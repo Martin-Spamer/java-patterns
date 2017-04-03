@@ -5,15 +5,14 @@
 package associations;
 
 /**
- * The Vehicle Interface.
+ * The Interface Vehicle.
  */
 public interface Vehicle {
 
 	/**
 	 * Sets the driver.
 	 *
-	 * @param driver
-	 *            the new driver
+	 * @param driver the new driver
 	 */
 	void setDriver(Driver driver);
 
@@ -27,8 +26,7 @@ public interface Vehicle {
 	/**
 	 * Travel.
 	 *
-	 * @param destination
-	 *            the destination
+	 * @param destination the destination
 	 */
 	void travel(String destination);
 

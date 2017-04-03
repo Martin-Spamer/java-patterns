@@ -1,3 +1,4 @@
+
 package patterns.mvc.controller;
 
 import java.util.ArrayList;
@@ -8,46 +9,96 @@ import patterns.mvc.ControllerInterface;
 import patterns.mvc.model.AbstractModel;
 import patterns.mvc.view.AbstractView;
 
+/**
+ * The Class AbstractController.
+ */
 public abstract class AbstractController extends Observable implements ControllerInterface {
 
+	/** The commands. */
 	protected ConcurrentHashMap<String, AbstractCommand> commands;
+
+	/** The registered models. */
 	protected ArrayList<AbstractModel> registeredModels;
+
+	/** The registered views. */
 	protected ArrayList<AbstractView> registeredViews;
 
+	/**
+	 * Instantiates a new abstract controller.
+	 */
 	public AbstractController() {
-		this.commands = new ConcurrentHashMap<String, AbstractCommand>();
-		this.registeredViews = new ArrayList<AbstractView>();
-		this.registeredModels = new ArrayList<AbstractModel>();
+		commands = new ConcurrentHashMap<String, AbstractCommand>();
+		registeredViews = new ArrayList<AbstractView>();
+		registeredModels = new ArrayList<AbstractModel>();
 	}
 
+	/**
+	 * Adds the model.
+	 *
+	 * @param model the model
+	 */
 	public void addModel(AbstractModel model) {
-		this.registeredModels.add(model);
+		registeredModels.add(model);
 	}
 
+	/**
+	 * Removes the model.
+	 *
+	 * @param model the model
+	 */
 	public void removeModel(AbstractModel model) {
-		this.registeredModels.remove(model);
+		registeredModels.remove(model);
 	}
 
+	/**
+	 * Adds the view.
+	 *
+	 * @param view the view
+	 */
 	public void addView(AbstractView view) {
-		this.registeredViews.add(view);
+		registeredViews.add(view);
 	}
 
+	/**
+	 * Removes the view.
+	 *
+	 * @param view the view
+	 */
 	public void removeView(AbstractView view) {
-		this.registeredViews.remove(view);
+		registeredViews.remove(view);
 	}
 
+	/**
+	 * Execute.
+	 *
+	 * @param context the context
+	 * @return the result
+	 */
 	public Result execute(Context context) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * Execute.
+	 *
+	 * @param command the command
+	 * @param context the context
+	 * @return the result
+	 */
 	public Result execute(String command, Context context) {
 		getCommand(command).execute(context);
 		return null;
 	}
 
+	/**
+	 * Gets the command.
+	 *
+	 * @param command the command
+	 * @return the command
+	 */
 	private AbstractCommand getCommand(String command) {
-		return this.commands.get(command);
+		return commands.get(command);
 	}
 
 }

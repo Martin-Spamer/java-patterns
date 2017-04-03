@@ -7,13 +7,13 @@ class Mediator implements MediatorInterface {
 	private Vector<ClientInterface> clients;
 
 	public void broadcastEvent() {
-		for (final ClientInterface client : this.clients) {
+		for (final ClientInterface client : clients) {
 			client.broadcastEvent();
 		}
 	}
 
 	public boolean add(ClientInterface e) {
-		return this.clients.add(e);
+		return clients.add(e);
 	}
 
 }

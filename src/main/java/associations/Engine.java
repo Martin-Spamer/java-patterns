@@ -1,16 +1,22 @@
+
 package associations;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Engine Class.
+ * The Class Engine.
  */
 public abstract class Engine implements Fuel {
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return "Engine [fuel=" + this.fuel + "]";
+		return "Engine [fuel=" + fuel + "]";
 	}
 
 	/** The Constant log. */
@@ -22,8 +28,7 @@ public abstract class Engine implements Fuel {
 	/**
 	 * Use fuel.
 	 *
-	 * @param fuel
-	 *            the fuel
+	 * @param fuel the fuel
 	 */
 	public void useFuel(Fuel fuel) {
 	}

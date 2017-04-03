@@ -1,13 +1,14 @@
+
 package associations;
 
 /**
- * The PetrolEngine Class.
+ * The Class PetrolEngine.
  */
 public class PetrolEngine extends Engine implements Fuel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see associations.Engine#fuelUp(associations.Fuel)
 	 */
 	@Override

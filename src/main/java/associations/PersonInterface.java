@@ -4,15 +4,14 @@
 package associations;
 
 /**
- * The PersonInterface Interface.
+ * The Interface PersonInterface.
  */
 public interface PersonInterface {
 
 	/**
 	 * Sets the name.
 	 *
-	 * @param name
-	 *            the new name
+	 * @param name the new name
 	 */
 	void setName(String name);
 

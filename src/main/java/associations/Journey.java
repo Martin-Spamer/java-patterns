@@ -1,7 +1,8 @@
+
 package associations;
 
 /**
- * The Journey Interface.
+ * The Interface Journey.
  */
 public interface Journey {
 

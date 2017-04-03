@@ -4,7 +4,7 @@
 package associations;
 
 /**
- * The MotorCycle Class.
+ * The Class MotorCycle.
  */
 public class MotorCycle extends AbstractVehicle {
 
@@ -20,7 +20,7 @@ public class MotorCycle extends AbstractVehicle {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
 	public void fuelUp(Fuel fuel) {
@@ -32,14 +32,13 @@ public class MotorCycle extends AbstractVehicle {
 	 * @return the rider
 	 */
 	public Rider getRider() {
-		return this.rider;
+		return rider;
 	}
 
 	/**
 	 * Sets the rider.
 	 *
-	 * @param rider
-	 *            the new rider
+	 * @param rider the new rider
 	 */
 	public void setRider(Rider rider) {
 		this.rider = rider;

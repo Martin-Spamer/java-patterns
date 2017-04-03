@@ -1,15 +1,15 @@
+
 package associations;
 
 /**
- * The Fuel Interface.
+ * The Interface Fuel.
  */
 public interface Fuel {
 
 	/**
 	 * Fuel up.
 	 *
-	 * @param fuel
-	 *            the fuel
+	 * @param fuel the fuel
 	 */
 	void fuelUp(Fuel fuel);
 

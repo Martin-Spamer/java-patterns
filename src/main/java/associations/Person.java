@@ -4,7 +4,7 @@
 package associations;
 
 /**
- * The Person Class.
+ * The Class Person.
  */
 public abstract class Person implements PersonInterface {
 
@@ -20,8 +20,7 @@ public abstract class Person implements PersonInterface {
 	/**
 	 * Instantiates a new person.
 	 *
-	 * @param name
-	 *            the name
+	 * @param name the name
 	 */
 	public Person(final String name) {
 		setName(name);
@@ -29,7 +28,7 @@ public abstract class Person implements PersonInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see associations.PersonInterface#setName(java.lang.String)
 	 */
 	public void setName(final String name) {
@@ -42,7 +41,7 @@ public abstract class Person implements PersonInterface {
 	 * @return the name
 	 */
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 }

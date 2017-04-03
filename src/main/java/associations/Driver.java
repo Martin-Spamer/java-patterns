@@ -4,7 +4,7 @@
 package associations;
 
 /**
- * The Driver Class.
+ * The Class Driver.
  */
 public class Driver extends Person {
 
@@ -18,8 +18,7 @@ public class Driver extends Person {
 	/**
 	 * Instantiates a new driver.
 	 *
-	 * @param name
-	 *            the name
+	 * @param name the name
 	 */
 	public Driver(String name) {
 		super(name);

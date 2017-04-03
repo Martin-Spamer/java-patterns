@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractVehicle Class.
+ * The Class AbstractVehicle.
  */
 public abstract class AbstractVehicle implements Vehicle, Fuel, Journey {
 
@@ -29,8 +29,7 @@ public abstract class AbstractVehicle implements Vehicle, Fuel, Journey {
 	/**
 	 * Instantiates a new abstract vehicle.
 	 *
-	 * @param driver
-	 *            the driver
+	 * @param engine the engine
 	 */
 	public AbstractVehicle(Engine engine) {
 		this.engine = engine;
@@ -51,7 +50,7 @@ public abstract class AbstractVehicle implements Vehicle, Fuel, Journey {
 	 * @see associations.Vehicle#getDriver()
 	 */
 	public Driver getDriver() {
-		return this.driver;
+		return driver;
 	}
 
 	/*
@@ -61,13 +60,18 @@ public abstract class AbstractVehicle implements Vehicle, Fuel, Journey {
 	 */
 	// Polymorphic interface
 	public void travel(String destination) {
-		this.engine.useFuel(this.engine);
+		engine.useFuel(engine);
 		log.info(destination);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return "AbstractVehicle [engine=" + this.engine + ", driver=" + this.driver + "]";
+		return "AbstractVehicle [engine=" + engine + ", driver=" + driver + "]";
 	}
 
 }

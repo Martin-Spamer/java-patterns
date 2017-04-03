@@ -4,7 +4,7 @@
 package associations;
 
 /**
- * The Truck Class.
+ * The Class Truck.
  */
 public class Truck extends AbstractVehicle {
 
@@ -18,8 +18,7 @@ public class Truck extends AbstractVehicle {
 	/**
 	 * Instantiates a new truck.
 	 *
-	 * @param engine
-	 *            the engine
+	 * @param engine the engine
 	 */
 	public Truck(DieselEngine engine) {
 		super(engine);
