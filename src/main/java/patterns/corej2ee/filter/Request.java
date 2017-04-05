@@ -2,7 +2,7 @@
 package patterns.corej2ee.filter;
 
 /**
- * The Class Request.
+ * The Request Class.
  */
 public class Request {
 

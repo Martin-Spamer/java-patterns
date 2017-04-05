@@ -2,7 +2,7 @@
 package patterns.gof.creational.factory;
 
 /**
- * The Class ConcreteFactory1.
+ * The ConcreteFactory1 Class.
  */
 class ConcreteFactory1 extends AbstractFactory {
 
@@ -14,7 +14,7 @@ class ConcreteFactory1 extends AbstractFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.creational.factory.AbstractFactory#createProductA()
 	 */
 	@Override
@@ -24,7 +24,7 @@ class ConcreteFactory1 extends AbstractFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.creational.factory.AbstractFactory#createProductB()
 	 */
 	@Override

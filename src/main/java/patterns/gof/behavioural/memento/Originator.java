@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.memento;
 
 /**
- * The Class Originator.
+ * The Originator Class.
  */
 public class Originator {
 

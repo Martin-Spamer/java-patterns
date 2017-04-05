@@ -2,7 +2,7 @@
 package patterns.corej2ee.filter;
 
 /**
- * The Class Client.
+ * The Client Class.
  */
 public class Client {
 

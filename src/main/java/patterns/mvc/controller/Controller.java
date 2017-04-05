@@ -2,7 +2,7 @@
 package patterns.mvc.controller;
 
 /**
- * The Class Controller.
+ * The Controller Class.
  */
 public class Controller extends AbstractController {
 

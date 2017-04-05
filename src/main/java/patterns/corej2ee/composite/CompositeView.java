@@ -2,7 +2,7 @@
 package patterns.corej2ee.composite;
 
 /**
- * The Class CompositeView.
+ * The CompositeView Class.
  */
 class CompositeView extends AbstractView {
 
@@ -11,7 +11,7 @@ class CompositeView extends AbstractView {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.corej2ee.composite.AbstractView#include()
 	 */
 	@Override

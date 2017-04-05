@@ -2,7 +2,7 @@
 package patterns.gof.structural.facade;
 
 /**
- * The Interface FacadeInterface.
+ * The FacadeInterface Interface.
  */
 public interface FacadeInterface {
 

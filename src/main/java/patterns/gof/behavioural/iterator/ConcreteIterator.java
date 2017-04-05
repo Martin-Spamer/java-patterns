@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.iterator;
 
 /**
- * The Class ConcreteIterator.
+ * The ConcreteIterator Class.
  */
 class ConcreteIterator extends AbstractIterator {
 
@@ -11,7 +11,7 @@ class ConcreteIterator extends AbstractIterator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.iterator.AbstractIterator#first()
 	 */
 	@Override
@@ -21,7 +21,7 @@ class ConcreteIterator extends AbstractIterator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.iterator.AbstractIterator#next()
 	 */
 	@Override
@@ -31,7 +31,7 @@ class ConcreteIterator extends AbstractIterator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.iterator.AbstractIterator#isDone()
 	 */
 	@Override
@@ -40,7 +40,7 @@ class ConcreteIterator extends AbstractIterator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.iterator.AbstractIterator#currentItem()
 	 */
 	@Override

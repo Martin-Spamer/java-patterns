@@ -4,7 +4,7 @@
 package associations;
 
 /**
- * The Interface PersonInterface.
+ * The PersonInterface Interface.
  */
 public interface PersonInterface {
 

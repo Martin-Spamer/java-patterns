@@ -4,7 +4,7 @@ package patterns.mvc.view;
 import patterns.mvc.model.Model;
 
 /**
- * The Class View.
+ * The View Class.
  */
 public class View extends AbstractView {
 

@@ -2,7 +2,7 @@
 package patterns.gof.creational.builder;
 
 /**
- * The Class AbstractBuilder.
+ * The AbstractBuilder Class.
  */
 public abstract class AbstractBuilder {
 

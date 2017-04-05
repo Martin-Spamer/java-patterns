@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.command;
 
 /**
- * The Class AbstractCommand.
+ * The AbstractCommand Class.
  */
 abstract class AbstractCommand {
 

@@ -2,7 +2,7 @@
 package patterns.gof.structural.proxy;
 
 /**
- * The Class Proxy.
+ * The Proxy Class.
  */
 class Proxy extends Subject {
 
@@ -11,7 +11,7 @@ class Proxy extends Subject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.structural.proxy.Subject#request()
 	 */
 	@Override

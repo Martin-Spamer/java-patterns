@@ -2,7 +2,7 @@
 package delegation;
 
 /**
- * The Interface ProcessInterface.
+ * The Process Interface.
  */
 public interface ProcessInterface {
 

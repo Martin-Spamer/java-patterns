@@ -4,7 +4,7 @@ package patterns.gof.behavioural.interpreter;
 import java.util.Vector;
 
 /**
- * The Class AbstractExpression.
+ * The AbstractExpression Class.
  */
 abstract class AbstractExpression {
 

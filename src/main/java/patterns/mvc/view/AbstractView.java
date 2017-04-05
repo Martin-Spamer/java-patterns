@@ -7,7 +7,7 @@ import patterns.mvc.ViewInterface;
 import patterns.mvc.model.Model;
 
 /**
- * The Class AbstractView.
+ * The AbstractView Class.
  */
 public abstract class AbstractView extends Observable implements ViewInterface {
 

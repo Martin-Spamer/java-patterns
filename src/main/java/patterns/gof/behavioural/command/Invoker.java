@@ -2,12 +2,12 @@
 package patterns.gof.behavioural.command;
 
 /**
- * The Class Invoker.
+ * The Invoker Class.
  */
 public class Invoker {
 
 	/** The my abstract command. */
-	public AbstractCommand myAbstractCommand;
+	private AbstractCommand abstractCommand;
 
 	/**
 	 * Store.

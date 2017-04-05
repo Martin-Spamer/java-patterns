@@ -2,12 +2,11 @@
 package delegation;
 
 /**
- * The Class Manager.
+ * The Manager Class.
  */
 class Manager implements ProcessInterface {
 
-	/** The worker. */
-	Worker worker;
+	private Worker worker;
 
 	/**
 	 * Instantiates a new manager.
@@ -37,10 +36,11 @@ class Manager implements ProcessInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see delegation.ProcessInterface#doProcess()
 	 */
 	public void doProcess() {
 		worker.doProcess();
 	}
+
 }

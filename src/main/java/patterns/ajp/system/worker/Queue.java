@@ -2,7 +2,7 @@
 package patterns.ajp.system.worker;
 
 /**
- * The Interface Queue.
+ * The Queue Interface.
  */
 public interface Queue {
 

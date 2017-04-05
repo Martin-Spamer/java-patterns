@@ -2,7 +2,7 @@
 package patterns.gof.structural.facade;
 
 /**
- * The Class SubSystemThree.
+ * The SubSystemThree Class.
  */
 class SubSystemThree {
 

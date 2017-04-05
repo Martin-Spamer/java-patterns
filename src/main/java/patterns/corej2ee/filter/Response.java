@@ -2,7 +2,7 @@
 package patterns.corej2ee.filter;
 
 /**
- * The Interface Response.
+ * The Response Interface.
  */
 public interface Response {
 

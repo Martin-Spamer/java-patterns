@@ -2,7 +2,7 @@
 package patterns.ajp.structural.hopp;
 
 /**
- * The Class LocalHopp.
+ * The LocalHopp Class.
  */
 class LocalHopp implements HoppInterface {
 

@@ -2,7 +2,7 @@
 package patterns.gof.structural.adapter;
 
 /**
- * The Class Director.
+ * The Director Class.
  */
 public class Director {
 

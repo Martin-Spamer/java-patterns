@@ -2,7 +2,7 @@
 package patterns.corej2ee.composite;
 
 /**
- * The Class AbstractView.
+ * The AbstractView Class.
  */
 public abstract class AbstractView {
 

@@ -4,12 +4,12 @@
 package associations;
 
 /**
- * The Class Person.
+ * The Person Class.
  */
 public abstract class Person implements PersonInterface {
 
 	/** The name. */
-	String name;
+	private String name;
 
 	/**
 	 * Instantiates a new person.

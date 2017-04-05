@@ -2,14 +2,13 @@
 package patterns.gof.behavioural.template_method;
 
 /**
- * The Class AbstractClass.
+ * The AbstractClass Class.
  */
 public abstract class AbstractClass {
 
 	/**
 	 * Template method.
 	 */
-
 	public void templateMethod() {
 	}
 

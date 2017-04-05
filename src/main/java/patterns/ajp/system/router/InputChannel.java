@@ -2,7 +2,7 @@
 package patterns.ajp.system.router;
 
 /**
- * The Interface InputChannel.
+ * The InputChannel Interface.
  */
 public interface InputChannel {
 

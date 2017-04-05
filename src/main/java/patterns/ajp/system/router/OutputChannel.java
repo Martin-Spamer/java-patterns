@@ -2,7 +2,7 @@
 package patterns.ajp.system.router;
 
 /**
- * The Interface OutputChannel.
+ * The OutputChannel Interface.
  */
 public interface OutputChannel {
 

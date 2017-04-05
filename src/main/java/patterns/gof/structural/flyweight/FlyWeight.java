@@ -2,7 +2,7 @@
 package patterns.gof.structural.flyweight;
 
 /**
- * The Class FlyWeight.
+ * The FlyWeight Class.
  */
 class FlyWeight {
 

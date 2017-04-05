@@ -4,7 +4,7 @@
 package associations;
 
 /**
- * The Class Truck.
+ * The Truck Class.
  */
 public class Truck extends AbstractVehicle {
 
@@ -29,6 +29,6 @@ public class Truck extends AbstractVehicle {
 	 *
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
-	public void fuelUp(Fuel fuel) {
+	public void fuelUp(FuelInterface fuel) {
 	}
 }

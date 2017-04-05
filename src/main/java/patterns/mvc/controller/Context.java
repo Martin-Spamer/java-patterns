@@ -2,7 +2,7 @@
 package patterns.mvc.controller;
 
 /**
- * The Class Context.
+ * The Context Class.
  */
 public class Context implements ContextInterface {
 

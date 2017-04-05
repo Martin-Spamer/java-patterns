@@ -2,27 +2,21 @@
 package patterns.gof.behavioural.observer;
 
 /**
- * The Class Subject.
+ * The ConcreteSubject Class.
  */
-public abstract class Subject {
-
-	/** The my observer. */
-	public Observer myObserver;
+class Subject extends AbstractSubject {
 
 	/**
-	 * Attach.
+	 * Gets the state.
 	 *
-	 * @param observer the observer
+	 * @return the state
 	 */
-	public void attach(final Observer observer) {
+	public void getState() {
 	}
 
 	/**
-	 * Detach.
-	 *
-	 * @param observer the observer
+	 * Sets the state.
 	 */
-	public void detach(final Observer observer) {
+	public void setState() {
 	}
-
 }

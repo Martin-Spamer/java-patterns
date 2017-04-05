@@ -2,7 +2,7 @@
 package patterns.mvc;
 
 /**
- * The Interface ViewInterface.
+ * The ViewInterface Interface.
  */
 public interface ViewInterface {
 

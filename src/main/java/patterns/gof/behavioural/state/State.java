@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.state;
 
 /**
- * The Class State.
+ * The State Class.
  */
 abstract class State {
 

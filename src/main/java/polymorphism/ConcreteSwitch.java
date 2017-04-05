@@ -2,28 +2,51 @@
 package polymorphism;
 
 /**
- * The Class ConcreteSwitch.
+ * The ConcreteSwitch Class.
  */
-public final class ConcreteSwitch extends AbstractSwitch<String, Object> {
+public final class ConcreteSwitch extends AbstractSwitch<String, AbstractCommand> implements CommandInterface {
+
+	/** The Constant serialVersionUID. */
+	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The Class Pass.
+	 * The Pass Class.
 	 */
-	protected final class Pass {
+	protected final class Pass extends AbstractCommand {
+
+		/*
+		 * (non-Javadoc)
+		 *
+		 * @see polymorphism.AbstractCommand#doProcess()
+		 */
+		@Override
+		public boolean doProcess() {
+			return true;
+		}
 	}
 
 	/**
-	 * The Class Fail.
+	 * The Fail Class.
 	 */
-	protected final class Fail {
+	protected final class Fail extends AbstractCommand {
+
+		/*
+		 * (non-Javadoc)
+		 *
+		 * @see polymorphism.AbstractCommand#doProcess()
+		 */
+		@Override
+		public boolean doProcess() {
+			return false;
+		}
 	}
 
 	/**
 	 * Instantiates a new concrete switch.
 	 */
 	public ConcreteSwitch() {
-		add("Pass", new Pass());
-		add("CaseB", new Fail());
-
+		super.put("Pass", new Pass());
+		super.put("CaseB", new Fail());
 	}
+
 }

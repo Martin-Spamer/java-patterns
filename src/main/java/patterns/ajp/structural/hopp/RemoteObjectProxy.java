@@ -2,7 +2,7 @@
 package patterns.ajp.structural.hopp;
 
 /**
- * The Class RemoteObjectProxy.
+ * The RemoteObjectProxy Class.
  */
 class RemoteObjectProxy implements HoppInterface {
 

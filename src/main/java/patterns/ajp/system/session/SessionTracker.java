@@ -4,7 +4,7 @@ package patterns.ajp.system.session;
 import java.util.Vector;
 
 /**
- * The Class SessionTracker.
+ * The SessionTracker Class.
  */
 public class SessionTracker {
 

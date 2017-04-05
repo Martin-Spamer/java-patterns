@@ -2,7 +2,7 @@
 package patterns.gof.structural.bridge;
 
 /**
- * The Class Abstraction.
+ * The Abstraction Class.
  */
 abstract class Abstraction {
 

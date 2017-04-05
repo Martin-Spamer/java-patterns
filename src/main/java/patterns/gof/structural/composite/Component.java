@@ -2,7 +2,7 @@
 package patterns.gof.structural.composite;
 
 /**
- * The Class Component.
+ * The Component Class.
  */
 abstract class Component implements CompositeInterface {
 
@@ -38,7 +38,7 @@ abstract class Component implements CompositeInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.structural.composite.CompositeInterface#operation()
 	 */
 	public CompositeInterface operation() {

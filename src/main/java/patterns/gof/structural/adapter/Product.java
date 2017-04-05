@@ -2,7 +2,7 @@
 package patterns.gof.structural.adapter;
 
 /**
- * The Class Product.
+ * The Product Class.
  */
 class Product {
 

@@ -2,13 +2,13 @@
 package patterns.gof.behavioural.chain;
 
 /**
- * The Interface HandlerInterface.
+ * The HandlerInterface Interface.
  */
 interface HandlerInterface {
 
 	/**
 	 * Handle request.
 	 */
-	void handleRequest();
+	HandlerInterface handleRequest();
 
 }

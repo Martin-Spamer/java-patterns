@@ -2,7 +2,7 @@
 package patterns.gof.structural.adapter;
 
 /**
- * The Class AbstractBuilder.
+ * The AbstractBuilder Class.
  */
 public abstract class AbstractBuilder {
 

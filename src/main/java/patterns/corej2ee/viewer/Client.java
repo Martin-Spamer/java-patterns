@@ -4,7 +4,7 @@ package patterns.corej2ee.viewer;
 import java.util.Vector;
 
 /**
- * The Class Client.
+ * The Client Class.
  */
 public class Client {
 

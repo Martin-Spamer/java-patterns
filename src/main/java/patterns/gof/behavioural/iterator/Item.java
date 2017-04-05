@@ -4,7 +4,7 @@ package patterns.gof.behavioural.iterator;
 import java.util.Vector;
 
 /**
- * The Class Item.
+ * The Item Class.
  */
 public abstract class Item {
 

@@ -2,7 +2,7 @@
 package patterns.ajp.system.router;
 
 /**
- * The Class Router.
+ * The Router Class.
  */
 class Router implements InputChannel, OutputChannel {
 
@@ -26,7 +26,7 @@ class Router implements InputChannel, OutputChannel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.ajp.system.router.OutputChannel#sendMessage(patterns.ajp.system.
 	 * router.Message)

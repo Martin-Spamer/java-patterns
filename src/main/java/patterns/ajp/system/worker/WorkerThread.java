@@ -2,7 +2,7 @@
 package patterns.ajp.system.worker;
 
 /**
- * The Class WorkerThread.
+ * The WorkerThread Class.
  */
 public class WorkerThread {
 

@@ -6,7 +6,7 @@ import java.util.Observable;
 import patterns.mvc.ModelInterface;
 
 /**
- * The Class AbstractModel.
+ * The AbstractModel Class.
  */
 public abstract class AbstractModel extends Observable implements ModelInterface {
 

@@ -2,7 +2,7 @@
 package patterns.corej2ee.viewer;
 
 /**
- * The Class Helper.
+ * The Helper Class.
  */
 class Helper {
 

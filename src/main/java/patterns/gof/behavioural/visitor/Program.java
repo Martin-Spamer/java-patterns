@@ -2,13 +2,13 @@
 package patterns.gof.behavioural.visitor;
 
 /**
- * The Class Program.
+ * The Program Class.
  */
 public class Program {
 
 	/** The my node. */
-	public Node myNode;
+	public AbstractNode myNode;
 
 	/** The my node visitor. */
-	public NodeVisitor myNodeVisitor;
+	public AbstractNodeVisitor myNodeVisitor;
 }

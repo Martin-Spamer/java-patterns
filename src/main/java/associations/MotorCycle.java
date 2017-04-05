@@ -4,7 +4,7 @@
 package associations;
 
 /**
- * The Class MotorCycle.
+ * The MotorCycle Class.
  */
 public class MotorCycle extends AbstractVehicle {
 
@@ -23,7 +23,7 @@ public class MotorCycle extends AbstractVehicle {
 	 *
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
-	public void fuelUp(Fuel fuel) {
+	public void fuelUp(FuelInterface fuel) {
 	}
 
 	/**

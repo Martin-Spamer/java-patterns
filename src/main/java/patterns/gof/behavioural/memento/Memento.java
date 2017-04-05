@@ -2,19 +2,17 @@
 package patterns.gof.behavioural.memento;
 
 /**
- * The Class Memento.
+ * The Memento Class.
  */
 class Memento {
 
-	/** The state. */
 	public Object state;
-
-	/** The my originator. */
-	public Originator myOriginator;
+	public Originator originator;
 
 	/**
 	 * New operation.
 	 */
 	public void newOperation() {
 	}
+
 }

@@ -2,7 +2,7 @@
 package patterns.mvc.controller;
 
 /**
- * The Class Result.
+ * The Result Class.
  */
 public class Result {
 

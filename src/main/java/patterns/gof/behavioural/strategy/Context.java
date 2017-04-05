@@ -2,12 +2,12 @@
 package patterns.gof.behavioural.strategy;
 
 /**
- * The Class Context.
+ * The Context Class.
  */
 public class Context {
 
 	/** The strategy. */
-	public Strategy strategy;
+	public AbstractStrategy strategy;
 
 	/**
 	 * Context interface.

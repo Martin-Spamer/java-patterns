@@ -2,13 +2,13 @@
 package patterns.gof.behavioural.template_method;
 
 /**
- * The Class ConcreteClass.
+ * The ConcreteClass Class.
  */
 class ConcreteClass extends AbstractClass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.template_method.AbstractClass#
 	 * primitiveOperationA()
 	 */
@@ -18,11 +18,12 @@ class ConcreteClass extends AbstractClass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.template_method.AbstractClass#
 	 * primitiveOperationB()
 	 */
 	@Override
 	public void primitiveOperationB() {
 	}
+
 }

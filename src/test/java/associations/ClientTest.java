@@ -8,15 +8,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Class ClientTest.
+ * ClientTest.
  */
 public class ClientTest {
 
-	/** The Constant log. */
 	private static final Logger log = LoggerFactory.getLogger(ClientTest.class);
 
 	/**
-	 * Test example aggregation.
+	 * Example aggregation.
 	 */
 	@Test
 	public void testExampleAggregation() {
@@ -25,12 +24,18 @@ public class ClientTest {
 	}
 
 	/**
-	 * Test example composition.
+	 * Example composition.
 	 */
 	@Test
 	public void testExampleComposition() {
-		final Vehicle aVehicle = new Car();
-		log.info("{}", aVehicle);
+		final VehicleInterface aCar = new Car();
+		log.info("{}", aCar);
+	}
+
+	@Test
+	public void testExampleaTaxi() {
+		final Taxi taxi = new Taxi();
+		log.info("{}", taxi);
 	}
 
 }

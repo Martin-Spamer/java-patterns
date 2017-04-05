@@ -4,7 +4,7 @@ package patterns.gof.structural.composite;
 import java.util.Vector;
 
 /**
- * The Class Composite.
+ * The Composite Class.
  */
 class Composite extends Component {
 
@@ -13,7 +13,7 @@ class Composite extends Component {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.gof.structural.composite.Component#add(patterns.gof.structural.
 	 * composite.Component)
@@ -26,7 +26,7 @@ class Composite extends Component {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.structural.composite.Component#remove(patterns.gof.
 	 * structural.composite.CompositeInterface)
 	 */
@@ -38,7 +38,7 @@ class Composite extends Component {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.structural.composite.Component#getChild(int)
 	 */
 	@Override
@@ -49,7 +49,7 @@ class Composite extends Component {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.structural.composite.Component#operation()
 	 */
 	@Override

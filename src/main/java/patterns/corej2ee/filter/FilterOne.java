@@ -2,7 +2,7 @@
 package patterns.corej2ee.filter;
 
 /**
- * The Class FilterOne.
+ * The FilterOne Class.
  */
 class FilterOne {
 

@@ -4,7 +4,7 @@
 package associations;
 
 /**
- * The Class Driver.
+ * The Driver Class.
  */
 public class Driver extends Person {
 

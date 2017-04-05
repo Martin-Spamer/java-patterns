@@ -2,13 +2,24 @@
 package patterns.gof.behavioural.observer;
 
 /**
- * The Class Observer.
+ * An asynchronous update interface for receiving notifications about Concrete
+ * information as the Concrete is constructed.
  */
-abstract class Observer {
+class Observer extends AbstractObserver {
 
-	/**
-	 * Update.
+	/** The state. */
+	public Object state;
+
+	/** The my concrete subject. */
+	public Subject myConcreteSubject;
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.gof.behavioural.observer.Observer#update()
 	 */
+	@Override
 	public void update() {
 	}
+
 }

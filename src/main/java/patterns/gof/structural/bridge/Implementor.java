@@ -2,7 +2,7 @@
 package patterns.gof.structural.bridge;
 
 /**
- * The Class Implementor.
+ * The Implementor Class.
  */
 abstract class Implementor {
 

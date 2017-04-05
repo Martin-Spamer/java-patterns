@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.interpreter;
 
 /**
- * The Class Context.
+ * The Context Class.
  */
 class Context {
 

@@ -2,7 +2,7 @@
 package patterns.corej2ee.controller;
 
 /**
- * The Class ServletFront.
+ * The ServletFront Class.
  */
 class ServletFront extends Controller {
 }

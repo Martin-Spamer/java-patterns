@@ -2,13 +2,13 @@
 package patterns.gof.creational.builder;
 
 /**
- * The Class ConcreteBuilderB.
+ * The ConcreteBuilderB Class.
  */
 class ConcreteBuilderB extends AbstractBuilder {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.creational.builder.AbstractBuilder#build()
 	 */
 	@Override

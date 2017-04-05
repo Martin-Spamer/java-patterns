@@ -2,7 +2,7 @@
 package patterns.gof.creational.builder;
 
 /**
- * The Class Director.
+ * The Director Class.
  */
 public class Director {
 

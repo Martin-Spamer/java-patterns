@@ -10,7 +10,7 @@ import patterns.mvc.model.AbstractModel;
 import patterns.mvc.view.AbstractView;
 
 /**
- * The Class AbstractController.
+ * The AbstractController Class.
  */
 public abstract class AbstractController extends Observable implements ControllerInterface {
 

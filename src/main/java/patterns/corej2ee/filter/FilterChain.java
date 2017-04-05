@@ -2,7 +2,7 @@
 package patterns.corej2ee.filter;
 
 /**
- * The Class FilterChain.
+ * The FilterChain Class.
  */
 class FilterChain {
 

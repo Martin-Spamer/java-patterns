@@ -2,7 +2,7 @@
 package patterns.gof.structural.decorator;
 
 /**
- * The Class AbstractComponent.
+ * The AbstractComponent Class.
  */
 public abstract class AbstractComponent {
 

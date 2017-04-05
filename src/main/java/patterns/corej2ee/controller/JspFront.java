@@ -2,7 +2,7 @@
 package patterns.corej2ee.controller;
 
 /**
- * The Class JspFront.
+ * The JspFront Class.
  */
 class JspFront extends Controller {
 }

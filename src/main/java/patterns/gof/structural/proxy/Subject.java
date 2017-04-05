@@ -2,7 +2,7 @@
 package patterns.gof.structural.proxy;
 
 /**
- * The Class Subject.
+ * The Subject Class.
  */
 abstract class Subject {
 

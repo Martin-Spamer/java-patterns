@@ -4,7 +4,7 @@ package delegation;
 import org.junit.Test;
 
 /**
- * The Class ManagerTest.
+ * ManagerTest.
  */
 public class ManagerTest {
 

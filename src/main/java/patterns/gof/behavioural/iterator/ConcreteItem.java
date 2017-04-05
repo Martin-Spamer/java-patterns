@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.iterator;
 
 /**
- * The Class ConcreteItem.
+ * The ConcreteItem Class.
  */
 class ConcreteItem extends Item {
 

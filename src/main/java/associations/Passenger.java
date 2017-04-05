@@ -2,7 +2,7 @@
 package associations;
 
 /**
- * The Class Passenger.
+ * The Passenger Class.
  */
 public class Passenger extends Person {
 

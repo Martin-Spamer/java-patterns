@@ -2,7 +2,7 @@
 package patterns.gof.creational.factory;
 
 /**
- * The Class AbstractProductB.
+ * The AbstractProductB Class.
  */
 public abstract class AbstractProductB {
 

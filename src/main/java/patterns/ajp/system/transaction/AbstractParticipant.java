@@ -2,7 +2,7 @@
 package patterns.ajp.system.transaction;
 
 /**
- * The Class AbstractParticipant.
+ * The AbstractParticipant Class.
  */
 public abstract class AbstractParticipant implements ParticipantInterfact {
 

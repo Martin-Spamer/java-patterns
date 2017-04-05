@@ -4,15 +4,10 @@ package patterns.ajp.system.transaction;
 import org.junit.Test;
 
 /**
- * The Class ClientTest.
+ * ClientTest.
  */
 public class ClientTest {
 
-	/**
-	 * Test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Test
 	public void test() throws Exception {
 		new ConcreteParticipant();

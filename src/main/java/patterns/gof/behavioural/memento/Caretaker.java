@@ -2,10 +2,10 @@
 package patterns.gof.behavioural.memento;
 
 /**
- * The Class Caretaker.
+ * The Caretaker Class.
  */
 class Caretaker {
 
-	/** The my memento. */
-	public Memento myMemento;
+	public Memento memento;
+
 }

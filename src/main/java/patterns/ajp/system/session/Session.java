@@ -2,7 +2,7 @@
 package patterns.ajp.system.session;
 
 /**
- * The Class Session.
+ * The Session Class.
  */
 class Session {
 

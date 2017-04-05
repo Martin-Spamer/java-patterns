@@ -2,7 +2,7 @@
 package patterns.gof.structural.adapter;
 
 /**
- * The Class ConcreteBuilder.
+ * The ConcreteBuilder Class.
  */
 class ConcreteBuilder extends AbstractBuilder {
 

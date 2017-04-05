@@ -2,7 +2,7 @@
 package patterns.ajp.structural.hopp;
 
 /**
- * The Interface Hopp.
+ * The Hopp Interface.
  */
 public interface Hopp {
 

@@ -2,7 +2,7 @@
 package patterns.ajp.system.transaction;
 
 /**
- * The Interface ParticipantInterfact.
+ * The ParticipantInterfact Interface.
  */
 public interface ParticipantInterfact {
 

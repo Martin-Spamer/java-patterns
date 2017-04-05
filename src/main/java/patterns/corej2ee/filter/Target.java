@@ -2,7 +2,7 @@
 package patterns.corej2ee.filter;
 
 /**
- * The Class Target.
+ * The Target Class.
  */
 class Target {
 

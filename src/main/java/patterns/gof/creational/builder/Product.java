@@ -2,7 +2,7 @@
 package patterns.gof.creational.builder;
 
 /**
- * The Class Product.
+ * The Product Class.
  */
 public class Product {
 

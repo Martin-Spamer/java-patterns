@@ -2,7 +2,7 @@
 package patterns.gof.structural.facade;
 
 /**
- * The Class ConcreteFacade.
+ * The ConcreteFacade Class.
  */
 class ConcreteFacade implements FacadeInterface {
 
@@ -22,18 +22,21 @@ class ConcreteFacade implements FacadeInterface {
 	 * Sub system one operation.
 	 */
 	public void subSystemOneOperation() {
+		new SubSystemOne().operation();
 	}
 
 	/**
 	 * Sub system two operation.
 	 */
 	public void subSystemTwoOperation() {
+		new SubSystemTwo().operation();
 	}
 
 	/**
 	 * Sub system three operation.
 	 */
 	public void subSystemThreeOperation() {
+		new SubSystemThree().operation();
 	}
 
 }

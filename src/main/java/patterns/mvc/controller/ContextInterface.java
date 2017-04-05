@@ -2,7 +2,7 @@
 package patterns.mvc.controller;
 
 /**
- * The Interface ContextInterface.
+ * The ContextInterface Interface.
  */
 public interface ContextInterface {
 

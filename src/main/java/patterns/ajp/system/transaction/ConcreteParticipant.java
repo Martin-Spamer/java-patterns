@@ -2,13 +2,13 @@
 package patterns.ajp.system.transaction;
 
 /**
- * The Class ConcreteParticipant.
+ * The ConcreteParticipant Class.
  */
 public class ConcreteParticipant extends AbstractParticipant {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.ajp.system.transaction.ParticipantInterfact#join()
 	 */
 	public void join() {
@@ -16,7 +16,7 @@ public class ConcreteParticipant extends AbstractParticipant {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.ajp.system.transaction.ParticipantInterfact#commit()
 	 */
 	public void commit() {
@@ -24,7 +24,7 @@ public class ConcreteParticipant extends AbstractParticipant {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.ajp.system.transaction.ParticipantInterfact#cancel()
 	 */
 	public void cancel() {

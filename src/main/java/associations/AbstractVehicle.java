@@ -7,15 +7,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Class AbstractVehicle.
+ * The AbstractVehicle Class.
  */
-public abstract class AbstractVehicle implements Vehicle, Fuel, Journey {
+public abstract class AbstractVehicle implements VehicleInterface, FuelInterface, JourneyInterface {
 
 	/** The Constant log. */
 	private static final Logger log = LoggerFactory.getLogger(AbstractVehicle.class);
 
 	/** The engine. */
-	private Engine engine;
+	private AbstractEngine engine;
 
 	/** The driver. */
 	protected Driver driver;
@@ -31,7 +31,7 @@ public abstract class AbstractVehicle implements Vehicle, Fuel, Journey {
 	 *
 	 * @param engine the engine
 	 */
-	public AbstractVehicle(Engine engine) {
+	public AbstractVehicle(AbstractEngine engine) {
 		this.engine = engine;
 	}
 
@@ -66,7 +66,7 @@ public abstract class AbstractVehicle implements Vehicle, Fuel, Journey {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

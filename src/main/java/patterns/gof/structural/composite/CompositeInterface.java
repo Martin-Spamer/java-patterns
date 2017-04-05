@@ -2,7 +2,7 @@
 package patterns.gof.structural.composite;
 
 /**
- * The Interface CompositeInterface.
+ * The CompositeInterface Interface.
  */
 interface CompositeInterface {
 

@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.iterator;
 
 /**
- * The Class AbstractAggregate.
+ * The AbstractAggregate Class.
  */
 abstract class AbstractAggregate {
 

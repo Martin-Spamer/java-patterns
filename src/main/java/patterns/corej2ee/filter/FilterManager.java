@@ -2,7 +2,7 @@
 package patterns.corej2ee.filter;
 
 /**
- * The Class FilterManager.
+ * The FilterManager Class.
  */
 class FilterManager {
 

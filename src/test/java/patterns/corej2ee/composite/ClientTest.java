@@ -2,7 +2,7 @@
 package patterns.corej2ee.composite;
 
 /**
- * The Class ClientTest.
+ * ClientTest.
  */
 public class ClientTest {
 

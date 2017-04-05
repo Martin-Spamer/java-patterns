@@ -2,7 +2,7 @@
 package patterns.ajp.system.worker;
 
 /**
- * The Class Task.
+ * The Task Class.
  */
 class Task {
 

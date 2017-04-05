@@ -2,7 +2,7 @@
 package associations;
 
 /**
- * The Class Taxi.
+ * The Taxi Class.
  */
 public class Taxi extends Car {
 

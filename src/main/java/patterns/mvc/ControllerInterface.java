@@ -2,7 +2,7 @@
 package patterns.mvc;
 
 /**
- * The Interface ControllerInterface.
+ * The ControllerInterface Interface.
  */
 public interface ControllerInterface {
 

@@ -2,13 +2,13 @@
 package patterns.mvc.controller;
 
 /**
- * The Class AbstractCommand.
+ * The AbstractCommand Class.
  */
 public class AbstractCommand implements CommandInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.mvc.controller.CommandInterface#execute(patterns.mvc.controller.
 	 * Context)

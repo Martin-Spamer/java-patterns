@@ -2,7 +2,7 @@
 package patterns.gof.creational.singleton;
 
 /**
- * The Class Singleton.
+ * The Singleton Class.
  */
 public class Singleton {
 
@@ -10,7 +10,7 @@ public class Singleton {
 	private static Singleton instance;
 
 	/**
-	 * Instantiates a new singleton.
+	 * Private Constructor prevents wild instantiation of singleton.
 	 */
 	private Singleton() {
 	}

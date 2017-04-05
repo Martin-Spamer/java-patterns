@@ -2,7 +2,7 @@
 package patterns.gof.creational.builder;
 
 /**
- * The Class PartOne.
+ * The PartOne Class.
  */
 public class PartOne extends Part {
 

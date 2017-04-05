@@ -1,13 +1,23 @@
 
 package patterns.gof.behavioural.chain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * The Class Handler.
+ * The Handler Class.
  */
 public abstract class Handler implements HandlerInterface {
 
-	/** The next. */
+	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private HandlerInterface next;
+
+	/**
+	 * Instantiates a new handler.
+	 */
+	public Handler() {
+		super();
+	}
 
 	/**
 	 * Instantiates a new handler.
@@ -32,9 +42,12 @@ public abstract class Handler implements HandlerInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.chain.HandlerInterface#handleRequest()
 	 */
-	abstract public void handleRequest();
+	public Handler handleRequest() {
+		this.next.handleRequest();
+		return this;
+	}
 
 }

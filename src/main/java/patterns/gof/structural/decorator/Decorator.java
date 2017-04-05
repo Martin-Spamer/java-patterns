@@ -2,7 +2,7 @@
 package patterns.gof.structural.decorator;
 
 /**
- * The Class Decorator.
+ * The Decorator Class.
  */
 abstract class Decorator extends AbstractComponent {
 
@@ -11,7 +11,7 @@ abstract class Decorator extends AbstractComponent {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.structural.decorator.AbstractComponent#operation()
 	 */
 	@Override

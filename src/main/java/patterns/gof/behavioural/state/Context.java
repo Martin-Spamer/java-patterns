@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.state;
 
 /**
- * The Class Context.
+ * The Context Class.
  */
 public class Context {
 

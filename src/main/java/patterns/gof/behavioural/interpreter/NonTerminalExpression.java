@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.interpreter;
 
 /**
- * The Class NonTerminalExpression.
+ * The NonTerminalExpression Class.
  */
 class NonTerminalExpression extends AbstractExpression {
 
@@ -11,7 +11,7 @@ class NonTerminalExpression extends AbstractExpression {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.interpreter.AbstractExpression#interpret(
 	 * patterns.gof.behavioural.interpreter.Context)
 	 */

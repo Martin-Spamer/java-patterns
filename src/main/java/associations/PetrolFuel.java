@@ -2,16 +2,16 @@
 package associations;
 
 /**
- * The Class PetrolFuel.
+ * The PetrolFuel Class.
  */
-public class PetrolFuel implements Fuel {
+public class PetrolFuel implements FuelInterface {
 
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
-	public void fuelUp(Fuel fuel) {
+	public void fuelUp(FuelInterface fuel) {
 	}
 
 }

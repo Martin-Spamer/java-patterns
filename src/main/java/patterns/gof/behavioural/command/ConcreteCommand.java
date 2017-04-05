@@ -2,13 +2,13 @@
 package patterns.gof.behavioural.command;
 
 /**
- * The Class ConcreteCommand.
+ * The ConcreteCommand Class.
  */
 class ConcreteCommand extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.command.AbstractCommand#execute()
 	 */
 	@Override

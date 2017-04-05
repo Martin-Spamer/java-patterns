@@ -5,7 +5,7 @@
 package associations;
 
 /**
- * The Class Car.
+ * The Car Class.
  */
 public class Car extends AbstractVehicle {
 
@@ -21,7 +21,7 @@ public class Car extends AbstractVehicle {
 	 *
 	 * @param engine the engine
 	 */
-	public Car(Engine engine) {
+	public Car(AbstractEngine engine) {
 		super(engine);
 	}
 
@@ -30,7 +30,7 @@ public class Car extends AbstractVehicle {
 	 *
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
-	public void fuelUp(Fuel fuel) {
+	public void fuelUp(FuelInterface fuel) {
 	}
 
 }

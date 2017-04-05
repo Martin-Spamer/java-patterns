@@ -2,7 +2,7 @@
 package patterns.gof.behavioural.iterator;
 
 /**
- * The Class ConcreteAggregate.
+ * The ConcreteAggregate Class.
  */
 class ConcreteAggregate extends AbstractAggregate {
 
@@ -11,7 +11,7 @@ class ConcreteAggregate extends AbstractAggregate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.behavioural.iterator.AbstractAggregate#createIterator()
 	 */
 	@Override

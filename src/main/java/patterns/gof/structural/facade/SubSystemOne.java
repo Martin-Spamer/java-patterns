@@ -2,12 +2,9 @@
 package patterns.gof.structural.facade;
 
 /**
- * The Class SubSystemOne.
+ * The SubSystemOne Class.
  */
 class SubSystemOne {
-
-	/** The my concrete facade. */
-	public ConcreteFacade myConcreteFacade;
 
 	/**
 	 * Operation.

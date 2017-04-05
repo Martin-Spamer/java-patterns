@@ -2,7 +2,7 @@
 package patterns.gof.creational.factory;
 
 /**
- * The Class ConcreteProductA2.
+ * The ConcreteProductA2 Class.
  */
 class ConcreteProductA2 extends AbstractProductA {
 

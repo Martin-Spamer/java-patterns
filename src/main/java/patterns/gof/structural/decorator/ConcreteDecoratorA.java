@@ -2,7 +2,7 @@
 package patterns.gof.structural.decorator;
 
 /**
- * The Class ConcreteDecoratorA.
+ * The ConcreteDecoratorA Class.
  */
 class ConcreteDecoratorA extends Decorator {
 
@@ -17,7 +17,7 @@ class ConcreteDecoratorA extends Decorator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.gof.structural.decorator.Decorator#operation()
 	 */
 	@Override
