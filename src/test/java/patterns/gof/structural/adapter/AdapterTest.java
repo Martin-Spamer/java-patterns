@@ -6,7 +6,4 @@ package patterns.gof.structural.adapter;
  */
 public class AdapterTest {
 
-	/** The director. */
-	public Director director;
-
 }

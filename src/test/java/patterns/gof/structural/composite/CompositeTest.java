@@ -6,7 +6,4 @@ package patterns.gof.structural.composite;
  */
 public class CompositeTest {
 
-	/** The component. */
-	public CompositeInterface component;
-
 }

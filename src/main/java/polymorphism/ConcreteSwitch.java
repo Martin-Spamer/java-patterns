@@ -45,8 +45,8 @@ public final class ConcreteSwitch extends AbstractSwitch<String, AbstractCommand
 	 * Instantiates a new concrete switch.
 	 */
 	public ConcreteSwitch() {
-		super.put("Pass", new Pass());
-		super.put("CaseB", new Fail());
+		super.put("PASS", new Pass());
+		super.put("FAIL", new Fail());
 	}
 
 }

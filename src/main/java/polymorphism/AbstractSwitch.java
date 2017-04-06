@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("serial")
 public abstract class AbstractSwitch<K, V> extends Hashtable<K, V> {
 
-	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**

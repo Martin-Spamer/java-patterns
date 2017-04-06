@@ -6,7 +6,6 @@ package patterns.gof.creational.builder;
  */
 public class BuilderTest {
 
-	/** The my director. */
-	public Director myDirector;
+	private Director director;
 
 }

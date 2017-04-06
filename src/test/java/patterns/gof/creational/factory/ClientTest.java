@@ -6,4 +6,10 @@ package patterns.gof.creational.factory;
  */
 public class ClientTest {
 
+	private AbstractFactory abstractFactory;
+
+	private AbstractProductA abstractProductA;
+
+	private AbstractProductB abstractProductB;
+
 }

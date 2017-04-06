@@ -1,6 +1,8 @@
 
 package polymorphism;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +12,6 @@ import org.slf4j.LoggerFactory;
  */
 public class ConcreteSwitchTest {
 
-	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(ConcreteSwitchTest.class);
 
 	/**
@@ -19,7 +20,7 @@ public class ConcreteSwitchTest {
 	@Test
 	public void testPass() {
 		final ConcreteSwitch command = new ConcreteSwitch();
-		command.execute("PASS");
+		assertNotNull(command.execute("PASS"));
 	}
 
 	/**
@@ -28,7 +29,7 @@ public class ConcreteSwitchTest {
 	@Test
 	public void testFail() {
 		final ConcreteSwitch command = new ConcreteSwitch();
-		command.execute("FAIL");
+		assertNotNull(command.execute("FAIL"));
 	}
 
 }

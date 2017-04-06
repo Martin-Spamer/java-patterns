@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractCommand implements CommandInterface {
 
-	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
