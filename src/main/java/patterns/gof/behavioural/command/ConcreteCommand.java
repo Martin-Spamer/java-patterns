@@ -6,12 +6,9 @@ package patterns.gof.behavioural.command;
  */
 class ConcreteCommand extends AbstractCommand {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.gof.behavioural.command.AbstractCommand#execute()
-	 */
 	@Override
-	public void execute() {
+	public AbstractCommand execute() {
+		return this;
 	}
+
 }

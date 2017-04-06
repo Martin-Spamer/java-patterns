@@ -6,9 +6,8 @@ package patterns.gof.behavioural.command;
  */
 abstract class AbstractCommand {
 
-	/**
-	 * Execute.
-	 */
-	public void execute() {
+	public AbstractCommand execute() {
+		return this;
 	}
+
 }
