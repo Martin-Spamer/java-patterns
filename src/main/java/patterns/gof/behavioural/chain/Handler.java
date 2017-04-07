@@ -46,7 +46,7 @@ public abstract class Handler implements HandlerInterface {
 	 * @see patterns.gof.behavioural.chain.HandlerInterface#handleRequest()
 	 */
 	public Handler handleRequest() {
-		this.next.handleRequest();
+		next.handleRequest();
 		return this;
 	}
 

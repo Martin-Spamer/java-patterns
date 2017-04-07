@@ -15,7 +15,7 @@ public class CommandMap extends HashMap<String, AbstractAction> implements Comma
 	private final Properties properties = new Properties();
 
 	public CommandInterface execute(final String actionName) {
-		final String className = this.properties.getProperty(actionName);
+		final String className = properties.getProperty(actionName);
 		try {
 			final AbstractCommand action = (AbstractCommand) Class.forName(className).newInstance();
 			action.execute();

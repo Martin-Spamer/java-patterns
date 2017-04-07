@@ -3,8 +3,6 @@ package patterns.router;
 
 import org.junit.Test;
 
-import patterns.router.Router;
-
 /**
  * ClientTest.
  */

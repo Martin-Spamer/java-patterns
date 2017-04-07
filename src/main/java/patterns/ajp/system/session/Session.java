@@ -20,7 +20,7 @@ class Session {
 	}
 
 	public long getId() {
-		return this.id;
+		return id;
 	}
 
 }

@@ -16,7 +16,7 @@ public class Invoker {
 	}
 
 	public Invoker execute(final String targetActionName) throws Exception {
-		final String className = this.properties.getProperty(targetActionName);
+		final String className = properties.getProperty(targetActionName);
 		final AbstractCommand targetAction = (AbstractCommand) Class.forName(className).newInstance();
 		targetAction.execute();
 		return this;
