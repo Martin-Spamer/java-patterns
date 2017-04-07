@@ -1,4 +1,3 @@
-
 package patterns.corej2ee.composite;
 
 /**
@@ -6,12 +5,12 @@ package patterns.corej2ee.composite;
  */
 public abstract class AbstractView {
 
-	/** The my composite view. */
-	public CompositeView myCompositeView;
+	private CompositeView compositeView;
 
 	/**
 	 * Include.
 	 */
 	public void include() {
 	}
+
 }

@@ -1,13 +1,12 @@
 
-package patterns.ajp.structural.hopp;
+package patterns.hopp;
 
 /**
  * The LocalHopp Class.
  */
 class LocalHopp implements HoppInterface {
 
-	/** The my remote object proxy. */
-	public RemoteObjectProxy myRemoteObjectProxy;
+	public RemoteObjectProxy remoteObjectProxy;
 
 	/**
 	 * Remote method.
@@ -18,6 +17,11 @@ class LocalHopp implements HoppInterface {
 	/**
 	 * New operation.
 	 */
-	public void newOperation() {
+	public void operation() {
+	}
+
+	public void localMethod() {
+		// TODO Auto-generated method stub
+
 	}
 }

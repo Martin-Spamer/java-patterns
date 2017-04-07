@@ -16,7 +16,7 @@ public abstract class AbstractEngine implements FuelInterface {
 	 */
 	@Override
 	public String toString() {
-		return "Engine [fuel=" + fuel + "]";
+		return "Engine [fuel=" + this.fuel + "]";
 	}
 
 	/** The Constant log. */

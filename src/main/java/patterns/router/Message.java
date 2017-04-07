@@ -1,8 +1,9 @@
 
-package patterns.ajp.system.router;
+package patterns.router;
 
 /**
  * The Message Class.
  */
 public class Message {
+
 }

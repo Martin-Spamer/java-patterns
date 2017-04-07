@@ -11,6 +11,8 @@ class Worker implements ProcessInterface {
 	 *
 	 * @see delegation.ProcessInterface#doProcess()
 	 */
-	public void doProcess() {
+	public Worker doProcess() {
+		System.out.println("do work");
+		return this;
 	}
 }

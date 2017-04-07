@@ -1,5 +1,5 @@
 
-package patterns.ajp.structural.hopp;
+package patterns.hopp;
 
 /**
  * The RemoteObject Class.
@@ -7,14 +7,15 @@ package patterns.ajp.structural.hopp;
 class RemoteObject implements HoppInterface {
 
 	/**
-	 * Remote method impl.
+	 * Remote method implementation.
 	 */
 	public void remoteMethod() {
 	}
 
-	/**
-	 * New operation.
-	 */
-	public void newOperation() {
+	public void localMethod() {
 	}
+
+	public void operation() {
+	}
+
 }

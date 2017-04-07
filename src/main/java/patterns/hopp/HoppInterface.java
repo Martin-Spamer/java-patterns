@@ -1,10 +1,10 @@
 
-package patterns.ajp.structural.hopp;
+package patterns.hopp;
 
 /**
- * The Hopp Interface.
+ * The Interface Half Object Plus Protocol pattern.
  */
-public interface Hopp {
+public interface HoppInterface {
 
 	/**
 	 * Remote method.
@@ -15,4 +15,6 @@ public interface Hopp {
 	 * Local method.
 	 */
 	public void localMethod();
+
+	public void operation();
 }

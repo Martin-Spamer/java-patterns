@@ -1,3 +1,4 @@
+
 package patterns.gof.behavioural.command;
 
 import java.util.HashMap;
@@ -5,6 +6,9 @@ import java.util.Properties;
 
 import javax.swing.AbstractAction;
 
+/**
+ * The CommandMap Class.
+ */
 @SuppressWarnings("serial")
 public class CommandMap extends HashMap<String, AbstractAction> implements CommandInterface {
 

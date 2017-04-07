@@ -1,6 +1,8 @@
 
 package patterns.gof.behavioural.command;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 /**
@@ -10,8 +12,9 @@ public class ClientTest {
 
 	@Test
 	public void testCommand() throws Exception {
-		final ConcreteCommand concreteCommand;
-
+		final ConcreteCommand command = new ConcreteCommand();
+		assertNotNull(command);
+		assertNotNull(command.execute());
 	}
 
 }

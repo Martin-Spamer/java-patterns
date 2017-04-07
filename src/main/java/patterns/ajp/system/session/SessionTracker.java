@@ -8,11 +8,9 @@ import java.util.Vector;
  */
 public class SessionTracker {
 
-	/** The sessions. */
-	public Vector<Session> sessions;
+	private Vector<Session> sessions;
 
-	/** The my session. */
-	public Session mySession;
+	private Session mySession;
 
 	/**
 	 * Creates the session.
@@ -25,4 +23,5 @@ public class SessionTracker {
 	 */
 	public void destroySession() {
 	}
+
 }

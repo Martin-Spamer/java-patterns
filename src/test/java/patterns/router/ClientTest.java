@@ -1,7 +1,9 @@
 
-package patterns.ajp.system.router;
+package patterns.router;
 
 import org.junit.Test;
+
+import patterns.router.Router;
 
 /**
  * ClientTest.
@@ -12,4 +14,5 @@ public class ClientTest {
 	public void test() {
 		new Router();
 	}
+
 }

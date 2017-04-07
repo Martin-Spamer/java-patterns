@@ -6,6 +6,6 @@ package patterns.ajp.system.worker;
  */
 public class WorkerThread {
 
-	/** The my queue. */
-	public Queue myQueue;
+	private Queue queue;
+
 }

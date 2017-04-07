@@ -2,13 +2,15 @@
 package delegation;
 
 /**
- * The Process Interface.
+ * The ProcessInterface Interface.
  */
 public interface ProcessInterface {
 
 	/**
 	 * Do process.
+	 *
+	 * @return the process interface
 	 */
-	public void doProcess();
+	ProcessInterface doProcess();
 
 }

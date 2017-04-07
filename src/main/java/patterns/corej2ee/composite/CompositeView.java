@@ -6,8 +6,7 @@ package patterns.corej2ee.composite;
  */
 class CompositeView extends AbstractView {
 
-	/** The my abstract view. */
-	public AbstractView myAbstractView;
+	private AbstractView myAbstractView;
 
 	/*
 	 * (non-Javadoc)
@@ -17,4 +16,5 @@ class CompositeView extends AbstractView {
 	@Override
 	public void include() {
 	}
+
 }

@@ -8,11 +8,11 @@ import java.util.Properties;
  */
 public class Invoker {
 
+	private final CommandMap commandMap = new CommandMap();
 	private final Properties properties = new Properties();
 
 	public Invoker() {
 		super();
-		final CommandMap commandMap = new CommandMap();
 	}
 
 	public Invoker execute(final String targetActionName) throws Exception {

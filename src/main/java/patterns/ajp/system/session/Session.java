@@ -1,4 +1,3 @@
-
 package patterns.ajp.system.session;
 
 /**
@@ -6,6 +5,22 @@ package patterns.ajp.system.session;
  */
 class Session {
 
-	/** The id. */
 	private long id;
+
+	public Session() {
+	}
+
+	public Session(long id) {
+		super();
+		this.id = id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public long getId() {
+		return this.id;
+	}
+
 }

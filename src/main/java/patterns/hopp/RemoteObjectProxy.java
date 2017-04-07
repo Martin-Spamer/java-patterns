@@ -1,5 +1,5 @@
 
-package patterns.ajp.structural.hopp;
+package patterns.hopp;
 
 /**
  * The RemoteObjectProxy Class.
@@ -7,7 +7,7 @@ package patterns.ajp.structural.hopp;
 class RemoteObjectProxy implements HoppInterface {
 
 	/** The my remote object. */
-	public RemoteObject myRemoteObject;
+	public RemoteObject remoteObject;
 
 	/**
 	 * Remote method proxy.
@@ -15,9 +15,13 @@ class RemoteObjectProxy implements HoppInterface {
 	public void remoteMethodProxy() {
 	}
 
-	/**
-	 * New operation.
-	 */
-	public void newOperation() {
+	public void remoteMethod() {
 	}
+
+	public void localMethod() {
+	}
+
+	public void operation() {
+	}
+
 }
