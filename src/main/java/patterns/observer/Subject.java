@@ -2,21 +2,29 @@
 package patterns.observer;
 
 /**
- * The ConcreteSubject Class.
+ * The Subject Class.
  */
 class Subject extends AbstractSubject {
 
+	private Boolean status = false;
+
 	/**
-	 * Gets the state.
+	 * Gets the status.
 	 *
-	 * @return the state
+	 * @return the status
 	 */
-	public void getState() {
+	public Boolean getStatus() {
+		return this.status;
 	}
 
 	/**
-	 * Sets the state.
+	 * Sets the status.
+	 *
+	 * @param status the new status
 	 */
-	public void setState() {
+	public void setStatus(Boolean status) {
+		this.status = status;
+		updateObservers();
 	}
+
 }
