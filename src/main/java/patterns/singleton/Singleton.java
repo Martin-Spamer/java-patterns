@@ -1,4 +1,3 @@
-
 package patterns.singleton;
 
 /**
@@ -10,7 +9,7 @@ public class Singleton {
 	private static Singleton instance;
 
 	/**
-	 * Private Constructor prevents wild instantiation of singleton.
+	 * Instantiates a new singleton.
 	 */
 	private Singleton() {
 	}
@@ -21,19 +20,8 @@ public class Singleton {
 	 * @return single instance of Singleton
 	 */
 	public synchronized static Singleton getInstance() {
-		if (instance == null) {
-			instance = create();
-		}
+		instance = new Singleton();
 		return instance;
-	}
-
-	/**
-	 * Creates the.
-	 *
-	 * @return the singleton
-	 */
-	private static Singleton create() {
-		return new Singleton();
 	}
 
 }
