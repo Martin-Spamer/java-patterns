@@ -1,12 +1,10 @@
-
 package patterns.proxy;
 
 /**
- * The Proxy Class.
+ * The Proxy for the Subject Class.
  */
-class Proxy extends Subject {
+class ProxySubject extends Subject {
 
-	/** The my real subject. */
 	public RealSubject myRealSubject;
 
 	/*
@@ -16,5 +14,6 @@ class Proxy extends Subject {
 	 */
 	@Override
 	public void request() {
+		this.myRealSubject.request();
 	}
 }
