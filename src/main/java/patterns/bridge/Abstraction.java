@@ -2,8 +2,15 @@ package patterns.bridge;
 
 abstract class Abstraction {
 
-	public Implementor implementor;
+	private final Implementor implementor;
 
-	abstract public void operation();
+	public Abstraction(Implementor implementor) {
+		super();
+		this.implementor = implementor;
+	}
+
+	public void operation() {
+		this.implementor.operation();
+	}
 
 }

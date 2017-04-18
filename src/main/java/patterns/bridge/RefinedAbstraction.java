@@ -2,8 +2,8 @@ package patterns.bridge;
 
 class RefinedAbstraction extends Abstraction {
 
-	@Override
-	public void operation() {
+	public RefinedAbstraction(Implementor implementor) {
+		super(implementor);
 	}
 
 }
