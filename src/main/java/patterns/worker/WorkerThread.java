@@ -1,4 +1,3 @@
-
 package patterns.worker;
 
 /**
@@ -6,6 +5,6 @@ package patterns.worker;
  */
 public class WorkerThread {
 
-	private Queue queue;
+	private QueueInterface queue;
 
 }

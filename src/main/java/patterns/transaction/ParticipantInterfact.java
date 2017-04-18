@@ -1,4 +1,3 @@
-
 package patterns.transaction;
 
 /**
@@ -20,4 +19,5 @@ public interface ParticipantInterfact {
 	 * Cancel.
 	 */
 	public void cancel();
+
 }

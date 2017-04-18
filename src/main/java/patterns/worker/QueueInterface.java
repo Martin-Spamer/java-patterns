@@ -1,10 +1,9 @@
-
 package patterns.worker;
 
 /**
  * The Queue Interface.
  */
-public interface Queue {
+public interface QueueInterface {
 
 	/**
 	 * Put.
@@ -17,4 +16,5 @@ public interface Queue {
 	 * Take.
 	 */
 	public void take();
+
 }

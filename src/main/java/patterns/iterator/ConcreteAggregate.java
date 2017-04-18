@@ -5,7 +5,6 @@ package patterns.iterator;
  */
 class ConcreteAggregate extends AbstractAggregate {
 
-	/** The my item. */
 	public Item myItem;
 
 	/*
@@ -16,4 +15,5 @@ class ConcreteAggregate extends AbstractAggregate {
 	@Override
 	public void createIterator() {
 	}
+
 }

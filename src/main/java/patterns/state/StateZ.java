@@ -1,10 +1,9 @@
-
 package patterns.state;
 
 /**
  * The ConcreteStateB Class.
  */
-class StateB extends State {
+class StateZ extends AbstractState {
 
 	/*
 	 * (non-Javadoc)
@@ -14,4 +13,5 @@ class StateB extends State {
 	@Override
 	public void handle() {
 	}
+
 }

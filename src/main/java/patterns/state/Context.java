@@ -1,4 +1,3 @@
-
 package patterns.state;
 
 /**
@@ -6,12 +5,14 @@ package patterns.state;
  */
 public class Context {
 
-	/** The my state. */
-	public State myState;
+	private AbstractState state;
 
-	/**
-	 * Request.
-	 */
-	public void request() {
+	public void toA() {
+		this.state = new StateA();
 	}
+
+	public void toZ() {
+		this.state = new StateZ();
+	}
+
 }

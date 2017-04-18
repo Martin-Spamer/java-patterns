@@ -1,10 +1,9 @@
-
 package patterns.worker;
 
 /**
  * The ConcreteQueue Class.
  */
-class ConcreteQueue implements Queue {
+class ConcreteQueue implements QueueInterface {
 
 	/*
 	 * (non-Javadoc)
@@ -21,4 +20,5 @@ class ConcreteQueue implements Queue {
 	 */
 	public void take() {
 	}
+
 }

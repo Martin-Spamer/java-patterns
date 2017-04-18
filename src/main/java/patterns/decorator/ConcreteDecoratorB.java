@@ -1,6 +1,6 @@
 package patterns.decorator;
 
-class ConcreteDecoratorB extends Decorator {
+class ConcreteDecoratorB extends AbstractDecorator {
 
 	private Object state;
 

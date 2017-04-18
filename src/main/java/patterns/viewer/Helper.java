@@ -1,4 +1,3 @@
-
 package patterns.viewer;
 
 /**
@@ -6,6 +5,6 @@ package patterns.viewer;
  */
 class Helper {
 
-	/** The my view. */
-	public View myView;
+	private View myView;
+
 }

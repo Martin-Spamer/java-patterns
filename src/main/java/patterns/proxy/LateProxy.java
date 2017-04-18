@@ -3,9 +3,9 @@ package patterns.proxy;
 /**
  * The Proxy for the Subject Class.
  */
-class ProxySubject extends Subject {
+class LateProxy extends Subject {
 
-	public RealSubject myRealSubject;
+	private RealSubject realSubject;
 
 	/*
 	 * (non-Javadoc)
@@ -14,6 +14,10 @@ class ProxySubject extends Subject {
 	 */
 	@Override
 	public void request() {
-		this.myRealSubject.request();
+		if (this.realSubject == null) {
+			this.realSubject = new RealSubject();
+		}
+		this.realSubject.request();
 	}
+
 }

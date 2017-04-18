@@ -1,4 +1,3 @@
-
 package patterns.session;
 
 import java.util.Vector;
@@ -9,8 +8,6 @@ import java.util.Vector;
 public class SessionTracker {
 
 	private Vector<Session> sessions;
-
-	private Session mySession;
 
 	/**
 	 * Creates the session.

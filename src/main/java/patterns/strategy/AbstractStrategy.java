@@ -1,4 +1,3 @@
-
 package patterns.strategy;
 
 /**
@@ -11,4 +10,5 @@ abstract class AbstractStrategy {
 	 */
 	public void algorithmInterface() {
 	}
+
 }

@@ -6,13 +6,26 @@ package patterns.memento;
  */
 class Memento {
 
-	public Object state;
-	public Originator originator;
+	/** The state. */
+	private final Object state;
 
 	/**
-	 * New operation.
+	 * Instantiates a new memento.
+	 *
+	 * @param state the state
 	 */
-	public void newOperation() {
+	public Memento(Object state) {
+		super();
+		this.state = state;
+	}
+
+	/**
+	 * Gets the state.
+	 *
+	 * @return the state
+	 */
+	public Object getState() {
+		return this.state;
 	}
 
 }

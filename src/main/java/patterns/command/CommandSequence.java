@@ -7,4 +7,9 @@ public class CommandSequence extends AbstractCommand {
 		return this;
 	}
 
+	@Override
+	AbstractCommand undo() {
+		return null;
+	}
+
 }

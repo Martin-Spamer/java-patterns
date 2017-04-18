@@ -1,4 +1,3 @@
-
 package patterns.strategy;
 
 /**
@@ -14,4 +13,5 @@ public class Context {
 	 */
 	public void contextInterface() {
 	}
+
 }

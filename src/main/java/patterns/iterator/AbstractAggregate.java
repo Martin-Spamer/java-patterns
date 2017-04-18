@@ -10,4 +10,5 @@ abstract class AbstractAggregate {
 	 */
 	public void createIterator() {
 	}
+
 }

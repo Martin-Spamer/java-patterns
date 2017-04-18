@@ -1,4 +1,3 @@
-
 package patterns.viewer;
 
 import java.util.Vector;
@@ -8,6 +7,6 @@ import java.util.Vector;
  */
 class View {
 
-	/** The my helper. */
-	public Vector myHelper;
+	public Vector<Helper> helpers;
+
 }

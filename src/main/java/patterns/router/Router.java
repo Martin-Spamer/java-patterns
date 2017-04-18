@@ -1,4 +1,3 @@
-
 package patterns.router;
 
 /**
@@ -6,7 +5,7 @@ package patterns.router;
  */
 class Router implements InputChannel, OutputChannel {
 
-	private OutputChannel utputChannel;
+	private OutputChannel outputChannel;
 
 	private InputChannel inputChannel;
 

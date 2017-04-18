@@ -7,4 +7,9 @@ class ConcreteCommand extends AbstractCommand {
 		return this;
 	}
 
+	@Override
+	AbstractCommand undo() {
+		return this;
+	}
+
 }

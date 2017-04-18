@@ -1,4 +1,3 @@
-
 package patterns.strategy;
 
 /**
@@ -14,4 +13,5 @@ class Strategy3 extends AbstractStrategy {
 	@Override
 	public void algorithmInterface() {
 	}
+
 }

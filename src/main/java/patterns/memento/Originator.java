@@ -6,15 +6,22 @@ package patterns.memento;
  */
 public class Originator {
 
-	/** The my memento. */
-	public Memento myMemento;
+	/** The state. */
+	private Object state;
+
+	/** The memento. */
+	private Memento memento;
 
 	/**
-	 * Sets the memento.
+	 * Instantiates a new originator.
 	 *
-	 * @param memento the new memento
+	 * @param state the state
+	 * @param memento the memento
 	 */
-	public void setMemento(final Memento memento) {
+	public Originator(Object state, Memento memento) {
+		super();
+		this.state = state;
+		this.memento = memento;
 	}
 
 	/**
@@ -23,6 +30,33 @@ public class Originator {
 	 * @return the memento
 	 */
 	public Memento createMemento() {
-		return null;
+		this.memento = new Memento(this.state);
+		return this.memento;
 	}
+
+	/**
+	 * Revert.
+	 */
+	public void revert() {
+		this.state = this.getMemento();
+	}
+
+	/**
+	 * Sets the memento.
+	 *
+	 * @param memento the new memento
+	 */
+	public void setMemento(final Memento memento) {
+		this.memento = memento;
+	}
+
+	/**
+	 * Gets the memento.
+	 *
+	 * @return the memento
+	 */
+	public Memento getMemento() {
+		return this.memento;
+	}
+
 }

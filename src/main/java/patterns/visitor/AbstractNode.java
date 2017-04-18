@@ -1,4 +1,3 @@
-
 package patterns.visitor;
 
 /**
@@ -12,4 +11,5 @@ abstract class AbstractNode {
 	 * @param nodeVisitor the node visitor
 	 */
 	abstract public void accept(AbstractNodeVisitor nodeVisitor);
+
 }

@@ -1,4 +1,3 @@
-
 package patterns.transaction;
 
 /**
@@ -17,4 +16,5 @@ public abstract class AbstractParticipant implements ParticipantInterfact {
 	 */
 	public void operation2() {
 	}
+
 }

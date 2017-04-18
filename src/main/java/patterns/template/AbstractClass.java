@@ -1,8 +1,7 @@
-
 package patterns.template;
 
 /**
- * The AbstractClass Class.
+ * Template Methods
  */
 public abstract class AbstractClass {
 

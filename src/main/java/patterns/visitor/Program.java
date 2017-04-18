@@ -1,4 +1,3 @@
-
 package patterns.visitor;
 
 /**
@@ -6,9 +5,8 @@ package patterns.visitor;
  */
 public class Program {
 
-	/** The my node. */
-	public AbstractNode myNode;
+	private AbstractNode myNode;
 
-	/** The my node visitor. */
-	public AbstractNodeVisitor myNodeVisitor;
+	private AbstractNodeVisitor myNodeVisitor;
+
 }

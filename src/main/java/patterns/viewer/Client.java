@@ -1,4 +1,3 @@
-
 package patterns.viewer;
 
 import java.util.Vector;
@@ -8,6 +7,6 @@ import java.util.Vector;
  */
 public class Client {
 
-	/** The my view. */
-	public Vector myView;
+	private Vector<View> views;
+
 }

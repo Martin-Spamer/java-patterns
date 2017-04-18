@@ -7,4 +7,10 @@ public class CompoundCommand extends AbstractCommand {
 		return this;
 	}
 
+	@Override
+	AbstractCommand undo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
