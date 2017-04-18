@@ -1,6 +1,7 @@
+
 package patterns.composite;
 
-abstract class Component implements CompositeInterface {
+abstract class Component implements ComponentInterface {
 
 	/**
 	 * Add component to the composite.
@@ -8,7 +9,7 @@ abstract class Component implements CompositeInterface {
 	 * @param component the component
 	 * @return the composite interface
 	 */
-	CompositeInterface add(Component component) {
+	public ComponentInterface add(Component component) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -18,7 +19,7 @@ abstract class Component implements CompositeInterface {
 	 * @param component the component
 	 * @return the composite interface
 	 */
-	CompositeInterface remove(CompositeInterface component) {
+	public ComponentInterface remove(Component component) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -28,11 +29,11 @@ abstract class Component implements CompositeInterface {
 	 * @param index the index
 	 * @return the child
 	 */
-	CompositeInterface getChild(int index) {
+	public ComponentInterface getChild(int index) {
 		throw new UnsupportedOperationException();
 	}
 
-	public CompositeInterface operation() {
+	public ComponentInterface operation() {
 		throw new UnsupportedOperationException();
 	}
 

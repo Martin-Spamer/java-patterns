@@ -6,4 +6,8 @@ package associations;
  */
 public interface JourneyInterface {
 
+	abstract void setDestination(String destination);
+
+	abstract String getDestination();
+
 }

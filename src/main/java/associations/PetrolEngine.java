@@ -6,6 +6,10 @@ package associations;
  */
 public class PetrolEngine extends AbstractEngine implements FuelInterface {
 
+	public PetrolEngine() {
+		super(new PetrolFuel());
+	}
+
 	/*
 	 * (non-Javadoc)
 	 *

@@ -8,26 +8,26 @@ class Composite extends Component {
 	public Vector<Component> composite;
 
 	@Override
-	public CompositeInterface add(Component component) {
-		composite.add(component);
+	public ComponentInterface add(Component component) {
+		this.composite.add(component);
 		return this;
 	}
 
 	@Override
-	public CompositeInterface remove(CompositeInterface component) {
-		composite.remove(component);
+	public ComponentInterface remove(Component component) {
+		this.composite.remove(component);
 		return this;
 	}
 
 	@Override
-	public CompositeInterface getChild(int index) {
-		composite.get(index);
+	public ComponentInterface getChild(int index) {
+		this.composite.get(index);
 		return this;
 	}
 
 	@Override
-	public CompositeInterface operation() {
-		for (final Component component : composite) {
+	public ComponentInterface operation() {
+		for (final Component component : this.composite) {
 			component.operation();
 		}
 		return this;

@@ -8,7 +8,7 @@ public class CommandFactoryTest {
 
 	@Test
 	public void testExecute() {
-		final CommandFactory commandFactory = new CommandFactory();
+		final InvokerInterface commandFactory = new CommandFactory();
 		assertNotNull(commandFactory);
 		final String actionName = "UnitTest";
 		commandFactory.execute(actionName);

@@ -6,13 +6,10 @@ import org.slf4j.LoggerFactory;
 /**
  * The AbstractComponent Class.
  */
-public abstract class AbstractComponent {
+public abstract class AbstractComponent implements ComponentInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Operation.
-	 */
 	abstract public void operation();
 
 }

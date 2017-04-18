@@ -1,6 +1,6 @@
 package patterns.command;
 
-class ConcreteCommand extends AbstractCommand {
+public class ConditionalCommand extends AbstractCommand {
 
 	@Override
 	public AbstractCommand execute() {
@@ -9,7 +9,7 @@ class ConcreteCommand extends AbstractCommand {
 
 	@Override
 	public AbstractCommand undo() {
-		return super.undo();
+		return super.execute();
 	}
 
 }

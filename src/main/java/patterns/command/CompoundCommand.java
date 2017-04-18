@@ -4,13 +4,12 @@ public class CompoundCommand extends AbstractCommand {
 
 	@Override
 	public AbstractCommand execute() {
-		return this;
+		return super.execute();
 	}
 
 	@Override
-	AbstractCommand undo() {
-		// TODO Auto-generated method stub
-		return null;
+	public AbstractCommand undo() {
+		return super.execute();
 	}
 
 }

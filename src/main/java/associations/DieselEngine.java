@@ -6,6 +6,10 @@ package associations;
  */
 public class DieselEngine extends AbstractEngine implements FuelInterface {
 
+	public DieselEngine() {
+		super(new DieselFuel());
+	}
+
 	/*
 	 * (non-Javadoc)
 	 *

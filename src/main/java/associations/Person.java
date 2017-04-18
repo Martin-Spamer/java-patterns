@@ -3,12 +3,16 @@
  */
 package associations;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * The Person Class.
  */
 public abstract class Person implements PersonInterface {
 
-	/** The name. */
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
 	private String name;
 
 	/**
@@ -41,7 +45,12 @@ public abstract class Person implements PersonInterface {
 	 * @return the name
 	 */
 	public String getName() {
-		return name;
+		return this.name;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Person [name=%s]", this.name);
 	}
 
 }

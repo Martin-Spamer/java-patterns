@@ -11,17 +11,14 @@ abstract class AbstractDecorator extends AbstractComponent {
 		this.components.add(component);
 	}
 
-	public void detach(final AbstractComponent component) {
+	public void detach(final ComponentInterface component) {
 		this.components.remove(component);
 	}
 
-	public void updateObservers() {
-		for (final AbstractComponent component : this.components) {
+	@Override
+	public void operation() {
+		for (final ComponentInterface component : this.components) {
 			component.operation();
 		}
 	}
-
-	@Override
-	abstract public void operation();
-
 }

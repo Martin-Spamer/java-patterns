@@ -9,7 +9,7 @@ public class AbstractDecoratorTest {
 
 	@Test
 	public void testOperation() {
-		final ConcreteComponent concreteComponent = new ConcreteComponent();
+		final DecoratedComponent concreteComponent = new DecoratedComponent();
 		assertNotNull(concreteComponent);
 	}
 

@@ -3,12 +3,12 @@ package patterns.command;
 import java.util.HashMap;
 
 @SuppressWarnings("serial")
-public class CommandMap extends HashMap<String, AbstractCommand> implements CommandInterface {
+public class CommandMap extends HashMap<String, AbstractCommand> {
 
 	public CommandInterface execute(final String actionName) {
-		final AbstractCommand command = this.get(actionName);
+		final CommandInterface command = this.get(actionName);
 		command.execute();
-		return this;
+		return command;
 	}
 
 }
