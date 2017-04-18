@@ -1,6 +1,6 @@
 package patterns.bridge;
 
-class CompleteImplementorB extends Implementor {
+class ImplementorA extends Implementor {
 
 	@Override
 	public void operation() {

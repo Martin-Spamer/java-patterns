@@ -6,7 +6,7 @@ public class AbstractionTest {
 
 	@Test
 	public void testOperation() {
-		new RefinedAbstraction(new ConcreteImplementorA());
+		new RefinedAbstraction(new ImplementorA());
 	}
 
 }
