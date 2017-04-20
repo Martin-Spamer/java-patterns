@@ -5,7 +5,7 @@ import java.util.Vector;
 /**
  * The View Class.
  */
-class View {
+public class View {
 
 	public Vector<Helper> helpers;
 

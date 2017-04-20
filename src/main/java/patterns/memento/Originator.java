@@ -30,15 +30,15 @@ public class Originator {
 	 * @return the memento
 	 */
 	public Memento createMemento() {
-		this.memento = new Memento(this.state);
-		return this.memento;
+		memento = new Memento(state);
+		return memento;
 	}
 
 	/**
 	 * Revert.
 	 */
 	public void revert() {
-		this.state = this.getMemento();
+		state = getMemento();
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class Originator {
 	 * @return the memento
 	 */
 	public Memento getMemento() {
-		return this.memento;
+		return memento;
 	}
 
 }

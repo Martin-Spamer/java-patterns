@@ -21,9 +21,11 @@ class Router implements InputChannel, OutputChannel {
 	public void removeRoute() {
 	}
 
+	@Override
 	public void sendMessage(final Message message) {
 	}
 
+	@Override
 	public void receiveMessage(Message message) {
 	}
 

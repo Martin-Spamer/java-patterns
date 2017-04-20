@@ -8,11 +8,11 @@ public class Context {
 	private AbstractState state;
 
 	public void toA() {
-		this.state = new StateA();
+		state = new StateA();
 	}
 
 	public void toZ() {
-		this.state = new StateZ();
+		state = new StateZ();
 	}
 
 }

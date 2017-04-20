@@ -22,6 +22,6 @@ class SubjectProxy extends Subject {
 	 */
 	@Override
 	public void request() {
-		this.realSubject.request();
+		realSubject.request();
 	}
 }

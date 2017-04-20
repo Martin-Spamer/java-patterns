@@ -1,5 +1,4 @@
 
-
 package associations;
 
 /**
@@ -12,6 +11,7 @@ public class DieselFuel implements FuelInterface {
 	 *
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
+	@Override
 	public void fuelUp(FuelInterface fuel) {
 	}
 

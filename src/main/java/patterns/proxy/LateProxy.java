@@ -14,10 +14,10 @@ class LateProxy extends Subject {
 	 */
 	@Override
 	public void request() {
-		if (this.realSubject == null) {
-			this.realSubject = new RealSubject();
+		if (realSubject == null) {
+			realSubject = new RealSubject();
 		}
-		this.realSubject.request();
+		realSubject.request();
 	}
 
 }

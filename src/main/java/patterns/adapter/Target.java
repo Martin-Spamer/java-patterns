@@ -7,8 +7,9 @@ public class Target implements TargetInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
+	@Override
 	public Result request() {
-		this.log.info("request");
+		log.info("request");
 		return new Result();
 	}
 

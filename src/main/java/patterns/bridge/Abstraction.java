@@ -10,7 +10,7 @@ abstract class Abstraction {
 	}
 
 	public void operation() {
-		this.implementor.operation();
+		implementor.operation();
 	}
 
 }

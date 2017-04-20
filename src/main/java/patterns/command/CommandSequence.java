@@ -9,7 +9,7 @@ public class CommandSequence extends AbstractCommand {
 
 	@Override
 	public AbstractCommand execute(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : this.sequence) {
+		for (final AbstractCommand command : sequence) {
 			command.execute(commandParameters);
 		}
 		return this;
@@ -17,7 +17,7 @@ public class CommandSequence extends AbstractCommand {
 
 	@Override
 	public AbstractCommand undo(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : this.sequence) {
+		for (final AbstractCommand command : sequence) {
 			command.undo(commandParameters);
 		}
 		return this;

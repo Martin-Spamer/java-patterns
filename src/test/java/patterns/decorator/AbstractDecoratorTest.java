@@ -18,13 +18,25 @@ public class AbstractDecoratorTest {
 	}
 
 	@Test
-	public void testAttachDetach() {
+	public void testBefore() {
 		final DecoratedComponent concreteComponent = new DecoratedComponent();
 		assertNotNull(concreteComponent);
-		final Behaviour behaviour = new Behaviour();
-		concreteComponent.attachBehaviour(behaviour);
+		final AbstractComponent behaviour = new ConcreteDecorator();
+		concreteComponent.attachBefore(behaviour);
 		concreteComponent.operation();
-		concreteComponent.detachtBehaviour(behaviour);
+		concreteComponent.detachBefore(behaviour);
+		concreteComponent.operation();
+	}
+
+	@Test
+	public void testAfter() {
+		final DecoratedComponent concreteComponent = new DecoratedComponent();
+		assertNotNull(concreteComponent);
+		final AbstractComponent behaviour = new ConcreteDecorator();
+		concreteComponent.attachAfter(behaviour);
+		concreteComponent.operation();
+		concreteComponent.detachAfter(behaviour);
+		concreteComponent.operation();
 	}
 
 }

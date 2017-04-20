@@ -37,6 +37,7 @@ public abstract class Person implements PersonInterface {
 	 *
 	 * @see associations.PersonInterface#setName(java.lang.String)
 	 */
+	@Override
 	public void setName(final String name) {
 		this.name = name;
 	}
@@ -47,15 +48,17 @@ public abstract class Person implements PersonInterface {
 	 * @return the name
 	 */
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return String.format("Person [name=%s]", this.name);
+		return String.format("Person [name=%s]", name);
 	}
 
 }

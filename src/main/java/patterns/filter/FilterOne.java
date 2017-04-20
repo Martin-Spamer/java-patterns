@@ -2,9 +2,9 @@ package patterns.filter;
 
 class FilterOne {
 
-	public FilterChain myFilterChain;
+	public FilterChain filterChain;
 
-	public void newOperation() {
+	public void operation() {
 	}
 
 }

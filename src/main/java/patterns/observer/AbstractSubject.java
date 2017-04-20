@@ -17,15 +17,15 @@ public abstract class AbstractSubject {
 	private final List<AbstractObserver> observers = new ArrayList<AbstractObserver>();
 
 	public void attach(final AbstractObserver observer) {
-		this.observers.add(observer);
+		observers.add(observer);
 	}
 
 	public void detach(final AbstractObserver observer) {
-		this.observers.remove(observer);
+		observers.remove(observer);
 	}
 
 	public void updateObservers() {
-		for (final AbstractObserver observer : this.observers) {
+		for (final AbstractObserver observer : observers) {
 			observer.updateObservers();
 		}
 	}

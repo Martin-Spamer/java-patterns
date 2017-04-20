@@ -22,6 +22,7 @@ public abstract class Handler implements HandlerInterface {
 		return this;
 	}
 
+	@Override
 	public Handler handleRequest() {
 		next.handleRequest();
 		return this;

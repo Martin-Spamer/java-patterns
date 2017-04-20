@@ -11,15 +11,18 @@ class LocalHopp implements HoppInterface {
 	/**
 	 * Remote method.
 	 */
+	@Override
 	public void remoteMethod() {
 	}
 
 	/**
 	 * New operation.
 	 */
+	@Override
 	public void operation() {
 	}
 
+	@Override
 	public void localMethod() {
 		// TODO Auto-generated method stub
 

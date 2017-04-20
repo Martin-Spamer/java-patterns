@@ -3,12 +3,12 @@ package patterns.strategy;
 /**
  * The Strategy Class.
  */
-abstract class AbstractStrategy {
+public abstract class AbstractStrategy implements StrategyInterface {
 
 	/**
 	 * Algorithm interface.
 	 */
-	public void algorithmInterface() {
-	}
+	@Override
+	public abstract void operation();
 
 }

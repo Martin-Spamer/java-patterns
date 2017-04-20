@@ -14,7 +14,7 @@ class Subject extends AbstractSubject {
 	 * @return the status
 	 */
 	public Boolean getStatus() {
-		return this.status;
+		return status;
 	}
 
 	/**

@@ -10,11 +10,11 @@ public interface QueueInterface {
 	 *
 	 * @param object the object
 	 */
-	public void put(Object object);
+	public QueueInterface put(Object object);
 
 	/**
 	 * Take.
 	 */
-	public void take();
+	public Object take();
 
 }

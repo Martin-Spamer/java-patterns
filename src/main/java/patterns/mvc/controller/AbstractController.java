@@ -26,9 +26,9 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * Instantiates a new abstract controller.
 	 */
 	public AbstractController() {
-		this.commands = new ConcurrentHashMap<String, AbstractCommand>();
-		this.registeredViews = new ArrayList<AbstractView>();
-		this.registeredModels = new ArrayList<AbstractModel>();
+		commands = new ConcurrentHashMap<String, AbstractCommand>();
+		registeredViews = new ArrayList<AbstractView>();
+		registeredModels = new ArrayList<AbstractModel>();
 	}
 
 	/**
@@ -37,7 +37,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @param model the model
 	 */
 	public void addModel(AbstractModel model) {
-		this.registeredModels.add(model);
+		registeredModels.add(model);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @param model the model
 	 */
 	public void removeModel(AbstractModel model) {
-		this.registeredModels.remove(model);
+		registeredModels.remove(model);
 	}
 
 	/**
@@ -55,7 +55,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @param view the view
 	 */
 	public void addView(AbstractView view) {
-		this.registeredViews.add(view);
+		registeredViews.add(view);
 	}
 
 	/**
@@ -64,7 +64,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @param view the view
 	 */
 	public void removeView(AbstractView view) {
-		this.registeredViews.remove(view);
+		registeredViews.remove(view);
 	}
 
 	/**
@@ -97,7 +97,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @return the command
 	 */
 	private AbstractCommand getCommand(String command) {
-		return this.commands.get(command);
+		return commands.get(command);
 	}
 
 }

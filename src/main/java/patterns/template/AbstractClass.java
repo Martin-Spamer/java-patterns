@@ -14,6 +14,8 @@ public abstract class AbstractClass {
 	 * Template method.
 	 */
 	public void templateMethod() {
+		primitiveOperationA();
+		primitiveOperationB();
 	}
 
 	/**

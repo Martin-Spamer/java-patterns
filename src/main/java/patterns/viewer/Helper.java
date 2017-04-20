@@ -3,8 +3,8 @@ package patterns.viewer;
 /**
  * The Helper Class.
  */
-class Helper {
+public class Helper {
 
-	private View myView;
+	private View view;
 
 }

@@ -30,6 +30,7 @@ public class Car extends AbstractVehicle {
 	 *
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
+	@Override
 	public void fuelUp(FuelInterface fuel) {
 	}
 

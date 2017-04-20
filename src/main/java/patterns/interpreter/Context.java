@@ -6,12 +6,12 @@ public class Context implements ContextInterface {
 
 	public Context() {
 		super();
-		this.setState(new String(""));
+		setState(new String(""));
 	}
 
 	public Context(final String state) {
 		super();
-		this.setState(state);
+		setState(state);
 	}
 
 	public void setState(Object state) {
@@ -19,7 +19,7 @@ public class Context implements ContextInterface {
 	}
 
 	public Object getState() {
-		return this.state;
+		return state;
 	}
 
 }

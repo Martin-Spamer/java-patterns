@@ -3,12 +3,14 @@ package patterns.decorator;
 class DecoratedComponent extends AbstractDecorator implements DecoratorInterface {
 
 	@Override
-	public void operation() {
+	public AbstractComponent operation() {
 		super.beforeOperation();
 
-		this.log.info("{}.operation", this.getClass().getSimpleName());
+		log.info("{}.operation", this.getClass().getSimpleName());
 
 		super.afterOperation();
+
+		return this;
 	}
 
 }

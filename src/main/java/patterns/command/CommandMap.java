@@ -13,7 +13,7 @@ public class CommandMap extends HashMap<String, AbstractCommand> {
 	public CommandInterface execute(final String actionName) {
 		if (actionName == null) {
 		} else {
-			final CommandInterface command = this.get(actionName);
+			final CommandInterface command = get(actionName);
 			if (command == null) {
 			} else {
 				command.execute(null);

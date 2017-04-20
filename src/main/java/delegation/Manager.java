@@ -17,7 +17,7 @@ class Manager implements ProcessInterface {
 	 */
 	public Manager() {
 		super();
-		this.worker = new Worker();
+		worker = new Worker();
 	}
 
 	/**
@@ -36,7 +36,7 @@ class Manager implements ProcessInterface {
 	 */
 	@Override
 	public Manager doProcess() {
-		this.worker.doProcess();
+		worker.doProcess();
 		return this;
 	}
 

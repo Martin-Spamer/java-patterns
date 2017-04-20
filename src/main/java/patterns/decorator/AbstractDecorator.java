@@ -10,32 +10,32 @@ abstract class AbstractDecorator extends AbstractComponent implements DecoratorI
 
 	@Override
 	public void attachBefore(AbstractComponent behaviour) {
-		this.beforeBehaviour.add(behaviour);
+		beforeBehaviour.add(behaviour);
 	}
 
 	@Override
 	public void detachBefore(AbstractComponent behaviour) {
-		this.beforeBehaviour.remove(behaviour);
+		beforeBehaviour.remove(behaviour);
 	}
 
 	@Override
 	public void attachAfter(AbstractComponent behaviour) {
-		this.afterBehaviour.add(behaviour);
+		afterBehaviour.add(behaviour);
 	}
 
 	@Override
 	public void detachAfter(AbstractComponent behaviour) {
-		this.afterBehaviour.remove(behaviour);
+		afterBehaviour.remove(behaviour);
 	}
 
 	protected void beforeOperation() {
-		for (final ComponentInterface component : this.beforeBehaviour) {
+		for (final ComponentInterface component : beforeBehaviour) {
 			component.operation();
 		}
 	}
 
 	protected void afterOperation() {
-		for (final ComponentInterface component : this.afterBehaviour) {
+		for (final ComponentInterface component : afterBehaviour) {
 			component.operation();
 		}
 	}

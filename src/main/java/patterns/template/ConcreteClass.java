@@ -4,7 +4,7 @@ package patterns.template;
 /**
  * The ConcreteClass Class.
  */
-class ConcreteClass extends AbstractClass {
+public final class ConcreteClass extends AbstractClass {
 
 	/*
 	 * (non-Javadoc)

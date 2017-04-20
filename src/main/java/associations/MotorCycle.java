@@ -23,6 +23,7 @@ public class MotorCycle extends AbstractVehicle {
 	 *
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
+	@Override
 	public void fuelUp(FuelInterface fuel) {
 	}
 

@@ -15,12 +15,15 @@ class RemoteObjectProxy implements HoppInterface {
 	public void remoteMethodProxy() {
 	}
 
+	@Override
 	public void remoteMethod() {
 	}
 
+	@Override
 	public void localMethod() {
 	}
 
+	@Override
 	public void operation() {
 	}
 

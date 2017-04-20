@@ -1,5 +1,5 @@
 package patterns.filter;
 
-public class Request {
+public class Request implements RequestInterface {
 
 }

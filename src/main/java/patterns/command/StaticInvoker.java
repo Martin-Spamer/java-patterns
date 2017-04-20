@@ -17,21 +17,21 @@ public class StaticInvoker implements InvokerInterface {
 
 	@Override
 	public CommandInterface execute(final String actionName) {
-		this.log.info("{}", actionName);
+		log.info("{}", actionName);
 		switch (actionName) {
 			case "ExampleCommand":
-				this.exampleCommand.execute(null);
+				exampleCommand.execute(null);
 				break;
 			case "CommandSequence":
-				this.commandSequence.execute(null);
+				commandSequence.execute(null);
 				break;
 			case "CompoundCommand":
-				this.compoundCommand.execute(null);
+				compoundCommand.execute(null);
 				break;
 			case "ConditionalCommand":
-				this.conditionalCommand.execute(null);
+				conditionalCommand.execute(null);
 				break;
 		}
-		return this.commandSequence;
+		return commandSequence;
 	}
 }

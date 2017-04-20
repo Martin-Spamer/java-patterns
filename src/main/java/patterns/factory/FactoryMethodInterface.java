@@ -1,4 +1,4 @@
-package patterns;
+package patterns.factory;
 
 public interface FactoryMethodInterface<T> {
 

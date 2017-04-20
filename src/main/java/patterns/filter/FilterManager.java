@@ -2,9 +2,9 @@ package patterns.filter;
 
 class FilterManager {
 
-	public Target myTarget;
+	public Target target;
 
-	public FilterChain myFilterChain;
+	public FilterChain filterChain;
 
 	/**
 	 * Handle request.
@@ -12,7 +12,7 @@ class FilterManager {
 	 * @param request the request
 	 * @param response the response
 	 */
-	public void handleRequest(final Request request, final Response response) {
+	public void handleRequest(final RequestInterface request, final ResponseInterface response) {
 	}
 
 	/**

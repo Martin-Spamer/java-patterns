@@ -13,6 +13,7 @@ public class AbstractCommand implements CommandInterface {
 	 * patterns.mvc.controller.CommandInterface#execute(patterns.mvc.controller.
 	 * Context)
 	 */
+	@Override
 	public Result execute(Context context) {
 		return new Result();
 	}

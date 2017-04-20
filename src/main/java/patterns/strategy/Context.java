@@ -6,7 +6,7 @@ package patterns.strategy;
 public class Context {
 
 	/** The strategy. */
-	public AbstractStrategy strategy;
+	public StrategyInterface strategy;
 
 	/**
 	 * Context interface.

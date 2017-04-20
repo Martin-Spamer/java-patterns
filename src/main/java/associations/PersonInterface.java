@@ -20,6 +20,7 @@ public interface PersonInterface {
 	 *
 	 * @return the string
 	 */
+	@Override
 	String toString();
 
 }

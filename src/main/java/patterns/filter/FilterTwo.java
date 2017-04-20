@@ -2,7 +2,7 @@ package patterns.filter;
 
 class FilterTwo {
 
-	public FilterChain myFilterChain;
+	public FilterChain filterChain;
 
 	public void operation() {
 	}

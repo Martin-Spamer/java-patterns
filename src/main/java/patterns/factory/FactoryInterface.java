@@ -7,13 +7,13 @@ public interface FactoryInterface {
 	 *
 	 * @return the product A
 	 */
-	AbstractProductA createProductA();
+	public AbstractProductA createProductA();
 
 	/**
 	 * Creates a new Abstract object.
 	 *
 	 * @return the product B
 	 */
-	AbstractProductB createProductB();
+	public AbstractProductB createProductB();
 
 }

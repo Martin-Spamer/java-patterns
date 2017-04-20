@@ -13,22 +13,22 @@ public class CommandFactory implements InvokerInterface {
 
 	public CommandFactory() throws Exception {
 		super();
-		this.properties = new Properties();
-		this.properties.load(inputStream("commands.properties"));
-		this.log.info("properties = {}", this.properties);
+		properties = new Properties();
+		properties.load(inputStream("commands.properties"));
+		log.info("properties = {}", properties);
 	}
 
 	public CommandFactory(final String filename) throws Exception {
 		super();
-		this.properties = new Properties();
-		this.properties.load(inputStream(filename));
-		this.log.info("properties = {}", this.properties);
+		properties = new Properties();
+		properties.load(inputStream(filename));
+		log.info("properties = {}", properties);
 	}
 
 	public CommandFactory(final Properties properties) {
 		super();
 		this.properties = properties;
-		this.log.info("properties = {}", this.properties);
+		log.info("properties = {}", this.properties);
 	}
 
 	private InputStream inputStream(final String resourceName) {
@@ -39,13 +39,13 @@ public class CommandFactory implements InvokerInterface {
 
 	@Override
 	public CommandInterface execute(final String actionName) {
-		final String className = this.properties.getProperty(actionName);
+		final String className = properties.getProperty(actionName);
 		AbstractCommand action;
 		try {
 			action = (AbstractCommand) Class.forName(className).newInstance();
 			return action.execute(null);
 		} catch (final Exception e) {
-			this.log.error(e.toString());
+			log.error(e.toString());
 		}
 		return null;
 	}

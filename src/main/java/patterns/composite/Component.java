@@ -33,6 +33,7 @@ abstract class Component implements ComponentInterface {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public ComponentInterface operation() {
 		throw new UnsupportedOperationException();
 	}
