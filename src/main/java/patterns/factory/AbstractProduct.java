@@ -1,13 +1,14 @@
-package polymorphism;
+package patterns.factory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class AbstractType {
+public class AbstractProduct {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	public void operation() {
+	public AbstractProduct() {
+		super();
 	}
 
 }

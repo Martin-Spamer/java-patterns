@@ -2,8 +2,8 @@ package patterns.command;
 
 interface CommandInterface {
 
-	abstract CommandInterface execute();
+	abstract CommandInterface execute(ParametersInterface commandParameters);
 
-	abstract CommandInterface undo();
+	abstract CommandInterface undo(ParametersInterface commandParameters);
 
 }

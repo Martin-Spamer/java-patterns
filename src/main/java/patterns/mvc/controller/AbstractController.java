@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import patterns.mvc.ControllerInterface;
 import patterns.mvc.model.AbstractModel;
 import patterns.mvc.view.AbstractView;
@@ -14,22 +17,18 @@ import patterns.mvc.view.AbstractView;
  */
 public abstract class AbstractController extends Observable implements ControllerInterface {
 
-	/** The commands. */
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ConcurrentHashMap<String, AbstractCommand> commands;
-
-	/** The registered models. */
 	protected ArrayList<AbstractModel> registeredModels;
-
-	/** The registered views. */
 	protected ArrayList<AbstractView> registeredViews;
 
 	/**
 	 * Instantiates a new abstract controller.
 	 */
 	public AbstractController() {
-		commands = new ConcurrentHashMap<String, AbstractCommand>();
-		registeredViews = new ArrayList<AbstractView>();
-		registeredModels = new ArrayList<AbstractModel>();
+		this.commands = new ConcurrentHashMap<String, AbstractCommand>();
+		this.registeredViews = new ArrayList<AbstractView>();
+		this.registeredModels = new ArrayList<AbstractModel>();
 	}
 
 	/**
@@ -38,7 +37,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @param model the model
 	 */
 	public void addModel(AbstractModel model) {
-		registeredModels.add(model);
+		this.registeredModels.add(model);
 	}
 
 	/**
@@ -47,7 +46,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @param model the model
 	 */
 	public void removeModel(AbstractModel model) {
-		registeredModels.remove(model);
+		this.registeredModels.remove(model);
 	}
 
 	/**
@@ -56,7 +55,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @param view the view
 	 */
 	public void addView(AbstractView view) {
-		registeredViews.add(view);
+		this.registeredViews.add(view);
 	}
 
 	/**
@@ -65,7 +64,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @param view the view
 	 */
 	public void removeView(AbstractView view) {
-		registeredViews.remove(view);
+		this.registeredViews.remove(view);
 	}
 
 	/**
@@ -98,7 +97,7 @@ public abstract class AbstractController extends Observable implements Controlle
 	 * @return the command
 	 */
 	private AbstractCommand getCommand(String command) {
-		return commands.get(command);
+		return this.commands.get(command);
 	}
 
 }

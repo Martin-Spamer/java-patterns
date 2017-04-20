@@ -18,7 +18,7 @@ class FilterManager {
 	/**
 	 * operation.
 	 */
-	public void peration() {
+	public void operation() {
 	}
 
 }

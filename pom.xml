@@ -5,26 +5,6 @@
 	<artifactId>java-patterns</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-<build>
-        <plugins>
-            <plugin>
-                <groupId>com.github.markusmo3.urm</groupId>
-                <artifactId>urm-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <configuration>
-                    <!-- if outputDirectory is not set explicitly it will default to your build dir -->
-                    <outputDirectory>${project.basedir}/etc</outputDirectory>
-                    <packages>
-                        <param>associations</param>
-                        <param>delegation</param>
-                        <param>patterns</param>
-                        <param>polymorphism</param>
-                    </packages>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -42,6 +22,20 @@
 
 	</dependencies>
 
-
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

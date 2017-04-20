@@ -6,7 +6,7 @@ abstract class AbstractExpression {
 
 	public Vector<?> myNonTerminalExpression;
 
-	public void interpret(final Context context) {
+	public void interpret(final ContextInterface context) {
 	}
 
 }

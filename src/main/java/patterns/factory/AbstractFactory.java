@@ -1,22 +1,19 @@
 package patterns.factory;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * A factory for creating objects.
  */
-public abstract class AbstractFactory {
+public abstract class AbstractFactory implements FactoryInterface {
 
-	/**
-	 * Creates a new Abstract object.
-	 *
-	 * @return the abstract product A
-	 */
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+	@Override
 	public abstract AbstractProductA createProductA();
 
-	/**
-	 * Creates a new Abstract object.
-	 *
-	 * @return the abstract product B
-	 */
+	@Override
 	public abstract AbstractProductB createProductB();
 
 }

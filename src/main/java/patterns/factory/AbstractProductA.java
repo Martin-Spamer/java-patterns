@@ -3,6 +3,6 @@ package patterns.factory;
 /**
  * The AbstractProductA Class.
  */
-public abstract class AbstractProductA {
+public abstract class AbstractProductA extends AbstractProduct {
 
 }

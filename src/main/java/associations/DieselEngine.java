@@ -1,4 +1,5 @@
 
+
 package associations;
 
 /**
@@ -6,6 +7,9 @@ package associations;
  */
 public class DieselEngine extends AbstractEngine implements FuelInterface {
 
+	/**
+	 * Instantiates a new diesel engine.
+	 */
 	public DieselEngine() {
 		super(new DieselFuel());
 	}

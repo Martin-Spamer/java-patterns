@@ -8,17 +8,17 @@ public class CommandSequence extends AbstractCommand {
 	private final List<AbstractCommand> sequence = new ArrayList<AbstractCommand>();
 
 	@Override
-	public AbstractCommand execute() {
+	public AbstractCommand execute(ParametersInterface commandParameters) {
 		for (final AbstractCommand command : this.sequence) {
-			command.execute();
+			command.execute(commandParameters);
 		}
 		return this;
 	}
 
 	@Override
-	public AbstractCommand undo() {
+	public AbstractCommand undo(ParametersInterface commandParameters) {
 		for (final AbstractCommand command : this.sequence) {
-			command.undo();
+			command.undo(commandParameters);
 		}
 		return this;
 	}

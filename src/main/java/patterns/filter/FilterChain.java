@@ -2,12 +2,12 @@ package patterns.filter;
 
 class FilterChain {
 
-	public FilterManager myFilterManager;
+	public FilterManager filterManager;
 
-	public FilterTwo myFilterTwo;
+	public FilterOne filterOne;
 
-	public FilterOne myFilterOne;
+	public FilterTwo filterTwo;
 
-	public FilterThree myFilterThree;
+	public FilterThree filterThree;
 
 }

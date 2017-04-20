@@ -1,12 +1,15 @@
-
 package delegation;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The Manager Class.
  */
 class Manager implements ProcessInterface {
 
-	/** The worker. */
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
 	private Worker worker;
 
 	/**
@@ -14,7 +17,7 @@ class Manager implements ProcessInterface {
 	 */
 	public Manager() {
 		super();
-		worker = new Worker();
+		this.worker = new Worker();
 	}
 
 	/**
@@ -31,8 +34,9 @@ class Manager implements ProcessInterface {
 	 *
 	 * @see delegation.ProcessInterface#doProcess()
 	 */
+	@Override
 	public Manager doProcess() {
-		worker.doProcess();
+		this.worker.doProcess();
 		return this;
 	}
 
