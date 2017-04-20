@@ -1,4 +1,3 @@
-
 package patterns.hopp;
 
 /**
@@ -6,7 +5,7 @@ package patterns.hopp;
  */
 class RemoteObjectProxy implements HoppInterface {
 
-	/** The my remote object. */
+	/** The remote object. */
 	public RemoteObject remoteObject;
 
 	/**
@@ -15,14 +14,29 @@ class RemoteObjectProxy implements HoppInterface {
 	public void remoteMethodProxy() {
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.hopp.HoppInterface#remoteMethod()
+	 */
 	@Override
 	public void remoteMethod() {
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.hopp.HoppInterface#localMethod()
+	 */
 	@Override
 	public void localMethod() {
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.hopp.HoppInterface#operation()
+	 */
 	@Override
 	public void operation() {
 	}

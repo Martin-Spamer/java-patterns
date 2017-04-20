@@ -1,5 +1,5 @@
 package patterns.flyweight;
 
-class FlyWeight {
+public final class FlyWeight {
 
 }

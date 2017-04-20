@@ -1,5 +1,5 @@
 package patterns.filter;
 
-class Target {
+public final class Target {
 	public FilterManager filterManager;
 }

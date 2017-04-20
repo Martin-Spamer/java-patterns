@@ -1,5 +1,5 @@
 package patterns.mediator;
 
-public class Mediator {
+public final class Mediator extends AbstractMediator {
 
 }

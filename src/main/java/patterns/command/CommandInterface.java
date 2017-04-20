@@ -1,6 +1,6 @@
 package patterns.command;
 
-interface CommandInterface {
+public interface CommandInterface {
 
 	abstract CommandInterface execute(ParametersInterface commandParameters);
 

@@ -1,6 +1,6 @@
 package patterns.chain;
 
-interface HandlerInterface {
+public interface HandlerInterface {
 
 	abstract HandlerInterface handleRequest();
 

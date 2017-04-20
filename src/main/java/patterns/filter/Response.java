@@ -1,5 +1,5 @@
 package patterns.filter;
 
-public class Response implements ResponseInterface {
+public final class Response implements ResponseInterface {
 
 }

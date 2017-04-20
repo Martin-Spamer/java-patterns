@@ -1,5 +1,5 @@
 package patterns.mediator;
 
-public class Colleague {
+public final class Colleague extends AbstactColleague {
 
 }

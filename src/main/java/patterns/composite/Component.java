@@ -1,7 +1,6 @@
-
 package patterns.composite;
 
-abstract class Component implements ComponentInterface {
+public abstract class Component implements ComponentInterface {
 
 	/**
 	 * Add component to the composite.

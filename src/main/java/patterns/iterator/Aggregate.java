@@ -1,11 +1,12 @@
+
 package patterns.iterator;
 
 /**
- * The ConcreteAggregate Class.
+ * The Aggregate Class.
  */
-class ConcreteAggregate extends AbstractAggregate {
+public final class Aggregate extends AbstractAggregate {
 
-	public Item myItem;
+	public AbstractItem item;
 
 	/*
 	 * (non-Javadoc)

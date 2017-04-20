@@ -6,12 +6,12 @@ import org.slf4j.LoggerFactory;
 /**
  * The Observer Class.
  */
-abstract class AbstractObserver {
+public abstract class AbstractObserver {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	public void updateObservers() {
-		log.info("update notification received");
+		this.log.info("update notification received");
 	}
 
 }

@@ -1,10 +1,10 @@
 package patterns.bridge;
 
-class ImplementorB extends Implementor {
+public class ImplementorB extends Implementor {
 
 	@Override
 	public void operation() {
-		log.info("{}", this.getClass().getSimpleName());
+		this.log.info("{}", this.getClass().getSimpleName());
 	}
 
 }

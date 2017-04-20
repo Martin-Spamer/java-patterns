@@ -1,4 +1,3 @@
-
 package patterns.hopp;
 
 /**
@@ -6,17 +5,29 @@ package patterns.hopp;
  */
 class RemoteObject implements HoppInterface {
 
-	/**
-	 * Remote method implementation.
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.hopp.HoppInterface#remoteMethod()
 	 */
 	@Override
 	public void remoteMethod() {
 	}
 
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.hopp.HoppInterface#localMethod()
+	 */
 	@Override
 	public void localMethod() {
 	}
 
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.hopp.HoppInterface#operation()
+	 */
 	@Override
 	public void operation() {
 	}

@@ -1,6 +1,6 @@
 package patterns.composite;
 
-class Leaf extends Component {
+public class Leaf extends Component {
 
 	@Override
 	public ComponentInterface operation() {

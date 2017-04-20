@@ -1,6 +1,6 @@
 package patterns.chain;
 
-class HandlerTwo extends Handler {
+public class HandlerTwo extends Handler {
 
 	public HandlerTwo() {
 		super();

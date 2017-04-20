@@ -3,7 +3,7 @@ package patterns.builder;
 /**
  * The ConcreteBuilderB Class.
  */
-class BuilderB extends AbstractBuilder {
+public class BuilderB extends AbstractBuilder {
 
 	/*
 	 * (non-Javadoc)

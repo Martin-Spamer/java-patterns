@@ -1,23 +1,24 @@
+
 package patterns.iterator;
 
 /**
  * The AbstractIterator Class.
  */
-abstract class AbstractIterator {
+public abstract class AbstractIterator {
 
 	/**
 	 * First.
 	 *
-	 * @return the item
+	 * @return the abstract item
 	 */
-	abstract public Item first();
+	abstract public AbstractItem first();
 
 	/**
 	 * Next.
 	 *
-	 * @return the item
+	 * @return the abstract item
 	 */
-	abstract public Item next();
+	abstract public AbstractItem next();
 
 	/**
 	 * Checks if is done.

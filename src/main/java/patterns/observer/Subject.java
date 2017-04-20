@@ -4,7 +4,7 @@ package patterns.observer;
 /**
  * The Subject Class.
  */
-class Subject extends AbstractSubject {
+public final class Subject extends AbstractSubject {
 
 	private Boolean status = false;
 
@@ -14,7 +14,7 @@ class Subject extends AbstractSubject {
 	 * @return the status
 	 */
 	public Boolean getStatus() {
-		return status;
+		return this.status;
 	}
 
 	/**

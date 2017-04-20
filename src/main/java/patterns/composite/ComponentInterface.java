@@ -1,6 +1,6 @@
 package patterns.composite;
 
-interface ComponentInterface {
+public interface ComponentInterface {
 
 	public ComponentInterface operation();
 

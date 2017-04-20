@@ -2,7 +2,7 @@ package patterns.interpreter;
 
 import java.util.Vector;
 
-abstract class AbstractExpression {
+public abstract class AbstractExpression {
 
 	public Vector<?> myNonTerminalExpression;
 

@@ -1,6 +1,6 @@
 package patterns.filter;
 
-class FilterThree {
+public final class FilterThree {
 
 	public FilterChain filterChain;
 

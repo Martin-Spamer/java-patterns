@@ -1,6 +1,6 @@
 package patterns.filter;
 
-class FilterManager {
+public final class FilterManager {
 
 	public Target target;
 

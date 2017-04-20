@@ -1,6 +1,6 @@
 package patterns.facade;
 
-class SubSystemThree {
+public class SubSystemThree {
 
 	public void operation() {
 	}

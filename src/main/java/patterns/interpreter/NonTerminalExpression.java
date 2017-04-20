@@ -1,6 +1,6 @@
 package patterns.interpreter;
 
-class NonTerminalExpression extends AbstractExpression {
+public class NonTerminalExpression extends AbstractExpression {
 
 	public AbstractExpression myAbstractExpression;
 

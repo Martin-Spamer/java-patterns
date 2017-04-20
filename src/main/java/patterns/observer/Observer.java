@@ -3,7 +3,7 @@ package patterns.observer;
 /**
  * The Observer Class.
  */
-class Observer extends AbstractObserver {
+public final class Observer extends AbstractObserver {
 
 	/*
 	 * (non-Javadoc)

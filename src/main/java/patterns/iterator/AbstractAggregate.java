@@ -1,9 +1,10 @@
+
 package patterns.iterator;
 
 /**
  * The AbstractAggregate Class.
  */
-abstract class AbstractAggregate {
+public abstract class AbstractAggregate {
 
 	/**
 	 * Creates the iterator.

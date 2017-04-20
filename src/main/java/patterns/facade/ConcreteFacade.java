@@ -1,11 +1,11 @@
 package patterns.facade;
 
-class ConcreteFacade implements FacadeInterface {
+public final class ConcreteFacade implements FacadeInterface {
 
-	public SubSystemOne subSystemOne;
-	public SubSystemTwo subSystemTwo;
-	public SubSystemThree subSystemThree;
-	public ConcreteFacade concreteFacade;
+	private SubSystemOne subSystemOne;
+	private SubSystemTwo subSystemTwo;
+	private SubSystemThree subSystemThree;
+	private ConcreteFacade concreteFacade;
 
 	@Override
 	public void operation() {
