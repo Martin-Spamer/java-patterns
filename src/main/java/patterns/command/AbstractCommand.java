@@ -8,14 +8,14 @@ public abstract class AbstractCommand implements CommandInterface {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	@Override
-	public AbstractCommand execute(ParametersInterface commandParameters) {
-		log.debug("{}.execute", this.getClass().getSimpleName());
+	public CommandInterface execute(ParametersInterface commandParameters) {
+		this.log.debug("{}.execute", this.getClass().getSimpleName());
 		return this;
 	}
 
 	@Override
-	public AbstractCommand undo(ParametersInterface commandParameters) {
-		log.debug("{}.undo", this.getClass().getSimpleName());
+	public CommandInterface undo(ParametersInterface commandParameters) {
+		this.log.debug("{}.undo", this.getClass().getSimpleName());
 		return this;
 	}
 

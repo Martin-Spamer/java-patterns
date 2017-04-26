@@ -1,13 +1,18 @@
-
 package patterns.memento;
 
 /**
  * The Memento Class.
  */
-class Memento {
+public class Memento {
 
-	/** The state. */
-	private final Object state;
+	private Object state;
+
+	/**
+	 * Instantiates a new memento.
+	 */
+	public Memento() {
+		super();
+	}
 
 	/**
 	 * Instantiates a new memento.
@@ -20,12 +25,21 @@ class Memento {
 	}
 
 	/**
+	 * Sets the state.
+	 *
+	 * @param state the new state
+	 */
+	public void setState(Object state) {
+		this.state = state;
+	}
+
+	/**
 	 * Gets the state.
 	 *
 	 * @return the state
 	 */
 	public Object getState() {
-		return state;
+		return this.state;
 	}
 
 }

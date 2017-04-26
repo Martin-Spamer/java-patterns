@@ -1,9 +1,8 @@
-
 package patterns.mvc.controller;
 
 /**
  * The Result Class.
  */
-public class Result {
+public class Result implements ResultInterface {
 
 }

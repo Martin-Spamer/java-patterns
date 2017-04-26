@@ -1,103 +1,94 @@
-
 package patterns.mvc.controller;
 
-import java.util.ArrayList;
-import java.util.Observable;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import patterns.command.AbstractCommand;
+import patterns.command.CommandInterface;
 import patterns.mvc.ControllerInterface;
-import patterns.mvc.model.AbstractModel;
-import patterns.mvc.view.AbstractView;
+import patterns.mvc.ModelInterface;
+import patterns.mvc.ViewInterface;
+import patterns.mvc.model.Model;
+import patterns.mvc.view.View;
 
 /**
- * The AbstractController Class.
+ * An Abstract Controller class from the Model View Controller Pattern.
  */
-public abstract class AbstractController extends Observable implements ControllerInterface {
+public abstract class AbstractController implements ControllerInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ConcurrentHashMap<String, AbstractCommand> commands;
-	protected ArrayList<AbstractModel> registeredModels;
-	protected ArrayList<AbstractView> registeredViews;
+	protected ModelInterface model;
+	protected ViewInterface view;
 
 	/**
 	 * Instantiates a new abstract controller.
 	 */
 	public AbstractController() {
-		commands = new ConcurrentHashMap<String, AbstractCommand>();
-		registeredViews = new ArrayList<AbstractView>();
-		registeredModels = new ArrayList<AbstractModel>();
+		this.commands = new ConcurrentHashMap<String, AbstractCommand>();
+		this.view = new View();
+		this.model = new Model();
 	}
 
 	/**
-	 * Adds the model.
+	 * attach a model to the model manager.
 	 *
 	 * @param model the model
 	 */
-	public void addModel(AbstractModel model) {
-		registeredModels.add(model);
+	public void attachModel(ModelInterface model) {
+		this.model = model;
+		this.view.attachModel(model);
 	}
 
 	/**
-	 * Removes the model.
+	 * Removes the model from the view.
 	 *
-	 * @param model the model
 	 */
-	public void removeModel(AbstractModel model) {
-		registeredModels.remove(model);
+	public void detachModel() {
+		this.view.detachModel();
+		this.model = null;
 	}
 
 	/**
-	 * Adds the view.
-	 *
-	 * @param view the view
-	 */
-	public void addView(AbstractView view) {
-		registeredViews.add(view);
-	}
-
-	/**
-	 * Removes the view.
+	 * Add a view to the controller.
 	 *
 	 * @param view the view
 	 */
-	public void removeView(AbstractView view) {
-		registeredViews.remove(view);
+	public void attachView(ViewInterface view) {
+		this.view = view;
 	}
 
 	/**
-	 * Execute.
+	 * Removes a view from the controller.
 	 *
-	 * @param context the context
-	 * @return the result
+	 * @param view the view
 	 */
-	public Result execute(Context context) {
-		// TODO Auto-generated method stub
-		return null;
+	public void detachView() {
+		this.view = null;
 	}
 
 	/**
-	 * Execute.
+	 * Execute the command.
 	 *
 	 * @param command the command
 	 * @param context the context
+	 * @return
 	 * @return the result
 	 */
-	public Result execute(String command, Context context) {
-		getCommand(command).execute(context);
-		return null;
+	public CommandInterface execute(String command) {
+		return getCommand(command).execute(null);
 	}
 
 	/**
-	 * Gets the command.
+	 * Gets the command object from the collection.
 	 *
 	 * @param command the command
 	 * @return the command
 	 */
 	private AbstractCommand getCommand(String command) {
-		return commands.get(command);
+		return this.commands.get(command);
 	}
 
 }

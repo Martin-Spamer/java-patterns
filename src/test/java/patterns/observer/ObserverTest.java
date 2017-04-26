@@ -10,10 +10,11 @@ public class ObserverTest {
 
 	@Test
 	public void testUpdate() {
+		LOG.info("{}.testUpdate", this.getClass().getSimpleName());
 		final Subject subject = new Subject();
 		final Observer observer = new Observer();
-		subject.attach(observer);
+		subject.attachObserver(observer);
 		subject.setStatus(true);
+		subject.detachObserver(observer);
 	}
-
 }

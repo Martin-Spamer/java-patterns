@@ -6,4 +6,5 @@ public interface CommandInterface {
 
 	abstract CommandInterface undo(ParametersInterface commandParameters);
 
+	abstract CommandInterface result();
 }

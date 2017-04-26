@@ -1,4 +1,3 @@
-
 package patterns.observer;
 
 /**
@@ -25,6 +24,11 @@ public final class Subject extends AbstractSubject {
 	public void setStatus(Boolean status) {
 		this.status = status;
 		updateObservers();
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Subject [status=%s]", this.status);
 	}
 
 }

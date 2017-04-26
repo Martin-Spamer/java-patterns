@@ -1,4 +1,3 @@
-
 package patterns.mvc.model;
 
 /**
