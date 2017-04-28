@@ -12,8 +12,9 @@ public class AbstractionTest {
 
 	@Test
 	public void testOperation() {
-		final RefinedAbstraction refinedAbstraction = new RefinedAbstraction(new ImplementorA());
-		assertNotNull(refinedAbstraction);
+		final RefinedAbstraction instance = new RefinedAbstraction(new ImplementorA());
+		assertNotNull(instance);
+		LOG.info("{}", instance.toString());
 	}
 
 }

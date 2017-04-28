@@ -1,7 +1,19 @@
+
 package patterns.command;
 
+import patterns.mvc.controller.ResultInterface;
+
+/**
+ * The InvokerInterface Interface.
+ */
 public interface InvokerInterface {
 
-	public CommandInterface execute(String actionName);
+	/**
+	 * Execute.
+	 *
+	 * @param actionName the action name
+	 * @return the result interface
+	 */
+	public ResultInterface execute(String actionName);
 
 }

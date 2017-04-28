@@ -12,7 +12,11 @@ public class StaticSingletonTest {
 
 	@Test
 	public void testGetInstance() {
-		assertNotNull(StaticSingleton.getInstance());
+		final StaticSingleton instance = StaticSingleton.getInstance();
+		assertNotNull(instance);
+		final String string = instance.toString();
+		assertNotNull(instance);
+		LOG.info(string);
 	}
 
 }

@@ -11,7 +11,7 @@ import patterns.mvc.view.View;
 public class MvcTest {
 
 	@Test
-	public void testMvc() {
+	public void testMvc() throws Exception {
 		final Model model = new Model();
 		assertNotNull(model);
 
@@ -23,7 +23,7 @@ public class MvcTest {
 	}
 
 	@Test
-	public void runMvc() {
+	public void runMvc() throws Exception {
 		final Model model = new Model();
 		final View view = new View();
 		model.attach("view", view);

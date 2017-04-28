@@ -1,8 +1,14 @@
+
 package patterns.command;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import patterns.mvc.controller.ResultInterface;
+
+/**
+ * The StaticInvoker Class.
+ */
 public class StaticInvoker implements InvokerInterface {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -11,27 +17,36 @@ public class StaticInvoker implements InvokerInterface {
 	private final CompoundCommand compoundCommand = new CompoundCommand();
 	private final ConditionalCommand conditionalCommand = new ConditionalCommand();
 
+	/**
+	 * Instantiates a new static invoker.
+	 *
+	 * @throws Exception the exception
+	 */
 	public StaticInvoker() throws Exception {
 		super();
 	}
 
+	/* (non-Javadoc)
+	 * @see patterns.command.InvokerInterface#execute(java.lang.String)
+	 */
 	@Override
-	public CommandInterface execute(final String actionName) {
-		log.info("{}", actionName);
+	public ResultInterface execute(final String actionName) {
+		ResultInterface result = null;
+		this.log.info("{}", actionName);
 		switch (actionName) {
 			case "ExampleCommand":
-				exampleCommand.execute(null);
+				result = this.exampleCommand.execute(null).result();
 				break;
 			case "CommandSequence":
-				commandSequence.execute(null);
+				result = this.commandSequence.execute(null).result();
 				break;
 			case "CompoundCommand":
-				compoundCommand.execute(null);
+				result = this.compoundCommand.execute(null).result();
 				break;
 			case "ConditionalCommand":
-				conditionalCommand.execute(null);
+				result = this.conditionalCommand.execute(null).result();
 				break;
 		}
-		return commandSequence;
+		return result;
 	}
 }

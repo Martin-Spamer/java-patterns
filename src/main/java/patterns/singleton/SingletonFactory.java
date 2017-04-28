@@ -5,7 +5,6 @@ package patterns.singleton;
  */
 public class SingletonFactory {
 
-	/** The instance. */
 	private static SingletonFactory instance;
 
 	/**
@@ -33,6 +32,11 @@ public class SingletonFactory {
 	 */
 	private static SingletonFactory create() {
 		return new SingletonFactory();
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s", this.getClass().getSimpleName());
 	}
 
 }

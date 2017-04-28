@@ -1,9 +1,9 @@
 package patterns.builder;
 
 /**
- * The ConcreteBuilderB Class.
+ * The ConcreteBuilderA Class.
  */
-public class BuilderB extends AbstractBuilder {
+public class BuilderOne extends AbstractBuilder {
 
 	/*
 	 * (non-Javadoc)
@@ -12,7 +12,7 @@ public class BuilderB extends AbstractBuilder {
 	 */
 	@Override
 	Part build() {
-		return new PartTwo();
+		return new PartOne();
 	}
 
 }

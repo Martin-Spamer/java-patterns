@@ -4,13 +4,15 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import patterns.mvc.controller.ResultInterface;
+
 public class StaticInvokerTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(StaticInvokerTest.class);
 
 	@Test
 	public void testExampleCommandInvoker() throws Exception {
-		new StaticInvoker().execute("ExampleCommand");
+		final ResultInterface execute = new StaticInvoker().execute("ExampleCommand");
 	}
 
 	@Test

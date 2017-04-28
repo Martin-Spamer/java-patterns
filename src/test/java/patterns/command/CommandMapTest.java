@@ -27,7 +27,6 @@ public class CommandMapTest {
 			final String value = (String) entry.getValue();
 			LOG.info("{} = {}", key, value);
 		}
-
 	}
 
 	private InputStream inputStream(final String resourceName) {
@@ -37,10 +36,51 @@ public class CommandMapTest {
 	}
 
 	@Test
-	public void testMissingCommandExecute() {
+	public void testExecuteMissingCommand() {
 		assertNotNull(this.commandMap);
 		final String actionName = "MissingCommand";
-		this.commandMap.execute(actionName);
+		final CommandInterface result = this.commandMap.execute(actionName);
+		assertNotNull(result);
+	}
+
+	@Test
+	public void testExecuteMissingClass() {
+		assertNotNull(this.commandMap);
+		final String actionName = "MissingClass";
+		final CommandInterface result = this.commandMap.execute(actionName);
+		assertNotNull(result);
+	}
+
+	@Test
+	public void testExecuteExampleCommand() {
+		assertNotNull(this.commandMap);
+		final String actionName = "ExampleCommand";
+		final CommandInterface result = this.commandMap.execute(actionName);
+		assertNotNull(result);
+	}
+
+	@Test
+	public void testExecuteSequenceCommand() {
+		assertNotNull(this.commandMap);
+		final String actionName = "SequenceCommand";
+		final CommandInterface result = this.commandMap.execute(actionName);
+		assertNotNull(result);
+	}
+
+	@Test
+	public void testExecuteCompoundCommand() {
+		assertNotNull(this.commandMap);
+		final String actionName = "CompoundCommand";
+		final CommandInterface result = this.commandMap.execute(actionName);
+		assertNotNull(result);
+	}
+
+	@Test
+	public void testExecuteConditionalCommand() {
+		assertNotNull(this.commandMap);
+		final String actionName = "ConditionalCommand";
+		final CommandInterface result = this.commandMap.execute(actionName);
+		assertNotNull(result);
 	}
 
 }

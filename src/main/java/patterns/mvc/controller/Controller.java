@@ -5,4 +5,8 @@ package patterns.mvc.controller;
  */
 public class Controller extends AbstractController {
 
+	public Controller() throws Exception {
+		super();
+	}
+
 }

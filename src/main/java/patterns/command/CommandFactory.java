@@ -1,3 +1,4 @@
+
 package patterns.command;
 
 import java.io.InputStream;
@@ -6,10 +7,12 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import patterns.mvc.controller.ResultInterface;
+
 /**
  * A factory for creating Command objects.
  */
-public class CommandFactory implements InvokerInterface {
+public final class CommandFactory implements InvokerInterface {
 
 	private static final String COMMANDS_PROPERTIES = "commands.properties";
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -51,6 +54,12 @@ public class CommandFactory implements InvokerInterface {
 		this.log.info("properties = {}", this.properties);
 	}
 
+	/**
+	 * Input stream.
+	 *
+	 * @param resourceName the resource name
+	 * @return the input stream
+	 */
 	private InputStream inputStream(final String resourceName) {
 		final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
@@ -63,12 +72,13 @@ public class CommandFactory implements InvokerInterface {
 	 * @see patterns.command.InvokerInterface#execute(java.lang.String)
 	 */
 	@Override
-	public CommandInterface execute(final String actionName) {
+	public ResultInterface execute(final String actionName) {
 		final String className = this.properties.getProperty(actionName);
 		AbstractCommand action;
 		try {
 			action = (AbstractCommand) Class.forName(className).newInstance();
-			return action.execute(null);
+			final CommandInterface execute = action.execute(null);
+			return execute.result();
 		} catch (final Exception e) {
 			this.log.error(e.toString());
 		}

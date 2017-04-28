@@ -1,31 +1,56 @@
+
 package patterns.command;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import patterns.mvc.controller.ResultInterface;
+
+/**
+ * The CommandSequence Class.
+ */
 public class CommandSequence extends AbstractCommand {
 
 	private final List<AbstractCommand> sequence = new ArrayList<AbstractCommand>();
-	private CommandInterface result;
+	private ResultInterface result;
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.command.AbstractCommand#execute(patterns.command.
+	 * ParametersInterface)
+	 */
 	@Override
-	public AbstractCommand execute(ParametersInterface commandParameters) {
+	public CommandInterface execute(ParametersInterface commandParameters) {
 		for (final AbstractCommand command : this.sequence) {
-			this.result = command.execute(commandParameters).result();
+			final CommandInterface execute = command.execute(commandParameters);
+			this.result = execute.result();
 		}
 		return this;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.command.AbstractCommand#undo(patterns.command.
+	 * ParametersInterface)
+	 */
 	@Override
-	public AbstractCommand undo(ParametersInterface commandParameters) {
+	public CommandInterface undo(ParametersInterface commandParameters) {
 		for (final AbstractCommand command : this.sequence) {
-			this.result = command.execute(commandParameters).result();
+			final CommandInterface execute = command.execute(commandParameters);
+			this.result = execute.result();
 		}
 		return this;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.command.AbstractCommand#result()
+	 */
 	@Override
-	public CommandInterface result() {
+	public ResultInterface result() {
 		return this.result;
 	}
 

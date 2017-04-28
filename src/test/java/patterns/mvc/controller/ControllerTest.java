@@ -7,7 +7,7 @@ import org.junit.Test;
 public class ControllerTest {
 
 	@Test
-	public void testController() {
+	public void testController() throws Exception {
 		final Controller controller = new Controller();
 		assertNotNull(controller);
 	}

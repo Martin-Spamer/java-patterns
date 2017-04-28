@@ -1,11 +1,10 @@
 package patterns.singleton;
 
 /**
- * The StaticSingleton Class.
+ * Singleton Pattern with Static construction.
  */
 public class StaticSingleton {
 
-	/** The instance. */
 	private static StaticSingleton instance = new StaticSingleton();
 
 	/**
@@ -21,6 +20,11 @@ public class StaticSingleton {
 	 */
 	public synchronized static StaticSingleton getInstance() {
 		return instance;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s", this.getClass().getSimpleName());
 	}
 
 }

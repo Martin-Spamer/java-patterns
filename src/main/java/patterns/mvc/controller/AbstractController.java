@@ -1,12 +1,9 @@
 package patterns.mvc.controller;
 
-import java.util.concurrent.ConcurrentHashMap;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import patterns.command.AbstractCommand;
-import patterns.command.CommandInterface;
+import patterns.command.CommandFactory;
 import patterns.mvc.ControllerInterface;
 import patterns.mvc.ModelInterface;
 import patterns.mvc.ViewInterface;
@@ -19,15 +16,16 @@ import patterns.mvc.view.View;
 public abstract class AbstractController implements ControllerInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	protected ConcurrentHashMap<String, AbstractCommand> commands;
+	protected CommandFactory commands;
 	protected ModelInterface model;
 	protected ViewInterface view;
 
 	/**
 	 * Instantiates a new abstract controller.
+	 * @throws Exception
 	 */
-	public AbstractController() {
-		this.commands = new ConcurrentHashMap<String, AbstractCommand>();
+	public AbstractController() throws Exception {
+		this.commands = new CommandFactory();
 		this.view = new View();
 		this.model = new Model();
 	}
@@ -77,18 +75,9 @@ public abstract class AbstractController implements ControllerInterface {
 	 * @return
 	 * @return the result
 	 */
-	public CommandInterface execute(String command) {
-		return getCommand(command).execute(null);
-	}
-
-	/**
-	 * Gets the command object from the collection.
-	 *
-	 * @param command the command
-	 * @return the command
-	 */
-	private AbstractCommand getCommand(String command) {
-		return this.commands.get(command);
+	public AbstractController execute(String commandName) {
+		this.commands.execute(commandName);
+		return this;
 	}
 
 }

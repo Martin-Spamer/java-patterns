@@ -12,7 +12,12 @@ public class SingletonFactoryTest {
 
 	@Test
 	public void testGetInstance() {
-		assertNotNull(SingletonFactory.getInstance());
+		final SingletonFactory instance = SingletonFactory.getInstance();
+		assertNotNull(instance);
+		final String string = instance.toString();
+		assertNotNull(instance);
+		LOG.info(string);
+
 	}
 
 }

@@ -1,11 +1,10 @@
 package patterns.singleton;
 
 /**
- * The Singleton Class.
+ * Singleton Pattern with late instantiation .
  */
 public class Singleton {
 
-	/** The instance. */
 	private static Singleton instance;
 
 	/**
@@ -22,6 +21,11 @@ public class Singleton {
 	public synchronized static Singleton getInstance() {
 		instance = new Singleton();
 		return instance;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s", this.getClass().getSimpleName());
 	}
 
 }

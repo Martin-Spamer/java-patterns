@@ -12,31 +12,32 @@ public class AbstractDecoratorTest {
 
 	@Test
 	public void testOperation() {
-		final DecoratedComponent concreteComponent = new DecoratedComponent();
-		assertNotNull(concreteComponent);
-		concreteComponent.operation();
+		final DecoratedComponent component = new DecoratedComponent();
+		assertNotNull(component);
+		assertNotNull(component.operation());
+		LOG.info("{}", component.toString());
 	}
 
 	@Test
 	public void testBefore() {
-		final DecoratedComponent concreteComponent = new DecoratedComponent();
-		assertNotNull(concreteComponent);
+		final DecoratedComponent component = new DecoratedComponent();
+		assertNotNull(component);
 		final AbstractComponent behaviour = new ConcreteDecorator();
-		concreteComponent.attachBefore(behaviour);
-		concreteComponent.operation();
-		concreteComponent.detachBefore(behaviour);
-		concreteComponent.operation();
+		component.attachBefore(behaviour);
+		component.operation();
+		component.detachBefore(behaviour);
+		component.operation();
 	}
 
 	@Test
 	public void testAfter() {
-		final DecoratedComponent concreteComponent = new DecoratedComponent();
-		assertNotNull(concreteComponent);
+		final DecoratedComponent component = new DecoratedComponent();
+		assertNotNull(component);
 		final AbstractComponent behaviour = new ConcreteDecorator();
-		concreteComponent.attachAfter(behaviour);
-		concreteComponent.operation();
-		concreteComponent.detachAfter(behaviour);
-		concreteComponent.operation();
+		component.attachAfter(behaviour);
+		component.operation();
+		component.detachAfter(behaviour);
+		component.operation();
 	}
 
 }
