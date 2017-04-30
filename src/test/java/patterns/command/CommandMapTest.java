@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import patterns.mvc.controller.ResultInterface;
+
 public class CommandMapTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);
@@ -24,8 +26,10 @@ public class CommandMapTest {
 
 		for (final Map.Entry<Object, Object> entry : properties.entrySet()) {
 			final String key = (String) entry.getKey();
-			final String value = (String) entry.getValue();
-			LOG.info("{} = {}", key, value);
+			final String className = (String) entry.getValue();
+			LOG.info("{} = {}", key, className);
+			final AbstractCommand instance = (AbstractCommand) Class.forName(className).newInstance();
+			commandMap.put(key, instance);
 		}
 	}
 
@@ -37,50 +41,56 @@ public class CommandMapTest {
 
 	@Test
 	public void testExecuteMissingCommand() {
-		assertNotNull(this.commandMap);
+		assertNotNull(commandMap);
 		final String actionName = "MissingCommand";
-		final CommandInterface result = this.commandMap.execute(actionName);
+		final ResultInterface result = commandMap.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
 	public void testExecuteMissingClass() {
-		assertNotNull(this.commandMap);
+		assertNotNull(commandMap);
 		final String actionName = "MissingClass";
-		final CommandInterface result = this.commandMap.execute(actionName);
+		final ResultInterface result = commandMap.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
 	public void testExecuteExampleCommand() {
-		assertNotNull(this.commandMap);
+		assertNotNull(commandMap);
 		final String actionName = "ExampleCommand";
-		final CommandInterface result = this.commandMap.execute(actionName);
+		final ResultInterface result = commandMap.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
 	public void testExecuteSequenceCommand() {
-		assertNotNull(this.commandMap);
+		assertNotNull(commandMap);
 		final String actionName = "SequenceCommand";
-		final CommandInterface result = this.commandMap.execute(actionName);
+		final ResultInterface result = commandMap.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
 	public void testExecuteCompoundCommand() {
-		assertNotNull(this.commandMap);
+		assertNotNull(commandMap);
 		final String actionName = "CompoundCommand";
-		final CommandInterface result = this.commandMap.execute(actionName);
+		final ResultInterface result = commandMap.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
 	public void testExecuteConditionalCommand() {
-		assertNotNull(this.commandMap);
+		assertNotNull(commandMap);
 		final String actionName = "ConditionalCommand";
-		final CommandInterface result = this.commandMap.execute(actionName);
+		final ResultInterface result = commandMap.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 }

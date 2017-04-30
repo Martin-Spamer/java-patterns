@@ -1,18 +1,22 @@
+
 package patterns.factory;
 
+/**
+ * The FactoryInterface Interface.
+ */
 public interface FactoryInterface {
 
 	/**
-	 * Creates a new Abstract object.
+	 * Creates the product A.
 	 *
-	 * @return the product A
+	 * @return the abstract product A
 	 */
 	public AbstractProductA createProductA();
 
 	/**
-	 * Creates a new Abstract object.
+	 * Creates the product B.
 	 *
-	 * @return the product B
+	 * @return the abstract product B
 	 */
 	public AbstractProductB createProductB();
 

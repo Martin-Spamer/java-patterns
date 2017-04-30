@@ -10,7 +10,7 @@ public final class Iterator extends AbstractIterator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.iterator.AbstractIterator#first()
 	 */
 	@Override
@@ -20,7 +20,7 @@ public final class Iterator extends AbstractIterator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.iterator.AbstractIterator#next()
 	 */
 	@Override
@@ -30,7 +30,7 @@ public final class Iterator extends AbstractIterator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.iterator.AbstractIterator#isDone()
 	 */
 	@Override
@@ -39,7 +39,7 @@ public final class Iterator extends AbstractIterator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.iterator.AbstractIterator#currentItem()
 	 */
 	@Override

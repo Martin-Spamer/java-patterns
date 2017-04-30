@@ -1,6 +1,8 @@
 
 package patterns.visitor;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 /**
@@ -15,7 +17,9 @@ public class VisitorTest {
 	@Test
 	public void testOperation() {
 		final Visitor visitor = new Visitor();
+		assertNotNull(visitor);
 		final Element element = new Element();
+		assertNotNull(element);
 	}
 
 }

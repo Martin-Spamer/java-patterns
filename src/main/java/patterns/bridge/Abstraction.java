@@ -1,16 +1,28 @@
+
 package patterns.bridge;
 
+/**
+ * The Abstraction Class.
+ */
 public abstract class Abstraction {
 
-	private final Implementor implementor;
+	private final AbstractImplementor implementor;
 
-	public Abstraction(Implementor implementor) {
+	/**
+	 * Instantiates a new abstraction.
+	 *
+	 * @param implementor the implementor
+	 */
+	public Abstraction(AbstractImplementor implementor) {
 		super();
 		this.implementor = implementor;
 	}
 
+	/**
+	 * Operation.
+	 */
 	public void operation() {
-		this.implementor.operation();
+		implementor.operation();
 	}
 
 }

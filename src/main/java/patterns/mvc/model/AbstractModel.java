@@ -1,3 +1,4 @@
+
 package patterns.mvc.model;
 
 import java.util.HashMap;
@@ -8,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 import patterns.mvc.ModelInterface;
 import patterns.mvc.view.AbstractView;
-import patterns.mvc.view.View;
 
 /**
  * The AbstractModel Class.
@@ -26,20 +26,46 @@ public abstract class AbstractModel implements ModelInterface {
 		super();
 	}
 
-	public void attach(String key, Model model) {
-		this.models.put(key, model);
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.mvc.ModelInterface#attach(java.lang.String,
+	 * patterns.mvc.model.AbstractModel)
+	 */
+	@Override
+	public void attach(final String key, final AbstractModel model) {
+		models.put(key, model);
 	}
 
-	public void attach(String key, View view) {
-		this.views.put(key, view);
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.mvc.ModelInterface#attach(java.lang.String,
+	 * patterns.mvc.view.AbstractView)
+	 */
+	@Override
+	public void attach(final String key, final AbstractView view) {
+		views.put(key, view);
 	}
 
-	public void detach(Model model) {
-		this.models.remove(model);
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.mvc.ModelInterface#detachModel(java.lang.String)
+	 */
+	@Override
+	public void detachModel(final String key) {
+		models.remove(key);
 	}
 
-	public void detach(View view) {
-		this.views.remove(view);
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.mvc.ModelInterface#detachView(java.lang.String)
+	 */
+	@Override
+	public void detachView(final String key) {
+		views.remove(key);
 	}
 
 }

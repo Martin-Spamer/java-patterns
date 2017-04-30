@@ -1,5 +1,9 @@
+
 package patterns.filter;
 
+/**
+ * The FilterChain Class.
+ */
 public final class FilterChain {
 
 	public FilterManager filterManager;

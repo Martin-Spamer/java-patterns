@@ -1,3 +1,4 @@
+
 package patterns.mvc.controller;
 
 import org.slf4j.Logger;
@@ -11,7 +12,7 @@ import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
 
 /**
- * An Abstract Controller class from the Model View Controller Pattern.
+ * The AbstractController Class.
  */
 public abstract class AbstractController implements ControllerInterface {
 
@@ -22,35 +23,35 @@ public abstract class AbstractController implements ControllerInterface {
 
 	/**
 	 * Instantiates a new abstract controller.
-	 * @throws Exception
+	 *
+	 * @throws Exception the exception
 	 */
 	public AbstractController() throws Exception {
-		this.commands = new CommandFactory();
-		this.view = new View();
-		this.model = new Model();
+		commands = new CommandFactory();
+		view = new View();
+		model = new Model();
 	}
 
 	/**
-	 * attach a model to the model manager.
+	 * Attach model.
 	 *
 	 * @param model the model
 	 */
 	public void attachModel(ModelInterface model) {
 		this.model = model;
-		this.view.attachModel(model);
+		view.attachModel(model);
 	}
 
 	/**
-	 * Removes the model from the view.
-	 *
+	 * Detach model.
 	 */
 	public void detachModel() {
-		this.view.detachModel();
-		this.model = null;
+		view.detachModel();
+		model = null;
 	}
 
 	/**
-	 * Add a view to the controller.
+	 * Attach view.
 	 *
 	 * @param view the view
 	 */
@@ -59,24 +60,20 @@ public abstract class AbstractController implements ControllerInterface {
 	}
 
 	/**
-	 * Removes a view from the controller.
-	 *
-	 * @param view the view
+	 * Detach view.
 	 */
 	public void detachView() {
-		this.view = null;
+		view = null;
 	}
 
 	/**
-	 * Execute the command.
+	 * Execute.
 	 *
-	 * @param command the command
-	 * @param context the context
-	 * @return
-	 * @return the result
+	 * @param commandName the command name
+	 * @return the abstract controller
 	 */
 	public AbstractController execute(String commandName) {
-		this.commands.execute(commandName);
+		commands.execute(commandName);
 		return this;
 	}
 

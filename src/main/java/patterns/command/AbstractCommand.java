@@ -16,36 +16,36 @@ public abstract class AbstractCommand implements CommandInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.command.CommandInterface#execute(patterns.command.
 	 * ParametersInterface)
 	 */
 	@Override
-	public CommandInterface execute(ParametersInterface commandParameters) {
-		this.log.debug("{}.execute", this.getClass().getSimpleName());
-		return this;
+	public ResultInterface execute(ParametersInterface commandParameters) {
+		log.debug("{}.execute", this.getClass().getSimpleName());
+		return result;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.command.CommandInterface#undo(patterns.command.
 	 * ParametersInterface)
 	 */
 	@Override
-	public CommandInterface undo(ParametersInterface commandParameters) {
-		this.log.debug("{}.undo", this.getClass().getSimpleName());
-		return this;
+	public ResultInterface undo(ParametersInterface commandParameters) {
+		log.debug("{}.undo", this.getClass().getSimpleName());
+		return result;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
-	 * @see patterns.command.CommandInterface#result()
+	 *
+	 * @see patterns.command.AbstractCommand#result()
 	 */
 	@Override
-	public ResultInterface result() {
-		return this.result;
+	public ResultInterface result(ResultInterface result) {
+		return this.result = result;
 	}
 
 }

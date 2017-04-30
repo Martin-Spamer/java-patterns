@@ -1,21 +1,19 @@
 
-package patterns.builder;
+package patterns.bridge;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractBuilder Class.
+ * The AbstractImplementor Class.
  */
-public abstract class AbstractBuilder {
+public abstract class AbstractImplementor {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
-	 * Builds the.
-	 *
-	 * @return the part
+	 * Operation.
 	 */
-	abstract Part build();
+	abstract public void operation();
 
 }

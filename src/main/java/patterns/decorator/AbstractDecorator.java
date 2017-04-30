@@ -1,41 +1,79 @@
+
 package patterns.decorator;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The AbstractDecorator Class.
+ */
 public abstract class AbstractDecorator extends AbstractComponent implements DecoratorInterface {
 
 	private final List<AbstractComponent> beforeBehaviour = new ArrayList<AbstractComponent>();
 	private final List<AbstractComponent> afterBehaviour = new ArrayList<AbstractComponent>();
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * patterns.decorator.DecoratorInterface#attachBefore(patterns.decorator.
+	 * AbstractComponent)
+	 */
 	@Override
 	public void attachBefore(AbstractComponent behaviour) {
-		this.beforeBehaviour.add(behaviour);
+		beforeBehaviour.add(behaviour);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * patterns.decorator.DecoratorInterface#detachBefore(patterns.decorator.
+	 * AbstractComponent)
+	 */
 	@Override
 	public void detachBefore(AbstractComponent behaviour) {
-		this.beforeBehaviour.remove(behaviour);
+		beforeBehaviour.remove(behaviour);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * patterns.decorator.DecoratorInterface#attachAfter(patterns.decorator.
+	 * AbstractComponent)
+	 */
 	@Override
 	public void attachAfter(AbstractComponent behaviour) {
-		this.afterBehaviour.add(behaviour);
+		afterBehaviour.add(behaviour);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * patterns.decorator.DecoratorInterface#detachAfter(patterns.decorator.
+	 * AbstractComponent)
+	 */
 	@Override
 	public void detachAfter(AbstractComponent behaviour) {
-		this.afterBehaviour.remove(behaviour);
+		afterBehaviour.remove(behaviour);
 	}
 
+	/**
+	 * Before operation.
+	 */
 	protected void beforeOperation() {
-		for (final ComponentInterface component : this.beforeBehaviour) {
+		for (final ComponentInterface component : beforeBehaviour) {
 			component.operation();
 		}
 	}
 
+	/**
+	 * After operation.
+	 */
 	protected void afterOperation() {
-		for (final ComponentInterface component : this.afterBehaviour) {
+		for (final ComponentInterface component : afterBehaviour) {
 			component.operation();
 		}
 	}

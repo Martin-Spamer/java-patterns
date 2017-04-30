@@ -1,5 +1,9 @@
+
 package patterns.filter;
 
+/**
+ * The FilterManager Class.
+ */
 public final class FilterManager {
 
 	public Target target;
@@ -16,7 +20,7 @@ public final class FilterManager {
 	}
 
 	/**
-	 * operation.
+	 * Operation.
 	 */
 	public void operation() {
 	}

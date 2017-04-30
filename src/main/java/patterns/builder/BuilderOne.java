@@ -1,7 +1,8 @@
+
 package patterns.builder;
 
 /**
- * The ConcreteBuilderA Class.
+ * The BuilderOne Class.
  */
 public class BuilderOne extends AbstractBuilder {
 

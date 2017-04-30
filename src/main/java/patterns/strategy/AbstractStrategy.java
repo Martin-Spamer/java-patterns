@@ -1,12 +1,15 @@
+
 package patterns.strategy;
 
 /**
- * The Strategy Class.
+ * The AbstractStrategy Class.
  */
 public abstract class AbstractStrategy implements StrategyInterface {
 
-	/**
-	 * Algorithm interface.
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.strategy.StrategyInterface#operation()
 	 */
 	@Override
 	public abstract void operation();

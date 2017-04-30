@@ -1,9 +1,13 @@
+
 package patterns.strategy;
 
+/**
+ * The StrategyInterface Interface.
+ */
 public interface StrategyInterface {
 
 	/**
-	 * Algorithm interface.
+	 * Operation.
 	 */
 	public abstract void operation();
 

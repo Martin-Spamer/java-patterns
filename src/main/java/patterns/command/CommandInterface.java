@@ -12,22 +12,24 @@ public interface CommandInterface {
 	 * Execute.
 	 *
 	 * @param commandParameters the command parameters
-	 * @return the command interface
+	 * @return the result interface
 	 */
-	abstract CommandInterface execute(ParametersInterface commandParameters);
+	abstract ResultInterface execute(ParametersInterface commandParameters);
 
 	/**
 	 * Undo.
 	 *
 	 * @param commandParameters the command parameters
-	 * @return the command interface
+	 * @return the result interface
 	 */
-	abstract CommandInterface undo(ParametersInterface commandParameters);
+	abstract ResultInterface undo(ParametersInterface commandParameters);
 
 	/**
 	 * Result.
 	 *
+	 * @param resultInterface the result interface
 	 * @return the result interface
 	 */
-	abstract ResultInterface result();
+	abstract ResultInterface result(ResultInterface resultInterface);
+
 }

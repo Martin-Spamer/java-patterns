@@ -1,12 +1,19 @@
+
 package patterns.bridge;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+/**
+ * The Implementor Class.
+ */
+public class Implementor extends AbstractImplementor {
 
-public abstract class Implementor {
-
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-
-	abstract public void operation();
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.bridge.AbstractImplementor#operation()
+	 */
+	@Override
+	public void operation() {
+		log.info("{}", this.getClass().getSimpleName());
+	}
 
 }

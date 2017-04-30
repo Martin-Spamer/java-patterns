@@ -1,33 +1,56 @@
+
 package patterns.composite;
 
 import java.util.Vector;
 
+/**
+ * The Composite Class.
+ */
 public class Composite extends Component {
 
-	/** The composite. */
-	public Vector<Component> composite;
+	protected Vector<Component> composite = new Vector<Component>();
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.composite.Component#add(patterns.composite.Component)
+	 */
 	@Override
 	public ComponentInterface add(Component component) {
-		this.composite.add(component);
+		composite.add(component);
 		return this;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.composite.Component#remove(patterns.composite.Component)
+	 */
 	@Override
 	public ComponentInterface remove(Component component) {
-		this.composite.remove(component);
+		composite.remove(component);
 		return this;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.composite.Component#getChild(int)
+	 */
 	@Override
 	public ComponentInterface getChild(int index) {
-		this.composite.get(index);
+		composite.get(index);
 		return this;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.composite.Component#operation()
+	 */
 	@Override
 	public ComponentInterface operation() {
-		for (final Component component : this.composite) {
+		for (final Component component : composite) {
 			component.operation();
 		}
 		return this;

@@ -1,10 +1,14 @@
+
 package patterns.state;
 
 /**
- * The State Class.
+ * The AbstractState Class.
  */
 abstract class AbstractState {
 
+	/**
+	 * Handle.
+	 */
 	abstract public void handle();
 
 }

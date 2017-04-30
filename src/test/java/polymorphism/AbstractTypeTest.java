@@ -11,16 +11,16 @@ public class AbstractTypeTest {
 
 	@Test
 	public void testOne() {
-		this.abstractType = new SubTypeOne();
-		LOG.info("{}", this.abstractType);
+		abstractType = new SubTypeOne();
+		LOG.info("{}", abstractType);
 	}
 
 	@Test
 	public void testTwo() {
-		this.abstractType = new SubTypeTwo();
-		LOG.info("{}", this.abstractType);
-		this.abstractType.operation();
-		LOG.info("{}", this.abstractType);
+		abstractType = new SubTypeTwo();
+		LOG.info("{}", abstractType);
+		abstractType.operation();
+		LOG.info("{}", abstractType);
 	}
 
 }

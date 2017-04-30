@@ -1,7 +1,8 @@
+
 package patterns.singleton;
 
 /**
- * Singleton Pattern with late instantiation .
+ * The Singleton Class.
  */
 public class Singleton {
 
@@ -23,6 +24,11 @@ public class Singleton {
 		return instance;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return String.format("%s", this.getClass().getSimpleName());

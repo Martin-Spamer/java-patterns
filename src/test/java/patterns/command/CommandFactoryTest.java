@@ -18,6 +18,7 @@ public class CommandFactoryTest {
 	public void testCommandFactory() throws Exception {
 		final InvokerInterface instance = new CommandFactory();
 		assertNotNull(instance);
+		LOG.info(instance.toString());
 	}
 
 	@Test
@@ -32,6 +33,7 @@ public class CommandFactoryTest {
 		final Properties properties = new Properties();
 		final InvokerInterface instance = new CommandFactory(properties);
 		assertNotNull(instance);
+		LOG.info(instance.toString());
 	}
 
 	@Test
@@ -39,7 +41,8 @@ public class CommandFactoryTest {
 		final InvokerInterface instance = new CommandFactory();
 		assertNotNull(instance);
 		final String actionName = "MissingCommand";
-		instance.execute(actionName);
+		final ResultInterface result = instance.execute(actionName);
+		LOG.info(result.toString());
 	}
 
 	@Test
@@ -49,6 +52,7 @@ public class CommandFactoryTest {
 		final String actionName = "MissingCommand";
 		final ResultInterface result = instance.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
@@ -58,6 +62,7 @@ public class CommandFactoryTest {
 		final String actionName = "MissingClass";
 		final ResultInterface result = instance.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
@@ -67,6 +72,7 @@ public class CommandFactoryTest {
 		final String actionName = "ExampleCommand";
 		final ResultInterface result = instance.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
@@ -76,6 +82,7 @@ public class CommandFactoryTest {
 		final String actionName = "SequenceCommand";
 		final ResultInterface result = commandFactory.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
@@ -85,6 +92,7 @@ public class CommandFactoryTest {
 		final String actionName = "CompoundCommand";
 		final ResultInterface result = commandFactory.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 	@Test
@@ -94,6 +102,7 @@ public class CommandFactoryTest {
 		final String actionName = "ConditionalCommand";
 		final ResultInterface result = commandFactory.execute(actionName);
 		assertNotNull(result);
+		LOG.info(result.toString());
 	}
 
 }

@@ -26,25 +26,27 @@ public class StaticInvoker implements InvokerInterface {
 		super();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see patterns.command.InvokerInterface#execute(java.lang.String)
 	 */
 	@Override
 	public ResultInterface execute(final String actionName) {
 		ResultInterface result = null;
-		this.log.info("{}", actionName);
+		log.info("{}", actionName);
 		switch (actionName) {
 			case "ExampleCommand":
-				result = this.exampleCommand.execute(null).result();
+				result = exampleCommand.execute(null).result();
 				break;
 			case "CommandSequence":
-				result = this.commandSequence.execute(null).result();
+				result = commandSequence.execute(null).result();
 				break;
 			case "CompoundCommand":
-				result = this.compoundCommand.execute(null).result();
+				result = compoundCommand.execute(null).result();
 				break;
 			case "ConditionalCommand":
-				result = this.conditionalCommand.execute(null).result();
+				result = conditionalCommand.execute(null).result();
 				break;
 		}
 		return result;

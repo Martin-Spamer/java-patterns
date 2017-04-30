@@ -1,3 +1,4 @@
+
 package patterns.router;
 
 /**
@@ -5,6 +6,11 @@ package patterns.router;
  */
 public interface OutputChannel {
 
+	/**
+	 * Send message.
+	 *
+	 * @param message the message
+	 */
 	public void sendMessage(Message message);
 
 }

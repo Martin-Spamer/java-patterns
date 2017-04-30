@@ -1,10 +1,11 @@
+
 package patterns.template;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Template Methods
+ * The AbstractClass Class.
  */
 public abstract class AbstractClass {
 

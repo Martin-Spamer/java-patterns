@@ -14,6 +14,9 @@ import org.slf4j.LoggerFactory;
 
 import patterns.mvc.controller.Result;
 
+/**
+ * The MvcServlet Class.
+ */
 @SuppressWarnings("serial")
 public class MvcServlet extends HttpServlet {
 
@@ -42,10 +45,11 @@ public class MvcServlet extends HttpServlet {
 	public void destroy() {
 	}
 
-	/**
-	 * Handles the HTTP <code>GET</code> method.
-	 * @param request servlet request
-	 * @param response servlet response
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.
+	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
@@ -57,10 +61,11 @@ public class MvcServlet extends HttpServlet {
 		}
 	}
 
-	/**
-	 * Handles the HTTP <code>POST</code> method.
-	 * @param request servlet request
-	 * @param response servlet response
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.
+	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -74,24 +79,30 @@ public class MvcServlet extends HttpServlet {
 	}
 
 	/**
-	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-	 * methods.
-	 * @param request servlet request
-	 * @param response servlet response
+	 * Process request.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @throws ServletException the servlet exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, java.io.IOException {
 
-		if (this.servletInitialised) {
+		if (servletInitialised) {
 			final String requestName = request.getPathInfo();
 
 			final Result result = new Result();
-			this.actionManager.handleRequest(request, response, result);
-			this.viewManager.handleRequest(request, response, result);
+			actionManager.handleRequest(request, response, result);
+			viewManager.handleRequest(request, response, result);
 		}
 	}
 
-	/** Returns a short description of the servlet */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.GenericServlet#getServletInfo()
+	 */
 	@Override
 	public String getServletInfo() {
 		return "Front Controller Servlet";

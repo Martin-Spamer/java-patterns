@@ -1,9 +1,15 @@
+
 package patterns.visitor;
 
+/**
+ * The VisitorInterface Interface.
+ */
 public interface VisitorInterface {
 
 	/**
-	 * operation.
+	 * Visit.
+	 *
+	 * @param element the element
 	 */
 	void visit(ElementInterface element);
 

@@ -12,46 +12,33 @@ import patterns.mvc.controller.ResultInterface;
 public class CommandSequence extends AbstractCommand {
 
 	private final List<AbstractCommand> sequence = new ArrayList<AbstractCommand>();
-	private ResultInterface result;
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.command.AbstractCommand#execute(patterns.command.
 	 * ParametersInterface)
 	 */
 	@Override
-	public CommandInterface execute(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : this.sequence) {
-			final CommandInterface execute = command.execute(commandParameters);
-			this.result = execute.result();
+	public ResultInterface execute(ParametersInterface commandParameters) {
+		for (final AbstractCommand command : sequence) {
+			result(command.execute(commandParameters));
 		}
-		return this;
+		return result;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.command.AbstractCommand#undo(patterns.command.
 	 * ParametersInterface)
 	 */
 	@Override
-	public CommandInterface undo(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : this.sequence) {
-			final CommandInterface execute = command.execute(commandParameters);
-			this.result = execute.result();
+	public ResultInterface undo(ParametersInterface commandParameters) {
+		for (final AbstractCommand command : sequence) {
+			result(command.execute(commandParameters));
 		}
-		return this;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see patterns.command.AbstractCommand#result()
-	 */
-	@Override
-	public ResultInterface result() {
-		return this.result;
+		return result;
 	}
 
 }

@@ -1,22 +1,26 @@
+
 package patterns.composite;
 
+/**
+ * The Component Class.
+ */
 public abstract class Component implements ComponentInterface {
 
 	/**
-	 * Add component to the composite.
+	 * Adds the.
 	 *
 	 * @param component the component
-	 * @return the composite interface
+	 * @return the component interface
 	 */
 	public ComponentInterface add(Component component) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * Removes component from the composite.
+	 * Removes the.
 	 *
 	 * @param component the component
-	 * @return the composite interface
+	 * @return the component interface
 	 */
 	public ComponentInterface remove(Component component) {
 		throw new UnsupportedOperationException();
@@ -32,6 +36,11 @@ public abstract class Component implements ComponentInterface {
 		throw new UnsupportedOperationException();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.composite.ComponentInterface#operation()
+	 */
 	@Override
 	public ComponentInterface operation() {
 		throw new UnsupportedOperationException();

@@ -2,14 +2,14 @@
 package patterns.proxy;
 
 /**
- * The Proxy for the Subject Class.
+ * The SubjectProxy Class.
  */
 class SubjectProxy extends Subject {
 
 	private final RealSubject realSubject = new RealSubject();
 
 	/**
-	 * Instantiates a new proxy subject.
+	 * Instantiates a new subject proxy.
 	 */
 	public SubjectProxy() {
 		super();

@@ -1,7 +1,8 @@
+
 package patterns.state;
 
 /**
- * The ConcreteStateA Class.
+ * The StateA Class.
  */
 class StateA extends AbstractState {
 

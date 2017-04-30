@@ -1,3 +1,4 @@
+
 package patterns.servlet;
 
 import java.io.IOException;
@@ -15,6 +16,9 @@ import org.slf4j.LoggerFactory;
 import patterns.command.CommandFactory;
 import patterns.mvc.controller.ResultInterface;
 
+/**
+ * The FrontController Class.
+ */
 @SuppressWarnings("serial")
 public class FrontController extends HttpServlet {
 
@@ -30,7 +34,7 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 		try {
-			this.commands = new CommandFactory();
+			commands = new CommandFactory();
 		} catch (final Exception e) {
 			LOG.error(e.toString());
 		}
@@ -45,10 +49,11 @@ public class FrontController extends HttpServlet {
 	public void destroy() {
 	}
 
-	/**
-	 * Handles the HTTP <code>GET</code> method.
-	 * @param request servlet request
-	 * @param response servlet response
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.
+	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
@@ -60,10 +65,11 @@ public class FrontController extends HttpServlet {
 		}
 	}
 
-	/**
-	 * Handles the HTTP <code>POST</code> method.
-	 * @param request servlet request
-	 * @param response servlet response
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.
+	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -77,10 +83,12 @@ public class FrontController extends HttpServlet {
 	}
 
 	/**
-	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-	 * methods.
-	 * @param request servlet request
-	 * @param response servlet response
+	 * Process request.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @throws ServletException the servlet exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, java.io.IOException {
@@ -89,7 +97,7 @@ public class FrontController extends HttpServlet {
 		final String[] split = queryString.split("/");
 		final String actionName = split[split.length - 1];
 
-		final ResultInterface result = this.commands.execute(actionName);
+		final ResultInterface result = commands.execute(actionName);
 
 		final String page = "result";
 
@@ -116,7 +124,11 @@ public class FrontController extends HttpServlet {
 		}
 	}
 
-	/** Returns a short description of the servlet */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.GenericServlet#getServletInfo()
+	 */
 	@Override
 	public String getServletInfo() {
 		return "Front Controller Servlet";
