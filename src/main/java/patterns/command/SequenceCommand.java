@@ -1,4 +1,3 @@
-
 package patterns.command;
 
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import patterns.mvc.controller.ResultInterface;
 /**
  * The CommandSequence Class.
  */
-public class CommandSequence extends AbstractCommand {
+public class SequenceCommand extends AbstractCommand {
 
 	private final List<AbstractCommand> sequence = new ArrayList<AbstractCommand>();
 
@@ -21,10 +20,10 @@ public class CommandSequence extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface execute(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : sequence) {
-			result(command.execute(commandParameters));
+		for (final AbstractCommand command : this.sequence) {
+			this.result = command.execute(commandParameters);
 		}
-		return result;
+		return this.result;
 	}
 
 	/*
@@ -35,10 +34,10 @@ public class CommandSequence extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface undo(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : sequence) {
-			result(command.execute(commandParameters));
+		for (final AbstractCommand command : this.sequence) {
+			this.result = this.result.updateResult(command.execute(commandParameters));
 		}
-		return result;
+		return this.result;
 	}
 
 }

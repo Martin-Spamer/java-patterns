@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import patterns.command.CommandFactory;
-import patterns.mvc.controller.ResultInterface;
+import patterns.command.MissingCommandException;
 
 /**
  * The FrontController Class.
@@ -34,7 +34,7 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 		try {
-			commands = new CommandFactory();
+			this.commands = new CommandFactory();
 		} catch (final Exception e) {
 			LOG.error(e.toString());
 		}
@@ -51,7 +51,7 @@ public class FrontController extends HttpServlet {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.
 	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
@@ -67,7 +67,7 @@ public class FrontController extends HttpServlet {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.
 	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
@@ -97,9 +97,14 @@ public class FrontController extends HttpServlet {
 		final String[] split = queryString.split("/");
 		final String actionName = split[split.length - 1];
 
-		final ResultInterface result = commands.execute(actionName);
-
-		final String page = "result";
+		String page;
+		try {
+			this.commands.execute(actionName);
+			page = "result";
+		} catch (final MissingCommandException e) {
+			LOG.error(e.toString());
+			page = "error";
+		}
 
 		// dispatch control to view
 		dispatch(request, response, page);
@@ -126,7 +131,7 @@ public class FrontController extends HttpServlet {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see javax.servlet.GenericServlet#getServletInfo()
 	 */
 	@Override

@@ -13,7 +13,7 @@ public class StaticInvoker implements InvokerInterface {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private final ExampleCommand exampleCommand = new ExampleCommand();
-	private final CommandSequence commandSequence = new CommandSequence();
+	private final SequenceCommand commandSequence = new SequenceCommand();
 	private final CompoundCommand compoundCommand = new CompoundCommand();
 	private final ConditionalCommand conditionalCommand = new ConditionalCommand();
 
@@ -28,25 +28,25 @@ public class StaticInvoker implements InvokerInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.command.InvokerInterface#execute(java.lang.String)
 	 */
 	@Override
 	public ResultInterface execute(final String actionName) {
 		ResultInterface result = null;
-		log.info("{}", actionName);
+		this.log.info("{}", actionName);
 		switch (actionName) {
 			case "ExampleCommand":
-				result = exampleCommand.execute(null).result();
+				result = this.exampleCommand.execute(null);
 				break;
 			case "CommandSequence":
-				result = commandSequence.execute(null).result();
+				result = this.commandSequence.execute(null);
 				break;
 			case "CompoundCommand":
-				result = compoundCommand.execute(null).result();
+				result = this.compoundCommand.execute(null);
 				break;
 			case "ConditionalCommand":
-				result = conditionalCommand.execute(null).result();
+				result = this.conditionalCommand.execute(null);
 				break;
 		}
 		return result;

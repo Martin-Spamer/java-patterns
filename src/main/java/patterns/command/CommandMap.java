@@ -21,15 +21,16 @@ public final class CommandMap extends HashMap<String, AbstractCommand> {
 	 *
 	 * @param actionName the action name
 	 * @return the result interface
+	 * @throws MissingCommandException
 	 */
-	public ResultInterface execute(final String actionName) {
+	public ResultInterface execute(final String actionName) throws MissingCommandException {
 		if (actionName == null) {
 			throw new RuntimeException("actionName cannot be null");
 		} else {
 			final CommandInterface command = get(actionName);
 			if (command == null) {
 				final String message = String.format("command %s not found", actionName);
-				throw new RuntimeException(message);
+				throw new MissingCommandException(message);
 			} else {
 				return command.execute(null);
 			}

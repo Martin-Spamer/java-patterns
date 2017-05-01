@@ -13,4 +13,12 @@ public interface ResultInterface {
 	 */
 	ResultInterface result();
 
+	/**
+	 * Update result.
+	 *
+	 * @param newResult the new result
+	 * @return the result interface
+	 */
+	ResultInterface updateResult(ResultInterface newResult);
+
 }

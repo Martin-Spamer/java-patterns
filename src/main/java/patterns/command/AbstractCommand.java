@@ -1,4 +1,3 @@
-
 package patterns.command;
 
 import org.slf4j.Logger;
@@ -22,8 +21,8 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public ResultInterface execute(ParametersInterface commandParameters) {
-		log.debug("{}.execute", this.getClass().getSimpleName());
-		return result;
+		this.log.debug("{}.execute", this.getClass().getSimpleName());
+		return this.result;
 	}
 
 	/*
@@ -34,8 +33,8 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public ResultInterface undo(ParametersInterface commandParameters) {
-		log.debug("{}.undo", this.getClass().getSimpleName());
-		return result;
+		this.log.debug("{}.undo", this.getClass().getSimpleName());
+		return this.result;
 	}
 
 	/*
@@ -44,8 +43,8 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * @see patterns.command.AbstractCommand#result()
 	 */
 	@Override
-	public ResultInterface result(ResultInterface result) {
-		return this.result = result;
+	public ResultInterface updateResult() {
+		return this.result;
 	}
 
 }

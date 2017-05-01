@@ -14,6 +14,7 @@ public class StaticInvokerTest {
 
 	@Test
 	public void testExampleCommandInvoker() throws Exception {
+		LOG.debug("testExampleCommandInvoker");
 		final ResultInterface result = new StaticInvoker().execute("ExampleCommand");
 		assertNotNull(result);
 		LOG.info(result.toString());
@@ -21,6 +22,7 @@ public class StaticInvokerTest {
 
 	@Test
 	public void testCommandSequenceInvoker() throws Exception {
+		LOG.debug("testCommandSequenceInvoker");
 		final ResultInterface result = new StaticInvoker().execute("CommandSequence");
 		assertNotNull(result);
 		LOG.info(result.toString());
@@ -28,6 +30,7 @@ public class StaticInvokerTest {
 
 	@Test
 	public void testCompoundCommandInvoker() throws Exception {
+		LOG.debug("testCompoundCommandInvoker");
 		final ResultInterface result = new StaticInvoker().execute("CompoundCommand");
 		assertNotNull(result);
 		LOG.info(result.toString());
@@ -35,6 +38,7 @@ public class StaticInvokerTest {
 
 	@Test
 	public void testConditionalCommandInvoker() throws Exception {
+		LOG.debug("testConditionalCommandInvoker");
 		final ResultInterface result = new StaticInvoker().execute("ConditionalCommand");
 		assertNotNull(result);
 		LOG.info(result.toString());

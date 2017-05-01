@@ -13,7 +13,8 @@ public interface InvokerInterface {
 	 *
 	 * @param actionName the action name
 	 * @return the result interface
+	 * @throws MissingCommandException
 	 */
-	public ResultInterface execute(String actionName);
+	public ResultInterface execute(String actionName) throws MissingCommandException;
 
 }

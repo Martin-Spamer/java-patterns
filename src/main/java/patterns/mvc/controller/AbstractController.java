@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import patterns.command.CommandFactory;
+import patterns.command.MissingCommandException;
 import patterns.mvc.ControllerInterface;
 import patterns.mvc.ModelInterface;
 import patterns.mvc.ViewInterface;
@@ -27,9 +28,9 @@ public abstract class AbstractController implements ControllerInterface {
 	 * @throws Exception the exception
 	 */
 	public AbstractController() throws Exception {
-		commands = new CommandFactory();
-		view = new View();
-		model = new Model();
+		this.commands = new CommandFactory();
+		this.view = new View();
+		this.model = new Model();
 	}
 
 	/**
@@ -39,15 +40,15 @@ public abstract class AbstractController implements ControllerInterface {
 	 */
 	public void attachModel(ModelInterface model) {
 		this.model = model;
-		view.attachModel(model);
+		this.view.attachModel(model);
 	}
 
 	/**
 	 * Detach model.
 	 */
 	public void detachModel() {
-		view.detachModel();
-		model = null;
+		this.view.detachModel();
+		this.model = null;
 	}
 
 	/**
@@ -63,7 +64,7 @@ public abstract class AbstractController implements ControllerInterface {
 	 * Detach view.
 	 */
 	public void detachView() {
-		view = null;
+		this.view = null;
 	}
 
 	/**
@@ -71,9 +72,10 @@ public abstract class AbstractController implements ControllerInterface {
 	 *
 	 * @param commandName the command name
 	 * @return the abstract controller
+	 * @throws MissingCommandException
 	 */
-	public AbstractController execute(String commandName) {
-		commands.execute(commandName);
+	public AbstractController execute(String commandName) throws MissingCommandException {
+		this.commands.execute(commandName);
 		return this;
 	}
 

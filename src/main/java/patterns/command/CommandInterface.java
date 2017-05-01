@@ -27,9 +27,8 @@ public interface CommandInterface {
 	/**
 	 * Result.
 	 *
-	 * @param resultInterface the result interface
 	 * @return the result interface
 	 */
-	abstract ResultInterface result(ResultInterface resultInterface);
+	abstract ResultInterface updateResult();
 
 }

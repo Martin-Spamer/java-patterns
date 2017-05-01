@@ -25,9 +25,9 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	public CommandFactory() throws Exception {
 		super();
-		properties = new Properties();
-		properties.load(inputStream(COMMANDS_PROPERTIES));
-		log.info("properties = {}", properties);
+		this.properties = new Properties();
+		this.properties.load(inputStream(COMMANDS_PROPERTIES));
+		this.log.info("properties = {}", this.properties);
 	}
 
 	/**
@@ -38,9 +38,9 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	public CommandFactory(final String filename) throws Exception {
 		super();
-		properties = new Properties();
-		properties.load(inputStream(filename));
-		log.info("properties = {}", properties);
+		this.properties = new Properties();
+		this.properties.load(inputStream(filename));
+		this.log.info("properties = {}", this.properties);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public final class CommandFactory implements InvokerInterface {
 	public CommandFactory(final Properties properties) {
 		super();
 		this.properties = properties;
-		log.info("properties = {}", this.properties);
+		this.log.info("properties = {}", this.properties);
 	}
 
 	/**
@@ -72,16 +72,15 @@ public final class CommandFactory implements InvokerInterface {
 	 * @see patterns.command.InvokerInterface#execute(java.lang.String)
 	 */
 	@Override
-	public ResultInterface execute(final String actionName) {
-		final String className = properties.getProperty(actionName);
+	public ResultInterface execute(final String actionName) throws MissingCommandException {
+		final String className = this.properties.getProperty(actionName);
 		AbstractCommand action;
 		try {
 			action = (AbstractCommand) Class.forName(className).newInstance();
 			return action.execute(null);
 		} catch (final Exception e) {
-			log.error(e.toString());
+			throw new MissingCommandException(e.toString());
 		}
-		return null;
 	}
 
 }
