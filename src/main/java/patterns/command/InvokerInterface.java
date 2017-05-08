@@ -1,10 +1,7 @@
-
 package patterns.command;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
- * The InvokerInterface Interface.
+ * Interface for Invoker for the GOF Command Pattern.
  */
 public interface InvokerInterface {
 

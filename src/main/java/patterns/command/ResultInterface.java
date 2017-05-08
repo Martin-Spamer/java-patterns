@@ -1,8 +1,7 @@
-
 package patterns.command;
 
 /**
- * The ResultInterface Interface.
+ * Result Interface.
  */
 public interface ResultInterface {
 

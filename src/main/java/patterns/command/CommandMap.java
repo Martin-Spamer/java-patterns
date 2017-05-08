@@ -1,4 +1,3 @@
-
 package patterns.command;
 
 import java.util.HashMap;
@@ -6,10 +5,11 @@ import java.util.HashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
  * The CommandMap Class.
+ *
+ * When the Commands are expensive to construct borrow them from resource pool
+ * and return when finished.
  */
 @SuppressWarnings("serial")
 public final class CommandMap extends HashMap<String, AbstractCommand> {

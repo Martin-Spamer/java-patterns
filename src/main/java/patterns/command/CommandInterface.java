@@ -1,10 +1,7 @@
-
 package patterns.command;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
- * The CommandInterface Interface.
+ * Command Interface from GOF Command Pattern.
  */
 public interface CommandInterface {
 

@@ -1,15 +1,12 @@
-
 package patterns.command;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
  * The StaticInvoker Class.
  */
-public class StaticInvoker implements InvokerInterface {
+public class InvokerExample implements InvokerInterface {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private final ExampleCommand exampleCommand = new ExampleCommand();
@@ -22,7 +19,7 @@ public class StaticInvoker implements InvokerInterface {
 	 *
 	 * @throws Exception the exception
 	 */
-	public StaticInvoker() throws Exception {
+	public InvokerExample() throws Exception {
 		super();
 	}
 

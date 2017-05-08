@@ -6,8 +6,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import patterns.mvc.controller.ResultInterface;
-
 public class StaticInvokerTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(StaticInvokerTest.class);
@@ -15,7 +13,7 @@ public class StaticInvokerTest {
 	@Test
 	public void testExampleCommandInvoker() throws Exception {
 		LOG.debug("testExampleCommandInvoker");
-		final ResultInterface result = new StaticInvoker().execute("ExampleCommand");
+		final ResultInterface result = new InvokerExample().execute("ExampleCommand");
 		assertNotNull(result);
 		LOG.info(result.toString());
 	}
@@ -23,7 +21,7 @@ public class StaticInvokerTest {
 	@Test
 	public void testCommandSequenceInvoker() throws Exception {
 		LOG.debug("testCommandSequenceInvoker");
-		final ResultInterface result = new StaticInvoker().execute("CommandSequence");
+		final ResultInterface result = new InvokerExample().execute("CommandSequence");
 		assertNotNull(result);
 		LOG.info(result.toString());
 	}
@@ -31,7 +29,7 @@ public class StaticInvokerTest {
 	@Test
 	public void testCompoundCommandInvoker() throws Exception {
 		LOG.debug("testCompoundCommandInvoker");
-		final ResultInterface result = new StaticInvoker().execute("CompoundCommand");
+		final ResultInterface result = new InvokerExample().execute("CompoundCommand");
 		assertNotNull(result);
 		LOG.info(result.toString());
 	}
@@ -39,7 +37,7 @@ public class StaticInvokerTest {
 	@Test
 	public void testConditionalCommandInvoker() throws Exception {
 		LOG.debug("testConditionalCommandInvoker");
-		final ResultInterface result = new StaticInvoker().execute("ConditionalCommand");
+		final ResultInterface result = new InvokerExample().execute("ConditionalCommand");
 		assertNotNull(result);
 		LOG.info(result.toString());
 	}

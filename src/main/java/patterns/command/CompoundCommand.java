@@ -1,10 +1,7 @@
-
 package patterns.command;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
- * The CompoundCommand Class.
+ * Compound Command class.
  */
 public class CompoundCommand extends AbstractCommand {
 

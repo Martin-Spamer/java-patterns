@@ -4,14 +4,7 @@ package patterns.chain;
 /**
  * The HandlerOne Class.
  */
-public class HandlerOne extends Handler {
-
-	/**
-	 * Instantiates a new handler one.
-	 */
-	public HandlerOne() {
-		super();
-	}
+public class HandlerOne extends AbstractHandler {
 
 	/**
 	 * Instantiates a new handler one.
@@ -24,13 +17,14 @@ public class HandlerOne extends Handler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.chain.Handler#handleRequest()
 	 */
 	@Override
-	public HandlerOne handleRequest() {
-		super.handleRequest();
-		return this;
+	public void handleRequest(RequestInterface request) {
+		// do something
+		// then pass request
+		super.handleRequest(request);
 	}
 
 }

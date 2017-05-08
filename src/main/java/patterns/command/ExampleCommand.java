@@ -1,7 +1,5 @@
 package patterns.command;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
  * The ExampleCommand Class.
  */

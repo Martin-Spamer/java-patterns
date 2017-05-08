@@ -3,10 +3,8 @@ package patterns.command;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
- * The AbstractCommand Class.
+ * Abstract Command class from GOF Command Pattern.
  */
 public abstract class AbstractCommand implements CommandInterface {
 

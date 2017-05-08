@@ -1,4 +1,3 @@
-
 package patterns.command;
 
 import java.io.InputStream;
@@ -7,10 +6,10 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
  * A factory for creating Command objects.
+ *
+ * Use a factory when the Commands are cheap to instantiate.
  */
 public final class CommandFactory implements InvokerInterface {
 

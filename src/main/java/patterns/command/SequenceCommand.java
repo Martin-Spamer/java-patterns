@@ -3,10 +3,8 @@ package patterns.command;
 import java.util.ArrayList;
 import java.util.List;
 
-import patterns.mvc.controller.ResultInterface;
-
 /**
- * The CommandSequence Class.
+ * Sequence of Commands example.
  */
 public class SequenceCommand extends AbstractCommand {
 
@@ -35,7 +33,7 @@ public class SequenceCommand extends AbstractCommand {
 	@Override
 	public ResultInterface undo(ParametersInterface commandParameters) {
 		for (final AbstractCommand command : this.sequence) {
-			this.result = this.result.updateResult(command.execute(commandParameters));
+			this.result = command.execute(commandParameters);
 		}
 		return this.result;
 	}

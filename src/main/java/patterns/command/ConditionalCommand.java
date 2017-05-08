@@ -1,7 +1,4 @@
-
 package patterns.command;
-
-import patterns.mvc.controller.ResultInterface;
 
 /**
  * The ConditionalCommand Class.
@@ -16,7 +13,10 @@ public class ConditionalCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface execute(ParametersInterface commandParameters) {
-		return super.execute(commandParameters);
+		if (condition()) {
+			return super.execute(commandParameters);
+		}
+		return null;
 	}
 
 	/*
@@ -30,4 +30,7 @@ public class ConditionalCommand extends AbstractCommand {
 		return super.execute(commandParameters);
 	}
 
+	private boolean condition() {
+		return true;
+	}
 }

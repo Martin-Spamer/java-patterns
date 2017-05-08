@@ -1,11 +1,10 @@
-
 package patterns.command;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The CommandParameters Class.
+ * Parameters for Commands.
  */
 public abstract class CommandParameters implements ParametersInterface {
 
