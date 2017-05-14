@@ -1,9 +1,14 @@
+
 package patterns.chain;
 
 /**
  * The HandlerTwo Class.
  */
 public class HandlerTwo extends AbstractHandler {
+
+	public HandlerTwo() {
+		super();
+	}
 
 	/**
 	 * Instantiates a new handler two.
@@ -21,6 +26,8 @@ public class HandlerTwo extends AbstractHandler {
 	 */
 	@Override
 	public void handleRequest(RequestInterface request) {
+		// do something
+		// then pass request
 		super.handleRequest(request);
 	}
 

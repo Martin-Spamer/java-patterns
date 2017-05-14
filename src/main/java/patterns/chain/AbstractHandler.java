@@ -1,4 +1,3 @@
-
 package patterns.chain;
 
 import org.slf4j.Logger;
@@ -11,6 +10,13 @@ public abstract class AbstractHandler implements HandlerInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private HandlerInterface next;
+
+	/**
+	 * Instantiates a new abstract handler.
+	 */
+	public AbstractHandler() {
+		super();
+	}
 
 	/**
 	 * Instantiates a new handler.

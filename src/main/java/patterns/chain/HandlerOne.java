@@ -8,6 +8,13 @@ public class HandlerOne extends AbstractHandler {
 
 	/**
 	 * Instantiates a new handler one.
+	 */
+	public HandlerOne() {
+		super();
+	}
+
+	/**
+	 * Instantiates a new handler one.
 	 *
 	 * @param next the next
 	 */

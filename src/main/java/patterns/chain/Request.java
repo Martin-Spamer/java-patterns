@@ -1,9 +1,12 @@
-
 package patterns.chain;
 
 /**
- * The Request Class.
+ * Request Class.
  */
 public class Request extends AbstractRequest implements RequestInterface {
+
+	public Request(String payload) {
+		setPayload(payload);
+	}
 
 }
