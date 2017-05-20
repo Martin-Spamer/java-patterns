@@ -28,7 +28,7 @@ public abstract class AbstractModel implements ModelInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.mvc.ModelInterface#attach(java.lang.String,
 	 * patterns.mvc.model.AbstractModel)
 	 */
@@ -39,7 +39,7 @@ public abstract class AbstractModel implements ModelInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.mvc.ModelInterface#attach(java.lang.String,
 	 * patterns.mvc.view.AbstractView)
 	 */
@@ -50,7 +50,7 @@ public abstract class AbstractModel implements ModelInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.mvc.ModelInterface#detachModel(java.lang.String)
 	 */
 	@Override
@@ -60,7 +60,7 @@ public abstract class AbstractModel implements ModelInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.mvc.ModelInterface#detachView(java.lang.String)
 	 */
 	@Override

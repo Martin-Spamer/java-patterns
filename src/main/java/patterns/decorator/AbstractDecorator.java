@@ -14,7 +14,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.decorator.DecoratorInterface#attachBefore(patterns.decorator.
 	 * AbstractComponent)
@@ -26,7 +26,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.decorator.DecoratorInterface#detachBefore(patterns.decorator.
 	 * AbstractComponent)
@@ -38,7 +38,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.decorator.DecoratorInterface#attachAfter(patterns.decorator.
 	 * AbstractComponent)
@@ -50,7 +50,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.decorator.DecoratorInterface#detachAfter(patterns.decorator.
 	 * AbstractComponent)

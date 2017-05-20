@@ -14,7 +14,7 @@ public abstract class AbstractObserver implements ObserverInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.observer.ObserverInterface#updateObservers()
 	 */
 	@Override

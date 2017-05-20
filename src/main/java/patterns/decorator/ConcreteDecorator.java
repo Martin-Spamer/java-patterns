@@ -8,7 +8,7 @@ public class ConcreteDecorator extends AbstractComponent {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.decorator.AbstractComponent#operation()
 	 */
 	@Override

@@ -8,7 +8,7 @@ class ConcreteQueue implements QueueInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.worker.QueueInterface#put(java.lang.Object)
 	 */
 	@Override
@@ -18,7 +18,7 @@ class ConcreteQueue implements QueueInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.worker.QueueInterface#take()
 	 */
 	@Override

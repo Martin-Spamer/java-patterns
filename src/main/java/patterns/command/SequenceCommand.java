@@ -18,10 +18,10 @@ public class SequenceCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface execute(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : this.sequence) {
-			this.result = command.execute(commandParameters);
+		for (final AbstractCommand command : sequence) {
+			result = command.execute(commandParameters);
 		}
-		return this.result;
+		return result;
 	}
 
 	/*
@@ -32,10 +32,10 @@ public class SequenceCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface undo(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : this.sequence) {
-			this.result = command.execute(commandParameters);
+		for (final AbstractCommand command : sequence) {
+			result = command.execute(commandParameters);
 		}
-		return this.result;
+		return result;
 	}
 
 }

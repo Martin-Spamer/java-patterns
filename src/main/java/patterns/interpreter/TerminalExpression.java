@@ -8,7 +8,7 @@ public class TerminalExpression extends AbstractExpression {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.interpreter.AbstractExpression#interpret(patterns.interpreter.
 	 * ContextInterface)

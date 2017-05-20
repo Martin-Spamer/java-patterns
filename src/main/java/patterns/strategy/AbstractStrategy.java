@@ -8,7 +8,7 @@ public abstract class AbstractStrategy implements StrategyInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.strategy.StrategyInterface#operation()
 	 */
 	@Override

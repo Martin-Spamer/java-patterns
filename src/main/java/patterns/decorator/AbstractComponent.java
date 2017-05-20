@@ -13,7 +13,7 @@ public abstract class AbstractComponent implements ComponentInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.decorator.ComponentInterface#operation()
 	 */
 	@Override

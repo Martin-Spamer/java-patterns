@@ -10,7 +10,7 @@ public class NonTerminalExpression extends AbstractExpression {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * patterns.interpreter.AbstractExpression#interpret(patterns.interpreter.
 	 * ContextInterface)

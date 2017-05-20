@@ -34,7 +34,7 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 		try {
-			this.commands = new CommandFactory();
+			commands = new CommandFactory();
 		} catch (final Exception e) {
 			LOG.error(e.toString());
 		}
@@ -99,7 +99,7 @@ public class FrontController extends HttpServlet {
 
 		String page;
 		try {
-			this.commands.execute(actionName);
+			commands.execute(actionName);
 			page = "result";
 		} catch (final MissingCommandException e) {
 			LOG.error(e.toString());

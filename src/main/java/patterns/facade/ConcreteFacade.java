@@ -13,7 +13,7 @@ public final class ConcreteFacade implements FacadeInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.facade.FacadeInterface#operation()
 	 */
 	@Override

@@ -46,7 +46,7 @@ public abstract class AbstractHandler implements HandlerInterface {
 	 */
 	@Override
 	public void handleRequest(RequestInterface request) {
-		this.next.handleRequest(request);
+		next.handleRequest(request);
 	}
 
 }

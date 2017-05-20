@@ -31,19 +31,19 @@ public class InvokerExample implements InvokerInterface {
 	@Override
 	public ResultInterface execute(final String actionName) {
 		ResultInterface result = null;
-		this.log.info("{}", actionName);
+		log.info("{}", actionName);
 		switch (actionName) {
 			case "ExampleCommand":
-				result = this.exampleCommand.execute(null);
+				result = exampleCommand.execute(null);
 				break;
 			case "CommandSequence":
-				result = this.commandSequence.execute(null);
+				result = commandSequence.execute(null);
 				break;
 			case "CompoundCommand":
-				result = this.compoundCommand.execute(null);
+				result = compoundCommand.execute(null);
 				break;
 			case "ConditionalCommand":
-				result = this.conditionalCommand.execute(null);
+				result = conditionalCommand.execute(null);
 				break;
 		}
 		return result;

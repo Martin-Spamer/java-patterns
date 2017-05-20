@@ -24,9 +24,9 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	public CommandFactory() throws Exception {
 		super();
-		this.properties = new Properties();
-		this.properties.load(inputStream(COMMANDS_PROPERTIES));
-		this.log.info("properties = {}", this.properties);
+		properties = new Properties();
+		properties.load(inputStream(COMMANDS_PROPERTIES));
+		log.info("properties = {}", properties);
 	}
 
 	/**
@@ -37,9 +37,9 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	public CommandFactory(final String filename) throws Exception {
 		super();
-		this.properties = new Properties();
-		this.properties.load(inputStream(filename));
-		this.log.info("properties = {}", this.properties);
+		properties = new Properties();
+		properties.load(inputStream(filename));
+		log.info("properties = {}", properties);
 	}
 
 	/**
@@ -50,7 +50,7 @@ public final class CommandFactory implements InvokerInterface {
 	public CommandFactory(final Properties properties) {
 		super();
 		this.properties = properties;
-		this.log.info("properties = {}", this.properties);
+		log.info("properties = {}", this.properties);
 	}
 
 	/**
@@ -72,7 +72,7 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	@Override
 	public ResultInterface execute(final String actionName) throws MissingCommandException {
-		final String className = this.properties.getProperty(actionName);
+		final String className = properties.getProperty(actionName);
 		AbstractCommand action;
 		try {
 			action = (AbstractCommand) Class.forName(className).newInstance();

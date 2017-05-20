@@ -19,8 +19,8 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public ResultInterface execute(ParametersInterface commandParameters) {
-		this.log.debug("{}.execute", this.getClass().getSimpleName());
-		return this.result;
+		log.debug("{}.execute", this.getClass().getSimpleName());
+		return result;
 	}
 
 	/*
@@ -31,8 +31,8 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public ResultInterface undo(ParametersInterface commandParameters) {
-		this.log.debug("{}.undo", this.getClass().getSimpleName());
-		return this.result;
+		log.debug("{}.undo", this.getClass().getSimpleName());
+		return result;
 	}
 
 	/*
@@ -42,7 +42,7 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public ResultInterface updateResult() {
-		return this.result;
+		return result;
 	}
 
 }

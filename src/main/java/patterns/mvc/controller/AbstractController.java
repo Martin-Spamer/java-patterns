@@ -28,9 +28,9 @@ public abstract class AbstractController implements ControllerInterface {
 	 * @throws Exception the exception
 	 */
 	public AbstractController() throws Exception {
-		this.commands = new CommandFactory();
-		this.view = new View();
-		this.model = new Model();
+		commands = new CommandFactory();
+		view = new View();
+		model = new Model();
 	}
 
 	/**
@@ -40,15 +40,15 @@ public abstract class AbstractController implements ControllerInterface {
 	 */
 	public void attachModel(ModelInterface model) {
 		this.model = model;
-		this.view.attachModel(model);
+		view.attachModel(model);
 	}
 
 	/**
 	 * Detach model.
 	 */
 	public void detachModel() {
-		this.view.detachModel();
-		this.model = null;
+		view.detachModel();
+		model = null;
 	}
 
 	/**
@@ -64,7 +64,7 @@ public abstract class AbstractController implements ControllerInterface {
 	 * Detach view.
 	 */
 	public void detachView() {
-		this.view = null;
+		view = null;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public abstract class AbstractController implements ControllerInterface {
 	 * @throws MissingCommandException
 	 */
 	public AbstractController execute(String commandName) throws MissingCommandException {
-		this.commands.execute(commandName);
+		commands.execute(commandName);
 		return this;
 	}
 

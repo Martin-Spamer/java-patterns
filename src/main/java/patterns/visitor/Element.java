@@ -8,7 +8,7 @@ public final class Element extends AbstractElement {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.visitor.AbstractElement#accept(patterns.visitor.
 	 * VisitorInterface)
 	 */

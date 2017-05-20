@@ -24,7 +24,7 @@ class Router implements InputChannel, OutputChannel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.router.OutputChannel#sendMessage(patterns.router.Message)
 	 */
 	@Override
@@ -33,7 +33,7 @@ class Router implements InputChannel, OutputChannel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.router.InputChannel#receiveMessage(patterns.router.Message)
 	 */
 	@Override

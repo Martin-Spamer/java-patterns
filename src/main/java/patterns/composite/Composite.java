@@ -12,7 +12,7 @@ public class Composite extends Component {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.composite.Component#add(patterns.composite.Component)
 	 */
 	@Override
@@ -23,7 +23,7 @@ public class Composite extends Component {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.composite.Component#remove(patterns.composite.Component)
 	 */
 	@Override
@@ -34,7 +34,7 @@ public class Composite extends Component {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.composite.Component#getChild(int)
 	 */
 	@Override
@@ -45,7 +45,7 @@ public class Composite extends Component {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.composite.Component#operation()
 	 */
 	@Override

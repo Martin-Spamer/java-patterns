@@ -29,7 +29,7 @@ public final class Subject extends AbstractSubject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

@@ -26,7 +26,7 @@ public abstract class AbstractView implements ViewInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.mvc.ViewInterface#attachModel(patterns.mvc.ModelInterface)
 	 */
 	@Override
