@@ -1,0 +1,25 @@
+/**
+ *  @title       ResourcePoolInitialisationException.java
+ *  @description TODO
+ *	Created      01-Nov-2004
+ *
+ **/
+
+package javamentor.pool;
+
+/**
+ * The ResourceReleaseException Class.
+ */
+@SuppressWarnings("serial")
+public class ResourceReleaseException extends ResourcePoolException {
+
+	/**
+	 * Instantiates a new resource release exception.
+	 *
+	 * @param exceptionMessage the exception message
+	 */
+	public ResourceReleaseException(final String exceptionMessage) {
+		super(exceptionMessage);
+	}
+
+}
