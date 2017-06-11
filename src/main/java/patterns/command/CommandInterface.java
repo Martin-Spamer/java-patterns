@@ -26,6 +26,6 @@ public interface CommandInterface {
 	 *
 	 * @return the result interface
 	 */
-	abstract ResultInterface updateResult();
+	abstract Boolean result();
 
 }

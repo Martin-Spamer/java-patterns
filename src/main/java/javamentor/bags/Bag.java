@@ -24,7 +24,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	/**
 	 * Instantiates a new bag from string array.
 	 *
-	 * @param values the values
+	 * @param values the values varargs
 	 */
 	public Bag(final String... values) {
 		fill(values == null ? new String[0] : values);
@@ -35,9 +35,11 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	 */
 	@Override
 	public BagInterface fill(final String... values) {
-		this.initialState = values;
-		for (final String value : values) {
-			this.add(value);
+		if (values != null) {
+			this.initialState = values;
+			for (final String value : values) {
+				this.add(value);
+			}
 		}
 		return this;
 	}

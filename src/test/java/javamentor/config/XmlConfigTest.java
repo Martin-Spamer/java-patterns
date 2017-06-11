@@ -1,19 +1,17 @@
 package javamentor.config;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class XmlConfigTest {
 
 	@Test
 	public void testXmlConfig() {
-		fail("Not yet implemented");
+		new XmlConfig();
 	}
 
 	@Test
 	public void testXmlConfigString() {
-		fail("Not yet implemented");
+		new XmlConfig("filename.xml");
 	}
 
 }

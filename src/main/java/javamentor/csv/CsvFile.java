@@ -18,19 +18,10 @@ import org.slf4j.LoggerFactory;
  */
 public class CsvFile {
 
-	/** The Constant log. */
 	protected static final Logger log = LoggerFactory.getLogger(CsvFile.class);
-
-	/** The csv filename. */
 	private final String csvFilename;
-
-	/** The header line. */
 	private String headerLine;
-
-	/** The column names. */
 	private String[] columnNames;
-
-	/** The records. */
 	private final ArrayList<CSVRecord> records = new ArrayList<>();
 
 	/**
@@ -54,12 +45,14 @@ public class CsvFile {
 	}
 
 	/**
-	 * Gets the column names.
-	 *
-	 * @return the column names
+	 * Initialise.
 	 */
-	public String getColumnNames() {
-		return Arrays.toString(this.columnNames);
+	private void initialise() {
+		try {
+			read(this.csvFilename);
+		} catch (final IOException e) {
+			CsvFile.log.error(e.toString());
+		}
 	}
 
 	/**
@@ -73,6 +66,15 @@ public class CsvFile {
 	}
 
 	/**
+	 * Gets the column names.
+	 *
+	 * @return the column names
+	 */
+	public String getColumnNames() {
+		return Arrays.toString(this.columnNames);
+	}
+
+	/**
 	 * Gets the record.
 	 *
 	 * @param index the index
@@ -80,17 +82,6 @@ public class CsvFile {
 	 */
 	public CSVRecord getRecord(final int index) {
 		return this.records.get(index);
-	}
-
-	/**
-	 * Initialise.
-	 */
-	private void initialise() {
-		try {
-			read(this.csvFilename);
-		} catch (final IOException e) {
-			CsvFile.log.error(e.toString());
-		}
 	}
 
 	/**

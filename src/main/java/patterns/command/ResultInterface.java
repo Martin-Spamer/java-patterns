@@ -8,9 +8,10 @@ public interface ResultInterface {
 	/**
 	 * Result.
 	 *
-	 * @param newResult the new result
 	 * @return the result interface
 	 */
-	ResultInterface result(ResultInterface newResult);
+	Boolean result();
+
+	boolean and(ResultInterface execute);
 
 }

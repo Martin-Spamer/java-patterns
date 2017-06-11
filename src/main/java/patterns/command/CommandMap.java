@@ -32,7 +32,7 @@ public final class CommandMap extends HashMap<String, AbstractCommand> {
 				final String message = String.format("command %s not found", actionName);
 				throw new MissingCommandException(message);
 			} else {
-				return command.execute(null);
+				return command.execute(new Parameters());
 			}
 		}
 	}

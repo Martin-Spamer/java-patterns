@@ -72,21 +72,45 @@ public class Triple<X, Y, Z> {
 	}
 
 	/**
+	 * Sets the x.
+	 *
+	 * @param x the new x
+	 * @return the triple
+	 */
+	public Triple<X, Y, Z> setX(final X x) {
+		this.x = x;
+		return this;
+	}
+
+	/**
+	 * Sets the y.
+	 *
+	 * @param y the new y
+	 * @return the triple
+	 */
+	public Triple<X, Y, Z> setY(final Y y) {
+		this.y = y;
+		return this;
+	}
+
+	/**
+	 * Sets the z.
+	 *
+	 * @param z the new z
+	 * @return the triple
+	 */
+	public Triple<X, Y, Z> setZ(final Z z) {
+		this.z = z;
+		return this;
+	}
+
+	/**
 	 * Gets the x.
 	 *
 	 * @return the x
 	 */
 	public X getX() {
 		return this.x;
-	}
-
-	/**
-	 * Sets the x.
-	 *
-	 * @param x the new x
-	 */
-	public void setX(final X x) {
-		this.x = x;
 	}
 
 	/**
@@ -99,30 +123,12 @@ public class Triple<X, Y, Z> {
 	}
 
 	/**
-	 * Sets the y.
-	 *
-	 * @param y the new y
-	 */
-	public void setY(final Y y) {
-		this.y = y;
-	}
-
-	/**
 	 * Gets the z.
 	 *
 	 * @return the z
 	 */
 	public Z getZ() {
 		return this.z;
-	}
-
-	/**
-	 * Sets the z.
-	 *
-	 * @param z the new z
-	 */
-	public void setZ(final Z z) {
-		this.z = z;
 	}
 
 	@Override

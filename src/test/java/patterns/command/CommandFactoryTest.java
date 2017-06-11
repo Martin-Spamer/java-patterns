@@ -15,56 +15,56 @@ public class CommandFactoryTest {
 	@Test
 	public void testCommandFactory() throws Exception {
 		LOG.debug("testCommandFactory");
-		final InvokerInterface instance = new CommandFactory();
-		assertNotNull(instance);
-		LOG.info(instance.toString());
+		final InvokerInterface commandFactory = new CommandFactory();
+		assertNotNull(commandFactory);
+		LOG.info(commandFactory.toString());
 	}
 
 	@Test
 	public void testCommandFactoryFile() throws Exception {
 		LOG.debug("testCommandFactoryFile");
-		final InvokerInterface instance = new CommandFactory("commands.properties");
-		assertNotNull(instance);
-		LOG.info(instance.toString());
+		final InvokerInterface commandFactory = new CommandFactory("commands.properties");
+		assertNotNull(commandFactory);
+		LOG.info(commandFactory.toString());
 	}
 
 	@Test
 	public void testCommandFactoryProperties() throws Exception {
 		LOG.debug("testCommandFactoryProperties");
 		final Properties properties = new Properties();
-		final InvokerInterface instance = new CommandFactory(properties);
-		assertNotNull(instance);
-		LOG.info(instance.toString());
+		final InvokerInterface commandFactory = new CommandFactory(properties);
+		assertNotNull(commandFactory);
+		LOG.info(commandFactory.toString());
 	}
 
 	@Test(expected = MissingCommandException.class)
 	public void testMissingCommandExecute() throws Exception {
 		LOG.debug("testMissingCommandExecute");
-		final InvokerInterface instance = new CommandFactory();
-		assertNotNull(instance);
+		final InvokerInterface commandFactory = new CommandFactory();
+		assertNotNull(commandFactory);
 		final String actionName = "MissingCommand";
-		final ResultInterface result = instance.execute(actionName);
+		final ResultInterface result = commandFactory.execute(actionName);
 		LOG.info(result.toString());
 	}
 
 	@Test(expected = MissingCommandException.class)
 	public void testExecuteMissingCommand() throws Exception {
 		LOG.debug("testExecuteMissingCommand");
-		final InvokerInterface instance = new CommandFactory();
-		assertNotNull(instance);
+		final InvokerInterface commandFactory = new CommandFactory();
+		assertNotNull(commandFactory);
 		final String actionName = "MissingCommand";
-		final ResultInterface result = instance.execute(actionName);
+		final ResultInterface result = commandFactory.execute(actionName);
 		assertNotNull(result);
 		LOG.info(result.toString());
 	}
 
-	@Test
+	@Test(expected = MissingCommandException.class)
 	public void testExecuteMissingClass() throws Exception {
 		LOG.debug("testExecuteMissingClass");
-		final InvokerInterface instance = new CommandFactory();
-		assertNotNull(instance);
+		final InvokerInterface commandFactory = new CommandFactory();
+		assertNotNull(commandFactory);
 		final String actionName = "MissingClass";
-		final ResultInterface result = instance.execute(actionName);
+		final ResultInterface result = commandFactory.execute(actionName);
 		assertNotNull(result);
 		LOG.info(result.toString());
 	}
@@ -72,10 +72,10 @@ public class CommandFactoryTest {
 	@Test
 	public void testExecuteExampleCommand() throws Exception {
 		LOG.debug("testExecuteExampleCommand");
-		final InvokerInterface instance = new CommandFactory();
-		assertNotNull(instance);
+		final InvokerInterface commandFactory = new CommandFactory();
+		assertNotNull(commandFactory);
 		final String actionName = "ExampleCommand";
-		final ResultInterface result = instance.execute(actionName);
+		final ResultInterface result = commandFactory.execute(actionName);
 		assertNotNull(result);
 		LOG.info(result.toString());
 	}

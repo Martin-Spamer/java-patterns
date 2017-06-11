@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractCommand implements CommandInterface {
 
+	private static final Context context = Context.getInstance();
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ResultInterface result = null;
 
@@ -17,10 +18,36 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * @see patterns.command.CommandInterface#execute(patterns.command.
 	 * ParametersInterface)
 	 */
+	public ResultInterface execute() {
+		this.log.debug("{}.execute", this.getClass().getSimpleName());
+		this.result = new Result(Result.PASS);
+		return this.result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.command.CommandInterface#execute(patterns.command.
+	 * ParametersInterface)
+	 */
 	@Override
 	public ResultInterface execute(ParametersInterface commandParameters) {
-		log.debug("{}.execute", this.getClass().getSimpleName());
-		return result;
+		this.log.debug("{}.execute", this.getClass().getSimpleName());
+		commandParameters.setPrameter("result", "pass");
+		this.result = new Result(Result.PASS);
+		return this.result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.command.CommandInterface#undo(patterns.command.
+	 * ParametersInterface)
+	 */
+	public ResultInterface undo() {
+		this.log.debug("{}.undo", this.getClass().getSimpleName());
+		this.result = new Result(Result.FAIL);
+		return this.result;
 	}
 
 	/*
@@ -31,8 +58,10 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public ResultInterface undo(ParametersInterface commandParameters) {
-		log.debug("{}.undo", this.getClass().getSimpleName());
-		return result;
+		this.log.debug("{}.undo", this.getClass().getSimpleName());
+		commandParameters.setPrameter("result", "pass");
+		this.result = new Result(Result.FAIL);
+		return this.result;
 	}
 
 	/*
@@ -41,8 +70,8 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * @see patterns.command.AbstractCommand#result()
 	 */
 	@Override
-	public ResultInterface updateResult() {
-		return result;
+	public Boolean result() {
+		return this.result.result();
 	}
 
 }

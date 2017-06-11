@@ -1,9 +1,7 @@
-
 package patterns.mvc.model;
 
 /**
- * The Model Class.
+ * Model Class.
  */
 public class Model extends AbstractModel {
-
 }

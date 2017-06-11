@@ -6,7 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 /**
- * The ViewTest Class.
+ * ViewTest Class.
  */
 public class ViewTest {
 
@@ -17,7 +17,7 @@ public class ViewTest {
 	public void testShowView() {
 		final View view = new View();
 		assertNotNull(view);
-		view.showView();
+		view.show();
 	}
 
 }

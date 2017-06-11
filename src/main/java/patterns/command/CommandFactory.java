@@ -24,9 +24,9 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	public CommandFactory() throws Exception {
 		super();
-		properties = new Properties();
-		properties.load(inputStream(COMMANDS_PROPERTIES));
-		log.info("properties = {}", properties);
+		this.properties = new Properties();
+		this.properties.load(inputStream(COMMANDS_PROPERTIES));
+		this.log.info("properties = {}", this.properties);
 	}
 
 	/**
@@ -37,9 +37,9 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	public CommandFactory(final String filename) throws Exception {
 		super();
-		properties = new Properties();
-		properties.load(inputStream(filename));
-		log.info("properties = {}", properties);
+		this.properties = new Properties();
+		this.properties.load(inputStream(filename));
+		this.log.info("properties = {}", this.properties);
 	}
 
 	/**
@@ -50,7 +50,7 @@ public final class CommandFactory implements InvokerInterface {
 	public CommandFactory(final Properties properties) {
 		super();
 		this.properties = properties;
-		log.info("properties = {}", this.properties);
+		this.log.info("properties = {}", this.properties);
 	}
 
 	/**
@@ -72,14 +72,25 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	@Override
 	public ResultInterface execute(final String actionName) throws MissingCommandException {
-		final String className = properties.getProperty(actionName);
-		AbstractCommand action;
 		try {
-			action = (AbstractCommand) Class.forName(className).newInstance();
-			return action.execute(null);
+			final String className = this.properties.getProperty(actionName);
+			if (className != null) {
+				if (className.length() > 0) {
+					AbstractCommand action;
+					action = (AbstractCommand) Class.forName(className).newInstance();
+					if (action != null) {
+						return action.execute(new Parameters());
+					} else {
+						throw new MissingCommandException("Class not found. " + className);
+					}
+				} else {
+					throw new MissingCommandException("Command class name not defined for ActionName");
+				}
+			} else {
+				throw new MissingCommandException("Command Class not defined in properties file for ActionName");
+			}
 		} catch (final Exception e) {
 			throw new MissingCommandException(e.toString());
 		}
 	}
-
 }

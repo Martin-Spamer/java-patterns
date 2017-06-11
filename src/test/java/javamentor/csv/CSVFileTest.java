@@ -1,4 +1,3 @@
-
 package javamentor.csv;
 
 import static org.junit.Assert.assertEquals;
@@ -8,27 +7,21 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javamentor.csv.CSVRecord;
-import javamentor.csv.CsvFile;
-
 /**
- * The CSVFileTest Class.
+ * Unit test CSVFile.
  */
 public class CSVFileTest {
 
-	/** The Constant log. */
 	private static final Logger log = LoggerFactory.getLogger(CSVFileTest.class);
 
-	/**
-	 * Test csv file.
-	 */
 	@Test
 	public void testCsvFile() {
+		log.info("{}", System.getProperty("user.home"));
 		log.info("testCsvFile in");
-		final CsvFile csvFile = new CsvFile("/data/data.csv");
+		final CsvFile csvFile = new CsvFile("/data.csv");
 		assertNotNull(csvFile);
+		log.info("{}", csvFile);
 		assertEquals(4, csvFile.size());
-		log.info("===================");
 
 		log.info("testCsvFile out");
 		log.info("{}", csvFile.getHeader());
@@ -36,17 +29,22 @@ public class CSVFileTest {
 			final CSVRecord record = csvFile.getRecord(index);
 			log.info("{}", record);
 		}
+
 		csvFile.logPretty();
 	}
 
 	/**
-	 * Test csv record.
+	 * Test CSV record.
 	 */
 	@Test
 	public void testCsvRecord() {
 		log.info("testCsvRecord");
-		assertEquals("#One, Two", new CSVRecord("#One,Two").toString());
-		assertEquals("One, Two", new CSVRecord("One,Two").toString());
+		final String headerLine = new CSVRecord("#One,Two").toString();
+		log.info("headerLine={}", headerLine);
+		assertEquals("#One, Two", headerLine);
+		final String dataLine = new CSVRecord("One,Two").toString();
+		log.info("dataLine={}", dataLine);
+		assertEquals("One, Two", dataLine);
 	}
 
 }

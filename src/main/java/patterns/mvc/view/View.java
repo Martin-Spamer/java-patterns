@@ -2,7 +2,7 @@
 package patterns.mvc.view;
 
 /**
- * The View Class.
+ * View Class.
  */
 public class View extends AbstractView {
 
@@ -19,8 +19,8 @@ public class View extends AbstractView {
 	 * @see patterns.mvc.view.AbstractView#showView()
 	 */
 	@Override
-	public void showView() {
-		log.info("{}.showView", this.getClass().getSimpleName());
+	public void show() {
+		this.log.info("{}.showView", this.getClass().getSimpleName());
 	}
 
 }

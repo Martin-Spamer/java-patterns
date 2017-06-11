@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The StaticInvoker Class.
+ * Invoker Example Class.
  */
 public class InvokerExample implements InvokerInterface {
 
@@ -13,6 +13,7 @@ public class InvokerExample implements InvokerInterface {
 	private final SequenceCommand commandSequence = new SequenceCommand();
 	private final CompoundCommand compoundCommand = new CompoundCommand();
 	private final ConditionalCommand conditionalCommand = new ConditionalCommand();
+	private final SequenceCommand sequenceCommand = new SequenceCommand();
 
 	/**
 	 * Instantiates a new static invoker.
@@ -31,21 +32,26 @@ public class InvokerExample implements InvokerInterface {
 	@Override
 	public ResultInterface execute(final String actionName) {
 		ResultInterface result = null;
-		log.info("{}", actionName);
+		this.log.info("execute({})", actionName);
 		switch (actionName) {
 			case "ExampleCommand":
-				result = exampleCommand.execute(null);
+				result = this.exampleCommand.execute(new Parameters());
 				break;
 			case "CommandSequence":
-				result = commandSequence.execute(null);
+				result = this.commandSequence.execute(new Parameters());
 				break;
 			case "CompoundCommand":
-				result = compoundCommand.execute(null);
+				result = this.compoundCommand.execute(new Parameters());
 				break;
 			case "ConditionalCommand":
-				result = conditionalCommand.execute(null);
+				result = this.conditionalCommand.execute(new Parameters());
+				break;
+			case "SequenceCommand":
+				result = this.sequenceCommand.execute(new Parameters());
 				break;
 		}
+		this.log.info("result={}", result);
 		return result;
 	}
+
 }

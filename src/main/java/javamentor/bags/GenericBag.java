@@ -39,10 +39,12 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	 */
 	@Override
 	public GenericBagInterface<T> fill(final T... values) {
-		for (final T value : values) {
-			this.add(value);
+		if (values != null) {
+			for (final T value : values) {
+				this.add(value);
+			}
+			this.initialState = values;
 		}
-		this.initialState = values;
 		return this;
 	}
 
