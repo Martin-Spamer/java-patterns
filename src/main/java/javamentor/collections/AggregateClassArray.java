@@ -20,8 +20,7 @@ public class AggregateClassArray {
 	AbstractElement[] aggregate = new AbstractElement[4];
 
 	/**
-	 *
-	 * execute replaces the contents of the aggregate
+	 * aggregate.
 	 */
 	public void execute() {
 		aggregate[0] = new ElementOne();

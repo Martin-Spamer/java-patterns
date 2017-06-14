@@ -1,3 +1,4 @@
+
 package patterns.command;
 
 import java.util.HashMap;
@@ -6,9 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The CommandMap Class.
+ * CommandMap Class.
  *
- * When the Commands are expensive to construct borrow them from resource pool
+ * Commands are expensive to construct borrow them from resource pool
  * and return when finished.
  */
 @SuppressWarnings("serial")
@@ -19,9 +20,13 @@ public final class CommandMap extends HashMap<String, AbstractCommand> {
 	/**
 	 * Execute.
 	 *
+	 * action name
+	 * result interface
+	 * missing command exception
+	 *
 	 * @param actionName the action name
 	 * @return the result interface
-	 * @throws MissingCommandException
+	 * @throws MissingCommandException the missing command exception
 	 */
 	public ResultInterface execute(final String actionName) throws MissingCommandException {
 		if (actionName == null) {

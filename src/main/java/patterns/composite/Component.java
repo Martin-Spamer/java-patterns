@@ -2,12 +2,15 @@
 package patterns.composite;
 
 /**
- * The Component Class.
+ * Component Class.
  */
 public abstract class Component implements ComponentInterface {
 
 	/**
 	 * Adds the.
+	 *
+	 * component
+	 * component interface
 	 *
 	 * @param component the component
 	 * @return the component interface
@@ -19,6 +22,9 @@ public abstract class Component implements ComponentInterface {
 	/**
 	 * Removes the.
 	 *
+	 * component
+	 * component interface
+	 *
 	 * @param component the component
 	 * @return the component interface
 	 */
@@ -27,7 +33,10 @@ public abstract class Component implements ComponentInterface {
 	}
 
 	/**
-	 * Gets the child.
+	 * child.
+	 *
+	 * index
+	 * child
 	 *
 	 * @param index the index
 	 * @return the child

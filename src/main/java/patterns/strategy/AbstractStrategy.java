@@ -2,7 +2,7 @@
 package patterns.strategy;
 
 /**
- * The AbstractStrategy Class.
+ * AbstractStrategy Class.
  */
 public abstract class AbstractStrategy implements StrategyInterface {
 

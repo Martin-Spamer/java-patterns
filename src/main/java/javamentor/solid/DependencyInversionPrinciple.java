@@ -9,25 +9,32 @@
 
 package javamentor.solid;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
+ * DependencyInversionPrinciple Class.
  *
  * @author martin.spamer
  * @version 0.1 - 12:07:53
- **/
+ */
 public class DependencyInversionPrinciple {
+
 	/**
-	 * DependencyInversionPrinciple Constructor
-	 *
-	 **/
+	 * DependencyInversionPrinciple Constructor.
+	 */
 	public DependencyInversionPrinciple() {
 		super();
 	}
 
 	/**
+	 * main method.
 	 *
-	 * @param args
+	 * arguments
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		final DependencyInversionPrinciple dip = new DependencyInversionPrinciple();
+		assertNotNull(dip);
 	}
 }

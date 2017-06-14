@@ -4,11 +4,16 @@ package javamentor.collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * PolymorphicList Class.
+ */
 public class PolymorphicList {
 	private final List<Integer> integerList = new LinkedList<Integer>();
 
 	/**
-	 * Adds the Integer object.
+	 * Integer object.
+	 *
+	 * integer in
 	 *
 	 * @param integerIn the integer in
 	 */
@@ -17,7 +22,9 @@ public class PolymorphicList {
 	}
 
 	/**
-	 * Next the Integer object.
+	 * Integer object.
+	 *
+	 * integer
 	 *
 	 * @return the integer
 	 */
@@ -26,7 +33,9 @@ public class PolymorphicList {
 	}
 
 	/**
-	 * The main method.
+	 * main method.
+	 *
+	 * arguments
 	 *
 	 * @param args the arguments
 	 */

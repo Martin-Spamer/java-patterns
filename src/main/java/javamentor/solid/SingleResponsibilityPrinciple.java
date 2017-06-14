@@ -9,26 +9,33 @@
 
 package javamentor.solid;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
+ * SingleResponsibilityPrinciple Class.
  *
  * @author martin.spamer
  * @version 0.1 - 12:05:35
- **/
+ */
 public class SingleResponsibilityPrinciple {
+
 	/**
-	 * SingleResponsibilityPrinciple Constructor
-	 *
-	 **/
+	 * SingleResponsibilityPrinciple Constructor.
+	 */
 	public SingleResponsibilityPrinciple() {
 		super();
 	}
 
 	/**
+	 * main method.
 	 *
-	 * @param args
+	 * arguments
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
+		assertNotNull(srp);
 	}
 
 }

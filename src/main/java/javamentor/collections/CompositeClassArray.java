@@ -20,6 +20,13 @@ public class CompositeClassArray {
 	// Implementing Composite using a Class Array
 	AbstractElement[] composite = { new ElementOne(), new ElementTwo(), new ElementThree(), new ElementFour() };
 
+	/**
+	 * Instantiates a new composite class array.
+	 *
+	 * composite
+	 *
+	 * @param composite the composite
+	 */
 	public CompositeClassArray(AbstractElement[] composite) {
 		super();
 		this.composite = composite;

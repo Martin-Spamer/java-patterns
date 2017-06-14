@@ -2,7 +2,7 @@
 package patterns.router;
 
 /**
- * The Router Class.
+ * Router Class.
  */
 class Router implements InputChannel, OutputChannel {
 
@@ -11,13 +11,13 @@ class Router implements InputChannel, OutputChannel {
 	private InputChannel inputChannel;
 
 	/**
-	 * Adds the route.
+	 * route.
 	 */
 	public void addRoute() {
 	}
 
 	/**
-	 * Removes the route.
+	 * route.
 	 */
 	public void removeRoute() {
 	}

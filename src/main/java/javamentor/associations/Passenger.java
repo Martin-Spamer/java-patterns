@@ -2,7 +2,7 @@
 package javamentor.associations;
 
 /**
- * The Passenger Class.
+ * Passenger Class.
  */
 public class Passenger extends Person {
 

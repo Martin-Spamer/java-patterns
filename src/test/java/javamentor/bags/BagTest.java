@@ -1,3 +1,4 @@
+
 package javamentor.bags;
 
 import static org.junit.Assert.assertEquals;
@@ -8,21 +9,28 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javamentor.bags.Bag;
-import javamentor.bags.BagInterface;
 import javamentor.tuples.BoxTest;
 
+/**
+ * The BagTest Class.
+ */
 public class BagTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
 	private static final String[] VALUES = { "Cat", "Dog", "Rabbit" };
 
+	/**
+	 * Unit Test to bag.
+	 */
 	@Test
 	public void testBag() {
 		final BagInterface bag = new Bag();
 		assertNotNull(bag);
 	}
 
+	/**
+	 * Unit Test to bag string array.
+	 */
 	@Test
 	public void testBagStringArray() {
 		final Bag bag = new Bag(VALUES);
@@ -30,6 +38,9 @@ public class BagTest {
 		verify(bag);
 	}
 
+	/**
+	 * Unit Test to bag array.
+	 */
 	@Test
 	public void testBagArray() {
 		final String[] stuff = { "Cat", "Dog", "Rabbit" };
@@ -37,12 +48,18 @@ public class BagTest {
 		verify(bag);
 	}
 
+	/**
+	 * Unit Test to bag vargs.
+	 */
 	@Test
 	public void testBagVargs() {
 		final Bag bag = new Bag("Cat", "Dog", "Rabbit");
 		verify(bag);
 	}
 
+	/**
+	 * Unit Test to fill.
+	 */
 	@Test
 	public void testFill() {
 		final Bag bag = new Bag();
@@ -51,6 +68,9 @@ public class BagTest {
 		verify(bag);
 	}
 
+	/**
+	 * Unit Test to vargs.
+	 */
 	@Test
 	public void testVargs() {
 		final Bag bag = new Bag();
@@ -69,6 +89,11 @@ public class BagTest {
 		verify(bag);
 	}
 
+	/**
+	 * Verify that.
+	 *
+	 * @param bag the bag
+	 */
 	private void verify(final Bag bag) {
 		assertEquals(3, bag.size());
 		String choice = bag.choose();
@@ -87,6 +112,9 @@ public class BagTest {
 		assertEquals(0, bag.size());
 	}
 
+	/**
+	 * Unit Test to choose.
+	 */
 	@Test
 	public void testChoose() {
 		final BagInterface bag = new Bag(VALUES);

@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractParticipant Class.
+ * AbstractParticipant Class.
  */
 public abstract class AbstractParticipant implements ParticipantInterfact {
 

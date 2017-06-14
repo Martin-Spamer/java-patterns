@@ -2,7 +2,7 @@
 package patterns.singleton;
 
 /**
- * The Singleton Class.
+ * Singleton Class.
  */
 public class Singleton {
 
@@ -15,7 +15,7 @@ public class Singleton {
 	}
 
 	/**
-	 * Gets the single instance of Singleton.
+	 * single instance of Singleton.
 	 *
 	 * @return single instance of Singleton
 	 */

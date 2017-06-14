@@ -2,7 +2,7 @@
 package patterns.mediator;
 
 /**
- * The AbstractMediator Class.
+ * AbstractMediator Class.
  */
 public abstract class AbstractMediator implements MediatorInterface {
 

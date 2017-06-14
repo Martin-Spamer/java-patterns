@@ -2,7 +2,7 @@
 package patterns.interpreter;
 
 /**
- * The ContextInterface Interface.
+ * ContextInterface Interface.
  */
 public interface ContextInterface {
 

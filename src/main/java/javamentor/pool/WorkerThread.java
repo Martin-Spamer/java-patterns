@@ -1,10 +1,11 @@
+
 package javamentor.pool;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The WorkerThread Class.
+ * WorkerThread Class.
  */
 public class WorkerThread implements Runnable {
 
@@ -20,10 +21,12 @@ public class WorkerThread implements Runnable {
 	/**
 	 * Instantiates a new worker thread.
 	 *
+	 * s
+	 *
 	 * @param s the s
 	 */
 	public WorkerThread(final String s) {
-		this.command = s;
+		command = s;
 	}
 
 	/**
@@ -47,7 +50,7 @@ public class WorkerThread implements Runnable {
 	@Override
 	public void run() {
 		final String name = Thread.currentThread().getName();
-		WorkerThread.log.info("{}:{}", name, this.command);
+		WorkerThread.log.info("{}:{}", name, command);
 		processCommand();
 		WorkerThread.log.info("{}:exit", name);
 	}

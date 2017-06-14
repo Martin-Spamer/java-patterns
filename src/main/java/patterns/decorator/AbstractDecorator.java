@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The AbstractDecorator Class.
+ * AbstractDecorator Class.
  */
 public abstract class AbstractDecorator extends AbstractComponent implements DecoratorInterface {
 

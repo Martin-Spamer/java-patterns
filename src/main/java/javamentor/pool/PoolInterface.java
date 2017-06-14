@@ -2,7 +2,9 @@
 package javamentor.pool;
 
 /**
- * The PoolInterface Interface.
+ * PoolInterface Interface.
+ *
+ * element type
  *
  * @param <E> the element type
  */
@@ -10,6 +12,9 @@ public interface PoolInterface<E> {
 
 	/**
 	 * Adds the.
+	 *
+	 * element
+	 * pool interface
 	 *
 	 * @param element the element
 	 * @return the pool interface
@@ -19,6 +24,8 @@ public interface PoolInterface<E> {
 	/**
 	 * Count free.
 	 *
+	 * int
+	 *
 	 * @return the int
 	 */
 	int countFree();
@@ -26,12 +33,16 @@ public interface PoolInterface<E> {
 	/**
 	 * Count used.
 	 *
+	 * int
+	 *
 	 * @return the int
 	 */
 	int countUsed();
 
 	/**
-	 * Take element from the pool
+	 * pool.
+	 *
+	 * e
 	 *
 	 * @return the e
 	 */
@@ -40,13 +51,19 @@ public interface PoolInterface<E> {
 	/**
 	 * Release element back to pool.
 	 *
+	 * t
+	 * pool interface
+	 *
 	 * @param t the t
 	 * @return the pool interface
 	 */
 	PoolInterface<E> release(E t);
 
 	/**
-	 * Removes the element from the pool.
+	 * pool.
+	 *
+	 * element
+	 * pool interface
 	 *
 	 * @param element the element
 	 * @return the pool interface

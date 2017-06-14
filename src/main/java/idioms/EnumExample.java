@@ -1,3 +1,4 @@
+
 package idioms;
 
 /**
@@ -12,6 +13,8 @@ public enum EnumExample {
 	/**
 	 * Instantiates a new enum example.
 	 *
+	 * text value
+	 *
 	 * @param textValue the text value
 	 */
 	EnumExample(String textValue) {
@@ -19,16 +22,21 @@ public enum EnumExample {
 	}
 
 	/**
-	 * Gets the text.
+	 * text.
+	 *
+	 * text
 	 *
 	 * @return the text
 	 */
 	public String getText() {
-		return this.textValue;
+		return textValue;
 	}
 
 	/**
 	 * Factory method Enum value from string.
+	 *
+	 * text value
+	 * enum example
 	 *
 	 * @param textValue the text value
 	 * @return the enum example

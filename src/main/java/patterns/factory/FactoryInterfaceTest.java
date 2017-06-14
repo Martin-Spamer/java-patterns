@@ -4,7 +4,7 @@ package patterns.factory;
 import org.junit.Test;
 
 /**
- * The FactoryInterfaceTest Class.
+ * FactoryInterfaceTest Class.
  */
 public class FactoryInterfaceTest {
 

@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractImplementor Class.
+ * AbstractImplementor Class.
  */
 public abstract class AbstractImplementor {
 

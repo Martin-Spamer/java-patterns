@@ -2,7 +2,7 @@
 package patterns.visitor;
 
 /**
- * The Element Class.
+ * Element Class.
  */
 public final class Element extends AbstractElement {
 

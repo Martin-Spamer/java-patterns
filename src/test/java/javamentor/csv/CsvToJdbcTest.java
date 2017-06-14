@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The CsvToJdbcTest Class.
+ * CsvToJdbcTest Class.
  */
 public class CsvToJdbcTest {
 
@@ -21,19 +21,21 @@ public class CsvToJdbcTest {
 	private final String tableName = "tableName";
 
 	/**
-	 * Unit Test the Fluent Interface.
+	 * Fluent Interface.
+	 *
+	 * exception
 	 *
 	 * @throws Exception the exception
 	 */
 	@Test
 	public void testFluentInterface() throws Exception {
 		final CsvToJdbc instance = new CsvToJdbc();
-		assertEquals(instance, instance.setFilename(this.filename));
-		assertEquals(instance, instance.setDriver(this.driver));
-		assertEquals(instance, instance.setUrl(this.url));
-		assertEquals(instance, instance.setUsername(this.username));
-		assertEquals(instance, instance.setPassword(this.password));
-		assertEquals(instance, instance.setTableName(this.tableName));
+		assertEquals(instance, instance.setFilename(filename));
+		assertEquals(instance, instance.setDriver(driver));
+		assertEquals(instance, instance.setUrl(url));
+		assertEquals(instance, instance.setUsername(username));
+		assertEquals(instance, instance.setPassword(password));
+		assertEquals(instance, instance.setTableName(tableName));
 	}
 
 }

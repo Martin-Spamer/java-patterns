@@ -2,12 +2,14 @@
 package patterns.iterator;
 
 /**
- * The AbstractIterator Class.
+ * AbstractIterator Class.
  */
 public abstract class AbstractIterator {
 
 	/**
 	 * First.
+	 *
+	 * abstract item
 	 *
 	 * @return the abstract item
 	 */
@@ -15,6 +17,8 @@ public abstract class AbstractIterator {
 
 	/**
 	 * Next.
+	 *
+	 * abstract item
 	 *
 	 * @return the abstract item
 	 */

@@ -1,3 +1,4 @@
+
 package javamentor.xml;
 
 import java.util.HashMap;
@@ -26,6 +27,8 @@ public class ElementMapper {
 	/**
 	 * Instantiates a new element mapper.
 	 *
+	 * node list
+	 *
 	 * @param nodeList the node list
 	 */
 	public ElementMapper(final NodeList nodeList) {
@@ -35,25 +38,30 @@ public class ElementMapper {
 	/**
 	 * Initialisation.
 	 *
+	 * node list
+	 *
 	 * @param nodeList the node list
 	 */
 	public void initialisation(final NodeList nodeList) {
 		for (int index = 0; index < nodeList.getLength(); index++) {
 			final Element element = (Element) nodeList.item(index);
-			final String key = element.getAttribute(this.indexName);
-			this.elementMap.put(key, element);
-			ElementMapper.log.info("{}={}", this.indexName, element);
+			final String key = element.getAttribute(indexName);
+			elementMap.put(key, element);
+			ElementMapper.log.info("{}={}", indexName, element);
 		}
 	}
 
 	/**
-	 * Gets the text.
+	 * text.
+	 *
+	 * node
+	 * text
 	 *
 	 * @param node the node
 	 * @return the text
 	 */
 	public static String getText(final Node node) {
-		// We need to retrieve the text from elements, entity
+		// * text from elements, entity
 		// references, CDATA sections, and text nodes; but not
 		// comments or processing instructions
 		final int type = node.getNodeType();
@@ -81,35 +89,44 @@ public class ElementMapper {
 	/**
 	 * Find element.
 	 *
+	 * attribute name
+	 * element
+	 *
 	 * @param attributeName the attribute name
 	 * @return the element
 	 */
 	public Element findElement(final String attributeName) {
-		final Element element = this.elementMap.get(attributeName);
+		final Element element = elementMap.get(attributeName);
 		return element;
 	}
 
 	/**
 	 * Find element text.
 	 *
+	 * attribute name
+	 * string
+	 *
 	 * @param attributeName the attribute name
 	 * @return the string
 	 */
 	public String findElementText(final String attributeName) {
-		final Node node = this.elementMap.get(attributeName);
+		final Node node = elementMap.get(attributeName);
 		return getText(node);
 	}
 
 	/**
 	 * Index name.
 	 *
+	 * index attribute
+	 * string
+	 *
 	 * @param indexAttribute the index attribute
 	 * @return the string
 	 */
 	public String indexName(final String indexAttribute) {
 		if (indexAttribute != null) {
-			this.indexName = indexAttribute;
+			indexName = indexAttribute;
 		}
-		return this.indexName;
+		return indexName;
 	}
 }

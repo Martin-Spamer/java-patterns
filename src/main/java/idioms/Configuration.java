@@ -1,3 +1,4 @@
+
 package idioms;
 
 import java.io.IOException;
@@ -8,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Configuration, uses ClassName as the propertyFilename.
+ * propertyFilename.
  */
 public class Configuration {
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -22,12 +23,19 @@ public class Configuration {
 		try {
 			final String resourceName = resourceName();
 			final InputStream inputStream = inputStream(resourceName);
-			this.properties.load(inputStream);
+			properties.load(inputStream);
 		} catch (final IOException e) {
-			this.log.error("{}", e);
+			log.error("{}", e);
 		}
 	}
 
+	/**
+	 * Resource name.
+	 *
+	 * string
+	 *
+	 * @return the string
+	 */
 	private String resourceName() {
 		final String simpleName = this.getClass().getSimpleName();
 		final String filename = String.format("%s.properties", simpleName);
@@ -36,6 +44,9 @@ public class Configuration {
 
 	/**
 	 * Input stream for resourceName.
+	 *
+	 * resource name
+	 * input stream
 	 *
 	 * @param resourceName the resource name
 	 * @return the input stream
@@ -46,32 +57,71 @@ public class Configuration {
 		return resourceAsStream;
 	}
 
+	/**
+	 * Value for.
+	 *
+	 * key
+	 * string
+	 *
+	 * @param key the key
+	 * @return the string
+	 */
 	public String valueFor(String key) {
 		final String property = System.getProperty(key);
 		if (property == null) {
-			return this.properties.getProperty(key);
+			return properties.getProperty(key);
 		}
 		return property;
 	}
 
+	/**
+	 * Value for.
+	 *
+	 * key
+	 * default value
+	 * string
+	 *
+	 * @param key the key
+	 * @param defaultValue the default value
+	 * @return the string
+	 */
 	public String valueFor(String key, String defaultValue) {
 		final String property = System.getProperty(key);
 		if (property == null) {
-			return this.properties.getProperty(key, defaultValue);
+			return properties.getProperty(key, defaultValue);
 		}
 		return property;
 	}
 
+	/**
+	 * To pretty string.
+	 *
+	 * string
+	 *
+	 * @return the string
+	 */
 	public String toPrettyString() {
-		return String.format("Configuration [properties=%s]", format(this.properties.toString()));
+		return String.format("Configuration [properties=%s]", format(properties.toString()));
 	}
 
+	/**
+	 * Format.
+	 *
+	 * string
+	 * object
+	 *
+	 * @param string the string
+	 * @return the object
+	 */
 	private Object format(final String string) {
 		return string.replace("{", "\n\t{\n\t").replace(", ", "\n\t").replace("}", "\n\t}\n");
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return String.format("Configuration [properties=%s]", this.properties);
+		return String.format("Configuration [properties=%s]", properties);
 	}
 }

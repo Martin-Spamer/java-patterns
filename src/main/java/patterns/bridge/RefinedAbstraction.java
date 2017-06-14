@@ -2,12 +2,14 @@
 package patterns.bridge;
 
 /**
- * The RefinedAbstraction Class.
+ * RefinedAbstraction Class.
  */
 public class RefinedAbstraction extends Abstraction {
 
 	/**
 	 * Instantiates a new refined abstraction.
+	 *
+	 * implementor
 	 *
 	 * @param implementor the implementor
 	 */

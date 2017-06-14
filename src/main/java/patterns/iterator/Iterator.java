@@ -2,7 +2,7 @@
 package patterns.iterator;
 
 /**
- * The Iterator Class.
+ * Iterator Class.
  */
 public final class Iterator extends AbstractIterator {
 

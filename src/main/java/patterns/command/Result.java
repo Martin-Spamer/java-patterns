@@ -14,11 +14,13 @@ public class Result implements ResultInterface {
 	 * Instantiates a new result.
 	 */
 	public Result() {
-		this.result = PASS;
+		result = PASS;
 	}
 
 	/**
 	 * Instantiates a new result.
+	 *
+	 * result
 	 *
 	 * @param result the result
 	 */
@@ -34,7 +36,7 @@ public class Result implements ResultInterface {
 	 */
 	@Override
 	public Boolean result() {
-		return this.result;
+		return result;
 	}
 
 	/* (non-Javadoc)
@@ -42,13 +44,16 @@ public class Result implements ResultInterface {
 	 */
 	@Override
 	public boolean and(ResultInterface newResult) {
-		this.result &= newResult.result().booleanValue();
-		return this.result;
+		result &= newResult.result().booleanValue();
+		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return String.format("Result [result=%s]", this.result);
+		return String.format("Result [result=%s]", result);
 	}
 
 }

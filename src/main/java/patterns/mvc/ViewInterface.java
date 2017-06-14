@@ -2,12 +2,14 @@
 package patterns.mvc;
 
 /**
- * The ViewInterface Interface.
+ * ViewInterface Interface.
  */
 public interface ViewInterface {
 
 	/**
-	 * Attach model to the view.
+	 * view.
+	 *
+	 * model
 	 *
 	 * @param model the model
 	 */

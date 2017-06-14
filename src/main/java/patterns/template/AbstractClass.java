@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractClass Class.
+ * AbstractClass Class.
  */
 public abstract class AbstractClass {
 

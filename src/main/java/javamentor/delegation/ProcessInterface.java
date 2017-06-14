@@ -1,12 +1,15 @@
+
 package javamentor.delegation;
 
 /**
- * The ProcessInterface Interface.
+ * ProcessInterface Interface.
  */
 public interface ProcessInterface {
 
 	/**
 	 * Do process.
+	 *
+	 * process interface
 	 *
 	 * @return the process interface
 	 */

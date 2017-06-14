@@ -17,8 +17,7 @@ package javamentor.types;
 public class PrimitivesArray {
 
 	/**
-	 * Main program entry point
-	 * @param args array of command line parameters as Strings.
+	 * Main program entry point.
 	 */
 	public void display() {
 		final int ARRAY_SIZE = 10;
@@ -27,7 +26,7 @@ public class PrimitivesArray {
 		long[] values;
 
 		/**
-		 * point the reference to an Allocation of space for an array of longs
+		 * reference to an Allocation of space for an array of longs
 		 */
 		values = new long[ARRAY_SIZE];
 
@@ -45,13 +44,13 @@ public class PrimitivesArray {
 		long[][] matrix;
 
 		/**
-		 * point the reference to an Allocation of space for an array of longs
+		 * reference to an Allocation of space for an array of longs
 		 */
 		matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
 
 		for (int x = 0; x < ARRAY_SIZE; x++) {
 			for (int y = 0; y < ARRAY_SIZE; y++) {
-				// assign a value to an element of the matrix
+				// * matrix
 				matrix[x][y] = x * y;
 				System.out.print(matrix[x][y] + ",");
 			}
@@ -59,7 +58,7 @@ public class PrimitivesArray {
 		}
 
 		/**
-		 * Declare and Initialise the array with static data
+		 * array with static data
 		 */
 		final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
 		for (int firstIndex = 0; firstIndex < 3; firstIndex++) {
@@ -71,7 +70,9 @@ public class PrimitivesArray {
 	}
 
 	/**
-	 * The main method.
+	 * main method.
+	 *
+	 * arguments
 	 *
 	 * @param args the arguments
 	 */

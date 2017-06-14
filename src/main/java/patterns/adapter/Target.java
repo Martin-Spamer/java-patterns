@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Target Class.
+ * Target Class.
  */
 public class Target implements TargetInterface {
 

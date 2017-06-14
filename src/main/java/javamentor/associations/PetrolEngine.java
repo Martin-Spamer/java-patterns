@@ -2,7 +2,7 @@
 package javamentor.associations;
 
 /**
- * The PetrolEngine Class.
+ * PetrolEngine Class.
  */
 public class PetrolEngine extends AbstractEngine implements FuelInterface {
 

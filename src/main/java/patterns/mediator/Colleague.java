@@ -2,7 +2,7 @@
 package patterns.mediator;
 
 /**
- * The Colleague Class.
+ * Colleague Class.
  */
 public final class Colleague extends AbstactColleague {
 

@@ -2,7 +2,7 @@
 package javamentor.associations;
 
 /**
- * The Rider Class.
+ * Rider Class.
  */
 public class Rider extends Person {
 
@@ -15,6 +15,8 @@ public class Rider extends Person {
 
 	/**
 	 * Instantiates a new rider.
+	 *
+	 * name
 	 *
 	 * @param name the name
 	 */

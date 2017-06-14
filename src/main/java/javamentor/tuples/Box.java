@@ -8,6 +8,8 @@ package javamentor.tuples;
  * 	N - Number
  * 	T - Type
  * 	V - Value
+ * generic type
+ *
  * @param <T> the generic type
  */
 public class Box<T> {
@@ -23,6 +25,8 @@ public class Box<T> {
 	/**
 	 * Instantiates a new box.
 	 *
+	 * t
+	 *
 	 * @param t the t
 	 */
 	public Box(final T t) {
@@ -33,6 +37,8 @@ public class Box<T> {
 	/**
 	 * Sets the.
 	 *
+	 * t
+	 *
 	 * @param t the t
 	 */
 	public void set(final T t) {
@@ -42,12 +48,17 @@ public class Box<T> {
 	/**
 	 * Gets the.
 	 *
+	 * t
+	 *
 	 * @return the t
 	 */
 	public T get() {
 		return this.t;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return String.format("Box [t=%s]", this.t);

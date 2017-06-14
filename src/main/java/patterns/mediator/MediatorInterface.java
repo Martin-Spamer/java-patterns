@@ -2,7 +2,7 @@
 package patterns.mediator;
 
 /**
- * The MediatorInterface Interface.
+ * MediatorInterface Interface.
  */
 public interface MediatorInterface {
 

@@ -1,3 +1,4 @@
+
 package idioms;
 
 import static org.junit.Assert.assertEquals;
@@ -7,10 +8,16 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The ConfigurationTest Class.
+ */
 public class ConfigurationTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ConfigurationTest.class);
 
+	/**
+	 * Unit Test to configuration.
+	 */
 	@Test
 	public void testConfiguration() {
 		final Configuration config = new Configuration();

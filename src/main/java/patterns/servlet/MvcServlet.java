@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 import patterns.mvc.controller.Result;
 
 /**
- * The MvcServlet Class.
+ * MvcServlet Class.
  */
 @SuppressWarnings("serial")
 public class MvcServlet extends HttpServlet {
@@ -80,6 +80,10 @@ public class MvcServlet extends HttpServlet {
 
 	/**
 	 * Process request.
+	 *
+	 * request
+	 * response
+	 * servlet exception
 	 *
 	 * @param request the request
 	 * @param response the response

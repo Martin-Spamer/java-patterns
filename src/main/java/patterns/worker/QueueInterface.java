@@ -2,12 +2,15 @@
 package patterns.worker;
 
 /**
- * The QueueInterface Interface.
+ * QueueInterface Interface.
  */
 public interface QueueInterface {
 
 	/**
 	 * Put.
+	 *
+	 * object
+	 * queue interface
 	 *
 	 * @param object the object
 	 * @return the queue interface
@@ -16,6 +19,8 @@ public interface QueueInterface {
 
 	/**
 	 * Take.
+	 *
+	 * object
 	 *
 	 * @return the object
 	 */

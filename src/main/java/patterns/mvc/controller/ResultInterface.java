@@ -2,12 +2,14 @@
 package patterns.mvc.controller;
 
 /**
- * The ResultInterface Interface.
+ * ResultInterface Interface.
  */
 public interface ResultInterface {
 
 	/**
 	 * Result.
+	 *
+	 * result interface
 	 *
 	 * @return the result interface
 	 */
@@ -15,6 +17,9 @@ public interface ResultInterface {
 
 	/**
 	 * Update result.
+	 *
+	 * new result
+	 * result interface
 	 *
 	 * @param newResult the new result
 	 * @return the result interface

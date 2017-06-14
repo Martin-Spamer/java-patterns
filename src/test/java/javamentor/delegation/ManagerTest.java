@@ -1,11 +1,9 @@
+
 package javamentor.delegation;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javamentor.delegation.Manager;
-import javamentor.delegation.Worker;
 
 /**
  * ManagerTest.

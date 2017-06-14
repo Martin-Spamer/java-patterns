@@ -2,7 +2,7 @@
 package patterns.proxy;
 
 /**
- * The SubjectProxy Class.
+ * SubjectProxy Class.
  */
 class SubjectProxy extends Subject {
 

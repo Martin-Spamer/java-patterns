@@ -2,7 +2,7 @@
 package javamentor.associations;
 
 /**
- * The PetrolFuel Class.
+ * PetrolFuel Class.
  */
 public class PetrolFuel implements FuelInterface {
 

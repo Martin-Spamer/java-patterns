@@ -1,3 +1,4 @@
+
 package javamentor.bags;
 
 import java.util.ArrayList;
@@ -5,12 +6,16 @@ import java.util.Random;
 
 /**
  * A Generic Type Bag Class.
+ *
+ * generic type
+ *
+ * @param <T> the generic type
  */
 @SuppressWarnings("serial")
 public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 	private final Random random = new Random();
 
-	/** The initial state, allows the bag to be reset */
+	/** * bag to be reset */
 	private T[] initialState = null;
 
 	/**
@@ -24,6 +29,8 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	/**
 	 * Instantiates a new bag from string array.
 	 * Accepts 0..N arguments.
+	 *
+	 * values
 	 *
 	 * @param values the values
 	 */
@@ -61,7 +68,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	 */
 	@Override
 	public T choose() {
-		final int size = this.size();
+		final int size = size();
 		if (size > 0) {
 			final int nextInt = this.random.nextInt(size);
 			return this.remove(nextInt);

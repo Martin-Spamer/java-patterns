@@ -7,7 +7,9 @@ package idioms;
 public class ClassMain {
 
 	/**
-	 * The main method.
+	 * main method.
+	 *
+	 * arguments
 	 *
 	 * @param args the arguments
 	 */

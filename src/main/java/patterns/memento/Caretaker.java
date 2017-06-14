@@ -2,7 +2,7 @@
 package patterns.memento;
 
 /**
- * The Caretaker Class.
+ * Caretaker Class.
  */
 class Caretaker {
 
@@ -10,7 +10,9 @@ class Caretaker {
 	public Memento memento;
 
 	/**
-	 * Gets the memento.
+	 * memento.
+	 *
+	 * memento
 	 *
 	 * @return the memento
 	 */
@@ -19,9 +21,12 @@ class Caretaker {
 	}
 
 	/**
-	 * Sets the memento.
+	 * memento.
 	 *
-	 * @param memento the new memento
+	 * new memento
+	 *
+	 * @param memento the new
+	 * 			memento
 	 */
 	public void setMemento(Memento memento) {
 		this.memento = memento;

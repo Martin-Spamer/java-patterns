@@ -1,7 +1,11 @@
+
 package javamentor.tuples;
 
 /**
- * The Twin Tuple Class.
+ * Twin Tuple Class.
+ *
+ * generic type
+ * generic type
  *
  * @param <L> the generic type
  * @param <R> the generic type
@@ -26,6 +30,9 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * Instantiates a new tuple.
 	 *
+	 * left
+	 * right
+	 *
 	 * @param left the left
 	 * @param right the right
 	 */
@@ -38,11 +45,17 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * a factory method to create a instance of tuple from values.
 	 *
+	 * generic type
+	 * generic type
+	 * left
+	 * right
+	 * new instance of tuple
+	 *
 	 * @param <L> the generic type
 	 * @param <R> the generic type
 	 * @param left the left
 	 * @param right the right
-	 * @return the new instance of tuple
+	 * @return the tuple interface
 	 */
 	public static <L, R> TupleInterface<L, R> pair(final L left, final R right) {
 		return new Tuple<L, R>(left, right);
@@ -91,6 +104,8 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * Checks if is equal to.
 	 *
+	 * tuple
+	 *
 	 * @param tuple the tuple
 	 * @return true, if is equal to
 	 */
@@ -120,7 +135,7 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -134,7 +149,7 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

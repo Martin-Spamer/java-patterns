@@ -1,3 +1,4 @@
+
 package patterns.command;
 
 import org.slf4j.Logger;
@@ -18,6 +19,8 @@ public class InvokerExample implements InvokerInterface {
 	/**
 	 * Instantiates a new static invoker.
 	 *
+	 * exception
+	 *
 	 * @throws Exception the exception
 	 */
 	public InvokerExample() throws Exception {
@@ -32,25 +35,25 @@ public class InvokerExample implements InvokerInterface {
 	@Override
 	public ResultInterface execute(final String actionName) {
 		ResultInterface result = null;
-		this.log.info("execute({})", actionName);
+		log.info("execute({})", actionName);
 		switch (actionName) {
 			case "ExampleCommand":
-				result = this.exampleCommand.execute(new Parameters());
+				result = exampleCommand.execute(new Parameters());
 				break;
 			case "CommandSequence":
-				result = this.commandSequence.execute(new Parameters());
+				result = commandSequence.execute(new Parameters());
 				break;
 			case "CompoundCommand":
-				result = this.compoundCommand.execute(new Parameters());
+				result = compoundCommand.execute(new Parameters());
 				break;
 			case "ConditionalCommand":
-				result = this.conditionalCommand.execute(new Parameters());
+				result = conditionalCommand.execute(new Parameters());
 				break;
 			case "SequenceCommand":
-				result = this.sequenceCommand.execute(new Parameters());
+				result = sequenceCommand.execute(new Parameters());
 				break;
 		}
-		this.log.info("result={}", result);
+		log.info("result={}", result);
 		return result;
 	}
 

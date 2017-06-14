@@ -2,7 +2,7 @@
 package patterns.transaction;
 
 /**
- * The ConcreteParticipant Class.
+ * ConcreteParticipant Class.
  */
 public final class ConcreteParticipant extends AbstractParticipant {
 

@@ -1,3 +1,4 @@
+
 package javamentor.tuples;
 
 import static org.junit.Assert.assertNotNull;
@@ -6,12 +7,16 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javamentor.tuples.Box;
-
+/**
+ * The BoxTest Class.
+ */
 public class BoxTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
 
+	/**
+	 * Unit Test to box.
+	 */
 	@Test
 	public void testBox() {
 		final Box<String> box = new Box<String>();

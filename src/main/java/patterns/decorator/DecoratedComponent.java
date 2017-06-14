@@ -2,7 +2,7 @@
 package patterns.decorator;
 
 /**
- * The DecoratedComponent Class.
+ * DecoratedComponent Class.
  */
 public class DecoratedComponent extends AbstractDecorator implements DecoratorInterface {
 

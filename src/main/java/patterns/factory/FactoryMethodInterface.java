@@ -2,7 +2,9 @@
 package patterns.factory;
 
 /**
- * The FactoryMethodInterface Interface.
+ * FactoryMethodInterface Interface.
+ *
+ * generic type
  *
  * @param <T> the generic type
  */
@@ -10,6 +12,8 @@ public interface FactoryMethodInterface<T> {
 
 	/**
 	 * Creates the.
+	 *
+	 * t
 	 *
 	 * @return the t
 	 */

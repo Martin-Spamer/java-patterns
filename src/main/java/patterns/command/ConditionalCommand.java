@@ -1,7 +1,8 @@
+
 package patterns.command;
 
 /**
- * The ConditionalCommand Class.
+ * ConditionalCommand Class.
  */
 public class ConditionalCommand extends AbstractCommand {
 
@@ -32,7 +33,12 @@ public class ConditionalCommand extends AbstractCommand {
 		return super.execute(commandParameters);
 	}
 
+	/**
+	 * Predicate.
+	 *
+	 * @return true, if successful
+	 */
 	private boolean predicate() {
-		return this.predicate;
+		return predicate;
 	}
 }

@@ -2,7 +2,7 @@
 package patterns.hopp;
 
 /**
- * The HoppInterface Interface.
+ * HoppInterface Interface.
  */
 public interface HoppInterface {
 

@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Subject Class.
+ * Subject Class.
  */
 abstract class Subject {
 

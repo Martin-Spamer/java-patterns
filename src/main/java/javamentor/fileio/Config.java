@@ -22,15 +22,32 @@ import java.io.FileOutputStream;
 public class Config extends java.util.Properties {
 	private final boolean loaded = false;
 
+	/**
+	 * Instantiates a new config.
+	 */
 	public Config() {
 		final String propertyFileName = this.getClass().getSimpleName() + ".properties";
 		load(propertyFileName);
 	}
 
+	/**
+	 * Instantiates a new config.
+	 *
+	 * property file name
+	 *
+	 * @param propertyFileName the property file name
+	 */
 	public Config(String propertyFileName) {
 		load(propertyFileName);
 	}
 
+	/**
+	 * Load.
+	 *
+	 * property file name
+	 *
+	 * @param propertyFileName the property file name
+	 */
 	public void load(String propertyFileName) {
 		try {
 			load(new File(propertyFileName));
@@ -39,6 +56,13 @@ public class Config extends java.util.Properties {
 		}
 	}
 
+	/**
+	 * Load.
+	 *
+	 * property file
+	 *
+	 * @param propertyFile the property file
+	 */
 	public void load(File propertyFile) {
 		try {
 			super.load(new FileInputStream(propertyFile));
@@ -47,6 +71,13 @@ public class Config extends java.util.Properties {
 		}
 	}
 
+	/**
+	 * Save.
+	 *
+	 * property file name
+	 *
+	 * @param propertyFileName the property file name
+	 */
 	public void save(String propertyFileName) {
 		try {
 			save(new File(propertyFileName));
@@ -55,6 +86,13 @@ public class Config extends java.util.Properties {
 		}
 	}
 
+	/**
+	 * Save.
+	 *
+	 * property file
+	 *
+	 * @param propertyFile the property file
+	 */
 	public void save(java.io.File propertyFile) {
 		try {
 			super.store(new FileOutputStream(propertyFile), "# Header");
@@ -63,6 +101,12 @@ public class Config extends java.util.Properties {
 		}
 	}
 
+	/**
+	 * Checks if is loaded.
+	 *
+	 * @return true, if is
+	 * 			loaded
+	 */
 	public boolean isLoaded() {
 		return loaded;
 	}

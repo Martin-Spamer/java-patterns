@@ -13,7 +13,7 @@ import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
 
 /**
- * The AbstractController Class.
+ * AbstractController Class.
  */
 public abstract class AbstractController implements ControllerInterface {
 
@@ -25,6 +25,8 @@ public abstract class AbstractController implements ControllerInterface {
 	/**
 	 * Instantiates a new abstract controller.
 	 *
+	 * exception
+	 *
 	 * @throws Exception the exception
 	 */
 	public AbstractController() throws Exception {
@@ -35,6 +37,8 @@ public abstract class AbstractController implements ControllerInterface {
 
 	/**
 	 * Attach model.
+	 *
+	 * model
 	 *
 	 * @param model the model
 	 */
@@ -54,6 +58,8 @@ public abstract class AbstractController implements ControllerInterface {
 	/**
 	 * Attach view.
 	 *
+	 * view
+	 *
 	 * @param view the view
 	 */
 	public void attachView(ViewInterface view) {
@@ -70,9 +76,13 @@ public abstract class AbstractController implements ControllerInterface {
 	/**
 	 * Execute.
 	 *
+	 * command name
+	 * abstract controller
+	 * missing command exception
+	 *
 	 * @param commandName the command name
 	 * @return the abstract controller
-	 * @throws MissingCommandException
+	 * @throws MissingCommandException the missing command exception
 	 */
 	public AbstractController execute(String commandName) throws MissingCommandException {
 		commands.execute(commandName);

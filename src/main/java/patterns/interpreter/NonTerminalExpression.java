@@ -2,7 +2,7 @@
 package patterns.interpreter;
 
 /**
- * The NonTerminalExpression Class.
+ * NonTerminalExpression Class.
  */
 public class NonTerminalExpression extends AbstractExpression {
 

@@ -1,12 +1,19 @@
+
 package javamentor.fileio;
 
 import org.junit.Test;
 
+/**
+ * ConfigTest Class.
+ */
 public class ConfigTest {
 
+	/**
+	 * Unit Test to.
+	 */
 	@Test
 	public void test() {
-		// Display the system properties.
+		// * system properties.
 		final java.util.Properties systemProperties = System.getProperties();
 		systemProperties.list(System.out);
 

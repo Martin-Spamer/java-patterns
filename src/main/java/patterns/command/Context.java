@@ -1,5 +1,9 @@
+
 package patterns.command;
 
+/**
+ * Context Class.
+ */
 public class Context {
 
 	/**
@@ -15,9 +19,10 @@ public class Context {
 	}
 
 	/**
-	 * Returns the single instance.
+	 * single instance.
 	 *
-	 * @returns The single instance
+	 * @return single instance of Context
+	 * single instance
 	 */
 	public static Context getInstance() {
 		return instance;

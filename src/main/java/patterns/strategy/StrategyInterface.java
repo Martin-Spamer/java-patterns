@@ -2,7 +2,7 @@
 package patterns.strategy;
 
 /**
- * The StrategyInterface Interface.
+ * StrategyInterface Interface.
  */
 public interface StrategyInterface {
 

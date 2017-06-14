@@ -8,12 +8,14 @@ import patterns.mvc.controller.Delegate;
 import patterns.mvc.controller.Result;
 
 /**
- * The ManagerInterface Interface.
+ * ManagerInterface Interface.
  */
 public interface ManagerInterface {
 
 	/**
 	 * Attach.
+	 *
+	 * delegate
 	 *
 	 * @param delegate the delegate
 	 */
@@ -22,12 +24,18 @@ public interface ManagerInterface {
 	/**
 	 * Detach.
 	 *
+	 * delegate
+	 *
 	 * @param delegate the delegate
 	 */
 	void detach(Delegate delegate);
 
 	/**
 	 * Handle request.
+	 *
+	 * request
+	 * response
+	 * result
 	 *
 	 * @param request the request
 	 * @param response the response

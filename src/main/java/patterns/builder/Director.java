@@ -4,7 +4,7 @@ package patterns.builder;
 import java.util.Vector;
 
 /**
- * The Director Class.
+ * Director Class.
  */
 public class Director {
 
@@ -19,6 +19,8 @@ public class Director {
 
 	/**
 	 * Adds the.
+	 *
+	 * builder
 	 *
 	 * @param builder the builder
 	 * @return true, if successful

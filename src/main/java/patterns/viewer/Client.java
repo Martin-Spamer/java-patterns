@@ -4,7 +4,7 @@ package patterns.viewer;
 import java.util.Vector;
 
 /**
- * The Client Class.
+ * Client Class.
  */
 public class Client {
 

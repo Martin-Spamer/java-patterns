@@ -2,7 +2,7 @@
 package patterns.strategy;
 
 /**
- * The StrategyTwo Class.
+ * StrategyTwo Class.
  */
 class StrategyTwo extends AbstractStrategy {
 

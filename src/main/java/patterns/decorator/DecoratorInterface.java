@@ -2,12 +2,14 @@
 package patterns.decorator;
 
 /**
- * The DecoratorInterface Interface.
+ * DecoratorInterface Interface.
  */
 public interface DecoratorInterface {
 
 	/**
 	 * Attach before.
+	 *
+	 * behaviour
 	 *
 	 * @param behaviour the behaviour
 	 */
@@ -16,6 +18,8 @@ public interface DecoratorInterface {
 	/**
 	 * Detach before.
 	 *
+	 * behaviour
+	 *
 	 * @param behaviour the behaviour
 	 */
 	public void detachBefore(AbstractComponent behaviour);
@@ -23,12 +27,16 @@ public interface DecoratorInterface {
 	/**
 	 * Attach after.
 	 *
+	 * behaviour
+	 *
 	 * @param behaviour the behaviour
 	 */
 	public void attachAfter(AbstractComponent behaviour);
 
 	/**
 	 * Detach after.
+	 *
+	 * behaviour
 	 *
 	 * @param behaviour the behaviour
 	 */

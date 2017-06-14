@@ -2,7 +2,7 @@
 package patterns.interpreter;
 
 /**
- * The Context Class.
+ * Context Class.
  */
 public class Context implements ContextInterface {
 
@@ -19,6 +19,8 @@ public class Context implements ContextInterface {
 	/**
 	 * Instantiates a new context.
 	 *
+	 * state
+	 *
 	 * @param state the state
 	 */
 	public Context(final String state) {
@@ -27,16 +29,21 @@ public class Context implements ContextInterface {
 	}
 
 	/**
-	 * Sets the state.
+	 * state.
 	 *
-	 * @param state the new state
+	 * new state
+	 *
+	 * @param state the new
+	 * 			state
 	 */
 	public void setState(Object state) {
 		this.state = state;
 	}
 
 	/**
-	 * Gets the state.
+	 * state.
+	 *
+	 * state
 	 *
 	 * @return the state
 	 */

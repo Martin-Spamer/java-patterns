@@ -2,16 +2,16 @@
  * This file is part of Automated Testing Framework for Java (atf4j).
  *
  * Atf4j is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
+ * GNU General Public License as published by
+ * License, or
  * (at your option) any later version.
  *
- * Atf4j is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * hope that it will be useful,
+ * implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * GNU General Public License
  * along with atf4j.  If not, see http://www.gnu.org/licenses/.
  */
 
@@ -19,8 +19,6 @@ package javamentor.xml;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -36,7 +34,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * The XmlToJdbc Class.
+ * XmlToJdbc Class.
  */
 class XmlToJdbc {
 	private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbc.class);
@@ -52,26 +50,52 @@ class XmlToJdbc {
 	private Statement statement = null;
 	private String[] args;
 
+	/**
+	 * Instantiates a new xml to jdbc.
+	 */
 	public XmlToJdbc() {
 		super();
-		this.filename = "CUSTOMER_TBL.xml";
-		this.driver = "com.pointbase.jdbc.jdbcUniversalDriver";
-		this.url = "jdbc:pointbase://localhost:9092/sample";
-		this.username = "pbpublic";
-		this.password = "pbpublic";
-		this.table = "CUSTOMER_TBL";
+		filename = "CUSTOMER_TBL.xml";
+		driver = "com.pointbase.jdbc.jdbcUniversalDriver";
+		url = "jdbc:pointbase://localhost:9092/sample";
+		username = "pbpublic";
+		password = "pbpublic";
+		table = "CUSTOMER_TBL";
 	}
 
+	/**
+	 * Instantiates a new xml to jdbc.
+	 *
+	 * args
+	 *
+	 * @param args the args
+	 */
 	public XmlToJdbc(final String[] args) {
 		this.args = args;
 	}
 
+	/**
+	 * Process.
+	 *
+	 * exception
+	 *
+	 * @throws Exception the exception
+	 */
 	public void process() throws Exception {
-		process(this.filename, this.driver, this.url, this.username, this.password, this.table);
+		process(filename, driver, url, username, password, table);
 	}
 
 	/**
 	 * Process.
+	 *
+	 * filename
+	 * driver
+	 * url
+	 * user
+	 * password
+	 * table
+	 * exception
+	 * null pointer exception
 	 *
 	 * @param filename the filename
 	 * @param driver the driver
@@ -79,9 +103,7 @@ class XmlToJdbc {
 	 * @param user the user
 	 * @param password the password
 	 * @param table the table
-	 * @throws FileNotFoundException the file not found exception
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws NullPointerException the null pointer exception
+	 * @throws Exception the exception
 	 */
 	public void process(final String filename,
 	        final String driver,
@@ -92,22 +114,22 @@ class XmlToJdbc {
 		try {
 			// JDBC Driver
 			Class.forName(driver);
-			this.connection = DriverManager.getConnection(url, user, password);
-			this.statement = this.connection.createStatement();
+			connection = DriverManager.getConnection(url, user, password);
+			statement = connection.createStatement();
 
 			final java.io.File configFile = new File(filename);
 			final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			final DocumentBuilder builder = builderFactory.newDocumentBuilder();
 			final Document mainAppConfig = builder.parse(configFile);
 
-			// Get the root Document Element
+			// * root Document Element
 			final Element tableElement = mainAppConfig.getDocumentElement();
 
 			if (tableElement.getNodeName().equals("TABLE")) {
 				// get a list of rows
 				final NodeList rowList = tableElement.getElementsByTagName("ROW");
 
-				// iterate the list of rows
+				// * list of rows
 				for (int rowNo = 0; rowNo < rowList.getLength(); rowNo++) {
 					final String temp = rowList.item(rowNo).toString();
 					LOG.info("{}", temp);
@@ -116,14 +138,14 @@ class XmlToJdbc {
 						final StringBuffer fieldNames = new StringBuffer();
 						final StringBuffer dataValues = new StringBuffer();
 
-						// get the first row element by index.
+						// * first row element by index.
 						final Element rowElement = (Element) rowList.item(rowNo);
 
-						// get a list of the fields
+						// * fields
 						final NodeList fieldList = rowElement.getElementsByTagName("FIELD");
 
 						char columnSeperator = ' ';
-						// iterate the list of fields
+						// * list of fields
 						for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
 							LOG.info(fieldList.item(fieldNo).toString());
 							final Element fieldElement = (Element) fieldList.item(fieldNo);
@@ -142,15 +164,15 @@ class XmlToJdbc {
 
 						LOG.error(sql.toString());
 						try {
-							if (this.statement.execute(sql.toString())) {
-								LOG.info("ok" + this.statement.getResultSet().toString());
+							if (statement.execute(sql.toString())) {
+								LOG.info("ok" + statement.getResultSet().toString());
 								// put in processed log.
 							} else {
-								if (this.statement.getUpdateCount() == 1) {
-									LOG.info("ok" + this.statement.getResultSet().toString());
+								if (statement.getUpdateCount() == 1) {
+									LOG.info("ok" + statement.getResultSet().toString());
 									// put in processed log.
 								} else {
-									LOG.info("failed " + this.statement.getWarnings());
+									LOG.info("failed " + statement.getWarnings());
 									// put in exceptions log.
 								}
 							}
@@ -162,7 +184,7 @@ class XmlToJdbc {
 					}
 				}
 			}
-			this.bufferedReader.close();
+			bufferedReader.close();
 		} catch (final Exception exception) {
 			LOG.error(exception.toString());
 		}
@@ -176,15 +198,17 @@ class XmlToJdbc {
 	@Override
 	public void finalize() {
 		try {
-			this.statement.close();
-			this.connection.close();
+			statement.close();
+			connection.close();
 		} catch (final SQLException exception) {
 			LOG.info("{}", exception);
 		}
 	}
 
 	/**
-	 * The main method.
+	 * main method.
+	 *
+	 * arguments
 	 *
 	 * @param args the arguments
 	 */

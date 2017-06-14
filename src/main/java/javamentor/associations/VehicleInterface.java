@@ -5,19 +5,24 @@
 package javamentor.associations;
 
 /**
- * The VehicleInterface Interface.
+ * VehicleInterface Interface.
  */
 public interface VehicleInterface {
 
 	/**
-	 * Sets the driver.
+	 * driver.
 	 *
-	 * @param driver the new driver
+	 * new driver
+	 *
+	 * @param driver the new
+	 * 			driver
 	 */
 	void setDriver(Driver driver);
 
 	/**
-	 * Gets the driver.
+	 * driver.
+	 *
+	 * driver
 	 *
 	 * @return the driver
 	 */
@@ -25,6 +30,8 @@ public interface VehicleInterface {
 
 	/**
 	 * Travel.
+	 *
+	 * destination
 	 *
 	 * @param destination the destination
 	 */

@@ -4,7 +4,7 @@
 package javamentor.associations;
 
 /**
- * The Truck Class.
+ * Truck Class.
  */
 public class Truck extends AbstractVehicle {
 
@@ -17,6 +17,8 @@ public class Truck extends AbstractVehicle {
 
 	/**
 	 * Instantiates a new truck.
+	 *
+	 * engine
 	 *
 	 * @param engine the engine
 	 */

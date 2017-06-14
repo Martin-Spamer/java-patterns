@@ -1,3 +1,4 @@
+
 package idioms;
 
 import org.slf4j.Logger;
@@ -11,21 +12,23 @@ import org.slf4j.LoggerFactory;
  * Each Class has its own logger, but uses this.getClass().getSimpleName()
  * to ensure polymorphic sub-classes always log under their name.
  *
- * Can used with the logging layout formater (%F:%L) for click through in most IDEs.
+ * logging layout formater (%F:%L) for click through in most IDEs.
  */
 public abstract class AbstractLogging {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
-	 * Logging using the Law of Demeter (Tell Don't Ask)
+	 * Law of Demeter (Tell Don't Ask).
 	 */
 	public void toLog() {
-		this.log.info("{}.toLog", this.getClass().getSimpleName());
+		log.info("{}.toLog", this.getClass().getSimpleName());
 	}
 
 	/**
-	 * Logging using the Law of Demeter (Tell Don't Ask)
+	 * Law of Demeter (Tell Don't Ask).
+	 *
+	 * destination log
 	 *
 	 * @param destinationLog the destination log
 	 */

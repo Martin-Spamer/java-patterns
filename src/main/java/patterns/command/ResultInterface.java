@@ -1,3 +1,4 @@
+
 package patterns.command;
 
 /**
@@ -8,10 +9,20 @@ public interface ResultInterface {
 	/**
 	 * Result.
 	 *
-	 * @return the result interface
+	 * result interface
+	 *
+	 * @return the boolean
 	 */
 	Boolean result();
 
+	/**
+	 * And.
+	 *
+	 * execute
+	 *
+	 * @param execute the execute
+	 * @return true, if successful
+	 */
 	boolean and(ResultInterface execute);
 
 }

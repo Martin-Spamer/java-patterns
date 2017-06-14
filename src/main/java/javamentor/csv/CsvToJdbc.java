@@ -13,7 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The CsvToJdbc Class.
+ * CsvToJdbc Class.
  */
 public class CsvToJdbc {
 
@@ -37,6 +37,8 @@ public class CsvToJdbc {
 	/**
 	 * Instantiates a new csv to jdbc.
 	 *
+	 * csv file
+	 *
 	 * @param csvFile the csv file
 	 */
 	public CsvToJdbc(final CsvFile csvFile) {
@@ -46,6 +48,11 @@ public class CsvToJdbc {
 	/**
 	 * Instantiates a new csv to jdbc.
 	 *
+	 * driver
+	 * url
+	 * user
+	 * password
+	 *
 	 * @param driver the driver
 	 * @param url the url
 	 * @param user the user
@@ -54,7 +61,7 @@ public class CsvToJdbc {
 	public CsvToJdbc(final String driver, final String url, final String user, final String password) {
 		this.driver = driver;
 		this.url = url;
-		this.username = user;
+		username = user;
 		this.password = password;
 	}
 
@@ -65,21 +72,31 @@ public class CsvToJdbc {
 	 */
 	@Override
 	public void finalize() throws SQLException {
-		this.statement.close();
-		this.connection.close();
+		statement.close();
+		connection.close();
 	}
 
 	/**
-	 * Gets the Column headers.
+	 * Column headers.
 	 *
-	 * @return the Column headers
+	 * Column headers
+	 *
+	 * @return the column headers
 	 */
 	private String getColumnHeaders() {
-		return this.csvFile.getColumnNames();
+		return csvFile.getColumnNames();
 	}
 
 	/**
 	 * Make jdbc connection.
+	 *
+	 * driver
+	 * url
+	 * user
+	 * password
+	 * connection
+	 * class not found exception
+	 * SQL exception
 	 *
 	 * @param driver the driver
 	 * @param url the url
@@ -94,13 +111,17 @@ public class CsvToJdbc {
 	        final String user,
 	        final String password) throws ClassNotFoundException, SQLException {
 		Class.forName(driver);
-		this.connection = DriverManager.getConnection(url, user, password);
-		this.statement = makeStatement(this.connection);
-		return this.connection;
+		connection = DriverManager.getConnection(url, user, password);
+		statement = makeStatement(connection);
+		return connection;
 	}
 
 	/**
 	 * Make statement.
+	 *
+	 * connection
+	 * statement
+	 * SQL exception
 	 *
 	 * @param connection the connection
 	 * @return the statement
@@ -113,14 +134,24 @@ public class CsvToJdbc {
 	/**
 	 * Process.
 	 *
+	 * exception
+	 *
 	 * @throws Exception the exception
 	 */
 	public void process() throws Exception {
-		process(this.filename, this.driver, this.url, this.username, this.password, this.tableName);
+		process(filename, driver, url, username, password, tableName);
 	}
 
 	/**
 	 * Process.
+	 *
+	 * filename
+	 * driver
+	 * url
+	 * user
+	 * password
+	 * table
+	 * exception
 	 *
 	 * @param filename the filename
 	 * @param driver the driver
@@ -137,17 +168,20 @@ public class CsvToJdbc {
 	        final String password,
 	        final String table) throws Exception {
 		makeJdbcConnection(driver, url, user, password);
-		this.csvFile = new CsvFile(filename);
-		this.tableName = table;
-		for (int index = 0; index < this.csvFile.size(); index++) {
-			final CSVRecord record = this.csvFile.getRecord(index);
-			this.log.info(record.toString());
+		csvFile = new CsvFile(filename);
+		tableName = table;
+		for (int index = 0; index < csvFile.size(); index++) {
+			final CSVRecord record = csvFile.getRecord(index);
+			log.info(record.toString());
 			write(record);
 		}
 	}
 
 	/**
-	 * Sets the connection.
+	 * connection.
+	 *
+	 * connection
+	 * csv to jdbc
 	 *
 	 * @param connection the connection
 	 * @return the csv to jdbc
@@ -158,7 +192,10 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Sets the csv file.
+	 * csv file.
+	 *
+	 * csv file
+	 * csv to jdbc
 	 *
 	 * @param csvFile the csv file
 	 * @return the csv to jdbc
@@ -169,7 +206,10 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Sets the driver.
+	 * driver.
+	 *
+	 * driver
+	 * csv to jdbc
 	 *
 	 * @param driver the driver
 	 * @return the csv to jdbc
@@ -180,7 +220,10 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Sets the filename.
+	 * filename.
+	 *
+	 * filename
+	 * csv to jdbc
 	 *
 	 * @param filename the filename
 	 * @return the csv to jdbc
@@ -191,7 +234,10 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Sets the password.
+	 * password.
+	 *
+	 * password
+	 * csv to jdbc
 	 *
 	 * @param password the password
 	 * @return the csv to jdbc
@@ -202,7 +248,10 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Sets the statement.
+	 * statement.
+	 *
+	 * statement
+	 * csv to jdbc
 	 *
 	 * @param statement the statement
 	 * @return the csv to jdbc
@@ -213,7 +262,10 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Sets the table name.
+	 * table name.
+	 *
+	 * table name
+	 * csv to jdbc
 	 *
 	 * @param tableName the table name
 	 * @return the csv to jdbc
@@ -224,7 +276,10 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Sets the url.
+	 * url.
+	 *
+	 * url
+	 * csv to jdbc
 	 *
 	 * @param url the url
 	 * @return the csv to jdbc
@@ -235,7 +290,10 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Sets the username.
+	 * username.
+	 *
+	 * username
+	 * csv to jdbc
 	 *
 	 * @param username the username
 	 * @return the csv to jdbc
@@ -248,8 +306,10 @@ public class CsvToJdbc {
 	/**
 	 * Write.
 	 *
+	 * record
+	 * SQL exception
+	 *
 	 * @param record the record
-	 * @param intoTable the into table
 	 * @throws SQLException the SQL exception
 	 */
 	public void write(final CSVRecord record) throws SQLException {
@@ -257,19 +317,19 @@ public class CsvToJdbc {
 		// into %table (%field%,...)
 		// from (%value%,...)
 		final StringBuffer sql = new StringBuffer();
-		sql.append("insert into ").append(this.tableName);
+		sql.append("insert into ").append(tableName);
 		sql.append(getColumnHeaders());
 		sql.append(" VALUES ");
 		sql.append(record.toString());
-		this.log.info(sql.toString());
+		log.info(sql.toString());
 
-		if (this.statement.execute(sql.toString())) {
-			this.log.info("ok {}", this.statement.getResultSet().toString());
+		if (statement.execute(sql.toString())) {
+			log.info("ok {}", statement.getResultSet().toString());
 		} else {
-			if (this.statement.getUpdateCount() == 1) {
-				this.log.info("ok {}", this.statement.getResultSet().toString());
+			if (statement.getUpdateCount() == 1) {
+				log.info("ok {}", statement.getResultSet().toString());
 			} else {
-				this.log.info("failed {}", this.statement.getWarnings());
+				log.info("failed {}", statement.getWarnings());
 			}
 		}
 	}

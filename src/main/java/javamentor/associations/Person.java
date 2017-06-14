@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Person Class.
+ * Person Class.
  */
 public abstract class Person implements PersonInterface {
 
@@ -26,6 +26,8 @@ public abstract class Person implements PersonInterface {
 	/**
 	 * Instantiates a new person.
 	 *
+	 * name
+	 *
 	 * @param name the name
 	 */
 	public Person(final String name) {
@@ -43,7 +45,9 @@ public abstract class Person implements PersonInterface {
 	}
 
 	/**
-	 * Gets the name.
+	 * name.
+	 *
+	 * name
 	 *
 	 * @return the name
 	 */

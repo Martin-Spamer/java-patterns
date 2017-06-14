@@ -2,7 +2,7 @@
 package patterns.worker;
 
 /**
- * The WorkerThread Class.
+ * WorkerThread Class.
  */
 public class WorkerThread {
 

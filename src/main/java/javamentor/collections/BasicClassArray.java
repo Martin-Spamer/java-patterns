@@ -19,7 +19,7 @@ public class BasicClassArray {
 	AbstractElement[] composite = new AbstractElement[4];
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	public BasicClassArray() {
 		composite[0] = new ElementOne();

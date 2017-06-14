@@ -9,10 +9,11 @@
 package javamentor.types;
 
 /**
- * Java Native Types
+ * Java Native Types.
+ *
  * @author martin.spamer
  * @version 0.1 - 09:20:22
- **/
+ */
 public class ObjectTypes {
 
 	// integers object types
@@ -41,6 +42,9 @@ public class ObjectTypes {
 	Boolean aBooleanTrue = true;
 	Boolean aBooleanFalse = false;
 
+	/**
+	 * Display.
+	 */
 	public void display() {
 		// display them all
 		System.out.println("largest byte value : " + largestByte);
@@ -75,7 +79,9 @@ public class ObjectTypes {
 	}
 
 	/**
-	 * The main method.
+	 * main method.
+	 *
+	 * arguments
 	 *
 	 * @param args the arguments
 	 */

@@ -2,7 +2,7 @@
 package patterns.facade;
 
 /**
- * The FacadeInterface Interface.
+ * FacadeInterface Interface.
  */
 public interface FacadeInterface {
 

@@ -2,7 +2,7 @@
 package patterns.hopp;
 
 /**
- * The LocalHopp Class.
+ * LocalHopp Class.
  */
 class LocalHopp implements HoppInterface {
 

@@ -2,12 +2,12 @@
 package patterns.iterator;
 
 /**
- * The AbstractAggregate Class.
+ * AbstractAggregate Class.
  */
 public abstract class AbstractAggregate {
 
 	/**
-	 * Creates the iterator.
+	 * iterator.
 	 */
 	public void createIterator() {
 	}

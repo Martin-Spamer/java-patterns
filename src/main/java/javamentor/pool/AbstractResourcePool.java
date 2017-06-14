@@ -1,3 +1,4 @@
+
 package javamentor.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;
@@ -6,7 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractResourcePool Class.
+ * AbstractResourcePool Class.
+ *
+ * element type
  *
  * @param <E> the element type
  */
@@ -69,7 +72,9 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 	}
 
 	/**
-	 * Gets the resource from list.
+	 * resource from list.
+	 *
+	 * resource from list
 	 *
 	 * @return the resource from list
 	 */
@@ -79,10 +84,10 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 		synchronized (this) {
 			// See if there is a resource available.
 			if (this.freePool.size() > 0) {
-				// Get the first resource from the free list
+				// * free list
 				resource = this.freePool.pop();
 
-				// Add the resource and its associated info to the used list
+				// * used list
 				this.usedPool.add(resource);
 			}
 		}
@@ -91,6 +96,8 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
 	/**
 	 * Offer.
+	 *
+	 * resource
 	 *
 	 * @param resource the resource
 	 * @return true, if successful

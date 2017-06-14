@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractSubject Class.
+ * AbstractSubject Class.
  */
 public abstract class AbstractSubject implements SubjectInterface {
 

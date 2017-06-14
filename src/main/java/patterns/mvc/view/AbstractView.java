@@ -9,7 +9,7 @@ import patterns.mvc.ViewInterface;
 import patterns.mvc.model.Model;
 
 /**
- * The AbstractView Class.
+ * AbstractView Class.
  */
 public abstract class AbstractView implements ViewInterface {
 
@@ -21,7 +21,7 @@ public abstract class AbstractView implements ViewInterface {
 	 */
 	public AbstractView() {
 		super();
-		this.model = new Model();
+		model = new Model();
 	}
 
 	/*
@@ -41,7 +41,7 @@ public abstract class AbstractView implements ViewInterface {
 	 */
 	@Override
 	public void detachModel() {
-		this.model = null;
+		model = null;
 	}
 
 	/*
@@ -51,7 +51,7 @@ public abstract class AbstractView implements ViewInterface {
 	 */
 	@Override
 	public void show() {
-		this.log.info("{}.showView", this.getClass().getSimpleName());
+		log.info("{}.showView", this.getClass().getSimpleName());
 	}
 
 }

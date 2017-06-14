@@ -1,7 +1,8 @@
+
 package patterns.chain;
 
 /**
- * The RequestInterface Interface.
+ * RequestInterface Interface.
  */
 public interface RequestInterface {
 

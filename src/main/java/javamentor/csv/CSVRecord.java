@@ -1,3 +1,4 @@
+
 package javamentor.csv;
 
 import java.util.Arrays;
@@ -7,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The CSVRecord Class.
+ * CSVRecord Class.
  */
 public class CSVRecord {
 
@@ -27,6 +28,8 @@ public class CSVRecord {
 	/**
 	 * Instantiates a new CSV record.
 	 *
+	 * line of data
+	 *
 	 * @param lineOfData the line of data
 	 */
 	public CSVRecord(final String lineOfData) {
@@ -36,20 +39,25 @@ public class CSVRecord {
 	/**
 	 * Column count.
 	 *
+	 * int
+	 *
 	 * @return the int
 	 */
 	public int columnCount() {
-		return this.fields.size();
+		return fields.size();
 	}
 
 	/**
-	 * Gets the column.
+	 * column.
+	 *
+	 * index
+	 * column
 	 *
 	 * @param index the index
 	 * @return the column
 	 */
 	public String getColumn(final int index) {
-		return this.fields.get(index);
+		return fields.get(index);
 	}
 
 	/**
@@ -58,38 +66,47 @@ public class CSVRecord {
 	 * @return true, if is empty
 	 */
 	public boolean isEmpty() {
-		return this.fields.isEmpty();
+		return fields.isEmpty();
 	}
 
 	/**
 	 * Parses the.
 	 *
+	 * line of data
+	 *
 	 * @param lineOfData the line of data
 	 */
 	private void parse(final String lineOfData) {
-		this.fields = Arrays.asList(lineOfData.split(","));
+		fields = Arrays.asList(lineOfData.split(","));
 	}
 
 	/**
 	 * Removes the.
 	 *
+	 * index
+	 * CSV record
+	 *
 	 * @param index the index
 	 * @return the CSV record
 	 */
 	public CSVRecord remove(final int index) {
-		this.fields.remove(index);
+		fields.remove(index);
 		return this;
 	}
 
 	/**
 	 * Sets the.
 	 *
+	 * index
+	 * field
+	 * CSV record
+	 *
 	 * @param index the index
 	 * @param field the field
 	 * @return the CSV record
 	 */
 	public CSVRecord set(final int index, final String field) {
-		this.fields.set(index, field);
+		fields.set(index, field);
 		return this;
 	}
 
@@ -100,7 +117,7 @@ public class CSVRecord {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s", this.fields).replace("[", "").replace("]", "");
+		return String.format("%s", fields).replace("[", "").replace("]", "");
 	}
 
 }

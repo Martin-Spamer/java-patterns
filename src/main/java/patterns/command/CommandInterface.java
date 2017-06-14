@@ -1,3 +1,4 @@
+
 package patterns.command;
 
 /**
@@ -8,6 +9,9 @@ public interface CommandInterface {
 	/**
 	 * Execute.
 	 *
+	 * command parameters
+	 * result interface
+	 *
 	 * @param commandParameters the command parameters
 	 * @return the result interface
 	 */
@@ -15,6 +19,9 @@ public interface CommandInterface {
 
 	/**
 	 * Undo.
+	 *
+	 * command parameters
+	 * result interface
 	 *
 	 * @param commandParameters the command parameters
 	 * @return the result interface
@@ -24,7 +31,9 @@ public interface CommandInterface {
 	/**
 	 * Result.
 	 *
-	 * @return the result interface
+	 * result interface
+	 *
+	 * @return the boolean
 	 */
 	abstract Boolean result();
 

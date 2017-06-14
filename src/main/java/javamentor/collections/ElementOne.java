@@ -9,7 +9,14 @@
 
 package javamentor.collections;
 
+/**
+ * ElementOne Class.
+ */
 public class ElementOne extends AbstractElement {
+
+	/**
+	 * Instantiates a new element one.
+	 */
 	public ElementOne() {
 		super();
 	}

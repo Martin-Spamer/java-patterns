@@ -1,3 +1,4 @@
+
 package patterns.mvc.model;
 
 import java.util.HashMap;
@@ -10,7 +11,7 @@ import patterns.mvc.ModelInterface;
 import patterns.mvc.view.AbstractView;
 
 /**
- * The AbstractModel Class.
+ * AbstractModel Class.
  */
 public abstract class AbstractModel implements ModelInterface {
 
@@ -33,7 +34,7 @@ public abstract class AbstractModel implements ModelInterface {
 	 */
 	@Override
 	public void attach(final String key, final AbstractModel model) {
-		this.models.put(key, model);
+		models.put(key, model);
 	}
 
 	/*
@@ -44,7 +45,7 @@ public abstract class AbstractModel implements ModelInterface {
 	 */
 	@Override
 	public void attach(final String key, final AbstractView view) {
-		this.views.put(key, view);
+		views.put(key, view);
 	}
 
 	/*
@@ -54,7 +55,7 @@ public abstract class AbstractModel implements ModelInterface {
 	 */
 	@Override
 	public void detachModel(final String key) {
-		this.models.remove(key);
+		models.remove(key);
 	}
 
 	/*
@@ -64,7 +65,7 @@ public abstract class AbstractModel implements ModelInterface {
 	 */
 	@Override
 	public void detachView(final String key) {
-		this.views.remove(key);
+		views.remove(key);
 	}
 
 }

@@ -2,12 +2,14 @@
 package patterns.router;
 
 /**
- * The InputChannel Interface.
+ * InputChannel Interface.
  */
 public interface InputChannel {
 
 	/**
 	 * Receive message.
+	 *
+	 * message
 	 *
 	 * @param message the message
 	 */

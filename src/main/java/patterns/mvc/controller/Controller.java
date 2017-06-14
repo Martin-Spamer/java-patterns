@@ -2,12 +2,14 @@
 package patterns.mvc.controller;
 
 /**
- * The Controller Class.
+ * Controller Class.
  */
 public class Controller extends AbstractController {
 
 	/**
 	 * Instantiates a new controller.
+	 *
+	 * exception
 	 *
 	 * @throws Exception the exception
 	 */

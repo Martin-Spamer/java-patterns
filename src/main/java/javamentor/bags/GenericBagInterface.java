@@ -1,35 +1,53 @@
+
 package javamentor.bags;
 
+/**
+ * GenericBagInterface Interface.
+ *
+ * generic type
+ *
+ * @param <T> the generic type
+ */
 public interface GenericBagInterface<T> {
 
 	/**
-	 * Fill the bag with String values.
+	 * bag with String values.
 	 *
-	 * @param the String values as variable length list of arguments.
-	 * Accepts 0..N arguments.
+	 * values
 	 *
+	 * @param values the values
 	 * @return this bag for a fluent interface
 	 */
 	GenericBagInterface<T> fill(T... values);
 
 	/**
-	 * Choose a value at random from the bag.
+	 * bag.
 	 *
-	 * @return the value as a string.
+	 * value as a string.
 	 *
+	 * @return the t
 	 * @see idioms.BagInterface#fill(java.lang.String)
 	 */
 	T pick();
 
 	/**
-	 * Choose a value at random from the bag.
+	 * bag.
 	 *
-	 * @return the value as a string.
+	 * value as a string.
 	 *
+	 * @return the t
 	 * @see idioms.BagInterface#fill(java.lang.String)
 	 */
 	T choose();
 
+	/**
+	 * Adds an.
+	 *
+	 * e
+	 *
+	 * @param e the e
+	 * @return true, if successful
+	 */
 	/*
 	 * (non-Javadoc)
 	 *
@@ -40,7 +58,9 @@ public interface GenericBagInterface<T> {
 	/**
 	 * Reset.
 	 *
-	 * @return the bag
+	 * bag
+	 *
+	 * @return the generic bag interface
 	 */
 	GenericBagInterface<T> reset();
 

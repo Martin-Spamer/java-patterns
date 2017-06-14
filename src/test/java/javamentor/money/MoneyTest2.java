@@ -1,3 +1,4 @@
+
 package javamentor.money;
 
 import static org.junit.Assert.assertEquals;
@@ -9,10 +10,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javamentor.money.BigDecimalMoney;
-
 /**
- * The MoneyTest Class.
+ * MoneyTest Class.
  */
 public class MoneyTest2 {
 
@@ -34,7 +33,7 @@ public class MoneyTest2 {
 	 */
 	@Test
 	public void testFrenchLocale() {
-		// Set the default locale to pre-defined FRENCH locale.
+		// * default locale to pre-defined FRENCH locale.
 		final Locale newLocale = Locale.FRENCH;
 		log.info("{}", newLocale);
 		log.info("{}", newLocale.getDisplayName());
@@ -45,7 +44,7 @@ public class MoneyTest2 {
 	 */
 	@Test
 	public void testUkLocale() {
-		// Set the default locale to pre-defined UK locale.
+		// * default locale to pre-defined UK locale.
 		final Locale newLocale = Locale.UK;
 		log.info("{}", newLocale.getDisplayName());
 	}

@@ -11,7 +11,7 @@ public class RegularExpression {
 
 	private static final String PATTERN_STRING = "^XYZ$";
 	private final Pattern PATTERN = Pattern.compile(PATTERN_STRING);
-	private Pattern pattern = this.PATTERN;
+	private Pattern pattern = PATTERN;
 
 	/**
 	 * Instantiates a new regular expression.
@@ -23,15 +23,19 @@ public class RegularExpression {
 	/**
 	 * Instantiates a new regular expression.
 	 *
+	 * pattern string
+	 *
 	 * @param patternString the pattern string
 	 */
 	public RegularExpression(String patternString) {
 		super();
-		this.pattern = Pattern.compile(patternString);
+		pattern = Pattern.compile(patternString);
 	}
 
 	/**
 	 * Instantiates a new regular expression.
+	 *
+	 * pattern
 	 *
 	 * @param pattern the pattern
 	 */
@@ -43,21 +47,25 @@ public class RegularExpression {
 	/**
 	 * Verify that.
 	 *
+	 * code
+	 *
 	 * @param code the code
 	 * @return true, if successful
 	 */
 	public boolean verify(final String code) {
-		final Matcher matcher = this.PATTERN.matcher(code);
+		final Matcher matcher = PATTERN.matcher(code);
 		return matcher.find();
 	}
 
 	/**
 	 * Find.
 	 *
+	 * original
+	 *
 	 * @param original the original
 	 */
 	public void find(final String original) {
-		final Matcher matcher = this.PATTERN.matcher(original);
+		final Matcher matcher = PATTERN.matcher(original);
 		while (matcher.find()) {
 			final String string = String.format("Test %s starting at index %s and ending at index %s", matcher.group(),
 			        matcher.start(), matcher.end());
@@ -68,13 +76,17 @@ public class RegularExpression {
 	/**
 	 * Replace.
 	 *
+	 * original
+	 * new sub string
+	 * string
+	 *
 	 * @param original the original
 	 * @param newSubString the new sub string
 	 * @return the string
 	 */
 	public String replace(final String original, String newSubString) {
-		final Matcher matcher = this.PATTERN.matcher(original);
-		return this.pattern.matcher(original).replaceAll(newSubString);
+		final Matcher matcher = PATTERN.matcher(original);
+		return pattern.matcher(original).replaceAll(newSubString);
 	}
 
 }

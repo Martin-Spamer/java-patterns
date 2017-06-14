@@ -5,12 +5,15 @@ import patterns.mvc.model.AbstractModel;
 import patterns.mvc.view.AbstractView;
 
 /**
- * The ModelInterface Interface.
+ * ModelInterface Interface.
  */
 public interface ModelInterface {
 
 	/**
 	 * Attach.
+	 *
+	 * key
+	 * model
 	 *
 	 * @param key the key
 	 * @param model the model
@@ -20,6 +23,9 @@ public interface ModelInterface {
 	/**
 	 * Attach.
 	 *
+	 * key
+	 * view
+	 *
 	 * @param key the key
 	 * @param view the view
 	 */
@@ -28,12 +34,16 @@ public interface ModelInterface {
 	/**
 	 * Detach model.
 	 *
+	 * key
+	 *
 	 * @param key the key
 	 */
 	public void detachModel(final String key);
 
 	/**
 	 * Detach view.
+	 *
+	 * key
 	 *
 	 * @param key the key
 	 */

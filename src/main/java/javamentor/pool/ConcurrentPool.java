@@ -1,3 +1,4 @@
+
 package javamentor.pool;
 
 import java.util.concurrent.ConcurrentLinkedDeque;
@@ -6,7 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The ConcurrentPool Class.
+ * ConcurrentPool Class.
+ *
+ * element type
  *
  * @param <E> the element type
  */

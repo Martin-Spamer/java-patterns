@@ -2,7 +2,7 @@
 package patterns.worker;
 
 /**
- * The ConcreteQueue Class.
+ * ConcreteQueue Class.
  */
 class ConcreteQueue implements QueueInterface {
 

@@ -1,3 +1,4 @@
+
 package patterns.command;
 
 import java.io.InputStream;
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
 /**
  * A factory for creating Command objects.
  *
- * Use a factory when the Commands are cheap to instantiate.
+ * Commands are cheap to instantiate.
  */
 public final class CommandFactory implements InvokerInterface {
 
@@ -20,41 +21,51 @@ public final class CommandFactory implements InvokerInterface {
 	/**
 	 * Instantiates a new command factory.
 	 *
+	 * exception
+	 *
 	 * @throws Exception the exception
 	 */
 	public CommandFactory() throws Exception {
 		super();
-		this.properties = new Properties();
-		this.properties.load(inputStream(COMMANDS_PROPERTIES));
-		this.log.info("properties = {}", this.properties);
+		properties = new Properties();
+		properties.load(inputStream(COMMANDS_PROPERTIES));
+		log.info("properties = {}", properties);
 	}
 
 	/**
 	 * Instantiates a new command factory.
+	 *
+	 * filename
+	 * exception
 	 *
 	 * @param filename the filename
 	 * @throws Exception the exception
 	 */
 	public CommandFactory(final String filename) throws Exception {
 		super();
-		this.properties = new Properties();
-		this.properties.load(inputStream(filename));
-		this.log.info("properties = {}", this.properties);
+		properties = new Properties();
+		properties.load(inputStream(filename));
+		log.info("properties = {}", properties);
 	}
 
 	/**
 	 * Instantiates a new command factory.
+	 *
+	 * properties
 	 *
 	 * @param properties the properties
 	 */
 	public CommandFactory(final Properties properties) {
 		super();
 		this.properties = properties;
-		this.log.info("properties = {}", this.properties);
+		log.info("properties = {}", this.properties);
 	}
 
 	/**
 	 * Input stream.
+	 *
+	 * resource name
+	 * input stream
 	 *
 	 * @param resourceName the resource name
 	 * @return the input stream
@@ -73,7 +84,7 @@ public final class CommandFactory implements InvokerInterface {
 	@Override
 	public ResultInterface execute(final String actionName) throws MissingCommandException {
 		try {
-			final String className = this.properties.getProperty(actionName);
+			final String className = properties.getProperty(actionName);
 			if (className != null) {
 				if (className.length() > 0) {
 					AbstractCommand action;

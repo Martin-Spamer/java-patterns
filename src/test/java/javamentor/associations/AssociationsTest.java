@@ -7,15 +7,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javamentor.associations.Car;
-import javamentor.associations.Driver;
-import javamentor.associations.MotorCycle;
-import javamentor.associations.Passenger;
-import javamentor.associations.Rider;
-import javamentor.associations.Taxi;
-import javamentor.associations.Truck;
-import javamentor.associations.VehicleInterface;
-
 /**
  * ClientTest Class.
  */
@@ -43,6 +34,9 @@ public class AssociationsTest {
 		log.info("{}", aCar);
 	}
 
+	/**
+	 * Unit Test to example taxi.
+	 */
 	@Test
 	public void testExampleTaxi() {
 		final Passenger passenger = new Passenger();
@@ -51,6 +45,9 @@ public class AssociationsTest {
 		log.info("{}", taxi);
 	}
 
+	/**
+	 * Unit Test to example motor cycle rider.
+	 */
 	@Test
 	public void testExampleMotorCycleRider() {
 		final Rider rider = new Rider();
@@ -59,6 +56,9 @@ public class AssociationsTest {
 		log.info("{}", motorCycle);
 	}
 
+	/**
+	 * Unit Test to example truck.
+	 */
 	@Test
 	public void testExampleTruck() {
 		final Truck truck = new Truck();

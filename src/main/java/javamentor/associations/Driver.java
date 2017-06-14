@@ -4,7 +4,7 @@
 package javamentor.associations;
 
 /**
- * The Driver Class.
+ * Driver Class.
  */
 public class Driver extends Person {
 
@@ -17,6 +17,8 @@ public class Driver extends Person {
 
 	/**
 	 * Instantiates a new driver.
+	 *
+	 * name
 	 *
 	 * @param name the name
 	 */

@@ -1,3 +1,4 @@
+
 package javamentor.rules;
 
 import java.io.File;
@@ -33,12 +34,14 @@ public class RulesEngine {
 	public RulesEngine() {
 		log.info(System.getProperties().toString());
 		final String className = this.getClass().getSimpleName();
-		this.filename = className + ".xml";
-		initialise(this.filename);
+		filename = className + ".xml";
+		initialise(filename);
 	}
 
 	/**
 	 * Initialise.
+	 *
+	 * config filename
 	 *
 	 * @param configFilename the config filename
 	 * @return true, if successful
@@ -50,19 +53,21 @@ public class RulesEngine {
 	/**
 	 * Initialise.
 	 *
+	 * config file
+	 *
 	 * @param configFile the config file
 	 * @return true, if successful
 	 */
 	public boolean initialise(final File configFile) {
 		boolean returnValue = false;
 		try {
-			this.documentBuilderFactory = DocumentBuilderFactory.newInstance();
-			this.documentBuilder = this.documentBuilderFactory.newDocumentBuilder();
-			this.document = this.documentBuilder.parse(configFile);
+			documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			documentBuilder = documentBuilderFactory.newDocumentBuilder();
+			document = documentBuilder.parse(configFile);
 
-			this.documentElement = this.document.getDocumentElement();
-			if (this.documentElement != null) {
-				log.info("documentElement = {}", this.documentElement);
+			documentElement = document.getDocumentElement();
+			if (documentElement != null) {
+				log.info("documentElement = {}", documentElement);
 			}
 
 			returnValue = true;
@@ -79,6 +84,8 @@ public class RulesEngine {
 	/**
 	 * Instantiates a new rules engine.
 	 *
+	 * args
+	 *
 	 * @param args the args
 	 */
 	public RulesEngine(final String[] args) {
@@ -86,6 +93,13 @@ public class RulesEngine {
 		initialise(args);
 	}
 
+	/**
+	 * Initialise.
+	 *
+	 * args
+	 *
+	 * @param args the args
+	 */
 	private void initialise(final String[] args) {
 		log.info("args[]={}", Arrays.toString(args));
 	}
@@ -102,7 +116,11 @@ public class RulesEngine {
 	}
 
 	/**
-	 * Gets the element.
+	 * element.
+	 *
+	 * document element
+	 * element name
+	 * element
 	 *
 	 * @param documentElement the document element
 	 * @param elementName the element name
@@ -130,7 +148,12 @@ public class RulesEngine {
 	}
 
 	/**
-	 * Gets the element attribute.
+	 * element attribute.
+	 *
+	 * document element
+	 * element name
+	 * attribute name
+	 * element attribute
 	 *
 	 * @param documentElement the document element
 	 * @param elementName the element name
@@ -145,7 +168,9 @@ public class RulesEngine {
 	}
 
 	/**
-	 * The main method.
+	 * main method.
+	 *
+	 * arguments
 	 *
 	 * @param args the arguments
 	 */

@@ -9,6 +9,9 @@ public class FactoryMethod {
 	/**
 	 * Creates instance of class from fully qualified name.
 	 *
+	 * string
+	 * exception
+	 *
 	 * @return the string
 	 * @throws Exception the exception
 	 */

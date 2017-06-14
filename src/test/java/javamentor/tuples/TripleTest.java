@@ -1,3 +1,4 @@
+
 package javamentor.tuples;
 
 import static org.junit.Assert.assertEquals;
@@ -5,13 +6,30 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+/**
+ * The TripleTest Class.
+ */
 public class TripleTest {
 
+	/**
+	 * The Space Class.
+	 */
 	public class Space extends Triple<Double, Double, Double> {
+
+		/**
+		 * Instantiates a new space.
+		 */
 		public Space() {
 			super();
 		}
 
+		/**
+		 * Instantiates a new space.
+		 *
+		 * @param x the x
+		 * @param y the y
+		 * @param z the z
+		 */
 		public Space(Double x, Double y, Double z) {
 			super(x, y, z);
 		}
@@ -21,6 +39,9 @@ public class TripleTest {
 		//}
 	}
 
+	/**
+	 * Unit Test to space.
+	 */
 	@Test
 	public void testSpace() {
 		final Space space = new Space();
@@ -33,12 +54,18 @@ public class TripleTest {
 		assertEquals(Double.MAX_VALUE, z.doubleValue(), Double.MIN_VALUE);
 	}
 
+	/**
+	 * Unit Test to create.
+	 */
 	@Test
 	public void testCreate() {
 		final Triple<Object, Object, Object> triple = Triple.create();
 		assertNotNull(triple);
 	}
 
+	/**
+	 * Unit Test to triple XYZ.
+	 */
 	@Test
 	public void testTripleXYZ() {
 		final Triple<Double, Double, Double> triple = new Triple<Double, Double, Double>();

@@ -2,7 +2,7 @@
 package patterns.builder;
 
 /**
- * The Product Class.
+ * Product Class.
  */
 public class Product {
 

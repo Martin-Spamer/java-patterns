@@ -11,7 +11,7 @@ import org.junit.Test;
 public class ViewTest {
 
 	/**
-	 * Unit Test to show the view.
+	 * view.
 	 */
 	@Test
 	public void testShowView() {

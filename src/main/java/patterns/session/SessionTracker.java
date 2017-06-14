@@ -4,14 +4,14 @@ package patterns.session;
 import java.util.Vector;
 
 /**
- * The SessionTracker Class.
+ * SessionTracker Class.
  */
 public class SessionTracker {
 
 	private Vector<Session> sessions;
 
 	/**
-	 * Creates the session.
+	 * session.
 	 */
 	public void createSession() {
 	}

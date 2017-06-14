@@ -10,22 +10,26 @@
 package javamentor.solid;
 
 /**
+ * OpenClosedPrinciple Class.
  *
  * @author martin.spamer
  * @version 0.1 - 12:11:08
- **/
+ */
 public class OpenClosedPrinciple {
+
 	/**
-	 * OpenClosedPrinciple Constructor
-	 *
-	 **/
+	 * OpenClosedPrinciple Constructor.
+	 */
 	public OpenClosedPrinciple() {
 		super();
 	}
 
 	/**
+	 * main method.
 	 *
-	 * @param args
+	 * arguments
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		new OpenClosedPrinciple();

@@ -2,19 +2,24 @@
 package javamentor.associations;
 
 /**
- * The JourneyInterface Interface.
+ * JourneyInterface Interface.
  */
 public interface JourneyInterface {
 
 	/**
-	 * Sets the destination.
+	 * destination.
 	 *
-	 * @param destination the new destination
+	 * new destination
+	 *
+	 * @param destination the new
+	 * 			destination
 	 */
 	abstract void setDestination(String destination);
 
 	/**
-	 * Gets the destination.
+	 * destination.
+	 *
+	 * destination
 	 *
 	 * @return the destination
 	 */

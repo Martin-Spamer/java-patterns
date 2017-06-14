@@ -2,7 +2,7 @@
 package patterns.flyweight;
 
 /**
- * The FlyWeight Class.
+ * FlyWeight Class.
  */
 public final class FlyWeight {
 

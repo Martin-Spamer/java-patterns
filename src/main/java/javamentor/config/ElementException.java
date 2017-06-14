@@ -6,7 +6,7 @@
 package javamentor.config;
 
 /**
- * The ElementException Class.
+ * ElementException Class.
  */
 @SuppressWarnings("serial")
 public class ElementException extends Exception {

@@ -1,3 +1,4 @@
+
 package patterns.command;
 
 import java.util.ArrayList;
@@ -13,31 +14,39 @@ public class SequenceCommand extends AbstractCommand {
 	/**
 	 * Append a new command.
 	 *
-	 * @param the command to be appended
+	 * command
+	 *
+	 * @param command the command
 	 * @return true, if successful
 	 */
 	public boolean append(AbstractCommand command) {
-		return this.sequence.add(command);
+		return sequence.add(command);
 	}
 
 	/**
 	 * Adds an new Command at index.
 	 *
+	 * index
+	 * element
+	 *
 	 * @param index the index
 	 * @param element the element
 	 */
 	public void add(int index, AbstractCommand element) {
-		this.sequence.add(index, element);
+		sequence.add(index, element);
 	}
 
 	/**
-	 * Removes the command at index.
+	 * command at index.
+	 *
+	 * index
+	 * abstract command
 	 *
 	 * @param index the index
 	 * @return the abstract command
 	 */
 	public AbstractCommand remove(int index) {
-		return this.sequence.remove(index);
+		return sequence.remove(index);
 	}
 
 	/*
@@ -48,12 +57,12 @@ public class SequenceCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface execute(ParametersInterface commandParameters) {
-		this.result = new Result();
-		for (final AbstractCommand command : this.sequence) {
+		result = new Result();
+		for (final AbstractCommand command : sequence) {
 			final ResultInterface newResult = command.execute(commandParameters);
-			this.result.and(newResult);
+			result.and(newResult);
 		}
-		return this.result;
+		return result;
 	}
 
 	/*
@@ -64,10 +73,10 @@ public class SequenceCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface undo(ParametersInterface commandParameters) {
-		for (final AbstractCommand command : this.sequence) {
-			this.result = command.execute(commandParameters);
+		for (final AbstractCommand command : sequence) {
+			result = command.execute(commandParameters);
 		}
-		return this.result;
+		return result;
 	}
 
 }

@@ -2,12 +2,14 @@
 package patterns.visitor;
 
 /**
- * The VisitorInterface Interface.
+ * VisitorInterface Interface.
  */
 public interface VisitorInterface {
 
 	/**
 	 * Visit.
+	 *
+	 * element
 	 *
 	 * @param element the element
 	 */

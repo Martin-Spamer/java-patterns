@@ -7,7 +7,7 @@
 package javamentor.rules;
 
 /**
- * The AbstractCommaAbstractRulend Class.
+ * AbstractCommaAbstractRulend Class.
  */
 public class AbstractRule implements CommandInterface {
 
@@ -15,11 +15,18 @@ public class AbstractRule implements CommandInterface {
 
 	/**
 	 * Instantiates a new abstract command.
+	 *
+	 * context
+	 *
+	 * @param context the context
 	 */
 	public AbstractRule(final ContextInterface context) {
 		this.context = context;
 	}
 
+	/* (non-Javadoc)
+	 * @see javamentor.rules.CommandInterface#execute(javamentor.rules.Parameters)
+	 */
 	@Override
 	public void execute(final Parameters parameters) {
 		final String className = this.getClass().getSimpleName();

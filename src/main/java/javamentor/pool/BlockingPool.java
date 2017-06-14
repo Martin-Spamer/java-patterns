@@ -1,3 +1,4 @@
+
 package javamentor.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;
@@ -6,9 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The BlockingPool Class.
+ * BlockingPool Class.
  *
- * @param <E> the generic type
+ * generic type
+ *
+ * @param <E> the element type
  */
 public abstract class BlockingPool<E> implements PoolInterface<E> {
 

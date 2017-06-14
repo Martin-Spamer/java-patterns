@@ -2,7 +2,7 @@
 package patterns.builder;
 
 /**
- * The BuilderOne Class.
+ * BuilderOne Class.
  */
 public class BuilderOne extends AbstractBuilder {
 

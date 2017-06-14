@@ -25,6 +25,10 @@ public class XmlElement implements XmlElementInterface {
 
 	/**
 	 * Instantiates a new xml element.
+	 *
+	 * element
+	 *
+	 * @param element the element
 	 */
 	public XmlElement(Element element) {
 		super();
@@ -34,6 +38,12 @@ public class XmlElement implements XmlElementInterface {
 
 	/**
 	 * Instantiates a new xml element.
+	 *
+	 * element
+	 * xml string
+	 *
+	 * @param element the element
+	 * @param xmlString the xml string
 	 */
 	public XmlElement(Element element, String xmlString) {
 		super();
@@ -41,20 +51,52 @@ public class XmlElement implements XmlElementInterface {
 		setXmlString(xmlString);
 	}
 
+	/**
+	 * element.
+	 *
+	 * new
+	 * 			element
+	 *
+	 * @param element the new
+	 * 			element
+	 */
 	public void setElement(Element element) {
 		this.element = element;
 	}
 
+	/**
+	 * xml string.
+	 *
+	 * new
+	 * 			xml string
+	 *
+	 * @param xmlString the new
+	 * 			xml string
+	 */
 	public void setXmlString(String xmlString) {
 		this.xmlString = xmlString;
 	}
 
+	/**
+	 * element.
+	 *
+	 * element
+	 *
+	 * @return the element
+	 */
 	public Element getElement() {
-		return this.element;
+		return element;
 	}
 
+	/**
+	 * xml string.
+	 *
+	 * xml string
+	 *
+	 * @return the xml string
+	 */
 	public String getXmlString() {
-		return this.xmlString;
+		return xmlString;
 	}
 
 	/*
@@ -64,12 +106,15 @@ public class XmlElement implements XmlElementInterface {
 	 */
 	@Override
 	public String toXML() {
-		return this.xmlString;
+		return xmlString;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return String.format("XmlElement [element=%s, xmlString=%s]", this.element, this.xmlString);
+		return String.format("XmlElement [element=%s, xmlString=%s]", element, xmlString);
 	}
 
 }

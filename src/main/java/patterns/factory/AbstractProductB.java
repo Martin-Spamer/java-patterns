@@ -2,7 +2,7 @@
 package patterns.factory;
 
 /**
- * The AbstractProductB Class.
+ * AbstractProductB Class.
  */
 public abstract class AbstractProductB extends AbstractProduct {
 

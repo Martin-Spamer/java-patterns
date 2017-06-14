@@ -10,12 +10,16 @@
 package javamentor.solid;
 
 /**
- * The InterfaceSegregationPrinciple Class.
+ * InterfaceSegregationPrinciple Class.
  *
  * @author martin.spamer
  * @version 0.1 - 12:21:40
  */
 public class InterfaceSegregationPrinciple implements ExampleInterface {
+
+	/**
+	 * Instantiates a new interface segregation principle.
+	 */
 	public InterfaceSegregationPrinciple() {
 		super();
 	}

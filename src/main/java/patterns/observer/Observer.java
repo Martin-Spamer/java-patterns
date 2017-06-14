@@ -2,7 +2,7 @@
 package patterns.observer;
 
 /**
- * The Observer Class.
+ * Observer Class.
  */
 public class Observer extends AbstractObserver {
 

@@ -2,12 +2,14 @@
 package patterns.observer;
 
 /**
- * The SubjectInterface Interface.
+ * SubjectInterface Interface.
  */
 public interface SubjectInterface {
 
 	/**
 	 * Attach observer.
+	 *
+	 * observer
 	 *
 	 * @param observer the observer
 	 */
@@ -15,6 +17,8 @@ public interface SubjectInterface {
 
 	/**
 	 * Detach observer.
+	 *
+	 * observer
 	 *
 	 * @param observer the observer
 	 */

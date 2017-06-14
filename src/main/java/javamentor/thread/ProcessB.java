@@ -10,14 +10,19 @@
 package javamentor.thread;
 
 /**
+ * ProcessB Class.
  *
  * @author martin.spamer
  * @version 0.1 - 09:18:51
- **/
+ */
 public class ProcessB extends AbstractApplicationProcess {
+
 	/**
+	 * main method.
 	 *
-	 * @param args
+	 * arguments
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		final ProcessB processB = new ProcessB();

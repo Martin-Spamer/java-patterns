@@ -2,7 +2,7 @@
 package patterns.visitor;
 
 /**
- * The AbstractVisitor Class.
+ * AbstractVisitor Class.
  */
 public abstract class AbstractVisitor implements VisitorInterface {
 

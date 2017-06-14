@@ -24,11 +24,13 @@ public class BigDecimalMoney {
 	 */
 	public BigDecimalMoney() {
 		setCurrency(Currency.getInstance(Locale.getDefault()));
-		this.amount = new BigDecimal(0);
+		amount = new BigDecimal(0);
 	}
 
 	/**
 	 * Instantiates a new money.
+	 *
+	 * amount
 	 *
 	 * @param amount the amount
 	 */
@@ -40,6 +42,8 @@ public class BigDecimalMoney {
 	/**
 	 * Instantiates a new money.
 	 *
+	 * amount
+	 *
 	 * @param amount the amount
 	 */
 	public BigDecimalMoney(final long amount) {
@@ -50,15 +54,20 @@ public class BigDecimalMoney {
 	/**
 	 * Instantiates a new money.
 	 *
+	 * big decimal
+	 *
 	 * @param bigDecimal the big decimal
 	 */
 	public BigDecimalMoney(final BigDecimal bigDecimal) {
 		setCurrency(Currency.getInstance(Locale.getDefault()));
-		this.amount = bigDecimal;
+		amount = bigDecimal;
 	}
 
 	/**
 	 * Instantiates a new money.
+	 *
+	 * amount
+	 * currency
 	 *
 	 * @param amount the amount
 	 * @param currency the currency
@@ -71,15 +80,20 @@ public class BigDecimalMoney {
 	/**
 	 * Instantiates a new money.
 	 *
+	 * currency
+	 *
 	 * @param currency the currency
 	 */
 	public BigDecimalMoney(final Currency currency) {
 		setCurrency(currency);
-		this.amount = new BigDecimal(0);
+		amount = new BigDecimal(0);
 	}
 
 	/**
 	 * Instantiates a new money.
+	 *
+	 * currency
+	 * amount
 	 *
 	 * @param currency the currency
 	 * @param amount the amount
@@ -93,6 +107,8 @@ public class BigDecimalMoney {
 	/**
 	 * Instantiates a new money.
 	 *
+	 * amount
+	 *
 	 * @param amount the amount
 	 */
 	public BigDecimalMoney(final String amount) {
@@ -103,8 +119,11 @@ public class BigDecimalMoney {
 	/**
 	 * Adds the.
 	 *
+	 * amount
+	 * money
+	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the big decimal money
 	 */
 	public BigDecimalMoney add(final int amount) {
 		this.amount = this.amount.add(new BigDecimal(amount));
@@ -114,8 +133,11 @@ public class BigDecimalMoney {
 	/**
 	 * Adds the.
 	 *
+	 * amount
+	 * money
+	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the big decimal money
 	 */
 	public BigDecimalMoney add(final long amount) {
 		this.amount = this.amount.add(new BigDecimal(amount));
@@ -125,8 +147,11 @@ public class BigDecimalMoney {
 	/**
 	 * Adds the.
 	 *
+	 * amount
+	 * money
+	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the big decimal money
 	 */
 	public BigDecimalMoney add(final BigDecimal amount) {
 		this.amount = this.amount.add(amount);
@@ -136,8 +161,11 @@ public class BigDecimalMoney {
 	/**
 	 * Adds the.
 	 *
+	 * amount
+	 * money
+	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the big decimal money
 	 */
 	public BigDecimalMoney add(final BigDecimalMoney amount) {
 		this.amount = this.amount.add(amount.asBigDecimal());
@@ -147,17 +175,22 @@ public class BigDecimalMoney {
 	/**
 	 * As big decimal.
 	 *
+	 * big decimal
+	 *
 	 * @return the big decimal
 	 */
 	private BigDecimal asBigDecimal() {
-		return this.amount;
+		return amount;
 	}
 
 	/**
 	 * Subtract.
 	 *
+	 * amount
+	 * money
+	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the big decimal money
 	 */
 	public BigDecimalMoney subtract(final int amount) {
 		this.amount = this.amount.subtract(new BigDecimal(amount));
@@ -167,8 +200,11 @@ public class BigDecimalMoney {
 	/**
 	 * Subtract.
 	 *
+	 * amount
+	 * money
+	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the big decimal money
 	 */
 	public BigDecimalMoney subtract(final BigDecimal amount) {
 		this.amount = this.amount.subtract(amount);
@@ -178,8 +214,11 @@ public class BigDecimalMoney {
 	/**
 	 * Subtract.
 	 *
+	 * amount
+	 * money
+	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the big decimal money
 	 */
 	public BigDecimalMoney subtract(final BigDecimalMoney amount) {
 		this.amount = this.amount.subtract(amount.asBigDecimal());
@@ -187,19 +226,24 @@ public class BigDecimalMoney {
 	}
 
 	/**
-	 * Gets the currency.
+	 * currency.
+	 *
+	 * currency
 	 *
 	 * @return the currency
 	 */
 	public Currency getCurrency() {
-		return this.currency;
+		return currency;
 	}
 
 	/**
-	 * Sets the currency.
+	 * currency.
+	 *
+	 * currency
+	 * money
 	 *
 	 * @param currency the currency
-	 * @return the money
+	 * @return the big decimal money
 	 */
 	public BigDecimalMoney setCurrency(final Currency currency) {
 		this.currency = currency;
@@ -214,7 +258,7 @@ public class BigDecimalMoney {
 	@Override
 	public String toString() {
 		final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-		final String currencyString = numberFormat.format(this.amount);
+		final String currencyString = numberFormat.format(amount);
 		return String.format("%s", currencyString);
 	}
 

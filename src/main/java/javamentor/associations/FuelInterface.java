@@ -2,12 +2,14 @@
 package javamentor.associations;
 
 /**
- * The FuelInterface Interface.
+ * FuelInterface Interface.
  */
 public interface FuelInterface {
 
 	/**
 	 * Fuel up.
+	 *
+	 * fuel
 	 *
 	 * @param fuel the fuel
 	 */

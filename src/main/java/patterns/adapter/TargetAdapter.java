@@ -2,7 +2,7 @@
 package patterns.adapter;
 
 /**
- * The TargetAdapter Class.
+ * TargetAdapter Class.
  */
 public class TargetAdapter extends AbstractAdapter {
 

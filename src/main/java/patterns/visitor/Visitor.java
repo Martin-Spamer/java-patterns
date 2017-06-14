@@ -2,7 +2,7 @@
 package patterns.visitor;
 
 /**
- * The Visitor Class.
+ * Visitor Class.
  */
 public final class Visitor extends AbstractVisitor {
 

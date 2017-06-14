@@ -2,7 +2,7 @@
 package patterns.mvc.controller;
 
 /**
- * The Delegate Class.
+ * Delegate Class.
  */
 public abstract class Delegate {
 

@@ -15,14 +15,18 @@ public final class StaticLogging {
 	private static final Logger LOG = LoggerFactory.getLogger(StaticLogging.class);
 
 	/**
-	 * Logging using the Law of Demeter (Tell Don't Ask)
+	 * Law of Demeter (Tell Don't Ask).
 	 */
 	public void toLog() {
 		LOG.info("{}.toLog", this.getClass().getSimpleName());
 	}
 
 	/**
-	 * Logging using the Law of Demeter (Tell Don't Ask)
+	 * Law of Demeter (Tell Don't Ask).
+	 *
+	 * destination log
+	 *
+	 * @param destinationLog the destination log
 	 */
 	public void logTo(Logger destinationLog) {
 		destinationLog.info("{}.logTo", this.getClass().getSimpleName());

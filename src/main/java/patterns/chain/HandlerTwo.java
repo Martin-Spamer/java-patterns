@@ -2,16 +2,21 @@
 package patterns.chain;
 
 /**
- * The HandlerTwo Class.
+ * HandlerTwo Class.
  */
 public class HandlerTwo extends AbstractHandler {
 
+	/**
+	 * Instantiates a new handler two.
+	 */
 	public HandlerTwo() {
 		super();
 	}
 
 	/**
 	 * Instantiates a new handler two.
+	 *
+	 * next
 	 *
 	 * @param next the next
 	 */

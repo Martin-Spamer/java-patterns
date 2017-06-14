@@ -2,7 +2,7 @@
 package patterns.viewer;
 
 /**
- * The Helper Class.
+ * Helper Class.
  */
 public class Helper {
 

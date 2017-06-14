@@ -4,19 +4,24 @@
 package javamentor.associations;
 
 /**
- * The PersonInterface Interface.
+ * PersonInterface Interface.
  */
 public interface PersonInterface {
 
 	/**
-	 * Sets the name.
+	 * name.
 	 *
-	 * @param name the new name
+	 * new name
+	 *
+	 * @param name the new
+	 * 			name
 	 */
 	void setName(String name);
 
 	/**
 	 * To string.
+	 *
+	 * string
 	 *
 	 * @return the string
 	 */

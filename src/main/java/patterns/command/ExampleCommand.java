@@ -1,7 +1,8 @@
+
 package patterns.command;
 
 /**
- * The ExampleCommand Class.
+ * ExampleCommand Class.
  */
 public class ExampleCommand extends AbstractCommand {
 

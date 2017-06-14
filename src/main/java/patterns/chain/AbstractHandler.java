@@ -1,3 +1,4 @@
+
 package patterns.chain;
 
 import org.slf4j.Logger;
@@ -21,6 +22,8 @@ public abstract class AbstractHandler implements HandlerInterface {
 	/**
 	 * Instantiates a new handler.
 	 *
+	 * next
+	 *
 	 * @param next the next
 	 */
 	public AbstractHandler(HandlerInterface next) {
@@ -29,10 +32,13 @@ public abstract class AbstractHandler implements HandlerInterface {
 	}
 
 	/**
-	 * Sets the next.
+	 * next.
+	 *
+	 * next
+	 * handler
 	 *
 	 * @param next the next
-	 * @return the handler
+	 * @return the abstract handler
 	 */
 	public AbstractHandler setNext(HandlerInterface next) {
 		this.next = next;

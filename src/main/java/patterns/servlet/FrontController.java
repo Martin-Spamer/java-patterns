@@ -17,7 +17,7 @@ import patterns.command.CommandFactory;
 import patterns.command.MissingCommandException;
 
 /**
- * The FrontController Class.
+ * FrontController Class.
  */
 @SuppressWarnings("serial")
 public class FrontController extends HttpServlet {
@@ -85,6 +85,10 @@ public class FrontController extends HttpServlet {
 	/**
 	 * Process request.
 	 *
+	 * request
+	 * response
+	 * servlet exception
+	 *
 	 * @param request the request
 	 * @param response the response
 	 * @throws ServletException the servlet exception
@@ -112,6 +116,11 @@ public class FrontController extends HttpServlet {
 
 	/**
 	 * Dispatch.
+	 *
+	 * request
+	 * response
+	 * page
+	 * servlet exception
 	 *
 	 * @param request the request
 	 * @param response the response

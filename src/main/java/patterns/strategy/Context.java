@@ -2,7 +2,7 @@
 package patterns.strategy;
 
 /**
- * The Context Class.
+ * Context Class.
  */
 public class Context {
 

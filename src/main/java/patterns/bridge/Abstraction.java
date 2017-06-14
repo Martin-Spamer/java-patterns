@@ -2,7 +2,7 @@
 package patterns.bridge;
 
 /**
- * The Abstraction Class.
+ * Abstraction Class.
  */
 public abstract class Abstraction {
 
@@ -10,6 +10,8 @@ public abstract class Abstraction {
 
 	/**
 	 * Instantiates a new abstraction.
+	 *
+	 * implementor
 	 *
 	 * @param implementor the implementor
 	 */

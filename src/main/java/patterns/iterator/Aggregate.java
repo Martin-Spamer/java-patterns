@@ -2,7 +2,7 @@
 package patterns.iterator;
 
 /**
- * The Aggregate Class.
+ * Aggregate Class.
  */
 public final class Aggregate extends AbstractAggregate {
 

@@ -13,7 +13,7 @@ public class AbstractLoggingTest {
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
 
 	/**
-	 * The MockLog Class.
+	 * MockLog Class.
 	 */
 	public final class MockLog extends AbstractLogging {
 	}

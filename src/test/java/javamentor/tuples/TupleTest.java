@@ -1,3 +1,4 @@
+
 package javamentor.tuples;
 
 import static org.junit.Assert.assertEquals;
@@ -5,32 +6,47 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import javamentor.tuples.Tuple;
-import javamentor.tuples.TupleInterface;
-
+/**
+ * The TupleTest Class.
+ */
 public class TupleTest {
 
+	/**
+	 * The Point Class.
+	 */
 	public class Point extends Tuple<Float, Float> {
 	}
 
+	/**
+	 * Unit Test to point.
+	 */
 	@Test
 	public void testPoint() {
 		final Point point = new Point();
 		assertNotNull(point);
 	}
 
+	/**
+	 * Unit Test to object tuple.
+	 */
 	@Test
 	public void testObjectTuple() {
 		final Tuple<Object, Object> tuple = new Tuple<Object, Object>();
 		assertNotNull(tuple);
 	}
 
+	/**
+	 * Unit Test to float tuple.
+	 */
 	@Test
 	public void testFloatTuple() {
 		final Tuple<Float, Float> tuple = new Tuple<Float, Float>();
 		assertNotNull(tuple);
 	}
 
+	/**
+	 * Unit Test to string tuple.
+	 */
 	@Test
 	public void testStringTuple() {
 		final Tuple<String, String> tuple = new Tuple<String, String>();

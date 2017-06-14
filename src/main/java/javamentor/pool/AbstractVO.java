@@ -1,7 +1,8 @@
+
 package javamentor.pool;
 
 /**
- * The AbstractVO Class.
+ * AbstractVO Class.
  */
 public abstract class AbstractVO {
 
@@ -12,7 +13,7 @@ public abstract class AbstractVO {
 	 * Dirty.
 	 */
 	protected void dirty() {
-		this.dirty = true;
+		dirty = true;
 	}
 
 	/**
@@ -21,7 +22,7 @@ public abstract class AbstractVO {
 	 * @return true, if is dirty
 	 */
 	protected boolean isDirty() {
-		return this.dirty;
+		return dirty;
 	}
 
 }

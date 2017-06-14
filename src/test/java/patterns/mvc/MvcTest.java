@@ -1,3 +1,4 @@
+
 package patterns.mvc;
 
 import static org.junit.Assert.assertNotNull;
@@ -8,8 +9,16 @@ import patterns.mvc.controller.Controller;
 import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
 
+/**
+ * The MvcTest Class.
+ */
 public class MvcTest {
 
+	/**
+	 * Unit Test to mvc.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Test
 	public void testMvc() throws Exception {
 		final Model model = new Model();
@@ -22,6 +31,11 @@ public class MvcTest {
 		assertNotNull(controller);
 	}
 
+	/**
+	 * Run mvc.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Test
 	public void runMvc() throws Exception {
 		final Model model = new Model();
@@ -34,6 +48,6 @@ public class MvcTest {
 		final Controller controller = new Controller();
 		controller.attachModel(model);
 		controller.attachView(view);
-		controller.execute("Test");
+		controller.execute("ExampleCommand");
 	}
 }

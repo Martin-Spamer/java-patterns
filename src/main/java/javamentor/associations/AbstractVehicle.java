@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractVehicle Class.
+ * AbstractVehicle Class.
  */
 public abstract class AbstractVehicle implements VehicleInterface, FuelInterface {
 
@@ -28,6 +28,8 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 
 	/**
 	 * Instantiates a new abstract vehicle.
+	 *
+	 * engine
 	 *
 	 * @param engine the engine
 	 */

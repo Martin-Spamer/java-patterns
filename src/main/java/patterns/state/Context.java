@@ -2,7 +2,7 @@
 package patterns.state;
 
 /**
- * The Context Class.
+ * Context Class.
  */
 public class Context {
 

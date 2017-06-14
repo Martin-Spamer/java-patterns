@@ -2,16 +2,16 @@
  * This file is part of Automated Testing Framework for Java (atf4j).
  *
  * Atf4j is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
+ * GNU General Public License as published by
+ * License, or
  * (at your option) any later version.
  *
- * Atf4j is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * hope that it will be useful,
+ * implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * GNU General Public License
  * along with atf4j.  If not, see http://www.gnu.org/licenses/.
  */
 
@@ -26,7 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractConfig Class.
+ * AbstractConfig Class.
  */
 public abstract class AbstractConfig implements ConfigInterface {
 
@@ -38,14 +38,16 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * Instantiates a new abstract configuration.
 	 */
 	public AbstractConfig() {
-		this.configFilename = this.getClass().getSimpleName();
-		load(this.configFilename);
+		configFilename = this.getClass().getSimpleName();
+		load(configFilename);
 	}
 
 	/**
 	 * Instantiates a new abstract configuration.
 	 *
-	 * @param configFilename the configuration filename
+	 * configuration filename
+	 *
+	 * @param configFilename the config filename
 	 */
 	AbstractConfig(final String configFilename) {
 		this.configFilename = configFilename;
@@ -53,9 +55,11 @@ public abstract class AbstractConfig implements ConfigInterface {
 	}
 
 	/**
-	 * Load the configuration from XML filename.
+	 * configuration from XML filename.
 	 *
-	 * @param configFilename the configuration filename
+	 * configuration filename
+	 *
+	 * @param configFilename the config filename
 	 */
 	private void load(final String configFilename) {
 		loadFromXmlFile(inputStream(toXmlFilename(configFilename)));
@@ -64,6 +68,9 @@ public abstract class AbstractConfig implements ConfigInterface {
 
 	/**
 	 * Input stream.
+	 *
+	 * resource name
+	 * input stream
 	 *
 	 * @param resourceName the resource name
 	 * @return the input stream
@@ -77,14 +84,16 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Load from property file.
 	 *
+	 * resource as stream
+	 *
 	 * @param resourceAsStream the resource as stream
 	 */
 	public void loadFromPropertyFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				this.properties.load(resourceAsStream);
+				properties.load(resourceAsStream);
 			} catch (final IOException e) {
-				this.log.error(e.toString());
+				log.error(e.toString());
 			}
 		}
 	}
@@ -92,16 +101,18 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Load from xml file.
 	 *
+	 * resource as stream
+	 *
 	 * @param resourceAsStream the resource as stream
 	 */
 	public void loadFromXmlFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				this.properties.loadFromXML(resourceAsStream);
+				properties.loadFromXML(resourceAsStream);
 			} catch (final InvalidPropertiesFormatException e) {
-				this.log.error(e.toString());
+				log.error(e.toString());
 			} catch (final IOException e) {
-				this.log.error(e.toString());
+				log.error(e.toString());
 			}
 		}
 	}
@@ -115,7 +126,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = this.properties.getProperty(key);
+			property = properties.getProperty(key);
 		}
 		return property;
 	}
@@ -130,7 +141,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key, final String defaultValue) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = this.properties.getProperty(key, defaultValue);
+			property = properties.getProperty(key, defaultValue);
 		}
 		return property;
 	}
@@ -138,7 +149,10 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * To property filename.
 	 *
-	 * @param configFilename the configuration filename
+	 * configuration filename
+	 * string
+	 *
+	 * @param configFilename the config filename
 	 * @return the string
 	 */
 	protected String toPropertyFilename(final String configFilename) {
@@ -148,19 +162,34 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * To xml filename.
 	 *
-	 * @param configFilename the configuration filename
+	 * configuration filename
+	 * string
+	 *
+	 * @param configFilename the config filename
 	 * @return the string
 	 */
 	protected String toXmlFilename(final String configFilename) {
 		return String.format("%s.xml", configFilename);
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		final String prettyProperties = prettyProperties(this.properties);
+		final String prettyProperties = prettyProperties(properties);
 		return String.format("properties = %s", prettyProperties);
 	}
 
+	/**
+	 * Pretty properties.
+	 *
+	 * properties
+	 * string
+	 *
+	 * @param properties the properties
+	 * @return the string
+	 */
 	private String prettyProperties(final Properties properties) {
 		return properties.toString().replace("{", "{\n\t").replace(", ", "\n\t").replace("}", "\n\t}");
 	}

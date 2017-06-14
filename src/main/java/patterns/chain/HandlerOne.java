@@ -2,7 +2,7 @@
 package patterns.chain;
 
 /**
- * The HandlerOne Class.
+ * HandlerOne Class.
  */
 public class HandlerOne extends AbstractHandler {
 
@@ -15,6 +15,8 @@ public class HandlerOne extends AbstractHandler {
 
 	/**
 	 * Instantiates a new handler one.
+	 *
+	 * next
 	 *
 	 * @param next the next
 	 */

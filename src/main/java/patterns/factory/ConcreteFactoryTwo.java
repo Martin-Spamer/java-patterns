@@ -2,7 +2,7 @@
 package patterns.factory;
 
 /**
- * The ConcreteFactoryTwo Class.
+ * ConcreteFactoryTwo Class.
  */
 class ConcreteFactoryTwo extends AbstractFactory {
 

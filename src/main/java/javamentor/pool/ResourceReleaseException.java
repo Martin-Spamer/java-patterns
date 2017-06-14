@@ -8,13 +8,15 @@
 package javamentor.pool;
 
 /**
- * The ResourceReleaseException Class.
+ * ResourceReleaseException Class.
  */
 @SuppressWarnings("serial")
 public class ResourceReleaseException extends ResourcePoolException {
 
 	/**
 	 * Instantiates a new resource release exception.
+	 *
+	 * exception message
 	 *
 	 * @param exceptionMessage the exception message
 	 */

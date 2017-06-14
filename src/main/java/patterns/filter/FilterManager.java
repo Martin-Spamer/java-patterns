@@ -2,27 +2,27 @@
 package patterns.filter;
 
 /**
- * The FilterManager Class.
+ * Filter Manager Class.
  */
 public final class FilterManager {
 
-	public Target target;
-
-	public FilterChain filterChain;
+	private FilterInterface first;
 
 	/**
-	 * Handle request.
-	 *
-	 * @param request the request
-	 * @param response the response
+	 * Instantiates a new filter manager.
 	 */
-	public void handleRequest(final RequestInterface request, final ResponseInterface response) {
+	public FilterManager() {
+		super();
 	}
 
 	/**
-	 * Operation.
+	 * Operation that needs to be filtered.
 	 */
 	public void operation() {
+		first = new FilterOne();
+		first.addNextFilter(new FilterTwo());
+		first.addNextFilter(new FilterThree());
+		first.handleRequest(new Payload());
 	}
 
 }

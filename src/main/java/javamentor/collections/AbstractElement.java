@@ -10,7 +10,7 @@
 package javamentor.collections;
 
 /**
- * The BasicElement Class.
+ * BasicElement Class.
  */
 public abstract class AbstractElement {
 
@@ -22,7 +22,7 @@ public abstract class AbstractElement {
 	}
 
 	/**
-	 * execute
+	 * execute.
 	 */
 	public void execute() {
 		System.out.println(this.getClass().getName() + ".execute");

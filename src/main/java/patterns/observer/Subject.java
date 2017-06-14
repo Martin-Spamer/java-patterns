@@ -2,14 +2,16 @@
 package patterns.observer;
 
 /**
- * The Subject Class.
+ * Subject Class.
  */
 public final class Subject extends AbstractSubject {
 
 	private Boolean status = false;
 
 	/**
-	 * Gets the status.
+	 * status.
+	 *
+	 * status
 	 *
 	 * @return the status
 	 */
@@ -18,9 +20,12 @@ public final class Subject extends AbstractSubject {
 	}
 
 	/**
-	 * Sets the status.
+	 * status.
 	 *
-	 * @param status the new status
+	 * new status
+	 *
+	 * @param status the new
+	 * 			status
 	 */
 	public void setStatus(Boolean status) {
 		this.status = status;

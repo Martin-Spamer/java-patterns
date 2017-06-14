@@ -2,7 +2,7 @@
 package patterns.proxy;
 
 /**
- * The LateProxy Class.
+ * LateProxy Class.
  */
 class LateProxy extends Subject {
 

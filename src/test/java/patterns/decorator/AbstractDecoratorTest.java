@@ -1,3 +1,4 @@
+
 package patterns.decorator;
 
 import static org.junit.Assert.assertNotNull;
@@ -6,10 +7,16 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The AbstractDecoratorTest Class.
+ */
 public class AbstractDecoratorTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractDecoratorTest.class);
 
+	/**
+	 * Unit Test to operation.
+	 */
 	@Test
 	public void testOperation() {
 		final DecoratedComponent component = new DecoratedComponent();
@@ -18,6 +25,9 @@ public class AbstractDecoratorTest {
 		LOG.info("{}", component.toString());
 	}
 
+	/**
+	 * Unit Test to before.
+	 */
 	@Test
 	public void testBefore() {
 		final DecoratedComponent component = new DecoratedComponent();
@@ -29,6 +39,9 @@ public class AbstractDecoratorTest {
 		component.operation();
 	}
 
+	/**
+	 * Unit Test to after.
+	 */
 	@Test
 	public void testAfter() {
 		final DecoratedComponent component = new DecoratedComponent();

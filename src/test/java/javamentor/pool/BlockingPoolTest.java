@@ -1,3 +1,4 @@
+
 package javamentor.pool;
 
 import static org.junit.Assert.assertEquals;
@@ -7,17 +8,15 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javamentor.pool.BlockingPool;
-
 /**
- * The BlockingPoolTest Class.
+ * BlockingPoolTest Class.
  */
 public class BlockingPoolTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(BlockingPoolTest.class);
 
 	/**
-	 * The TestResourcePool Class.
+	 * TestResourcePool Class.
 	 */
 	public class TestResourcePool extends BlockingPool<Boolean> {
 	}
@@ -45,7 +44,7 @@ public class BlockingPoolTest {
 		assertEquals(2, testResourcePool.countFree());
 		assertEquals(0, testResourcePool.countUsed());
 
-		// When we exhaust the pool
+		// * pool
 		while (testResourcePool.countFree() > 0) {
 			final Boolean bool = testResourcePool.take();
 			if (bool == true) {

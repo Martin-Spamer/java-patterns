@@ -4,7 +4,7 @@ package patterns.interpreter;
 import java.util.Vector;
 
 /**
- * The AbstractExpression Class.
+ * AbstractExpression Class.
  */
 public abstract class AbstractExpression {
 
@@ -12,6 +12,8 @@ public abstract class AbstractExpression {
 
 	/**
 	 * Interpret.
+	 *
+	 * context
 	 *
 	 * @param context the context
 	 */

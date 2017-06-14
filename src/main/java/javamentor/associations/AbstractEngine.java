@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractEngine Class.
+ * AbstractEngine Class.
  */
 public abstract class AbstractEngine implements FuelInterface {
 
@@ -18,6 +18,8 @@ public abstract class AbstractEngine implements FuelInterface {
 	/**
 	 * Instantiates a new abstract engine.
 	 *
+	 * fuel
+	 *
 	 * @param fuel the fuel
 	 */
 	public AbstractEngine(FuelInterface fuel) {
@@ -27,6 +29,8 @@ public abstract class AbstractEngine implements FuelInterface {
 
 	/**
 	 * Use fuel.
+	 *
+	 * fuel
 	 *
 	 * @param fuel the fuel
 	 */

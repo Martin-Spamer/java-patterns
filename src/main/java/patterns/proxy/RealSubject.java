@@ -2,7 +2,7 @@
 package patterns.proxy;
 
 /**
- * The RealSubject Class.
+ * RealSubject Class.
  */
 class RealSubject extends Subject {
 

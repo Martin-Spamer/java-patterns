@@ -2,7 +2,7 @@
 package patterns.interpreter;
 
 /**
- * The TerminalExpression Class.
+ * TerminalExpression Class.
  */
 public class TerminalExpression extends AbstractExpression {
 

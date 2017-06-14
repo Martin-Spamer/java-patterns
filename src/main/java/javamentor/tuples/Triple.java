@@ -4,6 +4,10 @@ package javamentor.tuples;
 /**
  * Triple Class.
  *
+ * generic type
+ * generic type
+ * generic type
+ *
  * @param <X> the generic type
  * @param <Y> the generic type
  * @param <Z> the generic type
@@ -24,6 +28,10 @@ public class Triple<X, Y, Z> {
 	/**
 	 * Instantiates a new triple.
 	 *
+	 * x
+	 * y
+	 * z
+	 *
 	 * @param x the x
 	 * @param y the y
 	 * @param z the z
@@ -38,6 +46,11 @@ public class Triple<X, Y, Z> {
 	/**
 	 * a factory method to create a instance of triple from default.
 	 *
+	 * generic type
+	 * generic type
+	 * generic type
+	 * triple
+	 *
 	 * @param <X> the generic type
 	 * @param <Y> the generic type
 	 * @param <Z> the generic type
@@ -50,13 +63,21 @@ public class Triple<X, Y, Z> {
 	/**
 	 * a factory method to create a instance of triple from values.
 	 *
+	 * generic type
+	 * generic type
+	 * generic type
+	 * x
+	 * y
+	 * z
+	 * new instance of tuple
+	 *
 	 * @param <X> the generic type
 	 * @param <Y> the generic type
 	 * @param <Z> the generic type
 	 * @param x the x
 	 * @param y the y
 	 * @param z the z
-	 * @return the new instance of tuple
+	 * @return the triple
 	 */
 	public static <X, Y, Z> Triple<X, Y, Z> create(final X x, final Y y, final Z z) {
 		return new Triple<X, Y, Z>(x, y, z);
@@ -65,16 +86,21 @@ public class Triple<X, Y, Z> {
 	/**
 	 * Return a shallow copy of this.
 	 *
-	 * @return the tuple
+	 * tuple
+	 *
+	 * @return the triple
 	 */
 	public Triple<X, Y, Z> copy() {
 		return new Triple<X, Y, Z>(getX(), getY(), getZ());
 	}
 
 	/**
-	 * Sets the x.
+	 * x.
 	 *
-	 * @param x the new x
+	 * new x
+	 * triple
+	 *
+	 * @param x the x
 	 * @return the triple
 	 */
 	public Triple<X, Y, Z> setX(final X x) {
@@ -83,9 +109,12 @@ public class Triple<X, Y, Z> {
 	}
 
 	/**
-	 * Sets the y.
+	 * y.
 	 *
-	 * @param y the new y
+	 * new y
+	 * triple
+	 *
+	 * @param y the y
 	 * @return the triple
 	 */
 	public Triple<X, Y, Z> setY(final Y y) {
@@ -94,9 +123,12 @@ public class Triple<X, Y, Z> {
 	}
 
 	/**
-	 * Sets the z.
+	 * z.
 	 *
-	 * @param z the new z
+	 * new z
+	 * triple
+	 *
+	 * @param z the z
 	 * @return the triple
 	 */
 	public Triple<X, Y, Z> setZ(final Z z) {
@@ -105,7 +137,9 @@ public class Triple<X, Y, Z> {
 	}
 
 	/**
-	 * Gets the x.
+	 * x.
+	 *
+	 * x
 	 *
 	 * @return the x
 	 */
@@ -114,7 +148,9 @@ public class Triple<X, Y, Z> {
 	}
 
 	/**
-	 * Gets the y.
+	 * y.
+	 *
+	 * y
 	 *
 	 * @return the y
 	 */
@@ -123,7 +159,9 @@ public class Triple<X, Y, Z> {
 	}
 
 	/**
-	 * Gets the z.
+	 * z.
+	 *
+	 * z
 	 *
 	 * @return the z
 	 */
@@ -131,11 +169,17 @@ public class Triple<X, Y, Z> {
 		return this.z;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return String.format("Triple [x=%s, y=%s, z=%s]", this.x, this.y, this.z);
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -146,6 +190,9 @@ public class Triple<X, Y, Z> {
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {

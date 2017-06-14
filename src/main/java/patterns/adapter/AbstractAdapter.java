@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The AbstractAdapter Class.
+ * AbstractAdapter Class.
  */
 public abstract class AbstractAdapter implements TargetInterface {
 

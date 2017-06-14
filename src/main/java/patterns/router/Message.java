@@ -2,7 +2,7 @@
 package patterns.router;
 
 /**
- * The Message Class.
+ * Message Class.
  */
 public class Message {
 

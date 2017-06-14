@@ -2,7 +2,7 @@
 package patterns.composite;
 
 /**
- * The Leaf Class.
+ * Leaf Class.
  */
 public class Leaf extends Component {
 

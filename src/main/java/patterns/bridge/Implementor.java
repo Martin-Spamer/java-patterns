@@ -2,7 +2,7 @@
 package patterns.bridge;
 
 /**
- * The Implementor Class.
+ * Implementor Class.
  */
 public class Implementor extends AbstractImplementor {
 

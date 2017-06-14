@@ -15,7 +15,7 @@ public class SingletonFactory {
 	}
 
 	/**
-	 * Gets the single instance of SingletonFactory.
+	 * single instance of SingletonFactory.
 	 *
 	 * @return single instance of SingletonFactory
 	 */
@@ -28,6 +28,8 @@ public class SingletonFactory {
 
 	/**
 	 * Creates the.
+	 *
+	 * singleton factory
 	 *
 	 * @return the singleton factory
 	 */

@@ -2,12 +2,14 @@
 package patterns.router;
 
 /**
- * The OutputChannel Interface.
+ * OutputChannel Interface.
  */
 public interface OutputChannel {
 
 	/**
 	 * Send message.
+	 *
+	 * message
 	 *
 	 * @param message the message
 	 */

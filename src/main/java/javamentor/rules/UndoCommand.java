@@ -1,7 +1,8 @@
+
 package javamentor.rules;
 
 /**
- * The UndoCommand Interface.
+ * UndoCommand Interface.
  */
 public interface UndoCommand extends CommandInterface {
 

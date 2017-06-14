@@ -1,7 +1,8 @@
+
 package patterns.chain;
 
 /**
- * The AbstractRequest Class.
+ * AbstractRequest Class.
  */
 public class AbstractRequest {
 
@@ -15,7 +16,9 @@ public class AbstractRequest {
 	}
 
 	/**
-	 * Gets the payload.
+	 * payload.
+	 *
+	 * payload
 	 *
 	 * @return the payload
 	 */
@@ -24,14 +27,20 @@ public class AbstractRequest {
 	}
 
 	/**
-	 * Sets the payload.
+	 * payload.
 	 *
-	 * @param payload the new payload
+	 * new payload
+	 *
+	 * @param payload the new
+	 * 			payload
 	 */
 	public void setPayload(String payload) {
 		this.payload = payload;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return String.format("%s [payload=%s]", this.getClass().getSimpleName(), payload);

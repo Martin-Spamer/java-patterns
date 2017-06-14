@@ -1,3 +1,4 @@
+
 package javamentor.money;
 
 import static org.junit.Assert.assertEquals;
@@ -10,15 +11,22 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javamentor.money.Money;
-
+/**
+ * The MoneyTest Class.
+ */
 public class MoneyTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
 
+	/**
+	 * The Pounds Class.
+	 */
 	public class Pounds extends Money {
 	}
 
+	/**
+	 * Unit Test to money.
+	 */
 	@Test
 	public void testMoney() {
 		final Money money = new Money(10L);
@@ -50,6 +58,9 @@ public class MoneyTest {
 		LOG.info("{}", money.toString());
 	}
 
+	/**
+	 * Unit Test to money currency.
+	 */
 	@Test
 	public void testMoneyCurrency() {
 		final Money money = new Money();
@@ -57,6 +68,9 @@ public class MoneyTest {
 		assertTrue(money.isEqualTo(0));
 	}
 
+	/**
+	 * Unit Test to money long.
+	 */
 	@Test
 	public void testMoneyLong() {
 		final Money money = new Money();
@@ -64,6 +78,9 @@ public class MoneyTest {
 		assertTrue(money.isEqualTo(0));
 	}
 
+	/**
+	 * Unit Test to money currency long.
+	 */
 	@Test
 	public void testMoneyCurrencyLong() {
 		final Money money = new Money();
@@ -71,6 +88,9 @@ public class MoneyTest {
 		assertTrue(money.isEqualTo(0L));
 	}
 
+	/**
+	 * Unit Test to min value.
+	 */
 	@Test
 	public void testMinValue() {
 		final Money money = new Money(Long.MIN_VALUE);
@@ -79,6 +99,9 @@ public class MoneyTest {
 		assertTrue(money.isEqualTo(Long.MIN_VALUE));
 	}
 
+	/**
+	 * Unit Test to max value.
+	 */
 	@Test
 	public void testMaxValue() {
 		final Money money = new Money(Long.MAX_VALUE);
@@ -87,6 +110,9 @@ public class MoneyTest {
 		assertTrue(money.isEqualTo(Long.MAX_VALUE));
 	}
 
+	/**
+	 * Unit Test to max pounds.
+	 */
 	@Test
 	public void testMaxPounds() {
 		final Currency gbp = Currency.getInstance("GBP");
@@ -98,6 +124,9 @@ public class MoneyTest {
 		assertEquals("£ 9,223,372,036,854,775,807", actual);
 	}
 
+	/**
+	 * Unit Test to max euro.
+	 */
 	@Test
 	public void testMaxEuro() {
 		final Currency eur = Currency.getInstance("EUR");
@@ -109,6 +138,9 @@ public class MoneyTest {
 		assertEquals("€ 9,223,372,036,854,775,807", actual);
 	}
 
+	/**
+	 * Unit Test to max dollar.
+	 */
 	@Test
 	public void testMaxDollar() {
 		final Currency usd = Currency.getInstance("USD");

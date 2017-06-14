@@ -1,10 +1,11 @@
+
 package javamentor.delegation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Worker Class.
+ * Worker Class.
  */
 class Worker implements ProcessInterface {
 

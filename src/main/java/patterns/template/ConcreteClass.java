@@ -2,7 +2,7 @@
 package patterns.template;
 
 /**
- * The ConcreteClass Class.
+ * ConcreteClass Class.
  */
 public final class ConcreteClass extends AbstractClass {
 

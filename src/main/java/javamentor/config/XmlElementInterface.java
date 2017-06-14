@@ -14,7 +14,9 @@ public interface XmlElementInterface {
 	/**
 	 * To XML String.
 	 *
-	 * @return the XML as a String object.
+	 * XML as a String object.
+	 *
+	 * @return the string
 	 */
 	public abstract String toXML();
 

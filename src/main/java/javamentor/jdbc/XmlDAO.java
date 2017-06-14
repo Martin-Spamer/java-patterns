@@ -1,3 +1,4 @@
+
 package javamentor.jdbc;
 
 import java.sql.Connection;
@@ -30,10 +31,15 @@ class XmlDAO {
 	private ResultSetMetaData resultSetMetaData = null;
 
 	/**
-	 * Constructor
-	 * @param String url
-	 * @param String userId
-	 * @param String passWord
+	 * Constructor.
+	 *
+	 * url
+	 * user id
+	 * pass word
+	 *
+	 * @param url the url
+	 * @param userId the user id
+	 * @param passWord the pass word
 	 */
 	public XmlDAO(String url, String userId, String passWord) {
 		this.url = url;
@@ -47,7 +53,7 @@ class XmlDAO {
 	}
 
 	/**
-	 * destructor. Close up the database connection.
+	 * database connection.
 	 */
 	@Override
 	public void finalize() {
@@ -61,8 +67,11 @@ class XmlDAO {
 	}
 
 	/**
-	 * read the database.
-	 * @param sql
+	 * database.
+	 *
+	 * sql
+	 *
+	 * @param sql the sql
 	 */
 	public void read(String sql) {
 		try {
@@ -75,15 +84,16 @@ class XmlDAO {
 	}
 
 	/**
-	 * return the data as an XML encoded string.
-	 * @return string representation of the data.
+	 * data as an XML encoded string.
+	 * data.
+	 *
+	 * @return the string
 	 */
 	public String toXmlString() {
-		StringBuffer xml = null;
+		final StringBuffer xml = new StringBuffer();
 
 		try {
 			final int colCount = resultSetMetaData.getColumnCount();
-			xml = new StringBuffer();
 			xml.append("<TABLE>\n");
 
 			while (resultSet.next()) {
@@ -111,8 +121,11 @@ class XmlDAO {
 	}
 
 	/**
-	 * return the data as XML
-	 * @return XML DOM representation of the data.
+	 * data as XML.
+	 *
+	 * data.
+	 *
+	 * @return the document
 	 */
 	public Document toXmlDocument() {
 		Document document = null;
@@ -151,8 +164,12 @@ class XmlDAO {
 
 	/**
 	 * main entry point.
-	 * @param argv
-	 * @throws Exception
+	 *
+	 * arguments
+	 * exception
+	 *
+	 * @param argv the arguments
+	 * @throws Exception the exception
 	 */
 	public static void main(String argv[]) throws Exception {
 		try {

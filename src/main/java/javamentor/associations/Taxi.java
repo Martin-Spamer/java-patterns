@@ -2,7 +2,7 @@
 package javamentor.associations;
 
 /**
- * The Taxi Class.
+ * Taxi Class.
  */
 public class Taxi extends Car {
 
@@ -16,6 +16,8 @@ public class Taxi extends Car {
 	/**
 	 * Instantiates a new taxi.
 	 *
+	 * engine
+	 *
 	 * @param engine the engine
 	 */
 	public Taxi(DieselEngine engine) {
@@ -23,7 +25,9 @@ public class Taxi extends Car {
 	}
 
 	/**
-	 * Gets the passenger.
+	 * passenger.
+	 *
+	 * passenger
 	 *
 	 * @return the passenger
 	 */
@@ -32,9 +36,12 @@ public class Taxi extends Car {
 	}
 
 	/**
-	 * Sets the passenger.
+	 * passenger.
 	 *
-	 * @param passenger the new passenger
+	 * new passenger
+	 *
+	 * @param passenger the new
+	 * 			passenger
 	 */
 	public void setPassenger(Passenger passenger) {
 		this.passenger = passenger;

@@ -4,7 +4,7 @@ package patterns.composite;
 import java.util.Vector;
 
 /**
- * The Composite Class.
+ * Composite Class.
  */
 public class Composite extends Component {
 

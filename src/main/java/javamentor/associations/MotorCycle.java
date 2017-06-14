@@ -4,7 +4,7 @@
 package javamentor.associations;
 
 /**
- * The MotorCycle Class.
+ * MotorCycle Class.
  */
 public class MotorCycle extends AbstractVehicle {
 
@@ -28,7 +28,9 @@ public class MotorCycle extends AbstractVehicle {
 	}
 
 	/**
-	 * Gets the rider.
+	 * rider.
+	 *
+	 * rider
 	 *
 	 * @return the rider
 	 */
@@ -37,9 +39,12 @@ public class MotorCycle extends AbstractVehicle {
 	}
 
 	/**
-	 * Sets the rider.
+	 * rider.
 	 *
-	 * @param rider the new rider
+	 * new rider
+	 *
+	 * @param rider the new
+	 * 			rider
 	 */
 	public void setRider(Rider rider) {
 		this.rider = rider;

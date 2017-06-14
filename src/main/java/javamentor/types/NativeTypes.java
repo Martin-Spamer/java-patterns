@@ -9,10 +9,11 @@
 package javamentor.types;
 
 /**
- * Java Native Types
+ * Java Native Types.
+ *
  * @author martin.spamer
  * @version 0.1 - 09:20:22
- **/
+ */
 public class NativeTypes {
 	// integers
 	byte largestByte = Byte.MAX_VALUE;
@@ -40,6 +41,9 @@ public class NativeTypes {
 	boolean aBooleanTrue = true;
 	boolean aBooleanFalse = false;
 
+	/**
+	 * Display.
+	 */
 	public void display() {
 		// display them all
 		System.out.println("largest byte value : " + largestByte);
@@ -74,7 +78,9 @@ public class NativeTypes {
 	}
 
 	/**
-	 * The main method.
+	 * main method.
+	 *
+	 * arguments
 	 *
 	 * @param args the arguments
 	 */

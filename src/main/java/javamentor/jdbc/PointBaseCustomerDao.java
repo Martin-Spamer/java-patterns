@@ -9,7 +9,7 @@ package javamentor.jdbc;
 import java.sql.SQLException;
 
 /**
- * The PointBaseCustomerDao Class.
+ * PointBaseCustomerDao Class.
  *
  * @author martin.spamer
  */
@@ -17,11 +17,15 @@ public class PointBaseCustomerDao {
 	private java.sql.Connection connection = null;
 
 	/**
+	 * Creates a new instance of DaoTemplate.
 	 *
-	 * Creates a new instance of DaoTemplate
-	 * @param connectionUrl
-	 * @param userId
-	 * @param password
+	 * connection url
+	 * user id
+	 * password
+	 *
+	 * @param connectionUrl the connection url
+	 * @param userId the user id
+	 * @param password the password
 	 */
 	public PointBaseCustomerDao(String connectionUrl, String userId, String password) {
 		try {
@@ -32,7 +36,7 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * read the database SQL> SELECT * from customer_tbl
+	 * database SQL> SELECT * from customer_tbl.
 	 */
 	public void read() {
 		try {
@@ -64,7 +68,7 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * write a new record to the database. SQL> INSERT INTO CUSTOMER_TBL
+	 * database. SQL> INSERT INTO CUSTOMER_TBL
 	 * (CUSTOMER_NUM,POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')
 	 */
 	public void write() {
@@ -81,7 +85,7 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * update a record within the database. SQL> UPDATE CUSTOMER_TBL SET NAME
+	 * database. SQL> UPDATE CUSTOMER_TBL SET NAME
 	 * ='DataMentor' WHERE CUSTOMER_NUM=999
 	 */
 	public void update() {
@@ -98,7 +102,7 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * delete a record within the database. SQL> DELETE FROM CUSTOMER_TBL WHERE
+	 * database. SQL> DELETE FROM CUSTOMER_TBL WHERE
 	 * FIELD-NAME='VALUE'
 	 */
 	public void delete() {
@@ -114,7 +118,7 @@ public class PointBaseCustomerDao {
 		}
 	}
 
-	/** class destructor closes the DB connection. */
+	/** * DB connection. */
 	@Override
 	public void finalize() {
 		try {
@@ -125,7 +129,11 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * @param args the command line arguments
+	 * main method.
+	 *
+	 * command line arguments
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		final String connectionUrl = "jdbc:pointbase://localhost:9092/sample";

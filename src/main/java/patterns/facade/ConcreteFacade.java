@@ -2,7 +2,7 @@
 package patterns.facade;
 
 /**
- * The ConcreteFacade Class.
+ * ConcreteFacade Class.
  */
 public final class ConcreteFacade implements FacadeInterface {
 

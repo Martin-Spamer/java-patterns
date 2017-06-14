@@ -2,7 +2,10 @@
 package javamentor.tuples;
 
 /**
- * The TupleInterface Interface.
+ * TupleInterface Interface.
+ *
+ * generic type
+ * generic type
  *
  * @param <L> the generic type
  * @param <R> the generic type
@@ -10,28 +13,38 @@ package javamentor.tuples;
 public interface TupleInterface<L, R> {
 
 	/**
-	 * Sets the left.
+	 * left.
 	 *
-	 * @param left the new left
+	 * new left
+	 *
+	 * @param left the new
+	 * 			left
 	 */
 	void setLeft(L left);
 
 	/**
-	 * Sets the right.
+	 * right.
 	 *
-	 * @param right the new right
+	 * new right
+	 *
+	 * @param right the new
+	 * 			right
 	 */
 	void setRight(R right);
 
 	/**
-	 * Gets the left.
+	 * left.
+	 *
+	 * left
 	 *
 	 * @return the left
 	 */
 	L getLeft();
 
 	/**
-	 * Gets the right.
+	 * right.
+	 *
+	 * right
 	 *
 	 * @return the right
 	 */
@@ -40,7 +53,9 @@ public interface TupleInterface<L, R> {
 	/**
 	 * Return a shallow copy of this.
 	 *
-	 * @return the tuple
+	 * tuple
+	 *
+	 * @return the tuple interface
 	 */
 	TupleInterface<L, R> copy();
 

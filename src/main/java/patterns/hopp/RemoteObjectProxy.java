@@ -2,7 +2,7 @@
 package patterns.hopp;
 
 /**
- * The RemoteObjectProxy Class.
+ * RemoteObjectProxy Class.
  */
 class RemoteObjectProxy implements HoppInterface {
 

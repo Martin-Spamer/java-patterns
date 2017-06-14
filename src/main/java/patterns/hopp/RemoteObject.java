@@ -2,7 +2,7 @@
 package patterns.hopp;
 
 /**
- * The RemoteObject Class.
+ * RemoteObject Class.
  */
 class RemoteObject implements HoppInterface {
 

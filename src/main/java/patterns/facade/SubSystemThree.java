@@ -2,7 +2,7 @@
 package patterns.facade;
 
 /**
- * The SubSystemThree Class.
+ * SubSystemThree Class.
  */
 public class SubSystemThree {
 

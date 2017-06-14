@@ -4,7 +4,7 @@ package patterns.viewer;
 import java.util.Vector;
 
 /**
- * The View Class.
+ * View Class.
  */
 public class View {
 

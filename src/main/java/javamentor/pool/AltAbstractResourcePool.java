@@ -10,7 +10,9 @@ import java.util.HashSet;
 import java.util.Stack;
 
 /**
- * The AbstractResourcePool Class.
+ * AbstractResourcePool Class.
+ *
+ * generic type
  *
  * @param <T> the generic type
  */
@@ -25,8 +27,10 @@ public abstract class AltAbstractResourcePool<T> {
 	/**
 	 * Instantiates a new abstract resource pool.
 	 *
-	 * @throws ResourcePoolCreationException the resource pool creation
+	 * resource pool creation
 	 *             exception
+	 *
+	 * @throws ResourcePoolCreationException the resource pool creation exception
 	 */
 	public AltAbstractResourcePool() throws ResourcePoolCreationException {
 		try {
@@ -40,15 +44,18 @@ public abstract class AltAbstractResourcePool<T> {
 	/**
 	 * Borrow.
 	 *
+	 * t
+	 * resource borrow exception
+	 *
 	 * @return the t
 	 * @throws ResourceBorrowException the resource borrow exception
 	 */
 	public synchronized T borrow() throws ResourceBorrowException {
 		T resource = null;
 
-		// if the pool of free resources is empty
+		// * pool of free resources is empty
 		if (this.freePool.isEmpty()) {
-			// if the usedPool is smaller than the threshold
+			// * threshold
 			if (this.usedPool.size() < this.maxPoolSize) {
 				// make a new object
 				try {
@@ -60,10 +67,10 @@ public abstract class AltAbstractResourcePool<T> {
 				// TODO: throw resource constraint exception ?
 			}
 		} else {
-			// return the first valid resource
+			// * first valid resource
 			resource = this.freePool.pop();
 
-			// move the valid resource to the used resource pool.
+			// * used resource pool.
 			this.usedPool.add(resource);
 		}
 		return resource;
@@ -71,6 +78,9 @@ public abstract class AltAbstractResourcePool<T> {
 
 	/**
 	 * Creates the.
+	 *
+	 * t
+	 * resource creation exception
 	 *
 	 * @return the t
 	 * @throws ResourceCreationException the resource creation exception
@@ -80,18 +90,22 @@ public abstract class AltAbstractResourcePool<T> {
 	/**
 	 * Discard.
 	 *
+	 * resource
+	 *
 	 * @param resource the resource
 	 */
 	public synchronized void discard(final T resource) {
-		// remove the resource from the in use pool.
+		// * in use pool.
 		this.usedPool.remove(resource);
 
-		// return the resource to the free pool
+		// * free pool
 		this.freePool.push(resource);
 	}
 
 	/**
 	 * Grow.
+	 *
+	 * growth rate
 	 *
 	 * @param growthRate the growth rate
 	 */
@@ -102,19 +116,24 @@ public abstract class AltAbstractResourcePool<T> {
 	/**
 	 * Release.
 	 *
+	 * resource
+	 * resource release exception
+	 *
 	 * @param resource the resource
 	 * @throws ResourceReleaseException the resource release exception
 	 */
 	public synchronized void release(final T resource) throws ResourceReleaseException {
-		// remove the resource from the in use pool.
+		// * in use pool.
 		this.usedPool.remove(resource);
 
-		// return the resource to the free pool
+		// * free pool
 		this.freePool.push(resource);
 	}
 
 	/**
 	 * Shrink.
+	 *
+	 * shrink rate
 	 *
 	 * @param shrinkRate the shrink rate
 	 */

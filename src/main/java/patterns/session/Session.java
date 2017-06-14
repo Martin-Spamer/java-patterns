@@ -2,7 +2,7 @@
 package patterns.session;
 
 /**
- * The Session Class.
+ * Session Class.
  */
 class Session {
 
@@ -17,6 +17,8 @@ class Session {
 	/**
 	 * Instantiates a new session.
 	 *
+	 * id
+	 *
 	 * @param id the id
 	 */
 	public Session(long id) {
@@ -25,16 +27,21 @@ class Session {
 	}
 
 	/**
-	 * Sets the id.
+	 * id.
 	 *
-	 * @param id the new id
+	 * new id
+	 *
+	 * @param id the new
+	 * 			id
 	 */
 	public void setId(long id) {
 		this.id = id;
 	}
 
 	/**
-	 * Gets the id.
+	 * id.
+	 *
+	 * id
 	 *
 	 * @return the id
 	 */
