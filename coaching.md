@@ -2,9 +2,9 @@ Coaching Topics
 
 Programming Fundamentals
 	All programming statements are formed on three basic constructs
-		Sequence : One instruction is performed after another, e.g.
-			doFoo
-			doBar
+		Sequence : One instruction follows another
+			foo
+			bar
 		Selection : Instruction is performed is condition is true
 			If/Then/Else & Switch
 		Iteration : An Instruction is performed repeatedly in a loop.
@@ -89,18 +89,21 @@ Software Engineering
 			Failure is a failure of the system under test.
 		Also Exceptions, likely failure of Test Suite.
 
-	SOLID principles http://www.oodesign.com/design-principles.html
+	SOLID principles 
 		Single Responsibility
 		Open for extension, Closed to modification
 		Liskov Substitution principle
 		Interface Segregation principle
 		Dependency Inversion principle
 
+	https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
+	http://www.oodesign.com/design-principles.html
+
 	Code to a Contract / Design by Contract
 		http://wiki.c2.com/?DesignByContract 
 
 	Data Driven Testing		
-		
+
 Advanced Topics
 	Big-O Complexity
 		https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
