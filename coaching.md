@@ -2,19 +2,21 @@
 ## Programming Fundamentals
 All programming statements are formed on three basic constructs
 ### Sequence
-One instruction follows another
-	foo  
-	bar  
-### Selection : Instruction is performed is condition is true
+One instruction follows another e.g.
+	foo 
+	bar
+### Selection
+Instruction is performed is condition is true  e.g.
 	If/Then/Else  
 	Switch
 ### Iteration
-An Instruction is performed repeatedly in a loop. e.g. for, while, do-while, recursion.
-	Variables, Constants, Scope and Types
-	What are Coupling and Cohesion
-	Why decoupling and high cohesion are are important
-	What are Algorithms, Data Structures, Patterns and idioms, why the distinction is important.
-	https://www.quora.com/What-is-a-call-stack
+An Instruction is performed repeatedly in a loop. e.g.
+	for, while, do-while, recursion.
+Variables, Constants, Scope and Types
+What are Coupling and Cohesion
+Why decoupling and high cohesion are are important
+What are Algorithms, Data Structures, Patterns and idioms, why the distinction is important.
+https://www.quora.com/What-is-a-call-stack
 ## Java Fundamentals
  * Java class Design : Interfaces, Abstract Classes, Final Classes
  * Using inBuilt Classes, Types, Strings, Dates etc.
