@@ -1,4 +1,3 @@
-
 package idioms;
 
 import java.util.Calendar;
@@ -6,7 +5,7 @@ import java.util.Calendar;
 import org.junit.Test;
 
 /**
- * The DateHelperTest Class.
+ * DateHelperTest Class.
  */
 public class DateHelperTest {
 

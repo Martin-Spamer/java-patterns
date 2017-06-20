@@ -11,6 +11,12 @@ package javamentor.fileio;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Configuration Class.
@@ -20,85 +26,66 @@ import java.io.FileOutputStream;
  */
 @SuppressWarnings("serial")
 public class Config extends java.util.Properties {
-	private final boolean loaded = false;
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+	private String propertyFileName = this.getClass().getSimpleName() + ".properties";
+	private boolean loaded = false;
 
 	/**
-	 * Instantiates a new config.
+	 * Construct a new configuration instance.
+	 *
+	 * @throws ConfigurationException the configuration exception
 	 */
-	public Config() {
-		final String propertyFileName = this.getClass().getSimpleName() + ".properties";
-		load(propertyFileName);
+	public Config() throws ConfigurationException {
+		super();
+		loadResource();
 	}
 
 	/**
-	 * Instantiates a new config.
+	 * Construct a new configuration instance.
 	 *
 	 * property file name
 	 *
 	 * @param propertyFileName the property file name
+	 * @throws ConfigurationException the configuration exception
 	 */
-	public Config(String propertyFileName) {
-		load(propertyFileName);
+	public Config(final String propertyFileName) throws ConfigurationException {
+		super();
+		setPropertyFileName(propertyFileName);
+		loadResource(this.propertyFileName);
 	}
 
 	/**
-	 * Load.
+	 * Instantiates a new configuration.
 	 *
-	 * property file name
+	 * @param properties the system properties
+	 */
+	public Config(final Properties properties) {
+		super(properties);
+	}
+
+	/**
+	 * Sets the property file name.
 	 *
 	 * @param propertyFileName the property file name
+	 * @return this for a fluent interface.
 	 */
-	public void load(String propertyFileName) {
-		try {
-			load(new File(propertyFileName));
-		} catch (final Exception exception) {
-			exception.printStackTrace();
+	public Config setPropertyFileName(final String propertyFileName) {
+		final String suffix = ".properties";
+		if (propertyFileName.endsWith(suffix)) {
+			this.propertyFileName = propertyFileName;
+		} else {
+			this.propertyFileName = String.format("%s%s", propertyFileName, suffix);
 		}
+		return this;
 	}
 
 	/**
-	 * Load.
+	 * Gets the property file name.
 	 *
-	 * property file
-	 *
-	 * @param propertyFile the property file
+	 * @return the property file name
 	 */
-	public void load(File propertyFile) {
-		try {
-			super.load(new FileInputStream(propertyFile));
-		} catch (final java.lang.Exception exception) {
-			exception.printStackTrace();
-		}
-	}
-
-	/**
-	 * Save.
-	 *
-	 * property file name
-	 *
-	 * @param propertyFileName the property file name
-	 */
-	public void save(String propertyFileName) {
-		try {
-			save(new File(propertyFileName));
-		} catch (final Exception exception) {
-			exception.printStackTrace();
-		}
-	}
-
-	/**
-	 * Save.
-	 *
-	 * property file
-	 *
-	 * @param propertyFile the property file
-	 */
-	public void save(java.io.File propertyFile) {
-		try {
-			super.store(new FileOutputStream(propertyFile), "# Header");
-		} catch (final Exception exception) {
-			exception.printStackTrace();
-		}
+	public String getPropertyFileName() {
+		return this.propertyFileName;
 	}
 
 	/**
@@ -108,7 +95,169 @@ public class Config extends java.util.Properties {
 	 * 			loaded
 	 */
 	public boolean isLoaded() {
-		return loaded;
+		return this.loaded;
 	}
 
+	/**
+	 * Load the configuration from the property filename.
+	 *
+	 * @return this for a fluent interface.
+	 * @throws ConfigurationException the configuration exception
+	 */
+	public Config loadPropertyFile() throws ConfigurationException {
+		return loadFrom(this.propertyFileName);
+	}
+
+	/**
+	 * Load the configuration from the property filename.
+	 *
+	 * @return this for a fluent interface.
+	 * @throws ConfigurationException the configuration exception
+	 */
+	public Config loadResource() throws ConfigurationException {
+		return loadResource(this.propertyFileName);
+	}
+
+	/**
+	 * Load the configuration from the resources.
+	 *
+	 * @param propertyFileName the property file name
+	 * @return this for a fluent interface.
+	 * @throws ConfigurationException the configuration exception
+	 */
+	public Config loadResource(final String propertyFileName) throws ConfigurationException {
+		final InputStream streamForResource = streamForResource(propertyFileName);
+		return loadFrom(streamForResource);
+	}
+
+	/**
+	 * Load the configuration form the property file name.
+	 *
+	 * @param propertyFileName the property file name
+	 * @return this for a fluent interface.
+	 * @throws ConfigurationException the configuration exception
+	 */
+	public Config loadFrom(final String propertyFileName) throws ConfigurationException {
+		try {
+			final FileInputStream inStream = new FileInputStream(propertyFileName);
+			super.load(inStream);
+			this.loaded = true;
+		} catch (final Exception e) {
+			this.log.error("{}", e.toString());
+			throw new ConfigurationException(e);
+		}
+		return this;
+	}
+
+	/**
+	 * Load the configuration form the property file name.
+	 *
+	 * @param streamForResource the property InputStream
+	 * @return this for a fluent interface.
+	 * @throws ConfigurationException the configuration exception
+	 */
+	public Config loadFrom(final InputStream streamForResource) throws ConfigurationException {
+		try {
+			super.load(streamForResource);
+			this.loaded = true;
+		} catch (final Exception e) {
+			this.log.error("{}", e.toString());
+			throw new ConfigurationException(e);
+		}
+		return this;
+	}
+
+	/**
+	 * Stream for resource.
+	 *
+	 * @param propertyFileName the property file name
+	 * @return the input stream
+	 */
+	protected InputStream streamForResource(final String propertyFileName) {
+		final ClassLoader classLoader = this.getClass().getClassLoader();
+		final InputStream resourceAsStream = classLoader.getResourceAsStream(propertyFileName);
+		return resourceAsStream;
+	}
+
+	/**
+	 * Save the configuration.
+	 *
+	 * property file name
+	 *
+	 * @param propertyFileName the property file name
+	 * @return this for a fluent interface.
+	 * @throws ConfigurationException the configuration exception
+	 */
+	public Config save(final String propertyFileName) throws ConfigurationException {
+		final File propertyFile = new File(propertyFileName);
+		try {
+			save(propertyFile);
+		} catch (final ConfigurationException e) {
+			this.log.error("{}", e.toString());
+			throw new ConfigurationException(e);
+		}
+		return this;
+	}
+
+	/**
+	 * Save the configuration.
+	 *
+	 * property file
+	 *
+	 * @param propertyFile the property file
+	 * @return this for fluent interface.
+	 * @throws ConfigurationException the configuration exception
+	 */
+	public Config save(final File propertyFile) throws ConfigurationException {
+		try {
+			final FileOutputStream outStream = new FileOutputStream(propertyFile);
+			final String comments = "# Header " + this.propertyFileName;
+			super.store(outStream, comments);
+		} catch (final IOException e) {
+			this.log.error("{}", e.toString());
+			throw new ConfigurationException(e);
+		}
+		return this;
+	}
+
+	/**
+	 * The ConfigurationException Class.
+	 */
+	public class ConfigurationException extends Exception {
+
+		/**
+		 * Instantiates a new configuration exception.
+		 */
+		public ConfigurationException() {
+			super();
+		}
+
+		/**
+		 * Instantiates a new configuration exception.
+		 *
+		 * @param message the message
+		 */
+		public ConfigurationException(final String message) {
+			super(message);
+		}
+
+		/**
+		 * Instantiates a new configuration exception.
+		 *
+		 * @param cause the cause
+		 */
+		public ConfigurationException(final Throwable cause) {
+			super(cause);
+		}
+	}
+
+	/**
+	 * Load property file.
+	 *
+	 * @param string the string
+	 */
+	public void loadPropertyFile(final String string) {
+		// TODO Auto-generated method stub
+
+	}
 }

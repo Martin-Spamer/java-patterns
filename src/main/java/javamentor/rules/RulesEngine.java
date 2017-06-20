@@ -1,4 +1,3 @@
-
 package javamentor.rules;
 
 import java.io.File;
@@ -34,16 +33,16 @@ public class RulesEngine {
 	public RulesEngine() {
 		log.info(System.getProperties().toString());
 		final String className = this.getClass().getSimpleName();
-		filename = className + ".xml";
-		initialise(filename);
+		this.filename = className + ".xml";
+		initialise(this.filename);
 	}
 
 	/**
 	 * Initialise.
 	 *
-	 * config filename
+	 * configuration filename
 	 *
-	 * @param configFilename the config filename
+	 * @param configFilename the configuration filename
 	 * @return true, if successful
 	 */
 	public boolean initialise(final String configFilename) {
@@ -53,21 +52,21 @@ public class RulesEngine {
 	/**
 	 * Initialise.
 	 *
-	 * config file
+	 * configuration file
 	 *
-	 * @param configFile the config file
+	 * @param configFile the configuration file
 	 * @return true, if successful
 	 */
 	public boolean initialise(final File configFile) {
 		boolean returnValue = false;
 		try {
-			documentBuilderFactory = DocumentBuilderFactory.newInstance();
-			documentBuilder = documentBuilderFactory.newDocumentBuilder();
-			document = documentBuilder.parse(configFile);
+			this.documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			this.documentBuilder = this.documentBuilderFactory.newDocumentBuilder();
+			this.document = this.documentBuilder.parse(configFile);
 
-			documentElement = document.getDocumentElement();
-			if (documentElement != null) {
-				log.info("documentElement = {}", documentElement);
+			this.documentElement = this.document.getDocumentElement();
+			if (this.documentElement != null) {
+				log.info("documentElement = {}", this.documentElement);
 			}
 
 			returnValue = true;

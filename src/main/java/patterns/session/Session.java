@@ -1,4 +1,3 @@
-
 package patterns.session;
 
 /**
@@ -21,7 +20,7 @@ class Session {
 	 *
 	 * @param id the id
 	 */
-	public Session(long id) {
+	public Session(final long id) {
 		super();
 		this.id = id;
 	}
@@ -34,7 +33,7 @@ class Session {
 	 * @param id the new
 	 * 			id
 	 */
-	public void setId(long id) {
+	public void setId(final long id) {
 		this.id = id;
 	}
 
@@ -46,7 +45,7 @@ class Session {
 	 * @return the id
 	 */
 	public long getId() {
-		return id;
+		return this.id;
 	}
 
 }

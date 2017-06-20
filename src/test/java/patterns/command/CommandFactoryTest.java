@@ -67,8 +67,7 @@ public class CommandFactoryTest {
 		final InvokerInterface commandFactory = new CommandFactory();
 		assertNotNull(commandFactory);
 		final String actionName = "MissingCommand";
-		final ResultInterface result = commandFactory.execute(actionName);
-		LOG.info(result.toString());
+		commandFactory.execute(actionName);
 	}
 
 	/**
@@ -82,9 +81,7 @@ public class CommandFactoryTest {
 		final InvokerInterface commandFactory = new CommandFactory();
 		assertNotNull(commandFactory);
 		final String actionName = "MissingCommand";
-		final ResultInterface result = commandFactory.execute(actionName);
-		assertNotNull(result);
-		LOG.info(result.toString());
+		commandFactory.execute(actionName);
 	}
 
 	/**
@@ -97,10 +94,8 @@ public class CommandFactoryTest {
 		LOG.debug("testExecuteMissingClass");
 		final InvokerInterface commandFactory = new CommandFactory();
 		assertNotNull(commandFactory);
-		final String actionName = "MissingClass";
-		final ResultInterface result = commandFactory.execute(actionName);
-		assertNotNull(result);
-		LOG.info(result.toString());
+		final String actionName = "MissingCommand";
+		commandFactory.execute(actionName);
 	}
 
 	/**

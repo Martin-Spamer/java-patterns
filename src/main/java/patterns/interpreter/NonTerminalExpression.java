@@ -1,4 +1,3 @@
-
 package patterns.interpreter;
 
 /**
@@ -6,7 +5,7 @@ package patterns.interpreter;
  */
 public class NonTerminalExpression extends AbstractExpression {
 
-	public AbstractExpression myAbstractExpression;
+	public AbstractExpression abstractExpression;
 
 	/*
 	 * (non-Javadoc)
@@ -16,7 +15,8 @@ public class NonTerminalExpression extends AbstractExpression {
 	 * ContextInterface)
 	 */
 	@Override
-	public void interpret(final ContextInterface context) {
+	public boolean interpret(final ContextInterface context) {
+		return false;
 	}
 
 }

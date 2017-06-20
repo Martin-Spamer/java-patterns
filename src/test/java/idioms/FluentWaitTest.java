@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
 /**
- * The FluentWaitTest Class.
+ * FluentWaitTest Class.
  */
 public class FluentWaitTest {
 
@@ -26,7 +26,25 @@ public class FluentWaitTest {
 	@Test
 	public void testFluentWaitUntil() {
 		final FluentWait wait = new FluentWait();
-		wait.until(Condition.isTrue());
+		wait.until(new Condition().isTrue());
+	}
+
+	/**
+	 * Unit Test to wait until condition true.
+	 */
+	@Test
+	public void testWaitUntilConditionTrue() {
+		final FluentWait wait = new FluentWait();
+		wait.until(new Condition(false).isTrue());
+	}
+
+	/**
+	 * Unit Test to wait until condition false.
+	 */
+	@Test
+	public void testWaitUntilConditionFalse() {
+		final FluentWait wait = new FluentWait();
+		wait.until(new Condition(false).isFalse());
 	}
 
 }

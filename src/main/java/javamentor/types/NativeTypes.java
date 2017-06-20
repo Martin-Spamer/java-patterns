@@ -46,46 +46,35 @@ public class NativeTypes {
 	 */
 	public void display() {
 		// display them all
-		System.out.println("largest byte value : " + largestByte);
-		System.out.println("smallest byte value : " + smallestByte);
+		System.out.println("largest byte value : " + this.largestByte);
+		System.out.println("smallest byte value : " + this.smallestByte);
 
-		System.out.println("largest short value is " + largestShort);
-		System.out.println("smallest short value is " + smallestShort);
+		System.out.println("largest short value is " + this.largestShort);
+		System.out.println("smallest short value is " + this.smallestShort);
 
-		System.out.println("largest integer value is " + largestInteger);
-		System.out.println("smallest integer value is " + smallestInteger);
+		System.out.println("largest integer value is " + this.largestInteger);
+		System.out.println("smallest integer value is " + this.smallestInteger);
 
-		System.out.println("largest long value is " + largestLong);
-		System.out.println("smallest long value is " + smallesttLong);
+		System.out.println("largest long value is " + this.largestLong);
+		System.out.println("smallest long value is " + this.smallesttLong);
 
-		System.out.println("largest float value is " + largestFloat);
-		System.out.println("smallest float value is " + smallestFloat);
+		System.out.println("largest float value is " + this.largestFloat);
+		System.out.println("smallest float value is " + this.smallestFloat);
 
-		System.out.println("largest double value is " + largestDouble);
-		System.out.println("smallest double value is " + smallestDouble);
+		System.out.println("largest double value is " + this.largestDouble);
+		System.out.println("smallest double value is " + this.smallestDouble);
 
-		if (Character.isUpperCase(aChar)) {
-			System.out.println("The character " + aChar + " is upper case.");
+		if (Character.isUpperCase(this.aChar)) {
+			System.out.println("The character " + this.aChar + " is upper case.");
 		} else {
-			System.out.println("The character " + aChar + " is lower case.");
+			System.out.println("The character " + this.aChar + " is lower case.");
 		}
 
-		if (aBooleanTrue) {
-			System.out.println("aBooleanTrue has tested as true : " + aBooleanTrue);
+		if (this.aBooleanTrue) {
+			System.out.println("aBooleanTrue has tested as true : " + this.aBooleanTrue);
 		} else {
-			System.out.println("aBooleanTrue has tested as false : " + aBooleanTrue);
+			System.out.println("aBooleanTrue has tested as false : " + this.aBooleanTrue);
 		}
 	}
 
-	/**
-	 * main method.
-	 *
-	 * arguments
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(String[] args) {
-		final NativeTypes types = new NativeTypes();
-		types.display();
-	}
 }

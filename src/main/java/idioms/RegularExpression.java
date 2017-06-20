@@ -4,14 +4,17 @@ package idioms;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * RegularExpression Class.
  */
 public class RegularExpression {
-
-	private static final String PATTERN_STRING = "^XYZ$";
+	private static final Logger LOG = LoggerFactory.getLogger(RegularExpression.class);
+	private static final String PATTERN_STRING = "^ABC$";
 	private final Pattern PATTERN = Pattern.compile(PATTERN_STRING);
-	private Pattern pattern = PATTERN;
+	private Pattern pattern = this.PATTERN;
 
 	/**
 	 * Instantiates a new regular expression.
@@ -27,9 +30,9 @@ public class RegularExpression {
 	 *
 	 * @param patternString the pattern string
 	 */
-	public RegularExpression(String patternString) {
+	public RegularExpression(final String patternString) {
 		super();
-		pattern = Pattern.compile(patternString);
+		this.pattern = Pattern.compile(patternString);
 	}
 
 	/**
@@ -39,7 +42,7 @@ public class RegularExpression {
 	 *
 	 * @param pattern the pattern
 	 */
-	public RegularExpression(Pattern pattern) {
+	public RegularExpression(final Pattern pattern) {
 		super();
 		this.pattern = pattern;
 	}
@@ -53,8 +56,9 @@ public class RegularExpression {
 	 * @return true, if successful
 	 */
 	public boolean verify(final String code) {
-		final Matcher matcher = PATTERN.matcher(code);
-		return matcher.find();
+		final Matcher matcher = this.PATTERN.matcher(code);
+		final boolean result = matcher.find();
+		return result;
 	}
 
 	/**
@@ -65,11 +69,11 @@ public class RegularExpression {
 	 * @param original the original
 	 */
 	public void find(final String original) {
-		final Matcher matcher = PATTERN.matcher(original);
+		final Matcher matcher = this.PATTERN.matcher(original);
 		while (matcher.find()) {
-			final String string = String.format("Test %s starting at index %s and ending at index %s", matcher.group(),
-			        matcher.start(), matcher.end());
-			System.out.println(string);
+			final String message = "Test %s starting at index %s and ending at index %s";
+			final String string = String.format(message, matcher.group(), matcher.start(), matcher.end());
+			LOG.info(string);
 		}
 	}
 
@@ -84,9 +88,9 @@ public class RegularExpression {
 	 * @param newSubString the new sub string
 	 * @return the string
 	 */
-	public String replace(final String original, String newSubString) {
-		final Matcher matcher = PATTERN.matcher(original);
-		return pattern.matcher(original).replaceAll(newSubString);
+	public String replace(final String original, final String newSubString) {
+		// final Matcher matcher = this.PATTERN.matcher(original);
+		return this.pattern.matcher(original).replaceAll(newSubString);
 	}
 
 }

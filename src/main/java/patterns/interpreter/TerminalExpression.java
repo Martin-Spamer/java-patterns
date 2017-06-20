@@ -1,10 +1,15 @@
-
 package patterns.interpreter;
 
 /**
  * TerminalExpression Class.
  */
 public class TerminalExpression extends AbstractExpression {
+
+	private Data data;
+
+	public TerminalExpression(final Data data) {
+		this.data = data;
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -14,7 +19,11 @@ public class TerminalExpression extends AbstractExpression {
 	 * ContextInterface)
 	 */
 	@Override
-	public void interpret(final ContextInterface context) {
+	public boolean interpret(final ContextInterface context) {
+		if (context.contains(this.data)) {
+			return true;
+		}
+		return false;
 	}
 
 }

@@ -1,4 +1,3 @@
-
 package idioms;
 
 /**
@@ -11,6 +10,13 @@ public final class PojoExample implements Cloneable {
 
 	/**
 	 * Instantiates a new pojo example.
+	 */
+	public PojoExample() {
+		super();
+	}
+
+	/**
+	 * Instantiates a new pojo example.
 	 *
 	 * string value
 	 * long value
@@ -18,60 +24,42 @@ public final class PojoExample implements Cloneable {
 	 * @param stringValue the string value
 	 * @param longValue the long value
 	 */
-	public PojoExample(String stringValue, long longValue) {
+	public PojoExample(final String stringValue, final long longValue) {
 		super();
 		setStringValue(stringValue);
 		setLongValue(longValue);
 	}
 
 	/**
-	 * string value.
-	 *
-	 * string value
-	 * pojo example
-	 *
 	 * @param stringValue the string value
-	 * @return the pojo example
+	 * @return this instance for a fluent interface.
 	 */
-	public PojoExample setStringValue(String stringValue) {
+	public PojoExample setStringValue(final String stringValue) {
 		this.stringValue = stringValue;
 		return this;
 	}
 
 	/**
-	 * long value.
-	 *
-	 * long value
-	 * pojo example
-	 *
 	 * @param longValue the long value
-	 * @return the pojo example
+	 * @return this instance for a fluent interface.
 	 */
-	public PojoExample setLongValue(long longValue) {
+	public PojoExample setLongValue(final long longValue) {
 		this.longValue = longValue;
 		return this;
 	}
 
 	/**
-	 * string value.
-	 *
-	 * string value
-	 *
 	 * @return the string value
 	 */
 	public String getStringValue() {
-		return stringValue;
+		return this.stringValue;
 	}
 
 	/**
-	 * long value.
-	 *
-	 * long value
-	 *
 	 * @return the long value
 	 */
 	public long getLongValue() {
-		return longValue;
+		return this.longValue;
 	}
 
 	/* (non-Javadoc)
@@ -81,8 +69,8 @@ public final class PojoExample implements Cloneable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (longValue ^ longValue >>> 32);
-		result = prime * result + (stringValue == null ? 0 : stringValue.hashCode());
+		result = prime * result + (int) (this.longValue ^ this.longValue >>> 32);
+		result = prime * result + (this.stringValue == null ? 0 : this.stringValue.hashCode());
 		return result;
 	}
 
@@ -90,7 +78,7 @@ public final class PojoExample implements Cloneable {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 		if (obj == null) {
 			return false;
 		}
@@ -98,9 +86,9 @@ public final class PojoExample implements Cloneable {
 			return true;
 		}
 		final PojoExample pojo = (PojoExample) obj;
-		if (pojo.isLongValueEqualTo(longValue)) {
-			if (stringValue == null) {
-				if (pojo.isStringValueEqualTo(stringValue)) {
+		if (pojo.isLongValueEqualTo(this.longValue)) {
+			if (this.stringValue == null) {
+				if (pojo.isStringValueEqualTo(this.stringValue)) {
 					return true;
 				}
 			}
@@ -117,7 +105,7 @@ public final class PojoExample implements Cloneable {
 	 * @return true, if is
 	 * 			string value equal to
 	 */
-	private boolean isStringValueEqualTo(String stringValue) {
+	private boolean isStringValueEqualTo(final String stringValue) {
 		return this.stringValue.equals(stringValue);
 	}
 
@@ -130,7 +118,7 @@ public final class PojoExample implements Cloneable {
 	 * @return true, if is
 	 * 			long value equal to
 	 */
-	private boolean isLongValueEqualTo(long longValue) {
+	private boolean isLongValueEqualTo(final long longValue) {
 		return this.longValue == longValue;
 	}
 

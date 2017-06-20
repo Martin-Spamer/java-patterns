@@ -1,4 +1,3 @@
-
 package idioms;
 
 import org.junit.Test;
@@ -19,18 +18,18 @@ public class AbstractLoggingTest {
 	}
 
 	/**
-	 * Unit Test to to log.
+	 * Unit Test Send to log.
 	 */
 	@Test
-	public void testToLog() {
+	public void testSendToLog() {
 		new MockLog().toLog();
 	}
 
 	/**
-	 * Unit Test to log to.
+	 * Unit Test Send to log.
 	 */
 	@Test
-	public void testLogTo() {
+	public void testSendLogTo() {
 		new MockLog().logTo(LOG);
 	}
 

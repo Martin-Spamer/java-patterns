@@ -39,6 +39,8 @@ public class AbstractResourcePoolTest {
 		// Given a resource pool
 		final TestResourcePool testResourcePool = new TestResourcePool();
 		assertNotNull(testResourcePool);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 		testResourcePool.add(true);
 		testResourcePool.add(false);
 		assertEquals(2, testResourcePool.countFree());
@@ -63,12 +65,12 @@ public class AbstractResourcePoolTest {
 	@Test
 	public void testAdd() {
 		final TestResourcePool testResourcePool = new TestResourcePool();
-		assertTrue(testResourcePool.countFree() == 0);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 		assertNotNull(testResourcePool.add(true));
 		assertNotNull(testResourcePool.add(false));
-		assertTrue(testResourcePool.countFree() == 2);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(2, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 	}
 
 	/**
@@ -77,12 +79,12 @@ public class AbstractResourcePoolTest {
 	@Test
 	public void testRemove() {
 		final TestResourcePool testResourcePool = new TestResourcePool();
-		assertTrue(testResourcePool.countFree() == 0);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 		testResourcePool.add(true);
 		testResourcePool.add(false);
-		assertTrue(testResourcePool.countFree() == 2);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(2, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 	}
 
 	/**
@@ -92,12 +94,12 @@ public class AbstractResourcePoolTest {
 	public void testOffer() {
 		final TestResourcePool testResourcePool = new TestResourcePool();
 		assertNotNull(testResourcePool);
-		assertTrue(testResourcePool.countFree() == 0);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 		assertTrue(testResourcePool.offer(true));
 		assertTrue(testResourcePool.offer(false));
-		assertTrue(testResourcePool.countFree() == 2);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(2, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 	}
 
 	/**
@@ -107,11 +109,11 @@ public class AbstractResourcePoolTest {
 	public void testRemoveWhenNull() {
 		final TestResourcePool testResourcePool = new TestResourcePool();
 		assertNotNull(testResourcePool);
-		assertTrue(testResourcePool.countFree() == 0);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 		assertNotNull(testResourcePool.remove(null));
-		assertTrue(testResourcePool.countFree() == 0);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 	}
 
 	/**
@@ -121,12 +123,12 @@ public class AbstractResourcePoolTest {
 	public void testGetWhenEmpty() {
 		final TestResourcePool testResourcePool = new TestResourcePool();
 		assertNotNull(testResourcePool);
-		assertTrue(testResourcePool.countFree() == 0);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 		assertNull(testResourcePool.take());
 		assertNull(testResourcePool.take());
-		assertTrue(testResourcePool.countFree() == 0);
-		assertTrue(testResourcePool.countUsed() == 0);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 	}
 
 	/**
@@ -136,13 +138,15 @@ public class AbstractResourcePoolTest {
 	public void testGet() {
 		final TestResourcePool testResourcePool = new TestResourcePool();
 		assertNotNull(testResourcePool);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 		testResourcePool.add(true);
 		testResourcePool.add(false);
-		assertTrue(testResourcePool.take() != null);
-		assertTrue(testResourcePool.take() != null);
+		assertNotNull(testResourcePool.take());
+		assertNotNull(testResourcePool.take());
 		assertNull(testResourcePool.take());
-		assertTrue(testResourcePool.countFree() == 0);
-		assertTrue(testResourcePool.countUsed() == 2);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(2, testResourcePool.countUsed());
 	}
 
 	/**
@@ -152,6 +156,8 @@ public class AbstractResourcePoolTest {
 	public void testRelease() {
 		final TestResourcePool testResourcePool = new TestResourcePool();
 		assertNotNull(testResourcePool);
+		assertEquals(0, testResourcePool.countFree());
+		assertEquals(0, testResourcePool.countUsed());
 		testResourcePool.add(true).add(false);
 		assertTrue(testResourcePool.take() != null);
 		assertTrue(testResourcePool.take() != null);

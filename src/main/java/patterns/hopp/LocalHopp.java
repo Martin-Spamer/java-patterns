@@ -1,4 +1,3 @@
-
 package patterns.hopp;
 
 /**
@@ -6,7 +5,6 @@ package patterns.hopp;
  */
 class LocalHopp implements HoppInterface {
 
-	/** The remote object proxy. */
 	public RemoteObjectProxy remoteObjectProxy;
 
 	/*
@@ -34,7 +32,6 @@ class LocalHopp implements HoppInterface {
 	 */
 	@Override
 	public void localMethod() {
-		// TODO Auto-generated method stub
-
 	}
+
 }

@@ -1,9 +1,7 @@
 # java-patterns
-======
-
 Design Patterns implemented in Java
 
-Java Patterns
+## Java Patterns
 
 	<dependency>
 		<groupId>spamer.me.uk</groupId>

@@ -23,9 +23,11 @@ public class Configuration {
 		try {
 			final String resourceName = resourceName();
 			final InputStream inputStream = inputStream(resourceName);
-			properties.load(inputStream);
+			if (inputStream != null) {
+				this.properties.load(inputStream);
+			}
 		} catch (final IOException e) {
-			log.error("{}", e);
+			this.log.error("{}", e);
 		}
 	}
 
@@ -66,10 +68,10 @@ public class Configuration {
 	 * @param key the key
 	 * @return the string
 	 */
-	public String valueFor(String key) {
+	public String valueFor(final String key) {
 		final String property = System.getProperty(key);
 		if (property == null) {
-			return properties.getProperty(key);
+			return this.properties.getProperty(key);
 		}
 		return property;
 	}
@@ -85,10 +87,10 @@ public class Configuration {
 	 * @param defaultValue the default value
 	 * @return the string
 	 */
-	public String valueFor(String key, String defaultValue) {
+	public String valueFor(final String key, final String defaultValue) {
 		final String property = System.getProperty(key);
 		if (property == null) {
-			return properties.getProperty(key, defaultValue);
+			return this.properties.getProperty(key, defaultValue);
 		}
 		return property;
 	}
@@ -101,7 +103,7 @@ public class Configuration {
 	 * @return the string
 	 */
 	public String toPrettyString() {
-		return String.format("Configuration [properties=%s]", format(properties.toString()));
+		return String.format("Configuration [properties=%s]", format(this.properties.toString()));
 	}
 
 	/**
@@ -122,6 +124,6 @@ public class Configuration {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Configuration [properties=%s]", properties);
+		return String.format("Configuration [properties=%s]", this.properties);
 	}
 }

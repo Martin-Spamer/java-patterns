@@ -8,7 +8,7 @@ import java.util.Vector;
  */
 public abstract class AbstractExpression {
 
-	public Vector<?> myNonTerminalExpression;
+	public Vector<?> abstractExpression;
 
 	/**
 	 * Interpret.
@@ -16,8 +16,10 @@ public abstract class AbstractExpression {
 	 * context
 	 *
 	 * @param context the context
+	 * @return
 	 */
-	public void interpret(final ContextInterface context) {
+	public boolean interpret(final ContextInterface context) {
+		return false;
 	}
 
 }

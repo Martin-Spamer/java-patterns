@@ -6,4 +6,6 @@ package patterns.interpreter;
  */
 public interface ContextInterface {
 
+	boolean contains(Data data);
+
 }
