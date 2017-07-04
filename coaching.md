@@ -1,12 +1,14 @@
-# Coaching Topics
+# Java Coaching Topics
 ## Programming Fundamentals
 All programming statements are formed on three basic constructs
 ### Sequence
 One instruction follows another e.g.
+
 ```
-foo 
-bar
+  foo
+  bar
 ```
+
 ### Selection
 Instruction is performed is condition is true  e.g.
 
@@ -18,11 +20,23 @@ Switch
 ### Iteration
 An Instruction is performed repeatedly in a loop. e.g.
 
+####for
+
 ~~~~
-	for
-	while 
-	do-while
-	recursion.
+~~~~
+
+####while
+
+~~~~
+~~~~ 
+
+####do-while
+
+~~~~
+~~~~
+
+####recursion
+~~~~
 ~~~~
 
  * Variables, Constants, Scope and Types
