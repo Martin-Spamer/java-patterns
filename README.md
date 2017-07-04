@@ -1,4 +1,4 @@
-# java-patterns
+# java-coaching
 Design Patterns implemented in Java
 
 ## Java Patterns
