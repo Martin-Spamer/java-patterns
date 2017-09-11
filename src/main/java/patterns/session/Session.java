@@ -1,3 +1,4 @@
+
 package patterns.session;
 
 /**
@@ -45,7 +46,7 @@ class Session {
 	 * @return the id
 	 */
 	public long getId() {
-		return this.id;
+		return id;
 	}
 
 }

@@ -2,7 +2,7 @@
 package automation;
 
 /**
- * Characteristic Enum.
+ * Characteristic .
  */
 public enum Characteristic {
 	AUTHORISED, UNAUTHORISED

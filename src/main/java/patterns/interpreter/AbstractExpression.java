@@ -16,7 +16,7 @@ public abstract class AbstractExpression {
 	 * context
 	 *
 	 * @param context the context
-	 * @return
+	 * @return true, if successful
 	 */
 	public boolean interpret(final ContextInterface context) {
 		return false;

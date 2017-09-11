@@ -2,21 +2,21 @@
 package automation;
 
 /**
- * DataManager Class.
+ * Data Manager Class.
  */
 public class DataManager {
 
 	/**
-	 * data.
+	 * return data with characteristic.
 	 *
 	 * authorised
 	 * data
 	 *
-	 * @param authorised the authorised
+	 * @param characteristic the characteristic
 	 * @return the data
 	 */
-	public static Data getData(Characteristic authorised) {
-		return new Data();
+	public static DataMock getData(final Characteristic characteristic) {
+		return new DataMock();
 	}
 
 }

@@ -10,10 +10,10 @@ One instruction follows another e.g.
 ```
 
 ### Selection
-Instruction is performed is condition is true  e.g.
+An Instruction is performed if a condition is true e.g.
 
 ~~~~
-If/Then/Else  
+If Then Else  
 Switch
 ~~~~
 
@@ -23,21 +23,26 @@ An Instruction is performed repeatedly in a loop. e.g.
 ####for
 
 ~~~~
+    for( i=1 ; i<10 ; i++) { ... }
 ~~~~
 
 ####while
 
 ~~~~
+    while(notFinished) { doWork(); }
 ~~~~ 
 
 ####do-while
 
 ~~~~
+    do { work(); } while(notFinished);
 ~~~~
 
 ####recursion
 ~~~~
+    work() { work() }
 ~~~~
+
 
  * Variables, Constants, Scope and Types
  * What are Coupling and Cohesion

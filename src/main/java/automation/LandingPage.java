@@ -2,7 +2,7 @@
 package automation;
 
 /**
- * LandingPage Class.
+ * Landing Page Class.
  */
 public class LandingPage extends Page {
 

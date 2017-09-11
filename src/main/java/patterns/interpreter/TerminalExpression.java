@@ -1,3 +1,4 @@
+
 package patterns.interpreter;
 
 /**
@@ -5,8 +6,13 @@ package patterns.interpreter;
  */
 public class TerminalExpression extends AbstractExpression {
 
-	private Data data;
+	private final Data data;
 
+	/**
+	 * Instantiates a new terminal expression.
+	 *
+	 * @param data the data
+	 */
 	public TerminalExpression(final Data data) {
 		this.data = data;
 	}
@@ -20,7 +26,7 @@ public class TerminalExpression extends AbstractExpression {
 	 */
 	@Override
 	public boolean interpret(final ContextInterface context) {
-		if (context.contains(this.data)) {
+		if (context.contains(data)) {
 			return true;
 		}
 		return false;

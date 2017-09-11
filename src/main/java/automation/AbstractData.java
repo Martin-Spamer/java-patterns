@@ -4,7 +4,6 @@ package automation;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
 /**
@@ -21,38 +20,38 @@ public abstract class AbstractData implements DataInterface {
 	 * @return this for a fluent interface.
 	 */
 	public AbstractData setProperty(final String key, final String value) {
-		this.properties.setProperty(key, value);
+		properties.setProperty(key, value);
 		return this;
 	}
 
 	/**
 	 * Number of values in collection.
 	 *
-	 * @return size as int.
+	 * @return size as integer.
 	 */
 	public int size() {
-		return this.properties.size();
+		return properties.size();
 	}
 
 	/**
-	 * Gets the property value for the key.
+	 * Get the value for the key.
 	 *
 	 * @param key the key
 	 * @return the property
 	 */
 	public String getProperty(final String key) {
-		return this.properties.getProperty(key);
+		return properties.getProperty(key);
 	}
 
 	/**
-	 * Gets the property.
+	 * Get the value for the key, otherwise default.
 	 *
 	 * @param key the key
 	 * @param defaultValue the default value
 	 * @return the property
 	 */
 	public String getProperty(final String key, final String defaultValue) {
-		return this.properties.getProperty(key, defaultValue);
+		return properties.getProperty(key, defaultValue);
 	}
 
 	/**
@@ -64,7 +63,7 @@ public abstract class AbstractData implements DataInterface {
 	 */
 	public AbstractData load(final InputStream inputStream) throws IOException {
 		if (inputStream != null) {
-			this.properties.load(inputStream);
+			properties.load(inputStream);
 		}
 		return this;
 	}
@@ -72,20 +71,19 @@ public abstract class AbstractData implements DataInterface {
 	/**
 	 * Load properties from XML.
 	 *
-	 * @param input stream.
+	 * @param inputStream the input stream
 	 * @return this instance for a fluent interface.
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws InvalidPropertiesFormatException the invalid properties format exception
+	 * @throws Exception the exception
 	 */
 	public AbstractData loadFromXML(final InputStream inputStream) throws Exception {
 		if (inputStream != null) {
-			this.properties.loadFromXML(inputStream);
+			properties.loadFromXML(inputStream);
 		}
 		return this;
 	}
 
 	/**
-	 * Store.
+	 * Store this object.
 	 *
 	 * @param outStream the out
 	 * @return this instance for a fluent interface.
@@ -97,7 +95,7 @@ public abstract class AbstractData implements DataInterface {
 	}
 
 	/**
-	 * Store.
+	 * Store this object.
 	 *
 	 * @param out the out
 	 * @param comments the comments
@@ -105,7 +103,7 @@ public abstract class AbstractData implements DataInterface {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public AbstractData store(final OutputStream out, final String comments) throws IOException {
-		this.properties.store(out, comments);
+		properties.store(out, comments);
 		return this;
 	}
 

@@ -1,3 +1,4 @@
+
 package patterns.interpreter;
 
 /**
@@ -47,9 +48,12 @@ public class Context implements ContextInterface {
 	 * @return the state
 	 */
 	public Object getState() {
-		return this.state;
+		return state;
 	}
 
+	/* (non-Javadoc)
+	 * @see patterns.interpreter.ContextInterface#contains(patterns.interpreter.Data)
+	 */
 	@Override
 	public boolean contains(final Data data) {
 		return false;
