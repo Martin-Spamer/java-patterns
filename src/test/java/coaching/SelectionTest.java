@@ -1,5 +1,7 @@
-
 package coaching;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -7,9 +9,10 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Examples of a selection programming instructions.
+ * SelectionTest class.
  */
-public class Selection {
-	private static final Logger LOG = LoggerFactory.getLogger(Selection.class);
+public class SelectionTest {
+	private static final Logger LOG = LoggerFactory.getLogger(SelectionTest.class);
 
 	/**
 	 * Unit Test to show an if.
@@ -21,6 +24,7 @@ public class Selection {
 		if (selection) {
 			LOG.info("true");
 		}
+		assertTrue(true);
 	}
 
 	/**
@@ -35,6 +39,7 @@ public class Selection {
 		} else {
 			LOG.info("else");
 		}
+		assertTrue(true);
 	}
 
 	/**
@@ -51,6 +56,7 @@ public class Selection {
 		} else {
 			LOG.info("else");
 		}
+		assertTrue(true);
 	}
 
 	/**
@@ -69,6 +75,7 @@ public class Selection {
 			default:
 				LOG.info("true");
 		}
+		assertTrue(true);
 	}
 
 	/**
@@ -87,6 +94,7 @@ public class Selection {
 			default:
 				LOG.info("default");
 		}
+		assertTrue(true);
 	}
 
 	/**
@@ -113,5 +121,6 @@ public class Selection {
 				LOG.info("ITERATION");
 				break;
 		}
+		assertEquals(STATEMENT.SELECTION, statement);
 	}
 }

@@ -1,5 +1,6 @@
-
 package coaching;
+
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -9,8 +10,8 @@ import org.slf4j.LoggerFactory;
  * Examples of a iteration (looping) programming instructions.
  * The Iteration Class.
  */
-public class Iteration {
-	private static final Logger LOG = LoggerFactory.getLogger(Iteration.class);
+public class IterationTest {
+	private static final Logger LOG = LoggerFactory.getLogger(IterationTest.class);
 
 	/**
 	 * Unit Test to example for.
@@ -20,15 +21,19 @@ public class Iteration {
 		LOG.info("testFor");
 		final int start = 1;
 		final int end = 10;
+
 		for (int i = start; i == end; i++) {
 			LOG.info("loop until {} == {}", i, end);
 		}
+
 		for (int i = start; i <= end; i++) {
 			LOG.info("loop until {} <= {}", i, end);
 		}
+
 		for (int i = start; i < end + 1; i++) {
 			LOG.info("loop until {} < {}", i, end);
 		}
+		assertTrue(true);
 	}
 
 	/**
@@ -38,9 +43,12 @@ public class Iteration {
 	public void testExampleFor0() {
 		LOG.info("testFor0 {}");
 		final int max = 0;
+
 		for (int i = 0; i < max; i++) {
 			LOG.info("loop until {} < {}", i, max);
 		}
+
+		assertTrue(true);
 	}
 
 	/**
@@ -54,6 +62,8 @@ public class Iteration {
 		for (int i = start; i > end; i--) {
 			LOG.info("{} > {}", i, end);
 		}
+
+		assertTrue(true);
 	}
 
 	/**
@@ -67,6 +77,7 @@ public class Iteration {
 		while (loop) {
 			LOG.info("while({})", loop);
 		}
+		assertTrue(true);
 	}
 
 	/**
@@ -80,6 +91,7 @@ public class Iteration {
 			LOG.info("while({})", exit);
 			exit = true;
 		}
+		assertTrue(true);
 	}
 
 	/**
@@ -93,5 +105,6 @@ public class Iteration {
 			LOG.info("do while({})", exit);
 			exit = true;
 		} while (!exit);
+		assertTrue(true);
 	}
 }
