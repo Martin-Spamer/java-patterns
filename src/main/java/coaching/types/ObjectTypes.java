@@ -17,76 +17,64 @@ package coaching.types;
 public class ObjectTypes {
 
 	// integers object types
-	Byte largestByte = Byte.MAX_VALUE;
-	Byte smallestByte = Byte.MIN_VALUE;
+	private final Byte largestByte = Byte.MAX_VALUE;
+	private Byte smallestByte = Byte.MIN_VALUE;
 
-	Short largestShort = Short.MAX_VALUE;
-	Short smallestShort = Short.MIN_VALUE;
+	private Short largestShort = Short.MAX_VALUE;
+	private Short smallestShort = Short.MIN_VALUE;
 
-	Integer largestInteger = Integer.MAX_VALUE;
-	Integer smallestInteger = Integer.MIN_VALUE;
+	private Integer largestInteger = Integer.MAX_VALUE;
+	private Integer smallestInteger = Integer.MIN_VALUE;
 
-	Long largestLong = Long.MAX_VALUE;
-	Long smallesttLong = Long.MIN_VALUE;
+	private Long largestLong = Long.MAX_VALUE;
+	private Long smallesttLong = Long.MIN_VALUE;
 
 	// real numbers
-	Float largestFloat = Float.MAX_VALUE;
-	Float smallestFloat = Float.MIN_VALUE;
+	private Float largestFloat = Float.MAX_VALUE;
+	private Float smallestFloat = Float.MIN_VALUE;
 
-	Double largestDouble = Double.MAX_VALUE;
-	Double smallestDouble = Double.MIN_VALUE;
+	private Double largestDouble = Double.MAX_VALUE;
+	private Double smallestDouble = Double.MIN_VALUE;
 
 	// other primitive types
-	Character aChar = 'A';
+	private Character aChar = 'A';
 
-	Boolean aBooleanTrue = true;
-	Boolean aBooleanFalse = false;
+	private Boolean aBooleanTrue = true;
+	private Boolean aBooleanFalse = false;
 
 	/**
 	 * Display.
 	 */
 	public void display() {
 		// display them all
-		System.out.println("largest byte value : " + largestByte);
-		System.out.println("smallest byte value : " + smallestByte);
+		System.out.println("largest byte value : " + this.largestByte);
+		System.out.println("smallest byte value : " + this.smallestByte);
 
-		System.out.println("largest short value is " + largestShort);
-		System.out.println("smallest short value is " + smallestShort);
+		System.out.println("largest short value is " + this.largestShort);
+		System.out.println("smallest short value is " + this.smallestShort);
 
-		System.out.println("largest integer value is " + largestInteger);
-		System.out.println("smallest integer value is " + smallestInteger);
+		System.out.println("largest integer value is " + this.largestInteger);
+		System.out.println("smallest integer value is " + this.smallestInteger);
 
-		System.out.println("largest long value is " + largestLong);
-		System.out.println("smallest long value is " + smallesttLong);
+		System.out.println("largest long value is " + this.largestLong);
+		System.out.println("smallest long value is " + this.smallesttLong);
 
-		System.out.println("largest float value is " + largestFloat);
-		System.out.println("smallest float value is " + smallestFloat);
+		System.out.println("largest float value is " + this.largestFloat);
+		System.out.println("smallest float value is " + this.smallestFloat);
 
-		System.out.println("largest double value is " + largestDouble);
-		System.out.println("smallest double value is " + smallestDouble);
+		System.out.println("largest double value is " + this.largestDouble);
+		System.out.println("smallest double value is " + this.smallestDouble);
 
-		if (Character.isUpperCase(aChar)) {
-			System.out.println("The character " + aChar + " is upper case.");
+		if (Character.isUpperCase(this.aChar)) {
+			System.out.println("The character " + this.aChar + " is upper case.");
 		} else {
-			System.out.println("The character " + aChar + " is lower case.");
+			System.out.println("The character " + this.aChar + " is lower case.");
 		}
 
-		if (aBooleanTrue) {
-			System.out.println("aBooleanTrue has tested as true : " + aBooleanTrue);
+		if (this.aBooleanTrue) {
+			System.out.println("aBooleanTrue has tested as true : " + this.aBooleanTrue);
 		} else {
-			System.out.println("aBooleanTrue has tested as false : " + aBooleanTrue);
+			System.out.println("aBooleanTrue has tested as false : " + this.aBooleanTrue);
 		}
-	}
-
-	/**
-	 * main method.
-	 *
-	 * arguments
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(String[] args) {
-		final ObjectTypes types = new ObjectTypes();
-		types.display();
 	}
 }

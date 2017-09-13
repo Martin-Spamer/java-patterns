@@ -1,5 +1,7 @@
 package coaching;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,10 +20,14 @@ public class IterationTest {
 	@Test
 	public void testExampleFor() {
 		final int max = 0;
+		int count = 0;
 
 		for (int i = 0; i < max; i++) {
-			LOG.info("loop until {} < {}", i, max);
+			count++;
 		}
+
+		LOG.info("loop count = {} ", count);
+		assertEquals(0, count);
 	}
 
 	/**
@@ -33,10 +39,14 @@ public class IterationTest {
 	public void testExampleForCountDown() {
 		final int start = 10;
 		final int end = 10;
+		int count = 0;
 
 		for (int i = start; i > end; i--) {
-			LOG.info("{} > {}", i, end);
+			count++;
 		}
+
+		LOG.info("loop count = {} ", count);
+		assertEquals(0, count);
 	}
 
 	/**
@@ -48,10 +58,15 @@ public class IterationTest {
 	public void testExampleWhileNotFalse() {
 		boolean loop;
 		loop = false;
+		int count = 0;
 
+		LOG.info("while({})", loop);
 		while (loop) {
-			LOG.info("while({})", loop);
+			count++;
 		}
+
+		LOG.info("loop count = {} ", count);
+		assertEquals(0, count);
 	}
 
 	/**
@@ -60,11 +75,15 @@ public class IterationTest {
 	@Test
 	public void testExampleWhileTrue() {
 		boolean exit = false;
+		int count = 0;
 
+		LOG.info("while({})", exit);
 		while (!exit) {
-			LOG.info("while({})", exit);
+			count++;
 			exit = true;
 		}
+		LOG.info("loop count = {} ", count);
+		assertEquals(1, count);
 	}
 
 	/**
@@ -75,11 +94,15 @@ public class IterationTest {
 	@Test
 	public void testExampleDoWhile() {
 		boolean exit = false;
+		int count = 0;
 
+		LOG.info("do while({})", exit);
 		do {
-			LOG.info("do while({})", exit);
+			count++;
 			exit = true;
 		} while (!exit);
-	}
 
+		LOG.info("loop count = {} ", count);
+		assertEquals(1, count);
+	}
 }

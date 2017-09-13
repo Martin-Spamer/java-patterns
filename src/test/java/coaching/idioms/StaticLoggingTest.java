@@ -1,4 +1,3 @@
-
 package coaching.idioms;
 
 import org.junit.Test;
@@ -17,7 +16,7 @@ public class StaticLoggingTest {
 	 */
 	@Test
 	public void testSendToLog() {
-		new StaticLogging().toLog();
+		LOG.info("{}", LOG.getName());
 	}
 
 }

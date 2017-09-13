@@ -68,17 +68,4 @@ public class PrimitivesArray {
 			System.out.print("\n");
 		}
 	}
-
-	/**
-	 * main method.
-	 *
-	 * arguments
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(String[] args) {
-		final PrimitivesArray types = new PrimitivesArray();
-		types.display();
-	}
-
 }

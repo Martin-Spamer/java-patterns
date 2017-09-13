@@ -20,11 +20,11 @@ public class SelectionTest {
 	@Test
 	public void testExampleIfTrue() {
 		boolean selection;
-		selection = false;
+		selection = true;
 		if (selection) {
-			LOG.info("true");
+			LOG.info("testExampleIfTrue");
 		}
-		assertFalse(selection);
+		assertTrue(selection);
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class SelectionTest {
 		boolean selection;
 		selection = false;
 		if (selection) {
-			LOG.info("true");
+			LOG.info("testExampleIfFalse");
 		}
 		assertFalse(selection);
 	}

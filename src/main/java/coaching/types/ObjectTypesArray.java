@@ -69,17 +69,4 @@ public class ObjectTypesArray {
 			System.out.print("\n");
 		}
 	}
-
-	/**
-	 * main method.
-	 *
-	 * arguments
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(String[] args) {
-		final ObjectTypesArray types = new ObjectTypesArray();
-		types.display();
-	}
-
 }
