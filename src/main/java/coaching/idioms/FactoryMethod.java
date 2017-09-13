@@ -7,12 +7,9 @@ package coaching.idioms;
 public class FactoryMethod {
 
 	/**
-	 * Creates instance of class from fully qualified name.
+	 * Factory method to create an instance of class from a fully qualified name.
 	 *
-	 * string
-	 * exception
-	 *
-	 * @return the string
+	 * @return the instance of String.
 	 * @throws Exception the exception
 	 */
 	public static String create() throws Exception {

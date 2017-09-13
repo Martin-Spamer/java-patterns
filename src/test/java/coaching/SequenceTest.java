@@ -7,14 +7,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * An example of a Sequence of programming instructions.
- * The Sequence Class.
+ * A Sequence of programming instructions.
  */
 public class SequenceTest {
 	private static final Logger LOG = LoggerFactory.getLogger(SequenceTest.class);
 
 	/**
-	 * Unit Test to show a sequence of programming instructions.
+	 * Example of a sequence of programming instructions.
 	 */
 	@Test
 	public void testExampleSequence() {
@@ -22,7 +21,7 @@ public class SequenceTest {
 		final int y = 1;
 		final int z = x + y;
 		LOG.info("{} = {} + {}", z, x, y);
-		assertEquals(2, x);
+		assertEquals(2, z);
 	}
 
 }

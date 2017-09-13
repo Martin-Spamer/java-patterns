@@ -1,7 +1,4 @@
-
 package coaching.idioms;
-
-import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 
@@ -16,17 +13,8 @@ public class FluentWaitTest {
 	@Test
 	public void testFluentWait() {
 		final FluentWait wait = new FluentWait();
-		wait.timeOut(30, TimeUnit.SECONDS);
-		wait.interval(5, TimeUnit.SECONDS);
-	}
-
-	/**
-	 * Unit Test to fluent wait until.
-	 */
-	@Test
-	public void testFluentWaitUntil() {
-		final FluentWait wait = new FluentWait();
-		wait.until(new Condition().isTrue());
+		wait.timeOut(1000);
+		wait.interval(100);
 	}
 
 	/**
@@ -35,7 +23,8 @@ public class FluentWaitTest {
 	@Test
 	public void testWaitUntilConditionTrue() {
 		final FluentWait wait = new FluentWait();
-		wait.until(new Condition(false).isTrue());
+		// wait.until(new Condition(true));
+		wait.until(Condition.isTrue());
 	}
 
 	/**
@@ -44,7 +33,8 @@ public class FluentWaitTest {
 	@Test
 	public void testWaitUntilConditionFalse() {
 		final FluentWait wait = new FluentWait();
-		wait.until(new Condition(false).isFalse());
+		// wait.until(new Condition(false));
+		wait.until(Condition.isFalse());
 	}
 
 }

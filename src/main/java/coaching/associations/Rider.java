@@ -4,7 +4,7 @@ package coaching.associations;
 /**
  * Rider Class.
  */
-public class Rider extends Person {
+public class Rider extends AbstractPerson {
 
 	/**
 	 * Instantiates a new rider.

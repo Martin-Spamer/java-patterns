@@ -6,7 +6,7 @@ package coaching.associations;
 /**
  * Driver Class.
  */
-public class Driver extends Person {
+public class Driver extends AbstractPerson {
 
 	/**
 	 * Instantiates a new driver.

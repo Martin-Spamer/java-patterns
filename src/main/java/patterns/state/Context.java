@@ -6,20 +6,30 @@ package patterns.state;
  */
 public class Context {
 
-	private AbstractState state;
+	private AbstractState state = null;
+
+	public Context(final AbstractState state) {
+		super();
+		this.state = state;
+	}
 
 	/**
 	 * To A.
 	 */
 	public void toA() {
-		state = new StateA();
+		this.state = new StateA();
 	}
 
 	/**
 	 * To Z.
 	 */
 	public void toZ() {
-		state = new StateZ();
+		this.state = new StateZ();
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Context [state=%s]", this.state);
 	}
 
 }

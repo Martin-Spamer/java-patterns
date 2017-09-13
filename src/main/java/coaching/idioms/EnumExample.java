@@ -13,35 +13,28 @@ public enum EnumExample {
 	/**
 	 * Instantiates a new enum example.
 	 *
-	 * text value
-	 *
 	 * @param textValue the text value
 	 */
-	EnumExample(String textValue) {
+	EnumExample(final String textValue) {
 		this.textValue = textValue;
 	}
 
 	/**
 	 * text.
 	 *
-	 * text
-	 *
 	 * @return the text
 	 */
 	public String getText() {
-		return textValue;
+		return this.textValue;
 	}
 
 	/**
 	 * Factory method Enum value from string.
 	 *
-	 * text value
-	 * enum example
-	 *
 	 * @param textValue the text value
 	 * @return the enum example
 	 */
-	public static EnumExample fromString(String textValue) {
+	public static EnumExample fromString(final String textValue) {
 		for (final EnumExample instance : EnumExample.values()) {
 			if (instance.textValue.equalsIgnoreCase(textValue)) {
 				return instance;

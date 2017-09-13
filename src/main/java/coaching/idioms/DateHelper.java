@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * DateHelper Class.
+ * Helper Class.
  */
 public class DateHelper {
 
@@ -19,8 +19,6 @@ public class DateHelper {
 
 	/**
 	 * Now.
-	 *
-	 * calendar
 	 *
 	 * @return the calendar
 	 */
@@ -31,8 +29,6 @@ public class DateHelper {
 
 	/**
 	 * Yesterday.
-	 *
-	 * calendar
 	 *
 	 * @return the calendar
 	 */
@@ -45,8 +41,6 @@ public class DateHelper {
 	/**
 	 * Tomorrow.
 	 *
-	 * calendar
-	 *
 	 * @return the calendar
 	 */
 	public static Calendar tomorrow() {
@@ -57,8 +51,6 @@ public class DateHelper {
 
 	/**
 	 * Last week.
-	 *
-	 * calendar
 	 *
 	 * @return the calendar
 	 */
@@ -71,8 +63,6 @@ public class DateHelper {
 	/**
 	 * Next week.
 	 *
-	 * calendar
-	 *
 	 * @return the calendar
 	 */
 	public static Calendar nextWeek() {
@@ -83,8 +73,6 @@ public class DateHelper {
 
 	/**
 	 * Last month.
-	 *
-	 * calendar
 	 *
 	 * @return the calendar
 	 */
@@ -97,8 +85,6 @@ public class DateHelper {
 	/**
 	 * Next month.
 	 *
-	 * calendar
-	 *
 	 * @return the calendar
 	 */
 	public static Calendar nextMonth() {
@@ -109,8 +95,6 @@ public class DateHelper {
 
 	/**
 	 * Last year.
-	 *
-	 * calendar
 	 *
 	 * @return the calendar
 	 */
@@ -123,8 +107,6 @@ public class DateHelper {
 	/**
 	 * Next year.
 	 *
-	 * calendar
-	 *
 	 * @return the calendar
 	 */
 	public static Calendar nextYear() {
@@ -134,10 +116,7 @@ public class DateHelper {
 	}
 
 	/**
-	 *  Transform Calendar to ISO 8601 string.
-	 *
-	 * calendar
-	 * string
+	 * Transform Calendar instance to ISO 8601 string.
 	 *
 	 * @param calendar the calendar
 	 * @return the string
@@ -150,10 +129,6 @@ public class DateHelper {
 
 	/**
 	 *  Transform ISO 8601 string to Calendar.
-	 *
-	 * iso 8601 string
-	 * calendar
-	 * parse exception
 	 *
 	 * @param iso8601string the iso 8601 string
 	 * @return the calendar

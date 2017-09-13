@@ -19,7 +19,7 @@ public interface ParametersInterface {
 	 * @param value the value
 	 * @return the abstract parameters
 	 */
-	AbstractParameters setPrameter(String key, String value);
+	AbstractCommandParameters setPrameter(String key, String value);
 
 	/**
 	 * String property names.

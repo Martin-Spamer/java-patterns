@@ -1,26 +1,23 @@
 
 package coaching.delegation;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Manager Class with delegation.
  */
 public class Manager implements ProcessInterface {
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
 	private Worker worker;
 
 	/**
-	 * Instantiates a new manager.
+	 * Instantiates a new manager, with a new Worker instance.
 	 */
 	public Manager() {
 		super();
-		worker = new Worker();
+		this.worker = new Worker();
 	}
 
 	/**
-	 * Instantiates a new manager.
+	 * Instantiates a new manager with a passed Worker instance.
 	 *
 	 * worker
 	 *
@@ -32,7 +29,7 @@ public class Manager implements ProcessInterface {
 	}
 
 	/**
-	 * worker.
+	 * configure the worker to receive delegation.
 	 *
 	 * worker manager
 	 *
@@ -51,7 +48,7 @@ public class Manager implements ProcessInterface {
 	 */
 	@Override
 	public Manager doProcess() {
-		worker.doProcess();
+		this.worker.doProcess();
 		return this;
 	}
 

@@ -5,6 +5,6 @@ package patterns.command;
  * Parameters Class.
  */
 @SuppressWarnings("serial")
-public class Parameters extends AbstractParameters implements ParametersInterface {
+public class Parameters extends AbstractCommandParameters implements ParametersInterface {
 
 }

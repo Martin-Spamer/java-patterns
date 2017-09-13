@@ -1,4 +1,3 @@
-
 package coaching.associations;
 
 import org.slf4j.Logger;
@@ -9,20 +8,15 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractEngine implements FuelInterface {
 
-	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-
-	/** The fuel. */
 	protected FuelInterface fuel;
 
 	/**
-	 * Instantiates a new abstract engine.
-	 *
-	 * fuel
+	 * Abstract engine constructor, engine must have fuel.
 	 *
 	 * @param fuel the fuel
 	 */
-	public AbstractEngine(FuelInterface fuel) {
+	public AbstractEngine(final FuelInterface fuel) {
 		super();
 		useFuel(fuel);
 	}
@@ -30,11 +24,9 @@ public abstract class AbstractEngine implements FuelInterface {
 	/**
 	 * Use fuel.
 	 *
-	 * fuel
-	 *
 	 * @param fuel the fuel
 	 */
-	public void useFuel(FuelInterface fuel) {
+	public void useFuel(final FuelInterface fuel) {
 		this.fuel = fuel;
 	}
 
@@ -44,7 +36,7 @@ public abstract class AbstractEngine implements FuelInterface {
 	 * @see associations.Fuel#fuelUp(associations.Fuel)
 	 */
 	@Override
-	public void fuelUp(FuelInterface fuel) {
+	public void fuelUp(final FuelInterface fuel) {
 		fuel.fuelUp(fuel);
 	}
 
@@ -55,7 +47,7 @@ public abstract class AbstractEngine implements FuelInterface {
 	 */
 	@Override
 	public String toString() {
-		return "Engine [fuel=" + fuel + "]";
+		return "Engine [fuel=" + this.fuel + "]";
 	}
 
 }

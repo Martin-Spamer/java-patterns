@@ -1,6 +1,7 @@
 package coaching;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -8,78 +9,91 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Examples of a selection programming instructions.
- * SelectionTest class.
+ * Examples of selection programming instructions.
  */
 public class SelectionTest {
 	private static final Logger LOG = LoggerFactory.getLogger(SelectionTest.class);
 
 	/**
-	 * Unit Test to show an if.
+	 * The <code>if</code> statement is an example of selection.
 	 */
 	@Test
-	public void testExampleIf() {
+	public void testExampleIfTrue() {
 		boolean selection;
 		selection = false;
 		if (selection) {
 			LOG.info("true");
 		}
-		assertTrue(true);
+		assertFalse(selection);
 	}
 
 	/**
-	 * Unit Test to show an if else.
+	 * The <code>if</code> statement is an example of selection.
+	 */
+	@Test
+	public void testExampleIfFalse() {
+		boolean selection;
+		selection = false;
+		if (selection) {
+			LOG.info("true");
+		}
+		assertFalse(selection);
+	}
+
+	/**
+	 * The <code>if-then-else</code> statement is an example of selection.
 	 */
 	@Test
 	public void testExampleIfElse() {
 		boolean selection;
 		selection = false;
 		if (selection) {
-			LOG.info("true");
+			LOG.info("if true");
 		} else {
-			LOG.info("else");
+			LOG.info("else false");
 		}
-		assertTrue(true);
+		assertFalse(selection);
 	}
 
 	/**
-	 * Unit Test to show an if else if.
+	 * The <code>if-else-if</code> statement is an example of selection.
 	 */
 	@Test
-	public void testExampleIfElseIf() {
-		boolean selection;
-		selection = false;
-		if (selection) {
-			LOG.info("true");
-		} else if (!selection) {
-			LOG.info("else if ");
+	public void testExampleElseIfTrue() {
+		int selection;
+		selection = 1;
+		if (selection == 0) {
+			LOG.info("selection == 0");
+		} else if (selection == 1) {
+			LOG.info("selection == 1");
 		} else {
 			LOG.info("else");
 		}
-		assertTrue(true);
+		assertTrue(selection == 1);
 	}
 
 	/**
-	 * Unit Test to show a switch on an integer number.
+	 * The <code>switch</code> statement is an example of selection.
 	 */
 	@Test
 	public void testExampleSwitchInt() {
 		final int selection = 0;
 		switch (selection) {
 			case 0:
-				LOG.info("true");
+				LOG.info("case 0");
 				break;
 			case 1:
-				LOG.info("true");
+				LOG.info("case 1");
 				break;
 			default:
-				LOG.info("true");
+				LOG.info("default");
 		}
-		assertTrue(true);
+		assertEquals(0, selection);
 	}
 
 	/**
 	 * Unit Test to show a switch on an string.
+	 * The <code>if</code> statement is an example of selection.
 	 */
 	@Test
 	public void testExampleSwitchString() {
@@ -91,10 +105,8 @@ public class SelectionTest {
 			case "FALSE":
 				LOG.info("false case");
 				break;
-			default:
-				LOG.info("default");
 		}
-		assertTrue(true);
+		assertTrue(selection.equals("TRUE"));
 	}
 
 	/**
@@ -106,6 +118,7 @@ public class SelectionTest {
 
 	/**
 	 * Unit Test to switch enum.
+	 * The <code>if</code> statement is an example of selection.
 	 */
 	@Test
 	public void testExampleSwitchEnum() {

@@ -1,110 +1,85 @@
 package coaching;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Examples of a iteration (looping) programming instructions.
- * The Iteration Class.
  */
 public class IterationTest {
 	private static final Logger LOG = LoggerFactory.getLogger(IterationTest.class);
 
 	/**
-	 * Unit Test to example for.
+	 * The <code>for()</code> loop statement is an example of iteration.
+	 *
+	 * Q) How many times will the log code be executed?
 	 */
 	@Test
 	public void testExampleFor() {
-		LOG.info("testFor");
-		final int start = 1;
-		final int end = 10;
-
-		for (int i = start; i == end; i++) {
-			LOG.info("loop until {} == {}", i, end);
-		}
-
-		for (int i = start; i <= end; i++) {
-			LOG.info("loop until {} <= {}", i, end);
-		}
-
-		for (int i = start; i < end + 1; i++) {
-			LOG.info("loop until {} < {}", i, end);
-		}
-		assertTrue(true);
-	}
-
-	/**
-	 * Unit Test to example for 0.
-	 */
-	@Test
-	public void testExampleFor0() {
-		LOG.info("testFor0 {}");
 		final int max = 0;
 
 		for (int i = 0; i < max; i++) {
 			LOG.info("loop until {} < {}", i, max);
 		}
-
-		assertTrue(true);
 	}
 
 	/**
-	 * Unit Test to example for count down.
+	 * The <code>for()</code> loop statement is an example of iteration.
+	 *
+	 * Q) How many times will the log code be executed?
 	 */
 	@Test
 	public void testExampleForCountDown() {
-		LOG.info("testForCountDown");
 		final int start = 10;
 		final int end = 10;
+
 		for (int i = start; i > end; i--) {
 			LOG.info("{} > {}", i, end);
 		}
-
-		assertTrue(true);
 	}
 
 	/**
-	 * Unit Test to example while false.
+	 * The <code>while(not false)</code> statement is an example of selection.
+	 *
+	 * Q) How many times will the log code be executed?
 	 */
 	@Test
-	public void testExampleWhileFalse() {
-		LOG.info("testWhileFalse");
+	public void testExampleWhileNotFalse() {
 		boolean loop;
 		loop = false;
+
 		while (loop) {
 			LOG.info("while({})", loop);
 		}
-		assertTrue(true);
 	}
 
 	/**
-	 * Unit Test to example while not exit.
+	 * The <code>while(true)</code> statement is an example of selection.
 	 */
 	@Test
-	public void testExampleWhileNotExit() {
-		LOG.info("testWhileNotExit");
+	public void testExampleWhileTrue() {
 		boolean exit = false;
-		while (exit) {
+
+		while (!exit) {
 			LOG.info("while({})", exit);
 			exit = true;
 		}
-		assertTrue(true);
 	}
 
 	/**
-	 * Unit Test to example do while.
+	 * The <code>do { ... } while(true)</code> statement is an example of selection.
+	 *
+	 * Q) How many times will the log code be executed?
 	 */
 	@Test
 	public void testExampleDoWhile() {
-		LOG.info("testDoWhile");
 		boolean exit = false;
+
 		do {
 			LOG.info("do while({})", exit);
 			exit = true;
 		} while (!exit);
-		assertTrue(true);
 	}
+
 }

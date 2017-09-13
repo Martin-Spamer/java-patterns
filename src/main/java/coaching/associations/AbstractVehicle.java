@@ -11,13 +11,8 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractVehicle implements VehicleInterface, FuelInterface {
 
-	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-
-	/** The engine. */
 	protected AbstractEngine engine;
-
-	/** The driver. */
 	protected Driver driver;
 
 	/**
@@ -33,7 +28,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 *
 	 * @param engine the engine
 	 */
-	public AbstractVehicle(AbstractEngine engine) {
+	public AbstractVehicle(final AbstractEngine engine) {
 		this.engine = engine;
 	}
 
@@ -43,7 +38,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 * @see associations.Vehicle#setDriver(associations.Driver)
 	 */
 	@Override
-	public void setDriver(Driver driver) {
+	public void setDriver(final Driver driver) {
 		this.driver = driver;
 	}
 
@@ -54,7 +49,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 */
 	@Override
 	public Driver getDriver() {
-		return driver;
+		return this.driver;
 	}
 
 	/*
@@ -64,9 +59,9 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 */
 	// Polymorphic interface
 	@Override
-	public void travel(String destination) {
-		engine.useFuel(engine);
-		log.info(destination);
+	public void travel(final String destination) {
+		this.engine.useFuel(this.engine);
+		this.log.info(destination);
 	}
 
 	/*
@@ -76,7 +71,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 */
 	@Override
 	public String toString() {
-		return "AbstractVehicle [engine=" + engine + ", driver=" + driver + "]";
+		return "AbstractVehicle [engine=" + this.engine + ", driver=" + this.driver + "]";
 	}
 
 }

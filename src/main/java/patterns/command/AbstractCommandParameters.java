@@ -8,10 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Command Parameters.
+ * Abstract class for Parameters to Commands.
  */
-@SuppressWarnings("serial")
-public abstract class AbstractParameters implements ParametersInterface {
+public abstract class AbstractCommandParameters implements ParametersInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private final Properties parameters = new Properties();
@@ -19,7 +18,7 @@ public abstract class AbstractParameters implements ParametersInterface {
 	/**
 	 * Instantiates a new abstract parameters.
 	 */
-	public AbstractParameters() {
+	public AbstractCommandParameters() {
 		super();
 	}
 
@@ -29,7 +28,7 @@ public abstract class AbstractParameters implements ParametersInterface {
 	 * @param key the key
 	 * @param value the value
 	 */
-	public AbstractParameters(String key, String value) {
+	public AbstractCommandParameters(final String key, final String value) {
 		setPrameter(key, value);
 	}
 
@@ -37,8 +36,8 @@ public abstract class AbstractParameters implements ParametersInterface {
 	 * @see patterns.command.ParametersInterface#setPrameter(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public AbstractParameters setPrameter(String key, String value) {
-		parameters.setProperty(key, value);
+	public AbstractCommandParameters setPrameter(final String key, final String value) {
+		this.parameters.setProperty(key, value);
 		return this;
 	}
 
@@ -47,31 +46,31 @@ public abstract class AbstractParameters implements ParametersInterface {
 	 */
 	@Override
 	public Set<String> stringPropertyNames() {
-		return parameters.stringPropertyNames();
+		return this.parameters.stringPropertyNames();
 	}
 
 	/* (non-Javadoc)
 	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String)
 	 */
 	@Override
-	public String valueFor(String key) {
-		return parameters.getProperty(key);
+	public String valueFor(final String key) {
+		return this.parameters.getProperty(key);
 	}
 
 	/* (non-Javadoc)
 	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public String valueFor(String key, String defaultValue) {
-		return parameters.getProperty(key, defaultValue);
+	public String valueFor(final String key, final String defaultValue) {
+		return this.parameters.getProperty(key, defaultValue);
 	}
 
 	/* (non-Javadoc)
 	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String, java.lang.Boolean)
 	 */
 	@Override
-	public Boolean valueFor(String key, Boolean defaultValue) {
-		final String property = parameters.getProperty(key, defaultValue.toString());
+	public Boolean valueFor(final String key, final Boolean defaultValue) {
+		final String property = this.parameters.getProperty(key, defaultValue.toString());
 		return Boolean.parseBoolean(property);
 	}
 
@@ -79,8 +78,8 @@ public abstract class AbstractParameters implements ParametersInterface {
 	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String, java.lang.Long)
 	 */
 	@Override
-	public Long valueFor(String key, Long defaultValue) {
-		final String property = parameters.getProperty(key, defaultValue.toString());
+	public Long valueFor(final String key, final Long defaultValue) {
+		final String property = this.parameters.getProperty(key, defaultValue.toString());
 		return Long.parseLong(property);
 	}
 }

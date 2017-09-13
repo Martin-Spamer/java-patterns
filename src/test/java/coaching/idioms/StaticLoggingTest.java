@@ -20,12 +20,4 @@ public class StaticLoggingTest {
 		new StaticLogging().toLog();
 	}
 
-	/**
-	 * Unit Test to send log to.
-	 */
-	@Test
-	public void testSendLogTo() {
-		new StaticLogging().logTo(LOG);
-	}
-
 }

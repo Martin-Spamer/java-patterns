@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Person Class.
  */
-public abstract class Person implements PersonInterface {
+public abstract class AbstractPerson implements PersonInterface {
 
 	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -20,7 +20,7 @@ public abstract class Person implements PersonInterface {
 	/**
 	 * Instantiates a new person.
 	 */
-	public Person() {
+	public AbstractPerson() {
 	}
 
 	/**
@@ -30,7 +30,7 @@ public abstract class Person implements PersonInterface {
 	 *
 	 * @param name the name
 	 */
-	public Person(final String name) {
+	public AbstractPerson(final String name) {
 		setName(name);
 	}
 
