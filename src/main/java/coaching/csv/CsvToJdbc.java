@@ -171,7 +171,7 @@ public class CsvToJdbc {
 		csvFile = new CsvFile(filename);
 		tableName = table;
 		for (int index = 0; index < csvFile.size(); index++) {
-			final CSVRecord record = csvFile.getRecord(index);
+			final CsvRecord record = csvFile.getRecord(index);
 			log.info(record.toString());
 			write(record);
 		}
@@ -312,7 +312,7 @@ public class CsvToJdbc {
 	 * @param record the record
 	 * @throws SQLException the SQL exception
 	 */
-	public void write(final CSVRecord record) throws SQLException {
+	public void write(final CsvRecord record) throws SQLException {
 		// insert
 		// into %table (%field%,...)
 		// from (%value%,...)

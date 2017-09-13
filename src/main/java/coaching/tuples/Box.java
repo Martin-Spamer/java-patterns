@@ -1,4 +1,3 @@
-
 package coaching.tuples;
 
 /**
@@ -25,9 +24,7 @@ public class Box<T> {
 	/**
 	 * Instantiates a new box.
 	 *
-	 * t
-	 *
-	 * @param t the t
+	 * @param t the type T
 	 */
 	public Box(final T t) {
 		super();
@@ -37,9 +34,7 @@ public class Box<T> {
 	/**
 	 * Sets the.
 	 *
-	 * t
-	 *
-	 * @param t the t
+	 * @param t the type T
 	 */
 	public void set(final T t) {
 		this.t = t;
@@ -48,9 +43,7 @@ public class Box<T> {
 	/**
 	 * Gets the.
 	 *
-	 * t
-	 *
-	 * @return the t
+	 * @return the t as type T
 	 */
 	public T get() {
 		return this.t;

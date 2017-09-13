@@ -1,25 +1,21 @@
-
 package coaching.polymorphism;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * AbstractType Class.
+ * An abstract Class providing a polymorphic base.
  */
-public abstract class AbstractType {
+public abstract class AbstractType implements TypeInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Operation.
-	 *
-	 * abstract type
-	 *
-	 * @return the abstract type
+	/* (non-Javadoc)
+	 * @see coaching.polymorphism.TypeInterface#operation()
 	 */
-	public AbstractType operation() {
-		log.info("{}.operation", this.getClass().getSimpleName());
+	@Override
+	public TypeInterface operation() {
+		this.log.info("{}.operation", this.getClass().getSimpleName());
 		return this;
 	}
 

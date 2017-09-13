@@ -1,15 +1,15 @@
-
 package automation;
 
 /**
- * Page Class.
+ * Abstract Page Class.
  */
-public class Page {
+public abstract class AbstractPage {
 
 	/**
 	 * Login.
 	 */
 	public void login() {
+
 	}
 
 	/**

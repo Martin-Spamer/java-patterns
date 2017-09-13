@@ -1,4 +1,3 @@
-
 package automation;
 
 /**
@@ -8,9 +7,6 @@ public class DataManager {
 
 	/**
 	 * return data with characteristic.
-	 *
-	 * authorised
-	 * data
 	 *
 	 * @param characteristic the characteristic
 	 * @return the data

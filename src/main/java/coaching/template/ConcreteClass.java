@@ -1,5 +1,5 @@
 
-package patterns.template;
+package coaching.template;
 
 /**
  * ConcreteClass Class.

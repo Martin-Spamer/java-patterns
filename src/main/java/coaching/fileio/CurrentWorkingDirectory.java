@@ -3,7 +3,7 @@
  * Created on 21 July 2005, 14:39
  */
 
-package coaching.csv;
+package coaching.fileio;
 
 import java.io.File;
 

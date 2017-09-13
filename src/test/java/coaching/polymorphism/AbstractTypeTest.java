@@ -1,4 +1,3 @@
-
 package coaching.polymorphism;
 
 import org.junit.Test;
@@ -11,15 +10,16 @@ import org.slf4j.LoggerFactory;
 public class AbstractTypeTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractTypeTest.class);
-	private AbstractType abstractType;
+	private TypeInterface abstractType;
 
 	/**
 	 * Unit Test to one.
 	 */
 	@Test
-	public void testOne() {
-		abstractType = new SubTypeOne();
-		LOG.info("{}", abstractType);
+	public void testPolymorphism() {
+		this.abstractType = new SubTypeOne();
+		LOG.info("{}", this.abstractType);
+		this.abstractType.operation();
 	}
 
 	/**
@@ -27,10 +27,9 @@ public class AbstractTypeTest {
 	 */
 	@Test
 	public void testTwo() {
-		abstractType = new SubTypeTwo();
-		LOG.info("{}", abstractType);
-		abstractType.operation();
-		LOG.info("{}", abstractType);
+		this.abstractType = new SubTypeTwo();
+		LOG.info("{}", this.abstractType);
+		this.abstractType.operation();
 	}
 
 }

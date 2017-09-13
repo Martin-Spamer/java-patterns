@@ -30,7 +30,7 @@ public class CSVFileTest {
 		log.info("testCsvFile out");
 		log.info("{}", csvFile.getHeader());
 		for (int index = 0; index < csvFile.size(); index++) {
-			final CSVRecord record = csvFile.getRecord(index);
+			final CsvRecord record = csvFile.getRecord(index);
 			log.info("{}", record);
 		}
 
@@ -43,10 +43,10 @@ public class CSVFileTest {
 	@Test
 	public void testCsvRecord() {
 		log.info("testCsvRecord");
-		final String headerLine = new CSVRecord("#One,Two").toString();
+		final String headerLine = new CsvRecord("#One,Two").toString();
 		log.info("headerLine={}", headerLine);
 		assertEquals("#One, Two", headerLine);
-		final String dataLine = new CSVRecord("One,Two").toString();
+		final String dataLine = new CsvRecord("One,Two").toString();
 		log.info("dataLine={}", dataLine);
 		assertEquals("One, Two", dataLine);
 	}

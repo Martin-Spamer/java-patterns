@@ -22,7 +22,7 @@ public class CsvFile {
 	private final String csvFilename;
 	private String headerLine;
 	private String[] columnNames;
-	private final ArrayList<CSVRecord> records = new ArrayList<>();
+	private final ArrayList<CsvRecord> records = new ArrayList<>();
 
 	/**
 	 * Instantiates a new csv file.
@@ -89,7 +89,7 @@ public class CsvFile {
 	 * @param index the index
 	 * @return the record
 	 */
-	public CSVRecord getRecord(final int index) {
+	public CsvRecord getRecord(final int index) {
 		return records.get(index);
 	}
 
@@ -117,7 +117,7 @@ public class CsvFile {
 					if (line.startsWith("#")) {
 						setHeaderLine(line);
 					} else {
-						final CSVRecord record = new CSVRecord(line);
+						final CsvRecord record = new CsvRecord(line);
 						final String recordString = record.toString();
 						records.add(record);
 					}
@@ -229,7 +229,7 @@ public class CsvFile {
 		try {
 			final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
 			for (int index = 0; index < records.size(); index++) {
-				final CSVRecord csvRecord = records.get(index);
+				final CsvRecord csvRecord = records.get(index);
 				CsvFile.log.info(csvRecord.toString());
 				writer.write(csvRecord.toString());
 			}

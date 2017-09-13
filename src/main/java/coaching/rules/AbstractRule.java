@@ -9,7 +9,7 @@ package coaching.rules;
 /**
  * AbstractCommaAbstractRulend Class.
  */
-public class AbstractRule implements CommandInterface {
+public abstract class AbstractRule implements CommandInterface {
 
 	protected ContextInterface context = null;
 

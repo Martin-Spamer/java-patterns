@@ -1,4 +1,3 @@
-
 package patterns.adapter;
 
 import static org.junit.Assert.assertNotNull;

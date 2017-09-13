@@ -1,8 +1,7 @@
-
 package coaching.polymorphism;
 
 /**
- * SubTypeOne Class.
+ * SubTypeOne is an AbstractType.
  */
 public class SubTypeOne extends AbstractType {
 

@@ -2,7 +2,7 @@
 package coaching.polymorphism;
 
 /**
- * SubTypeTwo Class.
+ * SubTypeTwo is an AbstractType.
  */
 public class SubTypeTwo extends AbstractType {
 

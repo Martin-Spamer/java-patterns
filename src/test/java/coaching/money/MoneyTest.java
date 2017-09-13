@@ -1,4 +1,3 @@
-
 package coaching.money;
 
 import static org.junit.Assert.assertEquals;

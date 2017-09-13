@@ -1,9 +1,8 @@
-
 package automation;
 
 /**
  * Landing Page Class.
  */
-public class LandingPage extends Page {
+public class LandingPage extends AbstractPage {
 
 }

@@ -37,8 +37,8 @@ public class NativeTypes {
 	// other primitive types
 	private char aChar = 'A';
 
-	private boolean aBooleanTrue = true;
-	private boolean aBooleanFalse = false;
+	private boolean aTrueBoolean = true;
+	private boolean aFalseBoolean = false;
 
 	/**
 	 * Display.
@@ -69,10 +69,10 @@ public class NativeTypes {
 			System.out.println("The character " + this.aChar + " is lower case.");
 		}
 
-		if (this.aBooleanTrue) {
-			System.out.println("aBooleanTrue has tested as true : " + this.aBooleanTrue);
+		if (this.aTrueBoolean) {
+			System.out.println("aBooleanTrue has tested as true : " + this.aTrueBoolean);
 		} else {
-			System.out.println("aBooleanTrue has tested as false : " + this.aBooleanTrue);
+			System.out.println("aBooleanTrue has tested as false : " + this.aTrueBoolean);
 		}
 	}
 }

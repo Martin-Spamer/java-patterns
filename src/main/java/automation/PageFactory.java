@@ -1,4 +1,3 @@
-
 package automation;
 
 /**
@@ -9,11 +8,9 @@ public class PageFactory {
 	/**
 	 * Landing page.
 	 *
-	 * page
-	 *
 	 * @return the page
 	 */
-	public static Page landingPage() {
+	public static AbstractPage landingPage() {
 		return new LandingPage();
 	}
 
