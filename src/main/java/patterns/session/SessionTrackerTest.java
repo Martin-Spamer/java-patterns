@@ -1,6 +1,6 @@
 package patterns.session;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
@@ -8,17 +8,7 @@ public class SessionTrackerTest {
 
 	@Test
 	public void testSessionTracker() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testCreateSession() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testDestroySession() {
-		fail("Not yet implemented");
+		assertNotNull(new SessionTracker());
 	}
 
 }

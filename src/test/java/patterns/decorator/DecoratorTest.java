@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 /**
  * The AbstractDecoratorTest Class.
  */
-public class AbstractDecoratorTest {
+public class DecoratorTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(AbstractDecoratorTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
 
 	/**
 	 * Unit Test to operation.

@@ -1,4 +1,3 @@
-
 package coaching.jdbc;
 
 import java.sql.Connection;
@@ -22,6 +21,9 @@ import org.w3c.dom.Node;
  * @version 0.1 - 12:33:20
  */
 class XmlDAO {
+	private static final String URL = "jdbc:pointbase:server://localhost/sample";
+	private static final String USER_ID = "PBPUBLIC";
+	private static final String PASSWORD = "PBPUBLIC";
 	private String url = null;
 	private String userId = null;
 	private String password = null;
@@ -30,38 +32,50 @@ class XmlDAO {
 	private ResultSet resultSet = null;
 	private ResultSetMetaData resultSetMetaData = null;
 
+	public XmlDAO() {
+		this(URL, USER_ID, PASSWORD);
+	}
+
 	/**
 	 * Constructor.
 	 *
-	 * url
-	 * user id
-	 * pass word
-	 *
 	 * @param url the url
 	 * @param userId the user id
-	 * @param passWord the pass word
+	 * @param password the pass word
 	 */
-	public XmlDAO(String url, String userId, String passWord) {
+	public XmlDAO(final String url, final String userId, final String password) {
 		this.url = url;
 		this.userId = userId;
-		password = passWord;
+		this.password = password;
 		try {
-			connection = DriverManager.getConnection(url, userId, passWord);
+			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
+			this.connection = DriverManager.getConnection(url, userId, password);
+		} catch (final ClassNotFoundException e) {
+			e.printStackTrace();
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	/**
-	 * database connection.
-	 */
-	@Override
-	public void finalize() {
+	public void execute() {
 		try {
-			resultSet.close();
-			statement.close();
-			connection.close();
-		} catch (final SQLException e) {
+			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
+			final String url = "jdbc:pointbase:server://localhost/sample";
+			final String userId = "PBPUBLIC";
+			final String passWord = "PBPUBLIC";
+
+			final XmlDAO dao = new XmlDAO(url, userId, passWord);
+
+			String sql = "select * from TNRG_COSTING";
+			dao.read(sql);
+			final String xml = dao.toXmlString();
+			System.out.println(xml);
+
+			sql = "SELECT * from customer_tbl where CUSTOMER_NUM=777";
+			dao.read(sql);
+			final Document document = dao.toXmlDocument();
+			System.out.println(((Node) document).toString());
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -69,15 +83,13 @@ class XmlDAO {
 	/**
 	 * database.
 	 *
-	 * sql
-	 *
 	 * @param sql the sql
 	 */
-	public void read(String sql) {
+	public void read(final String sql) {
 		try {
-			statement = connection.createStatement();
-			resultSet = statement.executeQuery(sql);
-			resultSetMetaData = resultSet.getMetaData();
+			this.statement = this.connection.createStatement();
+			this.resultSet = this.statement.executeQuery(sql);
+			this.resultSetMetaData = this.resultSet.getMetaData();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
@@ -85,7 +97,6 @@ class XmlDAO {
 
 	/**
 	 * data as an XML encoded string.
-	 * data.
 	 *
 	 * @return the string
 	 */
@@ -93,15 +104,15 @@ class XmlDAO {
 		final StringBuffer xml = new StringBuffer();
 
 		try {
-			final int colCount = resultSetMetaData.getColumnCount();
+			final int colCount = this.resultSetMetaData.getColumnCount();
 			xml.append("<TABLE>\n");
 
-			while (resultSet.next()) {
+			while (this.resultSet.next()) {
 				xml.append("<ROW>\n");
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = resultSetMetaData.getColumnName(i);
-					final Object value = resultSet.getObject(i);
+					final String columnName = this.resultSetMetaData.getColumnName(i);
+					final Object value = this.resultSet.getObject(i);
 					xml.append("<" + columnName + ">");
 
 					if (value != null) {
@@ -123,8 +134,6 @@ class XmlDAO {
 	/**
 	 * data as XML.
 	 *
-	 * data.
-	 *
 	 * @return the document
 	 */
 	public Document toXmlDocument() {
@@ -138,15 +147,15 @@ class XmlDAO {
 			final Element results = document.createElement("TABLE");
 			document.appendChild(results);
 
-			final int colCount = resultSetMetaData.getColumnCount();
+			final int colCount = this.resultSetMetaData.getColumnCount();
 
-			while (resultSet.next()) {
+			while (this.resultSet.next()) {
 				final Element row = document.createElement("ROW");
 				results.appendChild(row);
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = resultSetMetaData.getColumnName(i);
-					final Object value = resultSet.getObject(i);
+					final String columnName = this.resultSetMetaData.getColumnName(i);
+					final Object value = this.resultSet.getObject(i);
 
 					if (value != null) {
 						final Element node = document.createElement(columnName);
@@ -163,33 +172,15 @@ class XmlDAO {
 	}
 
 	/**
-	 * main entry point.
-	 *
-	 * arguments
-	 * exception
-	 *
-	 * @param argv the arguments
-	 * @throws Exception the exception
+	 * database connection.
 	 */
-	public static void main(String argv[]) throws Exception {
+	@Override
+	public void finalize() {
 		try {
-			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
-			final String url = "jdbc:pointbase:server://localhost/sample";
-			final String userId = "PBPUBLIC";
-			final String passWord = "PBPUBLIC";
-
-			final XmlDAO dao = new XmlDAO(url, userId, passWord);
-
-			String sql = "select * from TNRG_COSTING";
-			dao.read(sql);
-			final String xml = dao.toXmlString();
-			System.out.println(xml);
-
-			sql = "SELECT * from customer_tbl where CUSTOMER_NUM=777";
-			dao.read(sql);
-			final Document document = dao.toXmlDocument();
-			System.out.println(((Node) document).toString());
-		} catch (final Exception e) {
+			this.resultSet.close();
+			this.statement.close();
+			this.connection.close();
+		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
 	}
