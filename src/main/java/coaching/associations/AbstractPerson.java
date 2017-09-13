@@ -11,10 +11,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractPerson implements PersonInterface {
 
-	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-
-	/** The name. */
 	private String name;
 
 	/**
@@ -52,7 +49,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 * @return the name
 	 */
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	/*
@@ -62,7 +59,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Person [name=%s]", name);
+		return String.format("Person [name=%s]", this.name);
 	}
 
 }

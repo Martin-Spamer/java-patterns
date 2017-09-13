@@ -17,14 +17,6 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 
 	/**
 	 * Instantiates a new abstract vehicle.
-	 */
-	public AbstractVehicle() {
-	}
-
-	/**
-	 * Instantiates a new abstract vehicle.
-	 *
-	 * engine
 	 *
 	 * @param engine the engine
 	 */

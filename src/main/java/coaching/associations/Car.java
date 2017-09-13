@@ -7,7 +7,7 @@ package coaching.associations;
 /**
  * Car Class.
  */
-public class Car extends AbstractVehicle {
+public class Car extends AbstractVehicle implements CarInterface {
 
 	/**
 	 * Instantiates a new car.
@@ -17,23 +17,12 @@ public class Car extends AbstractVehicle {
 	}
 
 	/**
-	 * Instantiates a new car.
-	 *
-	 * engine
+	 * Instantiates a new car with an engine.
 	 *
 	 * @param engine the engine
 	 */
-	public Car(AbstractEngine engine) {
+	public Car(final AbstractEngine engine) {
 		super(engine);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see associations.Fuel#fuelUp(associations.Fuel)
-	 */
-	@Override
-	public void fuelUp(FuelInterface fuel) {
 	}
 
 }

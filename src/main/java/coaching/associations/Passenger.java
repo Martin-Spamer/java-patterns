@@ -6,4 +6,8 @@ package coaching.associations;
  */
 public class Passenger extends AbstractPerson {
 
+	public Passenger(final String name) {
+		super(name);
+	}
+
 }
