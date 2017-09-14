@@ -1,5 +1,6 @@
-
 package coaching.config;
+
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ public class XmlConfigTest {
 	 */
 	@Test
 	public void testXmlConfig() {
-		new XmlConfig();
+		assertNotNull(new XmlConfig());
 	}
 
 	/**
@@ -21,7 +22,7 @@ public class XmlConfigTest {
 	 */
 	@Test
 	public void testXmlConfigString() {
-		new XmlConfig("filename.xml");
+		assertNotNull(new XmlConfig("filename.xml"));
 	}
 
 }

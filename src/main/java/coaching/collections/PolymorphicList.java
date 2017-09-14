@@ -8,38 +8,33 @@ import java.util.List;
  * PolymorphicList Class.
  */
 public class PolymorphicList {
+
 	private final List<Integer> integerList = new LinkedList<Integer>();
 
 	/**
 	 * Integer object.
 	 *
-	 * integer in
-	 *
 	 * @param integerIn the integer in
 	 */
-	public void add(Integer integerIn) {
-		integerList.add(integerIn);
+	public void add(final Integer integerIn) {
+		this.integerList.add(integerIn);
 	}
 
 	/**
 	 * Integer object.
 	 *
-	 * integer
-	 *
 	 * @return the integer
 	 */
 	public Integer next() {
-		return integerList.iterator().next();
+		return this.integerList.iterator().next();
 	}
 
 	/**
 	 * main method.
 	 *
-	 * arguments
-	 *
 	 * @param args the arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final PolymorphicList myIntList = new PolymorphicList();
 
 		myIntList.add(new Integer(0));
