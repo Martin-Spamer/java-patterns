@@ -10,6 +10,8 @@ import java.sql.Statement;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -21,6 +23,7 @@ import org.w3c.dom.Node;
  * @version 0.1 - 12:33:20
  */
 class XmlDAO {
+	private static final Logger LOG = LoggerFactory.getLogger(XmlDAO.class);
 	private static final String URL = "jdbc:pointbase:server://localhost/sample";
 	private static final String USER_ID = "PBPUBLIC";
 	private static final String PASSWORD = "PBPUBLIC";
@@ -69,12 +72,12 @@ class XmlDAO {
 			String sql = "select * from TNRG_COSTING";
 			dao.read(sql);
 			final String xml = dao.toXmlString();
-			System.out.println(xml);
+			LOG.info(xml);
 
 			sql = "SELECT * from customer_tbl where CUSTOMER_NUM=777";
 			dao.read(sql);
 			final Document document = dao.toXmlDocument();
-			System.out.println(((Node) document).toString());
+			LOG.info(((Node) document).toString());
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}

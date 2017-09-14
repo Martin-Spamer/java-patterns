@@ -9,6 +9,8 @@
 
 package coaching.solid;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
  * OpenClosedPrinciple Class.
  *
@@ -18,20 +20,12 @@ package coaching.solid;
 public class OpenClosedPrinciple {
 
 	/**
-	 * OpenClosedPrinciple Constructor.
-	 */
-	public OpenClosedPrinciple() {
-		super();
-	}
-
-	/**
 	 * main method.
-	 *
-	 * arguments
 	 *
 	 * @param args the arguments
 	 */
-	public static void main(String[] args) {
-		new OpenClosedPrinciple();
+	public static void main(final String[] args) {
+		final OpenClosedPrinciple ocp = new OpenClosedPrinciple();
+		assertNotNull(ocp);
 	}
 }

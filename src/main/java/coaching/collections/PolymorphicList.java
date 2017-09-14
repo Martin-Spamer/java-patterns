@@ -29,6 +29,11 @@ public class PolymorphicList {
 		return this.integerList.iterator().next();
 	}
 
+	@Override
+	public String toString() {
+		return String.format("PolymorphicList [integerList=%s]", this.integerList);
+	}
+
 	/**
 	 * main method.
 	 *

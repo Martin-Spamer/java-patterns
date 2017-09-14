@@ -24,14 +24,14 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	 * Thread.
 	 */
 	public AbstractApplicationProcess() {
-		thread = new java.lang.Thread(this);
+		this.thread = new java.lang.Thread(this);
 	}
 
 	/**
 	 * Thread running.
 	 */
 	public void start() {
-		thread.start();
+		this.thread.start();
 	}
 
 	/**
@@ -41,29 +41,24 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	@Override
 	public void run() {
 		try {
-			do // Some processing.
-			{
-				tick++;
-				System.out.println(this.getClass().getName() + "." + thread.getName() + "(" + thread.getPriority() + ")"
-				        + ".tick= " + tick);
+			do {
+				this.tick++;
 
-				// A Run method MUST have either a sleep or yield to prevent
-				// deadlock.
+				// A Run method MUST have either a sleep or yield to prevent deadlock.
 
 				// Pause for 1 Second.
-				java.lang.Thread.sleep(1000); // Note sleep is static method.
+				Thread.sleep(1000); // Note sleep is static method.
 
 				// Pause until I'm allowed to continue.
-				java.lang.Thread.yield(); // Note that yield is a static method.
+				Thread.yield(); // Note that yield is a static method.
 
-				// * Thread ends if it runs for more than
-				// a minute.
+				// * Thread ends if it runs for more than a minute.
 				// alternatively I could throw a new InterruptedException
-				if (tick >= 60) {
-					exit = true;
+				if (this.tick >= 60) {
+					this.exit = true;
 				}
 
-			} while (!exit);
+			} while (!this.exit);
 
 		} catch (final InterruptedException exception) {
 			exception.printStackTrace();
@@ -74,6 +69,6 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	 * Thread running.
 	 */
 	public void stop() {
-		exit = true;
+		this.exit = true;
 	}
 }

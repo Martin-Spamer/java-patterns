@@ -9,12 +9,17 @@ package coaching.jdbc;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * PointBaseCustomerDao Class.
  *
  * @author martin.spamer
  */
 public class PointBaseCustomerDao {
+
+	private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDao.class);
 	private Connection connection = null;
 
 	public PointBaseCustomerDao() {
@@ -60,7 +65,7 @@ public class PointBaseCustomerDao {
 				output.append("\n");
 			}
 
-			System.out.println(output.toString());
+			LOG.info(output.toString());
 
 			resultSet.close();
 		} catch (final SQLException exception) {
@@ -79,7 +84,7 @@ public class PointBaseCustomerDao {
 			final String sql = "INSERT INTO CUSTOMER_TBL (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
 			final int result = statement.executeUpdate(sql);
 
-			System.out.println("Rows updated: " + result + " for " + sql);
+			LOG.info("Rows updated: " + result + " for " + sql);
 		} catch (final SQLException exception) {
 			exception.printStackTrace();
 		}
@@ -96,7 +101,7 @@ public class PointBaseCustomerDao {
 			final String sql = "UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999";
 			final int result = statement.executeUpdate(sql);
 
-			System.out.println("Rows updated: " + result + " for " + sql);
+			LOG.info("Rows updated: " + result + " for " + sql);
 		} catch (final SQLException exception) {
 			exception.printStackTrace();
 		}
@@ -113,7 +118,7 @@ public class PointBaseCustomerDao {
 			final String sql = "DELETE FROM CUSTOMER_TBL WHERE CUSTOMER_NUM=999";
 			final int result = statement.executeUpdate(sql);
 
-			System.out.println("Rows updated: " + result + " for " + sql);
+			LOG.info("Rows updated: " + result + " for " + sql);
 		} catch (final SQLException exception) {
 			exception.printStackTrace();
 		}

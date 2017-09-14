@@ -6,11 +6,4 @@ package coaching.rules;
  */
 public abstract class AbstractContext {
 
-	/**
-	 * Instantiates a new abstract context.
-	 */
-	public AbstractContext() {
-		super();
-	}
-
 }

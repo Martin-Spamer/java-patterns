@@ -6,7 +6,7 @@ package patterns.iterator;
  */
 public final class Iterator extends AbstractIterator {
 
-	public Aggregate aggregate;
+	private Aggregate aggregate = null;
 
 	/*
 	 * (non-Javadoc)
@@ -28,22 +28,14 @@ public final class Iterator extends AbstractIterator {
 		return null;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.iterator.AbstractIterator#isDone()
-	 */
 	@Override
-	public void isDone() {
+	public boolean isDone() {
+		return true;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.iterator.AbstractIterator#currentItem()
-	 */
 	@Override
-	public void currentItem() {
+	public AbstractItem currentItem() {
+		return null;
 	}
 
 }

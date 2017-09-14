@@ -9,6 +9,8 @@
 
 package coaching.collections;
 
+import java.util.Arrays;
+
 /**
  * Using a basic Java array to implement an example UML Aggregation.
  * @author martin.spamer
@@ -27,6 +29,11 @@ public class AggregateClassArray {
 		this.aggregate[1] = new ElementTwo();
 		this.aggregate[2] = new ElementThree();
 		this.aggregate[3] = new ElementFour();
+	}
+
+	@Override
+	public String toString() {
+		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(this.aggregate));
 	}
 
 }

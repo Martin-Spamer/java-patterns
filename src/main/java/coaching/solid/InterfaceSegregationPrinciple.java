@@ -9,6 +9,8 @@
 
 package coaching.solid;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
  * InterfaceSegregationPrinciple Class.
  *
@@ -18,10 +20,13 @@ package coaching.solid;
 public class InterfaceSegregationPrinciple implements ExampleInterface {
 
 	/**
-	 * Instantiates a new interface segregation principle.
+	 * main method.
+	 *
+	 * @param args the arguments
 	 */
-	public InterfaceSegregationPrinciple() {
-		super();
+	public static void main(final String[] args) {
+		final InterfaceSegregationPrinciple isp = new InterfaceSegregationPrinciple();
+		assertNotNull(isp);
 	}
 
 }

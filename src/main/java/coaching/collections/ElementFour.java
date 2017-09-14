@@ -16,11 +16,4 @@ package coaching.collections;
  * @version 0.1 - 11:08:06
  */
 public class ElementFour extends AbstractElement {
-
-	/**
-	 * Instantiates a new element four.
-	 */
-	public ElementFour() {
-		super();
-	}
 }

@@ -9,6 +9,8 @@
 
 package coaching.collections;
 
+import java.util.Arrays;
+
 /**
  * Using a basic Java array to implement an Composite.
  * @author martin.spamer
@@ -27,6 +29,11 @@ public class BasicClassArray {
 		this.composite[1] = new ElementTwo();
 		this.composite[2] = new ElementThree();
 		this.composite[3] = new ElementFour();
+	}
+
+	@Override
+	public String toString() {
+		return String.format("BasicClassArray [composite=%s]", Arrays.toString(this.composite));
 	}
 
 }

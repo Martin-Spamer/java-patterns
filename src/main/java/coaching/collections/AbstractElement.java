@@ -9,22 +9,32 @@
 
 package coaching.collections;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * BasicElement Class.
  */
 public abstract class AbstractElement {
 
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
 	/**
 	 * Constructor instantiates a new basic element.
 	 */
 	public AbstractElement() {
-		System.out.println("new " + this.getClass().getName());
+		this.log.info("{} default constructor", this.getClass().getName());
 	}
 
 	/**
 	 * execute.
 	 */
 	public void execute() {
-		System.out.println(this.getClass().getName() + ".execute");
+		this.log.info("{}.execute", this.getClass().getName());
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s", this.getClass().getSimpleName());
 	}
 }

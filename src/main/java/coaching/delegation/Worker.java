@@ -25,7 +25,7 @@ class Worker implements ProcessInterface {
 	 */
 	@Override
 	public Worker doProcess() {
-		System.out.println("do work");
+		log.info("do work");
 		return this;
 	}
 

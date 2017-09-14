@@ -9,6 +9,9 @@
 
 package coaching.types;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Example code of arrays of primitive types.
  * @author martin.spamer
@@ -16,9 +19,8 @@ package coaching.types;
  **/
 public class ObjectTypesArray {
 
-	/**
-	 * Main program entry point.
-	 */
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
 	public void display() {
 		final int ARRAY_SIZE = 10;
 
@@ -37,7 +39,7 @@ public class ObjectTypesArray {
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
 			values[i] = new Long(i * 100);
-			System.out.println(i + "=" + values[i]);
+			this.log.info(i + "=" + values[i]);
 		}
 
 		// declare a reference to an matric of longs

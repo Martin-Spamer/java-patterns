@@ -6,46 +6,55 @@
 
 package coaching.exceptions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * ExceptionHandling Class.
  */
 public class CustomExceptionHandling {
+
+	private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandling.class);
+
 	/**
 	 * a Custom Exception. In most cases this all that is needed to implement a
 	 * custom exception class. In some cases additional constructors be be
 	 * required.
 	 */
 	private class CustomException extends Exception {
+		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * CustomCreationException Class.
 	 */
 	private class CustomCreationException extends CustomException {
+		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * CustomReadException Class.
 	 */
 	private class CustomReadException extends CustomException {
+		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * CustomUpdateException Class.
 	 */
 	private class CustomUpdateException extends CustomException {
+		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * CustomDeleteException Class.
 	 */
 	private class CustomDeleteException extends CustomException {
+		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * A SubProcess Throws a specialist exception.
-	 *
-	 * custom exception
 	 *
 	 * @throws CustomException the custom exception
 	 */
@@ -112,12 +121,12 @@ public class CustomExceptionHandling {
 	 *
 	 * @param args the arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final CustomExceptionHandling instance = new CustomExceptionHandling();
 		try {
 			instance.process();
 		} catch (final Exception exception) {
-			System.out.println(exception.toString());
+			CustomExceptionHandling.LOG.info(exception.toString());
 		}
 	}
 }

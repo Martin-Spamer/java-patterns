@@ -1,8 +1,7 @@
-
 package coaching.idioms;
 
 /**
- * PojoExample Class.
+ * Example plain old java object class.
  */
 public final class PojoExample implements Cloneable {
 
@@ -18,9 +17,6 @@ public final class PojoExample implements Cloneable {
 
 	/**
 	 * Instantiates a new pojo example.
-	 *
-	 * string value
-	 * long value
 	 *
 	 * @param stringValue the string value
 	 * @param longValue the long value
@@ -59,7 +55,7 @@ public final class PojoExample implements Cloneable {
 	 * @return the string value
 	 */
 	public String getStringValue() {
-		return stringValue;
+		return this.stringValue;
 	}
 
 	/**
@@ -68,7 +64,7 @@ public final class PojoExample implements Cloneable {
 	 * @return the long value
 	 */
 	public long getLongValue() {
-		return longValue;
+		return this.longValue;
 	}
 
 	/* (non-Javadoc)
@@ -78,8 +74,8 @@ public final class PojoExample implements Cloneable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (longValue ^ longValue >>> 32);
-		result = prime * result + (stringValue == null ? 0 : stringValue.hashCode());
+		result = prime * result + (int) (this.longValue ^ this.longValue >>> 32);
+		result = prime * result + (this.stringValue == null ? 0 : this.stringValue.hashCode());
 		return result;
 	}
 
@@ -95,9 +91,9 @@ public final class PojoExample implements Cloneable {
 			return true;
 		}
 		final PojoExample pojo = (PojoExample) obj;
-		if (pojo.isLongValueEqualTo(longValue)) {
-			if (stringValue == null) {
-				if (pojo.isStringValueEqualTo(stringValue)) {
+		if (pojo.isLongValueEqualTo(this.longValue)) {
+			if (this.stringValue == null) {
+				if (pojo.isStringValueEqualTo(this.stringValue)) {
 					return true;
 				}
 			}
@@ -108,11 +104,8 @@ public final class PojoExample implements Cloneable {
 	/**
 	 * Checks if is string value equal to.
 	 *
-	 * string value
-	 *
 	 * @param stringValue the string value
-	 * @return true, if is
-	 * 			string value equal to
+	 * @return true, if is string value equal to parameter value.
 	 */
 	private boolean isStringValueEqualTo(final String stringValue) {
 		return this.stringValue.equals(stringValue);
@@ -121,11 +114,8 @@ public final class PojoExample implements Cloneable {
 	/**
 	 * Checks if is long value equal to.
 	 *
-	 * long value
-	 *
 	 * @param longValue the long value
-	 * @return true, if is
-	 * 			long value equal to
+	 * @return true, if is long value equal to parameter value.
 	 */
 	private boolean isLongValueEqualTo(final long longValue) {
 		return this.longValue == longValue;
@@ -137,6 +127,11 @@ public final class PojoExample implements Cloneable {
 	@Override
 	public PojoExample clone() {
 		return new PojoExample(getStringValue(), getLongValue());
+	}
+
+	@Override
+	public String toString() {
+		return String.format("PojoExample [stringValue=%s, longValue=%s]", this.stringValue, this.longValue);
 	}
 
 }

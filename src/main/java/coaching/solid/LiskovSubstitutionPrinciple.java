@@ -19,20 +19,11 @@ import static org.junit.Assert.assertNotNull;
 public class LiskovSubstitutionPrinciple {
 
 	/**
-	 * LiskovSubstitutionPrinciple Constructor.
-	 */
-	public LiskovSubstitutionPrinciple() {
-		super();
-	}
-
-	/**
 	 * main method.
-	 *
-	 * arguments
 	 *
 	 * @param args the arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final LiskovSubstitutionPrinciple lsp = new LiskovSubstitutionPrinciple();
 		assertNotNull(lsp);
 

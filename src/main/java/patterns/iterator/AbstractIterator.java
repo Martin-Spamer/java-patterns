@@ -9,16 +9,12 @@ public abstract class AbstractIterator {
 	/**
 	 * First.
 	 *
-	 * abstract item
-	 *
 	 * @return the abstract item
 	 */
 	abstract public AbstractItem first();
 
 	/**
 	 * Next.
-	 *
-	 * abstract item
 	 *
 	 * @return the abstract item
 	 */
@@ -27,10 +23,11 @@ public abstract class AbstractIterator {
 	/**
 	 * Checks if is done.
 	 */
-	abstract public void isDone();
+	abstract public boolean isDone();
 
 	/**
 	 * Current item.
 	 */
-	abstract public void currentItem();
+	abstract public AbstractItem currentItem();
+
 }

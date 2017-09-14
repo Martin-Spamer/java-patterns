@@ -20,20 +20,11 @@ import static org.junit.Assert.assertNotNull;
 public class DependencyInversionPrinciple {
 
 	/**
-	 * DependencyInversionPrinciple Constructor.
-	 */
-	public DependencyInversionPrinciple() {
-		super();
-	}
-
-	/**
 	 * main method.
-	 *
-	 * arguments
 	 *
 	 * @param args the arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final DependencyInversionPrinciple dip = new DependencyInversionPrinciple();
 		assertNotNull(dip);
 	}

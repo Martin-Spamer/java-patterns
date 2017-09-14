@@ -9,9 +9,11 @@
 
 package coaching.collections;
 
+import java.util.Arrays;
+
 /**
- * Using a basic Java array to implement an Composite. Lifetime of parts is
- * constraint bound by lifetime of parent.
+ * Using a basic Java array to implement a Composite.
+ * The Lifetime of parts is constraint bound by lifetime of parent.
  * @author martin.spamer
  * @version 0.1 - 11:15:47
  **/
@@ -29,4 +31,10 @@ public class CompositeClassArray {
 		super();
 		this.composite = composite;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
+	}
+
 }

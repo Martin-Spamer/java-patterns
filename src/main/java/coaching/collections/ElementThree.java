@@ -13,11 +13,4 @@ package coaching.collections;
  * ElementThree Class.
  */
 public class ElementThree extends AbstractElement {
-
-	/**
-	 * Instantiates a new element three.
-	 */
-	public ElementThree() {
-		super();
-	}
 }
