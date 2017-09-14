@@ -17,9 +17,6 @@ public interface ConfigInterface {
 	/**
 	 * property.
 	 *
-	 * key
-	 * property
-	 *
 	 * @param key the key
 	 * @return the property
 	 */

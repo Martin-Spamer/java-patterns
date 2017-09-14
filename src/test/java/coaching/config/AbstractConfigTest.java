@@ -26,7 +26,7 @@ public class AbstractConfigTest {
 	}
 
 	/**
-	 * Unit Test to abstract config string.
+	 * Unit Test to abstract Configuration string.
 	 */
 	@Test
 	public void testAbstractConfigString() {

@@ -1,20 +1,3 @@
-/**
- * This file is part of Automated Testing Framework for Java (atf4j).
- *
- * Atf4j is free software: you can redistribute it and/or modify
- * GNU General Public License as published by
- * License, or
- * (at your option) any later version.
- *
- * hope that it will be useful,
- * implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * GNU General Public License
- * along with atf4j.  If not, see http://www.gnu.org/licenses/.
- */
-
 package coaching.config;
 
 import java.io.IOException;
@@ -26,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * AbstractConfig Class.
+ * Abstract Configuration Class.
  */
 public abstract class AbstractConfig implements ConfigInterface {
 
@@ -38,8 +21,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * Instantiates a new abstract configuration.
 	 */
 	public AbstractConfig() {
-		configFilename = this.getClass().getSimpleName();
-		load(configFilename);
+		this.configFilename = this.getClass().getSimpleName();
+		load(this.configFilename);
 	}
 
 	/**
@@ -47,7 +30,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 *
 	 * configuration filename
 	 *
-	 * @param configFilename the config filename
+	 * @param configFilename the Configuration filename
 	 */
 	AbstractConfig(final String configFilename) {
 		this.configFilename = configFilename;
@@ -59,7 +42,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 *
 	 * configuration filename
 	 *
-	 * @param configFilename the config filename
+	 * @param configFilename the Configuration filename
 	 */
 	private void load(final String configFilename) {
 		loadFromXmlFile(inputStream(toXmlFilename(configFilename)));
@@ -91,9 +74,9 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public void loadFromPropertyFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				properties.load(resourceAsStream);
+				this.properties.load(resourceAsStream);
 			} catch (final IOException e) {
-				log.error(e.toString());
+				this.log.error(e.toString());
 			}
 		}
 	}
@@ -108,11 +91,11 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public void loadFromXmlFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				properties.loadFromXML(resourceAsStream);
+				this.properties.loadFromXML(resourceAsStream);
 			} catch (final InvalidPropertiesFormatException e) {
-				log.error(e.toString());
+				this.log.error(e.toString());
 			} catch (final IOException e) {
-				log.error(e.toString());
+				this.log.error(e.toString());
 			}
 		}
 	}
@@ -126,7 +109,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = properties.getProperty(key);
+			property = this.properties.getProperty(key);
 		}
 		return property;
 	}
@@ -141,7 +124,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key, final String defaultValue) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = properties.getProperty(key, defaultValue);
+			property = this.properties.getProperty(key, defaultValue);
 		}
 		return property;
 	}
@@ -152,7 +135,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * configuration filename
 	 * string
 	 *
-	 * @param configFilename the config filename
+	 * @param configFilename the Configuration filename
 	 * @return the string
 	 */
 	protected String toPropertyFilename(final String configFilename) {
@@ -165,7 +148,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * configuration filename
 	 * string
 	 *
-	 * @param configFilename the config filename
+	 * @param configFilename the Configuration filename
 	 * @return the string
 	 */
 	protected String toXmlFilename(final String configFilename) {
@@ -177,7 +160,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 */
 	@Override
 	public String toString() {
-		final String prettyProperties = prettyProperties(properties);
+		final String prettyProperties = prettyProperties(this.properties);
 		return String.format("properties = %s", prettyProperties);
 	}
 

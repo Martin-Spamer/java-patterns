@@ -1,4 +1,3 @@
-
 package patterns.servlet;
 
 import java.io.IOException;
@@ -17,7 +16,7 @@ import patterns.command.CommandFactory;
 import patterns.command.MissingCommandException;
 
 /**
- * FrontController Class.
+ * Front Controller Class.
  */
 @SuppressWarnings("serial")
 public class FrontController extends HttpServlet {
@@ -31,10 +30,10 @@ public class FrontController extends HttpServlet {
 	 * @see javax.servlet.GenericServlet#init(javax.servlet.ServletConfig)
 	 */
 	@Override
-	public void init(ServletConfig config) throws ServletException {
+	public void init(final ServletConfig config) throws ServletException {
 		super.init(config);
 		try {
-			commands = new CommandFactory();
+			this.commands = new CommandFactory();
 		} catch (final Exception e) {
 			LOG.error(e.toString());
 		}
@@ -56,7 +55,7 @@ public class FrontController extends HttpServlet {
 	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+	protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException {
 		try {
 			processRequest(request, response);
 		} catch (final IOException e) {
@@ -72,7 +71,7 @@ public class FrontController extends HttpServlet {
 	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException, java.io.IOException {
 		try {
 			processRequest(request, response);
@@ -94,7 +93,7 @@ public class FrontController extends HttpServlet {
 	 * @throws ServletException the servlet exception
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException, java.io.IOException {
 
 		final String queryString = request.getQueryString();
@@ -103,7 +102,7 @@ public class FrontController extends HttpServlet {
 
 		String page;
 		try {
-			commands.execute(actionName);
+			this.commands.execute(actionName);
 			page = "result";
 		} catch (final MissingCommandException e) {
 			LOG.error(e.toString());
@@ -127,7 +126,7 @@ public class FrontController extends HttpServlet {
 	 * @param page the page
 	 * @throws ServletException the servlet exception
 	 */
-	protected void dispatch(HttpServletRequest request, HttpServletResponse response, String page)
+	protected void dispatch(final HttpServletRequest request, final HttpServletResponse response, final String page)
 	        throws ServletException {
 		final RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
 		try {

@@ -21,7 +21,7 @@ public class PropertyConfigTest {
 	public void test() {
 		final PropertyConfig config = new PropertyConfig();
 		assertNotNull(config);
-		LOG.debug("config = {}", config);
+		LOG.debug("Configuration = {}", config);
 	}
 
 }

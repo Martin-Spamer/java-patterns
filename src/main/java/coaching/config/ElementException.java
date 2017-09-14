@@ -6,7 +6,7 @@
 package coaching.config;
 
 /**
- * ElementException Class.
+ * Element Exception Class.
  */
 @SuppressWarnings("serial")
 public class ElementException extends Exception {

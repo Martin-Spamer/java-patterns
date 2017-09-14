@@ -1,8 +1,7 @@
-
 package coaching.config;
 
 /**
- * PropertyConfig Class.
+ * PropertyConfiguration Class.
  */
 public class PropertyConfig extends AbstractConfig {
 

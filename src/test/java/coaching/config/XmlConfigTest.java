@@ -18,7 +18,7 @@ public class XmlConfigTest {
 	}
 
 	/**
-	 * Unit Test to xml config string.
+	 * Unit Test to xml Configuration string.
 	 */
 	@Test
 	public void testXmlConfigString() {

@@ -1,4 +1,3 @@
-
 package coaching.fileio;
 
 import org.junit.Test;
@@ -8,14 +7,14 @@ import org.slf4j.LoggerFactory;
 import coaching.fileio.Config.ConfigurationException;
 
 /**
- * Configuration Test Class.
+ * Config Test Class.
  */
 public class ConfigTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ConfigTest.class);
 
 	/**
-	 * Unit Test to config.
+	 * Unit Test for configuration.
 	 *
 	 * @throws ConfigurationException the configuration exception
 	 */
@@ -28,7 +27,7 @@ public class ConfigTest {
 	}
 
 	/**
-	 * Unit Test to config from properties.
+	 * Unit Test to Configuration from properties.
 	 *
 	 * @throws ConfigurationException the configuration exception
 	 */
@@ -42,7 +41,7 @@ public class ConfigTest {
 	}
 
 	/**
-	 * Unit Test to config load by file name.
+	 * Unit Test to Configuration load by file name.
 	 *
 	 * @throws ConfigurationException the configuration exception
 	 */
@@ -55,7 +54,7 @@ public class ConfigTest {
 	}
 
 	/**
-	 * Unit Test to config save properties.
+	 * Unit Test to Configuration save properties.
 	 *
 	 * @throws Exception the exception
 	 */
@@ -76,18 +75,16 @@ public class ConfigTest {
 	 */
 	@Test(expected = ConfigurationException.class)
 	public void testMissingConfig() throws Exception {
-		// load a properties file.
 		new Config("missing");
 	}
 
 	/**
-	 * Unit Test to missing config properties.
+	 * Unit Test to missing Configuration properties.
 	 *
 	 * @throws Exception the exception
 	 */
 	@Test(expected = ConfigurationException.class)
 	public void testMissingConfigProperties() throws Exception {
-		// load a properties file.
 		new Config("missing.properties");
 	}
 

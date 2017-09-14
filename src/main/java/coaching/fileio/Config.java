@@ -43,8 +43,6 @@ public class Config extends java.util.Properties {
 	/**
 	 * Construct a new configuration instance.
 	 *
-	 * property file name
-	 *
 	 * @param propertyFileName the property file name
 	 * @throws ConfigurationException the configuration exception
 	 */
@@ -85,7 +83,7 @@ public class Config extends java.util.Properties {
 	 * @return the property file name
 	 */
 	public String getPropertyFileName() {
-		return propertyFileName;
+		return this.propertyFileName;
 	}
 
 	/**
@@ -95,7 +93,7 @@ public class Config extends java.util.Properties {
 	 * 			loaded
 	 */
 	public boolean isLoaded() {
-		return loaded;
+		return this.loaded;
 	}
 
 	/**
@@ -105,7 +103,7 @@ public class Config extends java.util.Properties {
 	 * @throws ConfigurationException the configuration exception
 	 */
 	public Config loadPropertyFile() throws ConfigurationException {
-		return loadFrom(propertyFileName);
+		return loadFrom(this.propertyFileName);
 	}
 
 	/**
@@ -115,7 +113,7 @@ public class Config extends java.util.Properties {
 	 * @throws ConfigurationException the configuration exception
 	 */
 	public Config loadResource() throws ConfigurationException {
-		return loadResource(propertyFileName);
+		return loadResource(this.propertyFileName);
 	}
 
 	/**
@@ -141,9 +139,9 @@ public class Config extends java.util.Properties {
 		try {
 			final FileInputStream inStream = new FileInputStream(propertyFileName);
 			super.load(inStream);
-			loaded = true;
+			this.loaded = true;
 		} catch (final Exception e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -159,9 +157,9 @@ public class Config extends java.util.Properties {
 	public Config loadFrom(final InputStream streamForResource) throws ConfigurationException {
 		try {
 			super.load(streamForResource);
-			loaded = true;
+			this.loaded = true;
 		} catch (final Exception e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -193,7 +191,7 @@ public class Config extends java.util.Properties {
 		try {
 			save(propertyFile);
 		} catch (final ConfigurationException e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -211,10 +209,10 @@ public class Config extends java.util.Properties {
 	public Config save(final File propertyFile) throws ConfigurationException {
 		try {
 			final FileOutputStream outStream = new FileOutputStream(propertyFile);
-			final String comments = "# Header " + propertyFileName;
+			final String comments = "# Header " + this.propertyFileName;
 			super.store(outStream, comments);
 		} catch (final IOException e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;

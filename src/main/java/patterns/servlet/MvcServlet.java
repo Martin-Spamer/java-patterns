@@ -32,7 +32,7 @@ public class MvcServlet extends HttpServlet {
 	 * @see javax.servlet.GenericServlet#init(javax.servlet.ServletConfig)
 	 */
 	@Override
-	public void init(ServletConfig config) throws ServletException {
+	public void init(final ServletConfig config) throws ServletException {
 		super.init(config);
 	}
 
@@ -52,7 +52,7 @@ public class MvcServlet extends HttpServlet {
 	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+	protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException {
 		try {
 			processRequest(request, response);
 		} catch (final IOException e) {
@@ -68,7 +68,7 @@ public class MvcServlet extends HttpServlet {
 	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException, java.io.IOException {
 		try {
 			processRequest(request, response);
@@ -90,15 +90,15 @@ public class MvcServlet extends HttpServlet {
 	 * @throws ServletException the servlet exception
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException, java.io.IOException {
 
-		if (servletInitialised) {
+		if (this.servletInitialised) {
 			final String requestName = request.getPathInfo();
 
 			final Result result = new Result();
-			actionManager.handleRequest(request, response, result);
-			viewManager.handleRequest(request, response, result);
+			this.actionManager.handleRequest(request, response, result);
+			this.viewManager.handleRequest(request, response, result);
 		}
 	}
 
