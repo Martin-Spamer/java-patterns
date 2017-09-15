@@ -20,17 +20,14 @@ public final class CommandMap extends HashMap<String, AbstractCommand> {
 	/**
 	 * Execute.
 	 *
-	 * action name
-	 * result interface
-	 * missing command exception
-	 *
 	 * @param actionName the action name
 	 * @return the result interface
 	 * @throws MissingCommandException the missing command exception
 	 */
 	public ResultInterface execute(final String actionName) throws MissingCommandException {
 		if (actionName == null) {
-			throw new RuntimeException("actionName cannot be null");
+			final String message = "actionName cannot be null";
+			throw new MissingCommandException(message);
 		} else {
 			final CommandInterface command = get(actionName);
 			if (command == null) {

@@ -1,4 +1,3 @@
-
 package coaching.tuples;
 
 import static org.junit.Assert.assertEquals;
@@ -7,9 +6,15 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 /**
- * The TupleTest Class.
+ * Unit test for Tuple Class.
  */
 public class TupleTest {
+
+	/** The Constant RIGHT. */
+	private static final String RIGHT = "Right";
+
+	/** The Constant LEFT. */
+	private static final String LEFT = "Left";
 
 	/**
 	 * The Point Class.
@@ -52,12 +57,6 @@ public class TupleTest {
 		final Tuple<String, String> tuple = new Tuple<String, String>();
 		assertNotNull(tuple);
 	}
-
-	/** The Constant RIGHT. */
-	private static final String RIGHT = "Right";
-
-	/** The Constant LEFT. */
-	private static final String LEFT = "Left";
 
 	/**
 	 * Test tuple.

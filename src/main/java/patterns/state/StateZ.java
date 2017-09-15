@@ -13,6 +13,7 @@ class StateZ extends AbstractState {
 	 */
 	@Override
 	public void handle() {
+		log.info("handle()");
 	}
 
 }

@@ -1,4 +1,3 @@
-
 package patterns.filter;
 
 /**
@@ -18,11 +17,9 @@ public class AbstractFilter implements FilterInterface {
 	/**
 	 * Instantiates a new abstract filter.
 	 *
-	 * filter
-	 *
 	 * @param filter the filter
 	 */
-	public AbstractFilter(FilterInterface filter) {
+	public AbstractFilter(final FilterInterface filter) {
 		super();
 		addNextFilter(filter);
 	}
@@ -31,11 +28,11 @@ public class AbstractFilter implements FilterInterface {
 	 * @see patterns.filter.FilterInterface#addNextFilter(patterns.filter.FilterInterface)
 	 */
 	@Override
-	public FilterInterface addNextFilter(FilterInterface newFilter) {
-		if (nextFilter == null) {
-			nextFilter = newFilter;
+	public FilterInterface addNextFilter(final FilterInterface newFilter) {
+		if (this.nextFilter == null) {
+			this.nextFilter = newFilter;
 		} else {
-			nextFilter.addNextFilter(newFilter);
+			this.nextFilter.addNextFilter(newFilter);
 		}
 		return this;
 	}
@@ -44,9 +41,9 @@ public class AbstractFilter implements FilterInterface {
 	 * @see patterns.filter.FilterInterface#handleRequest(patterns.filter.PayloadInterface)
 	 */
 	@Override
-	public void handleRequest(PayloadInterface payload) {
-		if (nextFilter != null) {
-			nextFilter.handleRequest(payload);
+	public void handleRequest(final PayloadInterface payload) {
+		if (this.nextFilter != null) {
+			this.nextFilter.handleRequest(payload);
 		}
 	}
 

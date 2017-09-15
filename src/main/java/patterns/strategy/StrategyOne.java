@@ -1,4 +1,3 @@
-
 package patterns.strategy;
 
 /**
@@ -13,6 +12,7 @@ class StrategyOne extends AbstractStrategy {
 	 */
 	@Override
 	public void operation() {
+		this.log.info("operation()");
 	}
 
 }

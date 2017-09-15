@@ -1,4 +1,3 @@
-
 package patterns.strategy;
 
 /**
@@ -13,8 +12,7 @@ class StrategyThree extends AbstractStrategy {
 	 */
 	@Override
 	public void operation() {
-		// TODO Auto-generated method stub
-
+		this.log.info("operation()");
 	}
 
 }

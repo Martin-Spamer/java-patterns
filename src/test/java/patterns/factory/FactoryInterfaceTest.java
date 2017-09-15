@@ -1,18 +1,30 @@
-
 package patterns.factory;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * FactoryInterfaceTest Class.
  */
 public class FactoryInterfaceTest {
 
+	private static final Logger LOG = LoggerFactory.getLogger(FactoryInterfaceTest.class);
+
 	/**
 	 * Unit Test to factory one.
 	 */
 	@Test
 	public void testFactoryOne() {
+		LOG.info("testFactoryOne");
+		final ConcreteFactoryOne factory = new ConcreteFactoryOne();
+		assertNotNull(factory);
+		final AbstractProductA productA = factory.createProductA();
+		assertNotNull(productA);
+		final AbstractProductB productB = factory.createProductB();
+		assertNotNull(productB);
 	}
 
 	/**
@@ -20,6 +32,13 @@ public class FactoryInterfaceTest {
 	 */
 	@Test
 	public void testFactoryTwo() {
+		LOG.info("testFactoryOne");
+		final ConcreteFactoryTwo factory = new ConcreteFactoryTwo();
+		assertNotNull(factory);
+		final AbstractProductA productA = factory.createProductA();
+		assertNotNull(productA);
+		final AbstractProductB productB = factory.createProductB();
+		assertNotNull(productB);
 	}
 
 }

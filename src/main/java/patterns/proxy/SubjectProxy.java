@@ -1,4 +1,3 @@
-
 package patterns.proxy;
 
 /**
@@ -22,6 +21,6 @@ class SubjectProxy extends Subject {
 	 */
 	@Override
 	public void request() {
-		realSubject.request();
+		this.realSubject.request();
 	}
 }

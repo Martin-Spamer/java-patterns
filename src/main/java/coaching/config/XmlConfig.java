@@ -18,21 +18,11 @@ import org.w3c.dom.NodeList;
  */
 public class XmlConfig implements ConfigInterface {
 	private static final Logger LOG = LoggerFactory.getLogger(XmlConfig.class);
-	private static DocumentBuilderFactory documentBuilderFactory = null;
-	private static DocumentBuilder documentBuilder = null;
+	private DocumentBuilder documentBuilder = null;
 	private Document document = null;
 	private Element configElement = null;
 	private NodeList context = null;
 	private int index = 0;
-
-	static {
-		XmlConfig.documentBuilderFactory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
-		try {
-			XmlConfig.documentBuilder = XmlConfig.documentBuilderFactory.newDocumentBuilder();
-		} catch (final ParserConfigurationException parserConfigurationException) {
-			LOG.error(parserConfigurationException.toString());
-		}
-	}
 
 	/**
 	 * Instantiates a new XmlConfig.
@@ -42,20 +32,7 @@ public class XmlConfig implements ConfigInterface {
 	}
 
 	/**
-	 * Instantiates a new XmlConfig.
-	 *
-	 * configuration element
-	 *
-	 * @param configElement the Configuration element
-	 */
-	public XmlConfig(final Element configElement) {
-		this.configElement = configElement;
-	}
-
-	/**
-	 * Instantiates a new XmlConfig.
-	 *
-	 * configuration file
+	 * Instantiates a new XmlConfig from configuration file
 	 *
 	 * @param configFilename the Configuration filename
 	 */
@@ -64,9 +41,7 @@ public class XmlConfig implements ConfigInterface {
 	}
 
 	/**
-	 * Instantiates a new XmlConfig.
-	 *
-	 * configuration file name
+	 * Instantiates a new XmlConfig from configuration file name
 	 *
 	 * @param configFilename the Configuration filename
 	 */
@@ -75,10 +50,45 @@ public class XmlConfig implements ConfigInterface {
 	}
 
 	/**
-	 * First element by tag name.
+	 * Instantiates a new XmlConfig from configuration element
 	 *
-	 * element name
-	 * element
+	 * @param configElement the Configuration element
+	 */
+	public XmlConfig(final Element configElement) {
+		this.configElement = configElement;
+	}
+
+	/**
+	 * Load configuration filename
+	 *
+	 * @param configFilename the Configuration filename
+	 */
+	public void load(final String configFilename) {
+		load(new File(configFilename));
+	}
+
+	/**
+	 * Load configuration file
+	 *
+	 * @param configFile the Configuration file
+	 */
+	public void load(final File configFile) {
+		try {
+			final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			try {
+				this.documentBuilder = documentBuilderFactory.newDocumentBuilder();
+				this.document = this.documentBuilder.parse(configFile);
+				this.configElement = this.document.getDocumentElement();
+			} catch (final ParserConfigurationException parserConfigurationException) {
+				LOG.error(parserConfigurationException.toString());
+			}
+		} catch (final Exception exception) {
+			LOG.info("{}", exception.toString());
+		}
+	}
+
+	/**
+	 * First element by tag name.
 	 *
 	 * @param elementName the element name
 	 * @return the element
@@ -91,9 +101,6 @@ public class XmlConfig implements ConfigInterface {
 	/**
 	 * attribute.
 	 *
-	 * attribute name
-	 * attribute
-	 *
 	 * @param attributeName the attribute name
 	 * @return the attribute
 	 */
@@ -104,13 +111,10 @@ public class XmlConfig implements ConfigInterface {
 	/**
 	 * elements by tag name.
 	 *
-	 * element name
-	 * elements by tag name
-	 *
 	 * @param elementName the element name
 	 * @return the elements by tag name
 	 */
-	protected org.w3c.dom.NodeList getElementsByTagName(final String elementName) {
+	protected NodeList getElementsByTagName(final String elementName) {
 		return this.configElement.getElementsByTagName(elementName);
 	}
 
@@ -138,8 +142,6 @@ public class XmlConfig implements ConfigInterface {
 	/**
 	 * tag name.
 	 *
-	 * tag name
-	 *
 	 * @return the tag name
 	 */
 	protected String getTagName() {
@@ -147,36 +149,7 @@ public class XmlConfig implements ConfigInterface {
 	}
 
 	/**
-	 * Load.
-	 *
-	 * configuration file
-	 *
-	 * @param configFile the Configuration file
-	 */
-	public void load(final File configFile) {
-		try {
-			this.document = XmlConfig.documentBuilder.parse(configFile);
-			this.configElement = this.document.getDocumentElement();
-		} catch (final Exception exception) {
-			XmlConfig.LOG.info("{}", exception.toString());
-		}
-	}
-
-	/**
-	 * Load.
-	 *
-	 * configuration filename
-	 *
-	 * @param configFilename the Configuration filename
-	 */
-	public void load(final String configFilename) {
-		load(new File(configFilename));
-	}
-
-	/**
 	 * Next element by tag name.
-	 *
-	 * element
 	 *
 	 * @return the element
 	 */
@@ -186,9 +159,6 @@ public class XmlConfig implements ConfigInterface {
 
 	/**
 	 * Sub config.
-	 *
-	 * element name
-	 * xml config
 	 *
 	 * @param elementName the element name
 	 * @return the xml config
@@ -209,9 +179,6 @@ public class XmlConfig implements ConfigInterface {
 
 	/**
 	 * To xml.
-	 *
-	 * node
-	 * string
 	 *
 	 * @param node the node
 	 * @return the string

@@ -13,6 +13,7 @@ class StateA extends AbstractState {
 	 */
 	@Override
 	public void handle() {
+		log.info("handle()");
 	}
 
 }

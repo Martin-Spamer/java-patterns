@@ -1,4 +1,3 @@
-
 package patterns.filter;
 
 /**
@@ -20,7 +19,7 @@ public final class FilterThree extends AbstractFilter {
 	 *
 	 * @param filter the filter
 	 */
-	public FilterThree(FilterInterface filter) {
+	public FilterThree(final FilterInterface filter) {
 		super(filter);
 	}
 }

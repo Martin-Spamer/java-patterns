@@ -18,6 +18,6 @@ public abstract class AbstractBuilder {
 	 *
 	 * @return the part
 	 */
-	abstract Part build();
+	public abstract Part build();
 
 }

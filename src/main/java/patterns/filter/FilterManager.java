@@ -1,4 +1,3 @@
-
 package patterns.filter;
 
 /**
@@ -19,10 +18,10 @@ public final class FilterManager {
 	 * Operation that needs to be filtered.
 	 */
 	public void operation() {
-		first = new FilterOne();
-		first.addNextFilter(new FilterTwo());
-		first.addNextFilter(new FilterThree());
-		first.handleRequest(new Payload());
+		this.first = new FilterOne();
+		this.first.addNextFilter(new FilterTwo());
+		this.first.addNextFilter(new FilterThree());
+		this.first.handleRequest(new Payload());
 	}
 
 }
