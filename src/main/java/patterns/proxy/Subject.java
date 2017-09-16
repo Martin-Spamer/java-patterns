@@ -12,6 +12,6 @@ abstract class Subject {
 	/**
 	 * Request.
 	 */
-	abstract public void request();
+	public abstract void request();
 
 }

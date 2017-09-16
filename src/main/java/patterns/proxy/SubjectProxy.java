@@ -7,13 +7,6 @@ class SubjectProxy extends Subject {
 
 	private final RealSubject realSubject = new RealSubject();
 
-	/**
-	 * Instantiates a new subject proxy.
-	 */
-	public SubjectProxy() {
-		super();
-	}
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -21,6 +14,6 @@ class SubjectProxy extends Subject {
 	 */
 	@Override
 	public void request() {
-		realSubject.request();
+		this.realSubject.request();
 	}
 }

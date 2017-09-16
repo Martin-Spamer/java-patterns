@@ -46,7 +46,7 @@ public class AbstractResourcePoolTest {
 		// * pool
 		while (testResourcePool.countFree() > 0) {
 			final Boolean bool = testResourcePool.take();
-			if (bool == true) {
+			if (bool) {
 				testResourcePool.remove(bool);
 			}
 		}

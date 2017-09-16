@@ -27,19 +27,10 @@ public class FrontController extends HttpServlet {
 	public void init(final ServletConfig config) throws ServletException {
 		super.init(config);
 		try {
-			commands = new CommandFactory();
+			this.commands = new CommandFactory();
 		} catch (final Exception e) {
 			LOG.error(e.toString());
 		}
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see javax.servlet.GenericServlet#destroy()
-	 */
-	@Override
-	public void destroy() {
 	}
 
 	/*
@@ -96,7 +87,7 @@ public class FrontController extends HttpServlet {
 
 		String page;
 		try {
-			commands.execute(actionName);
+			this.commands.execute(actionName);
 			page = "result";
 		} catch (final MissingCommandException e) {
 			LOG.error(e.toString());

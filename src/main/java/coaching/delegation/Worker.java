@@ -10,13 +10,6 @@ class Worker implements ProcessInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Instantiates a new worker.
-	 */
-	public Worker() {
-		super();
-	}
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -24,7 +17,7 @@ class Worker implements ProcessInterface {
 	 */
 	@Override
 	public Worker doProcess() {
-		log.info("do work");
+		this.log.info("do work");
 		return this;
 	}
 

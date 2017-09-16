@@ -10,11 +10,4 @@ public class AbstractProduct {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Instantiates a new abstract product.
-	 */
-	public AbstractProduct() {
-		super();
-	}
-
 }

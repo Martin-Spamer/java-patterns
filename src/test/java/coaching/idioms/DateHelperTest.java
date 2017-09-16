@@ -15,7 +15,7 @@ public class DateHelperTest {
 	 */
 	@Test
 	public void testNow() {
-		DateHelper.now();
+		final Calendar now = DateHelper.now();
 	}
 
 	/**
@@ -25,6 +25,7 @@ public class DateHelperTest {
 	public void testYesterday() {
 		final Calendar now = Calendar.getInstance();
 		now.add(Calendar.DAY_OF_YEAR, -1);
+		final Calendar yesterday = DateHelper.yesterday();
 	}
 
 	/**
@@ -34,6 +35,7 @@ public class DateHelperTest {
 	public void testTomorrow() {
 		final Calendar now = Calendar.getInstance();
 		now.add(Calendar.DAY_OF_YEAR, +1);
+		final Calendar tomorrow = DateHelper.tomorrow();
 	}
 
 }

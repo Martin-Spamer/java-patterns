@@ -14,11 +14,8 @@ import org.xml.sax.SAXException;
 public class RulesEngine {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
-	private DocumentBuilderFactory documentBuilderFactory = null;
-	private DocumentBuilder documentBuilder = null;
-	private Document document = null;
-	private final Element documentElement = null;
 	private String filename = null;
+	private final Element documentElement = null;
 
 	/**
 	 * Instantiates a new rules engine.
@@ -26,9 +23,9 @@ public class RulesEngine {
 	public RulesEngine() {
 		LOG.trace(System.getProperties().toString());
 		final String className = this.getClass().getSimpleName();
-		filename = String.format("%s.xml", className);
-		LOG.info("this.filename = {}", filename);
-		initialise(filename);
+		this.filename = String.format("%s.xml", className);
+		LOG.info("this.filename = {}", this.filename);
+		initialise(this.filename);
 	}
 
 	/**
@@ -41,6 +38,9 @@ public class RulesEngine {
 	 */
 	public boolean initialise(final String configFilename) {
 		try {
+			DocumentBuilderFactory documentBuilderFactory = null;
+			DocumentBuilder documentBuilder = null;
+			Document document = null;
 			documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			if (documentBuilderFactory != null) {
 				documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -78,8 +78,8 @@ public class RulesEngine {
 	public boolean execute() {
 		final boolean returnValue = false;
 		LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
-		if (documentElement != null) {
-			final NodeList childNodes = documentElement.getChildNodes();
+		if (this.documentElement != null) {
+			final NodeList childNodes = this.documentElement.getChildNodes();
 			LOG.info("childNodes  = {}", childNodes);
 		}
 		return returnValue;
@@ -106,22 +106,22 @@ public class RulesEngine {
 	 */
 	private Element getElement(final String elementName) {
 		Element element = null;
-		final NodeList nodelist = documentElement.getElementsByTagName(elementName);
+		final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
 		if (nodelist != null) {
 			if (nodelist.getLength() == 0) {
 				final String className = this.getClass().getSimpleName();
 				LOG.info("{}", className);
-				LOG.info("Element {} is missing in element {}", elementName, documentElement.toString());
+				LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
 			} else {
 				if (nodelist.getLength() > 1) {
 					final String className = this.getClass().getSimpleName();
 					LOG.info("{}", className);
-					LOG.info(" surplus Elements {} ignored in element: {}", elementName, documentElement.toString());
+					LOG.info(" surplus Elements {} ignored in element: {}", elementName,
+					        this.documentElement.toString());
 				}
 				element = (Element) nodelist.item(0);
 			}
 		}
 		return element;
 	}
-
 }

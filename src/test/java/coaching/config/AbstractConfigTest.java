@@ -29,6 +29,7 @@ public class AbstractConfigTest {
 	 */
 	@Test
 	public void testAbstractConfig() {
+		LOG.info("testAbstractConfig");
 		final Configuration configuration = new Configuration();
 		assertNotNull(configuration);
 	}
@@ -38,6 +39,7 @@ public class AbstractConfigTest {
 	 */
 	@Test
 	public void testAbstractConfigString() {
+		LOG.info("testAbstractConfig");
 		final Configuration configuration = new Configuration("Configuration");
 		assertNotNull(configuration);
 	}

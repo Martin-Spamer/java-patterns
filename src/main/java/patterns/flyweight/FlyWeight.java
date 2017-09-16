@@ -25,4 +25,12 @@ public final class FlyWeight {
 		this.commonState = commonState;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return String.format("FlyWeight [commonState=%s]", this.commonState);
+	}
+
 }

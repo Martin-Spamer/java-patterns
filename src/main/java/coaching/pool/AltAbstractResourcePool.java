@@ -26,9 +26,6 @@ public abstract class AltAbstractResourcePool<T> {
 	/**
 	 * Instantiates a new abstract resource pool.
 	 *
-	 * resource pool creation
-	 *             exception
-	 *
 	 * @throws ResourcePoolCreationException the resource pool creation exception
 	 */
 	public AltAbstractResourcePool() throws ResourcePoolCreationException {
@@ -42,9 +39,6 @@ public abstract class AltAbstractResourcePool<T> {
 
 	/**
 	 * Borrow.
-	 *
-	 * t
-	 * resource borrow exception
 	 *
 	 * @return the t
 	 * @throws ResourceBorrowException the resource borrow exception

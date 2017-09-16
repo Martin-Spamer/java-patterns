@@ -4,9 +4,6 @@ package coaching.tuples;
 /**
  * Twin Tuple Class.
  *
- * generic type
- * generic type
- *
  * @param <L> the generic type
  * @param <R> the generic type
  */
@@ -30,9 +27,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * Instantiates a new tuple.
 	 *
-	 * left
-	 * right
-	 *
 	 * @param left the left
 	 * @param right the right
 	 */
@@ -45,10 +39,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * a factory method to create a instance of tuple from values.
 	 *
-	 * generic type
-	 * generic type
-	 * left
-	 * right
 	 * new instance of tuple
 	 *
 	 * @param <L> the generic type
@@ -104,8 +94,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * Checks if is equal to.
 	 *
-	 * tuple
-	 *
 	 * @param tuple the tuple
 	 * @return true, if is equal to
 	 */
@@ -131,54 +119,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	@Override
 	public String toString() {
 		return String.format("Tuple [left=%s, right=%s]", this.left, this.right);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#hashCode()
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (this.left == null ? 0 : this.left.hashCode());
-		result = prime * result + (this.right == null ? 0 : this.right.hashCode());
-		return result;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(final Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (o == null) {
-			return false;
-		}
-		if (getClass() != o.getClass()) {
-			return false;
-		}
-		final Tuple<L, R> other = (Tuple<L, R>) o;
-		if (this.left == null) {
-			if (other.left != null) {
-				return false;
-			}
-		} else if (!this.left.equals(other.left)) {
-			return false;
-		}
-		if (this.right == null) {
-			if (other.right != null) {
-				return false;
-			}
-		} else if (!this.right.equals(other.right)) {
-			return false;
-		}
-		return true;
 	}
 
 }

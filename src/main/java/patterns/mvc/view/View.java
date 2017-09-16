@@ -6,13 +6,6 @@ package patterns.mvc.view;
  */
 public class View extends AbstractView {
 
-	/**
-	 * Instantiates a new view.
-	 */
-	public View() {
-		super();
-	}
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -20,7 +13,7 @@ public class View extends AbstractView {
 	 */
 	@Override
 	public void show() {
-		log.info("{}.showView", this.getClass().getSimpleName());
+		this.log.info("{}.showView", this.getClass().getSimpleName());
 	}
 
 }

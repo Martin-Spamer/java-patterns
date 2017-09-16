@@ -35,15 +35,6 @@ public class MvcServlet extends HttpServlet {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see javax.servlet.GenericServlet#destroy()
-	 */
-	@Override
-	public void destroy() {
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.
 	 * HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
@@ -89,12 +80,12 @@ public class MvcServlet extends HttpServlet {
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException, java.io.IOException {
 
-		if (servletInitialised) {
+		if (this.servletInitialised) {
 			final String requestName = request.getPathInfo();
 
 			final Result result = new Result();
-			actionManager.handleRequest(request, response, result);
-			viewManager.handleRequest(request, response, result);
+			this.actionManager.handleRequest(request, response, result);
+			this.viewManager.handleRequest(request, response, result);
 		}
 	}
 

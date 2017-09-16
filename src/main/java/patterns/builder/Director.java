@@ -13,13 +13,6 @@ public class Director {
 	private Vector<AbstractBuilder> builders = new Vector<AbstractBuilder>();
 
 	/**
-	 * Instantiates a new director.
-	 */
-	public Director() {
-		super();
-	}
-
-	/**
 	 * Adds part builder.
 	 *
 	 * @param builder the builder to be added.

@@ -23,54 +23,31 @@ class XmlToJdbc {
 	private String table;
 	private Connection connection = null;
 	private Statement statement = null;
-	private String[] args;
 
 	/**
 	 * Instantiates a new xml to jdbc.
 	 */
 	public XmlToJdbc() {
 		super();
-		filename = "CUSTOMER_TBL.xml";
-		driver = "com.pointbase.jdbc.jdbcUniversalDriver";
-		url = "jdbc:pointbase://localhost:9092/sample";
-		username = "pbpublic";
-		password = "pbpublic";
-		table = "CUSTOMER_TBL";
-	}
-
-	/**
-	 * Instantiates a new xml to jdbc.
-	 *
-	 * args
-	 *
-	 * @param args the args
-	 */
-	public XmlToJdbc(final String[] args) {
-		this.args = args;
+		this.filename = "CUSTOMER_TBL.xml";
+		this.driver = "com.pointbase.jdbc.jdbcUniversalDriver";
+		this.url = "jdbc:pointbase://localhost:9092/sample";
+		this.username = "pbpublic";
+		this.password = "pbpublic";
+		this.table = "CUSTOMER_TBL";
 	}
 
 	/**
 	 * Process.
-	 *
-	 * exception
 	 *
 	 * @throws Exception the exception
 	 */
 	public void process() throws Exception {
-		process(filename, driver, url, username, password, table);
+		process(this.filename, this.driver, this.url, this.username, this.password, this.table);
 	}
 
 	/**
 	 * Process.
-	 *
-	 * filename
-	 * driver
-	 * url
-	 * user
-	 * password
-	 * table
-	 * exception
-	 * null pointer exception
 	 *
 	 * @param filename the filename
 	 * @param driver the driver
@@ -89,8 +66,8 @@ class XmlToJdbc {
 		try {
 			// JDBC Driver
 			Class.forName(driver);
-			connection = DriverManager.getConnection(url, user, password);
-			statement = connection.createStatement();
+			this.connection = DriverManager.getConnection(url, user, password);
+			this.statement = this.connection.createStatement();
 
 			final java.io.File configFile = new File(filename);
 			final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -139,15 +116,15 @@ class XmlToJdbc {
 
 						LOG.error(sql.toString());
 						try {
-							if (statement.execute(sql.toString())) {
-								LOG.info("ok" + statement.getResultSet().toString());
+							if (this.statement.execute(sql.toString())) {
+								LOG.info("ok" + this.statement.getResultSet().toString());
 								// put in processed log.
 							} else {
-								if (statement.getUpdateCount() == 1) {
-									LOG.info("ok" + statement.getResultSet().toString());
+								if (this.statement.getUpdateCount() == 1) {
+									LOG.info("ok" + this.statement.getResultSet().toString());
 									// put in processed log.
 								} else {
-									LOG.info("failed " + statement.getWarnings());
+									LOG.info("failed " + this.statement.getWarnings());
 									// put in exceptions log.
 								}
 							}
@@ -159,7 +136,7 @@ class XmlToJdbc {
 					}
 				}
 			}
-			bufferedReader.close();
+			this.bufferedReader.close();
 		} catch (final Exception exception) {
 			LOG.error(exception.toString());
 		}
@@ -173,8 +150,8 @@ class XmlToJdbc {
 	@Override
 	public void finalize() {
 		try {
-			statement.close();
-			connection.close();
+			this.statement.close();
+			this.connection.close();
 		} catch (final SQLException exception) {
 			LOG.info("{}", exception);
 		}
@@ -183,13 +160,11 @@ class XmlToJdbc {
 	/**
 	 * main method.
 	 *
-	 * arguments
-	 *
 	 * @param args the arguments
 	 */
 	public static void main(final String[] args) {
 		try {
-			final XmlToJdbc instance = new XmlToJdbc(args);
+			final XmlToJdbc instance = new XmlToJdbc();
 			instance.process();
 		} catch (final Exception exception) {
 			LOG.error(exception.toString());

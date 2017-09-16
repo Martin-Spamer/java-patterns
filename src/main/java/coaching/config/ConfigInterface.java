@@ -25,10 +25,6 @@ public interface ConfigInterface {
 	/**
 	 * property, with default if not found.
 	 *
-	 * key
-	 * default value
-	 * property
-	 *
 	 * @param key the key
 	 * @param defaultValue the default value
 	 * @return the property
