@@ -4,15 +4,14 @@ package patterns.bridge;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
- * The AbstractionTest Class.
+ * BridgeTest Class.
  */
-public class AbstractionTest {
+public class BridgeTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(AbstractionTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(BridgeTest.class);
 
 	/**
 	 * Unit Test to operation.

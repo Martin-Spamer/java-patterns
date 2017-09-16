@@ -18,12 +18,10 @@ public class AbstractRequest {
 	/**
 	 * payload.
 	 *
-	 * payload
-	 *
 	 * @return the payload
 	 */
 	public String getPayload() {
-		return payload;
+		return this.payload;
 	}
 
 	/**
@@ -34,7 +32,7 @@ public class AbstractRequest {
 	 * @param payload the new
 	 * 			payload
 	 */
-	public void setPayload(String payload) {
+	public void setPayload(final String payload) {
 		this.payload = payload;
 	}
 
@@ -43,7 +41,7 @@ public class AbstractRequest {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s [payload=%s]", this.getClass().getSimpleName(), payload);
+		return String.format("%s [payload=%s]", this.getClass().getSimpleName(), this.payload);
 	}
 
 }

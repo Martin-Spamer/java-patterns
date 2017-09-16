@@ -3,12 +3,14 @@ package patterns.builder;
 
 import java.util.Vector;
 
+import org.slf4j.*;
+
 /**
  * Director Class.
  */
 public class Director {
-
-	public Vector<AbstractBuilder> builders = new Vector<AbstractBuilder>();
+	private static final Logger LOG = LoggerFactory.getLogger(Director.class);
+	private Vector<AbstractBuilder> builders = new Vector<AbstractBuilder>();
 
 	/**
 	 * Instantiates a new director.
@@ -18,23 +20,36 @@ public class Director {
 	}
 
 	/**
-	 * Adds the.
+	 * Adds part builder.
 	 *
-	 * builder
-	 *
-	 * @param builder the builder
-	 * @return true, if successful
+	 * @param builder the builder to be added.
+	 * @return true, if successful, otherwise false.
 	 */
-	public boolean add(AbstractBuilder builder) {
-		return builders.add(builder);
+	public boolean add(final AbstractBuilder builder) {
+		return this.builders.add(builder);
 	}
 
 	/**
-	 * Construct.
+	 * Construct Product.
 	 */
-	public void construct() {
-		for (final AbstractBuilder builder : builders) {
-			builder.build();
+	public Product constructProduct() {
+		final BuilderOne builderOne = new BuilderOne();
+		final Part partOne = builderOne.build();
+
+		final BuilderTwo builderTwo = new BuilderTwo();
+		final Part partTwo = builderTwo.build();
+
+		final Product product = new Product(partOne, partTwo);
+		return product;
+	}
+
+	/**
+	 * Construct Product.
+	 */
+	public void buildAll() {
+		for (final BuilderInterface builder : this.builders) {
+			final Part part = builder.build();
+			LOG.info("part={}", part);
 		}
 	}
 

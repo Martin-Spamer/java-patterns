@@ -15,7 +15,7 @@ public class FilterManagerTest {
 	 */
 	@Test
 	public void testFilter() {
-		final FilterOne filterChain = new FilterOne(new FilterTwo(new FilterThree()));
+		final FilterAlice filterChain = new FilterAlice(new FilterBob(new FilterCharlie()));
 		filterChain.handleRequest(new Payload());
 	}
 

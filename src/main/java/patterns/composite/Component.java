@@ -6,10 +6,7 @@ package patterns.composite;
 public abstract class Component implements ComponentInterface {
 
 	/**
-	 * Adds the.
-	 *
-	 * component
-	 * component interface
+	 * Adds the component.
 	 *
 	 * @param component the component
 	 * @return the component interface
@@ -19,10 +16,7 @@ public abstract class Component implements ComponentInterface {
 	}
 
 	/**
-	 * Removes the.
-	 *
-	 * component
-	 * component interface
+	 * Remove the component.
 	 *
 	 * @param component the component
 	 * @return the component interface
@@ -32,10 +26,7 @@ public abstract class Component implements ComponentInterface {
 	}
 
 	/**
-	 * child.
-	 *
-	 * index
-	 * child
+	 * Get child component.
 	 *
 	 * @param index the index
 	 * @return the child

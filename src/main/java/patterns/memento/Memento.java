@@ -18,11 +18,9 @@ public class Memento {
 	/**
 	 * Instantiates a new memento.
 	 *
-	 * state
-	 *
 	 * @param state the state
 	 */
-	public Memento(Object state) {
+	public Memento(final Object state) {
 		super();
 		this.state = state;
 	}
@@ -35,7 +33,7 @@ public class Memento {
 	 * @param state the new
 	 * 			state
 	 */
-	public void setState(Object state) {
+	public void setState(final Object state) {
 		this.state = state;
 	}
 
@@ -47,7 +45,7 @@ public class Memento {
 	 * @return the state
 	 */
 	public Object getState() {
-		return state;
+		return this.state;
 	}
 
 }

@@ -9,11 +9,9 @@ public class Request extends AbstractRequest implements RequestInterface {
 	/**
 	 * Instantiates a new request.
 	 *
-	 * payload
-	 *
 	 * @param payload the payload
 	 */
-	public Request(String payload) {
+	public Request(final String payload) {
 		setPayload(payload);
 	}
 

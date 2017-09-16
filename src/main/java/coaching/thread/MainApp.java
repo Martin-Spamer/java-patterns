@@ -84,17 +84,13 @@ public class MainApp {
 			// * threads we must start.
 			final NodeList threadListConfig = document.getElementsByTagName("thread");
 			for (int i = 0; i < threadListConfig.getLength(); i++) {
-				final Node threadNode = threadListConfig.item(i);
-				LOG.info("threadNode={}", threadNode.toString());
-
 				final Element element = (Element) threadListConfig.item(i);
-				LOG.info("element={}", element.toString());
-
-				final String className = element.getAttribute("class");
-				LOG.info("className={}", className);
 
 				final String nameAttribute = element.getAttribute("name");
 				LOG.info("nameAttribute={}", nameAttribute);
+
+				final String className = element.getAttribute("class");
+				LOG.info("className={}", className);
 
 				final AbstractProcess abstractApplicationProcess = createProcess(className);
 				if (abstractApplicationProcess != null) {

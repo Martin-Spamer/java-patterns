@@ -5,8 +5,21 @@ package patterns.builder;
  */
 public class Product {
 
-	PartOne partOne;
+	private Part partOne = null;
+	private Part partTwo = null;
 
-	PartTwo partTwo;
+	public Product(final Part partOne, final Part partTwo) {
+		super();
+		this.partOne = partOne;
+		this.partTwo = partTwo;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return String.format("Product [partOne=%s, partTwo=%s]", this.partOne, this.partTwo);
+	}
 
 }

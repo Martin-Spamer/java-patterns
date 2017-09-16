@@ -1,9 +1,9 @@
 package patterns.strategy;
 
 /**
- * StrategyOne Class.
+ * StrategyThree Class.
  */
-class StrategyOne extends AbstractStrategy {
+class StrategyCharlie extends AbstractStrategy {
 
 	/*
 	 * (non-Javadoc)

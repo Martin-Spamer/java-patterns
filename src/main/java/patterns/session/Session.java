@@ -6,7 +6,7 @@ package patterns.session;
  */
 class Session {
 
-	private long id;
+	private long id = 0L;
 
 	/**
 	 * Instantiates a new session.
@@ -16,8 +16,6 @@ class Session {
 
 	/**
 	 * Instantiates a new session.
-	 *
-	 * id
 	 *
 	 * @param id the id
 	 */
@@ -29,10 +27,7 @@ class Session {
 	/**
 	 * id.
 	 *
-	 * new id
-	 *
-	 * @param id the new
-	 * 			id
+	 * @param id the new id
 	 */
 	public void setId(final long id) {
 		this.id = id;
@@ -41,12 +36,10 @@ class Session {
 	/**
 	 * id.
 	 *
-	 * id
-	 *
 	 * @return the id
 	 */
 	public long getId() {
-		return id;
+		return this.id;
 	}
 
 }

@@ -16,11 +16,9 @@ public class HandlerTwo extends AbstractHandler {
 	/**
 	 * Instantiates a new handler two.
 	 *
-	 * next
-	 *
 	 * @param next the next
 	 */
-	public HandlerTwo(HandlerInterface next) {
+	public HandlerTwo(final HandlerInterface next) {
 		super(next);
 	}
 
@@ -30,7 +28,7 @@ public class HandlerTwo extends AbstractHandler {
 	 * @see patterns.chain.Handler#handleRequest()
 	 */
 	@Override
-	public void handleRequest(RequestInterface request) {
+	public void handleRequest(final RequestInterface request) {
 		// do something
 		// then pass request
 		super.handleRequest(request);

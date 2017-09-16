@@ -6,29 +6,24 @@ package patterns.memento;
  */
 class Caretaker {
 
-	/** The memento. */
-	public Memento memento;
+	private Memento memento;
 
 	/**
 	 * memento.
 	 *
-	 * memento
-	 *
 	 * @return the memento
 	 */
 	public Memento getMemento() {
-		return memento;
+		return this.memento;
 	}
 
 	/**
 	 * memento.
 	 *
-	 * new memento
-	 *
 	 * @param memento the new
 	 * 			memento
 	 */
-	public void setMemento(Memento memento) {
+	public void setMemento(final Memento memento) {
 		this.memento = memento;
 	}
 

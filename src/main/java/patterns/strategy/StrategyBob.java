@@ -1,9 +1,9 @@
 package patterns.strategy;
 
 /**
- * StrategyThree Class.
+ * StrategyBob Class.
  */
-class StrategyThree extends AbstractStrategy {
+class StrategyBob extends AbstractStrategy {
 
 	/*
 	 * (non-Javadoc)
@@ -12,7 +12,7 @@ class StrategyThree extends AbstractStrategy {
 	 */
 	@Override
 	public void operation() {
-		log.info("operation()");
+		this.log.info("operation()");
 	}
 
 }

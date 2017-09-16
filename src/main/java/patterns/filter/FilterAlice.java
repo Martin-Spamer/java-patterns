@@ -3,12 +3,12 @@ package patterns.filter;
 /**
  * First Filter.
  */
-public final class FilterOne extends AbstractFilter {
+public final class FilterAlice extends AbstractFilter {
 
 	/**
 	 * Instantiates a new filter one.
 	 */
-	public FilterOne() {
+	public FilterAlice() {
 		super();
 	}
 
@@ -19,7 +19,7 @@ public final class FilterOne extends AbstractFilter {
 	 *
 	 * @param filter the filter
 	 */
-	public FilterOne(final FilterInterface filter) {
+	public FilterAlice(final FilterInterface filter) {
 		super(filter);
 	}
 

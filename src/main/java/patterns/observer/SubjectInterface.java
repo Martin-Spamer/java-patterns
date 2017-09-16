@@ -9,16 +9,12 @@ public interface SubjectInterface {
 	/**
 	 * Attach observer.
 	 *
-	 * observer
-	 *
 	 * @param observer the observer
 	 */
 	void attachObserver(AbstractObserver observer);
 
 	/**
 	 * Detach observer.
-	 *
-	 * observer
 	 *
 	 * @param observer the observer
 	 */

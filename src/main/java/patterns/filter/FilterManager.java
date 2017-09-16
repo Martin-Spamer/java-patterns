@@ -18,9 +18,9 @@ public final class FilterManager {
 	 * Operation that needs to be filtered.
 	 */
 	public void operation() {
-		first = new FilterOne();
-		first.addNextFilter(new FilterTwo());
-		first.addNextFilter(new FilterThree());
+		first = new FilterAlice();
+		first.addNextFilter(new FilterBob());
+		first.addNextFilter(new FilterCharlie());
 		first.handleRequest(new Payload());
 	}
 
