@@ -15,17 +15,6 @@ public class InvokerExample implements InvokerInterface {
 	private final ConditionalCommand conditionalCommand = new ConditionalCommand();
 	private final SequenceCommand sequenceCommand = new SequenceCommand();
 
-	/**
-	 * Instantiates a new static invoker.
-	 *
-	 * exception
-	 *
-	 * @throws Exception the exception
-	 */
-	public InvokerExample() throws Exception {
-		super();
-	}
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -34,25 +23,25 @@ public class InvokerExample implements InvokerInterface {
 	@Override
 	public ResultInterface execute(final String actionName) {
 		ResultInterface result = null;
-		log.info("execute({})", actionName);
+		this.log.info("execute({})", actionName);
 		switch (actionName) {
 			case "ExampleCommand":
-				result = exampleCommand.execute(new Parameters());
+				result = this.exampleCommand.execute(new Parameters());
 				break;
 			case "CommandSequence":
-				result = commandSequence.execute(new Parameters());
+				result = this.commandSequence.execute(new Parameters());
 				break;
 			case "CompoundCommand":
-				result = compoundCommand.execute(new Parameters());
+				result = this.compoundCommand.execute(new Parameters());
 				break;
 			case "ConditionalCommand":
-				result = conditionalCommand.execute(new Parameters());
+				result = this.conditionalCommand.execute(new Parameters());
 				break;
 			case "SequenceCommand":
-				result = sequenceCommand.execute(new Parameters());
+				result = this.sequenceCommand.execute(new Parameters());
 				break;
 		}
-		log.info("result={}", result);
+		this.log.info("result={}", result);
 		return result;
 	}
 

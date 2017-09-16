@@ -9,13 +9,6 @@ public class AbstractRequest {
 	private String payload;
 
 	/**
-	 * Instantiates a new abstract request.
-	 */
-	public AbstractRequest() {
-		super();
-	}
-
-	/**
 	 * payload.
 	 *
 	 * @return the payload

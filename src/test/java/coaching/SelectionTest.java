@@ -1,12 +1,9 @@
 package coaching;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Examples of selection programming instructions.
@@ -87,6 +84,7 @@ public class SelectionTest {
 				break;
 			default:
 				LOG.info("default");
+				break;
 		}
 		assertEquals(0, selection);
 	}

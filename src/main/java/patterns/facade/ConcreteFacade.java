@@ -1,15 +1,18 @@
 
 package patterns.facade;
 
+import org.slf4j.*;
+
 /**
- * ConcreteFacade Class.
+ * Concrete Facade Class.
  */
 public final class ConcreteFacade implements FacadeInterface {
 
-	private SubSystemOne subSystemOne;
-	private SubSystemTwo subSystemTwo;
-	private SubSystemThree subSystemThree;
-	private ConcreteFacade concreteFacade;
+	private static final Logger LOG = LoggerFactory.getLogger(ConcreteFacade.class);
+	private SubSystemOne subSystemOne = null;
+	private SubSystemTwo subSystemTwo = null;
+	private SubSystemThree subSystemThree = null;
+	private ConcreteFacade concreteFacade = null;
 
 	/*
 	 * (non-Javadoc)
@@ -18,6 +21,9 @@ public final class ConcreteFacade implements FacadeInterface {
 	 */
 	@Override
 	public void operation() {
+		subSystemOneOperation();
+		subSystemTwoOperation();
+		subSystemThreeOperation();
 	}
 
 	/**

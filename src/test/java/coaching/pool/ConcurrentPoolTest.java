@@ -1,12 +1,10 @@
 
 package coaching.pool;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * ConcurrentPoolTest Class.
@@ -45,7 +43,7 @@ public class ConcurrentPoolTest {
 		// * pool
 		while (testResourcePool.countFree() > 0) {
 			final Boolean bool = testResourcePool.take();
-			if (bool == true) {
+			if (bool) {
 				testResourcePool.remove(bool);
 			}
 		}

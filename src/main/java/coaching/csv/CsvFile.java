@@ -207,4 +207,11 @@ public class CsvFile {
 			log.error(exception.toString());
 		}
 	}
+
+	/**
+	 * @return the headerLine
+	 */
+	public String getHeaderLine() {
+		return this.headerLine;
+	}
 }
