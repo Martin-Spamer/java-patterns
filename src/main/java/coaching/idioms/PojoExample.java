@@ -1,3 +1,4 @@
+
 package coaching.idioms;
 
 /**
@@ -55,7 +56,7 @@ public final class PojoExample implements Cloneable {
 	 * @return the string value
 	 */
 	public String getStringValue() {
-		return stringValue;
+		return this.stringValue;
 	}
 
 	/**
@@ -64,74 +65,15 @@ public final class PojoExample implements Cloneable {
 	 * @return the long value
 	 */
 	public long getLongValue() {
-		return longValue;
+		return this.longValue;
 	}
 
 	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
+	 * @see java.lang.Object#toString()
 	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (longValue ^ longValue >>> 32);
-		result = prime * result + (stringValue == null ? 0 : stringValue.hashCode());
-		return result;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(final Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		if (this == obj) {
-			return true;
-		}
-		final PojoExample pojo = (PojoExample) obj;
-		if (pojo.isLongValueEqualTo(longValue)) {
-			if (stringValue == null) {
-				if (pojo.isStringValueEqualTo(stringValue)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * Checks if is string value equal to.
-	 *
-	 * @param stringValue the string value
-	 * @return true, if is string value equal to parameter value.
-	 */
-	private boolean isStringValueEqualTo(final String stringValue) {
-		return this.stringValue.equals(stringValue);
-	}
-
-	/**
-	 * Checks if is long value equal to.
-	 *
-	 * @param longValue the long value
-	 * @return true, if is long value equal to parameter value.
-	 */
-	private boolean isLongValueEqualTo(final long longValue) {
-		return this.longValue == longValue;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#clone()
-	 */
-	@Override
-	public PojoExample clone() {
-		return new PojoExample(getStringValue(), getLongValue());
-	}
-
 	@Override
 	public String toString() {
-		return String.format("PojoExample [stringValue=%s, longValue=%s]", stringValue, longValue);
+		return String.format("PojoExample [stringValue=%s, longValue=%s]", this.stringValue, this.longValue);
 	}
 
 }

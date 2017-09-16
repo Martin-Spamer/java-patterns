@@ -12,7 +12,6 @@ import org.slf4j.*;
  * CsvToJdbc Class.
  */
 public class CsvToJdbc {
-
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private CsvFile csvFile;
 	private String filename;
@@ -57,7 +56,7 @@ public class CsvToJdbc {
 	public CsvToJdbc(final String driver, final String url, final String user, final String password) {
 		this.driver = driver;
 		this.url = url;
-		username = user;
+		this.username = user;
 		this.password = password;
 	}
 
@@ -68,8 +67,8 @@ public class CsvToJdbc {
 	 */
 	@Override
 	public void finalize() throws SQLException {
-		statement.close();
-		connection.close();
+		this.statement.close();
+		this.connection.close();
 	}
 
 	/**
@@ -80,7 +79,7 @@ public class CsvToJdbc {
 	 * @return the column headers
 	 */
 	private String getColumnHeaders() {
-		return csvFile.getColumnNames();
+		return this.csvFile.getColumnNames();
 	}
 
 	/**
@@ -107,9 +106,9 @@ public class CsvToJdbc {
 	        final String user,
 	        final String password) throws ClassNotFoundException, SQLException {
 		Class.forName(driver);
-		connection = DriverManager.getConnection(url, user, password);
-		statement = makeStatement(connection);
-		return connection;
+		this.connection = DriverManager.getConnection(url, user, password);
+		this.statement = makeStatement(this.connection);
+		return this.connection;
 	}
 
 	/**
@@ -135,7 +134,7 @@ public class CsvToJdbc {
 	 * @throws Exception the exception
 	 */
 	public void process() throws Exception {
-		process(filename, driver, url, username, password, tableName);
+		process(this.filename, this.driver, this.url, this.username, this.password, this.tableName);
 	}
 
 	/**
@@ -164,11 +163,11 @@ public class CsvToJdbc {
 	        final String password,
 	        final String table) throws Exception {
 		makeJdbcConnection(driver, url, user, password);
-		csvFile = new CsvFile(filename);
-		tableName = table;
-		for (int index = 0; index < csvFile.size(); index++) {
-			final CsvRecord record = csvFile.getRecord(index);
-			log.info(record.toString());
+		this.csvFile = new CsvFile(filename);
+		this.tableName = table;
+		for (int index = 0; index < this.csvFile.size(); index++) {
+			final CsvRecord record = this.csvFile.getRecord(index);
+			this.log.info(record.toString());
 			write(record);
 		}
 	}
@@ -313,19 +312,19 @@ public class CsvToJdbc {
 		// into %table (%field%,...)
 		// from (%value%,...)
 		final StringBuffer sql = new StringBuffer();
-		sql.append("insert into ").append(tableName);
+		sql.append("insert into ").append(this.tableName);
 		sql.append(getColumnHeaders());
 		sql.append(" VALUES ");
 		sql.append(record.toString());
-		log.info(sql.toString());
+		this.log.info(sql.toString());
 
-		if (statement.execute(sql.toString())) {
-			log.info("ok {}", statement.getResultSet().toString());
+		if (this.statement.execute(sql.toString())) {
+			this.log.info("ok {}", this.statement.getResultSet().toString());
 		} else {
-			if (statement.getUpdateCount() == 1) {
-				log.info("ok {}", statement.getResultSet().toString());
+			if (this.statement.getUpdateCount() == 1) {
+				this.log.info("ok {}", this.statement.getResultSet().toString());
 			} else {
-				log.info("failed {}", statement.getWarnings());
+				this.log.info("failed {}", this.statement.getWarnings());
 			}
 		}
 	}

@@ -1,4 +1,3 @@
-
 package coaching.csv;
 
 import java.util.*;
@@ -10,10 +9,8 @@ import org.slf4j.*;
  */
 public class CsvRecord {
 
-	/** The Constant log. */
 	protected static final Logger log = LoggerFactory.getLogger(CsvRecord.class);
 
-	/** The fields. */
 	private List<String> fields;
 
 	/**
@@ -24,11 +21,9 @@ public class CsvRecord {
 	}
 
 	/**
-	 * Instantiates a new CSV record.
+	 * Instantiates a new CSV record from a line of data.
 	 *
-	 * line of data
-	 *
-	 * @param lineOfData the line of data
+	 * @param lineOfData the line of data.
 	 */
 	public CsvRecord(final String lineOfData) {
 		parse(lineOfData);
@@ -37,74 +32,60 @@ public class CsvRecord {
 	/**
 	 * Column count.
 	 *
-	 * int
-	 *
-	 * @return the int
+	 * @return the number of field columns as int.
 	 */
 	public int columnCount() {
-		return fields.size();
+		return this.fields.size();
 	}
 
 	/**
 	 * column.
 	 *
-	 * index
-	 * column
-	 *
-	 * @param index the index
-	 * @return the column
+	 * @param index the index.
+	 * @return the column.
 	 */
 	public String getColumn(final int index) {
-		return fields.get(index);
+		return this.fields.get(index);
 	}
 
 	/**
 	 * Checks if is empty.
 	 *
-	 * @return true, if is empty
+	 * @return true, if record is empty.
 	 */
 	public boolean isEmpty() {
-		return fields.isEmpty();
+		return this.fields.isEmpty();
 	}
 
 	/**
-	 * Parses the.
-	 *
-	 * line of data
+	 * Parses the line of data into fields.
 	 *
 	 * @param lineOfData the line of data
 	 */
 	private void parse(final String lineOfData) {
-		fields = Arrays.asList(lineOfData.split(","));
+		this.fields = Arrays.asList(lineOfData.split(","));
 	}
 
 	/**
-	 * Removes the.
-	 *
-	 * index
-	 * CSV record
+	 * Removes the field value by index.
 	 *
 	 * @param index the index
 	 * @return the CSV record
 	 */
 	public CsvRecord remove(final int index) {
-		fields.remove(index);
+		this.fields.remove(index);
 		return this;
 	}
 
 	/**
-	 * Sets the.
-	 *
-	 * index
-	 * field
-	 * CSV record
+	 * Sets the field value at index.
 	 *
 	 * @param index the index
 	 * @param field the field
 	 * @return the CSV record
 	 */
 	public CsvRecord set(final int index, final String field) {
-		fields.set(index, field);
+		this.fields.set(index, field);
 		return this;
 	}
 
@@ -115,7 +96,7 @@ public class CsvRecord {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s", fields).replace("[", "").replace("]", "");
+		return String.format("%s", this.fields).replace("[", "").replace("]", "");
 	}
 
 }

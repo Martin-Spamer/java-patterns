@@ -6,10 +6,13 @@
 
 package coaching.thread;
 
-import java.io.File;
+import java.io.*;
 import java.util.HashMap;
 
 import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.slf4j.*;
 import org.w3c.dom.*;
@@ -21,51 +24,31 @@ import org.w3c.dom.*;
 public class MainApp {
 
 	private static final Logger LOG = LoggerFactory.getLogger(MainApp.class);
-	private Document mainAppConfig;
-	private Element config;
-	private final HashMap<String, AbstractApplicationProcess> threadMap = new HashMap<String, AbstractApplicationProcess>();
+	private final HashMap<String, AbstractProcess> threadMap = new HashMap<String, AbstractProcess>();
 
 	/**
 	 * Instantiates a new main application.
 	 */
 	public MainApp() {
 		super();
+		initialise();
 	}
 
 	/**
-	 * XML Configuration File.
+	 * initialise from configuration file.
 	 *
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
-	public boolean init() {
+	public boolean initialise() {
 		try {
-			final String configFilename = this.getClass().getName() + ".xml";
-			final File configFile = new File(configFilename);
+			final String configFilename = configFilename();
 
 			// * XML file into a DOM
 			final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			final DocumentBuilder builder = builderFactory.newDocumentBuilder();
-			mainAppConfig = builder.parse(configFile);
+			final Document document = builder.parse(inputStream(configFilename));
 
-			// * root Document Element <config>
-			config = mainAppConfig.getDocumentElement();
-			LOG.info("{}", config);
-
-			// * threads we must start.
-			final NodeList threadListConfig = config.getElementsByTagName("thread");
-			for (int i = 0; i < threadListConfig.getLength(); i++) {
-				final org.w3c.dom.Node threadNode = threadListConfig.item(i);
-				LOG.info("{}", threadNode);
-				final org.w3c.dom.Element element = (Element) threadListConfig.item(i);
-				LOG.info("{}", element);
-
-				final String className = element.getAttribute("class");
-				final AbstractApplicationProcess abstractApplicationProcess = (AbstractApplicationProcess) Class
-				        .forName(className).newInstance();
-				abstractApplicationProcess.start();
-
-				threadMap.put(element.getAttribute("name"), abstractApplicationProcess);
-			}
+			createThreads(document);
 
 		} catch (final Exception exception) {
 			LOG.error("{}", exception.toString());
@@ -75,20 +58,111 @@ public class MainApp {
 	}
 
 	/**
-	 * main method.
+	 * Input stream.
 	 *
-	 * command line arguments
-	 * exception
+	 * @param resourceName the resource name
+	 * @return the input stream
+	 */
+	protected InputStream inputStream(final String resourceName) {
+		final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+		final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
+		return resourceAsStream;
+	}
+
+	/**
+	 * Creates the threads.
+	 *
+	 * @param config the configuration.
+	 * @throws InstantiationException the instantiation exception
+	 * @throws IllegalAccessException the illegal access exception
+	 * @throws ClassNotFoundException the class not found exception
+	 */
+	protected void createThreads(final Document document) {
+		final Element documentElement = document.getDocumentElement();
+
+		if (documentElement != null) {
+			// * threads we must start.
+			final NodeList threadListConfig = document.getElementsByTagName("thread");
+			for (int i = 0; i < threadListConfig.getLength(); i++) {
+				final Node threadNode = threadListConfig.item(i);
+				LOG.info("threadNode={}", threadNode.toString());
+
+				final Element element = (Element) threadListConfig.item(i);
+				LOG.info("element={}", element.toString());
+
+				final String className = element.getAttribute("class");
+				LOG.info("className={}", className);
+
+				final String nameAttribute = element.getAttribute("name");
+				LOG.info("nameAttribute={}", nameAttribute);
+
+				final AbstractProcess abstractApplicationProcess = createProcess(className);
+				if (abstractApplicationProcess != null) {
+					abstractApplicationProcess.start();
+				}
+
+				this.threadMap.put(nameAttribute, abstractApplicationProcess);
+			}
+		}
+	}
+
+	/**
+	 * Creates the process.
+	 *
+	 * @param className the class name
+	 * @return the abstract process
+	 * @throws InstantiationException the instantiation exception
+	 * @throws IllegalAccessException the illegal access exception
+	 * @throws ClassNotFoundException the class not found exception
+	 */
+	protected AbstractProcess createProcess(final String className) {
+		try {
+			final AbstractProcess process = (AbstractProcess) Class.forName(className).newInstance();
+			return process;
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			LOG.error("{}", e.toString());
+		}
+		return null;
+	}
+
+	/**
+	 * Configuration filename.
+	 *
+	 * @return the string
+	 */
+	protected String configFilename() {
+		final String className = this.getClass().getSimpleName();
+		final String configFilename = String.format("%s.xml", className);
+		return configFilename;
+	}
+
+	protected String foo(final Document doc) {
+		try {
+			final TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			final Transformer transformer = transformerFactory.newTransformer();
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			final StreamResult result = new StreamResult(new StringWriter());
+			final DOMSource source = new DOMSource(doc);
+			transformer.transform(source, result);
+			final String xmlString = result.getWriter().toString();
+			return xmlString;
+		} catch (IllegalArgumentException | TransformerFactoryConfigurationError | TransformerException e) {
+			LOG.error("{}", e.toString());
+		}
+		return null;
+	}
+
+	/**
+	 * main method.
 	 *
 	 * @param args the arguments
 	 * @throws Exception the exception
 	 */
 	public static void main(final String[] args) throws Exception {
 		try {
-			final MainApp mainApp = new MainApp();
-			mainApp.init();
-		} catch (final Exception exception) {
-			LOG.error("{}", exception.toString());
+			new MainApp();
+		} catch (final Exception e) {
+			LOG.error("{}", e.toString());
 		}
 	}
 }

@@ -17,23 +17,25 @@ import org.slf4j.*;
  * @author martin.spamer
  * @version 0.1 - 16:13:19
  */
-abstract public class AbstractApplicationProcess implements Runnable {
+public abstract class AbstractProcess implements Runnable {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private final Thread thread;
 	private long tick;
 	private boolean exit = false;
 
 	/**
-	 * Thread.
+	 * AbstractProcess.
 	 */
-	public AbstractApplicationProcess() {
+	public AbstractProcess() {
+		this.log.info("AbstractProcess()", this.getClass().getSimpleName());
 		this.thread = new Thread(this);
 	}
 
 	/**
-	 * Thread running.
+	 * Start the thread running.
 	 */
 	public void start() {
+		this.log.info("{}.start()", this.getClass().getSimpleName());
 		this.thread.start();
 	}
 
@@ -43,10 +45,9 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	 */
 	@Override
 	public void run() {
+		this.log.info("{}.run", this.getClass().getSimpleName());
 		try {
 			do {
-				this.tick++;
-
 				// A Run method MUST have either a sleep or yield to prevent deadlock.
 
 				// Pause for 1 Second.
@@ -55,23 +56,27 @@ abstract public class AbstractApplicationProcess implements Runnable {
 				// Pause until I'm allowed to continue.
 				Thread.yield(); // Note that yield is a static method.
 
-				// * Thread ends if it runs for more than a minute.
+				// Thread ends if it runs more than a ten times.
 				// alternatively I could throw a new InterruptedException
-				if (this.tick >= 60) {
+				this.tick++;
+				if (this.tick >= 10) {
 					this.exit = true;
 				}
 
+				this.log.info("tick={}", this.tick);
 			} while (!this.exit);
 
 		} catch (final InterruptedException exception) {
 			this.log.error("{}", exception.toString());
 		}
+		this.log.info("{}.ending", this.getClass().getSimpleName());
 	}
 
 	/**
-	 * Thread running.
+	 * Stop the thread running.
 	 */
 	public void stop() {
+		this.log.info("{}.stop()", this.getClass().getSimpleName());
 		this.exit = true;
 	}
 }
