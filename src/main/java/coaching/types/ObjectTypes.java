@@ -8,8 +8,7 @@
 
 package coaching.types;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Java Native Types.
@@ -23,63 +22,63 @@ public class ObjectTypes {
 
 	// integers object types
 	private final Byte largestByte = Byte.MAX_VALUE;
-	private Byte smallestByte = Byte.MIN_VALUE;
+	private final Byte smallestByte = Byte.MIN_VALUE;
 
-	private Short largestShort = Short.MAX_VALUE;
-	private Short smallestShort = Short.MIN_VALUE;
+	private final Short largestShort = Short.MAX_VALUE;
+	private final Short smallestShort = Short.MIN_VALUE;
 
-	private Integer largestInteger = Integer.MAX_VALUE;
-	private Integer smallestInteger = Integer.MIN_VALUE;
+	private final Integer largestInteger = Integer.MAX_VALUE;
+	private final Integer smallestInteger = Integer.MIN_VALUE;
 
-	private Long largestLong = Long.MAX_VALUE;
-	private Long smallesttLong = Long.MIN_VALUE;
+	private final Long largestLong = Long.MAX_VALUE;
+	private final Long smallesttLong = Long.MIN_VALUE;
 
 	// real numbers
-	private Float largestFloat = Float.MAX_VALUE;
-	private Float smallestFloat = Float.MIN_VALUE;
+	private final Float largestFloat = Float.MAX_VALUE;
+	private final Float smallestFloat = Float.MIN_VALUE;
 
-	private Double largestDouble = Double.MAX_VALUE;
-	private Double smallestDouble = Double.MIN_VALUE;
+	private final Double largestDouble = Double.MAX_VALUE;
+	private final Double smallestDouble = Double.MIN_VALUE;
 
 	// other primitive types
-	private Character aChar = 'A';
+	private final Character aChar = 'A';
 
-	private Boolean aBooleanTrue = true;
-	private Boolean aBooleanFalse = false;
+	private final Boolean aBooleanTrue = true;
+	private final Boolean aBooleanFalse = false;
 
 	/**
 	 * Display.
 	 */
 	public void display() {
 		// display them all
-		this.log.info("largest byte value : " + this.largestByte);
-		this.log.info("smallest byte value : " + this.smallestByte);
+		log.info("largest byte value : " + largestByte);
+		log.info("smallest byte value : " + smallestByte);
 
-		this.log.info("largest short value is " + this.largestShort);
-		this.log.info("smallest short value is " + this.smallestShort);
+		log.info("largest short value is " + largestShort);
+		log.info("smallest short value is " + smallestShort);
 
-		this.log.info("largest integer value is " + this.largestInteger);
-		this.log.info("smallest integer value is " + this.smallestInteger);
+		log.info("largest integer value is " + largestInteger);
+		log.info("smallest integer value is " + smallestInteger);
 
-		this.log.info("largest long value is " + this.largestLong);
-		this.log.info("smallest long value is " + this.smallesttLong);
+		log.info("largest long value is " + largestLong);
+		log.info("smallest long value is " + smallesttLong);
 
-		this.log.info("largest float value is " + this.largestFloat);
-		this.log.info("smallest float value is " + this.smallestFloat);
+		log.info("largest float value is " + largestFloat);
+		log.info("smallest float value is " + smallestFloat);
 
-		this.log.info("largest double value is " + this.largestDouble);
-		this.log.info("smallest double value is " + this.smallestDouble);
+		log.info("largest double value is " + largestDouble);
+		log.info("smallest double value is " + smallestDouble);
 
-		if (Character.isUpperCase(this.aChar)) {
-			this.log.info("The character " + this.aChar + " is upper case.");
+		if (Character.isUpperCase(aChar)) {
+			log.info("The character " + aChar + " is upper case.");
 		} else {
-			this.log.info("The character " + this.aChar + " is lower case.");
+			log.info("The character " + aChar + " is lower case.");
 		}
 
-		if (this.aBooleanTrue) {
-			this.log.info("aBooleanTrue has tested as true : " + this.aBooleanTrue);
+		if (aBooleanTrue) {
+			log.info("aBooleanTrue has tested as true : " + aBooleanTrue);
 		} else {
-			this.log.info("aBooleanTrue has tested as false : " + this.aBooleanTrue);
+			log.info("aBooleanTrue has tested as false : " + aBooleanTrue);
 		}
 	}
 }

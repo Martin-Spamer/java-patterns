@@ -1,7 +1,6 @@
 package patterns.facade;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 public class SubSystem {
 
@@ -11,7 +10,7 @@ public class SubSystem {
 	 * Operation.
 	 */
 	public void operation() {
-		this.log.info("%s.operation", this.toString());
+		log.info("%s.operation", toString());
 	}
 
 	@Override

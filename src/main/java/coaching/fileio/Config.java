@@ -1,31 +1,15 @@
-/**
- *  @title       Example1.java
- *  @description TODO
- *  @author      martin.spamer.
- *  @version     0.1 - first release.
- *	Created      13-Oct-2004
- **/
-
 package coaching.fileio;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Configuration Class.
- *
- * @author martin.spamer
- * @version 0.1 - 12:23:05
  */
 @SuppressWarnings("serial")
-public class Config extends java.util.Properties {
+public class Config extends Properties {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private String propertyFileName = this.getClass().getSimpleName() + ".properties";
 	private boolean loaded = false;
@@ -83,7 +67,7 @@ public class Config extends java.util.Properties {
 	 * @return the property file name
 	 */
 	public String getPropertyFileName() {
-		return this.propertyFileName;
+		return propertyFileName;
 	}
 
 	/**
@@ -93,7 +77,7 @@ public class Config extends java.util.Properties {
 	 * 			loaded
 	 */
 	public boolean isLoaded() {
-		return this.loaded;
+		return loaded;
 	}
 
 	/**
@@ -103,7 +87,7 @@ public class Config extends java.util.Properties {
 	 * @throws ConfigurationException the configuration exception
 	 */
 	public Config loadPropertyFile() throws ConfigurationException {
-		return loadFrom(this.propertyFileName);
+		return loadFrom(propertyFileName);
 	}
 
 	/**
@@ -113,7 +97,7 @@ public class Config extends java.util.Properties {
 	 * @throws ConfigurationException the configuration exception
 	 */
 	public Config loadResource() throws ConfigurationException {
-		return loadResource(this.propertyFileName);
+		return loadResource(propertyFileName);
 	}
 
 	/**
@@ -139,9 +123,9 @@ public class Config extends java.util.Properties {
 		try {
 			final FileInputStream inStream = new FileInputStream(propertyFileName);
 			super.load(inStream);
-			this.loaded = true;
+			loaded = true;
 		} catch (final Exception e) {
-			this.log.error("{}", e.toString());
+			log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -157,9 +141,9 @@ public class Config extends java.util.Properties {
 	public Config loadFrom(final InputStream streamForResource) throws ConfigurationException {
 		try {
 			super.load(streamForResource);
-			this.loaded = true;
+			loaded = true;
 		} catch (final Exception e) {
-			this.log.error("{}", e.toString());
+			log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -191,7 +175,7 @@ public class Config extends java.util.Properties {
 		try {
 			save(propertyFile);
 		} catch (final ConfigurationException e) {
-			this.log.error("{}", e.toString());
+			log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -209,17 +193,17 @@ public class Config extends java.util.Properties {
 	public Config save(final File propertyFile) throws ConfigurationException {
 		try {
 			final FileOutputStream outStream = new FileOutputStream(propertyFile);
-			final String comments = "# Header " + this.propertyFileName;
+			final String comments = "# Header " + propertyFileName;
 			super.store(outStream, comments);
 		} catch (final IOException e) {
-			this.log.error("{}", e.toString());
+			log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
 	}
 
 	/**
-	 * The ConfigurationException Class.
+	 * Configuration Exception Class.
 	 */
 	public class ConfigurationException extends Exception {
 
@@ -256,6 +240,5 @@ public class Config extends java.util.Properties {
 	 */
 	public void loadPropertyFile(final String string) {
 		// TODO Auto-generated method stub
-
 	}
 }

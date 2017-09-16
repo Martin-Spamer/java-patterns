@@ -3,8 +3,7 @@
  */
 package coaching.associations;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Person Class.
@@ -49,7 +48,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 * @return the name
 	 */
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	/*
@@ -59,7 +58,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Person [name=%s]", this.name);
+		return String.format("Person [name=%s]", name);
 	}
 
 }

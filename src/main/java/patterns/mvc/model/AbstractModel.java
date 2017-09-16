@@ -1,11 +1,9 @@
 
 package patterns.mvc.model;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 import patterns.mvc.ModelInterface;
 import patterns.mvc.view.AbstractView;

@@ -2,18 +2,12 @@ package patterns.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
-import patterns.command.CommandFactory;
-import patterns.command.MissingCommandException;
+import patterns.command.*;
 
 /**
  * Front Controller Class.
@@ -33,7 +27,7 @@ public class FrontController extends HttpServlet {
 	public void init(final ServletConfig config) throws ServletException {
 		super.init(config);
 		try {
-			this.commands = new CommandFactory();
+			commands = new CommandFactory();
 		} catch (final Exception e) {
 			LOG.error(e.toString());
 		}
@@ -102,7 +96,7 @@ public class FrontController extends HttpServlet {
 
 		String page;
 		try {
-			this.commands.execute(actionName);
+			commands.execute(actionName);
 			page = "result";
 		} catch (final MissingCommandException e) {
 			LOG.error(e.toString());

@@ -1,14 +1,10 @@
 
 package patterns.mvc.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
-import patterns.command.CommandFactory;
-import patterns.command.MissingCommandException;
-import patterns.mvc.ControllerInterface;
-import patterns.mvc.ModelInterface;
-import patterns.mvc.ViewInterface;
+import patterns.command.*;
+import patterns.mvc.*;
 import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
 

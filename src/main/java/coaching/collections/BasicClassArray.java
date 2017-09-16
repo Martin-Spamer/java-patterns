@@ -19,21 +19,21 @@ import java.util.Arrays;
 public class BasicClassArray {
 
 	// Implementing Aggregate using a Class Array
-	private AbstractElement[] composite = new AbstractElement[4];
+	private final AbstractElement[] composite = new AbstractElement[4];
 
 	/**
 	 * Constructor.
 	 */
 	public BasicClassArray() {
-		this.composite[0] = new ElementOne();
-		this.composite[1] = new ElementTwo();
-		this.composite[2] = new ElementThree();
-		this.composite[3] = new ElementFour();
+		composite[0] = new ElementOne();
+		composite[1] = new ElementTwo();
+		composite[2] = new ElementThree();
+		composite[3] = new ElementFour();
 	}
 
 	@Override
 	public String toString() {
-		return String.format("BasicClassArray [composite=%s]", Arrays.toString(this.composite));
+		return String.format("BasicClassArray [composite=%s]", Arrays.toString(composite));
 	}
 
 }

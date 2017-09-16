@@ -1,8 +1,7 @@
-
 package patterns.interpreter;
 
 /**
- * Context Class.
+ * Represent the current context Class.
  */
 public class Context implements ContextInterface {
 
@@ -13,37 +12,33 @@ public class Context implements ContextInterface {
 	 */
 	public Context() {
 		super();
-		setState(new String(""));
+		setState(new String());
 	}
 
 	/**
 	 * Instantiates a new context.
 	 *
-	 * state
-	 *
 	 * @param state the state
 	 */
-	public Context(final String state) {
+	public Context(final Object state) {
 		super();
 		setState(state);
 	}
 
 	/**
-	 * state.
-	 *
-	 * new state
+	 * Set the state.
 	 *
 	 * @param state the new
 	 * 			state
+	 * @return
 	 */
-	public void setState(final Object state) {
+	public Context setState(final Object state) {
 		this.state = state;
+		return this;
 	}
 
 	/**
-	 * state.
-	 *
-	 * state
+	 * get the current state.
 	 *
 	 * @return the state
 	 */
@@ -55,7 +50,7 @@ public class Context implements ContextInterface {
 	 * @see patterns.interpreter.ContextInterface#contains(patterns.interpreter.Data)
 	 */
 	@Override
-	public boolean contains(final Data data) {
+	public boolean contains(final Object state) {
 		return false;
 	}
 

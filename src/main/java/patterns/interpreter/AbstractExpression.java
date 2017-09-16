@@ -1,10 +1,9 @@
-
 package patterns.interpreter;
 
 import java.util.Vector;
 
 /**
- * AbstractExpression Class.
+ * An abstract Expression Class.
  */
 public abstract class AbstractExpression {
 
@@ -13,10 +12,8 @@ public abstract class AbstractExpression {
 	/**
 	 * Interpret.
 	 *
-	 * context
-	 *
 	 * @param context the context
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	public boolean interpret(final ContextInterface context) {
 		return false;

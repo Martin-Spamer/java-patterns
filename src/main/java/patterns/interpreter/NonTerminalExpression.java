@@ -1,8 +1,7 @@
-
 package patterns.interpreter;
 
 /**
- * NonTerminalExpression Class.
+ * Non Terminal Expression Class.
  */
 public class NonTerminalExpression extends AbstractExpression {
 
@@ -12,8 +11,7 @@ public class NonTerminalExpression extends AbstractExpression {
 	 * (non-Javadoc)
 	 *
 	 * @see
-	 * patterns.interpreter.AbstractExpression#interpret(patterns.interpreter.
-	 * ContextInterface)
+	 * patterns.interpreter.AbstractExpression#interpret(patterns.interpreter.ContextInterface)
 	 */
 	@Override
 	public boolean interpret(final ContextInterface context) {

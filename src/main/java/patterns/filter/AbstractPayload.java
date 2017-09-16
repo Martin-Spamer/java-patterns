@@ -1,10 +1,7 @@
 package patterns.filter;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.InvalidPropertiesFormatException;
-import java.util.Properties;
+import java.io.*;
+import java.util.*;
 
 /**
  * AbstractPayload Class.
@@ -18,7 +15,7 @@ public class AbstractPayload {
 	 */
 	public AbstractPayload() {
 		super();
-		this.properties = new Properties();
+		properties = new Properties();
 	}
 
 	/**
@@ -44,7 +41,7 @@ public class AbstractPayload {
 	 * @return the abstract payload
 	 */
 	public AbstractPayload setProperty(final String key, final String value) {
-		this.properties.setProperty(key, value);
+		properties.setProperty(key, value);
 		return this;
 	}
 
@@ -56,7 +53,7 @@ public class AbstractPayload {
 	 * @return the int
 	 */
 	public int size() {
-		return this.properties.size();
+		return properties.size();
 	}
 
 	/**
@@ -69,7 +66,7 @@ public class AbstractPayload {
 	 * @return the property
 	 */
 	public String getProperty(final String key) {
-		return this.properties.getProperty(key);
+		return properties.getProperty(key);
 	}
 
 	/**
@@ -84,7 +81,7 @@ public class AbstractPayload {
 	 * @return the property
 	 */
 	public String getProperty(final String key, final String defaultValue) {
-		return this.properties.getProperty(key, defaultValue);
+		return properties.getProperty(key, defaultValue);
 	}
 
 	/**
@@ -98,7 +95,7 @@ public class AbstractPayload {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public AbstractPayload load(final InputStream inStream) throws IOException {
-		this.properties.load(inStream);
+		properties.load(inStream);
 		return this;
 	}
 
@@ -115,7 +112,7 @@ public class AbstractPayload {
 	 * @throws InvalidPropertiesFormatException the invalid properties format exception
 	 */
 	public AbstractPayload loadFromXML(final InputStream in) throws IOException, InvalidPropertiesFormatException {
-		this.properties.loadFromXML(in);
+		properties.loadFromXML(in);
 		return this;
 
 	}
@@ -147,7 +144,7 @@ public class AbstractPayload {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public AbstractPayload store(final OutputStream out, final String comments) throws IOException {
-		this.properties.store(out, comments);
+		properties.store(out, comments);
 		return this;
 	}
 

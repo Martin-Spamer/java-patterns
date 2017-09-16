@@ -3,8 +3,7 @@
  */
 package coaching.associations;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * AbstractVehicle Class.
@@ -41,7 +40,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 */
 	@Override
 	public Driver getDriver() {
-		return this.driver;
+		return driver;
 	}
 
 	/*
@@ -52,8 +51,8 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	// Polymorphic interface
 	@Override
 	public void travel(final String destination) {
-		this.engine.useFuel(this.engine);
-		this.log.info(destination);
+		engine.useFuel(engine);
+		log.info(destination);
 	}
 
 	/*
@@ -63,7 +62,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 */
 	@Override
 	public String toString() {
-		return "AbstractVehicle [engine=" + this.engine + ", driver=" + this.driver + "]";
+		return "AbstractVehicle [engine=" + engine + ", driver=" + driver + "]";
 	}
 
 }

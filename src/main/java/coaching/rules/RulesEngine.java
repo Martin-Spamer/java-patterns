@@ -1,17 +1,11 @@
 package coaching.rules;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import org.slf4j.*;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 /**
@@ -23,7 +17,7 @@ public class RulesEngine {
 	private DocumentBuilderFactory documentBuilderFactory = null;
 	private DocumentBuilder documentBuilder = null;
 	private Document document = null;
-	private Element documentElement = null;
+	private final Element documentElement = null;
 	private String filename = null;
 
 	/**
@@ -32,9 +26,9 @@ public class RulesEngine {
 	public RulesEngine() {
 		LOG.trace(System.getProperties().toString());
 		final String className = this.getClass().getSimpleName();
-		this.filename = String.format("%s.xml", className);
-		LOG.info("this.filename = {}", this.filename);
-		initialise(this.filename);
+		filename = String.format("%s.xml", className);
+		LOG.info("this.filename = {}", filename);
+		initialise(filename);
 	}
 
 	/**
@@ -47,13 +41,13 @@ public class RulesEngine {
 	 */
 	public boolean initialise(final String configFilename) {
 		try {
-			this.documentBuilderFactory = DocumentBuilderFactory.newInstance();
-			if (this.documentBuilderFactory != null) {
-				this.documentBuilder = this.documentBuilderFactory.newDocumentBuilder();
-				if (this.documentBuilder != null) {
+			documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			if (documentBuilderFactory != null) {
+				documentBuilder = documentBuilderFactory.newDocumentBuilder();
+				if (documentBuilder != null) {
 					final InputStream is = inputStream(configFilename);
 					if (null != is) {
-						this.document = this.documentBuilder.parse(is);
+						document = documentBuilder.parse(is);
 						return true;
 					}
 				}
@@ -84,8 +78,8 @@ public class RulesEngine {
 	public boolean execute() {
 		final boolean returnValue = false;
 		LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
-		if (this.documentElement != null) {
-			final NodeList childNodes = this.documentElement.getChildNodes();
+		if (documentElement != null) {
+			final NodeList childNodes = documentElement.getChildNodes();
 			LOG.info("childNodes  = {}", childNodes);
 		}
 		return returnValue;
@@ -112,18 +106,17 @@ public class RulesEngine {
 	 */
 	private Element getElement(final String elementName) {
 		Element element = null;
-		final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
+		final NodeList nodelist = documentElement.getElementsByTagName(elementName);
 		if (nodelist != null) {
 			if (nodelist.getLength() == 0) {
 				final String className = this.getClass().getSimpleName();
 				LOG.info("{}", className);
-				LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
+				LOG.info("Element {} is missing in element {}", elementName, documentElement.toString());
 			} else {
 				if (nodelist.getLength() > 1) {
 					final String className = this.getClass().getSimpleName();
 					LOG.info("{}", className);
-					LOG.info(" surplus Elements {} ignored in element: {}", elementName,
-					        this.documentElement.toString());
+					LOG.info(" surplus Elements {} ignored in element: {}", elementName, documentElement.toString());
 				}
 				element = (Element) nodelist.item(0);
 			}

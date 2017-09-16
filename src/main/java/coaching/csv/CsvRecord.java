@@ -1,11 +1,9 @@
 
 package coaching.csv;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * CsvRecord Class.
@@ -44,7 +42,7 @@ public class CsvRecord {
 	 * @return the int
 	 */
 	public int columnCount() {
-		return this.fields.size();
+		return fields.size();
 	}
 
 	/**
@@ -57,7 +55,7 @@ public class CsvRecord {
 	 * @return the column
 	 */
 	public String getColumn(final int index) {
-		return this.fields.get(index);
+		return fields.get(index);
 	}
 
 	/**
@@ -66,7 +64,7 @@ public class CsvRecord {
 	 * @return true, if is empty
 	 */
 	public boolean isEmpty() {
-		return this.fields.isEmpty();
+		return fields.isEmpty();
 	}
 
 	/**
@@ -77,7 +75,7 @@ public class CsvRecord {
 	 * @param lineOfData the line of data
 	 */
 	private void parse(final String lineOfData) {
-		this.fields = Arrays.asList(lineOfData.split(","));
+		fields = Arrays.asList(lineOfData.split(","));
 	}
 
 	/**
@@ -90,7 +88,7 @@ public class CsvRecord {
 	 * @return the CSV record
 	 */
 	public CsvRecord remove(final int index) {
-		this.fields.remove(index);
+		fields.remove(index);
 		return this;
 	}
 
@@ -106,7 +104,7 @@ public class CsvRecord {
 	 * @return the CSV record
 	 */
 	public CsvRecord set(final int index, final String field) {
-		this.fields.set(index, field);
+		fields.set(index, field);
 		return this;
 	}
 
@@ -117,7 +115,7 @@ public class CsvRecord {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s", this.fields).replace("[", "").replace("]", "");
+		return String.format("%s", fields).replace("[", "").replace("]", "");
 	}
 
 }

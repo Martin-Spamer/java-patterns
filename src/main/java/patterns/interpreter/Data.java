@@ -1,9 +1,8 @@
-
 package patterns.interpreter;
 
 /**
- * The Data Class.
+ * Data Class.
  */
-public class Data {
+public abstract class Data {
 
 }

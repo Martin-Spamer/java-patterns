@@ -29,10 +29,10 @@ public class AbstractFilter implements FilterInterface {
 	 */
 	@Override
 	public FilterInterface addNextFilter(final FilterInterface newFilter) {
-		if (this.nextFilter == null) {
-			this.nextFilter = newFilter;
+		if (nextFilter == null) {
+			nextFilter = newFilter;
 		} else {
-			this.nextFilter.addNextFilter(newFilter);
+			nextFilter.addNextFilter(newFilter);
 		}
 		return this;
 	}
@@ -42,8 +42,8 @@ public class AbstractFilter implements FilterInterface {
 	 */
 	@Override
 	public void handleRequest(final PayloadInterface payload) {
-		if (this.nextFilter != null) {
-			this.nextFilter.handleRequest(payload);
+		if (nextFilter != null) {
+			nextFilter.handleRequest(payload);
 		}
 	}
 

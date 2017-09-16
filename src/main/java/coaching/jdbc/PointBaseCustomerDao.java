@@ -6,11 +6,9 @@
 
 package coaching.jdbc;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import java.sql.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * PointBaseCustomerDao Class.
@@ -35,7 +33,7 @@ public class PointBaseCustomerDao {
 	 */
 	public PointBaseCustomerDao(final String connectionUrl, final String userId, final String password) {
 		try {
-			this.connection = java.sql.DriverManager.getConnection(connectionUrl, userId, password);
+			connection = java.sql.DriverManager.getConnection(connectionUrl, userId, password);
 		} catch (final java.sql.SQLException exception) {
 			exception.printStackTrace();
 		}
@@ -46,7 +44,7 @@ public class PointBaseCustomerDao {
 	 */
 	public void read() {
 		try {
-			final java.sql.Statement statement = this.connection.createStatement();
+			final java.sql.Statement statement = connection.createStatement();
 			final java.sql.ResultSet resultSet = statement.executeQuery("SELECT * from customers");
 			final java.sql.ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 
@@ -79,7 +77,7 @@ public class PointBaseCustomerDao {
 	 */
 	public void write() {
 		try {
-			final java.sql.Statement statement = this.connection.createStatement();
+			final java.sql.Statement statement = connection.createStatement();
 
 			final String sql = "INSERT INTO CUSTOMER_TBL (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
 			final int result = statement.executeUpdate(sql);
@@ -96,7 +94,7 @@ public class PointBaseCustomerDao {
 	 */
 	public void update() {
 		try {
-			final java.sql.Statement statement = this.connection.createStatement();
+			final java.sql.Statement statement = connection.createStatement();
 
 			final String sql = "UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999";
 			final int result = statement.executeUpdate(sql);
@@ -113,7 +111,7 @@ public class PointBaseCustomerDao {
 	 */
 	public void delete() {
 		try {
-			final java.sql.Statement statement = this.connection.createStatement();
+			final java.sql.Statement statement = connection.createStatement();
 
 			final String sql = "DELETE FROM CUSTOMER_TBL WHERE CUSTOMER_NUM=999";
 			final int result = statement.executeUpdate(sql);
@@ -128,7 +126,7 @@ public class PointBaseCustomerDao {
 	@Override
 	public void finalize() {
 		try {
-			this.connection.close();
+			connection.close();
 		} catch (final java.sql.SQLException exception) {
 			exception.printStackTrace();
 		}

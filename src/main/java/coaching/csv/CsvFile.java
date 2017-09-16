@@ -1,20 +1,13 @@
 
 package coaching.csv;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.io.*;
+import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
- * CsvFile Class.
+ * Represent a comma separated value file class.
  */
 public class CsvFile {
 
@@ -28,20 +21,18 @@ public class CsvFile {
 	 * Instantiates a new csv file.
 	 */
 	public CsvFile() {
-		CsvFile.log.info("CsvFile({})");
+		log.info("CsvFile({})");
 		csvFilename = String.format("%s.csv", this.getClass().getSimpleName());
 		initialise();
 	}
 
 	/**
-	 * Instantiates a new csv file.
-	 *
-	 * csv filename
+	 * Instantiates a new csv file from filename.
 	 *
 	 * @param csvFilename the csv filename
 	 */
 	public CsvFile(final String csvFilename) {
-		CsvFile.log.info("CsvFile({})", csvFilename);
+		log.info("CsvFile({})", csvFilename);
 		this.csvFilename = csvFilename;
 		initialise();
 	}
@@ -53,14 +44,12 @@ public class CsvFile {
 		try {
 			read(csvFilename);
 		} catch (final IOException e) {
-			CsvFile.log.error(e.toString());
+			log.error(e.toString());
 		}
 	}
 
 	/**
 	 * header.
-	 *
-	 * header
 	 *
 	 * @return the header
 	 */
@@ -72,8 +61,6 @@ public class CsvFile {
 	/**
 	 * column names.
 	 *
-	 * column names
-	 *
 	 * @return the column names
 	 */
 	public String getColumnNames() {
@@ -82,9 +69,6 @@ public class CsvFile {
 
 	/**
 	 * record.
-	 *
-	 * index
-	 * record
 	 *
 	 * @param index the index
 	 * @return the record
@@ -102,8 +86,6 @@ public class CsvFile {
 
 	/**
 	 * Read.
-	 *
-	 * buffered reader
 	 *
 	 * @param bufferedReader the buffered reader
 	 * @throws IOException Signals that an I/O exception has occurred.
@@ -126,14 +108,12 @@ public class CsvFile {
 			}
 			bufferedReader.close();
 		} else {
-			CsvFile.log.info("bufferedReader");
+			log.info("bufferedReader");
 		}
 	}
 
 	/**
-	 * Read.
-	 *
-	 * resource as stream
+	 * Read a resource as a stream.
 	 *
 	 * @param resourceAsStream the resource as stream
 	 * @throws IOException Signals that an I/O exception has occurred.
@@ -144,14 +124,12 @@ public class CsvFile {
 			read(inputStreamReader);
 			resourceAsStream.close();
 		} else {
-			CsvFile.log.info("resourceAsStream");
+			log.info("resourceAsStream");
 		}
 	}
 
 	/**
-	 * Read.
-	 *
-	 * input stream reader
+	 * Read input stream reader
 	 *
 	 * @param inputStreamReader the input stream reader
 	 * @throws IOException Signals that an I/O exception has occurred.
@@ -162,32 +140,28 @@ public class CsvFile {
 			read(bufferedReader);
 			inputStreamReader.close();
 		} else {
-			CsvFile.log.info("inputStreamReader");
+			log.info("inputStreamReader");
 		}
 	}
 
 	/**
-	 * Read.
-	 *
-	 * filename
+	 * Read filename
 	 *
 	 * @param filename the filename
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public void read(final String filename) throws IOException {
-		CsvFile.log.info("read({})", filename);
+		log.info("read({})", filename);
 		if (filename != null) {
 			final InputStream resourceAsStream = getClass().getResourceAsStream(filename);
 			read(resourceAsStream);
 		} else {
-			CsvFile.log.info("filename");
+			log.info("filename");
 		}
 	}
 
 	/**
-	 * header line.
-	 *
-	 * new header line
+	 * header line new header line
 	 *
 	 * @param line the new
 	 * 			header line
@@ -199,8 +173,6 @@ public class CsvFile {
 
 	/**
 	 * Size.
-	 *
-	 * int
 	 *
 	 * @return the int
 	 */
@@ -221,8 +193,6 @@ public class CsvFile {
 	/**
 	 * Write.
 	 *
-	 * filename
-	 *
 	 * @param filename the filename
 	 */
 	public void write(final String filename) {
@@ -230,13 +200,12 @@ public class CsvFile {
 			final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
 			for (int index = 0; index < records.size(); index++) {
 				final CsvRecord csvRecord = records.get(index);
-				CsvFile.log.info(csvRecord.toString());
+				log.info(csvRecord.toString());
 				writer.write(csvRecord.toString());
 			}
 			writer.close();
 		} catch (final Exception exception) {
-			CsvFile.log.error(exception.toString());
+			log.error(exception.toString());
 		}
 	}
-
 }

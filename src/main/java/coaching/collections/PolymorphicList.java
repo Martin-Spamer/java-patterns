@@ -1,8 +1,9 @@
 
 package coaching.collections;
 
-import java.util.LinkedList;
-import java.util.List;
+import static org.junit.Assert.assertNotNull;
+
+import java.util.*;
 
 /**
  * PolymorphicList Class.
@@ -17,7 +18,7 @@ public class PolymorphicList {
 	 * @param integerIn the integer in
 	 */
 	public void add(final Integer integerIn) {
-		this.integerList.add(integerIn);
+		integerList.add(integerIn);
 	}
 
 	/**
@@ -26,12 +27,12 @@ public class PolymorphicList {
 	 * @return the integer
 	 */
 	public Integer next() {
-		return this.integerList.iterator().next();
+		return integerList.iterator().next();
 	}
 
 	@Override
 	public String toString() {
-		return String.format("PolymorphicList [integerList=%s]", this.integerList);
+		return String.format("PolymorphicList [integerList=%s]", integerList);
 	}
 
 	/**
@@ -43,7 +44,8 @@ public class PolymorphicList {
 		final PolymorphicList myIntList = new PolymorphicList();
 
 		myIntList.add(new Integer(0));
-		final Integer x = myIntList.next();
+		final Integer actual = myIntList.next();
+		assertNotNull(actual);
 
 		// these unsafe type conversions wont compile
 		// myIntList.add( new Double(0) ) ;

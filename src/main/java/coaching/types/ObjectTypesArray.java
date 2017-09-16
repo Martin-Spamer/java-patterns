@@ -9,8 +9,7 @@
 
 package coaching.types;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Example code of arrays of primitive types.
@@ -39,7 +38,7 @@ public class ObjectTypesArray {
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
 			values[i] = new Long(i * 100);
-			this.log.info(i + "=" + values[i]);
+			log.info(i + "=" + values[i]);
 		}
 
 		// declare a reference to an matric of longs

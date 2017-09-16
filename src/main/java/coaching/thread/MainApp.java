@@ -9,14 +9,10 @@ package coaching.thread;
 import java.io.File;
 import java.util.HashMap;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import org.slf4j.*;
+import org.w3c.dom.*;
 
 /**
  * a test harness for Java modules.
@@ -49,14 +45,14 @@ public class MainApp {
 			// * XML file into a DOM
 			final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			final DocumentBuilder builder = builderFactory.newDocumentBuilder();
-			this.mainAppConfig = builder.parse(configFile);
+			mainAppConfig = builder.parse(configFile);
 
 			// * root Document Element <config>
-			this.config = this.mainAppConfig.getDocumentElement();
-			LOG.info("{}", this.config);
+			config = mainAppConfig.getDocumentElement();
+			LOG.info("{}", config);
 
 			// * threads we must start.
-			final NodeList threadListConfig = this.config.getElementsByTagName("thread");
+			final NodeList threadListConfig = config.getElementsByTagName("thread");
 			for (int i = 0; i < threadListConfig.getLength(); i++) {
 				final org.w3c.dom.Node threadNode = threadListConfig.item(i);
 				LOG.info("{}", threadNode);
@@ -68,7 +64,7 @@ public class MainApp {
 				        .forName(className).newInstance();
 				abstractApplicationProcess.start();
 
-				this.threadMap.put(element.getAttribute("name"), abstractApplicationProcess);
+				threadMap.put(element.getAttribute("name"), abstractApplicationProcess);
 			}
 
 		} catch (final Exception exception) {

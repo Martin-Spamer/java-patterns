@@ -12,7 +12,7 @@ class RealSubject extends Subject {
 	 */
 	@Override
 	public void request() {
-		this.log.info("request");
+		log.info("request");
 	}
 
 }

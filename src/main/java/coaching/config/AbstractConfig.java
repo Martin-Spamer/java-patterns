@@ -1,12 +1,9 @@
 package coaching.config;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.InvalidPropertiesFormatException;
-import java.util.Properties;
+import java.io.*;
+import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Abstract Configuration Class.
@@ -21,8 +18,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * Instantiates a new abstract configuration.
 	 */
 	public AbstractConfig() {
-		this.configFilename = this.getClass().getSimpleName();
-		load(this.configFilename);
+		configFilename = this.getClass().getSimpleName();
+		load(configFilename);
 	}
 
 	/**
@@ -74,9 +71,9 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public void loadFromPropertyFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				this.properties.load(resourceAsStream);
+				properties.load(resourceAsStream);
 			} catch (final IOException e) {
-				this.log.error(e.toString());
+				log.error(e.toString());
 			}
 		}
 	}
@@ -91,11 +88,11 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public void loadFromXmlFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				this.properties.loadFromXML(resourceAsStream);
+				properties.loadFromXML(resourceAsStream);
 			} catch (final InvalidPropertiesFormatException e) {
-				this.log.error(e.toString());
+				log.error(e.toString());
 			} catch (final IOException e) {
-				this.log.error(e.toString());
+				log.error(e.toString());
 			}
 		}
 	}
@@ -109,7 +106,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = this.properties.getProperty(key);
+			property = properties.getProperty(key);
 		}
 		return property;
 	}
@@ -124,7 +121,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key, final String defaultValue) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = this.properties.getProperty(key, defaultValue);
+			property = properties.getProperty(key, defaultValue);
 		}
 		return property;
 	}
@@ -160,7 +157,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 */
 	@Override
 	public String toString() {
-		final String prettyProperties = prettyProperties(this.properties);
+		final String prettyProperties = prettyProperties(properties);
 		return String.format("properties = %s", prettyProperties);
 	}
 

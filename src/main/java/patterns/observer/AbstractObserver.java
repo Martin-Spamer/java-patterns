@@ -1,8 +1,7 @@
 
 package patterns.observer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * An asynchronous update interface for receiving notifications about Abstract

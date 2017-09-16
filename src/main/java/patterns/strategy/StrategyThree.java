@@ -12,7 +12,7 @@ class StrategyThree extends AbstractStrategy {
 	 */
 	@Override
 	public void operation() {
-		this.log.info("operation()");
+		log.info("operation()");
 	}
 
 }

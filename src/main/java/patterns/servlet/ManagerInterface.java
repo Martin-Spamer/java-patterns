@@ -1,11 +1,9 @@
 
 package patterns.servlet;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
-import patterns.mvc.controller.Delegate;
-import patterns.mvc.controller.Result;
+import patterns.mvc.controller.*;
 
 /**
  * ManagerInterface Interface.

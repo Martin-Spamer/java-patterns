@@ -55,7 +55,7 @@ public final class PojoExample implements Cloneable {
 	 * @return the string value
 	 */
 	public String getStringValue() {
-		return this.stringValue;
+		return stringValue;
 	}
 
 	/**
@@ -64,7 +64,7 @@ public final class PojoExample implements Cloneable {
 	 * @return the long value
 	 */
 	public long getLongValue() {
-		return this.longValue;
+		return longValue;
 	}
 
 	/* (non-Javadoc)
@@ -74,8 +74,8 @@ public final class PojoExample implements Cloneable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (this.longValue ^ this.longValue >>> 32);
-		result = prime * result + (this.stringValue == null ? 0 : this.stringValue.hashCode());
+		result = prime * result + (int) (longValue ^ longValue >>> 32);
+		result = prime * result + (stringValue == null ? 0 : stringValue.hashCode());
 		return result;
 	}
 
@@ -91,9 +91,9 @@ public final class PojoExample implements Cloneable {
 			return true;
 		}
 		final PojoExample pojo = (PojoExample) obj;
-		if (pojo.isLongValueEqualTo(this.longValue)) {
-			if (this.stringValue == null) {
-				if (pojo.isStringValueEqualTo(this.stringValue)) {
+		if (pojo.isLongValueEqualTo(longValue)) {
+			if (stringValue == null) {
+				if (pojo.isStringValueEqualTo(stringValue)) {
 					return true;
 				}
 			}
@@ -131,7 +131,7 @@ public final class PojoExample implements Cloneable {
 
 	@Override
 	public String toString() {
-		return String.format("PojoExample [stringValue=%s, longValue=%s]", this.stringValue, this.longValue);
+		return String.format("PojoExample [stringValue=%s, longValue=%s]", stringValue, longValue);
 	}
 
 }

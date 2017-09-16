@@ -13,7 +13,7 @@ public final class ConcreteClass extends AbstractClass {
 	 */
 	@Override
 	public void primitiveOperationA() {
-		this.log.info("primitiveOperationA()");
+		log.info("primitiveOperationA()");
 	}
 
 	/*
@@ -24,7 +24,7 @@ public final class ConcreteClass extends AbstractClass {
 	 */
 	@Override
 	public void primitiveOperationB() {
-		this.log.info("primitiveOperationA()");
+		log.info("primitiveOperationA()");
 	}
 
 }

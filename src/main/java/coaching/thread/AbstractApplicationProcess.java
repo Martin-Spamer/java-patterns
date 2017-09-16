@@ -24,14 +24,14 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	 * Thread.
 	 */
 	public AbstractApplicationProcess() {
-		this.thread = new java.lang.Thread(this);
+		thread = new java.lang.Thread(this);
 	}
 
 	/**
 	 * Thread running.
 	 */
 	public void start() {
-		this.thread.start();
+		thread.start();
 	}
 
 	/**
@@ -42,7 +42,7 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	public void run() {
 		try {
 			do {
-				this.tick++;
+				tick++;
 
 				// A Run method MUST have either a sleep or yield to prevent deadlock.
 
@@ -54,11 +54,11 @@ abstract public class AbstractApplicationProcess implements Runnable {
 
 				// * Thread ends if it runs for more than a minute.
 				// alternatively I could throw a new InterruptedException
-				if (this.tick >= 60) {
-					this.exit = true;
+				if (tick >= 60) {
+					exit = true;
 				}
 
-			} while (!this.exit);
+			} while (!exit);
 
 		} catch (final InterruptedException exception) {
 			exception.printStackTrace();
@@ -69,6 +69,6 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	 * Thread running.
 	 */
 	public void stop() {
-		this.exit = true;
+		exit = true;
 	}
 }

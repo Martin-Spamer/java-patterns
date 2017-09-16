@@ -1,7 +1,6 @@
 package coaching.idioms;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * A Fluent Wait Class, will test a condition for one second.
@@ -18,12 +17,12 @@ public class FluentWait {
 	 * @return
 	 */
 	public FluentWait timeOut(final long timeout) {
-		this.timeOut = timeout;
+		timeOut = timeout;
 		return this;
 	}
 
 	public long timeOut() {
-		return this.timeOut;
+		return timeOut;
 	}
 
 	/**
@@ -37,7 +36,7 @@ public class FluentWait {
 	}
 
 	public long interval() {
-		return this.interval;
+		return interval;
 	}
 
 	/**
@@ -46,23 +45,23 @@ public class FluentWait {
 	public boolean until(final Condition condition) {
 		if (condition != null) {
 			final long startTime = System.currentTimeMillis();
-			final long endTime = startTime + this.timeOut;
+			final long endTime = startTime + timeOut;
 			do {
 				if (condition.result()) {
-					this.log.info("pass at {}", System.currentTimeMillis());
+					log.info("pass at {}", System.currentTimeMillis());
 					return true;
 				} else {
 					try {
-						this.log.info("sleep {} at {}", this.interval, System.currentTimeMillis());
-						Thread.sleep(this.interval);
+						log.info("sleep {} at {}", interval, System.currentTimeMillis());
+						Thread.sleep(interval);
 					} catch (final InterruptedException ex) {
 						Thread.currentThread().interrupt();
 					}
 				}
 			} while (System.currentTimeMillis() < endTime);
-			this.log.info("timeout at {}", System.currentTimeMillis());
+			log.info("timeout at {}", System.currentTimeMillis());
 		} else {
-			this.log.info("null condition at {}", System.currentTimeMillis());
+			log.info("null condition at {}", System.currentTimeMillis());
 		}
 		return false;
 	}

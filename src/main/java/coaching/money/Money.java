@@ -2,11 +2,9 @@
 package coaching.money;
 
 import java.text.DecimalFormat;
-import java.util.Currency;
-import java.util.Locale;
+import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Money Class.

@@ -1,8 +1,7 @@
 
 package patterns.command;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Sequence of Commands example.

@@ -6,7 +6,7 @@ package patterns.iterator;
  */
 public final class Iterator extends AbstractIterator {
 
-	private Aggregate aggregate = null;
+	private final Aggregate aggregate = null;
 
 	/*
 	 * (non-Javadoc)

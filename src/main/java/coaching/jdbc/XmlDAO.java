@@ -1,20 +1,11 @@
 package coaching.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import org.slf4j.*;
+import org.w3c.dom.*;
 
 /**
  * A JDBC example to access a PointBase Database. Faster Reader with XML Support
@@ -52,7 +43,7 @@ class XmlDAO {
 		this.password = password;
 		try {
 			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
-			this.connection = DriverManager.getConnection(url, userId, password);
+			connection = DriverManager.getConnection(url, userId, password);
 		} catch (final ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (final SQLException e) {
@@ -90,9 +81,9 @@ class XmlDAO {
 	 */
 	public void read(final String sql) {
 		try {
-			this.statement = this.connection.createStatement();
-			this.resultSet = this.statement.executeQuery(sql);
-			this.resultSetMetaData = this.resultSet.getMetaData();
+			statement = connection.createStatement();
+			resultSet = statement.executeQuery(sql);
+			resultSetMetaData = resultSet.getMetaData();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
@@ -107,15 +98,15 @@ class XmlDAO {
 		final StringBuffer xml = new StringBuffer();
 
 		try {
-			final int colCount = this.resultSetMetaData.getColumnCount();
+			final int colCount = resultSetMetaData.getColumnCount();
 			xml.append("<TABLE>\n");
 
-			while (this.resultSet.next()) {
+			while (resultSet.next()) {
 				xml.append("<ROW>\n");
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = this.resultSetMetaData.getColumnName(i);
-					final Object value = this.resultSet.getObject(i);
+					final String columnName = resultSetMetaData.getColumnName(i);
+					final Object value = resultSet.getObject(i);
 					xml.append("<" + columnName + ">");
 
 					if (value != null) {
@@ -150,15 +141,15 @@ class XmlDAO {
 			final Element results = document.createElement("TABLE");
 			document.appendChild(results);
 
-			final int colCount = this.resultSetMetaData.getColumnCount();
+			final int colCount = resultSetMetaData.getColumnCount();
 
-			while (this.resultSet.next()) {
+			while (resultSet.next()) {
 				final Element row = document.createElement("ROW");
 				results.appendChild(row);
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = this.resultSetMetaData.getColumnName(i);
-					final Object value = this.resultSet.getObject(i);
+					final String columnName = resultSetMetaData.getColumnName(i);
+					final Object value = resultSet.getObject(i);
 
 					if (value != null) {
 						final Element node = document.createElement(columnName);
@@ -180,9 +171,9 @@ class XmlDAO {
 	@Override
 	public void finalize() {
 		try {
-			this.resultSet.close();
-			this.statement.close();
-			this.connection.close();
+			resultSet.close();
+			statement.close();
+			connection.close();
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}

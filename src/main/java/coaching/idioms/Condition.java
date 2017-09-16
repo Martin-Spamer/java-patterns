@@ -26,12 +26,12 @@ public class Condition implements ConditionInterface<Boolean> {
 	}
 
 	public boolean result() {
-		return this.result;
+		return result;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("Condition [result=%s]", this.result);
+		return String.format("Condition [result=%s]", result);
 	}
 
 }

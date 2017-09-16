@@ -16,7 +16,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface add(final Component component) {
-		this.composite.add(component);
+		composite.add(component);
 		return this;
 	}
 
@@ -27,7 +27,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface remove(final Component component) {
-		this.composite.remove(component);
+		composite.remove(component);
 		return this;
 	}
 
@@ -38,7 +38,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface getChild(final int index) {
-		this.composite.get(index);
+		composite.get(index);
 		return this;
 	}
 
@@ -49,7 +49,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface operation() {
-		for (final Component component : this.composite) {
+		for (final Component component : composite) {
 			component.operation();
 		}
 		return this;

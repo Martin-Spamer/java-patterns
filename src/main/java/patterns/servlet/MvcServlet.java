@@ -3,14 +3,10 @@ package patterns.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 import patterns.mvc.controller.Result;
 
@@ -93,12 +89,12 @@ public class MvcServlet extends HttpServlet {
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException, java.io.IOException {
 
-		if (this.servletInitialised) {
+		if (servletInitialised) {
 			final String requestName = request.getPathInfo();
 
 			final Result result = new Result();
-			this.actionManager.handleRequest(request, response, result);
-			this.viewManager.handleRequest(request, response, result);
+			actionManager.handleRequest(request, response, result);
+			viewManager.handleRequest(request, response, result);
 		}
 	}
 

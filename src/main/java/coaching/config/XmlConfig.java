@@ -3,15 +3,10 @@ package coaching.config;
 
 import java.io.File;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import org.slf4j.*;
+import org.w3c.dom.*;
 
 /**
  * XmlConfiguration Class.
@@ -76,9 +71,9 @@ public class XmlConfig implements ConfigInterface {
 		try {
 			final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			try {
-				this.documentBuilder = documentBuilderFactory.newDocumentBuilder();
-				this.document = this.documentBuilder.parse(configFile);
-				this.configElement = this.document.getDocumentElement();
+				documentBuilder = documentBuilderFactory.newDocumentBuilder();
+				document = documentBuilder.parse(configFile);
+				configElement = document.getDocumentElement();
 			} catch (final ParserConfigurationException parserConfigurationException) {
 				LOG.error(parserConfigurationException.toString());
 			}
@@ -94,8 +89,8 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the element
 	 */
 	private Element firstElementByTagName(final String elementName) {
-		this.context = this.configElement.getElementsByTagName(elementName);
-		return (Element) this.context.item(this.index = 0);
+		context = configElement.getElementsByTagName(elementName);
+		return (Element) context.item(index = 0);
 	}
 
 	/**
@@ -105,7 +100,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the attribute
 	 */
 	protected String getAttribute(final String attributeName) {
-		return this.configElement.getAttribute(attributeName);
+		return configElement.getAttribute(attributeName);
 	}
 
 	/**
@@ -115,7 +110,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the elements by tag name
 	 */
 	protected NodeList getElementsByTagName(final String elementName) {
-		return this.configElement.getElementsByTagName(elementName);
+		return configElement.getElementsByTagName(elementName);
 	}
 
 	/*
@@ -145,7 +140,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the tag name
 	 */
 	protected String getTagName() {
-		return this.configElement.getTagName();
+		return configElement.getTagName();
 	}
 
 	/**
@@ -154,7 +149,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the element
 	 */
 	protected Element nextElementByTagName() {
-		return (Element) this.context.item(++this.index);
+		return (Element) context.item(++index);
 	}
 
 	/**
@@ -174,11 +169,11 @@ public class XmlConfig implements ConfigInterface {
 	 */
 	@Override
 	public String toString() {
-		return null != this.configElement ? toXml(this.configElement) : "null";
+		return null != configElement ? toXml(configElement) : "null";
 	}
 
 	/**
-	 * To xml.
+	 * To xml string.
 	 *
 	 * @param node the node
 	 * @return the string
@@ -191,7 +186,7 @@ public class XmlConfig implements ConfigInterface {
 				text = new StringBuffer(value);
 			}
 			if (node.hasChildNodes()) {
-				final org.w3c.dom.NodeList children = node.getChildNodes();
+				final NodeList children = node.getChildNodes();
 				for (int i = 0; i < children.getLength(); i++) {
 					text.append(toXml(children.item(i)));
 				}

@@ -19,21 +19,21 @@ import java.util.Arrays;
 public class AggregateClassArray {
 
 	// Implementing Aggregate using a Class Array
-	private AbstractElement[] aggregate = new AbstractElement[4];
+	private final AbstractElement[] aggregate = new AbstractElement[4];
 
 	/**
 	 * aggregate.
 	 */
 	public void execute() {
-		this.aggregate[0] = new ElementOne();
-		this.aggregate[1] = new ElementTwo();
-		this.aggregate[2] = new ElementThree();
-		this.aggregate[3] = new ElementFour();
+		aggregate[0] = new ElementOne();
+		aggregate[1] = new ElementTwo();
+		aggregate[2] = new ElementThree();
+		aggregate[3] = new ElementFour();
 	}
 
 	@Override
 	public String toString() {
-		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(this.aggregate));
+		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(aggregate));
 	}
 
 }

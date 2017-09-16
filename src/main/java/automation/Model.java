@@ -16,8 +16,8 @@ public class Model {
 	 */
 	public Model given() {
 		DataManager.getData(Characteristic.AUTHORISED);
-		this.currentPage = PageFactory.landingPage();
-		this.currentPage.verify();
+		currentPage = PageFactory.landingPage();
+		currentPage.verify();
 		return this;
 	}
 
@@ -29,7 +29,7 @@ public class Model {
 	 * @return the model
 	 */
 	public Model when() {
-		this.currentPage.login();
+		currentPage.login();
 		return this;
 	}
 
@@ -41,8 +41,8 @@ public class Model {
 	 * @return the model
 	 */
 	public Model then() {
-		this.currentPage = PageFactory.landingPage();
-		this.currentPage.verify();
+		currentPage = PageFactory.landingPage();
+		currentPage.verify();
 		return this;
 	}
 

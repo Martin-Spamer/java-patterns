@@ -1,7 +1,6 @@
 package automation;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Abstract Page class.
@@ -14,14 +13,14 @@ public abstract class AbstractPage {
 	 * Login.
 	 */
 	public void login() {
-		this.log.info("login");
+		log.info("login");
 	}
 
 	/**
 	 * Verify that.
 	 */
 	public void verify() {
-		this.log.info("verify");
+		log.info("verify");
 	}
 
 }

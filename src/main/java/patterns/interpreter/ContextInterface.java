@@ -1,17 +1,10 @@
-
 package patterns.interpreter;
 
 /**
- * ContextInterface Interface.
+ * Context Interface.
  */
 public interface ContextInterface {
 
-	/**
-	 * Contains.
-	 *
-	 * @param data the data
-	 * @return true, if successful
-	 */
-	boolean contains(Data data);
+	boolean contains(Object data);
 
 }

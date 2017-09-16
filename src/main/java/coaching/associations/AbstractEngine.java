@@ -1,7 +1,6 @@
 package coaching.associations;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 public abstract class AbstractEngine implements FuelInterface {
 
@@ -24,7 +23,7 @@ public abstract class AbstractEngine implements FuelInterface {
 	 */
 	@Override
 	public String toString() {
-		return "Engine [fuel=" + this.fuel + "]";
+		return "Engine [fuel=" + fuel + "]";
 	}
 
 }
