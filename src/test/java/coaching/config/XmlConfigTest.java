@@ -6,14 +6,14 @@ import org.junit.Test;
 import org.slf4j.*;
 
 /**
- * The XmlConfigTest Class.
+ * Unit test xml configuration class.
  */
 public class XmlConfigTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(XmlConfigTest.class);
 
 	/**
-	 * Unit Test to xml config.
+	 * Unit Test xml configuration.
 	 */
 	@Test
 	public void testXmlConfig() {
@@ -21,7 +21,7 @@ public class XmlConfigTest {
 	}
 
 	/**
-	 * Unit Test to xml Configuration string.
+	 * Unit Test xml configuration string.
 	 */
 	@Test
 	public void testXmlConfigString() {

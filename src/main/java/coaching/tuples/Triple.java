@@ -3,10 +3,6 @@ package coaching.tuples;
 /**
  * Triple Class.
  *
- * generic type
- * generic type
- * generic type
- *
  * @param <X> the generic type
  * @param <Y> the generic type
  * @param <Z> the generic type

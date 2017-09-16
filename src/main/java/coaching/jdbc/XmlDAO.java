@@ -43,7 +43,7 @@ class XmlDAO {
 		this.password = password;
 		try {
 			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
-			this.connection = DriverManager.getConnection(url, userId, password);
+			this.connection = DriverManager.getConnection(this.url, this.userId, this.password);
 		} catch (final ClassNotFoundException e) {
 			LOG.error("{}", e.toString());
 		} catch (final SQLException e) {
@@ -54,11 +54,8 @@ class XmlDAO {
 	public void execute() {
 		try {
 			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
-			final String url = "jdbc:pointbase:server://localhost/sample";
-			final String userId = "PBPUBLIC";
-			final String passWord = "PBPUBLIC";
 
-			final XmlDAO dao = new XmlDAO(url, userId, passWord);
+			final XmlDAO dao = new XmlDAO(this.url, this.userId, this.password);
 
 			String sql = "select * from TNRG_COSTING";
 			dao.read(sql);
