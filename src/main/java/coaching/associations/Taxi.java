@@ -6,6 +6,8 @@ package coaching.associations;
  */
 public class Taxi extends Car {
 
+	private Passenger passenger;
+
 	/**
 	 * Instantiates a new taxi.
 	 */
@@ -14,40 +16,31 @@ public class Taxi extends Car {
 	}
 
 	/**
-	 * Instantiates a new taxi.
-	 *
-	 * engine
+	 * Instantiates a new taxi with engine.
 	 *
 	 * @param engine the engine
 	 */
-	public Taxi(DieselEngine engine) {
+	public Taxi(final DieselEngine engine) {
 		super(engine);
 	}
 
 	/**
 	 * passenger.
 	 *
-	 * passenger
-	 *
 	 * @return the passenger
 	 */
 	public Passenger getPassenger() {
-		return passenger;
+		return this.passenger;
 	}
 
 	/**
-	 * passenger.
-	 *
-	 * new passenger
+	 * new passenger.
 	 *
 	 * @param passenger the new
 	 * 			passenger
 	 */
-	public void setPassenger(Passenger passenger) {
+	public void setPassenger(final Passenger passenger) {
 		this.passenger = passenger;
 	}
-
-	/** The passenger. */
-	protected Passenger passenger;
 
 }

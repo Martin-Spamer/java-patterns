@@ -1,7 +1,7 @@
 package coaching.config;
 
 import java.io.*;
-import java.util.*;
+import java.util.Properties;
 
 import org.slf4j.*;
 
@@ -12,14 +12,14 @@ public abstract class AbstractConfig implements ConfigInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected final Properties properties = new Properties();
-	protected final String configFilename;
+	protected final String propertyFilename;
 
 	/**
 	 * Instantiates a new abstract configuration.
 	 */
 	public AbstractConfig() {
-		configFilename = this.getClass().getSimpleName();
-		load(configFilename);
+		this.propertyFilename = this.getClass().getSimpleName();
+		loadFromPropertyFile(this.propertyFilename);
 	}
 
 	/**
@@ -30,8 +30,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * @param configFilename the Configuration filename
 	 */
 	AbstractConfig(final String configFilename) {
-		this.configFilename = configFilename;
-		load(configFilename);
+		this.propertyFilename = configFilename;
+		loadFromPropertyFile(configFilename);
 	}
 
 	/**
@@ -41,21 +41,17 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 *
 	 * @param configFilename the Configuration filename
 	 */
-	private void load(final String configFilename) {
-		loadFromXmlFile(inputStream(toXmlFilename(configFilename)));
+	private void loadFromPropertyFile(final String configFilename) {
 		loadFromPropertyFile(inputStream(toPropertyFilename(configFilename)));
 	}
 
 	/**
 	 * Input stream.
 	 *
-	 * resource name
-	 * input stream
-	 *
 	 * @param resourceName the resource name
 	 * @return the input stream
 	 */
-	private InputStream inputStream(final String resourceName) {
+	protected InputStream inputStream(final String resourceName) {
 		final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
 		return resourceAsStream;
@@ -71,28 +67,9 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public void loadFromPropertyFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				properties.load(resourceAsStream);
+				this.properties.load(resourceAsStream);
 			} catch (final IOException e) {
-				log.error(e.toString());
-			}
-		}
-	}
-
-	/**
-	 * Load from xml file.
-	 *
-	 * resource as stream
-	 *
-	 * @param resourceAsStream the resource as stream
-	 */
-	public void loadFromXmlFile(final InputStream resourceAsStream) {
-		if (resourceAsStream != null) {
-			try {
-				properties.loadFromXML(resourceAsStream);
-			} catch (final InvalidPropertiesFormatException e) {
-				log.error(e.toString());
-			} catch (final IOException e) {
-				log.error(e.toString());
+				this.log.error(e.toString());
 			}
 		}
 	}
@@ -106,7 +83,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = properties.getProperty(key);
+			property = this.properties.getProperty(key);
 		}
 		return property;
 	}
@@ -121,7 +98,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key, final String defaultValue) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = properties.getProperty(key, defaultValue);
+			property = this.properties.getProperty(key, defaultValue);
 		}
 		return property;
 	}
@@ -129,8 +106,6 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * To property filename.
 	 *
-	 * configuration filename
-	 * string
 	 *
 	 * @param configFilename the Configuration filename
 	 * @return the string
@@ -139,33 +114,17 @@ public abstract class AbstractConfig implements ConfigInterface {
 		return String.format("%s.properties", configFilename);
 	}
 
-	/**
-	 * To xml filename.
-	 *
-	 * configuration filename
-	 * string
-	 *
-	 * @param configFilename the Configuration filename
-	 * @return the string
-	 */
-	protected String toXmlFilename(final String configFilename) {
-		return String.format("%s.xml", configFilename);
-	}
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		final String prettyProperties = prettyProperties(properties);
+		final String prettyProperties = prettyProperties(this.properties);
 		return String.format("properties = %s", prettyProperties);
 	}
 
 	/**
 	 * Pretty properties.
-	 *
-	 * properties
-	 * string
 	 *
 	 * @param properties the properties
 	 * @return the string

@@ -4,6 +4,6 @@ package patterns.router;
 /**
  * Message Class.
  */
-public class Message {
+public class Message extends AbstractMessage {
 
 }

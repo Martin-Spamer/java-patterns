@@ -11,7 +11,7 @@ import java.sql.*;
 import org.slf4j.*;
 
 /**
- * PointBaseCustomerDao Class.
+ * Point Base Customer Dao Class.
  *
  * @author martin.spamer
  */
@@ -33,9 +33,9 @@ public class PointBaseCustomerDao {
 	 */
 	public PointBaseCustomerDao(final String connectionUrl, final String userId, final String password) {
 		try {
-			connection = java.sql.DriverManager.getConnection(connectionUrl, userId, password);
-		} catch (final java.sql.SQLException exception) {
-			exception.printStackTrace();
+			this.connection = DriverManager.getConnection(connectionUrl, userId, password);
+		} catch (final SQLException exception) {
+			LOG.error("{}", exception.toString());
 		}
 	}
 
@@ -44,9 +44,9 @@ public class PointBaseCustomerDao {
 	 */
 	public void read() {
 		try {
-			final java.sql.Statement statement = connection.createStatement();
-			final java.sql.ResultSet resultSet = statement.executeQuery("SELECT * from customers");
-			final java.sql.ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+			final Statement statement = this.connection.createStatement();
+			final ResultSet resultSet = statement.executeQuery("SELECT * from customers");
+			final ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 
 			final int colCount = resultSetMetaData.getColumnCount();
 
@@ -67,7 +67,7 @@ public class PointBaseCustomerDao {
 
 			resultSet.close();
 		} catch (final SQLException exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 		}
 	}
 
@@ -77,14 +77,14 @@ public class PointBaseCustomerDao {
 	 */
 	public void write() {
 		try {
-			final java.sql.Statement statement = connection.createStatement();
+			final java.sql.Statement statement = this.connection.createStatement();
 
 			final String sql = "INSERT INTO CUSTOMER_TBL (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
 			final int result = statement.executeUpdate(sql);
 
 			LOG.info("Rows updated: " + result + " for " + sql);
 		} catch (final SQLException exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 		}
 	}
 
@@ -94,14 +94,12 @@ public class PointBaseCustomerDao {
 	 */
 	public void update() {
 		try {
-			final java.sql.Statement statement = connection.createStatement();
-
+			final Statement statement = this.connection.createStatement();
 			final String sql = "UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999";
 			final int result = statement.executeUpdate(sql);
-
 			LOG.info("Rows updated: " + result + " for " + sql);
 		} catch (final SQLException exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 		}
 	}
 
@@ -111,14 +109,12 @@ public class PointBaseCustomerDao {
 	 */
 	public void delete() {
 		try {
-			final java.sql.Statement statement = connection.createStatement();
-
+			final Statement statement = this.connection.createStatement();
 			final String sql = "DELETE FROM CUSTOMER_TBL WHERE CUSTOMER_NUM=999";
 			final int result = statement.executeUpdate(sql);
-
 			LOG.info("Rows updated: " + result + " for " + sql);
 		} catch (final SQLException exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 		}
 	}
 
@@ -126,9 +122,9 @@ public class PointBaseCustomerDao {
 	@Override
 	public void finalize() {
 		try {
-			connection.close();
+			this.connection.close();
 		} catch (final java.sql.SQLException exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 		}
 	}
 
@@ -154,10 +150,10 @@ public class PointBaseCustomerDao {
 				dao.update();
 				dao.delete();
 			} catch (final Exception exception) {
-				exception.printStackTrace();
+				LOG.error("{}", exception.toString());
 			}
 		} catch (final Exception exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 		}
 	}
 }

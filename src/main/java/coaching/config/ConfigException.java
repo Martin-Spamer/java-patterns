@@ -10,6 +10,6 @@ package coaching.config;
  * Configuration Exception.
  */
 @SuppressWarnings("serial")
-public class ConfigException {
+public class ConfigException extends Exception {
 
 }

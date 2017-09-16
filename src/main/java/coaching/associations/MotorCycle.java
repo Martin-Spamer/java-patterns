@@ -10,6 +10,9 @@ public class MotorCycle extends AbstractVehicle {
 
 	private Rider rider;
 
+	/**
+	 * Instantiates a new motor cycle.
+	 */
 	public MotorCycle() {
 		super(new PetrolEngine());
 	}

@@ -53,7 +53,7 @@ public class RulesEngine {
 				}
 			}
 		} catch (ParserConfigurationException | SAXException | IOException e) {
-			e.printStackTrace();
+			LOG.error("{}", e.toString());
 		}
 		return false;
 	}

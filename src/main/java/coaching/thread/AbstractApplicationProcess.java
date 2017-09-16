@@ -9,14 +9,17 @@
 
 package coaching.thread;
 
+import org.slf4j.*;
+
 /**
- * An Abstract Base Class for.
+ * An abstract base class for an Application.
  *
  * @author martin.spamer
  * @version 0.1 - 16:13:19
  */
 abstract public class AbstractApplicationProcess implements Runnable {
-	private final java.lang.Thread thread;
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+	private final Thread thread;
 	private long tick;
 	private boolean exit = false;
 
@@ -24,14 +27,14 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	 * Thread.
 	 */
 	public AbstractApplicationProcess() {
-		thread = new java.lang.Thread(this);
+		this.thread = new Thread(this);
 	}
 
 	/**
 	 * Thread running.
 	 */
 	public void start() {
-		thread.start();
+		this.thread.start();
 	}
 
 	/**
@@ -42,7 +45,7 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	public void run() {
 		try {
 			do {
-				tick++;
+				this.tick++;
 
 				// A Run method MUST have either a sleep or yield to prevent deadlock.
 
@@ -54,14 +57,14 @@ abstract public class AbstractApplicationProcess implements Runnable {
 
 				// * Thread ends if it runs for more than a minute.
 				// alternatively I could throw a new InterruptedException
-				if (tick >= 60) {
-					exit = true;
+				if (this.tick >= 60) {
+					this.exit = true;
 				}
 
-			} while (!exit);
+			} while (!this.exit);
 
 		} catch (final InterruptedException exception) {
-			exception.printStackTrace();
+			this.log.error("{}", exception.toString());
 		}
 	}
 
@@ -69,6 +72,6 @@ abstract public class AbstractApplicationProcess implements Runnable {
 	 * Thread running.
 	 */
 	public void stop() {
-		exit = true;
+		this.exit = true;
 	}
 }

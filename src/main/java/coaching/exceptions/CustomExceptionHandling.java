@@ -95,20 +95,20 @@ public class CustomExceptionHandling {
 		try {
 			subProcessA();
 		} catch (final CustomException exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 			throw new CustomException();
 		}
 
 		try {
 			subProcessB();
 		} catch (final CustomException exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 			throw new CustomException();
 		}
 		try {
 			subProcessC();
 		} catch (final CustomException exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 			throw new CustomException();
 		}
 	}

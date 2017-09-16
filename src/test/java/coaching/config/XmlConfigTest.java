@@ -3,11 +3,14 @@ package coaching.config;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
+import org.slf4j.*;
 
 /**
  * The XmlConfigTest Class.
  */
 public class XmlConfigTest {
+
+	private static final Logger LOG = LoggerFactory.getLogger(XmlConfigTest.class);
 
 	/**
 	 * Unit Test to xml config.
@@ -22,7 +25,7 @@ public class XmlConfigTest {
 	 */
 	@Test
 	public void testXmlConfigString() {
-		assertNotNull(new XmlConfig("filename.xml"));
+		assertNotNull(new XmlConfig("Configuration.xml"));
 	}
 
 }

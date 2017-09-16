@@ -1,18 +1,17 @@
 
 package coaching.config;
 
-import java.io.File;
+import java.io.*;
+import java.util.InvalidPropertiesFormatException;
 
 import javax.xml.parsers.*;
 
-import org.slf4j.*;
 import org.w3c.dom.*;
 
 /**
- * XmlConfiguration Class.
+ * Xml Configuration Class.
  */
-public class XmlConfig implements ConfigInterface {
-	private static final Logger LOG = LoggerFactory.getLogger(XmlConfig.class);
+public class XmlConfig extends AbstractConfig {
 	private DocumentBuilder documentBuilder = null;
 	private Document document = null;
 	private Element configElement = null;
@@ -42,15 +41,37 @@ public class XmlConfig implements ConfigInterface {
 	 */
 	public XmlConfig(final String configFilename) {
 		load(new File(configFilename));
+		loadFromXmlFile(inputStream(toXmlFilename(configFilename)));
 	}
 
 	/**
-	 * Instantiates a new XmlConfig from configuration element
+	 * Load from xml file resource as stream
 	 *
-	 * @param configElement the Configuration element
+	 * @param resourceAsStream the resource as stream
 	 */
-	public XmlConfig(final Element configElement) {
-		this.configElement = configElement;
+	public void loadFromXmlFile(final InputStream resourceAsStream) {
+		if (resourceAsStream != null) {
+			try {
+				this.properties.loadFromXML(resourceAsStream);
+			} catch (final InvalidPropertiesFormatException e) {
+				this.log.error(e.toString());
+			} catch (final IOException e) {
+				this.log.error(e.toString());
+			}
+		}
+	}
+
+	/**
+	 * To xml filename.
+	 *
+	 * configuration filename
+	 * string
+	 *
+	 * @param configFilename the Configuration filename
+	 * @return the string
+	 */
+	protected String toXmlFilename(final String configFilename) {
+		return String.format("%s.xml", configFilename);
 	}
 
 	/**
@@ -71,14 +92,14 @@ public class XmlConfig implements ConfigInterface {
 		try {
 			final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			try {
-				documentBuilder = documentBuilderFactory.newDocumentBuilder();
-				document = documentBuilder.parse(configFile);
-				configElement = document.getDocumentElement();
+				this.documentBuilder = documentBuilderFactory.newDocumentBuilder();
+				this.document = this.documentBuilder.parse(configFile);
+				this.configElement = this.document.getDocumentElement();
 			} catch (final ParserConfigurationException parserConfigurationException) {
-				LOG.error(parserConfigurationException.toString());
+				this.log.error(parserConfigurationException.toString());
 			}
 		} catch (final Exception exception) {
-			LOG.info("{}", exception.toString());
+			this.log.info("{}", exception.toString());
 		}
 	}
 
@@ -89,8 +110,8 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the element
 	 */
 	private Element firstElementByTagName(final String elementName) {
-		context = configElement.getElementsByTagName(elementName);
-		return (Element) context.item(index = 0);
+		this.context = this.configElement.getElementsByTagName(elementName);
+		return (Element) this.context.item(this.index = 0);
 	}
 
 	/**
@@ -100,7 +121,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the attribute
 	 */
 	protected String getAttribute(final String attributeName) {
-		return configElement.getAttribute(attributeName);
+		return this.configElement.getAttribute(attributeName);
 	}
 
 	/**
@@ -110,7 +131,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the elements by tag name
 	 */
 	protected NodeList getElementsByTagName(final String elementName) {
-		return configElement.getElementsByTagName(elementName);
+		return this.configElement.getElementsByTagName(elementName);
 	}
 
 	/*
@@ -140,7 +161,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the tag name
 	 */
 	protected String getTagName() {
-		return configElement.getTagName();
+		return this.configElement.getTagName();
 	}
 
 	/**
@@ -149,17 +170,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @return the element
 	 */
 	protected Element nextElementByTagName() {
-		return (Element) context.item(++index);
-	}
-
-	/**
-	 * Sub config.
-	 *
-	 * @param elementName the element name
-	 * @return the xml config
-	 */
-	public XmlConfig subConfig(final String elementName) {
-		return new XmlConfig(firstElementByTagName(elementName));
+		return (Element) this.context.item(++this.index);
 	}
 
 	/*
@@ -169,7 +180,7 @@ public class XmlConfig implements ConfigInterface {
 	 */
 	@Override
 	public String toString() {
-		return null != configElement ? toXml(configElement) : "null";
+		return null != this.configElement ? toXml(this.configElement) : "null";
 	}
 
 	/**
@@ -178,7 +189,7 @@ public class XmlConfig implements ConfigInterface {
 	 * @param node the node
 	 * @return the string
 	 */
-	private String toXml(final org.w3c.dom.Node node) {
+	private String toXml(final Node node) {
 		StringBuffer text = new StringBuffer();
 		if (node != null) {
 			final String value = node.getNodeValue();

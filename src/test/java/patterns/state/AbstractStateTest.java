@@ -1,13 +1,15 @@
 package patterns.state;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 public class AbstractStateTest {
 
 	@Test
 	public void testAbstractState() {
-		final StateA stateA = new StateA();
-		final StateZ stateZ = new StateZ();
+		assertNotNull(new StateA());
+		assertNotNull(new StateZ());
 	}
 
 }

@@ -43,11 +43,11 @@ class XmlDAO {
 		this.password = password;
 		try {
 			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
-			connection = DriverManager.getConnection(url, userId, password);
+			this.connection = DriverManager.getConnection(url, userId, password);
 		} catch (final ClassNotFoundException e) {
-			e.printStackTrace();
+			LOG.error("{}", e.toString());
 		} catch (final SQLException e) {
-			e.printStackTrace();
+			LOG.error("{}", e.toString());
 		}
 	}
 
@@ -70,7 +70,7 @@ class XmlDAO {
 			final Document document = dao.toXmlDocument();
 			LOG.info(((Node) document).toString());
 		} catch (final Exception e) {
-			e.printStackTrace();
+			LOG.error("{}", e.toString());
 		}
 	}
 
@@ -81,11 +81,11 @@ class XmlDAO {
 	 */
 	public void read(final String sql) {
 		try {
-			statement = connection.createStatement();
-			resultSet = statement.executeQuery(sql);
-			resultSetMetaData = resultSet.getMetaData();
+			this.statement = this.connection.createStatement();
+			this.resultSet = this.statement.executeQuery(sql);
+			this.resultSetMetaData = this.resultSet.getMetaData();
 		} catch (final Exception e) {
-			e.printStackTrace();
+			LOG.error("{}", e.toString());
 		}
 	}
 
@@ -98,15 +98,15 @@ class XmlDAO {
 		final StringBuffer xml = new StringBuffer();
 
 		try {
-			final int colCount = resultSetMetaData.getColumnCount();
+			final int colCount = this.resultSetMetaData.getColumnCount();
 			xml.append("<TABLE>\n");
 
-			while (resultSet.next()) {
+			while (this.resultSet.next()) {
 				xml.append("<ROW>\n");
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = resultSetMetaData.getColumnName(i);
-					final Object value = resultSet.getObject(i);
+					final String columnName = this.resultSetMetaData.getColumnName(i);
+					final Object value = this.resultSet.getObject(i);
 					xml.append("<" + columnName + ">");
 
 					if (value != null) {
@@ -119,7 +119,7 @@ class XmlDAO {
 
 			xml.append("</TABLE>\n");
 		} catch (final Exception e) {
-			e.printStackTrace();
+			LOG.error("{}", e.toString());
 		}
 
 		return xml.toString();
@@ -141,15 +141,15 @@ class XmlDAO {
 			final Element results = document.createElement("TABLE");
 			document.appendChild(results);
 
-			final int colCount = resultSetMetaData.getColumnCount();
+			final int colCount = this.resultSetMetaData.getColumnCount();
 
-			while (resultSet.next()) {
+			while (this.resultSet.next()) {
 				final Element row = document.createElement("ROW");
 				results.appendChild(row);
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = resultSetMetaData.getColumnName(i);
-					final Object value = resultSet.getObject(i);
+					final String columnName = this.resultSetMetaData.getColumnName(i);
+					final Object value = this.resultSet.getObject(i);
 
 					if (value != null) {
 						final Element node = document.createElement(columnName);
@@ -159,7 +159,7 @@ class XmlDAO {
 				}
 			}
 		} catch (final Exception e) {
-			e.printStackTrace();
+			LOG.error("{}", e.toString());
 		}
 
 		return document;
@@ -171,11 +171,11 @@ class XmlDAO {
 	@Override
 	public void finalize() {
 		try {
-			resultSet.close();
-			statement.close();
-			connection.close();
+			this.resultSet.close();
+			this.statement.close();
+			this.connection.close();
 		} catch (final SQLException e) {
-			e.printStackTrace();
+			LOG.error("{}", e.toString());
 		}
 	}
 }

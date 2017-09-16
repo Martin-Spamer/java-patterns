@@ -1,23 +1,31 @@
 
 package coaching.config;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.slf4j.*;
 
 /**
- * The AbstractConfigTest Class.
+ * Unit test for Abstract configuration class.
  */
 public class AbstractConfigTest {
 
-	/**
-	 * The Configuration Class.
-	 */
+	private static final Logger LOG = LoggerFactory.getLogger(AbstractConfigTest.class);
+
 	public class Configuration extends AbstractConfig {
+
+		public Configuration() {
+			super();
+		}
+
+		public Configuration(final String configFilename) {
+			super(configFilename);
+		}
 	}
 
 	/**
-	 * Unit Test to abstract config.
+	 * Unit Test to abstract configuration.
 	 */
 	@Test
 	public void testAbstractConfig() {
@@ -30,25 +38,7 @@ public class AbstractConfigTest {
 	 */
 	@Test
 	public void testAbstractConfigString() {
-		final Configuration configuration = new Configuration();
-		assertNotNull(configuration);
-	}
-
-	/**
-	 * Unit Test to load from property file.
-	 */
-	@Test
-	public void testLoadFromPropertyFile() {
-		final Configuration configuration = new Configuration();
-		assertNotNull(configuration);
-	}
-
-	/**
-	 * Unit Test to load from xml file.
-	 */
-	@Test
-	public void testLoadFromXmlFile() {
-		final Configuration configuration = new Configuration();
+		final Configuration configuration = new Configuration("Configuration");
 		assertNotNull(configuration);
 	}
 
@@ -59,6 +49,7 @@ public class AbstractConfigTest {
 	public void testGetPropertyString() {
 		final Configuration configuration = new Configuration();
 		assertNotNull(configuration);
+		fail("incomplete");
 	}
 
 	/**
@@ -68,24 +59,7 @@ public class AbstractConfigTest {
 	public void testGetPropertyStringString() {
 		final Configuration configuration = new Configuration();
 		assertNotNull(configuration);
-	}
-
-	/**
-	 * Unit Test to to property filename.
-	 */
-	@Test
-	public void testToPropertyFilename() {
-		final Configuration configuration = new Configuration();
-		assertNotNull(configuration);
-	}
-
-	/**
-	 * Unit Test to to xml filename.
-	 */
-	@Test
-	public void testToXmlFilename() {
-		final Configuration configuration = new Configuration();
-		assertNotNull(configuration);
+		fail("incomplete");
 	}
 
 	/**
@@ -95,6 +69,7 @@ public class AbstractConfigTest {
 	public void testToString() {
 		final Configuration configuration = new Configuration();
 		assertNotNull(configuration);
+		fail("incomplete");
 	}
 
 }

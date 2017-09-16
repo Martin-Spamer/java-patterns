@@ -13,7 +13,7 @@ public final class Visitor extends AbstractVisitor {
 	 */
 	@Override
 	public void visit(final ElementInterface element) {
-		new UnsupportedOperationException();
+		throw new UnsupportedOperationException();
 	}
 
 }

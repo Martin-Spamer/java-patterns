@@ -12,7 +12,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
 	 */
 	@Override
 	public void join() {
-		new UnsupportedOperationException();
+		throw new UnsupportedOperationException();
 	}
 
 	/*
@@ -22,7 +22,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
 	 */
 	@Override
 	public void commit() {
-		new UnsupportedOperationException();
+		throw new UnsupportedOperationException();
 	}
 
 	/*
@@ -32,7 +32,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
 	 */
 	@Override
 	public void cancel() {
-		new UnsupportedOperationException();
+		throw new UnsupportedOperationException();
 	}
 
 }

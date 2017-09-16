@@ -68,7 +68,7 @@ public class MainApp {
 			}
 
 		} catch (final Exception exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 		}
 
 		return false;
@@ -88,7 +88,7 @@ public class MainApp {
 			final MainApp mainApp = new MainApp();
 			mainApp.init();
 		} catch (final Exception exception) {
-			exception.printStackTrace();
+			LOG.error("{}", exception.toString());
 		}
 	}
 }

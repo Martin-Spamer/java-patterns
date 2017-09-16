@@ -13,14 +13,14 @@ public abstract class AbstractParticipant implements ParticipantInterfact {
 	 * Operation 1.
 	 */
 	public void operation1() {
-		new UnsupportedOperationException();
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * Operation 2.
 	 */
 	public void operation2() {
-		new UnsupportedOperationException();
+		throw new UnsupportedOperationException();
 	}
 
 }

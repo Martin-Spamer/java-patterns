@@ -3,8 +3,7 @@ package coaching;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Examples of a iteration (looping) programming instructions.
@@ -63,6 +62,7 @@ public class IterationTest {
 		LOG.info("while({})", loop);
 		while (loop) {
 			count++;
+			loop = false;
 		}
 
 		LOG.info("loop count = {} ", count);
