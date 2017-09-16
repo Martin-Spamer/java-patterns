@@ -1,8 +1,7 @@
-
 package patterns.transaction;
 
 /**
- * ParticipantInterfact Interface.
+ * Participant Interface.
  */
 public interface ParticipantInterfact {
 

@@ -1,15 +1,12 @@
-
 package patterns.visitor;
 
 /**
- * ElementInterface Interface.
+ * Element Interface.
  */
 public interface ElementInterface {
 
 	/**
-	 * Accept.
-	 *
-	 * visitor
+	 * Accept visitor
 	 *
 	 * @param visitor the visitor
 	 */

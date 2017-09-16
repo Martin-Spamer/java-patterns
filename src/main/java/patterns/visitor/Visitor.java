@@ -1,4 +1,3 @@
-
 package patterns.visitor;
 
 /**
@@ -13,7 +12,8 @@ public final class Visitor extends AbstractVisitor {
 	 * patterns.visitor.AbstractVisitor#visit(patterns.visitor.ElementInterface)
 	 */
 	@Override
-	public void visit(ElementInterface element) {
+	public void visit(final ElementInterface element) {
+		new UnsupportedOperationException();
 	}
 
 }

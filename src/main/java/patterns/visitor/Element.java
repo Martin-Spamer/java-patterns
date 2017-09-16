@@ -1,4 +1,3 @@
-
 package patterns.visitor;
 
 /**
@@ -13,7 +12,7 @@ public final class Element extends AbstractElement {
 	 * VisitorInterface)
 	 */
 	@Override
-	public void accept(VisitorInterface visitor) {
+	public void accept(final VisitorInterface visitor) {
 	}
 
 }

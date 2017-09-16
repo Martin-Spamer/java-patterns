@@ -1,18 +1,15 @@
-
 package patterns.visitor;
 
 /**
- * VisitorInterface Interface.
+ * Visitor Interface.
  */
 public interface VisitorInterface {
 
 	/**
-	 * Visit.
-	 *
-	 * element
+	 * Visit element
 	 *
 	 * @param element the element
 	 */
-	void visit(ElementInterface element);
+	public void visit(ElementInterface element);
 
 }

@@ -1,7 +1,7 @@
 package patterns.transaction;
 
 /**
- * ConcreteParticipant Class.
+ * Concrete Participant Class.
  */
 public final class ConcreteParticipant extends AbstractParticipant {
 
@@ -12,6 +12,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
 	 */
 	@Override
 	public void join() {
+		new UnsupportedOperationException();
 	}
 
 	/*
@@ -21,6 +22,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
 	 */
 	@Override
 	public void commit() {
+		new UnsupportedOperationException();
 	}
 
 	/*
@@ -30,6 +32,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
 	 */
 	@Override
 	public void cancel() {
+		new UnsupportedOperationException();
 	}
 
 }

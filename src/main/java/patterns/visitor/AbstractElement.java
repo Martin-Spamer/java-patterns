@@ -1,8 +1,7 @@
-
 package patterns.visitor;
 
 /**
- * AbstractElement Class.
+ * Abstract Element Class.
  */
 public abstract class AbstractElement implements ElementInterface {
 
