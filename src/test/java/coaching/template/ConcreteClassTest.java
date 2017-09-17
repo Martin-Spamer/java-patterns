@@ -1,17 +1,23 @@
 package coaching.template;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 public class ConcreteClassTest {
 
 	@Test
 	public void testPrimitiveOperationA() {
-		new ConcreteClass().primitiveOperationA();
+		final ConcreteTemplate concreteClass = new ConcreteTemplate();
+		assertNotNull(concreteClass);
+		assertNotNull(concreteClass.primitiveOperationAlice());
 	}
 
 	@Test
 	public void testPrimitiveOperationB() {
-		new ConcreteClass().primitiveOperationB();
+		final ConcreteTemplate concreteClass = new ConcreteTemplate();
+		assertNotNull(concreteClass);
+		assertNotNull(concreteClass.primitiveOperationBob());
 	}
 
 }

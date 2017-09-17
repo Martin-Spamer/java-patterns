@@ -1,6 +1,8 @@
 
 package patterns.flyweight;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 /**
@@ -14,7 +16,9 @@ public class FlyweightFactoryTest {
 	@Test
 	public void testCreate() {
 		final FlyweightFactory flyweightFactory = new FlyweightFactory();
-		final FlyWeight create = flyweightFactory.create();
+		assertNotNull(flyweightFactory);
+		final FlyWeight flyweight = flyweightFactory.create();
+		assertNotNull(flyweight);
 	}
 
 }

@@ -1,13 +1,16 @@
 package coaching.fileio;
 
+import static org.junit.Assert.assertNotNull;
+
+import java.util.*;
+
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 import coaching.fileio.Config.ConfigurationException;
 
 /**
- * Config Test Class.
+ * Configuration Test Class.
  */
 public class ConfigTest {
 
@@ -22,7 +25,8 @@ public class ConfigTest {
 	public void testConfig() throws ConfigurationException {
 		// load a properties file.
 		final Config config = new Config("example.properties");
-		config.setProperty("TIMESTAMP", java.util.Calendar.getInstance().toString());
+		assertNotNull(config);
+		config.setProperty("TIMESTAMP", Calendar.getInstance().toString());
 		LOG.info(config.toString());
 	}
 
@@ -34,9 +38,10 @@ public class ConfigTest {
 	@Test
 	public void testConfigFromProperties() throws ConfigurationException {
 		// System properties used for convenience
-		final java.util.Properties systemProperties = System.getProperties();
+		final Properties systemProperties = System.getProperties();
 		// load a properties file.
 		final Config config = new Config(systemProperties);
+		assertNotNull(config);
 		LOG.info(config.toString());
 	}
 
@@ -49,6 +54,7 @@ public class ConfigTest {
 	public void testConfigLoadByFileName() throws ConfigurationException {
 		// load a properties file.
 		final Config config = new Config();
+		assertNotNull(config);
 		config.loadPropertyFile("example.properties");
 		LOG.info(config.toString());
 	}
@@ -61,31 +67,32 @@ public class ConfigTest {
 	@Test
 	public void testConfigSaveProperties() throws Exception {
 		// System properties used for convenience
-		final java.util.Properties systemProperties = System.getProperties();
+		final Properties systemProperties = System.getProperties();
 		// load a properties file.
 		final Config config = new Config(systemProperties);
+		assertNotNull(config);
 		LOG.info(config.toString());
 		config.save("./target/example.properties");
 	}
 
 	/**
-	 * Unit Test to missing config.
+	 * Unit Test to missing configuration.
 	 *
 	 * @throws Exception the exception
 	 */
 	@Test(expected = ConfigurationException.class)
 	public void testMissingConfig() throws Exception {
-		new Config("missing");
+		assertNotNull(new Config("missing"));
 	}
 
 	/**
-	 * Unit Test to missing Configuration properties.
+	 * Unit Test to missing configuration properties.
 	 *
 	 * @throws Exception the exception
 	 */
 	@Test(expected = ConfigurationException.class)
 	public void testMissingConfigProperties() throws Exception {
-		new Config("missing.properties");
+		assertNotNull(new Config("missing.properties"));
 	}
 
 }

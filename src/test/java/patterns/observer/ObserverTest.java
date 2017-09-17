@@ -1,12 +1,12 @@
-
 package patterns.observer;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
- * The ObserverTest Class.
+ * Observer Test Class.
  */
 public class ObserverTest {
 
@@ -19,7 +19,10 @@ public class ObserverTest {
 	public void testUpdate() {
 		LOG.info("{}.testUpdate", this.getClass().getSimpleName());
 		final Subject subject = new Subject();
+		assertNotNull(subject);
 		final Observer observer = new Observer();
+		assertNotNull(observer);
+
 		subject.attachObserver(observer);
 		subject.setStatus(true);
 		subject.detachObserver(observer);

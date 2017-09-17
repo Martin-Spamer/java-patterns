@@ -1,10 +1,12 @@
 
 package coaching.types;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 /**
- * The NativeTypesTest Class.
+ * Class showing usage of native types.
  */
 public class NativeTypesTest {
 
@@ -14,6 +16,7 @@ public class NativeTypesTest {
 	@Test
 	public void testDisplay() {
 		final NativeTypes nativeTypes = new NativeTypes();
+		assertNotNull(nativeTypes);
 		nativeTypes.display();
 	}
 

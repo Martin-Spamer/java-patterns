@@ -1,9 +1,9 @@
 package coaching.template;
 
 /**
- * ConcreteClass Class.
+ * Concrete Class.
  */
-public final class ConcreteClass extends AbstractClass {
+public final class ConcreteTemplate extends AbstractTemplate {
 
 	/*
 	 * (non-Javadoc)
@@ -12,8 +12,9 @@ public final class ConcreteClass extends AbstractClass {
 	 * primitiveOperationA()
 	 */
 	@Override
-	public void primitiveOperationA() {
-		log.info("primitiveOperationA()");
+	public AbstractTemplate primitiveOperationAlice() {
+		this.log.info("primitiveOperationAlice()");
+		return this;
 	}
 
 	/*
@@ -23,8 +24,9 @@ public final class ConcreteClass extends AbstractClass {
 	 * primitiveOperationB()
 	 */
 	@Override
-	public void primitiveOperationB() {
-		log.info("primitiveOperationA()");
+	public AbstractTemplate primitiveOperationBob() {
+		this.log.info("primitiveOperationBob()");
+		return this;
 	}
 
 }

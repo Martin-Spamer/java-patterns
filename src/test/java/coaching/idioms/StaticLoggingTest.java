@@ -1,8 +1,9 @@
 package coaching.idioms;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * StaticLoggingTest Class.
@@ -16,7 +17,7 @@ public class StaticLoggingTest {
 	 */
 	@Test
 	public void testSendToLog() {
-		LOG.info("{}", LOG.getName());
+		assertNotNull(LOG);
 	}
 
 }

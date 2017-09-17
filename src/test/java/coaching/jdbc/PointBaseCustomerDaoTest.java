@@ -1,12 +1,14 @@
 package coaching.jdbc;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 public class PointBaseCustomerDaoTest {
 
 	@Test
 	public void testPointBaseCustomerDao() {
-		new PointBaseCustomerDao();
+		assertNotNull(new PointBaseCustomerDao());
 	}
 
 }

@@ -1,12 +1,15 @@
 package patterns.iterator;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 public class AggregateTest {
 
 	@Test
 	public void testCreateIterator() {
-		new Aggregate();
+		final Aggregate aggregate = new Aggregate();
+		assertNotNull(aggregate);
 	}
 
 }
