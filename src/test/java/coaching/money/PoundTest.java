@@ -10,79 +10,88 @@ import org.slf4j.*;
 /**
  * Money Test Class.
  */
-public class MoneyTest {
+public class PoundTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(PoundTest.class);
+
+	/**
+	 * Pounds Class.
+	 */
+	public final class Pounds extends Money {
+
+		public Pounds() {
+			super();
+		}
+
+		public Pounds(final Currency currency, final long amount) {
+			super(currency, amount);
+		}
+
+		public Pounds(final Currency currency) {
+			super(currency);
+		}
+
+		public Pounds(final long amount) {
+			super(amount);
+		}
+	}
 
 	/**
 	 * Unit Test to money.
 	 */
 	@Test
-	public void testMoney() {
-		LOG.info("testMoney");
+	public void testPounds() {
+		LOG.info("testPounds");
 
-		final Money money = new Money(10L);
-		assertNotNull(money);
-		LOG.info("new Money(10L) = {}", money.toString());
+		final Pounds pounds = new Pounds(10L);
+		assertNotNull(pounds);
+		LOG.info("new Money(10L) = {}", pounds.toString());
 
-		money.add(1L);
-		LOG.info("new Money(10L).add(1L) = {}", money.toString());
+		pounds.add(1L);
+		LOG.info("new Money(10L).add(1L) = {}", pounds.toString());
 
-		money.add(new Money(1L));
-		LOG.info("new Money(10L).add(1L) = {}", money.toString());
+		pounds.add(new Money(1L));
+		LOG.info("new Money(10L).add(1L) = {}", pounds.toString());
 
-		money.subtract(2L);
-		LOG.info("new Money(10L).add(1L).subtract(2L) = {}", money.toString());
+		pounds.subtract(2L);
+		LOG.info("new Money(10L).add(1L).subtract(2L) = {}", pounds.toString());
 
-		money.subtract(new Money(2L));
-		LOG.info("new Money(10L).add(1L).subtract(2L) = {}", money.toString());
+		pounds.subtract(new Money(2L));
+		LOG.info("new Money(10L).add(1L).subtract(2L) = {}", pounds.toString());
 
-		assertTrue(money.isMoreThan(7L));
-		assertTrue(money.isMoreThan(new Money(7L)));
-		LOG.info("{}", money.toString());
+		assertTrue(pounds.isMoreThan(7L));
+		assertTrue(pounds.isMoreThan(new Money(7L)));
+		LOG.info("{}", pounds.toString());
 
-		assertTrue(money.isEqualTo(8L));
-		assertTrue(money.isEqualTo(new Money(8L)));
-		LOG.info("{}", money.toString());
+		assertTrue(pounds.isEqualTo(8L));
+		assertTrue(pounds.isEqualTo(new Money(8L)));
+		LOG.info("{}", pounds.toString());
 
-		assertTrue(money.isLessThan(9L));
-		assertTrue(money.isLessThan(new Money(9L)));
-		LOG.info("{}", money.toString());
+		assertTrue(pounds.isLessThan(9L));
+		assertTrue(pounds.isLessThan(new Money(9L)));
+		LOG.info("{}", pounds.toString());
 	}
 
 	/**
 	 * Unit Test to money currency.
 	 */
 	@Test
-	public void testMoneyCurrency() {
-		LOG.info("testMoneyCurrency");
-		final MoneyInterface money = new Money();
-		assertNotNull(money);
-		assertTrue(money.isEqualTo(0));
-		final Currency currency = money.getCurrency();
-		assertNotNull(currency);
+	public void testPoundsCurrency() {
+		LOG.info("testPoundsCurrency");
+		final MoneyInterface pounds = new Pounds();
+		assertNotNull(pounds);
+		assertTrue(pounds.isEqualTo(0));
 	}
 
 	/**
 	 * Unit Test to money long.
 	 */
 	@Test
-	public void testMoneyLong() {
-		LOG.info("testMoneyLong");
-		final MoneyInterface money = new Money();
-		assertNotNull(money);
-		assertTrue(money.isEqualTo(0));
-	}
-
-	/**
-	 * Unit Test to money currency long.
-	 */
-	@Test
-	public void testMoneyCurrencyLong() {
-		LOG.info("testMoneyCurrencyLong");
-		final MoneyInterface money = new Money();
-		assertNotNull(money);
-		assertTrue(money.isEqualTo(0L));
+	public void testPoundsCurrencyLong() {
+		LOG.info("testPoundsCurrencyLong");
+		final MoneyInterface pounds = new Pounds(0L);
+		assertNotNull(pounds);
+		assertTrue(pounds.isEqualTo(0));
 	}
 
 	/**
@@ -117,10 +126,10 @@ public class MoneyTest {
 		LOG.info("testMaxPounds");
 		final Currency gbp = Currency.getInstance("GBP");
 		LOG.info("Currency = {}", gbp.getDisplayName());
-		final MoneyInterface money = new Money(gbp, Long.MAX_VALUE);
-		LOG.info("{}", money.toString());
-		assertNotNull(money);
-		final String actual = money.toString();
+		final MoneyInterface pounds = new Pounds(gbp, Long.MAX_VALUE);
+		LOG.info("{}", pounds.toString());
+		assertNotNull(pounds);
+		final String actual = pounds.toString();
 		assertEquals("£ 9,223,372,036,854,775,807", actual);
 	}
 

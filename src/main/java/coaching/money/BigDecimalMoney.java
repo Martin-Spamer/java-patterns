@@ -10,11 +10,14 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.*;
 
+import org.slf4j.*;
+
 /**
  * BigDecimalMoney Class.
  */
 public class BigDecimalMoney {
 
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private Currency currency = Currency.getInstance(Locale.getDefault());
 	private BigDecimal amount = new BigDecimal(0);
 
@@ -23,7 +26,7 @@ public class BigDecimalMoney {
 	 */
 	public BigDecimalMoney() {
 		setCurrency(Currency.getInstance(Locale.getDefault()));
-		amount = new BigDecimal(0);
+		this.amount = new BigDecimal(0);
 	}
 
 	/**
@@ -59,7 +62,7 @@ public class BigDecimalMoney {
 	 */
 	public BigDecimalMoney(final BigDecimal bigDecimal) {
 		setCurrency(Currency.getInstance(Locale.getDefault()));
-		amount = bigDecimal;
+		this.amount = bigDecimal;
 	}
 
 	/**
@@ -85,7 +88,7 @@ public class BigDecimalMoney {
 	 */
 	public BigDecimalMoney(final Currency currency) {
 		setCurrency(currency);
-		amount = new BigDecimal(0);
+		this.amount = new BigDecimal(0);
 	}
 
 	/**
@@ -179,7 +182,7 @@ public class BigDecimalMoney {
 	 * @return the big decimal
 	 */
 	private BigDecimal asBigDecimal() {
-		return amount;
+		return this.amount;
 	}
 
 	/**
@@ -232,7 +235,7 @@ public class BigDecimalMoney {
 	 * @return the currency
 	 */
 	public Currency getCurrency() {
-		return currency;
+		return this.currency;
 	}
 
 	/**
@@ -257,7 +260,7 @@ public class BigDecimalMoney {
 	@Override
 	public String toString() {
 		final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-		final String currencyString = numberFormat.format(amount);
+		final String currencyString = numberFormat.format(this.amount);
 		return String.format("%s", currencyString);
 	}
 

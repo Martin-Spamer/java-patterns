@@ -1,4 +1,3 @@
-
 package coaching.idioms;
 
 import static org.junit.Assert.assertNotNull;
@@ -20,6 +19,7 @@ public class DateHelperTest {
 	 */
 	@Test
 	public void testNow() {
+		LOG.info("testNow");
 		final Calendar now = DateHelper.now();
 		assertNotNull(now);
 		LOG.info("testNow = {}", now.toString());
@@ -30,6 +30,7 @@ public class DateHelperTest {
 	 */
 	@Test
 	public void testYesterday() {
+		LOG.info("testYesterday");
 		final Calendar yesterday = DateHelper.yesterday();
 		assertNotNull(yesterday);
 		LOG.info("testNow = {}", yesterday.toString());
@@ -42,6 +43,7 @@ public class DateHelperTest {
 	 */
 	@Test
 	public void testTomorrow() {
+		LOG.info("testTomorrow");
 		final Calendar tomorrow = DateHelper.tomorrow();
 		assertNotNull(tomorrow);
 		LOG.info("testNow = {}", tomorrow.toString());
