@@ -7,13 +7,6 @@ public final class Iterator extends AbstractIterator {
 
 	private final Aggregate aggregate = null;
 
-	/**
-	 * Instantiates a new iterator.
-	 */
-	public Iterator() {
-		super();
-	}
-
 	/*
 	 * (non-Javadoc)
 	 *

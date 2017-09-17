@@ -1,4 +1,3 @@
-
 package patterns.flyweight;
 
 import java.util.*;
@@ -11,14 +10,7 @@ public final class FlyweightFactory {
 	private List<FlyWeight> list = new ArrayList<FlyWeight>();
 
 	/**
-	 * Instantiates a new flyweight factory.
-	 */
-	public FlyweightFactory() {
-		super();
-	}
-
-	/**
-	 * Creates the.
+	 * Creates the flyweight object.
 	 *
 	 * @return the fly weight
 	 */
