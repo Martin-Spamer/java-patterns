@@ -1,16 +1,15 @@
-
 package patterns.mvc;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import patterns.mvc.controller.Controller;
+import patterns.mvc.controller.*;
 import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
 
 /**
- * The MvcTest Class.
+ * MvcTest Class.
  */
 public class MvcTest {
 
@@ -48,6 +47,7 @@ public class MvcTest {
 		final Controller controller = new Controller();
 		controller.attachModel(model);
 		controller.attachView(view);
-		controller.execute("ExampleCommand");
+		final AbstractController execute = controller.execute("ExampleCommand");
+		assertNotNull(execute);
 	}
 }
