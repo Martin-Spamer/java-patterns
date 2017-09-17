@@ -14,7 +14,6 @@ import org.xml.sax.SAXException;
 public class RulesEngine {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
-	private String filename = null;
 	private final Element documentElement = null;
 
 	/**
@@ -23,9 +22,9 @@ public class RulesEngine {
 	public RulesEngine() {
 		LOG.trace(System.getProperties().toString());
 		final String className = this.getClass().getSimpleName();
-		this.filename = String.format("%s.xml", className);
-		LOG.info("this.filename = {}", this.filename);
-		initialise(this.filename);
+		final String filename = String.format("%s.xml", className);
+		LOG.info("this.filename = {}", filename);
+		initialise(filename);
 	}
 
 	/**

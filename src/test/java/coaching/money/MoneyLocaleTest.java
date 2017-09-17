@@ -7,16 +7,14 @@ import java.math.BigDecimal;
 import java.util.Locale;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * MoneyTest Class.
  */
-public class MoneyTest2 {
+public class MoneyLocaleTest {
 
-	/** The Constant log. */
-	private static final Logger log = LoggerFactory.getLogger(MoneyTest2.class);
+	private static final Logger log = LoggerFactory.getLogger(MoneyLocaleTest.class);
 
 	/**
 	 * Test default locale.

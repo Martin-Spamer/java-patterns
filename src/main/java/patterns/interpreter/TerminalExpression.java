@@ -25,10 +25,7 @@ public class TerminalExpression extends AbstractExpression {
 	 */
 	@Override
 	public boolean interpret(final ContextInterface context) {
-		if (context.contains(data)) {
-			return true;
-		}
-		return false;
+		return context.contains(this.data);
 	}
 
 }

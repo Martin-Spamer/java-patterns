@@ -103,6 +103,9 @@ public class SelectionTest {
 			case "FALSE":
 				LOG.info("false case");
 				break;
+			default:
+				LOG.info("default");
+				break;
 		}
 		assertTrue(selection.equals("TRUE"));
 	}

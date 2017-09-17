@@ -1,14 +1,11 @@
 package coaching.money;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.Currency;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * The MoneyTest Class.
@@ -18,7 +15,7 @@ public class MoneyTest {
 	private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
 
 	/**
-	 * The Pounds Class.
+	 * Pounds Class.
 	 */
 	public class Pounds extends Money {
 	}
