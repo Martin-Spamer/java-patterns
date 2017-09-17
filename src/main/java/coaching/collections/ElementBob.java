@@ -12,5 +12,5 @@ package coaching.collections;
 /**
  * ElementTwo Class.
  */
-public class ElementTwo extends AbstractElement {
+public final class ElementBob extends AbstractElement {
 }

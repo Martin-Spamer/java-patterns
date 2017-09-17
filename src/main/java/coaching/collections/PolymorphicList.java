@@ -5,12 +5,24 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.*;
 
+import org.slf4j.*;
+
 /**
  * PolymorphicList Class.
  */
 public class PolymorphicList {
 
+	private static final Logger LOG = LoggerFactory.getLogger(PolymorphicList.class);
+
 	private final List<Integer> integerList = new LinkedList<Integer>();
+
+	/**
+	 * Instantiates a new polymorphic list.
+	 */
+	public PolymorphicList() {
+		super();
+		LOG.info("PolymorphicList");
+	}
 
 	/**
 	 * Integer object.
@@ -18,7 +30,7 @@ public class PolymorphicList {
 	 * @param integerIn the integer in
 	 */
 	public void add(final Integer integerIn) {
-		integerList.add(integerIn);
+		this.integerList.add(integerIn);
 	}
 
 	/**
@@ -27,12 +39,15 @@ public class PolymorphicList {
 	 * @return the integer
 	 */
 	public Integer next() {
-		return integerList.iterator().next();
+		return this.integerList.iterator().next();
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return String.format("PolymorphicList [integerList=%s]", integerList);
+		return String.format("PolymorphicList [integerList=%s]", this.integerList);
 	}
 
 	/**
@@ -51,4 +66,5 @@ public class PolymorphicList {
 		// myIntList.add( new Double(0) ) ;
 		// myIntList.add( new Object(0) ) ;
 	}
+
 }

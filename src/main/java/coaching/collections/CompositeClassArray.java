@@ -11,6 +11,8 @@ package coaching.collections;
 
 import java.util.Arrays;
 
+import org.slf4j.*;
+
 /**
  * Using a basic Java array to implement a Composite.
  * The Lifetime of parts is constraint bound by lifetime of parent.
@@ -19,8 +21,18 @@ import java.util.Arrays;
  **/
 public class CompositeClassArray {
 
+	private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
+
 	// Implementing Composite using a Class Array
-	private AbstractElement[] composite = { new ElementOne(), new ElementTwo(), new ElementThree(), new ElementFour() };
+	private AbstractElement[] composite = { new ElementAlice(), new ElementBob(), new ElementCharlie(),
+	        new ElementDan() };
+
+	/**
+	 * Instantiates a new composite class array.
+	 */
+	public CompositeClassArray() {
+		LOG.info("PolymorphicList");
+	}
 
 	/**
 	 * Instantiates a new composite class array.
@@ -32,9 +44,12 @@ public class CompositeClassArray {
 		this.composite = composite;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(composite));
+		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
 	}
 
 }

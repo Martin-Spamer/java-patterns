@@ -12,7 +12,7 @@ package coaching.collections;
 import org.slf4j.*;
 
 /**
- * BasicElement Class.
+ * AbstractElement Class.
  */
 public abstract class AbstractElement {
 
@@ -22,16 +22,19 @@ public abstract class AbstractElement {
 	 * Constructor instantiates a new basic element.
 	 */
 	public AbstractElement() {
-		log.info("{} default constructor", this.getClass().getName());
+		this.log.info("{} default constructor", this.getClass().getName());
 	}
 
 	/**
 	 * execute.
 	 */
 	public void execute() {
-		log.info("{}.execute", this.getClass().getName());
+		this.log.info("{}.execute", this.getClass().getName());
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return String.format("%s", this.getClass().getSimpleName());

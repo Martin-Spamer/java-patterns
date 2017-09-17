@@ -10,10 +10,7 @@
 package coaching.collections;
 
 /**
- * ElementFour Class.
- *
- * @author martin.spamer
- * @version 0.1 - 11:08:06
+ * ElementOne Class.
  */
-public class ElementFour extends AbstractElement {
+public final class ElementAlice extends AbstractElement {
 }
