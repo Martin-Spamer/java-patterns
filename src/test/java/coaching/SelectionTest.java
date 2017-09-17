@@ -107,7 +107,7 @@ public class SelectionTest {
 				LOG.info("default");
 				break;
 		}
-		assertTrue(selection.equals("TRUE"));
+		assertEquals("TRUE", selection);
 	}
 
 	/**
@@ -133,6 +133,9 @@ public class SelectionTest {
 				break;
 			case ITERATION:
 				LOG.info("ITERATION");
+				break;
+			default:
+				LOG.info("default");
 				break;
 		}
 		assertEquals(STATEMENT.SELECTION, statement);

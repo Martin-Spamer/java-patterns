@@ -1,9 +1,8 @@
 
 package coaching.money;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
-import java.math.BigDecimal;
 import java.util.Locale;
 
 import org.junit.Test;
@@ -22,8 +21,9 @@ public class MoneyLocaleTest {
 	@Test
 	public void testDefaultLocale() {
 		// Get default locale
-		final Locale locale = Locale.getDefault();
-		log.info("{}", locale.getDisplayName());
+		final Locale defaultLocale = Locale.getDefault();
+		assertNotNull(defaultLocale);
+		log.info("{}", defaultLocale.getDisplayName());
 	}
 
 	/**
@@ -32,9 +32,10 @@ public class MoneyLocaleTest {
 	@Test
 	public void testFrenchLocale() {
 		// * default locale to pre-defined FRENCH locale.
-		final Locale newLocale = Locale.FRENCH;
-		log.info("{}", newLocale);
-		log.info("{}", newLocale.getDisplayName());
+		final Locale frenchLocale = Locale.FRENCH;
+		assertNotNull(frenchLocale);
+		log.info("frenchLocale = {}", frenchLocale);
+		log.info("frenchLocale = {}", frenchLocale.getDisplayName());
 	}
 
 	/**
@@ -43,8 +44,10 @@ public class MoneyLocaleTest {
 	@Test
 	public void testUkLocale() {
 		// * default locale to pre-defined UK locale.
-		final Locale newLocale = Locale.UK;
-		log.info("{}", newLocale.getDisplayName());
+		final Locale ukLocale = Locale.UK;
+		assertNotNull(ukLocale);
+		log.info("ukLocale = {}", ukLocale);
+		log.info("ukLocale = {}", ukLocale.getDisplayName());
 	}
 
 	/**
@@ -60,7 +63,7 @@ public class MoneyLocaleTest {
 		assertEquals("£0.00", money0.toString());
 		log.info("{}", money0);
 
-		final BigDecimalMoney money1 = new BigDecimalMoney(new BigDecimal(1.00));
+		final BigDecimalMoney money1 = new BigDecimalMoney("1.00");
 		assertEquals("£1.00", money1.toString());
 		log.info("{}", money1);
 

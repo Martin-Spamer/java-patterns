@@ -1,12 +1,9 @@
 
 package automation;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 
 import org.junit.Test;
 
@@ -16,7 +13,7 @@ import org.junit.Test;
 public class AbstractDataTest {
 
 	/**
-	 * The TestData Class.
+	 * TestData Class.
 	 */
 	public class TestData extends AbstractData {
 	}
@@ -46,7 +43,9 @@ public class AbstractDataTest {
 	 */
 	@Test
 	public void testLoadNull() throws Exception {
-		new TestData().load(null);
+		final TestData testData = new TestData();
+		assertNotNull(testData);
+		assertNotNull(testData.load(null));
 	}
 
 	/**
@@ -58,7 +57,7 @@ public class AbstractDataTest {
 	public void testLoadString() throws Exception {
 		final Class<? extends AbstractDataTest> thisClass = this.getClass();
 		final InputStream inStream = thisClass.getResourceAsStream("./Data.csv");
-		new TestData().load(inStream);
+		assertNotNull(new TestData().load(inStream));
 	}
 
 	/**
@@ -70,7 +69,7 @@ public class AbstractDataTest {
 	public void testLoadFromXML() throws Exception {
 		final Class<? extends AbstractDataTest> thisClass = this.getClass();
 		final InputStream inStream = thisClass.getResourceAsStream("./Data.csv");
-		new TestData().loadFromXML(inStream);
+		assertNotNull(new TestData().loadFromXML(inStream));
 	}
 
 	/**
@@ -81,7 +80,7 @@ public class AbstractDataTest {
 	@Test
 	public void testStoreOutputStream() throws Exception {
 		final OutputStream out = new FileOutputStream("./target/testOut.properties");
-		new TestData().store(out);
+		assertNotNull(new TestData().store(out));
 	}
 
 	/**
@@ -92,7 +91,7 @@ public class AbstractDataTest {
 	@Test
 	public void testStoreOutputStreamString() throws Exception {
 		final OutputStream out = new FileOutputStream("./target/testOut.properties");
-		new TestData().store(out, "");
+		assertNotNull(new TestData().store(out, ""));
 	}
 
 	/**
@@ -100,7 +99,7 @@ public class AbstractDataTest {
 	 */
 	@Test
 	public void testSize() {
-		new TestData().size();
+		assertEquals(0, new TestData().size());
 	}
 
 	/**

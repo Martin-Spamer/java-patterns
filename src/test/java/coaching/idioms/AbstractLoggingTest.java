@@ -1,9 +1,10 @@
 
 package coaching.idioms;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * AbstractLoggingTest Class.
@@ -23,7 +24,9 @@ public class AbstractLoggingTest {
 	 */
 	@Test
 	public void testSendToLog() {
-		new MockLog().toLog();
+		final MockLog mockLog = new MockLog();
+		assertNotNull(mockLog);
+		mockLog.toLog();
 	}
 
 	/**
@@ -31,7 +34,9 @@ public class AbstractLoggingTest {
 	 */
 	@Test
 	public void testSendLogTo() {
-		new MockLog().logTo(LOG);
+		final MockLog mockLog = new MockLog();
+		assertNotNull(mockLog);
+		mockLog.logTo(LOG);
 	}
 
 }

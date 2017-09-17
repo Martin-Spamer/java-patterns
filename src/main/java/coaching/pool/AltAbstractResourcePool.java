@@ -8,6 +8,8 @@ package coaching.pool;
 
 import java.util.*;
 
+import org.slf4j.*;
+
 /**
  * AbstractResourcePool Class.
  *
@@ -16,7 +18,7 @@ import java.util.*;
  * @param <T> the generic type
  */
 public abstract class AltAbstractResourcePool<T> {
-
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected int maxPoolSize = Integer.MAX_VALUE;
 	protected int defaultPoolSize = Integer.MAX_VALUE;
 	protected int minPoolSize = Integer.MIN_VALUE;
@@ -53,11 +55,13 @@ public abstract class AltAbstractResourcePool<T> {
 				// make a new object
 				try {
 					resource = create();
-				} catch (final ResourceCreationException resourceCreationException) {
-					throw new ResourceBorrowException(resourceCreationException);
+				} catch (final ResourceCreationException exception) {
+					this.log.error("{}", exception.toString());
+					throw new ResourceBorrowException(exception);
 				}
 			} else {
 				// TODO: throw resource constraint exception ?
+				this.log.info("Used({}) < maxPoolSize({})", this.usedPool.size(), this.maxPoolSize);
 			}
 		} else {
 			// * first valid resource
@@ -72,9 +76,6 @@ public abstract class AltAbstractResourcePool<T> {
 	/**
 	 * Creates the.
 	 *
-	 * t
-	 * resource creation exception
-	 *
 	 * @return the t
 	 * @throws ResourceCreationException the resource creation exception
 	 */
@@ -82,8 +83,6 @@ public abstract class AltAbstractResourcePool<T> {
 
 	/**
 	 * Discard.
-	 *
-	 * resource
 	 *
 	 * @param resource the resource
 	 */
@@ -98,8 +97,6 @@ public abstract class AltAbstractResourcePool<T> {
 	/**
 	 * Grow.
 	 *
-	 * growth rate
-	 *
 	 * @param growthRate the growth rate
 	 */
 	public synchronized void grow(final int growthRate) {
@@ -108,9 +105,6 @@ public abstract class AltAbstractResourcePool<T> {
 
 	/**
 	 * Release.
-	 *
-	 * resource
-	 * resource release exception
 	 *
 	 * @param resource the resource
 	 * @throws ResourceReleaseException the resource release exception
@@ -125,8 +119,6 @@ public abstract class AltAbstractResourcePool<T> {
 
 	/**
 	 * Shrink.
-	 *
-	 * shrink rate
 	 *
 	 * @param shrinkRate the shrink rate
 	 */

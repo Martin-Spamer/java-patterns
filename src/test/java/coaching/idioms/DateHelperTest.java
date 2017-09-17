@@ -1,14 +1,19 @@
 
 package coaching.idioms;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.Calendar;
 
 import org.junit.Test;
+import org.slf4j.*;
 
 /**
  * DateHelperTest Class.
  */
 public class DateHelperTest {
+
+	private static final Logger LOG = LoggerFactory.getLogger(DateHelperTest.class);
 
 	/**
 	 * Unit Test to now.
@@ -16,6 +21,8 @@ public class DateHelperTest {
 	@Test
 	public void testNow() {
 		final Calendar now = DateHelper.now();
+		assertNotNull(now);
+		LOG.info("testNow = {}", now.toString());
 	}
 
 	/**
@@ -23,9 +30,11 @@ public class DateHelperTest {
 	 */
 	@Test
 	public void testYesterday() {
+		final Calendar yesterday = DateHelper.yesterday();
+		assertNotNull(yesterday);
+		LOG.info("testNow = {}", yesterday.toString());
 		final Calendar now = Calendar.getInstance();
 		now.add(Calendar.DAY_OF_YEAR, -1);
-		final Calendar yesterday = DateHelper.yesterday();
 	}
 
 	/**
@@ -33,9 +42,11 @@ public class DateHelperTest {
 	 */
 	@Test
 	public void testTomorrow() {
+		final Calendar tomorrow = DateHelper.tomorrow();
+		assertNotNull(tomorrow);
+		LOG.info("testNow = {}", tomorrow.toString());
 		final Calendar now = Calendar.getInstance();
 		now.add(Calendar.DAY_OF_YEAR, +1);
-		final Calendar tomorrow = DateHelper.tomorrow();
 	}
 
 }
