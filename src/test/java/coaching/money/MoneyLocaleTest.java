@@ -1,4 +1,3 @@
-
 package coaching.money;
 
 import static org.junit.Assert.*;
@@ -9,21 +8,22 @@ import org.junit.Test;
 import org.slf4j.*;
 
 /**
- * MoneyTest Class.
+ * Money Locale Test Class.
  */
 public class MoneyLocaleTest {
 
-	private static final Logger log = LoggerFactory.getLogger(MoneyLocaleTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(MoneyLocaleTest.class);
 
 	/**
 	 * Test default locale.
 	 */
 	@Test
 	public void testDefaultLocale() {
+		LOG.info("testDefaultLocale");
 		// Get default locale
 		final Locale defaultLocale = Locale.getDefault();
 		assertNotNull(defaultLocale);
-		log.info("{}", defaultLocale.getDisplayName());
+		LOG.info("{}", defaultLocale.getDisplayName());
 	}
 
 	/**
@@ -31,11 +31,12 @@ public class MoneyLocaleTest {
 	 */
 	@Test
 	public void testFrenchLocale() {
+		LOG.info("testFrenchLocale");
 		// * default locale to pre-defined FRENCH locale.
 		final Locale frenchLocale = Locale.FRENCH;
 		assertNotNull(frenchLocale);
-		log.info("frenchLocale = {}", frenchLocale);
-		log.info("frenchLocale = {}", frenchLocale.getDisplayName());
+		LOG.info("frenchLocale = {}", frenchLocale);
+		LOG.info("frenchLocale = {}", frenchLocale.getDisplayName());
 	}
 
 	/**
@@ -43,11 +44,12 @@ public class MoneyLocaleTest {
 	 */
 	@Test
 	public void testUkLocale() {
+		LOG.info("testUkLocale");
 		// * default locale to pre-defined UK locale.
 		final Locale ukLocale = Locale.UK;
 		assertNotNull(ukLocale);
-		log.info("ukLocale = {}", ukLocale);
-		log.info("ukLocale = {}", ukLocale.getDisplayName());
+		LOG.info("ukLocale = {}", ukLocale);
+		LOG.info("ukLocale = {}", ukLocale.getDisplayName());
 	}
 
 	/**
@@ -55,25 +57,26 @@ public class MoneyLocaleTest {
 	 */
 	@Test
 	public void testMoney() {
+		LOG.info("testMoney");
 		final BigDecimalMoney instance = new BigDecimalMoney();
 		assertEquals("£0.00", instance.toString());
-		log.info("{}", instance);
+		LOG.info("{}", instance);
 
 		final BigDecimalMoney money0 = new BigDecimalMoney();
 		assertEquals("£0.00", money0.toString());
-		log.info("{}", money0);
+		LOG.info("{}", money0);
 
 		final BigDecimalMoney money1 = new BigDecimalMoney("1.00");
 		assertEquals("£1.00", money1.toString());
-		log.info("{}", money1);
+		LOG.info("{}", money1);
 
 		final BigDecimalMoney moneyStr99 = new BigDecimalMoney("99.99");
 		assertEquals("£99.99", moneyStr99.toString());
-		log.info("{}", moneyStr99);
+		LOG.info("{}", moneyStr99);
 
 		final BigDecimalMoney moneyStr100 = new BigDecimalMoney("100.00");
 		assertEquals("£100.00", moneyStr100.toString());
-		log.info("{}", moneyStr100);
+		LOG.info("{}", moneyStr100);
 	}
 
 	/**
@@ -81,39 +84,39 @@ public class MoneyLocaleTest {
 	 */
 	@Test
 	public void testAddition() {
+		LOG.info("testAddition");
 		final BigDecimalMoney total = new BigDecimalMoney(0);
-		log.info("{}", "total=" + total.toString());
+		LOG.info("{}", "total=" + total.toString());
 
 		final BigDecimalMoney number1 = new BigDecimalMoney(1);
-		log.info("{}", "number1 = " + number1.toString());
+		LOG.info("{}", "number1 = " + number1.toString());
 		total.add(number1);
-		log.info("{}", "total + number1 = " + total.toString());
+		LOG.info("{}", "total + number1 = " + total.toString());
 
 		final BigDecimalMoney number2 = new BigDecimalMoney("2");
-		log.info("{}", "number2 = " + number2.toString());
+		LOG.info("{}", "number2 = " + number2.toString());
 		total.add(number2);
-		log.info("{}", "total+number2=" + total.toString());
+		LOG.info("{}", "total+number2=" + total.toString());
 
 		final BigDecimalMoney number3 = new BigDecimalMoney(3);
-		log.info("{}", "number3 = " + number3.toString());
+		LOG.info("{}", "number3 = " + number3.toString());
 		total.add(number3);
-		log.info("{}", "total+number3 = " + total.toString());
+		LOG.info("{}", "total+number3 = " + total.toString());
 
 		final BigDecimalMoney number4 = new BigDecimalMoney("4.0");
-		log.info("{}", "number4 = " + number4.toString());
+		LOG.info("{}", "number4 = " + number4.toString());
 		total.add(number4);
-		log.info("{}", "total+number4 = " + total.toString());
+		LOG.info("{}", "total+number4 = " + total.toString());
 
 		BigDecimalMoney balance = new BigDecimalMoney("1234567.89");
 		BigDecimalMoney transaction = new BigDecimalMoney("9876543.21");
 		BigDecimalMoney newBalance = balance.add(transaction);
-		log.info(newBalance.toString());
+		LOG.info(newBalance.toString());
 
 		balance = new BigDecimalMoney("1115.37");
 		transaction = new BigDecimalMoney("115.37");
 		newBalance = balance.subtract(transaction);
-		log.info(newBalance.toString());
-
+		LOG.info(newBalance.toString());
 	}
 
 }

@@ -1,12 +1,12 @@
-
 package coaching.delegation;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
- * ManagerTest.
+ * Manager Test.
  */
 public class ManagerTest {
 
@@ -17,10 +17,15 @@ public class ManagerTest {
 	 */
 	@Test
 	public void testDelegation() {
+		LOG.info("testDelegation");
 		final Manager manager = new Manager();
+		assertNotNull(manager);
+
 		final Worker worker = new Worker();
-		manager.setWorker(worker);
-		manager.doProcess();
+		assertNotNull(manager);
+
+		assertNotNull(manager.setWorker(worker));
+		assertNotNull(manager.doProcess());
 	}
 
 }

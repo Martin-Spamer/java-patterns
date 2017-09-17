@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.slf4j.*;
 
 /**
- * The MoneyTest Class.
+ * Money Test Class.
  */
 public class MoneyTest {
 
@@ -25,6 +25,8 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMoney() {
+		LOG.info("testMoney");
+
 		final Money money = new Money(10L);
 		assertNotNull(money);
 		LOG.info("new Money(10L) = {}", money.toString());
@@ -59,6 +61,7 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMoneyCurrency() {
+		LOG.info("testMoneyCurrency");
 		final Money money = new Money();
 		assertNotNull(money);
 		assertTrue(money.isEqualTo(0));
@@ -69,6 +72,7 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMoneyLong() {
+		LOG.info("testMoneyLong");
 		final Money money = new Money();
 		assertNotNull(money);
 		assertTrue(money.isEqualTo(0));
@@ -79,6 +83,7 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMoneyCurrencyLong() {
+		LOG.info("testMoneyCurrencyLong");
 		final Money money = new Money();
 		assertNotNull(money);
 		assertTrue(money.isEqualTo(0L));
@@ -89,6 +94,7 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMinValue() {
+		LOG.info("testMinValue");
 		final Money money = new Money(Long.MIN_VALUE);
 		assertNotNull(money);
 		LOG.info("{}", money.toString());
@@ -100,6 +106,7 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMaxValue() {
+		LOG.info("testMaxValue");
 		final Money money = new Money(Long.MAX_VALUE);
 		assertNotNull(money);
 		LOG.info("{}", money.toString());
@@ -111,6 +118,7 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMaxPounds() {
+		LOG.info("testMaxPounds");
 		final Currency gbp = Currency.getInstance("GBP");
 		LOG.info("Currency = {}", gbp.getDisplayName());
 		final Money money = new Money(gbp, Long.MAX_VALUE);
@@ -125,6 +133,7 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMaxEuro() {
+		LOG.info("testMaxEuro");
 		final Currency eur = Currency.getInstance("EUR");
 		LOG.info("Currency = {}", eur.getDisplayName());
 		final Money money = new Money(eur, Long.MAX_VALUE);
@@ -139,6 +148,7 @@ public class MoneyTest {
 	 */
 	@Test
 	public void testMaxDollar() {
+		LOG.info("testMaxDollar");
 		final Currency usd = Currency.getInstance("USD");
 		LOG.info("Currency = {}", usd.getDisplayName());
 		final Money money = new Money(usd, Long.MAX_VALUE);
