@@ -4,14 +4,11 @@ package coaching.pool;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.slf4j.*;
 
 /**
  * ConcurrentPoolTest Class.
  */
 public class ConcurrentPoolTest {
-
-	private static final Logger LOG = LoggerFactory.getLogger(ConcurrentPoolTest.class);
 
 	/**
 	 * TestResourcePool Class.

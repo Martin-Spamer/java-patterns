@@ -1,4 +1,3 @@
-
 package patterns.hopp;
 
 import org.slf4j.*;
@@ -16,7 +15,6 @@ class RemoteObjectProxy implements HoppInterface {
 	 */
 	public void remoteMethodProxy() {
 		LOG.info("%s.remoteMethodProxy()", this.getClass().getSimpleName());
-
 	}
 
 	/*

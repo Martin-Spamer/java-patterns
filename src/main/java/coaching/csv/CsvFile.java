@@ -99,8 +99,9 @@ public class CsvFile {
 						setHeaderLine(line);
 					} else {
 						final CsvRecord record = new CsvRecord(line);
-						final String recordString = record.toString();
 						this.records.add(record);
+						final String recordString = record.toString();
+						log.info("recordString={}", recordString);
 					}
 				}
 				line = bufferedReader.readLine();

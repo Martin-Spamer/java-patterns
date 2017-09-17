@@ -4,14 +4,11 @@ package coaching.idioms;
 import java.text.*;
 import java.util.*;
 
-import org.slf4j.*;
-
 /**
  * Helper Class.
  */
 public class DateHelper {
 
-	private static final Logger LOG = LoggerFactory.getLogger(DateHelper.class);
 	private static final String ISO_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
 	/**

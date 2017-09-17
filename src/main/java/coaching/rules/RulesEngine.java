@@ -15,7 +15,7 @@ public class RulesEngine {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
 	private Document document = null;
-	private final Element documentElement = null;
+	private Element documentElement = null;
 
 	/**
 	 * Instantiates a new rules engine.
@@ -43,6 +43,7 @@ public class RulesEngine {
 					final InputStream is = inputStream(configFilename);
 					if (null != is) {
 						this.document = documentBuilder.parse(is);
+						this.documentElement = this.document.getDocumentElement();
 						return true;
 					}
 				}

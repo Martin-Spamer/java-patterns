@@ -1,17 +1,13 @@
 package patterns.facade;
 
-import org.slf4j.*;
-
 /**
  * Concrete Facade Class.
  */
 public final class ConcreteFacade implements FacadeInterface {
 
-	private static final Logger LOG = LoggerFactory.getLogger(ConcreteFacade.class);
 	private SubSystemOne subSystemOne = null;
 	private SubSystemTwo subSystemTwo = null;
 	private SubSystemThree subSystemThree = null;
-	private ConcreteFacade concreteFacade = null;
 
 	/**
 	 * Instantiates a new concrete facade.

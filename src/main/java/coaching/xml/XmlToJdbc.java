@@ -13,7 +13,6 @@ import org.w3c.dom.*;
  */
 class XmlToJdbc {
 	private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbc.class);
-	private final File inputFile = null;
 	private final BufferedReader bufferedReader = null;
 	private String url = null;
 	private String username = null;

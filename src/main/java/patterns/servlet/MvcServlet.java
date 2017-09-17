@@ -19,7 +19,6 @@ public class MvcServlet extends HttpServlet {
 	private static final Logger LOG = LoggerFactory.getLogger(MvcServlet.class);
 	private ManagerInterface actionManager;
 	private ManagerInterface viewManager;
-	private ManagerInterface browserManager;
 	private boolean servletInitialised;
 
 	/*
@@ -42,7 +41,7 @@ public class MvcServlet extends HttpServlet {
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException {
 		try {
 			processRequest(request, response);
-		} catch (final IOException e) {
+		} catch (final Exception e) {
 			LOG.error(e.toString());
 			throw new ServletException(e);
 		}
@@ -56,10 +55,10 @@ public class MvcServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
-	        throws ServletException, java.io.IOException {
+	        throws ServletException {
 		try {
 			processRequest(request, response);
-		} catch (final IOException e) {
+		} catch (final Exception e) {
 			LOG.error(e.toString());
 			throw new ServletException(e);
 		}
@@ -68,17 +67,13 @@ public class MvcServlet extends HttpServlet {
 	/**
 	 * Process request.
 	 *
-	 * request
-	 * response
-	 * servlet exception
-	 *
 	 * @param request the request
 	 * @param response the response
 	 * @throws ServletException the servlet exception
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
-	        throws ServletException, java.io.IOException {
+	        throws ServletException {
 
 		if (this.servletInitialised) {
 			final String requestName = request.getPathInfo();
