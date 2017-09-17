@@ -9,6 +9,6 @@ public interface TypeInterface {
 	 *
 	 * @return the abstract type
 	 */
-	TypeInterface operation();
+	public TypeInterface operation();
 
 }

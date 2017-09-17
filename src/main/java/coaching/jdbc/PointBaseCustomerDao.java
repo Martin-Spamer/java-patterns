@@ -123,7 +123,7 @@ public class PointBaseCustomerDao {
 	public void finalize() {
 		try {
 			this.connection.close();
-		} catch (final java.sql.SQLException exception) {
+		} catch (final SQLException exception) {
 			LOG.error("{}", exception.toString());
 		}
 	}

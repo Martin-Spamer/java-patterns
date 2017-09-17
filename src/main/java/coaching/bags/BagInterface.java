@@ -9,12 +9,10 @@ public interface BagInterface {
 	/**
 	 * bag with String values.
 	 *
-	 * values
-	 *
 	 * @param values the values
 	 * @return this bag for a fluent interface
 	 */
-	BagInterface fill(String... values);
+	public BagInterface fill(String... values);
 
 	/**
 	 * bag.
@@ -23,7 +21,7 @@ public interface BagInterface {
 	 *
 	 * @return the string
 	 */
-	String pick();
+	public String pick();
 
 	/**
 	 * bag.
@@ -32,13 +30,13 @@ public interface BagInterface {
 	 *
 	 * @return the string
 	 */
-	String choose();
+	public String choose();
 
 	/**
 	 * back to its initial state.
 	 *
 	 * @return this bag for a fluent interface
 	 */
-	BagInterface reset();
+	public BagInterface reset();
 
 }

@@ -20,43 +20,35 @@ public interface TupleInterface<L, R> {
 	 * @param left the new
 	 * 			left
 	 */
-	void setLeft(L left);
+	public void setLeft(L left);
 
 	/**
 	 * right.
-	 *
-	 * new right
 	 *
 	 * @param right the new
 	 * 			right
 	 */
-	void setRight(R right);
+	public void setRight(R right);
 
 	/**
 	 * left.
 	 *
-	 * left
-	 *
 	 * @return the left
 	 */
-	L getLeft();
+	public L getLeft();
 
 	/**
 	 * right.
 	 *
-	 * right
-	 *
 	 * @return the right
 	 */
-	R getRight();
+	public R getRight();
 
 	/**
 	 * Return a shallow copy of this.
 	 *
-	 * tuple
-	 *
 	 * @return the tuple interface
 	 */
-	TupleInterface<L, R> copy();
+	public TupleInterface<L, R> copy();
 
 }

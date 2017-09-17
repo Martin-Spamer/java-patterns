@@ -1,5 +1,4 @@
 
-
 package coaching.associations;
 
 /**
@@ -15,7 +14,7 @@ public interface JourneyInterface {
 	 * @param destination the new
 	 * 			destination
 	 */
-	abstract void setDestination(String destination);
+	public abstract void setDestination(String destination);
 
 	/**
 	 * destination.
@@ -24,6 +23,6 @@ public interface JourneyInterface {
 	 *
 	 * @return the destination
 	 */
-	abstract String getDestination();
+	public abstract String getDestination();
 
 }

@@ -12,13 +12,6 @@ public abstract class AbstractCommand implements CommandInterface {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ResultInterface result = null;
 
-	/**
-	 * Execute.
-	 *
-	 * result interface
-	 *
-	 * @return the result interface
-	 */
 	/*
 	 * (non-Javadoc)
 	 *
@@ -26,9 +19,9 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * ParametersInterface)
 	 */
 	public ResultInterface execute() {
-		log.debug("{}.execute", this.getClass().getSimpleName());
-		result = new Result(Result.PASS);
-		return result;
+		this.log.debug("{}.execute", this.getClass().getSimpleName());
+		this.result = new Result(Result.PASS);
+		return this.result;
 	}
 
 	/*
@@ -38,11 +31,11 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * ParametersInterface)
 	 */
 	@Override
-	public ResultInterface execute(ParametersInterface commandParameters) {
-		log.debug("{}.execute", this.getClass().getSimpleName());
+	public ResultInterface execute(final ParametersInterface commandParameters) {
+		this.log.debug("{}.execute", this.getClass().getSimpleName());
 		commandParameters.setPrameter("result", "pass");
-		result = new Result(Result.PASS);
-		return result;
+		this.result = new Result(Result.PASS);
+		return this.result;
 	}
 
 	/**
@@ -59,9 +52,9 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * ParametersInterface)
 	 */
 	public ResultInterface undo() {
-		log.debug("{}.undo", this.getClass().getSimpleName());
-		result = new Result(Result.FAIL);
-		return result;
+		this.log.debug("{}.undo", this.getClass().getSimpleName());
+		this.result = new Result(Result.FAIL);
+		return this.result;
 	}
 
 	/*
@@ -71,11 +64,11 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * ParametersInterface)
 	 */
 	@Override
-	public ResultInterface undo(ParametersInterface commandParameters) {
-		log.debug("{}.undo", this.getClass().getSimpleName());
+	public ResultInterface undo(final ParametersInterface commandParameters) {
+		this.log.debug("{}.undo", this.getClass().getSimpleName());
 		commandParameters.setPrameter("result", "pass");
-		result = new Result(Result.FAIL);
-		return result;
+		this.result = new Result(Result.FAIL);
+		return this.result;
 	}
 
 	/*
@@ -85,7 +78,7 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public Boolean result() {
-		return result.result();
+		return this.result.result();
 	}
 
 }

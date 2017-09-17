@@ -11,21 +11,9 @@ public interface PersonInterface {
 	/**
 	 * name.
 	 *
-	 * new name
-	 *
 	 * @param name the new
 	 * 			name
 	 */
-	void setName(String name);
-
-	/**
-	 * To string.
-	 *
-	 * string
-	 *
-	 * @return the string
-	 */
-	@Override
-	String toString();
+	public void setName(String name);
 
 }

@@ -11,6 +11,6 @@ public interface ProcessInterface {
 	 *
 	 * @return the process interface
 	 */
-	ProcessInterface doProcess();
+	public ProcessInterface doProcess();
 
 }

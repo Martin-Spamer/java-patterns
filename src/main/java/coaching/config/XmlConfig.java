@@ -14,7 +14,6 @@ import org.w3c.dom.*;
 public class XmlConfig extends AbstractConfig {
 
 	private Element configElement = null;
-	private final NodeList context = null;
 
 	/**
 	 * Instantiates a new XmlConfig.
@@ -127,6 +126,7 @@ public class XmlConfig extends AbstractConfig {
 		final NodeList propertyElements = this.configElement.getElementsByTagName("property");
 		for (int i = 0; i < propertyElements.getLength(); i++) {
 			final Node item = propertyElements.item(i);
+			this.log.info("item={}", item.toString());
 		}
 		return null;
 	}
@@ -139,7 +139,8 @@ public class XmlConfig extends AbstractConfig {
 	 */
 	@Override
 	public String getProperty(final String key, final String defaultValue) {
-		return null;
+		final String property = getProperty(key);
+		return property == null ? defaultValue : property;
 	}
 
 	/**

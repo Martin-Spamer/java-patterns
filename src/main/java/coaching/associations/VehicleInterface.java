@@ -12,29 +12,23 @@ public interface VehicleInterface {
 	/**
 	 * driver.
 	 *
-	 * new driver
-	 *
 	 * @param driver the new
 	 * 			driver
 	 */
-	void setDriver(Driver driver);
+	public void setDriver(Driver driver);
 
 	/**
 	 * driver.
 	 *
-	 * driver
-	 *
 	 * @return the driver
 	 */
-	Driver getDriver();
+	public Driver getDriver();
 
 	/**
-	 * Travel.
-	 *
-	 * destination
+	 * Travel destination
 	 *
 	 * @param destination the destination
 	 */
-	void travel(String destination);
+	public void travel(String destination);
 
 }

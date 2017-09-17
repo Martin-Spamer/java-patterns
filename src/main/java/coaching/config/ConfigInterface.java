@@ -20,7 +20,7 @@ public interface ConfigInterface {
 	 * @param key the key
 	 * @return the property
 	 */
-	String getProperty(String key);
+	public String getProperty(String key);
 
 	/**
 	 * property, with default if not found.
@@ -29,6 +29,6 @@ public interface ConfigInterface {
 	 * @param defaultValue the default value
 	 * @return the property
 	 */
-	String getProperty(String key, String defaultValue);
+	public String getProperty(String key, String defaultValue);
 
 }
