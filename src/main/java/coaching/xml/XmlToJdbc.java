@@ -43,6 +43,7 @@ class XmlToJdbc {
 	 * @throws Exception the exception
 	 */
 	public void process() throws Exception {
+		LOG.info("process");
 		process(this.filename, this.driver, this.url, this.username, this.password, this.table);
 	}
 
@@ -69,7 +70,7 @@ class XmlToJdbc {
 			this.connection = DriverManager.getConnection(url, user, password);
 			this.statement = this.connection.createStatement();
 
-			final java.io.File configFile = new File(filename);
+			final File configFile = new File(filename);
 			final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			final DocumentBuilder builder = builderFactory.newDocumentBuilder();
 			final Document mainAppConfig = builder.parse(configFile);

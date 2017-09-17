@@ -6,6 +6,4 @@ package patterns.iterator;
  */
 public final class Aggregate extends AbstractAggregate {
 
-	private AbstractItem item;
-
 }

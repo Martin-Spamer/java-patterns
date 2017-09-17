@@ -29,7 +29,7 @@ public class BasicClassArray {
 	 * Constructor.
 	 */
 	public BasicClassArray() {
-		LOG.info("PolymorphicList");
+		LOG.info("BasicClassArray");
 
 		this.composite[0] = new ElementAlice();
 		this.composite[1] = new ElementBob();

@@ -43,7 +43,7 @@ public class FrontController extends HttpServlet {
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException {
 		try {
 			processRequest(request, response);
-		} catch (final IOException e) {
+		} catch (final Exception e) {
 			LOG.error(e.toString());
 			throw new ServletException(e);
 		}
@@ -57,10 +57,10 @@ public class FrontController extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
-	        throws ServletException, java.io.IOException {
+	        throws ServletException {
 		try {
 			processRequest(request, response);
-		} catch (final IOException e) {
+		} catch (final Exception e) {
 			LOG.error(e.toString());
 			throw new ServletException(e);
 		}
@@ -69,17 +69,13 @@ public class FrontController extends HttpServlet {
 	/**
 	 * Process request.
 	 *
-	 * request
-	 * response
-	 * servlet exception
-	 *
 	 * @param request the request
 	 * @param response the response
 	 * @throws ServletException the servlet exception
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
-	        throws ServletException, java.io.IOException {
+	        throws ServletException {
 
 		final String queryString = request.getQueryString();
 		final String[] split = queryString.split("/");
@@ -100,11 +96,6 @@ public class FrontController extends HttpServlet {
 
 	/**
 	 * Dispatch.
-	 *
-	 * request
-	 * response
-	 * page
-	 * servlet exception
 	 *
 	 * @param request the request
 	 * @param response the response

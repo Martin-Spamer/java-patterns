@@ -1,14 +1,12 @@
-
 package patterns.proxy;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
- * The ProxySubjectTest Class.
+ * Proxy Subject Test Class.
  */
 public class ProxySubjectTest {
 
@@ -23,5 +21,4 @@ public class ProxySubjectTest {
 		assertNotNull(proxySubject);
 		proxySubject.request();
 	}
-
 }

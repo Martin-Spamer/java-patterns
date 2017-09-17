@@ -1,33 +1,40 @@
-
 package patterns.iterator;
+
+import org.slf4j.*;
 
 /**
  * AbstractIterator Class.
  */
-public abstract class AbstractIterator {
+public abstract class AbstractIterator implements IteratorInterface {
+
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
 	 * First.
 	 *
 	 * @return the abstract item
 	 */
-	abstract public AbstractItem first();
+	@Override
+	public abstract ItemInterface first();
 
 	/**
 	 * Next.
 	 *
 	 * @return the abstract item
 	 */
-	abstract public AbstractItem next();
+	@Override
+	public abstract ItemInterface next();
 
 	/**
 	 * Checks if is done.
 	 */
-	abstract public boolean isDone();
+	@Override
+	public abstract boolean isDone();
 
 	/**
 	 * Current item.
 	 */
-	abstract public AbstractItem currentItem();
+	@Override
+	public abstract ItemInterface currentItem();
 
 }

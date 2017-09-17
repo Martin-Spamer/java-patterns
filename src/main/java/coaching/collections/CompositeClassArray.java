@@ -31,7 +31,8 @@ public class CompositeClassArray {
 	 * Instantiates a new composite class array.
 	 */
 	public CompositeClassArray() {
-		LOG.info("PolymorphicList");
+		super();
+		LOG.info("CompositeClassArray");
 	}
 
 	/**
@@ -42,6 +43,7 @@ public class CompositeClassArray {
 	public CompositeClassArray(final AbstractElement[] composite) {
 		super();
 		this.composite = composite;
+		LOG.info("CompositeClassArray");
 	}
 
 	/* (non-Javadoc)

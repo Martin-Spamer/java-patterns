@@ -1,3 +1,4 @@
+
 package patterns.interpreter;
 
 /**
@@ -5,7 +6,21 @@ package patterns.interpreter;
  */
 public class NonTerminalExpression extends AbstractExpression {
 
-	public AbstractExpression abstractExpression;
+	/**
+	 * Instantiates a new non terminal expression.
+	 */
+	public NonTerminalExpression() {
+		super();
+	}
+
+	/**
+	 * Instantiates a new non terminal expression.
+	 *
+	 * @param result the result
+	 */
+	public NonTerminalExpression(final boolean result) {
+		super(result);
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -15,7 +30,7 @@ public class NonTerminalExpression extends AbstractExpression {
 	 */
 	@Override
 	public boolean interpret(final ContextInterface context) {
-		return false;
+		return super.interpret(context);
 	}
 
 }

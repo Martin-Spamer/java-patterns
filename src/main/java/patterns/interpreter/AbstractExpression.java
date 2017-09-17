@@ -1,13 +1,29 @@
-package patterns.interpreter;
 
-import java.util.Vector;
+package patterns.interpreter;
 
 /**
  * An abstract Expression Class.
  */
 public abstract class AbstractExpression {
 
-	public Vector<?> abstractExpression;
+	private boolean result;
+
+	/**
+	 * Instantiates a new abstract expression.
+	 */
+	public AbstractExpression() {
+		super();
+	}
+
+	/**
+	 * Instantiates a new abstract expression.
+	 *
+	 * @param result the result
+	 */
+	public AbstractExpression(final boolean result) {
+		super();
+		this.result = result;
+	}
 
 	/**
 	 * Interpret.
@@ -16,7 +32,7 @@ public abstract class AbstractExpression {
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean interpret(final ContextInterface context) {
-		return false;
+		return this.result;
 	}
 
 }

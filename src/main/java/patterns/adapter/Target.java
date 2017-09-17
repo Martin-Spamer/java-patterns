@@ -1,4 +1,3 @@
-
 package patterns.adapter;
 
 import org.slf4j.*;
@@ -17,7 +16,7 @@ public class Target implements TargetInterface {
 	 */
 	@Override
 	public Result request() {
-		log.info("request");
+		this.log.info("request");
 		return new Result();
 	}
 

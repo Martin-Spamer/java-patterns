@@ -33,6 +33,7 @@ public abstract class AbstractCommand implements CommandInterface {
 	@Override
 	public ResultInterface execute(final ParametersInterface commandParameters) {
 		this.log.debug("{}.execute", this.getClass().getSimpleName());
+		this.log.debug("context={}", context);
 		commandParameters.setPrameter("result", "pass");
 		this.result = new Result(Result.PASS);
 		return this.result;

@@ -29,7 +29,7 @@ public class AggregateClassArray {
 	 * Instantiates a new aggregate class array.
 	 */
 	public AggregateClassArray() {
-		LOG.info("PolymorphicList");
+		LOG.info("AggregateClassArray");
 	}
 
 	/**

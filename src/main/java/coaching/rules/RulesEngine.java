@@ -14,6 +14,7 @@ import org.xml.sax.SAXException;
 public class RulesEngine {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
+	private Document document = null;
 	private final Element documentElement = null;
 
 	/**
@@ -28,25 +29,20 @@ public class RulesEngine {
 	}
 
 	/**
-	 * Initialise.
-	 *
-	 * configuration filename
+	 * Initialise with configuration filename
 	 *
 	 * @param configFilename the configuration filename
 	 * @return true, if successful
 	 */
 	public boolean initialise(final String configFilename) {
 		try {
-			DocumentBuilderFactory documentBuilderFactory = null;
-			DocumentBuilder documentBuilder = null;
-			Document document = null;
-			documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			if (documentBuilderFactory != null) {
-				documentBuilder = documentBuilderFactory.newDocumentBuilder();
+				final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 				if (documentBuilder != null) {
 					final InputStream is = inputStream(configFilename);
 					if (null != is) {
-						document = documentBuilder.parse(is);
+						this.document = documentBuilder.parse(is);
 						return true;
 					}
 				}

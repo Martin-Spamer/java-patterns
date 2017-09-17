@@ -28,7 +28,7 @@ public abstract class AbstractRule implements CommandInterface {
 	 * @see javamentor.rules.CommandInterface#execute(javamentor.rules.Parameters)
 	 */
 	@Override
-	public void execute(final Parameters parameters) {
+	public void execute(final AbstractParameters parameters) {
 		final String className = this.getClass().getSimpleName();
 		final String message = String.format("%s.execute(%s) must be declared", className, parameters);
 		throw new UnsupportedOperationException(message);

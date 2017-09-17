@@ -20,6 +20,9 @@ public class PointBaseCustomerDao {
 	private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDao.class);
 	private Connection connection = null;
 
+	/**
+	 * Instantiates a new point base customer dao.
+	 */
 	public PointBaseCustomerDao() {
 		this("", "", "");
 	}
@@ -77,7 +80,7 @@ public class PointBaseCustomerDao {
 	 */
 	public void write() {
 		try {
-			final java.sql.Statement statement = this.connection.createStatement();
+			final Statement statement = this.connection.createStatement();
 
 			final String sql = "INSERT INTO CUSTOMER_TBL (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
 			final int result = statement.executeUpdate(sql);

@@ -1,7 +1,7 @@
 package patterns.interpreter;
 
 /**
- * Or Expression Class.
+ * Disjunction / OR Expression Class.
  */
 public class Disjunction extends NonTerminalExpression {
 
@@ -15,6 +15,7 @@ public class Disjunction extends NonTerminalExpression {
 	 * @param rhs sub-expression on right hand side.
 	 */
 	public Disjunction(final AbstractExpression lhs, final AbstractExpression rhs) {
+		super();
 		this.lhs = lhs;
 		this.rhs = rhs;
 	}
@@ -24,7 +25,7 @@ public class Disjunction extends NonTerminalExpression {
 	 */
 	@Override
 	public boolean interpret(final ContextInterface context) {
-		return lhs.interpret(context) || rhs.interpret(context);
+		return this.lhs.interpret(context) || this.rhs.interpret(context);
 	}
 
 }

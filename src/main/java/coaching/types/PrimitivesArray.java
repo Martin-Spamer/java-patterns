@@ -20,6 +20,9 @@ public class PrimitivesArray {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
+	/**
+	 * Display.
+	 */
 	public void display() {
 		final int ARRAY_SIZE = 10;
 
@@ -38,7 +41,7 @@ public class PrimitivesArray {
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
 			values[i] = i * 100;
-			log.info(i + "=" + values[i]);
+			this.log.info(i + "=" + values[i]);
 		}
 
 		// declare a reference to an matric of longs
@@ -49,14 +52,19 @@ public class PrimitivesArray {
 		 */
 		matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
 
+		final StringBuffer stringBuffer = new StringBuffer();
 		for (int x = 0; x < ARRAY_SIZE; x++) {
 			for (int y = 0; y < ARRAY_SIZE; y++) {
 				// * matrix
 				matrix[x][y] = x * y;
-				System.out.print(matrix[x][y] + ",");
+
+				stringBuffer.append(matrix[x][y]);
+				stringBuffer.append(",");
 			}
-			System.out.print("\n");
+			stringBuffer.append("\n");
 		}
+
+		this.log.info("{}", stringBuffer.toString());
 
 		/**
 		 * array with static data
@@ -64,9 +72,10 @@ public class PrimitivesArray {
 		final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
 		for (int firstIndex = 0; firstIndex < 3; firstIndex++) {
 			for (int secondIndex = 0; secondIndex < 3; secondIndex++) {
-				System.out.print(vector[firstIndex][secondIndex]);
+				stringBuffer.append(",");
 			}
-			System.out.print("\n");
+			stringBuffer.append("\n");
 		}
+		this.log.info("{}", stringBuffer.toString());
 	}
 }

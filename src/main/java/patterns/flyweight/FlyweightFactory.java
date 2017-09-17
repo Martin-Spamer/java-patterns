@@ -1,14 +1,21 @@
 
 package patterns.flyweight;
 
-import java.util.Vector;
+import java.util.*;
 
 /**
  * A factory for creating FlyWeight objects.
  */
 public final class FlyweightFactory {
 
-	private Vector<FlyWeight> flyWeight;
+	private List<FlyWeight> list = new ArrayList<FlyWeight>();
+
+	/**
+	 * Instantiates a new flyweight factory.
+	 */
+	public FlyweightFactory() {
+		super();
+	}
 
 	/**
 	 * Creates the.
@@ -16,7 +23,9 @@ public final class FlyweightFactory {
 	 * @return the fly weight
 	 */
 	public FlyWeight create() {
-		return new FlyWeight("CommonState");
+		final FlyWeight flyWeight = new FlyWeight("CommonState");
+		this.list.add(flyWeight);
+		return flyWeight;
 	}
 
 }
