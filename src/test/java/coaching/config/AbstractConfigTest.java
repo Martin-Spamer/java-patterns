@@ -1,7 +1,6 @@
-
 package coaching.config;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 import org.slf4j.*;
@@ -49,19 +48,10 @@ public class AbstractConfigTest {
 	 */
 	@Test
 	public void testGetPropertyString() {
-		final Configuration configuration = new Configuration();
+		final Configuration configuration = new Configuration("Configuration");
 		assertNotNull(configuration);
-		fail("incomplete");
-	}
-
-	/**
-	 * Unit Test to get property string string.
-	 */
-	@Test
-	public void testGetPropertyStringString() {
-		final Configuration configuration = new Configuration();
-		assertNotNull(configuration);
-		fail("incomplete");
+		final String value = configuration.getProperty("key");
+		assertNotNull(value);
 	}
 
 	/**
@@ -71,7 +61,8 @@ public class AbstractConfigTest {
 	public void testToString() {
 		final Configuration configuration = new Configuration();
 		assertNotNull(configuration);
-		fail("incomplete");
+		final String string = configuration.toString();
+		assertNotNull(string);
 	}
 
 }

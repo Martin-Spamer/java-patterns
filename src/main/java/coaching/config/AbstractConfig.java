@@ -25,8 +25,6 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Instantiates a new abstract configuration.
 	 *
-	 * configuration filename
-	 *
 	 * @param configFilename the Configuration filename
 	 */
 	AbstractConfig(final String configFilename) {

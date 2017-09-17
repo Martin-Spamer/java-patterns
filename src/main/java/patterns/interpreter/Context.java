@@ -1,10 +1,13 @@
 package patterns.interpreter;
 
+import org.slf4j.*;
+
 /**
  * Represent the current context Class.
  */
 public class Context implements ContextInterface {
 
+	private static final Logger LOG = LoggerFactory.getLogger(Context.class);
 	private Object state;
 
 	/**
@@ -12,7 +15,7 @@ public class Context implements ContextInterface {
 	 */
 	public Context() {
 		super();
-		setState(new String());
+		setState("");
 	}
 
 	/**
@@ -43,7 +46,7 @@ public class Context implements ContextInterface {
 	 * @return the state
 	 */
 	public Object getState() {
-		return state;
+		return this.state;
 	}
 
 	/* (non-Javadoc)

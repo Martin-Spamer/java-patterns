@@ -1,4 +1,3 @@
-
 package coaching.collections;
 
 import static org.junit.Assert.assertNotNull;
@@ -28,9 +27,12 @@ public class PolymorphicList {
 	 * Integer object.
 	 *
 	 * @param integerIn the integer in
+	 * @return
 	 */
-	public void add(final Integer integerIn) {
+	public PolymorphicList add(final Integer integerIn) {
+		LOG.info("add({}", integerIn);
 		this.integerList.add(integerIn);
+		return this;
 	}
 
 	/**

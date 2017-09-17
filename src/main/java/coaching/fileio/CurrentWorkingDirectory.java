@@ -14,7 +14,6 @@ import org.slf4j.*;
  */
 public class CurrentWorkingDirectory {
 
-	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
@@ -27,9 +26,6 @@ public class CurrentWorkingDirectory {
 	/**
 	 * Mark.
 	 *
-	 * that
-	 * string
-	 *
 	 * @param that the that
 	 * @return the string
 	 */
@@ -37,17 +33,17 @@ public class CurrentWorkingDirectory {
 		String absolutePath = null;
 		try {
 			final String className = that.getClass().getSimpleName();
-			final String fileName = String.format("%s.CurrentWorkingDirectory", className);
+			final String fileName = String.format("./target/%s.CurrentWorkingDirectory", className);
 			final File file = new File(fileName);
 			try {
 				file.createNewFile();
 				absolutePath = file.getAbsolutePath();
-				log.info("{}", absolutePath);
+				this.log.info("{}", absolutePath);
 			} catch (final Exception exception) {
-				log.debug(exception.toString());
+				this.log.debug(exception.toString());
 			}
 		} catch (final Exception exception) {
-			log.error(exception.toString());
+			this.log.error(exception.toString());
 		}
 		return absolutePath;
 	}
