@@ -75,12 +75,12 @@ public class MvcServlet extends HttpServlet {
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException {
 
-		if (servletInitialised) {
+		if (this.servletInitialised) {
 			final String requestName = request.getPathInfo();
-
+			LOG.info("requestName={}", requestName);
 			final Result result = new Result();
-			actionManager.handleRequest(request, response, result);
-			viewManager.handleRequest(request, response, result);
+			this.actionManager.handleRequest(request, response, result);
+			this.viewManager.handleRequest(request, response, result);
 		}
 	}
 

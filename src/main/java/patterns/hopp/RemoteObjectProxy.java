@@ -15,6 +15,7 @@ class RemoteObjectProxy implements HoppInterface {
 	 */
 	public void remoteMethodProxy() {
 		LOG.info("%s.remoteMethodProxy()", this.getClass().getSimpleName());
+		this.remoteObject.operation();
 	}
 
 	/*
@@ -25,6 +26,7 @@ class RemoteObjectProxy implements HoppInterface {
 	@Override
 	public void remoteMethod() {
 		LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
+		this.remoteObject.remoteMethod();
 	}
 
 	/*
@@ -35,6 +37,7 @@ class RemoteObjectProxy implements HoppInterface {
 	@Override
 	public void localMethod() {
 		LOG.info("%s.localMethod()", this.getClass().getSimpleName());
+		this.remoteObject.localMethod();
 	}
 
 	/*
@@ -45,6 +48,7 @@ class RemoteObjectProxy implements HoppInterface {
 	@Override
 	public void operation() {
 		LOG.info("%s.operation()", this.getClass().getSimpleName());
+		this.remoteObject.operation();
 	}
 
 }

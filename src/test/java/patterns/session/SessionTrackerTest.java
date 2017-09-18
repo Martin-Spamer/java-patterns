@@ -5,7 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 /**
- * class SessionTrackerTest.
+ * Session Tracker Test class.
  */
 public class SessionTrackerTest {
 

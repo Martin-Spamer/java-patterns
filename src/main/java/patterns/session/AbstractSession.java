@@ -3,7 +3,7 @@ package patterns.session;
 import java.util.UUID;
 
 /**
- * class AbstractSession.
+ * Abstract Session class.
  */
 public class AbstractSession {
 
@@ -16,7 +16,7 @@ public class AbstractSession {
 	 */
 	public AbstractSession() {
 		super();
-		randomUUID = UUID.randomUUID();
+		this.randomUUID = UUID.randomUUID();
 	}
 
 	/**
@@ -26,7 +26,8 @@ public class AbstractSession {
 	 */
 	public AbstractSession(final long id) {
 		super();
-		randomUUID = UUID.randomUUID();
+		this.randomUUID = UUID.randomUUID();
+		setId(id);
 	}
 
 	/**
@@ -46,7 +47,7 @@ public class AbstractSession {
 	 * @return the id
 	 */
 	public long getId() {
-		return id;
+		return this.id;
 	}
 
 	/* (non-Javadoc)
@@ -54,7 +55,7 @@ public class AbstractSession {
 	 */
 	@Override
 	public String toString() {
-		return String.format("AbstractSession [randomUUID=%s, id=%s, value=%s]", randomUUID, id, value);
+		return String.format("AbstractSession [randomUUID=%s, id=%s, value=%s]", this.randomUUID, this.id, this.value);
 	}
 
 }

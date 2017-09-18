@@ -17,7 +17,8 @@ public class RulesEngineTest {
 	@Test
 	public void testRulesEngine() {
 		LOG.info("testRulesEngine();");
-		assertNotNull(new RulesEngine());
+		final RulesEngine rulesEngine = new RulesEngine();
+		assertNotNull(rulesEngine);
 	}
 
 	/**
@@ -26,7 +27,8 @@ public class RulesEngineTest {
 	@Test
 	public void testExecute() {
 		LOG.info("new RulesEngine().execute();");
-		assertNotNull(new RulesEngine().execute());
+		final RulesEngine rulesEngine = new RulesEngine();
+		assertNotNull(rulesEngine.execute());
 	}
 
 }

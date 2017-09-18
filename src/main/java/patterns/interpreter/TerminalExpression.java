@@ -11,8 +11,17 @@ public class TerminalExpression extends AbstractExpression {
 	 *
 	 * @param result the result
 	 */
-	public TerminalExpression(final boolean result) {
+	public TerminalExpression() {
 		super(true);
+	}
+
+	/**
+	 * Instantiates a new terminal expression.
+	 *
+	 * @param result the result
+	 */
+	public TerminalExpression(final boolean result) {
+		super(result);
 	}
 
 	/*
