@@ -9,7 +9,7 @@ public interface InputChannelInterface {
 	/**
 	 * Receive message.
 	 *
-	 * @param message the message
+	 * @return the message
 	 */
 	public Message receiveMessage();
 

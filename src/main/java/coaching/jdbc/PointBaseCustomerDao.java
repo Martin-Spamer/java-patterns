@@ -11,7 +11,7 @@ import java.sql.*;
 import org.slf4j.*;
 
 /**
- * Point Base Customer Dao Class.
+ * Data Access object for Point Base sample customer table.
  *
  * @author martin.spamer
  */
@@ -100,7 +100,7 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * database SQL>
+	 * database SQL
 	 * <code>
 	 * UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999
 	 * </code>
