@@ -7,7 +7,7 @@ import java.util.*;
  */
 public final class FlyweightFactory {
 
-	private List<FlyWeight> list = new ArrayList<FlyWeight>();
+	private final List<FlyWeight> list = new ArrayList<FlyWeight>();
 
 	/**
 	 * Creates the flyweight object.
@@ -16,7 +16,7 @@ public final class FlyweightFactory {
 	 */
 	public FlyWeight create() {
 		final FlyWeight flyWeight = new FlyWeight("CommonState");
-		this.list.add(flyWeight);
+		list.add(flyWeight);
 		return flyWeight;
 	}
 

@@ -10,7 +10,7 @@ import org.slf4j.*;
  */
 public class Director {
 	private static final Logger LOG = LoggerFactory.getLogger(Director.class);
-	private Vector<AbstractBuilder> builders = new Vector<AbstractBuilder>();
+	private final Vector<AbstractBuilder> builders = new Vector<AbstractBuilder>();
 
 	/**
 	 * Adds part builder.
@@ -24,6 +24,8 @@ public class Director {
 
 	/**
 	 * Construct Product.
+	 *
+	 * @return the product
 	 */
 	public Product constructProduct() {
 		final BuilderOne builderOne = new BuilderOne();

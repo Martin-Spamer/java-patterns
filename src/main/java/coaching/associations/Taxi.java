@@ -30,7 +30,7 @@ public class Taxi extends Car {
 	 * @return the passenger
 	 */
 	public Passenger getPassenger() {
-		return this.passenger;
+		return passenger;
 	}
 
 	/**

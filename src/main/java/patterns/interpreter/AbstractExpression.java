@@ -32,7 +32,7 @@ public abstract class AbstractExpression {
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean interpret(final ContextInterface context) {
-		return this.result;
+		return result;
 	}
 
 }

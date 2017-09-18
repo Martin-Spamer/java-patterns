@@ -7,7 +7,7 @@ import java.io.*;
 import org.junit.Test;
 
 /**
- * AbstractDataTest Class.
+ * Abstract Data Test Class.
  */
 public class AbstractDataTest {
 
@@ -56,7 +56,8 @@ public class AbstractDataTest {
 	public void testLoadString() throws Exception {
 		final Class<? extends AbstractDataTest> thisClass = this.getClass();
 		final InputStream inStream = thisClass.getResourceAsStream("./Data.csv");
-		assertNotNull(new TestData().load(inStream));
+		final TestData testData = new TestData();
+		assertNotNull(testData.load(inStream));
 	}
 
 	/**
@@ -68,7 +69,8 @@ public class AbstractDataTest {
 	public void testLoadFromXML() throws Exception {
 		final Class<? extends AbstractDataTest> thisClass = this.getClass();
 		final InputStream inStream = thisClass.getResourceAsStream("./Data.csv");
-		assertNotNull(new TestData().loadFromXML(inStream));
+		final TestData testData = new TestData();
+		assertNotNull(testData.loadFromXML(inStream));
 	}
 
 	/**
@@ -79,7 +81,8 @@ public class AbstractDataTest {
 	@Test
 	public void testStoreOutputStream() throws Exception {
 		final OutputStream out = new FileOutputStream("./target/testOut.properties");
-		assertNotNull(new TestData().store(out));
+		final TestData testData = new TestData();
+		assertNotNull(testData.store(out));
 	}
 
 	/**
@@ -90,7 +93,8 @@ public class AbstractDataTest {
 	@Test
 	public void testStoreOutputStreamString() throws Exception {
 		final OutputStream out = new FileOutputStream("./target/testOut.properties");
-		assertNotNull(new TestData().store(out, ""));
+		final TestData testData = new TestData();
+		assertNotNull(testData.store(out, this.getClass().getSimpleName()));
 	}
 
 	/**
@@ -98,7 +102,9 @@ public class AbstractDataTest {
 	 */
 	@Test
 	public void testSize() {
-		assertEquals(0, new TestData().size());
+		final TestData testData = new TestData();
+		assertNotNull(testData);
+		assertEquals(0, testData.size());
 	}
 
 	/**
@@ -107,6 +113,7 @@ public class AbstractDataTest {
 	@Test
 	public void testSetGetProperty() {
 		final TestData testData = new TestData();
+		assertNotNull(testData);
 		final String key = "key";
 		final String value = "value";
 		testData.setProperty(key, value);
@@ -120,6 +127,7 @@ public class AbstractDataTest {
 	@Test
 	public void testGetPropertyStringString() {
 		final TestData testData = new TestData();
+		assertNotNull(testData);
 		final String key = "key";
 		final String defaultValue = "value";
 		final String actual = testData.getProperty(key, defaultValue);

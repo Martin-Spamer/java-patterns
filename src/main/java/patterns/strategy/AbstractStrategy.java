@@ -22,7 +22,7 @@ public abstract class AbstractStrategy implements StrategyInterface {
 	 */
 	@Override
 	public void operation() {
-		this.log.info("{}.operation() should be overridden.", this.getClass().getSimpleName());
+		log.info("{}.operation() should be overridden.", this.getClass().getSimpleName());
 	}
 
 	/* (non-Javadoc)
@@ -30,7 +30,7 @@ public abstract class AbstractStrategy implements StrategyInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("AbstractStrategy [context=%s]", this.context);
+		return String.format("AbstractStrategy [context=%s]", context);
 	}
 
 }

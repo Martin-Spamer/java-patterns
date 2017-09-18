@@ -17,6 +17,7 @@ import org.slf4j.*;
  */
 public class PointBaseCustomerDao {
 
+	private static final String SELECT_FROM_CUSTOMERS = "SELECT * from customers";
 	private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDao.class);
 	private Connection connection = null;
 
@@ -43,12 +44,15 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * database SQL> SELECT * from customer_tbl.
+	 * database SQL to
+	 * <code>
+	 * SELECT * from customer table.
+	 * </code>
 	 */
 	public void read() {
 		try {
 			final Statement statement = this.connection.createStatement();
-			final ResultSet resultSet = statement.executeQuery("SELECT * from customers");
+			final ResultSet resultSet = statement.executeQuery(SELECT_FROM_CUSTOMERS);
 			final ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 
 			final int colCount = resultSetMetaData.getColumnCount();
@@ -75,8 +79,12 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * database. SQL> INSERT INTO CUSTOMER_TBL
-	 * (CUSTOMER_NUM,POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')
+	 * database SQL to
+	 * <code>INSERT INTO CUSTOMER_TBL
+	 * 	(CUSTOMER_NUM,POSTCODE,DISCOUNT_CODE)
+	 * VALUES
+	 * 	(999,'AA99 9ZZ','N')
+	 * </code>
 	 */
 	public void write() {
 		try {
@@ -92,8 +100,10 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * database. SQL> UPDATE CUSTOMER_TBL SET NAME
-	 * ='DataMentor' WHERE CUSTOMER_NUM=999
+	 * database SQL>
+	 * <code>
+	 * UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999
+	 * </code>
 	 */
 	public void update() {
 		try {
@@ -107,8 +117,11 @@ public class PointBaseCustomerDao {
 	}
 
 	/**
-	 * database. SQL> DELETE FROM CUSTOMER_TBL WHERE
+	 * database SQL
+	 * <code>
+	 * 	DELETE FROM CUSTOMER_TBL WHERE
 	 * FIELD-NAME='VALUE'
+	 * </code>
 	 */
 	public void delete() {
 		try {

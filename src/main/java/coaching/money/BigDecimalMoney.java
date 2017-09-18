@@ -26,7 +26,7 @@ public class BigDecimalMoney {
 	 */
 	public BigDecimalMoney() {
 		setCurrency(Currency.getInstance(Locale.getDefault()));
-		this.amount = new BigDecimal(0);
+		amount = new BigDecimal(0);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class BigDecimalMoney {
 	 */
 	public BigDecimalMoney(final BigDecimal bigDecimal) {
 		setCurrency(Currency.getInstance(Locale.getDefault()));
-		this.amount = bigDecimal;
+		amount = bigDecimal;
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class BigDecimalMoney {
 	 */
 	public BigDecimalMoney(final Currency currency) {
 		setCurrency(currency);
-		this.amount = new BigDecimal(0);
+		amount = new BigDecimal(0);
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class BigDecimalMoney {
 	 * @return the big decimal
 	 */
 	private BigDecimal asBigDecimal() {
-		return this.amount;
+		return amount;
 	}
 
 	/**
@@ -235,7 +235,7 @@ public class BigDecimalMoney {
 	 * @return the currency
 	 */
 	public Currency getCurrency() {
-		return this.currency;
+		return currency;
 	}
 
 	/**
@@ -260,7 +260,7 @@ public class BigDecimalMoney {
 	@Override
 	public String toString() {
 		final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-		final String currencyString = numberFormat.format(this.amount);
+		final String currencyString = numberFormat.format(amount);
 		return String.format("%s", currencyString);
 	}
 

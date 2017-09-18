@@ -31,10 +31,10 @@ public class BasicClassArray {
 	public BasicClassArray() {
 		LOG.info("BasicClassArray");
 
-		this.composite[0] = new ElementAlice();
-		this.composite[1] = new ElementBob();
-		this.composite[2] = new ElementCharlie();
-		this.composite[3] = new ElementDan();
+		composite[0] = new ElementAlice();
+		composite[1] = new ElementBob();
+		composite[2] = new ElementCharlie();
+		composite[3] = new ElementDan();
 	}
 
 	/* (non-Javadoc)
@@ -42,7 +42,7 @@ public class BasicClassArray {
 	 */
 	@Override
 	public String toString() {
-		return String.format("BasicClassArray [composite=%s]", Arrays.toString(this.composite));
+		return String.format("BasicClassArray [composite=%s]", Arrays.toString(composite));
 	}
 
 }

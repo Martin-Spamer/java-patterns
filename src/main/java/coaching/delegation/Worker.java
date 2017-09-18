@@ -17,7 +17,7 @@ class Worker implements ProcessInterface {
 	 */
 	@Override
 	public Worker doProcess() {
-		this.log.info("do work");
+		log.info("do work");
 		return this;
 	}
 

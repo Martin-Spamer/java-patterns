@@ -6,15 +6,18 @@ import org.junit.Test;
 
 public class RouteTest {
 
-	public class InputChanel extends AbstractInputChannel {
+	public final class InputChanel extends AbstractInputChannel {
 	}
 
-	public class OutputChannel extends AbstractOutputChannel {
+	public final class OutputChannel extends AbstractOutputChannel {
 	}
 
 	@Test
 	public void testRoute() {
-		assertNotNull(new Route(new OutputChannel(), new InputChanel()));
+		OutputChannel outputChannel = new OutputChannel();
+		InputChanel inputChannel = new InputChanel();
+		Route route = new Route(outputChannel, inputChannel);
+		assertNotNull(route);
 	}
 
 }

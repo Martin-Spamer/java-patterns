@@ -3,14 +3,13 @@ package patterns.session;
 /**
  * Session Class.
  */
-class Session {
-
-	private long id = 0L;
+public final class Session extends AbstractSession {
 
 	/**
 	 * Instantiates a new session.
 	 */
 	public Session() {
+		super();
 	}
 
 	/**
@@ -19,26 +18,7 @@ class Session {
 	 * @param id the id
 	 */
 	public Session(final long id) {
-		super();
-		this.id = id;
-	}
-
-	/**
-	 * id.
-	 *
-	 * @param id the new id
-	 */
-	public void setId(final long id) {
-		this.id = id;
-	}
-
-	/**
-	 * id.
-	 *
-	 * @return the id
-	 */
-	public long getId() {
-		return this.id;
+		super(id);
 	}
 
 }

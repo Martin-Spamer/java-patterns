@@ -15,9 +15,9 @@ public class SessionTracker {
 	 *
 	 * @return the session
 	 */
-	public Session createSession() {
+	public AbstractSession createSession() {
 		final Session session = new Session();
-		this.sessions.add(session);
+		sessions.add(session);
 		return session;
 	}
 
@@ -26,8 +26,8 @@ public class SessionTracker {
 	 *
 	 * @param session the session
 	 */
-	public void destroySession(final Session session) {
-		this.sessions.remove(session);
+	public void destroySession(final AbstractSession session) {
+		sessions.remove(session);
 	}
 
 }

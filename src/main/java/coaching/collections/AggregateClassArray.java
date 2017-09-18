@@ -36,10 +36,10 @@ public class AggregateClassArray {
 	 * aggregate.
 	 */
 	public void execute() {
-		this.aggregate[0] = new ElementAlice();
-		this.aggregate[1] = new ElementBob();
-		this.aggregate[2] = new ElementCharlie();
-		this.aggregate[3] = new ElementDan();
+		aggregate[0] = new ElementAlice();
+		aggregate[1] = new ElementBob();
+		aggregate[2] = new ElementCharlie();
+		aggregate[3] = new ElementDan();
 	}
 
 	/* (non-Javadoc)
@@ -47,7 +47,7 @@ public class AggregateClassArray {
 	 */
 	@Override
 	public String toString() {
-		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(this.aggregate));
+		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(aggregate));
 	}
 
 }

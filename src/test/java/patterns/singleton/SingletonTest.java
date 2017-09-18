@@ -1,14 +1,12 @@
-
 package patterns.singleton;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
- * The SingletonTest Class.
+ * Singleton Test Class.
  */
 public class SingletonTest {
 
@@ -23,7 +21,7 @@ public class SingletonTest {
 		assertNotNull(instance);
 		final String string = instance.toString();
 		assertNotNull(instance);
-		LOG.info(string);
+		LOG.info("{}", string);
 	}
 
 }

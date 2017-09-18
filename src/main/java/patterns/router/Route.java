@@ -20,13 +20,13 @@ class Route implements InputChannelInterface, OutputChannelInterface {
 	@Override
 	public void sendMessage(final Message message) {
 		LOG.info("sendMessage{}", message);
-		this.outputChannel.sendMessage(message);
+		outputChannel.sendMessage(message);
 	}
 
 	@Override
 	public Message receiveMessage() {
 		LOG.info("receiveMessage{}");
-		return this.inputChannel.receiveMessage();
+		return inputChannel.receiveMessage();
 	}
 
 }

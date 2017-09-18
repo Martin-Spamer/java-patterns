@@ -9,7 +9,7 @@ import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
 
 /**
- * MvcTest Class.
+ * Model View Controller Test Class.
  */
 public class MvcTest {
 
@@ -31,18 +31,20 @@ public class MvcTest {
 	}
 
 	/**
-	 * Run mvc.
+	 * Test run the MVC pattern.
 	 *
 	 * @throws Exception the exception
 	 */
 	@Test
-	public void runMvc() throws Exception {
+	public void tesrRunMvc() throws Exception {
 		final Model model = new Model();
 		final View view = new View();
 		model.attach("view", view);
 
 		/**
-		 * create Controller. add Model and View, initialise model
+		 * create Controller.
+		 * Add Model and View,
+		 * initialise model
 		 */
 		final Controller controller = new Controller();
 		controller.attachModel(model);

@@ -1,11 +1,9 @@
-
 package automation;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * TestScript Class.
@@ -21,8 +19,7 @@ public class TestScript {
 	public void testCase() {
 		final Model model = new Model();
 		assertNotNull(model);
-		model.given().when().then();
-		assertNotNull(model);
+		assertNotNull(model.given().when().then());
 		LOG.info("{}", model.toString());
 	}
 

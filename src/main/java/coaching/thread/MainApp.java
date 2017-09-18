@@ -97,7 +97,7 @@ public class MainApp {
 					abstractApplicationProcess.start();
 				}
 
-				this.threadMap.put(nameAttribute, abstractApplicationProcess);
+				threadMap.put(nameAttribute, abstractApplicationProcess);
 			}
 		}
 	}

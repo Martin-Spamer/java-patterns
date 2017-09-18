@@ -8,6 +8,7 @@ public class MediatorTest {
 
 	@Test
 	public void test() {
-		assertNotNull(new Mediator());
+		Mediator mediator = new Mediator();
+		assertNotNull(mediator);
 	}
 }

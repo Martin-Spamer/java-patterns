@@ -41,7 +41,7 @@ public class ObjectTypesArray {
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
 			values[i] = new Long(i * 100);
-			this.log.info("{}){}", i, values[i]);
+			log.info("{}){}", i, values[i]);
 		}
 
 		// declare a reference to an matrix of longs
@@ -64,7 +64,7 @@ public class ObjectTypesArray {
 			stringBuffer.append("\n");
 		}
 
-		this.log.info("{}", stringBuffer.toString());
+		log.info("{}", stringBuffer.toString());
 
 		/**
 		 * array with static data
@@ -79,6 +79,6 @@ public class ObjectTypesArray {
 			}
 			stringBuffer.append("\n");
 		}
-		this.log.info("{}", stringBuffer.toString());
+		log.info("{}", stringBuffer.toString());
 	}
 }

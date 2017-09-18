@@ -41,7 +41,7 @@ public class PrimitivesArray {
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
 			values[i] = i * 100;
-			this.log.info(i + "=" + values[i]);
+			log.info(i + "=" + values[i]);
 		}
 
 		// declare a reference to an matric of longs
@@ -64,7 +64,7 @@ public class PrimitivesArray {
 			stringBuffer.append("\n");
 		}
 
-		this.log.info("{}", stringBuffer.toString());
+		log.info("{}", stringBuffer.toString());
 
 		/**
 		 * array with static data
@@ -76,6 +76,6 @@ public class PrimitivesArray {
 			}
 			stringBuffer.append("\n");
 		}
-		this.log.info("{}", stringBuffer.toString());
+		log.info("{}", stringBuffer.toString());
 	}
 }

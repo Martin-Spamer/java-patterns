@@ -16,7 +16,7 @@ public class Target implements TargetInterface {
 	 */
 	@Override
 	public Result request() {
-		this.log.info("request");
+		log.info("request");
 		return new Result();
 	}
 

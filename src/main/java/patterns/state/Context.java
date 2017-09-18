@@ -17,19 +17,19 @@ public class Context {
 	 * To A.
 	 */
 	public void toA() {
-		this.state = new StateA();
+		state = new StateAlice();
 	}
 
 	/**
 	 * To Z.
 	 */
 	public void toZ() {
-		this.state = new StateZ();
+		state = new StateBob();
 	}
 
 	@Override
 	public String toString() {
-		return String.format("Context [state=%s]", this.state);
+		return String.format("Context [state=%s]", state);
 	}
 
 }

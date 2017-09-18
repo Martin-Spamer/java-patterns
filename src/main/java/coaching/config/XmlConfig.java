@@ -1,4 +1,3 @@
-
 package coaching.config;
 
 import java.io.*;
@@ -48,11 +47,11 @@ public class XmlConfig extends AbstractConfig {
 	public void loadFromXmlFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				this.properties.loadFromXML(resourceAsStream);
+				properties.loadFromXML(resourceAsStream);
 			} catch (final InvalidPropertiesFormatException e) {
-				this.log.error(e.toString());
+				log.error(e.toString());
 			} catch (final IOException e) {
-				this.log.error(e.toString());
+				log.error(e.toString());
 			}
 		}
 	}
@@ -87,12 +86,12 @@ public class XmlConfig extends AbstractConfig {
 			try {
 				final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 				final Document document = documentBuilder.parse(configFile);
-				this.configElement = document.getDocumentElement();
+				configElement = document.getDocumentElement();
 			} catch (final ParserConfigurationException parserConfigurationException) {
-				this.log.error(parserConfigurationException.toString());
+				log.error(parserConfigurationException.toString());
 			}
 		} catch (final Exception exception) {
-			this.log.info("{}", exception.toString());
+			log.info("{}", exception.toString());
 		}
 	}
 
@@ -103,7 +102,7 @@ public class XmlConfig extends AbstractConfig {
 	 * @return the attribute
 	 */
 	protected String getAttribute(final String attributeName) {
-		return this.configElement.getAttribute(attributeName);
+		return configElement.getAttribute(attributeName);
 	}
 
 	/**
@@ -113,7 +112,7 @@ public class XmlConfig extends AbstractConfig {
 	 * @return the elements by tag name
 	 */
 	protected NodeList getElementsByTagName(final String elementName) {
-		return this.configElement.getElementsByTagName(elementName);
+		return configElement.getElementsByTagName(elementName);
 	}
 
 	/*
@@ -123,10 +122,10 @@ public class XmlConfig extends AbstractConfig {
 	 */
 	@Override
 	public String getProperty(final String key) {
-		final NodeList propertyElements = this.configElement.getElementsByTagName("property");
+		final NodeList propertyElements = configElement.getElementsByTagName("property");
 		for (int i = 0; i < propertyElements.getLength(); i++) {
 			final Node item = propertyElements.item(i);
-			this.log.info("item={}", item.toString());
+			log.info("item={}", item.toString());
 		}
 		return null;
 	}
@@ -149,7 +148,7 @@ public class XmlConfig extends AbstractConfig {
 	 * @return the tag name
 	 */
 	protected String getTagName() {
-		return this.configElement.getTagName();
+		return configElement.getTagName();
 	}
 
 	/*
@@ -159,7 +158,7 @@ public class XmlConfig extends AbstractConfig {
 	 */
 	@Override
 	public String toString() {
-		return null != this.configElement ? toXml(this.configElement) : "null";
+		return null != configElement ? toXml(configElement) : "null";
 	}
 
 	/**

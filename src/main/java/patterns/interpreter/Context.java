@@ -1,3 +1,4 @@
+
 package patterns.interpreter;
 
 import org.slf4j.*;
@@ -34,7 +35,7 @@ public class Context implements ContextInterface {
 	 *
 	 * @param state the new
 	 * 			state
-	 * @return
+	 * @return the context
 	 */
 	public Context setState(final Object state) {
 		this.state = state;

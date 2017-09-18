@@ -15,9 +15,9 @@ public final class ConcreteFacade implements FacadeInterface {
 	public ConcreteFacade() {
 		super();
 
-		this.subSystemOne = new SubSystemOne();
-		this.subSystemTwo = new SubSystemTwo();
-		this.subSystemThree = new SubSystemThree();
+		subSystemOne = new SubSystemOne();
+		subSystemTwo = new SubSystemTwo();
+		subSystemThree = new SubSystemThree();
 	}
 
 	/*
@@ -36,21 +36,21 @@ public final class ConcreteFacade implements FacadeInterface {
 	 * Sub system one operation.
 	 */
 	public void subSystemOneOperation() {
-		this.subSystemOne.operation();
+		subSystemOne.operation();
 	}
 
 	/**
 	 * Sub system two operation.
 	 */
 	public void subSystemTwoOperation() {
-		this.subSystemTwo.operation();
+		subSystemTwo.operation();
 	}
 
 	/**
 	 * Sub system three operation.
 	 */
 	public void subSystemThreeOperation() {
-		this.subSystemThree.operation();
+		subSystemThree.operation();
 	}
 
 }

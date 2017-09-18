@@ -43,7 +43,7 @@ class XmlDAO {
 		this.password = password;
 		try {
 			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
-			this.connection = DriverManager.getConnection(this.url, this.userId, this.password);
+			connection = DriverManager.getConnection(this.url, this.userId, this.password);
 		} catch (final ClassNotFoundException e) {
 			LOG.error("{}", e.toString());
 		} catch (final SQLException e) {
@@ -55,7 +55,7 @@ class XmlDAO {
 		try {
 			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
 
-			final XmlDAO dao = new XmlDAO(this.url, this.userId, this.password);
+			final XmlDAO dao = new XmlDAO(url, userId, password);
 
 			String sql = "select * from TNRG_COSTING";
 			dao.read(sql);
@@ -78,9 +78,9 @@ class XmlDAO {
 	 */
 	public void read(final String sql) {
 		try {
-			this.statement = this.connection.createStatement();
-			this.resultSet = this.statement.executeQuery(sql);
-			this.resultSetMetaData = this.resultSet.getMetaData();
+			statement = connection.createStatement();
+			resultSet = statement.executeQuery(sql);
+			resultSetMetaData = resultSet.getMetaData();
 		} catch (final Exception e) {
 			LOG.error("{}", e.toString());
 		}
@@ -95,15 +95,15 @@ class XmlDAO {
 		final StringBuffer xml = new StringBuffer();
 
 		try {
-			final int colCount = this.resultSetMetaData.getColumnCount();
+			final int colCount = resultSetMetaData.getColumnCount();
 			xml.append("<TABLE>\n");
 
-			while (this.resultSet.next()) {
+			while (resultSet.next()) {
 				xml.append("<ROW>\n");
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = this.resultSetMetaData.getColumnName(i);
-					final Object value = this.resultSet.getObject(i);
+					final String columnName = resultSetMetaData.getColumnName(i);
+					final Object value = resultSet.getObject(i);
 					xml.append("<" + columnName + ">");
 
 					if (value != null) {
@@ -138,15 +138,15 @@ class XmlDAO {
 			final Element results = document.createElement("TABLE");
 			document.appendChild(results);
 
-			final int colCount = this.resultSetMetaData.getColumnCount();
+			final int colCount = resultSetMetaData.getColumnCount();
 
-			while (this.resultSet.next()) {
+			while (resultSet.next()) {
 				final Element row = document.createElement("ROW");
 				results.appendChild(row);
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = this.resultSetMetaData.getColumnName(i);
-					final Object value = this.resultSet.getObject(i);
+					final String columnName = resultSetMetaData.getColumnName(i);
+					final Object value = resultSet.getObject(i);
 
 					if (value != null) {
 						final Element node = document.createElement(columnName);
@@ -168,9 +168,9 @@ class XmlDAO {
 	@Override
 	public void finalize() {
 		try {
-			this.resultSet.close();
-			this.statement.close();
-			this.connection.close();
+			resultSet.close();
+			statement.close();
+			connection.close();
 		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}

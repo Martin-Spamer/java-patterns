@@ -14,7 +14,7 @@ public class AbstractRequest {
 	 * @return the payload
 	 */
 	public String getPayload() {
-		return this.payload;
+		return payload;
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class AbstractRequest {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s [payload=%s]", this.getClass().getSimpleName(), this.payload);
+		return String.format("%s [payload=%s]", this.getClass().getSimpleName(), payload);
 	}
 
 }

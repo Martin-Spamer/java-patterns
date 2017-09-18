@@ -45,7 +45,7 @@ public class Memento {
 	 * @return the state
 	 */
 	public Object getState() {
-		return this.state;
+		return state;
 	}
 
 }

@@ -25,7 +25,7 @@ public class Conjunction extends NonTerminalExpression {
 	 */
 	@Override
 	public boolean interpret(final ContextInterface context) {
-		return this.lhs.interpret(context) && this.rhs.interpret(context);
+		return lhs.interpret(context) && rhs.interpret(context);
 	}
 
 }

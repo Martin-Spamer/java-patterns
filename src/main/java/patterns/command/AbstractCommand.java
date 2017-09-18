@@ -19,9 +19,9 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * ParametersInterface)
 	 */
 	public ResultInterface execute() {
-		this.log.debug("{}.execute", this.getClass().getSimpleName());
-		this.result = new Result(Result.PASS);
-		return this.result;
+		log.debug("{}.execute", this.getClass().getSimpleName());
+		result = new Result(Result.PASS);
+		return result;
 	}
 
 	/*
@@ -32,11 +32,11 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public ResultInterface execute(final ParametersInterface commandParameters) {
-		this.log.debug("{}.execute", this.getClass().getSimpleName());
-		this.log.debug("context={}", context);
+		log.debug("{}.execute", this.getClass().getSimpleName());
+		log.debug("context={}", context);
 		commandParameters.setPrameter("result", "pass");
-		this.result = new Result(Result.PASS);
-		return this.result;
+		result = new Result(Result.PASS);
+		return result;
 	}
 
 	/**
@@ -53,9 +53,9 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * ParametersInterface)
 	 */
 	public ResultInterface undo() {
-		this.log.debug("{}.undo", this.getClass().getSimpleName());
-		this.result = new Result(Result.FAIL);
-		return this.result;
+		log.debug("{}.undo", this.getClass().getSimpleName());
+		result = new Result(Result.FAIL);
+		return result;
 	}
 
 	/*
@@ -66,10 +66,10 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public ResultInterface undo(final ParametersInterface commandParameters) {
-		this.log.debug("{}.undo", this.getClass().getSimpleName());
+		log.debug("{}.undo", this.getClass().getSimpleName());
 		commandParameters.setPrameter("result", "pass");
-		this.result = new Result(Result.FAIL);
-		return this.result;
+		result = new Result(Result.FAIL);
+		return result;
 	}
 
 	/*
@@ -79,7 +79,7 @@ public abstract class AbstractCommand implements CommandInterface {
 	 */
 	@Override
 	public Boolean result() {
-		return this.result.result();
+		return result.result();
 	}
 
 }

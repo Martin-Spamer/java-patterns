@@ -1,3 +1,4 @@
+
 package coaching.template;
 
 import org.slf4j.*;
@@ -5,7 +6,7 @@ import org.slf4j.*;
 /**
  * Abstract Template Class.
  */
-public abstract class AbstractTemplate {
+public abstract class AbstractTemplate implements TemplateInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
@@ -19,11 +20,15 @@ public abstract class AbstractTemplate {
 
 	/**
 	 * Primitive operation A.
+	 *
+	 * @return the template interface
 	 */
-	abstract protected AbstractTemplate primitiveOperationAlice();
+	abstract protected TemplateInterface primitiveOperationAlice();
 
 	/**
 	 * Primitive operation B.
+	 *
+	 * @return the template interface
 	 */
-	abstract protected AbstractTemplate primitiveOperationBob();
+	abstract protected TemplateInterface primitiveOperationBob();
 }

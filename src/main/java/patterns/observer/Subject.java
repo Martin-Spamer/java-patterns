@@ -14,7 +14,7 @@ public final class Subject extends AbstractSubject {
 	 * @return the status
 	 */
 	public Boolean getStatus() {
-		return this.status;
+		return status;
 	}
 
 	/**
@@ -34,7 +34,7 @@ public final class Subject extends AbstractSubject {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Subject [status=%s]", this.status);
+		return String.format("Subject [status=%s]", status);
 	}
 
 }

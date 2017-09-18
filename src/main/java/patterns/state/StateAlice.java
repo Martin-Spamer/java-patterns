@@ -2,9 +2,9 @@
 package patterns.state;
 
 /**
- * StateZ Class.
+ * StateA Class.
  */
-class StateZ extends AbstractState {
+class StateAlice extends AbstractState {
 
 	/*
 	 * (non-Javadoc)

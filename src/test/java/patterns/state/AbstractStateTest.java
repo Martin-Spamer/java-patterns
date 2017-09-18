@@ -8,8 +8,10 @@ public class AbstractStateTest {
 
 	@Test
 	public void testAbstractState() {
-		assertNotNull(new StateA());
-		assertNotNull(new StateZ());
+		StateAlice stateAlice = new StateAlice();
+		assertNotNull(stateAlice);
+		StateBob stateBob = new StateBob();
+		assertNotNull(stateBob);
 	}
 
 }

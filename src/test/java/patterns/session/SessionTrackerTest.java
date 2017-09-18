@@ -4,11 +4,18 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+/**
+ * class SessionTrackerTest.
+ */
 public class SessionTrackerTest {
 
+	/**
+	 * Unit Test to session tracker.
+	 */
 	@Test
 	public void testSessionTracker() {
-		assertNotNull(new SessionTracker());
+		final SessionTracker sessionTracker = new SessionTracker();
+		assertNotNull(sessionTracker);
 	}
 
 }

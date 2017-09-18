@@ -38,12 +38,12 @@ public class CurrentWorkingDirectory {
 			try {
 				file.createNewFile();
 				absolutePath = file.getAbsolutePath();
-				this.log.info("{}", absolutePath);
+				log.info("{}", absolutePath);
 			} catch (final Exception exception) {
-				this.log.debug(exception.toString());
+				log.debug(exception.toString());
 			}
 		} catch (final Exception exception) {
-			this.log.error(exception.toString());
+			log.error(exception.toString());
 		}
 		return absolutePath;
 	}

@@ -8,7 +8,8 @@ public class ConcreteParticipantTest {
 
 	@Test
 	public void testCommit() {
-		assertNotNull(new ConcreteParticipant());
+		ConcreteParticipant testInstance = new ConcreteParticipant();
+		assertNotNull(testInstance);
 	}
 
 }
