@@ -20,35 +20,35 @@ public class CustomExceptionHandling {
 	 * custom exception class. In some cases additional constructors be be
 	 * required.
 	 */
-	private class CustomException extends Exception {
+	public class CustomException extends Exception {
 		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * CustomCreationException Class.
 	 */
-	private class CustomCreationException extends CustomException {
+	public class CustomCreationException extends CustomException {
 		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * CustomReadException Class.
 	 */
-	private class CustomReadException extends CustomException {
+	public class CustomReadException extends CustomException {
 		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * CustomUpdateException Class.
 	 */
-	private class CustomUpdateException extends CustomException {
+	public class CustomUpdateException extends CustomException {
 		private static final long serialVersionUID = 1L;
 	}
 
 	/**
 	 * CustomDeleteException Class.
 	 */
-	private class CustomDeleteException extends CustomException {
+	public class CustomDeleteException extends CustomException {
 		private static final long serialVersionUID = 1L;
 	}
 
@@ -57,7 +57,7 @@ public class CustomExceptionHandling {
 	 *
 	 * @throws CustomException the custom exception
 	 */
-	public void subProcessA() throws CustomException {
+	public void subProcessA() throws CustomCreationException {
 		throw new CustomCreationException();
 	}
 
@@ -68,7 +68,7 @@ public class CustomExceptionHandling {
 	 *
 	 * @throws CustomException the custom exception
 	 */
-	public void subProcessB() throws CustomException {
+	public void subProcessB() throws CustomReadException {
 		throw new CustomReadException();
 	}
 
@@ -79,7 +79,7 @@ public class CustomExceptionHandling {
 	 *
 	 * @throws CustomException the custom exception
 	 */
-	public void subProcessC() throws CustomException {
+	public void subProcessC() throws CustomUpdateException {
 		throw new CustomUpdateException();
 	}
 
@@ -96,20 +96,17 @@ public class CustomExceptionHandling {
 			subProcessA();
 		} catch (final CustomException exception) {
 			LOG.error("{}", exception.toString());
-			throw new CustomException();
 		}
 
 		try {
 			subProcessB();
 		} catch (final CustomException exception) {
 			LOG.error("{}", exception.toString());
-			throw new CustomException();
 		}
 		try {
 			subProcessC();
 		} catch (final CustomException exception) {
 			LOG.error("{}", exception.toString());
-			throw new CustomException();
 		}
 	}
 

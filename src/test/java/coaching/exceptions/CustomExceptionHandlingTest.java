@@ -1,27 +1,29 @@
 package coaching.exceptions;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+import coaching.exceptions.CustomExceptionHandling.*;
+
 public class CustomExceptionHandlingTest {
 
-	@Test
-	public void testSubProcessA() throws Exception {
+	@Test(expected = CustomCreationException.class)
+	public void testSubProcessA() throws CustomCreationException {
 		final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
 		assertNotNull(customExceptionHandling);
 		customExceptionHandling.subProcessA();
 	}
 
-	@Test
-	public void testSubProcessB() throws Exception {
+	@Test(expected = CustomReadException.class)
+	public void testSubProcessB() throws CustomReadException {
 		final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
 		assertNotNull(customExceptionHandling);
 		customExceptionHandling.subProcessB();
 	}
 
-	@Test
-	public void testSubProcessC() throws Exception {
+	@Test(expected = CustomUpdateException.class)
+	public void testSubProcessC() throws CustomUpdateException {
 		final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
 		assertNotNull(customExceptionHandling);
 		customExceptionHandling.subProcessC();
@@ -32,11 +34,6 @@ public class CustomExceptionHandlingTest {
 		final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
 		assertNotNull(customExceptionHandling);
 		customExceptionHandling.process();
-	}
-
-	@Test
-	public void testMain() {
-		fail("Not yet implemented");
 	}
 
 }
