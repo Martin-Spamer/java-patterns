@@ -1,9 +1,17 @@
+
 package patterns.iterator;
 
 /**
  * interface IteratorInterface.
  */
 public interface IteratorInterface {
+
+	/**
+	 * First item.
+	 *
+	 * @return the item interface
+	 */
+	public ItemInterface first();
 
 	/**
 	 * Current item.
@@ -13,25 +21,17 @@ public interface IteratorInterface {
 	public ItemInterface currentItem();
 
 	/**
-	 * Checks if is done.
-	 *
-	 * @return true, if successful, otherwise false.
-	 * 			done
-	 */
-	public boolean isDone();
-
-	/**
-	 * Next.
+	 * Next item.
 	 *
 	 * @return the item interface
 	 */
 	public ItemInterface next();
 
 	/**
-	 * First.
+	 * Checks if is done.
 	 *
-	 * @return the item interface
+	 * @return true, if successful, otherwise false.
 	 */
-	public ItemInterface first();
+	public boolean isDone();
 
 }

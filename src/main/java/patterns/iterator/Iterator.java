@@ -1,3 +1,4 @@
+
 package patterns.iterator;
 
 /**
@@ -5,36 +6,13 @@ package patterns.iterator;
  */
 public final class Iterator extends AbstractIterator {
 
-	private final Aggregate aggregate = null;
-
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Instantiates a new iterator.
 	 *
-	 * @see patterns.iterator.AbstractIterator#first()
+	 * @param abstractAggregate the abstract aggregate
 	 */
-	@Override
-	public ItemInterface first() {
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.iterator.AbstractIterator#next()
-	 */
-	@Override
-	public ItemInterface next() {
-		return null;
-	}
-
-	@Override
-	public boolean isDone() {
-		return true;
-	}
-
-	@Override
-	public ItemInterface currentItem() {
-		return null;
+	public Iterator(final AggregateInterface abstractAggregate) {
+		super(abstractAggregate);
 	}
 
 }

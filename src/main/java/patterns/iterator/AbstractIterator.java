@@ -1,4 +1,7 @@
+
 package patterns.iterator;
+
+import java.util.*;
 
 import org.slf4j.*;
 
@@ -8,33 +11,52 @@ import org.slf4j.*;
 public abstract class AbstractIterator implements IteratorInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+	protected AggregateInterface aggregate = null;
+	protected final List<ItemInterface> itemList = new ArrayList<ItemInterface>();
+	protected int index = 0;
 
 	/**
-	 * First.
+	 * Instantiates a new iterator.
 	 *
-	 * @return the abstract item
+	 * @param aggregate the aggregate
 	 */
-	@Override
-	public abstract ItemInterface first();
+	public AbstractIterator(final AggregateInterface aggregate) {
+		super();
+		this.aggregate = aggregate;
+	}
 
-	/**
-	 * Next.
-	 *
-	 * @return the abstract item
+	/* (non-Javadoc)
+	 * @see patterns.iterator.IteratorInterface#first()
 	 */
 	@Override
-	public abstract ItemInterface next();
+	public ItemInterface first() {
+		this.index = 0;
+		return this.itemList.get(this.index);
+	}
 
-	/**
-	 * Checks if is done.
+	/* (non-Javadoc)
+	 * @see patterns.iterator.IteratorInterface#next()
 	 */
 	@Override
-	public abstract boolean isDone();
+	public ItemInterface next() {
+		this.index++;
+		return this.itemList.get(this.index);
+	}
 
-	/**
-	 * Current item.
+	/* (non-Javadoc)
+	 * @see patterns.iterator.IteratorInterface#isDone()
 	 */
 	@Override
-	public abstract ItemInterface currentItem();
+	public boolean isDone() {
+		return this.index == this.itemList.size();
+	}
+
+	/* (non-Javadoc)
+	 * @see patterns.iterator.IteratorInterface#currentItem()
+	 */
+	@Override
+	public ItemInterface currentItem() {
+		return this.itemList.get(this.index);
+	}
 
 }
