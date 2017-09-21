@@ -1,5 +1,4 @@
 
-
 package automation;
 
 import org.slf4j.*;
@@ -14,15 +13,15 @@ public abstract class AbstractPage {
 	/**
 	 * Login.
 	 */
-	public void login() {
-		log.info("login");
+	public void open() {
+		this.log.info("open");
 	}
 
 	/**
 	 * Verify that.
 	 */
 	public void verify() {
-		log.info("verify");
+		this.log.info("verify");
 	}
 
 }
