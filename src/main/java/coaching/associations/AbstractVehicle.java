@@ -40,7 +40,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 */
 	@Override
 	public Driver getDriver() {
-		return driver;
+		return this.driver;
 	}
 
 	/*
@@ -51,8 +51,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	// Polymorphic interface
 	@Override
 	public void travel(final String destination) {
-		engine.useFuel(engine);
-		log.info(destination);
+		this.log.info(destination);
 	}
 
 	/*
@@ -62,7 +61,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 */
 	@Override
 	public String toString() {
-		return "AbstractVehicle [engine=" + engine + ", driver=" + driver + "]";
+		return "AbstractVehicle [engine=" + this.engine + ", driver=" + this.driver + "]";
 	}
 
 }

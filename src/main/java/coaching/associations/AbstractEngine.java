@@ -1,5 +1,4 @@
 
-
 package coaching.associations;
 
 import org.slf4j.*;
@@ -19,15 +18,15 @@ public abstract class AbstractEngine implements FuelInterface {
 	 */
 	public AbstractEngine(final FuelInterface fuel) {
 		super();
-		useFuel(fuel);
+		fuelType(fuel);
 	}
 
 	/**
-	 * Use fuel.
+	 * Use fuel type.
 	 *
 	 * @param fuel the fuel
 	 */
-	public void useFuel(final FuelInterface fuel) {
+	private final void fuelType(final FuelInterface fuel) {
 		this.fuel = fuel;
 	}
 
@@ -38,7 +37,7 @@ public abstract class AbstractEngine implements FuelInterface {
 	 */
 	@Override
 	public String toString() {
-		return "Engine [fuel=" + fuel + "]";
+		return "Engine [fuel=" + this.fuel + "]";
 	}
 
 }

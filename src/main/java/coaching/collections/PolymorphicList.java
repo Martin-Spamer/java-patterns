@@ -1,8 +1,6 @@
 
 package coaching.collections;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.util.*;
 
 import org.slf4j.*;
@@ -14,7 +12,7 @@ public class PolymorphicList {
 
 	private static final Logger LOG = LoggerFactory.getLogger(PolymorphicList.class);
 
-	private final List<Integer> integerList = new LinkedList<Integer>();
+	private final List<Integer> integerList = new ArrayList<Integer>();
 
 	/**
 	 * Instantiates a new polymorphic list.
@@ -32,17 +30,8 @@ public class PolymorphicList {
 	 */
 	public PolymorphicList add(final Integer integerIn) {
 		LOG.info("add({}", integerIn);
-		integerList.add(integerIn);
+		this.integerList.add(integerIn);
 		return this;
-	}
-
-	/**
-	 * Integer object.
-	 *
-	 * @return the integer
-	 */
-	public Integer next() {
-		return integerList.iterator().next();
 	}
 
 	/* (non-Javadoc)
@@ -50,24 +39,7 @@ public class PolymorphicList {
 	 */
 	@Override
 	public String toString() {
-		return String.format("PolymorphicList [integerList=%s]", integerList);
-	}
-
-	/**
-	 * main method.
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(final String[] args) {
-		final PolymorphicList myIntList = new PolymorphicList();
-
-		myIntList.add(new Integer(0));
-		final Integer actual = myIntList.next();
-		assertNotNull(actual);
-
-		// these unsafe type conversions wont compile
-		// myIntList.add( new Double(0) ) ;
-		// myIntList.add( new Object(0) ) ;
+		return String.format("PolymorphicList [integerList=%s]", this.integerList);
 	}
 
 }

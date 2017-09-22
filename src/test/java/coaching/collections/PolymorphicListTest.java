@@ -17,21 +17,18 @@ public class PolymorphicListTest {
 	}
 
 	@Test
+	public void testPolymorphicListUsage() {
+		final PolymorphicList actual = new PolymorphicList();
+		assertNotNull(actual);
+		actual.add(new Integer(0));
+	}
+
+	@Test
 	public void testAdd() {
 		LOG.info("testAdd");
 		final PolymorphicList polymorphicList = new PolymorphicList();
 		assertNotNull(polymorphicList);
 		assertNotNull(polymorphicList.add(1));
-	}
-
-	@Test
-	public void testNext() {
-		LOG.info("testNext");
-		final PolymorphicList polymorphicList = new PolymorphicList();
-		assertNotNull(polymorphicList);
-		assertNotNull(polymorphicList.add(1));
-		final Integer next = polymorphicList.next();
-		assertNotNull(next);
 	}
 
 	@Test
