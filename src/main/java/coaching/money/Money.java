@@ -3,7 +3,7 @@ package coaching.money;
 import java.util.Currency;
 
 /**
- * Money Class.
+ * Money class.
  */
 public class Money extends AbstractMoney {
 

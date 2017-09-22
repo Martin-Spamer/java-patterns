@@ -31,7 +31,7 @@ public class PolymorphicList {
 	 */
 	public PolymorphicList add(final Integer integerIn) {
 		LOG.info("add({}", integerIn);
-		this.integerList.add(integerIn);
+		integerList.add(integerIn);
 		return this;
 	}
 
@@ -41,7 +41,7 @@ public class PolymorphicList {
 	 * @return the integer
 	 */
 	public Integer next() {
-		return this.integerList.iterator().next();
+		return integerList.iterator().next();
 	}
 
 	/* (non-Javadoc)
@@ -49,7 +49,7 @@ public class PolymorphicList {
 	 */
 	@Override
 	public String toString() {
-		return String.format("PolymorphicList [integerList=%s]", this.integerList);
+		return String.format("PolymorphicList [integerList=%s]", integerList);
 	}
 
 	/**

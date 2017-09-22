@@ -7,7 +7,7 @@ import java.util.*;
 import org.slf4j.*;
 
 /**
- * Abstract Money class.
+ * An Abstract Money class.
  */
 public class AbstractMoney implements MoneyInterface {
 
@@ -90,19 +90,19 @@ public class AbstractMoney implements MoneyInterface {
 	}
 
 	/* (non-Javadoc)
-	 * @see coaching.money.MoneyInterface#getAmount()
-	 */
-	@Override
-	public Long getAmount() {
-		return amount;
-	}
-
-	/* (non-Javadoc)
 	 * @see coaching.money.MoneyInterface#getCurrencyCode()
 	 */
 	@Override
 	public String getCurrencyCode() {
 		return currency.getCurrencyCode();
+	}
+
+	/* (non-Javadoc)
+	 * @see coaching.money.MoneyInterface#getAmount()
+	 */
+	@Override
+	public Long getAmount() {
+		return amount;
 	}
 
 	/* (non-Javadoc)

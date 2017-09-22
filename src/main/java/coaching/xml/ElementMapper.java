@@ -1,3 +1,4 @@
+
 package coaching.xml;
 
 import java.util.HashMap;
@@ -23,10 +24,21 @@ public class ElementMapper {
 	/**
 	 * Instantiates a new element mapper.
 	 *
-	 * @param nodeList the node list
+	 * @param document the document
 	 */
-	public ElementMapper(final NodeList nodeList) {
-		initialisation(nodeList);
+	public ElementMapper(final Document document) {
+		initialisation(document);
+	}
+
+	/**
+	 * Initialisation.
+	 *
+	 * @param document the document
+	 */
+	public void initialisation(final Document document) {
+		final Element documentElement = document.getDocumentElement();
+		final NodeList childNodes = documentElement.getChildNodes();
+		initialisation(childNodes);
 	}
 
 	/**

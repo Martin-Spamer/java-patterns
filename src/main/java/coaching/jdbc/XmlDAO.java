@@ -1,3 +1,4 @@
+
 package coaching.jdbc;
 
 import java.sql.*;
@@ -14,59 +15,45 @@ import org.w3c.dom.*;
  * @version 0.1 - 12:33:20
  */
 class XmlDAO {
-	private static final Logger LOG = LoggerFactory.getLogger(XmlDAO.class);
-	private static final String URL = "jdbc:pointbase:server://localhost/sample";
-	private static final String USER_ID = "PBPUBLIC";
-	private static final String PASSWORD = "PBPUBLIC";
-	private String url = null;
-	private String userId = null;
-	private String password = null;
-	private Connection connection = null;
-	private Statement statement = null;
-	private ResultSet resultSet = null;
-	private ResultSetMetaData resultSetMetaData = null;
 
+	private static final Logger LOG = LoggerFactory.getLogger(XmlDAO.class);
+
+	private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
+	private static final String URL = "jdbc:pointbase:server://localhost/sample";
+	private static final String USER = "PBPUBLIC";
+	private static final String PASSWORD = "PBPUBLIC";
+	private static final String SQL = "SELECT * from customers";
+
+	/**
+	 * Instantiates a new xml DAO.
+	 */
 	public XmlDAO() {
-		this(URL, USER_ID, PASSWORD);
+		this(URL, USER, PASSWORD);
 	}
 
 	/**
 	 * Constructor.
 	 *
 	 * @param url the url
-	 * @param userId the user id
+	 * @param user the user id
 	 * @param password the pass word
 	 */
-	public XmlDAO(final String url, final String userId, final String password) {
-		this.url = url;
-		this.userId = userId;
-		this.password = password;
+	public XmlDAO(final String url, final String user, final String password) {
 		try {
-			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
-			connection = DriverManager.getConnection(this.url, this.userId, this.password);
+			Class.forName(JDBC_DRIVER);
 		} catch (final ClassNotFoundException e) {
-			LOG.error("{}", e.toString());
-		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}
 	}
 
-	public void execute() {
+	/**
+	 * Execute.
+	 */
+	protected void execute() {
 		try {
-			Class.forName("com.pointbase.jdbc.jdbcUniversalDriver");
-
-			final XmlDAO dao = new XmlDAO(url, userId, password);
-
-			String sql = "select * from TNRG_COSTING";
-			dao.read(sql);
-			final String xml = dao.toXmlString();
-			LOG.info(xml);
-
-			sql = "SELECT * from customer_tbl where CUSTOMER_NUM=777";
-			dao.read(sql);
-			final Document document = dao.toXmlDocument();
-			LOG.info(((Node) document).toString());
-		} catch (final Exception e) {
+			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+			read(connection);
+		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}
 	}
@@ -74,60 +61,26 @@ class XmlDAO {
 	/**
 	 * database.
 	 *
-	 * @param sql the sql
+	 * @param connection the connection
 	 */
-	public void read(final String sql) {
+	public void read(final Connection connection) {
 		try {
-			statement = connection.createStatement();
-			resultSet = statement.executeQuery(sql);
-			resultSetMetaData = resultSet.getMetaData();
+			final Statement statement = connection.createStatement();
+			final ResultSet resultSet = statement.executeQuery(SQL);
+			final Document document = toXmlDocument(resultSet);
+			final String xmlString = toXmlString(resultSet);
 		} catch (final Exception e) {
 			LOG.error("{}", e.toString());
 		}
-	}
-
-	/**
-	 * data as an XML encoded string.
-	 *
-	 * @return the string
-	 */
-	public String toXmlString() {
-		final StringBuffer xml = new StringBuffer();
-
-		try {
-			final int colCount = resultSetMetaData.getColumnCount();
-			xml.append("<TABLE>\n");
-
-			while (resultSet.next()) {
-				xml.append("<ROW>\n");
-
-				for (int i = 1; i <= colCount; i++) {
-					final String columnName = resultSetMetaData.getColumnName(i);
-					final Object value = resultSet.getObject(i);
-					xml.append("<" + columnName + ">");
-
-					if (value != null) {
-						xml.append(value.toString().trim());
-					}
-					xml.append("</" + columnName + ">\n");
-				}
-				xml.append("</ROW>\n");
-			}
-
-			xml.append("</TABLE>\n");
-		} catch (final Exception e) {
-			LOG.error("{}", e.toString());
-		}
-
-		return xml.toString();
 	}
 
 	/**
 	 * data as XML.
 	 *
+	 * @param resultSet the result set
 	 * @return the document
 	 */
-	public Document toXmlDocument() {
+	public Document toXmlDocument(final ResultSet resultSet) {
 		Document document = null;
 
 		try {
@@ -135,17 +88,18 @@ class XmlDAO {
 			final DocumentBuilder builder = factory.newDocumentBuilder();
 			document = builder.newDocument();
 
+			final ResultSetMetaData metaData = resultSet.getMetaData();
+			final int colCount = metaData.getColumnCount();
+
 			final Element results = document.createElement("TABLE");
 			document.appendChild(results);
-
-			final int colCount = resultSetMetaData.getColumnCount();
 
 			while (resultSet.next()) {
 				final Element row = document.createElement("ROW");
 				results.appendChild(row);
 
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = resultSetMetaData.getColumnName(i);
+					final String columnName = metaData.getColumnName(i);
 					final Object value = resultSet.getObject(i);
 
 					if (value != null) {
@@ -163,16 +117,44 @@ class XmlDAO {
 	}
 
 	/**
-	 * database connection.
+	 * data as an XML encoded string.
+	 *
+	 * @param resultSet the result set
+	 * @return the string
 	 */
-	@Override
-	public void finalize() {
+	public String toXmlString(final ResultSet resultSet) {
+		final StringBuffer xml = new StringBuffer();
+
 		try {
+			final ResultSetMetaData metaData = resultSet.getMetaData();
+			final int colCount = metaData.getColumnCount();
+
+			while (resultSet.next()) {
+				xml.append("<TABLE>\n");
+
+				for (int i = 1; i <= colCount; i++) {
+					xml.append("<ROW>\n");
+					final String columnLabel = metaData.getColumnName(i);
+					final Object value = resultSet.getObject(i);
+					final String columnAsXml = columnValue(columnLabel, value);
+					xml.append(columnAsXml);
+				}
+				xml.append("</ROW>\n");
+			}
+			xml.append("</TABLE>\n");
 			resultSet.close();
-			statement.close();
-			connection.close();
-		} catch (final SQLException e) {
+		} catch (final Exception e) {
 			LOG.error("{}", e.toString());
 		}
+		return xml.toString();
+	}
+
+	/**
+	 * @param xml
+	 * @param columnName
+	 * @param value
+	 */
+	protected String columnValue(final String columnName, final Object value) {
+		return String.format("<%s>%s</%s>", columnName, value, columnName);
 	}
 }

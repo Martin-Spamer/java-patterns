@@ -8,7 +8,8 @@ public class XmlToJdbcTest {
 
 	@Test
 	public void testXmlToJdbc() {
-		assertNotNull(new XmlToJdbc());
+		final XmlToJdbc xmlToJdbc = new XmlToJdbc();
+		assertNotNull(xmlToJdbc);
 	}
 
 }

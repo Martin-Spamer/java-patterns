@@ -5,7 +5,7 @@ import java.util.Currency;
 public interface MoneyInterface {
 
 	/**
-	 * currency.
+	 * set the currency.
 	 *
 	 * @param currency the currency
 	 * @return the money
@@ -13,7 +13,7 @@ public interface MoneyInterface {
 	public MoneyInterface setCurrency(Currency currency);
 
 	/**
-	 * amount.
+	 * set the amount using long.
 	 *
 	 * @param amount the amount
 	 * @return the money
@@ -21,7 +21,7 @@ public interface MoneyInterface {
 	public MoneyInterface setAmount(long amount);
 
 	/**
-	 * amount.
+	 * set the amount using Money instance.
 	 *
 	 * @param amount the amount
 	 * @return the money
@@ -29,42 +29,42 @@ public interface MoneyInterface {
 	public MoneyInterface setAmount(Money amount);
 
 	/**
-	 * currency.
+	 * get the currency.
 	 *
 	 * @return the currency
 	 */
 	public Currency getCurrency();
 
 	/**
-	 * amount.
+	 * get the amount.
 	 *
 	 * @return the amount
 	 */
 	public Long getAmount();
 
 	/**
-	 * currency code.
+	 * get the currency code.
 	 *
 	 * @return the currency code
 	 */
 	public String getCurrencyCode();
 
 	/**
-	 * symbol.
+	 * get the symbol.
 	 *
 	 * @return the symbol
 	 */
 	public String getSymbol();
 
 	/**
-	 * display name.
+	 * get the display name.
 	 *
 	 * @return the display name
 	 */
 	public String getDisplayName();
 
 	/**
-	 * Adds an.
+	 * Add an amount.
 	 *
 	 * @param amount the amount
 	 * @return the money
@@ -72,7 +72,7 @@ public interface MoneyInterface {
 	public MoneyInterface add(long amount);
 
 	/**
-	 * Adds an.
+	 * Add an amount.
 	 *
 	 * @param amount the amount
 	 * @return the money
@@ -80,7 +80,7 @@ public interface MoneyInterface {
 	public MoneyInterface add(Money amount);
 
 	/**
-	 * Subtract.
+	 * Subtract an amount.
 	 *
 	 * @param amount the amount
 	 * @return the money
@@ -88,7 +88,7 @@ public interface MoneyInterface {
 	public MoneyInterface subtract(long amount);
 
 	/**
-	 * Subtract.
+	 * Subtract an amount.
 	 *
 	 * @param amount the amount
 	 * @return the money
@@ -96,7 +96,7 @@ public interface MoneyInterface {
 	public MoneyInterface subtract(Money amount);
 
 	/**
-	 * Checks if is more than.
+	 * Checks if more than amount.
 	 *
 	 * @param amount the amount
 	 * @return true, if is
@@ -105,7 +105,7 @@ public interface MoneyInterface {
 	public boolean isMoreThan(long amount);
 
 	/**
-	 * Checks if is more than.
+	 * Checks if more than amount.
 	 *
 	 * @param money the money
 	 * @return true, if is
@@ -114,7 +114,7 @@ public interface MoneyInterface {
 	public boolean isMoreThan(Money money);
 
 	/**
-	 * Checks if is equal to.
+	 * Checks if equal to amount.
 	 *
 	 * @param amount the amount
 	 * @return true, if is
@@ -123,7 +123,7 @@ public interface MoneyInterface {
 	public boolean isEqualTo(long amount);
 
 	/**
-	 * Checks if is equal to.
+	 * Checks if equal to amount.
 	 *
 	 * @param money the money
 	 * @return true, if is
@@ -132,7 +132,7 @@ public interface MoneyInterface {
 	public boolean isEqualTo(Money money);
 
 	/**
-	 * Checks if is less than.
+	 * Checks if less than amount.
 	 *
 	 * @param amount the amount
 	 * @return true, if is
@@ -141,7 +141,7 @@ public interface MoneyInterface {
 	public boolean isLessThan(long amount);
 
 	/**
-	 * Checks if is less than.
+	 * Checks if less than amount.
 	 *
 	 * @param money the money
 	 * @return true, if is

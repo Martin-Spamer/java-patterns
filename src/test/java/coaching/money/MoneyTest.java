@@ -2,7 +2,7 @@ package coaching.money;
 
 import static org.junit.Assert.*;
 
-import java.util.Currency;
+import java.util.*;
 
 import org.junit.Test;
 import org.slf4j.*;
@@ -56,11 +56,13 @@ public class MoneyTest {
 	@Test
 	public void testMoneyCurrency() {
 		LOG.info("testMoneyCurrency");
-		final MoneyInterface money = new Money();
+		final Locale locale = Locale.getDefault();
+		final Currency currency = Currency.getInstance(locale);
+		final MoneyInterface money = new Money(currency);
 		assertNotNull(money);
 		assertTrue(money.isEqualTo(0));
-		final Currency currency = money.getCurrency();
-		assertNotNull(currency);
+		final Currency actualCurrency = money.getCurrency();
+		assertNotNull(actualCurrency);
 	}
 
 	/**

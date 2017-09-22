@@ -6,9 +6,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import org.slf4j.*;
 
 /**
- * AbstractResourcePool Class.
- *
- * element type
+ * Abstract Resource Pool class.
  *
  * @param <E> the element type
  */
