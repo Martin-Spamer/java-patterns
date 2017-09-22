@@ -19,15 +19,7 @@ public class CsvToJdbc {
 	private String url;
 	private String username;
 	private String password;
-	private Connection connection;
-	private Statement statement;
 	private String tableName;
-
-	/**
-	 * Instantiates a new csv to jdbc.
-	 */
-	public CsvToJdbc() {
-	}
 
 	/**
 	 * Instantiates a new csv to jdbc.
@@ -43,11 +35,6 @@ public class CsvToJdbc {
 	/**
 	 * Instantiates a new csv to jdbc.
 	 *
-	 * driver
-	 * url
-	 * user
-	 * password
-	 *
 	 * @param driver the driver
 	 * @param url the url
 	 * @param user the user
@@ -56,42 +43,28 @@ public class CsvToJdbc {
 	public CsvToJdbc(final String driver, final String url, final String user, final String password) {
 		this.driver = driver;
 		this.url = url;
-		username = user;
+		this.username = user;
 		this.password = password;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#finalize()
+	/**
+	 * Instantiates a new csv to jdbc.
 	 */
-	@Override
-	public void finalize() throws SQLException {
-		statement.close();
-		connection.close();
+	public CsvToJdbc() {
+		super();
 	}
 
 	/**
 	 * Column headers.
 	 *
-	 * Column headers
-	 *
 	 * @return the column headers
 	 */
 	private String getColumnHeaders() {
-		return csvFile.getColumnNames();
+		return this.csvFile.getColumnNames();
 	}
 
 	/**
 	 * Make jdbc connection.
-	 *
-	 * driver
-	 * url
-	 * user
-	 * password
-	 * connection
-	 * class not found exception
-	 * SQL exception
 	 *
 	 * @param driver the driver
 	 * @param url the url
@@ -106,17 +79,13 @@ public class CsvToJdbc {
 	        final String user,
 	        final String password) throws ClassNotFoundException, SQLException {
 		Class.forName(driver);
-		connection = DriverManager.getConnection(url, user, password);
-		statement = makeStatement(connection);
+		final Connection connection = DriverManager.getConnection(url, user, password);
+		final Statement statement = makeStatement(connection);
 		return connection;
 	}
 
 	/**
 	 * Make statement.
-	 *
-	 * connection
-	 * statement
-	 * SQL exception
 	 *
 	 * @param connection the connection
 	 * @return the statement
@@ -129,24 +98,15 @@ public class CsvToJdbc {
 	/**
 	 * Process.
 	 *
-	 * exception
-	 *
 	 * @throws Exception the exception
 	 */
 	public void process() throws Exception {
-		process(filename, driver, url, username, password, tableName);
+		final String tableName = "";
+		process(this.filename, this.driver, this.url, this.username, this.password, tableName);
 	}
 
 	/**
 	 * Process.
-	 *
-	 * filename
-	 * driver
-	 * url
-	 * user
-	 * password
-	 * table
-	 * exception
 	 *
 	 * @param filename the filename
 	 * @param driver the driver
@@ -163,34 +123,16 @@ public class CsvToJdbc {
 	        final String password,
 	        final String table) throws Exception {
 		makeJdbcConnection(driver, url, user, password);
-		csvFile = new CsvFile(filename);
-		tableName = table;
-		for (int index = 0; index < csvFile.size(); index++) {
-			final CsvRecord record = csvFile.getRecord(index);
-			log.info(record.toString());
+		this.csvFile = new CsvFile(filename);
+		for (int index = 0; index < this.csvFile.size(); index++) {
+			final CsvRecord record = this.csvFile.getRecord(index);
+			this.log.info(record.toString());
 			write(record);
 		}
 	}
 
 	/**
-	 * connection.
-	 *
-	 * connection
-	 * csv to jdbc
-	 *
-	 * @param connection the connection
-	 * @return the csv to jdbc
-	 */
-	public CsvToJdbc setConnection(final Connection connection) {
-		this.connection = connection;
-		return this;
-	}
-
-	/**
 	 * csv file.
-	 *
-	 * csv file
-	 * csv to jdbc
 	 *
 	 * @param csvFile the csv file
 	 * @return the csv to jdbc
@@ -203,9 +145,6 @@ public class CsvToJdbc {
 	/**
 	 * driver.
 	 *
-	 * driver
-	 * csv to jdbc
-	 *
 	 * @param driver the driver
 	 * @return the csv to jdbc
 	 */
@@ -216,9 +155,6 @@ public class CsvToJdbc {
 
 	/**
 	 * filename.
-	 *
-	 * filename
-	 * csv to jdbc
 	 *
 	 * @param filename the filename
 	 * @return the csv to jdbc
@@ -231,9 +167,6 @@ public class CsvToJdbc {
 	/**
 	 * password.
 	 *
-	 * password
-	 * csv to jdbc
-	 *
 	 * @param password the password
 	 * @return the csv to jdbc
 	 */
@@ -243,24 +176,7 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * statement.
-	 *
-	 * statement
-	 * csv to jdbc
-	 *
-	 * @param statement the statement
-	 * @return the csv to jdbc
-	 */
-	public CsvToJdbc setStatement(final Statement statement) {
-		this.statement = statement;
-		return this;
-	}
-
-	/**
 	 * table name.
-	 *
-	 * table name
-	 * csv to jdbc
 	 *
 	 * @param tableName the table name
 	 * @return the csv to jdbc
@@ -273,9 +189,6 @@ public class CsvToJdbc {
 	/**
 	 * url.
 	 *
-	 * url
-	 * csv to jdbc
-	 *
 	 * @param url the url
 	 * @return the csv to jdbc
 	 */
@@ -286,9 +199,6 @@ public class CsvToJdbc {
 
 	/**
 	 * username.
-	 *
-	 * username
-	 * csv to jdbc
 	 *
 	 * @param username the username
 	 * @return the csv to jdbc
@@ -301,9 +211,6 @@ public class CsvToJdbc {
 	/**
 	 * Write.
 	 *
-	 * record
-	 * SQL exception
-	 *
 	 * @param record the record
 	 * @throws SQLException the SQL exception
 	 */
@@ -312,19 +219,20 @@ public class CsvToJdbc {
 		// into %table (%field%,...)
 		// from (%value%,...)
 		final StringBuffer sql = new StringBuffer();
-		sql.append("insert into ").append(tableName);
+		sql.append("insert into ").append(this.tableName);
 		sql.append(getColumnHeaders());
 		sql.append(" VALUES ");
 		sql.append(record.toString());
-		log.info(sql.toString());
+		this.log.info(sql.toString());
 
+		final Statement statement = null;
 		if (statement.execute(sql.toString())) {
-			log.info("ok {}", statement.getResultSet().toString());
+			this.log.info("ok {}", statement.getResultSet().toString());
 		} else {
 			if (statement.getUpdateCount() == 1) {
-				log.info("ok {}", statement.getResultSet().toString());
+				this.log.info("ok {}", statement.getResultSet().toString());
 			} else {
-				log.info("failed {}", statement.getWarnings());
+				this.log.info("failed {}", statement.getWarnings());
 			}
 		}
 	}

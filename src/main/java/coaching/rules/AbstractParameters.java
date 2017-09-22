@@ -6,4 +6,8 @@ package coaching.rules;
  */
 public abstract class AbstractParameters {
 
+	protected AbstractParameters() {
+		super();
+	}
+
 }

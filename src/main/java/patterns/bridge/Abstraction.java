@@ -1,5 +1,4 @@
 
-
 package patterns.bridge;
 
 /**
@@ -7,7 +6,7 @@ package patterns.bridge;
  */
 public abstract class Abstraction {
 
-	private final AbstractImplementor implementor;
+	private AbstractImplementor implementor = null;
 
 	/**
 	 * Instantiates a new abstraction.
@@ -16,7 +15,7 @@ public abstract class Abstraction {
 	 *
 	 * @param implementor the implementor
 	 */
-	public Abstraction(AbstractImplementor implementor) {
+	public Abstraction(final AbstractImplementor implementor) {
 		super();
 		this.implementor = implementor;
 	}
@@ -25,7 +24,7 @@ public abstract class Abstraction {
 	 * Operation.
 	 */
 	public void operation() {
-		implementor.operation();
+		this.implementor.operation();
 	}
 
 }

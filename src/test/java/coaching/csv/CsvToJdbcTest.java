@@ -21,8 +21,6 @@ public class CsvToJdbcTest {
 	/**
 	 * Fluent Interface.
 	 *
-	 * exception
-	 *
 	 * @throws Exception the exception
 	 */
 	@Test

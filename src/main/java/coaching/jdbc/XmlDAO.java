@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import java.sql.*;
@@ -105,7 +104,9 @@ class XmlDAO {
 
 					if (value != null) {
 						final Element node = document.createElement(columnName);
-						node.appendChild(document.createTextNode(value.toString()));
+						String string = value.toString();
+						Text createTextNode = document.createTextNode(string);
+						node.appendChild(createTextNode);
 						row.appendChild(node);
 					}
 				}

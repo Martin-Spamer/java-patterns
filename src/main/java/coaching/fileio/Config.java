@@ -68,7 +68,7 @@ public class Config extends Properties {
 	 * @return the property file name
 	 */
 	public String getPropertyFileName() {
-		return propertyFileName;
+		return this.propertyFileName;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class Config extends Properties {
 	 * 			loaded
 	 */
 	public boolean isLoaded() {
-		return loaded;
+		return this.loaded;
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class Config extends Properties {
 	 * @throws ConfigurationException the configuration exception
 	 */
 	public Config loadPropertyFile() throws ConfigurationException {
-		return loadFrom(propertyFileName);
+		return loadFrom(this.propertyFileName);
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class Config extends Properties {
 	 * @throws ConfigurationException the configuration exception
 	 */
 	public Config loadResource() throws ConfigurationException {
-		return loadResource(propertyFileName);
+		return loadResource(this.propertyFileName);
 	}
 
 	/**
@@ -124,9 +124,9 @@ public class Config extends Properties {
 		try {
 			final FileInputStream inStream = new FileInputStream(propertyFileName);
 			super.load(inStream);
-			loaded = true;
+			this.loaded = true;
 		} catch (final Exception e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -142,11 +142,20 @@ public class Config extends Properties {
 	public Config loadFrom(final InputStream streamForResource) throws ConfigurationException {
 		try {
 			super.load(streamForResource);
-			loaded = true;
+			this.loaded = true;
 		} catch (final Exception e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
+		return this;
+	}
+
+	/**
+	 * Load property file.
+	 *
+	 * @param string the string
+	 */
+	public Config loadPropertyFile(final String string) {
 		return this;
 	}
 
@@ -158,14 +167,11 @@ public class Config extends Properties {
 	 */
 	protected InputStream streamForResource(final String propertyFileName) {
 		final ClassLoader classLoader = this.getClass().getClassLoader();
-		final InputStream resourceAsStream = classLoader.getResourceAsStream(propertyFileName);
-		return resourceAsStream;
+		return classLoader.getResourceAsStream(propertyFileName);
 	}
 
 	/**
 	 * Save the configuration.
-	 *
-	 * property file name
 	 *
 	 * @param propertyFileName the property file name
 	 * @return this for a fluent interface.
@@ -176,7 +182,7 @@ public class Config extends Properties {
 		try {
 			save(propertyFile);
 		} catch (final ConfigurationException e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -185,8 +191,6 @@ public class Config extends Properties {
 	/**
 	 * Save the configuration.
 	 *
-	 * property file
-	 *
 	 * @param propertyFile the property file
 	 * @return this for fluent interface.
 	 * @throws ConfigurationException the configuration exception
@@ -194,10 +198,10 @@ public class Config extends Properties {
 	public Config save(final File propertyFile) throws ConfigurationException {
 		try {
 			final FileOutputStream outStream = new FileOutputStream(propertyFile);
-			final String comments = "# Header " + propertyFileName;
+			final String comments = "# Header " + this.propertyFileName;
 			super.store(outStream, comments);
 		} catch (final IOException e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 			throw new ConfigurationException(e);
 		}
 		return this;
@@ -232,14 +236,5 @@ public class Config extends Properties {
 		public ConfigurationException(final Throwable cause) {
 			super(cause);
 		}
-	}
-
-	/**
-	 * Load property file.
-	 *
-	 * @param string the string
-	 */
-	public void loadPropertyFile(final String string) {
-		// TODO Auto-generated method stub
 	}
 }

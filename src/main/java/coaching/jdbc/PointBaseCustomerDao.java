@@ -69,7 +69,8 @@ public class PointBaseCustomerDao {
 					final Object value = resultSet.getObject(i);
 					output.append(columnName + "=");
 					if (value != null) {
-						output.append(value.toString().trim() + ",");
+						final String str = String.format("%s,", value.toString().trim());
+						output.append(str);
 					}
 				}
 				output.append("\n");
