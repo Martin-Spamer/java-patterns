@@ -1,4 +1,5 @@
 
+
 package patterns.state;
 
 /**
@@ -8,6 +9,11 @@ public class Context {
 
 	private AbstractState state = null;
 
+	/**
+	 * Instantiates a new context.
+	 *
+	 * @param state the state
+	 */
 	public Context(final AbstractState state) {
 		super();
 		this.state = state;
@@ -27,6 +33,9 @@ public class Context {
 		state = new StateBob();
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return String.format("Context [state=%s]", state);

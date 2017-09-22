@@ -1,9 +1,13 @@
+
 package patterns.builder;
 
+/**
+ * interface BuilderInterface.
+ */
 public interface BuilderInterface {
 
 	/**
-	 * Builds the part
+	 * Builds the part.
 	 *
 	 * @return the part
 	 */

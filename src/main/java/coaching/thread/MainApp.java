@@ -72,10 +72,7 @@ public class MainApp {
 	/**
 	 * Creates the threads.
 	 *
-	 * @param config the configuration.
-	 * @throws InstantiationException the instantiation exception
-	 * @throws IllegalAccessException the illegal access exception
-	 * @throws ClassNotFoundException the class not found exception
+	 * @param document the document
 	 */
 	protected void createThreads(final Document document) {
 		final Element documentElement = document.getDocumentElement();
@@ -107,9 +104,6 @@ public class MainApp {
 	 *
 	 * @param className the class name
 	 * @return the abstract process
-	 * @throws InstantiationException the instantiation exception
-	 * @throws IllegalAccessException the illegal access exception
-	 * @throws ClassNotFoundException the class not found exception
 	 */
 	protected AbstractProcess createProcess(final String className) {
 		try {
@@ -132,6 +126,12 @@ public class MainApp {
 		return configFilename;
 	}
 
+	/**
+	 * Foo.
+	 *
+	 * @param doc the doc
+	 * @return the string
+	 */
 	protected String foo(final Document doc) {
 		try {
 			final TransformerFactory transformerFactory = TransformerFactory.newInstance();

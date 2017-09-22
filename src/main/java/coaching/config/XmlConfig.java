@@ -1,4 +1,5 @@
 
+
 package coaching.config;
 
 import java.io.*;
@@ -23,7 +24,7 @@ public class XmlConfig extends AbstractConfig {
 	}
 
 	/**
-	 * Instantiates a new XmlConfig from configuration file
+	 * Instantiates a new XmlConfig from configuration file.
 	 *
 	 * @param configFilename the Configuration filename
 	 */
@@ -32,7 +33,7 @@ public class XmlConfig extends AbstractConfig {
 	}
 
 	/**
-	 * Instantiates a new XmlConfig from configuration file name
+	 * Instantiates a new XmlConfig from configuration file name.
 	 *
 	 * @param configFilename the Configuration filename
 	 */
@@ -41,7 +42,7 @@ public class XmlConfig extends AbstractConfig {
 	}
 
 	/**
-	 * Load from xml file resource as stream
+	 * Load from xml file resource as stream.
 	 *
 	 * @param resourceAsStream the resource as stream
 	 */
@@ -68,7 +69,7 @@ public class XmlConfig extends AbstractConfig {
 	}
 
 	/**
-	 * Load configuration filename
+	 * Load configuration filename.
 	 *
 	 * @param configFilename the Configuration filename
 	 */
@@ -77,7 +78,7 @@ public class XmlConfig extends AbstractConfig {
 	}
 
 	/**
-	 * Load configuration file
+	 * Load configuration file.
 	 *
 	 * @param configFile the Configuration file
 	 */

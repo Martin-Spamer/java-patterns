@@ -25,7 +25,7 @@ public interface VehicleInterface {
 	public Driver getDriver();
 
 	/**
-	 * Travel destination
+	 * Travel destination.
 	 *
 	 * @param destination the destination
 	 */

@@ -1,4 +1,5 @@
 
+
 package patterns.iterator;
 
 import java.util.*;
@@ -30,8 +31,8 @@ public abstract class AbstractIterator implements IteratorInterface {
 	 */
 	@Override
 	public ItemInterface first() {
-		this.index = 0;
-		return this.itemList.get(this.index);
+		index = 0;
+		return itemList.get(index);
 	}
 
 	/* (non-Javadoc)
@@ -39,8 +40,8 @@ public abstract class AbstractIterator implements IteratorInterface {
 	 */
 	@Override
 	public ItemInterface next() {
-		this.index++;
-		return this.itemList.get(this.index);
+		index++;
+		return itemList.get(index);
 	}
 
 	/* (non-Javadoc)
@@ -48,7 +49,7 @@ public abstract class AbstractIterator implements IteratorInterface {
 	 */
 	@Override
 	public boolean isDone() {
-		return this.index == this.itemList.size();
+		return index == itemList.size();
 	}
 
 	/* (non-Javadoc)
@@ -56,7 +57,7 @@ public abstract class AbstractIterator implements IteratorInterface {
 	 */
 	@Override
 	public ItemInterface currentItem() {
-		return this.itemList.get(this.index);
+		return itemList.get(index);
 	}
 
 }

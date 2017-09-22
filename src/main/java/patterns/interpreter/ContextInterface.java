@@ -1,3 +1,4 @@
+
 package patterns.interpreter;
 
 /**
@@ -5,6 +6,12 @@ package patterns.interpreter;
  */
 public interface ContextInterface {
 
+	/**
+	 * Contains.
+	 *
+	 * @param data the data
+	 * @return true, if successful
+	 */
 	boolean contains(Object data);
 
 }

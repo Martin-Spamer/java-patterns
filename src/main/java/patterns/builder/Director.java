@@ -1,4 +1,5 @@
 
+
 package patterns.builder;
 
 import java.util.Vector;
@@ -19,7 +20,7 @@ public class Director {
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean add(final AbstractBuilder builder) {
-		return this.builders.add(builder);
+		return builders.add(builder);
 	}
 
 	/**
@@ -42,7 +43,7 @@ public class Director {
 	 * Construct Product.
 	 */
 	public void buildAll() {
-		for (final BuilderInterface builder : this.builders) {
+		for (final BuilderInterface builder : builders) {
 			final Part part = builder.build();
 			LOG.info("part={}", part);
 		}

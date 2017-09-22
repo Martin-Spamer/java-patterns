@@ -1,3 +1,4 @@
+
 package coaching.rules;
 
 import java.io.*;
@@ -29,7 +30,7 @@ public class RulesEngine {
 	}
 
 	/**
-	 * Initialise with configuration filename
+	 * Initialise with configuration filename.
 	 *
 	 * @param configFilename the configuration filename
 	 * @return true, if successful
@@ -84,7 +85,6 @@ public class RulesEngine {
 	/**
 	 * get element attribute.
 	 *
-	 * @param documentElement the document element
 	 * @param elementName the element name
 	 * @param attributeName the attribute name
 	 * @return the element attribute

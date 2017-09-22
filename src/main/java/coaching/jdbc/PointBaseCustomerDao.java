@@ -88,7 +88,7 @@ public class PointBaseCustomerDao {
 	 * 		(CUSTOMER_NUM,POSTCODE,DISCOUNT_CODE)
 	 * VALUES
 	 * 		(999,'AA99 9ZZ','N')
-	 * </code>
+	 * </code>.
 	 */
 	public void write() {
 		try {
@@ -106,7 +106,7 @@ public class PointBaseCustomerDao {
 	 * database SQL
 	 * <code>
 	 * UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999
-	 * </code>
+	 * </code>.
 	 */
 	public void update() {
 		try {
@@ -125,7 +125,7 @@ public class PointBaseCustomerDao {
 	 * <code>
 	 * 	DELETE FROM CUSTOMER_TBL WHERE
 	 * FIELD-NAME='VALUE'
-	 * </code>
+	 * </code>.
 	 */
 	public void delete() {
 		try {

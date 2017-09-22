@@ -1,3 +1,4 @@
+
 package patterns.strategy;
 
 import org.slf4j.*;
@@ -10,6 +11,11 @@ public abstract class AbstractStrategy implements StrategyInterface {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private Context context = null;
 
+	/**
+	 * Instantiates a new abstract strategy.
+	 *
+	 * @param context the context
+	 */
 	public AbstractStrategy(final Context context) {
 		super();
 		this.context = context;

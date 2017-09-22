@@ -1,4 +1,5 @@
 
+
 package patterns.command;
 
 import org.slf4j.*;
@@ -12,6 +13,11 @@ public abstract class AbstractCommand implements CommandInterface {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ResultInterface result = null;
 
+	/**
+	 * Execute.
+	 *
+	 * @return the result interface
+	 */
 	/*
 	 * (non-Javadoc)
 	 *

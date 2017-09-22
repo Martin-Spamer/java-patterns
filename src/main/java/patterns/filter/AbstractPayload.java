@@ -1,3 +1,4 @@
+
 package patterns.filter;
 
 import java.io.*;

@@ -1,3 +1,4 @@
+
 package patterns.visitor;
 
 /**
@@ -6,7 +7,7 @@ package patterns.visitor;
 public interface VisitorInterface {
 
 	/**
-	 * Visit element
+	 * Visit element.
 	 *
 	 * @param element the element
 	 */

@@ -55,7 +55,7 @@ public class CustomExceptionHandling {
 	/**
 	 * A SubProcess Throws a specialist exception.
 	 *
-	 * @throws CustomException the custom exception
+	 * @throws CustomCreationException the custom creation exception
 	 */
 	public void subProcessA() throws CustomCreationException {
 		throw new CustomCreationException();
@@ -63,10 +63,10 @@ public class CustomExceptionHandling {
 
 	/**
 	 * A SubProcess Throws a specialist exception.
-	 *
+	 * 
 	 * custom exception
 	 *
-	 * @throws CustomException the custom exception
+	 * @throws CustomReadException the custom read exception
 	 */
 	public void subProcessB() throws CustomReadException {
 		throw new CustomReadException();
@@ -74,10 +74,10 @@ public class CustomExceptionHandling {
 
 	/**
 	 * A SubProcess Throws a specialist exception.
-	 *
+	 * 
 	 * custom exception
 	 *
-	 * @throws CustomException the custom exception
+	 * @throws CustomUpdateException the custom update exception
 	 */
 	public void subProcessC() throws CustomUpdateException {
 		throw new CustomUpdateException();

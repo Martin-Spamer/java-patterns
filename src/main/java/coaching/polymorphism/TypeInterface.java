@@ -1,6 +1,10 @@
 
+
 package coaching.polymorphism;
 
+/**
+ * interface TypeInterface.
+ */
 public interface TypeInterface {
 
 	/**

@@ -1,4 +1,5 @@
 
+
 package patterns.interpreter;
 
 /**
@@ -8,8 +9,6 @@ public class TerminalExpression extends AbstractExpression {
 
 	/**
 	 * Instantiates a new terminal expression.
-	 *
-	 * @param result the result
 	 */
 	public TerminalExpression() {
 		super(true);

@@ -1,3 +1,4 @@
+
 package patterns.servlet;
 
 import java.io.IOException;
@@ -72,7 +73,6 @@ public class FrontController extends HttpServlet {
 	 * @param request the request
 	 * @param response the response
 	 * @throws ServletException the servlet exception
-	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException {

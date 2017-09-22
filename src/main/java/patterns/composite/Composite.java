@@ -1,3 +1,4 @@
+
 package patterns.composite;
 
 import java.util.Vector;

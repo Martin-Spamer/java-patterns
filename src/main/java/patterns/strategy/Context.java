@@ -1,4 +1,5 @@
 
+
 package patterns.strategy;
 
 import coaching.rules.AbstractContext;

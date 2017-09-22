@@ -1,4 +1,5 @@
 
+
 package patterns.servlet;
 
 import java.io.IOException;
@@ -70,17 +71,16 @@ public class MvcServlet extends HttpServlet {
 	 * @param request the request
 	 * @param response the response
 	 * @throws ServletException the servlet exception
-	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException {
 
-		if (this.servletInitialised) {
+		if (servletInitialised) {
 			final String requestName = request.getPathInfo();
 			LOG.info("requestName={}", requestName);
 			final Result result = new Result();
-			this.actionManager.handleRequest(request, response, result);
-			this.viewManager.handleRequest(request, response, result);
+			actionManager.handleRequest(request, response, result);
+			viewManager.handleRequest(request, response, result);
 		}
 	}
 

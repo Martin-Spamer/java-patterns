@@ -1,7 +1,11 @@
+
 package coaching.money;
 
 import java.util.Currency;
 
+/**
+ * interface MoneyInterface.
+ */
 public interface MoneyInterface {
 
 	/**

@@ -1,4 +1,5 @@
 
+
 package patterns.iterator;
 
 import java.util.*;
@@ -19,7 +20,7 @@ public abstract class AbstractAggregate implements AggregateInterface {
 	 */
 	@Override
 	public IteratorInterface createIterator() {
-		this.log.info("%s.createIterator()", this.getClass().getSimpleName());
+		log.info("%s.createIterator()", this.getClass().getSimpleName());
 		return new Iterator(this);
 	}
 

@@ -1,4 +1,5 @@
 
+
 package patterns.interpreter;
 
 /**
@@ -44,7 +45,7 @@ public class Context implements ContextInterface {
 	 * @return the state
 	 */
 	public Object getState() {
-		return this.state;
+		return state;
 	}
 
 	/* (non-Javadoc)

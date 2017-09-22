@@ -1,4 +1,5 @@
 
+
 package coaching.jdbc;
 
 import java.sql.*;
@@ -150,9 +151,11 @@ class XmlDAO {
 	}
 
 	/**
-	 * @param xml
-	 * @param columnName
-	 * @param value
+	 * Column value.
+	 *
+	 * @param columnName the column name
+	 * @param value the value
+	 * @return the string
 	 */
 	protected String columnValue(final String columnName, final Object value) {
 		return String.format("<%s>%s</%s>", columnName, value, columnName);

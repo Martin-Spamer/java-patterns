@@ -1,4 +1,5 @@
 
+
 package patterns.bridge;
 
 import org.slf4j.*;

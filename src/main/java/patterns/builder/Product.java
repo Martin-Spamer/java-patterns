@@ -1,3 +1,4 @@
+
 package patterns.builder;
 
 /**
@@ -8,6 +9,12 @@ public class Product {
 	private Part partOne = null;
 	private Part partTwo = null;
 
+	/**
+	 * Instantiates a new product.
+	 *
+	 * @param partOne the part one
+	 * @param partTwo the part two
+	 */
 	public Product(final Part partOne, final Part partTwo) {
 		super();
 		this.partOne = partOne;

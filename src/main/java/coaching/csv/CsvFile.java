@@ -1,3 +1,4 @@
+
 package coaching.csv;
 
 import java.io.*;
@@ -129,7 +130,7 @@ public class CsvFile {
 	}
 
 	/**
-	 * Read input stream reader
+	 * Read input stream reader.
 	 *
 	 * @param inputStreamReader the input stream reader
 	 * @throws IOException Signals that an I/O exception has occurred.
@@ -145,7 +146,7 @@ public class CsvFile {
 	}
 
 	/**
-	 * Read filename
+	 * Read filename.
 	 *
 	 * @param filename the filename
 	 * @throws IOException Signals that an I/O exception has occurred.
@@ -161,7 +162,7 @@ public class CsvFile {
 	}
 
 	/**
-	 * header line new header line
+	 * header line new header line.
 	 *
 	 * @param line the new
 	 * 			header line
@@ -210,6 +211,8 @@ public class CsvFile {
 	}
 
 	/**
+	 * Gets the header line.
+	 *
 	 * @return the headerLine
 	 */
 	public String getHeaderLine() {
