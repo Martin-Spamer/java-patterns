@@ -1,5 +1,4 @@
 
-
 package automation;
 
 import java.io.*;
@@ -19,7 +18,7 @@ public abstract class AbstractData implements DataInterface {
 	 * @return this for a fluent interface.
 	 */
 	public AbstractData setProperty(final String key, final String value) {
-		properties.setProperty(key, value);
+		this.properties.setProperty(key, value);
 		return this;
 	}
 
@@ -32,7 +31,7 @@ public abstract class AbstractData implements DataInterface {
 	 */
 	public AbstractData load(final InputStream inputStream) throws IOException {
 		if (inputStream != null) {
-			properties.load(inputStream);
+			this.properties.load(inputStream);
 		}
 		return this;
 	}
@@ -46,7 +45,7 @@ public abstract class AbstractData implements DataInterface {
 	 */
 	public AbstractData loadFromXML(final InputStream inputStream) throws Exception {
 		if (inputStream != null) {
-			properties.loadFromXML(inputStream);
+			this.properties.loadFromXML(inputStream);
 		}
 		return this;
 	}
@@ -58,7 +57,7 @@ public abstract class AbstractData implements DataInterface {
 	 * @return the property
 	 */
 	public String getProperty(final String key) {
-		return properties.getProperty(key);
+		return this.properties.getProperty(key);
 	}
 
 	/**
@@ -69,7 +68,7 @@ public abstract class AbstractData implements DataInterface {
 	 * @return the property
 	 */
 	public String getProperty(final String key, final String defaultValue) {
-		return properties.getProperty(key, defaultValue);
+		return this.properties.getProperty(key, defaultValue);
 	}
 
 	/**
@@ -93,7 +92,7 @@ public abstract class AbstractData implements DataInterface {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public AbstractData store(final OutputStream out, final String comments) throws IOException {
-		properties.store(out, comments);
+		this.properties.store(out, comments);
 		return this;
 	}
 
@@ -103,6 +102,7 @@ public abstract class AbstractData implements DataInterface {
 	 * @return size as integer.
 	 */
 	public int size() {
-		return properties.size();
+		return this.properties.size();
 	}
+
 }

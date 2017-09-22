@@ -1,5 +1,4 @@
 
-
 package patterns.decorator;
 
 /**
@@ -9,8 +8,6 @@ public interface ComponentInterface {
 
 	/**
 	 * Operation.
-	 *
-	 * component interface
 	 *
 	 * @return the component interface
 	 */

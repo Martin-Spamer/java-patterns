@@ -80,7 +80,6 @@ public class CsvToJdbc {
 	        final String password) throws ClassNotFoundException, SQLException {
 		Class.forName(driver);
 		final Connection connection = DriverManager.getConnection(url, user, password);
-		final Statement statement = makeStatement(connection);
 		return connection;
 	}
 
@@ -219,13 +218,15 @@ public class CsvToJdbc {
 		// into %table (%field%,...)
 		// from (%value%,...)
 		final StringBuffer sql = new StringBuffer();
-		sql.append("insert into ").append(this.tableName);
+		sql.append("insert into ");
+		sql.append(this.tableName);
 		sql.append(getColumnHeaders());
 		sql.append(" VALUES ");
 		sql.append(record.toString());
 		this.log.info(sql.toString());
 
-		final Statement statement = null;
+		final Connection connection = DriverManager.getConnection(this.url, this.username, this.password);
+		final Statement statement = makeStatement(connection);
 		if (statement.execute(sql.toString())) {
 			this.log.info("ok {}", statement.getResultSet().toString());
 		} else {
@@ -236,5 +237,4 @@ public class CsvToJdbc {
 			}
 		}
 	}
-
 }

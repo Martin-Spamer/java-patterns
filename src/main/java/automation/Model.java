@@ -1,5 +1,4 @@
 
-
 package automation;
 
 /**
@@ -16,8 +15,8 @@ public class Model {
 	 */
 	public Model given() {
 		DataManager.getData(Characteristic.AUTHORISED);
-		currentPage = PageFactory.landingPage();
-		currentPage.verify();
+		this.currentPage = PageFactory.landingPage();
+		this.currentPage.verify();
 		return this;
 	}
 
@@ -27,7 +26,7 @@ public class Model {
 	 * @return the model
 	 */
 	public Model when() {
-		currentPage.open();
+		this.currentPage.open();
 		return this;
 	}
 
@@ -37,8 +36,8 @@ public class Model {
 	 * @return the model
 	 */
 	public Model then() {
-		currentPage = PageFactory.landingPage();
-		currentPage.verify();
+		this.currentPage = PageFactory.landingPage();
+		this.currentPage.verify();
 		return this;
 	}
 

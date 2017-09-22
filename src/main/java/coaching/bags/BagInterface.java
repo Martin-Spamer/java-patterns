@@ -1,5 +1,4 @@
 
-
 package coaching.bags;
 
 /**
@@ -16,25 +15,29 @@ public interface BagInterface {
 	public BagInterface fill(String... values);
 
 	/**
-	 * bag.
+	 * Adds an item to the bag.
 	 *
-	 * value as a string.
+	 * @param value the value
+	 * @return true, if successful, otherwise false.
+	 */
+	public boolean add(String value);
+
+	/**
+	 * pick item from the bag.
 	 *
 	 * @return the string
 	 */
 	public String pick();
 
 	/**
-	 * bag.
-	 *
-	 * value as a string.
+	 * choose item from bag.
 	 *
 	 * @return the string
 	 */
 	public String choose();
 
 	/**
-	 * back to its initial state.
+	 * reset the back to its initial state.
 	 *
 	 * @return this bag for a fluent interface
 	 */

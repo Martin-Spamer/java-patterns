@@ -1,5 +1,4 @@
 
-
 package automation;
 
 import org.slf4j.*;
@@ -12,17 +11,17 @@ public abstract class AbstractPage {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
-	 * Login.
+	 * open the page.
 	 */
 	public void open() {
-		log.info("open");
+		this.log.info("open");
 	}
 
 	/**
 	 * Verify that.
 	 */
 	public void verify() {
-		log.info("verify");
+		this.log.info("verify");
 	}
 
 }

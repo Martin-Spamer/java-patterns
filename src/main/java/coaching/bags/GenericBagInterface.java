@@ -1,18 +1,17 @@
 
-
 package coaching.bags;
 
 /**
  * GenericBagInterface Interface.
  *
- * generic type
+ * Requires a generic type.
  *
  * @param <T> the generic type
  */
 public interface GenericBagInterface<T> {
 
 	/**
-	 * bag with String values.
+	 * bag with T values.
 	 *
 	 * @param values the values
 	 * @return this bag for a fluent interface
@@ -20,31 +19,31 @@ public interface GenericBagInterface<T> {
 	public GenericBagInterface<T> fill(T... values);
 
 	/**
-	 * bag.
+	 * Add an instance of T to the bag.
 	 *
-	 * @return the t
+	 * @param t the t
+	 * @return true, if successful, otherwise false.
+	 */
+	public boolean add(T t);
+
+	/**
+	 * pick from the bag.
+	 *
+	 * @return the value as type T
 	 * @see idioms.BagInterface#fill(java.lang.String)
 	 */
 	public T pick();
 
 	/**
-	 * bag.
+	 * choose from bag.
 	 *
-	 * @return the t
+	 * @return the value as type T
 	 * @see idioms.BagInterface#fill(java.lang.String)
 	 */
 	public T choose();
 
 	/**
-	 * Adds an.
-	 *
-	 * @param e the e
-	 * @return true, if successful
-	 */
-	public boolean add(T e);
-
-	/**
-	 * Reset.
+	 * Reset the bag to its initial state.
 	 *
 	 * @return the generic bag interface
 	 */

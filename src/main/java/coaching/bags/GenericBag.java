@@ -1,21 +1,16 @@
 
-
 package coaching.bags;
 
 import java.util.*;
 
 /**
- * A Generic Type Bag Class.
- *
- * generic type
+ * Generic Type Bag Class.
  *
  * @param <T> the generic type
  */
 @SuppressWarnings("serial")
 public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 	private final Random random = new Random();
-
-	/** * bag to be reset */
 	private T[] initialState = null;
 
 	/**
@@ -30,19 +25,15 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	 * Instantiates a new bag from string array.
 	 * Accepts 0..N arguments.
 	 *
-	 * values
-	 *
 	 * @param values the values
 	 */
 	public GenericBag(final T... values) {
+		super();
 		fill(values);
 	}
 
-	/*
-	 * @see idioms.BagInterface#fill(java.lang.String)
-	 */
 	/* (non-Javadoc)
-	 * @see idioms.bags.GenericBagInterface#fill(T)
+	 * @see coaching.bags.GenericBagInterface#fill(java.lang.Object[])
 	 */
 	@Override
 	public GenericBagInterface<T> fill(final T... values) {
@@ -56,7 +47,15 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	}
 
 	/* (non-Javadoc)
-	 * @see idioms.bags.GenericBagInterface#choose()
+	 * @see java.util.ArrayList#add(java.lang.Object)
+	 */
+	@Override
+	public boolean add(final T e) {
+		return add(e);
+	}
+
+	/* (non-Javadoc)
+	 * @see coaching.bags.GenericBagInterface#pick()
 	 */
 	@Override
 	public T pick() {
@@ -64,29 +63,21 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	}
 
 	/* (non-Javadoc)
-	 * @see idioms.bags.GenericBagInterface#choose()
+	 * @see coaching.bags.GenericBagInterface#choose()
 	 */
 	@Override
 	public T choose() {
 		final int size = size();
 		if (size > 0) {
 			final int nextInt = this.random.nextInt(size);
-			return this.remove(nextInt);
+			return remove(nextInt);
 		} else {
 			return null;
 		}
 	}
 
 	/* (non-Javadoc)
-	 * @see idioms.bags.GenericBagInterface#add(T)
-	 */
-	@Override
-	public boolean add(T e) {
-		return super.add(e);
-	}
-
-	/* (non-Javadoc)
-	 * @see idioms.bags.GenericBagInterface#reset()
+	 * @see coaching.bags.GenericBagInterface#reset()
 	 */
 	@Override
 	public GenericBagInterface<T> reset() {

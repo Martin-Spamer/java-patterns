@@ -1,5 +1,4 @@
 
-
 package coaching.bags;
 
 import java.util.*;
@@ -10,16 +9,13 @@ import java.util.*;
 @SuppressWarnings("serial")
 public class Bag extends ArrayList<String> implements BagInterface {
 	private final Random random = new Random();
-
-	/** * bag to be reset */
 	private String[] initialState = new String[0];
 
 	/**
 	 * Instantiates a new empty bag.
 	 */
 	public Bag() {
-		super();
-		fill(initialState);
+		fill(this.initialState);
 	}
 
 	/**
@@ -34,15 +30,12 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	}
 
 	/* (non-Javadoc)
-	 * @see javamentor.bags.BagInterface#fill(java.lang.String[])
-	 */
-	/*
-	 * @see idioms.BagInterface#fill(java.lang.String)
+	 * @see coaching.bags.BagInterface#fill(java.lang.String[])
 	 */
 	@Override
 	public BagInterface fill(final String... values) {
 		if (values != null) {
-			initialState = values;
+			this.initialState = values;
 			for (final String value : values) {
 				this.add(value);
 			}
@@ -51,7 +44,15 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	}
 
 	/* (non-Javadoc)
-	 * @see idioms.BagInterface#choose()
+	 * @see java.util.ArrayList#add(java.lang.Object)
+	 */
+	@Override
+	public boolean add(final String value) {
+		return add(value);
+	}
+
+	/* (non-Javadoc)
+	 * @see coaching.bags.BagInterface#pick()
 	 */
 	@Override
 	public String pick() {
@@ -59,13 +60,13 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	}
 
 	/* (non-Javadoc)
-	 * @see idioms.BagInterface#choose()
+	 * @see coaching.bags.BagInterface#choose()
 	 */
 	@Override
 	public String choose() {
 		final int size = size();
 		if (size > 0) {
-			final int nextInt = random.nextInt(size);
+			final int nextInt = this.random.nextInt(size);
 			return this.remove(nextInt);
 		} else {
 			return null;
@@ -73,11 +74,11 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	}
 
 	/* (non-Javadoc)
-	 * @see idioms.BagInterface#reset()
+	 * @see coaching.bags.BagInterface#reset()
 	 */
 	@Override
 	public BagInterface reset() {
-		return fill(initialState);
+		return fill(this.initialState);
 	}
 
 }
