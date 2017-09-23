@@ -2,7 +2,7 @@
 package patterns.builder;
 
 /**
- * interface BuilderInterface.
+ * Builder Interface.
  */
 public interface BuilderInterface {
 

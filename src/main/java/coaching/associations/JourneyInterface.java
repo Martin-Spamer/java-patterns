@@ -1,29 +1,24 @@
 
-
 package coaching.associations;
 
 /**
- * JourneyInterface Interface.
+ * Journey Interface.
  */
 public interface JourneyInterface {
 
 	/**
-	 * destination.
-	 *
-	 * new destination
+	 * set the destination of the journey.
 	 *
 	 * @param destination the new
 	 * 			destination
 	 */
-	public abstract void setDestination(String destination);
+	public JourneyInterface setDestination(String destination);
 
 	/**
-	 * destination.
-	 *
-	 * destination
+	 * get the destination of the journey.
 	 *
 	 * @return the destination
 	 */
-	public abstract String getDestination();
+	public String getDestination();
 
 }

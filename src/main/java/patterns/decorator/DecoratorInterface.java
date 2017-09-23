@@ -1,9 +1,8 @@
 
-
 package patterns.decorator;
 
 /**
- * DecoratorInterface Interface.
+ * Decorator Interface.
  */
 public interface DecoratorInterface {
 

@@ -1,5 +1,4 @@
 
-
 package patterns.command;
 
 /**
@@ -9,10 +8,6 @@ public interface InvokerInterface {
 
 	/**
 	 * Execute.
-	 *
-	 * action name
-	 * result interface
-	 * missing command exception
 	 *
 	 * @param actionName the action name
 	 * @return the result interface

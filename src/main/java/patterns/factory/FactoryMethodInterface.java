@@ -1,9 +1,8 @@
 
-
 package patterns.factory;
 
 /**
- * FactoryMethodInterface Interface.
+ * Factory Method Interface.
  *
  * generic type
  *

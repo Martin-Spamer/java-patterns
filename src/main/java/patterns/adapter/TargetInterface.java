@@ -1,9 +1,8 @@
 
-
 package patterns.adapter;
 
 /**
- * TargetInterface Interface.
+ * Target Interface.
  */
 public interface TargetInterface {
 
@@ -14,6 +13,6 @@ public interface TargetInterface {
 	 *
 	 * @return the result
 	 */
-	public abstract Result request();
+	public Result request();
 
 }

@@ -17,12 +17,11 @@ public abstract class AbstractPerson implements PersonInterface {
 	 * Instantiates a new person.
 	 */
 	public AbstractPerson() {
+		this.name = "";
 	}
 
 	/**
 	 * Instantiates a new person.
-	 *
-	 * name
 	 *
 	 * @param name the name
 	 */
@@ -36,19 +35,19 @@ public abstract class AbstractPerson implements PersonInterface {
 	 * @see associations.PersonInterface#setName(java.lang.String)
 	 */
 	@Override
-	public void setName(final String name) {
+	public PersonInterface setName(final String name) {
 		this.name = name;
+		return this;
 	}
 
 	/**
-	 * name.
-	 *
-	 * name
+	 * Gets the name.
 	 *
 	 * @return the name
 	 */
+	@Override
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	/*
@@ -58,7 +57,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Person [name=%s]", name);
+		return String.format("Person [name=%s]", this.name);
 	}
 
 }

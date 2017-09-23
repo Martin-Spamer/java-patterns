@@ -15,6 +15,7 @@ import org.slf4j.*;
 
 /**
  * Using a basic Java array to implement an example UML Aggregation.
+ * The Lifetime of parts is unconstrained by lifetime of the parent.
  * @author martin.spamer
  * @version 0.1 Created 23-Sep-2004 - 11:15:47
  **/
@@ -36,10 +37,10 @@ public class AggregateClassArray {
 	 * aggregate.
 	 */
 	public void execute() {
-		aggregate[0] = new ElementAlice();
-		aggregate[1] = new ElementBob();
-		aggregate[2] = new ElementCharlie();
-		aggregate[3] = new ElementDan();
+		this.aggregate[0] = new ElementAlice();
+		this.aggregate[1] = new ElementBob();
+		this.aggregate[2] = new ElementCharlie();
+		this.aggregate[3] = new ElementDan();
 	}
 
 	/* (non-Javadoc)
@@ -47,7 +48,7 @@ public class AggregateClassArray {
 	 */
 	@Override
 	public String toString() {
-		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(aggregate));
+		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(this.aggregate));
 	}
 
 }

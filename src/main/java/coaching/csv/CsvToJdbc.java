@@ -23,8 +23,13 @@ public class CsvToJdbc {
 
 	/**
 	 * Instantiates a new csv to jdbc.
-	 *
-	 * csv file
+	 */
+	public CsvToJdbc() {
+		super();
+	}
+
+	/**
+	 * Instantiates a new csv to jdbc.
 	 *
 	 * @param csvFile the csv file
 	 */
@@ -45,13 +50,6 @@ public class CsvToJdbc {
 		this.url = url;
 		this.username = user;
 		this.password = password;
-	}
-
-	/**
-	 * Instantiates a new csv to jdbc.
-	 */
-	public CsvToJdbc() {
-		super();
 	}
 
 	/**

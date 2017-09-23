@@ -1,9 +1,8 @@
 
-
 package patterns.iterator;
 
 /**
- * interface AggregateInterface.
+ * Aggregate Interface.
  */
 public interface AggregateInterface {
 

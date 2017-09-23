@@ -1,9 +1,8 @@
 
-
 package patterns.router;
 
 /**
- * interface MessageInterface.
+ * Message Interface.
  */
 public interface MessageInterface {
 

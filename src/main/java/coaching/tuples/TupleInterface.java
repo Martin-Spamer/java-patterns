@@ -1,9 +1,8 @@
 
-
 package coaching.tuples;
 
 /**
- * TupleInterface Interface.
+ * Tuple Interface.
  *
  * generic type
  * generic type

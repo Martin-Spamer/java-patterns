@@ -2,7 +2,7 @@
 package coaching.bags;
 
 /**
- * GenericBagInterface Interface.
+ * Generic Bag Interface.
  *
  * Requires a generic type.
  *

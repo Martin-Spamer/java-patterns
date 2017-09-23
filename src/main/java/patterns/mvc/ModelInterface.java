@@ -1,20 +1,16 @@
 
-
 package patterns.mvc;
 
 import patterns.mvc.model.AbstractModel;
 import patterns.mvc.view.AbstractView;
 
 /**
- * ModelInterface Interface.
+ * Model Interface.
  */
 public interface ModelInterface {
 
 	/**
 	 * Attach.
-	 *
-	 * key
-	 * model
 	 *
 	 * @param key the key
 	 * @param model the model
@@ -24,9 +20,6 @@ public interface ModelInterface {
 	/**
 	 * Attach.
 	 *
-	 * key
-	 * view
-	 *
 	 * @param key the key
 	 * @param view the view
 	 */
@@ -35,16 +28,12 @@ public interface ModelInterface {
 	/**
 	 * Detach model.
 	 *
-	 * key
-	 *
 	 * @param key the key
 	 */
 	public void detachModel(final String key);
 
 	/**
 	 * Detach view.
-	 *
-	 * key
 	 *
 	 * @param key the key
 	 */

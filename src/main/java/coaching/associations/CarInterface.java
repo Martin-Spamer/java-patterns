@@ -1,9 +1,8 @@
 
-
 package coaching.associations;
 
 /**
- * interface CarInterface.
+ * Car Interface.
  */
 public interface CarInterface {
 

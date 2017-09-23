@@ -29,8 +29,9 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 * @see associations.Vehicle#setDriver(associations.Driver)
 	 */
 	@Override
-	public void setDriver(final Driver driver) {
+	public AbstractVehicle setDriver(final Driver driver) {
 		this.driver = driver;
+		return this;
 	}
 
 	/*
@@ -50,8 +51,9 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	 */
 	// Polymorphic interface
 	@Override
-	public void travel(final String destination) {
+	public VehicleInterface travel(final String destination) {
 		this.log.info(destination);
+		return this;
 	}
 
 	/*

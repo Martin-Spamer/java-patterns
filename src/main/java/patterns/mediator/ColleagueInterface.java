@@ -1,9 +1,8 @@
 
-
 package patterns.mediator;
 
 /**
- * ColleagueInterface Interface.
+ * Colleague Interface.
  */
 public interface ColleagueInterface {
 

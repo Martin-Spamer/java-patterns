@@ -1,18 +1,15 @@
 
-
 package coaching.pool;
 
 /**
- * PoolInterface Interface.
- *
- * element type
+ * Pool Interface.
  *
  * @param <E> the element type
  */
 public interface PoolInterface<E> {
 
 	/**
-	 * Adds the.
+	 * Adds element to the pool.
 	 *
 	 * @param element the element
 	 * @return the pool interface
@@ -20,21 +17,21 @@ public interface PoolInterface<E> {
 	public PoolInterface<E> add(E element);
 
 	/**
-	 * Count free.
+	 * Count the number of free elements.
 	 *
 	 * @return the int
 	 */
 	public int countFree();
 
 	/**
-	 * Count used.
+	 * Count the number used elements.
 	 *
 	 * @return the int
 	 */
 	public int countUsed();
 
 	/**
-	 * pool.
+	 * Take an element from the pool.
 	 *
 	 * @return the e
 	 */
@@ -49,7 +46,7 @@ public interface PoolInterface<E> {
 	public PoolInterface<E> release(E t);
 
 	/**
-	 * pool.
+	 * remove an from the pool.
 	 *
 	 * @param element the element
 	 * @return the pool interface

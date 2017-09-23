@@ -2,13 +2,13 @@
 package patterns.strategy;
 
 /**
- * StrategyInterface Interface.
+ * Strategy Interface.
  */
 public interface StrategyInterface {
 
 	/**
 	 * Operation.
 	 */
-	public abstract void operation();
+	public void operation();
 
 }

@@ -1,9 +1,8 @@
 
-
 package patterns.observer;
 
 /**
- * ObserverInterface Interface.
+ * Observer Interface.
  */
 public interface ObserverInterface {
 

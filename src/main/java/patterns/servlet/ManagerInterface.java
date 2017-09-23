@@ -1,5 +1,4 @@
 
-
 package patterns.servlet;
 
 import javax.servlet.http.*;
@@ -7,7 +6,7 @@ import javax.servlet.http.*;
 import patterns.mvc.controller.*;
 
 /**
- * ManagerInterface Interface.
+ * Manager Interface.
  */
 public interface ManagerInterface {
 
@@ -16,14 +15,14 @@ public interface ManagerInterface {
 	 *
 	 * @param delegate the delegate
 	 */
-	void attach(Delegate delegate);
+	public void attach(Delegate delegate);
 
 	/**
 	 * Detach.
 	 *
 	 * @param delegate the delegate
 	 */
-	void detach(Delegate delegate);
+	public void detach(Delegate delegate);
 
 	/**
 	 * Handle request.
@@ -32,6 +31,6 @@ public interface ManagerInterface {
 	 * @param response the response
 	 * @param result the result
 	 */
-	void handleRequest(HttpServletRequest request, HttpServletResponse response, Result result);
+	public void handleRequest(HttpServletRequest request, HttpServletResponse response, Result result);
 
 }

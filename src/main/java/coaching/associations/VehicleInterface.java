@@ -5,17 +5,18 @@
 package coaching.associations;
 
 /**
- * VehicleInterface Interface.
+ * Vehicle Interface.
  */
 public interface VehicleInterface {
 
 	/**
-	 * driver.
+	 * set the vehicle's driver.
 	 *
 	 * @param driver the new
 	 * 			driver
+	 * @return the this for fluent interface
 	 */
-	public void setDriver(Driver driver);
+	public VehicleInterface setDriver(Driver driver);
 
 	/**
 	 * driver.
@@ -28,7 +29,8 @@ public interface VehicleInterface {
 	 * Travel destination.
 	 *
 	 * @param destination the destination
+	 * @return the this for fluent interface
 	 */
-	public void travel(String destination);
+	public VehicleInterface travel(String destination);
 
 }

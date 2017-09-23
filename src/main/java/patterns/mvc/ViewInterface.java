@@ -1,16 +1,13 @@
 
-
 package patterns.mvc;
 
 /**
- * ViewInterface Interface.
+ * View Interface.
  */
 public interface ViewInterface {
 
 	/**
 	 * view.
-	 *
-	 * model
 	 *
 	 * @param model the model
 	 */
@@ -24,6 +21,6 @@ public interface ViewInterface {
 	/**
 	 * Show view.
 	 */
-	void show();
+	public void show();
 
 }

@@ -1,9 +1,8 @@
 
-
 package patterns.hopp;
 
 /**
- * HoppInterface Interface.
+ * Hopp Interface.
  */
 public interface HoppInterface {
 

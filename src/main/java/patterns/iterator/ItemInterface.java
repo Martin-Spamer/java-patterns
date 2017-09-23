@@ -1,9 +1,8 @@
 
-
 package patterns.iterator;
 
 /**
- * interface ItemInterface.
+ * Item Interface.
  */
 public interface ItemInterface {
 

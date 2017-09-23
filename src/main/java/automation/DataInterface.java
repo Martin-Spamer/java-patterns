@@ -2,7 +2,7 @@
 package automation;
 
 /**
- * DataInterface Interface.
+ * Data Interface.
  */
 public interface DataInterface {
 

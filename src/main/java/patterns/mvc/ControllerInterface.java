@@ -1,9 +1,8 @@
 
-
 package patterns.mvc;
 
 /**
- * ControllerInterface Interface.
+ * Controller Interface.
  */
 public interface ControllerInterface {
 

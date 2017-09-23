@@ -1,9 +1,8 @@
 
-
 package coaching.rules;
 
 /**
- * ContextInterface Interface.
+ * Context Interface.
  */
 public interface ContextInterface {
 

@@ -2,7 +2,7 @@
 package patterns.filter;
 
 /**
- * FilterInterface Interface.
+ * Filter Interface.
  */
 public interface FilterInterface {
 

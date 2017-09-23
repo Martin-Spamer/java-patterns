@@ -1,9 +1,8 @@
 
-
 package patterns.factory;
 
 /**
- * FactoryInterface Interface.
+ * Factory Interface.
  */
 public interface FactoryInterface {
 

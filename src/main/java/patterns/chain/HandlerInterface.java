@@ -1,9 +1,8 @@
 
-
 package patterns.chain;
 
 /**
- * HandlerInterface Interface.
+ * Handler Interface.
  */
 public interface HandlerInterface {
 
@@ -12,6 +11,6 @@ public interface HandlerInterface {
 	 *
 	 * @param request the request
 	 */
-	abstract void handleRequest(RequestInterface request);
+	public void handleRequest(RequestInterface request);
 
 }

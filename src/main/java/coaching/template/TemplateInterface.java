@@ -2,7 +2,7 @@
 package coaching.template;
 
 /**
- * interface TemplateInterface.
+ * Template Interface.
  */
 public interface TemplateInterface {
 

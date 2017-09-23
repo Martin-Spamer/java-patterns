@@ -1,9 +1,8 @@
 
-
 package coaching.solid;
 
 /**
- * ExampleInterface Interface.
+ * Example Interface.
  */
 public interface ExampleInterface {
 

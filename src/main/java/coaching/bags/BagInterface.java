@@ -2,7 +2,7 @@
 package coaching.bags;
 
 /**
- * BagInterface Interface.
+ * Bag Interface.
  */
 public interface BagInterface {
 

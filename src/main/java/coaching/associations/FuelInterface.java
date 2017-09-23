@@ -1,9 +1,8 @@
 
-
 package coaching.associations;
 
 /**
- * FuelInterface Interface.
+ * Fuel Interface.
  */
 public interface FuelInterface {
 

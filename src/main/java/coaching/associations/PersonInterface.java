@@ -4,16 +4,25 @@
 package coaching.associations;
 
 /**
- * PersonInterface Interface.
+ * Person Interface.
  */
 public interface PersonInterface {
 
 	/**
-	 * name.
+	 * set name.
 	 *
 	 * @param name the new
 	 * 			name
+	 * @return the person interface
 	 */
-	public void setName(String name);
+	public PersonInterface setName(String name);
+
+	/**
+	 * Gets the name.
+	 *
+	 * @param name the name
+	 * @return the name
+	 */
+	public String getName();
 
 }

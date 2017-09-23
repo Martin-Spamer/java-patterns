@@ -1,9 +1,8 @@
 
-
 package coaching.idioms;
 
 /**
- * ConditionInterface Interface.
+ * Condition Interface.
  *
  * generic type
  *

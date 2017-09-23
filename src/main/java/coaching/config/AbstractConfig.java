@@ -19,8 +19,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * Instantiates a new abstract configuration.
 	 */
 	public AbstractConfig() {
-		propertyFilename = this.getClass().getSimpleName();
-		loadFromPropertyFile(propertyFilename);
+		this.propertyFilename = this.getClass().getSimpleName();
+		loadFromPropertyFile(this.propertyFilename);
 	}
 
 	/**
@@ -29,7 +29,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * @param configFilename the Configuration filename
 	 */
 	AbstractConfig(final String configFilename) {
-		propertyFilename = configFilename;
+		this.propertyFilename = configFilename;
 		loadFromPropertyFile(configFilename);
 	}
 
@@ -59,16 +59,14 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Load from property file.
 	 *
-	 * resource as stream
-	 *
 	 * @param resourceAsStream the resource as stream
 	 */
 	public void loadFromPropertyFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				properties.load(resourceAsStream);
+				this.properties.load(resourceAsStream);
 			} catch (final IOException e) {
-				log.error(e.toString());
+				this.log.error(e.toString());
 			}
 		}
 	}
@@ -82,7 +80,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = properties.getProperty(key);
+			property = this.properties.getProperty(key);
 		}
 		return property;
 	}
@@ -97,14 +95,13 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key, final String defaultValue) {
 		String property = System.getProperty(key);
 		if (property == null) {
-			property = properties.getProperty(key, defaultValue);
+			property = this.properties.getProperty(key, defaultValue);
 		}
 		return property;
 	}
 
 	/**
 	 * To property filename.
-	 *
 	 *
 	 * @param configFilename the Configuration filename
 	 * @return the string
@@ -118,7 +115,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 */
 	@Override
 	public String toString() {
-		final String prettyProperties = prettyProperties(properties);
+		final String prettyProperties = prettyProperties(this.properties);
 		return String.format("properties = %s", prettyProperties);
 	}
 

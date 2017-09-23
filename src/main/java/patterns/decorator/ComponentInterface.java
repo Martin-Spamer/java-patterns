@@ -2,7 +2,7 @@
 package patterns.decorator;
 
 /**
- * ComponentInterface Interface.
+ * Component Interface.
  */
 public interface ComponentInterface {
 

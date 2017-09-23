@@ -1,16 +1,13 @@
 
-
 package coaching.rules;
 
 /**
- * CommandInterface Interface.
+ * Command Interface.
  */
 public interface CommandInterface {
 
 	/**
 	 * Execute.
-	 *
-	 * parameters
 	 *
 	 * @param parameters the parameters
 	 */

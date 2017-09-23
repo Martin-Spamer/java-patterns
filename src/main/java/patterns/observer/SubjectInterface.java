@@ -1,9 +1,8 @@
 
-
 package patterns.observer;
 
 /**
- * SubjectInterface Interface.
+ * Subject Interface.
  */
 public interface SubjectInterface {
 
@@ -12,18 +11,18 @@ public interface SubjectInterface {
 	 *
 	 * @param observer the observer
 	 */
-	void attachObserver(AbstractObserver observer);
+	public void attachObserver(AbstractObserver observer);
 
 	/**
 	 * Detach observer.
 	 *
 	 * @param observer the observer
 	 */
-	void detachObserver(ObserverInterface observer);
+	public void detachObserver(ObserverInterface observer);
 
 	/**
 	 * Update observers.
 	 */
-	void updateObservers();
+	public void updateObservers();
 
 }

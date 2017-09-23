@@ -2,14 +2,12 @@
 package patterns.composite;
 
 /**
- * ComponentInterface Interface.
+ * Component Interface.
  */
 public interface ComponentInterface {
 
 	/**
 	 * Operation.
-	 *
-	 * component interface
 	 *
 	 * @return the component interface
 	 */

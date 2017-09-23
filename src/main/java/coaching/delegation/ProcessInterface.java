@@ -1,9 +1,8 @@
 
-
 package coaching.delegation;
 
 /**
- * ProcessInterface Interface.
+ * Process Interface.
  */
 public interface ProcessInterface {
 
