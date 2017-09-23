@@ -48,7 +48,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	 */
 	@Override
 	public boolean add(final String value) {
-		return add(value);
+		return super.add(value);
 	}
 
 	/* (non-Javadoc)
@@ -67,7 +67,8 @@ public class Bag extends ArrayList<String> implements BagInterface {
 		final int size = size();
 		if (size > 0) {
 			final int nextInt = this.random.nextInt(size);
-			return this.remove(nextInt);
+			final String remove = this.remove(nextInt);
+			return remove;
 		} else {
 			return null;
 		}

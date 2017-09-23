@@ -51,7 +51,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	 */
 	@Override
 	public boolean add(final T e) {
-		return add(e);
+		return super.add(e);
 	}
 
 	/* (non-Javadoc)
@@ -70,7 +70,8 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 		final int size = size();
 		if (size > 0) {
 			final int nextInt = this.random.nextInt(size);
-			return remove(nextInt);
+			T remove = remove(nextInt);
+			return remove;
 		} else {
 			return null;
 		}

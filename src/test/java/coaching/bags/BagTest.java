@@ -1,23 +1,22 @@
 
 package coaching.bags;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 import coaching.tuples.BoxTest;
 
 /**
- * The BagTest Class.
+ * Unit Test examples for a Bag Class.
  */
 public class BagTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
-	private static final String[] VALUES = { "Cat", "Dog", "Rabbit" };
+	private static final String[] VALUES = {
+	        "Cat", "Dog", "Rabbit"
+	};
 
 	/**
 	 * Unit Test to bag.
@@ -43,8 +42,11 @@ public class BagTest {
 	 */
 	@Test
 	public void testBagArray() {
-		final String[] stuff = { "Cat", "Dog", "Rabbit" };
+		final String[] stuff = {
+		        "Cat", "Dog", "Rabbit"
+		};
 		final Bag bag = new Bag(stuff);
+		assertNotNull(bag);
 		verify(bag);
 	}
 
@@ -54,6 +56,7 @@ public class BagTest {
 	@Test
 	public void testBagVargs() {
 		final Bag bag = new Bag("Cat", "Dog", "Rabbit");
+		assertNotNull(bag);
 		verify(bag);
 	}
 
@@ -84,8 +87,11 @@ public class BagTest {
 	 */
 	@Test
 	public void testExhaustedBag() {
-		final String[] stuff = { "Cat", "Dog", "Rabbit" };
+		final String[] stuff = {
+		        "Cat", "Dog", "Rabbit"
+		};
 		final Bag bag = new Bag(stuff);
+		assertNotNull(bag);
 		verify(bag);
 	}
 
@@ -95,6 +101,7 @@ public class BagTest {
 	 * @param bag the bag
 	 */
 	private void verify(final Bag bag) {
+		assertNotNull(bag);
 		assertEquals(3, bag.size());
 		String choice = bag.choose();
 		assertNotNull(choice);
