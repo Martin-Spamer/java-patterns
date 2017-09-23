@@ -51,9 +51,9 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 * @return the input stream
 	 */
 	protected InputStream inputStream(final String resourceName) {
-		final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-		final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
-		return resourceAsStream;
+		final Thread currentThread = Thread.currentThread();
+		final ClassLoader classloader = currentThread.getContextClassLoader();
+		return classloader.getResourceAsStream(resourceName);
 	}
 
 	/**

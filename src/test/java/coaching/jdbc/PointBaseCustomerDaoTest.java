@@ -21,7 +21,8 @@ public class PointBaseCustomerDaoTest {
 	 */
 	@Test
 	public void testPointBaseCustomerDao() {
-		assertNotNull(new PointBaseCustomerDao());
+		final PointBaseCustomerDao dao = new PointBaseCustomerDao();
+		assertNotNull(dao);
 	}
 
 	/**
@@ -29,6 +30,20 @@ public class PointBaseCustomerDaoTest {
 	 */
 	@Test
 	public void testPointBaseCustomerDaoUrlUserPassword() {
+		assertNotNull(new PointBaseCustomerDao());
+		try {
+			final PointBaseCustomerDao dao = new PointBaseCustomerDao(URL, USER, PASSWORD);
+			assertNotNull(dao);
+		} catch (final Exception exception) {
+			LOG.error("{}", exception.toString());
+		}
+	}
+
+	/**
+	 * Unit Test to point base customer dao url user password.
+	 */
+	@Test
+	public void testPointBaseCustomerDaoTypical() {
 		assertNotNull(new PointBaseCustomerDao());
 		try {
 			final PointBaseCustomerDao dao = new PointBaseCustomerDao(URL, USER, PASSWORD);

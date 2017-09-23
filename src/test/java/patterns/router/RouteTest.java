@@ -14,9 +14,9 @@ public class RouteTest {
 
 	@Test
 	public void testRoute() {
-		OutputChannel outputChannel = new OutputChannel();
-		InputChanel inputChannel = new InputChanel();
-		Route route = new Route(outputChannel, inputChannel);
+		final OutputChannel outputChannel = new OutputChannel();
+		final InputChanel inputChannel = new InputChanel();
+		final Route route = new Route(outputChannel, inputChannel);
 		assertNotNull(route);
 	}
 

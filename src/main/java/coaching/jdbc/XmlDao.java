@@ -14,9 +14,9 @@ import org.w3c.dom.*;
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
-class XmlDAO {
+class XmlDao {
 
-	private static final Logger LOG = LoggerFactory.getLogger(XmlDAO.class);
+	private static final Logger LOG = LoggerFactory.getLogger(XmlDao.class);
 
 	private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
 	private static final String URL = "jdbc:pointbase:server://localhost/sample";
@@ -27,7 +27,7 @@ class XmlDAO {
 	/**
 	 * Instantiates a new xml DAO.
 	 */
-	public XmlDAO() {
+	public XmlDao() {
 		this(URL, USER, PASSWORD);
 	}
 
@@ -38,7 +38,7 @@ class XmlDAO {
 	 * @param user the user id
 	 * @param password the pass word
 	 */
-	public XmlDAO(final String url, final String user, final String password) {
+	public XmlDao(final String url, final String user, final String password) {
 		try {
 			Class.forName(JDBC_DRIVER);
 		} catch (final ClassNotFoundException e) {
@@ -46,32 +46,44 @@ class XmlDAO {
 		}
 	}
 
-	/**
-	 * Execute.
-	 */
-	protected void execute() {
+	public String toXmlString() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-			read(connection);
+			ResultSet read = read(connection);
+			final String xmlString = toXmlString(read);
+			return xmlString;
 		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}
+		return null;
+	}
+
+	public Document toXmlDocument() {
+		try {
+			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+			ResultSet read = read(connection);
+			final Document document = toXmlDocument(read);
+			return document;
+		} catch (final SQLException e) {
+			LOG.error("{}", e.toString());
+		}
+		return null;
 	}
 
 	/**
 	 * database.
 	 *
 	 * @param connection the connection
+	 * @return
 	 */
-	public void read(final Connection connection) {
+	protected ResultSet read(final Connection connection) {
 		try {
 			final Statement statement = connection.createStatement();
-			final ResultSet resultSet = statement.executeQuery(SQL);
-			final Document document = toXmlDocument(resultSet);
-			final String xmlString = toXmlString(resultSet);
+			return statement.executeQuery(SQL);
 		} catch (final Exception e) {
 			LOG.error("{}", e.toString());
 		}
+		return null;
 	}
 
 	/**
@@ -80,7 +92,7 @@ class XmlDAO {
 	 * @param resultSet the result set
 	 * @return the document
 	 */
-	public Document toXmlDocument(final ResultSet resultSet) {
+	protected Document toXmlDocument(final ResultSet resultSet) {
 		Document document = null;
 
 		try {
@@ -104,8 +116,8 @@ class XmlDAO {
 
 					if (value != null) {
 						final Element node = document.createElement(columnName);
-						String string = value.toString();
-						Text createTextNode = document.createTextNode(string);
+						final String string = value.toString();
+						final Text createTextNode = document.createTextNode(string);
 						node.appendChild(createTextNode);
 						row.appendChild(node);
 					}
@@ -124,7 +136,7 @@ class XmlDAO {
 	 * @param resultSet the result set
 	 * @return the string
 	 */
-	public String toXmlString(final ResultSet resultSet) {
+	protected String toXmlString(final ResultSet resultSet) {
 		final StringBuffer xml = new StringBuffer();
 
 		try {

@@ -14,13 +14,16 @@ public class PolymorphicListTest {
 		LOG.info("testPolymorphicList");
 		final PolymorphicList polymorphicList = new PolymorphicList();
 		assertNotNull(polymorphicList);
+		LOG.info("{}", polymorphicList.toString());
 	}
 
 	@Test
 	public void testPolymorphicListUsage() {
-		final PolymorphicList actual = new PolymorphicList();
-		assertNotNull(actual);
-		actual.add(new Integer(0));
+		LOG.info("testPolymorphicList");
+		final PolymorphicList polymorphicList = new PolymorphicList();
+		assertNotNull(polymorphicList);
+		polymorphicList.add(new Integer(0));
+		LOG.info("{}", polymorphicList.toString());
 	}
 
 	@Test
@@ -29,12 +32,6 @@ public class PolymorphicListTest {
 		final PolymorphicList polymorphicList = new PolymorphicList();
 		assertNotNull(polymorphicList);
 		assertNotNull(polymorphicList.add(1));
-	}
-
-	@Test
-	public void testToString() {
-		final PolymorphicList polymorphicList = new PolymorphicList();
-		assertNotNull(polymorphicList);
 		LOG.info("{}", polymorphicList.toString());
 	}
 

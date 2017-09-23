@@ -17,14 +17,15 @@ import org.slf4j.*;
  */
 public class PointBaseCustomerDao {
 
+	private static final String DELETE_SQL = "DELETE FROM CUSTOMER_TBL WHERE CUSTOMER_NUM=999";
 	private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDao.class);
-
 	private static final String DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
 	private static final String URL = "jdbc:pointbase:server://localhost/sample";
 	private static final String USER = "PBPUBLIC";
 	private static final String PASSWORD = "PBPUBLIC";
 	private static final String SQL = "SELECT * from customers";
-	private static final String SQL_ = "INSERT INTO CUSTOMER_TBL (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
+	private static final String INSERT_SQL = "INSERT INTO CUSTOMER_TBL (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
+	private static final String UPDATE_SQL = "UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999";
 
 	/**
 	 * Instantiates a DAO for a point base customer.
@@ -53,8 +54,9 @@ public class PointBaseCustomerDao {
 	 * <code>
 	 * 	SELECT * from customer table.
 	 * </code>
+	 * @return
 	 */
-	public void read() {
+	public PointBaseCustomerDao read() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 			final Statement statement = connection.createStatement();
@@ -80,6 +82,7 @@ public class PointBaseCustomerDao {
 		} catch (final SQLException exception) {
 			LOG.error("{}", exception.toString());
 		}
+		return this;
 	}
 
 	/**
@@ -90,35 +93,38 @@ public class PointBaseCustomerDao {
 	 * VALUES
 	 * 		(999,'AA99 9ZZ','N')
 	 * </code>.
+	 * @return
 	 */
-	public void write() {
+	public PointBaseCustomerDao write() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 			final Statement statement = connection.createStatement();
-			final int result = statement.executeUpdate(SQL);
+			final int result = statement.executeUpdate(INSERT_SQL);
 			final String msg = String.format("Rows updated: %s", result);
 			LOG.info(msg);
 		} catch (final SQLException exception) {
 			LOG.error("{}", exception.toString());
 		}
+		return this;
 	}
 
 	/**
 	 * database SQL
 	 * <code>
-	 * UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999
+	 * 	UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999
 	 * </code>.
+	 * @return
 	 */
-	public void update() {
+	public PointBaseCustomerDao update() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 			final Statement statement = connection.createStatement();
-			final String sql = "UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999";
-			final int result = statement.executeUpdate(sql);
-			LOG.info("Rows updated: " + result + " for " + sql);
+			final int result = statement.executeUpdate(UPDATE_SQL);
+			LOG.info("Rows updated {}", result);
 		} catch (final SQLException exception) {
 			LOG.error("{}", exception.toString());
 		}
+		return this;
 	}
 
 	/**
@@ -127,16 +133,17 @@ public class PointBaseCustomerDao {
 	 * 	DELETE FROM CUSTOMER_TBL WHERE
 	 * FIELD-NAME='VALUE'
 	 * </code>.
+	 * @return
 	 */
-	public void delete() {
+	public PointBaseCustomerDao delete() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 			final Statement statement = connection.createStatement();
-			final String sql = "DELETE FROM CUSTOMER_TBL WHERE CUSTOMER_NUM=999";
-			final int result = statement.executeUpdate(sql);
-			LOG.info("Rows updated: " + result + " for " + sql);
+			final int result = statement.executeUpdate(DELETE_SQL);
+			LOG.info("Rows updated: {}", result);
 		} catch (final SQLException exception) {
 			LOG.error("{}", exception.toString());
 		}
+		return this;
 	}
 }

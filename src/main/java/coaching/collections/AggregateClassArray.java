@@ -33,16 +33,6 @@ public class AggregateClassArray {
 		LOG.info("AggregateClassArray");
 	}
 
-	/**
-	 * aggregate.
-	 */
-	public void execute() {
-		this.aggregate[0] = new ElementAlice();
-		this.aggregate[1] = new ElementBob();
-		this.aggregate[2] = new ElementCharlie();
-		this.aggregate[3] = new ElementDan();
-	}
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
