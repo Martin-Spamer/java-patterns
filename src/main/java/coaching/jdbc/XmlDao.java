@@ -49,7 +49,7 @@ class XmlDao {
 	public String toXmlString() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-			ResultSet read = read(connection);
+			final ResultSet read = read(connection);
 			final String xmlString = toXmlString(read);
 			return xmlString;
 		} catch (final SQLException e) {
@@ -61,7 +61,7 @@ class XmlDao {
 	public Document toXmlDocument() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-			ResultSet read = read(connection);
+			final ResultSet read = read(connection);
 			final Document document = toXmlDocument(read);
 			return document;
 		} catch (final SQLException e) {
@@ -116,7 +116,7 @@ class XmlDao {
 
 					if (value != null) {
 						final Element node = document.createElement(columnName);
-						final String string = value.toString();
+						final String string = String.format("%s", value);
 						final Text createTextNode = document.createTextNode(string);
 						node.appendChild(createTextNode);
 						row.appendChild(node);

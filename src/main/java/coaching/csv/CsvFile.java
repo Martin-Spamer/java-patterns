@@ -200,7 +200,7 @@ public class CsvFile {
 			final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
 			for (int index = 0; index < this.records.size(); index++) {
 				final CsvRecord csvRecord = this.records.get(index);
-				log.info(csvRecord.toString());
+				log.info("{}", csvRecord);
 				writer.write(csvRecord.toString());
 			}
 			writer.close();

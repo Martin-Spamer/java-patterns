@@ -43,8 +43,8 @@ public class RulesEngine {
 				if (documentBuilder != null) {
 					final InputStream is = inputStream(configFilename);
 					if (null != is) {
-						document = documentBuilder.parse(is);
-						documentElement = document.getDocumentElement();
+						this.document = documentBuilder.parse(is);
+						this.documentElement = this.document.getDocumentElement();
 						return true;
 					}
 				}
@@ -62,9 +62,9 @@ public class RulesEngine {
 	 * @return the input stream
 	 */
 	private InputStream inputStream(final String resourceName) {
-		final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-		final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
-		return resourceAsStream;
+		final Thread currentThread = Thread.currentThread();
+		final ClassLoader classloader = currentThread.getContextClassLoader();
+		return classloader.getResourceAsStream(resourceName);
 	}
 
 	/**
@@ -75,8 +75,8 @@ public class RulesEngine {
 	public boolean execute() {
 		final boolean returnValue = false;
 		LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
-		if (documentElement != null) {
-			final NodeList childNodes = documentElement.getChildNodes();
+		if (this.documentElement != null) {
+			final NodeList childNodes = this.documentElement.getChildNodes();
 			LOG.info("childNodes  = {}", childNodes);
 		}
 		return returnValue;
@@ -102,17 +102,19 @@ public class RulesEngine {
 	 */
 	protected Element getElement(final String elementName) {
 		Element element = null;
-		final NodeList nodelist = documentElement.getElementsByTagName(elementName);
+		final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
 		if (nodelist != null) {
-			if (nodelist.getLength() == 0) {
+			int length = nodelist.getLength();
+			if (length == 0) {
 				final String className = this.getClass().getSimpleName();
 				LOG.info("{}", className);
-				LOG.info("Element {} is missing in element {}", elementName, documentElement.toString());
+				LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
 			} else {
-				if (nodelist.getLength() > 1) {
+				if (length > 1) {
 					final String className = this.getClass().getSimpleName();
 					LOG.info("{}", className);
-					LOG.info(" surplus Elements {} ignored in element: {}", elementName, documentElement.toString());
+					LOG.info(" surplus Elements {} ignored in element: {}", elementName,
+					        this.documentElement.toString());
 				}
 				element = (Element) nodelist.item(0);
 			}

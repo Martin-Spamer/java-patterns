@@ -178,7 +178,9 @@ public class XmlConfig extends AbstractConfig {
 			if (node.hasChildNodes()) {
 				final NodeList children = node.getChildNodes();
 				for (int i = 0; i < children.getLength(); i++) {
-					text.append(toXml(children.item(i)));
+					Node item = children.item(i);
+					String xml = toXml(item);
+					text.append(xml);
 				}
 			}
 		}
