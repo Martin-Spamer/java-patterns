@@ -11,6 +11,8 @@ package coaching.solid;
 
 import static org.junit.Assert.assertNotNull;
 
+import org.slf4j.*;
+
 /**
  * LiskovSubstitutionPrinciple Class.
  *
@@ -18,6 +20,8 @@ import static org.junit.Assert.assertNotNull;
  * @version 0.1 - 12:08:34
  */
 public class LiskovSubstitutionPrinciple {
+
+	private static final Logger LOG = LoggerFactory.getLogger(LiskovSubstitutionPrinciple.class);
 
 	/**
 	 * main method.

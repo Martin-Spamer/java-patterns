@@ -1,4 +1,5 @@
 
+
 package coaching.bags;
 
 import java.util.*;
@@ -32,7 +33,9 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 		fill(values);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.bags.GenericBagInterface#fill(java.lang.Object[])
 	 */
 	@Override
@@ -46,7 +49,9 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.util.ArrayList#add(java.lang.Object)
 	 */
 	@Override
@@ -54,7 +59,9 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 		return super.add(e);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.bags.GenericBagInterface#pick()
 	 */
 	@Override
@@ -62,7 +69,9 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 		return choose();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.bags.GenericBagInterface#choose()
 	 */
 	@Override
@@ -70,14 +79,16 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 		final int size = size();
 		if (size > 0) {
 			final int nextInt = this.random.nextInt(size);
-			T remove = remove(nextInt);
+			final T remove = remove(nextInt);
 			return remove;
 		} else {
 			return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.bags.GenericBagInterface#reset()
 	 */
 	@Override

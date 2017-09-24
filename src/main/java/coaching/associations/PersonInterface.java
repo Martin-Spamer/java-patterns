@@ -9,18 +9,16 @@ package coaching.associations;
 public interface PersonInterface {
 
 	/**
-	 * set name.
+	 * set the person's name.
 	 *
-	 * @param name the new
-	 * 			name
-	 * @return the person interface
+	 * @param name the name
+	 * @return this for a fluent interface.
 	 */
 	public PersonInterface setName(String name);
 
 	/**
 	 * Gets the name.
 	 *
-	 * @param name the name
 	 * @return the name
 	 */
 	public String getName();

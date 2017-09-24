@@ -1,4 +1,5 @@
 
+
 package patterns.session;
 
 import java.util.UUID;
@@ -51,7 +52,9 @@ public class AbstractSession {
 		return id;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

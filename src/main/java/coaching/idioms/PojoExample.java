@@ -69,7 +69,9 @@ public final class PojoExample implements Cloneable {
 		return longValue;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

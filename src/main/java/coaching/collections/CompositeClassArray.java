@@ -47,12 +47,14 @@ public class CompositeClassArray {
 		LOG.info("CompositeClassArray");
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
+		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(composite));
 	}
 
 }

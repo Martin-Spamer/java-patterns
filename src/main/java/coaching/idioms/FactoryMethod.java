@@ -8,7 +8,8 @@ package coaching.idioms;
 public class FactoryMethod {
 
 	/**
-	 * Factory method to create an instance of class from a fully qualified name.
+	 * Factory method to create an instance of class from a fully qualified
+	 * name.
 	 *
 	 * @return the instance of String.
 	 * @throws Exception the exception

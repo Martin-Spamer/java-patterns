@@ -36,7 +36,9 @@ public abstract class AbstractLogging {
 		destinationLog.info("{}.logTo", this.getClass().getSimpleName());
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

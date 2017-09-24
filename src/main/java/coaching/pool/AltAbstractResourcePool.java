@@ -28,7 +28,8 @@ public abstract class AltAbstractResourcePool<T> {
 	/**
 	 * Instantiates a new abstract resource pool.
 	 *
-	 * @throws ResourcePoolCreationException the resource pool creation exception
+	 * @throws ResourcePoolCreationException the resource pool creation
+	 *             exception
 	 */
 	public AltAbstractResourcePool() throws ResourcePoolCreationException {
 		try {

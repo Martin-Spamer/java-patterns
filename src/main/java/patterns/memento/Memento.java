@@ -32,7 +32,7 @@ public class Memento {
 	 * new state
 	 *
 	 * @param state the new
-	 * 			state
+	 *            state
 	 */
 	public void setState(final Object state) {
 		this.state = state;

@@ -1,4 +1,5 @@
 
+
 package coaching.tuples;
 
 /**
@@ -18,7 +19,7 @@ public interface TupleInterface<L, R> {
 	 * new left
 	 *
 	 * @param left the new
-	 * 			left
+	 *            left
 	 */
 	public void setLeft(L left);
 
@@ -26,7 +27,7 @@ public interface TupleInterface<L, R> {
 	 * right.
 	 *
 	 * @param right the new
-	 * 			right
+	 *            right
 	 */
 	public void setRight(R right);
 

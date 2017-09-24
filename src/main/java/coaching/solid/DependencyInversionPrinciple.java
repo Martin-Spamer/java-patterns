@@ -11,6 +11,8 @@ package coaching.solid;
 
 import static org.junit.Assert.assertNotNull;
 
+import org.slf4j.*;
+
 /**
  * DependencyInversionPrinciple Class.
  *
@@ -18,6 +20,8 @@ import static org.junit.Assert.assertNotNull;
  * @version 0.1 - 12:07:53
  */
 public class DependencyInversionPrinciple {
+
+	private static final Logger LOG = LoggerFactory.getLogger(DependencyInversionPrinciple.class);
 
 	/**
 	 * main method.

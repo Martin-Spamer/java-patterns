@@ -23,7 +23,7 @@ public class Context {
 	 * single instance.
 	 *
 	 * @return single instance of Context
-	 * single instance
+	 *         single instance
 	 */
 	public static Context getInstance() {
 		return instance;

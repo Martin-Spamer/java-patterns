@@ -1,4 +1,5 @@
 
+
 package coaching.associations;
 
 /**
@@ -10,7 +11,8 @@ public interface JourneyInterface {
 	 * set the destination of the journey.
 	 *
 	 * @param destination the new
-	 * 			destination
+	 *            destination
+	 * @return the journey interface
 	 */
 	public JourneyInterface setDestination(String destination);
 

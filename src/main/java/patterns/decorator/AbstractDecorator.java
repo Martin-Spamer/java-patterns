@@ -1,4 +1,5 @@
 
+
 package patterns.decorator;
 
 import java.util.*;
@@ -20,7 +21,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 	 */
 	@Override
 	public void attachBefore(final AbstractComponent behaviour) {
-		this.beforeBehaviour.add(behaviour);
+		beforeBehaviour.add(behaviour);
 	}
 
 	/*
@@ -32,7 +33,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 	 */
 	@Override
 	public void detachBefore(final AbstractComponent behaviour) {
-		this.beforeBehaviour.remove(behaviour);
+		beforeBehaviour.remove(behaviour);
 	}
 
 	/*
@@ -44,7 +45,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 	 */
 	@Override
 	public void attachAfter(final AbstractComponent behaviour) {
-		this.afterBehaviour.add(behaviour);
+		afterBehaviour.add(behaviour);
 	}
 
 	/*
@@ -56,14 +57,14 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 	 */
 	@Override
 	public void detachAfter(final AbstractComponent behaviour) {
-		this.afterBehaviour.remove(behaviour);
+		afterBehaviour.remove(behaviour);
 	}
 
 	/**
 	 * Before operation.
 	 */
 	protected void beforeOperation() {
-		for (final ComponentInterface component : this.beforeBehaviour) {
+		for (final ComponentInterface component : beforeBehaviour) {
 			component.operation();
 		}
 	}
@@ -72,7 +73,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 	 * After operation.
 	 */
 	protected void afterOperation() {
-		for (final ComponentInterface component : this.afterBehaviour) {
+		for (final ComponentInterface component : afterBehaviour) {
 			component.operation();
 		}
 	}

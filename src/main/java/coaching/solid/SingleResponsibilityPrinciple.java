@@ -11,13 +11,40 @@ package coaching.solid;
 
 import static org.junit.Assert.assertNotNull;
 
+import org.slf4j.*;
+
 /**
- * SingleResponsibilityPrinciple Class.
- *
+ * Demonstrate the Single Responsibility Principle.
+ * A class should have a responsibility pieces of functionality.
  * @author martin.spamer
  * @version 0.1 - 12:05:35
  */
 public class SingleResponsibilityPrinciple {
+
+	private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
+
+	/**
+	 * Foo bar.
+	 */
+	public void fooBar() {
+		LOG.info("fooBar");
+		foo();
+		bar();
+	}
+
+	/**
+	 * Foo.
+	 */
+	private void foo() {
+		LOG.info("foo");
+	}
+
+	/**
+	 * Bar.
+	 */
+	private void bar() {
+		LOG.info("bar");
+	}
 
 	/**
 	 * main method.
@@ -27,6 +54,7 @@ public class SingleResponsibilityPrinciple {
 	public static void main(final String[] args) {
 		final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
 		assertNotNull(srp);
+		srp.fooBar();
 	}
 
 }

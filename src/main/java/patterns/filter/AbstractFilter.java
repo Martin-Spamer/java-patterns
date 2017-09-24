@@ -1,4 +1,5 @@
 
+
 package patterns.filter;
 
 /**
@@ -25,8 +26,11 @@ public class AbstractFilter implements FilterInterface {
 		addNextFilter(filter);
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.filter.FilterInterface#addNextFilter(patterns.filter.FilterInterface)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.filter.FilterInterface#addNextFilter(patterns.filter.
+	 * FilterInterface)
 	 */
 	@Override
 	public FilterInterface addNextFilter(final FilterInterface newFilter) {
@@ -38,8 +42,11 @@ public class AbstractFilter implements FilterInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.filter.FilterInterface#handleRequest(patterns.filter.PayloadInterface)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.filter.FilterInterface#handleRequest(patterns.filter.
+	 * PayloadInterface)
 	 */
 	@Override
 	public void handleRequest(final PayloadInterface payload) {

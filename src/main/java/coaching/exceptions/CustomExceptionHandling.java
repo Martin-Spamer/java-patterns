@@ -63,7 +63,7 @@ public class CustomExceptionHandling {
 
 	/**
 	 * A SubProcess Throws a specialist exception.
-	 * 
+	 *
 	 * custom exception
 	 *
 	 * @throws CustomReadException the custom read exception
@@ -74,7 +74,7 @@ public class CustomExceptionHandling {
 
 	/**
 	 * A SubProcess Throws a specialist exception.
-	 * 
+	 *
 	 * custom exception
 	 *
 	 * @throws CustomUpdateException the custom update exception

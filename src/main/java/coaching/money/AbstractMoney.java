@@ -55,7 +55,9 @@ public class AbstractMoney implements MoneyInterface {
 		setAmount(amount);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#setCurrency(java.util.Currency)
 	 */
 	@Override
@@ -64,7 +66,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#setAmount(long)
 	 */
 	@Override
@@ -73,7 +77,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#setAmount(coaching.money.Money)
 	 */
 	@Override
@@ -82,7 +88,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getCurrency()
 	 */
 	@Override
@@ -90,7 +98,9 @@ public class AbstractMoney implements MoneyInterface {
 		return currency;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getCurrencyCode()
 	 */
 	@Override
@@ -98,7 +108,9 @@ public class AbstractMoney implements MoneyInterface {
 		return currency.getCurrencyCode();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getAmount()
 	 */
 	@Override
@@ -106,7 +118,9 @@ public class AbstractMoney implements MoneyInterface {
 		return amount;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getSymbol()
 	 */
 	@Override
@@ -114,7 +128,9 @@ public class AbstractMoney implements MoneyInterface {
 		return currency.getSymbol();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getDisplayName()
 	 */
 	@Override
@@ -122,7 +138,9 @@ public class AbstractMoney implements MoneyInterface {
 		return currency.getDisplayName();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#add(long)
 	 */
 	@Override
@@ -131,7 +149,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#add(coaching.money.Money)
 	 */
 	@Override
@@ -140,7 +160,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#subtract(long)
 	 */
 	@Override
@@ -149,7 +171,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#subtract(coaching.money.Money)
 	 */
 	@Override
@@ -158,7 +182,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isMoreThan(long)
 	 */
 	@Override
@@ -166,7 +192,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this.amount > amount;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isMoreThan(coaching.money.Money)
 	 */
 	@Override
@@ -174,7 +202,9 @@ public class AbstractMoney implements MoneyInterface {
 		return amount > money.getAmount();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isEqualTo(long)
 	 */
 	@Override
@@ -182,7 +212,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this.amount == amount;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isEqualTo(coaching.money.Money)
 	 */
 	@Override
@@ -190,7 +222,9 @@ public class AbstractMoney implements MoneyInterface {
 		return amount == money.getAmount();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isLessThan(long)
 	 */
 	@Override
@@ -198,7 +232,9 @@ public class AbstractMoney implements MoneyInterface {
 		return this.amount < amount;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isLessThan(coaching.money.Money)
 	 */
 	@Override
@@ -214,7 +250,9 @@ public class AbstractMoney implements MoneyInterface {
 		log.info("{}", debug);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

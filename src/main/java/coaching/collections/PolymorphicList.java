@@ -1,4 +1,5 @@
 
+
 package coaching.collections;
 
 import java.util.*;
@@ -30,16 +31,18 @@ public class PolymorphicList {
 	 */
 	public PolymorphicList add(final Integer integerIn) {
 		LOG.info("add({}", integerIn);
-		this.integerList.add(integerIn);
+		integerList.add(integerIn);
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return String.format("PolymorphicList [integerList=%s]", this.integerList);
+		return String.format("PolymorphicList [integerList=%s]", integerList);
 	}
 
 }

@@ -26,7 +26,9 @@ public final class FlyWeight {
 		this.commonState = commonState;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

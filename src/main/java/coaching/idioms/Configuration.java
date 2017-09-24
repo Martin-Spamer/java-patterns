@@ -118,7 +118,9 @@ public class Configuration {
 		return string.replace("{", "\n\t{\n\t").replace(", ", "\n\t").replace("}", "\n\t}\n");
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

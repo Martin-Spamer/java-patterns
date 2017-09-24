@@ -115,7 +115,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#setAmount(long)
 	 */
 	@Override
@@ -124,7 +126,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#setAmount(coaching.money.Money)
 	 */
 	@Override
@@ -178,7 +182,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#add(coaching.money.Money)
 	 */
 	@Override
@@ -187,7 +193,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#subtract(long)
 	 */
 	@Override
@@ -196,7 +204,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#subtract(coaching.money.Money)
 	 */
 	@Override
@@ -248,7 +258,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return currency;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getAmount()
 	 */
 	@Override
@@ -257,7 +269,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getCurrencyCode()
 	 */
 	@Override
@@ -266,7 +280,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getSymbol()
 	 */
 	@Override
@@ -275,7 +291,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#getDisplayName()
 	 */
 	@Override
@@ -305,7 +323,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return String.format("%s", currencyString);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isMoreThan(long)
 	 */
 	@Override
@@ -314,7 +334,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isMoreThan(coaching.money.Money)
 	 */
 	@Override
@@ -323,7 +345,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isEqualTo(long)
 	 */
 	@Override
@@ -332,7 +356,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isEqualTo(coaching.money.Money)
 	 */
 	@Override
@@ -341,7 +367,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isLessThan(long)
 	 */
 	@Override
@@ -350,7 +378,9 @@ public class BigDecimalMoney implements MoneyInterface {
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.money.MoneyInterface#isLessThan(coaching.money.Money)
 	 */
 	@Override

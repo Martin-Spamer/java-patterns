@@ -1,4 +1,5 @@
 
+
 package coaching.rules;
 
 import java.io.*;
@@ -43,8 +44,8 @@ public class RulesEngine {
 				if (documentBuilder != null) {
 					final InputStream is = inputStream(configFilename);
 					if (null != is) {
-						this.document = documentBuilder.parse(is);
-						this.documentElement = this.document.getDocumentElement();
+						document = documentBuilder.parse(is);
+						documentElement = document.getDocumentElement();
 						return true;
 					}
 				}
@@ -75,8 +76,8 @@ public class RulesEngine {
 	public boolean execute() {
 		final boolean returnValue = false;
 		LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
-		if (this.documentElement != null) {
-			final NodeList childNodes = this.documentElement.getChildNodes();
+		if (documentElement != null) {
+			final NodeList childNodes = documentElement.getChildNodes();
 			LOG.info("childNodes  = {}", childNodes);
 		}
 		return returnValue;
@@ -102,19 +103,18 @@ public class RulesEngine {
 	 */
 	protected Element getElement(final String elementName) {
 		Element element = null;
-		final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
+		final NodeList nodelist = documentElement.getElementsByTagName(elementName);
 		if (nodelist != null) {
-			int length = nodelist.getLength();
+			final int length = nodelist.getLength();
 			if (length == 0) {
 				final String className = this.getClass().getSimpleName();
 				LOG.info("{}", className);
-				LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
+				LOG.info("Element {} is missing in element {}", elementName, documentElement.toString());
 			} else {
 				if (length > 1) {
 					final String className = this.getClass().getSimpleName();
 					LOG.info("{}", className);
-					LOG.info(" surplus Elements {} ignored in element: {}", elementName,
-					        this.documentElement.toString());
+					LOG.info(" surplus Elements {} ignored in element: {}", elementName, documentElement.toString());
 				}
 				element = (Element) nodelist.item(0);
 			}

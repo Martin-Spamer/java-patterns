@@ -32,7 +32,9 @@ public abstract class AbstractStrategy implements StrategyInterface {
 		log.info("{}.operation() should be overridden.", this.getClass().getSimpleName());
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

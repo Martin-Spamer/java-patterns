@@ -1,4 +1,5 @@
 
+
 package coaching.tuples;
 
 /**
@@ -46,7 +47,9 @@ public class Box<T> {
 		return this.t;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

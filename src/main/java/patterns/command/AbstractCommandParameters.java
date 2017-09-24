@@ -31,8 +31,11 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 		setPrameter(key, value);
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.command.ParametersInterface#setPrameter(java.lang.String, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.command.ParametersInterface#setPrameter(java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
 	public AbstractCommandParameters setPrameter(final String key, final String value) {
@@ -40,7 +43,9 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see patterns.command.ParametersInterface#stringPropertyNames()
 	 */
 	@Override
@@ -48,7 +53,9 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 		return parameters.stringPropertyNames();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String)
 	 */
 	@Override
@@ -56,16 +63,22 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 		return parameters.getProperty(key);
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
 	public String valueFor(final String key, final String defaultValue) {
 		return parameters.getProperty(key, defaultValue);
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String, java.lang.Boolean)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String,
+	 * java.lang.Boolean)
 	 */
 	@Override
 	public Boolean valueFor(final String key, final Boolean defaultValue) {
@@ -73,8 +86,11 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 		return Boolean.parseBoolean(property);
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String, java.lang.Long)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.command.ParametersInterface#valueFor(java.lang.String,
+	 * java.lang.Long)
 	 */
 	@Override
 	public Long valueFor(final String key, final Long defaultValue) {

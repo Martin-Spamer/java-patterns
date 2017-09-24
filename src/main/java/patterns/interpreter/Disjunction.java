@@ -1,4 +1,5 @@
 
+
 package patterns.interpreter;
 
 /**
@@ -21,8 +22,12 @@ public class Disjunction extends NonTerminalExpression {
 		this.rhs = rhs;
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.interpreter.NonTerminalExpression#interpret(patterns.interpreter.ContextInterface)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * patterns.interpreter.NonTerminalExpression#interpret(patterns.interpreter
+	 * .ContextInterface)
 	 */
 	@Override
 	public boolean interpret(final ContextInterface context) {

@@ -1,4 +1,5 @@
 
+
 package patterns.builder;
 
 /**
@@ -21,7 +22,9 @@ public class Product {
 		this.partTwo = partTwo;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

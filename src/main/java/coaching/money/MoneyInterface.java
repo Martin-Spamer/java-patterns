@@ -1,4 +1,5 @@
 
+
 package coaching.money;
 
 import java.util.Currency;
@@ -104,7 +105,7 @@ public interface MoneyInterface {
 	 *
 	 * @param amount the amount
 	 * @return true, if is
-	 * 			more than
+	 *         more than
 	 */
 	public boolean isMoreThan(long amount);
 
@@ -113,7 +114,7 @@ public interface MoneyInterface {
 	 *
 	 * @param money the money
 	 * @return true, if is
-	 * 			more than
+	 *         more than
 	 */
 	public boolean isMoreThan(Money money);
 
@@ -122,7 +123,7 @@ public interface MoneyInterface {
 	 *
 	 * @param amount the amount
 	 * @return true, if is
-	 * 			equal to
+	 *         equal to
 	 */
 	public boolean isEqualTo(long amount);
 
@@ -131,7 +132,7 @@ public interface MoneyInterface {
 	 *
 	 * @param money the money
 	 * @return true, if is
-	 * 			equal to
+	 *         equal to
 	 */
 	public boolean isEqualTo(Money money);
 
@@ -140,7 +141,7 @@ public interface MoneyInterface {
 	 *
 	 * @param amount the amount
 	 * @return true, if is
-	 * 			less than
+	 *         less than
 	 */
 	public boolean isLessThan(long amount);
 
@@ -149,7 +150,7 @@ public interface MoneyInterface {
 	 *
 	 * @param money the money
 	 * @return true, if is
-	 * 			less than
+	 *         less than
 	 */
 	public boolean isLessThan(Money money);
 

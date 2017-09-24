@@ -11,6 +11,8 @@ package coaching.solid;
 
 import static org.junit.Assert.assertNotNull;
 
+import org.slf4j.*;
+
 /**
  * OpenClosedPrinciple Class.
  *
@@ -18,6 +20,8 @@ import static org.junit.Assert.assertNotNull;
  * @version 0.1 - 12:11:08
  */
 public class OpenClosedPrinciple {
+
+	private static final Logger LOG = LoggerFactory.getLogger(OpenClosedPrinciple.class);
 
 	/**
 	 * main method.

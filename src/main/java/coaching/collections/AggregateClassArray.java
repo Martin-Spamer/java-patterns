@@ -33,12 +33,14 @@ public class AggregateClassArray {
 		LOG.info("AggregateClassArray");
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(this.aggregate));
+		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(aggregate));
 	}
 
 }

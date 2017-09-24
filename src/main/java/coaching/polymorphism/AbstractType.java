@@ -11,7 +11,9 @@ public abstract class AbstractType implements TypeInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.polymorphism.TypeInterface#operation()
 	 */
 	@Override
@@ -20,7 +22,9 @@ public abstract class AbstractType implements TypeInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

@@ -38,7 +38,7 @@ public class Taxi extends Car {
 	 * new passenger.
 	 *
 	 * @param passenger the new
-	 * 			passenger
+	 *            passenger
 	 */
 	public void setPassenger(final Passenger passenger) {
 		this.passenger = passenger;

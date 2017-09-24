@@ -31,7 +31,7 @@ public class Context implements ContextInterface {
 	 * Set the state.
 	 *
 	 * @param state the new
-	 * 			state
+	 *            state
 	 * @return the context
 	 */
 	public Context setState(final Object state) {
@@ -48,8 +48,11 @@ public class Context implements ContextInterface {
 		return state;
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.interpreter.ContextInterface#contains(patterns.interpreter.Data)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * patterns.interpreter.ContextInterface#contains(patterns.interpreter.Data)
 	 */
 	@Override
 	public boolean contains(final Object state) {

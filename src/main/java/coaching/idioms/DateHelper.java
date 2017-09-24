@@ -123,7 +123,7 @@ public class DateHelper {
 	}
 
 	/**
-	 *  Transform ISO 8601 string to Calendar.
+	 * Transform ISO 8601 string to Calendar.
 	 *
 	 * @param iso8601string the iso 8601 string
 	 * @return the calendar

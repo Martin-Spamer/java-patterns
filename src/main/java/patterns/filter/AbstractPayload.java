@@ -1,4 +1,5 @@
 
+
 package patterns.filter;
 
 import java.io.*;
@@ -109,8 +110,9 @@ public class AbstractPayload {
 	 * @param in the in
 	 * @return the abstract payload
 	 * @throws IOException Signals that an I/O exception has occurred.
-	 * invalid properties format exception
-	 * @throws InvalidPropertiesFormatException the invalid properties format exception
+	 *             invalid properties format exception
+	 * @throws InvalidPropertiesFormatException the invalid properties format
+	 *             exception
 	 */
 	public AbstractPayload loadFromXML(final InputStream in) throws IOException, InvalidPropertiesFormatException {
 		properties.loadFromXML(in);

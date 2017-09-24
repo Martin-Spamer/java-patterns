@@ -1,4 +1,5 @@
 
+
 package patterns.bridge;
 
 /**
@@ -24,7 +25,7 @@ public abstract class Abstraction {
 	 * Operation.
 	 */
 	public void operation() {
-		this.implementor.operation();
+		implementor.operation();
 	}
 
 }

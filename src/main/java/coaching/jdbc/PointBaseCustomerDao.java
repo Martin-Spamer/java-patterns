@@ -54,7 +54,8 @@ public class PointBaseCustomerDao {
 	 * <code>
 	 * 	SELECT * from customer table.
 	 * </code>
-	 * @return
+	 *
+	 * @return the point base customer dao
 	 */
 	public PointBaseCustomerDao read() {
 		try {
@@ -93,7 +94,8 @@ public class PointBaseCustomerDao {
 	 * VALUES
 	 * 		(999,'AA99 9ZZ','N')
 	 * </code>.
-	 * @return
+	 *
+	 * @return the point base customer dao
 	 */
 	public PointBaseCustomerDao write() {
 		try {
@@ -113,7 +115,8 @@ public class PointBaseCustomerDao {
 	 * <code>
 	 * 	UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999
 	 * </code>.
-	 * @return
+	 *
+	 * @return the point base customer dao
 	 */
 	public PointBaseCustomerDao update() {
 		try {
@@ -133,7 +136,8 @@ public class PointBaseCustomerDao {
 	 * 	DELETE FROM CUSTOMER_TBL WHERE
 	 * FIELD-NAME='VALUE'
 	 * </code>.
-	 * @return
+	 *
+	 * @return the point base customer dao
 	 */
 	public PointBaseCustomerDao delete() {
 		try {

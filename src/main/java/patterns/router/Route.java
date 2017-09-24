@@ -1,4 +1,5 @@
 
+
 package patterns.router;
 
 import org.slf4j.*;
@@ -23,8 +24,11 @@ class Route implements InputChannelInterface, OutputChannelInterface {
 		this.inputChannel = inputChannel;
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.router.OutputChannelInterface#sendMessage(patterns.router.Message)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see patterns.router.OutputChannelInterface#sendMessage(patterns.router.
+	 * Message)
 	 */
 	@Override
 	public void sendMessage(final Message message) {
@@ -32,7 +36,9 @@ class Route implements InputChannelInterface, OutputChannelInterface {
 		outputChannel.sendMessage(message);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see patterns.router.InputChannelInterface#receiveMessage()
 	 */
 	@Override

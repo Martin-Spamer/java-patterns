@@ -24,13 +24,15 @@ public class AbstractRequest {
 	 * new payload
 	 *
 	 * @param payload the new
-	 * 			payload
+	 *            payload
 	 */
 	public void setPayload(final String payload) {
 		this.payload = payload;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

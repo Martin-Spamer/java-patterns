@@ -45,7 +45,9 @@ public class Condition implements ConditionInterface<Boolean> {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

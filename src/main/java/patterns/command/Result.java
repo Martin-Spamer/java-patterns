@@ -40,8 +40,11 @@ public class Result implements ResultInterface {
 		return result;
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.command.ResultInterface#and(patterns.command.ResultInterface)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * patterns.command.ResultInterface#and(patterns.command.ResultInterface)
 	 */
 	@Override
 	public boolean and(ResultInterface newResult) {
@@ -49,7 +52,9 @@ public class Result implements ResultInterface {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

@@ -1,4 +1,5 @@
 
+
 package coaching.tuples;
 
 /**
@@ -133,7 +134,9 @@ public class Triple<X, Y, Z> {
 		return this.z;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

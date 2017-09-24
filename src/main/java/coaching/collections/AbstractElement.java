@@ -22,17 +22,19 @@ public abstract class AbstractElement {
 	 * Constructor instantiates a new basic element.
 	 */
 	public AbstractElement() {
-		this.log.info("{} default constructor", this.getClass().getName());
+		log.info("{} default constructor", this.getClass().getName());
 	}
 
 	/**
 	 * execute.
 	 */
 	public void execute() {
-		this.log.info("{}.execute", this.getClass().getName());
+		log.info("{}.execute", this.getClass().getName());
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

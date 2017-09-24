@@ -1,4 +1,5 @@
 
+
 package coaching.bags;
 
 import java.util.*;
@@ -16,7 +17,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	 */
 	public Bag() {
 		super();
-		fill(this.initialState);
+		fill(initialState);
 	}
 
 	/**
@@ -31,13 +32,15 @@ public class Bag extends ArrayList<String> implements BagInterface {
 		fill(values == null ? new String[0] : values);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.bags.BagInterface#fill(java.lang.String[])
 	 */
 	@Override
 	public BagInterface fill(final String... values) {
 		if (values != null) {
-			this.initialState = values;
+			initialState = values;
 			for (final String value : values) {
 				this.add(value);
 			}
@@ -45,7 +48,9 @@ public class Bag extends ArrayList<String> implements BagInterface {
 		return this;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.util.ArrayList#add(java.lang.Object)
 	 */
 	@Override
@@ -53,7 +58,9 @@ public class Bag extends ArrayList<String> implements BagInterface {
 		return super.add(value);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.bags.BagInterface#pick()
 	 */
 	@Override
@@ -61,14 +68,16 @@ public class Bag extends ArrayList<String> implements BagInterface {
 		return choose();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.bags.BagInterface#choose()
 	 */
 	@Override
 	public String choose() {
 		final int size = size();
 		if (size > 0) {
-			final int nextInt = this.random.nextInt(size);
+			final int nextInt = random.nextInt(size);
 			final String remove = this.remove(nextInt);
 			return remove;
 		} else {
@@ -76,12 +85,14 @@ public class Bag extends ArrayList<String> implements BagInterface {
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see coaching.bags.BagInterface#reset()
 	 */
 	@Override
 	public BagInterface reset() {
-		return fill(this.initialState);
+		return fill(initialState);
 	}
 
 }

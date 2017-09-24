@@ -24,8 +24,11 @@ public abstract class AbstractRule implements CommandInterface {
 		this.context = context;
 	}
 
-	/* (non-Javadoc)
-	 * @see javamentor.rules.CommandInterface#execute(javamentor.rules.Parameters)
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * javamentor.rules.CommandInterface#execute(javamentor.rules.Parameters)
 	 */
 	@Override
 	public void execute(final AbstractParameters parameters) {

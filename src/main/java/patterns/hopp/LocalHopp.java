@@ -1,4 +1,5 @@
 
+
 package patterns.hopp;
 
 import org.slf4j.*;

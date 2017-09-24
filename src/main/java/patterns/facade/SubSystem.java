@@ -1,4 +1,5 @@
 
+
 package patterns.facade;
 
 import org.slf4j.*;
@@ -17,7 +18,9 @@ public class SubSystem {
 		log.info("%s.operation", toString());
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

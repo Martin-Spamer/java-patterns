@@ -15,7 +15,9 @@ public abstract class AbstractAggregate implements AggregateInterface {
 
 	protected final List<ItemInterface> itemList = new ArrayList<ItemInterface>();
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see patterns.iterator.AggregateInterface#createIterator()
 	 */
 	@Override

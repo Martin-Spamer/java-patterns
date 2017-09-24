@@ -31,12 +31,20 @@ public class Composite {
 	public Composite() {
 		super();
 		LOG.info("Composite()");
-		this.elementAlice = new ElementAlice();
-		this.elementBob = new ElementBob();
-		this.elementCharlie = new ElementCharlie();
-		this.elementDan = new ElementDan();
+		elementAlice = new ElementAlice();
+		elementBob = new ElementBob();
+		elementCharlie = new ElementCharlie();
+		elementDan = new ElementDan();
 	}
 
+	/**
+	 * Instantiates a new composite.
+	 *
+	 * @param elementAlice the element alice
+	 * @param elementBob the element bob
+	 * @param elementCharlie the element charlie
+	 * @param elementDan the element dan
+	 */
 	public Composite(final ElementAlice elementAlice,
 	        final ElementBob elementBob,
 	        final ElementCharlie elementCharlie,
@@ -49,13 +57,15 @@ public class Composite {
 		this.elementDan = elementDan;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return String.format("Composite [elementAlice=%s, elementBob=%s, elementCharlie=%s, elementDan=%s]",
-		        this.elementAlice, this.elementBob, this.elementCharlie, this.elementDan);
+		        elementAlice, elementBob, elementCharlie, elementDan);
 	}
 
 }

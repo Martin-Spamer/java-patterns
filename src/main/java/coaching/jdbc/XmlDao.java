@@ -1,4 +1,5 @@
 
+
 package coaching.jdbc;
 
 import java.sql.*;
@@ -9,7 +10,8 @@ import org.slf4j.*;
 import org.w3c.dom.*;
 
 /**
- * A JDBC example provides a faster reader with XML Support input and a PointBase Database
+ * A JDBC example provides a faster reader with XML Support input and a
+ * PointBase Database
  * for output.
  * @author martin.spamer
  * @version 0.1 - 12:33:20
@@ -46,6 +48,11 @@ class XmlDao {
 		}
 	}
 
+	/**
+	 * To xml string.
+	 *
+	 * @return the string
+	 */
 	public String toXmlString() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -57,6 +64,11 @@ class XmlDao {
 		return null;
 	}
 
+	/**
+	 * To xml document.
+	 *
+	 * @return the document
+	 */
 	public Document toXmlDocument() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -72,7 +84,7 @@ class XmlDao {
 	 * database.
 	 *
 	 * @param connection the connection
-	 * @return
+	 * @return the result set
 	 */
 	protected ResultSet read(final Connection connection) {
 		try {

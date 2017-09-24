@@ -26,7 +26,9 @@ public abstract class AbstractIterator implements IteratorInterface {
 		this.aggregate = aggregate;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see patterns.iterator.IteratorInterface#first()
 	 */
 	@Override
@@ -35,7 +37,9 @@ public abstract class AbstractIterator implements IteratorInterface {
 		return itemList.get(index);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see patterns.iterator.IteratorInterface#next()
 	 */
 	@Override
@@ -44,7 +48,9 @@ public abstract class AbstractIterator implements IteratorInterface {
 		return itemList.get(index);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see patterns.iterator.IteratorInterface#isDone()
 	 */
 	@Override
@@ -52,7 +58,9 @@ public abstract class AbstractIterator implements IteratorInterface {
 		return index == itemList.size();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see patterns.iterator.IteratorInterface#currentItem()
 	 */
 	@Override
