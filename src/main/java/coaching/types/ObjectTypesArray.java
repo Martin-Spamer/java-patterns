@@ -19,31 +19,32 @@ import org.slf4j.*;
 public class ObjectTypesArray {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+	private static final int ARRAY_SIZE = 10;
 
 	/**
 	 * Display.
 	 */
-	public void display() {
-		final int ARRAY_SIZE = 10;
-
+	public void displayObjectArray() {
 		// Declare a reference to an array of longs.
 		Long[] values;
 
 		/**
-		 * reference to an Allocation of space for an array of longs
+		 * initialise the space for an array of longs
 		 */
 		values = new Long[ARRAY_SIZE];
 
 		// fill in some value
 		// arrays index from zero
-		values[0] = 0l;
+		values[0] = 0L;
 
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
 			values[i] = new Long(i * 100);
-			log.info("{}){}", i, values[i]);
+			this.log.info("{}){}", i, values[i]);
 		}
+	}
 
+	public void displayMatrix() {
 		// declare a reference to an matrix of longs
 		Long[][] matrix;
 
@@ -52,7 +53,7 @@ public class ObjectTypesArray {
 		 */
 		matrix = new Long[ARRAY_SIZE][ARRAY_SIZE];
 
-		StringBuffer stringBuffer = new StringBuffer();
+		final StringBuffer stringBuffer = new StringBuffer();
 		for (int x = 0; x < ARRAY_SIZE; x++) {
 			for (int y = 0; y < ARRAY_SIZE; y++) {
 				// * matrix
@@ -64,21 +65,31 @@ public class ObjectTypesArray {
 			stringBuffer.append("\n");
 		}
 
-		log.info("{}", stringBuffer.toString());
+		this.log.info("{}", stringBuffer.toString());
+	}
 
+	public void display() {
+		final Long[][] vector = {
+		        {
+		                0L, 1L, 2L
+				}, {
+				        3L, 4L, 5L
+				}, {
+				        6L, 7L, 8L
+				}
+		};
 		/**
 		 * array with static data
 		 */
-		stringBuffer = new StringBuffer();
-		final Long[][] vector = new Long[3][3];
-		for (int firstIndex = 0; firstIndex < 3; firstIndex++) {
-			for (int secondIndex = 0; secondIndex < 3; secondIndex++) {
+		final StringBuffer stringBuffer = new StringBuffer();
+		for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
+			for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
 				vector[firstIndex][secondIndex] = new Long(firstIndex * secondIndex);
 				stringBuffer.append(vector[firstIndex][secondIndex]);
 				stringBuffer.append(",");
 			}
 			stringBuffer.append("\n");
 		}
-		log.info("{}", stringBuffer.toString());
+		this.log.info("{}", stringBuffer.toString());
 	}
 }

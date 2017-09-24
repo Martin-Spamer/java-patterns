@@ -28,5 +28,4 @@ public class InterfaceSegregationPrinciple implements ExampleInterface {
 		final InterfaceSegregationPrinciple isp = new InterfaceSegregationPrinciple();
 		assertNotNull(isp);
 	}
-
 }

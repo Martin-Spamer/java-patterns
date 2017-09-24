@@ -75,10 +75,18 @@ public class CsvToJdbc {
 	private Connection makeJdbcConnection(final String driver,
 	        final String url,
 	        final String user,
-	        final String password) throws ClassNotFoundException, SQLException {
-		Class.forName(driver);
-		final Connection connection = DriverManager.getConnection(url, user, password);
-		return connection;
+	        final String password) {
+		try {
+			Class.forName(driver);
+			try {
+				return DriverManager.getConnection(url, user, password);
+			} catch (final SQLException e) {
+				this.log.error("{}", e);
+			}
+		} catch (final ClassNotFoundException e) {
+			this.log.error("{}", e);
+		}
+		return null;
 	}
 
 	/**
@@ -97,7 +105,7 @@ public class CsvToJdbc {
 	 *
 	 * @throws Exception the exception
 	 */
-	public void process() throws Exception {
+	public void process() {
 		final String tableName = "";
 		process(this.filename, this.driver, this.url, this.username, this.password, tableName);
 	}
@@ -118,13 +126,17 @@ public class CsvToJdbc {
 	        final String url,
 	        final String user,
 	        final String password,
-	        final String table) throws Exception {
+	        final String table) {
 		makeJdbcConnection(driver, url, user, password);
-		this.csvFile = new CsvFile(filename);
-		for (int index = 0; index < this.csvFile.size(); index++) {
-			final CsvRecord record = this.csvFile.getRecord(index);
-			this.log.info(record.toString());
-			write(record);
+		try {
+			this.csvFile = new CsvFile(filename);
+			for (int index = 0; index < this.csvFile.size(); index++) {
+				final CsvRecord record = this.csvFile.getRecord(index);
+				this.log.info(record.toString());
+				write(record);
+			}
+		} catch (final SQLException e) {
+			this.log.error("{}", e);
 		}
 	}
 

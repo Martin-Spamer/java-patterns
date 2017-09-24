@@ -43,7 +43,7 @@ public abstract class AbstractData implements DataInterface {
 	 * @return this instance for a fluent interface.
 	 * @throws Exception the exception
 	 */
-	public AbstractData loadFromXML(final InputStream inputStream) throws Exception {
+	public AbstractData loadFromXML(final InputStream inputStream) throws IOException {
 		if (inputStream != null) {
 			this.properties.loadFromXML(inputStream);
 		}

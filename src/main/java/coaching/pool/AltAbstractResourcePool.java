@@ -40,7 +40,7 @@ public abstract class AltAbstractResourcePool<T> {
 	}
 
 	/**
-	 * Borrow.
+	 * Borrow resource from pool.
 	 *
 	 * @return the t
 	 * @throws ResourceBorrowException the resource borrow exception
@@ -48,9 +48,9 @@ public abstract class AltAbstractResourcePool<T> {
 	public synchronized T borrow() throws ResourceBorrowException {
 		T resource = null;
 
-		// * pool of free resources is empty
+		// pool of free resources is empty
 		if (this.freePool.isEmpty()) {
-			// * threshold
+			// threshold
 			if (this.usedPool.size() < this.maxPoolSize) {
 				// make a new object
 				try {
@@ -64,17 +64,17 @@ public abstract class AltAbstractResourcePool<T> {
 				this.log.info("Used({}) < maxPoolSize({})", this.usedPool.size(), this.maxPoolSize);
 			}
 		} else {
-			// * first valid resource
+			// first valid resource
 			resource = this.freePool.pop();
 
-			// * used resource pool.
+			// used resource pool.
 			this.usedPool.add(resource);
 		}
 		return resource;
 	}
 
 	/**
-	 * Creates the.
+	 * Allows pool to create resources to re-populate the pool.
 	 *
 	 * @return the t
 	 * @throws ResourceCreationException the resource creation exception
@@ -82,20 +82,20 @@ public abstract class AltAbstractResourcePool<T> {
 	public abstract T create() throws ResourceCreationException;
 
 	/**
-	 * Discard.
+	 * Discard a resource to the pool.
 	 *
 	 * @param resource the resource
 	 */
 	public synchronized void discard(final T resource) {
-		// * in use pool.
+		// in use pool.
 		this.usedPool.remove(resource);
 
-		// * free pool
+		// free pool
 		this.freePool.push(resource);
 	}
 
 	/**
-	 * Grow.
+	 * Grow the pool.
 	 *
 	 * @param growthRate the growth rate
 	 */
@@ -104,7 +104,7 @@ public abstract class AltAbstractResourcePool<T> {
 	}
 
 	/**
-	 * Release.
+	 * Release a resource back to pool.
 	 *
 	 * @param resource the resource
 	 * @throws ResourceReleaseException the resource release exception
@@ -118,7 +118,7 @@ public abstract class AltAbstractResourcePool<T> {
 	}
 
 	/**
-	 * Shrink.
+	 * Shrink the pool size.
 	 *
 	 * @param shrinkRate the shrink rate
 	 */

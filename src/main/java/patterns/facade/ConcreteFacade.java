@@ -6,9 +6,9 @@ package patterns.facade;
  */
 public final class ConcreteFacade implements FacadeInterface {
 
-	private SubSystemOne subSystemOne = null;
-	private SubSystemTwo subSystemTwo = null;
-	private SubSystemThree subSystemThree = null;
+	private SubSystemOne subSystemOne = new SubSystemOne();
+	private SubSystemTwo subSystemTwo = new SubSystemTwo();
+	private SubSystemThree subSystemThree = new SubSystemThree();
 
 	/**
 	 * Instantiates a new concrete facade.
@@ -16,9 +16,9 @@ public final class ConcreteFacade implements FacadeInterface {
 	public ConcreteFacade() {
 		super();
 
-		subSystemOne = new SubSystemOne();
-		subSystemTwo = new SubSystemTwo();
-		subSystemThree = new SubSystemThree();
+		//		this.subSystemOne = new SubSystemOne();
+		//		this.subSystemTwo = new SubSystemTwo();
+		//		this.subSystemThree = new SubSystemThree();
 	}
 
 	/*
@@ -37,21 +37,21 @@ public final class ConcreteFacade implements FacadeInterface {
 	 * Sub system one operation.
 	 */
 	public void subSystemOneOperation() {
-		subSystemOne.operation();
+		this.subSystemOne.operation();
 	}
 
 	/**
 	 * Sub system two operation.
 	 */
 	public void subSystemTwoOperation() {
-		subSystemTwo.operation();
+		this.subSystemTwo.operation();
 	}
 
 	/**
 	 * Sub system three operation.
 	 */
 	public void subSystemThreeOperation() {
-		subSystemThree.operation();
+		this.subSystemThree.operation();
 	}
 
 }

@@ -8,12 +8,13 @@ public class AbstractStrategyTest {
 
 	@Test
 	public void testOperation() {
-		final StrategyInterface strategyAlice = new StrategyAlice(new Context());
+		final Context context = new Context();
+		assertNotNull(context);
+		final StrategyInterface strategyAlice = new StrategyAlice(context);
 		assertNotNull(strategyAlice);
-		final StrategyInterface strategyBob = new StrategyBob(new Context());
+		final StrategyInterface strategyBob = new StrategyBob(context);
 		assertNotNull(strategyBob);
-		final StrategyInterface strategyCharlie = new StrategyCharlie(new Context());
+		final StrategyInterface strategyCharlie = new StrategyCharlie(context);
 		assertNotNull(strategyCharlie);
 	}
-
 }

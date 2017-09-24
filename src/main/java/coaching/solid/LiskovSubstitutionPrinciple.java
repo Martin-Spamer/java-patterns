@@ -6,6 +6,7 @@
  *	Created      13-Jan-2005
  *
  **/
+
 package coaching.solid;
 
 import static org.junit.Assert.assertNotNull;
@@ -26,6 +27,5 @@ public class LiskovSubstitutionPrinciple {
 	public static void main(final String[] args) {
 		final LiskovSubstitutionPrinciple lsp = new LiskovSubstitutionPrinciple();
 		assertNotNull(lsp);
-
 	}
 }

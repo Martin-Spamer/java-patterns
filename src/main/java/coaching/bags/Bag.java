@@ -15,6 +15,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	 * Instantiates a new empty bag.
 	 */
 	public Bag() {
+		super();
 		fill(this.initialState);
 	}
 
@@ -26,6 +27,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	 * @param values the values
 	 */
 	public Bag(final String... values) {
+		super();
 		fill(values == null ? new String[0] : values);
 	}
 

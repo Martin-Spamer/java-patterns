@@ -1,5 +1,6 @@
 
 
+
 package patterns.strategy;
 
 import org.slf4j.*;
