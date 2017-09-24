@@ -36,17 +36,6 @@ public class CompositeClassArray {
 		LOG.info("CompositeClassArray");
 	}
 
-	/**
-	 * Instantiates a new composite class array.
-	 *
-	 * @param composite the composite
-	 */
-	public CompositeClassArray(final AbstractElement[] composite) {
-		super();
-		this.composite = composite;
-		LOG.info("CompositeClassArray");
-	}
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -54,7 +43,7 @@ public class CompositeClassArray {
 	 */
 	@Override
 	public String toString() {
-		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(composite));
+		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
 	}
 
 }
