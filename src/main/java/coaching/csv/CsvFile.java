@@ -92,10 +92,10 @@ public class CsvFile {
 	 */
 	private void read(final BufferedReader bufferedReader) throws IOException {
 		if (bufferedReader != null) {
-			String line = bufferedReader.readLine();
+			String line = bufferedReader.readLine().trim();
 			while (line != null) {
 				if (line.length() > 0) {
-					if (line.startsWith("#")) {
+					if (line.charAt(0) == '#') {
 						setHeaderLine(line);
 					} else {
 						final CsvRecord record = new CsvRecord(line);

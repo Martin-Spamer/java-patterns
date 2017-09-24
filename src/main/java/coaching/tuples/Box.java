@@ -2,13 +2,9 @@
 package coaching.tuples;
 
 /**
- * Box Class of type T.
- * 	E - Element/Enum
- * 	K - Key
- * 	N - Number
- * 	T - Type
- * 	V - Value
- * generic type
+ * Box class for generic type T.
+ *
+ * Boxing is an effective way of adapting the behaviour of a type.
  *
  * @param <T> the generic type
  */

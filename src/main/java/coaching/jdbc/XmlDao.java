@@ -9,8 +9,8 @@ import org.slf4j.*;
 import org.w3c.dom.*;
 
 /**
- * A JDBC example to access a PointBase Database. Faster Reader with XML Support
- * output support.
+ * A JDBC example provides a faster reader with XML Support input and a PointBase Database
+ * for output.
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
@@ -50,8 +50,7 @@ class XmlDao {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 			final ResultSet read = read(connection);
-			final String xmlString = toXmlString(read);
-			return xmlString;
+			return toXmlString(read);
 		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}
@@ -62,8 +61,7 @@ class XmlDao {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 			final ResultSet read = read(connection);
-			final Document document = toXmlDocument(read);
-			return document;
+			return toXmlDocument(read);
 		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}
