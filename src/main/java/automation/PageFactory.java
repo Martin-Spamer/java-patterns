@@ -6,6 +6,9 @@ package automation;
  */
 public class PageFactory {
 
+	private PageFactory() {
+	}
+
 	/**
 	 * Landing page.
 	 *
