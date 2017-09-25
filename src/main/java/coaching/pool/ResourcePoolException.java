@@ -1,5 +1,4 @@
 
-
 package coaching.pool;
 
 /**
@@ -11,8 +10,6 @@ public class ResourcePoolException extends Exception {
 	/**
 	 * Instantiates a new resource pool exception.
 	 *
-	 * message
-	 *
 	 * @param message the message
 	 */
 	public ResourcePoolException(final String message) {
@@ -21,8 +18,6 @@ public class ResourcePoolException extends Exception {
 
 	/**
 	 * Instantiates a new resource pool exception.
-	 *
-	 * exception
 	 *
 	 * @param exception the exception
 	 */

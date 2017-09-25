@@ -24,13 +24,13 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.21</version>
 		</dependency>
-<!--
- 		<dependency>
+		<!-- 
+		<dependency> 
 			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
+			<artifactId>slf4j-simple</artifactId> 
 			<version>1.7.21</version>
 		</dependency>
- -->
+		-->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -52,7 +52,82 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<reportOutputDirectory>target/reportOutputDirectory</reportOutputDirectory>
+					<outputDirectory>target/outputDirectory</outputDirectory>
+					<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
+					<!-- <docletPath>/path/to/UmlGraph.jar</docletPath> -->
+					<docletArtifact>
+						<groupId>org.umlgraph</groupId>
+						<artifactId>doclet</artifactId>
+						<version>5.1</version>
+					</docletArtifact>
+					<additionalparam>-views</additionalparam>
+					<useStandardDocletOptions>true</useStandardDocletOptions>					
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.8</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<reportOutputDirectory>target/reportOutputDirectory</reportOutputDirectory>
+					<outputDirectory>target/outputDirectory</outputDirectory>
+					<!-- 
+						<stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile> 
+					-->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.20.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.20.1</version>
+			</plugin>
+		</plugins>
+
+	</reporting>
 
 </project>

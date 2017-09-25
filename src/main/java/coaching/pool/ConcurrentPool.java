@@ -1,5 +1,4 @@
 
-
 package coaching.pool;
 
 import java.util.concurrent.ConcurrentLinkedDeque;
@@ -77,8 +76,9 @@ public abstract class ConcurrentPool<E> implements PoolInterface<E> {
 	 */
 	@Override
 	public PoolInterface<E> release(final E resource) {
-		// TODO Auto-generated method stub
-		return null;
+		this.freePool.remove(resource);
+		this.usedPool.remove(resource);
+		return this;
 	}
 
 	/*

@@ -1,5 +1,4 @@
 
-
 package coaching.pool;
 
 import org.slf4j.*;
@@ -9,24 +8,17 @@ import org.slf4j.*;
  */
 public class WorkerThread implements Runnable {
 
-	/** The Constant log. */
 	private static final Logger log = LoggerFactory.getLogger(WorkerThread.class);
-
-	/** The Constant INTERVAL. */
 	private static final int INTERVAL = 5000;
-
-	/** The command. */
 	private final String command;
 
 	/**
 	 * Instantiates a new worker thread.
 	 *
-	 * s
-	 *
-	 * @param s the s
+	 * @param commandName the command name as String object.
 	 */
-	public WorkerThread(final String s) {
-		command = s;
+	public WorkerThread(final String commandName) {
+		this.command = commandName;
 	}
 
 	/**
@@ -50,7 +42,7 @@ public class WorkerThread implements Runnable {
 	@Override
 	public void run() {
 		final String name = Thread.currentThread().getName();
-		WorkerThread.log.info("{}:{}", name, command);
+		WorkerThread.log.info("{}:{}", name, this.command);
 		processCommand();
 		WorkerThread.log.info("{}:exit", name);
 	}

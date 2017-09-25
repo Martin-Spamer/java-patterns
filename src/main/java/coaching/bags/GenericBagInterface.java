@@ -1,5 +1,4 @@
 
-
 package coaching.bags;
 
 /**
@@ -31,7 +30,6 @@ public interface GenericBagInterface<T> {
 	 * pick from the bag.
 	 *
 	 * @return the value as type T
-	 * @see idioms.BagInterface#fill(java.lang.String)
 	 */
 	public T pick();
 
@@ -39,7 +37,6 @@ public interface GenericBagInterface<T> {
 	 * choose from bag.
 	 *
 	 * @return the value as type T
-	 * @see idioms.BagInterface#fill(java.lang.String)
 	 */
 	public T choose();
 
