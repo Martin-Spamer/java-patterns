@@ -1,5 +1,4 @@
 
-
 package coaching.money;
 
 import java.text.DecimalFormat;
@@ -61,7 +60,7 @@ public class AbstractMoney implements MoneyInterface {
 	 * @see coaching.money.MoneyInterface#setCurrency(java.util.Currency)
 	 */
 	@Override
-	public AbstractMoney setCurrency(final Currency currency) {
+	public MoneyInterface setCurrency(final Currency currency) {
 		this.currency = currency;
 		return this;
 	}
@@ -72,7 +71,7 @@ public class AbstractMoney implements MoneyInterface {
 	 * @see coaching.money.MoneyInterface#setAmount(long)
 	 */
 	@Override
-	public AbstractMoney setAmount(final long amount) {
+	public MoneyInterface setAmount(final long amount) {
 		this.amount = amount;
 		return this;
 	}
@@ -83,7 +82,7 @@ public class AbstractMoney implements MoneyInterface {
 	 * @see coaching.money.MoneyInterface#setAmount(coaching.money.Money)
 	 */
 	@Override
-	public AbstractMoney setAmount(final Money amount) {
+	public MoneyInterface setAmount(final MoneyInterface amount) {
 		this.amount = amount.getAmount();
 		return this;
 	}
@@ -95,7 +94,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public Currency getCurrency() {
-		return currency;
+		return this.currency;
 	}
 
 	/*
@@ -105,7 +104,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getCurrencyCode() {
-		return currency.getCurrencyCode();
+		return this.currency.getCurrencyCode();
 	}
 
 	/*
@@ -115,7 +114,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public Long getAmount() {
-		return amount;
+		return this.amount;
 	}
 
 	/*
@@ -125,7 +124,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getSymbol() {
-		return currency.getSymbol();
+		return this.currency.getSymbol();
 	}
 
 	/*
@@ -135,7 +134,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getDisplayName() {
-		return currency.getDisplayName();
+		return this.currency.getDisplayName();
 	}
 
 	/*
@@ -144,7 +143,7 @@ public class AbstractMoney implements MoneyInterface {
 	 * @see coaching.money.MoneyInterface#add(long)
 	 */
 	@Override
-	public AbstractMoney add(final long amount) {
+	public MoneyInterface add(final long amount) {
 		this.amount += amount;
 		return this;
 	}
@@ -155,7 +154,7 @@ public class AbstractMoney implements MoneyInterface {
 	 * @see coaching.money.MoneyInterface#add(coaching.money.Money)
 	 */
 	@Override
-	public AbstractMoney add(final Money amount) {
+	public MoneyInterface add(final Money amount) {
 		this.amount += amount.getAmount();
 		return this;
 	}
@@ -166,7 +165,7 @@ public class AbstractMoney implements MoneyInterface {
 	 * @see coaching.money.MoneyInterface#subtract(long)
 	 */
 	@Override
-	public AbstractMoney subtract(final long amount) {
+	public MoneyInterface subtract(final long amount) {
 		this.amount -= amount;
 		return this;
 	}
@@ -177,7 +176,7 @@ public class AbstractMoney implements MoneyInterface {
 	 * @see coaching.money.MoneyInterface#subtract(coaching.money.Money)
 	 */
 	@Override
-	public AbstractMoney subtract(final Money amount) {
+	public MoneyInterface subtract(final Money amount) {
 		this.amount -= amount.getAmount();
 		return this;
 	}
@@ -199,7 +198,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isMoreThan(final Money money) {
-		return amount > money.getAmount();
+		return this.amount > money.getAmount();
 	}
 
 	/*
@@ -219,7 +218,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isEqualTo(final Money money) {
-		return amount == money.getAmount();
+		return this.amount == money.getAmount();
 	}
 
 	/*
@@ -239,15 +238,15 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isLessThan(final Money money) {
-		return amount < money.getAmount();
+		return this.amount < money.getAmount();
 	}
 
 	/**
 	 * To log.
 	 */
 	public void toLog() {
-		final String debug = String.format("Money [currency=%s, amount=%s]", currency, amount);
-		log.info("{}", debug);
+		final String debug = String.format("Money [currency=%s, amount=%s]", this.currency, this.amount);
+		this.log.info("{}", debug);
 	}
 
 	/*
@@ -257,10 +256,10 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public String toString() {
-		final String symbol = currency.getSymbol();
+		final String symbol = this.currency.getSymbol();
 		final String pattern = String.format("%s ###,###.##", symbol);
 		final DecimalFormat formatter = new DecimalFormat(pattern);
-		final String output = formatter.format(amount);
+		final String output = formatter.format(this.amount);
 		return output;
 	}
 

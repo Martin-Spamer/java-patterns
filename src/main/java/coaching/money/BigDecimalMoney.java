@@ -27,7 +27,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	public BigDecimalMoney() {
 		final Locale locale = Locale.getDefault();
 		setCurrency(Currency.getInstance(locale));
-		amount = new BigDecimal(0);
+		this.amount = new BigDecimal(0);
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	public BigDecimalMoney(final BigDecimal bigDecimal) {
 		setCurrency(Currency.getInstance(Locale.getDefault()));
-		amount = bigDecimal;
+		this.amount = bigDecimal;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	public BigDecimalMoney(final Currency currency) {
 		setCurrency(currency);
-		amount = new BigDecimal(0);
+		this.amount = new BigDecimal(0);
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * @return the big decimal money
 	 */
 	@Override
-	public BigDecimalMoney setCurrency(final Currency currency) {
+	public MoneyInterface setCurrency(final Currency currency) {
 		this.currency = currency;
 		return this;
 	}
@@ -122,8 +122,8 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public MoneyInterface setAmount(final long amount) {
-		// TODO Auto-generated method stub
-		return null;
+		this.amount = new BigDecimal(amount);
+		return this;
 	}
 
 	/*
@@ -132,8 +132,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * @see coaching.money.MoneyInterface#setAmount(coaching.money.Money)
 	 */
 	@Override
-	public MoneyInterface setAmount(final Money amount) {
-		// TODO Auto-generated method stub
+	public MoneyInterface setAmount(final MoneyInterface amount) {
 		return null;
 	}
 
@@ -255,7 +254,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public Currency getCurrency() {
-		return currency;
+		return this.currency;
 	}
 
 	/*
@@ -308,7 +307,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * @return the big decimal
 	 */
 	private BigDecimal asBigDecimal() {
-		return amount;
+		return this.amount;
 	}
 
 	/*
@@ -319,7 +318,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	@Override
 	public String toString() {
 		final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-		final String currencyString = numberFormat.format(amount);
+		final String currencyString = numberFormat.format(this.amount);
 		return String.format("%s", currencyString);
 	}
 

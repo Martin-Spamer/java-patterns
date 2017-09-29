@@ -1,5 +1,4 @@
 
-
 package coaching.bags;
 
 import java.util.*;
@@ -12,14 +11,13 @@ import java.util.*;
 @SuppressWarnings("serial")
 public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 	private final Random random = new Random();
-	private T[] initialState = null;
+	private T[] initialState;
 
 	/**
 	 * Instantiates a new empty bag.
 	 */
 	public GenericBag() {
 		super();
-		fill(this.initialState);
 	}
 
 	/**
@@ -28,6 +26,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	 *
 	 * @param values the values
 	 */
+	@SafeVarargs
 	public GenericBag(final T... values) {
 		super();
 		fill(values);
@@ -38,13 +37,14 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	 *
 	 * @see coaching.bags.GenericBagInterface#fill(java.lang.Object[])
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public GenericBagInterface<T> fill(final T... values) {
 		if (values != null) {
+			this.initialState = values;
 			for (final T value : values) {
 				this.add(value);
 			}
-			this.initialState = values;
 		}
 		return this;
 	}

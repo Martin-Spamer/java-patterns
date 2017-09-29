@@ -1,5 +1,4 @@
 
-
 package coaching.money;
 
 import java.util.Currency;
@@ -31,7 +30,7 @@ public interface MoneyInterface {
 	 * @param amount the amount
 	 * @return the money
 	 */
-	public MoneyInterface setAmount(Money amount);
+	public MoneyInterface setAmount(MoneyInterface amount);
 
 	/**
 	 * get the currency.

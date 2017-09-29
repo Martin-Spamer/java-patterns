@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import java.sql.*;
@@ -56,8 +55,10 @@ class XmlDao {
 	public String toXmlString() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-			final ResultSet read = read(connection);
-			return toXmlString(read);
+			final ResultSet resultSet = read(connection);
+			final String xmlString = toXmlString(resultSet);
+			resultSet.close();
+			return xmlString;
 		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}
@@ -72,8 +73,10 @@ class XmlDao {
 	public Document toXmlDocument() {
 		try {
 			final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-			final ResultSet read = read(connection);
-			return toXmlDocument(read);
+			final ResultSet resultSet = read(connection);
+			final Document xmlDocument = toXmlDocument(resultSet);
+			resultSet.close();
+			return xmlDocument;
 		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}
@@ -87,13 +90,15 @@ class XmlDao {
 	 * @return the result set
 	 */
 	protected ResultSet read(final Connection connection) {
+		ResultSet executeQuery = null;
 		try {
 			final Statement statement = connection.createStatement();
-			return statement.executeQuery(SQL);
-		} catch (final Exception e) {
+			executeQuery = statement.executeQuery(SQL);
+			statement.close();
+		} catch (final SQLException e) {
 			LOG.error("{}", e.toString());
 		}
-		return null;
+		return executeQuery;
 	}
 
 	/**

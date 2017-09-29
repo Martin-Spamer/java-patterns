@@ -1,5 +1,4 @@
 
-
 package coaching.tuples;
 
 /**
@@ -17,6 +16,7 @@ public class Box<T> {
 	 * Instantiates a new box.
 	 */
 	public Box() {
+		super();
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class Box<T> {
 	}
 
 	/**
-	 * Sets the.
+	 * Sets the value.
 	 *
 	 * @param t the type T
 	 */
@@ -39,7 +39,7 @@ public class Box<T> {
 	}
 
 	/**
-	 * Gets the.
+	 * Gets the value.
 	 *
 	 * @return the t as type T
 	 */
@@ -54,7 +54,7 @@ public class Box<T> {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Box [t=%s]", this.t);
+		return String.format("Box [T=%s]", this.t);
 	}
 
 }
