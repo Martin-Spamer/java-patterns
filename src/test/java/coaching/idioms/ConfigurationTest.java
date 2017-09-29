@@ -21,7 +21,7 @@ public class ConfigurationTest {
 	@Test
 	public void testConfiguration() {
 		final Configuration config = new Configuration();
-		assertNotNull(config);
+		assertNotNull("Value cannot be null",config);
 		assertEquals(null, config.valueFor("missing"));
 		assertEquals("./Configuration.properties", config.valueFor("File"));
 		assertEquals("JavaMentor", config.valueFor("Project"));

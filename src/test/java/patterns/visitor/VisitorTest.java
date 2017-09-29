@@ -17,9 +17,9 @@ public class VisitorTest {
 	@Test
 	public void testOperation() {
 		final Visitor visitor = new Visitor();
-		assertNotNull(visitor);
+		assertNotNull("Value cannot be null",visitor);
 		final Element element = new Element();
-		assertNotNull(element);
+		assertNotNull("Value cannot be null",element);
 	}
 
 }

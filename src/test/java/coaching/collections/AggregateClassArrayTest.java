@@ -12,7 +12,7 @@ public class AggregateClassArrayTest {
 	@Test
 	public void testExecute() {
 		final AggregateClassArray aggregateClassArray = new AggregateClassArray();
-		assertNotNull(aggregateClassArray);
+		assertNotNull("Value cannot be null",aggregateClassArray);
 		LOG.info("{}", aggregateClassArray.toString());
 	}
 

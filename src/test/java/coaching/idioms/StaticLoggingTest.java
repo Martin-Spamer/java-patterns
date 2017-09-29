@@ -17,7 +17,7 @@ public class StaticLoggingTest {
 	 */
 	@Test
 	public void testSendToLog() {
-		assertNotNull(LOG);
+		assertNotNull("Value cannot be null",LOG);
 	}
 
 }

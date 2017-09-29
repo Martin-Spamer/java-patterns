@@ -17,7 +17,7 @@ public class RouteTest {
 		final OutputChannel outputChannel = new OutputChannel();
 		final InputChanel inputChannel = new InputChanel();
 		final Route route = new Route(outputChannel, inputChannel);
-		assertNotNull(route);
+		assertNotNull("Value cannot be null",route);
 	}
 
 }

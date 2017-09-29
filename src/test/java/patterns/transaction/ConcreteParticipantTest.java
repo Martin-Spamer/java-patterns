@@ -9,7 +9,7 @@ public class ConcreteParticipantTest {
 	@Test
 	public void testCommit() {
 		ConcreteParticipant testInstance = new ConcreteParticipant();
-		assertNotNull(testInstance);
+		assertNotNull("Value cannot be null",testInstance);
 	}
 
 }

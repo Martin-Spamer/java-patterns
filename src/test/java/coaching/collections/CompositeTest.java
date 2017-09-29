@@ -12,7 +12,7 @@ public class CompositeTest {
 	@Test
 	public void testComposite() {
 		final Composite composite = new Composite();
-		assertNotNull(composite);
+		assertNotNull("Value cannot be null",composite);
 		LOG.info("{}", composite);
 	}
 
@@ -23,7 +23,7 @@ public class CompositeTest {
 		final ElementCharlie charlie = new ElementCharlie();
 		final ElementDan dan = new ElementDan();
 		final Composite composite = new Composite(alice, bob, charlie, dan);
-		assertNotNull(composite);
+		assertNotNull("Value cannot be null",composite);
 		LOG.info("{}", composite);
 	}
 

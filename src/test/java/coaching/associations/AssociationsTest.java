@@ -22,7 +22,7 @@ public class AssociationsTest {
 	@Test
 	public void testExampleComposition() {
 		final VehicleInterface car = new Car();
-		assertNotNull(car);
+		assertNotNull("Value cannot be null",car);
 		log.info("{}", car);
 	}
 
@@ -32,7 +32,7 @@ public class AssociationsTest {
 	@Test
 	public void testExampleTruck() {
 		final Truck truck = new Truck();
-		assertNotNull(truck);
+		assertNotNull("Value cannot be null",truck);
 		log.info("{}", truck);
 	}
 
@@ -42,9 +42,9 @@ public class AssociationsTest {
 	@Test
 	public void testExampleAggregation() {
 		final Driver driver = new Driver("Alice");
-		assertNotNull(driver);
+		assertNotNull("Value cannot be null",driver);
 		final Car car = new Car();
-		assertNotNull(car);
+		assertNotNull("Value cannot be null",car);
 		car.setDriver(driver);
 		log.info("{}", car);
 	}
@@ -55,9 +55,9 @@ public class AssociationsTest {
 	@Test
 	public void testExampleTaxi() {
 		final Taxi taxi = new Taxi();
-		assertNotNull(taxi);
+		assertNotNull("Value cannot be null",taxi);
 		final Passenger passenger = new Passenger("Bob");
-		assertNotNull(passenger);
+		assertNotNull("Value cannot be null",passenger);
 		taxi.setPassenger(passenger);
 		log.info("{}", taxi);
 	}
@@ -68,9 +68,9 @@ public class AssociationsTest {
 	@Test
 	public void testExampleMotorCycleRider() {
 		final MotorCycle motorCycle = new MotorCycle();
-		assertNotNull(motorCycle);
+		assertNotNull("Value cannot be null",motorCycle);
 		final Rider rider = new Rider();
-		assertNotNull(rider);
+		assertNotNull("Value cannot be null",rider);
 		motorCycle.setRider(rider);
 		log.info("{}", motorCycle);
 	}

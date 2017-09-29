@@ -22,7 +22,7 @@ public class MoneyTest {
 		LOG.info("testMoney");
 
 		final Money money = new Money(10L);
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		LOG.info("new Money(10L) = {}", money.toString());
 
 		money.add(1L);
@@ -59,10 +59,10 @@ public class MoneyTest {
 		final Locale locale = Locale.getDefault();
 		final Currency currency = Currency.getInstance(locale);
 		final MoneyInterface money = new Money(currency);
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		assertTrue(money.isEqualTo(0));
 		final Currency actualCurrency = money.getCurrency();
-		assertNotNull(actualCurrency);
+		assertNotNull("Value cannot be null",actualCurrency);
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class MoneyTest {
 	public void testMoneyLong() {
 		LOG.info("testMoneyLong");
 		final MoneyInterface money = new Money();
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		assertTrue(money.isEqualTo(0));
 	}
 
@@ -83,7 +83,7 @@ public class MoneyTest {
 	public void testMoneyCurrencyLong() {
 		LOG.info("testMoneyCurrencyLong");
 		final MoneyInterface money = new Money();
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		assertTrue(money.isEqualTo(0L));
 	}
 
@@ -94,7 +94,7 @@ public class MoneyTest {
 	public void testMinValue() {
 		LOG.info("testMinValue");
 		final MoneyInterface money = new Money(Long.MIN_VALUE);
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		LOG.info("{}", money.toString());
 		assertTrue(money.isEqualTo(Long.MIN_VALUE));
 	}
@@ -106,7 +106,7 @@ public class MoneyTest {
 	public void testMaxValue() {
 		LOG.info("testMaxValue");
 		final MoneyInterface money = new Money(Long.MAX_VALUE);
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		LOG.info("{}", money.toString());
 		assertTrue(money.isEqualTo(Long.MAX_VALUE));
 	}
@@ -121,7 +121,7 @@ public class MoneyTest {
 		LOG.info("Currency = {}", gbp.getDisplayName());
 		final MoneyInterface money = new Money(gbp, Long.MAX_VALUE);
 		LOG.info("{}", money.toString());
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		final String actual = money.toString();
 		assertEquals("£ 9,223,372,036,854,775,807", actual);
 	}
@@ -135,7 +135,7 @@ public class MoneyTest {
 		final Currency eur = Currency.getInstance("EUR");
 		LOG.info("Currency = {}", eur.getDisplayName());
 		final MoneyInterface money = new Money(eur, Long.MAX_VALUE);
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		LOG.info("{}", money.toString());
 		final String actual = money.toString();
 		assertEquals("€ 9,223,372,036,854,775,807", actual);
@@ -150,7 +150,7 @@ public class MoneyTest {
 		final Currency usd = Currency.getInstance("USD");
 		LOG.info("Currency = {}", usd.getDisplayName());
 		final MoneyInterface money = new Money(usd, Long.MAX_VALUE);
-		assertNotNull(money);
+		assertNotNull("Value cannot be null",money);
 		LOG.info("{}", money.toString());
 		final String actual = money.toString();
 		assertEquals("USD 9,223,372,036,854,775,807", actual);

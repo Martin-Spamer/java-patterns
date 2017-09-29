@@ -1,6 +1,4 @@
 
-
-
 package coaching.xml;
 
 import java.io.*;
@@ -31,12 +29,12 @@ class XmlToJdbc {
 	 */
 	public XmlToJdbc() {
 		super();
-		filename = "CUSTOMER_TBL.xml";
-		driver = "com.pointbase.jdbc.jdbcUniversalDriver";
-		url = "jdbc:pointbase://localhost:9092/sample";
-		username = "pbpublic";
-		password = "pbpublic";
-		table = "CUSTOMER_TBL";
+		this.filename = "CUSTOMER_TBL.xml";
+		this.driver = "com.pointbase.jdbc.jdbcUniversalDriver";
+		this.url = "jdbc:pointbase://localhost:9092/sample";
+		this.username = "pbpublic";
+		this.password = "pbpublic";
+		this.table = "CUSTOMER_TBL";
 	}
 
 	/**
@@ -46,7 +44,7 @@ class XmlToJdbc {
 	 */
 	public void process() throws Exception {
 		LOG.info("process");
-		process(filename, driver, url, username, password, table);
+		process(this.filename, this.driver, this.url, this.username, this.password, this.table);
 	}
 
 	/**
@@ -69,8 +67,8 @@ class XmlToJdbc {
 		try {
 			// JDBC Driver
 			Class.forName(driver);
-			connection = DriverManager.getConnection(url, user, password);
-			statement = connection.createStatement();
+			this.connection = DriverManager.getConnection(url, user, password);
+			this.statement = this.connection.createStatement();
 
 			this.filename = filename;
 			final File configFile = new File(filename);
@@ -120,15 +118,15 @@ class XmlToJdbc {
 
 						LOG.error(sql.toString());
 						try {
-							if (statement.execute(sql.toString())) {
-								LOG.info("ok" + statement.getResultSet().toString());
+							if (this.statement.execute(sql.toString())) {
+								LOG.info("ok" + this.statement.getResultSet().toString());
 								// put in processed log.
 							} else {
-								if (statement.getUpdateCount() == 1) {
-									LOG.info("ok" + statement.getResultSet().toString());
+								if (this.statement.getUpdateCount() == 1) {
+									LOG.info("ok" + this.statement.getResultSet().toString());
 									// put in processed log.
 								} else {
-									LOG.info("failed " + statement.getWarnings());
+									LOG.info("failed " + this.statement.getWarnings());
 									// put in exceptions log.
 								}
 							}
@@ -140,7 +138,7 @@ class XmlToJdbc {
 					}
 				}
 			}
-			bufferedReader.close();
+			this.bufferedReader.close();
 		} catch (final Exception exception) {
 			LOG.error(exception.toString());
 		}
@@ -154,8 +152,8 @@ class XmlToJdbc {
 	@Override
 	public void finalize() {
 		try {
-			statement.close();
-			connection.close();
+			this.statement.close();
+			this.connection.close();
 		} catch (final SQLException exception) {
 			LOG.info("{}", exception);
 		}

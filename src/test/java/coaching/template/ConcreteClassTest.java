@@ -9,15 +9,15 @@ public class ConcreteClassTest {
 	@Test
 	public void testPrimitiveOperationA() {
 		final ConcreteTemplate concreteClass = new ConcreteTemplate();
-		assertNotNull(concreteClass);
-		assertNotNull(concreteClass.primitiveOperationAlice());
+		assertNotNull("Value cannot be null",concreteClass);
+		assertNotNull("Value cannot be null",concreteClass.primitiveOperationAlice());
 	}
 
 	@Test
 	public void testPrimitiveOperationB() {
 		final ConcreteTemplate concreteClass = new ConcreteTemplate();
-		assertNotNull(concreteClass);
-		assertNotNull(concreteClass.primitiveOperationBob());
+		assertNotNull("Value cannot be null",concreteClass);
+		assertNotNull("Value cannot be null",concreteClass.primitiveOperationBob());
 	}
 
 }

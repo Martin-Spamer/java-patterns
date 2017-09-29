@@ -21,7 +21,7 @@ public class RegularExpressionTest {
 	@Test
 	public void testRegularExpression() {
 		final RegularExpression regularExpression = new RegularExpression();
-		assertNotNull(regularExpression);
+		assertNotNull("Value cannot be null",regularExpression);
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class RegularExpressionTest {
 	@Test
 	public void testRegularExpressionString() {
 		final RegularExpression regularExpression = new RegularExpression(PATTERN_STRING);
-		assertNotNull(regularExpression);
+		assertNotNull("Value cannot be null",regularExpression);
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class RegularExpressionTest {
 	@Test
 	public void testRegularExpressionPattern() {
 		final RegularExpression regularExpression = new RegularExpression(PATTERN);
-		assertNotNull(regularExpression);
+		assertNotNull("Value cannot be null",regularExpression);
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class RegularExpressionTest {
 	@Test
 	public void testVerify() {
 		final RegularExpression regularExpression = new RegularExpression();
-		assertNotNull(regularExpression);
+		assertNotNull("Value cannot be null",regularExpression);
 		assertTrue(regularExpression.verify("ABC"));
 	}
 
@@ -58,7 +58,7 @@ public class RegularExpressionTest {
 	@Test
 	public void testFind() {
 		final RegularExpression regularExpression = new RegularExpression();
-		assertNotNull(regularExpression);
+		assertNotNull("Value cannot be null",regularExpression);
 		regularExpression.find("ABC");
 	}
 
@@ -68,7 +68,7 @@ public class RegularExpressionTest {
 	@Test
 	public void testReplace() {
 		final RegularExpression regularExpression = new RegularExpression();
-		assertNotNull(regularExpression);
+		assertNotNull("Value cannot be null",regularExpression);
 		regularExpression.replace("ABC", "ZYZ");
 	}
 

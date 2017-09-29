@@ -13,7 +13,7 @@ public class CurrentWorkingDirectoryTest {
 	public void testCurrentWorkingDirectory() {
 		LOG.info("testCurrentWorkingDirectory");
 		final CurrentWorkingDirectory cwd = new CurrentWorkingDirectory();
-		assertNotNull(cwd);
+		assertNotNull("Value cannot be null",cwd);
 	}
 
 }

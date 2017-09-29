@@ -30,6 +30,6 @@ public class InterfaceSegregationPrinciple implements ExampleInterface {
 	 */
 	public static void main(final String[] args) {
 		final InterfaceSegregationPrinciple isp = new InterfaceSegregationPrinciple();
-		assertNotNull(isp);
+		assertNotNull("Value cannot be null",isp);
 	}
 }

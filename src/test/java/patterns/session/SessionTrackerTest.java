@@ -15,7 +15,7 @@ public class SessionTrackerTest {
 	@Test
 	public void testSessionTracker() {
 		final SessionTracker sessionTracker = new SessionTracker();
-		assertNotNull(sessionTracker);
+		assertNotNull("Value cannot be null",sessionTracker);
 	}
 
 }

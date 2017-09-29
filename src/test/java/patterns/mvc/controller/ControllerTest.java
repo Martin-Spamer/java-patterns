@@ -18,6 +18,6 @@ public class ControllerTest {
 	@Test
 	public void testController() throws Exception {
 		final Controller controller = new Controller();
-		assertNotNull(controller);
+		assertNotNull("Value cannot be null",controller);
 	}
 }

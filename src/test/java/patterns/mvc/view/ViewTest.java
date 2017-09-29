@@ -16,7 +16,7 @@ public class ViewTest {
 	@Test
 	public void testShowView() {
 		final View view = new View();
-		assertNotNull(view);
+		assertNotNull("Value cannot be null",view);
 		view.show();
 	}
 

@@ -9,7 +9,7 @@ public class ElementMapperTest {
 	@Test
 	public void testElementMapper() {
 		final ElementMapper elementMapper = new ElementMapper();
-		assertNotNull(elementMapper);
+		assertNotNull("Value cannot be null",elementMapper);
 	}
 
 }

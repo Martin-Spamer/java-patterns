@@ -13,7 +13,7 @@ public class PolymorphicListTest {
 	public void testPolymorphicList() {
 		LOG.info("testPolymorphicList");
 		final PolymorphicList polymorphicList = new PolymorphicList();
-		assertNotNull(polymorphicList);
+		assertNotNull("Value cannot be null",polymorphicList);
 		LOG.info("{}", polymorphicList.toString());
 	}
 
@@ -21,7 +21,7 @@ public class PolymorphicListTest {
 	public void testPolymorphicListUsage() {
 		LOG.info("testPolymorphicList");
 		final PolymorphicList polymorphicList = new PolymorphicList();
-		assertNotNull(polymorphicList);
+		assertNotNull("Value cannot be null",polymorphicList);
 		polymorphicList.add(new Integer(0));
 		LOG.info("{}", polymorphicList.toString());
 	}
@@ -30,8 +30,8 @@ public class PolymorphicListTest {
 	public void testAdd() {
 		LOG.info("testAdd");
 		final PolymorphicList polymorphicList = new PolymorphicList();
-		assertNotNull(polymorphicList);
-		assertNotNull(polymorphicList.add(1));
+		assertNotNull("Value cannot be null",polymorphicList);
+		assertNotNull("Value cannot be null",polymorphicList.add(1));
 		LOG.info("{}", polymorphicList.toString());
 	}
 

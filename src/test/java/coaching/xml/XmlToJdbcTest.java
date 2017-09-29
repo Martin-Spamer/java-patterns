@@ -9,7 +9,7 @@ public class XmlToJdbcTest {
 	@Test
 	public void testXmlToJdbc() {
 		final XmlToJdbc xmlToJdbc = new XmlToJdbc();
-		assertNotNull(xmlToJdbc);
+		assertNotNull("Value cannot be null",xmlToJdbc);
 	}
 
 }

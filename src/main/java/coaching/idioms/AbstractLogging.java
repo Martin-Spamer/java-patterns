@@ -1,6 +1,4 @@
 
-
-
 package coaching.idioms;
 
 import org.slf4j.*;
@@ -15,25 +13,27 @@ import org.slf4j.*;
  *
  * logging layout formater (%F:%L) for click through in most IDEs.
  */
-public abstract class AbstractLogging {
+public abstract class AbstractLogging implements LoggingInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Law of Demeter (Tell Don't Ask).
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see coaching.idioms.LoggingInterface#toLog()
 	 */
+	@Override
 	public void toLog() {
-		log.info("{}.toLog", this.getClass().getSimpleName());
+		this.log.info("{}.toLog", this.getClass().getSimpleName());
 	}
 
-	/**
-	 * Law of Demeter (Tell Don't Ask).
-	 *
-	 * destination log
-	 *
-	 * @param destinationLog the destination log
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see coaching.idioms.LoggingInterface#logTo(org.slf4j.Logger)
 	 */
-	public void logTo(Logger destinationLog) {
+	@Override
+	public void logTo(final Logger destinationLog) {
 		destinationLog.info("{}.logTo", this.getClass().getSimpleName());
 	}
 

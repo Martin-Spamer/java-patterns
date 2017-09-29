@@ -12,12 +12,12 @@ public class CompositeTest {
 	@Test
 	public void testComposite() {
 		final Component composite = new Composite();
-		assertNotNull(composite);
+		assertNotNull("Value cannot be null",composite);
 
 		final Leaf leaf = new Leaf();
-		assertNotNull(leaf);
+		assertNotNull("Value cannot be null",leaf);
 
-		assertNotNull(composite.add(leaf));
+		assertNotNull("Value cannot be null",composite.add(leaf));
 		LOG.info("{}", composite.toString());
 	}
 }

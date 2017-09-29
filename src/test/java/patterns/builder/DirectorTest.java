@@ -11,15 +11,15 @@ public class DirectorTest {
 		final Director director = new Director();
 
 		final BuilderOne builderOne = new BuilderOne();
-		assertNotNull(builderOne);
+		assertNotNull("Value cannot be null",builderOne);
 		director.add(builderOne);
 
 		final BuilderTwo builderTwo = new BuilderTwo();
-		assertNotNull(builderTwo);
+		assertNotNull("Value cannot be null",builderTwo);
 		director.add(builderTwo);
 
 		final Product product = director.constructProduct();
-		assertNotNull(product);
+		assertNotNull("Value cannot be null",product);
 
 	}
 

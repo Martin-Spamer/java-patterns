@@ -9,7 +9,7 @@ public class MainAppTest {
 	@Test
 	public void testMainApp() {
 		final MainApp mainApp = new MainApp();
-		assertNotNull(mainApp);
+		assertNotNull("Value cannot be null",mainApp);
 	}
 
 }

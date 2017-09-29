@@ -20,8 +20,8 @@ public class DecoratorTest {
 	@Test
 	public void testOperation() {
 		final DecoratedComponent component = new DecoratedComponent();
-		assertNotNull(component);
-		assertNotNull(component.operation());
+		assertNotNull("Value cannot be null",component);
+		assertNotNull("Value cannot be null",component.operation());
 		LOG.info("{}", component.toString());
 	}
 
@@ -31,7 +31,7 @@ public class DecoratorTest {
 	@Test
 	public void testBefore() {
 		final DecoratedComponent component = new DecoratedComponent();
-		assertNotNull(component);
+		assertNotNull("Value cannot be null",component);
 		final AbstractComponent behaviour = new ConcreteDecorator();
 		component.attachBefore(behaviour);
 		component.operation();
@@ -45,7 +45,7 @@ public class DecoratorTest {
 	@Test
 	public void testAfter() {
 		final DecoratedComponent component = new DecoratedComponent();
-		assertNotNull(component);
+		assertNotNull("Value cannot be null",component);
 		final AbstractComponent behaviour = new ConcreteDecorator();
 		component.attachAfter(behaviour);
 		component.operation();

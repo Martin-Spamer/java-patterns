@@ -15,7 +15,7 @@ public class ContextTest {
 	 */
 	@Test
 	public void testContext() {
-		assertNotNull(new Context());
+		assertNotNull("Value cannot be null",new Context());
 	}
 
 }

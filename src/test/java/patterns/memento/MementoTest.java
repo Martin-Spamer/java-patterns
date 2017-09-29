@@ -20,7 +20,7 @@ public class MementoTest {
 	@Test
 	public void testMemento() {
 		final Memento memento = new Memento(null);
-		assertNotNull(memento);
+		assertNotNull("Value cannot be null",memento);
 		LOG.info("{}", memento);
 	}
 

@@ -8,7 +8,7 @@ public class LocalHoppTest {
 
 	@Test
 	public void testLocalMethod() {
-		assertNotNull(new LocalHopp());
+		assertNotNull("Value cannot be null",new LocalHopp());
 	}
 
 }

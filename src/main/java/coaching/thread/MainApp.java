@@ -94,7 +94,7 @@ public class MainApp {
 					abstractApplicationProcess.start();
 				}
 
-				threadMap.put(nameAttribute, abstractApplicationProcess);
+				this.threadMap.put(nameAttribute, abstractApplicationProcess);
 			}
 		}
 	}
@@ -154,7 +154,7 @@ public class MainApp {
 	 * @param args the arguments
 	 * @throws Exception the exception
 	 */
-	public static void main(final String[] args) throws Exception {
+	public static void main(final String[] args) {
 		try {
 			new MainApp();
 		} catch (final Exception e) {

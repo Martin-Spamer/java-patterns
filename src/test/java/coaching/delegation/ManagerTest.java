@@ -19,13 +19,13 @@ public class ManagerTest {
 	public void testDelegation() {
 		LOG.info("testDelegation");
 		final Manager manager = new Manager();
-		assertNotNull(manager);
+		assertNotNull("Value cannot be null",manager);
 
 		final Worker worker = new Worker();
-		assertNotNull(manager);
+		assertNotNull("Value cannot be null",manager);
 
-		assertNotNull(manager.setWorker(worker));
-		assertNotNull(manager.doProcess());
+		assertNotNull("Value cannot be null",manager.setWorker(worker));
+		assertNotNull("Value cannot be null",manager.doProcess());
 	}
 
 }

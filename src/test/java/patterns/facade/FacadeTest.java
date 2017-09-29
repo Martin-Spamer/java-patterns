@@ -8,7 +8,7 @@ public class FacadeTest {
 
 	@Test
 	public void testConcreteFacadeOperation() {
-		assertNotNull(new ConcreteFacade());
+		assertNotNull("Value cannot be null",new ConcreteFacade());
 	}
 
 }

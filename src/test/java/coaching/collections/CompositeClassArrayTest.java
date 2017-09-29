@@ -12,7 +12,7 @@ public class CompositeClassArrayTest {
 	@Test
 	public void testCompositeClassArray() {
 		final CompositeClassArray compositeClassArray = new CompositeClassArray();
-		assertNotNull(compositeClassArray);
+		assertNotNull("Value cannot be null",compositeClassArray);
 		LOG.info("{}", compositeClassArray.toString());
 	}
 

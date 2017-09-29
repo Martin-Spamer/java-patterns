@@ -30,7 +30,7 @@ public class AbstractConfigTest {
 	public void testAbstractConfig() {
 		LOG.info("testAbstractConfig");
 		final Configuration configuration = new Configuration();
-		assertNotNull(configuration);
+		assertNotNull("Value cannot be null",configuration);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class AbstractConfigTest {
 	public void testAbstractConfigString() {
 		LOG.info("testAbstractConfig");
 		final Configuration configuration = new Configuration("Configuration");
-		assertNotNull(configuration);
+		assertNotNull("Value cannot be null",configuration);
 	}
 
 	/**
@@ -49,9 +49,9 @@ public class AbstractConfigTest {
 	@Test
 	public void testGetPropertyString() {
 		final Configuration configuration = new Configuration("Configuration");
-		assertNotNull(configuration);
+		assertNotNull("Value cannot be null",configuration);
 		final String value = configuration.getProperty("key");
-		assertNotNull(value);
+		assertNotNull("Value cannot be null",value);
 	}
 
 	/**
@@ -60,9 +60,9 @@ public class AbstractConfigTest {
 	@Test
 	public void testToString() {
 		final Configuration configuration = new Configuration();
-		assertNotNull(configuration);
+		assertNotNull("Value cannot be null",configuration);
 		final String string = configuration.toString();
-		assertNotNull(string);
+		assertNotNull("Value cannot be null",string);
 	}
 
 }

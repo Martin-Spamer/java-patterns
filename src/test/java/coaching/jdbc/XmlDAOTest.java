@@ -24,7 +24,7 @@ public class XmlDAOTest {
 	@Test
 	public void testXmlDao() {
 		final XmlDao dao = new XmlDao();
-		assertNotNull(dao);
+		assertNotNull("Value cannot be null",dao);
 		LOG.info("{}", dao);
 	}
 
@@ -34,7 +34,7 @@ public class XmlDAOTest {
 	@Test
 	public void testXmlDaoUrlUserPassword() {
 		final XmlDao dao = new XmlDao();
-		assertNotNull(dao);
+		assertNotNull("Value cannot be null",dao);
 		LOG.info("{}", dao);
 	}
 

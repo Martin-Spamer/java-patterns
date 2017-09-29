@@ -30,6 +30,6 @@ public class OpenClosedPrinciple {
 	 */
 	public static void main(final String[] args) {
 		final OpenClosedPrinciple ocp = new OpenClosedPrinciple();
-		assertNotNull(ocp);
+		assertNotNull("Value cannot be null",ocp);
 	}
 }

@@ -9,7 +9,7 @@ public class ColleagueTest {
 	@Test
 	public void testColleague() {
 		final Colleague colleague = new Colleague();
-		assertNotNull(colleague);
+		assertNotNull("Value cannot be null",colleague);
 	}
 
 }

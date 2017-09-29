@@ -9,12 +9,12 @@ public class AbstractStrategyTest {
 	@Test
 	public void testOperation() {
 		final Context context = new Context();
-		assertNotNull(context);
+		assertNotNull("Value cannot be null",context);
 		final StrategyInterface strategyAlice = new StrategyAlice(context);
-		assertNotNull(strategyAlice);
+		assertNotNull("Value cannot be null",strategyAlice);
 		final StrategyInterface strategyBob = new StrategyBob(context);
-		assertNotNull(strategyBob);
+		assertNotNull("Value cannot be null",strategyBob);
 		final StrategyInterface strategyCharlie = new StrategyCharlie(context);
-		assertNotNull(strategyCharlie);
+		assertNotNull("Value cannot be null",strategyCharlie);
 	}
 }

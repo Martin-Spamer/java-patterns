@@ -20,11 +20,11 @@ public class FactoryInterfaceTest {
 	public void testFactoryOne() {
 		LOG.info("testFactoryOne");
 		final ConcreteFactoryOne factory = new ConcreteFactoryOne();
-		assertNotNull(factory);
+		assertNotNull("Value cannot be null",factory);
 		final AbstractProductA productA = factory.createProductA();
-		assertNotNull(productA);
+		assertNotNull("Value cannot be null",productA);
 		final AbstractProductB productB = factory.createProductB();
-		assertNotNull(productB);
+		assertNotNull("Value cannot be null",productB);
 	}
 
 	/**
@@ -34,11 +34,11 @@ public class FactoryInterfaceTest {
 	public void testFactoryTwo() {
 		LOG.info("testFactoryOne");
 		final ConcreteFactoryTwo factory = new ConcreteFactoryTwo();
-		assertNotNull(factory);
+		assertNotNull("Value cannot be null",factory);
 		final AbstractProductA productA = factory.createProductA();
-		assertNotNull(productA);
+		assertNotNull("Value cannot be null",productA);
 		final AbstractProductB productB = factory.createProductB();
-		assertNotNull(productB);
+		assertNotNull("Value cannot be null",productB);
 	}
 
 }

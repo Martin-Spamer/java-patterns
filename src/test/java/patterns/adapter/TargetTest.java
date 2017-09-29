@@ -19,7 +19,7 @@ public class TargetTest {
 	@Test
 	public void testRequest() {
 		final TargetAdapter targetAdapter = new TargetAdapter();
-		assertNotNull(targetAdapter);
+		assertNotNull("Value cannot be null",targetAdapter);
 		LOG.info("{}", targetAdapter.toString());
 	}
 

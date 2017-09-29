@@ -18,7 +18,7 @@ public class XmlConfigTest {
 	@Test
 	public void testXmlConfig() {
 		final XmlConfig instance = new XmlConfig();
-		assertNotNull(instance);
+		assertNotNull("Value cannot be null",instance);
 		LOG.debug("{}", instance.toString());
 	}
 
@@ -28,7 +28,7 @@ public class XmlConfigTest {
 	@Test
 	public void testXmlConfigString() {
 		final XmlConfig instance = new XmlConfig("Configuration.xml");
-		assertNotNull(instance);
+		assertNotNull("Value cannot be null",instance);
 		LOG.debug("{}", instance.toString());
 	}
 

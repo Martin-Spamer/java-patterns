@@ -12,7 +12,7 @@ import org.slf4j.*;
  */
 public class CsvRecord {
 
-	protected static final Logger log = LoggerFactory.getLogger(CsvRecord.class);
+	protected static final Logger LOG = LoggerFactory.getLogger(CsvRecord.class);
 
 	private List<String> fields;
 

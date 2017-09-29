@@ -28,7 +28,7 @@ public class TupleTest {
 	@Test
 	public void testPoint() {
 		final Point point = new Point();
-		assertNotNull(point);
+		assertNotNull("Value cannot be null",point);
 	}
 
 	/**
@@ -37,7 +37,7 @@ public class TupleTest {
 	@Test
 	public void testObjectTuple() {
 		final Tuple<Object, Object> tuple = new Tuple<Object, Object>();
-		assertNotNull(tuple);
+		assertNotNull("Value cannot be null",tuple);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class TupleTest {
 	@Test
 	public void testFloatTuple() {
 		final Tuple<Float, Float> tuple = new Tuple<Float, Float>();
-		assertNotNull(tuple);
+		assertNotNull("Value cannot be null",tuple);
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class TupleTest {
 	@Test
 	public void testStringTuple() {
 		final Tuple<String, String> tuple = new Tuple<String, String>();
-		assertNotNull(tuple);
+		assertNotNull("Value cannot be null",tuple);
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class TupleTest {
 	@Test
 	public void testTuple() {
 		final TupleInterface<String, String> tuple = new Tuple<String, String>();
-		assertNotNull(tuple);
+		assertNotNull("Value cannot be null",tuple);
 		tuple.setLeft(LEFT);
 		tuple.setRight(RIGHT);
 		assertEquals(LEFT, tuple.getLeft());
@@ -77,7 +77,7 @@ public class TupleTest {
 	@Test
 	public void testTupleLR() {
 		final TupleInterface<String, String> tuple = new Tuple<String, String>(LEFT, RIGHT);
-		assertNotNull(tuple);
+		assertNotNull("Value cannot be null",tuple);
 		assertEquals(LEFT, tuple.getLeft());
 		assertEquals(RIGHT, tuple.getRight());
 	}

@@ -12,7 +12,7 @@ public class CsvRecordTest {
 	@Test
 	public void testCsvRecord() {
 		LOG.info("testCsvRecord");
-		assertNotNull(new CsvRecord());
+		assertNotNull("Value cannot be null",new CsvRecord());
 	}
 
 	/**

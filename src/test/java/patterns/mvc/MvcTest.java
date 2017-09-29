@@ -21,13 +21,13 @@ public class MvcTest {
 	@Test
 	public void testMvc() throws Exception {
 		final Model model = new Model();
-		assertNotNull(model);
+		assertNotNull("Value cannot be null",model);
 
 		final View view = new View();
-		assertNotNull(view);
+		assertNotNull("Value cannot be null",view);
 
 		final Controller controller = new Controller();
-		assertNotNull(controller);
+		assertNotNull("Value cannot be null",controller);
 	}
 
 	/**
@@ -50,6 +50,6 @@ public class MvcTest {
 		controller.attachModel(model);
 		controller.attachView(view);
 		final AbstractController execute = controller.execute("ExampleCommand");
-		assertNotNull(execute);
+		assertNotNull("Value cannot be null",execute);
 	}
 }

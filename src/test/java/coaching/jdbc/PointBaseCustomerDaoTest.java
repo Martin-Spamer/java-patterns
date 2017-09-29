@@ -22,7 +22,7 @@ public class PointBaseCustomerDaoTest {
 	@Test
 	public void testPointBaseCustomerDao() {
 		final PointBaseCustomerDao dao = new PointBaseCustomerDao();
-		assertNotNull(dao);
+		assertNotNull("Value cannot be null",dao);
 	}
 
 	/**
@@ -30,10 +30,10 @@ public class PointBaseCustomerDaoTest {
 	 */
 	@Test
 	public void testPointBaseCustomerDaoUrlUserPassword() {
-		assertNotNull(new PointBaseCustomerDao());
+		assertNotNull("Value cannot be null",new PointBaseCustomerDao());
 		try {
 			final PointBaseCustomerDao dao = new PointBaseCustomerDao(URL, USER, PASSWORD);
-			assertNotNull(dao);
+			assertNotNull("Value cannot be null",dao);
 		} catch (final Exception exception) {
 			LOG.error("{}", exception.toString());
 		}
@@ -44,7 +44,7 @@ public class PointBaseCustomerDaoTest {
 	 */
 	@Test
 	public void testPointBaseCustomerDaoTypical() {
-		assertNotNull(new PointBaseCustomerDao());
+		assertNotNull("Value cannot be null",new PointBaseCustomerDao());
 		try {
 			final PointBaseCustomerDao dao = new PointBaseCustomerDao(URL, USER, PASSWORD);
 			dao.read();

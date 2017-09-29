@@ -19,9 +19,9 @@ public class ObserverTest {
 	public void testUpdate() {
 		LOG.info("{}.testUpdate", this.getClass().getSimpleName());
 		final Subject subject = new Subject();
-		assertNotNull(subject);
+		assertNotNull("Value cannot be null",subject);
 		final Observer observer = new Observer();
-		assertNotNull(observer);
+		assertNotNull("Value cannot be null",observer);
 
 		subject.attachObserver(observer);
 		subject.setStatus(true);
