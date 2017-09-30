@@ -1,7 +1,7 @@
 
 package coaching.xml;
 
-import java.io.*;
+import java.io.File;
 import java.sql.*;
 
 import javax.xml.parsers.*;
@@ -13,8 +13,13 @@ import org.w3c.dom.*;
  * XmlToJdbc Class.
  */
 class XmlToJdbc {
+	private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
+	private static final String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
+	private static final String CUSTOMER_TBL_XML = "CUSTOMER_TBL.xml";
+	private static final String USERNAME = "pbpublic";
+	private static final String PASSWORD = "pbpublic";
+
 	private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbc.class);
-	private final BufferedReader bufferedReader = null;
 	private String url = null;
 	private String username = null;
 	private String password = null;
@@ -29,12 +34,12 @@ class XmlToJdbc {
 	 */
 	public XmlToJdbc() {
 		super();
-		filename = "CUSTOMER_TBL.xml";
-		driver = "com.pointbase.jdbc.jdbcUniversalDriver";
-		url = "jdbc:pointbase://localhost:9092/sample";
-		username = "pbpublic";
-		password = "pbpublic";
-		table = "CUSTOMER_TBL";
+		this.filename = CUSTOMER_TBL_XML;
+		this.driver = JDBC_DRIVER;
+		this.url = JDBC_URL;
+		this.username = USERNAME;
+		this.password = PASSWORD;
+		this.table = "CUSTOMER_TBL";
 	}
 
 	/**
@@ -44,7 +49,7 @@ class XmlToJdbc {
 	 */
 	public void process() throws Exception {
 		LOG.info("process");
-		process(filename, driver, url, username, password, table);
+		process(this.filename, this.driver, this.url, this.username, this.password, this.table);
 	}
 
 	/**
@@ -67,8 +72,8 @@ class XmlToJdbc {
 		try {
 			// JDBC Driver
 			Class.forName(driver);
-			connection = DriverManager.getConnection(url, user, password);
-			statement = connection.createStatement();
+			this.connection = DriverManager.getConnection(url, user, password);
+			this.statement = this.connection.createStatement();
 
 			this.filename = filename;
 			final File configFile = new File(filename);
@@ -109,38 +114,47 @@ class XmlToJdbc {
 							columnSeperator = ',';
 						}
 
-						// sql = insert into %table (%field%,...) from
-						// (%value%,...)
-						final StringBuffer sql = new StringBuffer();
-						sql.append(String.format("insert into %s", table));
-						sql.append(String.format(" (%s)", fieldNames.toString()));
-						sql.append(String.format(" VALUES (%s)", dataValues.toString()));
+						insertRow(table, fieldNames, dataValues);
 
-						LOG.error(sql.toString());
-						try {
-							if (statement.execute(sql.toString())) {
-								LOG.info("ok" + statement.getResultSet().toString());
-								// put in processed log.
-							} else {
-								if (statement.getUpdateCount() == 1) {
-									LOG.info("ok" + statement.getResultSet().toString());
-									// put in processed log.
-								} else {
-									LOG.info("failed " + statement.getWarnings());
-									// put in exceptions log.
-								}
-							}
-						} catch (final Exception exception) {
-							LOG.info("Failed with " + exception.getMessage());
-						}
 					} catch (final Exception exception) {
 						LOG.info("Failed with " + exception.getMessage());
 					}
 				}
 			}
-			bufferedReader.close();
 		} catch (final Exception exception) {
 			LOG.error(exception.toString());
+		}
+	}
+
+	/**
+	 * @param table
+	 * @param fieldNames
+	 * @param dataValues
+	 */
+	protected void insertRow(final String table, final StringBuffer fieldNames, final StringBuffer dataValues) {
+		// sql = insert into %table (%field%,...) from
+		// (%value%,...)
+		final StringBuffer sql = new StringBuffer();
+		sql.append(String.format("insert into %s", table));
+		sql.append(String.format(" (%s)", fieldNames.toString()));
+		sql.append(String.format(" VALUES (%s)", dataValues.toString()));
+
+		LOG.error(sql.toString());
+		try {
+			if (this.statement.execute(sql.toString())) {
+				LOG.info("ok" + this.statement.getResultSet().toString());
+				// put in processed log.
+			} else {
+				if (this.statement.getUpdateCount() == 1) {
+					LOG.info("ok" + this.statement.getResultSet().toString());
+					// put in processed log.
+				} else {
+					LOG.info("failed " + this.statement.getWarnings());
+					// put in exceptions log.
+				}
+			}
+		} catch (final Exception exception) {
+			LOG.info("Failed with " + exception.getMessage());
 		}
 	}
 
@@ -152,8 +166,8 @@ class XmlToJdbc {
 	@Override
 	public void finalize() {
 		try {
-			statement.close();
-			connection.close();
+			this.statement.close();
+			this.connection.close();
 		} catch (final SQLException exception) {
 			LOG.info("{}", exception);
 		}

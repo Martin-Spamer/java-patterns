@@ -7,10 +7,17 @@ package coaching.idioms;
 public class FactoryMethod {
 
 	/**
+	 * private constructor prevent wild instantiation.
+	 */
+	private FactoryMethod() {
+		super();
+	}
+
+	/**
 	 * Factory method to create an instance of class from a fully qualified
-	 * name.
+	 * class name.
 	 *
-	 * @return the instance of String.
+	 * @return the instance of String class.
 	 * @throws Exception the exception
 	 */
 	public static String create() throws Exception {
