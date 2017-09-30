@@ -4,4 +4,4 @@
  * Detailed description of package.
  *
  */
-package patterns.servlet;
+package coaching.servlet;

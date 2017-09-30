@@ -81,57 +81,109 @@ class XmlToJdbc {
 			final DocumentBuilder builder = builderFactory.newDocumentBuilder();
 			final Document mainAppConfig = builder.parse(configFile);
 
-			// * root Document Element
-			final Element tableElement = mainAppConfig.getDocumentElement();
-
-			if (tableElement.getNodeName().equals("TABLE")) {
-				// get a list of rows
-				final NodeList rowList = tableElement.getElementsByTagName("ROW");
-
-				// * list of rows
-				for (int rowNo = 0; rowNo < rowList.getLength(); rowNo++) {
-					final String temp = rowList.item(rowNo).toString();
-					LOG.info("{}", temp);
-
-					try {
-						final StringBuffer fieldNames = new StringBuffer();
-						final StringBuffer dataValues = new StringBuffer();
-
-						// * first row element by index.
-						final Element rowElement = (Element) rowList.item(rowNo);
-
-						// * fields
-						final NodeList fieldList = rowElement.getElementsByTagName("FIELD");
-
-						char columnSeperator = ' ';
-						// * list of fields
-						for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
-							LOG.info(fieldList.item(fieldNo).toString());
-							final Element fieldElement = (Element) fieldList.item(fieldNo);
-							fieldNames.append(columnSeperator + fieldElement.getAttribute("NAME"));
-							dataValues.append(columnSeperator + "\'"
-							        + fieldElement.getChildNodes().item(0).getNodeValue() + "\'");
-							columnSeperator = ',';
-						}
-
-						insertRow(table, fieldNames, dataValues);
-
-					} catch (final Exception exception) {
-						LOG.info("Failed with " + exception.getMessage());
-					}
-				}
-			}
+			processTable(table, mainAppConfig);
 		} catch (final Exception exception) {
 			LOG.error(exception.toString());
 		}
 	}
 
 	/**
-	 * @param table
-	 * @param fieldNames
-	 * @param dataValues
+	 * Process table.
+	 *
+	 * @param table the table
+	 * @param mainAppConfig the main app config
 	 */
-	protected void insertRow(final String table, final StringBuffer fieldNames, final StringBuffer dataValues) {
+	protected void processTable(final String table, final Document mainAppConfig) {
+		// * root Document Element
+		final Element tableElement = mainAppConfig.getDocumentElement();
+
+		if (tableElement.getNodeName().equals("TABLE")) {
+			// get a list of rows
+			final NodeList rowList = tableElement.getElementsByTagName("ROW");
+
+			// * list of rows
+			for (int rowNo = 0; rowNo < rowList.getLength(); rowNo++) {
+				final String temp = rowList.item(rowNo).toString();
+				processRow(table, rowList, rowNo, temp);
+			}
+		}
+	}
+
+	/**
+	 * Process row.
+	 *
+	 * @param table the table
+	 * @param rowList the row list
+	 * @param rowNo the row no
+	 * @param temp the temp
+	 */
+	protected void processRow(final String table, final NodeList rowList, final int rowNo, final String temp) {
+		LOG.info("{}", temp);
+
+		try {
+			// * first row element by index.
+			final Element rowElement = (Element) rowList.item(rowNo);
+
+			// * fields
+			final NodeList fieldList = rowElement.getElementsByTagName("FIELD");
+
+			final char columnSeperator = ' ';
+			final String fieldNames = fieldNames(fieldList, columnSeperator);
+			final String dataValues = dataValues(fieldList, columnSeperator);
+
+			insertRow(table, fieldNames, dataValues);
+
+		} catch (final Exception exception) {
+			LOG.info("Failed with " + exception.getMessage());
+		}
+	}
+
+	/**
+	 * Field names.
+	 *
+	 * @param fieldList the field list
+	 * @param columnSeperator the column seperator
+	 * @return the string
+	 */
+	protected String fieldNames(final NodeList fieldList, char columnSeperator) {
+		final StringBuffer fieldNames = new StringBuffer();
+
+		for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
+			LOG.info(fieldList.item(fieldNo).toString());
+			final Element fieldElement = (Element) fieldList.item(fieldNo);
+			fieldNames.append(columnSeperator + fieldElement.getAttribute("NAME"));
+			columnSeperator = ',';
+		}
+		return fieldNames.toString();
+	}
+
+	/**
+	 * Data values.
+	 *
+	 * @param fieldList the field list
+	 * @param columnSeperator the column seperator
+	 * @return the string
+	 */
+	protected String dataValues(final NodeList fieldList, char columnSeperator) {
+		final StringBuffer dataValues = new StringBuffer();
+
+		for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
+			LOG.info(fieldList.item(fieldNo).toString());
+			final Element fieldElement = (Element) fieldList.item(fieldNo);
+			dataValues.append(columnSeperator + "\'" + fieldElement.getChildNodes().item(0).getNodeValue() + "\'");
+			columnSeperator = ',';
+		}
+		return dataValues.toString();
+	}
+
+	/**
+	 * Insert row.
+	 *
+	 * @param table the table
+	 * @param fieldNames the field names
+	 * @param dataValues the data values
+	 */
+	protected void insertRow(final String table, final String fieldNames, final String dataValues) {
 		// sql = insert into %table (%field%,...) from
 		// (%value%,...)
 		final StringBuffer sql = new StringBuffer();

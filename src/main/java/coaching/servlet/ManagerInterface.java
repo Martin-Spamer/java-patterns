@@ -1,5 +1,5 @@
 
-package patterns.servlet;
+package coaching.servlet;
 
 import javax.servlet.http.*;
 

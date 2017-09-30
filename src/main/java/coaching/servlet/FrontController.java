@@ -1,23 +1,23 @@
 
-package patterns.servlet;
+package coaching.servlet;
+
+import java.io.IOException;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
 import org.slf4j.*;
 
-import patterns.mvc.controller.Result;
+import patterns.command.*;
 
 /**
- * MvcServlet Class.
+ * Front Controller Class.
  */
 @SuppressWarnings("serial")
-public class MvcServlet extends HttpServlet {
+public class FrontController extends HttpServlet {
 
-	private static final Logger LOG = LoggerFactory.getLogger(MvcServlet.class);
-	private ManagerInterface actionManager;
-	private ManagerInterface viewManager;
-	private boolean servletInitialised;
+	private static final Logger LOG = LoggerFactory.getLogger(FrontController.class);
+	private CommandFactory commands;
 
 	/*
 	 * (non-Javadoc)
@@ -27,6 +27,11 @@ public class MvcServlet extends HttpServlet {
 	@Override
 	public void init(final ServletConfig config) throws ServletException {
 		super.init(config);
+		try {
+			commands = new CommandFactory();
+		} catch (final Exception e) {
+			LOG.error(e.toString());
+		}
 	}
 
 	/*
@@ -72,12 +77,39 @@ public class MvcServlet extends HttpServlet {
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException {
 
-		if (servletInitialised) {
-			final String requestName = request.getPathInfo();
-			LOG.info("requestName={}", requestName);
-			final Result result = new Result();
-			actionManager.handleRequest(request, response, result);
-			viewManager.handleRequest(request, response, result);
+		final String queryString = request.getQueryString();
+		final String[] split = queryString.split("/");
+		final String actionName = split[split.length - 1];
+
+		String page;
+		try {
+			commands.execute(actionName);
+			page = "result";
+		} catch (final MissingCommandException e) {
+			LOG.error(e.toString());
+			page = "error";
+		}
+
+		// dispatch control to view
+		dispatch(request, response, page);
+	}
+
+	/**
+	 * Dispatch.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @param page the page
+	 * @throws ServletException the servlet exception
+	 */
+	protected void dispatch(final HttpServletRequest request, final HttpServletResponse response, final String page)
+	        throws ServletException {
+		final RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+		try {
+			dispatcher.forward(request, response);
+		} catch (final IOException e) {
+			LOG.error(e.toString());
+			throw new ServletException(e);
 		}
 	}
 
