@@ -16,7 +16,7 @@ public class PrimitivesArrayTest {
 	@Test
 	public void testDisplay() {
 		final PrimitivesArray primitivesArray = new PrimitivesArray();
-		assertNotNull("Value cannot be null",primitivesArray);
+		assertNotNull("Value cannot be null", primitivesArray);
 		primitivesArray.display();
 	}
 

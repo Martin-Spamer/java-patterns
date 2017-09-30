@@ -1,5 +1,4 @@
 
-
 package coaching.pool;
 
 import org.slf4j.*;
@@ -19,7 +18,7 @@ public class WorkerThread implements Runnable {
 	 * @param commandName the command name as String object.
 	 */
 	public WorkerThread(final String commandName) {
-		this.command = commandName;
+		command = commandName;
 	}
 
 	/**
@@ -43,7 +42,7 @@ public class WorkerThread implements Runnable {
 	@Override
 	public void run() {
 		final String name = Thread.currentThread().getName();
-		WorkerThread.log.info("{}:{}", name, this.command);
+		WorkerThread.log.info("{}:{}", name, command);
 		processCommand();
 		WorkerThread.log.info("{}:exit", name);
 	}

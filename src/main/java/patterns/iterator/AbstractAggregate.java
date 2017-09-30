@@ -1,5 +1,4 @@
 
-
 package patterns.iterator;
 
 import java.util.*;

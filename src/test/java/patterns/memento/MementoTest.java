@@ -4,8 +4,7 @@ package patterns.memento;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * The MementoTest Class.
@@ -20,7 +19,7 @@ public class MementoTest {
 	@Test
 	public void testMemento() {
 		final Memento memento = new Memento(null);
-		assertNotNull("Value cannot be null",memento);
+		assertNotNull("Value cannot be null", memento);
 		LOG.info("{}", memento);
 	}
 

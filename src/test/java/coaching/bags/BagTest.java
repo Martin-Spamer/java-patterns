@@ -24,7 +24,7 @@ public class BagTest {
 	@Test
 	public void testBag() {
 		final BagInterface bag = new Bag();
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 	}
 
 	/**
@@ -33,7 +33,7 @@ public class BagTest {
 	@Test
 	public void testBagStringArray() {
 		final Bag bag = new Bag(VALUES);
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 		verify(bag);
 	}
 
@@ -46,7 +46,7 @@ public class BagTest {
 		        "Cat", "Dog", "Rabbit"
 		};
 		final Bag bag = new Bag(stuff);
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 		verify(bag);
 	}
 
@@ -56,7 +56,7 @@ public class BagTest {
 	@Test
 	public void testBagVargs() {
 		final Bag bag = new Bag("Cat", "Dog", "Rabbit");
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 		verify(bag);
 	}
 
@@ -66,7 +66,7 @@ public class BagTest {
 	@Test
 	public void testFill() {
 		final Bag bag = new Bag();
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 		bag.fill(VALUES);
 		verify(bag);
 	}
@@ -77,7 +77,7 @@ public class BagTest {
 	@Test
 	public void testVargs() {
 		final Bag bag = new Bag();
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 		bag.fill("Cat", "Dog", "Rabbit");
 		verify(bag);
 	}
@@ -91,7 +91,7 @@ public class BagTest {
 		        "Cat", "Dog", "Rabbit"
 		};
 		final Bag bag = new Bag(stuff);
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 		verify(bag);
 	}
 
@@ -101,20 +101,20 @@ public class BagTest {
 	 * @param bag the bag
 	 */
 	private void verify(final Bag bag) {
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 		assertEquals(3, bag.size());
 		String choice = bag.choose();
-		assertNotNull("Value cannot be null",choice);
+		assertNotNull("Value cannot be null", choice);
 		LOG.info(choice);
 		assertEquals(2, bag.size());
 
 		choice = bag.choose();
-		assertNotNull("Value cannot be null",choice);
+		assertNotNull("Value cannot be null", choice);
 		LOG.info(choice);
 		assertEquals(1, bag.size());
 
 		choice = bag.choose();
-		assertNotNull("Value cannot be null",choice);
+		assertNotNull("Value cannot be null", choice);
 		LOG.info(choice);
 		assertEquals(0, bag.size());
 	}
@@ -125,9 +125,9 @@ public class BagTest {
 	@Test
 	public void testChoose() {
 		final BagInterface bag = new Bag(VALUES);
-		assertNotNull("Value cannot be null",bag);
+		assertNotNull("Value cannot be null", bag);
 		final String chosen = bag.choose();
-		assertNotNull("Value cannot be null",chosen);
+		assertNotNull("Value cannot be null", chosen);
 	}
 
 	/**

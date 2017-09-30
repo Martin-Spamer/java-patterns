@@ -1,6 +1,4 @@
 
-
-
 package patterns.mvc.controller;
 
 /**
@@ -18,8 +16,11 @@ public class Result implements ResultInterface {
 		return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see patterns.mvc.controller.ResultInterface#updateResult(patterns.mvc.controller.ResultInterface)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.mvc.controller.ResultInterface#updateResult(patterns.mvc.
+	 * controller.ResultInterface)
 	 */
 	@Override
 	public ResultInterface updateResult(ResultInterface newResult) {

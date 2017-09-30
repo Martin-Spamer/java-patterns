@@ -30,6 +30,6 @@ public class DependencyInversionPrinciple {
 	 */
 	public static void main(final String[] args) {
 		final DependencyInversionPrinciple dip = new DependencyInversionPrinciple();
-		assertNotNull("Value cannot be null",dip);
+		assertNotNull("Value cannot be null", dip);
 	}
 }

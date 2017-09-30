@@ -1,3 +1,4 @@
+
 package coaching.csv;
 
 import static org.junit.Assert.*;
@@ -12,10 +13,13 @@ public class CsvFileTest {
 
 	private static final Logger log = LoggerFactory.getLogger(CsvFileTest.class);
 
+	/**
+	 * Unit Test to csv file.
+	 */
 	public void testCsvFile() {
 		log.info("testCsvFile()");
 		final CsvFile csvFile = new CsvFile();
-		assertNotNull("Value cannot be null",csvFile);
+		assertNotNull("Value cannot be null", csvFile);
 		assertEquals(4, csvFile.size());
 		log.info("{}", csvFile);
 		csvFile.logPretty();
@@ -28,7 +32,7 @@ public class CsvFileTest {
 	public void testCsvFileString() {
 		log.info("testCsvFileString()");
 		final CsvFile csvFile = new CsvFile("/data.csv");
-		assertNotNull("Value cannot be null",csvFile);
+		assertNotNull("Value cannot be null", csvFile);
 		assertEquals(4, csvFile.size());
 		log.info("{}", csvFile);
 		csvFile.logPretty();
@@ -41,10 +45,10 @@ public class CsvFileTest {
 	public void testCsvFileHeader() {
 		log.info("testCsvFileHeader()");
 		final CsvFile csvFile = new CsvFile();
-		assertNotNull("Value cannot be null",csvFile);
+		assertNotNull("Value cannot be null", csvFile);
 		log.info("{}", csvFile);
 		final String header = csvFile.getHeader();
-		assertNotNull("Value cannot be null",header);
+		assertNotNull("Value cannot be null", header);
 		log.info("{}", header);
 	}
 
@@ -55,10 +59,10 @@ public class CsvFileTest {
 	public void testCsvFileRecords() {
 		log.info("testCsvFileRecords()");
 		final CsvFile csvFile = new CsvFile();
-		assertNotNull("Value cannot be null",csvFile);
+		assertNotNull("Value cannot be null", csvFile);
 		for (int index = 0; index < csvFile.size(); index++) {
 			final CsvRecord record = csvFile.getRecord(index);
-			assertNotNull("Value cannot be null",record);
+			assertNotNull("Value cannot be null", record);
 			log.info("{}", record);
 		}
 	}

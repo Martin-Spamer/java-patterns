@@ -16,6 +16,6 @@ public class ModelTest {
 	@Test
 	public void test() {
 		final Model model = new Model();
-		assertNotNull("Value cannot be null",model);
+		assertNotNull("Value cannot be null", model);
 	}
 }

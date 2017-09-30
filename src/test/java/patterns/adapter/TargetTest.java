@@ -1,10 +1,10 @@
+
 package patterns.adapter;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * The TargetTest Class.
@@ -19,7 +19,7 @@ public class TargetTest {
 	@Test
 	public void testRequest() {
 		final TargetAdapter targetAdapter = new TargetAdapter();
-		assertNotNull("Value cannot be null",targetAdapter);
+		assertNotNull("Value cannot be null", targetAdapter);
 		LOG.info("{}", targetAdapter.toString());
 	}
 

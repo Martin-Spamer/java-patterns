@@ -25,19 +25,14 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * Instantiates a new money instance.
 	 */
 	public BigDecimalMoney() {
+		super();
 		final Locale locale = Locale.getDefault();
-		setCurrency(Currency.getInstance(locale));
-		this.amount = new BigDecimal(0);
-	}
-
-	/**
-	 * Instantiates a new money instance.
-	 *
-	 * @param amount the amount
-	 */
-	public BigDecimalMoney(final int amount) {
-		setCurrency(Currency.getInstance(Locale.getDefault()));
-		this.amount = new BigDecimal(amount);
+		log.debug("locale = {}", locale);
+		final Currency currency = Currency.getInstance(locale);
+		log.debug("currency = {}", currency);
+		setCurrency(currency);
+		amount = new BigDecimal(0);
+		log.debug("this.amount = {}", amount);
 	}
 
 	/**
@@ -46,8 +41,14 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * @param amount the amount
 	 */
 	public BigDecimalMoney(final long amount) {
-		setCurrency(Currency.getInstance(Locale.getDefault()));
+		super();
+		final Locale locale = Locale.getDefault();
+		log.debug("locale = {}", locale);
+		final Currency currency = Currency.getInstance(locale);
+		log.debug("currency = {}", currency);
+		setCurrency(currency);
 		this.amount = new BigDecimal(amount);
+		log.debug("this.amount = {}", this.amount);
 	}
 
 	/**
@@ -56,8 +57,30 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * @param bigDecimal the big decimal
 	 */
 	public BigDecimalMoney(final BigDecimal bigDecimal) {
-		setCurrency(Currency.getInstance(Locale.getDefault()));
-		this.amount = bigDecimal;
+		super();
+		final Locale locale = Locale.getDefault();
+		log.debug("locale = {}", locale);
+		final Currency currency = Currency.getInstance(locale);
+		log.debug("currency = {}", currency);
+		setCurrency(currency);
+		amount = bigDecimal;
+		log.debug("this.amount = {}", amount);
+	}
+
+	/**
+	 * Instantiates a new money instance.
+	 *
+	 * @param amount the amount
+	 * @param locale the locale
+	 */
+	public BigDecimalMoney(final BigDecimal amount, final Locale locale) {
+		super();
+		log.debug("locale = {}", locale);
+		final Currency currency = Currency.getInstance(locale);
+		log.debug("currency = {}", currency);
+		setCurrency(currency);
+		this.amount = amount;
+		log.debug("this.amount = {}", this.amount);
 	}
 
 	/**
@@ -67,8 +90,11 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * @param currency the currency
 	 */
 	public BigDecimalMoney(final BigDecimal amount, final Currency currency) {
+		super();
+		log.debug("currency = {}", currency);
 		setCurrency(currency);
 		this.amount = amount;
+		log.debug("this.amount = {}", this.amount);
 	}
 
 	/**
@@ -77,8 +103,11 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * @param currency the currency
 	 */
 	public BigDecimalMoney(final Currency currency) {
+		super();
+		log.debug("currency = {}", currency);
 		setCurrency(currency);
-		this.amount = new BigDecimal(0);
+		amount = new BigDecimal(0);
+		log.debug("this.amount = {}", amount);
 	}
 
 	/**
@@ -89,8 +118,10 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	public BigDecimalMoney(final Currency currency, final BigDecimal amount) {
 		super();
+		log.debug("currency = {}", currency);
 		setCurrency(currency);
 		this.amount = amount;
+		log.debug("this.amount = {}", this.amount);
 	}
 
 	/**
@@ -133,17 +164,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public MoneyInterface setAmount(final MoneyInterface amount) {
-		return null;
-	}
-
-	/**
-	 * Adds an int amount.
-	 *
-	 * @param amount the amount
-	 * @return the big decimal money
-	 */
-	public BigDecimalMoney add(final int amount) {
-		this.amount = this.amount.add(new BigDecimal(amount));
+		this.amount = new BigDecimal(amount.getAmount());
 		return this;
 	}
 
@@ -184,43 +205,10 @@ public class BigDecimalMoney implements MoneyInterface {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see coaching.money.MoneyInterface#add(coaching.money.Money)
-	 */
-	@Override
-	public MoneyInterface add(final Money amount) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
 	 * @see coaching.money.MoneyInterface#subtract(long)
 	 */
 	@Override
 	public MoneyInterface subtract(final long amount) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see coaching.money.MoneyInterface#subtract(coaching.money.Money)
-	 */
-	@Override
-	public MoneyInterface subtract(final Money amount) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/**
-	 * Subtract an int amount.
-	 *
-	 * @param amount the amount
-	 * @return the big decimal money
-	 */
-	public BigDecimalMoney subtract(final int amount) {
 		this.amount = this.amount.subtract(new BigDecimal(amount));
 		return this;
 	}
@@ -254,7 +242,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public Currency getCurrency() {
-		return this.currency;
+		return currency;
 	}
 
 	/*
@@ -264,8 +252,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public Long getAmount() {
-		// TODO Auto-generated method stub
-		return null;
+		return amount.longValue();
 	}
 
 	/*
@@ -275,8 +262,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getCurrencyCode() {
-		// TODO Auto-generated method stub
-		return null;
+		return currency.getCurrencyCode();
 	}
 
 	/*
@@ -286,8 +272,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getSymbol() {
-		// TODO Auto-generated method stub
-		return null;
+		return currency.getSymbol();
 	}
 
 	/*
@@ -297,8 +282,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getDisplayName() {
-		// TODO Auto-generated method stub
-		return null;
+		return currency.getDisplayName();
 	}
 
 	/**
@@ -307,7 +291,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 * @return the big decimal
 	 */
 	private BigDecimal asBigDecimal() {
-		return this.amount;
+		return amount;
 	}
 
 	/*
@@ -318,7 +302,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	@Override
 	public String toString() {
 		final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-		final String currencyString = numberFormat.format(this.amount);
+		final String currencyString = numberFormat.format(amount);
 		return String.format("%s", currencyString);
 	}
 
@@ -329,19 +313,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isMoreThan(final long amount) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see coaching.money.MoneyInterface#isMoreThan(coaching.money.Money)
-	 */
-	@Override
-	public boolean isMoreThan(final Money money) {
-		// TODO Auto-generated method stub
-		return false;
+		return this.amount.longValue() > amount;
 	}
 
 	/*
@@ -351,19 +323,7 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isEqualTo(final long amount) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see coaching.money.MoneyInterface#isEqualTo(coaching.money.Money)
-	 */
-	@Override
-	public boolean isEqualTo(final Money money) {
-		// TODO Auto-generated method stub
-		return false;
+		return this.amount.longValue() == amount;
 	}
 
 	/*
@@ -373,17 +333,64 @@ public class BigDecimalMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isLessThan(final long amount) {
+		return this.amount.longValue() < amount;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see coaching.money.MoneyInterface#add(coaching.money.MoneyInterface)
+	 */
+	@Override
+	public MoneyInterface add(final MoneyInterface amount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * coaching.money.MoneyInterface#subtract(coaching.money.MoneyInterface)
+	 */
+	@Override
+	public MoneyInterface subtract(final MoneyInterface amount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * coaching.money.MoneyInterface#isMoreThan(coaching.money.MoneyInterface)
+	 */
+	@Override
+	public boolean isMoreThan(final MoneyInterface money) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
-	 * @see coaching.money.MoneyInterface#isLessThan(coaching.money.Money)
+	 * 
+	 * @see
+	 * coaching.money.MoneyInterface#isEqualTo(coaching.money.MoneyInterface)
 	 */
 	@Override
-	public boolean isLessThan(final Money money) {
+	public boolean isEqualTo(final MoneyInterface money) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * coaching.money.MoneyInterface#isLessThan(coaching.money.MoneyInterface)
+	 */
+	@Override
+	public boolean isLessThan(final MoneyInterface money) {
 		// TODO Auto-generated method stub
 		return false;
 	}

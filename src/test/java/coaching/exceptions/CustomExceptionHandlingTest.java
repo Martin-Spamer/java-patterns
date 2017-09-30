@@ -1,3 +1,4 @@
+
 package coaching.exceptions;
 
 import static org.junit.Assert.assertNotNull;
@@ -19,7 +20,7 @@ public class CustomExceptionHandlingTest {
 	@Test(expected = CustomCreationException.class)
 	public void testSubProcessA() throws CustomCreationException {
 		final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-		assertNotNull("Value cannot be null",customExceptionHandling);
+		assertNotNull("Value cannot be null", customExceptionHandling);
 		customExceptionHandling.subProcessA();
 	}
 
@@ -31,7 +32,7 @@ public class CustomExceptionHandlingTest {
 	@Test(expected = CustomReadException.class)
 	public void testSubProcessB() throws CustomReadException {
 		final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-		assertNotNull("Value cannot be null",customExceptionHandling);
+		assertNotNull("Value cannot be null", customExceptionHandling);
 		customExceptionHandling.subProcessB();
 	}
 
@@ -43,7 +44,7 @@ public class CustomExceptionHandlingTest {
 	@Test(expected = CustomUpdateException.class)
 	public void testSubProcessC() throws CustomUpdateException {
 		final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-		assertNotNull("Value cannot be null",customExceptionHandling);
+		assertNotNull("Value cannot be null", customExceptionHandling);
 		customExceptionHandling.subProcessC();
 	}
 
@@ -55,7 +56,7 @@ public class CustomExceptionHandlingTest {
 	@Test
 	public void testProcess() throws Exception {
 		final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-		assertNotNull("Value cannot be null",customExceptionHandling);
+		assertNotNull("Value cannot be null", customExceptionHandling);
 		customExceptionHandling.process();
 	}
 

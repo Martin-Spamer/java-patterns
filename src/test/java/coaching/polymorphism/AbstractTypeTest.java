@@ -1,3 +1,4 @@
+
 package coaching.polymorphism;
 
 import static org.junit.Assert.assertNotNull;
@@ -19,11 +20,11 @@ public class AbstractTypeTest {
 	@Test
 	public void testSubTypeOne() {
 		LOG.info("testPolymorphism");
-		this.abstractType = new SubTypeOne();
-		assertNotNull("Value cannot be null",this.abstractType);
-		LOG.info("{}", this.abstractType);
-		assertNotNull("Value cannot be null",this.abstractType.operation());
-		LOG.info("{}", this.abstractType);
+		abstractType = new SubTypeOne();
+		assertNotNull("Value cannot be null", abstractType);
+		LOG.info("{}", abstractType);
+		assertNotNull("Value cannot be null", abstractType.operation());
+		LOG.info("{}", abstractType);
 	}
 
 	/**
@@ -32,13 +33,13 @@ public class AbstractTypeTest {
 	@Test
 	public void testSubTypeTwo() {
 		LOG.info("testPolymorphism");
-		LOG.info("{}", this.abstractType);
-		this.abstractType = new SubTypeTwo();
-		assertNotNull("Value cannot be null",this.abstractType);
-		LOG.info("{}", this.abstractType);
-		this.abstractType.operation();
-		assertNotNull("Value cannot be null",this.abstractType.operation());
-		LOG.info("{}", this.abstractType);
+		LOG.info("{}", abstractType);
+		abstractType = new SubTypeTwo();
+		assertNotNull("Value cannot be null", abstractType);
+		LOG.info("{}", abstractType);
+		abstractType.operation();
+		assertNotNull("Value cannot be null", abstractType.operation());
+		LOG.info("{}", abstractType);
 	}
 
 }

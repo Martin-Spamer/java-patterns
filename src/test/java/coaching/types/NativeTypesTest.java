@@ -16,7 +16,7 @@ public class NativeTypesTest {
 	@Test
 	public void testDisplay() {
 		final NativeTypes nativeTypes = new NativeTypes();
-		assertNotNull("Value cannot be null",nativeTypes);
+		assertNotNull("Value cannot be null", nativeTypes);
 		nativeTypes.display();
 	}
 

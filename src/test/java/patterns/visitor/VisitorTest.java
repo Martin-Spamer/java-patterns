@@ -1,3 +1,4 @@
+
 package patterns.visitor;
 
 import static org.junit.Assert.assertNotNull;
@@ -17,9 +18,9 @@ public class VisitorTest {
 	@Test
 	public void testOperation() {
 		final Visitor visitor = new Visitor();
-		assertNotNull("Value cannot be null",visitor);
+		assertNotNull("Value cannot be null", visitor);
 		final Element element = new Element();
-		assertNotNull("Value cannot be null",element);
+		assertNotNull("Value cannot be null", element);
 	}
 
 }

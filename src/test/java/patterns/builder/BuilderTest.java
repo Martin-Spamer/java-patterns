@@ -19,7 +19,7 @@ public class BuilderTest {
 	@Test
 	public void testBuilderOne() {
 		final BuilderOne builder = new BuilderOne();
-		assertNotNull("Value cannot be null",builder);
+		assertNotNull("Value cannot be null", builder);
 		final Part product = builder.build();
 		LOG.info("product = {}", product);
 	}
@@ -30,7 +30,7 @@ public class BuilderTest {
 	@Test
 	public void testBuilderTwo() {
 		final BuilderTwo builder = new BuilderTwo();
-		assertNotNull("Value cannot be null",builder);
+		assertNotNull("Value cannot be null", builder);
 		final Part product = builder.build();
 		LOG.info("product = {}", product);
 	}

@@ -1,3 +1,4 @@
+
 package patterns.mvc;
 
 import static org.junit.Assert.assertNotNull;
@@ -21,13 +22,13 @@ public class MvcTest {
 	@Test
 	public void testMvc() throws Exception {
 		final Model model = new Model();
-		assertNotNull("Value cannot be null",model);
+		assertNotNull("Value cannot be null", model);
 
 		final View view = new View();
-		assertNotNull("Value cannot be null",view);
+		assertNotNull("Value cannot be null", view);
 
 		final Controller controller = new Controller();
-		assertNotNull("Value cannot be null",controller);
+		assertNotNull("Value cannot be null", controller);
 	}
 
 	/**
@@ -50,6 +51,6 @@ public class MvcTest {
 		controller.attachModel(model);
 		controller.attachView(view);
 		final AbstractController execute = controller.execute("ExampleCommand");
-		assertNotNull("Value cannot be null",execute);
+		assertNotNull("Value cannot be null", execute);
 	}
 }

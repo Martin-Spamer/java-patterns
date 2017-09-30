@@ -1,8 +1,7 @@
 
 package coaching.idioms;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -17,7 +16,7 @@ public class PojoExampleTest {
 	@Test
 	public void testPojoExample() {
 		final PojoExample pojoExample = new PojoExample();
-		assertNotNull("Value cannot be null",pojoExample);
+		assertNotNull("Value cannot be null", pojoExample);
 	}
 
 	/**
@@ -26,7 +25,7 @@ public class PojoExampleTest {
 	@Test
 	public void testPojoExampleStringLong() {
 		final PojoExample pojoExample = new PojoExample("Long", Long.MAX_VALUE);
-		assertNotNull("Value cannot be null",pojoExample);
+		assertNotNull("Value cannot be null", pojoExample);
 	}
 
 	/**
@@ -35,7 +34,7 @@ public class PojoExampleTest {
 	@Test
 	public void testSetGetStringValue() {
 		final PojoExample pojoExample = new PojoExample();
-		assertNotNull("Value cannot be null",pojoExample);
+		assertNotNull("Value cannot be null", pojoExample);
 		final String expectedStringValue = "Long";
 		pojoExample.setStringValue(expectedStringValue);
 		final String stringValue = pojoExample.getStringValue();
@@ -48,7 +47,7 @@ public class PojoExampleTest {
 	@Test
 	public void testSetGetLongValue() {
 		final PojoExample pojoExample = new PojoExample();
-		assertNotNull("Value cannot be null",pojoExample);
+		assertNotNull("Value cannot be null", pojoExample);
 		final long expectedLongValue = Long.MAX_VALUE;
 		pojoExample.setLongValue(expectedLongValue);
 		final long longValue = pojoExample.getLongValue();

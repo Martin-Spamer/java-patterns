@@ -16,7 +16,7 @@ public class FilterManagerTest {
 	@Test
 	public void testFilter() {
 		final FilterAlice filterChain = new FilterAlice(new FilterBob(new FilterCharlie()));
-		assertNotNull("Value cannot be null",filterChain);
+		assertNotNull("Value cannot be null", filterChain);
 		filterChain.handleRequest(new Payload());
 	}
 
@@ -26,7 +26,7 @@ public class FilterManagerTest {
 	@Test
 	public void testFilterManager() {
 		final FilterManager filterManager = new FilterManager();
-		assertNotNull("Value cannot be null",filterManager);
+		assertNotNull("Value cannot be null", filterManager);
 		filterManager.operation();
 	}
 

@@ -1,3 +1,4 @@
+
 package coaching.delegation;
 
 import static org.junit.Assert.assertNotNull;
@@ -19,13 +20,13 @@ public class ManagerTest {
 	public void testDelegation() {
 		LOG.info("testDelegation");
 		final Manager manager = new Manager();
-		assertNotNull("Value cannot be null",manager);
+		assertNotNull("Value cannot be null", manager);
 
 		final Worker worker = new Worker();
-		assertNotNull("Value cannot be null",manager);
+		assertNotNull("Value cannot be null", manager);
 
-		assertNotNull("Value cannot be null",manager.setWorker(worker));
-		assertNotNull("Value cannot be null",manager.doProcess());
+		assertNotNull("Value cannot be null", manager.setWorker(worker));
+		assertNotNull("Value cannot be null", manager.doProcess());
 	}
 
 }

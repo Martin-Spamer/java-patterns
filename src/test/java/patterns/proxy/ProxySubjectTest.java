@@ -1,3 +1,4 @@
+
 package patterns.proxy;
 
 import static org.junit.Assert.assertNotNull;
@@ -15,7 +16,7 @@ public class ProxySubjectTest {
 	@Test
 	public void testRequest() {
 		final SubjectProxy proxySubject = new SubjectProxy();
-		assertNotNull("Value cannot be null",proxySubject);
+		assertNotNull("Value cannot be null", proxySubject);
 		proxySubject.request();
 	}
 }

@@ -24,7 +24,7 @@ public class CompositeClassArray {
 	private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
 
 	// Implementing Composite using a Class Array
-	private AbstractElement[] composite = {
+	private final AbstractElement[] composite = {
 	        new ElementAlice(), new ElementBob(), new ElementCharlie(), new ElementDan()
 	};
 
@@ -43,7 +43,7 @@ public class CompositeClassArray {
 	 */
 	@Override
 	public String toString() {
-		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
+		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(composite));
 	}
 
 }

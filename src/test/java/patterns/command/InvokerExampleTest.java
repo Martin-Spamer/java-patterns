@@ -4,8 +4,7 @@ package patterns.command;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * InvokerExampleTest Class.
@@ -23,7 +22,7 @@ public class InvokerExampleTest {
 	public void testExampleCommand() throws Exception {
 		LOG.debug("testExampleCommand");
 		final ResultInterface result = new ExampleCommand().execute();
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -37,7 +36,7 @@ public class InvokerExampleTest {
 		LOG.debug("testInvokerExampleCommand");
 		final InvokerExample invokerExample = new InvokerExample();
 		final ResultInterface result = invokerExample.execute("ExampleCommand");
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -50,7 +49,7 @@ public class InvokerExampleTest {
 	public void testSequenceCommand() throws Exception {
 		LOG.debug("testSequenceCommand");
 		final ResultInterface result = new SequenceCommand().execute();
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -64,7 +63,7 @@ public class InvokerExampleTest {
 		LOG.debug("testInvokerSequenceCommand");
 		final InvokerExample invokerExample = new InvokerExample();
 		final ResultInterface result = invokerExample.execute("SequenceCommand");
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -77,7 +76,7 @@ public class InvokerExampleTest {
 	public void testCompoundCommand() throws Exception {
 		LOG.debug("testCompoundCommand");
 		final ResultInterface result = new CompoundCommand().execute();
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -91,7 +90,7 @@ public class InvokerExampleTest {
 		LOG.debug("testInvokerCompoundCommand");
 		final InvokerExample invokerExample = new InvokerExample();
 		final ResultInterface result = invokerExample.execute("CompoundCommand");
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -104,7 +103,7 @@ public class InvokerExampleTest {
 	public void testConditionalCommand() throws Exception {
 		LOG.debug("testConditionalCommand");
 		final ResultInterface result = new ConditionalCommand().execute();
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -118,7 +117,7 @@ public class InvokerExampleTest {
 		LOG.debug("testInvokerConditionalCommand");
 		final InvokerExample invokerExample = new InvokerExample();
 		final ResultInterface result = invokerExample.execute("ConditionalCommand");
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 

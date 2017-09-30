@@ -1,3 +1,4 @@
+
 package coaching.fileio;
 
 import static org.junit.Assert.assertNotNull;
@@ -25,7 +26,7 @@ public class ConfigTest {
 	public void testConfig() throws ConfigurationException {
 		// load a properties file.
 		final Config config = new Config("example.properties");
-		assertNotNull("Value cannot be null",config);
+		assertNotNull("Value cannot be null", config);
 		config.setProperty("TIMESTAMP", Calendar.getInstance().toString());
 		LOG.info(config.toString());
 	}
@@ -41,7 +42,7 @@ public class ConfigTest {
 		final Properties systemProperties = System.getProperties();
 		// load a properties file.
 		final Config config = new Config(systemProperties);
-		assertNotNull("Value cannot be null",config);
+		assertNotNull("Value cannot be null", config);
 		LOG.info(config.toString());
 	}
 
@@ -54,7 +55,7 @@ public class ConfigTest {
 	public void testConfigLoadByFileName() throws ConfigurationException {
 		// load a properties file.
 		final Config config = new Config();
-		assertNotNull("Value cannot be null",config);
+		assertNotNull("Value cannot be null", config);
 		config.loadPropertyFile("example.properties");
 		LOG.info(config.toString());
 	}
@@ -70,7 +71,7 @@ public class ConfigTest {
 		final Properties systemProperties = System.getProperties();
 		// load a properties file.
 		final Config config = new Config(systemProperties);
-		assertNotNull("Value cannot be null",config);
+		assertNotNull("Value cannot be null", config);
 		LOG.info(config.toString());
 		config.save("./target/example.properties");
 	}
@@ -82,7 +83,7 @@ public class ConfigTest {
 	 */
 	@Test(expected = ConfigurationException.class)
 	public void testMissingConfig() throws Exception {
-		assertNotNull("Value cannot be null",new Config("missing"));
+		assertNotNull("Value cannot be null", new Config("missing"));
 	}
 
 	/**
@@ -92,7 +93,7 @@ public class ConfigTest {
 	 */
 	@Test(expected = ConfigurationException.class)
 	public void testMissingConfigProperties() throws Exception {
-		assertNotNull("Value cannot be null",new Config("missing.properties"));
+		assertNotNull("Value cannot be null", new Config("missing.properties"));
 	}
 
 }

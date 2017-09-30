@@ -1,10 +1,10 @@
+
 package patterns.factory;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * FactoryInterfaceTest Class.
@@ -20,11 +20,11 @@ public class FactoryInterfaceTest {
 	public void testFactoryOne() {
 		LOG.info("testFactoryOne");
 		final ConcreteFactoryOne factory = new ConcreteFactoryOne();
-		assertNotNull("Value cannot be null",factory);
+		assertNotNull("Value cannot be null", factory);
 		final AbstractProductA productA = factory.createProductA();
-		assertNotNull("Value cannot be null",productA);
+		assertNotNull("Value cannot be null", productA);
 		final AbstractProductB productB = factory.createProductB();
-		assertNotNull("Value cannot be null",productB);
+		assertNotNull("Value cannot be null", productB);
 	}
 
 	/**
@@ -34,11 +34,11 @@ public class FactoryInterfaceTest {
 	public void testFactoryTwo() {
 		LOG.info("testFactoryOne");
 		final ConcreteFactoryTwo factory = new ConcreteFactoryTwo();
-		assertNotNull("Value cannot be null",factory);
+		assertNotNull("Value cannot be null", factory);
 		final AbstractProductA productA = factory.createProductA();
-		assertNotNull("Value cannot be null",productA);
+		assertNotNull("Value cannot be null", productA);
 		final AbstractProductB productB = factory.createProductB();
-		assertNotNull("Value cannot be null",productB);
+		assertNotNull("Value cannot be null", productB);
 	}
 
 }

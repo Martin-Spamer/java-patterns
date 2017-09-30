@@ -4,8 +4,7 @@ package coaching.bags;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * The GenericBagTest Class.
@@ -13,7 +12,9 @@ import org.slf4j.LoggerFactory;
 public class GenericBagTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(GenericBagTest.class);
-	private static final String[] VALUES = { "Heads", "Tails" };
+	private static final String[] VALUES = {
+	        "Heads", "Tails"
+	};
 
 	/**
 	 * Unit Test to generic bag.
@@ -21,7 +22,7 @@ public class GenericBagTest {
 	@Test
 	public void testGenericBag() {
 		final GenericBag<String> genericBag = new GenericBag<String>();
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		LOG.debug("genericBag = {}", genericBag);
 	}
 
@@ -31,7 +32,7 @@ public class GenericBagTest {
 	@Test
 	public void testGenericBagNull() {
 		final GenericBag<String> genericBag = new GenericBag<String>(null);
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		LOG.debug("genericBag = {}", genericBag);
 	}
 
@@ -41,7 +42,7 @@ public class GenericBagTest {
 	@Test
 	public void testGenericBagStringArray() {
 		final GenericBag<String> genericBag = new GenericBag<String>(VALUES);
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		LOG.debug("genericBag = {}", genericBag);
 	}
 
@@ -51,7 +52,7 @@ public class GenericBagTest {
 	@Test
 	public void testGenericBagVargs() {
 		final GenericBag<String> genericBag = new GenericBag<String>("Heads", "Tails");
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		LOG.debug("genericBag = {}", genericBag);
 	}
 
@@ -61,7 +62,7 @@ public class GenericBagTest {
 	@Test
 	public void testGenericBagTArray() {
 		final GenericBag<Boolean> genericBag = new GenericBag<Boolean>(true, false);
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		LOG.debug("genericBag = {}", genericBag);
 	}
 
@@ -71,7 +72,7 @@ public class GenericBagTest {
 	@Test
 	public void testFillVargs() {
 		final GenericBag<String> genericBag = new GenericBag<String>();
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		genericBag.fill("Heads", "Tails");
 		LOG.debug("genericBag = {}", genericBag);
 	}
@@ -82,7 +83,7 @@ public class GenericBagTest {
 	@Test
 	public void testFillNull() {
 		final GenericBag<String> genericBag = new GenericBag<String>();
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		genericBag.fill(null);
 		LOG.debug("genericBag = {}", genericBag);
 	}
@@ -93,7 +94,7 @@ public class GenericBagTest {
 	@Test
 	public void testFillStringArray() {
 		final GenericBag<String> genericBag = new GenericBag<String>();
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		genericBag.fill(VALUES);
 		LOG.debug("genericBag = {}", genericBag);
 	}
@@ -104,7 +105,7 @@ public class GenericBagTest {
 	@Test
 	public void testPick() {
 		final GenericBag<String> genericBag = new GenericBag<String>("Heads", "Tails");
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		LOG.debug("genericBag = {}", genericBag.pick());
 	}
 
@@ -114,7 +115,7 @@ public class GenericBagTest {
 	@Test
 	public void testChoose() {
 		final GenericBag<String> genericBag = new GenericBag<String>("Heads", "Tails");
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		LOG.debug("genericBag = {}", genericBag.choose());
 	}
 
@@ -124,7 +125,7 @@ public class GenericBagTest {
 	@Test
 	public void testAddT() {
 		final GenericBag<String> genericBag = new GenericBag<String>("Heads", "Tails");
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		genericBag.add("Edge");
 		LOG.debug("genericBag = {}", genericBag.choose());
 		LOG.debug("genericBag = {}", genericBag.choose());
@@ -138,7 +139,7 @@ public class GenericBagTest {
 	@Test
 	public void testReset() {
 		final GenericBag<String> genericBag = new GenericBag<String>("Heads", "Tails");
-		assertNotNull("Value cannot be null",genericBag);
+		assertNotNull("Value cannot be null", genericBag);
 		LOG.debug("genericBag = {}", genericBag);
 		LOG.debug("genericBag = {}", genericBag.choose());
 		LOG.debug("genericBag = {}", genericBag.choose());

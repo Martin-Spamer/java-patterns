@@ -1,3 +1,4 @@
+
 package coaching.csv;
 
 import static org.junit.Assert.assertEquals;
@@ -29,8 +30,8 @@ public class CsvToJdbcTest {
 		assertEquals(instance, instance.setUrl(URL));
 		assertEquals(instance, instance.setUsername(USERNAME));
 		assertEquals(instance, instance.setPassword(PASSWORD));
-		assertEquals(instance, instance.setTableName(this.tableName));
-		assertEquals(instance, instance.setFilename(this.filename));
+		assertEquals(instance, instance.setTableName(tableName));
+		assertEquals(instance, instance.setFilename(filename));
 	}
 
 }

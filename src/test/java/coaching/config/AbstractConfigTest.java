@@ -1,3 +1,4 @@
+
 package coaching.config;
 
 import static org.junit.Assert.assertNotNull;
@@ -12,12 +13,23 @@ public class AbstractConfigTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractConfigTest.class);
 
+	/**
+	 * class Configuration.
+	 */
 	public class Configuration extends AbstractConfig {
 
+		/**
+		 * Instantiates a new configuration.
+		 */
 		public Configuration() {
 			super();
 		}
 
+		/**
+		 * Instantiates a new configuration.
+		 *
+		 * @param configFilename the config filename
+		 */
 		public Configuration(final String configFilename) {
 			super(configFilename);
 		}
@@ -30,7 +42,7 @@ public class AbstractConfigTest {
 	public void testAbstractConfig() {
 		LOG.info("testAbstractConfig");
 		final Configuration configuration = new Configuration();
-		assertNotNull("Value cannot be null",configuration);
+		assertNotNull("Value cannot be null", configuration);
 	}
 
 	/**
@@ -40,7 +52,7 @@ public class AbstractConfigTest {
 	public void testAbstractConfigString() {
 		LOG.info("testAbstractConfig");
 		final Configuration configuration = new Configuration("Configuration");
-		assertNotNull("Value cannot be null",configuration);
+		assertNotNull("Value cannot be null", configuration);
 	}
 
 	/**
@@ -49,9 +61,9 @@ public class AbstractConfigTest {
 	@Test
 	public void testGetPropertyString() {
 		final Configuration configuration = new Configuration("Configuration");
-		assertNotNull("Value cannot be null",configuration);
+		assertNotNull("Value cannot be null", configuration);
 		final String value = configuration.getProperty("key");
-		assertNotNull("Value cannot be null",value);
+		assertNotNull("Value cannot be null", value);
 	}
 
 	/**
@@ -60,9 +72,9 @@ public class AbstractConfigTest {
 	@Test
 	public void testToString() {
 		final Configuration configuration = new Configuration();
-		assertNotNull("Value cannot be null",configuration);
+		assertNotNull("Value cannot be null", configuration);
 		final String string = configuration.toString();
-		assertNotNull("Value cannot be null",string);
+		assertNotNull("Value cannot be null", string);
 	}
 
 }

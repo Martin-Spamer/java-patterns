@@ -1,5 +1,4 @@
 
-
 package patterns.proxy;
 
 import org.slf4j.*;

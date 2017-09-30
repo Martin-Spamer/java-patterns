@@ -1,6 +1,4 @@
 
-
-
 package coaching.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;

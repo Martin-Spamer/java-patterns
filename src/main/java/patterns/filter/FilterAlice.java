@@ -1,5 +1,4 @@
 
-
 package patterns.filter;
 
 /**

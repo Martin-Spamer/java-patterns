@@ -6,8 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import java.util.Properties;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * The CommandFactoryTest Class.
@@ -25,7 +24,7 @@ public class CommandFactoryTest {
 	public void testCommandFactory() throws Exception {
 		LOG.debug("testCommandFactory");
 		final InvokerInterface commandFactory = new CommandFactory();
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		LOG.info(commandFactory.toString());
 	}
 
@@ -38,7 +37,7 @@ public class CommandFactoryTest {
 	public void testCommandFactoryFile() throws Exception {
 		LOG.debug("testCommandFactoryFile");
 		final InvokerInterface commandFactory = new CommandFactory("commands.properties");
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		LOG.info(commandFactory.toString());
 	}
 
@@ -52,7 +51,7 @@ public class CommandFactoryTest {
 		LOG.debug("testCommandFactoryProperties");
 		final Properties properties = new Properties();
 		final InvokerInterface commandFactory = new CommandFactory(properties);
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		LOG.info(commandFactory.toString());
 	}
 
@@ -65,7 +64,7 @@ public class CommandFactoryTest {
 	public void testMissingCommandExecute() throws Exception {
 		LOG.debug("testMissingCommandExecute");
 		final InvokerInterface commandFactory = new CommandFactory();
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		final String actionName = "MissingCommand";
 		commandFactory.execute(actionName);
 	}
@@ -79,7 +78,7 @@ public class CommandFactoryTest {
 	public void testExecuteMissingCommand() throws Exception {
 		LOG.debug("testExecuteMissingCommand");
 		final InvokerInterface commandFactory = new CommandFactory();
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		final String actionName = "MissingCommand";
 		commandFactory.execute(actionName);
 	}
@@ -93,7 +92,7 @@ public class CommandFactoryTest {
 	public void testExecuteMissingClass() throws Exception {
 		LOG.debug("testExecuteMissingClass");
 		final InvokerInterface commandFactory = new CommandFactory();
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		final String actionName = "MissingCommand";
 		commandFactory.execute(actionName);
 	}
@@ -107,10 +106,10 @@ public class CommandFactoryTest {
 	public void testExecuteExampleCommand() throws Exception {
 		LOG.debug("testExecuteExampleCommand");
 		final InvokerInterface commandFactory = new CommandFactory();
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		final String actionName = "ExampleCommand";
 		final ResultInterface result = commandFactory.execute(actionName);
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -123,10 +122,10 @@ public class CommandFactoryTest {
 	public void testExecuteSequenceCommand() throws Exception {
 		LOG.debug("testExecuteSequenceCommand");
 		final InvokerInterface commandFactory = new CommandFactory();
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		final String actionName = "SequenceCommand";
 		final ResultInterface result = commandFactory.execute(actionName);
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -139,10 +138,10 @@ public class CommandFactoryTest {
 	public void testExecuteCompoundCommand() throws Exception {
 		LOG.debug("testExecuteCompoundCommand");
 		final InvokerInterface commandFactory = new CommandFactory();
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		final String actionName = "CompoundCommand";
 		final ResultInterface result = commandFactory.execute(actionName);
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 
@@ -155,10 +154,10 @@ public class CommandFactoryTest {
 	public void testExecuteConditionalCommand() throws Exception {
 		LOG.debug("testExecuteConditionalCommand");
 		final InvokerInterface commandFactory = new CommandFactory();
-		assertNotNull("Value cannot be null",commandFactory);
+		assertNotNull("Value cannot be null", commandFactory);
 		final String actionName = "ConditionalCommand";
 		final ResultInterface result = commandFactory.execute(actionName);
-		assertNotNull("Value cannot be null",result);
+		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
 

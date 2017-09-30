@@ -1,7 +1,11 @@
+
 package coaching.idioms;
 
 import org.slf4j.Logger;
 
+/**
+ * interface LoggingInterface.
+ */
 public interface LoggingInterface {
 
 	/**

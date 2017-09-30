@@ -40,7 +40,7 @@ public class TripleTest {
 	@Test
 	public void testSpace() {
 		final Space space = new Space();
-		assertNotNull("Value cannot be null",space);
+		assertNotNull("Value cannot be null", space);
 		final Double x = space.setX(Double.MAX_VALUE).getX();
 		assertEquals(Double.MAX_VALUE, x.doubleValue(), Double.MIN_VALUE);
 		final Double y = space.setY(Double.MAX_VALUE).getY();
@@ -55,7 +55,7 @@ public class TripleTest {
 	@Test
 	public void testCreate() {
 		final Triple<Object, Object, Object> triple = Triple.create();
-		assertNotNull("Value cannot be null",triple);
+		assertNotNull("Value cannot be null", triple);
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class TripleTest {
 	@Test
 	public void testTripleXYZ() {
 		final Triple<Double, Double, Double> triple = new Triple<Double, Double, Double>();
-		assertNotNull("Value cannot be null",triple);
+		assertNotNull("Value cannot be null", triple);
 		final Double x = triple.setX(Double.MAX_VALUE).getX();
 		assertEquals(Double.MAX_VALUE, x.doubleValue(), Double.MIN_VALUE);
 		final Double y = triple.setY(Double.MAX_VALUE).getY();

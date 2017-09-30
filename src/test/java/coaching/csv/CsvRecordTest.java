@@ -1,3 +1,4 @@
+
 package coaching.csv;
 
 import static org.junit.Assert.*;
@@ -5,14 +6,20 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.slf4j.*;
 
+/**
+ * class CsvRecordTest.
+ */
 public class CsvRecordTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CsvRecordTest.class);
 
+	/**
+	 * Unit Test to csv record.
+	 */
 	@Test
 	public void testCsvRecord() {
 		LOG.info("testCsvRecord");
-		assertNotNull("Value cannot be null",new CsvRecord());
+		assertNotNull("Value cannot be null", new CsvRecord());
 	}
 
 	/**

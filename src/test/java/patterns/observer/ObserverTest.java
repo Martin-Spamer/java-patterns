@@ -1,3 +1,4 @@
+
 package patterns.observer;
 
 import static org.junit.Assert.assertNotNull;
@@ -19,9 +20,9 @@ public class ObserverTest {
 	public void testUpdate() {
 		LOG.info("{}.testUpdate", this.getClass().getSimpleName());
 		final Subject subject = new Subject();
-		assertNotNull("Value cannot be null",subject);
+		assertNotNull("Value cannot be null", subject);
 		final Observer observer = new Observer();
-		assertNotNull("Value cannot be null",observer);
+		assertNotNull("Value cannot be null", observer);
 
 		subject.attachObserver(observer);
 		subject.setStatus(true);

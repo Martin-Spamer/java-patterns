@@ -1,3 +1,4 @@
+
 package coaching.idioms;
 
 import static org.junit.Assert.assertNotNull;
@@ -17,7 +18,7 @@ public class StaticLoggingTest {
 	 */
 	@Test
 	public void testSendToLog() {
-		assertNotNull("Value cannot be null",LOG);
+		assertNotNull("Value cannot be null", LOG);
 	}
 
 }

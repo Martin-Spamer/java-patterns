@@ -1,12 +1,10 @@
 
 package patterns.command;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Unit test for abstract parameters Class for commands.
@@ -44,8 +42,8 @@ public class CommandParametersTest {
 	@Test
 	public void testAbstractParameters() {
 		final ParametersInterface commandParameters = new MockCommandParameters();
-		assertNotNull("Value cannot be null",commandParameters);
-		this.log.info("{}", commandParameters.toString());
+		assertNotNull("Value cannot be null", commandParameters);
+		log.info("{}", commandParameters.toString());
 	}
 
 	/**
@@ -54,8 +52,8 @@ public class CommandParametersTest {
 	@Test
 	public void testAbstractParametersStringString() {
 		final ParametersInterface commandParameters = new MockCommandParameters("key", "value");
-		assertNotNull("Value cannot be null",commandParameters);
-		this.log.info("{}", commandParameters.toString());
+		assertNotNull("Value cannot be null", commandParameters);
+		log.info("{}", commandParameters.toString());
 		assertEquals("value", commandParameters.valueFor("key"));
 	}
 
@@ -65,9 +63,9 @@ public class CommandParametersTest {
 	@Test
 	public void testGetString() {
 		final ParametersInterface commandParameters = new MockCommandParameters();
-		assertNotNull("Value cannot be null",commandParameters);
+		assertNotNull("Value cannot be null", commandParameters);
 		commandParameters.setPrameter("key", "value");
-		this.log.info("{}", commandParameters.toString());
+		log.info("{}", commandParameters.toString());
 		assertEquals("value", commandParameters.valueFor("key"));
 	}
 

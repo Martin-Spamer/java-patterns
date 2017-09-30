@@ -1,6 +1,4 @@
 
-
-
 package coaching.associations;
 
 /**

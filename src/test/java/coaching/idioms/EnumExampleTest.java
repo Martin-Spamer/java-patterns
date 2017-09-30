@@ -1,8 +1,7 @@
 
 package coaching.idioms;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -17,7 +16,7 @@ public class EnumExampleTest {
 	@Test
 	public void testEnumExample() {
 		final EnumExample enumExample = EnumExample.Unknown;
-		assertNotNull("Value cannot be null",enumExample);
+		assertNotNull("Value cannot be null", enumExample);
 	}
 
 	/**
@@ -26,7 +25,7 @@ public class EnumExampleTest {
 	@Test
 	public void testFromString() {
 		final EnumExample enumExample = EnumExample.Unknown;
-		assertNotNull("Value cannot be null",enumExample);
+		assertNotNull("Value cannot be null", enumExample);
 		assertEquals("Unknown", enumExample.toString());
 	}
 

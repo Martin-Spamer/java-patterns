@@ -1,5 +1,4 @@
 
-
 package patterns.chain;
 
 import org.slf4j.*;

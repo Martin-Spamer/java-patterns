@@ -30,6 +30,6 @@ public class LiskovSubstitutionPrinciple {
 	 */
 	public static void main(final String[] args) {
 		final LiskovSubstitutionPrinciple lsp = new LiskovSubstitutionPrinciple();
-		assertNotNull("Value cannot be null",lsp);
+		assertNotNull("Value cannot be null", lsp);
 	}
 }

@@ -1,5 +1,4 @@
 
-
 package patterns.visitor;
 
 import org.slf4j.*;

@@ -1,12 +1,10 @@
+
 package coaching.idioms;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * Fluent Wait Test Class.
@@ -15,13 +13,27 @@ public class FluentWaitTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(FluentWaitTest.class);
 
+	/**
+	 * class PassCondition.
+	 */
 	public class PassCondition extends Condition {
+
+		/**
+		 * Instantiates a new pass condition.
+		 */
 		public PassCondition() {
 			super(true);
 		}
 	}
 
+	/**
+	 * class FailCondition.
+	 */
 	public class FailCondition extends Condition {
+
+		/**
+		 * Instantiates a new fail condition.
+		 */
 		public FailCondition() {
 			super(false);
 		}

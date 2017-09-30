@@ -1,5 +1,4 @@
 
-
 package patterns.command;
 
 import org.slf4j.*;

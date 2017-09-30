@@ -4,8 +4,7 @@ package patterns.decorator;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * The AbstractDecoratorTest Class.
@@ -20,8 +19,8 @@ public class DecoratorTest {
 	@Test
 	public void testOperation() {
 		final DecoratedComponent component = new DecoratedComponent();
-		assertNotNull("Value cannot be null",component);
-		assertNotNull("Value cannot be null",component.operation());
+		assertNotNull("Value cannot be null", component);
+		assertNotNull("Value cannot be null", component.operation());
 		LOG.info("{}", component.toString());
 	}
 
@@ -31,7 +30,7 @@ public class DecoratorTest {
 	@Test
 	public void testBefore() {
 		final DecoratedComponent component = new DecoratedComponent();
-		assertNotNull("Value cannot be null",component);
+		assertNotNull("Value cannot be null", component);
 		final AbstractComponent behaviour = new ConcreteDecorator();
 		component.attachBefore(behaviour);
 		component.operation();
@@ -45,7 +44,7 @@ public class DecoratorTest {
 	@Test
 	public void testAfter() {
 		final DecoratedComponent component = new DecoratedComponent();
-		assertNotNull("Value cannot be null",component);
+		assertNotNull("Value cannot be null", component);
 		final AbstractComponent behaviour = new ConcreteDecorator();
 		component.attachAfter(behaviour);
 		component.operation();

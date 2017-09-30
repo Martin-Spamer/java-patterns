@@ -1,5 +1,4 @@
 
-
 package coaching.money;
 
 import java.util.Currency;
@@ -77,28 +76,28 @@ public interface MoneyInterface {
 	public MoneyInterface add(long amount);
 
 	/**
-	 * Add an amount.
+	 * Adds an.
 	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the money interface
 	 */
-	public MoneyInterface add(Money amount);
+	public MoneyInterface add(MoneyInterface amount);
 
 	/**
-	 * Subtract an amount.
+	 * Subtract.
 	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the money interface
 	 */
 	public MoneyInterface subtract(long amount);
 
 	/**
-	 * Subtract an amount.
+	 * Subtract.
 	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return the money interface
 	 */
-	public MoneyInterface subtract(Money amount);
+	public MoneyInterface subtract(MoneyInterface amount);
 
 	/**
 	 * Checks if more than amount.
@@ -110,13 +109,13 @@ public interface MoneyInterface {
 	public boolean isMoreThan(long amount);
 
 	/**
-	 * Checks if more than amount.
+	 * Checks if is more than.
 	 *
 	 * @param money the money
-	 * @return true, if is
+	 * @return true, if successful, otherwise false.
 	 *         more than
 	 */
-	public boolean isMoreThan(Money money);
+	public boolean isMoreThan(MoneyInterface money);
 
 	/**
 	 * Checks if equal to amount.
@@ -128,13 +127,13 @@ public interface MoneyInterface {
 	public boolean isEqualTo(long amount);
 
 	/**
-	 * Checks if equal to amount.
+	 * Checks if is equal to.
 	 *
 	 * @param money the money
-	 * @return true, if is
+	 * @return true, if successful, otherwise false.
 	 *         equal to
 	 */
-	public boolean isEqualTo(Money money);
+	public boolean isEqualTo(MoneyInterface money);
 
 	/**
 	 * Checks if less than amount.
@@ -146,12 +145,12 @@ public interface MoneyInterface {
 	public boolean isLessThan(long amount);
 
 	/**
-	 * Checks if less than amount.
+	 * Checks if is less than.
 	 *
 	 * @param money the money
-	 * @return true, if is
+	 * @return true, if successful, otherwise false.
 	 *         less than
 	 */
-	public boolean isLessThan(Money money);
+	public boolean isLessThan(MoneyInterface money);
 
 }

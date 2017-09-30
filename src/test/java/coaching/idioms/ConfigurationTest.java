@@ -1,12 +1,10 @@
 
 package coaching.idioms;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 /**
  * ConfigurationTest Class.
@@ -21,7 +19,7 @@ public class ConfigurationTest {
 	@Test
 	public void testConfiguration() {
 		final Configuration config = new Configuration();
-		assertNotNull("Value cannot be null",config);
+		assertNotNull("Value cannot be null", config);
 		assertEquals(null, config.valueFor("missing"));
 		assertEquals("./Configuration.properties", config.valueFor("File"));
 		assertEquals("JavaMentor", config.valueFor("Project"));

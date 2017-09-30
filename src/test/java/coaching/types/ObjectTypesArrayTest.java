@@ -16,7 +16,7 @@ public class ObjectTypesArrayTest {
 	@Test
 	public void testDisplay() {
 		final ObjectTypesArray objectTypes = new ObjectTypesArray();
-		assertNotNull("Value cannot be null",objectTypes);
+		assertNotNull("Value cannot be null", objectTypes);
 		objectTypes.display();
 	}
 

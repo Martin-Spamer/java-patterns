@@ -53,7 +53,7 @@ public class SingleResponsibilityPrinciple {
 	 */
 	public static void main(final String[] args) {
 		final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
-		assertNotNull("Value cannot be null",srp);
+		assertNotNull("Value cannot be null", srp);
 		srp.fooBar();
 	}
 

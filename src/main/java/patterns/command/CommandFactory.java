@@ -1,5 +1,4 @@
 
-
 package patterns.command;
 
 import java.io.InputStream;

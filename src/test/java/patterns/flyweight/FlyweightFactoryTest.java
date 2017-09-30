@@ -16,9 +16,9 @@ public class FlyweightFactoryTest {
 	@Test
 	public void testCreate() {
 		final FlyweightFactory flyweightFactory = new FlyweightFactory();
-		assertNotNull("Value cannot be null",flyweightFactory);
+		assertNotNull("Value cannot be null", flyweightFactory);
 		final FlyWeight flyweight = flyweightFactory.create();
-		assertNotNull("Value cannot be null",flyweight);
+		assertNotNull("Value cannot be null", flyweight);
 	}
 
 }

@@ -1,6 +1,4 @@
 
-
-
 package coaching.associations;
 
 import org.slf4j.*;

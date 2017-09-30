@@ -1,3 +1,4 @@
+
 package patterns.session;
 
 import static org.junit.Assert.assertNotNull;
@@ -15,7 +16,7 @@ public class SessionTrackerTest {
 	@Test
 	public void testSessionTracker() {
 		final SessionTracker sessionTracker = new SessionTracker();
-		assertNotNull("Value cannot be null",sessionTracker);
+		assertNotNull("Value cannot be null", sessionTracker);
 	}
 
 }
