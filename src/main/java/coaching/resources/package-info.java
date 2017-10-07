@@ -4,4 +4,4 @@
  * Detailed description of package.
  * 
  */
-package coaching.fileio;
+package coaching.resources;

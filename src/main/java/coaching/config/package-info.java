@@ -1,5 +1,5 @@
 /**
- * Package provides examples of how to provide and manage configuration..
+ * Package provides examples of how to provide and manage configuration.
  * <p>
  * Detailed description of package.
  */

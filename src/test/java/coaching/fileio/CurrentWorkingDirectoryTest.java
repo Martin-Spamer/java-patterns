@@ -6,6 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 import org.slf4j.*;
 
+import coaching.resources.CurrentWorkingDirectory;
+
 /**
  * class CurrentWorkingDirectoryTest.
  */
