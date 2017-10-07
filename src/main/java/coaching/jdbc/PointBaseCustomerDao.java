@@ -30,18 +30,30 @@ public final class PointBaseCustomerDao extends AbstractDataAccessObject {
 		super(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);
 	}
 
+	/**
+	 * Creates the.
+	 */
 	public void create() {
 		super.create(INSERT_SQL);
 	}
 
+	/**
+	 * Read.
+	 */
 	public void read() {
 		super.create(SELECT_SQL);
 	}
 
+	/**
+	 * Update.
+	 */
 	public void update() {
 		super.create(UPDATE_SQL);
 	}
 
+	/**
+	 * Delete.
+	 */
 	public void delete() {
 		super.create(DELETE_SQL);
 	}

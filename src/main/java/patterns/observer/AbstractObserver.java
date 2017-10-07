@@ -1,4 +1,5 @@
 
+
 package patterns.observer;
 
 import org.slf4j.*;

@@ -1,4 +1,5 @@
 
+
 package patterns.factory;
 
 import static org.junit.Assert.assertNotNull;

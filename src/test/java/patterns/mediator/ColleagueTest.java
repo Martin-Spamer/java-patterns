@@ -1,4 +1,5 @@
 
+
 package patterns.mediator;
 
 import static org.junit.Assert.assertNotNull;

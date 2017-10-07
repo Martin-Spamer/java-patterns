@@ -1,4 +1,5 @@
 
+
 package patterns.composite;
 
 import static org.junit.Assert.assertNotNull;

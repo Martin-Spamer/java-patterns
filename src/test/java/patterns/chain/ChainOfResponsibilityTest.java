@@ -1,4 +1,5 @@
 
+
 package patterns.chain;
 
 import static org.junit.Assert.assertNotNull;

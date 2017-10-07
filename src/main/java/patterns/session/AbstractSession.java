@@ -1,4 +1,5 @@
 
+
 package patterns.session;
 
 import java.util.UUID;

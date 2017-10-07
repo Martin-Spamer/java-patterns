@@ -1,4 +1,5 @@
 
+
 package coaching.jdbc;
 
 import java.sql.*;
@@ -140,6 +141,12 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		return sql(sql);
 	}
 
+	/**
+	 * Sql.
+	 *
+	 * @param sql the sql
+	 * @return the dao interface
+	 */
 	public DaoInterface sql(final String sql) {
 		try {
 			final Connection connection = this.connectionFactory.getConnection();

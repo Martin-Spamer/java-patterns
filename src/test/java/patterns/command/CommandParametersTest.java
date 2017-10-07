@@ -1,4 +1,5 @@
 
+
 package patterns.command;
 
 import static org.junit.Assert.*;

@@ -1,4 +1,5 @@
 
+
 package patterns.memento;
 
 import static org.junit.Assert.assertNotNull;

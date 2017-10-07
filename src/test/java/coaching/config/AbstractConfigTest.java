@@ -35,6 +35,9 @@ public class AbstractConfigTest {
 		}
 	}
 
+	/**
+	 * class MissingConfiguration.
+	 */
 	public class MissingConfiguration extends AbstractConfig {
 	}
 
@@ -163,7 +166,7 @@ public class AbstractConfigTest {
 		assertNotNull("Value cannot be null", config);
 		LOG.info("{}", config.toString());
 		assertEquals("Configuration.properties", config.valueFor("File"));
-		assertEquals("JavaMentor", config.valueFor("Project"));
+		assertEquals("Java Coaching", config.valueFor("Project"));
 		assertEquals("Value.000", config.valueFor("000"));
 		assertEquals("Value.001", config.valueFor("001"));
 		assertEquals("Value.002", config.valueFor("002"));

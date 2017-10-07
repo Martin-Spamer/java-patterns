@@ -1,4 +1,5 @@
 
+
 package coaching.xml;
 
 import java.io.File;
@@ -12,6 +13,9 @@ import org.w3c.dom.*;
  */
 public class XmlToJdbc extends MySqlDao {
 
+	/**
+	 * Instantiates a new xml to jdbc.
+	 */
 	public XmlToJdbc() {
 		super();
 	}

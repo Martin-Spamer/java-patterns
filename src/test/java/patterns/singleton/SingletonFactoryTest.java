@@ -1,4 +1,5 @@
 
+
 package patterns.singleton;
 
 import static org.junit.Assert.assertNotNull;

@@ -1,4 +1,5 @@
 
+
 package patterns.decorator;
 
 import static org.junit.Assert.assertNotNull;
