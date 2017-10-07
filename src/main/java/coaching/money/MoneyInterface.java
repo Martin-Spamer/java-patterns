@@ -12,7 +12,7 @@ public interface MoneyInterface {
 	 * set the currency.
 	 *
 	 * @param currency the currency
-	 * @return the money
+	 * @return this as fluent interface.
 	 */
 	public MoneyInterface setCurrency(Currency currency);
 
@@ -20,7 +20,7 @@ public interface MoneyInterface {
 	 * set the amount using long.
 	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return this as fluent interface.
 	 */
 	public MoneyInterface setAmount(long amount);
 
@@ -28,7 +28,7 @@ public interface MoneyInterface {
 	 * set the amount using Money instance.
 	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return this as fluent interface.
 	 */
 	public MoneyInterface setAmount(MoneyInterface amount);
 
@@ -71,15 +71,15 @@ public interface MoneyInterface {
 	 * Add an amount.
 	 *
 	 * @param amount the amount
-	 * @return the money
+	 * @return this as fluent interface.
 	 */
 	public MoneyInterface add(long amount);
 
 	/**
-	 * Adds an.
+	 * Adds an amount.
 	 *
 	 * @param amount the amount
-	 * @return the money interface
+	 * @return this as fluent interface.
 	 */
 	public MoneyInterface add(MoneyInterface amount);
 
@@ -87,7 +87,7 @@ public interface MoneyInterface {
 	 * Subtract.
 	 *
 	 * @param amount the amount
-	 * @return the money interface
+	 * @return this as fluent interface.
 	 */
 	public MoneyInterface subtract(long amount);
 
@@ -95,7 +95,7 @@ public interface MoneyInterface {
 	 * Subtract.
 	 *
 	 * @param amount the amount
-	 * @return the money interface
+	 * @return this as fluent interface.
 	 */
 	public MoneyInterface subtract(MoneyInterface amount);
 

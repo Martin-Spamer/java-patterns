@@ -4,7 +4,7 @@ package coaching.idioms;
 /**
  * Factory Method Example.
  */
-public class FactoryMethod {
+public final class FactoryMethod {
 
 	/**
 	 * private constructor prevent wild instantiation.

@@ -11,7 +11,7 @@ public interface JourneyInterface {
 	 *
 	 * @param destination the new
 	 *            destination
-	 * @return the journey interface
+	 * @return this as fluent interface.
 	 */
 	public JourneyInterface setDestination(String destination);
 

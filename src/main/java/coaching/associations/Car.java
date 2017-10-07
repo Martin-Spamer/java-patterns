@@ -5,7 +5,7 @@
 package coaching.associations;
 
 /**
- * Car Class.
+ * An example Car class.
  */
 public class Car extends AbstractVehicle implements CarInterface {
 

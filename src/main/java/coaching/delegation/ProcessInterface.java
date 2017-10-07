@@ -9,7 +9,7 @@ public interface ProcessInterface {
 	/**
 	 * Do process.
 	 *
-	 * @return the process interface
+	 * @return this as fluent interface.
 	 */
 	public ProcessInterface doProcess();
 

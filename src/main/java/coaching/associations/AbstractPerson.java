@@ -6,7 +6,7 @@ package coaching.associations;
 import org.slf4j.*;
 
 /**
- * Person Class.
+ * An abstract Person class.
  */
 public abstract class AbstractPerson implements PersonInterface {
 
@@ -17,7 +17,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 * Instantiates a new person.
 	 */
 	public AbstractPerson() {
-		name = "";
+		this.name = "";
 	}
 
 	/**
@@ -47,7 +47,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	/*
@@ -57,7 +57,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Person [name=%s]", name);
+		return String.format("Person [name=%s]", this.name);
 	}
 
 }

@@ -10,7 +10,7 @@
 package coaching.config;
 
 /**
- * Interface for a Configuration class.
+ * An Interface for a Configuration class.
  */
 public interface ConfigInterface {
 
@@ -18,7 +18,7 @@ public interface ConfigInterface {
 	 * property.
 	 *
 	 * @param key the key
-	 * @return the property
+	 * @return the property value as a String object.
 	 */
 	public String getProperty(String key);
 
@@ -27,7 +27,7 @@ public interface ConfigInterface {
 	 *
 	 * @param key the key
 	 * @param defaultValue the default value
-	 * @return the property
+	 * @return the property value as a String object.
 	 */
 	public String getProperty(String key, String defaultValue);
 
