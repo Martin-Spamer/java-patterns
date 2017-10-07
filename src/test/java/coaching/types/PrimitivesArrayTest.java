@@ -6,12 +6,12 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 /**
- * The PrimitivesArrayTest Class.
+ * Unit Tests for Primitives Arrays.
  */
 public class PrimitivesArrayTest {
 
 	/**
-	 * Unit Test to display.
+	 * Unit Test to display array.
 	 */
 	@Test
 	public void testDisplay() {
@@ -20,4 +20,23 @@ public class PrimitivesArrayTest {
 		primitivesArray.display();
 	}
 
+	/**
+	 * Unit Test to display array.
+	 */
+	@Test
+	public void testDisplayMatrix() {
+		final PrimitivesArray primitivesArray = new PrimitivesArray();
+		assertNotNull("Value cannot be null", primitivesArray);
+		primitivesArray.displayMatrix();
+	}
+
+	/**
+	 * Unit Test to display array.
+	 */
+	@Test
+	public void testDisplayArray() {
+		final PrimitivesArray primitivesArray = new PrimitivesArray();
+		assertNotNull("Value cannot be null", primitivesArray);
+		primitivesArray.displayArray();
+	}
 }

@@ -60,18 +60,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	 */
 	@Override
 	public DaoInterface create(final String sql) {
-		try {
-			final Connection connection = this.connectionFactory.getConnection();
-			final Statement statement = connection.createStatement();
-			final int result = statement.executeUpdate(sql);
-			final String msg = String.format("Rows updated: %s", result);
-			statement.close();
-			connection.close();
-			log.info(msg);
-		} catch (final SQLException exception) {
-			log.error("{}", exception.toString());
-		}
-		return this;
+		return sql(sql);
 	}
 
 	/**
@@ -131,17 +120,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	 */
 	@Override
 	public DaoInterface update(final String sql) {
-		try {
-			final Connection connection = this.connectionFactory.getConnection();
-			final Statement statement = connection.createStatement();
-			final int result = statement.executeUpdate(sql);
-			log.info("Rows updated {}", result);
-			statement.close();
-			connection.close();
-		} catch (final SQLException exception) {
-			log.error("{}", exception.toString());
-		}
-		return this;
+		return sql(sql);
 	}
 
 	/**
@@ -158,6 +137,10 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	 */
 	@Override
 	public DaoInterface delete(final String sql) {
+		return sql(sql);
+	}
+
+	public DaoInterface sql(final String sql) {
 		try {
 			final Connection connection = this.connectionFactory.getConnection();
 			final Statement statement = connection.createStatement();
@@ -170,5 +153,4 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		}
 		return this;
 	}
-
 }

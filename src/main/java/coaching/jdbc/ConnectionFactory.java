@@ -10,35 +10,21 @@ import org.slf4j.*;
  */
 public class ConnectionFactory {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	private String driverClassName = "com.mysql.jdbc.Driver";
-	private String connectionUrl = "jdbc:mysql://localhost:3306/student";
-	private String username = "root";
-	private String password = "root";
+	private static final String DRIVER = "com.mysql.jdbc.Driver";
+	private static final String URL = "jdbc:mysql://localhost:3306/student";
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "root";
 
-	private static ConnectionFactory connectionFactory = null;
+	private String driverClassName = DRIVER;
+	private String connectionUrl = URL;
+	private String username = USERNAME;
+	private String password = PASSWORD;
 
 	/**
 	 * Instantiates a new connection factory.
 	 */
 	public ConnectionFactory() {
-		try {
-			Class.forName(this.driverClassName);
-		} catch (final ClassNotFoundException e) {
-			this.log.error("{}", e.toString());
-		}
-	}
-
-	/**
-	 * Instantiates a new connection factory.
-	 *
-	 * @param driverClassName the driver class name
-	 */
-	public ConnectionFactory(final String driverClassName) {
-		try {
-			Class.forName(this.driverClassName);
-		} catch (final ClassNotFoundException e) {
-			this.log.error("{}", e.toString());
-		}
+		this(DRIVER, URL, USERNAME, PASSWORD);
 	}
 
 	/**
@@ -54,7 +40,7 @@ public class ConnectionFactory {
 	        final String username,
 	        final String password) {
 		try {
-			Class.forName(this.driverClassName);
+			Class.forName(DRIVER);
 			this.connectionUrl = connectionUrl;
 			this.username = username;
 			this.password = password;
@@ -75,15 +61,4 @@ public class ConnectionFactory {
 		return connection;
 	}
 
-	/**
-	 * Gets the single instance of ConnectionFactory.
-	 *
-	 * @return single instance of ConnectionFactory
-	 */
-	public static ConnectionFactory getInstance() {
-		if (connectionFactory == null) {
-			connectionFactory = new ConnectionFactory();
-		}
-		return connectionFactory;
-	}
 }

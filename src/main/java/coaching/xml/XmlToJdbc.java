@@ -2,44 +2,18 @@
 package coaching.xml;
 
 import java.io.File;
-import java.sql.*;
 
 import javax.xml.parsers.*;
 
-import org.slf4j.*;
 import org.w3c.dom.*;
 
 /**
  * XmlToJdbc Class.
  */
-class XmlToJdbc {
-	private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-	private static final String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
-	private static final String CUSTOMER_TBL_XML = "CUSTOMER_TBL.xml";
-	private static final String USERNAME = "pbpublic";
-	private static final String PASSWORD = "pbpublic";
+public class XmlToJdbc extends MySqlDao {
 
-	private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbc.class);
-	private String url = null;
-	private String username = null;
-	private String password = null;
-	private String filename;
-	private final String driver;
-	private final String table;
-	private Connection connection = null;
-	private Statement statement = null;
-
-	/**
-	 * Instantiates a new xml to jdbc.
-	 */
 	public XmlToJdbc() {
 		super();
-		this.filename = CUSTOMER_TBL_XML;
-		this.driver = JDBC_DRIVER;
-		this.url = JDBC_URL;
-		this.username = USERNAME;
-		this.password = PASSWORD;
-		this.table = "CUSTOMER_TBL";
 	}
 
 	/**
@@ -48,8 +22,7 @@ class XmlToJdbc {
 	 * @throws Exception the exception
 	 */
 	public void process() throws Exception {
-		LOG.info("process");
-		process(this.filename, this.driver, this.url, this.username, this.password, this.table);
+		log.info("process");
 	}
 
 	/**
@@ -70,20 +43,15 @@ class XmlToJdbc {
 	        final String password,
 	        final String table) throws Exception {
 		try {
-			// JDBC Driver
-			Class.forName(driver);
-			this.connection = DriverManager.getConnection(url, user, password);
-			this.statement = this.connection.createStatement();
-
-			this.filename = filename;
 			final File configFile = new File(filename);
 			final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			final DocumentBuilder builder = builderFactory.newDocumentBuilder();
 			final Document mainAppConfig = builder.parse(configFile);
 
 			processTable(table, mainAppConfig);
+
 		} catch (final Exception exception) {
-			LOG.error(exception.toString());
+			log.error("Failed with {} ", exception);
 		}
 	}
 
@@ -118,8 +86,6 @@ class XmlToJdbc {
 	 * @param temp the temp
 	 */
 	protected void processRow(final String table, final NodeList rowList, final int rowNo, final String temp) {
-		LOG.info("{}", temp);
-
 		try {
 			// * first row element by index.
 			final Element rowElement = (Element) rowList.item(rowNo);
@@ -134,7 +100,7 @@ class XmlToJdbc {
 			insertRow(table, fieldNames, dataValues);
 
 		} catch (final Exception exception) {
-			LOG.info("Failed with " + exception.getMessage());
+			log.error("Failed with {} ", exception);
 		}
 	}
 
@@ -149,7 +115,7 @@ class XmlToJdbc {
 		final StringBuffer fieldNames = new StringBuffer();
 
 		for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
-			LOG.info(fieldList.item(fieldNo).toString());
+			log.info("{}", fieldList.item(fieldNo));
 			final Element fieldElement = (Element) fieldList.item(fieldNo);
 			fieldNames.append(columnSeperator + fieldElement.getAttribute("NAME"));
 			columnSeperator = ',';
@@ -168,7 +134,7 @@ class XmlToJdbc {
 		final StringBuffer dataValues = new StringBuffer();
 
 		for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
-			LOG.info(fieldList.item(fieldNo).toString());
+			log.info("{}", fieldList.item(fieldNo));
 			final Element fieldElement = (Element) fieldList.item(fieldNo);
 			dataValues.append(columnSeperator + "\'" + fieldElement.getChildNodes().item(0).getNodeValue() + "\'");
 			columnSeperator = ',';
@@ -191,51 +157,7 @@ class XmlToJdbc {
 		sql.append(String.format(" (%s)", fieldNames.toString()));
 		sql.append(String.format(" VALUES (%s)", dataValues.toString()));
 
-		LOG.error(sql.toString());
-		try {
-			if (this.statement.execute(sql.toString())) {
-				LOG.info("ok" + this.statement.getResultSet().toString());
-				// put in processed log.
-			} else {
-				if (this.statement.getUpdateCount() == 1) {
-					LOG.info("ok" + this.statement.getResultSet().toString());
-					// put in processed log.
-				} else {
-					LOG.info("failed " + this.statement.getWarnings());
-					// put in exceptions log.
-				}
-			}
-		} catch (final Exception exception) {
-			LOG.info("Failed with " + exception.getMessage());
-		}
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#finalize()
-	 */
-	@Override
-	public void finalize() {
-		try {
-			this.statement.close();
-			this.connection.close();
-		} catch (final SQLException exception) {
-			LOG.info("{}", exception);
-		}
-	}
-
-	/**
-	 * main method.
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(final String[] args) {
-		try {
-			final XmlToJdbc instance = new XmlToJdbc();
-			instance.process();
-		} catch (final Exception exception) {
-			LOG.error(exception.toString());
-		}
+		log.info("{}", sql.toString());
+		super.sql(sql.toString());
 	}
 }

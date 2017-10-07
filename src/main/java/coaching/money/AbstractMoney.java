@@ -9,7 +9,7 @@ import org.slf4j.*;
 /**
  * An Abstract Money class.
  */
-public class AbstractMoney implements MoneyInterface {
+public abstract class AbstractMoney implements MoneyInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private Currency currency = Currency.getInstance(Locale.getDefault());
@@ -94,7 +94,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public Currency getCurrency() {
-		return currency;
+		return this.currency;
 	}
 
 	/*
@@ -104,7 +104,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getCurrencyCode() {
-		return currency.getCurrencyCode();
+		return this.currency.getCurrencyCode();
 	}
 
 	/*
@@ -114,7 +114,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public Long getAmount() {
-		return amount;
+		return this.amount;
 	}
 
 	/*
@@ -124,7 +124,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getSymbol() {
-		return currency.getSymbol();
+		return this.currency.getSymbol();
 	}
 
 	/*
@@ -134,7 +134,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public String getDisplayName() {
-		return currency.getDisplayName();
+		return this.currency.getDisplayName();
 	}
 
 	/*
@@ -198,7 +198,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isMoreThan(final MoneyInterface money) {
-		return amount > money.getAmount();
+		return this.amount > money.getAmount();
 	}
 
 	/*
@@ -218,7 +218,7 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isEqualTo(final MoneyInterface money) {
-		return amount == money.getAmount();
+		return this.amount == money.getAmount();
 	}
 
 	/*
@@ -238,15 +238,15 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public boolean isLessThan(final MoneyInterface money) {
-		return amount < money.getAmount();
+		return this.amount < money.getAmount();
 	}
 
 	/**
 	 * To log.
 	 */
 	public void toLog() {
-		final String debug = String.format("Money [currency=%s, amount=%s]", currency, amount);
-		log.info("{}", debug);
+		final String debug = String.format("Money [currency=%s, amount=%s]", this.currency, this.amount);
+		this.log.info("{}", debug);
 	}
 
 	/*
@@ -256,10 +256,10 @@ public class AbstractMoney implements MoneyInterface {
 	 */
 	@Override
 	public String toString() {
-		final String symbol = currency.getSymbol();
+		final String symbol = this.currency.getSymbol();
 		final String pattern = String.format("%s ###,###.##", symbol);
 		final DecimalFormat formatter = new DecimalFormat(pattern);
-		final String output = formatter.format(amount);
+		final String output = formatter.format(this.amount);
 		return output;
 	}
 

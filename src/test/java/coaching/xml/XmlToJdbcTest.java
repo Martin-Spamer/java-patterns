@@ -6,7 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 /**
- * class XmlToJdbcTest.
+ * Unit test for XmlToJdbc class.
  */
 public class XmlToJdbcTest {
 
@@ -15,7 +15,7 @@ public class XmlToJdbcTest {
 	 */
 	@Test
 	public void testXmlToJdbc() {
-		final XmlToJdbc xmlToJdbc = new XmlToJdbc();
+		final MySqlDao xmlToJdbc = new XmlToJdbc();
 		assertNotNull("Value cannot be null", xmlToJdbc);
 	}
 

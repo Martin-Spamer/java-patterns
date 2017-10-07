@@ -11,6 +11,10 @@ public class DateHelper {
 
 	private static final String ISO_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
+	private DateHelper() {
+		super();
+	}
+
 	/**
 	 * Now.
 	 *
