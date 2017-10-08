@@ -1,5 +1,4 @@
 
-
 package coaching.rules;
 
 import java.util.Properties;
@@ -22,7 +21,7 @@ public abstract class AbstractContext implements ContextInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see coaching.rules.ContextInterface#setProperties(java.util.Properties)
 	 */
 	@Override
@@ -33,12 +32,31 @@ public abstract class AbstractContext implements ContextInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see coaching.rules.ContextInterface#getProperties()
 	 */
 	@Override
 	public Properties getProperties() {
-		return properties;
+		return this.properties;
+	}
+
+	/**
+	 * @param key
+	 * @param value
+	 * @return
+	 * @see java.util.Properties#setProperty(java.lang.String, java.lang.String)
+	 */
+	public Object setProperty(final String key, final String value) {
+		return this.properties.setProperty(key, value);
+	}
+
+	/**
+	 * @param key
+	 * @return
+	 * @see java.util.Properties#getProperty(java.lang.String)
+	 */
+	public String getProperty(final String key) {
+		return this.properties.getProperty(key);
 	}
 
 }

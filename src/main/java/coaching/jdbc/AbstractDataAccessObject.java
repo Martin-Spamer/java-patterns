@@ -74,18 +74,20 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	 */
 	@Override
 	public DaoInterface read(final String sql) {
+		Connection connection = null;
+		Statement statement = null;
 		try {
-			final Connection connection = this.connectionFactory.getConnection();
-			final Statement statement = connection.createStatement();
-			final ResultSet resultSet = statement.executeQuery(sql);
-			final ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-			final int colCount = resultSetMetaData.getColumnCount();
+			connection = this.connectionFactory.getConnection();
+			statement = connection.createStatement();
+			this.resultSet = statement.executeQuery(sql);
+			this.resultSetMetaData = this.resultSet.getMetaData();
+			final int colCount = this.resultSetMetaData.getColumnCount();
 
 			final StringBuffer output = new StringBuffer();
-			while (resultSet.next()) {
+			while (this.resultSet.next()) {
 				for (int i = 1; i <= colCount; i++) {
-					final String columnName = resultSetMetaData.getColumnName(i);
-					final Object value = resultSet.getObject(i);
+					final String columnName = this.resultSetMetaData.getColumnName(i);
+					final Object value = this.resultSet.getObject(i);
 					output.append(columnName + "=");
 					if (value != null) {
 						final String str = String.format("%s,", value.toString().trim());
@@ -95,11 +97,33 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 				output.append("\n");
 			}
 			log.info(output.toString());
-			resultSet.close();
+			this.resultSet.close();
 			statement.close();
 			connection.close();
 		} catch (final SQLException exception) {
 			log.error("{}", exception.toString());
+		} finally {
+			try {
+				if (this.resultSet != null) {
+					this.resultSet.close();
+				}
+			} catch (final Exception e) {
+				log.error("{}", e);
+			}
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+			} catch (final Exception e) {
+				log.error("{}", e);
+			}
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (final Exception e) {
+				log.error("{}", e.toString());
+			}
 		}
 		return this;
 	}
@@ -147,15 +171,32 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	 * @return the dao interface
 	 */
 	public DaoInterface sql(final String sql) {
+		Connection connection = null;
+		Statement statement = null;
 		try {
-			final Connection connection = this.connectionFactory.getConnection();
-			final Statement statement = connection.createStatement();
+			connection = this.connectionFactory.getConnection();
+			statement = connection.createStatement();
 			final int result = statement.executeUpdate(sql);
 			log.info("Rows updated: {}", result);
 			statement.close();
 			connection.close();
 		} catch (final SQLException exception) {
 			log.error("{}", exception.toString());
+		} finally {
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+			} catch (final Exception e) {
+				log.error("{}", e);
+			}
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (final Exception e) {
+				log.error("{}", e);
+			}
 		}
 		return this;
 	}

@@ -19,7 +19,6 @@ import org.w3c.dom.*;
 
 /**
  * a test harness for Java modules.
- * @author martin.spamer
  **/
 public class MainApp {
 
@@ -94,7 +93,7 @@ public class MainApp {
 					abstractApplicationProcess.start();
 				}
 
-				threadMap.put(nameAttribute, abstractApplicationProcess);
+				this.threadMap.put(nameAttribute, abstractApplicationProcess);
 			}
 		}
 	}

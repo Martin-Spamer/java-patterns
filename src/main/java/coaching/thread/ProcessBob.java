@@ -3,16 +3,13 @@
  *  @description	Test process.
  *  @author			martin.spamer
  *  @version		0.1 - first release.
- *	Created			20-Sep-2004
+ *	Created			20-Sep-2004 - 09:18:51
  **/
 
 package coaching.thread;
 
 /**
  * ProcessBob Class.
- *
- * @author martin.spamer
- * @version 0.1 - 09:18:51
  */
 public class ProcessBob extends AbstractProcess {
 
@@ -22,7 +19,8 @@ public class ProcessBob extends AbstractProcess {
 	 * @param args the arguments
 	 */
 	public static void main(final String[] args) {
-		final ProcessBob process = new ProcessBob();
+		final AbstractProcess process = new ProcessBob();
 		process.start();
 	}
+
 }

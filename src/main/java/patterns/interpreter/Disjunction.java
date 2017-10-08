@@ -1,5 +1,4 @@
 
-
 package patterns.interpreter;
 
 /**
@@ -7,8 +6,8 @@ package patterns.interpreter;
  */
 public class Disjunction extends NonTerminalExpression {
 
-	private AbstractExpression lhs = null;
-	private AbstractExpression rhs = null;
+	private final AbstractExpression lhs;
+	private final AbstractExpression rhs;
 
 	/**
 	 * Instantiates a new or expression.
@@ -31,7 +30,7 @@ public class Disjunction extends NonTerminalExpression {
 	 */
 	@Override
 	public boolean interpret(final ContextInterface context) {
-		return lhs.interpret(context) || rhs.interpret(context);
+		return this.lhs.interpret(context) || this.rhs.interpret(context);
 	}
 
 }

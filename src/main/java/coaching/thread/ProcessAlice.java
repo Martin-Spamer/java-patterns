@@ -3,16 +3,13 @@
  *  @description	Test process.
  *  @author			martin.spamer
  *  @version		0.1 - first release.
- *	Created			20-Sep-2004
+ *	Created			20-Sep-2004 - 09:18:51
  **/
 
 package coaching.thread;
 
 /**
  * ProcessAlice Class.
- *
- * @author martin.spamer
- * @version 0.1 - 09:18:51
  */
 public class ProcessAlice extends AbstractProcess {
 
@@ -22,7 +19,7 @@ public class ProcessAlice extends AbstractProcess {
 	 * @param args the arguments
 	 */
 	public static void main(final String[] args) {
-		final ProcessAlice process = new ProcessAlice();
+		final AbstractProcess process = new ProcessAlice();
 		process.start();
 	}
 }
