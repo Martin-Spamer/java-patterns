@@ -12,7 +12,7 @@ import org.slf4j.*;
  */
 public abstract class AbstractDataAccessObject implements DaoInterface {
 
-	protected static final Logger log = LoggerFactory.getLogger(AbstractDataAccessObject.class);
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ConnectionFactory connectionFactory;
 	protected ResultSet resultSet;
 	protected ResultSetMetaData resultSetMetaData;
@@ -26,7 +26,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		try {
 			Class.forName(driverClassName);
 		} catch (final ClassNotFoundException e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 		}
 	}
 
@@ -43,7 +43,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	        final String username,
 	        final String password) {
 		this(driverClassName);
-		connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
+		this.connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		Connection connection = null;
 		Statement statement = null;
 		try {
-			connection = connectionFactory.getConnection();
+			connection = this.connectionFactory.getConnection();
 			statement = connection.createStatement();
 			final ResultSet resultSet = statement.executeQuery(sql);
 
@@ -87,28 +87,28 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 			statement.close();
 			connection.close();
 		} catch (final SQLException exception) {
-			log.error("{}", exception.toString());
+			this.log.error("{}", exception.toString());
 		} finally {
 			try {
-				if (resultSet != null) {
-					resultSet.close();
+				if (this.resultSet != null) {
+					this.resultSet.close();
 				}
 			} catch (final Exception e) {
-				log.error("{}", e);
+				this.log.error("{}", e);
 			}
 			try {
 				if (statement != null) {
 					statement.close();
 				}
 			} catch (final Exception e) {
-				log.error("{}", e);
+				this.log.error("{}", e);
 			}
 			try {
 				if (connection != null) {
 					connection.close();
 				}
 			} catch (final Exception e) {
-				log.error("{}", e.toString());
+				this.log.error("{}", e.toString());
 			}
 		}
 		return this;
@@ -126,7 +126,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 			output.append(processRow(resultSet));
 			output.append("\n");
 		}
-		log.info(output.toString());
+		this.log.info(output.toString());
 	}
 
 	/**
@@ -196,28 +196,28 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		try {
-			connection = connectionFactory.getConnection();
+			connection = this.connectionFactory.getConnection();
 			preparedStatement = connection.prepareStatement(sql);
 			final int result = preparedStatement.executeUpdate();
-			log.info("Rows updated: {}", result);
+			this.log.info("Rows updated: {}", result);
 			preparedStatement.close();
 			connection.close();
 		} catch (final SQLException exception) {
-			log.error("{}", exception.toString());
+			this.log.error("{}", exception.toString());
 		} finally {
 			try {
 				if (preparedStatement != null) {
 					preparedStatement.close();
 				}
 			} catch (final Exception e) {
-				log.error("{}", e);
+				this.log.error("{}", e);
 			}
 			try {
 				if (connection != null) {
 					connection.close();
 				}
 			} catch (final Exception e) {
-				log.error("{}", e);
+				this.log.error("{}", e);
 			}
 		}
 		return this;

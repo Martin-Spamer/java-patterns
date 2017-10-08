@@ -20,7 +20,6 @@ public class XmlToJdbc extends MySqlDao {
 	 * @throws Exception the exception
 	 */
 	public void process() {
-		log.info("process");
 		process("");
 	}
 

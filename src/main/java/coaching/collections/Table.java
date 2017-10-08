@@ -7,5 +7,5 @@ import java.util.ArrayList;
  * class Table.
  */
 public class Table {
-	private final ArrayList<TableRow> rows = new ArrayList<>();
+	private final ArrayList<TableRow> rows = new ArrayList<TableRow>();
 }

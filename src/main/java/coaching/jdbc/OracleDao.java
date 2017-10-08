@@ -4,7 +4,7 @@ package coaching.jdbc;
 /**
  * Data Access object for Oracle sample customer table.
  */
-public class OracleDao extends AbstractDataAccessObject {
+public final class OracleDao extends AbstractDataAccessObject {
 
 	private static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
 	private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:sample";
