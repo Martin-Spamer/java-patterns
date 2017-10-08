@@ -1,6 +1,4 @@
 
-
-
 package coaching.xml;
 
 import java.io.File;
@@ -9,51 +7,37 @@ import javax.xml.parsers.*;
 
 import org.w3c.dom.*;
 
+import coaching.jdbc.MySqlDao;
+
 /**
  * XmlToJdbc Class.
  */
 public class XmlToJdbc extends MySqlDao {
 
 	/**
-	 * Instantiates a new xml to jdbc.
-	 */
-	public XmlToJdbc() {
-		super();
-	}
-
-	/**
 	 * Process.
 	 *
 	 * @throws Exception the exception
 	 */
-	public void process() throws Exception {
+	public void process() {
 		log.info("process");
+		process("");
 	}
 
 	/**
 	 * Process.
 	 *
 	 * @param filename the filename
-	 * @param driver the driver
-	 * @param url the url
-	 * @param user the user
-	 * @param password the password
-	 * @param table the table
 	 * @throws Exception the exception
 	 */
-	public void process(final String filename,
-	        final String driver,
-	        final String url,
-	        final String user,
-	        final String password,
-	        final String table) throws Exception {
+	public void process(final String filename) {
 		try {
 			final File configFile = new File(filename);
 			final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			final DocumentBuilder builder = builderFactory.newDocumentBuilder();
-			final Document mainAppConfig = builder.parse(configFile);
+			final Document document = builder.parse(configFile);
 
-			processTable(table, mainAppConfig);
+			processTable(document);
 
 		} catch (final Exception exception) {
 			log.error("Failed with {} ", exception);
@@ -66,18 +50,20 @@ public class XmlToJdbc extends MySqlDao {
 	 * @param table the table
 	 * @param mainAppConfig the main app config
 	 */
-	protected void processTable(final String table, final Document mainAppConfig) {
+	protected void processTable(final Document mainAppConfig) {
 		// * root Document Element
 		final Element tableElement = mainAppConfig.getDocumentElement();
 
 		if (tableElement.getNodeName().equals("TABLE")) {
+			final String tableName = tableElement.getAttribute("NAME");
+
 			// get a list of rows
 			final NodeList rowList = tableElement.getElementsByTagName("ROW");
 
 			// * list of rows
 			for (int rowNo = 0; rowNo < rowList.getLength(); rowNo++) {
 				final String temp = rowList.item(rowNo).toString();
-				processRow(table, rowList, rowNo, temp);
+				processRow(tableName, rowList, rowNo, temp);
 			}
 		}
 	}

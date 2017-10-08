@@ -1,5 +1,4 @@
 
-
 package patterns.filter;
 
 import java.io.*;
@@ -8,7 +7,7 @@ import java.util.*;
 /**
  * AbstractPayload Class.
  */
-public class AbstractPayload {
+public class AbstractPayload implements PayloadInterface {
 
 	private final Properties properties = new Properties();
 
@@ -17,17 +16,6 @@ public class AbstractPayload {
 	 */
 	public AbstractPayload() {
 		super();
-	}
-
-	/**
-	 * Instantiates a new abstract payload.
-	 *
-	 * @param key the key
-	 * @param value the value
-	 */
-	public AbstractPayload(final String key, final String value) {
-		this();
-		setProperty(key, value);
 	}
 
 	/**

@@ -7,6 +7,8 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+import coaching.arrays.PrimitivesArray;
+
 /**
  * Unit Tests for Primitives Arrays.
  */

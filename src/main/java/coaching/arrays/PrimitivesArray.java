@@ -6,7 +6,7 @@
  *	Created      23-Sep-2004 - 11:25:50
  **/
 
-package coaching.types;
+package coaching.arrays;
 
 import org.slf4j.*;
 

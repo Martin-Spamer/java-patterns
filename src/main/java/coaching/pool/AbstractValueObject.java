@@ -1,5 +1,4 @@
 
-
 package coaching.pool;
 
 /**
@@ -7,7 +6,7 @@ package coaching.pool;
  */
 public abstract class AbstractValueObject {
 
-	/** Indicates if the value dirty, has it been changed */
+	/** Indicates if the value dirty, has it been changed. */
 	private boolean dirty = false;
 
 	/**

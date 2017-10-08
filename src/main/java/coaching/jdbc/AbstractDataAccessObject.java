@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import java.sql.*;
@@ -80,24 +79,10 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		try {
 			connection = this.connectionFactory.getConnection();
 			statement = connection.createStatement();
-			this.resultSet = statement.executeQuery(sql);
-			this.resultSetMetaData = this.resultSet.getMetaData();
-			final int colCount = this.resultSetMetaData.getColumnCount();
+			final ResultSet resultSet = statement.executeQuery(sql);
 
-			final StringBuffer output = new StringBuffer();
-			while (this.resultSet.next()) {
-				for (int i = 1; i <= colCount; i++) {
-					final String columnName = this.resultSetMetaData.getColumnName(i);
-					final Object value = this.resultSet.getObject(i);
-					output.append(columnName + "=");
-					if (value != null) {
-						final String str = String.format("%s,", value.toString().trim());
-						output.append(str);
-					}
-				}
-				output.append("\n");
-			}
-			log.info(output.toString());
+			handleResultSet(resultSet);
+
 			this.resultSet.close();
 			statement.close();
 			connection.close();
@@ -127,6 +112,42 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 			}
 		}
 		return this;
+	}
+
+	/**
+	 * Handle result set.
+	 *
+	 * @param resultSet the result set
+	 * @throws SQLException the SQL exception
+	 */
+	protected void handleResultSet(final ResultSet resultSet) throws SQLException {
+		final StringBuffer output = new StringBuffer();
+		while (resultSet.next()) {
+			output.append(processRow(resultSet));
+			output.append("\n");
+		}
+		log.info(output.toString());
+	}
+
+	/**
+	 * @param colCount
+	 * @param output
+	 * @throws SQLException
+	 */
+	protected String processRow(final ResultSet resultSet) throws SQLException {
+		final ResultSetMetaData metaData = resultSet.getMetaData();
+		final int colCount = metaData.getColumnCount();
+		final StringBuffer output = new StringBuffer();
+		for (int i = 1; i <= colCount; i++) {
+			final String columnName = metaData.getColumnName(i);
+			final Object value = resultSet.getObject(i);
+			if (value == null) {
+				output.append(String.format("%s = %s,", columnName, value.toString().trim()));
+			} else {
+				output.append(String.format("%s = null,", columnName));
+			}
+		}
+		return output.toString();
 	}
 
 	/**
@@ -173,20 +194,20 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	 */
 	public DaoInterface sql(final String sql) {
 		Connection connection = null;
-		Statement statement = null;
+		PreparedStatement preparedStatement = null;
 		try {
 			connection = this.connectionFactory.getConnection();
-			statement = connection.createStatement();
-			final int result = statement.executeUpdate(sql);
+			preparedStatement = connection.prepareStatement(sql);
+			final int result = preparedStatement.executeUpdate();
 			log.info("Rows updated: {}", result);
-			statement.close();
+			preparedStatement.close();
 			connection.close();
 		} catch (final SQLException exception) {
 			log.error("{}", exception.toString());
 		} finally {
 			try {
-				if (statement != null) {
-					statement.close();
+				if (preparedStatement != null) {
+					preparedStatement.close();
 				}
 			} catch (final Exception e) {
 				log.error("{}", e);

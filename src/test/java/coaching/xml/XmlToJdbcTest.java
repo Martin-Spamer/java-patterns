@@ -7,6 +7,8 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+import coaching.jdbc.MySqlDao;
+
 /**
  * Unit test for XmlToJdbc class.
  */

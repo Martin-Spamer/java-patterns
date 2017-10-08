@@ -1,6 +1,4 @@
 
-
-
 package patterns.filter;
 
 import static org.junit.Assert.assertNotNull;

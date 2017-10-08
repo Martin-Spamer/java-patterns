@@ -18,7 +18,7 @@ public final class PointBaseCustomerDao extends AbstractDataAccessObject {
 	private static final String USER = "PBPUBLIC";
 	private static final String PASSWORD = "PBPUBLIC";
 
-	private static final String SELECT_SQL = "SELECT * from customers";
+	private static final String SELECT_SQL = "SELECT * FROM CUSTOMER_TBL";
 	private static final String INSERT_SQL = "INSERT INTO CUSTOMER_TBL (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
 	private static final String UPDATE_SQL = "UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999";
 	private static final String DELETE_SQL = "DELETE FROM CUSTOMER_TBL WHERE CUSTOMER_NUM=999";
