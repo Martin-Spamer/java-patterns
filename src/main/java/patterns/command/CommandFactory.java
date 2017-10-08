@@ -1,8 +1,7 @@
 
-
 package patterns.command;
 
-import java.io.InputStream;
+import java.io.*;
 import java.util.Properties;
 
 import org.slf4j.*;
@@ -14,58 +13,49 @@ import org.slf4j.*;
  */
 public final class CommandFactory implements InvokerInterface {
 
+	private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
 	private static final String COMMANDS_PROPERTIES = "commands.properties";
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	private final Properties properties;
+	private final Properties properties = new Properties();
 
 	/**
 	 * Instantiates a new command factory.
 	 *
-	 * exception
-	 *
 	 * @throws Exception the exception
 	 */
-	public CommandFactory() throws Exception {
+	public CommandFactory() {
 		super();
-		properties = new Properties();
-		properties.load(inputStream(COMMANDS_PROPERTIES));
-		log.info("properties = {}", properties);
+		initialise(COMMANDS_PROPERTIES);
 	}
 
 	/**
 	 * Instantiates a new command factory.
-	 *
-	 * filename
-	 * exception
 	 *
 	 * @param filename the filename
 	 * @throws Exception the exception
 	 */
-	public CommandFactory(final String filename) throws Exception {
+	public CommandFactory(final String filename) {
 		super();
-		properties = new Properties();
-		properties.load(inputStream(filename));
-		log.info("properties = {}", properties);
+		initialise(filename);
 	}
 
 	/**
-	 * Instantiates a new command factory.
+	 * Initialise.
 	 *
-	 * properties
-	 *
-	 * @param properties the properties
+	 * @param filename the filename
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
-	public CommandFactory(final Properties properties) {
-		super();
-		this.properties = properties;
-		log.info("properties = {}", this.properties);
+	protected void initialise(final String filename) {
+		try {
+			this.properties.load(inputStream(filename));
+			this.log.info("properties = {}", this.properties);
+		} catch (final IOException e) {
+			LOG.error("{}", e);
+		}
 	}
 
 	/**
 	 * Input stream.
-	 *
-	 * resource name
-	 * input stream
 	 *
 	 * @param resourceName the resource name
 	 * @return the input stream
@@ -84,7 +74,7 @@ public final class CommandFactory implements InvokerInterface {
 	@Override
 	public ResultInterface execute(final String actionName) throws MissingCommandException {
 		try {
-			final String className = properties.getProperty(actionName);
+			final String className = this.properties.getProperty(actionName);
 			if (className != null) {
 				if (className.length() > 0) {
 					AbstractCommand action;
