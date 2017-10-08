@@ -13,7 +13,7 @@ import org.slf4j.*;
 public class PointBaseCustomerDaoTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);
-	private final static String URL = "jdbc:pointbase://localhost:9092/sample";
+	private final static String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
 	private final static String USER = "PBPUBLIC";
 	private final static String PASSWORD = "PBPUBLIC";
 

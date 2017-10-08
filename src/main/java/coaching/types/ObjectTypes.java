@@ -1,9 +1,9 @@
 /**
- *  @title			Types.java
- *  @description	TODO
+ *  @title			ObjectTypes .java
+ *  @description	Example usage of built in Java object types.
  *  @author			martin.spamer.
  *  @version		0.1 - first release.
- *	Created			07-Oct-2004
+ *	Created			07-Oct-2004 - 09:20:22
  **/
 
 package coaching.types;
@@ -11,10 +11,8 @@ package coaching.types;
 import org.slf4j.*;
 
 /**
- * Java Native Types.
+ * Java Object Types.
  *
- * @author martin.spamer
- * @version 0.1 - 09:20:22
  */
 public class ObjectTypes {
 

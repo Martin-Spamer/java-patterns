@@ -18,7 +18,7 @@ public class ObjectTypesArrayTest {
 	public void testDisplayObjectArray() {
 		final ObjectTypesArray objectTypes = new ObjectTypesArray();
 		assertNotNull("Value cannot be null", objectTypes);
-		objectTypes.displayObjectArray();
+		objectTypes.iterateArray();
 	}
 
 	/**

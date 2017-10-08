@@ -1,10 +1,9 @@
 /**
- *  @title       PrimativeArray.java
- *  @description TODO
- *  @author      martin.spamer.
- *  @version     0.1 - first release.
- *	Created      23-Sep-2004
- *
+ *  @title			ObjectTypesArray.java
+ *  @description	Example code of arrays of objects.
+ *  @author      	martin.spamer.
+ *  @version		0.1 - first release.
+ *	Created			23-Sep-2004 - 11:25:50
  **/
 
 package coaching.types;
@@ -12,9 +11,7 @@ package coaching.types;
 import org.slf4j.*;
 
 /**
- * Example code of arrays of primitive types.
- * @author martin.spamer
- * @version 0.1 - 11:25:50
+ * Example code of arrays of objects.
  **/
 public class ObjectTypesArray {
 
@@ -22,9 +19,9 @@ public class ObjectTypesArray {
 	private static final int ARRAY_SIZE = 10;
 
 	/**
-	 * Display Object Array.
+	 * iterate the elements of an array for display.
 	 */
-	public void displayObjectArray() {
+	public void iterateArray() {
 		// Declare a reference to an array of longs.
 		Long[] values;
 
@@ -39,13 +36,13 @@ public class ObjectTypesArray {
 
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
-			values[i] = new Long(i * 100);
+			values[i] = Long.valueOf(i * 100);
 			this.log.info("{}){}", i, values[i]);
 		}
 	}
 
 	/**
-	 * Display matrix.
+	 * Display matrix, two dimensional array by nested iteration.
 	 */
 	public void displayMatrix() {
 		// declare a reference to an matrix of longs
@@ -60,7 +57,7 @@ public class ObjectTypesArray {
 		for (int x = 0; x < ARRAY_SIZE; x++) {
 			for (int y = 0; y < ARRAY_SIZE; y++) {
 				// * matrix
-				matrix[x][y] = new Long(x * y);
+				matrix[x][y] = Long.valueOf(x * y);
 
 				stringBuffer.append(matrix[x][y]);
 				stringBuffer.append(",");
@@ -75,6 +72,9 @@ public class ObjectTypesArray {
 	 * Display.
 	 */
 	public void display() {
+		/**
+		 * array with static data
+		 */
 		final Long[][] vector = {
 		        {
 		                0L, 1L, 2L
@@ -84,13 +84,11 @@ public class ObjectTypesArray {
 				        6L, 7L, 8L
 				}
 		};
-		/**
-		 * array with static data
-		 */
+
 		final StringBuffer stringBuffer = new StringBuffer();
 		for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
 			for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
-				vector[firstIndex][secondIndex] = new Long(firstIndex * secondIndex);
+				vector[firstIndex][secondIndex] = Long.valueOf(firstIndex * secondIndex);
 				stringBuffer.append(vector[firstIndex][secondIndex]);
 				stringBuffer.append(",");
 			}
@@ -98,4 +96,5 @@ public class ObjectTypesArray {
 		}
 		this.log.info("{}", stringBuffer.toString());
 	}
+
 }

@@ -17,7 +17,7 @@ public class BlockingPoolTest {
 	/**
 	 * TestResourcePool Class.
 	 */
-	public class TestResourcePool extends BlockingPool<Boolean> {
+	public class TestResourcePool extends AbstractBlockingPool<Boolean> {
 	}
 
 	/**

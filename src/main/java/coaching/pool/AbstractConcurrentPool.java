@@ -2,29 +2,29 @@
 
 package coaching.pool;
 
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 import org.slf4j.*;
 
 /**
- * BlockingPool Class.
+ * ConcurrentPool Class.
  *
- * generic type
+ * element type
  *
  * @param <E> the element type
  */
-public abstract class BlockingPool<E> implements PoolInterface<E> {
+public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	protected LinkedBlockingDeque<E> freePool;
-	protected LinkedBlockingDeque<E> usedPool;
+	protected ConcurrentLinkedDeque<E> freePool;
+	protected ConcurrentLinkedDeque<E> usedPool;
 
 	/**
-	 * Instantiates a new blocking pool.
+	 * Instantiates a new concurrent pool.
 	 */
-	public BlockingPool() {
-		this.freePool = new LinkedBlockingDeque<E>();
-		this.usedPool = new LinkedBlockingDeque<E>();
+	public AbstractConcurrentPool() {
+		this.freePool = new ConcurrentLinkedDeque<E>();
+		this.usedPool = new ConcurrentLinkedDeque<E>();
 	}
 
 	/*
@@ -61,19 +61,13 @@ public abstract class BlockingPool<E> implements PoolInterface<E> {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see code.pool.PoolInterface#get()
+	 * @see uk.me.spamer.pool.PoolInterface#take()
 	 */
 	@Override
 	public E take() {
-		try {
-			final E resource = this.freePool.take();
-			this.usedPool.add(resource);
-			return resource;
-		} catch (final InterruptedException e) {
-			Thread.currentThread().interrupt();
-			this.log.error(e.toString());
-		}
-		return null;
+		final E resource = this.freePool.poll();
+		this.usedPool.add(resource);
+		return resource;
 	}
 
 	/*
@@ -83,8 +77,8 @@ public abstract class BlockingPool<E> implements PoolInterface<E> {
 	 */
 	@Override
 	public PoolInterface<E> release(final E resource) {
+		this.freePool.remove(resource);
 		this.usedPool.remove(resource);
-		this.freePool.add(resource);
 		return this;
 	}
 

@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import static org.junit.Assert.assertNotNull;
@@ -8,13 +7,13 @@ import org.junit.Test;
 import org.slf4j.*;
 
 /**
- * class XmlDAOTest.
+ * Unit test for XmlDAO class.
  */
 public class XmlDAOTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(XmlDAOTest.class);
 	private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-	private static final String URL = "jdbc:pointbase:server://localhost/sample";
+	private static final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
 	private static final String USER = "PBPUBLIC";
 	private static final String PASSWORD = "PBPUBLIC";
 	private static final String SQL = "SELECT * from customers";

@@ -5,7 +5,7 @@ package coaching.pool;
 /**
  * AbstractVO Class.
  */
-public abstract class AbstractVO {
+public abstract class AbstractValueObject {
 
 	/** The dirty. */
 	private boolean dirty = false;

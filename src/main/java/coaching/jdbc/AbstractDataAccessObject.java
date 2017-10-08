@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import java.sql.*;
@@ -9,7 +8,7 @@ import org.slf4j.*;
 /**
  * Abstract Data Access object.
  *
- * @author martin.spamer
+ * Uses domain language to provide Create Read Update Delete interface.
  */
 public abstract class AbstractDataAccessObject implements DaoInterface {
 
@@ -48,7 +47,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * database SQL to
+	 * Execute a SQL insert statement for CRUD interface.
 	 * <code>
 	 * 	INSERT INTO CUSTOMER_TBL
 	 * 		(CUSTOMER_NUM,POSTCODE,DISCOUNT_CODE)
@@ -65,7 +64,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * database SQL to
+	 * Execute a SQL select statement for CRUD interface.
 	 * <code>
 	 * 	SELECT * from customer table.
 	 * </code>
@@ -106,7 +105,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * database SQL
+	 * Execute a SQL update statement for CRUD interface.
 	 * <code>
 	 * 	UPDATE
 	 * 		CUSTOMER_TBL
@@ -125,7 +124,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * database SQL
+	 * Execute a SQL delete statement for CRUD interface.
 	 * <code>
 	 * 	DELETE FROM
 	 * 		CUSTOMER_TBL
@@ -142,7 +141,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * Sql.
+	 * execute an sql statement.
 	 *
 	 * @param sql the sql
 	 * @return the dao interface

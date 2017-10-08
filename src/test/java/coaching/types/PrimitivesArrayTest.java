@@ -38,6 +38,6 @@ public class PrimitivesArrayTest {
 	public void testDisplayArray() {
 		final PrimitivesArray primitivesArray = new PrimitivesArray();
 		assertNotNull("Value cannot be null", primitivesArray);
-		primitivesArray.displayArray();
+		primitivesArray.iterateArray();
 	}
 }

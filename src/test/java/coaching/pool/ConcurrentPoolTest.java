@@ -14,7 +14,7 @@ public class ConcurrentPoolTest {
 	/**
 	 * TestResourcePool Class.
 	 */
-	public class TestResourcePool extends ConcurrentPool<Boolean> {
+	public class TestResourcePool extends AbstractConcurrentPool<Boolean> {
 	}
 
 	/**

@@ -17,7 +17,7 @@ import org.slf4j.*;
  *
  * @param <T> the generic type
  */
-public abstract class AltAbstractResourcePool<T> {
+public abstract class AbstractAltResourcePool<T> {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected int maxPoolSize = Integer.MAX_VALUE;
 	protected int defaultPoolSize = Integer.MAX_VALUE;
@@ -31,7 +31,7 @@ public abstract class AltAbstractResourcePool<T> {
 	 * @throws ResourcePoolCreationException the resource pool creation
 	 *             exception
 	 */
-	public AltAbstractResourcePool() throws ResourcePoolCreationException {
+	public AbstractAltResourcePool() throws ResourcePoolCreationException {
 		try {
 			this.freePool = new Stack<>();
 			this.usedPool = new HashSet<>();
