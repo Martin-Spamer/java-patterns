@@ -1,4 +1,5 @@
 
+
 package coaching.jdbc;
 
 import java.sql.*;
@@ -52,7 +53,6 @@ public class ConnectionFactory {
 	 * Get jdbc connection for the database.
 	 *
 	 * @return the connection
-	 * @throws SQLException the SQL exception
 	 */
 	public Connection getConnection() {
 		Connection connection = null;

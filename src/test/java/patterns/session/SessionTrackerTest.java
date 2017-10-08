@@ -1,5 +1,6 @@
 
 
+
 package patterns.session;
 
 import static org.junit.Assert.assertNotNull;

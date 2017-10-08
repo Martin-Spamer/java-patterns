@@ -1,5 +1,6 @@
 
 
+
 package coaching.exceptions;
 
 import static org.junit.Assert.assertNotNull;

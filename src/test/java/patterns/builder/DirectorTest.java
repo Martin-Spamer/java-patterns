@@ -1,5 +1,6 @@
 
 
+
 package patterns.builder;
 
 import static org.junit.Assert.assertNotNull;

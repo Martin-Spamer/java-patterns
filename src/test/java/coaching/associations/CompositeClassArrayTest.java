@@ -1,5 +1,6 @@
 
 
+
 package coaching.associations;
 
 import static org.junit.Assert.assertNotNull;

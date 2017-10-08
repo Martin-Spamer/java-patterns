@@ -1,5 +1,6 @@
 
 
+
 package patterns.flyweight;
 
 import static org.junit.Assert.assertNotNull;

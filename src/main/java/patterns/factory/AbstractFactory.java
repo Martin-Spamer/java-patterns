@@ -1,5 +1,6 @@
 
 
+
 package patterns.factory;
 
 import org.slf4j.*;

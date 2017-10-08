@@ -1,4 +1,5 @@
 
+
 package patterns.command;
 
 import java.io.*;
@@ -20,8 +21,6 @@ public final class CommandFactory implements InvokerInterface {
 
 	/**
 	 * Instantiates a new command factory.
-	 *
-	 * @throws Exception the exception
 	 */
 	public CommandFactory() {
 		super();
@@ -32,7 +31,6 @@ public final class CommandFactory implements InvokerInterface {
 	 * Instantiates a new command factory.
 	 *
 	 * @param filename the filename
-	 * @throws Exception the exception
 	 */
 	public CommandFactory(final String filename) {
 		super();
@@ -43,7 +41,6 @@ public final class CommandFactory implements InvokerInterface {
 	 * Initialise.
 	 *
 	 * @param filename the filename
-	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	protected void initialise(final String filename) {
 		try {

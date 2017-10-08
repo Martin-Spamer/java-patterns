@@ -3,27 +3,27 @@
 package coaching.pool;
 
 /**
- * AbstractVO Class.
+ * Abstract Value Object.
  */
 public abstract class AbstractValueObject {
 
-	/** The dirty. */
+	/** Indicates if the value dirty, has it been changed */
 	private boolean dirty = false;
 
 	/**
-	 * Dirty.
+	 * Mark as dirty, changed.
 	 */
 	protected void dirty() {
-		dirty = true;
+		this.dirty = true;
 	}
 
 	/**
-	 * Checks if is dirty.
+	 * Checks if the value is dirty.
 	 *
 	 * @return true, if is dirty
 	 */
 	protected boolean isDirty() {
-		return dirty;
+		return this.dirty;
 	}
 
 }

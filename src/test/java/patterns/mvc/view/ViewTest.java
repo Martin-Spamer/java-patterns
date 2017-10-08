@@ -1,5 +1,6 @@
 
 
+
 package patterns.mvc.view;
 
 import static org.junit.Assert.assertNotNull;

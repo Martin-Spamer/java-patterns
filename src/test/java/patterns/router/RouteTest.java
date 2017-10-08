@@ -1,5 +1,6 @@
 
 
+
 package patterns.router;
 
 import static org.junit.Assert.assertNotNull;

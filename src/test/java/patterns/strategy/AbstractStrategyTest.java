@@ -1,5 +1,6 @@
 
 
+
 package patterns.strategy;
 
 import static org.junit.Assert.assertNotNull;

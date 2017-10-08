@@ -1,5 +1,6 @@
 
 
+
 package patterns.decorator;
 
 import org.slf4j.*;

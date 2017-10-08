@@ -1,5 +1,6 @@
 
 
+
 package patterns.interpreter;
 
 import static org.junit.Assert.*;

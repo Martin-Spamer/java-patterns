@@ -1,5 +1,6 @@
 
 
+
 package patterns.mvc;
 
 import patterns.mvc.model.AbstractModel;

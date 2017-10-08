@@ -1,5 +1,6 @@
 
 
+
 package patterns.bridge;
 
 import static org.junit.Assert.assertNotNull;

@@ -1,5 +1,6 @@
 
 
+
 package patterns.observer;
 
 import static org.junit.Assert.assertNotNull;
