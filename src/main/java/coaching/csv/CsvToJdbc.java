@@ -38,27 +38,12 @@ public class CsvToJdbc {
 	}
 
 	/**
-	 * Instantiates a new csv to jdbc.
-	 *
-	 * @param driver the driver
-	 * @param url the url
-	 * @param user the user
-	 * @param password the password
-	 */
-	public CsvToJdbc(final String driver, final String url, final String user, final String password) {
-		this.driver = driver;
-		this.url = url;
-		username = user;
-		this.password = password;
-	}
-
-	/**
 	 * Column headers.
 	 *
 	 * @return the column headers
 	 */
 	private String getColumnHeaders() {
-		return csvFile.getColumnNames();
+		return this.csvFile.getColumnNames();
 	}
 
 	/**
@@ -79,10 +64,10 @@ public class CsvToJdbc {
 			try {
 				return DriverManager.getConnection(url, user, password);
 			} catch (final SQLException e) {
-				log.error("{}", e);
+				this.log.error("{}", e);
 			}
 		} catch (final ClassNotFoundException e) {
-			log.error("{}", e);
+			this.log.error("{}", e);
 		}
 		return null;
 	}
@@ -102,7 +87,7 @@ public class CsvToJdbc {
 	 * Process.
 	 */
 	public void process() {
-		process(driver, url, username, password, "tableName");
+		process(this.driver, this.url, this.username, this.password, "tableName");
 	}
 
 	/**
@@ -121,14 +106,14 @@ public class CsvToJdbc {
 	        final String table) {
 		makeJdbcConnection(driver, url, user, password);
 		try {
-			csvFile = new CsvFile(filename);
-			for (int index = 0; index < csvFile.size(); index++) {
-				final CsvRecord record = csvFile.getRecord(index);
-				log.info(record.toString());
+			this.csvFile = new CsvFile(this.filename);
+			for (int index = 0; index < this.csvFile.size(); index++) {
+				final CsvRecord record = this.csvFile.getRecord(index);
+				this.log.info(record.toString());
 				write(record);
 			}
 		} catch (final SQLException e) {
-			log.error("{}", e);
+			this.log.error("{}", e);
 		}
 	}
 
@@ -221,21 +206,21 @@ public class CsvToJdbc {
 		// from (%value%,...)
 		final StringBuffer sql = new StringBuffer();
 		sql.append("insert into ");
-		sql.append(tableName);
+		sql.append(this.tableName);
 		sql.append(getColumnHeaders());
 		sql.append(" VALUES ");
 		sql.append(record.toString());
-		log.info(sql.toString());
+		this.log.info(sql.toString());
 
-		final Connection connection = DriverManager.getConnection(url, username, password);
+		final Connection connection = DriverManager.getConnection(this.url, this.username, this.password);
 		final Statement statement = makeStatement(connection);
 		if (statement.execute(sql.toString())) {
-			log.info("ok {}", statement.getResultSet().toString());
+			this.log.info("ok {}", statement.getResultSet().toString());
 		} else {
 			if (statement.getUpdateCount() == 1) {
-				log.info("ok {}", statement.getResultSet().toString());
+				this.log.info("ok {}", statement.getResultSet().toString());
 			} else {
-				log.info("failed {}", statement.getWarnings());
+				this.log.info("failed {}", statement.getWarnings());
 			}
 		}
 	}
