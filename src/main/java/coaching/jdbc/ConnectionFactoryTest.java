@@ -8,12 +8,12 @@ import java.sql.*;
 import org.junit.Test;
 
 /**
- * class ConnectionFactoryTest.
+ * Unit test for the ConnectionFactory class.
  */
 public class ConnectionFactoryTest {
 
 	/**
-	 * Unit Test to connection factory.
+	 * Unit Test for typical usage of connection factory.
 	 *
 	 * @throws SQLException the SQL exception
 	 */

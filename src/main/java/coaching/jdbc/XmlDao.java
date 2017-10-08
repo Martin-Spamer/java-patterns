@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import java.sql.*;
@@ -9,16 +8,14 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
 /**
- * A JDBC example provides a faster reader with XML Support input and a
- * PointBase Database
- * for output.
+ * Provides a XML reader for input and a JDBC PointBase Database for output.
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
 public final class XmlDao extends AbstractDataAccessObject {
 
-	private static final String DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-	private static final String URL = "jdbc:pointbase:server://localhost/sample";
+	private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
+	private static final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
 	private static final String USER = "PBPUBLIC";
 	private static final String PASSWORD = "PBPUBLIC";
 	private static final String SQL = "SELECT * from customers";
@@ -27,7 +24,7 @@ public final class XmlDao extends AbstractDataAccessObject {
 	 * Instantiates a new xml DAO.
 	 */
 	public XmlDao() {
-		super(DRIVER, URL, USER, PASSWORD);
+		super(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);
 	}
 
 	/**

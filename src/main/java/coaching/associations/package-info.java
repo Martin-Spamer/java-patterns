@@ -1,5 +1,5 @@
 /**
- * Package provides examples of OO associations using Java.
+ * Package provides examples how UML association can be implemented in java.
  * <p>
  * Detailed description of package.
  */

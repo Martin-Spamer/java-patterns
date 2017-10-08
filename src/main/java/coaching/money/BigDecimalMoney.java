@@ -10,14 +10,11 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.*;
 
-import org.slf4j.*;
-
 /**
  * Big Decimal Money class.
  */
 public final class BigDecimalMoney {
 
-	private static final Logger LOG = LoggerFactory.getLogger(BigDecimalMoney.class);
 	private Currency currency = Currency.getInstance(Locale.getDefault());
 	private BigDecimal amount = new BigDecimal(0);
 
@@ -266,7 +263,7 @@ public final class BigDecimalMoney {
 	 *
 	 * @param amount the amount
 	 * @return true, if successful, otherwise false.
-	 * 			more than
+	 *         more than
 	 */
 	public boolean isMoreThan(final long amount) {
 		return this.amount.longValue() > amount;
@@ -277,7 +274,7 @@ public final class BigDecimalMoney {
 	 *
 	 * @param amount the amount
 	 * @return true, if successful, otherwise false.
-	 * 			equal to
+	 *         equal to
 	 */
 	public boolean isEqualTo(final long amount) {
 		return this.amount.longValue() == amount;
@@ -288,7 +285,7 @@ public final class BigDecimalMoney {
 	 *
 	 * @param amount the amount
 	 * @return true, if successful, otherwise false.
-	 * 			less than
+	 *         less than
 	 */
 	public boolean isLessThan(final long amount) {
 		return this.amount.longValue() < amount;
