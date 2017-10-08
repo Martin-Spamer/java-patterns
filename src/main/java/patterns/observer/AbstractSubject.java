@@ -1,6 +1,4 @@
 
-
-
 package patterns.observer;
 
 import java.util.*;

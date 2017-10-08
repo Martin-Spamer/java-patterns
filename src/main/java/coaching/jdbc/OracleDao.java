@@ -1,5 +1,9 @@
+
 package coaching.jdbc;
 
+/**
+ * Data Access object for Oracle sample customer table.
+ */
 public class OracleDao extends AbstractDataAccessObject {
 
 	private static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
@@ -15,7 +19,7 @@ public class OracleDao extends AbstractDataAccessObject {
 	/**
 	 * @param driverClassName
 	 */
-	private OracleDao(final String driverClassName) {
+	private OracleDao() {
 		super(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);
 	}
 

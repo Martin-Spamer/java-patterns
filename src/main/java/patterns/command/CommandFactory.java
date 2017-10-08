@@ -1,5 +1,4 @@
 
-
 package patterns.command;
 
 import java.io.*;
@@ -16,7 +15,6 @@ public final class CommandFactory implements InvokerInterface {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
 	private static final String COMMANDS_PROPERTIES = "commands.properties";
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private final Properties properties = new Properties();
 
 	/**
@@ -45,7 +43,7 @@ public final class CommandFactory implements InvokerInterface {
 	protected void initialise(final String filename) {
 		try {
 			this.properties.load(inputStream(filename));
-			this.log.info("properties = {}", this.properties);
+			LOG.info("properties = {}", this.properties);
 		} catch (final IOException e) {
 			LOG.error("{}", e);
 		}

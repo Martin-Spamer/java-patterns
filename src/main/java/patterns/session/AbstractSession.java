@@ -1,6 +1,4 @@
 
-
-
 package patterns.session;
 
 import java.util.UUID;
@@ -8,49 +6,72 @@ import java.util.UUID;
 /**
  * Abstract Session class.
  */
-public class AbstractSession {
+public abstract class AbstractSession {
 
-	protected UUID randomUUID = null;
-	protected long id = 0L;
-	protected String value;
+	protected UUID uuid = UUID.randomUUID();
+	protected String token;
 
 	/**
 	 * Instantiates a new abstract session.
 	 */
 	public AbstractSession() {
 		super();
-		randomUUID = UUID.randomUUID();
 	}
 
 	/**
-	 * Instantiates a new abstract session.
+	 * Sets the uuid.
 	 *
-	 * @param id the id
+	 * @param uuid the uuid to set
 	 */
-	public AbstractSession(final long id) {
-		super();
-		randomUUID = UUID.randomUUID();
-		setId(id);
+	public void setUuid(final UUID uuid) {
+		this.uuid = uuid;
 	}
 
 	/**
-	 * set the id.
+	 * Sets the token.
 	 *
-	 * @param id the new id
-	 * @return the abstract session
+	 * @param token the token to set
 	 */
-	public AbstractSession setId(final long id) {
-		this.id = id;
-		return this;
+	public void setToken(final String token) {
+		this.token = token;
 	}
 
 	/**
-	 * get the id.
+	 * Gets the uuid.
 	 *
-	 * @return the id
+	 * @return the uuid
 	 */
-	public long getId() {
-		return id;
+	public UUID getUuid() {
+		return this.uuid;
+	}
+
+	/**
+	 * Gets the token.
+	 *
+	 * @return the token
+	 */
+	public String getToken() {
+		return this.token;
+	}
+
+	/**
+	 * Timestamp.
+	 *
+	 * @return the long
+	 * @see java.util.UUID#timestamp()
+	 */
+	public long timestamp() {
+		return this.uuid.timestamp();
+	}
+
+	/**
+	 * Node.
+	 *
+	 * @return the long
+	 * @see java.util.UUID#node()
+	 */
+	public long node() {
+		return this.uuid.node();
 	}
 
 	/*
@@ -60,7 +81,6 @@ public class AbstractSession {
 	 */
 	@Override
 	public String toString() {
-		return String.format("AbstractSession [randomUUID=%s, id=%s, value=%s]", randomUUID, id, value);
+		return String.format("AbstractSession [randomUUID=%s, value=%s]", this.uuid, this.token);
 	}
-
 }

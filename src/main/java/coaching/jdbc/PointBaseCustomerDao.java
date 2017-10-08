@@ -2,14 +2,13 @@
  * Data Access Object Template.
  *
  * Created on 07 September 2004, 10:38
+ * @author martin.spamer
  */
 
 package coaching.jdbc;
 
 /**
  * Data Access object for Point Base sample customer table.
- *
- * @author martin.spamer
  */
 public final class PointBaseCustomerDao extends AbstractDataAccessObject {
 

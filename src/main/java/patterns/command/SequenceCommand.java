@@ -1,7 +1,4 @@
 
-
-
-
 package patterns.command;
 
 import java.util.*;
@@ -21,7 +18,7 @@ public class SequenceCommand extends AbstractCommand {
 	 * @param command the command
 	 * @return true, if successful
 	 */
-	public boolean append(AbstractCommand command) {
+	public boolean append(final AbstractCommand command) {
 		return sequence.add(command);
 	}
 
@@ -34,7 +31,7 @@ public class SequenceCommand extends AbstractCommand {
 	 * @param index the index
 	 * @param element the element
 	 */
-	public void add(int index, AbstractCommand element) {
+	public void add(final int index, final AbstractCommand element) {
 		sequence.add(index, element);
 	}
 
@@ -47,7 +44,7 @@ public class SequenceCommand extends AbstractCommand {
 	 * @param index the index
 	 * @return the abstract command
 	 */
-	public AbstractCommand remove(int index) {
+	public AbstractCommand remove(final int index) {
 		return sequence.remove(index);
 	}
 
@@ -58,7 +55,7 @@ public class SequenceCommand extends AbstractCommand {
 	 * ParametersInterface)
 	 */
 	@Override
-	public ResultInterface execute(ParametersInterface commandParameters) {
+	public ResultInterface execute(final ParametersInterface commandParameters) {
 		result = new Result();
 		for (final AbstractCommand command : sequence) {
 			final ResultInterface newResult = command.execute(commandParameters);
@@ -74,7 +71,7 @@ public class SequenceCommand extends AbstractCommand {
 	 * ParametersInterface)
 	 */
 	@Override
-	public ResultInterface undo(ParametersInterface commandParameters) {
+	public ResultInterface undo(final ParametersInterface commandParameters) {
 		for (final AbstractCommand command : sequence) {
 			result = command.execute(commandParameters);
 		}

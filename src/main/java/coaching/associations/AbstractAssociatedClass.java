@@ -21,7 +21,7 @@ public abstract class AbstractAssociatedClass {
 	 * execute.
 	 */
 	public void execute() {
-		this.log.info("{}.execute", this.getClass().getName());
+		log.info("{}.execute", this.getClass().getName());
 	}
 
 	/*

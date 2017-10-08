@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import static org.junit.Assert.assertNotNull;

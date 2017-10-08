@@ -1,6 +1,4 @@
 
-
-
 package coaching.rules;
 
 import java.util.Properties;

@@ -1,6 +1,4 @@
 
-
-
 package coaching.model;
 
 import org.slf4j.*;
@@ -39,7 +37,7 @@ public abstract class AbstractEngine implements FuelInterface {
 	 */
 	@Override
 	public String toString() {
-		return "Engine [fuel=" + this.fuel + "]";
+		return "Engine [fuel=" + fuel + "]";
 	}
 
 }

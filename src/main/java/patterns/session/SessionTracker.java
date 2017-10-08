@@ -1,6 +1,4 @@
 
-
-
 package patterns.session;
 
 import java.util.ArrayList;

@@ -1,6 +1,4 @@
 
-
-
 package patterns.mvc.controller;
 
 /**

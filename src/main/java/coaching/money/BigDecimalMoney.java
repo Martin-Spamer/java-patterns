@@ -201,7 +201,7 @@ public final class BigDecimalMoney {
 	 * @return the currency
 	 */
 	public Currency getCurrency() {
-		return this.currency;
+		return currency;
 	}
 
 	/**
@@ -210,7 +210,7 @@ public final class BigDecimalMoney {
 	 * @return the currency code
 	 */
 	public String getCurrencyCode() {
-		return this.currency.getCurrencyCode();
+		return currency.getCurrencyCode();
 	}
 
 	/**
@@ -219,7 +219,7 @@ public final class BigDecimalMoney {
 	 * @return the symbol
 	 */
 	public String getSymbol() {
-		return this.currency.getSymbol();
+		return currency.getSymbol();
 	}
 
 	/**
@@ -228,7 +228,7 @@ public final class BigDecimalMoney {
 	 * @return the display name
 	 */
 	public String getDisplayName() {
-		return this.currency.getDisplayName();
+		return currency.getDisplayName();
 	}
 
 	/**
@@ -237,7 +237,7 @@ public final class BigDecimalMoney {
 	 * @return the amount
 	 */
 	public Long getAmount() {
-		return this.amount.longValue();
+		return amount.longValue();
 	}
 
 	/**
@@ -246,7 +246,7 @@ public final class BigDecimalMoney {
 	 * @return the long
 	 */
 	public long asLong() {
-		return this.amount.longValue();
+		return amount.longValue();
 	}
 
 	/**
@@ -255,7 +255,7 @@ public final class BigDecimalMoney {
 	 * @return the big decimal
 	 */
 	private BigDecimal asBigDecimal() {
-		return this.amount;
+		return amount;
 	}
 
 	/**
@@ -299,7 +299,7 @@ public final class BigDecimalMoney {
 	@Override
 	public String toString() {
 		final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-		final String currencyString = numberFormat.format(this.amount);
+		final String currencyString = numberFormat.format(amount);
 		return String.format("%s", currencyString);
 	}
 

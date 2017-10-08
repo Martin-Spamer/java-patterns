@@ -1,6 +1,4 @@
 
-
-
 package patterns.mvc.controller;
 
 /**
@@ -20,7 +18,7 @@ public class Result implements ResultInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.mvc.controller.ResultInterface#updateResult(patterns.mvc.
 	 * controller.ResultInterface)
 	 */

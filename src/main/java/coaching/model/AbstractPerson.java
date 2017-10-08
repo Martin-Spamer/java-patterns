@@ -17,7 +17,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 * Instantiates a new person.
 	 */
 	public AbstractPerson() {
-		this.name = "";
+		name = "";
 	}
 
 	/**
@@ -47,7 +47,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	/*
@@ -57,7 +57,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Person [name=%s]", this.name);
+		return String.format("Person [name=%s]", name);
 	}
 
 }

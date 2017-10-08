@@ -1,7 +1,4 @@
 
-
-
-
 package patterns.command;
 
 /**
@@ -16,7 +13,7 @@ public abstract class AbstractPredicate implements CommandInterface {
 	 * ParametersInterface)
 	 */
 	@Override
-	public abstract ResultInterface execute(ParametersInterface commandParameters);
+	public abstract ResultInterface execute(final ParametersInterface commandParameters);
 
 	/*
 	 * (non-Javadoc)
@@ -25,7 +22,7 @@ public abstract class AbstractPredicate implements CommandInterface {
 	 * ParametersInterface)
 	 */
 	@Override
-	public abstract ResultInterface undo(ParametersInterface commandParameters);
+	public abstract ResultInterface undo(final ParametersInterface commandParameters);
 
 	/*
 	 * (non-Javadoc)

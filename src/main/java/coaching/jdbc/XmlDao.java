@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import java.sql.*;
@@ -36,8 +35,8 @@ public final class XmlDao extends AbstractDataAccessObject {
 	public String toXmlString() {
 		try {
 			read(SQL);
-			final String xmlString = toXmlString(this.resultSet);
-			this.resultSet.close();
+			final String xmlString = toXmlString(resultSet);
+			resultSet.close();
 			return xmlString;
 		} catch (final SQLException e) {
 			log.error("{}", e.toString());
@@ -53,8 +52,8 @@ public final class XmlDao extends AbstractDataAccessObject {
 	public Document toXmlDocument() {
 		try {
 			read(SQL);
-			final Document xmlDocument = toXmlDocument(this.resultSet);
-			this.resultSet.close();
+			final Document xmlDocument = toXmlDocument(resultSet);
+			resultSet.close();
 			return xmlDocument;
 		} catch (final SQLException e) {
 			log.error("{}", e.toString());

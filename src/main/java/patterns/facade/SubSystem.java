@@ -1,6 +1,4 @@
 
-
-
 package patterns.facade;
 
 import org.slf4j.*;

@@ -1,6 +1,4 @@
 
-
-
 package patterns.factory;
 
 /**

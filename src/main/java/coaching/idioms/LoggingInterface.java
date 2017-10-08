@@ -1,6 +1,4 @@
 
-
-
 package coaching.idioms;
 
 import org.slf4j.Logger;

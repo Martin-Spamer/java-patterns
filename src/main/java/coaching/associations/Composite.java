@@ -29,10 +29,10 @@ public class Composite {
 	 */
 	public Composite() {
 		super();
-		this.elementAlice = new Alice();
-		this.elementBob = new Bob();
-		this.elementCharlie = new Charlie();
-		this.elementDan = new Dan();
+		elementAlice = new Alice();
+		elementBob = new Bob();
+		elementCharlie = new Charlie();
+		elementDan = new Dan();
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class Composite {
 	@Override
 	public String toString() {
 		return String.format("Composite [elementAlice=%s, elementBob=%s, elementCharlie=%s, elementDan=%s]",
-		        this.elementAlice, this.elementBob, this.elementCharlie, this.elementDan);
+		        elementAlice, elementBob, elementCharlie, elementDan);
 	}
 
 }

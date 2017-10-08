@@ -1,7 +1,4 @@
 
-
-
-
 package patterns.command;
 
 /**
@@ -18,7 +15,7 @@ public class ConditionalCommand extends AbstractCommand {
 	 * ParametersInterface)
 	 */
 	@Override
-	public ResultInterface execute(ParametersInterface commandParameters) {
+	public ResultInterface execute(final ParametersInterface commandParameters) {
 		if (predicate()) {
 			return super.execute(commandParameters);
 		}
@@ -32,7 +29,7 @@ public class ConditionalCommand extends AbstractCommand {
 	 * ParametersInterface)
 	 */
 	@Override
-	public ResultInterface undo(ParametersInterface commandParameters) {
+	public ResultInterface undo(final ParametersInterface commandParameters) {
 		return super.execute(commandParameters);
 	}
 

@@ -44,7 +44,7 @@ public class ConnectionFactory {
 		try {
 			Class.forName(driverClassName);
 		} catch (final ClassNotFoundException e) {
-			this.log.error("{}", e.toString());
+			log.error("{}", e.toString());
 		}
 	}
 
@@ -56,9 +56,9 @@ public class ConnectionFactory {
 	public Connection getConnection() {
 		Connection connection = null;
 		try {
-			connection = DriverManager.getConnection(this.connectionUrl, this.username, this.password);
+			connection = DriverManager.getConnection(connectionUrl, username, password);
 		} catch (final Exception e) {
-			this.log.error("{}", e.toString());
+			log.error("{}", e.toString());
 		}
 		return connection;
 	}

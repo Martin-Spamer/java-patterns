@@ -56,34 +56,34 @@ public class ObjectTypes {
 	 */
 	public void display() {
 		// display them all
-		this.log.info("largest byte value : {}", this.largestByte);
-		this.log.info("smallest byte value : {}", this.smallestByte);
+		log.info("largest byte value : {}", largestByte);
+		log.info("smallest byte value : {}", smallestByte);
 
-		this.log.info("largest short value is {}", this.largestShort);
-		this.log.info("smallest short value is {}", this.smallestShort);
+		log.info("largest short value is {}", largestShort);
+		log.info("smallest short value is {}", smallestShort);
 
-		this.log.info("largest integer value is {}", this.largestInteger);
-		this.log.info("smallest integer value is {}", this.smallestInteger);
+		log.info("largest integer value is {}", largestInteger);
+		log.info("smallest integer value is {}", smallestInteger);
 
-		this.log.info("largest long value is {}", this.largestLong);
-		this.log.info("smallest long value is {}", this.smallesttLong);
+		log.info("largest long value is {}", largestLong);
+		log.info("smallest long value is {}", smallesttLong);
 
-		this.log.info("largest float value is {}", this.largestFloat);
-		this.log.info("smallest float value is {}", this.smallestFloat);
+		log.info("largest float value is {}", largestFloat);
+		log.info("smallest float value is {}", smallestFloat);
 
-		this.log.info("largest double value is {}", this.largestDouble);
-		this.log.info("smallest double value is {}", this.smallestDouble);
+		log.info("largest double value is {}", largestDouble);
+		log.info("smallest double value is {}", smallestDouble);
 
-		if (Character.isUpperCase(this.aChar)) {
-			this.log.info("The character {} is upper case.", this.aChar);
+		if (Character.isUpperCase(aChar)) {
+			log.info("The character {} is upper case.", aChar);
 		}
 
-		if (this.aTrueBoolean) {
-			this.log.info("aBooleanTrue has tested as true : {}", this.aTrueBoolean);
+		if (aTrueBoolean) {
+			log.info("aBooleanTrue has tested as true : {}", aTrueBoolean);
 		}
 
-		if (!this.aFalseBoolean) {
-			this.log.info("aBooleanFalse has tested as true : {}", this.aFalseBoolean);
+		if (!aFalseBoolean) {
+			log.info("aBooleanFalse has tested as true : {}", aFalseBoolean);
 		}
 	}
 }

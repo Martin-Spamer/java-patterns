@@ -43,7 +43,7 @@ public class CsvToJdbc {
 	 * @return the column headers
 	 */
 	private String getColumnHeaders() {
-		return this.csvFile.getColumnNames();
+		return csvFile.getColumnNames();
 	}
 
 	/**
@@ -64,10 +64,10 @@ public class CsvToJdbc {
 			try {
 				return DriverManager.getConnection(url, user, password);
 			} catch (final SQLException e) {
-				this.log.error("{}", e);
+				log.error("{}", e);
 			}
 		} catch (final ClassNotFoundException e) {
-			this.log.error("{}", e);
+			log.error("{}", e);
 		}
 		return null;
 	}
@@ -87,7 +87,7 @@ public class CsvToJdbc {
 	 * Process.
 	 */
 	public void process() {
-		process(this.driver, this.url, this.username, this.password, "tableName");
+		process(driver, url, username, password, "tableName");
 	}
 
 	/**
@@ -106,14 +106,14 @@ public class CsvToJdbc {
 	        final String table) {
 		makeJdbcConnection(driver, url, user, password);
 		try {
-			this.csvFile = new CsvFile(this.filename);
-			for (int index = 0; index < this.csvFile.size(); index++) {
-				final CsvRecord record = this.csvFile.getRecord(index);
-				this.log.info(record.toString());
+			csvFile = new CsvFile(filename);
+			for (int index = 0; index < csvFile.size(); index++) {
+				final CsvRecord record = csvFile.getRecord(index);
+				log.info(record.toString());
 				write(record);
 			}
 		} catch (final SQLException e) {
-			this.log.error("{}", e);
+			log.error("{}", e);
 		}
 	}
 
@@ -206,21 +206,21 @@ public class CsvToJdbc {
 		// from (%value%,...)
 		final StringBuffer sql = new StringBuffer();
 		sql.append("insert into ");
-		sql.append(this.tableName);
+		sql.append(tableName);
 		sql.append(getColumnHeaders());
 		sql.append(" VALUES ");
 		sql.append(record.toString());
-		this.log.info(sql.toString());
+		log.info(sql.toString());
 
-		final Connection connection = DriverManager.getConnection(this.url, this.username, this.password);
+		final Connection connection = DriverManager.getConnection(url, username, password);
 		final Statement statement = makeStatement(connection);
 		if (statement.execute(sql.toString())) {
-			this.log.info("ok {}", statement.getResultSet().toString());
+			log.info("ok {}", statement.getResultSet().toString());
 		} else {
 			if (statement.getUpdateCount() == 1) {
-				this.log.info("ok {}", statement.getResultSet().toString());
+				log.info("ok {}", statement.getResultSet().toString());
 			} else {
-				this.log.info("failed {}", statement.getWarnings());
+				log.info("failed {}", statement.getWarnings());
 			}
 		}
 	}

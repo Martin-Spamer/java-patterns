@@ -2,7 +2,7 @@
 package coaching.jdbc;
 
 /**
- * class MySqlDao.
+ * MySqlDao class.
  */
 public class MySqlDao extends AbstractDataAccessObject {
 

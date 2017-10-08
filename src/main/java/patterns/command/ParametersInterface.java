@@ -1,7 +1,4 @@
 
-
-
-
 package patterns.command;
 
 import java.util.Set;

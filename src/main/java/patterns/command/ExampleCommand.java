@@ -1,11 +1,8 @@
 
-
-
-
 package patterns.command;
 
 /**
- * ExampleCommand Class.
+ * Example Command Class.
  */
 public class ExampleCommand extends AbstractCommand {
 
@@ -16,7 +13,7 @@ public class ExampleCommand extends AbstractCommand {
 	 * ParametersInterface)
 	 */
 	@Override
-	public ResultInterface execute(ParametersInterface commandParameters) {
+	public ResultInterface execute(final ParametersInterface commandParameters) {
 		return super.execute(commandParameters);
 	}
 
@@ -27,7 +24,7 @@ public class ExampleCommand extends AbstractCommand {
 	 * ParametersInterface)
 	 */
 	@Override
-	public ResultInterface undo(ParametersInterface commandParameters) {
+	public ResultInterface undo(final ParametersInterface commandParameters) {
 		return super.undo(commandParameters);
 	}
 

@@ -43,7 +43,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	        final String username,
 	        final String password) {
 		this(driverClassName);
-		this.connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
+		connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		Connection connection = null;
 		Statement statement = null;
 		try {
-			connection = this.connectionFactory.getConnection();
+			connection = connectionFactory.getConnection();
 			statement = connection.createStatement();
 			final ResultSet resultSet = statement.executeQuery(sql);
 
@@ -90,8 +90,8 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 			log.error("{}", exception.toString());
 		} finally {
 			try {
-				if (this.resultSet != null) {
-					this.resultSet.close();
+				if (resultSet != null) {
+					resultSet.close();
 				}
 			} catch (final Exception e) {
 				log.error("{}", e);
@@ -196,7 +196,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		try {
-			connection = this.connectionFactory.getConnection();
+			connection = connectionFactory.getConnection();
 			preparedStatement = connection.prepareStatement(sql);
 			final int result = preparedStatement.executeUpdate();
 			log.info("Rows updated: {}", result);

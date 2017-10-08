@@ -20,7 +20,7 @@ public final class AggregateClassArray {
 	private static final Logger log = LoggerFactory.getLogger(AggregateClassArray.class);
 
 	// Implement an Aggregate using a Array of classes.
-	private AbstractAssociatedClass[] aggregate = new AbstractAssociatedClass[4];
+	private final AbstractAssociatedClass[] aggregate = new AbstractAssociatedClass[4];
 
 	/**
 	 * Sets the aggregate.
@@ -30,7 +30,7 @@ public final class AggregateClassArray {
 	 */
 	public void setAggregate(final int index, final AbstractAssociatedClass element) {
 		log.info("{}.execute", this.getClass().getName());
-		this.aggregate[index] = element;
+		aggregate[index] = element;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public final class AggregateClassArray {
 	 */
 	public AbstractAssociatedClass getAggregate(final int index) {
 		log.info("{}.execute", this.getClass().getName());
-		return this.aggregate[index];
+		return aggregate[index];
 	}
 
 	/*
@@ -51,7 +51,7 @@ public final class AggregateClassArray {
 	 */
 	@Override
 	public String toString() {
-		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(this.aggregate));
+		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(aggregate));
 	}
 
 }

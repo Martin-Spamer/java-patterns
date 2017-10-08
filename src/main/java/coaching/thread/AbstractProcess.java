@@ -24,16 +24,16 @@ public abstract class AbstractProcess implements Runnable {
 	 * AbstractProcess.
 	 */
 	public AbstractProcess() {
-		this.log.info("AbstractProcess()", this.getClass().getSimpleName());
-		this.thread = new Thread(this);
+		log.info("AbstractProcess()", this.getClass().getSimpleName());
+		thread = new Thread(this);
 	}
 
 	/**
 	 * Start the thread running.
 	 */
 	public void start() {
-		this.log.info("{}.start()", this.getClass().getSimpleName());
-		this.thread.start();
+		log.info("{}.start()", this.getClass().getSimpleName());
+		thread.start();
 	}
 
 	/**
@@ -42,7 +42,7 @@ public abstract class AbstractProcess implements Runnable {
 	 */
 	@Override
 	public void run() {
-		this.log.info("{}.run", this.getClass().getSimpleName());
+		log.info("{}.run", this.getClass().getSimpleName());
 		try {
 			do {
 				// A Run method MUST have either a sleep or yield to prevent deadlock.
@@ -55,25 +55,25 @@ public abstract class AbstractProcess implements Runnable {
 
 				// Thread ends if it runs more than a ten times.
 				// alternatively I could throw a new InterruptedException
-				this.tick++;
-				if (this.tick >= 10) {
-					this.exit = true;
+				tick++;
+				if (tick >= 10) {
+					exit = true;
 				}
 
-				this.log.info("tick={}", this.tick);
-			} while (!this.exit);
+				log.info("tick={}", tick);
+			} while (!exit);
 
 		} catch (final InterruptedException exception) {
-			this.log.error("{}", exception.toString());
+			log.error("{}", exception.toString());
 		}
-		this.log.info("{}.ending", this.getClass().getSimpleName());
+		log.info("{}.ending", this.getClass().getSimpleName());
 	}
 
 	/**
 	 * Stop the thread running.
 	 */
 	public void stop() {
-		this.log.info("{}.stop()", this.getClass().getSimpleName());
-		this.exit = true;
+		log.info("{}.stop()", this.getClass().getSimpleName());
+		exit = true;
 	}
 }

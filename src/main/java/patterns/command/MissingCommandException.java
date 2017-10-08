@@ -1,7 +1,4 @@
 
-
-
-
 package patterns.command;
 
 /**
@@ -17,7 +14,7 @@ public class MissingCommandException extends Exception {
 	 *
 	 * @param message the message
 	 */
-	public MissingCommandException(String message) {
+	public MissingCommandException(final String message) {
 		super(message);
 	}
 

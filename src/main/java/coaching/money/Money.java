@@ -1,6 +1,4 @@
 
-
-
 package coaching.money;
 
 import java.util.Currency;
