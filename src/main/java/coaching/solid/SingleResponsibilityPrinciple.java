@@ -1,60 +1,44 @@
 /**
- *  @title       SingleResponsibilityPrinciple.java
- *  @description TODO
- *  @author      martin.spamer.
- *  @version     0.1 - first release.
- *	Created      13-Jan-2005
- *
+ *  @title			SingleResponsibilityPrinciple.java
+ *  @description	A class should have a responsibility pieces of functionality.
+ *  @author			martin.spamer.
+ *  @version		0.1 - first release.
+ *	Created			13-Jan-2005 - 12:05:35
  **/
 
 package coaching.solid;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.slf4j.*;
 
 /**
- * Demonstrate the Single Responsibility Principle.
+ * A class to Demonstrate the Single Responsibility Principle.
  * A class should have a responsibility pieces of functionality.
- * @author martin.spamer
- * @version 0.1 - 12:05:35
  */
 public class SingleResponsibilityPrinciple {
 
 	private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
 	/**
-	 * Foo bar.
+	 * Foo Bar responsibility
 	 */
-	public void fooBar() {
-		LOG.info("fooBar");
-		foo();
-		bar();
+	public void responsibility() {
+		LOG.info("responsibility");
+		fooResponsibility();
+		barResponsibility();
 	}
 
 	/**
-	 * Foo.
+	 * Foo Responsibility.
 	 */
-	private void foo() {
-		LOG.info("foo");
+	private void fooResponsibility() {
+		LOG.info("fooResponsibility");
 	}
 
 	/**
-	 * Bar.
+	 * Bar Responsibility.
 	 */
-	private void bar() {
-		LOG.info("bar");
-	}
-
-	/**
-	 * main method.
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(final String[] args) {
-		final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
-		assertNotNull("Value cannot be null", srp);
-		srp.fooBar();
+	private void barResponsibility() {
+		LOG.info("barResponsibility");
 	}
 
 }

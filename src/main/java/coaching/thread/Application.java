@@ -1,7 +1,7 @@
 /**
- * MainApp.java
+ * Application.java
  *
- * Created on 30 June 2004, 13:07
+ * Created on 30 June 2004 - 13:07
  **/
 
 package coaching.thread;
@@ -20,15 +20,15 @@ import org.w3c.dom.*;
 /**
  * a test harness for Java modules.
  **/
-public class MainApp {
+public class Application {
 
-	private static final Logger LOG = LoggerFactory.getLogger(MainApp.class);
+	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 	private final HashMap<String, AbstractProcess> threadMap = new HashMap<String, AbstractProcess>();
 
 	/**
 	 * Instantiates a new main application.
 	 */
-	public MainApp() {
+	public Application() {
 		super();
 		initialise();
 	}
@@ -93,7 +93,7 @@ public class MainApp {
 					abstractApplicationProcess.start();
 				}
 
-				threadMap.put(nameAttribute, abstractApplicationProcess);
+				this.threadMap.put(nameAttribute, abstractApplicationProcess);
 			}
 		}
 	}
@@ -154,7 +154,7 @@ public class MainApp {
 	 */
 	public static void main(final String[] args) {
 		try {
-			new MainApp();
+			new Application();
 		} catch (final Exception e) {
 			LOG.error("{}", e.toString());
 		}

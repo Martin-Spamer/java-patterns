@@ -17,7 +17,7 @@ public class MainAppTest {
 	 */
 	@Test
 	public void testMainApp() {
-		final MainApp mainApp = new MainApp();
+		final Application mainApp = new Application();
 		assertNotNull("Value cannot be null", mainApp);
 	}
 

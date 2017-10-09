@@ -10,7 +10,7 @@ import org.w3c.dom.*;
 import coaching.jdbc.MySqlDao;
 
 /**
- * XmlToJdbc Class.
+ * Class shows combining Xml and Jdbc responsibilities.
  */
 public class XmlToJdbc extends MySqlDao {
 
@@ -20,7 +20,8 @@ public class XmlToJdbc extends MySqlDao {
 	 * @throws Exception the exception
 	 */
 	public void process() {
-		process("");
+		final String simpleName = String.format("%s.xml", this.getClass().getSimpleName());
+		process(simpleName);
 	}
 
 	/**
@@ -39,7 +40,7 @@ public class XmlToJdbc extends MySqlDao {
 			processTable(document);
 
 		} catch (final Exception exception) {
-			log.error("Failed with {} ", exception);
+			this.log.error("Failed with {} ", exception);
 		}
 	}
 
@@ -47,11 +48,11 @@ public class XmlToJdbc extends MySqlDao {
 	 * Process table.
 	 *
 	 * @param table the table
-	 * @param mainAppConfig the main app config
+	 * @param document the main app config
 	 */
-	protected void processTable(final Document mainAppConfig) {
+	protected void processTable(final Document document) {
 		// * root Document Element
-		final Element tableElement = mainAppConfig.getDocumentElement();
+		final Element tableElement = document.getDocumentElement();
 
 		if (tableElement.getNodeName().equals("TABLE")) {
 			final String tableName = tableElement.getAttribute("NAME");
@@ -83,14 +84,13 @@ public class XmlToJdbc extends MySqlDao {
 			// * fields
 			final NodeList fieldList = rowElement.getElementsByTagName("FIELD");
 
-			final char columnSeperator = ' ';
-			final String fieldNames = fieldNames(fieldList, columnSeperator);
-			final String dataValues = dataValues(fieldList, columnSeperator);
+			final String fieldNames = fieldNames(fieldList);
+			final String dataValues = dataValues(fieldList);
 
 			insertRow(table, fieldNames, dataValues);
 
 		} catch (final Exception exception) {
-			log.error("Failed with {} ", exception);
+			this.log.error("Failed with {} ", exception);
 		}
 	}
 
@@ -98,17 +98,17 @@ public class XmlToJdbc extends MySqlDao {
 	 * Field names.
 	 *
 	 * @param fieldList the field list
-	 * @param columnSeperator the column seperator
+	 * @param columnSeperator the column separator
 	 * @return the string
 	 */
-	protected String fieldNames(final NodeList fieldList, char columnSeperator) {
+	protected String fieldNames(final NodeList fieldList) {
 		final StringBuffer fieldNames = new StringBuffer();
+		final char columnSeperator = ' ';
 
 		for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
-			log.info("{}", fieldList.item(fieldNo));
+			this.log.info("{}", fieldList.item(fieldNo));
 			final Element fieldElement = (Element) fieldList.item(fieldNo);
 			fieldNames.append(columnSeperator + fieldElement.getAttribute("NAME"));
-			columnSeperator = ',';
 		}
 		return fieldNames.toString();
 	}
@@ -117,17 +117,17 @@ public class XmlToJdbc extends MySqlDao {
 	 * Data values.
 	 *
 	 * @param fieldList the field list
-	 * @param columnSeperator the column seperator
+	 * @param columnSeperator the column separator
 	 * @return the string
 	 */
-	protected String dataValues(final NodeList fieldList, char columnSeperator) {
+	protected String dataValues(final NodeList fieldList) {
 		final StringBuffer dataValues = new StringBuffer();
+		final char columnSeperator = ',';
 
 		for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
-			log.info("{}", fieldList.item(fieldNo));
+			this.log.info("{}", fieldList.item(fieldNo));
 			final Element fieldElement = (Element) fieldList.item(fieldNo);
 			dataValues.append(columnSeperator + "\'" + fieldElement.getChildNodes().item(0).getNodeValue() + "\'");
-			columnSeperator = ',';
 		}
 		return dataValues.toString();
 	}
@@ -147,7 +147,7 @@ public class XmlToJdbc extends MySqlDao {
 		sql.append(String.format(" (%s)", fieldNames.toString()));
 		sql.append(String.format(" VALUES (%s)", dataValues.toString()));
 
-		log.info("{}", sql.toString());
+		this.log.info("{}", sql.toString());
 		super.sql(sql.toString());
 	}
 }

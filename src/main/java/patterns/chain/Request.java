@@ -4,7 +4,7 @@ package patterns.chain;
 /**
  * Request Class.
  */
-public class Request extends AbstractRequest implements RequestInterface {
+public class Request extends AbstractRequest {
 
 	/**
 	 * Instantiates a new request.
@@ -12,6 +12,7 @@ public class Request extends AbstractRequest implements RequestInterface {
 	 * @param payload the payload
 	 */
 	public Request(final String payload) {
+		super();
 		setPayload(payload);
 	}
 

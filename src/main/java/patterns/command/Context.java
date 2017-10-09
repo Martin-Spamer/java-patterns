@@ -4,12 +4,12 @@ package patterns.command;
 /**
  * Context Class.
  */
-public class Context {
+public class Context extends AbstractContext {
 
 	/**
 	 * single instance within classLoader.
 	 */
-	private static Context instance = new Context();
+	private static ContextInterface instance = new Context();
 
 	/**
 	 * Constructor is private to prevent wild construction.
@@ -24,8 +24,11 @@ public class Context {
 	 * @return single instance of Context
 	 *         single instance
 	 */
-	public static Context getInstance() {
+	public static ContextInterface getInstance() {
 		return instance;
 	}
 
+	public static ContextInterface create() {
+		return new Context();
+	}
 }

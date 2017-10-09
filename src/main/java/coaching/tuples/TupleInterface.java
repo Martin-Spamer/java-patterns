@@ -4,9 +4,6 @@ package coaching.tuples;
 /**
  * Tuple Interface.
  *
- * generic type
- * generic type
- *
  * @param <L> the generic type
  * @param <R> the generic type
  */

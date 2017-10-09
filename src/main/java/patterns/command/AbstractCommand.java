@@ -8,7 +8,7 @@ import org.slf4j.*;
  */
 public abstract class AbstractCommand implements CommandInterface {
 
-	private final Context context = Context.getInstance();
+	private final ContextInterface context = Context.getInstance();
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ResultInterface result = null;
 

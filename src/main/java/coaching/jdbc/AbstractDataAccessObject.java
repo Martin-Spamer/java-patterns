@@ -79,9 +79,9 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		try {
 			connection = this.connectionFactory.getConnection();
 			statement = connection.createStatement();
-			final ResultSet resultSet = statement.executeQuery(sql);
+			this.resultSet = statement.executeQuery(sql);
 
-			handleResultSet(resultSet);
+			handleResultSet(this.resultSet);
 
 			this.resultSet.close();
 			statement.close();

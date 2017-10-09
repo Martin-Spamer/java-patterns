@@ -4,7 +4,7 @@ package patterns.singleton;
 /**
  * A factory for creating Singleton objects.
  */
-public class SingletonFactory {
+public final class SingletonFactory {
 
 	private static SingletonFactory instance;
 

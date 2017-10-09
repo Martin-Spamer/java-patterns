@@ -4,7 +4,7 @@ package patterns.chain;
 /**
  * AbstractRequest Class.
  */
-public class AbstractRequest {
+public class AbstractRequest implements RequestInterface {
 
 	private String payload;
 
@@ -14,7 +14,7 @@ public class AbstractRequest {
 	 * @return the payload
 	 */
 	public String getPayload() {
-		return payload;
+		return this.payload;
 	}
 
 	/**
@@ -36,7 +36,7 @@ public class AbstractRequest {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s [payload=%s]", this.getClass().getSimpleName(), payload);
+		return String.format("%s [payload=%s]", this.getClass().getSimpleName(), this.payload);
 	}
 
 }

@@ -2,7 +2,7 @@
 package coaching.tuples;
 
 /**
- * Box class for generic type T.
+ * Example of Boxing class for the generic type T.
  *
  * Boxing is an effective way of adapting the behaviour of a type.
  *

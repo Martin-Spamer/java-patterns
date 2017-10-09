@@ -37,7 +37,7 @@ public class ObjectTypesArray {
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
 			values[i] = Long.valueOf(i * 100);
-			log.info("{}){}", i, values[i]);
+			this.log.info("{}){}", i, values[i]);
 		}
 	}
 
@@ -65,7 +65,7 @@ public class ObjectTypesArray {
 			stringBuffer.append("\n");
 		}
 
-		log.info("{}", stringBuffer.toString());
+		this.log.info("{}", stringBuffer.toString());
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class ObjectTypesArray {
 	 */
 	public void display() {
 		/**
-		 * array with static data
+		 * array with static data.
 		 */
 		final Long[][] vector = {
 		        {
@@ -94,7 +94,7 @@ public class ObjectTypesArray {
 			}
 			stringBuffer.append("\n");
 		}
-		log.info("{}", stringBuffer.toString());
+		this.log.info("{}", stringBuffer.toString());
 	}
 
 }

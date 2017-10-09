@@ -10,17 +10,6 @@ public final class ConcreteFacade implements FacadeInterface {
 	private final SubSystemTwo subSystemTwo = new SubSystemTwo();
 	private final SubSystemThree subSystemThree = new SubSystemThree();
 
-	/**
-	 * Instantiates a new concrete facade.
-	 */
-	public ConcreteFacade() {
-		super();
-
-		//		this.subSystemOne = new SubSystemOne();
-		//		this.subSystemTwo = new SubSystemTwo();
-		//		this.subSystemThree = new SubSystemThree();
-	}
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -37,21 +26,21 @@ public final class ConcreteFacade implements FacadeInterface {
 	 * Sub system one operation.
 	 */
 	public void subSystemOneOperation() {
-		subSystemOne.operation();
+		this.subSystemOne.operation();
 	}
 
 	/**
 	 * Sub system two operation.
 	 */
 	public void subSystemTwoOperation() {
-		subSystemTwo.operation();
+		this.subSystemTwo.operation();
 	}
 
 	/**
 	 * Sub system three operation.
 	 */
 	public void subSystemThreeOperation() {
-		subSystemThree.operation();
+		this.subSystemThree.operation();
 	}
 
 }

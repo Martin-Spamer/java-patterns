@@ -13,14 +13,4 @@ package coaching.thread;
  */
 public class ProcessBob extends AbstractProcess {
 
-	/**
-	 * main method.
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(final String[] args) {
-		final AbstractProcess process = new ProcessBob();
-		process.start();
-	}
-
 }

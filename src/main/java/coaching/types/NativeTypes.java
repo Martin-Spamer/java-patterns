@@ -5,17 +5,18 @@
  * @version		0.1 - first release.
  * Created			07-Oct-2004 - 09:20:22
  **/
+
 package coaching.types;
 
 import org.slf4j.*;
 
 /**
- * Java Native Types examples.
+ * Examples of Java Native Types.
  */
 public class NativeTypes {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	// integers
+	// integer types
 	private final byte largestByte = Byte.MAX_VALUE;
 	private final byte smallestByte = Byte.MIN_VALUE;
 
@@ -28,7 +29,7 @@ public class NativeTypes {
 	private final long largestLong = Long.MAX_VALUE;
 	private final long smallesttLong = Long.MIN_VALUE;
 
-	// real numbers
+	// real number types
 	private final float largestFloat = Float.MAX_VALUE;
 	private final float smallestFloat = Float.MIN_VALUE;
 
@@ -38,48 +39,42 @@ public class NativeTypes {
 	// other primitive types
 	private final char aChar = 'A';
 
-	private final boolean aTrueBoolean = true;
-	private final boolean aFalseBoolean = false;
+	private final boolean trueBoolean = true;
+	private final boolean falseBoolean = false;
 
 	/**
 	 * Display.
 	 */
 	public void display() {
-		// display them all
-		log.info("largest byte value : {}", largestByte);
-		log.info("smallest byte value : {}", smallestByte);
+		// display all member types.
+		this.log.info("largest byte value : {}", this.largestByte);
+		this.log.info("smallest byte value : {}", this.smallestByte);
 
-		log.info("largest short value is {}", largestShort);
-		log.info("smallest short value is {}", smallestShort);
+		this.log.info("largest short value is {}", this.largestShort);
+		this.log.info("smallest short value is {}", this.smallestShort);
 
-		log.info("largest integer value is {}", largestInteger);
-		log.info("smallest integer value is {}", smallestInteger);
+		this.log.info("largest integer value is {}", this.largestInteger);
+		this.log.info("smallest integer value is {}", this.smallestInteger);
 
-		log.info("largest long value is {}", largestLong);
-		log.info("smallest long value is {}", smallesttLong);
+		this.log.info("largest long value is {}", this.largestLong);
+		this.log.info("smallest long value is {}", this.smallesttLong);
 
-		log.info("largest float value is {}", largestFloat);
-		log.info("smallest float value is {}", smallestFloat);
+		this.log.info("largest float value is {}", this.largestFloat);
+		this.log.info("smallest float value is {}", this.smallestFloat);
 
-		log.info("largest double value is {}", largestDouble);
-		log.info("smallest double value is {}", smallestDouble);
+		this.log.info("largest double value is {}", this.largestDouble);
+		this.log.info("smallest double value is {}", this.smallestDouble);
 
-		if (Character.isUpperCase(aChar)) {
-			log.info("The character {} is upper case.", aChar);
-		} else {
-			log.info("The character {} is lower case.", aChar);
+		if (Character.isUpperCase(this.aChar)) {
+			this.log.info("The character {} is upper case.", this.aChar);
 		}
 
-		if (aTrueBoolean) {
-			log.info("aBooleanTrue has tested as true : ", aTrueBoolean);
-		} else {
-			log.info("aBooleanTrue has tested as false : ", aTrueBoolean);
+		if (this.trueBoolean) {
+			this.log.info("aBooleanTrue has tested as true value : ", this.trueBoolean);
 		}
 
-		if (!aFalseBoolean) {
-			log.info("aFalseBoolean has tested as true : {}", aFalseBoolean);
-		} else {
-			log.info("aFalseBoolean has tested as false : {}", aFalseBoolean);
+		if (this.falseBoolean == false) {
+			this.log.info("aFalseBoolean has tested as false value : {}", this.falseBoolean);
 		}
 	}
 }

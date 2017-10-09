@@ -27,8 +27,8 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * Instantiates a new tuple.
 	 *
-	 * @param left the left
-	 * @param right the right
+	 * @param left the generic type <L>
+	 * @param right the generic type <R>
 	 */
 	public Tuple(final L left, final R right) {
 		super();
@@ -41,10 +41,8 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	 *
 	 * new instance of tuple
 	 *
-	 * @param <L> the generic type
-	 * @param <R> the generic type
-	 * @param left the left
-	 * @param right the right
+	 * @param left the generic type <L>
+	 * @param right the generic type <R>
 	 * @return the tuple interface
 	 */
 	public static <L, R> TupleInterface<L, R> pair(final L left, final R right) {

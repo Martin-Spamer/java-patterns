@@ -13,13 +13,4 @@ package coaching.thread;
  */
 public class ProcessAlice extends AbstractProcess {
 
-	/**
-	 * main method.
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(final String[] args) {
-		final AbstractProcess process = new ProcessAlice();
-		process.start();
-	}
 }

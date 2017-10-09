@@ -1,9 +1,9 @@
 /**
- *  @title       PrimativeArray.java
- *  @description Example code of arrays of primitive types
- *  @author      martin.spamer.
- *  @version     0.1 - first release.
- *	Created      23-Sep-2004 - 11:25:50
+ *  @title			NativeTypesArray.java
+ *  @description	Example code of arrays of primitive types
+ *  @author			martin.spamer.
+ *  @version		0.1 - first release.
+ *	Created			23-Sep-2004 - 11:25:50
  **/
 
 package coaching.arrays;
@@ -11,9 +11,9 @@ package coaching.arrays;
 import org.slf4j.*;
 
 /**
- * Example code of arrays of primitive types.
+ * Example code of arrays of native/primitive types.
  **/
-public class PrimitivesArray {
+public class NativeTypesArray {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private static final int ARRAY_SIZE = 10;
@@ -38,7 +38,7 @@ public class PrimitivesArray {
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
 			values[i] = i * 100;
-			log.info(i + "=" + values[i]);
+			this.log.info(i + "=" + values[i]);
 		}
 	}
 
@@ -67,7 +67,7 @@ public class PrimitivesArray {
 			stringBuffer.append("\n");
 		}
 
-		log.info("{}", stringBuffer.toString());
+		this.log.info("{}", stringBuffer.toString());
 
 	}
 
@@ -76,7 +76,7 @@ public class PrimitivesArray {
 	 */
 	public void display() {
 		/**
-		 * array with static data initialisation
+		 * array with static data initialisation.
 		 */
 		final long[][] vector = {
 		        {
@@ -97,7 +97,7 @@ public class PrimitivesArray {
 			}
 			stringBuffer.append("\n");
 		}
-		log.info("{}", stringBuffer.toString());
+		this.log.info("{}", stringBuffer.toString());
 	}
 
 }
