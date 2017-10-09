@@ -1,7 +1,7 @@
 
 package patterns.builder;
 
-import java.util.Vector;
+import java.util.*;
 
 import org.slf4j.*;
 
@@ -10,7 +10,7 @@ import org.slf4j.*;
  */
 public class Director {
 	private static final Logger LOG = LoggerFactory.getLogger(Director.class);
-	private final Vector<AbstractBuilder> builders = new Vector<AbstractBuilder>();
+	private final List<AbstractBuilder> builders = new Vector<AbstractBuilder>();
 
 	/**
 	 * Adds part builder.
@@ -19,7 +19,7 @@ public class Director {
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean add(final AbstractBuilder builder) {
-		return builders.add(builder);
+		return this.builders.add(builder);
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class Director {
 	 * Construct Product.
 	 */
 	public void buildAll() {
-		for (final BuilderInterface builder : builders) {
+		for (final BuilderInterface builder : this.builders) {
 			final Part part = builder.build();
 			LOG.info("part={}", part);
 		}

@@ -19,6 +19,7 @@ public class ElementMapper {
 	 * Instantiates a new element mapper.
 	 */
 	public ElementMapper() {
+		super();
 	}
 
 	/**

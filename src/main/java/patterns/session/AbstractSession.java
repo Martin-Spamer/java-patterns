@@ -12,13 +12,6 @@ public abstract class AbstractSession {
 	protected String token;
 
 	/**
-	 * Instantiates a new abstract session.
-	 */
-	public AbstractSession() {
-		super();
-	}
-
-	/**
 	 * Sets the uuid.
 	 *
 	 * @param uuid the uuid to set

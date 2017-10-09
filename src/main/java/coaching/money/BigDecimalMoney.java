@@ -16,13 +16,13 @@ import java.util.*;
 public final class BigDecimalMoney {
 
 	private Currency currency = Currency.getInstance(Locale.getDefault());
-	private BigDecimal amount = new BigDecimal(0);
+	private BigDecimal amount = BigDecimal.ZERO;
 
 	/**
 	 * Instantiates a new money instance.
 	 */
 	public BigDecimalMoney() {
-		this(0L);
+		super();
 	}
 
 	/**
@@ -81,7 +81,7 @@ public final class BigDecimalMoney {
 	 * @param currency the currency
 	 */
 	public BigDecimalMoney(final Currency currency) {
-		this(currency, new BigDecimal(0));
+		this(currency, BigDecimal.ZERO);
 	}
 
 	/**
@@ -201,7 +201,7 @@ public final class BigDecimalMoney {
 	 * @return the currency
 	 */
 	public Currency getCurrency() {
-		return currency;
+		return this.currency;
 	}
 
 	/**
@@ -210,7 +210,7 @@ public final class BigDecimalMoney {
 	 * @return the currency code
 	 */
 	public String getCurrencyCode() {
-		return currency.getCurrencyCode();
+		return this.currency.getCurrencyCode();
 	}
 
 	/**
@@ -219,7 +219,7 @@ public final class BigDecimalMoney {
 	 * @return the symbol
 	 */
 	public String getSymbol() {
-		return currency.getSymbol();
+		return this.currency.getSymbol();
 	}
 
 	/**
@@ -228,7 +228,7 @@ public final class BigDecimalMoney {
 	 * @return the display name
 	 */
 	public String getDisplayName() {
-		return currency.getDisplayName();
+		return this.currency.getDisplayName();
 	}
 
 	/**
@@ -237,7 +237,7 @@ public final class BigDecimalMoney {
 	 * @return the amount
 	 */
 	public Long getAmount() {
-		return amount.longValue();
+		return this.amount.longValue();
 	}
 
 	/**
@@ -246,7 +246,7 @@ public final class BigDecimalMoney {
 	 * @return the long
 	 */
 	public long asLong() {
-		return amount.longValue();
+		return this.amount.longValue();
 	}
 
 	/**
@@ -255,7 +255,7 @@ public final class BigDecimalMoney {
 	 * @return the big decimal
 	 */
 	private BigDecimal asBigDecimal() {
-		return amount;
+		return this.amount;
 	}
 
 	/**
@@ -299,7 +299,7 @@ public final class BigDecimalMoney {
 	@Override
 	public String toString() {
 		final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-		final String currencyString = numberFormat.format(amount);
+		final String currencyString = numberFormat.format(this.amount);
 		return String.format("%s", currencyString);
 	}
 

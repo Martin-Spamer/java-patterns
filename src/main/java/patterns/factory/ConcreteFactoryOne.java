@@ -12,8 +12,8 @@ class ConcreteFactoryOne extends AbstractFactory {
 	 * @see patterns.factory.AbstractFactory#createProductA()
 	 */
 	@Override
-	public AbstractProductA createProductA() {
-		return new ConcreteProductA1();
+	public AbstractProductAlpha createProductA() {
+		return new ConcreteProductAlphaOne();
 	}
 
 	/*
@@ -22,8 +22,8 @@ class ConcreteFactoryOne extends AbstractFactory {
 	 * @see patterns.factory.AbstractFactory#createProductB()
 	 */
 	@Override
-	public AbstractProductB createProductB() {
-		return new ConcreteProductB1();
+	public AbstractProductBeta createProductB() {
+		return new ConcreteProductBetaOne();
 	}
 
 }

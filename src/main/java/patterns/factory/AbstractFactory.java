@@ -16,7 +16,7 @@ public abstract class AbstractFactory implements FactoryInterface {
 	 * @see patterns.factory.FactoryInterface#createProductA()
 	 */
 	@Override
-	public abstract AbstractProductA createProductA();
+	public abstract AbstractProductAlpha createProductA();
 
 	/*
 	 * (non-Javadoc)
@@ -24,6 +24,6 @@ public abstract class AbstractFactory implements FactoryInterface {
 	 * @see patterns.factory.FactoryInterface#createProductB()
 	 */
 	@Override
-	public abstract AbstractProductB createProductB();
+	public abstract AbstractProductBeta createProductB();
 
 }

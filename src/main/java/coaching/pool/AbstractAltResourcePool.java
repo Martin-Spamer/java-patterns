@@ -1,7 +1,7 @@
 /**
- *  @title       AbstractResourcePool.java
- *  @description TODO
- *	Created      28-Oct-2004
+ *  @title			AbstractResourcePool.java
+ *  @description	TODO
+ *	Created			28-Oct-2004
  **/
 
 package coaching.pool;
@@ -22,23 +22,8 @@ public abstract class AbstractAltResourcePool<T> {
 	protected int maxPoolSize = Integer.MAX_VALUE;
 	protected int defaultPoolSize = Integer.MAX_VALUE;
 	protected int minPoolSize = Integer.MIN_VALUE;
-	protected Stack<T> freePool = null;
-	protected HashSet<T> usedPool = null;
-
-	/**
-	 * Instantiates a new abstract resource pool.
-	 *
-	 * @throws ResourcePoolCreationException the resource pool creation
-	 *             exception
-	 */
-	public AbstractAltResourcePool() throws ResourcePoolCreationException {
-		try {
-			this.freePool = new Stack<>();
-			this.usedPool = new HashSet<>();
-		} catch (final Exception exception) {
-			throw new ResourcePoolCreationException(exception);
-		}
-	}
+	protected Stack<T> freePool = new Stack<T>();
+	protected Set<T> usedPool = new HashSet<T>();
 
 	/**
 	 * Borrow resource from pool.

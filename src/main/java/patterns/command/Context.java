@@ -9,7 +9,7 @@ public class Context extends AbstractContext {
 	/**
 	 * single instance within classLoader.
 	 */
-	private static ContextInterface instance = new Context();
+	private static ContextInterface instance;
 
 	/**
 	 * Constructor is private to prevent wild construction.
@@ -25,10 +25,14 @@ public class Context extends AbstractContext {
 	 *         single instance
 	 */
 	public static ContextInterface getInstance() {
+		if (instance == null) {
+			instance = Context.create();
+		}
 		return instance;
 	}
 
 	public static ContextInterface create() {
-		return new Context();
+		final ContextInterface context = new Context();
+		return context;
 	}
 }
