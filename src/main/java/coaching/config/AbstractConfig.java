@@ -34,14 +34,12 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * configuration from XML filename.
 	 *
-	 * configuration filename
-	 *
 	 * @param configFilename the Configuration filename
 	 */
 	protected void loadFromFilename(final String configFilename) {
 		final String propertyFilename = toPropertyFilename(configFilename);
 		loadFromResourceStream(inputStream(propertyFilename));
-		properties.setProperty("propertyFilename", propertyFilename);
+		this.properties.setProperty("propertyFilename", propertyFilename);
 	}
 
 	/**
@@ -55,7 +53,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	}
 
 	/**
-	 * Input stream.
+	 * Input stream from a resource filename.
 	 *
 	 * @param resourceName the resource name
 	 * @return the input stream
@@ -74,9 +72,9 @@ public abstract class AbstractConfig implements ConfigInterface {
 	protected void loadFromResourceStream(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
 			try {
-				properties.load(resourceAsStream);
+				this.properties.load(resourceAsStream);
 			} catch (final IOException e) {
-				log.error(e.toString());
+				this.log.error(e.toString());
 			}
 		}
 	}
@@ -90,9 +88,9 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key) {
 		String value = System.getProperty(key);
 		if (value == null) {
-			value = properties.getProperty(key);
+			value = this.properties.getProperty(key);
 		}
-		log.trace("{}={}", key, value);
+		this.log.trace("{}={}", key, value);
 		return value;
 	}
 
@@ -106,14 +104,14 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String getProperty(final String key, final String defaultValue) {
 		String value = System.getProperty(key);
 		if (value == null) {
-			value = properties.getProperty(key, defaultValue);
+			value = this.properties.getProperty(key, defaultValue);
 		}
-		log.trace("{}={}", key, value);
+		this.log.trace("{}={}", key, value);
 		return value;
 	}
 
 	/**
-	 * Value for.
+	 * Value for key.
 	 *
 	 * @param key the key
 	 * @return the string
@@ -121,13 +119,13 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String valueFor(final String key) {
 		final String property = System.getProperty(key);
 		if (property == null) {
-			return properties.getProperty(key);
+			return this.properties.getProperty(key);
 		}
 		return property;
 	}
 
 	/**
-	 * Value for.
+	 * Value for key.
 	 *
 	 * @param key the key
 	 * @param defaultValue the default value
@@ -136,7 +134,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	public String valueFor(final String key, final String defaultValue) {
 		final String property = System.getProperty(key);
 		if (property == null) {
-			return properties.getProperty(key, defaultValue);
+			return this.properties.getProperty(key, defaultValue);
 		}
 		return property;
 	}
@@ -148,7 +146,7 @@ public abstract class AbstractConfig implements ConfigInterface {
 	 */
 	@Override
 	public String toString() {
-		final String prettyProperties = prettyProperties(properties);
+		final String prettyProperties = prettyProperties(this.properties);
 		return String.format("properties = %s", prettyProperties);
 	}
 

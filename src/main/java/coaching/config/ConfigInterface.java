@@ -3,8 +3,6 @@
  *
  * Created on 06 May 2006, 14:39
  *
- * To change this template, choose Tools | Template Manager
- * editor.
  */
 
 package coaching.config;
