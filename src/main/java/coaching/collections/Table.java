@@ -1,11 +1,17 @@
 
 package coaching.collections;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
+
+import org.slf4j.*;
 
 /**
- * class Table.
+ * Table class.
  */
 public class Table {
-	private final ArrayList<TableRow> rows = new ArrayList<TableRow>();
+
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+	private final LinkedHashMap<String, TableRow> rows = new LinkedHashMap<String, TableRow>();
+
 }
