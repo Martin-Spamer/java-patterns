@@ -1,14 +1,14 @@
 
 package patterns.session;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * SessionTracker Class.
  */
 public class SessionTracker {
 
-	private final ArrayList<Session> sessions = new ArrayList<Session>();
+	private final List<Session> sessions = new ArrayList<Session>();
 
 	/**
 	 * create a new Session.
@@ -17,7 +17,7 @@ public class SessionTracker {
 	 */
 	public AbstractSession createSession() {
 		final Session session = new Session();
-		sessions.add(session);
+		this.sessions.add(session);
 		return session;
 	}
 
@@ -27,7 +27,7 @@ public class SessionTracker {
 	 * @param session the session
 	 */
 	public void destroySession(final AbstractSession session) {
-		sessions.remove(session);
+		this.sessions.remove(session);
 	}
 
 }

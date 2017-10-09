@@ -40,7 +40,7 @@ public final class CommandFactory implements InvokerInterface {
 	 *
 	 * @param filename the filename
 	 */
-	protected void initialise(final String filename) {
+	private void initialise(final String filename) {
 		try {
 			this.properties.load(inputStream(filename));
 			LOG.info("properties = {}", this.properties);

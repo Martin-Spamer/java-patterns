@@ -3,8 +3,6 @@ package patterns.command;
 
 import java.util.HashMap;
 
-import org.slf4j.*;
-
 /**
  * CommandMap Class.
  *
@@ -13,8 +11,6 @@ import org.slf4j.*;
  */
 @SuppressWarnings("serial")
 public final class CommandMap extends HashMap<String, AbstractCommand> {
-
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
 	 * Execute.

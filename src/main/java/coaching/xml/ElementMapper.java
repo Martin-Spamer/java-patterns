@@ -1,7 +1,7 @@
 
 package coaching.xml;
 
-import java.util.HashMap;
+import java.util.*;
 
 import org.slf4j.*;
 import org.w3c.dom.*;
@@ -13,7 +13,7 @@ public class ElementMapper {
 
 	private static final Logger log = LoggerFactory.getLogger(ElementMapper.class);
 	private String indexName = "id";
-	private final HashMap<String, Element> elementMap = new HashMap<String, Element>();
+	private final Map<String, Element> elementMap = new HashMap<String, Element>();
 
 	/**
 	 * Instantiates a new element mapper.
@@ -49,9 +49,9 @@ public class ElementMapper {
 	public void initialisation(final NodeList nodeList) {
 		for (int index = 0; index < nodeList.getLength(); index++) {
 			final Element element = (Element) nodeList.item(index);
-			final String key = element.getAttribute(indexName);
-			elementMap.put(key, element);
-			ElementMapper.log.info("{}={}", indexName, element);
+			final String key = element.getAttribute(this.indexName);
+			this.elementMap.put(key, element);
+			ElementMapper.log.info("{}={}", this.indexName, element);
 		}
 	}
 
@@ -94,7 +94,7 @@ public class ElementMapper {
 	 * @return the element
 	 */
 	public Element findElement(final String attributeName) {
-		final Element element = elementMap.get(attributeName);
+		final Element element = this.elementMap.get(attributeName);
 		return element;
 	}
 
@@ -105,7 +105,7 @@ public class ElementMapper {
 	 * @return the string
 	 */
 	public String findElementText(final String attributeName) {
-		final Node node = elementMap.get(attributeName);
+		final Node node = this.elementMap.get(attributeName);
 		return getText(node);
 	}
 
@@ -117,8 +117,8 @@ public class ElementMapper {
 	 */
 	public String indexName(final String indexAttribute) {
 		if (indexAttribute != null) {
-			indexName = indexAttribute;
+			this.indexName = indexAttribute;
 		}
-		return indexName;
+		return this.indexName;
 	}
 }
