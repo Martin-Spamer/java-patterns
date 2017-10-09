@@ -1,7 +1,7 @@
 
 package coaching.collections;
 
-import java.util.Hashtable;
+import java.util.*;
 
 import org.slf4j.*;
 
@@ -11,30 +11,44 @@ import org.slf4j.*;
 public class TableRow {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-
-	private final Hashtable<String, TableCell> cols = new Hashtable<String, TableCell>();
+	private final List<TableCell> cols = new ArrayList<TableCell>();
 
 	/**
-	 * Put.
+	 * Instantiates a new table row.
 	 *
-	 * @param key the key
-	 * @param value the value
-	 * @return the table cell
-	 * @see java.util.Hashtable#put(java.lang.Object, java.lang.Object)
+	 * @param values the values
 	 */
-	public TableCell put(final String key, final TableCell value) {
-		return cols.put(key, value);
+	public TableRow(final String... values) {
+		for (final String value : values) {
+			final TableCell tableCell = new TableCell(value);
+			this.cols.add(tableCell);
+		}
 	}
 
-	/**
-	 * Gets the.
+	public String toRowString() {
+		final StringBuffer stringBuffer = new StringBuffer();
+
+		final Iterator<TableCell> tableRow = this.cols.iterator();
+		if (tableRow.hasNext()) {
+			stringBuffer.append(tableRow.next());
+			while (tableRow.hasNext()) {
+				stringBuffer.append(',');
+				stringBuffer.append(tableRow.next());
+			}
+		}
+
+		stringBuffer.append('\n');
+		return stringBuffer.toString();
+	}
+
+	/*
+	 * (non-Javadoc)
 	 *
-	 * @param key the key
-	 * @return the table cell
-	 * @see java.util.Hashtable#get(java.lang.Object)
+	 * @see java.lang.Object#toString()
 	 */
-	public TableCell get(final Object key) {
-		return cols.get(key);
+	@Override
+	public String toString() {
+		return String.format("TableRow [cols=%s]", Arrays.asList(this.cols));
 	}
 
 }
