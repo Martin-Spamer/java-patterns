@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Helper Class.
  */
-public class DateHelper {
+public final class DateHelper {
 
 	private static final String ISO_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 

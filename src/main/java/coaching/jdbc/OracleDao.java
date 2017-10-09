@@ -1,4 +1,5 @@
 
+
 package coaching.jdbc;
 
 /**
@@ -17,7 +18,7 @@ public final class OracleDao extends AbstractDataAccessObject {
 	private static final String DELETE_SQL = "DELETE FROM table WHERE key=value";
 
 	/**
-	 * @param driverClassName
+	 * Instantiates a new oracle dao.
 	 */
 	private OracleDao() {
 		super(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);

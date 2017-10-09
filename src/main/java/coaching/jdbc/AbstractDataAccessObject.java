@@ -130,9 +130,11 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * @param colCount
-	 * @param output
-	 * @throws SQLException
+	 * Process row.
+	 *
+	 * @param resultSet the result set
+	 * @return the string
+	 * @throws SQLException the SQL exception
 	 */
 	protected String processRow(final ResultSet resultSet) throws SQLException {
 		final ResultSetMetaData metaData = resultSet.getMetaData();
