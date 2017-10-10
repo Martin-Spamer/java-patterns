@@ -1,8 +1,13 @@
 
+
+
 package patterns.command;
 
 import java.util.Properties;
 
+/**
+ * class AbstractContext.
+ */
 public abstract class AbstractContext implements ContextInterface {
 
 	private Properties properties = new Properties();

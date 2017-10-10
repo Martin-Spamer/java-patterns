@@ -6,9 +6,9 @@ import org.slf4j.*;
 /**
  * Worker Class.
  */
-class Worker implements ProcessInterface {
+public class Worker implements ProcessInterface {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/*
 	 * (non-Javadoc)
@@ -17,7 +17,7 @@ class Worker implements ProcessInterface {
 	 */
 	@Override
 	public Worker doProcess() {
-		log.info("do work");
+		this.log.info("do work");
 		return this;
 	}
 

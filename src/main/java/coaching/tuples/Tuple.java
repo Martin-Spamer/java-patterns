@@ -12,7 +12,7 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/** The left hand side of Tuple. */
 	private L left;
 
-	/** The right hand side of Tuple */
+	/** The right hand side of Tuple. */
 	private R right;
 
 	/**

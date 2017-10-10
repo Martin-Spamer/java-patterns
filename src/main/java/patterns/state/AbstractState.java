@@ -1,4 +1,5 @@
 
+
 package patterns.state;
 
 import org.slf4j.*;

@@ -224,5 +224,7 @@ public class CsvToJdbc {
 				this.log.info("failed {}", statement.getWarnings());
 			}
 		}
+		statement.close();
+		connection.close();
 	}
 }

@@ -15,16 +15,8 @@ import org.slf4j.*;
 public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	protected ConcurrentLinkedDeque<E> freePool;
-	protected ConcurrentLinkedDeque<E> usedPool;
-
-	/**
-	 * Instantiates a new concurrent pool.
-	 */
-	public AbstractConcurrentPool() {
-		this.freePool = new ConcurrentLinkedDeque<E>();
-		this.usedPool = new ConcurrentLinkedDeque<E>();
-	}
+	protected ConcurrentLinkedDeque<E> freePool = new ConcurrentLinkedDeque<E>();
+	protected ConcurrentLinkedDeque<E> usedPool = new ConcurrentLinkedDeque<E>();
 
 	/*
 	 * (non-Javadoc)
@@ -76,7 +68,7 @@ public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 	 */
 	@Override
 	public PoolInterface<E> release(final E resource) {
-		this.freePool.remove(resource);
+		this.freePool.add(resource);
 		this.usedPool.remove(resource);
 		return this;
 	}

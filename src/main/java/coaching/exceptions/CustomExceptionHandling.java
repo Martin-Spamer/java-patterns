@@ -64,8 +64,6 @@ public class CustomExceptionHandling {
 	/**
 	 * A SubProcess Throws a specialist exception.
 	 *
-	 * custom exception
-	 *
 	 * @throws CustomReadException the custom read exception
 	 */
 	public void subProcessB() throws CustomReadException {
@@ -75,8 +73,6 @@ public class CustomExceptionHandling {
 	/**
 	 * A SubProcess Throws a specialist exception.
 	 *
-	 * custom exception
-	 *
 	 * @throws CustomUpdateException the custom update exception
 	 */
 	public void subProcessC() throws CustomUpdateException {
@@ -84,10 +80,7 @@ public class CustomExceptionHandling {
 	}
 
 	/**
-	 * sub processes,
-	 * and replaces them with a simple generalised exception.
-	 *
-	 * custom exception
+	 * sub processes, and replaces them with a simple generalised exception.
 	 *
 	 * @throws CustomException the custom exception
 	 */
@@ -103,26 +96,11 @@ public class CustomExceptionHandling {
 		} catch (final CustomException exception) {
 			LOG.error("{}", exception.toString());
 		}
+
 		try {
 			subProcessC();
 		} catch (final CustomException exception) {
 			LOG.error("{}", exception.toString());
-		}
-	}
-
-	/**
-	 * main method.
-	 *
-	 * command line arguments
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(final String[] args) {
-		final CustomExceptionHandling instance = new CustomExceptionHandling();
-		try {
-			instance.process();
-		} catch (final Exception exception) {
-			CustomExceptionHandling.LOG.info(exception.toString());
 		}
 	}
 }

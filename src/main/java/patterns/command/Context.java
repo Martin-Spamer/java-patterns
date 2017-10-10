@@ -1,4 +1,6 @@
 
+
+
 package patterns.command;
 
 /**
@@ -31,6 +33,11 @@ public class Context extends AbstractContext {
 		return instance;
 	}
 
+	/**
+	 * Creates the.
+	 *
+	 * @return the context interface
+	 */
 	public static ContextInterface create() {
 		final ContextInterface context = new Context();
 		return context;

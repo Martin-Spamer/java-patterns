@@ -1,4 +1,5 @@
 
+
 package patterns.strategy;
 
 import java.util.Properties;

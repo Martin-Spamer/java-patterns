@@ -1,4 +1,5 @@
 
+
 package patterns.mvc.view;
 
 import org.slf4j.*;

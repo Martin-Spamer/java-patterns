@@ -1,4 +1,5 @@
 
+
 package patterns.interpreter;
 
 import org.slf4j.*;

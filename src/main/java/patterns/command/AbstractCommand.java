@@ -1,4 +1,6 @@
 
+
+
 package patterns.command;
 
 import org.slf4j.*;
@@ -12,6 +14,11 @@ public abstract class AbstractCommand implements CommandInterface {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ResultInterface result = null;
 
+	/**
+	 * Execute.
+	 *
+	 * @return the result interface
+	 */
 	public ResultInterface execute() {
 		this.log.debug("{}.execute", this.getClass().getSimpleName());
 		this.result = new Result(Result.PASS);
@@ -33,6 +40,11 @@ public abstract class AbstractCommand implements CommandInterface {
 		return this.result;
 	}
 
+	/**
+	 * Undo.
+	 *
+	 * @return the result interface
+	 */
 	public ResultInterface undo() {
 		this.log.debug("{}.undo", this.getClass().getSimpleName());
 		this.result = new Result(Result.FAIL);
