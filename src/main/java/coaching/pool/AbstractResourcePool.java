@@ -97,7 +97,7 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 	 * resource
 	 *
 	 * @param resource the resource
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	protected synchronized boolean offer(final E resource) {
 		return this.freePool.offer(resource);

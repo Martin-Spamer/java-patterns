@@ -18,7 +18,7 @@ public class SequenceCommand extends AbstractCommand {
 	 * command
 	 *
 	 * @param command the command
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	public boolean append(final AbstractCommand command) {
 		return sequence.add(command);

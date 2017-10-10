@@ -11,7 +11,7 @@ public interface ContextInterface {
 	 * Contains.
 	 *
 	 * @param data the data
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	boolean contains(Object data);
 

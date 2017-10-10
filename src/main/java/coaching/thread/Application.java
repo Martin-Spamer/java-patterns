@@ -36,7 +36,7 @@ public class Application {
 	/**
 	 * initialise from configuration file.
 	 *
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean initialise() {
 		try {

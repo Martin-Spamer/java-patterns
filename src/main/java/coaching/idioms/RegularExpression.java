@@ -51,7 +51,7 @@ public class RegularExpression {
 	 * code
 	 *
 	 * @param code the code
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	public boolean verify(final String code) {
 		final Matcher matcher = PATTERN.matcher(code);

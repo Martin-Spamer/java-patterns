@@ -19,7 +19,7 @@ public interface ResultInterface {
 	 * And.
 	 *
 	 * @param execute the execute
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	public boolean and(ResultInterface execute);
 

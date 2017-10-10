@@ -55,7 +55,7 @@ public class FluentWait {
 	 * Until.
 	 *
 	 * @param condition the condition
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean until(final Condition condition) {
 		if (condition != null) {

@@ -38,7 +38,7 @@ public class ConditionalCommand extends AbstractCommand {
 	/**
 	 * Predicate.
 	 *
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	private boolean predicate() {
 		return predicate;

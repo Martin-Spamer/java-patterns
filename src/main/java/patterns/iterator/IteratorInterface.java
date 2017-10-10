@@ -31,7 +31,7 @@ public interface IteratorInterface {
 	/**
 	 * Checks if is done.
 	 *
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean isDone();
 

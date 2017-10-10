@@ -18,7 +18,7 @@ public interface BagInterface {
 	 * Adds an item to the bag.
 	 *
 	 * @param value the value
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean add(String value);
 

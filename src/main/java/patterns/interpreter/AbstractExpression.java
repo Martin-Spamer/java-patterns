@@ -30,7 +30,7 @@ public abstract class AbstractExpression {
 	 * Interpret.
 	 *
 	 * @param context the context
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean interpret(final ContextInterface context) {
 		return result;

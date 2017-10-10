@@ -17,7 +17,7 @@ public class Director {
 	 * Adds part builder.
 	 *
 	 * @param builder the builder to be added.
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean add(final AbstractBuilder builder) {
 		return this.builders.add(builder);

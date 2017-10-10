@@ -1,13 +1,12 @@
 
 package coaching.rules;
 
-import java.io.*;
+import java.io.InputStream;
 
 import javax.xml.parsers.*;
 
 import org.slf4j.*;
 import org.w3c.dom.*;
-import org.xml.sax.SAXException;
 
 /**
  * Rules Engine Class.
@@ -22,34 +21,69 @@ public class RulesEngine {
 	 * Instantiates a new rules engine.
 	 */
 	public RulesEngine() {
+		super();
+		initialise();
+	}
+
+	/**
+	 * Initialise.
+	 */
+	protected void initialise() {
 		LOG.trace(System.getProperties().toString());
 		final String className = this.getClass().getSimpleName();
-		final String filename = String.format("%s.xml", className);
-		LOG.info("this.filename = {}", filename);
-		initialise(filename);
+		final String configFilename = String.format("%s.xml", className);
+		initialise(configFilename);
 	}
 
 	/**
 	 * Initialise with configuration filename.
 	 *
 	 * @param configFilename the configuration filename
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	public boolean initialise(final String configFilename) {
+		LOG.info("initialise({})", configFilename);
+		return readXmlDocument(configFilename);
+	}
+
+	/**
+	 * Read xml document.
+	 *
+	 * @param configFilename the config filename
+	 * @return the boolean
+	 */
+	protected boolean readXmlDocument(final String configFilename) {
 		try {
 			final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			if (documentBuilderFactory != null) {
-				final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+				DocumentBuilder documentBuilder;
+				documentBuilder = documentBuilderFactory.newDocumentBuilder();
 				if (documentBuilder != null) {
-					final InputStream is = inputStream(configFilename);
-					if (null != is) {
-						document = documentBuilder.parse(is);
-						documentElement = document.getDocumentElement();
-						return true;
-					}
+					return readXmlStream(configFilename, documentBuilder);
 				}
 			}
-		} catch (ParserConfigurationException | SAXException | IOException e) {
+		} catch (final ParserConfigurationException e) {
+			LOG.error("{}", e.toString());
+		}
+		return false;
+	}
+
+	/**
+	 * Read xml stream.
+	 *
+	 * @param configFilename the config filename
+	 * @param documentBuilder the document builder
+	 * @return the boolean
+	 */
+	protected boolean readXmlStream(final String configFilename, final DocumentBuilder documentBuilder) {
+		final InputStream is = inputStreamFrom(configFilename);
+		try {
+			if (null != is) {
+				this.document = documentBuilder.parse(is);
+				this.documentElement = this.document.getDocumentElement();
+				return true;
+			}
+		} catch (final Exception e) {
 			LOG.error("{}", e.toString());
 		}
 		return false;
@@ -61,7 +95,7 @@ public class RulesEngine {
 	 * @param resourceName the resource name
 	 * @return the input stream
 	 */
-	private InputStream inputStream(final String resourceName) {
+	private InputStream inputStreamFrom(final String resourceName) {
 		final Thread currentThread = Thread.currentThread();
 		final ClassLoader classloader = currentThread.getContextClassLoader();
 		return classloader.getResourceAsStream(resourceName);
@@ -70,13 +104,13 @@ public class RulesEngine {
 	/**
 	 * Execute.
 	 *
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	public boolean execute() {
 		final boolean returnValue = false;
 		LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
-		if (documentElement != null) {
-			final NodeList childNodes = documentElement.getChildNodes();
+		if (this.documentElement != null) {
+			final NodeList childNodes = this.documentElement.getChildNodes();
 			LOG.info("childNodes  = {}", childNodes);
 		}
 		return returnValue;
@@ -102,18 +136,19 @@ public class RulesEngine {
 	 */
 	protected Element getElement(final String elementName) {
 		Element element = null;
-		final NodeList nodelist = documentElement.getElementsByTagName(elementName);
+		final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
 		if (nodelist != null) {
 			final int length = nodelist.getLength();
 			if (length == 0) {
 				final String className = this.getClass().getSimpleName();
 				LOG.info("{}", className);
-				LOG.info("Element {} is missing in element {}", elementName, documentElement.toString());
+				LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
 			} else {
 				if (length > 1) {
 					final String className = this.getClass().getSimpleName();
 					LOG.info("{}", className);
-					LOG.info(" surplus Elements {} ignored in element: {}", elementName, documentElement.toString());
+					LOG.info(" surplus Elements {} ignored in element: {}", elementName,
+					        this.documentElement.toString());
 				}
 				element = (Element) nodelist.item(0);
 			}

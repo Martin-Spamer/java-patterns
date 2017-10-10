@@ -38,7 +38,7 @@ public class Condition implements ConditionInterface<Boolean> {
 	/**
 	 * Result.
 	 *
-	 * @return true, if successful
+	 * @return true, if successful, otherwise false.
 	 */
 	public boolean result() {
 		return result;

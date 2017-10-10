@@ -112,7 +112,7 @@ public interface MoneyInterface {
 	 * Checks if is more than.
 	 *
 	 * @param money the money
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 *         more than
 	 */
 	public boolean isMoreThan(MoneyInterface money);
@@ -130,7 +130,7 @@ public interface MoneyInterface {
 	 * Checks if is equal to.
 	 *
 	 * @param money the money
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 *         equal to
 	 */
 	public boolean isEqualTo(MoneyInterface money);
@@ -148,7 +148,7 @@ public interface MoneyInterface {
 	 * Checks if is less than.
 	 *
 	 * @param money the money
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 *         less than
 	 */
 	public boolean isLessThan(MoneyInterface money);

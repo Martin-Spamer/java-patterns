@@ -262,7 +262,7 @@ public final class BigDecimalMoney {
 	 * Checks if is more than.
 	 *
 	 * @param amount the amount
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 *         more than
 	 */
 	public boolean isMoreThan(final long amount) {
@@ -273,7 +273,7 @@ public final class BigDecimalMoney {
 	 * Checks if is equal to.
 	 *
 	 * @param amount the amount
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 *         equal to
 	 */
 	public boolean isEqualTo(final long amount) {
@@ -284,7 +284,7 @@ public final class BigDecimalMoney {
 	 * Checks if is less than.
 	 *
 	 * @param amount the amount
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 *         less than
 	 */
 	public boolean isLessThan(final long amount) {

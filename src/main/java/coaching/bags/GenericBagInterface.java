@@ -22,7 +22,7 @@ public interface GenericBagInterface<T> {
 	 * Add an instance of T to the bag.
 	 *
 	 * @param t the t
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean add(T t);
 

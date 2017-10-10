@@ -11,7 +11,7 @@ public interface ExpressionInterface {
 	 * interpret.
 	 *
 	 * @param context the context
-	 * @return true, if successful, otherwise false.
+	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean interpret(ContextInterface context);
 }
