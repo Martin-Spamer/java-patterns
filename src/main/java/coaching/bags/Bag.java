@@ -16,7 +16,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	 */
 	public Bag() {
 		super();
-		fill(initialState);
+		fill(this.initialState);
 	}
 
 	/**
@@ -39,22 +39,12 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	@Override
 	public BagInterface fill(final String... values) {
 		if (values != null) {
-			initialState = values;
+			this.initialState = values;
 			for (final String value : values) {
 				this.add(value);
 			}
 		}
 		return this;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.util.ArrayList#add(java.lang.Object)
-	 */
-	@Override
-	public boolean add(final String value) {
-		return super.add(value);
 	}
 
 	/*
@@ -76,7 +66,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	public String choose() {
 		final int size = size();
 		if (size > 0) {
-			final int nextInt = random.nextInt(size);
+			final int nextInt = this.random.nextInt(size);
 			final String remove = this.remove(nextInt);
 			return remove;
 		} else {
@@ -91,7 +81,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	 */
 	@Override
 	public BagInterface reset() {
-		return fill(initialState);
+		return fill(this.initialState);
 	}
 
 }

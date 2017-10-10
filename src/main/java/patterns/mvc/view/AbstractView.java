@@ -1,5 +1,4 @@
 
-
 package patterns.mvc.view;
 
 import org.slf4j.*;
@@ -20,7 +19,7 @@ public abstract class AbstractView implements ViewInterface {
 	 */
 	public AbstractView() {
 		super();
-		model = new Model();
+		this.model = new Model();
 	}
 
 	/*
@@ -29,7 +28,7 @@ public abstract class AbstractView implements ViewInterface {
 	 * @see patterns.mvc.ViewInterface#attachModel(patterns.mvc.ModelInterface)
 	 */
 	@Override
-	public void attachModel(ModelInterface model) {
+	public void attachModel(final ModelInterface model) {
 		this.model = model;
 	}
 
@@ -40,7 +39,7 @@ public abstract class AbstractView implements ViewInterface {
 	 */
 	@Override
 	public void detachModel() {
-		model = null;
+		this.model = null;
 	}
 
 	/*
@@ -50,7 +49,7 @@ public abstract class AbstractView implements ViewInterface {
 	 */
 	@Override
 	public void show() {
-		log.info("{}.showView", this.getClass().getSimpleName());
+		this.log.info("{}.showView", this.getClass().getSimpleName());
 	}
 
 }

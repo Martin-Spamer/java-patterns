@@ -16,7 +16,7 @@ import org.slf4j.*;
 public class NativeTypesArray {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	private static final int ARRAY_SIZE = 10;
+	private final static int ARRAY_SIZE = 10;
 
 	/**
 	 * iterate the elements of an array for display.

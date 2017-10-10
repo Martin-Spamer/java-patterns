@@ -1,5 +1,4 @@
 
-
 package patterns.interpreter;
 
 /**
@@ -21,18 +20,6 @@ public class TerminalExpression extends AbstractExpression {
 	 */
 	public TerminalExpression(final boolean result) {
 		super(result);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * patterns.interpreter.AbstractExpression#interpret(patterns.interpreter.
-	 * ContextInterface)
-	 */
-	@Override
-	public boolean interpret(final ContextInterface context) {
-		return super.interpret(context);
 	}
 
 }

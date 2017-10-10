@@ -1,20 +1,9 @@
 
-
 package patterns.observer;
 
 /**
  * Observer Class.
  */
-public class Observer extends AbstractObserver {
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.observer.AbstractObserver#update()
-	 */
-	@Override
-	public void updateObservers() {
-		super.updateObservers();
-	}
+public final class Observer extends AbstractObserver {
 
 }

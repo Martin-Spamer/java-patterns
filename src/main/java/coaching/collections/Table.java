@@ -100,9 +100,7 @@ public class Table {
 	 */
 	public String toCsvString() {
 		final StringBuffer stringBuffer = new StringBuffer();
-		stringBuffer.append('\n');
-		stringBuffer.append(tableHeader());
-		stringBuffer.append(tableBody());
+		stringBuffer.append('\n').append(tableHeader()).append(tableBody());
 		return stringBuffer.toString();
 	}
 

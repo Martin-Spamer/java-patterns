@@ -52,16 +52,6 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see java.util.ArrayList#add(java.lang.Object)
-	 */
-	@Override
-	public boolean add(final T e) {
-		return super.add(e);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
 	 * @see coaching.bags.GenericBagInterface#pick()
 	 */
 	@Override

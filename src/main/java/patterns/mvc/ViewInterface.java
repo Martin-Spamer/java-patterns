@@ -1,5 +1,4 @@
 
-
 package patterns.mvc;
 
 /**
@@ -12,7 +11,7 @@ public interface ViewInterface {
 	 *
 	 * @param model the model
 	 */
-	public void attachModel(ModelInterface model);
+	public void attachModel(final ModelInterface model);
 
 	/**
 	 * Detach model from view.
