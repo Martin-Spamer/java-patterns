@@ -1,15 +1,14 @@
 
-
 package patterns.composite;
 
-import java.util.Vector;
+import java.util.*;
 
 /**
  * Composite Class.
  */
 public class Composite extends Component {
 
-	protected Vector<Component> composite = new Vector<Component>();
+	protected List<Component> composite = new ArrayList<Component>();
 
 	/*
 	 * (non-Javadoc)
@@ -18,7 +17,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface add(final Component component) {
-		composite.add(component);
+		this.composite.add(component);
 		return this;
 	}
 
@@ -29,7 +28,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface remove(final Component component) {
-		composite.remove(component);
+		this.composite.remove(component);
 		return this;
 	}
 
@@ -40,7 +39,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface getChild(final int index) {
-		composite.get(index);
+		this.composite.get(index);
 		return this;
 	}
 
@@ -51,7 +50,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface operation() {
-		for (final Component component : composite) {
+		for (final Component component : this.composite) {
 			component.operation();
 		}
 		return this;
