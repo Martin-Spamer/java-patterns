@@ -1,6 +1,4 @@
 
-
-
 package patterns.command;
 
 import java.io.*;
@@ -88,7 +86,8 @@ public final class CommandFactory implements InvokerInterface {
 				throw new MissingCommandException("Command Class not defined in properties file for ActionName");
 			}
 		} catch (final Exception e) {
-			throw new MissingCommandException(e.toString());
+			LOG.error("{}", e);
+			throw new MissingCommandException(e);
 		}
 	}
 }

@@ -1,12 +1,10 @@
 
-
-
 package patterns.command;
 
 /**
  * Context Class.
  */
-public class Context extends AbstractContext {
+public final class Context extends AbstractContext {
 
 	/**
 	 * single instance within classLoader.
@@ -26,7 +24,7 @@ public class Context extends AbstractContext {
 	 * @return single instance of Context
 	 *         single instance
 	 */
-	public static ContextInterface getInstance() {
+	public synchronized static ContextInterface getInstance() {
 		if (instance == null) {
 			instance = Context.create();
 		}
