@@ -23,12 +23,12 @@ public abstract class AbstractTemplate implements TemplateInterface {
 	 *
 	 * @return the template interface
 	 */
-	abstract protected TemplateInterface primitiveOperationAlice();
+	protected abstract TemplateInterface primitiveOperationAlice();
 
 	/**
 	 * Primitive operation B.
 	 *
 	 * @return the template interface
 	 */
-	abstract protected TemplateInterface primitiveOperationBob();
+	protected abstract TemplateInterface primitiveOperationBob();
 }

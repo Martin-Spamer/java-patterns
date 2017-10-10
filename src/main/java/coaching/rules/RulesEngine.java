@@ -143,13 +143,11 @@ public class RulesEngine {
 				final String className = this.getClass().getSimpleName();
 				LOG.info("{}", className);
 				LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
-			} else {
-				if (length > 1) {
-					final String className = this.getClass().getSimpleName();
-					LOG.info("{}", className);
-					LOG.info(" surplus Elements {} ignored in element: {}", elementName,
-					        this.documentElement.toString());
-				}
+			} else if (length > 1) {
+				final String className = this.getClass().getSimpleName();
+				LOG.info("{}", className);
+				LOG.info(" surplus Elements {} ignored in element: {}", elementName,
+				        this.documentElement.toString());
 				element = (Element) nodelist.item(0);
 			}
 		}

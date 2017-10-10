@@ -9,10 +9,10 @@ import org.slf4j.*;
  * RegularExpression Class.
  */
 public class RegularExpression {
+
 	private static final Logger LOG = LoggerFactory.getLogger(RegularExpression.class);
 	private static final String PATTERN_STRING = "^ABC$";
-	private final Pattern PATTERN = Pattern.compile(PATTERN_STRING);
-	private Pattern pattern = PATTERN;
+	private Pattern pattern = Pattern.compile(PATTERN_STRING);
 
 	/**
 	 * Instantiates a new regular expression.
@@ -30,7 +30,7 @@ public class RegularExpression {
 	 */
 	public RegularExpression(final String patternString) {
 		super();
-		pattern = Pattern.compile(patternString);
+		this.pattern = Pattern.compile(patternString);
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class RegularExpression {
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean verify(final String code) {
-		final Matcher matcher = PATTERN.matcher(code);
+		final Matcher matcher = this.pattern.matcher(code);
 		final boolean result = matcher.find();
 		return result;
 	}
@@ -67,7 +67,7 @@ public class RegularExpression {
 	 * @param original the original
 	 */
 	public void find(final String original) {
-		final Matcher matcher = PATTERN.matcher(original);
+		final Matcher matcher = this.pattern.matcher(original);
 		while (matcher.find()) {
 			final String message = "Test %s starting at index %s and ending at index %s";
 			final String string = String.format(message, matcher.group(), matcher.start(), matcher.end());
@@ -88,7 +88,7 @@ public class RegularExpression {
 	 */
 	public String replace(final String original, final String newSubString) {
 		// final Matcher matcher = this.PATTERN.matcher(original);
-		return pattern.matcher(original).replaceAll(newSubString);
+		return this.pattern.matcher(original).replaceAll(newSubString);
 	}
 
 }

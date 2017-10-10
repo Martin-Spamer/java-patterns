@@ -1,4 +1,5 @@
 
+
 package coaching.collections;
 
 import java.util.*;
@@ -25,6 +26,11 @@ public class TableRow {
 		}
 	}
 
+	/**
+	 * To row string.
+	 *
+	 * @return the string
+	 */
 	public String toRowString() {
 		final StringBuffer stringBuffer = new StringBuffer();
 

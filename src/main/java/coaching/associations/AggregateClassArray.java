@@ -17,10 +17,12 @@ import org.slf4j.*;
  **/
 public final class AggregateClassArray {
 
+	private static final int SIZE = 4;
+
 	private static final Logger log = LoggerFactory.getLogger(AggregateClassArray.class);
 
 	// Implement an Aggregate using a Array of classes.
-	private final AbstractAssociatedClass[] aggregate = new AbstractAssociatedClass[4];
+	private final AbstractAssociatedClass[] aggregate = new AbstractAssociatedClass[SIZE];
 
 	/**
 	 * Sets the aggregate.

@@ -19,7 +19,7 @@ public class SingleResponsibilityPrinciple {
 	private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
 	/**
-	 * Foo Bar responsibility
+	 * Foo Bar responsibility.
 	 */
 	public void responsibility() {
 		LOG.info("responsibility");
