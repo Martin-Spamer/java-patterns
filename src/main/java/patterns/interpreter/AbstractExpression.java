@@ -1,5 +1,4 @@
 
-
 package patterns.interpreter;
 
 /**
@@ -33,7 +32,7 @@ public abstract class AbstractExpression {
 	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean interpret(final ContextInterface context) {
-		return result;
+		return this.result;
 	}
 
 }
