@@ -15,7 +15,7 @@ import org.slf4j.*;
  **/
 public class ObjectTypesArray {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private static final int ARRAY_SIZE = 10;
 
 	/**
@@ -36,7 +36,7 @@ public class ObjectTypesArray {
 
 		for (int i = 1; i < ARRAY_SIZE; i++) {
 			// assign a value to an element of array
-			values[i] = Long.valueOf(i * 100);
+			values[i] = Long.valueOf(i ^ i);
 			this.log.info("{}){}", i, values[i]);
 		}
 	}

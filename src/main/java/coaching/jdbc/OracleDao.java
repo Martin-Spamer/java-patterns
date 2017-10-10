@@ -19,7 +19,7 @@ public final class OracleDao extends AbstractDataAccessObject {
 	/**
 	 * Instantiates a new oracle dao.
 	 */
-	private OracleDao() {
+	public OracleDao() {
 		super(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);
 	}
 

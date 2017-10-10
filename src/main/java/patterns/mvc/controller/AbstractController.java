@@ -1,5 +1,4 @@
 
-
 package patterns.mvc.controller;
 
 import org.slf4j.*;
@@ -24,15 +23,13 @@ public abstract class AbstractController implements ControllerInterface {
 	 */
 	public void attachModel(final ModelInterface model) {
 		this.model = model;
-		view.attachModel(model);
 	}
 
 	/**
 	 * Detach model.
 	 */
 	public void detachModel() {
-		view.detachModel();
-		model = null;
+		this.model = null;
 	}
 
 	/**
@@ -48,7 +45,7 @@ public abstract class AbstractController implements ControllerInterface {
 	 * Detach view.
 	 */
 	public void detachView() {
-		view = null;
+		this.view = null;
 	}
 
 	/**
@@ -59,7 +56,7 @@ public abstract class AbstractController implements ControllerInterface {
 	 * @throws MissingCommandException the missing command exception
 	 */
 	public AbstractController execute(final String commandName) throws MissingCommandException {
-		commands.execute(commandName);
+		this.commands.execute(commandName);
 		return this;
 	}
 
