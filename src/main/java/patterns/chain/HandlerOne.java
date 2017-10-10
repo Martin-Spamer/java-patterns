@@ -33,7 +33,13 @@ public class HandlerOne extends AbstractHandler {
 		super.handleRequest(request);
 	}
 
+	/**
+	 * Do something.
+	 *
+	 * @param request the request
+	 */
 	private void doSomething(final RequestInterface request) {
+		this.log.info("doSomething {}", request);
 	}
 
 }

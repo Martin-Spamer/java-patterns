@@ -41,7 +41,7 @@ public class CompositeClassArray {
 	 */
 	@Override
 	public String toString() {
-		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(composite));
+		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
 	}
 
 }

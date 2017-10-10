@@ -15,7 +15,7 @@ import org.slf4j.*;
  **/
 public class ObjectTypesArray {
 
-	private final static int ARRAY_SIZE = 10;
+	private static final int ARRAY_SIZE = 10;
 	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**

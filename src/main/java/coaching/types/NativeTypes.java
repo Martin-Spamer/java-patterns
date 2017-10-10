@@ -14,7 +14,6 @@ import org.slf4j.*;
  * Examples of Java Native Types.
  */
 public class NativeTypes {
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	// integer types
 	private final byte largestByte = Byte.MAX_VALUE;
@@ -41,6 +40,8 @@ public class NativeTypes {
 
 	private final boolean trueBoolean = true;
 	private final boolean falseBoolean = false;
+
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
 	 * Display.

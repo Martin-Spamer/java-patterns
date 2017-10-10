@@ -15,8 +15,6 @@ import org.slf4j.*;
  */
 public class ObjectTypes {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-
 	// integers object types
 	private final Byte largestByte = Byte.MAX_VALUE;
 	private final Byte smallestByte = Byte.MIN_VALUE;
@@ -42,6 +40,8 @@ public class ObjectTypes {
 
 	private final Boolean trueBoolean = true;
 	private final Boolean falseBoolean = false;
+
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
 	 * Display.
