@@ -1,6 +1,4 @@
 
-
-
 package patterns.command;
 
 /**
@@ -21,6 +19,6 @@ public interface ResultInterface {
 	 * @param execute the execute
 	 * @return true, if successful, otherwise false.
 	 */
-	public boolean and(ResultInterface execute);
+	public boolean and(final ResultInterface execute);
 
 }

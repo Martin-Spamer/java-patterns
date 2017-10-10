@@ -1,7 +1,7 @@
 
 package coaching.servlet;
 
-import javax.servlet.*;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 import org.slf4j.*;
@@ -18,16 +18,6 @@ public class MvcServlet extends HttpServlet {
 	private ManagerInterface actionManager;
 	private ManagerInterface viewManager;
 	private boolean servletInitialised;
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see javax.servlet.GenericServlet#init(javax.servlet.ServletConfig)
-	 */
-	@Override
-	public void init(final ServletConfig config) throws ServletException {
-		super.init(config);
-	}
 
 	/*
 	 * (non-Javadoc)
@@ -72,12 +62,12 @@ public class MvcServlet extends HttpServlet {
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 	        throws ServletException {
 
-		if (servletInitialised) {
+		if (this.servletInitialised) {
 			final String requestName = request.getPathInfo();
 			LOG.info("requestName={}", requestName);
 			final Result result = new Result();
-			actionManager.handleRequest(request, response, result);
-			viewManager.handleRequest(request, response, result);
+			this.actionManager.handleRequest(request, response, result);
+			this.viewManager.handleRequest(request, response, result);
 		}
 	}
 

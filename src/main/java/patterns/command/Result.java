@@ -1,6 +1,4 @@
 
-
-
 package patterns.command;
 
 /**
@@ -16,7 +14,7 @@ public class Result implements ResultInterface {
 	 * Instantiates a new result.
 	 */
 	public Result() {
-		result = PASS;
+		this.result = PASS;
 	}
 
 	/**
@@ -38,7 +36,7 @@ public class Result implements ResultInterface {
 	 */
 	@Override
 	public Boolean result() {
-		return result;
+		return this.result;
 	}
 
 	/*
@@ -48,9 +46,9 @@ public class Result implements ResultInterface {
 	 * patterns.command.ResultInterface#and(patterns.command.ResultInterface)
 	 */
 	@Override
-	public boolean and(ResultInterface newResult) {
-		result &= newResult.result().booleanValue();
-		return result;
+	public boolean and(final ResultInterface newResult) {
+		this.result &= newResult.result().booleanValue();
+		return this.result;
 	}
 
 	/*
@@ -60,7 +58,7 @@ public class Result implements ResultInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Result [result=%s]", result);
+		return String.format("Result [result=%s]", this.result);
 	}
 
 }

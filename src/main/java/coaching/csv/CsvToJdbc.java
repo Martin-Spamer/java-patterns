@@ -245,11 +245,11 @@ public class CsvToJdbc {
 	 */
 	protected StringBuffer createSql(final CsvRecord record) {
 		final StringBuffer sql = new StringBuffer();
-		sql.append("insert into ");
-		sql.append(this.tableName);
-		sql.append(getColumnHeaders());
-		sql.append(" VALUES ");
-		sql.append(record.toString());
+		sql.append("insert into ")
+		        .append(this.tableName)
+		        .append(getColumnHeaders())
+		        .append(" VALUES ")
+		        .append(record.toString());
 		this.log.info(sql.toString());
 		return sql;
 	}

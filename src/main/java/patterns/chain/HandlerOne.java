@@ -1,5 +1,4 @@
 
-
 package patterns.chain;
 
 /**
@@ -30,9 +29,11 @@ public class HandlerOne extends AbstractHandler {
 	 */
 	@Override
 	public void handleRequest(final RequestInterface request) {
-		// do something
-		// then pass request
+		doSomething(request);
 		super.handleRequest(request);
+	}
+
+	private void doSomething(final RequestInterface request) {
 	}
 
 }

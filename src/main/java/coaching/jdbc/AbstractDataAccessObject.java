@@ -124,7 +124,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 		final StringBuffer output = new StringBuffer();
 		while (resultSet.next()) {
 			output.append(processRow(resultSet));
-			output.append("\n");
+			output.append('\n');
 		}
 		this.log.info(output.toString());
 	}

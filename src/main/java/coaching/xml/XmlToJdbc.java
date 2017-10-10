@@ -144,8 +144,7 @@ public class XmlToJdbc extends MySqlDao {
 		// (%value%,...)
 		final StringBuffer sql = new StringBuffer();
 		sql.append(String.format("insert into %s", table));
-		sql.append(String.format(" (%s)", fieldNames.toString()));
-		sql.append(String.format(" VALUES (%s)", dataValues.toString()));
+		sql.append(String.format(" (%s) VALUES (%s)", fieldNames, dataValues));
 
 		this.log.info("{}", sql.toString());
 		super.sql(sql.toString());

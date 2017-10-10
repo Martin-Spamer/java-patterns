@@ -20,7 +20,7 @@ public class Rider extends AbstractPerson {
 	 *
 	 * @param name the name
 	 */
-	public Rider(String name) {
+	public Rider(final String name) {
 		super(name);
 	}
 
