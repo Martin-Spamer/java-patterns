@@ -8,13 +8,9 @@
 
 package coaching.solid;
 
-import org.slf4j.*;
-
 /**
  * A class to Demonstrate the LiskovSubstitutionPrinciple Class.
  */
 public class LiskovSubstitutionPrinciple {
-
-	private static final Logger LOG = LoggerFactory.getLogger(LiskovSubstitutionPrinciple.class);
 
 }

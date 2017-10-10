@@ -8,17 +8,14 @@
 
 package coaching.associations;
 
-import org.slf4j.*;
-
 /**
  * Using a basic Java array to implement a UML Composite association.
  *
  * In a Composite the Lifetime of parts is time constrained by lifetime of
  * parent.
  **/
-public class Composite {
+public final class Composite {
 
-	private static final Logger LOG = LoggerFactory.getLogger(Composite.class);
 	private Alice elementAlice = new Alice();
 	private Bob elementBob = new Bob();
 	private Charlie elementCharlie = new Charlie();
@@ -29,10 +26,10 @@ public class Composite {
 	 */
 	public Composite() {
 		super();
-		elementAlice = new Alice();
-		elementBob = new Bob();
-		elementCharlie = new Charlie();
-		elementDan = new Dan();
+		this.elementAlice = new Alice();
+		this.elementBob = new Bob();
+		this.elementCharlie = new Charlie();
+		this.elementDan = new Dan();
 	}
 
 	/**
@@ -62,7 +59,7 @@ public class Composite {
 	@Override
 	public String toString() {
 		return String.format("Composite [elementAlice=%s, elementBob=%s, elementCharlie=%s, elementDan=%s]",
-		        elementAlice, elementBob, elementCharlie, elementDan);
+		        this.elementAlice, this.elementBob, this.elementCharlie, this.elementDan);
 	}
 
 }

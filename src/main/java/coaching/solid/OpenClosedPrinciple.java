@@ -8,13 +8,9 @@
 
 package coaching.solid;
 
-import org.slf4j.*;
-
 /**
  * A class to Demonstrate the Open Closed Principle.
  */
 public class OpenClosedPrinciple {
-
-	private static final Logger LOG = LoggerFactory.getLogger(OpenClosedPrinciple.class);
 
 }

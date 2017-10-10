@@ -8,13 +8,9 @@
 
 package coaching.solid;
 
-import org.slf4j.*;
-
 /**
  * A class to Demonstrate the Interface Segregation Principle.
  */
 public class InterfaceSegregationPrinciple implements ExampleInterface {
-
-	private static final Logger LOG = LoggerFactory.getLogger(InterfaceSegregationPrinciple.class);
 
 }

@@ -8,13 +8,9 @@
 
 package coaching.solid;
 
-import org.slf4j.*;
-
 /**
  * A class to Demonstrate the Dependency Inversion Principle.
  */
 public class DependencyInversionPrinciple {
-
-	private static final Logger LOG = LoggerFactory.getLogger(DependencyInversionPrinciple.class);
 
 }
