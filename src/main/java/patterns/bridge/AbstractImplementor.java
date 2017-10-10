@@ -1,5 +1,4 @@
 
-
 package patterns.bridge;
 
 import org.slf4j.*;
@@ -14,6 +13,6 @@ public abstract class AbstractImplementor {
 	/**
 	 * Operation.
 	 */
-	abstract public void operation();
+	public abstract void operation();
 
 }

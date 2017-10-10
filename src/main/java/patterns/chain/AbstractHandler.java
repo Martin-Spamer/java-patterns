@@ -1,15 +1,11 @@
 
-
 package patterns.chain;
-
-import org.slf4j.*;
 
 /**
  * Abstract Handler Class.
  */
 public abstract class AbstractHandler implements HandlerInterface {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private HandlerInterface next;
 
 	/**
@@ -26,7 +22,7 @@ public abstract class AbstractHandler implements HandlerInterface {
 	 *
 	 * @param next the next
 	 */
-	public AbstractHandler(HandlerInterface next) {
+	public AbstractHandler(final HandlerInterface next) {
 		super();
 		setNext(next);
 	}
@@ -40,7 +36,7 @@ public abstract class AbstractHandler implements HandlerInterface {
 	 * @param next the next
 	 * @return the abstract handler
 	 */
-	public AbstractHandler setNext(HandlerInterface next) {
+	public AbstractHandler setNext(final HandlerInterface next) {
 		this.next = next;
 		return this;
 	}
@@ -51,8 +47,8 @@ public abstract class AbstractHandler implements HandlerInterface {
 	 * @see patterns.chain.HandlerInterface#handleRequest()
 	 */
 	@Override
-	public void handleRequest(RequestInterface request) {
-		next.handleRequest(request);
+	public void handleRequest(final RequestInterface request) {
+		this.next.handleRequest(request);
 	}
 
 }

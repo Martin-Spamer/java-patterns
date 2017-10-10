@@ -118,7 +118,8 @@ public class ResourceLoader {
 	 * @return the input stream
 	 */
 	protected InputStream streamForResource(final String propertyFileName) {
-		final ClassLoader classLoader = this.getClass().getClassLoader();
+		//  legacy example <code>final ClassLoader classLoader = this.getClass().getClassLoader();</code>
+		final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		return classLoader.getResourceAsStream(propertyFileName);
 	}
 
