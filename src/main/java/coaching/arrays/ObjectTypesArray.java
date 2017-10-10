@@ -60,9 +60,9 @@ public class ObjectTypesArray {
 				matrix[x][y] = Long.valueOf(x * y);
 
 				stringBuffer.append(matrix[x][y]);
-				stringBuffer.append(",");
+				stringBuffer.append(',');
 			}
-			stringBuffer.append("\n");
+			stringBuffer.append('\n');
 		}
 
 		this.log.info("{}", stringBuffer.toString());
@@ -90,9 +90,9 @@ public class ObjectTypesArray {
 			for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
 				vector[firstIndex][secondIndex] = Long.valueOf(firstIndex * secondIndex);
 				stringBuffer.append(vector[firstIndex][secondIndex]);
-				stringBuffer.append(",");
+				stringBuffer.append(',');
 			}
-			stringBuffer.append("\n");
+			stringBuffer.append('\n');
 		}
 		this.log.info("{}", stringBuffer.toString());
 	}
