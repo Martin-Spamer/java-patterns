@@ -1,11 +1,10 @@
 
-
 package patterns.singleton;
 
 /**
  * Singleton Class.
  */
-public class Singleton {
+public final class Singleton {
 
 	private static Singleton instance;
 
@@ -13,6 +12,7 @@ public class Singleton {
 	 * Instantiates a new singleton.
 	 */
 	private Singleton() {
+		super();
 	}
 
 	/**

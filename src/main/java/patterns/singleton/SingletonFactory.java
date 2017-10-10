@@ -1,5 +1,4 @@
 
-
 package patterns.singleton;
 
 /**
@@ -13,6 +12,7 @@ public final class SingletonFactory {
 	 * Instantiates a new singleton factory.
 	 */
 	private SingletonFactory() {
+		super();
 	}
 
 	/**
