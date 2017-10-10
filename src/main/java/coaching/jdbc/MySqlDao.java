@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 /**
@@ -50,16 +49,6 @@ public class MySqlDao extends AbstractDataAccessObject {
 	 */
 	public void delete() {
 		super.delete(DELETE_SQL);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see coaching.jdbc.AbstractDataAccessObject#sql(java.lang.String)
-	 */
-	@Override
-	public DaoInterface sql(final String sql) {
-		return super.sql(sql);
 	}
 
 }

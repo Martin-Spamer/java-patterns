@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 /**
@@ -22,6 +21,34 @@ public final class OracleDao extends AbstractDataAccessObject {
 	 */
 	private OracleDao() {
 		super(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);
+	}
+
+	/**
+	 * Creates the.
+	 */
+	public void create() {
+		super.create(INSERT_SQL);
+	}
+
+	/**
+	 * Read.
+	 */
+	public void read() {
+		super.read(SELECT_SQL);
+	}
+
+	/**
+	 * Update.
+	 */
+	public void update() {
+		super.update(UPDATE_SQL);
+	}
+
+	/**
+	 * Delete.
+	 */
+	public void delete() {
+		super.delete(DELETE_SQL);
 	}
 
 }

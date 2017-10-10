@@ -106,15 +106,11 @@ public class CsvToJdbc {
 	        final String password,
 	        final String table) {
 		makeJdbcConnection(driver, url, user, password);
-		try {
-			this.csvFile = new CsvFile(this.filename);
-			for (int index = 0; index < this.csvFile.size(); index++) {
-				final CsvRecord record = this.csvFile.getRecord(index);
-				this.log.info(record.toString());
-				write(record);
-			}
-		} catch (final SQLException e) {
-			this.log.error("{}", e);
+		this.csvFile = new CsvFile(this.filename);
+		for (int index = 0; index < this.csvFile.size(); index++) {
+			final CsvRecord record = this.csvFile.getRecord(index);
+			this.log.info(record.toString());
+			write(record);
 		}
 	}
 
@@ -201,7 +197,7 @@ public class CsvToJdbc {
 	 * @param record the record
 	 * @throws SQLException the SQL exception
 	 */
-	public void write(final CsvRecord record) throws SQLException {
+	public void write(final CsvRecord record) {
 		// insert
 		// into %table (%field%,...)
 		// from (%value%,...)
@@ -213,18 +209,22 @@ public class CsvToJdbc {
 		sql.append(record.toString());
 		this.log.info(sql.toString());
 
-		final Connection connection = DriverManager.getConnection(this.url, this.username, this.password);
-		final Statement statement = makeStatement(connection);
-		if (statement.execute(sql.toString())) {
-			this.log.info("ok {}", statement.getResultSet().toString());
-		} else {
-			if (statement.getUpdateCount() == 1) {
+		try {
+			final Connection connection = DriverManager.getConnection(this.url, this.username, this.password);
+			final Statement statement = makeStatement(connection);
+			if (statement.execute(sql.toString())) {
 				this.log.info("ok {}", statement.getResultSet().toString());
 			} else {
-				this.log.info("failed {}", statement.getWarnings());
+				if (statement.getUpdateCount() == 1) {
+					this.log.info("ok {}", statement.getResultSet().toString());
+				} else {
+					this.log.info("failed {}", statement.getWarnings());
+				}
 			}
+			statement.close();
+			connection.close();
+		} catch (final SQLException e) {
+			this.log.error("{}", e);
 		}
-		statement.close();
-		connection.close();
 	}
 }
