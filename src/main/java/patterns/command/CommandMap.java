@@ -1,9 +1,7 @@
 
-
-
 package patterns.command;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * CommandMap Class.
@@ -12,7 +10,7 @@ import java.util.HashMap;
  * and return when finished.
  */
 @SuppressWarnings("serial")
-public final class CommandMap extends HashMap<String, AbstractCommand> {
+public final class CommandMap extends ConcurrentHashMap<String, AbstractCommand> {
 
 	/**
 	 * Execute.

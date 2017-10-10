@@ -1,8 +1,8 @@
 
-
 package patterns.mvc.model;
 
-import java.util.*;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.slf4j.*;
 
@@ -15,8 +15,8 @@ import patterns.mvc.view.AbstractView;
 public abstract class AbstractModel implements ModelInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	protected final Map<String, AbstractModel> models = new HashMap<String, AbstractModel>();
-	protected final Map<String, AbstractView> views = new HashMap<String, AbstractView>();
+	protected final Map<String, AbstractModel> models = new ConcurrentHashMap<String, AbstractModel>();
+	protected final Map<String, AbstractView> views = new ConcurrentHashMap<String, AbstractView>();
 
 	/*
 	 * (non-Javadoc)
@@ -26,7 +26,7 @@ public abstract class AbstractModel implements ModelInterface {
 	 */
 	@Override
 	public void attach(final String key, final AbstractModel model) {
-		models.put(key, model);
+		this.models.put(key, model);
 	}
 
 	/*
@@ -37,7 +37,7 @@ public abstract class AbstractModel implements ModelInterface {
 	 */
 	@Override
 	public void attach(final String key, final AbstractView view) {
-		views.put(key, view);
+		this.views.put(key, view);
 	}
 
 	/*
@@ -47,7 +47,7 @@ public abstract class AbstractModel implements ModelInterface {
 	 */
 	@Override
 	public void detachModel(final String key) {
-		models.remove(key);
+		this.models.remove(key);
 	}
 
 	/*
@@ -57,7 +57,7 @@ public abstract class AbstractModel implements ModelInterface {
 	 */
 	@Override
 	public void detachView(final String key) {
-		views.remove(key);
+		this.views.remove(key);
 	}
 
 }

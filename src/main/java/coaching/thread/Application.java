@@ -7,7 +7,8 @@
 package coaching.thread;
 
 import java.io.*;
-import java.util.*;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
@@ -23,7 +24,7 @@ import org.w3c.dom.*;
 public class Application {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
-	private final Map<String, AbstractProcess> threadMap = new HashMap<String, AbstractProcess>();
+	private final Map<String, AbstractProcess> threadMap = new ConcurrentHashMap<String, AbstractProcess>();
 
 	/**
 	 * Instantiates a new main application.

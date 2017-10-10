@@ -1,7 +1,8 @@
 
 package coaching.xml;
 
-import java.util.*;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.slf4j.*;
 import org.w3c.dom.*;
@@ -13,7 +14,7 @@ public class ElementMapper {
 
 	private static final Logger log = LoggerFactory.getLogger(ElementMapper.class);
 	private String indexName = "id";
-	private final Map<String, Element> elementMap = new HashMap<String, Element>();
+	private final Map<String, Element> elementMap = new ConcurrentHashMap<String, Element>();
 
 	/**
 	 * Instantiates a new element mapper.
