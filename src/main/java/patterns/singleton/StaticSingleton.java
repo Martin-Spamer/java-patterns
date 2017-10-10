@@ -20,7 +20,7 @@ public final class StaticSingleton {
 	 *
 	 * @return single instance of StaticSingleton
 	 */
-	public synchronized static StaticSingleton getInstance() {
+	public static synchronized StaticSingleton getInstance() {
 		return instance;
 	}
 

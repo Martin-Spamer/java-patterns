@@ -24,7 +24,7 @@ public final class Context extends AbstractContext {
 	 * @return single instance of Context
 	 *         single instance
 	 */
-	public synchronized static ContextInterface getInstance() {
+	public static synchronized ContextInterface getInstance() {
 		if (instance == null) {
 			instance = Context.create();
 		}

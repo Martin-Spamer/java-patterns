@@ -20,7 +20,7 @@ public final class SingletonFactory {
 	 *
 	 * @return single instance of SingletonFactory
 	 */
-	public synchronized static SingletonFactory getInstance() {
+	public static synchronized SingletonFactory getInstance() {
 		if (instance == null) {
 			instance = create();
 		}
