@@ -15,8 +15,8 @@ import org.slf4j.*;
  **/
 public class ObjectTypesArray {
 
-	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private final static int ARRAY_SIZE = 10;
+	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
 	 * iterate the elements of an array for display.
@@ -97,4 +97,22 @@ public class ObjectTypesArray {
 		this.log.info("{}", stringBuffer.toString());
 	}
 
+	/**
+	 * Looping.
+	 *
+	 * @param vector the vector
+	 * @return the string
+	 */
+	private String looping(final long[][] vector) {
+		final StringBuffer stringBuffer = new StringBuffer();
+		for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
+			for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
+				vector[firstIndex][secondIndex] = Long.valueOf(firstIndex * secondIndex);
+				stringBuffer.append(vector[firstIndex][secondIndex]);
+				stringBuffer.append(',');
+			}
+			stringBuffer.append('\n');
+		}
+		return stringBuffer.toString();
+	}
 }

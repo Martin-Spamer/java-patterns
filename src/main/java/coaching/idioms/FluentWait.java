@@ -7,9 +7,11 @@ import org.slf4j.*;
  * A Fluent Wait Class, will test a condition for one second.
  */
 public class FluentWait {
+	private static final int DEFAULT_INTERVAL = 100;
+	private static final int DEFAULT_TIMEOUT = 1000;
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	private long timeOut = 1000;
-	private long interval = 100;
+	private long timeOut = DEFAULT_TIMEOUT;
+	private long interval = DEFAULT_INTERVAL;
 
 	/**
 	 * Set the time out.

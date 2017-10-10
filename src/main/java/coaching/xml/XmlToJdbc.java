@@ -16,21 +16,18 @@ public class XmlToJdbc extends MySqlDao {
 
 	/**
 	 * Process.
-	 *
-	 * @throws Exception the exception
 	 */
 	public void process() {
 		final String simpleName = String.format("%s.xml", this.getClass().getSimpleName());
-		process(simpleName);
+		processFile(simpleName);
 	}
 
 	/**
 	 * Process.
 	 *
 	 * @param filename the filename
-	 * @throws Exception the exception
 	 */
-	public void process(final String filename) {
+	public void processFile(final String filename) {
 		try {
 			final File configFile = new File(filename);
 			final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -47,11 +44,10 @@ public class XmlToJdbc extends MySqlDao {
 	/**
 	 * Process table.
 	 *
-	 * @param table the table
-	 * @param document the main app config
+	 * @param document the document
 	 */
 	protected void processTable(final Document document) {
-		// * root Document Element
+		// root Document Element
 		final Element tableElement = document.getDocumentElement();
 
 		if (tableElement.getNodeName().equals("TABLE")) {
@@ -98,7 +94,6 @@ public class XmlToJdbc extends MySqlDao {
 	 * Field names.
 	 *
 	 * @param fieldList the field list
-	 * @param columnSeperator the column separator
 	 * @return the string
 	 */
 	protected String fieldNames(final NodeList fieldList) {
@@ -117,7 +112,6 @@ public class XmlToJdbc extends MySqlDao {
 	 * Data values.
 	 *
 	 * @param fieldList the field list
-	 * @param columnSeperator the column separator
 	 * @return the string
 	 */
 	protected String dataValues(final NodeList fieldList) {
