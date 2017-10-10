@@ -110,7 +110,7 @@ public class CsvToJdbc {
 		for (int index = 0; index < this.csvFile.size(); index++) {
 			final CsvRecord record = this.csvFile.getRecord(index);
 			this.log.info(record.toString());
-			write(record);
+			writeRecord(record);
 		}
 	}
 
@@ -197,21 +197,13 @@ public class CsvToJdbc {
 	 * @param record the record
 	 * @throws SQLException the SQL exception
 	 */
-	public void write(final CsvRecord record) {
-		// insert
-		// into %table (%field%,...)
-		// from (%value%,...)
-		final StringBuffer sql = new StringBuffer();
-		sql.append("insert into ");
-		sql.append(this.tableName);
-		sql.append(getColumnHeaders());
-		sql.append(" VALUES ");
-		sql.append(record.toString());
-		this.log.info(sql.toString());
-
+	public void writeRecord(final CsvRecord record) {
+		final StringBuffer sql = createSql(record);
+		Connection connection = null;
+		Statement statement = null;
 		try {
-			final Connection connection = DriverManager.getConnection(this.url, this.username, this.password);
-			final Statement statement = makeStatement(connection);
+			connection = DriverManager.getConnection(this.url, this.username, this.password);
+			statement = makeStatement(connection);
 			if (statement.execute(sql.toString())) {
 				this.log.info("ok {}", statement.getResultSet().toString());
 			} else {
@@ -225,6 +217,40 @@ public class CsvToJdbc {
 			connection.close();
 		} catch (final SQLException e) {
 			this.log.error("{}", e);
+		} finally {
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+			} catch (final SQLException e) {
+				this.log.error("{}", e);
+			}
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (final SQLException e) {
+				this.log.error("{}", e);
+			}
 		}
+	}
+
+	/**
+	 * Creates the sql.
+	 *
+	 * insert into %table% (%field%,...) from (%value%,...)
+	 *
+	 * @param record the record
+	 * @return the string buffer
+	 */
+	protected StringBuffer createSql(final CsvRecord record) {
+		final StringBuffer sql = new StringBuffer();
+		sql.append("insert into ");
+		sql.append(this.tableName);
+		sql.append(getColumnHeaders());
+		sql.append(" VALUES ");
+		sql.append(record.toString());
+		this.log.info(sql.toString());
+		return sql;
 	}
 }

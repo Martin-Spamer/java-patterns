@@ -54,13 +54,12 @@ public class ConnectionFactory {
 	 * @return the connection
 	 */
 	public Connection getConnection() {
-		Connection connection = null;
 		try {
-			connection = DriverManager.getConnection(this.connectionUrl, this.username, this.password);
+			return DriverManager.getConnection(this.connectionUrl, this.username, this.password);
 		} catch (final Exception e) {
 			this.log.error("{}", e.toString());
 		}
-		return connection;
+		return null;
 	}
 
 }

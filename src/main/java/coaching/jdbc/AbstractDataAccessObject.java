@@ -211,14 +211,14 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 				if (preparedStatement != null) {
 					preparedStatement.close();
 				}
-			} catch (final Exception e) {
+			} catch (final SQLException e) {
 				this.log.error("{}", e);
 			}
 			try {
 				if (connection != null) {
 					connection.close();
 				}
-			} catch (final Exception e) {
+			} catch (final SQLException e) {
 				this.log.error("{}", e);
 			}
 		}
