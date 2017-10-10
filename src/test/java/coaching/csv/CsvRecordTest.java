@@ -1,6 +1,4 @@
 
-
-
 package coaching.csv;
 
 import static org.junit.Assert.*;

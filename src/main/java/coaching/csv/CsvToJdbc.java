@@ -43,7 +43,7 @@ public class CsvToJdbc {
 	 *
 	 * @return the column headers
 	 */
-	private String getColumnHeaders() {
+	public String getColumnHeaders() {
 		return this.csvFile.getColumnNames();
 	}
 
