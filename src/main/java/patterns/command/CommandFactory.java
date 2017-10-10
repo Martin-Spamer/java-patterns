@@ -68,26 +68,59 @@ public final class CommandFactory implements InvokerInterface {
 	 */
 	@Override
 	public ResultInterface execute(final String actionName) throws MissingCommandException {
-		try {
-			final String className = this.properties.getProperty(actionName);
-			if (className != null) {
-				if (className.length() > 0) {
-					AbstractCommand action;
-					action = (AbstractCommand) Class.forName(className).newInstance();
-					if (action != null) {
-						return action.execute(new Parameters());
-					} else {
-						throw new MissingCommandException("Class not found. " + className);
-					}
-				} else {
-					throw new MissingCommandException("Command class name not defined for ActionName");
-				}
+		if (actionName != null) {
+			if (actionName.length() > 0) {
+				return executeActionName(actionName);
 			} else {
-				throw new MissingCommandException("Command Class not defined in properties file for ActionName");
+				final String message = String.format("actionName '%s' cannot be zero length.", actionName);
+				throw new MissingCommandException(message);
 			}
-		} catch (final Exception e) {
-			LOG.error("{}", e);
-			throw new MissingCommandException(e);
+		} else {
+			final String message = String.format("actionName cannot be null");
+			throw new MissingCommandException(message);
+		}
+	}
+
+	/**
+	 * @param actionName
+	 * @return
+	 * @throws MissingCommandException
+	 */
+	private ResultInterface executeActionName(final String actionName) throws MissingCommandException {
+		final String className = this.properties.getProperty(actionName);
+		if (className != null) {
+			if (className.length() > 0) {
+				return executeByClassName(className);
+			} else {
+				final String message = String.format("className '%s' cannot be zero length.", className);
+				throw new MissingCommandException(message);
+			}
+		} else {
+			final String message = String.format("className '%s' cannot be zero length.", className);
+			throw new MissingCommandException(message);
+		}
+	}
+
+	/**
+	 * @param className
+	 *            LOG.error("{}", e);
+	 *            throw new MissingCommandException(e);
+	 * @return
+	 * @throws MissingCommandException
+	 */
+	private ResultInterface executeByClassName(final String className) throws MissingCommandException {
+		AbstractCommand action = null;
+		try {
+			action = (AbstractCommand) Class.forName(className).newInstance();
+			if (action != null) {
+				final Parameters commandParameters = new Parameters();
+				return action.execute(commandParameters);
+			} else {
+				final String message = String.format("%s Class not found. ", className);
+				throw new MissingCommandException(message);
+			}
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			throw new MissingCommandException(e.toString());
 		}
 	}
 }

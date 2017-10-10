@@ -4,9 +4,9 @@ package coaching.tuples;
 /**
  * Triple Class.
  *
- * @param <X> the generic type
- * @param <Y> the generic type
- * @param <Z> the generic type
+ * @param the generic type X
+ * @param the generic type Y
+ * @param the generic type Z
  */
 public class Triple<X, Y, Z> {
 
@@ -24,9 +24,9 @@ public class Triple<X, Y, Z> {
 	/**
 	 * Instantiates a new triple.
 	 *
-	 * @param x the generic type <X>
-	 * @param y the generic type <Y>
-	 * @param z the generic type <Z>
+	 * @param x the generic type X
+	 * @param y the generic type Y
+	 * @param z the generic type Z
 	 */
 	public Triple(final X x, final Y y, final Z z) {
 		super();
@@ -38,9 +38,9 @@ public class Triple<X, Y, Z> {
 	/**
 	 * a factory method to create a instance of triple from default.
 	 *
-	 * @param <X> the generic type
-	 * @param <Y> the generic type
-	 * @param <Z> the generic type
+	 * @param x the generic type X
+	 * @param y the generic type Y
+	 * @param z the generic type Z
 	 * @return the triple
 	 */
 	public static <X, Y, Z> Triple<X, Y, Z> create() {
@@ -50,12 +50,9 @@ public class Triple<X, Y, Z> {
 	/**
 	 * a factory method to create a instance of triple from values.
 	 *
-	 * @param <X> the generic type
-	 * @param <Y> the generic type
-	 * @param <Z> the generic type
-	 * @param x the generic type <X>
-	 * @param y the generic type <Y>
-	 * @param z the generic type <Z>
+	 * @param x the generic type X
+	 * @param y the generic type Y
+	 * @param z the generic type Z
 	 * @return the triple
 	 */
 	public static <X, Y, Z> Triple<X, Y, Z> create(final X x, final Y y, final Z z) {
@@ -74,7 +71,7 @@ public class Triple<X, Y, Z> {
 	/**
 	 * set the value of x.
 	 *
-	 * @param x the x
+	 * @param x the X
 	 * @return this for fluent interface.
 	 */
 	public Triple<X, Y, Z> setX(final X x) {
@@ -85,7 +82,7 @@ public class Triple<X, Y, Z> {
 	/**
 	 * set the value of y.
 	 *
-	 * @param y the y
+	 * @param y the Y
 	 * @return this for fluent interface.
 	 */
 	public Triple<X, Y, Z> setY(final Y y) {
@@ -96,7 +93,7 @@ public class Triple<X, Y, Z> {
 	/**
 	 * set the value of z.
 	 *
-	 * @param z the z
+	 * @param z the Z
 	 * @return this for fluent interface.
 	 */
 	public Triple<X, Y, Z> setZ(final Z z) {

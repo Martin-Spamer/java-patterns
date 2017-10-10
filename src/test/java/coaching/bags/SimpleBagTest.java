@@ -13,7 +13,7 @@ import coaching.tuples.BoxTest;
 /**
  * Unit Test examples for a Bag Class.
  */
-public class BagTest {
+public class SimpleBagTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
 	private static final String[] VALUES = {
@@ -25,7 +25,7 @@ public class BagTest {
 	 */
 	@Test
 	public void testBag() {
-		final BagInterface bag = new Bag();
+		final BagInterface bag = new SimpleBag();
 		assertNotNull("Value cannot be null", bag);
 	}
 
@@ -34,7 +34,7 @@ public class BagTest {
 	 */
 	@Test
 	public void testBagStringArray() {
-		final Bag bag = new Bag(VALUES);
+		final SimpleBag bag = new SimpleBag(VALUES);
 		assertNotNull("Value cannot be null", bag);
 		verify(bag);
 	}
@@ -47,7 +47,7 @@ public class BagTest {
 		final String[] stuff = {
 		        "Cat", "Dog", "Rabbit"
 		};
-		final Bag bag = new Bag(stuff);
+		final SimpleBag bag = new SimpleBag(stuff);
 		assertNotNull("Value cannot be null", bag);
 		verify(bag);
 	}
@@ -57,7 +57,7 @@ public class BagTest {
 	 */
 	@Test
 	public void testBagVargs() {
-		final Bag bag = new Bag("Cat", "Dog", "Rabbit");
+		final SimpleBag bag = new SimpleBag("Cat", "Dog", "Rabbit");
 		assertNotNull("Value cannot be null", bag);
 		verify(bag);
 	}
@@ -67,7 +67,7 @@ public class BagTest {
 	 */
 	@Test
 	public void testFill() {
-		final Bag bag = new Bag();
+		final SimpleBag bag = new SimpleBag();
 		assertNotNull("Value cannot be null", bag);
 		bag.fill(VALUES);
 		verify(bag);
@@ -78,7 +78,7 @@ public class BagTest {
 	 */
 	@Test
 	public void testVargs() {
-		final Bag bag = new Bag();
+		final SimpleBag bag = new SimpleBag();
 		assertNotNull("Value cannot be null", bag);
 		bag.fill("Cat", "Dog", "Rabbit");
 		verify(bag);
@@ -92,7 +92,7 @@ public class BagTest {
 		final String[] stuff = {
 		        "Cat", "Dog", "Rabbit"
 		};
-		final Bag bag = new Bag(stuff);
+		final SimpleBag bag = new SimpleBag(stuff);
 		assertNotNull("Value cannot be null", bag);
 		verify(bag);
 	}
@@ -102,7 +102,7 @@ public class BagTest {
 	 *
 	 * @param bag the bag
 	 */
-	private void verify(final Bag bag) {
+	private void verify(final SimpleBag bag) {
 		assertNotNull("Value cannot be null", bag);
 		assertEquals(3, bag.size());
 		String choice = bag.choose();
@@ -126,7 +126,7 @@ public class BagTest {
 	 */
 	@Test
 	public void testChoose() {
-		final BagInterface bag = new Bag(VALUES);
+		final BagInterface bag = new SimpleBag(VALUES);
 		assertNotNull("Value cannot be null", bag);
 		final String chosen = bag.choose();
 		assertNotNull("Value cannot be null", chosen);
@@ -138,7 +138,7 @@ public class BagTest {
 	@Test
 	public void testNullBag() {
 		final String[] stuff = null;
-		final Bag bag = new Bag(stuff);
+		final SimpleBag bag = new SimpleBag(stuff);
 		assertEquals(0, bag.size());
 		final String choice = bag.choose();
 		assertNull(choice);
@@ -151,7 +151,7 @@ public class BagTest {
 	@Test
 	public void testEmptyBag() {
 		final String[] stuff = new String[0];
-		final Bag bag = new Bag(stuff);
+		final SimpleBag bag = new SimpleBag(stuff);
 		assertEquals(0, bag.size());
 		final String choice = bag.choose();
 		assertNull(choice);

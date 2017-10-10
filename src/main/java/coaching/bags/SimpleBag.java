@@ -7,14 +7,14 @@ import java.util.*;
  * Simple Bag Class.
  */
 @SuppressWarnings("serial")
-public class Bag extends ArrayList<String> implements BagInterface {
+public final class SimpleBag extends ArrayList<String> implements BagInterface {
 	private final Random random = new Random();
 	private String[] initialState = new String[0];
 
 	/**
 	 * Instantiates a new empty bag.
 	 */
-	public Bag() {
+	public SimpleBag() {
 		super();
 		fill(this.initialState);
 	}
@@ -26,7 +26,7 @@ public class Bag extends ArrayList<String> implements BagInterface {
 	 *
 	 * @param values the values
 	 */
-	public Bag(final String... values) {
+	public SimpleBag(final String... values) {
 		super();
 		fill(values == null ? new String[0] : values);
 	}

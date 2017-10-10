@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Composite extends Component {
 
-	protected List<Component> composite = new ArrayList<Component>();
+	protected List<Component> leaves = new ArrayList<Component>();
 
 	/*
 	 * (non-Javadoc)
@@ -17,7 +17,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface add(final Component component) {
-		this.composite.add(component);
+		this.leaves.add(component);
 		return this;
 	}
 
@@ -28,7 +28,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface remove(final Component component) {
-		this.composite.remove(component);
+		this.leaves.remove(component);
 		return this;
 	}
 
@@ -39,7 +39,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface getChild(final int index) {
-		this.composite.get(index);
+		this.leaves.get(index);
 		return this;
 	}
 
@@ -50,7 +50,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface operation() {
-		for (final Component component : this.composite) {
+		for (final Component component : this.leaves) {
 			component.operation();
 		}
 		return this;

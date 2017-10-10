@@ -9,7 +9,7 @@ package coaching.idioms;
 /**
  * Constants Class.
  */
-public class Constants {
+public final class Constants {
 
 	/** COUNTRY_CODE Constant. */
 	public static final String COUNTRY_CODE = "uk";

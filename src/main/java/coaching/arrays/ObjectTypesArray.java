@@ -53,19 +53,8 @@ public class ObjectTypesArray {
 		 */
 		matrix = new Long[ARRAY_SIZE][ARRAY_SIZE];
 
-		final StringBuffer stringBuffer = new StringBuffer();
-		for (int x = 0; x < ARRAY_SIZE; x++) {
-			for (int y = 0; y < ARRAY_SIZE; y++) {
-				// * matrix
-				matrix[x][y] = Long.valueOf(x * y);
+		this.log.info("{}", looping(matrix));
 
-				stringBuffer.append(matrix[x][y]);
-				stringBuffer.append(',');
-			}
-			stringBuffer.append('\n');
-		}
-
-		this.log.info("{}", stringBuffer.toString());
 	}
 
 	/**
@@ -85,16 +74,7 @@ public class ObjectTypesArray {
 				}
 		};
 
-		final StringBuffer stringBuffer = new StringBuffer();
-		for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
-			for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
-				vector[firstIndex][secondIndex] = Long.valueOf(firstIndex * secondIndex);
-				stringBuffer.append(vector[firstIndex][secondIndex]);
-				stringBuffer.append(',');
-			}
-			stringBuffer.append('\n');
-		}
-		this.log.info("{}", stringBuffer.toString());
+		this.log.info("{}", looping(vector));
 	}
 
 	/**
@@ -103,7 +83,7 @@ public class ObjectTypesArray {
 	 * @param vector the vector
 	 * @return the string
 	 */
-	private String looping(final long[][] vector) {
+	private String looping(final Long[][] vector) {
 		final StringBuffer stringBuffer = new StringBuffer();
 		for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
 			for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {

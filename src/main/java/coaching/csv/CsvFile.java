@@ -133,20 +133,29 @@ public class CsvFile {
 			String line = bufferedReader.readLine().trim();
 			while (line != null) {
 				if (line.length() > 0) {
-					if (line.charAt(0) == '#') {
-						setHeaderLine(line);
-					} else {
-						final CsvRecord record = new CsvRecord(line);
-						this.records.add(record);
-						final String recordString = record.toString();
-						log.info("recordString={}", recordString);
-					}
+					processLine(line);
 				}
 				line = bufferedReader.readLine();
 			}
 			bufferedReader.close();
 		} else {
 			log.info("bufferedReader");
+		}
+	}
+
+	/**
+	 * Process line.
+	 *
+	 * @param line the line
+	 */
+	protected void processLine(final String line) {
+		if (line.charAt(0) == '#') {
+			setHeaderLine(line);
+		} else {
+			final CsvRecord record = new CsvRecord(line);
+			this.records.add(record);
+			final String recordString = record.toString();
+			log.info("recordString={}", recordString);
 		}
 	}
 
