@@ -1,5 +1,4 @@
 
-
 package patterns.mediator;
 
 import org.slf4j.*;

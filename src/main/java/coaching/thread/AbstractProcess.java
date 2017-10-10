@@ -15,6 +15,8 @@ import org.slf4j.*;
  * An abstract base class for an Application.
  */
 public abstract class AbstractProcess implements Runnable {
+	private static final int MAX_TICKS = 10;
+	private static final int DEFAULT_WAIT = 1000;
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private final Thread thread;
 	private long tick;
@@ -48,7 +50,7 @@ public abstract class AbstractProcess implements Runnable {
 				// A Run method MUST have either a sleep or yield to prevent deadlock.
 
 				// Pause for 1 Second.
-				Thread.sleep(1000); // Note sleep is static method.
+				Thread.sleep(DEFAULT_WAIT); // Note sleep is static method.
 
 				// Pause until I'm allowed to continue.
 				Thread.yield(); // Note that yield is a static method.
@@ -56,7 +58,7 @@ public abstract class AbstractProcess implements Runnable {
 				// Thread ends if it runs more than a ten times.
 				// alternatively I could throw a new InterruptedException
 				tick++;
-				if (tick >= 10) {
+				if (tick >= MAX_TICKS) {
 					exit = true;
 				}
 

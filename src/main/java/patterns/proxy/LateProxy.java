@@ -1,11 +1,10 @@
 
-
 package patterns.proxy;
 
 /**
  * LateProxy Class.
  */
-class LateProxy extends Subject {
+public class LateProxy extends Subject {
 
 	private RealSubject realSubject;
 
@@ -16,10 +15,10 @@ class LateProxy extends Subject {
 	 */
 	@Override
 	public void request() {
-		if (realSubject == null) {
-			realSubject = new RealSubject();
+		if (this.realSubject == null) {
+			this.realSubject = new RealSubject();
 		}
-		realSubject.request();
+		this.realSubject.request();
 	}
 
 }

@@ -1,5 +1,4 @@
 
-
 package patterns.strategy;
 
 import org.slf4j.*;
@@ -29,7 +28,7 @@ public abstract class AbstractStrategy implements StrategyInterface {
 	 */
 	@Override
 	public void operation() {
-		log.info("{}.operation() should be overridden.", this.getClass().getSimpleName());
+		this.log.info("{}.operation() should be overridden.", this.getClass().getSimpleName());
 	}
 
 	/*
@@ -39,7 +38,7 @@ public abstract class AbstractStrategy implements StrategyInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("AbstractStrategy [context=%s]", context);
+		return String.format("AbstractStrategy [context=%s]", this.context);
 	}
 
 }

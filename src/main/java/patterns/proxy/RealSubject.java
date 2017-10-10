@@ -1,11 +1,10 @@
 
-
 package patterns.proxy;
 
 /**
  * RealSubject Class.
  */
-class RealSubject extends Subject {
+public class RealSubject extends Subject {
 
 	/*
 	 * (non-Javadoc)
@@ -14,7 +13,7 @@ class RealSubject extends Subject {
 	 */
 	@Override
 	public void request() {
-		log.info("request");
+		this.log.info("request");
 	}
 
 }
