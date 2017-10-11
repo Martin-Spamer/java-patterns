@@ -6,6 +6,8 @@
 
 package coaching.rules;
 
+import coaching.context.ContextInterface;
+
 /**
  * AbstractCommaAbstractRulend Class.
  */

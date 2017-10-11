@@ -3,7 +3,7 @@ package patterns.strategy;
 
 import java.util.Properties;
 
-import coaching.rules.AbstractContext;
+import coaching.context.AbstractContext;
 
 /**
  * Context Class.

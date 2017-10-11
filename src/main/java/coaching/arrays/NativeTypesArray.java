@@ -55,19 +55,7 @@ public class NativeTypesArray {
 		 */
 		matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
 
-		final StringBuffer stringBuffer = new StringBuffer();
-		for (int x = 0; x < ARRAY_SIZE; x++) {
-			for (int y = 0; y < ARRAY_SIZE; y++) {
-				// * matrix
-				matrix[x][y] = x * y;
-
-				stringBuffer.append(matrix[x][y]);
-				stringBuffer.append(',');
-			}
-			stringBuffer.append('\n');
-		}
-
-		this.log.info("{}", stringBuffer.toString());
+		this.log.info("{}", looping(matrix));
 
 	}
 
@@ -88,6 +76,16 @@ public class NativeTypesArray {
 				}
 		};
 
+		this.log.info("{}", looping(vector));
+	}
+
+	/**
+	 * Looping.
+	 *
+	 * @param vector the vector
+	 * @return the string
+	 */
+	private String looping(final long[][] vector) {
 		final StringBuffer stringBuffer = new StringBuffer();
 		for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
 			for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
@@ -97,7 +95,6 @@ public class NativeTypesArray {
 			}
 			stringBuffer.append('\n');
 		}
-		this.log.info("{}", stringBuffer.toString());
+		return stringBuffer.toString();
 	}
-
 }

@@ -16,6 +16,7 @@ public final class DateHelper {
 	 */
 	private DateHelper() {
 		super();
+		throw new UnsupportedOperationException("Do not instantiate this class, use staticly.");
 	}
 
 	/**

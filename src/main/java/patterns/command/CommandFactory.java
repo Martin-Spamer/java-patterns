@@ -82,9 +82,11 @@ public final class CommandFactory implements InvokerInterface {
 	}
 
 	/**
-	 * @param actionName
-	 * @return
-	 * @throws MissingCommandException
+	 * Execute action name.
+	 *
+	 * @param actionName the action name
+	 * @return the result interface
+	 * @throws MissingCommandException the missing command exception
 	 */
 	private ResultInterface executeActionName(final String actionName) throws MissingCommandException {
 		final String className = this.properties.getProperty(actionName);
@@ -102,11 +104,11 @@ public final class CommandFactory implements InvokerInterface {
 	}
 
 	/**
-	 * @param className
-	 *            LOG.error("{}", e);
-	 *            throw new MissingCommandException(e);
-	 * @return
-	 * @throws MissingCommandException
+	 * Execute by class name.
+	 *
+	 * @param className the class name
+	 * @return the result interface
+	 * @throws MissingCommandException the missing command exception
 	 */
 	private ResultInterface executeByClassName(final String className) throws MissingCommandException {
 		AbstractCommand action = null;

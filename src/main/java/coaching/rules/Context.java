@@ -3,10 +3,12 @@ package coaching.rules;
 
 import java.util.Properties;
 
+import coaching.context.AbstractContext;
+
 /**
  * Context Class.
  */
-public class Context extends AbstractContext implements ContextInterface {
+public class Context extends AbstractContext {
 
 	/**
 	 * Instantiates a new context.
@@ -15,26 +17,6 @@ public class Context extends AbstractContext implements ContextInterface {
 	 */
 	public Context(final Properties properties) {
 		super(properties);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see coaching.rules.AbstractContext#getProperties()
-	 */
-	@Override
-	public Properties getProperties() {
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see coaching.rules.AbstractContext#setProperties(java.util.Properties)
-	 */
-	@Override
-	public AbstractContext setProperties(final Properties properties) {
-		return null;
 	}
 
 }

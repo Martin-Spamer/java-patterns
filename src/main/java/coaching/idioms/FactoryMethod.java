@@ -14,7 +14,7 @@ public final class FactoryMethod {
 	 * private constructor prevent wild instantiation.
 	 */
 	private FactoryMethod() {
-		super();
+		throw new UnsupportedOperationException("Do not instantiate this class, use staticly.");
 	}
 
 	/**

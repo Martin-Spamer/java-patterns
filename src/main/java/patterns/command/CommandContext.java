@@ -1,10 +1,12 @@
 
 package patterns.command;
 
+import coaching.context.*;
+
 /**
  * Context Class.
  */
-public final class Context extends AbstractContext {
+public final class CommandContext extends AbstractContext {
 
 	/**
 	 * single instance within classLoader.
@@ -14,7 +16,7 @@ public final class Context extends AbstractContext {
 	/**
 	 * Constructor is private to prevent wild construction.
 	 */
-	private Context() {
+	private CommandContext() {
 		super();
 	}
 
@@ -26,7 +28,7 @@ public final class Context extends AbstractContext {
 	 */
 	public static synchronized ContextInterface getInstance() {
 		if (instance == null) {
-			instance = Context.create();
+			instance = CommandContext.create();
 		}
 		return instance;
 	}
@@ -37,7 +39,7 @@ public final class Context extends AbstractContext {
 	 * @return the context interface
 	 */
 	public static ContextInterface create() {
-		final ContextInterface context = new Context();
+		final ContextInterface context = new CommandContext();
 		return context;
 	}
 }

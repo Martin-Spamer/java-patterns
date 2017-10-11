@@ -31,7 +31,7 @@ public abstract class AbstractExpression {
 	 * @param context the context
 	 * @return true, if successful, otherwise false., otherwise false.
 	 */
-	public boolean interpret(final ContextInterface context) {
+	public boolean interpret(final Context context) {
 		return this.result;
 	}
 

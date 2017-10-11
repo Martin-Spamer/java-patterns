@@ -4,7 +4,7 @@ package patterns.interpreter;
 /**
  * Represent the current context Class.
  */
-public class Context implements ContextInterface {
+public class Context {
 
 	private Object state;
 
@@ -13,7 +13,6 @@ public class Context implements ContextInterface {
 	 */
 	public Context() {
 		super();
-		setState("");
 	}
 
 	/**
@@ -45,17 +44,6 @@ public class Context implements ContextInterface {
 	 */
 	public Object getState() {
 		return this.state;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * patterns.interpreter.ContextInterface#contains(patterns.interpreter.Data)
-	 */
-	@Override
-	public boolean contains(final Object state) {
-		return false;
 	}
 
 }

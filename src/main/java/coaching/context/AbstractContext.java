@@ -1,5 +1,5 @@
 
-package coaching.rules;
+package coaching.context;
 
 import java.util.Properties;
 
@@ -12,17 +12,27 @@ public abstract class AbstractContext implements ContextInterface {
 
 	/**
 	 * Instantiates a new abstract context.
+	 */
+	public AbstractContext() {
+		super();
+		setProperties(new Properties());
+	}
+
+	/**
+	 * Instantiates a new abstract context.
 	 *
 	 * @param properties the properties
 	 */
 	public AbstractContext(final Properties properties) {
+		super();
 		setProperties(properties);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see coaching.rules.ContextInterface#setProperties(java.util.Properties)
+	 * @see
+	 * patterns.interpreter.ContextInterface#setProperties(java.util.Properties)
 	 */
 	@Override
 	public ContextInterface setProperties(final Properties properties) {
@@ -33,34 +43,22 @@ public abstract class AbstractContext implements ContextInterface {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see coaching.rules.ContextInterface#getProperties()
+	 * @see patterns.interpreter.ContextInterface#setProperty(java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
-	public Properties getProperties() {
-		return this.properties;
+	public ContextInterface setProperty(final String key, final String value) {
+		this.properties.setProperty(key, value);
+		return this;
 	}
 
-	/**
-	 * Sets the property.
+	/*
+	 * (non-Javadoc)
 	 *
-	 * @param key the key
-	 * @param value the value
-	 * @return the object
-	 * @see java.util.Properties#setProperty(java.lang.String, java.lang.String)
+	 * @see patterns.interpreter.ContextInterface#getProperty(java.lang.String)
 	 */
-	public Object setProperty(final String key, final String value) {
-		return this.properties.setProperty(key, value);
-	}
-
-	/**
-	 * Gets the property.
-	 *
-	 * @param key the key
-	 * @return the property
-	 * @see java.util.Properties#getProperty(java.lang.String)
-	 */
+	@Override
 	public String getProperty(final String key) {
 		return this.properties.getProperty(key);
 	}
-
 }

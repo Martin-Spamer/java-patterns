@@ -1,16 +1,16 @@
 
-
-
 package patterns.command;
 
 import org.slf4j.*;
+
+import coaching.context.ContextInterface;
 
 /**
  * Abstract Command class from GOF Command Pattern.
  */
 public abstract class AbstractCommand implements CommandInterface {
 
-	private final ContextInterface context = Context.getInstance();
+	private final ContextInterface context = CommandContext.getInstance();
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	protected ResultInterface result = null;
 
