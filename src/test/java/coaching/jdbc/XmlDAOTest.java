@@ -1,15 +1,15 @@
 
-
 package coaching.jdbc;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Test;
+import org.junit.*;
 import org.slf4j.*;
 
 /**
  * Unit test for XmlDAO class.
  */
+@Ignore("Requires PointBase DB availability")
 public class XmlDAOTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(XmlDAOTest.class);

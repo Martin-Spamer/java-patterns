@@ -1,9 +1,10 @@
 package coaching.jdbc;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
-import org.junit.Test;
+import org.junit.*;
 
+@Ignore("Requires Oracle DB availability")
 public class OracleDaoTest {
 
 	@Test
@@ -14,22 +15,30 @@ public class OracleDaoTest {
 
 	@Test
 	public void testCreate() {
-		fail("Not yet implemented");
+		final OracleDao oracleDao = new OracleDao();
+		assertNotNull(oracleDao);
+		oracleDao.create();
 	}
 
 	@Test
 	public void testRead() {
-		fail("Not yet implemented");
+		final OracleDao oracleDao = new OracleDao();
+		assertNotNull(oracleDao);
+		oracleDao.read();
 	}
 
 	@Test
 	public void testUpdate() {
-		fail("Not yet implemented");
+		final OracleDao oracleDao = new OracleDao();
+		assertNotNull(oracleDao);
+		oracleDao.update();
 	}
 
 	@Test
 	public void testDelete() {
-		fail("Not yet implemented");
+		final OracleDao oracleDao = new OracleDao();
+		assertNotNull(oracleDao);
+		oracleDao.delete();
 	}
 
 }

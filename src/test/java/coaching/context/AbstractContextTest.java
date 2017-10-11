@@ -1,37 +1,54 @@
 package coaching.context;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
+
+import java.util.Properties;
 
 import org.junit.Test;
 
 public class AbstractContextTest {
 
 	public class TestContext extends AbstractContext {
+
+		private TestContext() {
+			super();
+		}
+
+		/**
+		 * @param properties
+		 */
+		private TestContext(final Properties properties) {
+			super(properties);
+		}
 	}
 
 	@Test
 	public void testAbstractContext() {
-		fail("Not yet implemented");
+		final TestContext testContext = new TestContext();
+		assertNotNull(testContext);
 	}
 
 	@Test
 	public void testAbstractContextProperties() {
-		fail("Not yet implemented");
+		final TestContext testContext = new TestContext(new Properties());
+		assertNotNull(testContext);
 	}
 
 	@Test
 	public void testSetProperties() {
-		fail("Not yet implemented");
+		final TestContext testContext = new TestContext();
+		assertNotNull(testContext);
+		testContext.setProperties(new Properties());
 	}
 
 	@Test
-	public void testSetProperty() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetProperty() {
-		fail("Not yet implemented");
+	public void testSetGetProperty() {
+		final TestContext testContext = new TestContext();
+		assertNotNull(testContext);
+		final String key = "key";
+		final String value = "value";
+		testContext.setProperty(key, value);
+		assertEquals(value, testContext.getProperty(key));
 	}
 
 }

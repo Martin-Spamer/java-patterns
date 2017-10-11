@@ -1,16 +1,15 @@
 
-
-
 package coaching.jdbc;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Test;
+import org.junit.*;
 import org.slf4j.*;
 
 /**
  * class PointBaseCustomerDaoTest.
  */
+@Ignore("Requires PointBase DB availability")
 public class PointBaseCustomerDaoTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);

@@ -1,9 +1,10 @@
 package coaching.jdbc;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
-import org.junit.Test;
+import org.junit.*;
 
+@Ignore("Requires MySQL DB availability")
 public class MySqlDaoTest {
 
 	@Test
@@ -14,22 +15,30 @@ public class MySqlDaoTest {
 
 	@Test
 	public void testCreate() {
-		fail("Not yet implemented");
+		final MySqlDao mySqlDao = new MySqlDao();
+		assertNotNull(mySqlDao);
+		mySqlDao.create();
 	}
 
 	@Test
 	public void testRead() {
-		fail("Not yet implemented");
+		final MySqlDao mySqlDao = new MySqlDao();
+		assertNotNull(mySqlDao);
+		mySqlDao.read();
 	}
 
 	@Test
 	public void testUpdate() {
-		fail("Not yet implemented");
+		final MySqlDao mySqlDao = new MySqlDao();
+		assertNotNull(mySqlDao);
+		mySqlDao.update();
 	}
 
 	@Test
 	public void testDelete() {
-		fail("Not yet implemented");
+		final MySqlDao mySqlDao = new MySqlDao();
+		assertNotNull(mySqlDao);
+		mySqlDao.delete();
 	}
 
 }
