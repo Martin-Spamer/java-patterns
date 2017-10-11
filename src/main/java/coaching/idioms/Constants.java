@@ -32,6 +32,9 @@ public final class Constants {
 	/** CURRENCY_NAME Constant. */
 	public static final String CURRENCY_NAME = "pound";
 
+	/**
+	 * Prevent wild instantiation.
+	 */
 	private Constants() {
 		throw new UnsupportedOperationException("Do not instantiate this class, use staticly.");
 	}
