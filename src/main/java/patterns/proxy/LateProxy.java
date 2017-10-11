@@ -4,7 +4,7 @@ package patterns.proxy;
 /**
  * LateProxy Class.
  */
-public class LateProxy extends Subject {
+public final class LateProxy extends AbstractSubject {
 
 	private RealSubject realSubject;
 

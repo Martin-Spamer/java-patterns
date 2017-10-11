@@ -71,8 +71,8 @@ public abstract class AbstractCommand implements CommandInterface {
 	 * @see patterns.command.AbstractCommand#result()
 	 */
 	@Override
-	public Boolean result() {
-		return this.result.result();
+	public Boolean getResult() {
+		return this.result.getResult();
 	}
 
 }

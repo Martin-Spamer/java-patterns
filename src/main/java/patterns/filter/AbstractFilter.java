@@ -4,7 +4,7 @@ package patterns.filter;
 /**
  * AbstractFilter Class.
  */
-public class AbstractFilter implements FilterInterface {
+public abstract class AbstractFilter implements FilterInterface {
 
 	private FilterInterface nextFilter = null;
 

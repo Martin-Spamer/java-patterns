@@ -6,7 +6,7 @@ import javax.servlet.http.*;
 
 import org.slf4j.*;
 
-import patterns.mvc.controller.Result;
+import patterns.mvc.controller.*;
 
 /**
  * MvcServlet Class.
@@ -65,7 +65,7 @@ public class MvcServlet extends HttpServlet {
 		if (this.servletInitialised) {
 			final String requestName = request.getPathInfo();
 			LOG.info("requestName={}", requestName);
-			final Result result = new Result();
+			final AbstractResult result = new Result();
 			this.actionManager.handleRequest(request, response, result);
 			this.viewManager.handleRequest(request, response, result);
 		}

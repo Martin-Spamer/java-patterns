@@ -4,7 +4,7 @@ package patterns.proxy;
 /**
  * RealSubject Class.
  */
-public class RealSubject extends Subject {
+public final class RealSubject extends AbstractSubject {
 
 	/*
 	 * (non-Javadoc)

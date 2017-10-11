@@ -39,7 +39,7 @@ public class FluentWait {
 	 * @param interval the interval
 	 * @return the fluent wait
 	 */
-	public FluentWait interval(final long interval) {
+	public FluentWait setInterval(final long interval) {
 		this.interval = interval;
 		return this;
 	}
@@ -49,7 +49,7 @@ public class FluentWait {
 	 *
 	 * @return the interval as native long.
 	 */
-	public long interval() {
+	public long getInterval() {
 		return interval;
 	}
 
@@ -64,7 +64,7 @@ public class FluentWait {
 			final long startTime = System.currentTimeMillis();
 			final long endTime = startTime + timeOut;
 			do {
-				if (condition.result()) {
+				if (condition.getResult()) {
 					log.info("pass at {}", System.currentTimeMillis());
 					return true;
 				} else {

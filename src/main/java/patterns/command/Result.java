@@ -35,7 +35,7 @@ public class Result implements ResultInterface {
 	 * patterns.command.ResultInterface#result(patterns.command.ResultInterface)
 	 */
 	@Override
-	public Boolean result() {
+	public Boolean getResult() {
 		return this.result;
 	}
 
@@ -47,7 +47,7 @@ public class Result implements ResultInterface {
 	 */
 	@Override
 	public boolean and(final ResultInterface newResult) {
-		this.result &= newResult.result().booleanValue();
+		this.result &= newResult.getResult().booleanValue();
 		return this.result;
 	}
 

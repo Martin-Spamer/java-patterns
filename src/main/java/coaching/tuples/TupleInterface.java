@@ -1,12 +1,11 @@
 
-
 package coaching.tuples;
 
 /**
  * Tuple Interface.
  *
- * @param <L> the generic type
- * @param <R> the generic type
+ * @param <L> the l generic type L.
+ * @param <R> the r generic type R.
  */
 public interface TupleInterface<L, R> {
 

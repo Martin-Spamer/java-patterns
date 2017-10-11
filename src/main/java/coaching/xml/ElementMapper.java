@@ -8,11 +8,11 @@ import org.slf4j.*;
 import org.w3c.dom.*;
 
 /**
- * DOM Element Mapper Class.
+ * DOM Element Mapper class.
  */
 public class ElementMapper {
 
-	private static final Logger log = LoggerFactory.getLogger(ElementMapper.class);
+	private static final Logger LOG = LoggerFactory.getLogger(ElementMapper.class);
 	private String indexName = "id";
 	private final Map<String, Element> elementMap = new ConcurrentHashMap<String, Element>();
 
@@ -53,7 +53,7 @@ public class ElementMapper {
 			final Element element = (Element) nodeList.item(index);
 			final String key = element.getAttribute(this.indexName);
 			this.elementMap.put(key, element);
-			ElementMapper.log.info("{}={}", this.indexName, element);
+			ElementMapper.LOG.info("{}={}", this.indexName, element);
 		}
 	}
 
@@ -117,7 +117,7 @@ public class ElementMapper {
 	 * @param indexAttribute the index attribute
 	 * @return the string
 	 */
-	public String indexName(final String indexAttribute) {
+	public String getIndexName(final String indexAttribute) {
 		if (indexAttribute != null) {
 			this.indexName = indexAttribute;
 		}

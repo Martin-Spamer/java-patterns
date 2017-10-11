@@ -2,7 +2,10 @@
 package coaching.tuples;
 
 /**
- * Triple Class.
+ * Triple, 3 Tuple class.
+ * @param <X> the x element type X
+ * @param <Y> the y element type Y
+ * @param <Z> the z element type Z
  */
 public class Triple<X, Y, Z> {
 

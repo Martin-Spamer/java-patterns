@@ -64,7 +64,7 @@ public class FluentWaitTest {
 		assertEquals(wait, wait.timeOut(1000));
 		assertEquals(1000, wait.timeOut());
 
-		assertEquals(wait, wait.interval(100));
+		assertEquals(wait, wait.setInterval(100));
 		assertEquals(1000, wait.timeOut());
 
 		final Condition pass = new PassCondition();

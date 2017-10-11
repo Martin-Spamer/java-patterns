@@ -1,5 +1,4 @@
 
-
 package coaching.jdbc;
 
 import java.sql.*;
@@ -29,23 +28,6 @@ public final class XmlDao extends AbstractDataAccessObject {
 	}
 
 	/**
-	 * To xml string.
-	 *
-	 * @return the string
-	 */
-	public String toXmlString() {
-		try {
-			read(SQL);
-			final String xmlString = toXmlString(resultSet);
-			resultSet.close();
-			return xmlString;
-		} catch (final SQLException e) {
-			log.error("{}", e.toString());
-		}
-		return null;
-	}
-
-	/**
 	 * To xml document.
 	 *
 	 * @return the document
@@ -53,11 +35,11 @@ public final class XmlDao extends AbstractDataAccessObject {
 	public Document toXmlDocument() {
 		try {
 			read(SQL);
-			final Document xmlDocument = toXmlDocument(resultSet);
-			resultSet.close();
+			final Document xmlDocument = toXmlDocument(this.resultSet);
+			this.resultSet.close();
 			return xmlDocument;
 		} catch (final SQLException e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 		}
 		return null;
 	}
@@ -100,10 +82,26 @@ public final class XmlDao extends AbstractDataAccessObject {
 				}
 			}
 		} catch (final Exception e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 		}
-
 		return document;
+	}
+
+	/**
+	 * To xml string.
+	 *
+	 * @return the string
+	 */
+	public String toXmlString() {
+		try {
+			read(SQL);
+			final String xmlString = toXmlString(this.resultSet);
+			this.resultSet.close();
+			return xmlString;
+		} catch (final SQLException e) {
+			this.log.error("{}", e.toString());
+		}
+		return null;
 	}
 
 	/**
@@ -134,7 +132,7 @@ public final class XmlDao extends AbstractDataAccessObject {
 			xml.append("</TABLE>\n");
 			resultSet.close();
 		} catch (final Exception e) {
-			log.error("{}", e.toString());
+			this.log.error("{}", e.toString());
 		}
 		return xml.toString();
 	}

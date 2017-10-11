@@ -29,6 +29,6 @@ public interface CommandInterface {
 	 *
 	 * @return the boolean
 	 */
-	public Boolean result();
+	public Boolean getResult();
 
 }

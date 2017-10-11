@@ -4,7 +4,7 @@ package patterns.proxy;
 /**
  * SubjectProxy Class.
  */
-public class SubjectProxy extends Subject {
+public final class SubjectProxy extends AbstractSubject {
 
 	private final RealSubject realSubject = new RealSubject();
 

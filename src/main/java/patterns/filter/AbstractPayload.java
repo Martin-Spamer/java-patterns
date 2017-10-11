@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * AbstractPayload Class.
  */
-public class AbstractPayload implements PayloadInterface {
+public abstract class AbstractPayload implements PayloadInterface {
 
 	private final Properties properties = new Properties();
 

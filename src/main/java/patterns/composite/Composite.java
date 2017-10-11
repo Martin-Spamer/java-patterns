@@ -6,9 +6,9 @@ import java.util.*;
 /**
  * Composite Class.
  */
-public class Composite extends Component {
+public final class Composite extends AbstractComponent {
 
-	protected List<Component> leaves = new ArrayList<Component>();
+	protected List<AbstractComponent> leaves = new ArrayList<AbstractComponent>();
 
 	/*
 	 * (non-Javadoc)
@@ -16,7 +16,7 @@ public class Composite extends Component {
 	 * @see patterns.composite.Component#add(patterns.composite.Component)
 	 */
 	@Override
-	public ComponentInterface add(final Component component) {
+	public ComponentInterface add(final AbstractComponent component) {
 		this.leaves.add(component);
 		return this;
 	}
@@ -27,7 +27,7 @@ public class Composite extends Component {
 	 * @see patterns.composite.Component#remove(patterns.composite.Component)
 	 */
 	@Override
-	public ComponentInterface remove(final Component component) {
+	public ComponentInterface remove(final AbstractComponent component) {
 		this.leaves.remove(component);
 		return this;
 	}
@@ -50,7 +50,7 @@ public class Composite extends Component {
 	 */
 	@Override
 	public ComponentInterface operation() {
-		for (final Component component : this.leaves) {
+		for (final AbstractComponent component : this.leaves) {
 			component.operation();
 		}
 		return this;

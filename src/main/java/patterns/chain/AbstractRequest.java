@@ -1,11 +1,10 @@
 
-
 package patterns.chain;
 
 /**
  * AbstractRequest Class.
  */
-public class AbstractRequest implements RequestInterface {
+public abstract class AbstractRequest implements RequestInterface {
 
 	private String payload;
 

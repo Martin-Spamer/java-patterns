@@ -15,14 +15,14 @@ public interface ManagerInterface {
 	 *
 	 * @param delegate the delegate
 	 */
-	public void attach(Delegate delegate);
+	public void attach(AbstractDelegate delegate);
 
 	/**
 	 * Detach.
 	 *
 	 * @param delegate the delegate
 	 */
-	public void detach(Delegate delegate);
+	public void detach(AbstractDelegate delegate);
 
 	/**
 	 * Handle request.
@@ -31,6 +31,6 @@ public interface ManagerInterface {
 	 * @param response the response
 	 * @param result the result
 	 */
-	public void handleRequest(HttpServletRequest request, HttpServletResponse response, Result result);
+	public void handleRequest(HttpServletRequest request, HttpServletResponse response, AbstractResult result);
 
 }

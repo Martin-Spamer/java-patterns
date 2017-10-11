@@ -32,6 +32,6 @@ public abstract class AbstractPredicate implements CommandInterface {
 	 * @see patterns.command.CommandInterface#result()
 	 */
 	@Override
-	public abstract Boolean result();
+	public abstract Boolean getResult();
 
 }

@@ -1,11 +1,10 @@
 
-
 package patterns.composite;
 
 /**
  * Leaf Class.
  */
-public class Leaf extends Component {
+public final class Leaf extends AbstractComponent {
 
 	/*
 	 * (non-Javadoc)

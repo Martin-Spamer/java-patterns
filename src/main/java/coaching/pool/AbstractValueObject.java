@@ -12,7 +12,7 @@ public abstract class AbstractValueObject {
 	/**
 	 * Mark as dirty, changed.
 	 */
-	protected void dirty() {
+	protected void markDirty() {
 		dirty = true;
 	}
 

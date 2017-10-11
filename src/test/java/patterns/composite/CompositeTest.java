@@ -20,7 +20,7 @@ public class CompositeTest {
 	 */
 	@Test
 	public void testComposite() {
-		final Component composite = new Composite();
+		final AbstractComponent composite = new Composite();
 		assertNotNull("Value cannot be null", composite);
 
 		final Leaf leaf = new Leaf();

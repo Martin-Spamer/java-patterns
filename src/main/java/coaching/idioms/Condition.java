@@ -40,7 +40,7 @@ public class Condition implements ConditionInterface<Boolean> {
 	 *
 	 * @return true, if successful, otherwise false.
 	 */
-	public boolean result() {
+	public boolean getResult() {
 		return result;
 	}
 

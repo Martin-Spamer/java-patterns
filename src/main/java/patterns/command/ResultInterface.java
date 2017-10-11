@@ -11,7 +11,7 @@ public interface ResultInterface {
 	 *
 	 * @return the boolean
 	 */
-	public Boolean result();
+	public Boolean getResult();
 
 	/**
 	 * And.

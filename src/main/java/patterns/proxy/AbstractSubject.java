@@ -6,13 +6,14 @@ import org.slf4j.*;
 /**
  * Subject Class.
  */
-public abstract class Subject {
+public abstract class AbstractSubject implements SubjectInterface {
 
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Request.
+	/* (non-Javadoc)
+	 * @see patterns.proxy.SubjectInterface#request()
 	 */
+	@Override
 	public abstract void request();
 
 }
