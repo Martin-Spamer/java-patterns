@@ -61,4 +61,15 @@ public abstract class AbstractContext implements ContextInterface {
 	public String getProperty(final String key) {
 		return this.properties.getProperty(key);
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see coaching.context.ContextInterface#getProperty(java.lang.String,
+	 * java.lang.String)
+	 */
+	@Override
+	public String getProperty(final String key, final String defaultValue) {
+		return this.properties.getProperty(key);
+	}
 }

@@ -16,7 +16,7 @@ public interface GenericBagInterface<T> {
 	 * @param values the values
 	 * @return this bag for a fluent interface
 	 */
-	public GenericBagInterface<T> fill(T... values);
+	public GenericBagInterface<T> fill(final T... values);
 
 	/**
 	 * Add an instance of T to the bag.
@@ -24,7 +24,7 @@ public interface GenericBagInterface<T> {
 	 * @param t the t
 	 * @return true, if successful, otherwise false., otherwise false.
 	 */
-	public boolean add(T t);
+	public boolean add(final T t);
 
 	/**
 	 * pick from the bag.

@@ -12,7 +12,7 @@ public interface BagInterface {
 	 * @param values the values
 	 * @return this bag for a fluent interface
 	 */
-	public BagInterface fill(String... values);
+	public BagInterface fill(final String... values);
 
 	/**
 	 * Adds an item to the bag.
@@ -20,7 +20,7 @@ public interface BagInterface {
 	 * @param value the value
 	 * @return true, if successful, otherwise false., otherwise false.
 	 */
-	public boolean add(String value);
+	public boolean add(final String value);
 
 	/**
 	 * pick item from the bag.

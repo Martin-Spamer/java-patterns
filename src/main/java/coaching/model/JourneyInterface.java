@@ -13,7 +13,7 @@ public interface JourneyInterface {
 	 *            destination
 	 * @return this as fluent interface.
 	 */
-	public JourneyInterface setDestination(String destination);
+	public JourneyInterface setDestination(final String destination);
 
 	/**
 	 * get the destination of the journey.

@@ -4,7 +4,7 @@ package coaching.context;
 import java.util.Properties;
 
 /**
- * interface ContextInterface.
+ * Context Interface.
  */
 public interface ContextInterface {
 
@@ -14,7 +14,7 @@ public interface ContextInterface {
 	 * @param properties the properties
 	 * @return the context interface for fluent interface.
 	 */
-	ContextInterface setProperties(Properties properties);
+	public ContextInterface setProperties(final Properties properties);
 
 	/**
 	 * Sets the property.
@@ -23,7 +23,7 @@ public interface ContextInterface {
 	 * @param value the value
 	 * @return the context interface for fluent interface.
 	 */
-	ContextInterface setProperty(String key, String value);
+	public ContextInterface setProperty(final String key, final String value);
 
 	/**
 	 * Gets the property.
@@ -32,6 +32,7 @@ public interface ContextInterface {
 	 * @return the property
 	 * @see java.util.Properties#getProperty(java.lang.String)
 	 */
-	String getProperty(String key);
+	public String getProperty(final String key);
 
+	public String getProperty(final String key, final String defaultValue);
 }

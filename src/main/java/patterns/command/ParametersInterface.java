@@ -1,6 +1,4 @@
 
-
-
 package patterns.command;
 
 import java.util.Set;
@@ -17,7 +15,7 @@ public interface ParametersInterface {
 	 * @param value the value
 	 * @return the abstract parameters
 	 */
-	public AbstractCommandParameters setPrameter(String key, String value);
+	public AbstractCommandParameters setPrameter(final String key, final String value);
 
 	/**
 	 * String property names.
@@ -32,7 +30,7 @@ public interface ParametersInterface {
 	 * @param key the key
 	 * @return the string
 	 */
-	public String valueFor(String key);
+	public String valueFor(final String key);
 
 	/**
 	 * Value for.
@@ -41,7 +39,7 @@ public interface ParametersInterface {
 	 * @param defaultValue the default value
 	 * @return the boolean
 	 */
-	public Boolean valueFor(String key, Boolean defaultValue);
+	public Boolean valueFor(final String key, final Boolean defaultValue);
 
 	/**
 	 * Value for.
@@ -50,7 +48,7 @@ public interface ParametersInterface {
 	 * @param defaultValue the default value
 	 * @return the string
 	 */
-	public String valueFor(String key, String defaultValue);
+	public String valueFor(final String key, final String defaultValue);
 
 	/**
 	 * Value for.
@@ -59,6 +57,6 @@ public interface ParametersInterface {
 	 * @param defaultValue the default value
 	 * @return the long
 	 */
-	public Long valueFor(String key, Long defaultValue);
+	public Long valueFor(final String key, final Long defaultValue);
 
 }

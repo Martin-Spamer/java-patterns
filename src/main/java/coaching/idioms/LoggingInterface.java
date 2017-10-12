@@ -20,6 +20,6 @@ public interface LoggingInterface {
 	 *
 	 * @param destinationLog the destination log
 	 */
-	public void logTo(Logger destinationLog);
+	public void logTo(final Logger destinationLog);
 
 }

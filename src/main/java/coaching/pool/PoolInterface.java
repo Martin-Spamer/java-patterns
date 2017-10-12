@@ -14,7 +14,7 @@ public interface PoolInterface<E> {
 	 * @param element the element
 	 * @return the pool interface
 	 */
-	public PoolInterface<E> add(E element);
+	public PoolInterface<E> add(final E element);
 
 	/**
 	 * Count the number of free elements.
@@ -43,7 +43,7 @@ public interface PoolInterface<E> {
 	 * @param t the t
 	 * @return the pool interface
 	 */
-	public PoolInterface<E> release(E t);
+	public PoolInterface<E> release(final E t);
 
 	/**
 	 * remove an from the pool.
@@ -51,6 +51,6 @@ public interface PoolInterface<E> {
 	 * @param element the element
 	 * @return the pool interface
 	 */
-	public PoolInterface<E> remove(E element);
+	public PoolInterface<E> remove(final E element);
 
 }

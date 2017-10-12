@@ -15,7 +15,7 @@ public interface VehicleInterface {
 	 * @param driver the new
 	 * @return this for a fluent interface.
 	 */
-	public VehicleInterface setDriver(Driver driver);
+	public VehicleInterface setDriver(final Driver driver);
 
 	/**
 	 * driver.
@@ -30,6 +30,6 @@ public interface VehicleInterface {
 	 * @param destination the destination
 	 * @return this for a fluent interface.
 	 */
-	public VehicleInterface travel(String destination);
+	public VehicleInterface travel(final String destination);
 
 }

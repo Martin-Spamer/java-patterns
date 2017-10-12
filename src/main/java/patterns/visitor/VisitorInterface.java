@@ -1,5 +1,4 @@
 
-
 package patterns.visitor;
 
 /**
@@ -12,6 +11,6 @@ public interface VisitorInterface {
 	 *
 	 * @param element the element
 	 */
-	public void visit(ElementInterface element);
+	public void visit(final ElementInterface element);
 
 }

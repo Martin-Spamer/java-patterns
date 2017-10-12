@@ -18,7 +18,7 @@ public interface ConfigInterface {
 	 * @param key the name of key
 	 * @return the property value as a String object.
 	 */
-	public String getProperty(String key);
+	public String getProperty(final String key);
 
 	/**
 	 * property, with default if not found.
@@ -27,6 +27,6 @@ public interface ConfigInterface {
 	 * @param defaultValue the default value
 	 * @return the property value as a String object.
 	 */
-	public String getProperty(String key, String defaultValue);
+	public String getProperty(final String key, final String defaultValue);
 
 }

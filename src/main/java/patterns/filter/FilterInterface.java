@@ -12,13 +12,13 @@ public interface FilterInterface {
 	 * @param newFilter the new filter
 	 * @return the filter interface
 	 */
-	public FilterInterface addNextFilter(FilterInterface newFilter);
+	public FilterInterface addNextFilter(final FilterInterface newFilter);
 
 	/**
 	 * handleRequest.
 	 *
 	 * @param payload the payload
 	 */
-	public void handleRequest(PayloadInterface payload);
+	public void handleRequest(final PayloadInterface payload);
 
 }

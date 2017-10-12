@@ -17,7 +17,7 @@ public interface TupleInterface<L, R> {
 	 * @param left the new
 	 *            left
 	 */
-	public void setLeft(L left);
+	public void setLeft(final L left);
 
 	/**
 	 * right.
@@ -25,7 +25,7 @@ public interface TupleInterface<L, R> {
 	 * @param right the new
 	 *            right
 	 */
-	public void setRight(R right);
+	public void setRight(final R right);
 
 	/**
 	 * left.

@@ -14,7 +14,7 @@ public interface PersonInterface {
 	 * @param name the name
 	 * @return this for a fluent interface.
 	 */
-	public PersonInterface setName(String name);
+	public PersonInterface setName(final String name);
 
 	/**
 	 * Gets the name.

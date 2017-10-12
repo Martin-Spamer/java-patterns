@@ -11,6 +11,6 @@ public interface CommandInterface {
 	 *
 	 * @param parameters the parameters
 	 */
-	public void execute(AbstractParameters parameters);
+	public void execute(final AbstractParameters parameters);
 
 }

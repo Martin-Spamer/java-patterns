@@ -15,14 +15,14 @@ public interface ManagerInterface {
 	 *
 	 * @param delegate the delegate
 	 */
-	public void attach(AbstractDelegate delegate);
+	public void attach(final AbstractDelegate delegate);
 
 	/**
 	 * Detach.
 	 *
 	 * @param delegate the delegate
 	 */
-	public void detach(AbstractDelegate delegate);
+	public void detach(final AbstractDelegate delegate);
 
 	/**
 	 * Handle request.

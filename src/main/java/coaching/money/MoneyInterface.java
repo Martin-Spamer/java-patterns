@@ -14,7 +14,7 @@ public interface MoneyInterface {
 	 * @param currency the currency
 	 * @return this as fluent interface.
 	 */
-	public MoneyInterface setCurrency(Currency currency);
+	public MoneyInterface setCurrency(final Currency currency);
 
 	/**
 	 * set the amount using long.
@@ -22,7 +22,7 @@ public interface MoneyInterface {
 	 * @param amount the amount
 	 * @return this as fluent interface.
 	 */
-	public MoneyInterface setAmount(long amount);
+	public MoneyInterface setAmount(final long amount);
 
 	/**
 	 * set the amount using Money instance.
@@ -30,7 +30,7 @@ public interface MoneyInterface {
 	 * @param amount the amount
 	 * @return this as fluent interface.
 	 */
-	public MoneyInterface setAmount(MoneyInterface amount);
+	public MoneyInterface setAmount(final MoneyInterface amount);
 
 	/**
 	 * get the currency.
@@ -73,7 +73,7 @@ public interface MoneyInterface {
 	 * @param amount the amount
 	 * @return this as fluent interface.
 	 */
-	public MoneyInterface add(long amount);
+	public MoneyInterface add(final long amount);
 
 	/**
 	 * Adds an amount.
@@ -81,7 +81,7 @@ public interface MoneyInterface {
 	 * @param amount the amount
 	 * @return this as fluent interface.
 	 */
-	public MoneyInterface add(MoneyInterface amount);
+	public MoneyInterface add(final MoneyInterface amount);
 
 	/**
 	 * Subtract.
@@ -89,7 +89,7 @@ public interface MoneyInterface {
 	 * @param amount the amount
 	 * @return this as fluent interface.
 	 */
-	public MoneyInterface subtract(long amount);
+	public MoneyInterface subtract(final long amount);
 
 	/**
 	 * Subtract.
@@ -97,7 +97,7 @@ public interface MoneyInterface {
 	 * @param amount the amount
 	 * @return this as fluent interface.
 	 */
-	public MoneyInterface subtract(MoneyInterface amount);
+	public MoneyInterface subtract(final MoneyInterface amount);
 
 	/**
 	 * Checks if more than amount.
@@ -106,7 +106,7 @@ public interface MoneyInterface {
 	 * @return true, if is
 	 *         more than
 	 */
-	public boolean isMoreThan(long amount);
+	public boolean isMoreThan(final long amount);
 
 	/**
 	 * Checks if is more than.
@@ -115,7 +115,7 @@ public interface MoneyInterface {
 	 * @return true, if successful, otherwise false., otherwise false.
 	 *         more than
 	 */
-	public boolean isMoreThan(MoneyInterface money);
+	public boolean isMoreThan(final MoneyInterface money);
 
 	/**
 	 * Checks if equal to amount.
@@ -124,7 +124,7 @@ public interface MoneyInterface {
 	 * @return true, if is
 	 *         equal to
 	 */
-	public boolean isEqualTo(long amount);
+	public boolean isEqualTo(final long amount);
 
 	/**
 	 * Checks if is equal to.
@@ -133,7 +133,7 @@ public interface MoneyInterface {
 	 * @return true, if successful, otherwise false., otherwise false.
 	 *         equal to
 	 */
-	public boolean isEqualTo(MoneyInterface money);
+	public boolean isEqualTo(final MoneyInterface money);
 
 	/**
 	 * Checks if less than amount.
@@ -142,7 +142,7 @@ public interface MoneyInterface {
 	 * @return true, if is
 	 *         less than
 	 */
-	public boolean isLessThan(long amount);
+	public boolean isLessThan(final long amount);
 
 	/**
 	 * Checks if is less than.
@@ -151,6 +151,6 @@ public interface MoneyInterface {
 	 * @return true, if successful, otherwise false., otherwise false.
 	 *         less than
 	 */
-	public boolean isLessThan(MoneyInterface money);
+	public boolean isLessThan(final MoneyInterface money);
 
 }
