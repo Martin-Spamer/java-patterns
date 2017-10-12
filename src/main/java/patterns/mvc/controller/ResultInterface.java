@@ -1,5 +1,4 @@
 
-
 package patterns.mvc.controller;
 
 /**
@@ -8,19 +7,30 @@ package patterns.mvc.controller;
 public interface ResultInterface {
 
 	/**
-	 * Result.
+	 * Gets the result.
 	 *
-	 * result interface
+	 * @return the result
+	 */
+	public boolean getResult();
+
+	/**
+	 * Sets the result.
 	 *
+	 * @param newResult the new result
 	 * @return the result interface
 	 */
-	public ResultInterface result();
+	public ResultInterface setResult(final boolean newResult);
 
 	/**
 	 * Update result.
 	 *
-	 * new result
-	 * result interface
+	 * @param newResult the new result
+	 * @return the result interface
+	 */
+	public ResultInterface updateResult(final boolean newResult);
+
+	/**
+	 * Update result.
 	 *
 	 * @param newResult the new result
 	 * @return the result interface

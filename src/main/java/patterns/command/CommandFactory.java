@@ -122,7 +122,7 @@ public final class CommandFactory implements InvokerInterface {
 				throw new MissingCommandException(message);
 			}
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-			throw new MissingCommandException(e.toString());
+			throw new MissingCommandException(e);
 		}
 	}
 }

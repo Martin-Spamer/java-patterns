@@ -6,6 +6,8 @@ package patterns.mvc.controller;
  */
 public abstract class AbstractResult implements ResultInterface {
 
+	private boolean result;
+
 	/**
 	 * Instantiates a new abstract result.
 	 */
@@ -19,8 +21,8 @@ public abstract class AbstractResult implements ResultInterface {
 	 * @see patterns.mvc.controller.ResultInterface#result()
 	 */
 	@Override
-	public ResultInterface result() {
-		return null;
+	public boolean getResult() {
+		return this.result;
 	}
 
 	/*
@@ -30,8 +32,21 @@ public abstract class AbstractResult implements ResultInterface {
 	 * controller.ResultInterface)
 	 */
 	@Override
+	public ResultInterface setResult(final boolean newResult) {
+		this.result = newResult;
+		return this;
+	}
+
+	@Override
+	public ResultInterface updateResult(final boolean newResult) {
+		this.result &= newResult;
+		return this;
+	}
+
+	@Override
 	public ResultInterface updateResult(final ResultInterface newResult) {
-		return null;
+		this.result &= newResult.getResult();
+		return this;
 	}
 
 }

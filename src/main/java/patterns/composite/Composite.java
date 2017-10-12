@@ -8,7 +8,7 @@ import java.util.*;
  */
 public final class Composite extends AbstractComponent {
 
-	protected List<AbstractComponent> leaves = new ArrayList<AbstractComponent>();
+	private List<AbstractComponent> leaves = new ArrayList<AbstractComponent>();
 
 	/*
 	 * (non-Javadoc)
