@@ -48,5 +48,4 @@ public abstract class AbstractResult implements ResultInterface {
 		this.result &= newResult.getResult();
 		return this;
 	}
-
 }

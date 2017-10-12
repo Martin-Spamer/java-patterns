@@ -1,6 +1,4 @@
 
-
-
 package coaching.idioms;
 
 import static org.junit.Assert.*;
@@ -79,7 +77,7 @@ public class FluentWaitTest {
 	public void testWaitUntilConditionTrue() {
 		LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
 		final FluentWait wait = new FluentWait();
-		assertTrue(wait.until(Condition.isTrue()));
+		assertTrue(wait.until(new PassCondition()));
 		LOG.info("end = {}", System.currentTimeMillis());
 	}
 
@@ -91,8 +89,7 @@ public class FluentWaitTest {
 		LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
 		final FluentWait wait = new FluentWait();
 		// wait.until(new Condition(false));
-		assertFalse(wait.until(Condition.isFalse()));
+		assertFalse(wait.until(new FailCondition()));
 		LOG.info("end = {}", System.currentTimeMillis());
 	}
-
 }

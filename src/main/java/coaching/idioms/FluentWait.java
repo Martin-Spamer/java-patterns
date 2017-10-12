@@ -9,9 +9,9 @@ import org.slf4j.*;
 public class FluentWait {
 	private static final int DEFAULT_INTERVAL = 100;
 	private static final int DEFAULT_TIMEOUT = 1000;
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 	private long timeOut = DEFAULT_TIMEOUT;
 	private long interval = DEFAULT_INTERVAL;
+	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**
 	 * Set the time out.
@@ -64,7 +64,7 @@ public class FluentWait {
 			final long startTime = System.currentTimeMillis();
 			final long endTime = startTime + this.timeOut;
 			do {
-				if (condition.getResult()) {
+				if (condition.isTrue()) {
 					this.log.info("pass at {}", System.currentTimeMillis());
 					return true;
 				} else {

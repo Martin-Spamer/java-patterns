@@ -13,9 +13,7 @@ import org.slf4j.*;
 /**
  * AbstractResourcePool Class.
  *
- * generic type
- *
- * @param <T> the generic type
+ * @param <T> the generic type T
  */
 public abstract class AbstractAltResourcePool<T> {
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -46,7 +44,6 @@ public abstract class AbstractAltResourcePool<T> {
 					throw new ResourceBorrowException(exception);
 				}
 			} else {
-				// TODO: throw resource constraint exception ?
 				this.log.info("Used({}) < maxPoolSize({})", this.usedPool.size(), this.maxPoolSize);
 			}
 		} else {

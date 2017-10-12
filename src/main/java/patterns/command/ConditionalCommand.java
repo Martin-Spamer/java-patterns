@@ -18,7 +18,7 @@ public class ConditionalCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface execute(final ParametersInterface commandParameters) {
-		if (predicate()) {
+		if (getPredicate()) {
 			return super.execute(commandParameters);
 		}
 		return null;
@@ -40,7 +40,7 @@ public class ConditionalCommand extends AbstractCommand {
 	 *
 	 * @return true, if successful, otherwise false.
 	 */
-	private boolean predicate() {
+	private boolean getPredicate() {
 		return predicate;
 	}
 }

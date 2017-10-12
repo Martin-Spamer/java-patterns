@@ -22,8 +22,8 @@ public class Condition implements ConditionInterface<Boolean> {
 	 *
 	 * @return the condition
 	 */
-	public static Condition isTrue() {
-		return new Condition(true);
+	public boolean isTrue() {
+		return this.result;
 	}
 
 	/**
@@ -31,16 +31,7 @@ public class Condition implements ConditionInterface<Boolean> {
 	 *
 	 * @return the condition
 	 */
-	public static Condition isFalse() {
-		return new Condition(false);
-	}
-
-	/**
-	 * Result.
-	 *
-	 * @return true, if successful, otherwise false.
-	 */
-	public boolean getResult() {
+	public boolean isFalse() {
 		return this.result;
 	}
 
