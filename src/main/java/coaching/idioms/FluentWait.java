@@ -19,8 +19,8 @@ public class FluentWait {
 	 * @param timeout the timeout
 	 * @return the fluent wait
 	 */
-	public FluentWait timeOut(final long timeout) {
-		timeOut = timeout;
+	public FluentWait setTimeOut(final long timeout) {
+		this.timeOut = timeout;
 		return this;
 	}
 
@@ -29,8 +29,8 @@ public class FluentWait {
 	 *
 	 * @return the timeOut as long
 	 */
-	public long timeOut() {
-		return timeOut;
+	public long setTimeOut() {
+		return this.timeOut;
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class FluentWait {
 	 * @return the interval as native long.
 	 */
 	public long getInterval() {
-		return interval;
+		return this.interval;
 	}
 
 	/**
@@ -62,23 +62,23 @@ public class FluentWait {
 	public boolean until(final Condition condition) {
 		if (condition != null) {
 			final long startTime = System.currentTimeMillis();
-			final long endTime = startTime + timeOut;
+			final long endTime = startTime + this.timeOut;
 			do {
 				if (condition.getResult()) {
-					log.info("pass at {}", System.currentTimeMillis());
+					this.log.info("pass at {}", System.currentTimeMillis());
 					return true;
 				} else {
 					try {
-						log.info("sleep {} at {}", interval, System.currentTimeMillis());
-						Thread.sleep(interval);
+						this.log.info("sleep {} at {}", this.interval, System.currentTimeMillis());
+						Thread.sleep(this.interval);
 					} catch (final InterruptedException ex) {
 						Thread.currentThread().interrupt();
 					}
 				}
 			} while (System.currentTimeMillis() < endTime);
-			log.info("timeout at {}", System.currentTimeMillis());
+			this.log.info("timeout at {}", System.currentTimeMillis());
 		} else {
-			log.info("null condition at {}", System.currentTimeMillis());
+			this.log.info("null condition at {}", System.currentTimeMillis());
 		}
 		return false;
 	}

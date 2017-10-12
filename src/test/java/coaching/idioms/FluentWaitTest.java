@@ -61,11 +61,11 @@ public class FluentWaitTest {
 		LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
 		final FluentWait wait = new FluentWait();
 
-		assertEquals(wait, wait.timeOut(1000));
-		assertEquals(1000, wait.timeOut());
+		assertEquals(wait, wait.setTimeOut(1000));
+		assertEquals(1000, wait.setTimeOut());
 
 		assertEquals(wait, wait.setInterval(100));
-		assertEquals(1000, wait.timeOut());
+		assertEquals(1000, wait.setTimeOut());
 
 		final Condition pass = new PassCondition();
 		assertTrue(wait.until(pass));

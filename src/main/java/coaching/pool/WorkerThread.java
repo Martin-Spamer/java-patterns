@@ -8,7 +8,7 @@ import org.slf4j.*;
  */
 public class WorkerThread implements Runnable {
 
-	private static final Logger log = LoggerFactory.getLogger(WorkerThread.class);
+	private static final Logger LOG = LoggerFactory.getLogger(WorkerThread.class);
 	private static final int INTERVAL = 5000;
 	private final String command;
 
@@ -30,7 +30,7 @@ public class WorkerThread implements Runnable {
 			Thread.sleep(WorkerThread.INTERVAL);
 		} catch (final InterruptedException e) {
 			Thread.currentThread().interrupt();
-			log.error(e.toString());
+			LOG.error(e.toString());
 		}
 	}
 
@@ -42,9 +42,9 @@ public class WorkerThread implements Runnable {
 	@Override
 	public void run() {
 		final String name = Thread.currentThread().getName();
-		WorkerThread.log.info("{}:{}", name, command);
+		WorkerThread.LOG.info("{}:{}", name, command);
 		processCommand();
-		WorkerThread.log.info("{}:exit", name);
+		WorkerThread.LOG.info("{}:exit", name);
 	}
 
 }

@@ -5,6 +5,6 @@ package patterns.mediator;
 /**
  * Colleague Class.
  */
-public final class Colleague extends AbstactColleague {
+public final class Colleague extends AbstractColleague {
 
 }

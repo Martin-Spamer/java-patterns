@@ -11,7 +11,7 @@ import org.slf4j.*;
  */
 public class CsvFile {
 
-	protected static final Logger log = LoggerFactory.getLogger(CsvFile.class);
+	private static final Logger LOG = LoggerFactory.getLogger(CsvFile.class);
 	private final String csvFilename;
 	private String headerLine;
 	private String[] columnNames;
@@ -21,7 +21,7 @@ public class CsvFile {
 	 * Instantiates a new csv file.
 	 */
 	public CsvFile() {
-		log.info("CsvFile({})");
+		LOG.info("CsvFile({})");
 		this.csvFilename = String.format("%s.csv", this.getClass().getSimpleName());
 		initialise();
 	}
@@ -32,7 +32,7 @@ public class CsvFile {
 	 * @param csvFilename the csv filename
 	 */
 	public CsvFile(final String csvFilename) {
-		log.info("CsvFile({})", csvFilename);
+		LOG.info("CsvFile({})", csvFilename);
 		this.csvFilename = csvFilename;
 		initialise();
 	}
@@ -44,7 +44,7 @@ public class CsvFile {
 		try {
 			read(this.csvFilename);
 		} catch (final IOException e) {
-			log.error(e.toString());
+			LOG.error(e.toString());
 		}
 	}
 
@@ -83,12 +83,12 @@ public class CsvFile {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public void read(final String filename) throws IOException {
-		log.info("read({})", filename);
+		LOG.info("read({})", filename);
 		if (filename != null) {
 			final InputStream resourceAsStream = getClass().getResourceAsStream(filename);
 			read(resourceAsStream);
 		} else {
-			log.info("filename");
+			LOG.info("filename");
 		}
 	}
 
@@ -104,7 +104,7 @@ public class CsvFile {
 			read(inputStreamReader);
 			resourceAsStream.close();
 		} else {
-			log.info("resourceAsStream");
+			LOG.info("resourceAsStream");
 		}
 	}
 
@@ -139,7 +139,7 @@ public class CsvFile {
 			}
 			bufferedReader.close();
 		} else {
-			log.info("bufferedReader");
+			LOG.info("bufferedReader");
 		}
 	}
 
@@ -155,7 +155,7 @@ public class CsvFile {
 			final CsvRecord record = new CsvRecord(line);
 			this.records.add(record);
 			final String recordString = record.toString();
-			log.info("recordString={}", recordString);
+			LOG.info("recordString={}", recordString);
 		}
 	}
 
@@ -180,12 +180,12 @@ public class CsvFile {
 			final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
 			for (int index = 0; index < this.records.size(); index++) {
 				final CsvRecord csvRecord = this.records.get(index);
-				log.info("{}", csvRecord);
+				LOG.info("{}", csvRecord);
 				writer.write(csvRecord.toString());
 			}
 			writer.close();
 		} catch (final Exception exception) {
-			log.error(exception.toString());
+			LOG.error(exception.toString());
 		}
 	}
 
@@ -203,7 +203,7 @@ public class CsvFile {
 	 * Log pretty.
 	 */
 	public void logPretty() {
-		CsvFile.log.info(toString());
+		CsvFile.LOG.info(toString());
 	}
 
 	/**

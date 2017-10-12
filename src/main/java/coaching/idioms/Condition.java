@@ -41,7 +41,7 @@ public class Condition implements ConditionInterface<Boolean> {
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean getResult() {
-		return result;
+		return this.result;
 	}
 
 	/*
@@ -51,7 +51,7 @@ public class Condition implements ConditionInterface<Boolean> {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Condition [result=%s]", result);
+		return String.format("Condition [result=%s]", this.result);
 	}
 
 }
