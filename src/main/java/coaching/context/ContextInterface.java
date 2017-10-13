@@ -34,5 +34,12 @@ public interface ContextInterface {
 	 */
 	public String getProperty(final String key);
 
+	/**
+	 * Gets the property, using default value, if the key is not found.
+	 *
+	 * @param key the key
+	 * @param defaultValue the default value
+	 * @return the property
+	 */
 	public String getProperty(final String key, final String defaultValue);
 }

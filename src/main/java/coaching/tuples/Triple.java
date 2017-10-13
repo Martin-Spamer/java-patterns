@@ -37,6 +37,9 @@ public class Triple<X, Y, Z> {
 	/**
 	 * a factory method to create a instance of triple from default.
 	 *
+	 * @param x the generic type X
+	 * @param y the generic type Y
+	 * @param z the generic type Z
 	 * @return the triple
 	 */
 	public static <X, Y, Z> Triple<X, Y, Z> create() {

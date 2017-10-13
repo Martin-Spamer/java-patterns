@@ -4,17 +4,17 @@ package patterns.command;
 /**
  * Result of Command execution.
  */
-public class Result implements ResultInterface {
+public final class Result implements ResultInterface {
 
 	public static final Boolean PASS = true;
 	public static final Boolean FAIL = false;
-	private Boolean result = false;
+	private Boolean value = false;
 
 	/**
 	 * Instantiates a new result.
 	 */
 	public Result() {
-		this.result = PASS;
+		this.value = PASS;
 	}
 
 	/**
@@ -25,7 +25,7 @@ public class Result implements ResultInterface {
 	 * @param result the result
 	 */
 	public Result(final Boolean result) {
-		this.result = result;
+		this.value = result;
 	}
 
 	/*
@@ -36,7 +36,7 @@ public class Result implements ResultInterface {
 	 */
 	@Override
 	public Boolean getResult() {
-		return this.result;
+		return this.value;
 	}
 
 	/*
@@ -47,8 +47,8 @@ public class Result implements ResultInterface {
 	 */
 	@Override
 	public boolean and(final ResultInterface newResult) {
-		this.result &= newResult.getResult().booleanValue();
-		return this.result;
+		this.value &= newResult.getResult().booleanValue();
+		return this.value;
 	}
 
 	/*
@@ -58,7 +58,7 @@ public class Result implements ResultInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Result [result=%s]", this.result);
+		return String.format("Result [result=%s]", this.value);
 	}
 
 }

@@ -2,7 +2,7 @@
 package patterns.mvc.controller;
 
 /**
- * class AbstractResult.
+ * AbstractResult class.
  */
 public abstract class AbstractResult implements ResultInterface {
 
@@ -37,12 +37,23 @@ public abstract class AbstractResult implements ResultInterface {
 		return this;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.mvc.controller.ResultInterface#updateResult(boolean)
+	 */
 	@Override
 	public ResultInterface updateResult(final boolean newResult) {
 		this.result &= newResult;
 		return this;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see patterns.mvc.controller.ResultInterface#updateResult(patterns.mvc.
+	 * controller.ResultInterface)
+	 */
 	@Override
 	public ResultInterface updateResult(final ResultInterface newResult) {
 		this.result &= newResult.getResult();

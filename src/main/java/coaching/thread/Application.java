@@ -151,7 +151,7 @@ public class Application {
 	/**
 	 * main method.
 	 *
-	 * @param args the arguments
+	 * @param args the arguments as String array.
 	 */
 	public static void main(final String[] args) {
 		try {

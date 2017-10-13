@@ -1,6 +1,4 @@
 
-
-
 package patterns.command;
 
 /**
@@ -18,7 +16,7 @@ public class ConditionalCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface execute(final ParametersInterface commandParameters) {
-		if (getPredicate()) {
+		if (isTrue()) {
 			return super.execute(commandParameters);
 		}
 		return null;
@@ -40,7 +38,7 @@ public class ConditionalCommand extends AbstractCommand {
 	 *
 	 * @return true, if successful, otherwise false.
 	 */
-	private boolean getPredicate() {
-		return predicate;
+	private boolean isTrue() {
+		return this.predicate;
 	}
 }
