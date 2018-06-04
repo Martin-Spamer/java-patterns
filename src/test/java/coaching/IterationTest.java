@@ -52,7 +52,7 @@ public class IterationTest {
 	}
 
 	/**
-	 * The <code>while(not false)</code> statement is an example of selection.
+	 * The <code>while(not false)</code> statement is an example of iteration.
 	 *
 	 * Q) How many times will the log code be executed?
 	 */
@@ -73,7 +73,9 @@ public class IterationTest {
 	}
 
 	/**
-	 * The <code>while(true)</code> statement is an example of selection.
+	 * The <code>while(true)</code> statement is an example of iteration.
+	 * 
+	 * Q) How many times will the log code be executed?
 	 */
 	@Test
 	public void testExampleWhileTrue() {
@@ -90,13 +92,33 @@ public class IterationTest {
 	}
 
 	/**
-	 * The <code>do { ... } while(true)</code> statement is an example of
-	 * selection.
+	 * The <code>do { ... } while(true)</code> statement is an example of an iteration.
 	 *
-	 * Q) How many times will the log code be executed?
+	 * Q) How many times will the code be executed?
 	 */
 	@Test
-	public void testExampleDoWhile() {
+	public void testExampleDoWhileTrue() {
+		boolean loop = true;
+		int count = 0;
+
+		LOG.info("do while({})", loop);
+		do {
+			count++;
+			loop = true;
+		} while (!loop);
+
+		LOG.info("loop count = {} ", count);
+		assertEquals(1, count);
+	}
+	
+	
+	/**
+	 * The <code>do { ... } while(true)</code> statement is an example of an iteration.
+	 *
+	 * Q) How many times will the code be executed?
+	 */
+	@Test
+	public void testExampleDoWhileFalse() {
 		boolean exit = false;
 		int count = 0;
 
@@ -109,4 +131,5 @@ public class IterationTest {
 		LOG.info("loop count = {} ", count);
 		assertEquals(1, count);
 	}
+	
 }

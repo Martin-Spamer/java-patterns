@@ -112,14 +112,14 @@ public class SelectionTest {
 	}
 
 	/**
-	 * The STATEMENT Enum.
+	 * Enumeration for a type of STATEMENT.
 	 */
 	public enum STATEMENT {
 		SEQUENCE, SELECTION, ITERATION
 	}
 
 	/**
-	 * Unit Test to switch enum.
+	 * Unit Test to show an example of switch on enumeration value.
 	 * The <code>if</code> statement is an example of selection.
 	 */
 	@Test

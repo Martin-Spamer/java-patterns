@@ -18,7 +18,7 @@ public class MoneyTest {
 	private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
 
 	/**
-	 * Unit Test to money.
+	 * Unit Test for typical usage of Money class.
 	 */
 	@Test
 	public void testMoney() {
@@ -94,7 +94,7 @@ public class MoneyTest {
 	 * Unit Test to min value.
 	 */
 	@Test
-	public void testMinValue() {
+	public void testMoneyWithMinValueOfLong() {
 		LOG.info("testMinValue");
 		final MoneyInterface money = new Money(Long.MIN_VALUE);
 		assertNotNull("Value cannot be null", money);
@@ -106,7 +106,7 @@ public class MoneyTest {
 	 * Unit Test to max value.
 	 */
 	@Test
-	public void testMaxValue() {
+	public void testMoneyWithMaxValueOfLong() {
 		LOG.info("testMaxValue");
 		final MoneyInterface money = new Money(Long.MAX_VALUE);
 		assertNotNull("Value cannot be null", money);
