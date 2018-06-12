@@ -1,5 +1,4 @@
 
-
 package patterns.bridge;
 
 /**
@@ -14,7 +13,7 @@ public class Implementor extends AbstractImplementor {
 	 */
 	@Override
 	public void operation() {
-		log.info("{}", this.getClass().getSimpleName());
+		this.log.info("{}", this.getClass().getSimpleName());
 	}
 
 }

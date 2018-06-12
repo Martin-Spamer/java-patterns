@@ -1,10 +1,12 @@
 
-
 package coaching.collections;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Table class.
@@ -26,7 +28,8 @@ public class Table {
 	/**
 	 * Instantiates a new table.
 	 *
-	 * @param tableName the table name
+	 * @param tableName
+	 *            the table name
 	 */
 	public Table(final String tableName) {
 		this.tableName = tableName;
@@ -35,7 +38,8 @@ public class Table {
 	/**
 	 * Sets the table name.
 	 *
-	 * @param tableName the tableName to set
+	 * @param tableName
+	 *            the tableName to set
 	 * @return the table
 	 */
 	public Table setTableName(final String tableName) {
@@ -55,7 +59,8 @@ public class Table {
 	/**
 	 * Adds an cols.
 	 *
-	 * @param colNames the col names
+	 * @param colNames
+	 *            the col names
 	 */
 	public void addCols(final String... colNames) {
 		for (final String name : colNames) {
@@ -66,7 +71,8 @@ public class Table {
 	/**
 	 * Adds an row.
 	 *
-	 * @param values the values
+	 * @param values
+	 *            the values
 	 */
 	public void addRow(final String... values) {
 		add(new TableRow(values));
@@ -75,7 +81,8 @@ public class Table {
 	/**
 	 * Adds a table row.
 	 *
-	 * @param e the e
+	 * @param e
+	 *            the e
 	 * @return the boolean
 	 * @see java.util.List#add(java.lang.Object)
 	 */
@@ -86,7 +93,8 @@ public class Table {
 	/**
 	 * Gets the row at index.
 	 *
-	 * @param index the index
+	 * @param index
+	 *            the index
 	 * @return the table row
 	 * @see java.util.List#get(int)
 	 */

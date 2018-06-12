@@ -1,9 +1,8 @@
 
-
-
 package patterns.command;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Sequence of Commands example.
@@ -17,37 +16,39 @@ public class SequenceCommand extends AbstractCommand {
 	 *
 	 * command
 	 *
-	 * @param command the command
+	 * @param command
+	 *            the command
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean append(final AbstractCommand command) {
-		return sequence.add(command);
+		return this.sequence.add(command);
 	}
 
 	/**
 	 * Adds an new Command at index.
 	 *
-	 * index
-	 * element
+	 * index element
 	 *
-	 * @param index the index
-	 * @param element the element
+	 * @param index
+	 *            the index
+	 * @param element
+	 *            the element
 	 */
 	public void add(final int index, final AbstractCommand element) {
-		sequence.add(index, element);
+		this.sequence.add(index, element);
 	}
 
 	/**
 	 * command at index.
 	 *
-	 * index
-	 * abstract command
+	 * index abstract command
 	 *
-	 * @param index the index
+	 * @param index
+	 *            the index
 	 * @return the abstract command
 	 */
 	public AbstractCommand remove(final int index) {
-		return sequence.remove(index);
+		return this.sequence.remove(index);
 	}
 
 	/*
@@ -58,12 +59,12 @@ public class SequenceCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface execute(final ParametersInterface commandParameters) {
-		result = new Result();
-		for (final AbstractCommand command : sequence) {
+		this.result = new Result();
+		for (final AbstractCommand command : this.sequence) {
 			final ResultInterface newResult = command.execute(commandParameters);
-			result.and(newResult);
+			this.result.and(newResult);
 		}
-		return result;
+		return this.result;
 	}
 
 	/*
@@ -74,10 +75,10 @@ public class SequenceCommand extends AbstractCommand {
 	 */
 	@Override
 	public ResultInterface undo(final ParametersInterface commandParameters) {
-		for (final AbstractCommand command : sequence) {
-			result = command.execute(commandParameters);
+		for (final AbstractCommand command : this.sequence) {
+			this.result = command.execute(commandParameters);
 		}
-		return result;
+		return this.result;
 	}
 
 }

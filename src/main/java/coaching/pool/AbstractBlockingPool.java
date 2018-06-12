@@ -3,14 +3,16 @@ package coaching.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * BlockingPool Class.
  *
  * generic type
  *
- * @param <E> the element type
+ * @param <E>
+ *            the element type
  */
 public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 

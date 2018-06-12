@@ -1,5 +1,4 @@
 
-
 package patterns.memento;
 
 /**
@@ -19,7 +18,8 @@ public class Memento {
 	/**
 	 * Instantiates a new memento.
 	 *
-	 * @param state the state
+	 * @param state
+	 *            the state
 	 */
 	public Memento(final Object state) {
 		super();
@@ -31,8 +31,8 @@ public class Memento {
 	 *
 	 * new state
 	 *
-	 * @param state the new
-	 *            state
+	 * @param state
+	 *            the new state
 	 */
 	public void setState(final Object state) {
 		this.state = state;
@@ -46,7 +46,7 @@ public class Memento {
 	 * @return the state
 	 */
 	public Object getState() {
-		return state;
+		return this.state;
 	}
 
 }

@@ -35,15 +35,17 @@ public final class Composite {
 	/**
 	 * Instantiates a new composite.
 	 *
-	 * @param elementAlice the element alice
-	 * @param elementBob the element bob
-	 * @param elementCharlie the element charlie
-	 * @param elementDan the element dan
+	 * @param elementAlice
+	 *            the element alice
+	 * @param elementBob
+	 *            the element bob
+	 * @param elementCharlie
+	 *            the element charlie
+	 * @param elementDan
+	 *            the element dan
 	 */
-	public Composite(final Alice elementAlice,
-	        final Bob elementBob,
-	        final Charlie elementCharlie,
-	        final Dan elementDan) {
+	public Composite(final Alice elementAlice, final Bob elementBob, final Charlie elementCharlie,
+			final Dan elementDan) {
 		super();
 		this.elementAlice = elementAlice;
 		this.elementBob = elementBob;
@@ -59,7 +61,7 @@ public final class Composite {
 	@Override
 	public String toString() {
 		return String.format("Composite [elementAlice=%s, elementBob=%s, elementCharlie=%s, elementDan=%s]",
-		        this.elementAlice, this.elementBob, this.elementCharlie, this.elementDan);
+				this.elementAlice, this.elementBob, this.elementCharlie, this.elementDan);
 	}
 
 }

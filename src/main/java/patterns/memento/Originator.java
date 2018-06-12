@@ -1,5 +1,4 @@
 
-
 package patterns.memento;
 
 /**
@@ -14,8 +13,10 @@ public class Originator {
 	/**
 	 * Instantiates a new originator.
 	 *
-	 * @param state the state
-	 * @param memento the memento
+	 * @param state
+	 *            the state
+	 * @param memento
+	 *            the memento
 	 */
 	public Originator(final Object state, final Memento memento) {
 		super();
@@ -29,21 +30,22 @@ public class Originator {
 	 * @return the memento
 	 */
 	public Memento createMemento() {
-		memento = new Memento(state);
-		return memento;
+		this.memento = new Memento(this.state);
+		return this.memento;
 	}
 
 	/**
 	 * Revert.
 	 */
 	public void revert() {
-		state = getMemento();
+		this.state = getMemento();
 	}
 
 	/**
 	 * memento.
 	 *
-	 * @param memento the new memento
+	 * @param memento
+	 *            the new memento
 	 */
 	public void setMemento(final Memento memento) {
 		this.memento = memento;
@@ -55,7 +57,7 @@ public class Originator {
 	 * @return the memento
 	 */
 	public Memento getMemento() {
-		return memento;
+		return this.memento;
 	}
 
 }

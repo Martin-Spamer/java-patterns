@@ -1,8 +1,8 @@
 
-
 package patterns.flyweight;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A factory for creating FlyWeight objects.
@@ -18,7 +18,7 @@ public final class FlyweightFactory {
 	 */
 	public FlyWeight create() {
 		final FlyWeight flyWeight = new FlyWeight("CommonState");
-		list.add(flyWeight);
+		this.list.add(flyWeight);
 		return flyWeight;
 	}
 

@@ -8,11 +8,12 @@
 
 package coaching.solid;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * A class to Demonstrate the Single Responsibility Principle.
- * A class should have a responsibility pieces of functionality.
+ * A class to Demonstrate the Single Responsibility Principle. A class should
+ * have a responsibility pieces of functionality.
  */
 public class SingleResponsibilityPrinciple {
 

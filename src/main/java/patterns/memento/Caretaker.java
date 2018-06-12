@@ -1,5 +1,4 @@
 
-
 package patterns.memento;
 
 /**
@@ -15,14 +14,14 @@ class Caretaker {
 	 * @return the memento
 	 */
 	public Memento getMemento() {
-		return memento;
+		return this.memento;
 	}
 
 	/**
 	 * memento.
 	 *
-	 * @param memento the new
-	 *            memento
+	 * @param memento
+	 *            the new memento
 	 */
 	public void setMemento(final Memento memento) {
 		this.memento = memento;

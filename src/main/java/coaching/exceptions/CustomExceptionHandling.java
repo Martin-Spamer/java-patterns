@@ -6,7 +6,8 @@
 
 package coaching.exceptions;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ExceptionHandling Class.
@@ -17,8 +18,7 @@ public class CustomExceptionHandling {
 
 	/**
 	 * a Custom Exception. In most cases this all that is needed to implement a
-	 * custom exception class. In some cases additional constructors be be
-	 * required.
+	 * custom exception class. In some cases additional constructors be be required.
 	 */
 	public class CustomException extends Exception {
 		private static final long serialVersionUID = 1L;
@@ -55,7 +55,8 @@ public class CustomExceptionHandling {
 	/**
 	 * A SubProcess Throws a specialist exception.
 	 *
-	 * @throws CustomCreationException the custom creation exception
+	 * @throws CustomCreationException
+	 *             the custom creation exception
 	 */
 	public void subProcessA() throws CustomCreationException {
 		throw new CustomCreationException();
@@ -64,7 +65,8 @@ public class CustomExceptionHandling {
 	/**
 	 * A SubProcess Throws a specialist exception.
 	 *
-	 * @throws CustomReadException the custom read exception
+	 * @throws CustomReadException
+	 *             the custom read exception
 	 */
 	public void subProcessB() throws CustomReadException {
 		throw new CustomReadException();
@@ -73,7 +75,8 @@ public class CustomExceptionHandling {
 	/**
 	 * A SubProcess Throws a specialist exception.
 	 *
-	 * @throws CustomUpdateException the custom update exception
+	 * @throws CustomUpdateException
+	 *             the custom update exception
 	 */
 	public void subProcessC() throws CustomUpdateException {
 		throw new CustomUpdateException();
@@ -82,7 +85,8 @@ public class CustomExceptionHandling {
 	/**
 	 * sub processes, and replaces them with a simple generalised exception.
 	 *
-	 * @throws CustomException the custom exception
+	 * @throws CustomException
+	 *             the custom exception
 	 */
 	public void process() throws CustomException {
 		try {

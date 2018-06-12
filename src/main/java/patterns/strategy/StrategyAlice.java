@@ -9,7 +9,8 @@ public class StrategyAlice extends AbstractStrategy {
 	/**
 	 * Instantiates a new strategy alice.
 	 *
-	 * @param context the context
+	 * @param context
+	 *            the context
 	 */
 	public StrategyAlice(final Context context) {
 		super(context);

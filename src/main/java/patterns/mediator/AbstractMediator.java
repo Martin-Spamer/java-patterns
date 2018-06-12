@@ -1,8 +1,8 @@
 
-
 package patterns.mediator;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * AbstractMediator Class.

@@ -5,7 +5,8 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import patterns.mvc.controller.*;
+import patterns.mvc.controller.AbstractController;
+import patterns.mvc.controller.Controller;
 import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
 
@@ -17,7 +18,8 @@ public class MvcTest {
 	/**
 	 * Unit Test to mvc.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testModel() throws Exception {
@@ -38,12 +40,11 @@ public class MvcTest {
 	}
 
 	/**
-	 * Test run the MVC pattern.
-	 * create Controller.
-	 * Add Model and View,
-	 * initialise model.
+	 * Test run the MVC pattern. create Controller. Add Model and View, initialise
+	 * model.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testRunMvc() throws Exception {

@@ -22,8 +22,8 @@ public abstract class AbstractRequest implements RequestInterface {
 	 *
 	 * new payload
 	 *
-	 * @param payload the new
-	 *            payload
+	 * @param payload
+	 *            the new payload
 	 */
 	public void setPayload(final String payload) {
 		this.payload = payload;

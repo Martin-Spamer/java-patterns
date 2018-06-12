@@ -6,17 +6,26 @@
 
 package coaching.thread;
 
-import java.io.*;
+import java.io.InputStream;
+import java.io.StringWriter;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.xml.parsers.*;
-import javax.xml.transform.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.slf4j.*;
-import org.w3c.dom.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 /**
  * a test harness for Java modules.
@@ -60,7 +69,8 @@ public class Application {
 	/**
 	 * Input stream.
 	 *
-	 * @param resourceName the resource name
+	 * @param resourceName
+	 *            the resource name
 	 * @return the input stream
 	 */
 	protected InputStream inputStream(final String resourceName) {
@@ -72,7 +82,8 @@ public class Application {
 	/**
 	 * Creates the threads.
 	 *
-	 * @param document the document
+	 * @param document
+	 *            the document
 	 */
 	protected void createThreads(final Document document) {
 		final Element documentElement = document.getDocumentElement();
@@ -102,7 +113,8 @@ public class Application {
 	/**
 	 * Creates the process.
 	 *
-	 * @param className the class name
+	 * @param className
+	 *            the class name
 	 * @return the abstract process
 	 */
 	protected AbstractProcess createProcess(final String className) {
@@ -129,7 +141,8 @@ public class Application {
 	/**
 	 * Foo.
 	 *
-	 * @param doc the doc
+	 * @param doc
+	 *            the doc
 	 * @return the string
 	 */
 	protected String foo(final Document doc) {
@@ -151,7 +164,8 @@ public class Application {
 	/**
 	 * main method.
 	 *
-	 * @param args the arguments as String array.
+	 * @param args
+	 *            the arguments as String array.
 	 */
 	public static void main(final String[] args) {
 		try {

@@ -1,6 +1,4 @@
 
-
-
 package patterns.proxy;
 
 import static org.junit.Assert.assertNotNull;

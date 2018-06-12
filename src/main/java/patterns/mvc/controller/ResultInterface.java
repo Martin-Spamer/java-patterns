@@ -16,7 +16,8 @@ public interface ResultInterface {
 	/**
 	 * Sets the result.
 	 *
-	 * @param newResult the new result
+	 * @param newResult
+	 *            the new result
 	 * @return the result interface
 	 */
 	public ResultInterface setResult(final boolean newResult);
@@ -24,7 +25,8 @@ public interface ResultInterface {
 	/**
 	 * Update result.
 	 *
-	 * @param newResult the new result
+	 * @param newResult
+	 *            the new result
 	 * @return the result interface
 	 */
 	public ResultInterface updateResult(final boolean newResult);
@@ -32,7 +34,8 @@ public interface ResultInterface {
 	/**
 	 * Update result.
 	 *
-	 * @param newResult the new result
+	 * @param newResult
+	 *            the new result
 	 * @return the result interface
 	 */
 	public ResultInterface updateResult(final ResultInterface newResult);

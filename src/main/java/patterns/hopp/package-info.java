@@ -5,4 +5,3 @@
  *
  */
 package patterns.hopp;
-

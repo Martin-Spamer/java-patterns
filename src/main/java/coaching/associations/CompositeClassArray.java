@@ -10,7 +10,8 @@ package coaching.associations;
 
 import java.util.Arrays;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Using a basic Java array to implement a UML Composite.
@@ -22,9 +23,7 @@ public class CompositeClassArray {
 	private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
 
 	// Implementing Composite using a Class Array
-	private final AbstractAssociatedClass[] composite = {
-	        new Alice(), new Bob(), new Charlie(), new Dan()
-	};
+	private final AbstractAssociatedClass[] composite = { new Alice(), new Bob(), new Charlie(), new Dan() };
 
 	/**
 	 * Instantiates a new composite class array.

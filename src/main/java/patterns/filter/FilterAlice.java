@@ -18,7 +18,8 @@ public final class FilterAlice extends AbstractFilter {
 	 *
 	 * filter
 	 *
-	 * @param filter the filter
+	 * @param filter
+	 *            the filter
 	 */
 	public FilterAlice(final FilterInterface filter) {
 		super(filter);

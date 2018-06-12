@@ -1,15 +1,16 @@
 
-
-
 package patterns.command;
 
 import static org.junit.Assert.assertNotNull;
 
 import java.io.InputStream;
-import java.util.*;
+import java.util.Map;
+import java.util.Properties;
 
-import org.junit.*;
-import org.slf4j.*;
+import org.junit.Before;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The CommandMapTest Class.
@@ -22,7 +23,8 @@ public class CommandMapTest {
 	/**
 	 * Before tests.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Before
 	public void beforeTests() throws Exception {
@@ -37,7 +39,7 @@ public class CommandMapTest {
 			LOG.info("\t{} = {}", key, className);
 			try {
 				final AbstractCommand instance = (AbstractCommand) Class.forName(className).newInstance();
-				commandMap.put(key, instance);
+				this.commandMap.put(key, instance);
 			} catch (final ClassNotFoundException e) {
 				LOG.warn("Class not found for command {}", key);
 			}
@@ -47,7 +49,8 @@ public class CommandMapTest {
 	/**
 	 * Input stream.
 	 *
-	 * @param resourceName the resource name
+	 * @param resourceName
+	 *            the resource name
 	 * @return the input stream
 	 */
 	private InputStream inputStream(final String resourceName) {
@@ -59,40 +62,43 @@ public class CommandMapTest {
 	/**
 	 * Unit Test to execute missing command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test(expected = MissingCommandException.class)
 	public void testExecuteMissingCommand() throws Exception {
 		LOG.debug("testExecuteMissingCommand");
-		assertNotNull("Value cannot be null", commandMap);
+		assertNotNull("Value cannot be null", this.commandMap);
 		final String actionName = "MissingCommand";
-		commandMap.execute(actionName);
+		this.commandMap.execute(actionName);
 	}
 
 	/**
 	 * Unit Test to execute missing class.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test(expected = MissingCommandException.class)
 	public void testExecuteMissingClass() throws Exception {
 		LOG.debug("testExecuteMissingClass");
-		assertNotNull("Value cannot be null", commandMap);
+		assertNotNull("Value cannot be null", this.commandMap);
 		final String actionName = "MissingCommand";
-		commandMap.execute(actionName);
+		this.commandMap.execute(actionName);
 	}
 
 	/**
 	 * Unit Test to execute example command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExecuteExampleCommand() throws Exception {
 		LOG.debug("testExecuteExampleCommand");
-		assertNotNull("Value cannot be null", commandMap);
+		assertNotNull("Value cannot be null", this.commandMap);
 		final String actionName = "ExampleCommand";
-		final ResultInterface result = commandMap.execute(actionName);
+		final ResultInterface result = this.commandMap.execute(actionName);
 		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
@@ -100,14 +106,15 @@ public class CommandMapTest {
 	/**
 	 * Unit Test to execute sequence command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExecuteSequenceCommand() throws Exception {
 		LOG.debug("testExecuteSequenceCommand");
-		assertNotNull("Value cannot be null", commandMap);
+		assertNotNull("Value cannot be null", this.commandMap);
 		final String actionName = "SequenceCommand";
-		final ResultInterface result = commandMap.execute(actionName);
+		final ResultInterface result = this.commandMap.execute(actionName);
 		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
@@ -115,14 +122,15 @@ public class CommandMapTest {
 	/**
 	 * Unit Test to execute compound command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExecuteCompoundCommand() throws Exception {
 		LOG.debug("testExecuteCompoundCommand");
-		assertNotNull("Value cannot be null", commandMap);
+		assertNotNull("Value cannot be null", this.commandMap);
 		final String actionName = "CompoundCommand";
-		final ResultInterface result = commandMap.execute(actionName);
+		final ResultInterface result = this.commandMap.execute(actionName);
 		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}
@@ -130,14 +138,15 @@ public class CommandMapTest {
 	/**
 	 * Unit Test to execute conditional command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExecuteConditionalCommand() throws Exception {
 		LOG.debug("testExecuteConditionalCommand");
-		assertNotNull("Value cannot be null", commandMap);
+		assertNotNull("Value cannot be null", this.commandMap);
 		final String actionName = "ConditionalCommand";
-		final ResultInterface result = commandMap.execute(actionName);
+		final ResultInterface result = this.commandMap.execute(actionName);
 		assertNotNull("Value cannot be null", result);
 		LOG.info(result.toString());
 	}

@@ -1,5 +1,4 @@
 
-
 package patterns.bridge;
 
 /**
@@ -14,7 +13,8 @@ public abstract class Abstraction {
 	 *
 	 * implementor
 	 *
-	 * @param implementor the implementor
+	 * @param implementor
+	 *            the implementor
 	 */
 	public Abstraction(final AbstractImplementor implementor) {
 		super();
@@ -25,7 +25,7 @@ public abstract class Abstraction {
 	 * Operation.
 	 */
 	public void operation() {
-		implementor.operation();
+		this.implementor.operation();
 	}
 
 }

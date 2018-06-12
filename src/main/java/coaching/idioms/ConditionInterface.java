@@ -6,7 +6,8 @@ package coaching.idioms;
  *
  * generic type
  *
- * @param <T> the generic type
+ * @param <T>
+ *            the generic type
  */
 public interface ConditionInterface<T> {
 

@@ -1,6 +1,4 @@
 
-
-
 package patterns.mvc.controller;
 
 import static org.junit.Assert.assertNotNull;
@@ -15,7 +13,8 @@ public class ControllerTest {
 	/**
 	 * Unit Test to controller.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testController() throws Exception {

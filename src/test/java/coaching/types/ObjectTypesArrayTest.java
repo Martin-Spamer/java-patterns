@@ -1,6 +1,4 @@
 
-
-
 package coaching.types;
 
 import static org.junit.Assert.assertNotNull;

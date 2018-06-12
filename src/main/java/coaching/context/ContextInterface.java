@@ -11,7 +11,8 @@ public interface ContextInterface {
 	/**
 	 * Sets the properties.
 	 *
-	 * @param properties the properties
+	 * @param properties
+	 *            the properties
 	 * @return the context interface for fluent interface.
 	 */
 	public ContextInterface setProperties(final Properties properties);
@@ -19,8 +20,10 @@ public interface ContextInterface {
 	/**
 	 * Sets the property.
 	 *
-	 * @param key the key
-	 * @param value the value
+	 * @param key
+	 *            the key
+	 * @param value
+	 *            the value
 	 * @return the context interface for fluent interface.
 	 */
 	public ContextInterface setProperty(final String key, final String value);
@@ -28,7 +31,8 @@ public interface ContextInterface {
 	/**
 	 * Gets the property.
 	 *
-	 * @param key the key
+	 * @param key
+	 *            the key
 	 * @return the property
 	 * @see java.util.Properties#getProperty(java.lang.String)
 	 */
@@ -37,8 +41,10 @@ public interface ContextInterface {
 	/**
 	 * Gets the property, using default value, if the key is not found.
 	 *
-	 * @param key the key
-	 * @param defaultValue the default value
+	 * @param key
+	 *            the key
+	 * @param defaultValue
+	 *            the default value
 	 * @return the property
 	 */
 	public String getProperty(final String key, final String defaultValue);

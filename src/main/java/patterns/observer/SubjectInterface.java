@@ -9,14 +9,16 @@ public interface SubjectInterface {
 	/**
 	 * Attach observer.
 	 *
-	 * @param observer the observer
+	 * @param observer
+	 *            the observer
 	 */
 	public void attachObserver(final AbstractObserver observer);
 
 	/**
 	 * Detach observer.
 	 *
-	 * @param observer the observer
+	 * @param observer
+	 *            the observer
 	 */
 	public void detachObserver(final ObserverInterface observer);
 

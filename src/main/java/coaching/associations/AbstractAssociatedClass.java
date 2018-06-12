@@ -8,7 +8,8 @@
 
 package coaching.associations;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract Associated Class.
@@ -21,7 +22,7 @@ public abstract class AbstractAssociatedClass {
 	 * execute.
 	 */
 	public void execute() {
-		log.info("{}.execute", this.getClass().getName());
+		this.log.info("{}.execute", this.getClass().getName());
 	}
 
 	/*

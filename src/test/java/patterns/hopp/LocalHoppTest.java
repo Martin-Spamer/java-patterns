@@ -1,6 +1,4 @@
 
-
-
 package patterns.hopp;
 
 import static org.junit.Assert.assertNotNull;

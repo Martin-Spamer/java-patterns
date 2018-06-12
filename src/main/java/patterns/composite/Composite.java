@@ -1,14 +1,15 @@
 
 package patterns.composite;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Composite Class.
  */
 public final class Composite extends AbstractComponent {
 
-	private List<AbstractComponent> leaves = new ArrayList<AbstractComponent>();
+	private final List<AbstractComponent> leaves = new ArrayList<AbstractComponent>();
 
 	/*
 	 * (non-Javadoc)

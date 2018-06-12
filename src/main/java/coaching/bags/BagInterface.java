@@ -9,7 +9,8 @@ public interface BagInterface {
 	/**
 	 * bag with String values.
 	 *
-	 * @param values the values
+	 * @param values
+	 *            the values
 	 * @return this bag for a fluent interface
 	 */
 	public BagInterface fill(final String... values);
@@ -17,7 +18,8 @@ public interface BagInterface {
 	/**
 	 * Adds an item to the bag.
 	 *
-	 * @param value the value
+	 * @param value
+	 *            the value
 	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean add(final String value);

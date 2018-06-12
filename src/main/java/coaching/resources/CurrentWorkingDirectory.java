@@ -7,7 +7,8 @@ package coaching.resources;
 
 import java.io.File;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * CurrentWorkingDirectory Class.
@@ -26,7 +27,8 @@ public class CurrentWorkingDirectory {
 	/**
 	 * Mark.
 	 *
-	 * @param that the that
+	 * @param that
+	 *            the that
 	 * @return the string
 	 */
 	public String mark(final Object that) {
@@ -38,12 +40,12 @@ public class CurrentWorkingDirectory {
 			try {
 				file.createNewFile();
 				absolutePath = file.getAbsolutePath();
-				log.info("{}", absolutePath);
+				this.log.info("{}", absolutePath);
 			} catch (final Exception exception) {
-				log.debug(exception.toString());
+				this.log.debug(exception.toString());
 			}
 		} catch (final Exception exception) {
-			log.error(exception.toString());
+			this.log.error(exception.toString());
 		}
 		return absolutePath;
 	}

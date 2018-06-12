@@ -1,14 +1,15 @@
 
-
-
 package coaching.money;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Currency;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Money Test Class.
@@ -32,8 +33,10 @@ public class PoundTest {
 		/**
 		 * Instantiates a new pounds.
 		 *
-		 * @param currency the currency
-		 * @param amount the amount
+		 * @param currency
+		 *            the currency
+		 * @param amount
+		 *            the amount
 		 */
 		public Pounds(final Currency currency, final long amount) {
 			super(currency, amount);
@@ -42,7 +45,8 @@ public class PoundTest {
 		/**
 		 * Instantiates a new pounds.
 		 *
-		 * @param currency the currency
+		 * @param currency
+		 *            the currency
 		 */
 		public Pounds(final Currency currency) {
 			super(currency);
@@ -51,7 +55,8 @@ public class PoundTest {
 		/**
 		 * Instantiates a new pounds.
 		 *
-		 * @param amount the amount
+		 * @param amount
+		 *            the amount
 		 */
 		public Pounds(final long amount) {
 			super(amount);

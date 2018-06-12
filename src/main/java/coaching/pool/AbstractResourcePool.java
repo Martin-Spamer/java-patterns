@@ -3,12 +3,14 @@ package coaching.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract Resource Pool class.
  *
- * @param <E> the element type
+ * @param <E>
+ *            the element type
  */
 public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
@@ -96,7 +98,8 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 	 *
 	 * resource
 	 *
-	 * @param resource the resource
+	 * @param resource
+	 *            the resource
 	 * @return true, if successful, otherwise false.
 	 */
 	protected synchronized boolean offer(final E resource) {

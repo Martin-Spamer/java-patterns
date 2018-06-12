@@ -8,7 +8,8 @@
 
 package coaching.arrays;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Example code of arrays of native/primitive types.
@@ -66,15 +67,7 @@ public class NativeTypesArray {
 		/**
 		 * array with static data initialisation.
 		 */
-		final long[][] vector = {
-		        {
-		                0, 1, 2
-				}, {
-				        3, 4, 5
-				}, {
-				        6, 7, 8
-				}
-		};
+		final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
 
 		this.log.info("{}", looping(vector));
 	}
@@ -82,7 +75,8 @@ public class NativeTypesArray {
 	/**
 	 * Looping.
 	 *
-	 * @param vector the vector
+	 * @param vector
+	 *            the vector
 	 * @return the string
 	 */
 	private String looping(final long[][] vector) {

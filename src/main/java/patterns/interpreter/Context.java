@@ -18,7 +18,8 @@ public class Context {
 	/**
 	 * Instantiates a new context.
 	 *
-	 * @param state the state
+	 * @param state
+	 *            the state
 	 */
 	public Context(final Object state) {
 		super();
@@ -28,8 +29,8 @@ public class Context {
 	/**
 	 * Set the state.
 	 *
-	 * @param state the new
-	 *            state
+	 * @param state
+	 *            the new state
 	 * @return the context
 	 */
 	public Context setState(final Object state) {

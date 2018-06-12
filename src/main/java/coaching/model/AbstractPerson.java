@@ -3,7 +3,8 @@
  */
 package coaching.model;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An abstract Person class.
@@ -17,13 +18,14 @@ public abstract class AbstractPerson implements PersonInterface {
 	 * Instantiates a new person.
 	 */
 	public AbstractPerson() {
-		name = "";
+		this.name = "";
 	}
 
 	/**
 	 * Instantiates a new person.
 	 *
-	 * @param name the name
+	 * @param name
+	 *            the name
 	 */
 	public AbstractPerson(final String name) {
 		setName(name);
@@ -47,7 +49,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	/*
@@ -57,7 +59,7 @@ public abstract class AbstractPerson implements PersonInterface {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Person [name=%s]", name);
+		return String.format("Person [name=%s]", this.name);
 	}
 
 }

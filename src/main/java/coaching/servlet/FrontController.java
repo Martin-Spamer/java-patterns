@@ -3,12 +3,18 @@ package coaching.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import patterns.command.*;
+import patterns.command.CommandFactory;
+import patterns.command.MissingCommandException;
 
 /**
  * Front Controller Class.
@@ -58,7 +64,7 @@ public class FrontController extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
-	        throws ServletException {
+			throws ServletException {
 		try {
 			processRequest(request, response);
 		} catch (final Exception e) {
@@ -70,12 +76,15 @@ public class FrontController extends HttpServlet {
 	/**
 	 * Process request.
 	 *
-	 * @param request the request
-	 * @param response the response
-	 * @throws ServletException the servlet exception
+	 * @param request
+	 *            the request
+	 * @param response
+	 *            the response
+	 * @throws ServletException
+	 *             the servlet exception
 	 */
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
-	        throws ServletException {
+			throws ServletException {
 
 		final String queryString = request.getQueryString();
 		final String[] split = queryString.split("/");
@@ -97,13 +106,17 @@ public class FrontController extends HttpServlet {
 	/**
 	 * Dispatch.
 	 *
-	 * @param request the request
-	 * @param response the response
-	 * @param page the page
-	 * @throws ServletException the servlet exception
+	 * @param request
+	 *            the request
+	 * @param response
+	 *            the response
+	 * @param page
+	 *            the page
+	 * @throws ServletException
+	 *             the servlet exception
 	 */
 	protected void dispatch(final HttpServletRequest request, final HttpServletResponse response, final String page)
-	        throws ServletException {
+			throws ServletException {
 		final RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
 		try {
 			dispatcher.forward(request, response);

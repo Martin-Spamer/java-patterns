@@ -4,7 +4,8 @@ package patterns.command;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * InvokerExampleTest Class.
@@ -16,7 +17,8 @@ public class InvokerExampleTest {
 	/**
 	 * Unit Test to example command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExampleCommand() throws Exception {
@@ -29,7 +31,8 @@ public class InvokerExampleTest {
 	/**
 	 * Unit Test to invoker example command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testInvokerExampleCommand() throws Exception {
@@ -43,7 +46,8 @@ public class InvokerExampleTest {
 	/**
 	 * Unit Test to sequence command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testSequenceCommand() throws Exception {
@@ -56,7 +60,8 @@ public class InvokerExampleTest {
 	/**
 	 * Unit Test to invoker sequence command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testInvokerSequenceCommand() throws Exception {
@@ -70,7 +75,8 @@ public class InvokerExampleTest {
 	/**
 	 * Unit Test to compound command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testCompoundCommand() throws Exception {
@@ -83,7 +89,8 @@ public class InvokerExampleTest {
 	/**
 	 * Unit Test to invoker compound command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testInvokerCompoundCommand() throws Exception {
@@ -97,7 +104,8 @@ public class InvokerExampleTest {
 	/**
 	 * Unit Test to conditional command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testConditionalCommand() throws Exception {
@@ -110,7 +118,8 @@ public class InvokerExampleTest {
 	/**
 	 * Unit Test to invoker conditional command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testInvokerConditionalCommand() throws Exception {

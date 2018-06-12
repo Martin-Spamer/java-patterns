@@ -9,11 +9,12 @@ package coaching.associations;
 
 import java.util.Arrays;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Using a basic Java array to implement an example UML Aggregation.
- * The Lifetime of parts is unconstrained by lifetime of the parent.
+ * Using a basic Java array to implement an example UML Aggregation. The
+ * Lifetime of parts is unconstrained by lifetime of the parent.
  **/
 public final class AggregateClassArray {
 
@@ -27,23 +28,26 @@ public final class AggregateClassArray {
 	/**
 	 * Sets the aggregate.
 	 *
-	 * @param index the index
-	 * @param element the element
+	 * @param index
+	 *            the index
+	 * @param element
+	 *            the element
 	 */
 	public void setAggregate(final int index, final AbstractAssociatedClass element) {
 		LOG.info("{}.execute", this.getClass().getName());
-		aggregate[index] = element;
+		this.aggregate[index] = element;
 	}
 
 	/**
 	 * Gets the aggregate.
 	 *
-	 * @param index the index
+	 * @param index
+	 *            the index
 	 * @return the aggregate
 	 */
 	public AbstractAssociatedClass getAggregate(final int index) {
 		LOG.info("{}.execute", this.getClass().getName());
-		return aggregate[index];
+		return this.aggregate[index];
 	}
 
 	/*
@@ -53,7 +57,7 @@ public final class AggregateClassArray {
 	 */
 	@Override
 	public String toString() {
-		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(aggregate));
+		return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(this.aggregate));
 	}
 
 }

@@ -1,9 +1,8 @@
 
-
-
 package coaching.idioms;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.regex.Pattern;
 
@@ -39,7 +38,7 @@ public class RegularExpressionTest {
 	 */
 	@Test
 	public void testRegularExpressionPattern() {
-		final RegularExpression regularExpression = new RegularExpression(PATTERN);
+		final RegularExpression regularExpression = new RegularExpression(this.PATTERN);
 		assertNotNull("Value cannot be null", regularExpression);
 	}
 

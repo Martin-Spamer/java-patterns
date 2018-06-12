@@ -22,7 +22,8 @@ public final class Result implements ResultInterface {
 	 *
 	 * result
 	 *
-	 * @param result the result
+	 * @param result
+	 *            the result
 	 */
 	public Result(final Boolean result) {
 		this.value = result;
@@ -42,8 +43,7 @@ public final class Result implements ResultInterface {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see
-	 * patterns.command.ResultInterface#and(patterns.command.ResultInterface)
+	 * @see patterns.command.ResultInterface#and(patterns.command.ResultInterface)
 	 */
 	@Override
 	public boolean and(final ResultInterface newResult) {

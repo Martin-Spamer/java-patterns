@@ -4,7 +4,8 @@ package coaching;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A Sequence of programming instructions, one follows another
@@ -39,5 +40,5 @@ public class SequenceTest {
 		LOG.info("foo()");
 		return true;
 	}
-	
+
 }

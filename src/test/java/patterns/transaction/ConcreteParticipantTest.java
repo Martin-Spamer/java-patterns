@@ -1,6 +1,4 @@
 
-
-
 package patterns.transaction;
 
 import static org.junit.Assert.assertNotNull;

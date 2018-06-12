@@ -13,7 +13,7 @@ public abstract class AbstractValueObject {
 	 * Mark as dirty, changed.
 	 */
 	protected void markDirty() {
-		dirty = true;
+		this.dirty = true;
 	}
 
 	/**
@@ -22,7 +22,7 @@ public abstract class AbstractValueObject {
 	 * @return true, if is dirty
 	 */
 	protected boolean isDirty() {
-		return dirty;
+		return this.dirty;
 	}
 
 }

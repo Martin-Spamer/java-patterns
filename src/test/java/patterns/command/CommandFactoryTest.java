@@ -4,7 +4,8 @@ package patterns.command;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The CommandFactoryTest Class.
@@ -16,7 +17,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to command factory.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testCommandFactory() throws Exception {
@@ -29,7 +31,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to command factory file.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testCommandFactoryFile() throws Exception {
@@ -42,7 +45,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to missing command execute.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test(expected = MissingCommandException.class)
 	public void testMissingCommandExecute() throws Exception {
@@ -56,7 +60,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to execute missing command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test(expected = MissingCommandException.class)
 	public void testExecuteMissingCommand() throws Exception {
@@ -70,7 +75,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to execute missing class.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test(expected = MissingCommandException.class)
 	public void testExecuteMissingClass() throws Exception {
@@ -84,7 +90,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to execute example command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExecuteExampleCommand() throws Exception {
@@ -100,7 +107,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to execute sequence command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExecuteSequenceCommand() throws Exception {
@@ -116,7 +124,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to execute compound command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExecuteCompoundCommand() throws Exception {
@@ -132,7 +141,8 @@ public class CommandFactoryTest {
 	/**
 	 * Unit Test to execute conditional command.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testExecuteConditionalCommand() throws Exception {

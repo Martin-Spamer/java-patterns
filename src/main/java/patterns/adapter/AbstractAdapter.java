@@ -1,8 +1,8 @@
 
-
 package patterns.adapter;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * AbstractAdapter Class.
@@ -18,7 +18,7 @@ public abstract class AbstractAdapter implements TargetInterface {
 	 */
 	@Override
 	public Result request() {
-		log.info("{}.request", this.getClass().getSimpleName());
+		this.log.info("{}.request", this.getClass().getSimpleName());
 		return null;
 	}
 

@@ -1,7 +1,8 @@
 
 package coaching.bags;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Simple Bag Class.
@@ -24,7 +25,8 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
 	 *
 	 * values varargs
 	 *
-	 * @param values the values
+	 * @param values
+	 *            the values
 	 */
 	public SimpleBag(final String... values) {
 		super();

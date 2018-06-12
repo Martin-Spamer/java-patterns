@@ -1,8 +1,11 @@
 
 package coaching.idioms;
 
-import java.text.*;
-import java.util.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * Helper Class.
@@ -120,7 +123,8 @@ public final class DateHelper {
 	/**
 	 * Transform Calendar instance to ISO 8601 string.
 	 *
-	 * @param calendar the calendar
+	 * @param calendar
+	 *            the calendar
 	 * @return the string
 	 */
 	public static String fromCalendar(final Calendar calendar) {
@@ -132,9 +136,11 @@ public final class DateHelper {
 	/**
 	 * Transform ISO 8601 string to Calendar.
 	 *
-	 * @param iso8601string the iso 8601 string
+	 * @param iso8601string
+	 *            the iso 8601 string
 	 * @return the calendar
-	 * @throws ParseException the parse exception
+	 * @throws ParseException
+	 *             the parse exception
 	 */
 	public static Calendar toCalendar(final String iso8601string) throws ParseException {
 		final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(ISO_FORMAT, Locale.getDefault());

@@ -1,12 +1,11 @@
 
-
-
 package coaching;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Examples of a iteration (looping) programming instructions.
@@ -74,7 +73,7 @@ public class IterationTest {
 
 	/**
 	 * The <code>while(true)</code> statement is an example of iteration.
-	 * 
+	 *
 	 * Q) How many times will the log code be executed?
 	 */
 	@Test
@@ -92,7 +91,8 @@ public class IterationTest {
 	}
 
 	/**
-	 * The <code>do { ... } while(true)</code> statement is an example of an iteration.
+	 * The <code>do { ... } while(true)</code> statement is an example of an
+	 * iteration.
 	 *
 	 * Q) How many times will the code be executed?
 	 */
@@ -110,10 +110,10 @@ public class IterationTest {
 		LOG.info("loop count = {} ", count);
 		assertEquals(1, count);
 	}
-	
-	
+
 	/**
-	 * The <code>do { ... } while(true)</code> statement is an example of an iteration.
+	 * The <code>do { ... } while(true)</code> statement is an example of an
+	 * iteration.
 	 *
 	 * Q) How many times will the code be executed?
 	 */
@@ -131,5 +131,5 @@ public class IterationTest {
 		LOG.info("loop count = {} ", count);
 		assertEquals(1, count);
 	}
-	
+
 }

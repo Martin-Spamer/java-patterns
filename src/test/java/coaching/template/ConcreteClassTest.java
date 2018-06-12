@@ -1,6 +1,4 @@
 
-
-
 package coaching.template;
 
 import static org.junit.Assert.assertNotNull;

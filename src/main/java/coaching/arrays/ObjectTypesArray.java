@@ -8,7 +8,8 @@
 
 package coaching.arrays;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Example code of arrays of objects.
@@ -64,15 +65,7 @@ public class ObjectTypesArray {
 		/**
 		 * array with static data.
 		 */
-		final Long[][] vector = {
-		        {
-		                0L, 1L, 2L
-				}, {
-				        3L, 4L, 5L
-				}, {
-				        6L, 7L, 8L
-				}
-		};
+		final Long[][] vector = { { 0L, 1L, 2L }, { 3L, 4L, 5L }, { 6L, 7L, 8L } };
 
 		this.log.info("{}", looping(vector));
 	}
@@ -80,7 +73,8 @@ public class ObjectTypesArray {
 	/**
 	 * Looping.
 	 *
-	 * @param vector the vector
+	 * @param vector
+	 *            the vector
 	 * @return the string
 	 */
 	private String looping(final Long[][] vector) {

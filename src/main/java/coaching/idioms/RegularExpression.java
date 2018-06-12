@@ -1,9 +1,11 @@
 
 package coaching.idioms;
 
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * RegularExpression Class.
@@ -26,7 +28,8 @@ public class RegularExpression {
 	 *
 	 * pattern string
 	 *
-	 * @param patternString the pattern string
+	 * @param patternString
+	 *            the pattern string
 	 */
 	public RegularExpression(final String patternString) {
 		super();
@@ -38,7 +41,8 @@ public class RegularExpression {
 	 *
 	 * pattern
 	 *
-	 * @param pattern the pattern
+	 * @param pattern
+	 *            the pattern
 	 */
 	public RegularExpression(final Pattern pattern) {
 		super();
@@ -50,7 +54,8 @@ public class RegularExpression {
 	 *
 	 * code
 	 *
-	 * @param code the code
+	 * @param code
+	 *            the code
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean verify(final String code) {
@@ -64,7 +69,8 @@ public class RegularExpression {
 	 *
 	 * original
 	 *
-	 * @param original the original
+	 * @param original
+	 *            the original
 	 */
 	public void find(final String original) {
 		final Matcher matcher = this.pattern.matcher(original);
@@ -78,12 +84,12 @@ public class RegularExpression {
 	/**
 	 * Replace.
 	 *
-	 * original
-	 * new sub string
-	 * string
+	 * original new sub string string
 	 *
-	 * @param original the original
-	 * @param newSubString the new sub string
+	 * @param original
+	 *            the original
+	 * @param newSubString
+	 *            the new sub string
 	 * @return the string
 	 */
 	public String replace(final String original, final String newSubString) {

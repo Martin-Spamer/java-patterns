@@ -4,8 +4,10 @@ package coaching.tuples;
 /**
  * Twin Tuple Class.
  *
- * @param <L> the generic type
- * @param <R> the generic type
+ * @param <L>
+ *            the generic type
+ * @param <R>
+ *            the generic type
  */
 public class Tuple<L, R> implements TupleInterface<L, R> {
 
@@ -27,8 +29,10 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * Instantiates a new tuple.
 	 *
-	 * @param left the generic type L
-	 * @param right the generic type R
+	 * @param left
+	 *            the generic type L
+	 * @param right
+	 *            the generic type R
 	 */
 	public Tuple(final L left, final R right) {
 		super();
@@ -39,8 +43,10 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * a factory method to create a instance of tuple from values.
 	 *
-	 * @param left the generic type L
-	 * @param right the generic type R
+	 * @param left
+	 *            the generic type L
+	 * @param right
+	 *            the generic type R
 	 * @return the tuple interface
 	 */
 	public static <L, R> TupleInterface<L, R> pair(final L left, final R right) {
@@ -90,7 +96,8 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 	/**
 	 * Checks if is equal to.
 	 *
-	 * @param tuple the tuple
+	 * @param tuple
+	 *            the tuple
 	 * @return true, if is equal to
 	 */
 	public boolean isEqualTo(final TupleInterface<L, R> tuple) {

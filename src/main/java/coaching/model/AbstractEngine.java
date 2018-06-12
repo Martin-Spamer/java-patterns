@@ -1,7 +1,8 @@
 
 package coaching.model;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract Engine class.
@@ -14,7 +15,8 @@ public abstract class AbstractEngine implements FuelInterface {
 	/**
 	 * Instantiates a new abstract engine.
 	 *
-	 * @param fuel the fuel
+	 * @param fuel
+	 *            the fuel
 	 */
 	public AbstractEngine(final FuelInterface fuel) {
 		super();
@@ -24,7 +26,8 @@ public abstract class AbstractEngine implements FuelInterface {
 	/**
 	 * Use fuel type.
 	 *
-	 * @param fuel the fuel
+	 * @param fuel
+	 *            the fuel
 	 */
 	private final void fuelType(final FuelInterface fuel) {
 		this.fuel = fuel;

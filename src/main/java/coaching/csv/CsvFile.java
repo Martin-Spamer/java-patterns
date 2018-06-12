@@ -1,10 +1,18 @@
 
 package coaching.csv;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Represent a comma separated value file class.
@@ -29,7 +37,8 @@ public class CsvFile {
 	/**
 	 * Instantiates a new csv file from filename.
 	 *
-	 * @param csvFilename the csv filename
+	 * @param csvFilename
+	 *            the csv filename
 	 */
 	public CsvFile(final String csvFilename) {
 		LOG.info("CsvFile({})", csvFilename);
@@ -79,8 +88,10 @@ public class CsvFile {
 	/**
 	 * Read filename.
 	 *
-	 * @param filename the filename
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @param filename
+	 *            the filename
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
 	 */
 	public void read(final String filename) throws IOException {
 		LOG.info("read({})", filename);
@@ -95,8 +106,10 @@ public class CsvFile {
 	/**
 	 * Read a resource as a stream.
 	 *
-	 * @param resourceAsStream the resource as stream
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @param resourceAsStream
+	 *            the resource as stream
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
 	 */
 	private void read(final InputStream resourceAsStream) throws IOException {
 		if (resourceAsStream != null) {
@@ -111,8 +124,10 @@ public class CsvFile {
 	/**
 	 * Read input stream reader.
 	 *
-	 * @param inputStreamReader the input stream reader
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @param inputStreamReader
+	 *            the input stream reader
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
 	 */
 	private void read(final InputStreamReader inputStreamReader) throws IOException {
 		if (inputStreamReader != null) {
@@ -125,8 +140,10 @@ public class CsvFile {
 	/**
 	 * Read.
 	 *
-	 * @param bufferedReader the buffered reader
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @param bufferedReader
+	 *            the buffered reader
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
 	 */
 	private void read(final BufferedReader bufferedReader) throws IOException {
 		if (bufferedReader != null) {
@@ -146,7 +163,8 @@ public class CsvFile {
 	/**
 	 * Process line.
 	 *
-	 * @param line the line
+	 * @param line
+	 *            the line
 	 */
 	protected void processLine(final String line) {
 		if (line.charAt(0) == '#') {
@@ -162,8 +180,8 @@ public class CsvFile {
 	/**
 	 * header line new header line.
 	 *
-	 * @param line the new
-	 *            header line
+	 * @param line
+	 *            the new header line
 	 */
 	private void setHeaderLine(final String line) {
 		this.headerLine = line.substring(1);
@@ -173,7 +191,8 @@ public class CsvFile {
 	/**
 	 * Write.
 	 *
-	 * @param filename the filename
+	 * @param filename
+	 *            the filename
 	 */
 	public void write(final String filename) {
 		try {
@@ -192,7 +211,8 @@ public class CsvFile {
 	/**
 	 * record.
 	 *
-	 * @param index the index
+	 * @param index
+	 *            the index
 	 * @return the record
 	 */
 	public CsvRecord getRecord(final int index) {

@@ -1,9 +1,8 @@
 
-
-
 package coaching.tuples;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
@@ -27,9 +26,12 @@ public class TripleTest {
 		/**
 		 * Instantiates a new space.
 		 *
-		 * @param x the x
-		 * @param y the y
-		 * @param z the z
+		 * @param x
+		 *            the x
+		 * @param y
+		 *            the y
+		 * @param z
+		 *            the z
 		 */
 		public Space(final Double x, final Double y, final Double z) {
 			super(x, y, z);

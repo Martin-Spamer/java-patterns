@@ -1,8 +1,8 @@
 
-
 package patterns.facade;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * class SubSystem.
@@ -15,7 +15,7 @@ public class SubSystem {
 	 * Operation.
 	 */
 	public void operation() {
-		log.info("%s.operation", toString());
+		this.log.info("%s.operation", toString());
 	}
 
 	/*

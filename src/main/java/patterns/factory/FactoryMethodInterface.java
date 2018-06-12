@@ -6,7 +6,8 @@ package patterns.factory;
  *
  * generic type
  *
- * @param <T> the generic type
+ * @param <T>
+ *            the generic type
  */
 public interface FactoryMethodInterface<T> {
 

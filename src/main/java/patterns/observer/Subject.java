@@ -1,5 +1,4 @@
 
-
 package patterns.observer;
 
 /**
@@ -15,13 +14,14 @@ public final class Subject extends AbstractSubject {
 	 * @return the status
 	 */
 	public Boolean getStatus() {
-		return status;
+		return this.status;
 	}
 
 	/**
 	 * status.
 	 *
-	 * @param status the new status
+	 * @param status
+	 *            the new status
 	 */
 	public void setStatus(final Boolean status) {
 		this.status = status;
@@ -35,7 +35,7 @@ public final class Subject extends AbstractSubject {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Subject [status=%s]", status);
+		return String.format("Subject [status=%s]", this.status);
 	}
 
 }

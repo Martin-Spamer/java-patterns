@@ -1,9 +1,11 @@
 
 package coaching.resources;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Configuration Class.
@@ -25,7 +27,8 @@ public class ResourceLoader {
 	/**
 	 * Construct a new configuration instance.
 	 *
-	 * @param propertyFileName the property file name
+	 * @param propertyFileName
+	 *            the property file name
 	 */
 	public ResourceLoader(final String propertyFileName) {
 		super();
@@ -36,7 +39,8 @@ public class ResourceLoader {
 	/**
 	 * Sets the property file name.
 	 *
-	 * @param propertyFileName the property file name
+	 * @param propertyFileName
+	 *            the property file name
 	 * @return this for a fluent interface.
 	 */
 	public ResourceLoader setFilename(final String propertyFileName) {
@@ -61,8 +65,7 @@ public class ResourceLoader {
 	/**
 	 * Checks if is loaded.
 	 *
-	 * @return true, if is
-	 *         loaded
+	 * @return true, if is loaded
 	 */
 	public boolean isLoaded() {
 		return this.loaded;
@@ -71,7 +74,8 @@ public class ResourceLoader {
 	/**
 	 * Load the configuration from the resources.
 	 *
-	 * @param propertyFileName the property file name
+	 * @param propertyFileName
+	 *            the property file name
 	 * @return this for a fluent interface.
 	 */
 	public ResourceLoader loadResource(final String propertyFileName) {
@@ -82,7 +86,8 @@ public class ResourceLoader {
 	/**
 	 * Load the configuration form the property file name.
 	 *
-	 * @param filename the property file name
+	 * @param filename
+	 *            the property file name
 	 * @return this for a fluent interface.
 	 */
 	public ResourceLoader loadFrom(final String filename) {
@@ -99,7 +104,8 @@ public class ResourceLoader {
 	/**
 	 * Load the configuration form the property file name.
 	 *
-	 * @param streamForResource the property InputStream
+	 * @param streamForResource
+	 *            the property InputStream
 	 * @return this for a fluent interface.
 	 */
 	public ResourceLoader loadFrom(final InputStream streamForResource) {
@@ -114,11 +120,13 @@ public class ResourceLoader {
 	/**
 	 * Stream for resource.
 	 *
-	 * @param propertyFileName the property file name
+	 * @param propertyFileName
+	 *            the property file name
 	 * @return the input stream
 	 */
 	protected InputStream streamForResource(final String propertyFileName) {
-		//  legacy example <code>final ClassLoader classLoader = this.getClass().getClassLoader();</code>
+		// legacy example <code>final ClassLoader classLoader =
+		// this.getClass().getClassLoader();</code>
 		final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		return classLoader.getResourceAsStream(propertyFileName);
 	}

@@ -3,8 +3,10 @@ package coaching.jdbc;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.*;
-import org.slf4j.*;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * class PointBaseCustomerDaoTest.
@@ -13,6 +15,7 @@ import org.slf4j.*;
 public class PointBaseCustomerDaoTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);
+	private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
 	private final static String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
 	private final static String USER = "PBPUBLIC";
 	private final static String PASSWORD = "PBPUBLIC";

@@ -1,8 +1,8 @@
 
-
 package patterns.router;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract Input Channel class.
@@ -18,7 +18,7 @@ public abstract class AbstractInputChannel implements InputChannelInterface {
 	 */
 	@Override
 	public Message receiveMessage() {
-		log.info("{}.receiveMessage()", this.getClass().getSimpleName());
+		this.log.info("{}.receiveMessage()", this.getClass().getSimpleName());
 		return new Message();
 	}
 

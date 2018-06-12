@@ -1,9 +1,9 @@
 
-
-
 package patterns.interpreter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -20,7 +20,8 @@ public class DisjunctionTest {
 		/**
 		 * Instantiates a new mock.
 		 *
-		 * @param result the result
+		 * @param result
+		 *            the result
 		 */
 		public Mock(final boolean result) {
 			super(result);

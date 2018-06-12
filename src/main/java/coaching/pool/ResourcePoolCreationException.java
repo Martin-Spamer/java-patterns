@@ -17,7 +17,8 @@ public class ResourcePoolCreationException extends ResourcePoolException {
 	 *
 	 * exception message
 	 *
-	 * @param exceptionMessage the exception message
+	 * @param exceptionMessage
+	 *            the exception message
 	 */
 	public ResourcePoolCreationException(final String exceptionMessage) {
 		super(exceptionMessage);
@@ -28,7 +29,8 @@ public class ResourcePoolCreationException extends ResourcePoolException {
 	 *
 	 * exception
 	 *
-	 * @param exception the exception
+	 * @param exception
+	 *            the exception
 	 */
 	public ResourcePoolCreationException(final Exception exception) {
 		super(exception);
