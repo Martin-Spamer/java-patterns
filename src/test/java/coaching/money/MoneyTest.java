@@ -158,7 +158,7 @@ public class MoneyTest {
         assertNotNull("Value cannot be null", money);
         LOG.info("{}", money.toString());
         final String actual = money.toString();
-        assertEquals("$ 9,223,372,036,854,775,807", actual);
+        assertEquals(usd.getDisplayName() + " 9,223,372,036,854,775,807", actual);
     }
 
 }
