@@ -13,3 +13,4 @@ Design Patterns implemented in Java
 	</dependency>
 	
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ff7e76d6a4924d5da8d9f1c1cc7fb035)](https://www.codacy.com/app/Martin-Spamer/java-coaching?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Martin-Spamer/java-coaching&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/Martin-Spamer/java-coaching.svg?branch=master)](https://travis-ci.org/Martin-Spamer/java-coaching)
