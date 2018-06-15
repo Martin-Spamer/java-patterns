@@ -14,16 +14,17 @@ import coaching.resources.CurrentWorkingDirectory;
  */
 public class CurrentWorkingDirectoryTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectoryTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectoryTest.class);
 
-	/**
-	 * Unit Test to current working directory.
-	 */
-	@Test
-	public void testCurrentWorkingDirectory() {
-		LOG.info("testCurrentWorkingDirectory");
-		final CurrentWorkingDirectory cwd = new CurrentWorkingDirectory();
-		assertNotNull("Value cannot be null", cwd);
-	}
+    /**
+     * Unit Test to current working directory.
+     */
+    @Test
+    public void testCurrentWorkingDirectory() {
+        LOG.info("testCurrentWorkingDirectory");
+        final CurrentWorkingDirectory cwd = new CurrentWorkingDirectory();
+        assertNotNull("Value cannot be null", cwd);
+    }
 
 }

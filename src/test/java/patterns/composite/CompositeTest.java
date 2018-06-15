@@ -12,20 +12,21 @@ import org.slf4j.LoggerFactory;
  */
 public class CompositeTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
 
-	/**
-	 * Unit Test to composite.
-	 */
-	@Test
-	public void testComposite() {
-		final AbstractComponent composite = new Composite();
-		assertNotNull("Value cannot be null", composite);
+    /**
+     * Unit Test to composite.
+     */
+    @Test
+    public void testComposite() {
+        final AbstractComponent composite = new Composite();
+        assertNotNull("Value cannot be null", composite);
 
-		final Leaf leaf = new Leaf();
-		assertNotNull("Value cannot be null", leaf);
+        final Leaf leaf = new Leaf();
+        assertNotNull("Value cannot be null", leaf);
 
-		assertNotNull("Value cannot be null", composite.add(leaf));
-		LOG.info("{}", composite.toString());
-	}
+        assertNotNull("Value cannot be null", composite.add(leaf));
+        LOG.info("{}", composite.toString());
+    }
 }

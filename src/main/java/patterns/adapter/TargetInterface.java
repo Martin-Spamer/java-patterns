@@ -6,13 +6,13 @@ package patterns.adapter;
  */
 public interface TargetInterface {
 
-	/**
-	 * Request.
-	 *
-	 * result
-	 *
-	 * @return the result
-	 */
-	public Result request();
+    /**
+     * Request.
+     *
+     * result
+     *
+     * @return the result
+     */
+    public Result request();
 
 }

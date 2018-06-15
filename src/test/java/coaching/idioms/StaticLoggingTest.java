@@ -12,14 +12,15 @@ import org.slf4j.LoggerFactory;
  */
 public class StaticLoggingTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(StaticLoggingTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(StaticLoggingTest.class);
 
-	/**
-	 * Unit Test to send to log.
-	 */
-	@Test
-	public void testSendToLog() {
-		assertNotNull("Value cannot be null", LOG);
-	}
+    /**
+     * Unit Test to send to log.
+     */
+    @Test
+    public void testSendToLog() {
+        assertNotNull("Value cannot be null", LOG);
+    }
 
 }

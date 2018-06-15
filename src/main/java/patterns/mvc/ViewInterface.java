@@ -6,22 +6,22 @@ package patterns.mvc;
  */
 public interface ViewInterface {
 
-	/**
-	 * view.
-	 *
-	 * @param model
-	 *            the model
-	 */
-	public void attachModel(final ModelInterface model);
+    /**
+     * view.
+     *
+     * @param model
+     *            the model
+     */
+    public void attachModel(final ModelInterface model);
 
-	/**
-	 * Detach model from view.
-	 */
-	public void detachModel();
+    /**
+     * Detach model from view.
+     */
+    public void detachModel();
 
-	/**
-	 * Show view.
-	 */
-	public void show();
+    /**
+     * Show view.
+     */
+    public void show();
 
 }

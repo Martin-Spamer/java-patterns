@@ -12,16 +12,17 @@ import org.slf4j.LoggerFactory;
  */
 public class CompositeClassArrayTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArrayTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArrayTest.class);
 
-	/**
-	 * Unit Test to composite class array.
-	 */
-	@Test
-	public void testCompositeClassArray() {
-		final CompositeClassArray compositeClassArray = new CompositeClassArray();
-		assertNotNull("Value cannot be null", compositeClassArray);
-		LOG.info("{}", compositeClassArray.toString());
-	}
+    /**
+     * Unit Test to composite class array.
+     */
+    @Test
+    public void testCompositeClassArray() {
+        final CompositeClassArray compositeClassArray = new CompositeClassArray();
+        assertNotNull("Value cannot be null", compositeClassArray);
+        LOG.info("{}", compositeClassArray.toString());
+    }
 
 }

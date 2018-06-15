@@ -20,27 +20,29 @@ import org.slf4j.LoggerFactory;
  **/
 public class CompositeClassArray {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
 
-	// Implementing Composite using a Class Array
-	private final AbstractAssociatedClass[] composite = { new Alice(), new Bob(), new Charlie(), new Dan() };
+    /** The composite. */
+    // Implementing Composite using a Class Array
+    private final AbstractAssociatedClass[] composite = { new Alice(), new Bob(), new Charlie(), new Dan() };
 
-	/**
-	 * Instantiates a new composite class array.
-	 */
-	public CompositeClassArray() {
-		super();
-		LOG.info("CompositeClassArray");
-	}
+    /**
+     * Instantiates a new composite class array.
+     */
+    public CompositeClassArray() {
+        super();
+        LOG.info("CompositeClassArray");
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
+    }
 
 }

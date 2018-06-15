@@ -10,13 +10,13 @@ import org.junit.Test;
  */
 public class SessionTrackerTest {
 
-	/**
-	 * Unit Test to session tracker.
-	 */
-	@Test
-	public void testSessionTracker() {
-		final SessionTracker sessionTracker = new SessionTracker();
-		assertNotNull("Value cannot be null", sessionTracker);
-	}
+    /**
+     * Unit Test to session tracker.
+     */
+    @Test
+    public void testSessionTracker() {
+        final SessionTracker sessionTracker = new SessionTracker();
+        assertNotNull("Value cannot be null", sessionTracker);
+    }
 
 }

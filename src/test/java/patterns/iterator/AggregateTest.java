@@ -10,13 +10,13 @@ import org.junit.Test;
  */
 public class AggregateTest {
 
-	/**
-	 * Unit Test to create iterator.
-	 */
-	@Test
-	public void testCreateIterator() {
-		final Aggregate aggregate = new Aggregate();
-		assertNotNull("Value cannot be null", aggregate);
-	}
+    /**
+     * Unit Test to create iterator.
+     */
+    @Test
+    public void testCreateIterator() {
+        final Aggregate aggregate = new Aggregate();
+        assertNotNull("Value cannot be null", aggregate);
+    }
 
 }

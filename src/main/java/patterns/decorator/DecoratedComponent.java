@@ -6,20 +6,20 @@ package patterns.decorator;
  */
 public class DecoratedComponent extends AbstractDecorator implements DecoratorInterface {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.decorator.AbstractComponent#operation()
-	 */
-	@Override
-	public AbstractComponent operation() {
-		super.beforeOperation();
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.decorator.AbstractComponent#operation()
+     */
+    @Override
+    public AbstractComponent operation() {
+        super.beforeOperation();
 
-		this.log.info("{}.operation", this.getClass().getSimpleName());
+        this.log.info("{}.operation", this.getClass().getSimpleName());
 
-		super.afterOperation();
+        super.afterOperation();
 
-		return this;
-	}
+        return this;
+    }
 
 }

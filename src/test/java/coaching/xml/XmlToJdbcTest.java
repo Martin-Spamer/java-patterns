@@ -12,13 +12,13 @@ import coaching.jdbc.MySqlDao;
  */
 public class XmlToJdbcTest {
 
-	/**
-	 * Unit Test to xml to jdbc.
-	 */
-	@Test
-	public void testXmlToJdbc() {
-		final MySqlDao xmlToJdbc = new XmlToJdbc();
-		assertNotNull("Value cannot be null", xmlToJdbc);
-	}
+    /**
+     * Unit Test to xml to jdbc.
+     */
+    @Test
+    public void testXmlToJdbc() {
+        final MySqlDao xmlToJdbc = new XmlToJdbc();
+        assertNotNull("Value cannot be null", xmlToJdbc);
+    }
 
 }

@@ -6,11 +6,11 @@ package coaching.model;
  */
 public class DieselEngine extends AbstractEngine implements FuelInterface {
 
-	/**
-	 * Instantiates a new diesel engine.
-	 */
-	public DieselEngine() {
-		super(new DieselFuel());
-	}
+    /**
+     * Instantiates a new diesel engine.
+     */
+    public DieselEngine() {
+        super(new DieselFuel());
+    }
 
 }

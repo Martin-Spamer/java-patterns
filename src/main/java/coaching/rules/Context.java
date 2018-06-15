@@ -10,14 +10,14 @@ import coaching.context.AbstractContext;
  */
 public class Context extends AbstractContext {
 
-	/**
-	 * Instantiates a new context.
-	 *
-	 * @param properties
-	 *            the properties
-	 */
-	public Context(final Properties properties) {
-		super(properties);
-	}
+    /**
+     * Instantiates a new context.
+     *
+     * @param properties
+     *            the properties
+     */
+    public Context(final Properties properties) {
+        super(properties);
+    }
 
 }

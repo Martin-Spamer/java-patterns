@@ -12,22 +12,23 @@ import org.slf4j.LoggerFactory;
  */
 public class ManagerTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(ManagerTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(ManagerTest.class);
 
-	/**
-	 * Test delegation.
-	 */
-	@Test
-	public void testDelegation() {
-		LOG.info("testDelegation");
-		final Manager manager = new Manager();
-		assertNotNull("Value cannot be null", manager);
+    /**
+     * Test delegation.
+     */
+    @Test
+    public void testDelegation() {
+        LOG.info("testDelegation");
+        final Manager manager = new Manager();
+        assertNotNull("Value cannot be null", manager);
 
-		final Worker worker = new Worker();
-		assertNotNull("Value cannot be null", manager);
+        final Worker worker = new Worker();
+        assertNotNull("Value cannot be null", manager);
 
-		assertNotNull("Value cannot be null", manager.setWorker(worker));
-		assertNotNull("Value cannot be null", manager.doProcess());
-	}
+        assertNotNull("Value cannot be null", manager.setWorker(worker));
+        assertNotNull("Value cannot be null", manager.doProcess());
+    }
 
 }

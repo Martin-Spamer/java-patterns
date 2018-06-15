@@ -10,13 +10,13 @@ import org.junit.Test;
  */
 public class ColleagueTest {
 
-	/**
-	 * Unit Test to colleague.
-	 */
-	@Test
-	public void testColleague() {
-		final Colleague colleague = new Colleague();
-		assertNotNull("Value cannot be null", colleague);
-	}
+    /**
+     * Unit Test to colleague.
+     */
+    @Test
+    public void testColleague() {
+        final Colleague colleague = new Colleague();
+        assertNotNull("Value cannot be null", colleague);
+    }
 
 }

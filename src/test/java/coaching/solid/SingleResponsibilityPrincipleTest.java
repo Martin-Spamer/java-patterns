@@ -10,14 +10,14 @@ import org.junit.Test;
  */
 public class SingleResponsibilityPrincipleTest {
 
-	/**
-	 * Unit Test to responsibility.
-	 */
-	@Test
-	public void testResponsibility() {
-		final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
-		assertNotNull("Value cannot be null", srp);
-		srp.responsibility();
-	}
+    /**
+     * Unit Test to responsibility.
+     */
+    @Test
+    public void testResponsibility() {
+        final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
+        assertNotNull("Value cannot be null", srp);
+        srp.responsibility();
+    }
 
 }

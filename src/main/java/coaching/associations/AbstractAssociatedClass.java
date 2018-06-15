@@ -16,23 +16,24 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractAssociatedClass {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** The log. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * execute.
-	 */
-	public void execute() {
-		this.log.info("{}.execute", this.getClass().getName());
-	}
+    /**
+     * execute.
+     */
+    public void execute() {
+        this.log.info("{}.execute", this.getClass().getName());
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("%s", this.getClass().getSimpleName());
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("%s", this.getClass().getSimpleName());
+    }
 
 }

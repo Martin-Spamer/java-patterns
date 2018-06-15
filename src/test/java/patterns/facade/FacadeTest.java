@@ -10,12 +10,12 @@ import org.junit.Test;
  */
 public class FacadeTest {
 
-	/**
-	 * Unit Test to concrete facade operation.
-	 */
-	@Test
-	public void testConcreteFacadeOperation() {
-		assertNotNull("Value cannot be null", new ConcreteFacade());
-	}
+    /**
+     * Unit Test to concrete facade operation.
+     */
+    @Test
+    public void testConcreteFacadeOperation() {
+        assertNotNull("Value cannot be null", new ConcreteFacade());
+    }
 
 }

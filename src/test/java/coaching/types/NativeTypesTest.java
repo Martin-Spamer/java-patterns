@@ -10,14 +10,14 @@ import org.junit.Test;
  */
 public class NativeTypesTest {
 
-	/**
-	 * Unit Test to display.
-	 */
-	@Test
-	public void testDisplay() {
-		final NativeTypes nativeTypes = new NativeTypes();
-		assertNotNull("Value cannot be null", nativeTypes);
-		nativeTypes.display();
-	}
+    /**
+     * Unit Test to display.
+     */
+    @Test
+    public void testDisplay() {
+        final NativeTypes nativeTypes = new NativeTypes();
+        assertNotNull("Value cannot be null", nativeTypes);
+        nativeTypes.display();
+    }
 
 }

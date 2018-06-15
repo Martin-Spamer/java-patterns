@@ -9,17 +9,18 @@ import org.slf4j.LoggerFactory;
  */
 public class Worker implements ProcessInterface {
 
-	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** The log. */
+    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see delegation.ProcessInterface#doProcess()
-	 */
-	@Override
-	public Worker doProcess() {
-		this.log.info("do work");
-		return this;
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see delegation.ProcessInterface#doProcess()
+     */
+    @Override
+    public Worker doProcess() {
+        this.log.info("do work");
+        return this;
+    }
 
 }

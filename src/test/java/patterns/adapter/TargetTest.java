@@ -12,16 +12,17 @@ import org.slf4j.LoggerFactory;
  */
 public class TargetTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(TargetTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(TargetTest.class);
 
-	/**
-	 * Unit Test to request.
-	 */
-	@Test
-	public void testRequest() {
-		final TargetAdapter targetAdapter = new TargetAdapter();
-		assertNotNull("Value cannot be null", targetAdapter);
-		LOG.info("{}", targetAdapter.toString());
-	}
+    /**
+     * Unit Test to request.
+     */
+    @Test
+    public void testRequest() {
+        final TargetAdapter targetAdapter = new TargetAdapter();
+        assertNotNull("Value cannot be null", targetAdapter);
+        LOG.info("{}", targetAdapter.toString());
+    }
 
 }

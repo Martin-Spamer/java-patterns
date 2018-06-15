@@ -6,14 +6,14 @@ package patterns.composite;
  */
 public final class Leaf extends AbstractComponent {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.composite.Component#operation()
-	 */
-	@Override
-	public ComponentInterface operation() {
-		return this;
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.composite.Component#operation()
+     */
+    @Override
+    public ComponentInterface operation() {
+        return this;
+    }
 
 }

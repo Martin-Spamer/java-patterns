@@ -9,51 +9,54 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractHandler implements HandlerInterface {
 
-	private HandlerInterface next;
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** The next. */
+    private HandlerInterface next;
+    
+    /** The log. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Instantiates a new abstract handler.
-	 */
-	public AbstractHandler() {
-		super();
-	}
+    /**
+     * Instantiates a new abstract handler.
+     */
+    public AbstractHandler() {
+        super();
+    }
 
-	/**
-	 * Instantiates a new handler.
-	 *
-	 * next
-	 *
-	 * @param next
-	 *            the next
-	 */
-	public AbstractHandler(final HandlerInterface next) {
-		super();
-		setNext(next);
-	}
+    /**
+     * Instantiates a new handler.
+     *
+     * next
+     *
+     * @param next
+     *            the next
+     */
+    public AbstractHandler(final HandlerInterface next) {
+        super();
+        setNext(next);
+    }
 
-	/**
-	 * next.
-	 *
-	 * next handler
-	 *
-	 * @param next
-	 *            the next
-	 * @return the abstract handler
-	 */
-	public AbstractHandler setNext(final HandlerInterface next) {
-		this.next = next;
-		return this;
-	}
+    /**
+     * next.
+     *
+     * next handler
+     *
+     * @param next
+     *            the next
+     * @return the abstract handler
+     */
+    public AbstractHandler setNext(final HandlerInterface next) {
+        this.next = next;
+        return this;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.chain.HandlerInterface#handleRequest()
-	 */
-	@Override
-	public void handleRequest(final RequestInterface request) {
-		this.next.handleRequest(request);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.chain.HandlerInterface#handleRequest()
+     */
+    @Override
+    public void handleRequest(final RequestInterface request) {
+        this.next.handleRequest(request);
+    }
 
 }

@@ -6,11 +6,11 @@ package patterns.iterator;
  */
 public interface AggregateInterface {
 
-	/**
-	 * Creates the iterator.
-	 *
-	 * @return the iterator interface
-	 */
-	public IteratorInterface createIterator();
+    /**
+     * Creates the iterator.
+     *
+     * @return the iterator interface
+     */
+    public IteratorInterface createIterator();
 
 }

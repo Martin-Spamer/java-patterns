@@ -6,13 +6,13 @@ package coaching.rules;
  */
 public interface UndoCommand extends CommandInterface {
 
-	/**
-	 * Redo.
-	 */
-	public void redo();
+    /**
+     * Redo.
+     */
+    public void redo();
 
-	/**
-	 * Undo.
-	 */
-	public void undo();
+    /**
+     * Undo.
+     */
+    public void undo();
 }

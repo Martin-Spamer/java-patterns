@@ -6,11 +6,11 @@ package coaching.rules;
  */
 public abstract class AbstractParameters {
 
-	/**
-	 * Instantiates a new abstract parameters.
-	 */
-	protected AbstractParameters() {
-		super();
-	}
+    /**
+     * Instantiates a new abstract parameters.
+     */
+    protected AbstractParameters() {
+        super();
+    }
 
 }

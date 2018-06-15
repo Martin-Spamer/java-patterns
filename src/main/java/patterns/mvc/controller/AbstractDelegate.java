@@ -6,9 +6,9 @@ package patterns.mvc.controller;
  */
 public abstract class AbstractDelegate {
 
-	/**
-	 * Do work.
-	 */
-	public abstract void doWork();
+    /**
+     * Do work.
+     */
+    public abstract void doWork();
 
 }

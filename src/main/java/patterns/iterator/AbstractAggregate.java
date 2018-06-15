@@ -12,19 +12,21 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractAggregate implements AggregateInterface {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** The log. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	protected final List<ItemInterface> itemList = new ArrayList<ItemInterface>();
+    /** The item list. */
+    protected final List<ItemInterface> itemList = new ArrayList<ItemInterface>();
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.iterator.AggregateInterface#createIterator()
-	 */
-	@Override
-	public IteratorInterface createIterator() {
-		this.log.info("%s.createIterator()", this.getClass().getSimpleName());
-		return new Iterator(this);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.iterator.AggregateInterface#createIterator()
+     */
+    @Override
+    public IteratorInterface createIterator() {
+        this.log.info("%s.createIterator()", this.getClass().getSimpleName());
+        return new Iterator(this);
+    }
 
 }

@@ -12,28 +12,29 @@ import org.slf4j.LoggerFactory;
  */
 public class BuilderTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(BuilderTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(BuilderTest.class);
 
-	/**
-	 * Unit Test to build one.
-	 */
-	@Test
-	public void testBuilderOne() {
-		final BuilderOne builder = new BuilderOne();
-		assertNotNull("Value cannot be null", builder);
-		final Part product = builder.build();
-		LOG.info("product = {}", product);
-	}
+    /**
+     * Unit Test to build one.
+     */
+    @Test
+    public void testBuilderOne() {
+        final BuilderOne builder = new BuilderOne();
+        assertNotNull("Value cannot be null", builder);
+        final Part product = builder.build();
+        LOG.info("product = {}", product);
+    }
 
-	/**
-	 * Unit Test to build two.
-	 */
-	@Test
-	public void testBuilderTwo() {
-		final BuilderTwo builder = new BuilderTwo();
-		assertNotNull("Value cannot be null", builder);
-		final Part product = builder.build();
-		LOG.info("product = {}", product);
-	}
+    /**
+     * Unit Test to build two.
+     */
+    @Test
+    public void testBuilderTwo() {
+        final BuilderTwo builder = new BuilderTwo();
+        assertNotNull("Value cannot be null", builder);
+        final Part product = builder.build();
+        LOG.info("product = {}", product);
+    }
 
 }

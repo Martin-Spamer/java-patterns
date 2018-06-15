@@ -12,16 +12,17 @@ import org.slf4j.LoggerFactory;
  */
 public class AggregateClassArrayTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArrayTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArrayTest.class);
 
-	/**
-	 * Unit Test to execute.
-	 */
-	@Test
-	public void testExecute() {
-		final AggregateClassArray aggregateClassArray = new AggregateClassArray();
-		assertNotNull("Value cannot be null", aggregateClassArray);
-		LOG.info("{}", aggregateClassArray.toString());
-	}
+    /**
+     * Unit Test to execute.
+     */
+    @Test
+    public void testExecute() {
+        final AggregateClassArray aggregateClassArray = new AggregateClassArray();
+        assertNotNull("Value cannot be null", aggregateClassArray);
+        LOG.info("{}", aggregateClassArray.toString());
+    }
 
 }

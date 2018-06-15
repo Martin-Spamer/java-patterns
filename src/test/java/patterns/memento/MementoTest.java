@@ -12,16 +12,17 @@ import org.slf4j.LoggerFactory;
  */
 public class MementoTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(MementoTest.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(MementoTest.class);
 
-	/**
-	 * Unit Test to memento.
-	 */
-	@Test
-	public void testMemento() {
-		final Memento memento = new Memento(null);
-		assertNotNull("Value cannot be null", memento);
-		LOG.info("{}", memento);
-	}
+    /**
+     * Unit Test to memento.
+     */
+    @Test
+    public void testMemento() {
+        final Memento memento = new Memento(null);
+        assertNotNull("Value cannot be null", memento);
+        LOG.info("{}", memento);
+    }
 
 }

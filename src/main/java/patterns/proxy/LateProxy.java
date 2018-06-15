@@ -6,19 +6,20 @@ package patterns.proxy;
  */
 public final class LateProxy extends AbstractSubject {
 
-	private RealSubject realSubject;
+    /** The real subject. */
+    private RealSubject realSubject;
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.gof.structural.proxy.Subject#request()
-	 */
-	@Override
-	public void request() {
-		if (this.realSubject == null) {
-			this.realSubject = new RealSubject();
-		}
-		this.realSubject.request();
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.gof.structural.proxy.Subject#request()
+     */
+    @Override
+    public void request() {
+        if (this.realSubject == null) {
+            this.realSubject = new RealSubject();
+        }
+        this.realSubject.request();
+    }
 
 }

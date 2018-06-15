@@ -9,11 +9,12 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractState {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** The log. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Handle.
-	 */
-	public abstract void handle();
+    /**
+     * Handle.
+     */
+    public abstract void handle();
 
 }

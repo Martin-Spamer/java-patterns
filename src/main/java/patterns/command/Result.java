@@ -6,59 +6,65 @@ package patterns.command;
  */
 public final class Result implements ResultInterface {
 
-	public static final Boolean PASS = true;
-	public static final Boolean FAIL = false;
-	private Boolean value = false;
+    /** The Constant PASS. */
+    public static final Boolean PASS = true;
+    
+    /** The Constant FAIL. */
+    public static final Boolean FAIL = false;
+    
+    /** The value. */
+    private Boolean value = false;
 
-	/**
-	 * Instantiates a new result.
-	 */
-	public Result() {
-		this.value = PASS;
-	}
+    /**
+     * Instantiates a new result.
+     */
+    public Result() {
+        this.value = PASS;
+    }
 
-	/**
-	 * Instantiates a new result.
-	 *
-	 * result
-	 *
-	 * @param result
-	 *            the result
-	 */
-	public Result(final Boolean result) {
-		this.value = result;
-	}
+    /**
+     * Instantiates a new result.
+     *
+     * result
+     *
+     * @param result
+     *            the result
+     */
+    public Result(final Boolean result) {
+        this.value = result;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * patterns.command.ResultInterface#result(patterns.command.ResultInterface)
-	 */
-	@Override
-	public Boolean getResult() {
-		return this.value;
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see
+     * patterns.command.ResultInterface#result(patterns.command.ResultInterface)
+     */
+    @Override
+    public Boolean getResult() {
+        return this.value;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.command.ResultInterface#and(patterns.command.ResultInterface)
-	 */
-	@Override
-	public boolean and(final ResultInterface newResult) {
-		this.value &= newResult.getResult().booleanValue();
-		return this.value;
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see
+     * patterns.command.ResultInterface#and(patterns.command.ResultInterface)
+     */
+    @Override
+    public boolean and(final ResultInterface newResult) {
+        this.value &= newResult.getResult().booleanValue();
+        return this.value;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("Result [result=%s]", this.value);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("Result [result=%s]", this.value);
+    }
 
 }

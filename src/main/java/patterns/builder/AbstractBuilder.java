@@ -9,14 +9,15 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractBuilder implements BuilderInterface {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** The log. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.builder.BuilderInterface#build()
-	 */
-	@Override
-	public abstract Part build();
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.builder.BuilderInterface#build()
+     */
+    @Override
+    public abstract Part build();
 
 }

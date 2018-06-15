@@ -6,32 +6,32 @@ package patterns.iterator;
  */
 public interface IteratorInterface {
 
-	/**
-	 * First item.
-	 *
-	 * @return the item interface
-	 */
-	public ItemInterface first();
+    /**
+     * First item.
+     *
+     * @return the item interface
+     */
+    public ItemInterface first();
 
-	/**
-	 * Current item.
-	 *
-	 * @return the item interface
-	 */
-	public ItemInterface currentItem();
+    /**
+     * Current item.
+     *
+     * @return the item interface
+     */
+    public ItemInterface currentItem();
 
-	/**
-	 * Next item.
-	 *
-	 * @return the item interface
-	 */
-	public ItemInterface next();
+    /**
+     * Next item.
+     *
+     * @return the item interface
+     */
+    public ItemInterface next();
 
-	/**
-	 * Checks if is done.
-	 *
-	 * @return true, if successful, otherwise false., otherwise false.
-	 */
-	public boolean isDone();
+    /**
+     * Checks if is done.
+     *
+     * @return true, if successful, otherwise false., otherwise false.
+     */
+    public boolean isDone();
 
 }

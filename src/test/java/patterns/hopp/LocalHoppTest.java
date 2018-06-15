@@ -10,12 +10,12 @@ import org.junit.Test;
  */
 public class LocalHoppTest {
 
-	/**
-	 * Unit Test to local method.
-	 */
-	@Test
-	public void testLocalMethod() {
-		assertNotNull("Value cannot be null", new LocalHopp());
-	}
+    /**
+     * Unit Test to local method.
+     */
+    @Test
+    public void testLocalMethod() {
+        assertNotNull("Value cannot be null", new LocalHopp());
+    }
 
 }

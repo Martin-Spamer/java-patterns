@@ -6,18 +6,18 @@ package patterns.hopp;
  */
 public interface HoppInterface {
 
-	/**
-	 * Remote method.
-	 */
-	public void remoteMethod();
+    /**
+     * Remote method.
+     */
+    public void remoteMethod();
 
-	/**
-	 * Local method.
-	 */
-	public void localMethod();
+    /**
+     * Local method.
+     */
+    public void localMethod();
 
-	/**
-	 * Operation.
-	 */
-	public void operation();
+    /**
+     * Operation.
+     */
+    public void operation();
 }

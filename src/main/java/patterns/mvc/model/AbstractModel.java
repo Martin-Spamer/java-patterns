@@ -15,50 +15,55 @@ import patterns.mvc.view.AbstractView;
  */
 public abstract class AbstractModel implements ModelInterface {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	protected final Map<String, AbstractModel> models = new ConcurrentHashMap<String, AbstractModel>();
-	protected final Map<String, AbstractView> views = new ConcurrentHashMap<String, AbstractView>();
+    /** The log. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    
+    /** The models. */
+    protected final Map<String, AbstractModel> models = new ConcurrentHashMap<String, AbstractModel>();
+    
+    /** The views. */
+    protected final Map<String, AbstractView> views = new ConcurrentHashMap<String, AbstractView>();
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.mvc.ModelInterface#attach(java.lang.String,
-	 * patterns.mvc.model.AbstractModel)
-	 */
-	@Override
-	public void attach(final String key, final AbstractModel model) {
-		this.models.put(key, model);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.mvc.ModelInterface#attach(java.lang.String,
+     * patterns.mvc.model.AbstractModel)
+     */
+    @Override
+    public void attach(final String key, final AbstractModel model) {
+        this.models.put(key, model);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.mvc.ModelInterface#attach(java.lang.String,
-	 * patterns.mvc.view.AbstractView)
-	 */
-	@Override
-	public void attach(final String key, final AbstractView view) {
-		this.views.put(key, view);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.mvc.ModelInterface#attach(java.lang.String,
+     * patterns.mvc.view.AbstractView)
+     */
+    @Override
+    public void attach(final String key, final AbstractView view) {
+        this.views.put(key, view);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.mvc.ModelInterface#detachModel(java.lang.String)
-	 */
-	@Override
-	public void detachModel(final String key) {
-		this.models.remove(key);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.mvc.ModelInterface#detachModel(java.lang.String)
+     */
+    @Override
+    public void detachModel(final String key) {
+        this.models.remove(key);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.mvc.ModelInterface#detachView(java.lang.String)
-	 */
-	@Override
-	public void detachView(final String key) {
-		this.views.remove(key);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.mvc.ModelInterface#detachView(java.lang.String)
+     */
+    @Override
+    public void detachView(final String key) {
+        this.views.remove(key);
+    }
 
 }

@@ -6,19 +6,19 @@ package patterns.transaction;
  */
 public interface ParticipantInterfact {
 
-	/**
-	 * Join.
-	 */
-	public void join();
+    /**
+     * Join.
+     */
+    public void join();
 
-	/**
-	 * Commit.
-	 */
-	public void commit();
+    /**
+     * Commit.
+     */
+    public void commit();
 
-	/**
-	 * Cancel.
-	 */
-	public void cancel();
+    /**
+     * Cancel.
+     */
+    public void cancel();
 
 }

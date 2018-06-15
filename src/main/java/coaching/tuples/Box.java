@@ -11,53 +11,54 @@ package coaching.tuples;
  */
 public class Box<T> {
 
-	protected T t;
+    /** The t. */
+    protected T t;
 
-	/**
-	 * Instantiates a new box.
-	 */
-	public Box() {
-		super();
-	}
+    /**
+     * Instantiates a new box.
+     */
+    public Box() {
+        super();
+    }
 
-	/**
-	 * Instantiates a new box.
-	 *
-	 * @param t
-	 *            the type T
-	 */
-	public Box(final T t) {
-		super();
-		this.t = t;
-	}
+    /**
+     * Instantiates a new box.
+     *
+     * @param t
+     *            the type T
+     */
+    public Box(final T t) {
+        super();
+        this.t = t;
+    }
 
-	/**
-	 * Sets the value.
-	 *
-	 * @param t
-	 *            the type T
-	 */
-	public void set(final T t) {
-		this.t = t;
-	}
+    /**
+     * Sets the value.
+     *
+     * @param t
+     *            the type T
+     */
+    public void set(final T t) {
+        this.t = t;
+    }
 
-	/**
-	 * Gets the value.
-	 *
-	 * @return the t as type T
-	 */
-	public T get() {
-		return this.t;
-	}
+    /**
+     * Gets the value.
+     *
+     * @return the t as type T
+     */
+    public T get() {
+        return this.t;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("Box [T=%s]", this.t);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("Box [T=%s]", this.t);
+    }
 
 }

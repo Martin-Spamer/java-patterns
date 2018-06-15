@@ -6,14 +6,14 @@ package patterns.bridge;
  */
 public class Implementor extends AbstractImplementor {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.bridge.AbstractImplementor#operation()
-	 */
-	@Override
-	public void operation() {
-		this.log.info("{}", this.getClass().getSimpleName());
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.bridge.AbstractImplementor#operation()
+     */
+    @Override
+    public void operation() {
+        this.log.info("{}", this.getClass().getSimpleName());
+    }
 
 }

@@ -3,4 +3,5 @@
  * <p>
  * Detailed description of package.
  */
+
 package patterns.mvc;

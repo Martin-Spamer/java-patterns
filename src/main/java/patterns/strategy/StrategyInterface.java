@@ -6,9 +6,9 @@ package patterns.strategy;
  */
 public interface StrategyInterface {
 
-	/**
-	 * Operation.
-	 */
-	public void operation();
+    /**
+     * Operation.
+     */
+    public void operation();
 
 }

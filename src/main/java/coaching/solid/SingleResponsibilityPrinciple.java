@@ -17,29 +17,30 @@ import org.slf4j.LoggerFactory;
  */
 public class SingleResponsibilityPrinciple {
 
-	private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
+    /** The Constant LOG. */
+    private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
-	/**
-	 * Foo Bar responsibility.
-	 */
-	public void responsibility() {
-		LOG.info("responsibility");
-		fooResponsibility();
-		barResponsibility();
-	}
+    /**
+     * Foo Bar responsibility.
+     */
+    public void responsibility() {
+        LOG.info("responsibility");
+        fooResponsibility();
+        barResponsibility();
+    }
 
-	/**
-	 * Foo Responsibility.
-	 */
-	private void fooResponsibility() {
-		LOG.info("fooResponsibility");
-	}
+    /**
+     * Foo Responsibility.
+     */
+    private void fooResponsibility() {
+        LOG.info("fooResponsibility");
+    }
 
-	/**
-	 * Bar Responsibility.
-	 */
-	private void barResponsibility() {
-		LOG.info("barResponsibility");
-	}
+    /**
+     * Bar Responsibility.
+     */
+    private void barResponsibility() {
+        LOG.info("barResponsibility");
+    }
 
 }

@@ -6,20 +6,20 @@ package coaching.model;
  */
 public interface JourneyInterface {
 
-	/**
-	 * set the destination of the journey.
-	 *
-	 * @param destination
-	 *            the new destination
-	 * @return this as fluent interface.
-	 */
-	public JourneyInterface setDestination(final String destination);
+    /**
+     * set the destination of the journey.
+     *
+     * @param destination
+     *            the new destination
+     * @return this as fluent interface.
+     */
+    public JourneyInterface setDestination(final String destination);
 
-	/**
-	 * get the destination of the journey.
-	 *
-	 * @return the destination
-	 */
-	public String getDestination();
+    /**
+     * get the destination of the journey.
+     *
+     * @return the destination
+     */
+    public String getDestination();
 
 }

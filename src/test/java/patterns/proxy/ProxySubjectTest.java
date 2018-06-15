@@ -10,13 +10,13 @@ import org.junit.Test;
  */
 public class ProxySubjectTest {
 
-	/**
-	 * Unit Test to request.
-	 */
-	@Test
-	public void testRequest() {
-		final SubjectProxy proxySubject = new SubjectProxy();
-		assertNotNull("Value cannot be null", proxySubject);
-		proxySubject.request();
-	}
+    /**
+     * Unit Test to request.
+     */
+    @Test
+    public void testRequest() {
+        final SubjectProxy proxySubject = new SubjectProxy();
+        assertNotNull("Value cannot be null", proxySubject);
+        proxySubject.request();
+    }
 }

@@ -10,14 +10,14 @@ import org.junit.Test;
  */
 public class ObjectTypesTest {
 
-	/**
-	 * Unit Test to display.
-	 */
-	@Test
-	public void testDisplay() {
-		final ObjectTypes objectTypes = new ObjectTypes();
-		assertNotNull("Value cannot be null", objectTypes);
-		objectTypes.display();
-	}
+    /**
+     * Unit Test to display.
+     */
+    @Test
+    public void testDisplay() {
+        final ObjectTypes objectTypes = new ObjectTypes();
+        assertNotNull("Value cannot be null", objectTypes);
+        objectTypes.display();
+    }
 
 }

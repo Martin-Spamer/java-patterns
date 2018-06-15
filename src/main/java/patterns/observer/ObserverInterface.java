@@ -6,9 +6,9 @@ package patterns.observer;
  */
 public interface ObserverInterface {
 
-	/**
-	 * Update observers.
-	 */
-	public void updateObservers();
+    /**
+     * Update observers.
+     */
+    public void updateObservers();
 
 }
