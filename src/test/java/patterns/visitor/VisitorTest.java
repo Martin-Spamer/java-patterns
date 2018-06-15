@@ -1,6 +1,4 @@
 
-
-
 package patterns.visitor;
 
 import static org.junit.Assert.assertNotNull;

@@ -18,7 +18,8 @@ public class Taxi extends Car {
 	/**
 	 * Instantiates a new taxi with engine.
 	 *
-	 * @param engine the engine
+	 * @param engine
+	 *            the engine
 	 */
 	public Taxi(final DieselEngine engine) {
 		super(engine);
@@ -30,14 +31,14 @@ public class Taxi extends Car {
 	 * @return the passenger
 	 */
 	public Passenger getPassenger() {
-		return passenger;
+		return this.passenger;
 	}
 
 	/**
 	 * new passenger.
 	 *
-	 * @param passenger the new
-	 *            passenger
+	 * @param passenger
+	 *            the new passenger
 	 */
 	public void setPassenger(final Passenger passenger) {
 		this.passenger = passenger;

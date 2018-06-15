@@ -1,9 +1,11 @@
 
 package coaching.jdbc;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A factory for creating Connection objects.
@@ -29,15 +31,17 @@ public class ConnectionFactory {
 	/**
 	 * Instantiates a new connection factory.
 	 *
-	 * @param driverClassName the driver class name
-	 * @param connectionUrl the connection url
-	 * @param username the username
-	 * @param password the password
+	 * @param driverClassName
+	 *            the driver class name
+	 * @param connectionUrl
+	 *            the connection url
+	 * @param username
+	 *            the username
+	 * @param password
+	 *            the password
 	 */
-	public ConnectionFactory(final String driverClassName,
-	        final String connectionUrl,
-	        final String username,
-	        final String password) {
+	public ConnectionFactory(final String driverClassName, final String connectionUrl, final String username,
+			final String password) {
 		this.connectionUrl = connectionUrl;
 		this.username = username;
 		this.password = password;

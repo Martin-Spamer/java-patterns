@@ -8,7 +8,8 @@ package coaching.money;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.*;
+import java.util.Currency;
+import java.util.Locale;
 
 /**
  * Big Decimal Money class.
@@ -28,7 +29,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Instantiates a new money instance.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 */
 	public BigDecimalMoney(final long amount) {
 		this(new BigDecimal(amount));
@@ -37,7 +39,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Instantiates a new money instance.
 	 *
-	 * @param bigDecimal the big decimal
+	 * @param bigDecimal
+	 *            the big decimal
 	 */
 	public BigDecimalMoney(final BigDecimal bigDecimal) {
 		this(bigDecimal, Locale.getDefault());
@@ -46,7 +49,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Instantiates a new money instance.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 */
 	public BigDecimalMoney(final String amount) {
 		setCurrency(Currency.getInstance(Locale.getDefault()));
@@ -56,8 +60,10 @@ public final class BigDecimalMoney {
 	/**
 	 * Instantiates a new money instance.
 	 *
-	 * @param amount the amount
-	 * @param locale the locale
+	 * @param amount
+	 *            the amount
+	 * @param locale
+	 *            the locale
 	 */
 	public BigDecimalMoney(final BigDecimal amount, final Locale locale) {
 		this(amount, Currency.getInstance(locale));
@@ -66,8 +72,10 @@ public final class BigDecimalMoney {
 	/**
 	 * Instantiates a new money instance.
 	 *
-	 * @param amount the amount
-	 * @param currency the currency
+	 * @param amount
+	 *            the amount
+	 * @param currency
+	 *            the currency
 	 */
 	public BigDecimalMoney(final BigDecimal amount, final Currency currency) {
 		super();
@@ -78,7 +86,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Instantiates a new money instance.
 	 *
-	 * @param currency the currency
+	 * @param currency
+	 *            the currency
 	 */
 	public BigDecimalMoney(final Currency currency) {
 		this(currency, BigDecimal.ZERO);
@@ -87,8 +96,10 @@ public final class BigDecimalMoney {
 	/**
 	 * Instantiates a new money instance.
 	 *
-	 * @param currency the currency
-	 * @param amount the amount
+	 * @param currency
+	 *            the currency
+	 * @param amount
+	 *            the amount
 	 */
 	public BigDecimalMoney(final Currency currency, final BigDecimal amount) {
 		super();
@@ -99,7 +110,8 @@ public final class BigDecimalMoney {
 	/**
 	 * set the currency.
 	 *
-	 * @param currency the currency
+	 * @param currency
+	 *            the currency
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney setCurrency(final Currency currency) {
@@ -110,7 +122,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Sets the amount.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney setAmount(final long amount) {
@@ -121,7 +134,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Sets the amount.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney setAmount(final MoneyInterface amount) {
@@ -132,7 +146,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Sets the amount.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney setAmount(final BigDecimal amount) {
@@ -143,7 +158,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Adds an.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney add(final long amount) {
@@ -154,7 +170,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Adds a BigDecimal amount.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney add(final BigDecimalMoney amount) {
@@ -165,7 +182,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Subtract.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney subtract(final long amount) {
@@ -176,7 +194,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Subtract an BigDecimal amount.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney subtract(final BigDecimal amount) {
@@ -187,7 +206,8 @@ public final class BigDecimalMoney {
 	/**
 	 * Subtract.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return the big decimal money
 	 */
 	public BigDecimalMoney subtract(final BigDecimalMoney amount) {
@@ -261,9 +281,9 @@ public final class BigDecimalMoney {
 	/**
 	 * Checks if is more than.
 	 *
-	 * @param amount the amount
-	 * @return true, if successful, otherwise false., otherwise false.
-	 *         more than
+	 * @param amount
+	 *            the amount
+	 * @return true, if successful, otherwise false., otherwise false. more than
 	 */
 	public boolean isMoreThan(final long amount) {
 		return this.amount.longValue() > amount;
@@ -272,9 +292,9 @@ public final class BigDecimalMoney {
 	/**
 	 * Checks if is equal to.
 	 *
-	 * @param amount the amount
-	 * @return true, if successful, otherwise false., otherwise false.
-	 *         equal to
+	 * @param amount
+	 *            the amount
+	 * @return true, if successful, otherwise false., otherwise false. equal to
 	 */
 	public boolean isEqualTo(final long amount) {
 		return this.amount.longValue() == amount;
@@ -283,9 +303,9 @@ public final class BigDecimalMoney {
 	/**
 	 * Checks if is less than.
 	 *
-	 * @param amount the amount
-	 * @return true, if successful, otherwise false., otherwise false.
-	 *         less than
+	 * @param amount
+	 *            the amount
+	 * @return true, if successful, otherwise false., otherwise false. less than
 	 */
 	public boolean isLessThan(final long amount) {
 		return this.amount.longValue() < amount;

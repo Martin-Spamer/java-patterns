@@ -1,8 +1,8 @@
 
-
 package patterns.router;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * class AbstractOutputChannel.
@@ -19,7 +19,7 @@ public abstract class AbstractOutputChannel implements OutputChannelInterface {
 	 */
 	@Override
 	public void sendMessage(final Message message) {
-		log.info("{}.sendMessage({})", this.getClass().getSimpleName(), message);
+		this.log.info("{}.sendMessage({})", this.getClass().getSimpleName(), message);
 	}
 
 }

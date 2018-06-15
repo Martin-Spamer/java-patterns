@@ -1,12 +1,19 @@
 
 package coaching.config;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.InvalidPropertiesFormatException;
 
-import javax.xml.parsers.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * Xml Configuration Class.
@@ -30,7 +37,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * Instantiates a new XmlConfig from configuration file.
 	 *
-	 * @param configFilename the Configuration filename
+	 * @param configFilename
+	 *            the Configuration filename
 	 */
 	public XmlConfig(final File configFilename) {
 		super();
@@ -40,7 +48,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * Instantiates a new XmlConfig from configuration file name.
 	 *
-	 * @param configFilename the Configuration filename
+	 * @param configFilename
+	 *            the Configuration filename
 	 */
 	public XmlConfig(final String configFilename) {
 		super();
@@ -50,7 +59,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * Load from xml file resource as stream.
 	 *
-	 * @param resourceAsStream the resource as stream
+	 * @param resourceAsStream
+	 *            the resource as stream
 	 */
 	public void loadFromXmlFile(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
@@ -67,7 +77,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * To xml filename.
 	 *
-	 * @param configFilename the Configuration filename
+	 * @param configFilename
+	 *            the Configuration filename
 	 * @return the string
 	 */
 	protected String toXmlFilename(final String configFilename) {
@@ -77,7 +88,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * Load configuration filename.
 	 *
-	 * @param configFilename the Configuration filename
+	 * @param configFilename
+	 *            the Configuration filename
 	 */
 	public void load(final String configFilename) {
 		load(new File(configFilename));
@@ -86,7 +98,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * Load configuration file.
 	 *
-	 * @param configFile the Configuration file
+	 * @param configFile
+	 *            the Configuration file
 	 */
 	public void load(final File configFile) {
 		try {
@@ -106,7 +119,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * attribute.
 	 *
-	 * @param attributeName the attribute name
+	 * @param attributeName
+	 *            the attribute name
 	 * @return the attribute
 	 */
 	protected String getAttribute(final String attributeName) {
@@ -116,7 +130,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * elements by tag name.
 	 *
-	 * @param elementName the element name
+	 * @param elementName
+	 *            the element name
 	 * @return the elements by tag name
 	 */
 	protected NodeList getElementsByTagName(final String elementName) {
@@ -172,7 +187,8 @@ public class XmlConfig extends AbstractConfig {
 	/**
 	 * To xml string.
 	 *
-	 * @param node the node
+	 * @param node
+	 *            the node
 	 * @return the string
 	 */
 	private String toXml(final Node node) {

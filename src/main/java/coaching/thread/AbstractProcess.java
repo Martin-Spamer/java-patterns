@@ -9,7 +9,8 @@
 
 package coaching.thread;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An abstract base class for an Application.
@@ -26,25 +27,25 @@ public abstract class AbstractProcess implements Runnable {
 	 * AbstractProcess.
 	 */
 	public AbstractProcess() {
-		log.info("AbstractProcess()", this.getClass().getSimpleName());
-		thread = new Thread(this);
+		this.log.info("AbstractProcess()", this.getClass().getSimpleName());
+		this.thread = new Thread(this);
 	}
 
 	/**
 	 * Start the thread running.
 	 */
 	public void start() {
-		log.info("{}.start()", this.getClass().getSimpleName());
-		thread.start();
+		this.log.info("{}.start()", this.getClass().getSimpleName());
+		this.thread.start();
 	}
 
 	/**
-	 * thread executes when it receives a time
-	 * thread this function should simple exit.
+	 * thread executes when it receives a time thread this function should simple
+	 * exit.
 	 */
 	@Override
 	public void run() {
-		log.info("{}.run", this.getClass().getSimpleName());
+		this.log.info("{}.run", this.getClass().getSimpleName());
 		try {
 			do {
 				// A Run method MUST have either a sleep or yield to prevent deadlock.
@@ -57,25 +58,25 @@ public abstract class AbstractProcess implements Runnable {
 
 				// Thread ends if it runs more than a ten times.
 				// alternatively I could throw a new InterruptedException
-				tick++;
-				if (tick >= MAX_TICKS) {
-					exit = true;
+				this.tick++;
+				if (this.tick >= MAX_TICKS) {
+					this.exit = true;
 				}
 
-				log.info("tick={}", tick);
-			} while (!exit);
+				this.log.info("tick={}", this.tick);
+			} while (!this.exit);
 
 		} catch (final InterruptedException exception) {
-			log.error("{}", exception.toString());
+			this.log.error("{}", exception.toString());
 		}
-		log.info("{}.ending", this.getClass().getSimpleName());
+		this.log.info("{}.ending", this.getClass().getSimpleName());
 	}
 
 	/**
 	 * Stop the thread running.
 	 */
 	public void stop() {
-		log.info("{}.stop()", this.getClass().getSimpleName());
-		exit = true;
+		this.log.info("{}.stop()", this.getClass().getSimpleName());
+		this.exit = true;
 	}
 }

@@ -6,7 +6,8 @@ package coaching.tuples;
  *
  * Boxing is an effective way of adapting the behaviour of a type.
  *
- * @param <T> the generic type
+ * @param <T>
+ *            the generic type
  */
 public class Box<T> {
 
@@ -22,7 +23,8 @@ public class Box<T> {
 	/**
 	 * Instantiates a new box.
 	 *
-	 * @param t the type T
+	 * @param t
+	 *            the type T
 	 */
 	public Box(final T t) {
 		super();
@@ -32,7 +34,8 @@ public class Box<T> {
 	/**
 	 * Sets the value.
 	 *
-	 * @param t the type T
+	 * @param t
+	 *            the type T
 	 */
 	public void set(final T t) {
 		this.t = t;

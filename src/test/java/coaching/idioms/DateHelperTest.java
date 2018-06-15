@@ -1,6 +1,4 @@
 
-
-
 package coaching.idioms;
 
 import static org.junit.Assert.assertNotNull;
@@ -8,7 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import java.util.Calendar;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * DateHelperTest Class.

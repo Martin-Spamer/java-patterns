@@ -9,7 +9,8 @@ public interface ViewInterface {
 	/**
 	 * view.
 	 *
-	 * @param model the model
+	 * @param model
+	 *            the model
 	 */
 	public void attachModel(final ModelInterface model);
 

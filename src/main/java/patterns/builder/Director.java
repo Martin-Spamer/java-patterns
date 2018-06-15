@@ -1,10 +1,11 @@
 
-
 package patterns.builder;
 
-import java.util.*;
+import java.util.List;
+import java.util.Vector;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Director Class.
@@ -16,7 +17,8 @@ public class Director {
 	/**
 	 * Adds part builder.
 	 *
-	 * @param builder the builder to be added.
+	 * @param builder
+	 *            the builder to be added.
 	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean add(final AbstractBuilder builder) {

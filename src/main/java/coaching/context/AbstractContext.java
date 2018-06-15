@@ -21,7 +21,8 @@ public abstract class AbstractContext implements ContextInterface {
 	/**
 	 * Instantiates a new abstract context.
 	 *
-	 * @param properties the properties
+	 * @param properties
+	 *            the properties
 	 */
 	public AbstractContext(final Properties properties) {
 		super();
@@ -64,7 +65,7 @@ public abstract class AbstractContext implements ContextInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see coaching.context.ContextInterface#getProperty(java.lang.String,
 	 * java.lang.String)
 	 */

@@ -1,8 +1,8 @@
 
-
 package patterns.router;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Route a Message, from the input channel to the output channel.
@@ -15,8 +15,10 @@ class Route implements InputChannelInterface, OutputChannelInterface {
 	/**
 	 * Instantiates a new route.
 	 *
-	 * @param outputChannel the output channel
-	 * @param inputChannel the input channel
+	 * @param outputChannel
+	 *            the output channel
+	 * @param inputChannel
+	 *            the input channel
 	 */
 	public Route(final OutputChannelInterface outputChannel, final InputChannelInterface inputChannel) {
 		super();
@@ -33,7 +35,7 @@ class Route implements InputChannelInterface, OutputChannelInterface {
 	@Override
 	public void sendMessage(final Message message) {
 		LOG.info("sendMessage{}", message);
-		outputChannel.sendMessage(message);
+		this.outputChannel.sendMessage(message);
 	}
 
 	/*
@@ -44,7 +46,7 @@ class Route implements InputChannelInterface, OutputChannelInterface {
 	@Override
 	public Message receiveMessage() {
 		LOG.info("receiveMessage{}");
-		return inputChannel.receiveMessage();
+		return this.inputChannel.receiveMessage();
 	}
 
 }

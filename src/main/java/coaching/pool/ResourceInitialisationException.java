@@ -18,7 +18,8 @@ public class ResourceInitialisationException extends ResourcePoolException {
 	 *
 	 * exception message
 	 *
-	 * @param exceptionMessage the exception message
+	 * @param exceptionMessage
+	 *            the exception message
 	 */
 	public ResourceInitialisationException(final String exceptionMessage) {
 		super(exceptionMessage);

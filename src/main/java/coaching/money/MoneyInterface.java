@@ -11,7 +11,8 @@ public interface MoneyInterface {
 	/**
 	 * set the currency.
 	 *
-	 * @param currency the currency
+	 * @param currency
+	 *            the currency
 	 * @return this as fluent interface.
 	 */
 	public MoneyInterface setCurrency(final Currency currency);
@@ -19,7 +20,8 @@ public interface MoneyInterface {
 	/**
 	 * set the amount using long.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return this as fluent interface.
 	 */
 	public MoneyInterface setAmount(final long amount);
@@ -27,7 +29,8 @@ public interface MoneyInterface {
 	/**
 	 * set the amount using Money instance.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return this as fluent interface.
 	 */
 	public MoneyInterface setAmount(final MoneyInterface amount);
@@ -70,7 +73,8 @@ public interface MoneyInterface {
 	/**
 	 * Add an amount.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return this as fluent interface.
 	 */
 	public MoneyInterface add(final long amount);
@@ -78,7 +82,8 @@ public interface MoneyInterface {
 	/**
 	 * Adds an amount.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return this as fluent interface.
 	 */
 	public MoneyInterface add(final MoneyInterface amount);
@@ -86,7 +91,8 @@ public interface MoneyInterface {
 	/**
 	 * Subtract.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return this as fluent interface.
 	 */
 	public MoneyInterface subtract(final long amount);
@@ -94,7 +100,8 @@ public interface MoneyInterface {
 	/**
 	 * Subtract.
 	 *
-	 * @param amount the amount
+	 * @param amount
+	 *            the amount
 	 * @return this as fluent interface.
 	 */
 	public MoneyInterface subtract(final MoneyInterface amount);
@@ -102,54 +109,54 @@ public interface MoneyInterface {
 	/**
 	 * Checks if more than amount.
 	 *
-	 * @param amount the amount
-	 * @return true, if is
-	 *         more than
+	 * @param amount
+	 *            the amount
+	 * @return true, if is more than
 	 */
 	public boolean isMoreThan(final long amount);
 
 	/**
 	 * Checks if is more than.
 	 *
-	 * @param money the money
-	 * @return true, if successful, otherwise false., otherwise false.
-	 *         more than
+	 * @param money
+	 *            the money
+	 * @return true, if successful, otherwise false., otherwise false. more than
 	 */
 	public boolean isMoreThan(final MoneyInterface money);
 
 	/**
 	 * Checks if equal to amount.
 	 *
-	 * @param amount the amount
-	 * @return true, if is
-	 *         equal to
+	 * @param amount
+	 *            the amount
+	 * @return true, if is equal to
 	 */
 	public boolean isEqualTo(final long amount);
 
 	/**
 	 * Checks if is equal to.
 	 *
-	 * @param money the money
-	 * @return true, if successful, otherwise false., otherwise false.
-	 *         equal to
+	 * @param money
+	 *            the money
+	 * @return true, if successful, otherwise false., otherwise false. equal to
 	 */
 	public boolean isEqualTo(final MoneyInterface money);
 
 	/**
 	 * Checks if less than amount.
 	 *
-	 * @param amount the amount
-	 * @return true, if is
-	 *         less than
+	 * @param amount
+	 *            the amount
+	 * @return true, if is less than
 	 */
 	public boolean isLessThan(final long amount);
 
 	/**
 	 * Checks if is less than.
 	 *
-	 * @param money the money
-	 * @return true, if successful, otherwise false., otherwise false.
-	 *         less than
+	 * @param money
+	 *            the money
+	 * @return true, if successful, otherwise false., otherwise false. less than
 	 */
 	public boolean isLessThan(final MoneyInterface money);
 

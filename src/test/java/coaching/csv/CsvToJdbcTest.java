@@ -4,7 +4,8 @@ package coaching.csv;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * CsvToJdbcTest Class.
@@ -22,7 +23,8 @@ public class CsvToJdbcTest {
 	/**
 	 * Fluent Interface.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testFluentInterface() throws Exception {

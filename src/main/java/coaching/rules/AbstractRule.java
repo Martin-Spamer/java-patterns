@@ -20,7 +20,8 @@ public abstract class AbstractRule implements CommandInterface {
 	 *
 	 * context
 	 *
-	 * @param context the context
+	 * @param context
+	 *            the context
 	 */
 	public AbstractRule(final ContextInterface context) {
 		this.context = context;
@@ -29,8 +30,7 @@ public abstract class AbstractRule implements CommandInterface {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see
-	 * javamentor.rules.CommandInterface#execute(javamentor.rules.Parameters)
+	 * @see javamentor.rules.CommandInterface#execute(javamentor.rules.Parameters)
 	 */
 	@Override
 	public void execute(final AbstractParameters parameters) {

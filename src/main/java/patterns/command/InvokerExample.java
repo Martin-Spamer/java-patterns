@@ -1,9 +1,8 @@
 
-
-
 package patterns.command;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Invoker Example Class.
@@ -25,33 +24,33 @@ public class InvokerExample implements InvokerInterface {
 	@Override
 	public ResultInterface execute(final String actionName) {
 		ResultInterface result = null;
-		log.info("execute({})", actionName);
+		this.log.info("execute({})", actionName);
 		switch (actionName) {
-			case "ExampleCommand":
-				log.info("case ExampleCommand");
-				result = exampleCommand.execute(new Parameters());
-				break;
-			case "CommandSequence":
-				log.info("case CommandSequence");
-				result = commandSequence.execute(new Parameters());
-				break;
-			case "CompoundCommand":
-				log.info("case CompoundCommand");
-				result = compoundCommand.execute(new Parameters());
-				break;
-			case "ConditionalCommand":
-				log.info("case ConditionalCommand");
-				result = conditionalCommand.execute(new Parameters());
-				break;
-			case "SequenceCommand":
-				log.info("case SequenceCommand");
-				result = sequenceCommand.execute(new Parameters());
-				break;
-			default:
-				log.info("unknown command");
-				break;
+		case "ExampleCommand":
+			this.log.info("case ExampleCommand");
+			result = this.exampleCommand.execute(new Parameters());
+			break;
+		case "CommandSequence":
+			this.log.info("case CommandSequence");
+			result = this.commandSequence.execute(new Parameters());
+			break;
+		case "CompoundCommand":
+			this.log.info("case CompoundCommand");
+			result = this.compoundCommand.execute(new Parameters());
+			break;
+		case "ConditionalCommand":
+			this.log.info("case ConditionalCommand");
+			result = this.conditionalCommand.execute(new Parameters());
+			break;
+		case "SequenceCommand":
+			this.log.info("case SequenceCommand");
+			result = this.sequenceCommand.execute(new Parameters());
+			break;
+		default:
+			this.log.info("unknown command");
+			break;
 		}
-		log.info("result={}", result);
+		this.log.info("result={}", result);
 		return result;
 	}
 

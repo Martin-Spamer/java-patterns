@@ -1,8 +1,8 @@
 
-
 package coaching.collections;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Table Cell class.
@@ -15,7 +15,8 @@ public class TableCell {
 	/**
 	 * Instantiates a new table cell.
 	 *
-	 * @param value the value
+	 * @param value
+	 *            the value
 	 */
 	public TableCell(final String value) {
 		this.value = value;
@@ -33,7 +34,8 @@ public class TableCell {
 	/**
 	 * Sets the value.
 	 *
-	 * @param value the value to set
+	 * @param value
+	 *            the value to set
 	 * @return the table cell
 	 */
 	public TableCell setValue(final String value) {

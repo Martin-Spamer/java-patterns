@@ -1,10 +1,13 @@
 
 package coaching;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Examples of selection programming instructions.
@@ -77,36 +80,36 @@ public class SelectionTest {
 	public void testExampleSwitchInt() {
 		final int selection = 0;
 		switch (selection) {
-			case 0:
-				LOG.info("case 0");
-				break;
-			case 1:
-				LOG.info("case 1");
-				break;
-			default:
-				LOG.info("default");
-				break;
+		case 0:
+			LOG.info("case 0");
+			break;
+		case 1:
+			LOG.info("case 1");
+			break;
+		default:
+			LOG.info("default");
+			break;
 		}
 		assertEquals(0, selection);
 	}
 
 	/**
-	 * Unit Test to show a switch on an string.
-	 * The <code>if</code> statement is an example of selection.
+	 * Unit Test to show a switch on an string. The <code>if</code> statement is an
+	 * example of selection.
 	 */
 	@Test
 	public void testExampleSwitchString() {
 		final String selection = "TRUE";
 		switch (selection) {
-			case "TRUE":
-				LOG.info("true case");
-				break;
-			case "FALSE":
-				LOG.info("false case");
-				break;
-			default:
-				LOG.info("default");
-				break;
+		case "TRUE":
+			LOG.info("true case");
+			break;
+		case "FALSE":
+			LOG.info("false case");
+			break;
+		default:
+			LOG.info("default");
+			break;
 		}
 		assertEquals("TRUE", selection);
 	}
@@ -119,25 +122,25 @@ public class SelectionTest {
 	}
 
 	/**
-	 * Unit Test to show an example of switch on enumeration value.
-	 * The <code>if</code> statement is an example of selection.
+	 * Unit Test to show an example of switch on enumeration value. The
+	 * <code>if</code> statement is an example of selection.
 	 */
 	@Test
 	public void testExampleSwitchEnum() {
 		final STATEMENT statement = STATEMENT.SELECTION;
 		switch (statement) {
-			case SEQUENCE:
-				LOG.info("SEQUENCE");
-				break;
-			case SELECTION:
-				LOG.info("SELECTION");
-				break;
-			case ITERATION:
-				LOG.info("ITERATION");
-				break;
-			default:
-				LOG.info("default");
-				break;
+		case SEQUENCE:
+			LOG.info("SEQUENCE");
+			break;
+		case SELECTION:
+			LOG.info("SELECTION");
+			break;
+		case ITERATION:
+			LOG.info("ITERATION");
+			break;
+		default:
+			LOG.info("default");
+			break;
 		}
 		assertEquals(STATEMENT.SELECTION, statement);
 	}

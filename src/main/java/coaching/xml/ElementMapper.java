@@ -4,8 +4,12 @@ package coaching.xml;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.slf4j.*;
-import org.w3c.dom.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * DOM Element Mapper class.
@@ -26,7 +30,8 @@ public class ElementMapper {
 	/**
 	 * Instantiates a new element mapper.
 	 *
-	 * @param document the document
+	 * @param document
+	 *            the document
 	 */
 	public ElementMapper(final Document document) {
 		initialisation(document);
@@ -35,7 +40,8 @@ public class ElementMapper {
 	/**
 	 * Initialisation.
 	 *
-	 * @param document the document
+	 * @param document
+	 *            the document
 	 */
 	public void initialisation(final Document document) {
 		final Element documentElement = document.getDocumentElement();
@@ -46,7 +52,8 @@ public class ElementMapper {
 	/**
 	 * Initialisation.
 	 *
-	 * @param nodeList the node list
+	 * @param nodeList
+	 *            the node list
 	 */
 	public void initialisation(final NodeList nodeList) {
 		for (int index = 0; index < nodeList.getLength(); index++) {
@@ -60,7 +67,8 @@ public class ElementMapper {
 	/**
 	 * text.
 	 *
-	 * @param node the node
+	 * @param node
+	 *            the node
 	 * @return the text
 	 */
 	public static String getText(final Node node) {
@@ -92,7 +100,8 @@ public class ElementMapper {
 	/**
 	 * Find element.
 	 *
-	 * @param attributeName the attribute name
+	 * @param attributeName
+	 *            the attribute name
 	 * @return the element
 	 */
 	public Element findElement(final String attributeName) {
@@ -103,7 +112,8 @@ public class ElementMapper {
 	/**
 	 * Find element text.
 	 *
-	 * @param attributeName the attribute name
+	 * @param attributeName
+	 *            the attribute name
 	 * @return the string
 	 */
 	public String findElementText(final String attributeName) {
@@ -114,7 +124,8 @@ public class ElementMapper {
 	/**
 	 * Index name.
 	 *
-	 * @param indexAttribute the index attribute
+	 * @param indexAttribute
+	 *            the index attribute
 	 * @return the string
 	 */
 	public String getIndexName(final String indexAttribute) {

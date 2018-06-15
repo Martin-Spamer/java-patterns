@@ -1,7 +1,8 @@
 
 package coaching.polymorphism;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An abstract Class providing a polymorphic base.
@@ -17,7 +18,7 @@ public abstract class AbstractType implements TypeInterface {
 	 */
 	@Override
 	public TypeInterface operation() {
-		log.info("{}.operation", this.getClass().getSimpleName());
+		this.log.info("{}.operation", this.getClass().getSimpleName());
 		return this;
 	}
 

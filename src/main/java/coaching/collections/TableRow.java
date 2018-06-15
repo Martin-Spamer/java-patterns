@@ -1,10 +1,13 @@
 
-
 package coaching.collections;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Table Row class.
@@ -17,7 +20,8 @@ public class TableRow {
 	/**
 	 * Instantiates a new table row.
 	 *
-	 * @param values the values
+	 * @param values
+	 *            the values
 	 */
 	public TableRow(final String... values) {
 		for (final String value : values) {

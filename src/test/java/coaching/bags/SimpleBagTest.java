@@ -1,12 +1,13 @@
 
-
-
 package coaching.bags;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import coaching.tuples.BoxTest;
 
@@ -16,9 +17,7 @@ import coaching.tuples.BoxTest;
 public class SimpleBagTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
-	private static final String[] VALUES = {
-	        "Cat", "Dog", "Rabbit"
-	};
+	private static final String[] VALUES = { "Cat", "Dog", "Rabbit" };
 
 	/**
 	 * Unit Test to bag.
@@ -44,9 +43,7 @@ public class SimpleBagTest {
 	 */
 	@Test
 	public void testBagArray() {
-		final String[] stuff = {
-		        "Cat", "Dog", "Rabbit"
-		};
+		final String[] stuff = { "Cat", "Dog", "Rabbit" };
 		final SimpleBag bag = new SimpleBag(stuff);
 		assertNotNull("Value cannot be null", bag);
 		verify(bag);
@@ -89,9 +86,7 @@ public class SimpleBagTest {
 	 */
 	@Test
 	public void testExhaustedBag() {
-		final String[] stuff = {
-		        "Cat", "Dog", "Rabbit"
-		};
+		final String[] stuff = { "Cat", "Dog", "Rabbit" };
 		final SimpleBag bag = new SimpleBag(stuff);
 		assertNotNull("Value cannot be null", bag);
 		verify(bag);
@@ -100,7 +95,8 @@ public class SimpleBagTest {
 	/**
 	 * Verify that.
 	 *
-	 * @param bag the bag
+	 * @param bag
+	 *            the bag
 	 */
 	private void verify(final SimpleBag bag) {
 		assertNotNull("Value cannot be null", bag);

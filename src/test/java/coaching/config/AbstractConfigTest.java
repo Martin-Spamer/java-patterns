@@ -1,10 +1,12 @@
 
 package coaching.config;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Unit test for Abstract configuration class.
@@ -28,7 +30,8 @@ public class AbstractConfigTest {
 		/**
 		 * Instantiates a new configuration.
 		 *
-		 * @param configFilename the config filename
+		 * @param configFilename
+		 *            the config filename
 		 */
 		public Configuration(final String configFilename) {
 			super(configFilename);

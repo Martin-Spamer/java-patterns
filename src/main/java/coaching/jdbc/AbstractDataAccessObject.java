@@ -1,9 +1,15 @@
 
 package coaching.jdbc;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract Data Access object.
@@ -20,7 +26,8 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	/**
 	 * Creates a new instance of DaoTemplate.
 	 *
-	 * @param driverClassName the driver class name
+	 * @param driverClassName
+	 *            the driver class name
 	 */
 	public AbstractDataAccessObject(final String driverClassName) {
 		try {
@@ -33,29 +40,31 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	/**
 	 * Creates a new instance of DaoTemplate.
 	 *
-	 * @param driverClassName the driver class name
-	 * @param connectionUrl the connection url
-	 * @param username the username
-	 * @param password the password
+	 * @param driverClassName
+	 *            the driver class name
+	 * @param connectionUrl
+	 *            the connection url
+	 * @param username
+	 *            the username
+	 * @param password
+	 *            the password
 	 */
-	public AbstractDataAccessObject(final String driverClassName,
-	        final String connectionUrl,
-	        final String username,
-	        final String password) {
+	public AbstractDataAccessObject(final String driverClassName, final String connectionUrl, final String username,
+			final String password) {
 		this(driverClassName);
 		this.connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
 	}
 
 	/**
-	 * Execute a SQL insert statement for CRUD interface.
-	 * <code>
+	 * Execute a SQL insert statement for CRUD interface. <code>
 	 * 	INSERT INTO CUSTOMER_TBL
 	 * 		(CUSTOMER_NUM,POSTCODE,DISCOUNT_CODE)
 	 * 	VALUES
 	 * 		(999,'AA99 9ZZ','N')
 	 * </code>.
 	 *
-	 * @param sql the sql
+	 * @param sql
+	 *            the sql
 	 * @return this as fluent interface.
 	 */
 	@Override
@@ -64,12 +73,12 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * Execute a SQL select statement for CRUD interface.
-	 * <code>
+	 * Execute a SQL select statement for CRUD interface. <code>
 	 * 	SELECT * from customer table.
 	 * </code>
 	 *
-	 * @param sql the sql
+	 * @param sql
+	 *            the sql
 	 * @return this as fluent interface.
 	 */
 	@Override
@@ -117,8 +126,10 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	/**
 	 * Handle result set.
 	 *
-	 * @param resultSet the result set
-	 * @throws SQLException the SQL exception
+	 * @param resultSet
+	 *            the result set
+	 * @throws SQLException
+	 *             the SQL exception
 	 */
 	protected void handleResultSet(final ResultSet resultSet) throws SQLException {
 		final StringBuffer output = new StringBuffer();
@@ -132,9 +143,11 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	/**
 	 * Process row.
 	 *
-	 * @param resultSet the result set
+	 * @param resultSet
+	 *            the result set
 	 * @return the string
-	 * @throws SQLException the SQL exception
+	 * @throws SQLException
+	 *             the SQL exception
 	 */
 	protected String processRow(final ResultSet resultSet) throws SQLException {
 		final ResultSetMetaData metaData = resultSet.getMetaData();
@@ -153,8 +166,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * Execute a SQL update statement for CRUD interface.
-	 * <code>
+	 * Execute a SQL update statement for CRUD interface. <code>
 	 * 	UPDATE
 	 * 		CUSTOMER_TBL
 	 * 	SET
@@ -163,7 +175,8 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	 * 		CUSTOMER_NUM=999
 	 * </code>.
 	 *
-	 * @param sql the sql
+	 * @param sql
+	 *            the sql
 	 * @return this as fluent interface.
 	 */
 	@Override
@@ -172,15 +185,15 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	}
 
 	/**
-	 * Execute a SQL delete statement for CRUD interface.
-	 * <code>
+	 * Execute a SQL delete statement for CRUD interface. <code>
 	 * 	DELETE FROM
 	 * 		CUSTOMER_TBL
 	 * 	WHERE
 	 * 		FIELD-NAME='VALUE'
 	 * </code>.
 	 *
-	 * @param sql the sql
+	 * @param sql
+	 *            the sql
 	 * @return this as fluent interface.
 	 */
 	@Override
@@ -191,7 +204,8 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
 	/**
 	 * execute an sql statement.
 	 *
-	 * @param sql the sql
+	 * @param sql
+	 *            the sql
 	 * @return the dao interface
 	 */
 	public DaoInterface sql(final String sql) {

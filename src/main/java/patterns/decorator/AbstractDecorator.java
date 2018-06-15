@@ -1,8 +1,8 @@
 
-
 package patterns.decorator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * AbstractDecorator Class.
@@ -15,56 +15,52 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see
-	 * patterns.decorator.DecoratorInterface#attachBefore(patterns.decorator.
+	 * @see patterns.decorator.DecoratorInterface#attachBefore(patterns.decorator.
 	 * AbstractComponent)
 	 */
 	@Override
 	public void attachBefore(final AbstractComponent behaviour) {
-		beforeBehaviour.add(behaviour);
+		this.beforeBehaviour.add(behaviour);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see
-	 * patterns.decorator.DecoratorInterface#detachBefore(patterns.decorator.
+	 * @see patterns.decorator.DecoratorInterface#detachBefore(patterns.decorator.
 	 * AbstractComponent)
 	 */
 	@Override
 	public void detachBefore(final AbstractComponent behaviour) {
-		beforeBehaviour.remove(behaviour);
+		this.beforeBehaviour.remove(behaviour);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see
-	 * patterns.decorator.DecoratorInterface#attachAfter(patterns.decorator.
+	 * @see patterns.decorator.DecoratorInterface#attachAfter(patterns.decorator.
 	 * AbstractComponent)
 	 */
 	@Override
 	public void attachAfter(final AbstractComponent behaviour) {
-		afterBehaviour.add(behaviour);
+		this.afterBehaviour.add(behaviour);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see
-	 * patterns.decorator.DecoratorInterface#detachAfter(patterns.decorator.
+	 * @see patterns.decorator.DecoratorInterface#detachAfter(patterns.decorator.
 	 * AbstractComponent)
 	 */
 	@Override
 	public void detachAfter(final AbstractComponent behaviour) {
-		afterBehaviour.remove(behaviour);
+		this.afterBehaviour.remove(behaviour);
 	}
 
 	/**
 	 * Before operation.
 	 */
 	protected void beforeOperation() {
-		for (final ComponentInterface component : beforeBehaviour) {
+		for (final ComponentInterface component : this.beforeBehaviour) {
 			component.operation();
 		}
 	}
@@ -73,7 +69,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 	 * After operation.
 	 */
 	protected void afterOperation() {
-		for (final ComponentInterface component : afterBehaviour) {
+		for (final ComponentInterface component : this.afterBehaviour) {
 			component.operation();
 		}
 	}

@@ -1,7 +1,8 @@
 
 package patterns.strategy;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract Strategy Class.
@@ -14,7 +15,8 @@ public abstract class AbstractStrategy implements StrategyInterface {
 	/**
 	 * Instantiates a new abstract strategy.
 	 *
-	 * @param context the context
+	 * @param context
+	 *            the context
 	 */
 	public AbstractStrategy(final Context context) {
 		super();

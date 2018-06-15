@@ -12,8 +12,10 @@ public class Disjunction extends NonTerminalExpression {
 	/**
 	 * Instantiates a new or expression.
 	 *
-	 * @param lhs sub-expression on left hand side.
-	 * @param rhs sub-expression on right hand side.
+	 * @param lhs
+	 *            sub-expression on left hand side.
+	 * @param rhs
+	 *            sub-expression on right hand side.
 	 */
 	public Disjunction(final AbstractExpression lhs, final AbstractExpression rhs) {
 		super();

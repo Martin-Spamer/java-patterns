@@ -1,10 +1,11 @@
 
-
 package patterns.iterator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * class AbstractAggregate.
@@ -22,7 +23,7 @@ public abstract class AbstractAggregate implements AggregateInterface {
 	 */
 	@Override
 	public IteratorInterface createIterator() {
-		log.info("%s.createIterator()", this.getClass().getSimpleName());
+		this.log.info("%s.createIterator()", this.getClass().getSimpleName());
 		return new Iterator(this);
 	}
 

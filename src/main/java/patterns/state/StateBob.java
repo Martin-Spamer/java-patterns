@@ -1,5 +1,4 @@
 
-
 package patterns.state;
 
 /**
@@ -14,7 +13,7 @@ class StateBob extends AbstractState {
 	 */
 	@Override
 	public void handle() {
-		log.info("handle()");
+		this.log.info("handle()");
 	}
 
 }

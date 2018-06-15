@@ -6,8 +6,8 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * CommandMap Class.
  *
- * Commands are expensive to construct borrow them from resource pool
- * and return when finished.
+ * Commands are expensive to construct borrow them from resource pool and return
+ * when finished.
  */
 @SuppressWarnings("serial")
 public final class CommandMap extends ConcurrentHashMap<String, AbstractCommand> {
@@ -15,9 +15,11 @@ public final class CommandMap extends ConcurrentHashMap<String, AbstractCommand>
 	/**
 	 * Execute.
 	 *
-	 * @param actionName the action name
+	 * @param actionName
+	 *            the action name
 	 * @return the result interface
-	 * @throws MissingCommandException the missing command exception
+	 * @throws MissingCommandException
+	 *             the missing command exception
 	 */
 	public ResultInterface execute(final String actionName) throws MissingCommandException {
 		if (actionName == null) {

@@ -3,7 +3,8 @@
  */
 package coaching.model;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An abstract Vehicle class.
@@ -17,7 +18,8 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 	/**
 	 * Instantiates a new abstract vehicle.
 	 *
-	 * @param engine the engine
+	 * @param engine
+	 *            the engine
 	 */
 	public AbstractVehicle(final AbstractEngine engine) {
 		this.engine = engine;

@@ -18,7 +18,8 @@ public class Rider extends AbstractPerson {
 	 *
 	 * name
 	 *
-	 * @param name the name
+	 * @param name
+	 *            the name
 	 */
 	public Rider(final String name) {
 		super(name);

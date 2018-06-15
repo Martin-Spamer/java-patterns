@@ -1,13 +1,13 @@
 
-
-
 package coaching.exceptions;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import coaching.exceptions.CustomExceptionHandling.*;
+import coaching.exceptions.CustomExceptionHandling.CustomCreationException;
+import coaching.exceptions.CustomExceptionHandling.CustomReadException;
+import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
 
 /**
  * Custom Exception Handling Test class.
@@ -17,7 +17,8 @@ public class CustomExceptionHandlingTest {
 	/**
 	 * Unit Test to sub process A.
 	 *
-	 * @throws CustomCreationException the custom creation exception
+	 * @throws CustomCreationException
+	 *             the custom creation exception
 	 */
 	@Test(expected = CustomCreationException.class)
 	public void testSubProcessA() throws CustomCreationException {
@@ -29,7 +30,8 @@ public class CustomExceptionHandlingTest {
 	/**
 	 * Unit Test to sub process B.
 	 *
-	 * @throws CustomReadException the custom read exception
+	 * @throws CustomReadException
+	 *             the custom read exception
 	 */
 	@Test(expected = CustomReadException.class)
 	public void testSubProcessB() throws CustomReadException {
@@ -41,7 +43,8 @@ public class CustomExceptionHandlingTest {
 	/**
 	 * Unit Test to sub process C.
 	 *
-	 * @throws CustomUpdateException the custom update exception
+	 * @throws CustomUpdateException
+	 *             the custom update exception
 	 */
 	@Test(expected = CustomUpdateException.class)
 	public void testSubProcessC() throws CustomUpdateException {
@@ -53,7 +56,8 @@ public class CustomExceptionHandlingTest {
 	/**
 	 * Unit Test to process.
 	 *
-	 * @throws Exception the exception
+	 * @throws Exception
+	 *             the exception
 	 */
 	@Test
 	public void testProcess() throws Exception {

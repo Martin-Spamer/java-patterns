@@ -2,15 +2,16 @@ package coaching.jdbc;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.*;
+import org.junit.Ignore;
+import org.junit.Test;
 
 @Ignore("Requires Oracle DB availability")
 public class OracleDaoTest {
 
 	@Test
 	public void testOracleDao() {
-		final OracleDao oracleDao = new OracleDao();
-		assertNotNull(oracleDao);
+		DaoInterface dao = new OracleDao();
+		assertNotNull(dao);
 	}
 
 	@Test

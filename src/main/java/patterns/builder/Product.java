@@ -1,5 +1,4 @@
 
-
 package patterns.builder;
 
 /**
@@ -13,8 +12,10 @@ public class Product {
 	/**
 	 * Instantiates a new product.
 	 *
-	 * @param partOne the part one
-	 * @param partTwo the part two
+	 * @param partOne
+	 *            the part one
+	 * @param partTwo
+	 *            the part two
 	 */
 	public Product(final Part partOne, final Part partTwo) {
 		super();
@@ -29,7 +30,7 @@ public class Product {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Product [partOne=%s, partTwo=%s]", partOne, partTwo);
+		return String.format("Product [partOne=%s, partTwo=%s]", this.partOne, this.partTwo);
 	}
 
 }

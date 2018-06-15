@@ -19,7 +19,8 @@ public class Car extends AbstractVehicle implements CarInterface {
 	/**
 	 * Instantiates a new car with an engine.
 	 *
-	 * @param engine the engine
+	 * @param engine
+	 *            the engine
 	 */
 	public Car(final AbstractEngine engine) {
 		super(engine);

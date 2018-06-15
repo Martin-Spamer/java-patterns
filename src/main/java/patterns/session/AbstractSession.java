@@ -1,5 +1,4 @@
 
-
 package patterns.session;
 
 import java.util.UUID;
@@ -15,7 +14,8 @@ public abstract class AbstractSession {
 	/**
 	 * Sets the uuid.
 	 *
-	 * @param uuid the uuid to set
+	 * @param uuid
+	 *            the uuid to set
 	 */
 	public void setUuid(final UUID uuid) {
 		this.uuid = uuid;
@@ -24,7 +24,8 @@ public abstract class AbstractSession {
 	/**
 	 * Sets the token.
 	 *
-	 * @param token the token to set
+	 * @param token
+	 *            the token to set
 	 */
 	public void setToken(final String token) {
 		this.token = token;

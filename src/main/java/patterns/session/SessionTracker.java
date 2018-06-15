@@ -1,8 +1,8 @@
 
-
 package patterns.session;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * SessionTracker Class.
@@ -25,7 +25,8 @@ public class SessionTracker {
 	/**
 	 * Destroy session.
 	 *
-	 * @param session the session
+	 * @param session
+	 *            the session
 	 */
 	public void destroySession(final AbstractSession session) {
 		this.sessions.remove(session);

@@ -6,14 +6,16 @@ package coaching.bags;
  *
  * Requires a generic type.
  *
- * @param <T> the generic type
+ * @param <T>
+ *            the generic type
  */
 public interface GenericBagInterface<T> {
 
 	/**
 	 * bag with T values.
 	 *
-	 * @param values the values
+	 * @param values
+	 *            the values
 	 * @return this bag for a fluent interface
 	 */
 	public GenericBagInterface<T> fill(final T... values);
@@ -21,7 +23,8 @@ public interface GenericBagInterface<T> {
 	/**
 	 * Add an instance of T to the bag.
 	 *
-	 * @param t the t
+	 * @param t
+	 *            the t
 	 * @return true, if successful, otherwise false., otherwise false.
 	 */
 	public boolean add(final T t);

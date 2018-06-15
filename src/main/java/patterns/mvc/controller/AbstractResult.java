@@ -39,7 +39,7 @@ public abstract class AbstractResult implements ResultInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.mvc.controller.ResultInterface#updateResult(boolean)
 	 */
 	@Override
@@ -50,7 +50,7 @@ public abstract class AbstractResult implements ResultInterface {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see patterns.mvc.controller.ResultInterface#updateResult(patterns.mvc.
 	 * controller.ResultInterface)
 	 */

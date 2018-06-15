@@ -3,9 +3,12 @@ package coaching.xml;
 
 import java.io.File;
 
-import javax.xml.parsers.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import coaching.jdbc.MySqlDao;
 
@@ -25,7 +28,8 @@ public class XmlToJdbc extends MySqlDao {
 	/**
 	 * Process.
 	 *
-	 * @param filename the filename
+	 * @param filename
+	 *            the filename
 	 */
 	public void processFile(final String filename) {
 		try {
@@ -44,7 +48,8 @@ public class XmlToJdbc extends MySqlDao {
 	/**
 	 * Process table.
 	 *
-	 * @param document the document
+	 * @param document
+	 *            the document
 	 */
 	protected void processTable(final Document document) {
 		// root Document Element
@@ -67,10 +72,14 @@ public class XmlToJdbc extends MySqlDao {
 	/**
 	 * Process row.
 	 *
-	 * @param table the table
-	 * @param rowList the row list
-	 * @param rowNo the row no
-	 * @param temp the temp
+	 * @param table
+	 *            the table
+	 * @param rowList
+	 *            the row list
+	 * @param rowNo
+	 *            the row no
+	 * @param temp
+	 *            the temp
 	 */
 	protected void processRow(final String table, final NodeList rowList, final int rowNo, final String temp) {
 		try {
@@ -93,7 +102,8 @@ public class XmlToJdbc extends MySqlDao {
 	/**
 	 * Field names.
 	 *
-	 * @param fieldList the field list
+	 * @param fieldList
+	 *            the field list
 	 * @return the string
 	 */
 	protected String fieldNames(final NodeList fieldList) {
@@ -111,7 +121,8 @@ public class XmlToJdbc extends MySqlDao {
 	/**
 	 * Data values.
 	 *
-	 * @param fieldList the field list
+	 * @param fieldList
+	 *            the field list
 	 * @return the string
 	 */
 	protected String dataValues(final NodeList fieldList) {
@@ -129,9 +140,12 @@ public class XmlToJdbc extends MySqlDao {
 	/**
 	 * Insert row.
 	 *
-	 * @param table the table
-	 * @param fieldNames the field names
-	 * @param dataValues the data values
+	 * @param table
+	 *            the table
+	 * @param fieldNames
+	 *            the field names
+	 * @param dataValues
+	 *            the data values
 	 */
 	protected void insertRow(final String table, final String fieldNames, final String dataValues) {
 		// sql = insert into %table (%field%,...) from

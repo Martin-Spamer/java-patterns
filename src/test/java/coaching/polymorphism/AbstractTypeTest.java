@@ -1,12 +1,11 @@
 
-
-
 package coaching.polymorphism;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The AbstractTypeTest Class.
@@ -22,11 +21,11 @@ public class AbstractTypeTest {
 	@Test
 	public void testSubTypeOne() {
 		LOG.info("testPolymorphism");
-		abstractType = new SubTypeOne();
-		assertNotNull("Value cannot be null", abstractType);
-		LOG.info("{}", abstractType);
-		assertNotNull("Value cannot be null", abstractType.operation());
-		LOG.info("{}", abstractType);
+		this.abstractType = new SubTypeOne();
+		assertNotNull("Value cannot be null", this.abstractType);
+		LOG.info("{}", this.abstractType);
+		assertNotNull("Value cannot be null", this.abstractType.operation());
+		LOG.info("{}", this.abstractType);
 	}
 
 	/**
@@ -35,13 +34,13 @@ public class AbstractTypeTest {
 	@Test
 	public void testSubTypeTwo() {
 		LOG.info("testPolymorphism");
-		LOG.info("{}", abstractType);
-		abstractType = new SubTypeTwo();
-		assertNotNull("Value cannot be null", abstractType);
-		LOG.info("{}", abstractType);
-		abstractType.operation();
-		assertNotNull("Value cannot be null", abstractType.operation());
-		LOG.info("{}", abstractType);
+		LOG.info("{}", this.abstractType);
+		this.abstractType = new SubTypeTwo();
+		assertNotNull("Value cannot be null", this.abstractType);
+		LOG.info("{}", this.abstractType);
+		this.abstractType.operation();
+		assertNotNull("Value cannot be null", this.abstractType.operation());
+		LOG.info("{}", this.abstractType);
 	}
 
 }

@@ -3,10 +3,15 @@ package coaching.rules;
 
 import java.io.InputStream;
 
-import javax.xml.parsers.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
-import org.slf4j.*;
-import org.w3c.dom.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 /**
  * Rules Engine Class.
@@ -38,7 +43,8 @@ public class RulesEngine {
 	/**
 	 * Initialise with configuration filename.
 	 *
-	 * @param configFilename the configuration filename
+	 * @param configFilename
+	 *            the configuration filename
 	 * @return true, if successful, otherwise false.
 	 */
 	public boolean initialise(final String configFilename) {
@@ -49,7 +55,8 @@ public class RulesEngine {
 	/**
 	 * Read xml document.
 	 *
-	 * @param configFilename the config filename
+	 * @param configFilename
+	 *            the config filename
 	 * @return the boolean
 	 */
 	protected boolean readXmlDocument(final String configFilename) {
@@ -71,8 +78,10 @@ public class RulesEngine {
 	/**
 	 * Read xml stream.
 	 *
-	 * @param configFilename the config filename
-	 * @param documentBuilder the document builder
+	 * @param configFilename
+	 *            the config filename
+	 * @param documentBuilder
+	 *            the document builder
 	 * @return the boolean
 	 */
 	protected boolean readXmlStream(final String configFilename, final DocumentBuilder documentBuilder) {
@@ -92,7 +101,8 @@ public class RulesEngine {
 	/**
 	 * Input stream.
 	 *
-	 * @param resourceName the resource name
+	 * @param resourceName
+	 *            the resource name
 	 * @return the input stream
 	 */
 	private InputStream inputStreamFrom(final String resourceName) {
@@ -119,8 +129,10 @@ public class RulesEngine {
 	/**
 	 * get element attribute.
 	 *
-	 * @param elementName the element name
-	 * @param attributeName the attribute name
+	 * @param elementName
+	 *            the element name
+	 * @param attributeName
+	 *            the attribute name
 	 * @return the element attribute
 	 */
 	protected String getElementAttribute(final String elementName, final String attributeName) {
@@ -131,7 +143,8 @@ public class RulesEngine {
 	/**
 	 * get element.
 	 *
-	 * @param elementName the element name
+	 * @param elementName
+	 *            the element name
 	 * @return the element
 	 */
 	protected Element getElement(final String elementName) {
@@ -146,8 +159,7 @@ public class RulesEngine {
 			} else if (length > 1) {
 				final String className = this.getClass().getSimpleName();
 				LOG.info("{}", className);
-				LOG.info(" surplus Elements {} ignored in element: {}", elementName,
-				        this.documentElement.toString());
+				LOG.info(" surplus Elements {} ignored in element: {}", elementName, this.documentElement.toString());
 				element = (Element) nodelist.item(0);
 			}
 		}

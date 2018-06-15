@@ -1,10 +1,12 @@
 
 package patterns.command;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A factory for creating Command objects.
@@ -28,7 +30,8 @@ public final class CommandFactory implements InvokerInterface {
 	/**
 	 * Instantiates a new command factory.
 	 *
-	 * @param filename the filename
+	 * @param filename
+	 *            the filename
 	 */
 	public CommandFactory(final String filename) {
 		super();
@@ -38,7 +41,8 @@ public final class CommandFactory implements InvokerInterface {
 	/**
 	 * Initialise.
 	 *
-	 * @param filename the filename
+	 * @param filename
+	 *            the filename
 	 */
 	private void initialise(final String filename) {
 		try {
@@ -52,7 +56,8 @@ public final class CommandFactory implements InvokerInterface {
 	/**
 	 * Input stream.
 	 *
-	 * @param resourceName the resource name
+	 * @param resourceName
+	 *            the resource name
 	 * @return the input stream
 	 */
 	private InputStream inputStream(final String resourceName) {
@@ -84,9 +89,11 @@ public final class CommandFactory implements InvokerInterface {
 	/**
 	 * Execute action name.
 	 *
-	 * @param actionName the action name
+	 * @param actionName
+	 *            the action name
 	 * @return the result interface
-	 * @throws MissingCommandException the missing command exception
+	 * @throws MissingCommandException
+	 *             the missing command exception
 	 */
 	private ResultInterface executeActionName(final String actionName) throws MissingCommandException {
 		final String className = this.properties.getProperty(actionName);
@@ -106,9 +113,11 @@ public final class CommandFactory implements InvokerInterface {
 	/**
 	 * Execute by class name.
 	 *
-	 * @param className the class name
+	 * @param className
+	 *            the class name
 	 * @return the result interface
-	 * @throws MissingCommandException the missing command exception
+	 * @throws MissingCommandException
+	 *             the missing command exception
 	 */
 	private ResultInterface executeByClassName(final String className) throws MissingCommandException {
 		AbstractCommand action = null;

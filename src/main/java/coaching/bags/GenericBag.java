@@ -1,12 +1,14 @@
 
 package coaching.bags;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Generic Type Bag Class.
  *
- * @param <T> the generic type
+ * @param <T>
+ *            the generic type
  */
 @SuppressWarnings("serial")
 public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
@@ -21,10 +23,10 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
 	}
 
 	/**
-	 * Instantiates a new bag from string array.
-	 * Accepts 0..N arguments.
+	 * Instantiates a new bag from string array. Accepts 0..N arguments.
 	 *
-	 * @param values the values
+	 * @param values
+	 *            the values
 	 */
 	@SafeVarargs
 	public GenericBag(final T... values) {

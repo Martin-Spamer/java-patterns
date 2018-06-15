@@ -1,6 +1,4 @@
 
-
-
 package patterns.command;
 
 /**
@@ -11,9 +9,11 @@ public interface InvokerInterface {
 	/**
 	 * Execute.
 	 *
-	 * @param actionName the action name
+	 * @param actionName
+	 *            the action name
 	 * @return the result interface
-	 * @throws MissingCommandException the missing command exception
+	 * @throws MissingCommandException
+	 *             the missing command exception
 	 */
 	public ResultInterface execute(final String actionName) throws MissingCommandException;
 

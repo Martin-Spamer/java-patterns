@@ -1,8 +1,8 @@
 
-
 package patterns.decorator;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * AbstractComponent Class.
@@ -18,7 +18,7 @@ public abstract class AbstractComponent implements ComponentInterface {
 	 */
 	@Override
 	public AbstractComponent operation() {
-		log.info("%s", this.getClass().getSimpleName());
+		this.log.info("%s", this.getClass().getSimpleName());
 		return this;
 	}
 

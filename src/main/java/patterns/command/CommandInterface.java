@@ -1,6 +1,4 @@
 
-
-
 package patterns.command;
 
 /**
@@ -11,7 +9,8 @@ public interface CommandInterface {
 	/**
 	 * Execute.
 	 *
-	 * @param commandParameters the command parameters
+	 * @param commandParameters
+	 *            the command parameters
 	 * @return the result interface
 	 */
 	public ResultInterface execute(final ParametersInterface commandParameters);
@@ -19,7 +18,8 @@ public interface CommandInterface {
 	/**
 	 * Undo.
 	 *
-	 * @param commandParameters the command parameters
+	 * @param commandParameters
+	 *            the command parameters
 	 * @return the result interface
 	 */
 	public ResultInterface undo(final ParametersInterface commandParameters);

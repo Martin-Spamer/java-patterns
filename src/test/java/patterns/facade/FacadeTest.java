@@ -1,6 +1,4 @@
 
-
-
 package patterns.facade;
 
 import static org.junit.Assert.assertNotNull;

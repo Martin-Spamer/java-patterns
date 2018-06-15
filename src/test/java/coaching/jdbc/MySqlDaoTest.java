@@ -2,7 +2,8 @@ package coaching.jdbc;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.*;
+import org.junit.Ignore;
+import org.junit.Test;
 
 @Ignore("Requires MySQL DB availability")
 public class MySqlDaoTest {

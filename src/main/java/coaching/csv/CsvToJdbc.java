@@ -5,9 +5,13 @@
  **/
 package coaching.csv;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * CsvToJdbc Class.
@@ -32,7 +36,8 @@ public class CsvToJdbc {
 	/**
 	 * Instantiates a new csv to jdbc.
 	 *
-	 * @param csvFile the csv file
+	 * @param csvFile
+	 *            the csv file
 	 */
 	public CsvToJdbc(final CsvFile csvFile) {
 		this.csvFile = csvFile;
@@ -50,16 +55,18 @@ public class CsvToJdbc {
 	/**
 	 * Make jdbc connection.
 	 *
-	 * @param driver the driver
-	 * @param url the url
-	 * @param user the user
-	 * @param password the password
+	 * @param driver
+	 *            the driver
+	 * @param url
+	 *            the url
+	 * @param user
+	 *            the user
+	 * @param password
+	 *            the password
 	 * @return the connection
 	 */
-	private Connection makeJdbcConnection(final String driver,
-	        final String url,
-	        final String user,
-	        final String password) {
+	private Connection makeJdbcConnection(final String driver, final String url, final String user,
+			final String password) {
 		try {
 			Class.forName(driver);
 			try {
@@ -76,9 +83,11 @@ public class CsvToJdbc {
 	/**
 	 * Make statement.
 	 *
-	 * @param connection the connection
+	 * @param connection
+	 *            the connection
 	 * @return the statement
-	 * @throws SQLException the SQL exception
+	 * @throws SQLException
+	 *             the SQL exception
 	 */
 	private Statement makeStatement(final Connection connection) throws SQLException {
 		return connection.createStatement();
@@ -94,17 +103,19 @@ public class CsvToJdbc {
 	/**
 	 * Process.
 	 *
-	 * @param driver the driver
-	 * @param url the url
-	 * @param user the user
-	 * @param password the password
-	 * @param table the table
+	 * @param driver
+	 *            the driver
+	 * @param url
+	 *            the url
+	 * @param user
+	 *            the user
+	 * @param password
+	 *            the password
+	 * @param table
+	 *            the table
 	 */
-	protected void process(final String driver,
-	        final String url,
-	        final String user,
-	        final String password,
-	        final String table) {
+	protected void process(final String driver, final String url, final String user, final String password,
+			final String table) {
 		makeJdbcConnection(driver, url, user, password);
 		this.csvFile = new CsvFile(this.filename);
 		for (int index = 0; index < this.csvFile.size(); index++) {
@@ -117,7 +128,8 @@ public class CsvToJdbc {
 	/**
 	 * csv file.
 	 *
-	 * @param csvFile the csv file
+	 * @param csvFile
+	 *            the csv file
 	 * @return the csv to jdbc
 	 */
 	public CsvToJdbc setCsvFile(final CsvFile csvFile) {
@@ -128,7 +140,8 @@ public class CsvToJdbc {
 	/**
 	 * driver.
 	 *
-	 * @param driver the driver
+	 * @param driver
+	 *            the driver
 	 * @return the csv to jdbc
 	 */
 	public CsvToJdbc setDriver(final String driver) {
@@ -139,7 +152,8 @@ public class CsvToJdbc {
 	/**
 	 * filename.
 	 *
-	 * @param filename the filename
+	 * @param filename
+	 *            the filename
 	 * @return the csv to jdbc
 	 */
 	public CsvToJdbc setFilename(final String filename) {
@@ -150,7 +164,8 @@ public class CsvToJdbc {
 	/**
 	 * password.
 	 *
-	 * @param password the password
+	 * @param password
+	 *            the password
 	 * @return the csv to jdbc
 	 */
 	public CsvToJdbc setPassword(final String password) {
@@ -161,7 +176,8 @@ public class CsvToJdbc {
 	/**
 	 * table name.
 	 *
-	 * @param tableName the table name
+	 * @param tableName
+	 *            the table name
 	 * @return the csv to jdbc
 	 */
 	public CsvToJdbc setTableName(final String tableName) {
@@ -172,7 +188,8 @@ public class CsvToJdbc {
 	/**
 	 * url.
 	 *
-	 * @param url the url
+	 * @param url
+	 *            the url
 	 * @return the csv to jdbc
 	 */
 	public CsvToJdbc setUrl(final String url) {
@@ -183,7 +200,8 @@ public class CsvToJdbc {
 	/**
 	 * username.
 	 *
-	 * @param username the username
+	 * @param username
+	 *            the username
 	 * @return the csv to jdbc
 	 */
 	public CsvToJdbc setUsername(final String username) {
@@ -194,8 +212,10 @@ public class CsvToJdbc {
 	/**
 	 * Write.
 	 *
-	 * @param record the record
-	 * @throws SQLException the SQL exception
+	 * @param record
+	 *            the record
+	 * @throws SQLException
+	 *             the SQL exception
 	 */
 	public void writeRecord(final CsvRecord record) {
 		final StringBuffer sql = createSql(record);
@@ -240,7 +260,8 @@ public class CsvToJdbc {
 	 *
 	 * insert into %table% (%field%,...) from (%value%,...)
 	 *
-	 * @param record the record
+	 * @param record
+	 *            the record
 	 * @return the string buffer
 	 */
 	protected StringBuffer createSql(final CsvRecord record) {

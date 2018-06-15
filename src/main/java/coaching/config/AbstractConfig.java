@@ -1,10 +1,12 @@
 
 package coaching.config;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract Configuration Class.
@@ -25,7 +27,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Instantiates a new abstract configuration.
 	 *
-	 * @param configFilename the Configuration filename
+	 * @param configFilename
+	 *            the Configuration filename
 	 */
 	public AbstractConfig(final String configFilename) {
 		loadFromFilename(configFilename);
@@ -34,7 +37,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * configuration from XML filename.
 	 *
-	 * @param configFilename the Configuration filename
+	 * @param configFilename
+	 *            the Configuration filename
 	 */
 	protected void loadFromFilename(final String configFilename) {
 		final String propertyFilename = toPropertyFilename(configFilename);
@@ -45,7 +49,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * To property filename.
 	 *
-	 * @param configFilename the Configuration filename
+	 * @param configFilename
+	 *            the Configuration filename
 	 * @return the string
 	 */
 	protected String toPropertyFilename(final String configFilename) {
@@ -55,7 +60,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Input stream from a resource filename.
 	 *
-	 * @param resourceName the resource name
+	 * @param resourceName
+	 *            the resource name
 	 * @return the input stream
 	 */
 	protected InputStream inputStream(final String resourceName) {
@@ -67,7 +73,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Load from property file.
 	 *
-	 * @param resourceAsStream the resource as stream
+	 * @param resourceAsStream
+	 *            the resource as stream
 	 */
 	protected void loadFromResourceStream(final InputStream resourceAsStream) {
 		if (resourceAsStream != null) {
@@ -113,7 +120,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Value for key.
 	 *
-	 * @param key the key
+	 * @param key
+	 *            the key
 	 * @return the string
 	 */
 	public String valueFor(final String key) {
@@ -127,8 +135,10 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Value for key.
 	 *
-	 * @param key the key
-	 * @param defaultValue the default value
+	 * @param key
+	 *            the key
+	 * @param defaultValue
+	 *            the default value
 	 * @return the string
 	 */
 	public String valueFor(final String key, final String defaultValue) {
@@ -153,7 +163,8 @@ public abstract class AbstractConfig implements ConfigInterface {
 	/**
 	 * Pretty properties.
 	 *
-	 * @param properties the properties
+	 * @param properties
+	 *            the properties
 	 * @return the string
 	 */
 	private String prettyProperties(final Properties properties) {

@@ -1,5 +1,4 @@
 
-
 package patterns.decorator;
 
 /**
@@ -16,7 +15,7 @@ public class DecoratedComponent extends AbstractDecorator implements DecoratorIn
 	public AbstractComponent operation() {
 		super.beforeOperation();
 
-		log.info("{}.operation", this.getClass().getSimpleName());
+		this.log.info("{}.operation", this.getClass().getSimpleName());
 
 		super.afterOperation();
 

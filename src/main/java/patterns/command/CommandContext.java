@@ -1,7 +1,8 @@
 
 package patterns.command;
 
-import coaching.context.*;
+import coaching.context.AbstractContext;
+import coaching.context.ContextInterface;
 
 /**
  * Context Class.
@@ -23,8 +24,7 @@ public final class CommandContext extends AbstractContext {
 	/**
 	 * single instance.
 	 *
-	 * @return single instance of Context
-	 *         single instance
+	 * @return single instance of Context single instance
 	 */
 	public static synchronized ContextInterface getInstance() {
 		if (instance == null) {

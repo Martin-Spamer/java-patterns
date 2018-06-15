@@ -1,12 +1,11 @@
 
-
-
 package coaching.bags;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The GenericBagTest Class.
@@ -14,9 +13,7 @@ import org.slf4j.*;
 public class GenericBagTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(GenericBagTest.class);
-	private static final String[] VALUES = {
-	        "Heads", "Tails"
-	};
+	private static final String[] VALUES = { "Heads", "Tails" };
 
 	/**
 	 * Unit Test to generic bag.

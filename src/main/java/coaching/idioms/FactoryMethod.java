@@ -1,7 +1,8 @@
 
 package coaching.idioms;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Factory Method Example.
@@ -18,8 +19,8 @@ public final class FactoryMethod {
 	}
 
 	/**
-	 * Factory method to create an instance of class from a
-	 * fully qualified class name.
+	 * Factory method to create an instance of class from a fully qualified class
+	 * name.
 	 *
 	 * @return the instance of String class.
 	 */

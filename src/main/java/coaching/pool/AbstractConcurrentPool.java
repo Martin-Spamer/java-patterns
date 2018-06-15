@@ -3,14 +3,16 @@ package coaching.pool;
 
 import java.util.concurrent.ConcurrentLinkedDeque;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ConcurrentPool Class.
  *
  * element type
  *
- * @param <E> the element type
+ * @param <E>
+ *            the element type
  */
 public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 

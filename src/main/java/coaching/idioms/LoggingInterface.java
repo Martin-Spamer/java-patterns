@@ -18,7 +18,8 @@ public interface LoggingInterface {
 	 *
 	 * destination log
 	 *
-	 * @param destinationLog the destination log
+	 * @param destinationLog
+	 *            the destination log
 	 */
 	public void logTo(final Logger destinationLog);
 

@@ -1,14 +1,20 @@
 
 package coaching.jdbc;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 
-import javax.xml.parsers.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Text;
 
 /**
  * Provides a XML reader for input and a JDBC PointBase Database for output.
+ * 
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
@@ -47,7 +53,8 @@ public final class XmlDao extends AbstractDataAccessObject {
 	/**
 	 * data as XML.
 	 *
-	 * @param resultSet the result set
+	 * @param resultSet
+	 *            the result set
 	 * @return the document
 	 */
 	protected Document toXmlDocument(final ResultSet resultSet) {
@@ -107,7 +114,8 @@ public final class XmlDao extends AbstractDataAccessObject {
 	/**
 	 * data as an XML encoded string.
 	 *
-	 * @param resultSet the result set
+	 * @param resultSet
+	 *            the result set
 	 * @return the string
 	 */
 	protected String toXmlString(final ResultSet resultSet) {
@@ -140,8 +148,10 @@ public final class XmlDao extends AbstractDataAccessObject {
 	/**
 	 * Column value.
 	 *
-	 * @param columnName the column name
-	 * @param value the value
+	 * @param columnName
+	 *            the column name
+	 * @param value
+	 *            the value
 	 * @return the string
 	 */
 	protected String columnValue(final String columnName, final Object value) {

@@ -11,7 +11,8 @@ public class Condition implements ConditionInterface<Boolean> {
 	/**
 	 * Instantiates a new condition.
 	 *
-	 * @param result the result
+	 * @param result
+	 *            the result
 	 */
 	protected Condition(final boolean result) {
 		this.result = result;
