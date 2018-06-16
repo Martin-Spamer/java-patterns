@@ -11,7 +11,7 @@ public abstract class AbstractEngine implements FuelInterface {
 
     /** The log. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The fuel. */
     private FuelInterface fuel;
 
@@ -32,7 +32,7 @@ public abstract class AbstractEngine implements FuelInterface {
      * @param fuel
      *            the fuel
      */
-    private final void fuelType(final FuelInterface fuel) {
+    private void fuelType(final FuelInterface fuel) {
         this.fuel = fuel;
     }
 

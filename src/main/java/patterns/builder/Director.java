@@ -1,8 +1,8 @@
 
 package patterns.builder;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,12 +11,12 @@ import org.slf4j.LoggerFactory;
  * Director Class.
  */
 public class Director {
-    
+
     /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(Director.class);
-    
+
     /** The builders. */
-    private final List<AbstractBuilder> builders = new Vector<AbstractBuilder>();
+    private final List<AbstractBuilder> builders = new ArrayList<AbstractBuilder>();
 
     /**
      * Adds part builder.
