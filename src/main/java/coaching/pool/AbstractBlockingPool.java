@@ -16,12 +16,12 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The free pool. */
     protected LinkedBlockingDeque<E> freePool;
-    
+
     /** The used pool. */
     protected LinkedBlockingDeque<E> usedPool;
 

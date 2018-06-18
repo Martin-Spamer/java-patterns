@@ -16,12 +16,12 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The free pool. */
     protected ConcurrentLinkedDeque<E> freePool = new ConcurrentLinkedDeque<E>();
-    
+
     /** The used pool. */
     protected ConcurrentLinkedDeque<E> usedPool = new ConcurrentLinkedDeque<E>();
 

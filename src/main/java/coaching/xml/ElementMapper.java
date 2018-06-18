@@ -16,12 +16,12 @@ import org.w3c.dom.NodeList;
  */
 public class ElementMapper {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ElementMapper.class);
-    
+
     /** The index name. */
     private String indexName = "id";
-    
+
     /** The element map. */
     private final Map<String, Element> elementMap = new ConcurrentHashMap<String, Element>();
 

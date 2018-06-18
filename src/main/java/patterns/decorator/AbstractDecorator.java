@@ -11,7 +11,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 
     /** The before behaviour. */
     private final List<AbstractComponent> beforeBehaviour = new ArrayList<AbstractComponent>();
-    
+
     /** The after behaviour. */
     private final List<AbstractComponent> afterBehaviour = new ArrayList<AbstractComponent>();
 

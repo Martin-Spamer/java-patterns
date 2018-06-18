@@ -8,7 +8,7 @@ public final class PojoExample implements Cloneable {
 
     /** The string value. */
     private String stringValue;
-    
+
     /** The long value. */
     private long longValue;
 

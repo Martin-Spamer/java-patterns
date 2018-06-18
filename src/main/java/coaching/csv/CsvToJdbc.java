@@ -18,28 +18,28 @@ import org.slf4j.LoggerFactory;
  * CsvToJdbc Class.
  */
 public class CsvToJdbc {
-    
-    /** The log. */
+
+    /** provides logging. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The csv file. */
     private CsvFile csvFile;
-    
+
     /** The filename. */
     private String filename;
-    
+
     /** The driver. */
     private String driver;
-    
+
     /** The url. */
     private String url;
-    
+
     /** The username. */
     private String username;
-    
+
     /** The password. */
     private String password;
-    
+
     /** The table name. */
     private String tableName;
 
@@ -234,7 +234,7 @@ public class CsvToJdbc {
     /**
      * Write.
      *
-     * @param record            the record
+     * @param record the record
      */
     public void writeRecord(final CsvRecord record) {
         final StringBuffer sql = createSql(record);

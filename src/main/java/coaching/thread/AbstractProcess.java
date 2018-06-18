@@ -16,22 +16,22 @@ import org.slf4j.LoggerFactory;
  * An abstract base class for an Application.
  */
 public abstract class AbstractProcess implements Runnable {
-    
+
     /** The Constant MAX_TICKS. */
     private static final int MAX_TICKS = 10;
-    
+
     /** The Constant DEFAULT_WAIT. */
     private static final int DEFAULT_WAIT = 1000;
-    
-    /** The log. */
+
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The thread. */
     private final Thread thread;
-    
+
     /** The tick. */
     private long tick;
-    
+
     /** The exit. */
     private boolean exit = false;
 

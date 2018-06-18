@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class TableTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(TableTest.class);
 
     /**
@@ -20,13 +20,17 @@ public class TableTest {
      */
     @Test
     public void testTypicalUsage() {
+        // Given
         final Table table = new Table();
         assertNotNull(table);
 
+        // When we add columns and rows.
         table.addCols("ColOne", "ColTwo");
         table.addRow("ValueOne", "ValueTwo");
 
-        LOG.info("{}", table.toCsvString());
+        // Then we can produce a table as csv.
+        final String csvString = table.toCsvString();
+        LOG.info("{}", csvString);
     }
 
     /**

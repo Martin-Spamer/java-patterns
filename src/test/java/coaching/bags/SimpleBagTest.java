@@ -16,7 +16,7 @@ import coaching.tuples.BoxTest;
  */
 public class SimpleBagTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
 
     /** The Constant VALUES. */

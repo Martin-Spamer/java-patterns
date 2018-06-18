@@ -12,7 +12,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
      * @see patterns.ajp.system.transaction.ParticipantInterfact#join()
      */
     @Override
-    public void join() {
+    public ParticipantInterface join() {
         throw new UnsupportedOperationException();
     }
 
@@ -22,7 +22,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
      * @see patterns.ajp.system.transaction.ParticipantInterfact#commit()
      */
     @Override
-    public void commit() {
+    public ParticipantInterface commit() {
         throw new UnsupportedOperationException();
     }
 
@@ -32,7 +32,7 @@ public final class ConcreteParticipant extends AbstractParticipant {
      * @see patterns.ajp.system.transaction.ParticipantInterfact#cancel()
      */
     @Override
-    public void cancel() {
+    public ParticipantInterface cancel() {
         throw new UnsupportedOperationException();
     }
 

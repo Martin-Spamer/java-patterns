@@ -8,7 +8,7 @@ public class Disjunction extends NonTerminalExpression {
 
     /** The lhs. */
     private final AbstractExpression lhs;
-    
+
     /** The rhs. */
     private final AbstractExpression rhs;
 

@@ -18,8 +18,8 @@ public class ObjectTypesArray {
 
     /** The Constant ARRAY_SIZE. */
     private static final int ARRAY_SIZE = 10;
-    
-    /** The log. */
+
+    /** provides logging. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**

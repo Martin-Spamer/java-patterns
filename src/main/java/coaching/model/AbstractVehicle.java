@@ -12,12 +12,12 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractVehicle implements VehicleInterface, FuelInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The engine. */
     protected AbstractEngine engine;
-    
+
     /** The driver. */
     protected Driver driver;
 

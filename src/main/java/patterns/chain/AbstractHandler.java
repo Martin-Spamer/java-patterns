@@ -11,8 +11,8 @@ public abstract class AbstractHandler implements HandlerInterface {
 
     /** The next. */
     private HandlerInterface next;
-    
-    /** The log. */
+
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**

@@ -10,7 +10,7 @@ import coaching.arrays.NativeTypesArray;
 /**
  * Unit Tests for Primitives Arrays.
  */
-public class PrimitivesArrayTest {
+public class PrimitivesArrayExampleTest {
 
     /**
      * Unit Test to display array.

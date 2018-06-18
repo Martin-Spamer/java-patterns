@@ -9,21 +9,21 @@ import org.slf4j.LoggerFactory;
  */
 public class InvokerExample implements InvokerInterface {
 
-    /** The log. */
+    /** provides logging. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The example command. */
     private final ExampleCommand exampleCommand = new ExampleCommand();
-    
+
     /** The command sequence. */
     private final SequenceCommand commandSequence = new SequenceCommand();
-    
+
     /** The compound command. */
     private final CompoundCommand compoundCommand = new CompoundCommand();
-    
+
     /** The conditional command. */
     private final ConditionalCommand conditionalCommand = new ConditionalCommand();
-    
+
     /** The sequence command. */
     private final SequenceCommand sequenceCommand = new SequenceCommand();
 

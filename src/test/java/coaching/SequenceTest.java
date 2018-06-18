@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
  * A Sequence of programming instructions, one follows another.
  */
 public class SequenceTest {
-    
-    /** The Constant LOG. */
+
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SequenceTest.class);
 
     /**

@@ -18,12 +18,12 @@ import org.w3c.dom.NodeList;
  */
 public class RulesEngine {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
-    
+
     /** The document. */
     private Document document = null;
-    
+
     /** The document element. */
     private Element documentElement = null;
 

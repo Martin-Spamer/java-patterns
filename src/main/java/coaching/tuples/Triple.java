@@ -15,10 +15,10 @@ public class Triple<X, Y, Z> {
 
     /** The x. */
     private X x;
-    
+
     /** The y. */
     private Y y;
-    
+
     /** The z. */
     private Z z;
 
@@ -64,9 +64,9 @@ public class Triple<X, Y, Z> {
      * @param <X> the generic type
      * @param <Y> the generic type
      * @param <Z> the generic type
-     * @param x            the generic type X
-     * @param y            the generic type Y
-     * @param z            the generic type Z
+     * @param x the generic type X
+     * @param y the generic type Y
+     * @param z the generic type Z
      * @return the triple
      */
     public static <X, Y, Z> Triple<X, Y, Z> create(final X x, final Y y, final Z z) {

@@ -19,18 +19,18 @@ import org.slf4j.LoggerFactory;
  */
 public class CsvFile {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvFile.class);
-    
+
     /** The csv filename. */
     private final String csvFilename;
-    
+
     /** The header line. */
     private String headerLine;
-    
+
     /** The column names. */
     private String[] columnNames;
-    
+
     /** The records. */
     private final List<CsvRecord> records = new ArrayList<CsvRecord>();
 

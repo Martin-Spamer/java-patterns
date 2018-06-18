@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractObserver implements ObserverInterface {
 
-    /** The log. */
+    /** provides logging. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*

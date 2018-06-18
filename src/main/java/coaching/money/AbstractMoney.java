@@ -13,12 +13,12 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractMoney implements MoneyInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The currency. */
     private Currency currency = Currency.getInstance(Locale.getDefault());
-    
+
     /** The amount. */
     private Long amount = 0L;
 

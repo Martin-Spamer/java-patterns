@@ -2,7 +2,8 @@
 package patterns.hopp;
 
 /**
- * Hopp Interface.
+ * Interface for HOPP pattern.
+ * Half Object, Part Protocol.
  */
 public interface HoppInterface {
 
@@ -16,8 +17,4 @@ public interface HoppInterface {
      */
     public void localMethod();
 
-    /**
-     * Operation.
-     */
-    public void operation();
 }

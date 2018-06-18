@@ -13,10 +13,10 @@ public abstract class AbstractCommand implements CommandInterface {
 
     /** The context. */
     private final ContextInterface context = CommandContext.getInstance();
-    
-    /** The log. */
+
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The result. */
     protected ResultInterface result = null;
 

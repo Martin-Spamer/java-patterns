@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ObserverTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ObserverTest.class);
 
     /**

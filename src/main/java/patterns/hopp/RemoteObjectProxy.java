@@ -9,18 +9,18 @@ import org.slf4j.LoggerFactory;
  */
 class RemoteObjectProxy implements HoppInterface {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
-    
+
     /** The remote object. */
-    private RemoteObject remoteObject;
+    private final HoppInterface remoteObject = new RemoteObject();
 
     /**
      * Remote method proxy.
      */
     public void remoteMethodProxy() {
         LOG.info("%s.remoteMethodProxy()", this.getClass().getSimpleName());
-        this.remoteObject.operation();
+        this.remoteObject.remoteMethod();
     }
 
     /*
@@ -43,17 +43,6 @@ class RemoteObjectProxy implements HoppInterface {
     public void localMethod() {
         LOG.info("%s.localMethod()", this.getClass().getSimpleName());
         this.remoteObject.localMethod();
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see patterns.hopp.HoppInterface#operation()
-     */
-    @Override
-    public void operation() {
-        LOG.info("%s.operation()", this.getClass().getSimpleName());
-        this.remoteObject.operation();
     }
 
 }

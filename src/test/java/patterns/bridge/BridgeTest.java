@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BridgeTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BridgeTest.class);
 
     /**

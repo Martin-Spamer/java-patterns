@@ -18,7 +18,7 @@ public final class BigDecimalMoney {
 
     /** The currency. */
     private Currency currency = Currency.getInstance(Locale.getDefault());
-    
+
     /** The amount. */
     private BigDecimal amount = BigDecimal.ZERO;
 

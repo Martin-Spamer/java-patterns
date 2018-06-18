@@ -8,10 +8,10 @@ public final class ConcreteFacade implements FacadeInterface {
 
     /** The sub system one. */
     private final SubSystemOne subSystemOne = new SubSystemOne();
-    
+
     /** The sub system two. */
     private final SubSystemTwo subSystemTwo = new SubSystemTwo();
-    
+
     /** The sub system three. */
     private final SubSystemThree subSystemThree = new SubSystemThree();
 

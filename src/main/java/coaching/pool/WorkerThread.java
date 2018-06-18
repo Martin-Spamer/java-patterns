@@ -9,12 +9,12 @@ import org.slf4j.LoggerFactory;
  */
 public class WorkerThread implements Runnable {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(WorkerThread.class);
-    
+
     /** The Constant INTERVAL. */
     private static final int INTERVAL = 5000;
-    
+
     /** The command. */
     private final String command;
 

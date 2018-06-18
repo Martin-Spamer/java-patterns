@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Director {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(Director.class);
 
     /** The builders. */

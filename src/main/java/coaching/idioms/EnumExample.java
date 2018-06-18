@@ -7,9 +7,11 @@ package coaching.idioms;
 public enum EnumExample {
 
     /** The Unknown. */
-    Unknown("Unknown"), /** The Heads. */
- Heads("Heads"), /** The Tails. */
- Tails("Tails");
+    Unknown("Unknown"),
+    /** The Heads. */
+    Heads("Heads"),
+    /** The Tails. */
+    Tails("Tails");
 
     /** The text value. */
     private String textValue;

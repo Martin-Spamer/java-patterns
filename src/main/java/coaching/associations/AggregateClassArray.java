@@ -21,7 +21,7 @@ public final class AggregateClassArray {
     /** The Constant SIZE. */
     private static final int SIZE = 4;
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArray.class);
 
     /** The aggregate. */

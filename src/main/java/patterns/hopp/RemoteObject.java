@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 class RemoteObject implements HoppInterface {
 
-    /** The Constant LOG. */
+    /** Provide logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RemoteObject.class);
 
     /*
@@ -30,16 +30,6 @@ class RemoteObject implements HoppInterface {
     @Override
     public void localMethod() {
         LOG.info("%s.localMethod()", this.getClass().getSimpleName());
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see patterns.hopp.HoppInterface#operation()
-     */
-    @Override
-    public void operation() {
-        LOG.info("%s.operation()", this.getClass().getSimpleName());
     }
 
 }

@@ -14,7 +14,7 @@ import coaching.resources.CurrentWorkingDirectory;
  */
 public class CurrentWorkingDirectoryTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectoryTest.class);
 
     /**

@@ -12,9 +12,9 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractCommandParameters implements ParametersInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The parameters. */
     private final Properties parameters = new Properties();
 

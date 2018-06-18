@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AbstractResourcePoolTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractResourcePoolTest.class);
 
     /**
@@ -29,7 +29,7 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testAbstractResourcePool() {
-        LOG.info("testAbstractResourcePool");
+        LOG.debug("testAbstractResourcePool");
         assertNotNull("Value cannot be null", new MockResourcePool());
     }
 
@@ -38,7 +38,8 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testTypicalUsage() {
-        LOG.info("testTypicalUsage");
+        LOG.debug("testTypicalUsage");
+
         // Given a resource pool
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull("Value cannot be null", testResourcePool);
@@ -67,7 +68,7 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testAdd() {
-        LOG.info("testAdd");
+        LOG.debug("testAdd");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
@@ -82,7 +83,7 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testRemove() {
-        LOG.info("testRemove");
+        LOG.debug("testRemove");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
@@ -97,7 +98,7 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testOffer() {
-        LOG.info("testOffer");
+        LOG.debug("testOffer");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull("Value cannot be null", testResourcePool);
         assertEquals(0, testResourcePool.countFree());
@@ -113,7 +114,7 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testRemoveWhenNull() {
-        LOG.info("testRemoveWhenNull");
+        LOG.debug("testRemoveWhenNull");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull("Value cannot be null", testResourcePool);
         assertEquals(0, testResourcePool.countFree());
@@ -128,7 +129,7 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testGetWhenEmpty() {
-        LOG.info("testGetWhenEmpty");
+        LOG.debug("testGetWhenEmpty");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull("Value cannot be null", testResourcePool);
         assertEquals(0, testResourcePool.countFree());
@@ -144,7 +145,7 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testGet() {
-        LOG.info("testGet");
+        LOG.debug("testGet");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull("Value cannot be null", testResourcePool);
         assertEquals(0, testResourcePool.countFree());
@@ -163,7 +164,7 @@ public class AbstractResourcePoolTest {
      */
     @Test
     public void testRelease() {
-        LOG.info("testRelease");
+        LOG.debug("testRelease");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull("Value cannot be null", testResourcePool);
         assertEquals(0, testResourcePool.countFree());

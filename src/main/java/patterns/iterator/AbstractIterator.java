@@ -12,15 +12,15 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractIterator implements IteratorInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The aggregate. */
     protected AggregateInterface aggregate = null;
-    
+
     /** The item list. */
     protected final List<ItemInterface> itemList = new ArrayList<ItemInterface>();
-    
+
     /** The index. */
     protected int index = 0;
 

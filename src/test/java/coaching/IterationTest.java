@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
  * Examples of a iteration (looping) programming instructions.
  */
 public class IterationTest {
-    
-    /** The Constant LOG. */
+
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(IterationTest.class);
 
     /**

@@ -19,38 +19,38 @@ public class ObjectTypes {
     /** The largest byte. */
     // integers object types
     private final Byte largestByte = Byte.MAX_VALUE;
-    
+
     /** The smallest byte. */
     private final Byte smallestByte = Byte.MIN_VALUE;
 
     /** The largest short. */
     private final Short largestShort = Short.MAX_VALUE;
-    
+
     /** The smallest short. */
     private final Short smallestShort = Short.MIN_VALUE;
 
     /** The largest integer. */
     private final Integer largestInteger = Integer.MAX_VALUE;
-    
+
     /** The smallest integer. */
     private final Integer smallestInteger = Integer.MIN_VALUE;
 
     /** The largest long. */
     private final Long largestLong = Long.MAX_VALUE;
-    
+
     /** The smallestt long. */
     private final Long smallesttLong = Long.MIN_VALUE;
 
     /** The largest float. */
     // real number object types.
     private final Float largestFloat = Float.MAX_VALUE;
-    
+
     /** The smallest float. */
     private final Float smallestFloat = Float.MIN_VALUE;
 
     /** The largest double. */
     private final Double largestDouble = Double.MAX_VALUE;
-    
+
     /** The smallest double. */
     private final Double smallestDouble = Double.MIN_VALUE;
 
@@ -60,11 +60,11 @@ public class ObjectTypes {
 
     /** The true boolean. */
     private final Boolean trueBoolean = true;
-    
+
     /** The false boolean. */
     private final Boolean falseBoolean = false;
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**

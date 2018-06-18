@@ -12,12 +12,12 @@ import org.slf4j.LoggerFactory;
  */
 public class RegularExpression {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RegularExpression.class);
-    
+
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^ABC$";
-    
+
     /** The pattern. */
     private Pattern pattern = Pattern.compile(PATTERN_STRING);
 

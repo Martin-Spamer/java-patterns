@@ -2,11 +2,11 @@
 package patterns.memento;
 
 /**
- * Memento Class.
+ * Memento class, See GOF Design Patterns.
  */
 public class Memento {
 
-    /** The state. */
+    /** The state to be encapsulated. */
     private Object state;
 
     /**

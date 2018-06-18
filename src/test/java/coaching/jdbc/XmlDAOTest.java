@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 @Ignore("Requires PointBase DB availability")
 public class XmlDAOTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlDAOTest.class);
     
     /** The Constant JDBC_DRIVER. */

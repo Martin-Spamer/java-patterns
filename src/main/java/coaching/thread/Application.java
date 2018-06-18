@@ -32,9 +32,9 @@ import org.w3c.dom.NodeList;
  **/
 public class Application {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
-    
+
     /** The thread map. */
     private final Map<String, AbstractProcess> threadMap = new ConcurrentHashMap<String, AbstractProcess>();
 

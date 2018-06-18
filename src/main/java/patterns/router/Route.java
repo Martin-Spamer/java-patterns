@@ -8,13 +8,13 @@ import org.slf4j.LoggerFactory;
  * Route a Message, from the input channel to the output channel.
  */
 class Route implements InputChannelInterface, OutputChannelInterface {
-    
-    /** The Constant LOG. */
+
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(Route.class);
-    
+
     /** The output channel. */
     private OutputChannelInterface outputChannel = null;
-    
+
     /** The input channel. */
     private InputChannelInterface inputChannel = null;
 

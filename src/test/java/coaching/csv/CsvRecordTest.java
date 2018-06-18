@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CsvRecordTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvRecordTest.class);
 
     /**

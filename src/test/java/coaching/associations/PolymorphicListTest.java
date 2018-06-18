@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PolymorphicListTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PolymorphicListTest.class);
 
     /**

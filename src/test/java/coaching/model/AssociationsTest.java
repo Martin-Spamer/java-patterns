@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AssociationsTest {
 
-    /** The Constant log. */
+    /** provides logging. */
     private static final Logger log = LoggerFactory.getLogger(AssociationsTest.class);
 
     /**

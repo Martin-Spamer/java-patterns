@@ -13,9 +13,9 @@ import patterns.mvc.model.Model;
  */
 public abstract class AbstractView implements ViewInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The model. */
     protected ModelInterface model = null;
 

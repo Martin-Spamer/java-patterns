@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PoundsTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PoundsTest.class);
 
     /**

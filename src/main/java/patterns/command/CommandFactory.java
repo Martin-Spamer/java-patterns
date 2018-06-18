@@ -15,12 +15,12 @@ import org.slf4j.LoggerFactory;
  */
 public final class CommandFactory implements InvokerInterface {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
-    
+
     /** The Constant COMMANDS_PROPERTIES. */
     private static final String COMMANDS_PROPERTIES = "commands.properties";
-    
+
     /** The properties. */
     private final Properties properties = new Properties();
 

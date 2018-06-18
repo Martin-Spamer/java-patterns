@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class FactoryMethod {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(FactoryMethod.class);
 
     /**

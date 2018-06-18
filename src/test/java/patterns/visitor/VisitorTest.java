@@ -19,6 +19,7 @@ public class VisitorTest {
     public void testOperation() {
         final Visitor visitor = new Visitor();
         assertNotNull("Value cannot be null", visitor);
+
         final Element element = new Element();
         assertNotNull("Value cannot be null", element);
     }

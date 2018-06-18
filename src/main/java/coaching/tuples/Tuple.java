@@ -45,8 +45,8 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
      *
      * @param <L> the generic type
      * @param <R> the generic type
-     * @param left            the generic type L
-     * @param right            the generic type R
+     * @param left the generic type L
+     * @param right the generic type R
      * @return the tuple interface
      */
     public static <L, R> TupleInterface<L, R> pair(final L left, final R right) {

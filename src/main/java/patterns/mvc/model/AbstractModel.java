@@ -15,12 +15,12 @@ import patterns.mvc.view.AbstractView;
  */
 public abstract class AbstractModel implements ModelInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The models. */
     protected final Map<String, AbstractModel> models = new ConcurrentHashMap<String, AbstractModel>();
-    
+
     /** The views. */
     protected final Map<String, AbstractView> views = new ConcurrentHashMap<String, AbstractView>();
 

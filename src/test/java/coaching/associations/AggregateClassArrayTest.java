@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AggregateClassArrayTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArrayTest.class);
 
     /**

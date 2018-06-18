@@ -13,9 +13,9 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractConfig implements ConfigInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The properties. */
     protected final Properties properties = new Properties();
 

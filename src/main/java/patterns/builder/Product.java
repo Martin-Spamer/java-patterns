@@ -8,7 +8,7 @@ public class Product {
 
     /** The part one. */
     private Part partOne = null;
-    
+
     /** The part two. */
     private Part partTwo = null;
 

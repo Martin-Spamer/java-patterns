@@ -19,38 +19,38 @@ public class NativeTypes {
     /** The largest byte. */
     // integer types
     private final byte largestByte = Byte.MAX_VALUE;
-    
+
     /** The smallest byte. */
     private final byte smallestByte = Byte.MIN_VALUE;
 
     /** The largest short. */
     private final short largestShort = Short.MAX_VALUE;
-    
+
     /** The smallest short. */
     private final short smallestShort = Short.MIN_VALUE;
 
     /** The largest integer. */
     private final int largestInteger = Integer.MAX_VALUE;
-    
+
     /** The smallest integer. */
     private final int smallestInteger = Integer.MIN_VALUE;
 
     /** The largest long. */
     private final long largestLong = Long.MAX_VALUE;
-    
+
     /** The smallestt long. */
     private final long smallesttLong = Long.MIN_VALUE;
 
     /** The largest float. */
     // real number types
     private final float largestFloat = Float.MAX_VALUE;
-    
+
     /** The smallest float. */
     private final float smallestFloat = Float.MIN_VALUE;
 
     /** The largest double. */
     private final double largestDouble = Double.MAX_VALUE;
-    
+
     /** The smallest double. */
     private final double smallestDouble = Double.MIN_VALUE;
 
@@ -60,11 +60,11 @@ public class NativeTypes {
 
     /** The true boolean. */
     private final boolean trueBoolean = true;
-    
+
     /** The false boolean. */
     private final boolean falseBoolean = false;
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**

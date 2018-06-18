@@ -15,15 +15,15 @@ import patterns.mvc.ViewInterface;
  */
 public abstract class AbstractController implements ControllerInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The commands. */
     protected CommandFactory commands = new CommandFactory();
-    
+
     /** The model. */
     protected ModelInterface model;
-    
+
     /** The view. */
     protected ViewInterface view;
 

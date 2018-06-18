@@ -6,32 +6,27 @@ package patterns.state;
  */
 public class Context {
 
-    /** The state. */
+    /** state. */
     private AbstractState state = null;
 
     /**
      * Instantiates a new context.
      *
-     * @param state
-     *            the state
+     * @param state the state
      */
     public Context(final AbstractState state) {
         super();
         this.state = state;
     }
 
-    /**
-     * To A.
-     */
-    public void toA() {
+    public Context toAlice() {
         this.state = new StateAlice();
+        return this;
     }
 
-    /**
-     * To Z.
-     */
-    public void toZ() {
+    public Context toBob() {
         this.state = new StateBob();
+        return this;
     }
 
     /*

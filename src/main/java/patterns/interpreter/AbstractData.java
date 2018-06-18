@@ -9,6 +9,6 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractData implements DataInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 }

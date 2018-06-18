@@ -26,7 +26,7 @@ public class ConcurrentPoolTest {
     }
 
     /**
-     * Test typical usage.
+     * Unit test typical usage..
      */
     @Test
     public void testTypicalUsage() {

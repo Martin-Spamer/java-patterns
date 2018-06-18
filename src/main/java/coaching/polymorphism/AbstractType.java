@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractType implements TypeInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*

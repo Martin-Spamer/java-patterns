@@ -22,16 +22,16 @@ public final class XmlDao extends AbstractDataAccessObject {
 
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-    
+
     /** The Constant JDBC_URL. */
     private static final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
-    
+
     /** The Constant USER. */
     private static final String USER = "PBPUBLIC";
-    
+
     /** The Constant PASSWORD. */
     private static final String PASSWORD = "PBPUBLIC";
-    
+
     /** The Constant SQL. */
     private static final String SQL = "SELECT * from customers";
 

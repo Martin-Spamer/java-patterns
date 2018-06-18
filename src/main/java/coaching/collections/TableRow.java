@@ -14,9 +14,9 @@ import org.slf4j.LoggerFactory;
  */
 public class TableRow {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The cols. */
     private final List<TableCell> cols = new ArrayList<TableCell>();
 

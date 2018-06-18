@@ -1,9 +1,6 @@
 
 package patterns.state;
 
-/**
- * StateZ Class.
- */
 class StateBob extends AbstractState {
 
     /*

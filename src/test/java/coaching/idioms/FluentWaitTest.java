@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  */
 public class FluentWaitTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(FluentWaitTest.class);
 
     /**

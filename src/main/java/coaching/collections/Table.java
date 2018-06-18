@@ -13,15 +13,15 @@ import org.slf4j.LoggerFactory;
  */
 public class Table {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The table name. */
     private String tableName;
-    
+
     /** The col names. */
     private final List<String> colNames = new ArrayList<String>();
-    
+
     /** The rows. */
     private final List<TableRow> rows = new ArrayList<TableRow>();
 

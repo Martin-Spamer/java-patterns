@@ -12,6 +12,11 @@ public class Originator {
     /** The memento. */
     private Memento memento;
 
+    public Originator(final Object state) {
+        this.state = state;
+        this.memento = new Memento();
+    }
+
     /**
      * Instantiates a new originator.
      *
@@ -33,6 +38,16 @@ public class Originator {
      */
     public Memento createMemento() {
         this.memento = new Memento(this.state);
+        return this.memento;
+    }
+
+    /**
+     * memento.
+     *
+     * @return the memento
+     */
+    public Memento createMemento(final Object state) {
+        this.memento = new Memento(state);
         return this.memento;
     }
 

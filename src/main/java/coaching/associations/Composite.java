@@ -18,13 +18,13 @@ public final class Composite {
 
     /** The element alice. */
     private Alice elementAlice = new Alice();
-    
+
     /** The element bob. */
     private Bob elementBob = new Bob();
-    
+
     /** The element charlie. */
     private Charlie elementCharlie = new Charlie();
-    
+
     /** The element dan. */
     private Dan elementDan = new Dan();
 

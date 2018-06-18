@@ -8,10 +8,10 @@ public final class Result implements ResultInterface {
 
     /** The Constant PASS. */
     public static final Boolean PASS = true;
-    
+
     /** The Constant FAIL. */
     public static final Boolean FAIL = false;
-    
+
     /** The value. */
     private Boolean value = false;
 

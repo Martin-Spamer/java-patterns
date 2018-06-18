@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AbstractConfigTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractConfigTest.class);
 
     /**
@@ -40,9 +40,29 @@ public class AbstractConfigTest {
     }
 
     /**
-     * class MissingConfiguration.
+     * Mock a MissingConfiguration.
+     * The configuration file is missing so throws MissingConfigException.
      */
     public class MissingConfiguration extends AbstractConfig {
+    }
+
+    /**
+     * Mock a DefaultConfiguration.
+     * When the configuration file is missing, provide default values.
+     */
+    public class DefaultConfiguration extends AbstractConfig {
+    }
+
+    @Test
+    public void testTypicalUsage() {
+        LOG.debug("testTypicalUsage");
+        final Configuration config = new Configuration();
+        assertNotNull("Value cannot be null", config);
+        LOG.debug("{}", config.toString());
+        assertEquals("Configuration.properties", config.valueFor("File"));
+        assertEquals("Value.000", config.valueFor("000"));
+        assertEquals("Value.001", config.valueFor("001"));
+        assertEquals("Value.002", config.valueFor("002"));
     }
 
     /**
@@ -50,7 +70,7 @@ public class AbstractConfigTest {
      */
     @Test
     public void testMissingConfig() {
-        LOG.info("testMissingConfig");
+        LOG.debug("testMissingConfig");
         final ConfigInterface configuration = new MissingConfiguration();
         assertNotNull("Value cannot be null", configuration);
     }
@@ -60,7 +80,7 @@ public class AbstractConfigTest {
      */
     @Test
     public void testMissingConfigString() {
-        LOG.info("testMissingConfigString");
+        LOG.debug("testMissingConfigString");
         final ConfigInterface configuration = new Configuration("Missing");
         assertNotNull("Value cannot be null", configuration);
     }
@@ -70,7 +90,7 @@ public class AbstractConfigTest {
      */
     @Test
     public void testAbstractConfig() {
-        LOG.info("testAbstractConfig");
+        LOG.debug("testAbstractConfig");
         final ConfigInterface configuration = new Configuration();
         assertNotNull("Value cannot be null", configuration);
         final String filename = configuration.getProperty("propertyFilename");
@@ -86,7 +106,7 @@ public class AbstractConfigTest {
      */
     @Test
     public void testAbstractConfigString() {
-        LOG.info("testAbstractConfigString");
+        LOG.debug("testAbstractConfigString");
         final ConfigInterface configuration = new Configuration("Configuration");
         assertNotNull("Value cannot be null", configuration);
         final String filename = configuration.getProperty("propertyFilename");
@@ -102,7 +122,7 @@ public class AbstractConfigTest {
      */
     @Test
     public void testGetPropertyString() {
-        LOG.info("testGetPropertyString");
+        LOG.debug("testGetPropertyString");
         final ConfigInterface configuration = new Configuration();
         final String filename = configuration.getProperty("propertyFilename");
         assertNotNull("Value cannot be null", configuration);
@@ -118,7 +138,7 @@ public class AbstractConfigTest {
      */
     @Test
     public void testGetPropertyStringDefault() {
-        LOG.info("testGetPropertyStringDefault");
+        LOG.debug("testGetPropertyStringDefault");
         final ConfigInterface configuration = new Configuration();
         assertNotNull("Value cannot be null", configuration);
         final String filename = configuration.getProperty("propertyFilename");
@@ -134,7 +154,7 @@ public class AbstractConfigTest {
      */
     @Test
     public void testGetSystemProperty() {
-        LOG.info("testGetSystemProperty");
+        LOG.debug("testGetSystemProperty");
         final ConfigInterface configuration = new Configuration();
         assertNotNull("Value cannot be null", configuration);
         final String filename = configuration.getProperty("propertyFilename");
@@ -150,12 +170,12 @@ public class AbstractConfigTest {
      */
     @Test
     public void testToString() {
-        LOG.info("testToString");
+        LOG.debug("testToString");
         final ConfigInterface configuration = new Configuration();
         assertNotNull("Value cannot be null", configuration);
         final String string = configuration.toString();
         assertNotNull("Value cannot be null", string);
-        LOG.info("{}", string);
+        LOG.debug("{}.{}", this.getClass().getSimpleName(), string);
         final String value = configuration.getProperty("key");
         assertNotNull("Value cannot be null", value);
         assertEquals("value", value);
@@ -168,9 +188,8 @@ public class AbstractConfigTest {
     public void testConfiguration() {
         final Configuration config = new Configuration();
         assertNotNull("Value cannot be null", config);
-        LOG.info("{}", config.toString());
+        LOG.debug("{}", config.toString());
         assertEquals("Configuration.properties", config.valueFor("File"));
-        assertEquals("Java Coaching", config.valueFor("Project"));
         assertEquals("Value.000", config.valueFor("000"));
         assertEquals("Value.001", config.valueFor("001"));
         assertEquals("Value.002", config.valueFor("002"));

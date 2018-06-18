@@ -9,19 +9,28 @@ import java.util.UUID;
 public abstract class AbstractSession {
 
     /** The uuid. */
-    protected UUID uuid = UUID.randomUUID();
-    
+    protected final UUID uuid = UUID.randomUUID();
+
     /** The token. */
     protected String token;
 
     /**
-     * Sets the uuid.
+     * Default Constructor.
      *
-     * @param uuid
-     *            the uuid to set
+     * @param token the token
      */
-    public void setUuid(final UUID uuid) {
-        this.uuid = uuid;
+    public AbstractSession() {
+        this("");
+    }
+
+    /**
+     * The Constructor.
+     *
+     * @param token the token
+     */
+    public AbstractSession(final String token) {
+        super();
+        setToken(token);
     }
 
     /**
@@ -48,28 +57,8 @@ public abstract class AbstractSession {
      *
      * @return the token
      */
-    public String getToken() {
+    public String token() {
         return this.token;
-    }
-
-    /**
-     * Timestamp.
-     *
-     * @return the long
-     * @see java.util.UUID#timestamp()
-     */
-    public long timestamp() {
-        return this.uuid.timestamp();
-    }
-
-    /**
-     * Node.
-     *
-     * @return the long
-     * @see java.util.UUID#node()
-     */
-    public long node() {
-        return this.uuid.node();
     }
 
     /*
@@ -79,6 +68,7 @@ public abstract class AbstractSession {
      */
     @Override
     public String toString() {
-        return String.format("AbstractSession [randomUUID=%s, value=%s]", this.uuid, this.token);
+        return String.format("AbstractSession [uuid=%s, token=%s]", this.uuid, this.token);
     }
+
 }

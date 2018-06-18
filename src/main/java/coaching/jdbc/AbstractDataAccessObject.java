@@ -18,15 +18,15 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractDataAccessObject implements DaoInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The connection factory. */
     protected ConnectionFactory connectionFactory;
-    
+
     /** The result set. */
     protected ResultSet resultSet;
-    
+
     /** The result set meta data. */
     protected ResultSetMetaData resultSetMetaData;
 

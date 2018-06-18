@@ -8,20 +8,20 @@ import org.slf4j.LoggerFactory;
  * A Fluent Wait Class, will test a condition for one second.
  */
 public class FluentWait {
-    
+
     /** The Constant DEFAULT_INTERVAL. */
     private static final int DEFAULT_INTERVAL = 100;
-    
+
     /** The Constant DEFAULT_TIMEOUT. */
     private static final int DEFAULT_TIMEOUT = 1000;
-    
+
     /** The time out. */
     private long timeOut = DEFAULT_TIMEOUT;
-    
+
     /** The interval. */
     private long interval = DEFAULT_INTERVAL;
-    
-    /** The log. */
+
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**

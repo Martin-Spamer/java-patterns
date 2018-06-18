@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
  * Examples of selection programming instructions.
  */
 public class SelectionTest {
-    
-    /** The Constant LOG. */
+
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SelectionTest.class);
 
     /**
@@ -121,13 +121,13 @@ public class SelectionTest {
      * Enumeration for a type of STATEMENT.
      */
     public enum STATEMENT {
-        
+
         /** The sequence. */
-        SEQUENCE, 
- /** The selection. */
- SELECTION, 
- /** The iteration. */
- ITERATION
+        SEQUENCE,
+        /** The selection. */
+        SELECTION,
+        /** The iteration. */
+        ITERATION
     }
 
     /**

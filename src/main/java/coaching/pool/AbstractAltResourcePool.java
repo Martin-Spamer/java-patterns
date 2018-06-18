@@ -20,22 +20,22 @@ import org.slf4j.LoggerFactory;
  *            the generic type T
  */
 public abstract class AbstractAltResourcePool<T> {
-    
-    /** The log. */
+
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The max pool size. */
     protected int maxPoolSize = Integer.MAX_VALUE;
-    
+
     /** The default pool size. */
     protected int defaultPoolSize = Integer.MAX_VALUE;
-    
+
     /** The min pool size. */
     protected int minPoolSize = Integer.MIN_VALUE;
-    
+
     /** The free pool. */
     protected Stack<T> freePool = new Stack<T>();
-    
+
     /** The used pool. */
     protected Set<T> usedPool = new HashSet<T>();
 

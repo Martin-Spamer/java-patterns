@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GenericBagTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(GenericBagTest.class);
     
     /** The Constant VALUES. */

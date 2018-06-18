@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CustomExceptionHandling {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandling.class);
 
     /**
@@ -23,7 +23,7 @@ public class CustomExceptionHandling {
      * required.
      */
     public class CustomException extends Exception {
-        
+
         /** The Constant serialVersionUID. */
         private static final long serialVersionUID = 1L;
     }
@@ -32,7 +32,7 @@ public class CustomExceptionHandling {
      * CustomCreationException Class.
      */
     public class CustomCreationException extends CustomException {
-        
+
         /** The Constant serialVersionUID. */
         private static final long serialVersionUID = 1L;
     }
@@ -41,7 +41,7 @@ public class CustomExceptionHandling {
      * CustomReadException Class.
      */
     public class CustomReadException extends CustomException {
-        
+
         /** The Constant serialVersionUID. */
         private static final long serialVersionUID = 1L;
     }
@@ -50,7 +50,7 @@ public class CustomExceptionHandling {
      * CustomUpdateException Class.
      */
     public class CustomUpdateException extends CustomException {
-        
+
         /** The Constant serialVersionUID. */
         private static final long serialVersionUID = 1L;
     }
@@ -59,7 +59,7 @@ public class CustomExceptionHandling {
      * CustomDeleteException Class.
      */
     public class CustomDeleteException extends CustomException {
-        
+
         /** The Constant serialVersionUID. */
         private static final long serialVersionUID = 1L;
     }

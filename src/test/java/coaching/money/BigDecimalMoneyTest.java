@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BigDecimalMoneyTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BigDecimalMoneyTest.class);
 
     /**

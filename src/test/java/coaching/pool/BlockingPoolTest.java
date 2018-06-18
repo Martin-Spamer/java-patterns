@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BlockingPoolTest {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BlockingPoolTest.class);
 
     /**
@@ -33,7 +33,7 @@ public class BlockingPoolTest {
     }
 
     /**
-     * Test typical usage.
+     * Unit test typical usage..
      */
     @Test
     public void testTypicalUsage() {

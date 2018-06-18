@@ -1,22 +1,39 @@
 
 package patterns.session;
 
-import static org.junit.Assert.assertNotNull;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assume.assumeNotNull;
 
 import org.junit.Test;
 
 /**
- * Session Tracker Test class.
+ * SessionTracker class tests.
  */
 public class SessionTrackerTest {
 
-    /**
-     * Unit Test to session tracker.
-     */
     @Test
-    public void testSessionTracker() {
+    public void testTypicalUsage() {
+        // Given
         final SessionTracker sessionTracker = new SessionTracker();
-        assertNotNull("Value cannot be null", sessionTracker);
+        assumeNotNull(sessionTracker);
+
+        // When
+        final AbstractSession session = sessionTracker.createSession();
+
+        // Then
+        sessionTracker.destroySession(session);
+    }
+
+    @Test
+    public void type() {
+        assertThat(SessionTracker.class, notNullValue());
+    }
+
+    @Test
+    public void instantiation() {
+        final SessionTracker target = new SessionTracker();
+        assertThat(target, notNullValue());
     }
 
 }

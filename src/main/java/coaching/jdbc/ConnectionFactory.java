@@ -11,28 +11,28 @@ import org.slf4j.LoggerFactory;
  * A factory for creating Connection objects.
  */
 public class ConnectionFactory {
-    
-    /** The log. */
+
+    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    
+
     /** The Constant JDBC_URL. */
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/student";
-    
+
     /** The Constant USER. */
     private static final String USER = "root";
-    
+
     /** The Constant PASSWORD. */
     private static final String PASSWORD = "root";
 
     /** The connection url. */
     private String connectionUrl = JDBC_URL;
-    
+
     /** The username. */
     private String username = USER;
-    
+
     /** The password. */
     private String password = PASSWORD;
 

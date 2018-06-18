@@ -5,35 +5,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * LocalHopp Class.
+ * Half Object Part Protocol class.
  */
 class LocalHopp implements HoppInterface {
 
-    /** The Constant LOG. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(LocalHopp.class);
-    
+
     /** The remote object proxy. */
-    public RemoteObjectProxy remoteObjectProxy;
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see patterns.hopp.HoppInterface#remoteMethod()
-     */
-    @Override
-    public void remoteMethod() {
-        LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see patterns.hopp.HoppInterface#operation()
-     */
-    @Override
-    public void operation() {
-        LOG.info("%s.operation()", this.getClass().getSimpleName());
-    }
+    public HoppInterface remoteObjectProxy = new RemoteObjectProxy();
 
     /*
      * (non-Javadoc)
@@ -43,6 +23,17 @@ class LocalHopp implements HoppInterface {
     @Override
     public void localMethod() {
         LOG.info("%s.localMethod()", this.getClass().getSimpleName());
+        this.remoteObjectProxy.localMethod();
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.hopp.HoppInterface#remoteMethod()
+     */
+    @Override
+    public void remoteMethod() {
+        LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
+        this.remoteObjectProxy.remoteMethod();
+    }
 }
