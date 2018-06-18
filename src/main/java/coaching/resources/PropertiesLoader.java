@@ -1,6 +1,10 @@
 
 package coaching.resources;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 /**
  * Property Loader class.
  *
@@ -22,20 +26,47 @@ package coaching.resources;
  */
 public class PropertiesLoader extends ResourceLoader {
 
+    private final Properties properties = new Properties();
+
     /**
-     * Constructor.
+     * Default Constructor.
      */
     public PropertiesLoader() {
         super();
     }
 
     /**
-     * Constructor.
+     * Constructor taking property filename as String.
      *
      * @param propertyFileName the property file name
      */
     public PropertiesLoader(final String propertyFileName) {
         super(propertyFileName);
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see coaching.resources.ResourceLoader#load(java.io.InputStream)
+     */
+    @Override
+    public ResourceLoader load(final InputStream streamForResource) {
+        try {
+            this.properties.load(streamForResource);
+            this.loaded = true;
+        } catch (final IOException e) {
+            this.log.error(e.toString());
+        }
+        return this;
+    }
+
+    /**
+     * Gets the properties.
+     *
+     * @return the properties
+     */
+    public Properties getProperties() {
+        return this.properties;
     }
 
 }

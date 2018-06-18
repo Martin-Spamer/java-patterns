@@ -38,7 +38,7 @@ public class ResourceLoader {
     private String filename = String.format("./%s%s", this.getClass().getSimpleName(), this.suffix);
 
     /** resource has been loaded. */
-    private boolean loaded = false;
+    protected boolean loaded = false;
 
     /**
      * Construct a new configuration instance.
