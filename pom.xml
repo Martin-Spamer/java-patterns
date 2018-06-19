@@ -4,7 +4,7 @@
 	
 	<groupId>spamer.me.uk</groupId>
 	<artifactId>java-coaching</artifactId>
-	<version>0.0.7-SNAPSHOT</version>
+	<version>0.0.8-SNAPSHOT</version>
 
 	<name>Maven project for coaching java</name>
 	<description>Java coaching project.</description>

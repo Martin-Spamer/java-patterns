@@ -26,13 +26,14 @@ import java.util.Properties;
  */
 public class PropertiesLoader extends ResourceLoader {
 
-    private final Properties properties = new Properties();
+    private Properties properties;
 
     /**
      * Default Constructor.
      */
     public PropertiesLoader() {
         super();
+        this.log.info("{}.{}", this.getClass().getSimpleName(), this.properties.toString());
     }
 
     /**
@@ -42,6 +43,7 @@ public class PropertiesLoader extends ResourceLoader {
      */
     public PropertiesLoader(final String propertyFileName) {
         super(propertyFileName);
+        this.log.info("{}.{}", this.getClass().getSimpleName(), this.properties.toString());
     }
 
     /*
@@ -51,7 +53,9 @@ public class PropertiesLoader extends ResourceLoader {
      */
     @Override
     public ResourceLoader load(final InputStream streamForResource) {
-        this.log.info("{}", this.properties.toString());
+        if (this.properties == null) {
+            this.properties = new Properties();
+        }
         try {
             this.properties.load(streamForResource);
             this.loaded = true;
