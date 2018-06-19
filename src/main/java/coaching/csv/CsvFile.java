@@ -108,7 +108,7 @@ public class CsvFile {
             final InputStream resourceAsStream = getClass().getResourceAsStream(filename);
             read(resourceAsStream);
         } else {
-            LOG.info("filename");
+            LOG.error("unexpected that filename == null");
         }
     }
 
@@ -126,7 +126,7 @@ public class CsvFile {
             read(inputStreamReader);
             resourceAsStream.close();
         } else {
-            LOG.info("resourceAsStream");
+            LOG.error("unexpected that resourceAsStream == null");
         }
     }
 
@@ -165,7 +165,7 @@ public class CsvFile {
             }
             bufferedReader.close();
         } else {
-            LOG.info("bufferedReader");
+            LOG.error("unexpected that bufferedReader == null");
         }
     }
 
@@ -182,7 +182,7 @@ public class CsvFile {
             final CsvRecord record = new CsvRecord(line);
             this.records.add(record);
             final String recordString = record.toString();
-            LOG.info("recordString={}", recordString);
+            LOG.debug("recordString = {}", recordString);
         }
     }
 
@@ -208,7 +208,7 @@ public class CsvFile {
             final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
             for (int index = 0; index < this.records.size(); index++) {
                 final CsvRecord csvRecord = this.records.get(index);
-                LOG.info("{}", csvRecord);
+                LOG.trace("csvRecord = {}", csvRecord);
                 writer.write(csvRecord.toString());
             }
             writer.close();
@@ -232,7 +232,7 @@ public class CsvFile {
      * Log pretty.
      */
     public void logPretty() {
-        CsvFile.LOG.info(toString());
+        CsvFile.LOG.debug(toString());
     }
 
     /**

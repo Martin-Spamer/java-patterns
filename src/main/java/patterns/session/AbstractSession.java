@@ -16,15 +16,13 @@ public abstract class AbstractSession {
 
     /**
      * Default Constructor.
-     *
-     * @param token the token
      */
     public AbstractSession() {
         this("");
     }
 
     /**
-     * The Constructor.
+     * Constructor with token.
      *
      * @param token the token
      */

@@ -25,8 +25,6 @@ public class LocalHoppTest {
 
     /**
      * Test type.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testType() {
@@ -35,8 +33,6 @@ public class LocalHoppTest {
 
     /**
      * Test remote method.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testRemoteMethod() {
@@ -47,8 +43,6 @@ public class LocalHoppTest {
 
     /**
      * Test local method.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testLocalMethod() {

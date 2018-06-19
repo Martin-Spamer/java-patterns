@@ -42,8 +42,9 @@ public class Originator {
     }
 
     /**
-     * memento.
+     * memento factory method
      *
+     * @param state the state
      * @return the memento
      */
     public Memento createMemento(final Object state) {

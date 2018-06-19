@@ -29,8 +29,6 @@ public class RemoteObjectProxyTest {
 
     /**
      * Unit test to type.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testType() {
@@ -39,8 +37,6 @@ public class RemoteObjectProxyTest {
 
     /**
      * Unit test to remote method a$.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testRemoteMethod() {
@@ -51,8 +47,6 @@ public class RemoteObjectProxyTest {
 
     /**
      * Unit test to remote method proxy.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testRemoteMethodProxy() {

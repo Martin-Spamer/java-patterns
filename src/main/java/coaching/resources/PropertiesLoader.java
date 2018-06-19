@@ -51,6 +51,7 @@ public class PropertiesLoader extends ResourceLoader {
      */
     @Override
     public ResourceLoader load(final InputStream streamForResource) {
+        this.log.info("{}", this.properties.toString());
         try {
             this.properties.load(streamForResource);
             this.loaded = true;

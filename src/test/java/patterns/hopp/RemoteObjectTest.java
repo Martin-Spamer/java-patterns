@@ -30,8 +30,6 @@ public class RemoteObjectTest {
 
     /**
      * Unit test the type.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testType() {
@@ -40,8 +38,6 @@ public class RemoteObjectTest {
 
     /**
      * Unit test to remote method a$.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testRemoteMethod() {
@@ -52,8 +48,6 @@ public class RemoteObjectTest {
 
     /**
      * Unit test to local method a$.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void testLocalMethod() {

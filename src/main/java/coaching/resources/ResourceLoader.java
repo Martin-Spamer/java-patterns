@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  * Class.getResourceAsStream ("/some/pkg/resource.properties");
  * ClassLoader.getResourceAsStream ("some/pkg/resource.properties");
  * ResourceBundle.getBundle ("some.pkg.resource");
- * <code>
+ * </code>
  */
 public class ResourceLoader {
 
@@ -103,7 +103,6 @@ public class ResourceLoader {
      *
      * @param propertyFileName the property file name
      * @return the resource loader
-     * @throws FileNotFoundException
      */
     public ResourceLoader load(final String propertyFileName) {
         if (propertyFileName != null) {

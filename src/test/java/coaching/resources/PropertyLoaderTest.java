@@ -13,8 +13,8 @@ public class PropertyLoaderTest {
     /**
      * ConfigurationLoader class.
      */
-    public class ConfigurationLoader extends PropertiesLoader {
-        public ConfigurationLoader() {
+    public class Configuration extends PropertiesLoader {
+        public Configuration() {
             super("./Configuration.properties");
         }
     }
@@ -42,11 +42,11 @@ public class PropertyLoaderTest {
         // Given a resource file exists called SpecificResource.properties
 
         // When
-        final ResourceLoader resourceLoader = new ConfigurationLoader();
+        final Configuration configuration = new Configuration();
 
         // Then
-        assertNotNull(resourceLoader);
-        assertTrue(resourceLoader.isLoaded());
+        assertNotNull(configuration);
+        assertTrue(configuration.isLoaded());
     }
 
     @Test
