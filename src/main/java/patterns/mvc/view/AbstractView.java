@@ -3,7 +3,6 @@ package patterns.mvc.view;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import patterns.mvc.ModelInterface;
 import patterns.mvc.ViewInterface;
 import patterns.mvc.model.Model;

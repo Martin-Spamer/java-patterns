@@ -12,6 +12,6 @@ public interface OutputChannelInterface {
      * @param message
      *            the message
      */
-    public void sendMessage(final Message message);
+    void sendMessage(final Message message);
 
 }

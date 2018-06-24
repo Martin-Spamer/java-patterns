@@ -1,11 +1,11 @@
 
 package patterns.command;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * The CommandFactoryTest Class.
@@ -18,11 +18,9 @@ public class CommandFactoryTest {
     /**
      * Unit Test to command factory.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testCommandFactory() throws Exception {
+    public void testCommandFactory() {
         LOG.debug("testCommandFactory");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull("Value cannot be null", commandFactory);
@@ -32,11 +30,9 @@ public class CommandFactoryTest {
     /**
      * Unit Test to command factory file.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testCommandFactoryFile() throws Exception {
+    public void testCommandFactoryFile() {
         LOG.debug("testCommandFactoryFile");
         final InvokerInterface commandFactory = new CommandFactory("commands.properties");
         assertNotNull("Value cannot be null", commandFactory);

@@ -19,7 +19,7 @@ public interface TupleInterface<L, R> {
      * @param left
      *            the new left
      */
-    public void setLeft(final L left);
+    void setLeft(final L left);
 
     /**
      * right.
@@ -27,27 +27,27 @@ public interface TupleInterface<L, R> {
      * @param right
      *            the new right
      */
-    public void setRight(final R right);
+    void setRight(final R right);
 
     /**
      * left.
      *
      * @return the left
      */
-    public L getLeft();
+    L getLeft();
 
     /**
      * right.
      *
      * @return the right
      */
-    public R getRight();
+    R getRight();
 
     /**
      * Return a shallow copy of this.
      *
      * @return the tuple interface
      */
-    public TupleInterface<L, R> copy();
+    TupleInterface<L, R> copy();
 
 }

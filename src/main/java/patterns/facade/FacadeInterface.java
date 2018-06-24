@@ -9,6 +9,6 @@ public interface FacadeInterface {
     /**
      * Operation.
      */
-    public void operation();
+    void operation();
 
 }

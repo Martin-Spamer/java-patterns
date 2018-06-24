@@ -1,15 +1,12 @@
 
 package coaching.resources;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assume.assumeNotNull;
-
+import coaching.resources.ResourceLoader.ConfigurationNotLoadedException;
 import org.junit.Test;
 
-import coaching.resources.ResourceLoader.ConfigurationNotLoadedException;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.*;
+import static org.junit.Assume.assumeNotNull;
 
 /**
  * ResourceLoader class tests.
@@ -179,7 +176,7 @@ public class ResourceLoaderTest {
     // public void testLoadResourceMissing() {
     // final ResourceLoader resourceLoader = new ResourceLoader();
     // assertNotNull(resourceLoader);
-    // final String propertyFileName = "MisssingResource";
+    // final String propertyFileName = "MissingResource";
     // final ResourceLoader actual = resourceLoader.load(propertyFileName);
     // final ResourceLoader expected = null;
     // assertThat(actual, is(equalTo(expected)));

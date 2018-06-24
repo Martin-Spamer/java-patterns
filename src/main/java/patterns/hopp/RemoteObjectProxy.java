@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 /**
  * RemoteObjectProxy Class.
  */
+@SuppressWarnings("SpellCheckingInspection")
 class RemoteObjectProxy implements HoppInterface {
 
     /** provides logging. */

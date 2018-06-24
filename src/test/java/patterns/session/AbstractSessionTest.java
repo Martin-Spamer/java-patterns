@@ -1,20 +1,17 @@
 
 package patterns.session;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assume.assumeNotNull;
-
-import java.util.UUID;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import patterns.composite.CompositeTest;
+
+import java.util.UUID;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assume.assumeNotNull;
 
 /**
  * AbstractSession class tests.

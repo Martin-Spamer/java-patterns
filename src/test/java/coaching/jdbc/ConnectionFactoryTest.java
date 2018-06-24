@@ -1,13 +1,13 @@
 
 package coaching.jdbc;
 
-import static org.junit.Assert.assertNotNull;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Unit test for the ConnectionFactory class.

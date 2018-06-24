@@ -1,11 +1,11 @@
 
 package patterns.command;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * InvokerExampleTest Class.
@@ -18,11 +18,9 @@ public class InvokerExampleTest {
     /**
      * Unit Test to example command.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testExampleCommand() throws Exception {
+    public void testExampleCommand() {
         LOG.debug("testExampleCommand");
         final ResultInterface result = new ExampleCommand().execute();
         assertNotNull("Value cannot be null", result);
@@ -32,11 +30,9 @@ public class InvokerExampleTest {
     /**
      * Unit Test to invoker example command.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testInvokerExampleCommand() throws Exception {
+    public void testInvokerExampleCommand() {
         LOG.debug("testInvokerExampleCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("ExampleCommand");
@@ -47,11 +43,9 @@ public class InvokerExampleTest {
     /**
      * Unit Test to sequence command.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testSequenceCommand() throws Exception {
+    public void testSequenceCommand() {
         LOG.debug("testSequenceCommand");
         final ResultInterface result = new SequenceCommand().execute();
         assertNotNull("Value cannot be null", result);
@@ -61,11 +55,9 @@ public class InvokerExampleTest {
     /**
      * Unit Test to invoker sequence command.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testInvokerSequenceCommand() throws Exception {
+    public void testInvokerSequenceCommand() {
         LOG.debug("testInvokerSequenceCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("SequenceCommand");
@@ -76,11 +68,9 @@ public class InvokerExampleTest {
     /**
      * Unit Test to compound command.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testCompoundCommand() throws Exception {
+    public void testCompoundCommand() {
         LOG.debug("testCompoundCommand");
         final ResultInterface result = new CompoundCommand().execute();
         assertNotNull("Value cannot be null", result);
@@ -90,11 +80,9 @@ public class InvokerExampleTest {
     /**
      * Unit Test to invoker compound command.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testInvokerCompoundCommand() throws Exception {
+    public void testInvokerCompoundCommand() {
         LOG.debug("testInvokerCompoundCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("CompoundCommand");
@@ -105,11 +93,9 @@ public class InvokerExampleTest {
     /**
      * Unit Test to conditional command.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testConditionalCommand() throws Exception {
+    public void testConditionalCommand() {
         LOG.debug("testConditionalCommand");
         final ResultInterface result = new ConditionalCommand().execute();
         assertNotNull("Value cannot be null", result);
@@ -119,11 +105,9 @@ public class InvokerExampleTest {
     /**
      * Unit Test to invoker conditional command.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testInvokerConditionalCommand() throws Exception {
+    public void testInvokerConditionalCommand() {
         LOG.debug("testInvokerConditionalCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("ConditionalCommand");

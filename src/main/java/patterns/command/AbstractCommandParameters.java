@@ -1,11 +1,11 @@
 
 package patterns.command;
 
-import java.util.Properties;
-import java.util.Set;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Properties;
+import java.util.Set;
 
 /**
  * Abstract class for Parameters to Commands.
@@ -34,17 +34,17 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      *            the value
      */
     public AbstractCommandParameters(final String key, final String value) {
-        setPrameter(key, value);
+        setParameter(key, value);
     }
 
     /*
      * (non-Javadoc)
      *
-     * @see patterns.command.ParametersInterface#setPrameter(java.lang.String,
+     * @see patterns.command.ParametersInterface#setParameter(java.lang.String,
      * java.lang.String)
      */
     @Override
-    public AbstractCommandParameters setPrameter(final String key, final String value) {
+    public AbstractCommandParameters setParameter(final String key, final String value) {
         this.parameters.setProperty(key, value);
         return this;
     }

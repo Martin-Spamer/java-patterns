@@ -9,6 +9,6 @@ public interface StrategyInterface {
     /**
      * Operation.
      */
-    public void operation();
+    void operation();
 
 }

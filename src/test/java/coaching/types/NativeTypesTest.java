@@ -1,9 +1,9 @@
 
 package coaching.types;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Class showing usage of native types.

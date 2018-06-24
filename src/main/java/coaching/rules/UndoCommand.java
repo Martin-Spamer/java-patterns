@@ -9,10 +9,10 @@ public interface UndoCommand extends CommandInterface {
     /**
      * Redo.
      */
-    public void redo();
+    void redo();
 
     /**
      * Undo.
      */
-    public void undo();
+    void undo();
 }

@@ -1,12 +1,13 @@
 
 package coaching.collections;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Table class.
@@ -20,10 +21,10 @@ public class Table {
     private String tableName;
 
     /** The col names. */
-    private final List<String> colNames = new ArrayList<String>();
+    private final List<String> colNames = new ArrayList<>();
 
     /** The rows. */
-    private final List<TableRow> rows = new ArrayList<TableRow>();
+    private final List<TableRow> rows = new ArrayList<>();
 
     /**
      * Instantiates a new table.
@@ -70,9 +71,7 @@ public class Table {
      *            the col names
      */
     public void addCols(final String... colNames) {
-        for (final String name : colNames) {
-            this.colNames.add(name);
-        }
+        this.colNames.addAll(Arrays.asList(colNames));
     }
 
     /**
@@ -115,9 +114,7 @@ public class Table {
      * @return the string
      */
     public String toCsvString() {
-        final StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append('\n').append(tableHeader()).append(tableBody());
-        return stringBuffer.toString();
+        return "\n" + tableHeader() + tableBody();
     }
 
     /**
@@ -126,7 +123,7 @@ public class Table {
      * @return the string
      */
     protected String tableHeader() {
-        final StringBuffer stringBuffer = new StringBuffer();
+        final StringBuilder stringBuffer = new StringBuilder();
 
         final Iterator<String> itemIterator = this.colNames.iterator();
         if (itemIterator.hasNext()) {
@@ -147,7 +144,7 @@ public class Table {
      * @return the string
      */
     protected String tableBody() {
-        final StringBuffer stringBuffer = new StringBuffer();
+        final StringBuilder stringBuffer = new StringBuilder();
 
         final Iterator<TableRow> tableRow = this.rows.iterator();
         if (tableRow.hasNext()) {

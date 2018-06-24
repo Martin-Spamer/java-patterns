@@ -1,14 +1,13 @@
 
 package patterns.mvc;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
-
 import patterns.mvc.controller.AbstractController;
 import patterns.mvc.controller.Controller;
 import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Model View Controller Test Class.
@@ -18,11 +17,9 @@ public class MvcTest {
     /**
      * Unit Test to mvc.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testModel() throws Exception {
+    public void testModel() {
         final Model model = new Model();
         assertNotNull("model cannot be null", model);
     }
@@ -30,10 +27,9 @@ public class MvcTest {
     /**
      * Test view.
      *
-     * @throws Exception the exception
      */
     @Test
-    public void testView() throws Exception {
+    public void testView() {
         final View view = new View();
         assertNotNull("View cannot be null", view);
     }
@@ -41,10 +37,9 @@ public class MvcTest {
     /**
      * Test controller.
      *
-     * @throws Exception the exception
      */
     @Test
-    public void testController() throws Exception {
+    public void testController() {
         final Controller controller = new Controller();
         assertNotNull("Controller cannot be null", controller);
     }

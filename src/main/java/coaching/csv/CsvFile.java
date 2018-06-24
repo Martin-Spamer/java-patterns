@@ -1,18 +1,13 @@
 
 package coaching.csv;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Represent a comma separated value file class.
@@ -32,7 +27,7 @@ public class CsvFile {
     private String[] columnNames;
 
     /** The records. */
-    private final List<CsvRecord> records = new ArrayList<CsvRecord>();
+    private final List<CsvRecord> records = new ArrayList<>();
 
     /**
      * Instantiates a new csv file.
@@ -206,8 +201,7 @@ public class CsvFile {
     public void write(final String filename) {
         try {
             final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-            for (int index = 0; index < this.records.size(); index++) {
-                final CsvRecord csvRecord = this.records.get(index);
+            for (final CsvRecord csvRecord : this.records) {
                 LOG.trace("csvRecord = {}", csvRecord);
                 writer.write(csvRecord.toString());
             }

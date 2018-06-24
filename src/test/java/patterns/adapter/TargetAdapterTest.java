@@ -1,12 +1,12 @@
 
 package patterns.adapter;
 
+import org.junit.Test;
+
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assume.assumeNotNull;
-
-import org.junit.Test;
 
 /**
  * TargetAdapter class tests.

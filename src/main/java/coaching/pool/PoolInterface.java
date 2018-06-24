@@ -16,28 +16,28 @@ public interface PoolInterface<E> {
      *            the element
      * @return the pool interface
      */
-    public PoolInterface<E> add(final E element);
+    PoolInterface<E> add(final E element);
 
     /**
      * Count the number of free elements.
      *
      * @return the int
      */
-    public int countFree();
+    int countFree();
 
     /**
      * Count the number used elements.
      *
      * @return the int
      */
-    public int countUsed();
+    int countUsed();
 
     /**
      * Take an element from the pool.
      *
      * @return the e
      */
-    public E take();
+    E take();
 
     /**
      * Release element back to pool.
@@ -46,7 +46,7 @@ public interface PoolInterface<E> {
      *            the t
      * @return the pool interface
      */
-    public PoolInterface<E> release(final E t);
+    PoolInterface<E> release(final E t);
 
     /**
      * remove an from the pool.
@@ -55,6 +55,6 @@ public interface PoolInterface<E> {
      *            the element
      * @return the pool interface
      */
-    public PoolInterface<E> remove(final E element);
+    PoolInterface<E> remove(final E element);
 
 }

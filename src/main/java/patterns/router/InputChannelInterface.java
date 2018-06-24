@@ -11,6 +11,6 @@ public interface InputChannelInterface {
      *
      * @return the message
      */
-    public Message receiveMessage();
+    Message receiveMessage();
 
 }

@@ -53,7 +53,7 @@ public final class Result implements ResultInterface {
      */
     @Override
     public boolean and(final ResultInterface newResult) {
-        this.value &= newResult.getResult().booleanValue();
+        this.value &= newResult.getResult();
         return this.value;
     }
 

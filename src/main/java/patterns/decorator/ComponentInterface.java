@@ -11,6 +11,6 @@ public interface ComponentInterface {
      *
      * @return the component interface
      */
-    public ComponentInterface operation();
+    ComponentInterface operation();
 
 }

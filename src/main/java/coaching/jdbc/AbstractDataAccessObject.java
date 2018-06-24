@@ -1,15 +1,10 @@
 
 package coaching.jdbc;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.sql.*;
 
 /**
  * Abstract Data Access object.
@@ -141,7 +136,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
      *             the SQL exception
      */
     protected void handleResultSet(final ResultSet resultSet) throws SQLException {
-        final StringBuffer output = new StringBuffer();
+        final StringBuilder output = new StringBuilder();
         while (resultSet.next()) {
             output.append(processRow(resultSet));
             output.append('\n');

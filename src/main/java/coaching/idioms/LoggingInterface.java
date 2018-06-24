@@ -11,7 +11,7 @@ public interface LoggingInterface {
     /**
      * Law of Demeter (Tell Don't Ask).
      */
-    public void toLog();
+    void toLog();
 
     /**
      * Law of Demeter (Tell Don't Ask).
@@ -21,6 +21,6 @@ public interface LoggingInterface {
      * @param destinationLog
      *            the destination log
      */
-    public void logTo(final Logger destinationLog);
+    void logTo(final Logger destinationLog);
 
 }

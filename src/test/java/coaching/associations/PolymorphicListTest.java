@@ -1,11 +1,11 @@
 
 package coaching.associations;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * class PolymorphicListTest.
@@ -34,7 +34,7 @@ public class PolymorphicListTest {
         LOG.info("testPolymorphicList");
         final PolymorphicList polymorphicList = new PolymorphicList();
         assertNotNull("Value cannot be null", polymorphicList);
-        polymorphicList.add(new Integer(0));
+        polymorphicList.add(0);
         LOG.info("{}", polymorphicList.toString());
     }
 

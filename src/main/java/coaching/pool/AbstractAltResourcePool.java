@@ -6,12 +6,12 @@
 
 package coaching.pool;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * AbstractResourcePool Class.
@@ -34,10 +34,10 @@ public abstract class AbstractAltResourcePool<T> {
     protected int minPoolSize = Integer.MIN_VALUE;
 
     /** The free pool. */
-    protected Stack<T> freePool = new Stack<T>();
+    protected Stack<T> freePool = new Stack<>();
 
     /** The used pool. */
-    protected Set<T> usedPool = new HashSet<T>();
+    protected Set<T> usedPool = new HashSet<>();
 
     /**
      * Borrow resource from pool.
@@ -111,10 +111,8 @@ public abstract class AbstractAltResourcePool<T> {
      *
      * @param resource
      *            the resource
-     * @throws ResourceReleaseException
-     *             the resource release exception
      */
-    public synchronized void release(final T resource) throws ResourceReleaseException {
+    public synchronized void release(final T resource) {
         // * in use pool.
         this.usedPool.remove(resource);
 

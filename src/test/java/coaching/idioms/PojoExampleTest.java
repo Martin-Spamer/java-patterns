@@ -1,14 +1,15 @@
 
 package coaching.idioms;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
-import org.junit.Test;
 
 /**
  * PojoExampleTest Class.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class PojoExampleTest {
 
     /**

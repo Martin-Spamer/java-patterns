@@ -3,7 +3,6 @@ package patterns.mvc.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import patterns.command.CommandFactory;
 import patterns.command.MissingCommandException;
 import patterns.mvc.ControllerInterface;

@@ -20,7 +20,7 @@ public final class DateHelper {
      */
     private DateHelper() {
         super();
-        throw new UnsupportedOperationException("Do not instantiate this class, use staticly.");
+        throw new UnsupportedOperationException("Do not instantiate this class, use statically.");
     }
 
     /**
@@ -29,8 +29,7 @@ public final class DateHelper {
      * @return the calendar
      */
     public static Calendar now() {
-        final Calendar now = Calendar.getInstance();
-        return now;
+        return Calendar.getInstance();
     }
 
     /**

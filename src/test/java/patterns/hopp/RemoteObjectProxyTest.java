@@ -1,10 +1,10 @@
 
 package patterns.hopp;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assume.assumeNotNull;
-
-import org.junit.Test;
 
 /**
  * RemoteObjectProxy class tests.

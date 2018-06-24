@@ -1,11 +1,11 @@
 
 package patterns.builder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Director Class.
@@ -16,7 +16,7 @@ public class Director {
     private static final Logger LOG = LoggerFactory.getLogger(Director.class);
 
     /** The builders. */
-    private final List<AbstractBuilder> builders = new ArrayList<AbstractBuilder>();
+    private final List<AbstractBuilder> builders = new ArrayList<>();
 
     /**
      * Adds part builder.
@@ -41,8 +41,7 @@ public class Director {
         final BuilderTwo builderTwo = new BuilderTwo();
         final Part partTwo = builderTwo.build();
 
-        final Product product = new Product(partOne, partTwo);
-        return product;
+        return new Product(partOne, partTwo);
     }
 
     /**

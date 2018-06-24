@@ -12,7 +12,7 @@ public interface ParticipantInterface {
      *
      * @return this to provide a participant with a fluent interface.
      */
-    public ParticipantInterface join();
+    ParticipantInterface join();
 
     /**
      * Commit operation.
@@ -20,7 +20,7 @@ public interface ParticipantInterface {
      *
      * @return this to provide a participant with a fluent interface.
      */
-    public ParticipantInterface commit();
+    ParticipantInterface commit();
 
     /**
      * Cancel operation.
@@ -28,6 +28,6 @@ public interface ParticipantInterface {
      *
      * @return this to provide a participant with a fluent interface.
      */
-    public ParticipantInterface cancel();
+    ParticipantInterface cancel();
 
 }

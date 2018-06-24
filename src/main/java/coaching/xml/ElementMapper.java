@@ -1,15 +1,15 @@
 
 package coaching.xml;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * DOM Element Mapper class.
@@ -23,7 +23,7 @@ public class ElementMapper {
     private String indexName = "id";
 
     /** The element map. */
-    private final Map<String, Element> elementMap = new ConcurrentHashMap<String, Element>();
+    private final Map<String, Element> elementMap = new ConcurrentHashMap<>();
 
     /**
      * Instantiates a new element mapper.
@@ -85,7 +85,7 @@ public class ElementMapper {
             return "";
         }
 
-        final StringBuffer text = new StringBuffer();
+        final StringBuilder text = new StringBuilder();
 
         final String value = node.getNodeValue();
         if (value != null) {
@@ -110,8 +110,7 @@ public class ElementMapper {
      * @return the element
      */
     public Element findElement(final String attributeName) {
-        final Element element = this.elementMap.get(attributeName);
-        return element;
+        return this.elementMap.get(attributeName);
     }
 
     /**

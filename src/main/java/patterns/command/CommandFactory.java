@@ -1,12 +1,12 @@
 
 package patterns.command;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * A factory for creating Command objects.
@@ -67,8 +67,7 @@ public final class CommandFactory implements InvokerInterface {
      */
     private InputStream inputStream(final String resourceName) {
         final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
-        return resourceAsStream;
+        return classloader.getResourceAsStream(resourceName);
     }
 
     /*
@@ -86,7 +85,7 @@ public final class CommandFactory implements InvokerInterface {
                 throw new MissingCommandException(message);
             }
         } else {
-            final String message = String.format("actionName cannot be null");
+            final String message = "actionName cannot be null";
             throw new MissingCommandException(message);
         }
     }

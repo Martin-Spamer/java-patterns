@@ -1,19 +1,14 @@
 
 package coaching.resources;
 
-import static org.junit.Assert.assertNotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URI;
 import java.net.URL;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Resource Loader class.
@@ -90,7 +85,7 @@ public class ResourceLoader {
     }
 
     /**
-     * Load the resource by classname.
+     * Load the resource by className.
      *
      * @return this ResourceLoader for fluent interface.
      */
@@ -181,18 +176,15 @@ public class ResourceLoader {
         return this.suffix;
     }
 
-    public static File getFile(final String resourceFilename)
-            throws FileNotFoundException {
+    public static File getFile(final String resourceFilename) {
         return null;
     }
 
-    public static File getFile(final URL resourceUrl)
-            throws FileNotFoundException {
+    public static File getFile(final URL resourceUrl) {
         return null;
     }
 
-    public static File getFile(final URI resourceUri)
-            throws FileNotFoundException {
+    public static File getFile(final URI resourceUri) {
         return null;
     }
 

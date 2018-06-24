@@ -17,14 +17,14 @@ public interface ParametersInterface {
      *            the value
      * @return the abstract parameters
      */
-    public AbstractCommandParameters setPrameter(final String key, final String value);
+    AbstractCommandParameters setParameter(final String key, final String value);
 
     /**
      * String property names.
      *
      * @return the sets the
      */
-    public Set<String> stringPropertyNames();
+    Set<String> stringPropertyNames();
 
     /**
      * Value for.
@@ -33,7 +33,7 @@ public interface ParametersInterface {
      *            the key
      * @return the string
      */
-    public String valueFor(final String key);
+    String valueFor(final String key);
 
     /**
      * Value for.
@@ -44,7 +44,7 @@ public interface ParametersInterface {
      *            the default value
      * @return the boolean
      */
-    public Boolean valueFor(final String key, final Boolean defaultValue);
+    Boolean valueFor(final String key, final Boolean defaultValue);
 
     /**
      * Value for.
@@ -55,7 +55,7 @@ public interface ParametersInterface {
      *            the default value
      * @return the string
      */
-    public String valueFor(final String key, final String defaultValue);
+    String valueFor(final String key, final String defaultValue);
 
     /**
      * Value for.
@@ -66,6 +66,6 @@ public interface ParametersInterface {
      *            the default value
      * @return the long
      */
-    public Long valueFor(final String key, final Long defaultValue);
+    Long valueFor(final String key, final Long defaultValue);
 
 }

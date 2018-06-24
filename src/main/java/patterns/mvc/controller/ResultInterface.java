@@ -11,7 +11,7 @@ public interface ResultInterface {
      *
      * @return the result
      */
-    public boolean getResult();
+    boolean getResult();
 
     /**
      * Sets the result.
@@ -20,7 +20,7 @@ public interface ResultInterface {
      *            the new result
      * @return the result interface
      */
-    public ResultInterface setResult(final boolean newResult);
+    ResultInterface setResult(final boolean newResult);
 
     /**
      * Update result.
@@ -29,7 +29,7 @@ public interface ResultInterface {
      *            the new result
      * @return the result interface
      */
-    public ResultInterface updateResult(final boolean newResult);
+    ResultInterface updateResult(final boolean newResult);
 
     /**
      * Update result.
@@ -38,6 +38,6 @@ public interface ResultInterface {
      *            the new result
      * @return the result interface
      */
-    public ResultInterface updateResult(final ResultInterface newResult);
+    ResultInterface updateResult(final ResultInterface newResult);
 
 }

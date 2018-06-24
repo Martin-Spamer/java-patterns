@@ -2,6 +2,7 @@
 package coaching.bags;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -48,9 +49,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
     public GenericBagInterface<T> fill(final T... values) {
         if (values != null) {
             this.initialState = values;
-            for (final T value : values) {
-                this.add(value);
-            }
+            this.addAll(Arrays.asList(values));
         }
         return this;
     }
@@ -75,8 +74,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
         final int size = size();
         if (size > 0) {
             final int nextInt = this.random.nextInt(size);
-            final T remove = remove(nextInt);
-            return remove;
+            return remove(nextInt);
         } else {
             return null;
         }

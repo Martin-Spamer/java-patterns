@@ -2,6 +2,7 @@
 package coaching.bags;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -46,9 +47,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
     public BagInterface fill(final String... values) {
         if (values != null) {
             this.initialState = values;
-            for (final String value : values) {
-                this.add(value);
-            }
+            this.addAll(Arrays.asList(values));
         }
         return this;
     }
@@ -73,8 +72,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
         final int size = size();
         if (size > 0) {
             final int nextInt = this.random.nextInt(size);
-            final String remove = this.remove(nextInt);
-            return remove;
+            return this.remove(nextInt);
         } else {
             return null;
         }

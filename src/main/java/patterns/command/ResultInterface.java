@@ -11,7 +11,7 @@ public interface ResultInterface {
      *
      * @return the boolean
      */
-    public Boolean getResult();
+    Boolean getResult();
 
     /**
      * And.
@@ -20,6 +20,6 @@ public interface ResultInterface {
      *            the execute
      * @return true, if successful, otherwise false.
      */
-    public boolean and(final ResultInterface execute);
+    boolean and(final ResultInterface execute);
 
 }

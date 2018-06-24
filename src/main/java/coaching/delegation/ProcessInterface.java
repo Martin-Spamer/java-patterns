@@ -11,6 +11,6 @@ public interface ProcessInterface {
      *
      * @return this as fluent interface.
      */
-    public ProcessInterface doProcess();
+    ProcessInterface doProcess();
 
 }

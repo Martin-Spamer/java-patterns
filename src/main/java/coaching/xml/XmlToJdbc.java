@@ -1,16 +1,14 @@
 
 package coaching.xml;
 
-import java.io.File;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
+import coaching.jdbc.MySqlDao;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import coaching.jdbc.MySqlDao;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
 
 /**
  * Class shows combining Xml and Jdbc responsibilities.
@@ -107,13 +105,13 @@ public class XmlToJdbc extends MySqlDao {
      * @return the string
      */
     protected String fieldNames(final NodeList fieldList) {
-        final StringBuffer fieldNames = new StringBuffer();
-        final char columnSeperator = ' ';
+        final StringBuilder fieldNames = new StringBuilder();
+        final char columnSeparator = ' ';
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
             this.log.info("{}", fieldList.item(fieldNo));
             final Element fieldElement = (Element) fieldList.item(fieldNo);
-            fieldNames.append(columnSeperator + fieldElement.getAttribute("NAME"));
+            fieldNames.append(columnSeparator).append(fieldElement.getAttribute("NAME"));
         }
         return fieldNames.toString();
     }
@@ -126,13 +124,16 @@ public class XmlToJdbc extends MySqlDao {
      * @return the string
      */
     protected String dataValues(final NodeList fieldList) {
-        final StringBuffer dataValues = new StringBuffer();
+        final StringBuilder dataValues = new StringBuilder();
         final char columnSeperator = ',';
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
             this.log.info("{}", fieldList.item(fieldNo));
             final Element fieldElement = (Element) fieldList.item(fieldNo);
-            dataValues.append(columnSeperator + "\'" + fieldElement.getChildNodes().item(0).getNodeValue() + "\'");
+            String nodeValue = fieldElement.getChildNodes().item(0).getNodeValue();
+            dataValues.append(columnSeperator + "\'")
+                    .append(nodeValue)
+                    .append("\'");
         }
         return dataValues.toString();
     }
@@ -150,7 +151,7 @@ public class XmlToJdbc extends MySqlDao {
     protected void insertRow(final String table, final String fieldNames, final String dataValues) {
         // sql = insert into %table (%field%,...) from
         // (%value%,...)
-        final StringBuffer sql = new StringBuffer();
+        final StringBuilder sql = new StringBuilder();
         sql.append(String.format("insert into %s", table));
         sql.append(String.format(" (%s) VALUES (%s)", fieldNames, dataValues));
 

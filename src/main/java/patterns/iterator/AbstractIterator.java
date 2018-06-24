@@ -1,11 +1,11 @@
 
 package patterns.iterator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * AbstractIterator Class.
@@ -19,7 +19,7 @@ public abstract class AbstractIterator implements IteratorInterface {
     protected AggregateInterface aggregate = null;
 
     /** The item list. */
-    protected final List<ItemInterface> itemList = new ArrayList<ItemInterface>();
+    protected final List<ItemInterface> itemList = new ArrayList<>();
 
     /** The index. */
     protected int index = 0;

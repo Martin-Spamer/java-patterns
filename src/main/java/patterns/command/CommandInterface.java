@@ -13,7 +13,7 @@ public interface CommandInterface {
      *            the command parameters
      * @return the result interface
      */
-    public ResultInterface execute(final ParametersInterface commandParameters);
+    ResultInterface execute(final ParametersInterface commandParameters);
 
     /**
      * Undo.
@@ -22,13 +22,13 @@ public interface CommandInterface {
      *            the command parameters
      * @return the result interface
      */
-    public ResultInterface undo(final ParametersInterface commandParameters);
+    ResultInterface undo(final ParametersInterface commandParameters);
 
     /**
      * Result.
      *
      * @return the boolean
      */
-    public Boolean getResult();
+    Boolean getResult();
 
 }

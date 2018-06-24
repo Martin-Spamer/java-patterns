@@ -10,10 +10,10 @@ import java.util.List;
 public abstract class AbstractDecorator extends AbstractComponent implements DecoratorInterface {
 
     /** The before behaviour. */
-    private final List<AbstractComponent> beforeBehaviour = new ArrayList<AbstractComponent>();
+    private final List<AbstractComponent> beforeBehaviour = new ArrayList<>();
 
     /** The after behaviour. */
-    private final List<AbstractComponent> afterBehaviour = new ArrayList<AbstractComponent>();
+    private final List<AbstractComponent> afterBehaviour = new ArrayList<>();
 
     /*
      * (non-Javadoc)

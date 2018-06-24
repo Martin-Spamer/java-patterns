@@ -10,7 +10,7 @@ import java.util.List;
 public class SessionTracker {
 
     /** The sessions. */
-    private final List<Session> sessions = new ArrayList<Session>();
+    private final List<Session> sessions = new ArrayList<>();
 
     /**
      * create a new Session.

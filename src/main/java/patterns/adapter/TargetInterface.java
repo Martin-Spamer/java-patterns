@@ -13,6 +13,6 @@ public interface TargetInterface {
      *
      * @return the result
      */
-    public Result request();
+    Result request();
 
 }

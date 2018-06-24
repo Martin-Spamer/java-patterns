@@ -1,9 +1,9 @@
 
 package coaching.solid;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * The Class DependencyInversionPrincipleTest.

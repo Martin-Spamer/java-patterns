@@ -1,19 +1,18 @@
 
 package coaching.config;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.InvalidPropertiesFormatException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.InvalidPropertiesFormatException;
 
 /**
  * Xml Configuration Class.
@@ -67,8 +66,6 @@ public class XmlConfig extends AbstractConfig {
         if (resourceAsStream != null) {
             try {
                 this.properties.loadFromXML(resourceAsStream);
-            } catch (final InvalidPropertiesFormatException e) {
-                this.log.error(e.toString());
             } catch (final IOException e) {
                 this.log.error(e.toString());
             }

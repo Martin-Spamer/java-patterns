@@ -10,7 +10,7 @@ import java.util.List;
 public final class Composite extends AbstractComponent {
 
     /** The leaves. */
-    private final List<AbstractComponent> leaves = new ArrayList<AbstractComponent>();
+    private final List<AbstractComponent> leaves = new ArrayList<>();
 
     /*
      * (non-Javadoc)

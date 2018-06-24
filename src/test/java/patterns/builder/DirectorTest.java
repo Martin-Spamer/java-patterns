@@ -1,9 +1,9 @@
 
 package patterns.builder;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * class DirectorTest.

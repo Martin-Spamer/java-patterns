@@ -29,7 +29,7 @@ public class ObjectTypesArray {
         // Declare a reference to an array of longs.
         Long[] values;
 
-        /**
+        /*
          * initialise the space for an array of longs
          */
         values = new Long[ARRAY_SIZE];
@@ -38,9 +38,9 @@ public class ObjectTypesArray {
         // arrays index from zero
         values[0] = 0L;
 
-        for (int i = 1; i < ARRAY_SIZE; i++) {
+        for(int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
-            values[i] = Long.valueOf(i ^ i);
+            values[i] = (long) (i ^ i);
             this.log.info("{}){}", i, values[i]);
         }
     }
@@ -52,7 +52,7 @@ public class ObjectTypesArray {
         // declare a reference to an matrix of longs
         Long[][] matrix;
 
-        /**
+        /*
          * reference to an Allocation of space for an array of longs
          */
         matrix = new Long[ARRAY_SIZE][ARRAY_SIZE];
@@ -65,7 +65,7 @@ public class ObjectTypesArray {
      * Display.
      */
     public void display() {
-        /**
+        /*
          * array with static data.
          */
         final Long[][] vector = { { 0L, 1L, 2L }, { 3L, 4L, 5L }, { 6L, 7L, 8L } };
@@ -81,10 +81,10 @@ public class ObjectTypesArray {
      * @return the string
      */
     private String looping(final Long[][] vector) {
-        final StringBuffer stringBuffer = new StringBuffer();
+        final StringBuilder stringBuffer = new StringBuilder();
         for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
             for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
-                vector[firstIndex][secondIndex] = Long.valueOf(firstIndex * secondIndex);
+                vector[firstIndex][secondIndex] = (long) (firstIndex * secondIndex);
                 stringBuffer.append(vector[firstIndex][secondIndex]);
                 stringBuffer.append(',');
             }

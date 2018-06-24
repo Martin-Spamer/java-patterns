@@ -1,12 +1,10 @@
 
 package coaching.resources;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.*;
 
 public class PropertyLoaderTest {
 
@@ -50,7 +48,7 @@ public class PropertyLoaderTest {
     }
 
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertThat(PropertiesLoader.class, notNullValue());
     }
 

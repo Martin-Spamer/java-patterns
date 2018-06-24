@@ -55,7 +55,7 @@ public class Triple<X, Y, Z> {
      * @return the triple
      */
     public static <X, Y, Z> Triple<X, Y, Z> create() {
-        return new Triple<X, Y, Z>();
+        return new Triple<>();
     }
 
     /**
@@ -70,7 +70,7 @@ public class Triple<X, Y, Z> {
      * @return the triple
      */
     public static <X, Y, Z> Triple<X, Y, Z> create(final X x, final Y y, final Z z) {
-        return new Triple<X, Y, Z>(x, y, z);
+        return new Triple<>(x, y, z);
     }
 
     /**
@@ -79,7 +79,7 @@ public class Triple<X, Y, Z> {
      * @return the triple
      */
     public Triple<X, Y, Z> copy() {
-        return new Triple<X, Y, Z>(getX(), getY(), getZ());
+        return new Triple<>(getX(), getY(), getZ());
     }
 
     /**

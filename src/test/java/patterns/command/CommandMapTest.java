@@ -1,16 +1,16 @@
 
 package patterns.command;
 
-import static org.junit.Assert.assertNotNull;
+import org.junit.Before;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.util.Map;
 import java.util.Properties;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * The CommandMapTest Class.
@@ -58,8 +58,7 @@ public class CommandMapTest {
      */
     private InputStream inputStream(final String resourceName) {
         final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
-        return resourceAsStream;
+        return classloader.getResourceAsStream(resourceName);
     }
 
     /**

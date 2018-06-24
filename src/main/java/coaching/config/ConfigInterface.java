@@ -19,7 +19,7 @@ public interface ConfigInterface {
      *            the name of key
      * @return the property value as a String object.
      */
-    public String getProperty(final String key);
+    String getProperty(final String key);
 
     /**
      * property, with default if not found.
@@ -30,6 +30,6 @@ public interface ConfigInterface {
      *            the default value
      * @return the property value as a String object.
      */
-    public String getProperty(final String key, final String defaultValue);
+    String getProperty(final String key, final String defaultValue);
 
 }

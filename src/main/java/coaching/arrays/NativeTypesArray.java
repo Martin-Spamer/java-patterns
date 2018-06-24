@@ -30,8 +30,8 @@ public class NativeTypesArray {
         // Declare a reference to an array of longs.
         long[] values;
 
-        /**
-         * reference to an Allocation of space for an array of longs
+        /*
+          reference to an Allocation of space for an array of longs
          */
         values = new long[ARRAY_SIZE];
 
@@ -39,7 +39,7 @@ public class NativeTypesArray {
         // arrays index from zero
         values[0] = 0L;
 
-        for (int i = 1; i < ARRAY_SIZE; i++) {
+        for(int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
             values[i] = i ^ i;
             this.log.info(i + "=" + values[i]);
@@ -83,10 +83,10 @@ public class NativeTypesArray {
      * @return the string
      */
     private String looping(final long[][] vector) {
-        final StringBuffer stringBuffer = new StringBuffer();
+        final StringBuilder stringBuffer = new StringBuilder();
         for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
             for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
-                vector[firstIndex][secondIndex] = Long.valueOf(firstIndex * secondIndex);
+                vector[firstIndex][secondIndex] = (long) (firstIndex * secondIndex);
                 stringBuffer.append(vector[firstIndex][secondIndex]);
                 stringBuffer.append(',');
             }

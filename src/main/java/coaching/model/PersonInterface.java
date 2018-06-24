@@ -16,13 +16,13 @@ public interface PersonInterface {
      *            the name
      * @return this for a fluent interface.
      */
-    public PersonInterface setName(final String name);
+    PersonInterface setName(final String name);
 
     /**
      * Gets the name.
      *
      * @return the name
      */
-    public String getName();
+    String getName();
 
 }

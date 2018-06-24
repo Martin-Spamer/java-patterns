@@ -12,7 +12,7 @@ public interface SubjectInterface {
      * @param observer
      *            the observer
      */
-    public void attachObserver(final AbstractObserver observer);
+    void attachObserver(final AbstractObserver observer);
 
     /**
      * Detach observer.
@@ -20,11 +20,11 @@ public interface SubjectInterface {
      * @param observer
      *            the observer
      */
-    public void detachObserver(final ObserverInterface observer);
+    void detachObserver(final ObserverInterface observer);
 
     /**
      * Update observers.
      */
-    public void updateObservers();
+    void updateObservers();
 
 }

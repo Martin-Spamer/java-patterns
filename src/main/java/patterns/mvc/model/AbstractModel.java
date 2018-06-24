@@ -1,14 +1,13 @@
 
 package patterns.mvc.model;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import patterns.mvc.ModelInterface;
 import patterns.mvc.view.AbstractView;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * AbstractModel Class.
@@ -19,10 +18,10 @@ public abstract class AbstractModel implements ModelInterface {
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The models. */
-    protected final Map<String, AbstractModel> models = new ConcurrentHashMap<String, AbstractModel>();
+    protected final Map<String, AbstractModel> models = new ConcurrentHashMap<>();
 
     /** The views. */
-    protected final Map<String, AbstractView> views = new ConcurrentHashMap<String, AbstractView>();
+    protected final Map<String, AbstractView> views = new ConcurrentHashMap<>();
 
     /*
      * (non-Javadoc)

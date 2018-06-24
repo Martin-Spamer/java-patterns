@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * AbstactColleague Class.
+ * Abstact class for Colleague.
  */
 public abstract class AbstractColleague implements ColleagueInterface {
 

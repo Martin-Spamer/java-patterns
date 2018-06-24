@@ -1,11 +1,11 @@
 
 package coaching.idioms;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * RegularExpression Class.
@@ -65,8 +65,7 @@ public class RegularExpression {
      */
     public boolean verify(final String code) {
         final Matcher matcher = this.pattern.matcher(code);
-        final boolean result = matcher.find();
-        return result;
+        return matcher.find();
     }
 
     /**

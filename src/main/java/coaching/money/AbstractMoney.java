@@ -1,12 +1,12 @@
 
 package coaching.money;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.text.DecimalFormat;
 import java.util.Currency;
 import java.util.Locale;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * An Abstract Money class.
@@ -270,8 +270,7 @@ public abstract class AbstractMoney implements MoneyInterface {
         final String symbol = this.currency.getSymbol();
         final String pattern = String.format("%s ###,###.##", symbol);
         final DecimalFormat formatter = new DecimalFormat(pattern);
-        final String output = formatter.format(this.amount);
-        return output;
+        return formatter.format(this.amount);
     }
 
 }

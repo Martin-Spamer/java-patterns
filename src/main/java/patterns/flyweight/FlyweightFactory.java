@@ -10,7 +10,7 @@ import java.util.List;
 public final class FlyweightFactory {
 
     /** The list. */
-    private final List<FlyWeight> list = new ArrayList<FlyWeight>();
+    private final List<FlyWeight> list = new ArrayList<>();
 
     /**
      * Creates the flyweight object.

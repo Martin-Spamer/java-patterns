@@ -1,11 +1,11 @@
 
 package coaching.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 /**
  * A factory for creating Connection objects.
@@ -15,16 +15,16 @@ public class ConnectionFactory {
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** The Constant JDBC_DRIVER. */
+    /** JDBC_DRIVER to be used. */
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
-    /** The Constant JDBC_URL. */
+    /** JDBC_URL to be used. */
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/student";
 
-    /** The Constant USER. */
+    /** USER to be used. */
     private static final String USER = "root";
 
-    /** The Constant PASSWORD. */
+    /** PASSWORD to be used. */
     private static final String PASSWORD = "root";
 
     /** The connection url. */

@@ -18,6 +18,6 @@ public interface FactoryMethodInterface<T> {
      *
      * @return the t
      */
-    public T create();
+    T create();
 
 }

@@ -1,10 +1,10 @@
 
 package coaching.pool;
 
-import java.util.concurrent.LinkedBlockingDeque;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * BlockingPool Class.
@@ -29,8 +29,8 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
      * Instantiates a new blocking pool.
      */
     public AbstractBlockingPool() {
-        this.freePool = new LinkedBlockingDeque<E>();
-        this.usedPool = new LinkedBlockingDeque<E>();
+        this.freePool = new LinkedBlockingDeque<>();
+        this.usedPool = new LinkedBlockingDeque<>();
     }
 
     /*

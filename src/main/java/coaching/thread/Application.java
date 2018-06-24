@@ -6,26 +6,21 @@
 
 package coaching.thread;
 
-import java.io.InputStream;
-import java.io.StringWriter;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerFactoryConfigurationError;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * a test harness for Java modules.
@@ -36,7 +31,7 @@ public class Application {
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 
     /** The thread map. */
-    private final Map<String, AbstractProcess> threadMap = new ConcurrentHashMap<String, AbstractProcess>();
+    private final Map<String, AbstractProcess> threadMap = new ConcurrentHashMap<>();
 
     /**
      * Instantiates a new main application.
@@ -78,8 +73,7 @@ public class Application {
      */
     protected InputStream inputStream(final String resourceName) {
         final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
-        return resourceAsStream;
+        return classloader.getResourceAsStream(resourceName);
     }
 
     /**
@@ -122,8 +116,7 @@ public class Application {
      */
     protected AbstractProcess createProcess(final String className) {
         try {
-            final AbstractProcess process = (AbstractProcess) Class.forName(className).newInstance();
-            return process;
+            return (AbstractProcess) Class.forName(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
             LOG.error("{}", e.toString());
         }
@@ -137,8 +130,7 @@ public class Application {
      */
     protected String configFilename() {
         final String className = this.getClass().getSimpleName();
-        final String configFilename = String.format("%s.xml", className);
-        return configFilename;
+        return String.format("%s.xml", className);
     }
 
     /**
@@ -156,8 +148,7 @@ public class Application {
             final StreamResult result = new StreamResult(new StringWriter());
             final DOMSource source = new DOMSource(doc);
             transformer.transform(source, result);
-            final String xmlString = result.getWriter().toString();
-            return xmlString;
+            return result.getWriter().toString();
         } catch (IllegalArgumentException | TransformerFactoryConfigurationError | TransformerException e) {
             LOG.error("{}", e.toString());
         }

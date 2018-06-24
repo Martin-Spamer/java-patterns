@@ -50,7 +50,7 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
      * @return the tuple interface
      */
     public static <L, R> TupleInterface<L, R> pair(final L left, final R right) {
-        return new Tuple<L, R>(left, right);
+        return new Tuple<>(left, right);
     }
 
     /*
@@ -111,7 +111,7 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
      */
     @Override
     public TupleInterface<L, R> copy() {
-        return new Tuple<L, R>(getLeft(), getRight());
+        return new Tuple<>(getLeft(), getRight());
     }
 
     /*

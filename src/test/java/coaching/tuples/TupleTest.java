@@ -1,10 +1,10 @@
 
 package coaching.tuples;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
-import org.junit.Test;
 
 /**
  * Unit test for Tuple Class.
@@ -37,7 +37,7 @@ public class TupleTest {
      */
     @Test
     public void testObjectTuple() {
-        final Tuple<Object, Object> tuple = new Tuple<Object, Object>();
+        final Tuple<Object, Object> tuple = new Tuple<>();
         assertNotNull("Value cannot be null", tuple);
     }
 
@@ -46,7 +46,7 @@ public class TupleTest {
      */
     @Test
     public void testFloatTuple() {
-        final Tuple<Float, Float> tuple = new Tuple<Float, Float>();
+        final Tuple<Float, Float> tuple = new Tuple<>();
         assertNotNull("Value cannot be null", tuple);
     }
 
@@ -55,7 +55,7 @@ public class TupleTest {
      */
     @Test
     public void testStringTuple() {
-        final Tuple<String, String> tuple = new Tuple<String, String>();
+        final Tuple<String, String> tuple = new Tuple<>();
         assertNotNull("Value cannot be null", tuple);
     }
 
@@ -64,7 +64,7 @@ public class TupleTest {
      */
     @Test
     public void testTuple() {
-        final TupleInterface<String, String> tuple = new Tuple<String, String>();
+        final TupleInterface<String, String> tuple = new Tuple<>();
         assertNotNull("Value cannot be null", tuple);
         tuple.setLeft(LEFT);
         tuple.setRight(RIGHT);
@@ -77,7 +77,7 @@ public class TupleTest {
      */
     @Test
     public void testTupleLR() {
-        final TupleInterface<String, String> tuple = new Tuple<String, String>(LEFT, RIGHT);
+        final TupleInterface<String, String> tuple = new Tuple<>(LEFT, RIGHT);
         assertNotNull("Value cannot be null", tuple);
         assertEquals(LEFT, tuple.getLeft());
         assertEquals(RIGHT, tuple.getRight());

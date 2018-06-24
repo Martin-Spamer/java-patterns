@@ -1,10 +1,10 @@
 
 package coaching.pool;
 
-import java.util.concurrent.ConcurrentLinkedDeque;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * ConcurrentPool Class.
@@ -20,10 +20,10 @@ public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The free pool. */
-    protected ConcurrentLinkedDeque<E> freePool = new ConcurrentLinkedDeque<E>();
+    protected ConcurrentLinkedDeque<E> freePool = new ConcurrentLinkedDeque<>();
 
     /** The used pool. */
-    protected ConcurrentLinkedDeque<E> usedPool = new ConcurrentLinkedDeque<E>();
+    protected ConcurrentLinkedDeque<E> usedPool = new ConcurrentLinkedDeque<>();
 
     /*
      * (non-Javadoc)

@@ -11,6 +11,6 @@ public interface AggregateInterface {
      *
      * @return the iterator interface
      */
-    public IteratorInterface createIterator();
+    IteratorInterface createIterator();
 
 }

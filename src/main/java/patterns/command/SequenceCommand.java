@@ -10,7 +10,7 @@ import java.util.List;
 public class SequenceCommand extends AbstractCommand {
 
     /** The sequence. */
-    private final List<AbstractCommand> sequence = new ArrayList<AbstractCommand>();
+    private final List<AbstractCommand> sequence = new ArrayList<>();
 
     /**
      * Append a new command.

@@ -9,6 +9,6 @@ public interface ObserverInterface {
     /**
      * Update observers.
      */
-    public void updateObservers();
+    void updateObservers();
 
 }

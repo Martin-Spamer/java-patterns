@@ -1,11 +1,11 @@
 
 package coaching.associations;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * PolymorphicList Class.
@@ -16,7 +16,7 @@ public class PolymorphicList {
     private static final Logger LOG = LoggerFactory.getLogger(PolymorphicList.class);
 
     /** The integer list. */
-    private final List<Integer> integerList = new ArrayList<Integer>();
+    private final List<Integer> integerList = new ArrayList<>();
 
     /**
      * Instantiates a new polymorphic list.

@@ -97,10 +97,8 @@ public class CustomExceptionHandling {
     /**
      * sub processes, and replaces them with a simple generalised exception.
      *
-     * @throws CustomException
-     *             the custom exception
      */
-    public void process() throws CustomException {
+    public void process() {
         try {
             subProcessA();
         } catch (final CustomException exception) {

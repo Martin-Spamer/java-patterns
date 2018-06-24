@@ -9,6 +9,6 @@ public interface SubjectInterface {
     /**
      * Request.
      */
-    public void request();
+    void request();
 
 }

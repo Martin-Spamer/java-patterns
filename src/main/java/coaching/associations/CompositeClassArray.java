@@ -8,10 +8,10 @@
 
 package coaching.associations;
 
-import java.util.Arrays;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
 
 /**
  * Using a basic Java array to implement a UML Composite.

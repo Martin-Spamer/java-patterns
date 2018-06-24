@@ -12,6 +12,6 @@ public interface HandlerInterface {
      * @param request
      *            the request
      */
-    public void handleRequest(final RequestInterface request);
+    void handleRequest(final RequestInterface request);
 
 }

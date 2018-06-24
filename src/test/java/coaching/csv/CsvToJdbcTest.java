@@ -1,13 +1,12 @@
 
 package coaching.csv;
 
-import static org.junit.Assert.assertEquals;
-
+import coaching.jdbc.XmlDAOTest;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import coaching.jdbc.XmlDAOTest;
+import static org.junit.Assert.assertEquals;
 
 /**
  * CsvToJdbcTest Class.
@@ -17,16 +16,16 @@ public class CsvToJdbcTest {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlDAOTest.class);
 
-    /** The Constant DRIVER. */
+    /** JDBC DRIVER . */
     private static final String DRIVER = "org.postgresql.Driver";
 
-    /** The Constant URL. */
+    /** JDBC URL. */
     private static final String URL = "jdbc:postgresql://localhost";
 
-    /** The Constant USERNAME. */
+    /** USERNAME for connection. */
     private static final String USERNAME = "postgres";
 
-    /** The Constant PASSWORD. */
+    /** PASSWORD for connection. */
     private static final String PASSWORD = "password";
 
     /** The filename. */
@@ -41,11 +40,9 @@ public class CsvToJdbcTest {
     /**
      * Fluent Interface.
      *
-     * @throws Exception
-     *             the exception
      */
     @Test
-    public void testFluentInterface() throws Exception {
+    public void testFluentInterface() {
         final CsvToJdbc instance = new CsvToJdbc();
         assertEquals(instance, instance.setDriver(DRIVER));
         assertEquals(instance, instance.setUrl(URL));

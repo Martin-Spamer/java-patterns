@@ -11,6 +11,6 @@ public interface BuilderInterface {
      *
      * @return the part
      */
-    public Part build();
+    Part build();
 
 }

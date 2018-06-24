@@ -11,27 +11,27 @@ public interface IteratorInterface {
      *
      * @return the item interface
      */
-    public ItemInterface first();
+    ItemInterface first();
 
     /**
      * Current item.
      *
      * @return the item interface
      */
-    public ItemInterface currentItem();
+    ItemInterface currentItem();
 
     /**
      * Next item.
      *
      * @return the item interface
      */
-    public ItemInterface next();
+    ItemInterface next();
 
     /**
      * Checks if is done.
      *
      * @return true, if successful, otherwise false., otherwise false.
      */
-    public boolean isDone();
+    boolean isDone();
 
 }

@@ -12,6 +12,6 @@ public interface VisitorInterface {
      * @param element
      *            the element
      */
-    public void visit(final ElementInterface element);
+    void visit(final ElementInterface element);
 
 }

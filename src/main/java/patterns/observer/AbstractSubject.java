@@ -1,11 +1,11 @@
 
 package patterns.observer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * AbstractSubject Class.
@@ -16,7 +16,7 @@ public abstract class AbstractSubject implements SubjectInterface {
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The observers. */
-    private final List<AbstractObserver> observers = new ArrayList<AbstractObserver>();
+    private final List<AbstractObserver> observers = new ArrayList<>();
 
     /*
      * (non-Javadoc)

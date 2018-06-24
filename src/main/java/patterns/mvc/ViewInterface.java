@@ -12,16 +12,16 @@ public interface ViewInterface {
      * @param model
      *            the model
      */
-    public void attachModel(final ModelInterface model);
+    void attachModel(final ModelInterface model);
 
     /**
      * Detach model from view.
      */
-    public void detachModel();
+    void detachModel();
 
     /**
      * Show view.
      */
-    public void show();
+    void show();
 
 }

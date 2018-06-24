@@ -1,10 +1,10 @@
 
 package coaching.pool;
 
-import java.util.concurrent.LinkedBlockingDeque;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * Abstract Resource Pool class.
@@ -27,8 +27,8 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
      * Instantiates a new abstract resource pool.
      */
     public AbstractResourcePool() {
-        this.freePool = new LinkedBlockingDeque<E>();
-        this.usedPool = new LinkedBlockingDeque<E>();
+        this.freePool = new LinkedBlockingDeque<>();
+        this.usedPool = new LinkedBlockingDeque<>();
     }
 
     /*
@@ -49,8 +49,7 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
      */
     @Override
     public synchronized int countFree() {
-        final int size = this.freePool.size();
-        return size;
+        return this.freePool.size();
     }
 
     /*
@@ -60,8 +59,7 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
      */
     @Override
     public synchronized int countUsed() {
-        final int size = this.usedPool.size();
-        return size;
+        return this.usedPool.size();
     }
 
     /*
@@ -71,8 +69,7 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
      */
     @Override
     public E take() {
-        final E resourceFromList = getResourceFromList();
-        return resourceFromList;
+        return getResourceFromList();
     }
 
     /**

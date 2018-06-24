@@ -17,14 +17,14 @@ public interface VehicleInterface {
      *            the new
      * @return this for a fluent interface.
      */
-    public VehicleInterface setDriver(final Driver driver);
+    VehicleInterface setDriver(final Driver driver);
 
     /**
      * driver.
      *
      * @return the driver
      */
-    public Driver getDriver();
+    Driver getDriver();
 
     /**
      * Travel destination.
@@ -33,6 +33,6 @@ public interface VehicleInterface {
      *            the destination
      * @return this for a fluent interface.
      */
-    public VehicleInterface travel(final String destination);
+    VehicleInterface travel(final String destination);
 
 }

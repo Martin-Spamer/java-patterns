@@ -10,11 +10,11 @@ public interface HoppInterface {
     /**
      * Remote method.
      */
-    public void remoteMethod();
+    void remoteMethod();
 
     /**
      * Local method.
      */
-    public void localMethod();
+    void localMethod();
 
 }
