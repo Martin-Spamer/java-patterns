@@ -1,9 +1,3 @@
-/*
- * ConfigInterface.java
- *
- * Created on 06 May 2006, 14:39
- *
- */
 
 package coaching.config;
 

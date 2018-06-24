@@ -1,10 +1,3 @@
-/**
- * @title			CompositeClassArray.java
- * @description	implement a UML Composite using object array.
- * @author			martin.spamer.
- * @version		0.1 - first release.
- * Created			23-Sep-2004
- **/
 
 package coaching.associations;
 

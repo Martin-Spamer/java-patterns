@@ -6,12 +6,13 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class InterfaceSegregationPrincipleTest.
+ * Unit Test for the Interface Segregation Principle (ISP) example class.
+.
  */
 public class InterfaceSegregationPrincipleTest {
 
     /**
-     * Test interface segregation principle.
+     * Unit Test for the interface segregation principle example java example class.
      */
     @Test
     public void testInterfaceSegregationPrinciple() {

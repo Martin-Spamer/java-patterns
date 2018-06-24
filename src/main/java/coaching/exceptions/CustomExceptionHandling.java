@@ -1,8 +1,3 @@
-/*
- * ExceptionHandling.java
- *
- * Created on 20 October 2004, 11:11
- */
 
 package coaching.exceptions;
 

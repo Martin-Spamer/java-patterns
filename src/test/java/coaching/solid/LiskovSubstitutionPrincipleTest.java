@@ -6,12 +6,12 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class LiskovSubstitutionPrincipleTest.
+ * Unit Test for the Liskov Substitution Principle (LSP) example class.
  */
 public class LiskovSubstitutionPrincipleTest {
 
     /**
-     * Test liskov substitution principle.
+     * Unit Test for the Liskov substitution principle example class..
      */
     @Test
     public void testLiskovSubstitutionPrinciple() {

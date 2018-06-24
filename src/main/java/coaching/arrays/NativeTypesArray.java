@@ -1,11 +1,3 @@
-/**
- *  @title			NativeTypesArray.java
- *  @description	Example code of arrays of primitive types
- *  @author			martin.spamer.
- *  @version		0.1 - first release.
- *	Created			23-Sep-2004 - 11:25:50
- **/
-
 package coaching.arrays;
 
 import org.slf4j.Logger;
@@ -27,16 +19,9 @@ public class NativeTypesArray {
      */
     public void iterateArray() {
 
-        // Declare a reference to an array of longs.
         long[] values;
-
-        /*
-          reference to an Allocation of space for an array of longs
-         */
         values = new long[ARRAY_SIZE];
 
-        // fill in some value
-        // arrays index from zero
         values[0] = 0L;
 
         for(int i = 1; i < ARRAY_SIZE; i++) {
@@ -51,12 +36,7 @@ public class NativeTypesArray {
      */
     public void displayMatrix() {
 
-        // declare a reference to an matric of longs
         long[][] matrix;
-
-        /**
-         * reference to an Allocation of space for an array of longs
-         */
         matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
 
         this.log.info("{}", looping(matrix));
@@ -67,11 +47,7 @@ public class NativeTypesArray {
      * Display.
      */
     public void display() {
-        /**
-         * array with static data initialisation.
-         */
         final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
-
         this.log.info("{}", looping(vector));
     }
 

@@ -1,10 +1,3 @@
-/**
- *  @title       	Composite.java
- *  @description	Implement a UML Composite association using a basic array.
- *  @author      	martin.spamer.
- *  @version     	0.1 - first release.
- *	Created      	23-Sep-2004 11:15:47
- **/
 
 package coaching.associations;
 

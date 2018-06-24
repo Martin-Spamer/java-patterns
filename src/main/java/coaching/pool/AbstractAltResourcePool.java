@@ -1,8 +1,3 @@
-/**
- *  @title			AbstractResourcePool.java
- *  @description	TODO
- *	Created			28-Oct-2004
- **/
 
 package coaching.pool;
 

@@ -1,8 +1,3 @@
-/**
- * Application.java
- *
- * Created on 30 June 2004 - 13:07
- **/
 
 package coaching.thread;
 
@@ -24,6 +19,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * a test harness for Java modules.
+ * Application.java
+ *
+ * Created on 30 June 2004 - 13:07
  **/
 public class Application {
 

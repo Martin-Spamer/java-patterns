@@ -1,8 +1,3 @@
-/**
- *  @title			Constants.java
- *  @description	locale constants
- *	Created			09-May-2005
- **/
 
 package coaching.idioms;
 

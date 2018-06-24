@@ -1,8 +1,3 @@
-/**
- * AbstractRule.java
- *
- * Created on 28 August 2003, 16:10
- */
 
 package coaching.rules;
 

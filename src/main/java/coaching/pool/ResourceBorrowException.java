@@ -1,9 +1,3 @@
-/**
- *  @title       ResourcePoolInitialisationException.java
- *  @description TODO
- *	Created      01-Nov-2004
- *
- **/
 
 package coaching.pool;
 

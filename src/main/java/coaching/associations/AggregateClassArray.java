@@ -1,9 +1,3 @@
-/**
- * @title			AggregateClassArray
- * @description	implement a UML Aggregation using object array.
- * @author			martin.spamer.
- * @version	0.1 Created 23-Sep-2004 - 11:15:47
- **/
 
 package coaching.associations;
 

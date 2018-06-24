@@ -5,7 +5,7 @@
 
 	<groupId>spamer.me.uk</groupId>
 	<artifactId>java-coaching</artifactId>
-	<version>0.0.8-SNAPSHOT</version>
+	<version>0.8.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Maven project for coaching java</name>
@@ -25,30 +25,16 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
-		
-		<java.version>1.7</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	
+		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<selenium.version>2.53.1</selenium.version>
 		<!-- <selenium.version>3.12.0</selenium.version> -->
 		<activemq.version>5.15.4</activemq.version>
 		<soapui-version>5.3.0</soapui-version>
-
-		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
-		<maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
-		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
-		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
-		<maven-failsafe-plugin.version>2.22.0</maven-failsafe-plugin.version>
-		<maven-surefire-report-plugin.version>2.22.0</maven-surefire-report-plugin.version>
-		<maven-site-plugin.version>3.7.1</maven-site-plugin.version>
-		<maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
-		<maven-pmd-plugin.version>3.7</maven-pmd-plugin.version>
-		<maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
-		<jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
 		<sqlite-jdbc.version>3.23.1</sqlite-jdbc.version>
 		<lombok.version>1.18.0</lombok.version>
 	</properties>
@@ -101,7 +87,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -112,7 +97,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>${maven-resources-plugin.version}</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -121,7 +105,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven-source-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -135,7 +118,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -149,7 +131,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>${maven-jar-plugin.version}</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -173,7 +154,6 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco-maven-plugin.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -197,13 +177,11 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>${maven-surefire-plugin.version}</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>${maven-failsafe-plugin.version}</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -255,7 +233,6 @@
 			<plugin>
 			  <groupId>org.jacoco</groupId>
 			  <artifactId>jacoco-maven-plugin</artifactId>
-			  <version>${jacoco-maven-plugin.version}</version>
 			</plugin>
 
 		</plugins>

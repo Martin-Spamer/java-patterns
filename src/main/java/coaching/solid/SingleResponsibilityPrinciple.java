@@ -1,10 +1,3 @@
-/**
- *  @title			SingleResponsibilityPrinciple.java
- *  @description	A class should have a responsibility pieces of functionality.
- *  @author			martin.spamer.
- *  @version		0.1 - first release.
- *	Created			13-Jan-2005 - 12:05:35
- **/
 
 package coaching.solid;
 
@@ -12,35 +5,66 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * A class to Demonstrate the Single Responsibility Principle. A class should
- * have a responsibility pieces of functionality.
+ * A class to Demonstrate the Single Responsibility Principle (SRP).
+ * 
+ * Intent: A class should have only on reason to change, one responsibility.
+ * 
+ * @author martin.spamer.
+ * @version 0.1 - first release.
+ *          Created 13-Jan-2005 - 12:05:35
  */
 public class SingleResponsibilityPrinciple {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
-    /**
-     * Foo Bar responsibility.
-     */
-    public void responsibility() {
-        LOG.info("responsibility");
-        fooResponsibility();
-        barResponsibility();
+    public class MultipleResponsibility {
+        private boolean foo;
+        private boolean bar;
+
+        /**
+         * Foo and Bar responsibility.
+         */
+        public void responsibility() {
+            LOG.info("responsibility");
+            foo = true;
+            bar = true;
+        }
     }
 
-    /**
-     * Foo Responsibility.
-     */
-    private void fooResponsibility() {
-        LOG.info("fooResponsibility");
+    public class Foo {
+        private boolean foo;
+        public void foo() {
+            LOG.info("foo");
+            foo = true;
+        }
     }
 
-    /**
-     * Bar Responsibility.
-     */
-    private void barResponsibility() {
-        LOG.info("barResponsibility");
+    public class Bar {
+        private boolean bar;
+        public void bar() {
+            LOG.info("bar");
+            bar = true;
+        }
     }
 
+    public class SingleResponsibility {
+        private Foo foo = new Foo();
+        private Bar bar = new Bar();
+        public void responsibility() {
+            LOG.info("responsibility");
+            foo.foo();
+            bar.bar();
+        }
+    }
+
+    public void multipleResponsibility() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public void singleResponsibility() {
+        // TODO Auto-generated method stub
+        
+    }
 }

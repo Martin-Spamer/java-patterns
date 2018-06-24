@@ -6,12 +6,12 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class DependencyInversionPrincipleTest.
+ * Unit Test for the Dependency Inversion Principle example class.
  */
 public class DependencyInversionPrincipleTest {
 
     /**
-     * Test dependency inversion principle.
+     * Unit Test to demonstrate the dependency inversion principle with java example.
      */
     @Test
     public void testDependencyInversionPrinciple() {

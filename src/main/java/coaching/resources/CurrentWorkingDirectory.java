@@ -1,7 +1,3 @@
-/**
- * CurrentWorkingDirectory.java
- * Created on 21 July 2005, 14:39
- */
 
 package coaching.resources;
 

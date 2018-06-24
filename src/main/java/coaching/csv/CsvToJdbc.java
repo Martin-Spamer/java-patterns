@@ -1,8 +1,3 @@
-/**
- * CsvToJdbc.java
- *
- * Created on 01 December 2004, 15:46
- **/
 
 package coaching.csv;
 
