@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Java Coaching">
+ <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.7</version>
+  </skin>
   <bannerLeft>
     <name>Java Coaching</name>
     <src>http://maven.apache.org/images/apache-maven-project.png</src>
