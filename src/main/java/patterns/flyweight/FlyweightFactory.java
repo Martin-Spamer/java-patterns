@@ -9,17 +9,18 @@ import java.util.List;
  */
 public final class FlyweightFactory {
 
-	private final List<FlyWeight> list = new ArrayList<FlyWeight>();
+    /** The list. */
+    private final List<FlyWeight> list = new ArrayList<>();
 
-	/**
-	 * Creates the flyweight object.
-	 *
-	 * @return the fly weight
-	 */
-	public FlyWeight create() {
-		final FlyWeight flyWeight = new FlyWeight("CommonState");
-		this.list.add(flyWeight);
-		return flyWeight;
-	}
+    /**
+     * Creates the flyweight object.
+     *
+     * @return the fly weight
+     */
+    public FlyWeight create() {
+        final FlyWeight flyWeight = new FlyWeight("CommonState");
+        this.list.add(flyWeight);
+        return flyWeight;
+    }
 
 }

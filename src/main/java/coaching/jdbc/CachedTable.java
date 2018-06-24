@@ -6,16 +6,23 @@ package coaching.jdbc;
  */
 public class CachedTable extends AbstractDataAccessObject {
 
-	private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-	private static final String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
-	private static final String USERNAME = "pbpublic";
-	private static final String PASSWORD = "pbpublic";
+    /** JDBC_DRIVER to be used. */
+    private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
 
-	/**
-	 * Instantiates a new cached table.
-	 */
-	public CachedTable() {
-		super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
-	}
+    /** JDBC_URL to be used. */
+    private static final String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
+
+    /** USERNAME to be used. */
+    private static final String USERNAME = "pbpublic";
+
+    /** PASSWORD to be used. */
+    private static final String PASSWORD = "pbpublic";
+
+    /**
+     * Instantiates a new cached table.
+     */
+    public CachedTable() {
+        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+    }
 
 }

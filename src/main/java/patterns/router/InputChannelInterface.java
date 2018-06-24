@@ -6,11 +6,11 @@ package patterns.router;
  */
 public interface InputChannelInterface {
 
-	/**
-	 * Receive message.
-	 *
-	 * @return the message
-	 */
-	public Message receiveMessage();
+    /**
+     * Receive message.
+     *
+     * @return the message
+     */
+    Message receiveMessage();
 
 }

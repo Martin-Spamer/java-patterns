@@ -9,27 +9,28 @@ import java.util.List;
  */
 public class SessionTracker {
 
-	private final List<Session> sessions = new ArrayList<Session>();
+    /** The sessions. */
+    private final List<Session> sessions = new ArrayList<>();
 
-	/**
-	 * create a new Session.
-	 *
-	 * @return the session
-	 */
-	public AbstractSession createSession() {
-		final Session session = new Session();
-		this.sessions.add(session);
-		return session;
-	}
+    /**
+     * create a new Session.
+     *
+     * @return the session
+     */
+    public AbstractSession createSession() {
+        final Session session = new Session();
+        this.sessions.add(session);
+        return session;
+    }
 
-	/**
-	 * Destroy session.
-	 *
-	 * @param session
-	 *            the session
-	 */
-	public void destroySession(final AbstractSession session) {
-		this.sessions.remove(session);
-	}
+    /**
+     * Destroy session.
+     *
+     * @param session
+     *            the session
+     */
+    public void destroySession(final AbstractSession session) {
+        this.sessions.remove(session);
+    }
 
 }

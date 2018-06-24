@@ -9,44 +9,49 @@ import org.slf4j.LoggerFactory;
  */
 public class WorkerThread implements Runnable {
 
-	private static final Logger LOG = LoggerFactory.getLogger(WorkerThread.class);
-	private static final int INTERVAL = 5000;
-	private final String command;
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(WorkerThread.class);
 
-	/**
-	 * Instantiates a new worker thread.
-	 *
-	 * @param commandName
-	 *            the command name as String object.
-	 */
-	public WorkerThread(final String commandName) {
-		this.command = commandName;
-	}
+    /** The Constant INTERVAL. */
+    private static final int INTERVAL = 5000;
 
-	/**
-	 * Process command.
-	 */
-	private void processCommand() {
-		try {
-			// Simulate some work
-			Thread.sleep(WorkerThread.INTERVAL);
-		} catch (final InterruptedException e) {
-			Thread.currentThread().interrupt();
-			LOG.error(e.toString());
-		}
-	}
+    /** The command. */
+    private final String command;
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Runnable#run()
-	 */
-	@Override
-	public void run() {
-		final String name = Thread.currentThread().getName();
-		WorkerThread.LOG.info("{}:{}", name, this.command);
-		processCommand();
-		WorkerThread.LOG.info("{}:exit", name);
-	}
+    /**
+     * Instantiates a new worker thread.
+     *
+     * @param commandName
+     *            the command name as String object.
+     */
+    public WorkerThread(final String commandName) {
+        this.command = commandName;
+    }
+
+    /**
+     * Process command.
+     */
+    private void processCommand() {
+        try {
+            // Simulate some work
+            Thread.sleep(WorkerThread.INTERVAL);
+        } catch (final InterruptedException e) {
+            Thread.currentThread().interrupt();
+            LOG.error(e.toString());
+        }
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Runnable#run()
+     */
+    @Override
+    public void run() {
+        final String name = Thread.currentThread().getName();
+        WorkerThread.LOG.info("{}:{}", name, this.command);
+        processCommand();
+        WorkerThread.LOG.info("{}:exit", name);
+    }
 
 }

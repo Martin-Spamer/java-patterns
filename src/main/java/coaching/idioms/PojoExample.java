@@ -6,80 +6,83 @@ package coaching.idioms;
  */
 public final class PojoExample implements Cloneable {
 
-	private String stringValue;
-	private long longValue;
+    /** The string value. */
+    private String stringValue;
 
-	/**
-	 * Instantiates a new pojo example.
-	 */
-	public PojoExample() {
-		super();
-	}
+    /** The long value. */
+    private long longValue;
 
-	/**
-	 * Instantiates a new pojo example.
-	 *
-	 * @param stringValue
-	 *            the string value
-	 * @param longValue
-	 *            the long value
-	 */
-	public PojoExample(final String stringValue, final long longValue) {
-		super();
-		setStringValue(stringValue);
-		setLongValue(longValue);
-	}
+    /**
+     * Instantiates a new pojo example.
+     */
+    public PojoExample() {
+        super();
+    }
 
-	/**
-	 * Sets the string value.
-	 *
-	 * @param stringValue
-	 *            the string value
-	 * @return this instance for a fluent interface.
-	 */
-	public PojoExample setStringValue(final String stringValue) {
-		this.stringValue = stringValue;
-		return this;
-	}
+    /**
+     * Instantiates a new pojo example.
+     *
+     * @param stringValue
+     *            the string value
+     * @param longValue
+     *            the long value
+     */
+    public PojoExample(final String stringValue, final long longValue) {
+        super();
+        setStringValue(stringValue);
+        setLongValue(longValue);
+    }
 
-	/**
-	 * Sets the long value.
-	 *
-	 * @param longValue
-	 *            the long value
-	 * @return this instance for a fluent interface.
-	 */
-	public PojoExample setLongValue(final long longValue) {
-		this.longValue = longValue;
-		return this;
-	}
+    /**
+     * Sets the string value.
+     *
+     * @param stringValue
+     *            the string value
+     * @return this instance for a fluent interface.
+     */
+    public PojoExample setStringValue(final String stringValue) {
+        this.stringValue = stringValue;
+        return this;
+    }
 
-	/**
-	 * Gets the string value.
-	 *
-	 * @return the string value
-	 */
-	public String getStringValue() {
-		return this.stringValue;
-	}
+    /**
+     * Sets the long value.
+     *
+     * @param longValue
+     *            the long value
+     * @return this instance for a fluent interface.
+     */
+    public PojoExample setLongValue(final long longValue) {
+        this.longValue = longValue;
+        return this;
+    }
 
-	/**
-	 * Gets the long value.
-	 *
-	 * @return the long value
-	 */
-	public long getLongValue() {
-		return this.longValue;
-	}
+    /**
+     * Gets the string value.
+     *
+     * @return the string value
+     */
+    public String getStringValue() {
+        return this.stringValue;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("PojoExample [stringValue=%s, longValue=%s]", this.stringValue, this.longValue);
-	}
+    /**
+     * Gets the long value.
+     *
+     * @return the long value
+     */
+    public long getLongValue() {
+        return this.longValue;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("PojoExample [stringValue=%s, longValue=%s]", this.stringValue, this.longValue);
+    }
 
 }

@@ -6,33 +6,36 @@ package patterns.interpreter;
  */
 public class Conjunction extends NonTerminalExpression {
 
-	private final AbstractExpression lhs;
-	private final AbstractExpression rhs;
+    /** The lhs. */
+    private final AbstractExpression lhs;
 
-	/**
-	 * Instantiates a new and expression.
-	 *
-	 * @param lhs
-	 *            sub-expression on left hand side.
-	 * @param rhs
-	 *            sub-expression on right hand side.
-	 */
-	public Conjunction(final AbstractExpression lhs, final AbstractExpression rhs) {
-		super();
-		this.lhs = lhs;
-		this.rhs = rhs;
-	}
+    /** The rhs. */
+    private final AbstractExpression rhs;
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * patterns.interpreter.NonTerminalExpression#interpret(patterns.interpreter
-	 * .ContextInterface)
-	 */
-	@Override
-	public boolean interpret(final Context context) {
-		return this.lhs.interpret(context) && this.rhs.interpret(context);
-	}
+    /**
+     * Instantiates a new and expression.
+     *
+     * @param lhs
+     *            sub-expression on left hand side.
+     * @param rhs
+     *            sub-expression on right hand side.
+     */
+    public Conjunction(final AbstractExpression lhs, final AbstractExpression rhs) {
+        super();
+        this.lhs = lhs;
+        this.rhs = rhs;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see
+     * patterns.interpreter.NonTerminalExpression#interpret(patterns.interpreter
+     * .ContextInterface)
+     */
+    @Override
+    public boolean interpret(final Context context) {
+        return this.lhs.interpret(context) && this.rhs.interpret(context);
+    }
 
 }

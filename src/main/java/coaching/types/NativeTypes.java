@@ -1,10 +1,3 @@
-/**
- * @title			NativeTypes.java
- * @description	Example of Java native type usage.
- * @author			martin spamer
- * @version		0.1 - first release.
- * Created			07-Oct-2004 - 09:20:22
- **/
 
 package coaching.types;
 
@@ -13,70 +6,96 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Examples of Java Native Types.
+ * @author          martin spamer
+ * @version     0.1 - first release.
+ * Created          07-Oct-2004 - 09:20:22
  */
 public class NativeTypes {
 
-	// integer types
-	private final byte largestByte = Byte.MAX_VALUE;
-	private final byte smallestByte = Byte.MIN_VALUE;
+    /** The largest byte. */
+    // integer types
+    private final byte largestByte = Byte.MAX_VALUE;
 
-	private final short largestShort = Short.MAX_VALUE;
-	private final short smallestShort = Short.MIN_VALUE;
+    /** The smallest byte. */
+    private final byte smallestByte = Byte.MIN_VALUE;
 
-	private final int largestInteger = Integer.MAX_VALUE;
-	private final int smallestInteger = Integer.MIN_VALUE;
+    /** The largest short. */
+    private final short largestShort = Short.MAX_VALUE;
 
-	private final long largestLong = Long.MAX_VALUE;
-	private final long smallesttLong = Long.MIN_VALUE;
+    /** The smallest short. */
+    private final short smallestShort = Short.MIN_VALUE;
 
-	// real number types
-	private final float largestFloat = Float.MAX_VALUE;
-	private final float smallestFloat = Float.MIN_VALUE;
+    /** The largest integer. */
+    private final int largestInteger = Integer.MAX_VALUE;
 
-	private final double largestDouble = Double.MAX_VALUE;
-	private final double smallestDouble = Double.MIN_VALUE;
+    /** The smallest integer. */
+    private final int smallestInteger = Integer.MIN_VALUE;
 
-	// other primitive types
-	private final char aChar = 'A';
+    /** The largest long. */
+    private final long largestLong = Long.MAX_VALUE;
 
-	private final boolean trueBoolean = true;
-	private final boolean falseBoolean = false;
+    /** The smallestt long. */
+    private final long smallesttLong = Long.MIN_VALUE;
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** The largest float. */
+    // real number types
+    private final float largestFloat = Float.MAX_VALUE;
 
-	/**
-	 * Display.
-	 */
-	public void display() {
-		// display all member types.
-		this.log.info("largest byte value : {}", this.largestByte);
-		this.log.info("smallest byte value : {}", this.smallestByte);
+    /** The smallest float. */
+    private final float smallestFloat = Float.MIN_VALUE;
 
-		this.log.info("largest short value is {}", this.largestShort);
-		this.log.info("smallest short value is {}", this.smallestShort);
+    /** The largest double. */
+    private final double largestDouble = Double.MAX_VALUE;
 
-		this.log.info("largest integer value is {}", this.largestInteger);
-		this.log.info("smallest integer value is {}", this.smallestInteger);
+    /** The smallest double. */
+    private final double smallestDouble = Double.MIN_VALUE;
 
-		this.log.info("largest long value is {}", this.largestLong);
-		this.log.info("smallest long value is {}", this.smallesttLong);
+    /** The a char. */
+    // other primitive types
+    private final char aChar = 'A';
 
-		this.log.info("largest float value is {}", this.largestFloat);
-		this.log.info("smallest float value is {}", this.smallestFloat);
+    /** The true boolean. */
+    private final boolean trueBoolean = true;
 
-		this.log.info("largest double value is {}", this.largestDouble);
-		this.log.info("smallest double value is {}", this.smallestDouble);
+    /** The false boolean. */
+    private final boolean falseBoolean = false;
 
-		if (Character.isUpperCase(this.aChar)) {
-			this.log.info("The character {} is upper case.", this.aChar);
-		}
+    /** provides logging. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-		if (this.trueBoolean) {
-			this.log.info("aBooleanTrue has tested as true value : ", this.trueBoolean);
-		}
+    /**
+     * Display.
+     */
+    public void display() {
+        // display all member types.
+        this.log.info("largest byte value : {}", this.largestByte);
+        this.log.info("smallest byte value : {}", this.smallestByte);
 
-		if (this.falseBoolean == false) {
-			this.log.info("aFalseBoolean has tested as false value : {}", this.falseBoolean);
-		}
-	}
+        this.log.info("largest short value is {}", this.largestShort);
+        this.log.info("smallest short value is {}", this.smallestShort);
+
+        this.log.info("largest integer value is {}", this.largestInteger);
+        this.log.info("smallest integer value is {}", this.smallestInteger);
+
+        this.log.info("largest long value is {}", this.largestLong);
+        this.log.info("smallest long value is {}", this.smallesttLong);
+
+        this.log.info("largest float value is {}", this.largestFloat);
+        this.log.info("smallest float value is {}", this.smallestFloat);
+
+        this.log.info("largest double value is {}", this.largestDouble);
+        this.log.info("smallest double value is {}", this.smallestDouble);
+
+        if (Character.isUpperCase(this.aChar)) {
+            this.log.info("The character {} is upper case.", this.aChar);
+        }
+
+        if (this.trueBoolean) {
+            this.log.info("aBooleanTrue has tested as true value : ", this.trueBoolean);
+        }
+
+        if (this.falseBoolean == false) {
+            this.log.info("aFalseBoolean has tested as false value : {}", this.falseBoolean);
+        }
+    }
 }

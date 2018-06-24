@@ -6,11 +6,11 @@ package patterns.decorator;
  */
 public interface ComponentInterface {
 
-	/**
-	 * Operation.
-	 *
-	 * @return the component interface
-	 */
-	public ComponentInterface operation();
+    /**
+     * Operation.
+     *
+     * @return the component interface
+     */
+    ComponentInterface operation();
 
 }

@@ -1,15 +1,22 @@
-package coaching.solid;
 
-import static org.junit.Assert.assertNotNull;
+package coaching.solid;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
+
+/**
+ * Unit Test for the Liskov Substitution Principle (LSP) example class.
+ */
 public class LiskovSubstitutionPrincipleTest {
 
-	@Test
-	public void testLiskovSubstitutionPrinciple() {
-		final LiskovSubstitutionPrinciple lsp = new LiskovSubstitutionPrinciple();
-		assertNotNull("Value cannot be null", lsp);
-	}
+    /**
+     * Unit Test for the Liskov substitution principle example class..
+     */
+    @Test
+    public void testLiskovSubstitutionPrinciple() {
+        final LiskovSubstitutionPrinciple lsp = new LiskovSubstitutionPrinciple();
+        assertNotNull("Value cannot be null", lsp);
+    }
 
 }

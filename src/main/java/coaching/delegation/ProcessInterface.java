@@ -6,11 +6,11 @@ package coaching.delegation;
  */
 public interface ProcessInterface {
 
-	/**
-	 * Do process.
-	 *
-	 * @return this as fluent interface.
-	 */
-	public ProcessInterface doProcess();
+    /**
+     * Do process.
+     *
+     * @return this as fluent interface.
+     */
+    ProcessInterface doProcess();
 
 }

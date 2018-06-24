@@ -2,6 +2,7 @@
  * VehicleInterface.
  * Created on 06-Jul-2004
  */
+
 package coaching.model;
 
 /**
@@ -9,29 +10,29 @@ package coaching.model;
  */
 public interface VehicleInterface {
 
-	/**
-	 * set the vehicle's driver.
-	 *
-	 * @param driver
-	 *            the new
-	 * @return this for a fluent interface.
-	 */
-	public VehicleInterface setDriver(final Driver driver);
+    /**
+     * set the vehicle's driver.
+     *
+     * @param driver
+     *            the new
+     * @return this for a fluent interface.
+     */
+    VehicleInterface setDriver(final Driver driver);
 
-	/**
-	 * driver.
-	 *
-	 * @return the driver
-	 */
-	public Driver getDriver();
+    /**
+     * driver.
+     *
+     * @return the driver
+     */
+    Driver getDriver();
 
-	/**
-	 * Travel destination.
-	 *
-	 * @param destination
-	 *            the destination
-	 * @return this for a fluent interface.
-	 */
-	public VehicleInterface travel(final String destination);
+    /**
+     * Travel destination.
+     *
+     * @param destination
+     *            the destination
+     * @return this for a fluent interface.
+     */
+    VehicleInterface travel(final String destination);
 
 }

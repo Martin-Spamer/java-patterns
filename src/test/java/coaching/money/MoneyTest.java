@@ -1,31 +1,28 @@
 
 package coaching.money;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Currency;
-import java.util.Locale;
-
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Currency;
+import java.util.Locale;
+
+import static org.junit.Assert.*;
+
 /**
  * Money Test Class.
  */
-@Ignore
 public class MoneyTest {
 
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
 
     /**
      * Unit Test for typical usage of Money class.
      */
     @Test
-    public void testMoney() {
+    public void testMoneyUsage() {
         LOG.info("testMoney");
 
         final Money money = new Money(10L);
@@ -154,13 +151,13 @@ public class MoneyTest {
     @Test
     public void testMaxDollar() {
         LOG.info("testMaxDollar");
-        final Currency usd = Currency.getInstance("USD");
+        final Currency usd = Currency.getInstance(Locale.US);
         LOG.info("Currency = {}", usd.getDisplayName());
         final MoneyInterface money = new Money(usd, Long.MAX_VALUE);
         assertNotNull("Value cannot be null", money);
         LOG.info("{}", money.toString());
         final String actual = money.toString();
-        assertEquals(usd.getDisplayName() + " 9,223,372,036,854,775,807", actual);
+        assertEquals("USD 9,223,372,036,854,775,807", actual);
     }
 
 }

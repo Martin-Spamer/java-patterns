@@ -11,13 +11,13 @@ package patterns.factory;
  */
 public interface FactoryMethodInterface<T> {
 
-	/**
-	 * Creates the.
-	 *
-	 * t
-	 *
-	 * @return the t
-	 */
-	public T create();
+    /**
+     * Creates the.
+     *
+     * t
+     *
+     * @return the t
+     */
+    T create();
 
 }

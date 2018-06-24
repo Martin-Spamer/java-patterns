@@ -6,34 +6,35 @@ package patterns.flyweight;
  */
 public final class FlyWeight {
 
-	private String commonState;
+    /** The common state. */
+    private String commonState;
 
-	/**
-	 * private constructor to prevent uncontrolled creation.
-	 */
-	@SuppressWarnings("unused")
-	private FlyWeight() {
-		super();
-	}
+    /**
+     * private constructor to prevent uncontrolled creation.
+     */
+    @SuppressWarnings("unused")
+    private FlyWeight() {
+        super();
+    }
 
-	/**
-	 * Instantiates a new fly weight.
-	 *
-	 * @param commonState
-	 *            the common state
-	 */
-	public FlyWeight(final String commonState) {
-		this.commonState = commonState;
-	}
+    /**
+     * Instantiates a new fly weight.
+     *
+     * @param commonState
+     *            the common state
+     */
+    public FlyWeight(final String commonState) {
+        this.commonState = commonState;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("FlyWeight [commonState=%s]", this.commonState);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("FlyWeight [commonState=%s]", this.commonState);
+    }
 
 }

@@ -1,43 +1,44 @@
 
 package coaching.idioms;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * AbstractLoggingTest Class.
  */
 public class AbstractLoggingTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
 
-	/**
-	 * MockLog Class.
-	 */
-	public final class MockLog extends AbstractLogging {
-	}
+    /**
+     * MockLog Class.
+     */
+    public final class MockLog extends AbstractLogging {
+    }
 
-	/**
-	 * Unit Test Send to log.
-	 */
-	@Test
-	public void testSendToLog() {
-		final MockLog mockLog = new MockLog();
-		assertNotNull("Value cannot be null", mockLog);
-		mockLog.toLog();
-	}
+    /**
+     * Unit Test Send to log.
+     */
+    @Test
+    public void testSendToLog() {
+        final MockLog mockLog = new MockLog();
+        assertNotNull("Value cannot be null", mockLog);
+        mockLog.toLog();
+    }
 
-	/**
-	 * Unit Test Send to log.
-	 */
-	@Test
-	public void testSendLogTo() {
-		final MockLog mockLog = new MockLog();
-		assertNotNull("Value cannot be null", mockLog);
-		mockLog.logTo(LOG);
-	}
+    /**
+     * Unit Test Send to log.
+     */
+    @Test
+    public void testSendLogTo() {
+        final MockLog mockLog = new MockLog();
+        assertNotNull("Value cannot be null", mockLog);
+        mockLog.logTo(LOG);
+    }
 
 }

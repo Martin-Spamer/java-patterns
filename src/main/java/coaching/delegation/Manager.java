@@ -6,52 +6,53 @@ package coaching.delegation;
  */
 public class Manager implements ProcessInterface {
 
-	private Worker worker;
+    /** The worker. */
+    private Worker worker;
 
-	/**
-	 * Instantiates a new manager, with a new Worker instance.
-	 */
-	public Manager() {
-		super();
-		this.worker = new Worker();
-	}
+    /**
+     * Instantiates a new manager, with a new Worker instance.
+     */
+    public Manager() {
+        super();
+        this.worker = new Worker();
+    }
 
-	/**
-	 * Instantiates a new manager with a passed Worker instance.
-	 *
-	 * worker
-	 *
-	 * @param worker
-	 *            the worker
-	 */
-	public Manager(final Worker worker) {
-		super();
-		setWorker(worker);
-	}
+    /**
+     * Instantiates a new manager with a passed Worker instance.
+     *
+     * worker
+     *
+     * @param worker
+     *            the worker
+     */
+    public Manager(final Worker worker) {
+        super();
+        setWorker(worker);
+    }
 
-	/**
-	 * configure the worker to receive delegation.
-	 *
-	 * worker manager
-	 *
-	 * @param worker
-	 *            the worker
-	 * @return the manager
-	 */
-	public Manager setWorker(final Worker worker) {
-		this.worker = worker;
-		return this;
-	}
+    /**
+     * configure the worker to receive delegation.
+     *
+     * worker manager
+     *
+     * @param worker
+     *            the worker
+     * @return the manager
+     */
+    public Manager setWorker(final Worker worker) {
+        this.worker = worker;
+        return this;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see delegation.ProcessInterface#doProcess()
-	 */
-	@Override
-	public Manager doProcess() {
-		this.worker.doProcess();
-		return this;
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see delegation.ProcessInterface#doProcess()
+     */
+    @Override
+    public Manager doProcess() {
+        this.worker.doProcess();
+        return this;
+    }
 
 }

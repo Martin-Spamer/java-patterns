@@ -12,13 +12,14 @@ import org.slf4j.LoggerFactory;
  */
 public final class StaticLogging {
 
-	private static final Logger LOG = LoggerFactory.getLogger(StaticLogging.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(StaticLogging.class);
 
-	/**
-	 * Law of Demeter (Tell Don't Ask).
-	 */
-	public void toLog() {
-		LOG.info("{}.toLog", this.getClass().getSimpleName());
-	}
+    /**
+     * Law of Demeter (Tell Don't Ask).
+     */
+    public void toLog() {
+        LOG.info("{}.toLog", this.getClass().getSimpleName());
+    }
 
 }

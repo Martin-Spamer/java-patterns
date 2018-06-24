@@ -6,41 +6,37 @@ package patterns.state;
  */
 public class Context {
 
-	private AbstractState state = null;
+    /** state. */
+    private AbstractState state = null;
 
-	/**
-	 * Instantiates a new context.
-	 *
-	 * @param state
-	 *            the state
-	 */
-	public Context(final AbstractState state) {
-		super();
-		this.state = state;
-	}
+    /**
+     * Instantiates a new context.
+     *
+     * @param state the state
+     */
+    public Context(final AbstractState state) {
+        super();
+        this.state = state;
+    }
 
-	/**
-	 * To A.
-	 */
-	public void toA() {
-		this.state = new StateAlice();
-	}
+    public Context toAlice() {
+        this.state = new StateAlice();
+        return this;
+    }
 
-	/**
-	 * To Z.
-	 */
-	public void toZ() {
-		this.state = new StateBob();
-	}
+    public Context toBob() {
+        this.state = new StateBob();
+        return this;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("Context [state=%s]", this.state);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("Context [state=%s]", this.state);
+    }
 
 }

@@ -6,9 +6,9 @@ package patterns.facade;
  */
 public interface FacadeInterface {
 
-	/**
-	 * Operation.
-	 */
-	public void operation();
+    /**
+     * Operation.
+     */
+    void operation();
 
 }

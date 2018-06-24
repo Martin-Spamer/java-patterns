@@ -1,17 +1,10 @@
-/**
- * @title			CompositeClassArray.java
- * @description	implement a UML Composite using object array.
- * @author			martin.spamer.
- * @version		0.1 - first release.
- * Created			23-Sep-2004
- **/
 
 package coaching.associations;
 
-import java.util.Arrays;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
 
 /**
  * Using a basic Java array to implement a UML Composite.
@@ -20,27 +13,29 @@ import org.slf4j.LoggerFactory;
  **/
 public class CompositeClassArray {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
 
-	// Implementing Composite using a Class Array
-	private final AbstractAssociatedClass[] composite = { new Alice(), new Bob(), new Charlie(), new Dan() };
+    /** The composite. */
+    // Implementing Composite using a Class Array
+    private final AbstractAssociatedClass[] composite = { new Alice(), new Bob(), new Charlie(), new Dan() };
 
-	/**
-	 * Instantiates a new composite class array.
-	 */
-	public CompositeClassArray() {
-		super();
-		LOG.info("CompositeClassArray");
-	}
+    /**
+     * Instantiates a new composite class array.
+     */
+    public CompositeClassArray() {
+        super();
+        LOG.info("CompositeClassArray");
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
+    }
 
 }

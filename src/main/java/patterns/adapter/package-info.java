@@ -4,4 +4,5 @@
  * Detailed description of package.
  *
  */
+
 package patterns.adapter;

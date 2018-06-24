@@ -5,24 +5,32 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Abstract Participant Class.
+ * Abstract Participant class.
+ * https://en.wikipedia.org/wiki/ACID
  */
-public abstract class AbstractParticipant implements ParticipantInterfact {
+public abstract class AbstractParticipant implements ParticipantInterface {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** provides logging. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Operation 1.
-	 */
-	public void operation1() {
-		throw new UnsupportedOperationException();
-	}
+    /**
+     * Operation One, must be implemented in the final class,
+     * otherwise will throw an UnsupportedOperationException.
+     *
+     * @return the participant interface
+     */
+    public ParticipantInterface operation1() {
+        throw new UnsupportedOperationException();
+    }
 
-	/**
-	 * Operation 2.
-	 */
-	public void operation2() {
-		throw new UnsupportedOperationException();
-	}
+    /**
+     * Operation Two, must be implemented in the final class,
+     * otherwise will throw an UnsupportedOperationException.
+     *
+     * @return the participant interface
+     */
+    public ParticipantInterface operation2() {
+        throw new UnsupportedOperationException();
+    }
 
 }

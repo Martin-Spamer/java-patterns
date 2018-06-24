@@ -5,15 +5,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * AbstractState Class.
+ * AbstractState class.
  */
 public abstract class AbstractState {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** provides logging. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Handle.
-	 */
-	public abstract void handle();
+    /**
+     * Handle the state, do what needs to be done when this state arises.
+     */
+    public abstract void handle();
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 
 }

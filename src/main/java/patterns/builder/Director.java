@@ -1,54 +1,57 @@
 
 package patterns.builder;
 
-import java.util.List;
-import java.util.Vector;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Director Class.
  */
 public class Director {
-	private static final Logger LOG = LoggerFactory.getLogger(Director.class);
-	private final List<AbstractBuilder> builders = new Vector<AbstractBuilder>();
 
-	/**
-	 * Adds part builder.
-	 *
-	 * @param builder
-	 *            the builder to be added.
-	 * @return true, if successful, otherwise false., otherwise false.
-	 */
-	public boolean add(final AbstractBuilder builder) {
-		return this.builders.add(builder);
-	}
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(Director.class);
 
-	/**
-	 * Construct Product.
-	 *
-	 * @return the product
-	 */
-	public Product constructProduct() {
-		final BuilderOne builderOne = new BuilderOne();
-		final Part partOne = builderOne.build();
+    /** The builders. */
+    private final List<AbstractBuilder> builders = new ArrayList<>();
 
-		final BuilderTwo builderTwo = new BuilderTwo();
-		final Part partTwo = builderTwo.build();
+    /**
+     * Adds part builder.
+     *
+     * @param builder
+     *            the builder to be added.
+     * @return true, if successful, otherwise false., otherwise false.
+     */
+    public boolean add(final AbstractBuilder builder) {
+        return this.builders.add(builder);
+    }
 
-		final Product product = new Product(partOne, partTwo);
-		return product;
-	}
+    /**
+     * Construct Product.
+     *
+     * @return the product
+     */
+    public Product constructProduct() {
+        final BuilderOne builderOne = new BuilderOne();
+        final Part partOne = builderOne.build();
 
-	/**
-	 * Construct Product.
-	 */
-	public void buildAll() {
-		for (final BuilderInterface builder : this.builders) {
-			final Part part = builder.build();
-			LOG.info("part={}", part);
-		}
-	}
+        final BuilderTwo builderTwo = new BuilderTwo();
+        final Part partTwo = builderTwo.build();
+
+        return new Product(partOne, partTwo);
+    }
+
+    /**
+     * Construct Product.
+     */
+    public void buildAll() {
+        for (final BuilderInterface builder : this.builders) {
+            final Part part = builder.build();
+            LOG.info("part={}", part);
+        }
+    }
 
 }

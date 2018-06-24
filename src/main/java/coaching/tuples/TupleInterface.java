@@ -11,43 +11,43 @@ package coaching.tuples;
  */
 public interface TupleInterface<L, R> {
 
-	/**
-	 * left.
-	 *
-	 * new left
-	 *
-	 * @param left
-	 *            the new left
-	 */
-	public void setLeft(final L left);
+    /**
+     * left.
+     *
+     * new left
+     *
+     * @param left
+     *            the new left
+     */
+    void setLeft(final L left);
 
-	/**
-	 * right.
-	 *
-	 * @param right
-	 *            the new right
-	 */
-	public void setRight(final R right);
+    /**
+     * right.
+     *
+     * @param right
+     *            the new right
+     */
+    void setRight(final R right);
 
-	/**
-	 * left.
-	 *
-	 * @return the left
-	 */
-	public L getLeft();
+    /**
+     * left.
+     *
+     * @return the left
+     */
+    L getLeft();
 
-	/**
-	 * right.
-	 *
-	 * @return the right
-	 */
-	public R getRight();
+    /**
+     * right.
+     *
+     * @return the right
+     */
+    R getRight();
 
-	/**
-	 * Return a shallow copy of this.
-	 *
-	 * @return the tuple interface
-	 */
-	public TupleInterface<L, R> copy();
+    /**
+     * Return a shallow copy of this.
+     *
+     * @return the tuple interface
+     */
+    TupleInterface<L, R> copy();
 
 }

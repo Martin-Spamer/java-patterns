@@ -1,15 +1,23 @@
-package coaching.solid;
 
-import static org.junit.Assert.assertNotNull;
+package coaching.solid;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
+
+/**
+ * Unit Test for the Interface Segregation Principle (ISP) example class.
+.
+ */
 public class InterfaceSegregationPrincipleTest {
 
-	@Test
-	public void testInterfaceSegregationPrinciple() {
-		final InterfaceSegregationPrinciple isp = new InterfaceSegregationPrinciple();
-		assertNotNull("Value cannot be null", isp);
-	}
+    /**
+     * Unit Test for the interface segregation principle example java example class.
+     */
+    @Test
+    public void testInterfaceSegregationPrinciple() {
+        final InterfaceSegregationPrinciple isp = new InterfaceSegregationPrinciple();
+        assertNotNull("Value cannot be null", isp);
+    }
 
 }

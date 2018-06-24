@@ -5,41 +5,35 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * LocalHopp Class.
+ * Half Object Part Protocol class.
  */
 class LocalHopp implements HoppInterface {
 
-	private static final Logger LOG = LoggerFactory.getLogger(LocalHopp.class);
-	public RemoteObjectProxy remoteObjectProxy;
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(LocalHopp.class);
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.hopp.HoppInterface#remoteMethod()
-	 */
-	@Override
-	public void remoteMethod() {
-		LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
-	}
+    /** The remote object proxy. */
+    public HoppInterface remoteObjectProxy = new RemoteObjectProxy();
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.hopp.HoppInterface#operation()
-	 */
-	@Override
-	public void operation() {
-		LOG.info("%s.operation()", this.getClass().getSimpleName());
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.hopp.HoppInterface#localMethod()
+     */
+    @Override
+    public void localMethod() {
+        LOG.info("%s.localMethod()", this.getClass().getSimpleName());
+        this.remoteObjectProxy.localMethod();
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.hopp.HoppInterface#localMethod()
-	 */
-	@Override
-	public void localMethod() {
-		LOG.info("%s.localMethod()", this.getClass().getSimpleName());
-	}
-
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.hopp.HoppInterface#remoteMethod()
+     */
+    @Override
+    public void remoteMethod() {
+        LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
+        this.remoteObjectProxy.remoteMethod();
+    }
 }

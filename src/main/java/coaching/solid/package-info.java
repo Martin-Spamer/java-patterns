@@ -15,4 +15,5 @@
  * rather than general-purpose. - Dependency Inversion principle. A class should
  * depend upon abstractions, not implementations.
  */
+
 package coaching.solid;

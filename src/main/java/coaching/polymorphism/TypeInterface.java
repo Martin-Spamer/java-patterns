@@ -6,11 +6,11 @@ package coaching.polymorphism;
  */
 public interface TypeInterface {
 
-	/**
-	 * Operation.
-	 *
-	 * @return the abstract type
-	 */
-	public TypeInterface operation();
+    /**
+     * Operation.
+     *
+     * @return the abstract type
+     */
+    TypeInterface operation();
 
 }

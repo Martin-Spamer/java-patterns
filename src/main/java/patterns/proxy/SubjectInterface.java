@@ -6,9 +6,9 @@ package patterns.proxy;
  */
 public interface SubjectInterface {
 
-	/**
-	 * Request.
-	 */
-	public void request();
+    /**
+     * Request.
+     */
+    void request();
 
 }

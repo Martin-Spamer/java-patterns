@@ -6,12 +6,12 @@ package patterns.visitor;
  */
 public interface VisitorInterface {
 
-	/**
-	 * Visit element.
-	 *
-	 * @param element
-	 *            the element
-	 */
-	public void visit(final ElementInterface element);
+    /**
+     * Visit element.
+     *
+     * @param element
+     *            the element
+     */
+    void visit(final ElementInterface element);
 
 }

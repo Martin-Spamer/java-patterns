@@ -10,16 +10,17 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractObserver implements ObserverInterface {
 
-	private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** provides logging. */
+    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.observer.ObserverInterface#updateObservers()
-	 */
-	@Override
-	public void updateObservers() {
-		this.log.info("update notification received");
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.observer.ObserverInterface#updateObservers()
+     */
+    @Override
+    public void updateObservers() {
+        this.log.info("update notification received");
+    }
 
 }

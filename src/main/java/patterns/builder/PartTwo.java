@@ -2,7 +2,7 @@
 package patterns.builder;
 
 /**
- * PartTwo Class.
+ * PartTwo class.
  */
 public class PartTwo extends Part {
 

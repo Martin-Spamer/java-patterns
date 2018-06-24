@@ -6,14 +6,14 @@ package patterns.builder;
  */
 public class BuilderOne extends AbstractBuilder {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.gof.creational.builder.AbstractBuilder#build()
-	 */
-	@Override
-	public Part build() {
-		return new PartOne();
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.gof.creational.builder.AbstractBuilder#build()
+     */
+    @Override
+    public Part build() {
+        return new PartOne();
+    }
 
 }

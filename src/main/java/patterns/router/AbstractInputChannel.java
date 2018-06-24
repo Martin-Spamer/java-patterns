@@ -9,17 +9,18 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractInputChannel implements InputChannelInterface {
 
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** provides logging. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see patterns.router.InputChannelInterface#receiveMessage()
-	 */
-	@Override
-	public Message receiveMessage() {
-		this.log.info("{}.receiveMessage()", this.getClass().getSimpleName());
-		return new Message();
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see patterns.router.InputChannelInterface#receiveMessage()
+     */
+    @Override
+    public Message receiveMessage() {
+        this.log.info("{}.receiveMessage()", this.getClass().getSimpleName());
+        return new Message();
+    }
 
 }

@@ -1,27 +1,25 @@
 
 package coaching.money;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Currency;
-
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Money Test Class.
- */
-@Ignore
-public class PoundTest {
+import java.util.Currency;
+import java.util.Locale;
 
-    private static final Logger LOG = LoggerFactory.getLogger(PoundTest.class);
+import static org.junit.Assert.*;
+
+/**
+ * Pounds Test Class.
+ */
+public class PoundsTest {
+
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(PoundsTest.class);
 
     /**
-     * Pounds Class.
+     * A Class for Pounds as Money.
      */
     public final class Pounds extends Money {
 
@@ -29,29 +27,7 @@ public class PoundTest {
          * Instantiates a new pounds.
          */
         public Pounds() {
-            super();
-        }
-
-        /**
-         * Instantiates a new pounds.
-         *
-         * @param currency
-         *            the currency
-         * @param amount
-         *            the amount
-         */
-        public Pounds(final Currency currency, final long amount) {
-            super(currency, amount);
-        }
-
-        /**
-         * Instantiates a new pounds.
-         *
-         * @param currency
-         *            the currency
-         */
-        public Pounds(final Currency currency) {
-            super(currency);
+            super(Currency.getInstance(Locale.UK), 0);
         }
 
         /**
@@ -61,7 +37,7 @@ public class PoundTest {
          *            the amount
          */
         public Pounds(final long amount) {
-            super(amount);
+            super(Currency.getInstance(Locale.UK), amount);
         }
     }
 
@@ -152,10 +128,7 @@ public class PoundTest {
      */
     @Test
     public void testMaxPounds() {
-        LOG.info("testMaxPounds");
-        final Currency gbp = Currency.getInstance("GBP");
-        LOG.info("Currency = {}", gbp.getDisplayName());
-        final MoneyInterface pounds = new Pounds(gbp, Long.MAX_VALUE);
+        final MoneyInterface pounds = new Pounds(Long.MAX_VALUE);
         LOG.info("{}", pounds.toString());
         assertNotNull("Value cannot be null", pounds);
         final String actual = pounds.toString();

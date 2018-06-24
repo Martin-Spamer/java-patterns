@@ -2,22 +2,19 @@
 package patterns.hopp;
 
 /**
- * Hopp Interface.
+ * Interface for HOPP pattern.
+ * Half Object, Part Protocol.
  */
 public interface HoppInterface {
 
-	/**
-	 * Remote method.
-	 */
-	public void remoteMethod();
+    /**
+     * Remote method.
+     */
+    void remoteMethod();
 
-	/**
-	 * Local method.
-	 */
-	public void localMethod();
+    /**
+     * Local method.
+     */
+    void localMethod();
 
-	/**
-	 * Operation.
-	 */
-	public void operation();
 }

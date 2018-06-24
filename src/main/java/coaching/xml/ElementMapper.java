@@ -1,9 +1,6 @@
 
 package coaching.xml;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -11,127 +8,134 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * DOM Element Mapper class.
  */
 public class ElementMapper {
 
-	private static final Logger LOG = LoggerFactory.getLogger(ElementMapper.class);
-	private String indexName = "id";
-	private final Map<String, Element> elementMap = new ConcurrentHashMap<String, Element>();
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(ElementMapper.class);
 
-	/**
-	 * Instantiates a new element mapper.
-	 */
-	public ElementMapper() {
-		super();
-	}
+    /** The index name. */
+    private String indexName = "id";
 
-	/**
-	 * Instantiates a new element mapper.
-	 *
-	 * @param document
-	 *            the document
-	 */
-	public ElementMapper(final Document document) {
-		initialisation(document);
-	}
+    /** The element map. */
+    private final Map<String, Element> elementMap = new ConcurrentHashMap<>();
 
-	/**
-	 * Initialisation.
-	 *
-	 * @param document
-	 *            the document
-	 */
-	public void initialisation(final Document document) {
-		final Element documentElement = document.getDocumentElement();
-		final NodeList childNodes = documentElement.getChildNodes();
-		initialisation(childNodes);
-	}
+    /**
+     * Instantiates a new element mapper.
+     */
+    public ElementMapper() {
+        super();
+    }
 
-	/**
-	 * Initialisation.
-	 *
-	 * @param nodeList
-	 *            the node list
-	 */
-	public void initialisation(final NodeList nodeList) {
-		for (int index = 0; index < nodeList.getLength(); index++) {
-			final Element element = (Element) nodeList.item(index);
-			final String key = element.getAttribute(this.indexName);
-			this.elementMap.put(key, element);
-			ElementMapper.LOG.info("{}={}", this.indexName, element);
-		}
-	}
+    /**
+     * Instantiates a new element mapper.
+     *
+     * @param document
+     *            the document
+     */
+    public ElementMapper(final Document document) {
+        initialisation(document);
+    }
 
-	/**
-	 * text.
-	 *
-	 * @param node
-	 *            the node
-	 * @return the text
-	 */
-	public static String getText(final Node node) {
-		// * text from elements, entity
-		// references, CDATA sections, and text nodes; but not
-		// comments or processing instructions
-		final int type = node.getNodeType();
-		if (type == Node.COMMENT_NODE || type == Node.PROCESSING_INSTRUCTION_NODE) {
-			return "";
-		}
+    /**
+     * Initialisation.
+     *
+     * @param document
+     *            the document
+     */
+    public void initialisation(final Document document) {
+        final Element documentElement = document.getDocumentElement();
+        final NodeList childNodes = documentElement.getChildNodes();
+        initialisation(childNodes);
+    }
 
-		final StringBuffer text = new StringBuffer();
+    /**
+     * Initialisation.
+     *
+     * @param nodeList
+     *            the node list
+     */
+    public void initialisation(final NodeList nodeList) {
+        for (int index = 0; index < nodeList.getLength(); index++) {
+            final Element element = (Element) nodeList.item(index);
+            final String key = element.getAttribute(this.indexName);
+            this.elementMap.put(key, element);
+            ElementMapper.LOG.info("{}={}", this.indexName, element);
+        }
+    }
 
-		final String value = node.getNodeValue();
-		if (value != null) {
-			text.append(value);
-		}
+    /**
+     * text.
+     *
+     * @param node
+     *            the node
+     * @return the text
+     */
+    public static String getText(final Node node) {
+        // * text from elements, entity
+        // references, CDATA sections, and text nodes; but not
+        // comments or processing instructions
+        final int type = node.getNodeType();
+        if (type == Node.COMMENT_NODE || type == Node.PROCESSING_INSTRUCTION_NODE) {
+            return "";
+        }
 
-		if (node.hasChildNodes()) {
-			final NodeList children = node.getChildNodes();
-			for (int index = 0; index < children.getLength(); index++) {
-				final Node child = children.item(index);
-				text.append(getText(child));
-			}
-		}
-		return text.toString();
-	}
+        final StringBuilder text = new StringBuilder();
 
-	/**
-	 * Find element.
-	 *
-	 * @param attributeName
-	 *            the attribute name
-	 * @return the element
-	 */
-	public Element findElement(final String attributeName) {
-		final Element element = this.elementMap.get(attributeName);
-		return element;
-	}
+        final String value = node.getNodeValue();
+        if (value != null) {
+            text.append(value);
+        }
 
-	/**
-	 * Find element text.
-	 *
-	 * @param attributeName
-	 *            the attribute name
-	 * @return the string
-	 */
-	public String findElementText(final String attributeName) {
-		final Node node = this.elementMap.get(attributeName);
-		return getText(node);
-	}
+        if (node.hasChildNodes()) {
+            final NodeList children = node.getChildNodes();
+            for (int index = 0; index < children.getLength(); index++) {
+                final Node child = children.item(index);
+                text.append(getText(child));
+            }
+        }
+        return text.toString();
+    }
 
-	/**
-	 * Index name.
-	 *
-	 * @param indexAttribute
-	 *            the index attribute
-	 * @return the string
-	 */
-	public String getIndexName(final String indexAttribute) {
-		if (indexAttribute != null) {
-			this.indexName = indexAttribute;
-		}
-		return this.indexName;
-	}
+    /**
+     * Find element.
+     *
+     * @param attributeName
+     *            the attribute name
+     * @return the element
+     */
+    public Element findElement(final String attributeName) {
+        return this.elementMap.get(attributeName);
+    }
+
+    /**
+     * Find element text.
+     *
+     * @param attributeName
+     *            the attribute name
+     * @return the string
+     */
+    public String findElementText(final String attributeName) {
+        final Node node = this.elementMap.get(attributeName);
+        return getText(node);
+    }
+
+    /**
+     * Index name.
+     *
+     * @param indexAttribute
+     *            the index attribute
+     * @return the string
+     */
+    public String getIndexName(final String indexAttribute) {
+        if (indexAttribute != null) {
+            this.indexName = indexAttribute;
+        }
+        return this.indexName;
+    }
 }

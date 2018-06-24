@@ -1,60 +1,61 @@
 
 package coaching.pool;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * BlockingPoolTest Class.
  */
 public class BlockingPoolTest {
 
-	private static final Logger LOG = LoggerFactory.getLogger(BlockingPoolTest.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(BlockingPoolTest.class);
 
-	/**
-	 * TestResourcePool Class.
-	 */
-	public class TestResourcePool extends AbstractBlockingPool<Boolean> {
-	}
+    /**
+     * TestResourcePool Class.
+     */
+    public class TestResourcePool extends AbstractBlockingPool<Boolean> {
+    }
 
-	/**
-	 * Test blocking pool.
-	 */
-	@Test
-	public void testBlockingPool() {
-		final TestResourcePool resourcePool = new TestResourcePool();
-		assertNotNull("Value cannot be null", resourcePool);
-		LOG.info(resourcePool.toString());
-	}
+    /**
+     * Test blocking pool.
+     */
+    @Test
+    public void testBlockingPool() {
+        final TestResourcePool resourcePool = new TestResourcePool();
+        assertNotNull("Value cannot be null", resourcePool);
+        LOG.info(resourcePool.toString());
+    }
 
-	/**
-	 * Test typical usage.
-	 */
-	@Test
-	public void testTypicalUsage() {
-		// Given a resource pool
-		final TestResourcePool testResourcePool = new TestResourcePool();
-		assertNotNull("Value cannot be null", testResourcePool);
-		testResourcePool.add(true);
-		testResourcePool.add(false);
-		assertEquals(2, testResourcePool.countFree());
-		assertEquals(0, testResourcePool.countUsed());
+    /**
+     * Unit test typical usage..
+     */
+    @Test
+    public void testTypicalUsage() {
+        // Given a resource pool
+        final TestResourcePool testResourcePool = new TestResourcePool();
+        assertNotNull("Value cannot be null", testResourcePool);
+        testResourcePool.add(true);
+        testResourcePool.add(false);
+        assertEquals(2, testResourcePool.countFree());
+        assertEquals(0, testResourcePool.countUsed());
 
-		// * pool
-		while (testResourcePool.countFree() > 0) {
-			final Boolean bool = testResourcePool.take();
-			if (bool) {
-				testResourcePool.remove(bool);
-			}
-		}
+        // * pool
+        while (testResourcePool.countFree() > 0) {
+            final Boolean bool = testResourcePool.take();
+            if (bool) {
+                testResourcePool.remove(bool);
+            }
+        }
 
-		// Then
-		assertEquals(0, testResourcePool.countFree());
-		assertEquals(1, testResourcePool.countUsed());
-	}
+        // Then
+        assertEquals(0, testResourcePool.countFree());
+        assertEquals(1, testResourcePool.countUsed());
+    }
 
 }

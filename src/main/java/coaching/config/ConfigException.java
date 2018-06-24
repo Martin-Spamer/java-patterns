@@ -1,8 +1,3 @@
-/**
- *  @title			ConfigException.java
- *  @description	TODO
- *	Created			21-Oct-2004
- **/
 
 package coaching.config;
 

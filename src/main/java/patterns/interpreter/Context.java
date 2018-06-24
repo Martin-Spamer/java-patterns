@@ -6,45 +6,46 @@ package patterns.interpreter;
  */
 public class Context {
 
-	private Object state;
+    /** The state. */
+    private Object state;
 
-	/**
-	 * Instantiates a new context.
-	 */
-	public Context() {
-		super();
-	}
+    /**
+     * Instantiates a new context.
+     */
+    public Context() {
+        super();
+    }
 
-	/**
-	 * Instantiates a new context.
-	 *
-	 * @param state
-	 *            the state
-	 */
-	public Context(final Object state) {
-		super();
-		setState(state);
-	}
+    /**
+     * Instantiates a new context.
+     *
+     * @param state
+     *            the state
+     */
+    public Context(final Object state) {
+        super();
+        setState(state);
+    }
 
-	/**
-	 * Set the state.
-	 *
-	 * @param state
-	 *            the new state
-	 * @return the context
-	 */
-	public Context setState(final Object state) {
-		this.state = state;
-		return this;
-	}
+    /**
+     * Set the state.
+     *
+     * @param state
+     *            the new state
+     * @return the context
+     */
+    public Context setState(final Object state) {
+        this.state = state;
+        return this;
+    }
 
-	/**
-	 * get the current state.
-	 *
-	 * @return the state
-	 */
-	public Object getState() {
-		return this.state;
-	}
+    /**
+     * get the current state.
+     *
+     * @return the state
+     */
+    public Object getState() {
+        return this.state;
+    }
 
 }

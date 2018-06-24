@@ -1,7 +1,3 @@
-/**
- *  @title			HandlerException
- *  @description	TODO [description].
- **/
 
 package coaching.config;
 
