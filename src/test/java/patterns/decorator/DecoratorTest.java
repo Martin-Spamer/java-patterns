@@ -19,7 +19,7 @@ public class DecoratorTest {
      * Unit Test to operation.
      */
     @Test
-    public void testOperation() {
+    public void testDecoratedComponentOperation() {
         final DecoratedComponent component = new DecoratedComponent();
         assertNotNull("Value cannot be null", component);
         assertNotNull("Value cannot be null", component.operation());
@@ -30,14 +30,16 @@ public class DecoratorTest {
      * Unit Test to before.
      */
     @Test
-    public void testBefore() {
+    public void testBeforeOperation() {
         final DecoratedComponent component = new DecoratedComponent();
         assertNotNull("Value cannot be null", component);
+
         final AbstractComponent behaviour = new ConcreteDecorator();
-        component.attachBefore(behaviour);
-        component.operation();
-        component.detachBefore(behaviour);
-        component.operation();
+        assertNotNull("Value cannot be null", component.attachBefore(behaviour));
+        assertNotNull("Value cannot be null", component.operation());
+        assertNotNull("Value cannot be null", component.detachBefore(behaviour));
+        assertNotNull("Value cannot be null", component.operation());
+        LOG.info("{}", component.toString());
     }
 
     /**

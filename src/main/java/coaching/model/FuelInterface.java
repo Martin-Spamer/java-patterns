@@ -6,4 +6,6 @@ package coaching.model;
  */
 public interface FuelInterface {
 
+    void addFuel(int quantity);
+    void useFuel(int quantity);
 }

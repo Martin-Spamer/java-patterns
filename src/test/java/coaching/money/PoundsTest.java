@@ -1,6 +1,7 @@
 
 package coaching.money;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +10,8 @@ import java.util.Currency;
 import java.util.Locale;
 
 import static org.junit.Assert.*;
+
+import static org.junit.Assume.assumeTrue;
 
 /**
  * Pounds Test Class.
@@ -19,7 +22,7 @@ public class PoundsTest {
     private static final Logger LOG = LoggerFactory.getLogger(PoundsTest.class);
 
     /**
-     * A Class for Pounds as Money.
+     * A class for Pounds as Money.
      */
     public final class Pounds extends Money {
 
@@ -41,12 +44,23 @@ public class PoundsTest {
         }
     }
 
+    @Before
+    public void beforeTest() {
+        LOG.info("beforeTest");
+        Locale defaultLocale = Locale.getDefault();
+        Currency defaultCurrency = Currency.getInstance(defaultLocale);
+        assumeTrue(defaultCurrency.getSymbol().equals("£"));
+    }
+    
     /**
      * Unit Test to money.
      */
     @Test
     public void testPounds() {
         LOG.info("testPounds");
+        Locale defaultLocale = Locale.getDefault();
+        Currency defaultCurrency = Currency.getInstance(defaultLocale);
+        assumeTrue(defaultCurrency.getSymbol().equals("£"));
 
         final Pounds pounds = new Pounds(10L);
         assertNotNull("Value cannot be null", pounds);
@@ -86,6 +100,7 @@ public class PoundsTest {
         final MoneyInterface pounds = new Pounds();
         assertNotNull("Value cannot be null", pounds);
         assertTrue(pounds.isEqualTo(0));
+        LOG.info("pounds = {}", pounds.toString());
     }
 
     /**
@@ -97,6 +112,7 @@ public class PoundsTest {
         final MoneyInterface pounds = new Pounds(0L);
         assertNotNull("Value cannot be null", pounds);
         assertTrue(pounds.isEqualTo(0));
+        LOG.info("pounds = {}", pounds.toString());
     }
 
     /**
@@ -107,7 +123,7 @@ public class PoundsTest {
         LOG.info("testMinValue");
         final MoneyInterface money = new Money(Long.MIN_VALUE);
         assertNotNull("Value cannot be null", money);
-        LOG.info("{}", money.toString());
+        LOG.info("money = {}", money.toString());
         assertTrue(money.isEqualTo(Long.MIN_VALUE));
     }
 
@@ -119,7 +135,7 @@ public class PoundsTest {
         LOG.info("testMaxValue");
         final MoneyInterface money = new Money(Long.MAX_VALUE);
         assertNotNull("Value cannot be null", money);
-        LOG.info("{}", money.toString());
+        LOG.info("money = {}", money.toString());
         assertTrue(money.isEqualTo(Long.MAX_VALUE));
     }
 
@@ -128,9 +144,10 @@ public class PoundsTest {
      */
     @Test
     public void testMaxPounds() {
+        LOG.info("testMaxPounds");
         final MoneyInterface pounds = new Pounds(Long.MAX_VALUE);
-        LOG.info("{}", pounds.toString());
         assertNotNull("Value cannot be null", pounds);
+        LOG.info("pounds = {}", pounds.toString());
         final String actual = pounds.toString();
         assertEquals("£ 9,223,372,036,854,775,807", actual);
     }

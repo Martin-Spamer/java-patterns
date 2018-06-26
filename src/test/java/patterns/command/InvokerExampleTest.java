@@ -8,7 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * InvokerExampleTest Class.
+ * Example of an Invoker class.
+ * 
+ * Each command is statically constructed and invoked.
  */
 public class InvokerExampleTest {
 
@@ -16,8 +18,7 @@ public class InvokerExampleTest {
     private static final Logger LOG = LoggerFactory.getLogger(InvokerExampleTest.class);
 
     /**
-     * Unit Test to example command.
-     *
+     * Unit Test for example command.
      */
     @Test
     public void testExampleCommand() {
@@ -28,8 +29,7 @@ public class InvokerExampleTest {
     }
 
     /**
-     * Unit Test to invoker example command.
-     *
+     * Unit Test of invoker with the example command.
      */
     @Test
     public void testInvokerExampleCommand() {
@@ -41,8 +41,7 @@ public class InvokerExampleTest {
     }
 
     /**
-     * Unit Test to sequence command.
-     *
+     * Unit Test for the sequence command.
      */
     @Test
     public void testSequenceCommand() {
@@ -53,8 +52,7 @@ public class InvokerExampleTest {
     }
 
     /**
-     * Unit Test to invoker sequence command.
-     *
+     * Unit Test of invoker with the sequence command.
      */
     @Test
     public void testInvokerSequenceCommand() {
@@ -66,8 +64,7 @@ public class InvokerExampleTest {
     }
 
     /**
-     * Unit Test to compound command.
-     *
+     * Unit Test for the compound command.
      */
     @Test
     public void testCompoundCommand() {
@@ -78,8 +75,7 @@ public class InvokerExampleTest {
     }
 
     /**
-     * Unit Test to invoker compound command.
-     *
+     * Unit Test of invoker with the compound command.
      */
     @Test
     public void testInvokerCompoundCommand() {
@@ -91,8 +87,7 @@ public class InvokerExampleTest {
     }
 
     /**
-     * Unit Test to conditional command.
-     *
+     * Unit Test for the conditional command.
      */
     @Test
     public void testConditionalCommand() {
@@ -103,8 +98,7 @@ public class InvokerExampleTest {
     }
 
     /**
-     * Unit Test to invoker conditional command.
-     *
+     * Unit Test of invoker with the conditional command.
      */
     @Test
     public void testInvokerConditionalCommand() {

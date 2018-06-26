@@ -11,7 +11,7 @@ import java.util.Locale;
 import static org.junit.Assert.*;
 
 /**
- * Money Test Class.
+ * Money Test class.
  */
 public class MoneyTest {
 
@@ -23,35 +23,35 @@ public class MoneyTest {
      */
     @Test
     public void testMoneyUsage() {
-        LOG.info("testMoney");
+        LOG.info("testMoneyUsage");
 
         final Money money = new Money(10L);
         assertNotNull("Value cannot be null", money);
         LOG.info("new Money(10L) = {}", money.toString());
 
         money.add(1L);
-        LOG.info("new Money(10L).add(1L) = {}", money.toString());
+        LOG.info(".add(1L) = {}", money.toString());
 
         money.add(new Money(1L));
-        LOG.info("new Money(10L).add(1L) = {}", money.toString());
+        LOG.info(".add(1L) = {}", money.toString());
 
         money.subtract(2L);
-        LOG.info("new Money(10L).add(1L).subtract(2L) = {}", money.toString());
+        LOG.info(".subtract(2L) = {}", money.toString());
 
         money.subtract(new Money(2L));
-        LOG.info("new Money(10L).add(1L).subtract(2L) = {}", money.toString());
+        LOG.info(".subtract(2L) = {}", money.toString());
 
         assertTrue(money.isMoreThan(7L));
         assertTrue(money.isMoreThan(new Money(7L)));
-        LOG.info("{}", money.toString());
+        LOG.info("money = {}", money.toString());
 
         assertTrue(money.isEqualTo(8L));
         assertTrue(money.isEqualTo(new Money(8L)));
-        LOG.info("{}", money.toString());
+        LOG.info("money = {}", money.toString());
 
         assertTrue(money.isLessThan(9L));
         assertTrue(money.isLessThan(new Money(9L)));
-        LOG.info("{}", money.toString());
+        LOG.info("money = {}", money.toString());
     }
 
     /**
@@ -96,7 +96,7 @@ public class MoneyTest {
      */
     @Test
     public void testMoneyWithMinValueOfLong() {
-        LOG.info("testMinValue");
+        LOG.info("testMoneyWithMinValueOfLong");
         final MoneyInterface money = new Money(Long.MIN_VALUE);
         assertNotNull("Value cannot be null", money);
         LOG.info("{}", money.toString());
@@ -108,7 +108,7 @@ public class MoneyTest {
      */
     @Test
     public void testMoneyWithMaxValueOfLong() {
-        LOG.info("testMaxValue");
+        LOG.info("testMoneyWithMaxValueOfLong");
         final MoneyInterface money = new Money(Long.MAX_VALUE);
         assertNotNull("Value cannot be null", money);
         LOG.info("{}", money.toString());
@@ -152,12 +152,15 @@ public class MoneyTest {
     public void testMaxDollar() {
         LOG.info("testMaxDollar");
         final Currency usd = Currency.getInstance(Locale.US);
-        LOG.info("Currency = {}", usd.getDisplayName());
+        LOG.info("usd.getSymbol = {}", usd.getSymbol());
+        LOG.info("usd.getDisplayName = {}", usd.getDisplayName());
+        LOG.info("usd.getCurrencyCode = {}", usd.getCurrencyCode());
+        
         final MoneyInterface money = new Money(usd, Long.MAX_VALUE);
         assertNotNull("Value cannot be null", money);
         LOG.info("{}", money.toString());
         final String actual = money.toString();
-        assertEquals("USD 9,223,372,036,854,775,807", actual);
+        assertEquals("$ 9,223,372,036,854,775,807", actual);
     }
 
 }

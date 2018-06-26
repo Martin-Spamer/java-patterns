@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit test for abstract parameters Class for commands.
+ * Example of an abstract parameters class for commands.
  */
 public class CommandParametersTest {
 
@@ -40,15 +40,28 @@ public class CommandParametersTest {
             super(key, value);
         }
     }
-
+    
     /**
      * Unit Test to abstract parameters.
      */
     @Test
-    public void testAbstractParameters() {
+    public void testCommandParameters() {
         final ParametersInterface commandParameters = new MockCommandParameters();
         assertNotNull("Value cannot be null", commandParameters);
-        this.log.info("{}", commandParameters.toString());
+        String string = commandParameters.toString();
+        this.log.trace("{}", string);
+    }
+
+    /**
+     * Unit Test to get string.
+     */
+    @Test
+    public void testSetGetParameter() {
+        final ParametersInterface commandParameters = new MockCommandParameters();
+        assertNotNull("Value cannot be null", commandParameters);
+        commandParameters.setParameter("key", "value");
+        assertEquals("value", commandParameters.valueFor("key"));
+        this.log.trace("{}", commandParameters.toString());
     }
 
     /**
@@ -58,20 +71,8 @@ public class CommandParametersTest {
     public void testAbstractParametersStringString() {
         final ParametersInterface commandParameters = new MockCommandParameters("key", "value");
         assertNotNull("Value cannot be null", commandParameters);
-        this.log.info("{}", commandParameters.toString());
         assertEquals("value", commandParameters.valueFor("key"));
-    }
-
-    /**
-     * Unit Test to get string.
-     */
-    @Test
-    public void testGetString() {
-        final ParametersInterface commandParameters = new MockCommandParameters();
-        assertNotNull("Value cannot be null", commandParameters);
-        commandParameters.setParameter("key", "value");
-        this.log.info("{}", commandParameters.toString());
-        assertEquals("value", commandParameters.valueFor("key"));
+        this.log.trace("{}", commandParameters.toString());
     }
 
 }

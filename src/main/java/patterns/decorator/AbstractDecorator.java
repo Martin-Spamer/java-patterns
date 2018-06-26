@@ -23,8 +23,9 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      * AbstractComponent)
      */
     @Override
-    public void attachBefore(final AbstractComponent behaviour) {
+    public DecoratorInterface attachBefore(final AbstractComponent behaviour) {
         this.beforeBehaviour.add(behaviour);
+        return this;
     }
 
     /*
@@ -35,8 +36,9 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      * AbstractComponent)
      */
     @Override
-    public void detachBefore(final AbstractComponent behaviour) {
+    public DecoratorInterface detachBefore(final AbstractComponent behaviour) {
         this.beforeBehaviour.remove(behaviour);
+        return this;
     }
 
     /*
@@ -47,8 +49,9 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      * AbstractComponent)
      */
     @Override
-    public void attachAfter(final AbstractComponent behaviour) {
+    public DecoratorInterface attachAfter(final AbstractComponent behaviour) {
         this.afterBehaviour.add(behaviour);
+        return this;
     }
 
     /*
@@ -59,25 +62,30 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      * AbstractComponent)
      */
     @Override
-    public void detachAfter(final AbstractComponent behaviour) {
+    public DecoratorInterface detachAfter(final AbstractComponent behaviour) {
         this.afterBehaviour.remove(behaviour);
+        return this;
     }
 
     /**
      * Before operation.
+     * @return 
      */
-    protected void beforeOperation() {
+    protected DecoratorInterface beforeOperation() {
         for (final ComponentInterface component : this.beforeBehaviour) {
             component.operation();
         }
+        return this;
     }
 
     /**
      * After operation.
+     * @return 
      */
-    protected void afterOperation() {
+    protected DecoratorInterface afterOperation() {
         for (final ComponentInterface component : this.afterBehaviour) {
             component.operation();
         }
+        return this;
     }
 }

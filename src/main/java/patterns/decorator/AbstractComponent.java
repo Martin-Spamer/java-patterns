@@ -19,7 +19,8 @@ public abstract class AbstractComponent implements ComponentInterface {
      */
     @Override
     public AbstractComponent operation() {
-        this.log.info("%s", this.getClass().getSimpleName());
+        String simpleName = this.getClass().getSimpleName();
+        this.log.info("{}", simpleName);
         return this;
     }
 

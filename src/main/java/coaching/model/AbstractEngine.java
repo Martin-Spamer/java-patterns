@@ -36,14 +36,19 @@ public abstract class AbstractEngine implements FuelInterface {
         this.fuel = fuel;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#toString()
-     */
+    @Override
+    public void addFuel(int quantity) {
+        fuel.addFuel(quantity);
+    }
+
+    @Override
+    public void useFuel(int quantity) {
+        fuel.useFuel(quantity);
+    }
+
     @Override
     public String toString() {
-        return "Engine [fuel=" + this.fuel + "]";
+        return String.format("%s [fuel=%s]", this.getClass().getSimpleName(), fuel);
     }
 
 }

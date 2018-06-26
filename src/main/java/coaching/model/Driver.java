@@ -5,7 +5,7 @@
 package coaching.model;
 
 /**
- * Driver Class.
+ * Driver class.
  */
 public class Driver extends AbstractPerson {
 

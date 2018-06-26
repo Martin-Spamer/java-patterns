@@ -2,7 +2,7 @@
 package coaching.model;
 
 /**
- * Passenger Class.
+ * Passenger class.
  */
 public class Passenger extends AbstractPerson {
 
