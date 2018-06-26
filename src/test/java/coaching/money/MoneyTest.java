@@ -10,6 +10,8 @@ import java.util.Locale;
 
 import static org.junit.Assert.*;
 
+import static org.junit.Assume.assumeTrue;
+
 /**
  * Money Test class.
  */
@@ -123,11 +125,14 @@ public class MoneyTest {
         LOG.info("testMaxPounds");
         final Currency gbp = Currency.getInstance("GBP");
         LOG.info("Currency = {}", gbp.getDisplayName());
+        assumeTrue(gbp.getSymbol().equals("£"));
+
         final MoneyInterface money = new Money(gbp, Long.MAX_VALUE);
         LOG.info("{}", money.toString());
         assertNotNull("Value cannot be null", money);
         final String actual = money.toString();
-        assertEquals("£ 9,223,372,036,854,775,807", actual);
+        String expected = "£ 9,223,372,036,854,775,807";
+        assertEquals(expected, actual);
     }
 
     /**
@@ -138,11 +143,14 @@ public class MoneyTest {
         LOG.info("testMaxEuro");
         final Currency eur = Currency.getInstance("EUR");
         LOG.info("Currency = {}", eur.getDisplayName());
+        assumeTrue(eur.getSymbol().equals("€"));
+
         final MoneyInterface money = new Money(eur, Long.MAX_VALUE);
         assertNotNull("Value cannot be null", money);
         LOG.info("{}", money.toString());
         final String actual = money.toString();
-        assertEquals("€ 9,223,372,036,854,775,807", actual);
+        String expected = "€ 9,223,372,036,854,775,807";
+        assertEquals(expected, actual);
     }
 
     /**
@@ -155,12 +163,14 @@ public class MoneyTest {
         LOG.info("usd.getSymbol = {}", usd.getSymbol());
         LOG.info("usd.getDisplayName = {}", usd.getDisplayName());
         LOG.info("usd.getCurrencyCode = {}", usd.getCurrencyCode());
-        
+        assumeTrue(usd.getSymbol().equals("$"));
+
         final MoneyInterface money = new Money(usd, Long.MAX_VALUE);
         assertNotNull("Value cannot be null", money);
         LOG.info("{}", money.toString());
         final String actual = money.toString();
-        assertEquals("$ 9,223,372,036,854,775,807", actual);
+        String expected = "$ 9,223,372,036,854,775,807";
+        assertEquals(expected, actual);
     }
 
 }
