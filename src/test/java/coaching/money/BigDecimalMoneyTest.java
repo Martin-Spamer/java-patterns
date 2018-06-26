@@ -11,6 +11,8 @@ import java.util.Locale;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import static org.junit.Assume.assumeTrue;
+
 /**
  * Money Locale Test Class.
  */
@@ -56,7 +58,7 @@ public class BigDecimalMoneyTest {
         final Locale ukLocale = Locale.UK;
         assertNotNull("Value cannot be null", ukLocale);
         LOG.info("ukLocale = {}", ukLocale);
-        LOG.info("ukLocale = {}", ukLocale.getDisplayName());
+        LOG.info("ukLocale.getDisplayName = {}", ukLocale.getDisplayName());
         final Currency currency = Currency.getInstance(ukLocale);
         assertNotNull("Value cannot be null", new BigDecimalMoney(currency));
     }
@@ -66,33 +68,37 @@ public class BigDecimalMoneyTest {
      */
     @Test
     public void testBigDecimalMoney() {
-        LOG.info("testMoney");
+        LOG.info("testBigDecimalMoney");
+        Locale defaultLocale = Locale.getDefault();
+        Currency defaultCurrency = Currency.getInstance(defaultLocale);
+        assumeTrue(defaultCurrency.getSymbol().equals("£"));
+
         final BigDecimalMoney money = new BigDecimalMoney();
         assertNotNull("Value cannot be null", money);
         final Currency currency = money.getCurrency();
         assertNotNull("Value cannot be null", currency);
         assertEquals("£0.00", money.toString());
-        LOG.info("{}", money);
+        LOG.info("money = {}", money);
 
         final BigDecimalMoney money0 = new BigDecimalMoney();
         assertNotNull("Value cannot be null", money);
         assertEquals("£0.00", money0.toString());
-        LOG.info("{}", money0);
+        LOG.info("money = {}", money0);
 
         final BigDecimalMoney money1 = new BigDecimalMoney("1.00");
         assertNotNull("Value cannot be null", money);
         assertEquals("£1.00", money1.toString());
-        LOG.info("{}", money1);
+        LOG.info("money = {}", money1);
 
         final BigDecimalMoney moneyStr99 = new BigDecimalMoney("99.99");
         assertNotNull("Value cannot be null", money);
         assertEquals("£99.99", moneyStr99.toString());
-        LOG.info("{}", moneyStr99);
+        LOG.info("money = {}", moneyStr99);
 
         final BigDecimalMoney moneyStr100 = new BigDecimalMoney("100.00");
         assertNotNull("Value cannot be null", money);
         assertEquals("£100.00", moneyStr100.toString());
-        LOG.info("{}", moneyStr100);
+        LOG.info("money = {}", moneyStr100);
     }
 
     /**
@@ -103,31 +109,31 @@ public class BigDecimalMoneyTest {
         LOG.info("testAddition");
         final BigDecimalMoney total = new BigDecimalMoney(0);
         assertNotNull("Value cannot be null", total);
-        LOG.info("{}", "money=" + total.toString());
+        LOG.info("money = {}", total.toString());
 
         final BigDecimalMoney number1 = new BigDecimalMoney(1);
         assertNotNull("Value cannot be null", number1);
-        LOG.info("{}", "number1 = " + number1.toString());
+        LOG.info("number1 = {}", "" + number1.toString());
         total.add(number1);
-        LOG.info("{}", "total + number1 = " + total.toString());
+        LOG.info("total + number1 = {}", total.toString());
 
         final BigDecimalMoney number2 = new BigDecimalMoney("2");
         assertNotNull("Value cannot be null", number2);
-        LOG.info("{}", "number2 = " + number2.toString());
+        LOG.info("number2 = {}", number2.toString());
         total.add(number2);
-        LOG.info("{}", "total + number2=" + total.toString());
+        LOG.info("total + number2 = {}",  total.toString());
 
         final BigDecimalMoney number3 = new BigDecimalMoney(3);
         assertNotNull("Value cannot be null", number3);
-        LOG.info("{}", "number3 = " + number3.toString());
+        LOG.info("number3 = {}", number3.toString());
         total.add(number3);
-        LOG.info("{}", "total+number3 = " + total.toString());
+        LOG.info("total + number3 = {}", total.toString());
 
         final BigDecimalMoney number4 = new BigDecimalMoney("4.0");
         assertNotNull("Value cannot be null", number4);
-        LOG.info("{}", "number4 = " + number4.toString());
+        LOG.info("number4 = {}", number4.toString());
         total.add(number4);
-        LOG.info("{}", "total+number4 = " + total.toString());
+        LOG.info("total+number4 = {}", total.toString());
 
         BigDecimalMoney balance = new BigDecimalMoney("1234567.89");
         assertNotNull("Value cannot be null", balance);
