@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class SingleResponsibilityPrinciple {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
     public class MultipleResponsibility {
         private boolean foo;

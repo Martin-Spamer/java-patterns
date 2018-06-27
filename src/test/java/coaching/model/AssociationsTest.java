@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class AssociationsTest {
 
     /** provides logging. */
-    private static final Logger log = LoggerFactory.getLogger(AssociationsTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(AssociationsTest.class);
 
     /**
      * Unit Test for Car example.
@@ -22,10 +22,10 @@ public class AssociationsTest {
      */
     @Test
     public void testExampleComposition() {
-        log.info("testExampleComposition");
+        LOG.info("testExampleComposition");
         final VehicleInterface car = new Car();
         assertNotNull("Value cannot be null", car);
-        log.info("car = {}", car);
+        LOG.info("car = {}", car);
     }
 
     /**
@@ -36,7 +36,7 @@ public class AssociationsTest {
     @Test
     public void testExampleAggregation() {
         // Given
-        log.info("testExampleAggregation");
+        LOG.info("testExampleAggregation");
         final Car car = new Car();
         assertNotNull("Value cannot be null", car);
 
@@ -44,7 +44,7 @@ public class AssociationsTest {
         final Driver driver = new Driver("Alice");
         assertNotNull("Value cannot be null", driver);
         car.setDriver(driver);
-        log.info("car = {}", car);
+        LOG.info("car = {}", car);
     }
 
     /**
@@ -53,7 +53,7 @@ public class AssociationsTest {
     @Test
     public void testExampleTruck() {
         // Given
-        log.info("testExampleTruck");
+        LOG.info("testExampleTruck");
         final Truck truck = new Truck();
         assertNotNull("Value cannot be null", truck);
 
@@ -62,7 +62,7 @@ public class AssociationsTest {
         assertNotNull("Value cannot be null", driver);
 
         truck.setDriver(driver);
-        log.info("truck = {}", truck);
+        LOG.info("truck = {}", truck);
     }
     
     /**
@@ -71,7 +71,7 @@ public class AssociationsTest {
     @Test
     public void testExampleTaxi() {
         // Given
-        log.info("testExampleTaxi");
+        LOG.info("testExampleTaxi");
         final Taxi taxi = new Taxi();
         assertNotNull("Value cannot be null", taxi);
 
@@ -83,9 +83,9 @@ public class AssociationsTest {
         final Passenger passenger = new Passenger("Bob");
         assertNotNull("Value cannot be null", passenger);        
         taxi.setPassenger(passenger);
-        log.info("taxi = {}", taxi);
+        LOG.info("taxi = {}", taxi);
         taxi.clearPassenger();
-        log.info("taxi = {}", taxi);
+        LOG.info("taxi = {}", taxi);
     }
 
     /**
@@ -94,7 +94,7 @@ public class AssociationsTest {
     @Test
     public void testExampleMotorCycleRider() {
         // Given
-        log.info("testExampleMotorCycleRider");
+        LOG.info("testExampleMotorCycleRider");
         final MotorCycle motorCycle = new MotorCycle();
         assertNotNull("Value cannot be null", motorCycle);
 
@@ -102,7 +102,7 @@ public class AssociationsTest {
         final Rider rider = new Rider("Charlie");
         assertNotNull("Value cannot be null", rider);
         motorCycle.setRider(rider);
-        log.info("motorCycle = {}", motorCycle);
+        LOG.info("motorCycle = {}", motorCycle);
     }
 
 }

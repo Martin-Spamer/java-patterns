@@ -13,7 +13,7 @@ import java.util.List;
 public class Director {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(Director.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(Director.class);
 
     /** The builders. */
     private final List<AbstractBuilder> builders = new ArrayList<>();

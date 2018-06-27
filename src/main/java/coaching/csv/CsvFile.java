@@ -15,7 +15,7 @@ import java.util.List;
 public class CsvFile {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CsvFile.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(CsvFile.class);
 
     /** The csv filename. */
     private final String csvFilename;

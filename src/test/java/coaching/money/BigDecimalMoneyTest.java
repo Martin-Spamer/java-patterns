@@ -19,7 +19,7 @@ import static org.junit.Assume.assumeTrue;
 public class BigDecimalMoneyTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BigDecimalMoneyTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(BigDecimalMoneyTest.class);
 
     /**
      * Test using the default locale.

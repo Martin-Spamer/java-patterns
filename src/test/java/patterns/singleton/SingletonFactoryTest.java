@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class SingletonFactoryTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SingletonFactoryTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(SingletonFactoryTest.class);
 
     /**
      * Unit Test to get instance.

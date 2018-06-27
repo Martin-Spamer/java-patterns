@@ -16,7 +16,7 @@ public final class AggregateClassArray {
     private static final int SIZE = 4;
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArray.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(AggregateClassArray.class);
 
     /** The aggregate. */
     // Implement an Aggregate using a Array of classes.

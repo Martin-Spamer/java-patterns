@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ElementMapper {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ElementMapper.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(ElementMapper.class);
 
     /** The index name. */
     private String indexName = "id";

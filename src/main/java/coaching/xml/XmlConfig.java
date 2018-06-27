@@ -21,7 +21,7 @@ import org.w3c.dom.NodeList;
  */
 public class XmlConfig  {
 
-    private static final Logger LOG = LoggerFactory.getLogger(XmlConfig.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(XmlConfig.class);
 
     /** configuration element. */
     private Element configElement = null;

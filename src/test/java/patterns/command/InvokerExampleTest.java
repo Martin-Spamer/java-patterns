@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public class InvokerExampleTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(InvokerExampleTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(InvokerExampleTest.class);
 
     /**
      * Unit Test for example command.

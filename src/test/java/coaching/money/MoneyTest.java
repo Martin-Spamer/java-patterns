@@ -18,7 +18,7 @@ import static org.junit.Assume.assumeTrue;
 public class MoneyTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(MoneyTest.class);
 
     /**
      * Unit Test for typical usage of Money class.

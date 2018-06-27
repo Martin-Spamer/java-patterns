@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class FactoryInterfaceTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(FactoryInterfaceTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(FactoryInterfaceTest.class);
 
     /**
      * Unit Test to factory one.

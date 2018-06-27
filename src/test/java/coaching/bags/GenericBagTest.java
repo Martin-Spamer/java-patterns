@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class GenericBagTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(GenericBagTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(GenericBagTest.class);
     
     /** The Constant VALUES. */
     private static final String[] VALUES = { "Heads", "Tails" };

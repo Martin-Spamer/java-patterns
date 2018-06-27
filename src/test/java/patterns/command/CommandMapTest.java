@@ -18,7 +18,7 @@ import static org.junit.Assert.assertNotNull;
 public class CommandMapTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(CommandFactoryTest.class);
 
     /** The command map. */
     private final CommandMap commandMap = new CommandMap();

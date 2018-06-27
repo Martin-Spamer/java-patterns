@@ -19,7 +19,7 @@ import static org.junit.Assume.assumeTrue;
 public class PoundsTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PoundsTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(PoundsTest.class);
 
     /**
      * A class for Pounds as Money.

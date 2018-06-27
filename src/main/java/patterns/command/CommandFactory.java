@@ -16,7 +16,7 @@ import java.util.Properties;
 public final class CommandFactory implements InvokerInterface {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(CommandFactory.class);
 
     /** The Constant COMMANDS_PROPERTIES. */
     private static final String COMMANDS_PROPERTIES = "commands.properties";

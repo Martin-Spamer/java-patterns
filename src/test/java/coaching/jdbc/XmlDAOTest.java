@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public class XmlDAOTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlDAOTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(XmlDAOTest.class);
     
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";

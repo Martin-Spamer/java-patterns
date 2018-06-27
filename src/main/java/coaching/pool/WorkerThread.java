@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class WorkerThread implements Runnable {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(WorkerThread.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(WorkerThread.class);
 
     /** The Constant INTERVAL. */
     private static final int INTERVAL = 5000;

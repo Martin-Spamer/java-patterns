@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class CompositeClassArray {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(CompositeClassArray.class);
 
     /** The composite. */
     // Implementing Composite using a Class Array

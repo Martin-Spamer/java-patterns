@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class SimpleBagTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(BoxTest.class);
 
     /** The Constant VALUES. */
     private static final String[] VALUES = { "Cat", "Dog", "Rabbit" };

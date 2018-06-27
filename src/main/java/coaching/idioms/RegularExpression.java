@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class RegularExpression {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RegularExpression.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(RegularExpression.class);
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^ABC$";

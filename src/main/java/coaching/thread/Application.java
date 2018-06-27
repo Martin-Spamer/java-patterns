@@ -26,7 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Application {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(Application.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(Application.class);
 
     /** The thread map. */
     private final Map<String, AbstractProcess> threadMap = new ConcurrentHashMap<>();
