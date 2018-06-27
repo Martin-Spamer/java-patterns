@@ -1,3 +1,4 @@
+
 package coaching.arrays;
 
 import org.slf4j.Logger;
@@ -24,10 +25,10 @@ public class NativeTypesArray {
 
         values[0] = 0L;
 
-        for(int i = 1; i < ARRAY_SIZE; i++) {
+        for (int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
             values[i] = i ^ i;
-            this.log.info(i + "=" + values[i]);
+            log.info(i + "=" + values[i]);
         }
     }
 
@@ -39,7 +40,7 @@ public class NativeTypesArray {
         long[][] matrix;
         matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
 
-        this.log.info("{}", looping(matrix));
+        log.info("{}", looping(matrix));
 
     }
 
@@ -48,7 +49,7 @@ public class NativeTypesArray {
      */
     public void display() {
         final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
-        this.log.info("{}", looping(vector));
+        log.info("{}", looping(vector));
     }
 
     /**
@@ -62,7 +63,7 @@ public class NativeTypesArray {
         final StringBuilder stringBuffer = new StringBuilder();
         for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
             for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
-                vector[firstIndex][secondIndex] = (long) (firstIndex * secondIndex);
+                vector[firstIndex][secondIndex] = firstIndex * secondIndex;
                 stringBuffer.append(vector[firstIndex][secondIndex]);
                 stringBuffer.append(',');
             }

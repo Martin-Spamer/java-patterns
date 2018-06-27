@@ -25,7 +25,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @return the abstract payload
      */
     public AbstractPayload setProperty(final String key, final String value) {
-        this.properties.setProperty(key, value);
+        properties.setProperty(key, value);
         return this;
     }
 
@@ -37,7 +37,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @return the property
      */
     public String getProperty(final String key) {
-        return this.properties.getProperty(key);
+        return properties.getProperty(key);
     }
 
     /**
@@ -50,7 +50,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @return the property
      */
     public String getProperty(final String key, final String defaultValue) {
-        return this.properties.getProperty(key, defaultValue);
+        return properties.getProperty(key, defaultValue);
     }
 
     /**
@@ -63,7 +63,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      *             Signals that an I/O exception has occurred.
      */
     public AbstractPayload load(final InputStream inputStream) throws IOException {
-        this.properties.load(inputStream);
+        properties.load(inputStream);
         return this;
     }
 
@@ -82,7 +82,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      */
     public AbstractPayload loadFromXML(final InputStream inputStream)
             throws IOException, InvalidPropertiesFormatException {
-        this.properties.loadFromXML(inputStream);
+        properties.loadFromXML(inputStream);
         return this;
 
     }
@@ -112,7 +112,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      *             Signals that an I/O exception has occurred.
      */
     public AbstractPayload store(final OutputStream outputStream, final String comments) throws IOException {
-        this.properties.store(outputStream, comments);
+        properties.store(outputStream, comments);
         return this;
     }
 

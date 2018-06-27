@@ -1,12 +1,16 @@
 
 package coaching.resources;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URL;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -30,7 +34,7 @@ public class ResourceLoader {
     private String suffix = ".properties";
 
     /** filename of the Resource, default to "./thisClassName.properties" */
-    private String filename = String.format("./%s%s", this.getClass().getSimpleName(), this.suffix);
+    private String filename = String.format("./%s%s", this.getClass().getSimpleName(), suffix);
 
     /** resource has been loaded. */
     protected boolean loaded = false;
@@ -40,8 +44,8 @@ public class ResourceLoader {
      *
      */
     public ResourceLoader() {
-        assertNotNull(this.filename);
-        load(this.filename);
+        assertNotNull(filename);
+        load(filename);
     }
 
     /**
@@ -52,7 +56,7 @@ public class ResourceLoader {
      */
     public ResourceLoader(final String propertyFileName) {
         setFilename(propertyFileName);
-        load(this.filename);
+        load(filename);
     }
 
     /**
@@ -64,10 +68,10 @@ public class ResourceLoader {
      */
     public ResourceLoader setFilename(final String propertyFileName) {
         if (propertyFileName != null) {
-            if (propertyFileName.endsWith(this.suffix)) {
-                this.filename = propertyFileName;
+            if (propertyFileName.endsWith(suffix)) {
+                filename = propertyFileName;
             } else {
-                this.filename = String.format("./%s%s", propertyFileName, this.suffix);
+                filename = String.format("./%s%s", propertyFileName, suffix);
             }
         } else {
             throw new ConfigurationNotLoadedException(propertyFileName);
@@ -90,7 +94,7 @@ public class ResourceLoader {
      * @return this ResourceLoader for fluent interface.
      */
     public ResourceLoader load() {
-        return load(this.filename);
+        return load(filename);
     }
 
     /**
@@ -142,9 +146,9 @@ public class ResourceLoader {
             }
             bufferedReader.close();
             streamForResource.close();
-            this.loaded = true;
+            loaded = true;
         } catch (final IOException e) {
-            this.log.error(e.toString());
+            log.error(e.toString());
         }
         return this;
     }
@@ -155,7 +159,7 @@ public class ResourceLoader {
      * @return true, if is loaded
      */
     public boolean isLoaded() {
-        return this.loaded;
+        return loaded;
     }
 
     /**
@@ -164,7 +168,7 @@ public class ResourceLoader {
      * @return the property file name
      */
     public String getFilename() {
-        return this.filename;
+        return filename;
     }
 
     /**
@@ -173,7 +177,7 @@ public class ResourceLoader {
      * @return the suffix
      */
     public String getSuffix() {
-        return this.suffix;
+        return suffix;
     }
 
     public static File getFile(final String resourceFilename) {

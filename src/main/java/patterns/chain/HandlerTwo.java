@@ -41,7 +41,7 @@ public class HandlerTwo extends AbstractHandler {
      *            the request
      */
     private void doSomething(final RequestInterface request) {
-        this.log.info("doSomething {}", request);
+        log.info("doSomething {}", request);
     }
 
 }

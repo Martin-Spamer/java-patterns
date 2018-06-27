@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class TableTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(TableTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TableTest.class);
 
     /**
      * Unit Test to typical usage.

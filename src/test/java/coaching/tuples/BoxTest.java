@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class BoxTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(BoxTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
 
     /**
      * Unit Test to box.

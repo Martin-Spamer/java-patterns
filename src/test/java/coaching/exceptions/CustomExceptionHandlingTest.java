@@ -1,12 +1,13 @@
 
 package coaching.exceptions;
 
-import coaching.exceptions.CustomExceptionHandling.CustomCreationException;
-import coaching.exceptions.CustomExceptionHandling.CustomReadException;
-import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.exceptions.CustomExceptionHandling.CustomCreationException;
+import coaching.exceptions.CustomExceptionHandling.CustomReadException;
+import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
 
 /**
  * Custom Exception Handling Test class.

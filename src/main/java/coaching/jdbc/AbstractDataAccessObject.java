@@ -1,10 +1,15 @@
 
 package coaching.jdbc;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.sql.*;
 
 /**
  * Abstract Data Access object.
@@ -35,7 +40,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
         try {
             Class.forName(driverClassName);
         } catch (final ClassNotFoundException e) {
-            this.log.error("{}", e.toString());
+            log.error("{}", e.toString());
         }
     }
 
@@ -56,7 +61,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
             final String username,
             final String password) {
         this(driverClassName);
-        this.connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
+        connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
     }
 
     /**
@@ -90,38 +95,38 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
         Connection connection = null;
         Statement statement = null;
         try {
-            connection = this.connectionFactory.getConnection();
+            connection = connectionFactory.getConnection();
             statement = connection.createStatement();
-            this.resultSet = statement.executeQuery(sql);
+            resultSet = statement.executeQuery(sql);
 
-            handleResultSet(this.resultSet);
+            handleResultSet(resultSet);
 
-            this.resultSet.close();
+            resultSet.close();
             statement.close();
             connection.close();
         } catch (final SQLException exception) {
-            this.log.error("{}", exception.toString());
+            log.error("{}", exception.toString());
         } finally {
             try {
-                if (this.resultSet != null) {
-                    this.resultSet.close();
+                if (resultSet != null) {
+                    resultSet.close();
                 }
             } catch (final Exception e) {
-                this.log.error("{}", e);
+                log.error("{}", e);
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (final Exception e) {
-                this.log.error("{}", e);
+                log.error("{}", e);
             }
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (final Exception e) {
-                this.log.error("{}", e.toString());
+                log.error("{}", e.toString());
             }
         }
         return this;
@@ -141,7 +146,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
             output.append(processRow(resultSet));
             output.append('\n');
         }
-        this.log.info(output.toString());
+        log.info(output.toString());
     }
 
     /**
@@ -216,28 +221,28 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         try {
-            connection = this.connectionFactory.getConnection();
+            connection = connectionFactory.getConnection();
             preparedStatement = connection.prepareStatement(sql);
             final int result = preparedStatement.executeUpdate();
-            this.log.info("Rows updated: {}", result);
+            log.info("Rows updated: {}", result);
             preparedStatement.close();
             connection.close();
         } catch (final SQLException exception) {
-            this.log.error("{}", exception.toString());
+            log.error("{}", exception.toString());
         } finally {
             try {
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }
             } catch (final SQLException e) {
-                this.log.error("{}", e);
+                log.error("{}", e);
             }
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (final SQLException e) {
-                this.log.error("{}", e);
+                log.error("{}", e);
             }
         }
         return this;

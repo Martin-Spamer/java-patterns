@@ -11,7 +11,8 @@ import static org.junit.Assert.assertNotNull;
 public class DependencyInversionPrincipleTest {
 
     /**
-     * Unit Test to demonstrate the dependency inversion principle with java example.
+     * Unit Test to demonstrate the dependency inversion principle with java
+     * example.
      */
     @Test
     public void testDependencyInversionPrinciple() {

@@ -1,10 +1,11 @@
 
 package coaching.xml;
 
-import coaching.jdbc.MySqlDao;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.jdbc.MySqlDao;
 
 /**
  * Unit test for the XmlToJdbc class.

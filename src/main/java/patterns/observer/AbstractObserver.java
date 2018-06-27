@@ -20,7 +20,7 @@ public abstract class AbstractObserver implements ObserverInterface {
      */
     @Override
     public void updateObservers() {
-        this.log.info("update notification received");
+        log.info("update notification received");
     }
 
 }

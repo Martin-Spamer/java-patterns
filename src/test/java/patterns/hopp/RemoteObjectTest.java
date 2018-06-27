@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
 import static org.junit.Assume.assumeNotNull;
 
 /**
@@ -14,7 +15,7 @@ import static org.junit.Assume.assumeNotNull;
 public class RemoteObjectTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(RemoteObjectProxy.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
 
     @Test
     public void testTypicalUsage() {

@@ -50,7 +50,7 @@ public abstract class AbstractContext implements ContextInterface {
      */
     @Override
     public ContextInterface setProperty(final String key, final String value) {
-        this.properties.setProperty(key, value);
+        properties.setProperty(key, value);
         return this;
     }
 
@@ -61,7 +61,7 @@ public abstract class AbstractContext implements ContextInterface {
      */
     @Override
     public String getProperty(final String key) {
-        return this.properties.getProperty(key);
+        return properties.getProperty(key);
     }
 
     /*
@@ -72,6 +72,6 @@ public abstract class AbstractContext implements ContextInterface {
      */
     @Override
     public String getProperty(final String key, final String defaultValue) {
-        return this.properties.getProperty(key);
+        return properties.getProperty(key);
     }
 }

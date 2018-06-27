@@ -1,10 +1,10 @@
 
 package coaching.associations;
 
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Arrays;
 
 /**
  * Using a basic Java array to implement a UML Composite.
@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class CompositeClassArray {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CompositeClassArray.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
 
     /** The composite. */
     // Implementing Composite using a Class Array
@@ -35,7 +35,7 @@ public class CompositeClassArray {
      */
     @Override
     public String toString() {
-        return String.format("CompositeClassArray [composite=%s]", Arrays.toString(this.composite));
+        return String.format("CompositeClassArray [composite=%s]", Arrays.toString(composite));
     }
 
 }

@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class CompositeTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CompositeTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
 
     /**
      * Unit Test to composite.

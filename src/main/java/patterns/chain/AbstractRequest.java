@@ -15,7 +15,7 @@ public abstract class AbstractRequest implements RequestInterface {
      * @return the payload
      */
     public String getPayload() {
-        return this.payload;
+        return payload;
     }
 
     /**
@@ -37,7 +37,7 @@ public abstract class AbstractRequest implements RequestInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [payload=%s]", this.getClass().getSimpleName(), this.payload);
+        return String.format("%s [payload=%s]", this.getClass().getSimpleName(), payload);
     }
 
 }

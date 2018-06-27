@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class BuilderTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(BuilderTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BuilderTest.class);
 
     /**
      * Unit Test to build one.

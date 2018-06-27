@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class DecoratorTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(DecoratorTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
 
     /**
      * Unit Test to operation.

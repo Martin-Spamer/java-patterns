@@ -1,10 +1,10 @@
 
 package coaching.associations;
 
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Arrays;
 
 /**
  * Using a basic Java array to implement an example UML Aggregation. The
@@ -16,7 +16,7 @@ public final class AggregateClassArray {
     private static final int SIZE = 4;
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(AggregateClassArray.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArray.class);
 
     /** The aggregate. */
     // Implement an Aggregate using a Array of classes.
@@ -32,7 +32,7 @@ public final class AggregateClassArray {
      */
     public void setAggregate(final int index, final AbstractAssociatedClass element) {
         LOG.info("{}.execute", this.getClass().getName());
-        this.aggregate[index] = element;
+        aggregate[index] = element;
     }
 
     /**
@@ -44,7 +44,7 @@ public final class AggregateClassArray {
      */
     public AbstractAssociatedClass getAggregate(final int index) {
         LOG.info("{}.execute", this.getClass().getName());
-        return this.aggregate[index];
+        return aggregate[index];
     }
 
     /*
@@ -54,7 +54,7 @@ public final class AggregateClassArray {
      */
     @Override
     public String toString() {
-        return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(this.aggregate));
+        return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(aggregate));
     }
 
 }

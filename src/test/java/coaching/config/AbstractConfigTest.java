@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public class AbstractConfigTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(AbstractConfigTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractConfigTest.class);
 
     /**
      * Configuration class.

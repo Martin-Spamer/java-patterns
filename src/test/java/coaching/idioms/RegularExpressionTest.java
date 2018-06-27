@@ -1,9 +1,9 @@
 
 package coaching.idioms;
 
-import org.junit.Test;
-
 import java.util.regex.Pattern;
+
+import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -12,10 +12,10 @@ import static org.junit.Assert.assertTrue;
  * Regular Expression Test Class.
  */
 public class RegularExpressionTest {
-    
+
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^XYZ$";
-    
+
     /** The pattern. */
     private final Pattern PATTERN = Pattern.compile(PATTERN_STRING);
 
@@ -42,7 +42,7 @@ public class RegularExpressionTest {
      */
     @Test
     public void testRegularExpressionPattern() {
-        final RegularExpression regularExpression = new RegularExpression(this.PATTERN);
+        final RegularExpression regularExpression = new RegularExpression(PATTERN);
         assertNotNull("Value cannot be null", regularExpression);
     }
 

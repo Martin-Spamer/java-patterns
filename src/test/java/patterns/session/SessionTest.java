@@ -1,9 +1,10 @@
 
 package patterns.session;
 
+import static org.hamcrest.CoreMatchers.notNullValue;
+
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 public class SessionTest {

@@ -22,7 +22,7 @@ public class VisitorTest {
 
         final ConcreteVisitorTwo visitorTwo = new ConcreteVisitorTwo();
         assertNotNull("Value cannot be null", visitorTwo);
-        
+
         final ConcreteElement element = new ConcreteElement();
         assertNotNull("Value cannot be null", element);
     }

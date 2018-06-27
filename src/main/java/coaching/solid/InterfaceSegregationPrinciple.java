@@ -3,12 +3,13 @@ package coaching.solid;
 
 /**
  * A class to Demonstrate the Interface Segregation Principle (ISP).
- * 
- * Intent: Clients should not be forced to depend upon interfaces that they don't use.
- * 
- *  @author			martin.spamer.
- *  @version		0.1 - first release.
- *	Created			13-Jan-2005 - 12:21:40
+ *
+ * Intent: Clients should not be forced to depend upon interfaces that they
+ * don't use.
+ *
+ * @author martin.spamer.
+ * @version 0.1 - first release.
+ *          Created 13-Jan-2005 - 12:21:40
  */
 public class InterfaceSegregationPrinciple {
 
@@ -17,8 +18,11 @@ public class InterfaceSegregationPrinciple {
      */
     public interface Abstraction {
         void work();
+
         void rest();
+
         void play();
+
         void learn();
     }
 
@@ -29,11 +33,11 @@ public class InterfaceSegregationPrinciple {
     public interface Work {
         void work();
     }
-    
+
     public interface Rest {
         void rest();
     }
-    
+
     public interface Play {
         void play();
     }
@@ -41,7 +45,7 @@ public class InterfaceSegregationPrinciple {
     public interface Learn {
         void learn();
     }
-    
+
     public abstract class Person implements Abstraction {
     }
 
@@ -63,10 +67,10 @@ public class InterfaceSegregationPrinciple {
 
         @Override
         public void learn() {
-            // do some learning            
+            // do some learning
         }
     }
-    
+
     public class Boss extends Person {
         @Override
         public void learn() {
@@ -75,7 +79,7 @@ public class InterfaceSegregationPrinciple {
 
         @Override
         public void work() {
-            // do some work            
+            // do some work
         }
 
         @Override
@@ -89,5 +93,5 @@ public class InterfaceSegregationPrinciple {
         }
 
     }
-   
+
 }

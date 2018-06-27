@@ -20,12 +20,12 @@ public class Context {
     }
 
     public Context toAlice() {
-        this.state = new StateAlice();
+        state = new StateAlice();
         return this;
     }
 
     public Context toBob() {
-        this.state = new StateBob();
+        state = new StateBob();
         return this;
     }
 
@@ -36,7 +36,7 @@ public class Context {
      */
     @Override
     public String toString() {
-        return String.format("Context [state=%s]", this.state);
+        return String.format("Context [state=%s]", state);
     }
 
 }

@@ -13,8 +13,8 @@ import static org.junit.Assert.assertNotNull;
 public class GenericBagTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(GenericBagTest.class);
-    
+    private static final Logger LOG = LoggerFactory.getLogger(GenericBagTest.class);
+
     /** The Constant VALUES. */
     private static final String[] VALUES = { "Heads", "Tails" };
 
@@ -33,7 +33,7 @@ public class GenericBagTest {
      */
     @Test
     public void testGenericBagNull() {
-        final GenericBag<String> genericBag = new GenericBag<String>((String[])null);
+        final GenericBag<String> genericBag = new GenericBag<String>((String[]) null);
         assertNotNull("Value cannot be null", genericBag);
         LOG.debug("genericBag = {}", genericBag);
     }
@@ -86,7 +86,7 @@ public class GenericBagTest {
     public void testFillNull() {
         final GenericBag<String> genericBag = new GenericBag<>();
         assertNotNull("Value cannot be null", genericBag);
-        genericBag.fill((String[])null);
+        genericBag.fill((String[]) null);
         LOG.debug("genericBag = {}", genericBag);
     }
 

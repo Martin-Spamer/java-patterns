@@ -14,7 +14,7 @@ public class Originator {
 
     public Originator(final Object state) {
         this.state = state;
-        this.memento = new Memento();
+        memento = new Memento();
     }
 
     /**
@@ -37,8 +37,8 @@ public class Originator {
      * @return the memento
      */
     public Memento createMemento() {
-        this.memento = new Memento(this.state);
-        return this.memento;
+        memento = new Memento(state);
+        return memento;
     }
 
     /**
@@ -48,15 +48,15 @@ public class Originator {
      * @return the memento
      */
     public Memento createMemento(final Object state) {
-        this.memento = new Memento(state);
-        return this.memento;
+        memento = new Memento(state);
+        return memento;
     }
 
     /**
      * Revert.
      */
     public void revert() {
-        this.state = getMemento();
+        state = getMemento();
     }
 
     /**
@@ -75,7 +75,7 @@ public class Originator {
      * @return the memento
      */
     public Memento getMemento() {
-        return this.memento;
+        return memento;
     }
 
 }

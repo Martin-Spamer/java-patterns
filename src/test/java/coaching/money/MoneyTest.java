@@ -1,14 +1,16 @@
 
 package coaching.money;
 
+import java.util.Currency;
+import java.util.Locale;
+
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Currency;
-import java.util.Locale;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import static org.junit.Assume.assumeTrue;
 
@@ -18,7 +20,7 @@ import static org.junit.Assume.assumeTrue;
 public class MoneyTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(MoneyTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
 
     /**
      * Unit Test for typical usage of Money class.

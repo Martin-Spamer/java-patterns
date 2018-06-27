@@ -1,11 +1,12 @@
 
 package patterns.memento;
 
-import org.junit.Test;
+import static org.hamcrest.CoreMatchers.notNullValue;
 
 import java.util.UUID;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
+import org.junit.Test;
+
 import static org.junit.Assert.assertThat;
 
 public class OriginatorTest {

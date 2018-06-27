@@ -1,11 +1,11 @@
 
 package patterns.memento;
 
+import java.util.UUID;
+
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.UUID;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -16,7 +16,7 @@ import static org.junit.Assert.assertNotNull;
 public class MementoTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(MementoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MementoTest.class);
 
     /**
      * Unit Test to memento typical usage.

@@ -1,12 +1,12 @@
 
 package patterns.command;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A factory for creating Command objects.
@@ -16,7 +16,7 @@ import java.util.Properties;
 public final class CommandFactory implements InvokerInterface {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CommandFactory.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
 
     /** The Constant COMMANDS_PROPERTIES. */
     private static final String COMMANDS_PROPERTIES = "commands.properties";
@@ -51,8 +51,8 @@ public final class CommandFactory implements InvokerInterface {
      */
     private void initialise(final String filename) {
         try {
-            this.properties.load(inputStream(filename));
-            LOG.info("properties = {}", this.properties);
+            properties.load(inputStream(filename));
+            LOG.info("properties = {}", properties);
         } catch (final IOException e) {
             LOG.error("{}", e);
         }
@@ -100,7 +100,7 @@ public final class CommandFactory implements InvokerInterface {
      *             the missing command exception
      */
     private ResultInterface executeActionName(final String actionName) throws MissingCommandException {
-        final String className = this.properties.getProperty(actionName);
+        final String className = properties.getProperty(actionName);
         if (className != null) {
             if (className.length() > 0) {
                 return executeByClassName(className);

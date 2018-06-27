@@ -24,7 +24,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      */
     @Override
     public DecoratorInterface attachBefore(final AbstractComponent behaviour) {
-        this.beforeBehaviour.add(behaviour);
+        beforeBehaviour.add(behaviour);
         return this;
     }
 
@@ -37,7 +37,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      */
     @Override
     public DecoratorInterface detachBefore(final AbstractComponent behaviour) {
-        this.beforeBehaviour.remove(behaviour);
+        beforeBehaviour.remove(behaviour);
         return this;
     }
 
@@ -50,7 +50,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      */
     @Override
     public DecoratorInterface attachAfter(final AbstractComponent behaviour) {
-        this.afterBehaviour.add(behaviour);
+        afterBehaviour.add(behaviour);
         return this;
     }
 
@@ -63,16 +63,17 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      */
     @Override
     public DecoratorInterface detachAfter(final AbstractComponent behaviour) {
-        this.afterBehaviour.remove(behaviour);
+        afterBehaviour.remove(behaviour);
         return this;
     }
 
     /**
      * Before operation.
-     * @return 
+     * 
+     * @return
      */
     protected DecoratorInterface beforeOperation() {
-        for (final ComponentInterface component : this.beforeBehaviour) {
+        for (final ComponentInterface component : beforeBehaviour) {
             component.operation();
         }
         return this;
@@ -80,10 +81,11 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 
     /**
      * After operation.
-     * @return 
+     * 
+     * @return
      */
     protected DecoratorInterface afterOperation() {
-        for (final ComponentInterface component : this.afterBehaviour) {
+        for (final ComponentInterface component : afterBehaviour) {
             component.operation();
         }
         return this;

@@ -32,7 +32,7 @@ public enum EnumExample {
      * @return the text
      */
     public String getText() {
-        return this.textValue;
+        return textValue;
     }
 
     /**

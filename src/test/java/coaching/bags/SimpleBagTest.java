@@ -1,12 +1,15 @@
 
 package coaching.bags;
 
-import coaching.tuples.BoxTest;
 import org.junit.Test;
-import org.slf4j.*;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import coaching.tuples.BoxTest;
 
 /**
  * Unit Test examples for a Bag Class.
@@ -14,7 +17,7 @@ import static org.junit.Assert.*;
 public class SimpleBagTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(BoxTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
 
     /** The Constant VALUES. */
     private static final String[] VALUES = { "Cat", "Dog", "Rabbit" };

@@ -5,7 +5,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Examples of selection programming instructions.
@@ -13,7 +15,7 @@ import static org.junit.Assert.*;
 public class SelectionTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(SelectionTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SelectionTest.class);
 
     /**
      * The <code>if</code> statement is an example of selection.

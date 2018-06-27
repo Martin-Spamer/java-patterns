@@ -2,8 +2,6 @@
 package coaching.xml;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,9 +17,9 @@ import org.w3c.dom.NodeList;
 /**
  * XML Configuration Class.
  */
-public class XmlConfig  {
+public class XmlConfig {
 
-    private static final Logger LOG  = LoggerFactory.getLogger(XmlConfig.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XmlConfig.class);
 
     /** configuration element. */
     private Element configElement = null;
@@ -92,7 +90,7 @@ public class XmlConfig  {
             try {
                 final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
                 final Document document = documentBuilder.parse(configFile);
-                this.configElement = document.getDocumentElement();
+                configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {
                 LOG.error(parserConfigurationException.toString());
             }
@@ -109,7 +107,7 @@ public class XmlConfig  {
      * @return the attribute
      */
     protected String getAttribute(final String attributeName) {
-        return this.configElement.getAttribute(attributeName);
+        return configElement.getAttribute(attributeName);
     }
 
     /**
@@ -120,7 +118,7 @@ public class XmlConfig  {
      * @return the elements by tag name
      */
     protected NodeList getElementsByTagName(final String elementName) {
-        return this.configElement.getElementsByTagName(elementName);
+        return configElement.getElementsByTagName(elementName);
     }
 
     /*
@@ -129,7 +127,7 @@ public class XmlConfig  {
      * @see framework.config.ConfigInterface#getProperty(java.lang.String)
      */
     public String getProperty(final String key) {
-        final NodeList propertyElements = this.configElement.getElementsByTagName("property");
+        final NodeList propertyElements = configElement.getElementsByTagName("property");
         for (int i = 0; i < propertyElements.getLength(); i++) {
             final Node item = propertyElements.item(i);
             LOG.info("item = {}", item.toString());
@@ -154,7 +152,7 @@ public class XmlConfig  {
      * @return the tag name
      */
     protected String getTagName() {
-        return this.configElement.getTagName();
+        return configElement.getTagName();
     }
 
     /*
@@ -164,7 +162,7 @@ public class XmlConfig  {
      */
     @Override
     public String toString() {
-        return null != this.configElement ? toXml(this.configElement) : "null";
+        return null != configElement ? toXml(configElement) : "null";
     }
 
     /**

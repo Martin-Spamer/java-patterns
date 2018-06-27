@@ -15,7 +15,7 @@ class Caretaker {
      * @return the memento
      */
     public Memento getMemento() {
-        return this.memento;
+        return memento;
     }
 
     /**

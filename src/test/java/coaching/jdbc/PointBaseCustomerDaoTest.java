@@ -15,17 +15,17 @@ import static org.junit.Assert.assertNotNull;
 public class PointBaseCustomerDaoTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);
-    
+    private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);
+
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-    
+
     /** The Constant JDBC_URL. */
     private final static String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
-    
+
     /** The Constant USER. */
     private final static String USER = "PBPUBLIC";
-    
+
     /** The Constant PASSWORD. */
     private final static String PASSWORD = "PBPUBLIC";
 

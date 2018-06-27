@@ -1,6 +1,9 @@
 
 package coaching.xml;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -8,16 +11,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 /**
  * DOM Element Mapper class.
  */
 public class ElementMapper {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(ElementMapper.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ElementMapper.class);
 
     /** The index name. */
     private String indexName = "id";
@@ -63,9 +63,9 @@ public class ElementMapper {
     public void initialisation(final NodeList nodeList) {
         for (int index = 0; index < nodeList.getLength(); index++) {
             final Element element = (Element) nodeList.item(index);
-            final String key = element.getAttribute(this.indexName);
-            this.elementMap.put(key, element);
-            ElementMapper.LOG.info("{}={}", this.indexName, element);
+            final String key = element.getAttribute(indexName);
+            elementMap.put(key, element);
+            ElementMapper.LOG.info("{}={}", indexName, element);
         }
     }
 
@@ -81,7 +81,7 @@ public class ElementMapper {
         // references, CDATA sections, and text nodes; but not
         // comments or processing instructions
         final int type = node.getNodeType();
-        if (type == Node.COMMENT_NODE || type == Node.PROCESSING_INSTRUCTION_NODE) {
+        if ((type == Node.COMMENT_NODE) || (type == Node.PROCESSING_INSTRUCTION_NODE)) {
             return "";
         }
 
@@ -110,7 +110,7 @@ public class ElementMapper {
      * @return the element
      */
     public Element findElement(final String attributeName) {
-        return this.elementMap.get(attributeName);
+        return elementMap.get(attributeName);
     }
 
     /**
@@ -121,7 +121,7 @@ public class ElementMapper {
      * @return the string
      */
     public String findElementText(final String attributeName) {
-        final Node node = this.elementMap.get(attributeName);
+        final Node node = elementMap.get(attributeName);
         return getText(node);
     }
 
@@ -134,8 +134,8 @@ public class ElementMapper {
      */
     public String getIndexName(final String indexAttribute) {
         if (indexAttribute != null) {
-            this.indexName = indexAttribute;
+            indexName = indexAttribute;
         }
-        return this.indexName;
+        return indexName;
     }
 }

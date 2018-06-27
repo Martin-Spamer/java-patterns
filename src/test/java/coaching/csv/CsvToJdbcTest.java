@@ -1,12 +1,13 @@
 
 package coaching.csv;
 
-import coaching.jdbc.XmlDAOTest;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
+
+import coaching.jdbc.XmlDAOTest;
 
 /**
  * CsvToJdbcTest Class.
@@ -14,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class CsvToJdbcTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(XmlDAOTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XmlDAOTest.class);
 
     /** JDBC DRIVER . */
     private static final String DRIVER = "org.postgresql.Driver";
@@ -48,8 +49,8 @@ public class CsvToJdbcTest {
         assertEquals(instance, instance.setUrl(URL));
         assertEquals(instance, instance.setUsername(USERNAME));
         assertEquals(instance, instance.setPassword(PASSWORD));
-        assertEquals(instance, instance.setTableName(this.tableName));
-        assertEquals(instance, instance.setFilename(this.filename));
+        assertEquals(instance, instance.setTableName(tableName));
+        assertEquals(instance, instance.setFilename(filename));
     }
 
 }

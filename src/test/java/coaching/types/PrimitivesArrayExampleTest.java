@@ -1,10 +1,11 @@
 
 package coaching.types;
 
-import coaching.arrays.NativeTypesArray;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.arrays.NativeTypesArray;
 
 /**
  * Unit Tests for Primitives Arrays.

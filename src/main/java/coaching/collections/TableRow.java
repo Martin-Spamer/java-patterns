@@ -1,10 +1,13 @@
 
 package coaching.collections;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.*;
 
 /**
  * Table Row class.
@@ -26,7 +29,7 @@ public class TableRow {
     public TableRow(final String... values) {
         for (final String value : values) {
             final TableCell tableCell = new TableCell(value);
-            this.cols.add(tableCell);
+            cols.add(tableCell);
         }
     }
 
@@ -38,7 +41,7 @@ public class TableRow {
     public String toRowString() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableCell> tableRow = this.cols.iterator();
+        final Iterator<TableCell> tableRow = cols.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -58,7 +61,7 @@ public class TableRow {
      */
     @Override
     public String toString() {
-        return String.format("TableRow [cols=%s]", Collections.singletonList(this.cols));
+        return String.format("TableRow [cols=%s]", Collections.singletonList(cols));
     }
 
 }

@@ -1,11 +1,11 @@
 
 package coaching.idioms;
 
+import java.util.Calendar;
+
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Calendar;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public class DateHelperTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(DateHelperTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DateHelperTest.class);
 
     /**
      * Unit Test to now.

@@ -2,12 +2,13 @@
 package patterns.mvc;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
+
 import patterns.mvc.controller.AbstractController;
 import patterns.mvc.controller.Controller;
 import patterns.mvc.model.Model;
 import patterns.mvc.view.View;
-
-import static org.junit.Assert.assertNotNull;
 
 /**
  * Model View Controller Test Class.

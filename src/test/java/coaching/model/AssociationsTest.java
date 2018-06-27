@@ -13,11 +13,11 @@ import static org.junit.Assert.assertNotNull;
 public class AssociationsTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(AssociationsTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AssociationsTest.class);
 
     /**
      * Unit Test for Car example.
-     * 
+     *
      * A Car has an engine from construction.
      */
     @Test
@@ -30,7 +30,7 @@ public class AssociationsTest {
 
     /**
      * Example aggregation.
-     * 
+     *
      * The driver changes.
      */
     @Test
@@ -64,7 +64,7 @@ public class AssociationsTest {
         truck.setDriver(driver);
         LOG.info("truck = {}", truck);
     }
-    
+
     /**
      * Unit Test to example taxi.
      */
@@ -78,10 +78,10 @@ public class AssociationsTest {
         final Driver driver = new Driver("Alice");
         assertNotNull("Value cannot be null", driver);
         taxi.setDriver(driver);
-        
+
         // When
         final Passenger passenger = new Passenger("Bob");
-        assertNotNull("Value cannot be null", passenger);        
+        assertNotNull("Value cannot be null", passenger);
         taxi.setPassenger(passenger);
         LOG.info("taxi = {}", taxi);
         taxi.clearPassenger();

@@ -1,15 +1,9 @@
 
 package coaching.config;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -20,7 +14,7 @@ import org.w3c.dom.NodeList;
 public class XmlConfig extends AbstractConfig {
 
     /** configuration element. */
-    private Element configElement = null;
+    private final Element configElement = null;
 
     /**
      * Instantiates a new XmlConfig.
@@ -63,9 +57,9 @@ public class XmlConfig extends AbstractConfig {
     public void loadFromXmlFile(final InputStream resourceAsStream) {
         if (resourceAsStream != null) {
             try {
-                this.properties.loadFromXML(resourceAsStream);
+                properties.loadFromXML(resourceAsStream);
             } catch (final IOException e) {
-                this.log.error(e.toString());
+                log.error(e.toString());
             }
         }
     }
@@ -75,13 +69,13 @@ public class XmlConfig extends AbstractConfig {
         final String property = getProperty(key);
         return property == null ? defaultValue : property;
     }
-    
+
     @Override
     public String getProperty(final String key) {
-        final NodeList propertyElements = this.configElement.getElementsByTagName("property");
+        final NodeList propertyElements = configElement.getElementsByTagName("property");
         for (int i = 0; i < propertyElements.getLength(); i++) {
             final Node item = propertyElements.item(i);
-            this.log.info("item={}", item.toString());
+            log.info("item={}", item.toString());
         }
         return null;
     }

@@ -15,7 +15,7 @@ public class DecoratedComponent extends AbstractDecorator implements DecoratorIn
     public AbstractComponent operation() {
         super.beforeOperation();
 
-        this.log.info("{}.operation", this.getClass().getSimpleName());
+        log.info("{}.operation", this.getClass().getSimpleName());
 
         super.afterOperation();
 

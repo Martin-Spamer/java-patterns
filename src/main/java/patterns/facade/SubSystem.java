@@ -16,7 +16,7 @@ public class SubSystem {
      * Operation.
      */
     public void operation() {
-        this.log.info("%s.operation", toString());
+        log.info("%s.operation", toString());
     }
 
     /*

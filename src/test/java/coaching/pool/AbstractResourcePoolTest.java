@@ -5,7 +5,10 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * AbstractResourcePoolTest Class.
@@ -13,7 +16,7 @@ import static org.junit.Assert.*;
 public class AbstractResourcePoolTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(AbstractResourcePoolTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractResourcePoolTest.class);
 
     /**
      * TestResourcePool Class.

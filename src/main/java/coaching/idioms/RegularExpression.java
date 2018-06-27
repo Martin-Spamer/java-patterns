@@ -1,11 +1,11 @@
 
 package coaching.idioms;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * RegularExpression Class.
@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class RegularExpression {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(RegularExpression.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RegularExpression.class);
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^ABC$";
@@ -38,7 +38,7 @@ public class RegularExpression {
      */
     public RegularExpression(final String patternString) {
         super();
-        this.pattern = Pattern.compile(patternString);
+        pattern = Pattern.compile(patternString);
     }
 
     /**
@@ -64,7 +64,7 @@ public class RegularExpression {
      * @return true, if successful, otherwise false.
      */
     public boolean verify(final String code) {
-        final Matcher matcher = this.pattern.matcher(code);
+        final Matcher matcher = pattern.matcher(code);
         return matcher.find();
     }
 
@@ -77,7 +77,7 @@ public class RegularExpression {
      *            the original
      */
     public void find(final String original) {
-        final Matcher matcher = this.pattern.matcher(original);
+        final Matcher matcher = pattern.matcher(original);
         while (matcher.find()) {
             final String message = "Test %s starting at index %s and ending at index %s";
             final String string = String.format(message, matcher.group(), matcher.start(), matcher.end());
@@ -98,7 +98,7 @@ public class RegularExpression {
      */
     public String replace(final String original, final String newSubString) {
         // final Matcher matcher = this.PATTERN.matcher(original);
-        return this.pattern.matcher(original).replaceAll(newSubString);
+        return pattern.matcher(original).replaceAll(newSubString);
     }
 
 }

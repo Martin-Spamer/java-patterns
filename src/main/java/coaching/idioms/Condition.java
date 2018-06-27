@@ -25,7 +25,7 @@ public class Condition implements ConditionInterface<Boolean> {
      * @return the condition
      */
     public boolean isTrue() {
-        return this.result;
+        return result;
     }
 
     /**
@@ -34,7 +34,7 @@ public class Condition implements ConditionInterface<Boolean> {
      * @return the condition
      */
     public boolean isFalse() {
-        return this.result;
+        return result;
     }
 
     /*
@@ -44,7 +44,7 @@ public class Condition implements ConditionInterface<Boolean> {
      */
     @Override
     public String toString() {
-        return String.format("Condition [result=%s]", this.result);
+        return String.format("Condition [result=%s]", result);
     }
 
 }

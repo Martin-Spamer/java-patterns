@@ -1,15 +1,17 @@
 
 package coaching.money;
 
+import java.util.Currency;
+import java.util.Locale;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Currency;
-import java.util.Locale;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import static org.junit.Assume.assumeTrue;
 
@@ -19,7 +21,7 @@ import static org.junit.Assume.assumeTrue;
 public class PoundsTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(PoundsTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PoundsTest.class);
 
     /**
      * A class for Pounds as Money.
@@ -51,7 +53,7 @@ public class PoundsTest {
         Currency defaultCurrency = Currency.getInstance(defaultLocale);
         assumeTrue(defaultCurrency.getSymbol().equals("£"));
     }
-    
+
     /**
      * Unit Test to money.
      */

@@ -1,13 +1,13 @@
 
 package coaching.collections;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Table class.
@@ -61,7 +61,7 @@ public class Table {
      * @return the tableName
      */
     public String getTableName() {
-        return this.tableName;
+        return tableName;
     }
 
     /**
@@ -93,7 +93,7 @@ public class Table {
      * @see java.util.List#add(java.lang.Object)
      */
     public boolean add(final TableRow e) {
-        return this.rows.add(e);
+        return rows.add(e);
     }
 
     /**
@@ -105,7 +105,7 @@ public class Table {
      * @see java.util.List#get(int)
      */
     public TableRow get(final int index) {
-        return this.rows.get(index);
+        return rows.get(index);
     }
 
     /**
@@ -125,7 +125,7 @@ public class Table {
     protected String tableHeader() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<String> itemIterator = this.colNames.iterator();
+        final Iterator<String> itemIterator = colNames.iterator();
         if (itemIterator.hasNext()) {
             stringBuffer.append(itemIterator.next());
             while (itemIterator.hasNext()) {
@@ -146,7 +146,7 @@ public class Table {
     protected String tableBody() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableRow> tableRow = this.rows.iterator();
+        final Iterator<TableRow> tableRow = rows.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -166,7 +166,7 @@ public class Table {
      */
     @Override
     public String toString() {
-        return String.format("Table [tableName=%s, colNames=%s, rows=%s]", this.tableName, this.colNames, this.rows);
+        return String.format("Table [tableName=%s, colNames=%s, rows=%s]", tableName, colNames, rows);
     }
 
 }

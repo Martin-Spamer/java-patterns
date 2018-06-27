@@ -1,15 +1,16 @@
 
 package coaching.jdbc;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Text;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Text;
 
 /**
  * Provides a XML reader for input and a JDBC PointBase Database for output.
@@ -49,11 +50,11 @@ public final class XmlDao extends AbstractDataAccessObject {
     public Document toXmlDocument() {
         try {
             read(SQL);
-            final Document xmlDocument = toXmlDocument(this.resultSet);
-            this.resultSet.close();
+            final Document xmlDocument = toXmlDocument(resultSet);
+            resultSet.close();
             return xmlDocument;
         } catch (final SQLException e) {
-            this.log.error("{}", e.toString());
+            log.error("{}", e.toString());
         }
         return null;
     }
@@ -97,7 +98,7 @@ public final class XmlDao extends AbstractDataAccessObject {
                 }
             }
         } catch (final Exception e) {
-            this.log.error("{}", e.toString());
+            log.error("{}", e.toString());
         }
         return document;
     }
@@ -110,11 +111,11 @@ public final class XmlDao extends AbstractDataAccessObject {
     public String toXmlString() {
         try {
             read(SQL);
-            final String xmlString = toXmlString(this.resultSet);
-            this.resultSet.close();
+            final String xmlString = toXmlString(resultSet);
+            resultSet.close();
             return xmlString;
         } catch (final SQLException e) {
-            this.log.error("{}", e.toString());
+            log.error("{}", e.toString());
         }
         return null;
     }
@@ -148,7 +149,7 @@ public final class XmlDao extends AbstractDataAccessObject {
             xml.append("</TABLE>\n");
             resultSet.close();
         } catch (final Exception e) {
-            this.log.error("{}", e.toString());
+            log.error("{}", e.toString());
         }
         return xml.toString();
     }

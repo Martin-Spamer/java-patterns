@@ -3,6 +3,7 @@ package patterns.mvc.view;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import patterns.mvc.ModelInterface;
 import patterns.mvc.ViewInterface;
 import patterns.mvc.model.Model;
@@ -23,7 +24,7 @@ public abstract class AbstractView implements ViewInterface {
      */
     public AbstractView() {
         super();
-        this.model = new Model();
+        model = new Model();
     }
 
     /*
@@ -43,7 +44,7 @@ public abstract class AbstractView implements ViewInterface {
      */
     @Override
     public void detachModel() {
-        this.model = null;
+        model = null;
     }
 
     /*
@@ -53,7 +54,7 @@ public abstract class AbstractView implements ViewInterface {
      */
     @Override
     public void show() {
-        this.log.info("{}.showView", this.getClass().getSimpleName());
+        log.info("{}.showView", this.getClass().getSimpleName());
     }
 
 }

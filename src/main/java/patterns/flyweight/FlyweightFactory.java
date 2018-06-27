@@ -19,7 +19,7 @@ public final class FlyweightFactory {
      */
     public FlyWeight create() {
         final FlyWeight flyWeight = new FlyWeight("CommonState");
-        this.list.add(flyWeight);
+        list.add(flyWeight);
         return flyWeight;
     }
 

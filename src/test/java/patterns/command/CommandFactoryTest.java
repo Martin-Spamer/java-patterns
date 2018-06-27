@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class CommandFactoryTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CommandFactoryTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);
 
     /**
      * Unit Test to command factory.

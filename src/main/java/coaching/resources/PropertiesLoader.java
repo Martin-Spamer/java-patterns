@@ -33,7 +33,7 @@ public class PropertiesLoader extends ResourceLoader {
      */
     public PropertiesLoader() {
         super();
-        this.log.info("{}.{}", this.getClass().getSimpleName(), this.properties.toString());
+        log.info("{}.{}", this.getClass().getSimpleName(), properties.toString());
     }
 
     /**
@@ -43,7 +43,7 @@ public class PropertiesLoader extends ResourceLoader {
      */
     public PropertiesLoader(final String propertyFileName) {
         super(propertyFileName);
-        this.log.info("{}.{}", this.getClass().getSimpleName(), this.properties.toString());
+        log.info("{}.{}", this.getClass().getSimpleName(), properties.toString());
     }
 
     /*
@@ -53,14 +53,14 @@ public class PropertiesLoader extends ResourceLoader {
      */
     @Override
     public ResourceLoader load(final InputStream streamForResource) {
-        if (this.properties == null) {
-            this.properties = new Properties();
+        if (properties == null) {
+            properties = new Properties();
         }
         try {
-            this.properties.load(streamForResource);
-            this.loaded = true;
+            properties.load(streamForResource);
+            loaded = true;
         } catch (final IOException e) {
-            this.log.error(e.toString());
+            log.error(e.toString());
         }
         return this;
     }
@@ -71,7 +71,7 @@ public class PropertiesLoader extends ResourceLoader {
      * @return the properties
      */
     public Properties getProperties() {
-        return this.properties;
+        return properties;
     }
 
 }

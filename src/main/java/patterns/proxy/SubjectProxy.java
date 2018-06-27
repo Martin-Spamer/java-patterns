@@ -16,6 +16,6 @@ public final class SubjectProxy extends AbstractSubject {
      */
     @Override
     public void request() {
-        this.realSubject.request();
+        realSubject.request();
     }
 }

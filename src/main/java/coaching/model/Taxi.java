@@ -42,17 +42,21 @@ public class Taxi extends Car {
      * @return the passenger
      */
     public Passenger getPassenger() {
-        return this.passenger;
+        return passenger;
     }
-    
+
     /**
      * Clear passenger.
      */
     public void clearPassenger() {
-        this.passenger = null;
+        passenger = null;
     }
 
-
+    /*
+     * (non-Javadoc)
+     * 
+     * @see coaching.model.AbstractVehicle#toString()
+     */
     @Override
     public String toString() {
         return String.format("%s [%s[passenger=%s]]", this.getClass().getSimpleName(), super.toString(), passenger);

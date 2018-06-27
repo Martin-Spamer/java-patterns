@@ -31,7 +31,7 @@ public class TableCell {
      * @return the value
      */
     public String getValue() {
-        return this.value;
+        return value;
     }
 
     /**
@@ -53,7 +53,7 @@ public class TableCell {
      */
     @Override
     public String toString() {
-        return String.format("%s", this.value);
+        return String.format("%s", value);
     }
 
 }

@@ -9,13 +9,13 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * Example of an Invoker class.
- * 
+ *
  * Each command is statically constructed and invoked.
  */
 public class InvokerExampleTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(InvokerExampleTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(InvokerExampleTest.class);
 
     /**
      * Unit Test for example command.

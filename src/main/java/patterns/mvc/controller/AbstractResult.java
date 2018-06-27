@@ -23,7 +23,7 @@ public abstract class AbstractResult implements ResultInterface {
      */
     @Override
     public boolean getResult() {
-        return this.result;
+        return result;
     }
 
     /*
@@ -34,7 +34,7 @@ public abstract class AbstractResult implements ResultInterface {
      */
     @Override
     public ResultInterface setResult(final boolean newResult) {
-        this.result = newResult;
+        result = newResult;
         return this;
     }
 
@@ -45,7 +45,7 @@ public abstract class AbstractResult implements ResultInterface {
      */
     @Override
     public ResultInterface updateResult(final boolean newResult) {
-        this.result &= newResult;
+        result &= newResult;
         return this;
     }
 
@@ -57,7 +57,7 @@ public abstract class AbstractResult implements ResultInterface {
      */
     @Override
     public ResultInterface updateResult(final ResultInterface newResult) {
-        this.result &= newResult.getResult();
+        result &= newResult.getResult();
         return this;
     }
 }

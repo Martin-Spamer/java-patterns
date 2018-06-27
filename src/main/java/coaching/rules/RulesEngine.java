@@ -1,16 +1,17 @@
 
 package coaching.rules;
 
+import java.io.InputStream;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.InputStream;
 
 /**
  * Rules Engine Class.
@@ -18,7 +19,7 @@ import java.io.InputStream;
 public class RulesEngine {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(RulesEngine.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
 
     /** The document. */
     private Document document = null;
@@ -92,8 +93,8 @@ public class RulesEngine {
         final InputStream is = inputStreamFrom(configFilename);
         try {
             if (null != is) {
-                this.document = documentBuilder.parse(is);
-                this.documentElement = this.document.getDocumentElement();
+                document = documentBuilder.parse(is);
+                documentElement = document.getDocumentElement();
                 return true;
             }
         } catch (final Exception e) {
@@ -123,8 +124,8 @@ public class RulesEngine {
     public boolean execute() {
         final boolean returnValue = false;
         LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
-        if (this.documentElement != null) {
-            final NodeList childNodes = this.documentElement.getChildNodes();
+        if (documentElement != null) {
+            final NodeList childNodes = documentElement.getChildNodes();
             LOG.info("childNodes  = {}", childNodes);
         }
         return returnValue;
@@ -153,17 +154,17 @@ public class RulesEngine {
      */
     protected Element getElement(final String elementName) {
         Element element = null;
-        final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
+        final NodeList nodelist = documentElement.getElementsByTagName(elementName);
         if (nodelist != null) {
             final int length = nodelist.getLength();
             if (length == 0) {
                 final String className = this.getClass().getSimpleName();
                 LOG.info("{}", className);
-                LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
+                LOG.info("Element {} is missing in element {}", elementName, documentElement.toString());
             } else if (length > 1) {
                 final String className = this.getClass().getSimpleName();
                 LOG.info("{}", className);
-                LOG.info(" surplus Elements {} ignored in element: {}", elementName, this.documentElement.toString());
+                LOG.info(" surplus Elements {} ignored in element: {}", elementName, documentElement.toString());
                 element = (Element) nodelist.item(0);
             }
         }

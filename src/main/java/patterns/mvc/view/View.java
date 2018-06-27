@@ -13,7 +13,7 @@ public class View extends AbstractView {
      */
     @Override
     public void show() {
-        this.log.info("{}.showView", this.getClass().getSimpleName());
+        log.info("{}.showView", this.getClass().getSimpleName());
     }
 
 }

@@ -10,7 +10,7 @@ class StateBob extends AbstractState {
      */
     @Override
     public void handle() {
-        this.log.info("handle()");
+        log.info("handle()");
     }
 
 }

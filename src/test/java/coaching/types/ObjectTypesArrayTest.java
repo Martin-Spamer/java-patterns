@@ -1,10 +1,11 @@
 
 package coaching.types;
 
-import coaching.arrays.ObjectTypesArray;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.arrays.ObjectTypesArray;
 
 /**
  * The ObjectTypesArrayTest Class.
