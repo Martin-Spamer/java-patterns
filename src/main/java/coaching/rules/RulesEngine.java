@@ -18,7 +18,7 @@ import java.io.InputStream;
 public class RulesEngine {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(RulesEngine.class);
 
     /** The document. */
     private Document document = null;

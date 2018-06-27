@@ -2,7 +2,7 @@
 package coaching.model;
 
 /**
- * PetrolEngine Class.
+ * PetrolEngine class.
  */
 public class PetrolEngine extends AbstractEngine implements FuelInterface {
 
@@ -10,7 +10,7 @@ public class PetrolEngine extends AbstractEngine implements FuelInterface {
      * Instantiates a new petrol engine.
      */
     public PetrolEngine() {
-        super(new PetrolFuel());
+        super(new Petrol());
     }
 
 }

@@ -2,7 +2,7 @@
 package patterns.decorator;
 
 /**
- * ConcreteDecorator Class.
+ * An example concrete decorator class.
  */
 public class ConcreteDecorator extends AbstractComponent {
 

@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class AggregateClassArrayTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArrayTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(AggregateClassArrayTest.class);
 
     /**
      * Unit Test to execute.

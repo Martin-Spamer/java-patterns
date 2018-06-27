@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 public class CsvToJdbcTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlDAOTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(XmlDAOTest.class);
 
     /** JDBC DRIVER . */
     private static final String DRIVER = "org.postgresql.Driver";

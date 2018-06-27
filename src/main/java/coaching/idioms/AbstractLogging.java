@@ -26,7 +26,7 @@ public abstract class AbstractLogging implements LoggingInterface {
      */
     @Override
     public void toLog() {
-        this.log.info("{}.toLog", this.getClass().getSimpleName());
+        this.log.info("the.{}.toLog", this.getClass().getSimpleName());
     }
 
     /*
@@ -36,7 +36,7 @@ public abstract class AbstractLogging implements LoggingInterface {
      */
     @Override
     public void logTo(final Logger destinationLog) {
-        destinationLog.info("{}.logTo", this.getClass().getSimpleName());
+        destinationLog.info("destinationLog.{}.logTo", this.getClass().getSimpleName());
     }
 
     /*

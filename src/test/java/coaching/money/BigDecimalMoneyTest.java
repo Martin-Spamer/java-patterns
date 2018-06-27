@@ -14,12 +14,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assume.assumeTrue;
 
 /**
- * Money Locale Test Class.
+ * Money Locale Test class.
  */
 public class BigDecimalMoneyTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BigDecimalMoneyTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(BigDecimalMoneyTest.class);
 
     /**
      * Test using the default locale.
@@ -27,12 +27,22 @@ public class BigDecimalMoneyTest {
     @Test
     public void testDefaultLocale() {
         LOG.info("testDefaultLocale");
+
         final Locale defaultLocale = Locale.getDefault();
         assertNotNull("Value cannot be null", defaultLocale);
         LOG.info("defaultLocale = {}", defaultLocale);
         LOG.info("defaultLocale = {}", defaultLocale.getDisplayName());
+
         final Currency currency = Currency.getInstance(defaultLocale);
-        assertNotNull("Value cannot be null", new BigDecimalMoney(currency));
+        assertNotNull("Value cannot be null", currency);
+        LOG.info("currency  = {}", currency);
+        LOG.info("currency  = {}", currency.getDisplayName());
+        LOG.info("currency  = {}", currency.getCurrencyCode());
+        LOG.info("currency  = {}", currency.getSymbol());
+
+        BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        assertNotNull("Value cannot be null", bigDecimalMoney );
+        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -41,12 +51,22 @@ public class BigDecimalMoneyTest {
     @Test
     public void testFrenchLocale() {
         LOG.info("testFrenchLocale");
+
         final Locale frenchLocale = Locale.FRANCE;
         assertNotNull("Value cannot be null", frenchLocale);
         LOG.info("frenchLocale = {}", frenchLocale);
         LOG.info("frenchLocale = {}", frenchLocale.getDisplayName());
+
         final Currency currency = Currency.getInstance(frenchLocale);
-        assertNotNull("Value cannot be null", new BigDecimalMoney(currency));
+        assertNotNull("Value cannot be null", currency);
+        LOG.info("currency  = {}", currency);
+        LOG.info("currency  = {}", currency.getDisplayName());
+        LOG.info("currency  = {}", currency.getCurrencyCode());
+        LOG.info("currency  = {}", currency.getSymbol());
+        
+        BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        assertNotNull("Value cannot be null", bigDecimalMoney );
+        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -55,12 +75,21 @@ public class BigDecimalMoneyTest {
     @Test
     public void testUkLocale() {
         LOG.info("testUkLocale");
+
         final Locale ukLocale = Locale.UK;
         assertNotNull("Value cannot be null", ukLocale);
         LOG.info("ukLocale = {}", ukLocale);
         LOG.info("ukLocale.getDisplayName = {}", ukLocale.getDisplayName());
+
         final Currency currency = Currency.getInstance(ukLocale);
-        assertNotNull("Value cannot be null", new BigDecimalMoney(currency));
+        LOG.info("currency  = {}", currency);
+        LOG.info("currency  = {}", currency.getDisplayName());
+        LOG.info("currency  = {}", currency.getCurrencyCode());
+        LOG.info("currency  = {}", currency.getSymbol());
+        
+        BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        assertNotNull("Value cannot be null", bigDecimalMoney );
+        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -71,33 +100,34 @@ public class BigDecimalMoneyTest {
         LOG.info("testBigDecimalMoney");
         Locale defaultLocale = Locale.getDefault();
         Currency defaultCurrency = Currency.getInstance(defaultLocale);
-        assumeTrue(defaultCurrency.getSymbol().equals("£"));
+        String currencySymbol = defaultCurrency.getSymbol();
+        assumeTrue(currencySymbol.equals("£"));
 
         final BigDecimalMoney money = new BigDecimalMoney();
         assertNotNull("Value cannot be null", money);
         final Currency currency = money.getCurrency();
         assertNotNull("Value cannot be null", currency);
-        assertEquals("£0.00", money.toString());
+        assertEquals(currencySymbol+"0.00", money.toString());
         LOG.info("money = {}", money);
 
         final BigDecimalMoney money0 = new BigDecimalMoney();
         assertNotNull("Value cannot be null", money);
-        assertEquals("£0.00", money0.toString());
+        assertEquals(currencySymbol+"0.00", money0.toString());
         LOG.info("money = {}", money0);
 
         final BigDecimalMoney money1 = new BigDecimalMoney("1.00");
         assertNotNull("Value cannot be null", money);
-        assertEquals("£1.00", money1.toString());
+        assertEquals(currencySymbol+"1.00", money1.toString());
         LOG.info("money = {}", money1);
 
         final BigDecimalMoney moneyStr99 = new BigDecimalMoney("99.99");
         assertNotNull("Value cannot be null", money);
-        assertEquals("£99.99", moneyStr99.toString());
+        assertEquals(currencySymbol+"99.99", moneyStr99.toString());
         LOG.info("money = {}", moneyStr99);
 
         final BigDecimalMoney moneyStr100 = new BigDecimalMoney("100.00");
         assertNotNull("Value cannot be null", money);
-        assertEquals("£100.00", moneyStr100.toString());
+        assertEquals(currencySymbol+"100.00", moneyStr100.toString());
         LOG.info("money = {}", moneyStr100);
     }
 

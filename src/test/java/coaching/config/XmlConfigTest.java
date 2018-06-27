@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class XmlConfigTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlConfigTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(XmlConfigTest.class);
 
     /**
      * Unit Test xml configuration.

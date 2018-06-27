@@ -13,12 +13,12 @@ import java.util.Properties;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The CommandMapTest Class.
+ * An example class for mapping Command classes.
  */
 public class CommandMapTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(CommandFactoryTest.class);
 
     /** The command map. */
     private final CommandMap commandMap = new CommandMap();
@@ -39,7 +39,7 @@ public class CommandMapTest {
         for (final Map.Entry<Object, Object> entry : properties.entrySet()) {
             final String key = (String) entry.getKey();
             final String className = (String) entry.getValue();
-            LOG.info("\t{} = {}", key, className);
+            LOG.trace("\t{} = {}", key, className);
             try {
                 final AbstractCommand instance = (AbstractCommand) Class.forName(className).newInstance();
                 this.commandMap.put(key, instance);

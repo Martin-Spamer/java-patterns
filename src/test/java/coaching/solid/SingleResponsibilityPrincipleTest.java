@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class SingleResponsibilityPrincipleTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrincipleTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(SingleResponsibilityPrincipleTest.class);
     
     /**
      * Unit Test shows multiple responsibility.

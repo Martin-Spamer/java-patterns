@@ -2,11 +2,11 @@
 package coaching.model;
 
 /**
- * Taxi Class.
+ * Taxi class.
  */
 public class Taxi extends Car {
 
-    /** The passenger. */
+    /** passenger. */
     private Passenger passenger;
 
     /**
@@ -27,15 +27,6 @@ public class Taxi extends Car {
     }
 
     /**
-     * passenger.
-     *
-     * @return the passenger
-     */
-    public Passenger getPassenger() {
-        return this.passenger;
-    }
-
-    /**
      * new passenger.
      *
      * @param passenger
@@ -45,4 +36,25 @@ public class Taxi extends Car {
         this.passenger = passenger;
     }
 
+    /**
+     * passenger.
+     *
+     * @return the passenger
+     */
+    public Passenger getPassenger() {
+        return this.passenger;
+    }
+    
+    /**
+     * Clear passenger.
+     */
+    public void clearPassenger() {
+        this.passenger = null;
+    }
+
+
+    @Override
+    public String toString() {
+        return String.format("%s [%s[passenger=%s]]", this.getClass().getSimpleName(), super.toString(), passenger);
+    }
 }

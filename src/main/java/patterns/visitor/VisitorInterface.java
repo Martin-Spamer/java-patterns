@@ -9,8 +9,7 @@ public interface VisitorInterface {
     /**
      * Visit element.
      *
-     * @param element
-     *            the element
+     * @param element the element
      */
     void visit(final ElementInterface element);
 

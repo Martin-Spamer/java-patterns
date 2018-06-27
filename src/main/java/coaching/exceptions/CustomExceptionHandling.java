@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class CustomExceptionHandling {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandling.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(CustomExceptionHandling.class);
 
     /**
      * a Custom Exception. In most cases this all that is needed to implement a

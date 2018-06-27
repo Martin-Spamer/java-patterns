@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public class PointBaseCustomerDaoTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);
     
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";

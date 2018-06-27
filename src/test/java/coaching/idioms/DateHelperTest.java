@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public class DateHelperTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(DateHelperTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(DateHelperTest.class);
 
     /**
      * Unit Test to now.

@@ -13,7 +13,7 @@ import java.util.List;
 public class PolymorphicList {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PolymorphicList.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(PolymorphicList.class);
 
     /** The integer list. */
     private final List<Integer> integerList = new ArrayList<>();

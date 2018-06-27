@@ -5,7 +5,7 @@
 package coaching.model;
 
 /**
- * MotorCycle Class.
+ * MotorCycle class.
  */
 public class MotorCycle extends AbstractVehicle {
 

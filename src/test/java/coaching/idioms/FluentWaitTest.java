@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class FluentWaitTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(FluentWaitTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(FluentWaitTest.class);
 
     /**
      * class PassCondition.

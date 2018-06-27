@@ -14,7 +14,7 @@ import static org.junit.Assume.assumeNotNull;
 public class RemoteObjectTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(RemoteObjectProxy.class);
 
     @Test
     public void testTypicalUsage() {

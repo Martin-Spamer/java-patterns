@@ -2,16 +2,9 @@
 package coaching.model;
 
 /**
- * Rider Class.
+ * Rider class.
  */
 public class Rider extends AbstractPerson {
-
-    /**
-     * Instantiates a new rider.
-     */
-    public Rider() {
-        super();
-    }
 
     /**
      * Instantiates a new rider.

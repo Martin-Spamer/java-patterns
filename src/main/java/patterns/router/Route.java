@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 class Route implements InputChannelInterface, OutputChannelInterface {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(Route.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(Route.class);
 
     /** The output channel. */
     private OutputChannelInterface outputChannel = null;

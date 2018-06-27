@@ -5,7 +5,7 @@
 package coaching.model;
 
 /**
- * Truck Class.
+ * Truck class.
  */
 public class Truck extends AbstractVehicle {
 

@@ -12,19 +12,19 @@ public class InvokerExample implements InvokerInterface {
     /** provides logging. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** The example command. */
+    /** static instance of the example command. */
     private final ExampleCommand exampleCommand = new ExampleCommand();
 
-    /** The command sequence. */
+    /** static instance of the command sequence. */
     private final SequenceCommand commandSequence = new SequenceCommand();
 
-    /** The compound command. */
+    /** static instance of the compound command. */
     private final CompoundCommand compoundCommand = new CompoundCommand();
 
-    /** The conditional command. */
+    /** static instance of the conditional command. */
     private final ConditionalCommand conditionalCommand = new ConditionalCommand();
 
-    /** The sequence command. */
+    /** static instance of the sequence command. */
     private final SequenceCommand sequenceCommand = new SequenceCommand();
 
     /*
@@ -38,30 +38,30 @@ public class InvokerExample implements InvokerInterface {
         this.log.info("execute({})", actionName);
         switch (actionName) {
         case "ExampleCommand":
-            this.log.info("case ExampleCommand");
+            this.log.trace("case ExampleCommand");
             result = this.exampleCommand.execute(new Parameters());
             break;
         case "CommandSequence":
-            this.log.info("case CommandSequence");
+            this.log.trace("case CommandSequence");
             result = this.commandSequence.execute(new Parameters());
             break;
         case "CompoundCommand":
-            this.log.info("case CompoundCommand");
+            this.log.trace("case CompoundCommand");
             result = this.compoundCommand.execute(new Parameters());
             break;
         case "ConditionalCommand":
-            this.log.info("case ConditionalCommand");
+            this.log.trace("case ConditionalCommand");
             result = this.conditionalCommand.execute(new Parameters());
             break;
         case "SequenceCommand":
-            this.log.info("case SequenceCommand");
+            this.log.trace("case SequenceCommand");
             result = this.sequenceCommand.execute(new Parameters());
             break;
         default:
-            this.log.info("unknown command");
+            this.log.trace("unknown command");
             break;
         }
-        this.log.info("result={}", result);
+        this.log.info("result = {}", result);
         return result;
     }
 

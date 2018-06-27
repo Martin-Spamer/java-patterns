@@ -22,7 +22,7 @@ public abstract class AbstractPerson implements PersonInterface {
      * Instantiates a new person.
      */
     public AbstractPerson() {
-        this.name = "";
+        this.name = "Name";
     }
 
     /**
@@ -56,14 +56,10 @@ public abstract class AbstractPerson implements PersonInterface {
         return this.name;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#toString()
-     */
     @Override
     public String toString() {
-        return String.format("Person [name=%s]", this.name);
+        return String.format("%s [name=%s]", this.getClass().getSimpleName(), name);
     }
 
+    
 }

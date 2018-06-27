@@ -16,7 +16,7 @@ import static org.junit.Assume.assumeNotNull;
 public class CompositeTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(CompositeTest.class);
 
     /**
      * Unit Test a typical usage of composite.

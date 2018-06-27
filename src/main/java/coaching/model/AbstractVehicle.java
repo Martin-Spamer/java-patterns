@@ -31,6 +31,16 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
         this.engine = engine;
     }
 
+    @Override
+    public void addFuel(int quantity) {
+        engine.addFuel(quantity);
+    }
+
+    @Override
+    public void useFuel(int quantity) {
+        engine.useFuel(quantity);
+    }
+    
     /*
      * (non-Javadoc)
      *
@@ -60,17 +70,13 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
     @Override
     public VehicleInterface travel(final String destination) {
         this.log.info(destination);
+        engine.useFuel(1);
         return this;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#toString()
-     */
     @Override
     public String toString() {
-        return "AbstractVehicle [engine=" + this.engine + ", driver=" + this.driver + "]";
+        return String.format("%s [engine=%s, driver=%s]", this.getClass().getSimpleName(), engine, driver);
     }
 
 }

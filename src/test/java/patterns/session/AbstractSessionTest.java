@@ -19,7 +19,7 @@ import static org.junit.Assume.assumeNotNull;
 public class AbstractSessionTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(CompositeTest.class);
 
     /**
      * Test Mock for AbstractSession.

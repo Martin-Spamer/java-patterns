@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public final class FactoryMethod {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(FactoryMethod.class);
+    private static final Logger LOG  = LoggerFactory.getLogger(FactoryMethod.class);
 
     /**
      * private constructor prevent wild instantiation.
