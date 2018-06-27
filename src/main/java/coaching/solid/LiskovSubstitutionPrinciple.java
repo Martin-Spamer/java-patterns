@@ -12,32 +12,65 @@ package coaching.solid;
  */
 public class LiskovSubstitutionPrinciple {
 
+    /**
+     * Abstraction Interface.
+     */
     public interface Abstraction {
+        /**
+         * Do something.
+         */
         void doSomething();
     }
 
+    /**
+     * BaseType class.
+     */
     public abstract class BaseType implements Abstraction {
+        
+        /* (non-Javadoc)
+         * @see coaching.solid.LiskovSubstitutionPrinciple.Abstraction#doSomething()
+         */
         @Override
         public abstract void doSomething();
     }
 
+    /**
+     * TypeOne class.
+     */
     public class TypeOne extends BaseType {
+        
+        /* (non-Javadoc)
+         * @see coaching.solid.LiskovSubstitutionPrinciple.BaseType#doSomething()
+         */
         @Override
         public void doSomething() {
             doOneThing();
         }
 
+        /**
+         * Do one thing.
+         */
         private void doOneThing() {
             // do one thing;
         }
     }
 
+    /**
+     * TypeType class.
+     */
     public class TypeType extends BaseType {
+        
+        /* (non-Javadoc)
+         * @see coaching.solid.LiskovSubstitutionPrinciple.BaseType#doSomething()
+         */
         @Override
         public void doSomething() {
             doSomethingElse();
         }
 
+        /**
+         * Do something else.
+         */
         private void doSomethingElse() {
             // do something else
         }

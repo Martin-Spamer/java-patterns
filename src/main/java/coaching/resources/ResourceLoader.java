@@ -136,13 +136,12 @@ public class ResourceLoader {
      * @return this for a fluent interface.
      */
     public ResourceLoader load(final InputStream streamForResource) {
-
         final InputStreamReader inputStreamReader = new InputStreamReader(streamForResource);
         final BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String line;
         try {
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
+                log.info(line);
             }
             bufferedReader.close();
             streamForResource.close();
