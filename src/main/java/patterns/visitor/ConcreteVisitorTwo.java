@@ -4,7 +4,7 @@ package patterns.visitor;
 /**
  * Visitor Class.
  */
-public final class Visitor extends AbstractVisitor {
+public final class ConcreteVisitorTwo extends AbstractVisitor {
 
     /*
      * (non-Javadoc)
