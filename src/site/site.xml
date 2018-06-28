@@ -15,22 +15,27 @@
 	</bannerRight>
 	<body>
 		<links>
-			<!-- Cucumber -->
-			<!-- Selenium WebDriver -->
-			<!-- Slfj4 -->
-			<!-- JUnit -->
+			<item name="Cucumber" href="https://cucumber.io" />
+			<item name="Selenium WebDriver" href="https://www.seleniumhq.org" />
+			<item name="Slfj4" href="https://www.slf4j.org/" />
+			<item name="JUnit" href="https://junit.org/junit4/" />
 			<item name="Apache" href="http://www.apache.org/" />
 			<item name="Maven" href="http://maven.apache.org/" />
 		</links>
 
 		<menu name="Java Coaching">
 			<item name="Introduction" href="index.html" />
-			<item name="Download" href="download.html" />
-			<item name="Release Notes" href="release-notes.html" />
-			<item name="General Information" href="about.html" />
+			<item name="About" href="about.html" />
+			<item name="Usage" href="usage.html" />
 			<item name="Road Map" href="roadmap.html" />
+			<item name="Report" href="project-report.html" />
+			<item name="Release Notes" href="release-notes.html" />
+			<item name="Download (GitHub)" href="https://github.com/atf4j/atf4j" />
+			<item name="Issue Tracking (GitHub)" href="https://github.com/Martin-Spamer/java-coaching/issues" />
+			<item name="FAQ" href="faq.html" />
+			<item name="ATF4J API" href="apidocs/index.html" />
+			<item name="Test API" href="testapidocs/index.html" />
 		</menu>
-
 		<menu ref="reports" />
 
 	</body>

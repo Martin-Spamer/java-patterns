@@ -28,7 +28,7 @@ public class NativeTypesArray {
         for (int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
             values[i] = i ^ i;
-            log.info(i + "=" + values[i]);
+            log.info("{} = {}",i, values[i]);
         }
     }
 

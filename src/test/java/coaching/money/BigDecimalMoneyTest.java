@@ -143,7 +143,7 @@ public class BigDecimalMoneyTest {
 
         final BigDecimalMoney number1 = new BigDecimalMoney(1);
         assertNotNull("Value cannot be null", number1);
-        LOG.info("number1 = {}", "" + number1.toString());
+        LOG.info("number1 = {}", number1.toString());
         total.add(number1);
         LOG.info("total + number1 = {}", total.toString());
 
