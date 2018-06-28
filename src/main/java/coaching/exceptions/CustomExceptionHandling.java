@@ -97,19 +97,19 @@ public class CustomExceptionHandling {
         try {
             subProcessA();
         } catch (final CustomException exception) {
-            LOG.error("{}", exception.toString());
+            LOG.error( exception.toString());
         }
 
         try {
             subProcessB();
         } catch (final CustomException exception) {
-            LOG.error("{}", exception.toString());
+            LOG.error( exception.toString());
         }
 
         try {
             subProcessC();
         } catch (final CustomException exception) {
-            LOG.error("{}", exception.toString());
+            LOG.error( exception.toString());
         }
     }
 }

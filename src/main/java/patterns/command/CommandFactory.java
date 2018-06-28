@@ -54,7 +54,7 @@ public final class CommandFactory implements InvokerInterface {
             properties.load(inputStream(filename));
             LOG.info("properties = {}", properties);
         } catch (final IOException e) {
-            LOG.error("{}", e);
+            LOG.error(e.getLocalizedMessage());
         }
     }
 

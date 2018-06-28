@@ -86,10 +86,10 @@ public class CsvToJdbc {
             try {
                 return DriverManager.getConnection(url, user, password);
             } catch (final SQLException e) {
-                log.error("{}", e);
+                log.error(e.getLocalizedMessage());
             }
         } catch (final ClassNotFoundException e) {
-            log.error("{}", e);
+            log.error(e.getLocalizedMessage());
         }
         return null;
     }
@@ -250,21 +250,21 @@ public class CsvToJdbc {
             statement.close();
             connection.close();
         } catch (final SQLException e) {
-            log.error("{}", e);
+            log.error(e.getLocalizedMessage());
         } finally {
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (final SQLException e) {
-                log.error("{}", e);
+                log.error(e.getLocalizedMessage());
             }
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (final SQLException e) {
-                log.error("{}", e);
+                log.error(e.getLocalizedMessage());
             }
         }
     }

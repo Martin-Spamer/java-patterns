@@ -54,7 +54,7 @@ public final class XmlDao extends AbstractDataAccessObject {
             resultSet.close();
             return xmlDocument;
         } catch (final SQLException e) {
-            log.error("{}", e.toString());
+            log.error( e.toString());
         }
         return null;
     }
@@ -98,7 +98,7 @@ public final class XmlDao extends AbstractDataAccessObject {
                 }
             }
         } catch (final Exception e) {
-            log.error("{}", e.toString());
+            log.error( e.toString());
         }
         return document;
     }
@@ -115,7 +115,7 @@ public final class XmlDao extends AbstractDataAccessObject {
             resultSet.close();
             return xmlString;
         } catch (final SQLException e) {
-            log.error("{}", e.toString());
+            log.error( e.toString());
         }
         return null;
     }
@@ -149,7 +149,7 @@ public final class XmlDao extends AbstractDataAccessObject {
             xml.append("</TABLE>\n");
             resultSet.close();
         } catch (final Exception e) {
-            log.error("{}", e.toString());
+            log.error( e.toString());
         }
         return xml.toString();
     }

@@ -78,7 +78,7 @@ public abstract class AbstractProcess implements Runnable {
             } while (!exit);
 
         } catch (final InterruptedException exception) {
-            log.error("{}", exception.toString());
+            log.error( exception.toString());
         }
         log.info("{}.ending", this.getClass().getSimpleName());
     }

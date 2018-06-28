@@ -65,7 +65,7 @@ public class ConnectionFactory {
         try {
             Class.forName(driverClassName);
         } catch (final ClassNotFoundException e) {
-            log.error("{}", e.toString());
+            log.error( e.toString());
         }
     }
 
@@ -78,7 +78,7 @@ public class ConnectionFactory {
         try {
             return DriverManager.getConnection(connectionUrl, username, password);
         } catch (final Exception e) {
-            log.error("{}", e.toString());
+            log.error( e.toString());
         }
         return null;
     }

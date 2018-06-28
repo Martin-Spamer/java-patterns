@@ -48,7 +48,7 @@ public class PointBaseCustomerDaoTest {
             final DaoInterface dao = new PointBaseCustomerDao();
             assertNotNull("Value cannot be null", dao);
         } catch (final Exception exception) {
-            LOG.error("{}", exception.toString());
+            LOG.error( exception.toString());
         }
     }
 
@@ -65,7 +65,7 @@ public class PointBaseCustomerDaoTest {
             dao.update();
             dao.delete();
         } catch (final Exception exception) {
-            LOG.error("{}", exception.toString());
+            LOG.error( exception.toString());
         }
     }
 }

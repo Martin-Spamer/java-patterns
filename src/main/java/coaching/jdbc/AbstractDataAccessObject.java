@@ -40,7 +40,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
         try {
             Class.forName(driverClassName);
         } catch (final ClassNotFoundException e) {
-            log.error("{}", e.toString());
+            log.error( e.toString());
         }
     }
 
@@ -105,28 +105,28 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
             statement.close();
             connection.close();
         } catch (final SQLException exception) {
-            log.error("{}", exception.toString());
+            log.error( exception.toString());
         } finally {
             try {
                 if (resultSet != null) {
                     resultSet.close();
                 }
             } catch (final Exception e) {
-                log.error("{}", e);
+                log.error(e.getLocalizedMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (final Exception e) {
-                log.error("{}", e);
+                log.error(e.getLocalizedMessage());
             }
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (final Exception e) {
-                log.error("{}", e.toString());
+                log.error(e.getLocalizedMessage());
             }
         }
         return this;
@@ -228,21 +228,21 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
             preparedStatement.close();
             connection.close();
         } catch (final SQLException exception) {
-            log.error("{}", exception.toString());
+            log.error( exception.toString());
         } finally {
             try {
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }
             } catch (final SQLException e) {
-                log.error("{}", e);
+                log.error(e.getLocalizedMessage());
             }
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (final SQLException e) {
-                log.error("{}", e);
+                log.error(e.getLocalizedMessage());
             }
         }
         return this;
