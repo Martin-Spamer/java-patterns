@@ -2,9 +2,8 @@ language: java
 jdk:
   - openjdk7
   - openjdk8
-services:
-  - postgresql
-before_install:
-  - sudo apt-get update && sudo apt-get --reinstall install -qq language-pack-en_GB
+branches:
+  only:
+  - master
 script:
   - "mvn site"

@@ -171,7 +171,9 @@
 	</build>
 
 	<reporting>
-		<outputDirectory>${project.build.directory}/site</outputDirectory>
+		<!-- 
+			<outputDirectory>${project.build.directory}</outputDirectory>
+ 		-->
 
 		<plugins>
 
