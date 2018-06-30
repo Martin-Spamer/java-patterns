@@ -7,17 +7,24 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 /**
- * Unit test for Abstract configuration class.
+ * Unit test for the AbstractConfig object.
  */
 public class AbstractConfigTest {
 
+    private static final String FILENAME_KEY = "Filename";
+
+    private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
+
     private static final String TEST_CONFIG_PROPERTIES = "TestConfig.properties";
+
+    /** provide logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractConfigTest.class);
 
     /**
-     * Configuration class.
+     * Test Configuration class.
      */
     public class TestConfig extends AbstractConfig {
 
@@ -50,7 +57,7 @@ public class AbstractConfigTest {
      * Mock a DefaultConfiguration.
      * When the configuration file is missing, provide default values.
      */
-    public class DefaultConfiguration extends AbstractConfig {
+    public class InvalidConfig extends AbstractConfig {
     }
 
     @Test
@@ -58,11 +65,10 @@ public class AbstractConfigTest {
         LOG.debug("testTypicalUsage");
         final TestConfig config = new TestConfig();
         assertNotNull(config);
-        LOG.debug(config.toString());
-        assertEquals(TEST_CONFIG_PROPERTIES, config.valueFor("File"));
-        assertEquals("Value.000", config.valueFor("000"));
-        assertEquals("Value.001", config.valueFor("001"));
-        assertEquals("Value.002", config.valueFor("002"));
+        LOG.trace(config.toString());
+
+        assertEquals(TEST_CONFIG_PROPERTIES, config.valueFor(FILENAME_KEY));
+        verifyProperties(config);
     }
 
     /**
@@ -86,87 +92,19 @@ public class AbstractConfigTest {
     }
 
     /**
-     * Unit Test to abstract configuration.
-     */
-    @Test
-    public void testAbstractConfig() {
-        LOG.debug("testAbstractConfig");
-        final ConfigInterface config = new TestConfig();
-        assertNotNull(config);
-        LOG.debug(config.toString());
-
-        assertEquals(TEST_CONFIG_PROPERTIES, config.getProperty("propertyFilename"));
-        assertEquals("value", config.getProperty("key"));
-        assertEquals("Value.000", config.getProperty("000"));
-        assertEquals("Value.001", config.getProperty("001"));
-        assertEquals("Value.002", config.getProperty("002"));
-        assertEquals("default", config.getProperty("missing-key", "default"));
-    }
-
-    /**
-     * Unit Test to abstract Configuration string.
-     */
-    @Test
-    public void testAbstractConfigString() {
-        LOG.debug("testAbstractConfigString");
-        final ConfigInterface config = new TestConfig("Configuration");
-        assertNotNull(config);
-        LOG.debug(config.toString());
-
-        assertEquals("Configuration.properties", config.getProperty("propertyFilename"));
-        assertEquals("value", config.getProperty("key"));
-        assertEquals("Value.000", config.getProperty("000"));
-        assertEquals("Value.001", config.getProperty("001"));
-        assertEquals("Value.002", config.getProperty("002"));
-        assertEquals("default", config.getProperty("missing-key", "default"));
-    }
-
-    /**
-     * Unit Test to get property string.
-     */
-    @Test
-    public void testGetPropertyString() {
-        LOG.debug("testGetPropertyString");
-        final ConfigInterface config = new TestConfig();
-        assertNotNull(config);
-        LOG.debug(config.toString());
-
-        assertEquals(TEST_CONFIG_PROPERTIES, config.getProperty("propertyFilename"));
-        assertEquals("value", config.getProperty("key"));
-        assertEquals("Value.000", config.getProperty("000"));
-        assertEquals("Value.001", config.getProperty("001"));
-        assertEquals("Value.002", config.getProperty("002"));
-        assertEquals("default", config.getProperty("missing-key", "default"));
-    }
-
-    /**
-     * Unit Test to get property string with default.
-     */
-    @Test
-    public void testGetPropertyStringDefault() {
-        LOG.debug("testGetPropertyStringDefault");
-        final ConfigInterface config = new TestConfig();
-        assertNotNull(config);
-        LOG.debug(config.toString());
-
-        assertEquals(TEST_CONFIG_PROPERTIES, config.getProperty("propertyFilename"));
-        assertEquals("value", config.getProperty("key"));
-        assertEquals("Value.000", config.getProperty("000"));
-        assertEquals("Value.001", config.getProperty("001"));
-        assertEquals("Value.002", config.getProperty("002"));
-        assertEquals("default", config.getProperty("missing-key", "default"));
-    }
-
-    /**
-     * Unit Test to get property string.
+     * Unit Test to system property as override string.
      */
     @Test
     public void testGetSystemProperty() {
         LOG.debug("testGetSystemProperty");
-        System.setProperty("systemPropertyKey", "systemPropertyValue");
+        final String key = "systemPropertyKey";
+        final String expectedValue = "systemPropertyValue";
+        System.setProperty(key, expectedValue);
         final ConfigInterface configuration = new TestConfig();
         assertNotNull(configuration);
-        assertEquals("systemPropertyValue", configuration.getProperty("systemPropertyKey"));
+        assertNull(configuration.get(key));
+        final String property = configuration.valueFor(key);
+        assertEquals(expectedValue, property);
     }
 
     /**
@@ -188,14 +126,36 @@ public class AbstractConfigTest {
     @Test
     public void testConfiguration() {
         LOG.debug("testConfiguration");
-        final TestConfig config = new TestConfig(TEST_CONFIG_PROPERTIES);
+        final TestConfig config = new TestConfig("Configuration");
         assertNotNull(config);
         LOG.debug(config.toString());
 
-        assertEquals(TEST_CONFIG_PROPERTIES, config.valueFor("File"));
-        assertEquals("Value.000", config.valueFor("000"));
-        assertEquals("Value.001", config.valueFor("001"));
-        assertEquals("Value.002", config.valueFor("002"));
+        assertEquals(CONFIGURATION_PROPERTIES, config.get(FILENAME_KEY));
+        verifyProperties(config);
+    }
+
+    /**
+     * Unit Test to abstract Configuration string.
+     */
+    @Test
+    public void testAbstractConfigStringXml() {
+        LOG.debug("testAbstractConfigStringXml");
+        final ConfigInterface config = new TestConfig(CONFIGURATION_PROPERTIES);
+        assertNotNull(config);
+        LOG.trace(config.toString());
+
+        assertEquals(CONFIGURATION_PROPERTIES, config.get(FILENAME_KEY));
+        verifyProperties(config);
+    }
+
+    private void verifyProperties(final ConfigInterface config) {
+        assertNull(config.get("missing-key"));
+        assertEquals("default", config.get("missing-key", "default"));
+        assertEquals("value", config.get("key"));
+        assertEquals("Value.000", config.get("000"));
+        assertEquals("Value.001", config.get("001"));
+        assertEquals("Value.002", config.get("002"));
+        LOG.debug(config.toString());
     }
 
 }

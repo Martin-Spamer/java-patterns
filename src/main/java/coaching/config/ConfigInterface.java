@@ -2,7 +2,7 @@
 package coaching.config;
 
 /**
- * An Interface for a Configuration class.
+ * An Interface for Configuration classes.
  */
 public interface ConfigInterface {
 
@@ -13,7 +13,7 @@ public interface ConfigInterface {
      *            the name of key
      * @return the property value as a String object.
      */
-    String getProperty(final String key);
+    String get(final String key);
 
     /**
      * property, with default if not found.
@@ -24,6 +24,23 @@ public interface ConfigInterface {
      *            the default value
      * @return the property value as a String object.
      */
-    String getProperty(final String key, final String defaultValue);
+    String get(final String key, final String defaultValue);
+
+    /**
+     * Value for key, allows an environment value to override the property.
+     *
+     * @param key the key
+     * @param defaultValue the default value, if no property found.
+     * @return the property value as a String object.
+     */
+    String valueFor(final String key, final String defaultValue);
+
+    /**
+     * Value for key, allows an environment value to override the property.
+     *
+     * @param key the key
+     * @return the value as a String object.
+     */
+    String valueFor(final String key);
 
 }

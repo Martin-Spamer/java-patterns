@@ -5,7 +5,8 @@
     PUBLIC ID: -//vendor//vocabulary//EN
     SYSTEM ID: http://server/path/MainApp.dtd
 
---><!--
+-->
+<!--
     An example how to use this DTD from your XML document:
 
     <?xml version='1.0' encoding='utf-8'?>
