@@ -7,28 +7,20 @@ import static org.junit.Assert.assertNotNull;
 
 public class CredentialsTest {
 
+    private final String platform = "@dev";
+    private final String tag = "@tag";
+
     @Test
     public void testCredentials() {
-        final Credentials credentials = new Credentials();
+        final Actor actor = Credentials.on(this.platform).with(this.tag);
+        assertNotNull(actor);
+    }
+
+    @Test
+    public void testCredentialsPlatform() {
+        final Credentials credentials = new Credentials(this.platform);
         assertNotNull(credentials);
-    }
-
-    @Test
-    public void testStaticCredentials() {
-        final String platform = "@dev";
-        final String tag = "@tag";
-        final Credentials credentials = new Credentials(platform);
-        final Actor actor = Credentials.on(platform).with(tag);
+        final Actor actor = credentials.with(this.tag);
         assertNotNull(actor);
     }
-
-    @Test
-    public void testFluentCredentials() {
-        final String platform = "@dev";
-        final String tag = "@tag";
-        final Credentials credentials = new Credentials();
-        final Actor actor = Credentials.on(platform).with(tag);
-        assertNotNull(actor);
-    }
-
 }
