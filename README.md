@@ -33,12 +33,12 @@ Add the following dependency to your projects pom.xml file.
 
 ## Java xoding idioms
 
-- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
--- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
--- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
+ - [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
+ -- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
+ -- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
 
 ## Java Design Pattern examples
 
-- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
--- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
--- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
+ - [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
+ -- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
+ -- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
