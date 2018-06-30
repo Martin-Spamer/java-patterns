@@ -1,11 +1,11 @@
 
 package patterns.iterator;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * AbstractIterator Class.
@@ -42,8 +42,8 @@ public abstract class AbstractIterator implements IteratorInterface {
      */
     @Override
     public ItemInterface first() {
-        this.index = 0;
-        return this.itemList.get(this.index);
+        index = 0;
+        return itemList.get(index);
     }
 
     /*
@@ -53,8 +53,8 @@ public abstract class AbstractIterator implements IteratorInterface {
      */
     @Override
     public ItemInterface next() {
-        this.index++;
-        return this.itemList.get(this.index);
+        index++;
+        return itemList.get(index);
     }
 
     /*
@@ -64,7 +64,7 @@ public abstract class AbstractIterator implements IteratorInterface {
      */
     @Override
     public boolean isDone() {
-        return this.index == this.itemList.size();
+        return index == itemList.size();
     }
 
     /*
@@ -74,7 +74,7 @@ public abstract class AbstractIterator implements IteratorInterface {
      */
     @Override
     public ItemInterface currentItem() {
-        return this.itemList.get(this.index);
+        return itemList.get(index);
     }
 
 }

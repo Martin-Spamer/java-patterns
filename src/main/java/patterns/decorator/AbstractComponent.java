@@ -20,7 +20,7 @@ public abstract class AbstractComponent implements ComponentInterface {
     @Override
     public AbstractComponent operation() {
         String simpleName = this.getClass().getSimpleName();
-        this.log.info("{}", simpleName);
+        log.info("{}", simpleName);
         return this;
     }
 

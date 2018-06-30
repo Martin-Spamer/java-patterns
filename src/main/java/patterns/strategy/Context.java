@@ -1,9 +1,9 @@
 
 package patterns.strategy;
 
-import coaching.context.AbstractContext;
-
 import java.util.Properties;
+
+import coaching.context.AbstractContext;
 
 /**
  * Context Class.

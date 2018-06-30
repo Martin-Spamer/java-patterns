@@ -33,7 +33,7 @@ public class Product {
      */
     @Override
     public String toString() {
-        return String.format("Product [partOne=%s, partTwo=%s]", this.partOne, this.partTwo);
+        return String.format("Product [partOne=%s, partTwo=%s]", partOne, partTwo);
     }
 
 }

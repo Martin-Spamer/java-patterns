@@ -40,16 +40,16 @@ public class CommandParametersTest {
             super(key, value);
         }
     }
-    
+
     /**
      * Unit Test to abstract parameters.
      */
     @Test
     public void testCommandParameters() {
         final ParametersInterface commandParameters = new MockCommandParameters();
-        assertNotNull("Value cannot be null", commandParameters);
+        assertNotNull(commandParameters);
         String string = commandParameters.toString();
-        this.log.trace("{}", string);
+        log.trace("{}", string);
     }
 
     /**
@@ -58,10 +58,10 @@ public class CommandParametersTest {
     @Test
     public void testSetGetParameter() {
         final ParametersInterface commandParameters = new MockCommandParameters();
-        assertNotNull("Value cannot be null", commandParameters);
+        assertNotNull(commandParameters);
         commandParameters.setParameter("key", "value");
         assertEquals("value", commandParameters.valueFor("key"));
-        this.log.trace("{}", commandParameters.toString());
+        log.trace("{}", commandParameters.toString());
     }
 
     /**
@@ -70,9 +70,9 @@ public class CommandParametersTest {
     @Test
     public void testAbstractParametersStringString() {
         final ParametersInterface commandParameters = new MockCommandParameters("key", "value");
-        assertNotNull("Value cannot be null", commandParameters);
+        assertNotNull(commandParameters);
         assertEquals("value", commandParameters.valueFor("key"));
-        this.log.trace("{}", commandParameters.toString());
+        log.trace("{}", commandParameters.toString());
     }
 
 }

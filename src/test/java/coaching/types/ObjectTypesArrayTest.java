@@ -1,10 +1,11 @@
 
 package coaching.types;
 
-import coaching.arrays.ObjectTypesArray;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.arrays.ObjectTypesArray;
 
 /**
  * The ObjectTypesArrayTest Class.
@@ -17,7 +18,7 @@ public class ObjectTypesArrayTest {
     @Test
     public void testDisplayObjectArray() {
         final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull("Value cannot be null", objectTypes);
+        assertNotNull(objectTypes);
         objectTypes.iterateArray();
     }
 
@@ -27,7 +28,7 @@ public class ObjectTypesArrayTest {
     @Test
     public void testDisplayMatrix() {
         final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull("Value cannot be null", objectTypes);
+        assertNotNull(objectTypes);
         objectTypes.displayMatrix();
     }
 
@@ -37,7 +38,7 @@ public class ObjectTypesArrayTest {
     @Test
     public void testDisplay() {
         final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull("Value cannot be null", objectTypes);
+        assertNotNull(objectTypes);
         objectTypes.display();
     }
 }

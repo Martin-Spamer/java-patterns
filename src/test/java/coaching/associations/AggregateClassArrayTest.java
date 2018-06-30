@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class AggregateClassArrayTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(AggregateClassArrayTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArrayTest.class);
 
     /**
      * Unit Test to execute.
@@ -21,7 +21,7 @@ public class AggregateClassArrayTest {
     @Test
     public void testExecute() {
         final AggregateClassArray aggregateClassArray = new AggregateClassArray();
-        assertNotNull("Value cannot be null", aggregateClassArray);
+        assertNotNull(aggregateClassArray);
         LOG.info("{}", aggregateClassArray.toString());
     }
 

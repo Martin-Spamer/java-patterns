@@ -1,12 +1,12 @@
 
 package coaching.pool;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * AbstractResourcePool Class.
@@ -52,7 +52,7 @@ public abstract class AbstractAltResourcePool<T> {
                 try {
                     resource = create();
                 } catch (final ResourceCreationException exception) {
-                    this.log.error("{}", exception.toString());
+                    this.log.error( exception.toString());
                     throw new ResourceBorrowException(exception);
                 }
             } else {

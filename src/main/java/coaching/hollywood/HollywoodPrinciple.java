@@ -1,3 +1,4 @@
+
 package coaching.hollywood;
 
 public class HollywoodPrinciple {
@@ -7,11 +8,11 @@ public class HollywoodPrinciple {
             throw new Exception();
         } catch (Exception e) {
             // increased coupling, two points of contact, two reasons to change.
-            String msg = e.getLocalizedMessage();
+            final String msg = e.getLocalizedMessage();
             System.out.println(msg);
         }
     }
-    
+
     public void wellCallYou() {
         try {
             throw new Exception();
@@ -19,5 +20,5 @@ public class HollywoodPrinciple {
             // decreased coupling, one point of contact, one reason to change.
             e.printStackTrace(System.out);
         }
-    }    
+    }
 }

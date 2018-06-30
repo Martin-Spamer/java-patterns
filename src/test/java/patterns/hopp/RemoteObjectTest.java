@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
 import static org.junit.Assume.assumeNotNull;
 
 /**
@@ -14,7 +15,7 @@ import static org.junit.Assume.assumeNotNull;
 public class RemoteObjectTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(RemoteObjectProxy.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
 
     @Test
     public void testTypicalUsage() {
@@ -42,7 +43,7 @@ public class RemoteObjectTest {
     @Test
     public void testRemoteMethod() {
         final RemoteObject remoteObject = new RemoteObject();
-        assumeNotNull("Value cannot be null", remoteObject);
+        assumeNotNull(remoteObject);
         remoteObject.remoteMethod();
     }
 
@@ -52,7 +53,7 @@ public class RemoteObjectTest {
     @Test
     public void testLocalMethod() {
         final RemoteObject remoteObject = new RemoteObject();
-        assumeNotNull("Value cannot be null", remoteObject);
+        assumeNotNull(remoteObject);
         remoteObject.localMethod();
     }
 

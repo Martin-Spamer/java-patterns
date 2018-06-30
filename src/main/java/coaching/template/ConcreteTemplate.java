@@ -14,7 +14,7 @@ public final class ConcreteTemplate extends AbstractTemplate {
      */
     @Override
     public TemplateInterface primitiveOperationAlice() {
-        this.log.info("primitiveOperationAlice()");
+        log.info("primitiveOperationAlice()");
         return this;
     }
 
@@ -26,7 +26,7 @@ public final class ConcreteTemplate extends AbstractTemplate {
      */
     @Override
     public TemplateInterface primitiveOperationBob() {
-        this.log.info("primitiveOperationBob()");
+        log.info("primitiveOperationBob()");
         return this;
     }
 

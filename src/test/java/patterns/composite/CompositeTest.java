@@ -1,13 +1,15 @@
 
 package patterns.composite;
 
+import static org.hamcrest.CoreMatchers.notNullValue;
+
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
+
 import static org.junit.Assume.assumeNotNull;
 
 /**
@@ -16,7 +18,7 @@ import static org.junit.Assume.assumeNotNull;
 public class CompositeTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CompositeTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
 
     /**
      * Unit Test a typical usage of composite.

@@ -16,13 +16,13 @@ public class ChainOfResponsibilityTest {
     @Test
     public void testHandleRequest() {
         final AbstractHandler one = new HandlerOne();
-        assertNotNull("Value cannot be null", one);
+        assertNotNull(one);
 
         final AbstractHandler two = new HandlerTwo();
-        assertNotNull("Value cannot be null", two);
+        assertNotNull(two);
 
         final Request request = new Request("Payload");
-        assertNotNull("Value cannot be null", request);
+        assertNotNull(request);
     }
 
 }

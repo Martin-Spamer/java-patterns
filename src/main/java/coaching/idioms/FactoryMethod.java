@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public final class FactoryMethod {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(FactoryMethod.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FactoryMethod.class);
 
     /**
      * private constructor prevent wild instantiation.
@@ -30,7 +30,7 @@ public final class FactoryMethod {
         try {
             return (String) Class.forName("java.lang.String").newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error("{}", e);
+            LOG.error(e.getLocalizedMessage());
         }
         return null;
     }

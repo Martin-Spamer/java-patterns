@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class StaticSingletonTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(StaticSingletonTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(StaticSingletonTest.class);
 
     /**
      * Unit Test to get instance.
@@ -21,9 +21,9 @@ public class StaticSingletonTest {
     @Test
     public void testGetInstance() {
         final StaticSingleton instance = StaticSingleton.getInstance();
-        assertNotNull("Value cannot be null", instance);
+        assertNotNull(instance);
         final String string = instance.toString();
-        assertNotNull("Value cannot be null", instance);
+        assertNotNull(instance);
         LOG.info("{}", string);
     }
 

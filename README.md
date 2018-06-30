@@ -31,11 +31,14 @@ Add the following dependency to your projects pom.xml file.
 		<version>...</version>
 	</dependency>
 
-## Java Coding Idioms
+## Java xoding idioms
 
- [Coaching](coaching/)
+ - [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
+ -- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
+ -- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
 
-## Java Pattern Examples
+## Java Design Pattern examples
 
- [Patterns](patterns/)
- 
+ - [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
+ -- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
+ -- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)

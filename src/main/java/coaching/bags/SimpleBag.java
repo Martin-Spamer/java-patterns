@@ -22,7 +22,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     public SimpleBag() {
         super();
-        fill(this.initialState);
+        fill(initialState);
     }
 
     /**
@@ -46,7 +46,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
     @Override
     public BagInterface fill(final String... values) {
         if (values != null) {
-            this.initialState = values;
+            initialState = values;
             this.addAll(Arrays.asList(values));
         }
         return this;
@@ -71,7 +71,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
     public String choose() {
         final int size = size();
         if (size > 0) {
-            final int nextInt = this.random.nextInt(size);
+            final int nextInt = random.nextInt(size);
             return this.remove(nextInt);
         } else {
             return null;
@@ -85,7 +85,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public BagInterface reset() {
-        return fill(this.initialState);
+        return fill(initialState);
     }
 
 }

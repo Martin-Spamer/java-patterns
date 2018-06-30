@@ -19,7 +19,7 @@ public abstract class AbstractType implements TypeInterface {
      */
     @Override
     public TypeInterface operation() {
-        this.log.info("{}.operation", this.getClass().getSimpleName());
+        log.info("{}.operation", this.getClass().getSimpleName());
         return this;
     }
 

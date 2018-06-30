@@ -1,51 +1,57 @@
 
 package coaching.config;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Properties;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
- * Abstract Configuration Class.
+ * An abstract Configuration class.
+ * Loads Configuration Properties from an .properties file.
  */
-public abstract class AbstractConfig implements ConfigInterface {
+public abstract class AbstractConfig extends AbstractConfiguration {
 
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-
-    /** The properties. */
-    protected final Properties properties = new Properties();
+    /** The filename. */
+    protected String filename;
 
     /**
      * Instantiates a new abstract configuration.
      */
     public AbstractConfig() {
-        final String propertyFilename = this.getClass().getSimpleName();
-        loadFromFilename(propertyFilename);
+        super();
+        loadFrom(defaultFilename());
     }
 
     /**
      * Instantiates a new abstract configuration.
      *
-     * @param configFilename
-     *            the Configuration filename
+     * @param configFilename the Configuration filename
      */
     public AbstractConfig(final String configFilename) {
-        loadFromFilename(configFilename);
+        this.filename = configFilename;
+        loadFrom(configFilename);
     }
 
     /**
-     * configuration from XML filename.
+     * Default filename.
+     *
+     * @return the string
+     */
+    protected String defaultFilename() {
+        this.filename = this.getClass().getSimpleName();
+        return this.filename;
+    }
+
+    /**
+     * configuration from filename.
      *
      * @param configFilename
      *            the Configuration filename
      */
-    protected void loadFromFilename(final String configFilename) {
+    protected void loadFrom(final String configFilename) {
         final String propertyFilename = toPropertyFilename(configFilename);
-        loadFromResourceStream(inputStream(propertyFilename));
+        loadFrom(inputStream(propertyFilename));
         this.properties.setProperty("propertyFilename", propertyFilename);
     }
 
@@ -57,7 +63,12 @@ public abstract class AbstractConfig implements ConfigInterface {
      * @return the string
      */
     protected String toPropertyFilename(final String configFilename) {
-        return String.format("%s.properties", configFilename);
+        assertNotNull(configFilename);
+        if (configFilename.endsWith(".properties")) {
+            return configFilename;
+        } else {
+            return String.format("%s.properties", configFilename);
+        }
     }
 
     /**
@@ -79,99 +90,14 @@ public abstract class AbstractConfig implements ConfigInterface {
      * @param resourceAsStream
      *            the resource as stream
      */
-    protected void loadFromResourceStream(final InputStream resourceAsStream) {
+    protected void loadFrom(final InputStream resourceAsStream) {
         if (resourceAsStream != null) {
             try {
                 this.properties.load(resourceAsStream);
+                this.loaded = true;
             } catch (final IOException e) {
                 this.log.error(e.toString());
             }
         }
     }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see framework.config.ConfigInterface#getProperty(java.lang.String)
-     */
-    @Override
-    public String getProperty(final String key) {
-        String value = System.getProperty(key);
-        if (value == null) {
-            value = this.properties.getProperty(key);
-        }
-        this.log.trace("{}={}", key, value);
-        return value;
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see framework.config.ConfigInterface#getProperty(java.lang.String,
-     * java.lang.String)
-     */
-    @Override
-    public String getProperty(final String key, final String defaultValue) {
-        String value = System.getProperty(key);
-        if (value == null) {
-            value = this.properties.getProperty(key, defaultValue);
-        }
-        this.log.trace("{}={}", key, value);
-        return value;
-    }
-
-    /**
-     * Value for key.
-     *
-     * @param key
-     *            the key
-     * @return the string
-     */
-    public String valueFor(final String key) {
-        final String property = System.getProperty(key);
-        if (property == null) {
-            return this.properties.getProperty(key);
-        }
-        return property;
-    }
-
-    /**
-     * Value for key.
-     *
-     * @param key
-     *            the key
-     * @param defaultValue
-     *            the default value
-     * @return the string
-     */
-    public String valueFor(final String key, final String defaultValue) {
-        final String property = System.getProperty(key);
-        if (property == null) {
-            return this.properties.getProperty(key, defaultValue);
-        }
-        return property;
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-        final String prettyProperties = prettyProperties(this.properties);
-        return String.format("properties = %s", prettyProperties);
-    }
-
-    /**
-     * Pretty properties.
-     *
-     * @param properties
-     *            the properties
-     * @return the string
-     */
-    private String prettyProperties(final Properties properties) {
-        return properties.toString().replace("{", "{\n\t").replace(", ", "\n\t").replace("}", "\n\t}");
-    }
-
 }

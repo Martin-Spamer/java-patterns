@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class CompositeTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CompositeTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
 
     /**
      * Unit Test to composite.
@@ -21,7 +21,7 @@ public class CompositeTest {
     @Test
     public void testComposite() {
         final Composite composite = new Composite();
-        assertNotNull("Value cannot be null", composite);
+        assertNotNull(composite);
         LOG.info("{}", composite);
     }
 
@@ -35,7 +35,7 @@ public class CompositeTest {
         final Charlie charlie = new Charlie();
         final Dan dan = new Dan();
         final Composite composite = new Composite(alice, bob, charlie, dan);
-        assertNotNull("Value cannot be null", composite);
+        assertNotNull(composite);
         LOG.info("{}", composite);
     }
 

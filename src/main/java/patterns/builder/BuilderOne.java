@@ -16,4 +16,9 @@ public class BuilderOne extends AbstractBuilder {
         return new PartOne();
     }
 
+    @Override
+    public Part build(final String partName) {
+        return new PartOne(partName);
+    }
+
 }

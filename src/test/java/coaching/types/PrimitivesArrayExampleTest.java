@@ -1,10 +1,11 @@
 
 package coaching.types;
 
-import coaching.arrays.NativeTypesArray;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.arrays.NativeTypesArray;
 
 /**
  * Unit Tests for Primitives Arrays.
@@ -17,7 +18,7 @@ public class PrimitivesArrayExampleTest {
     @Test
     public void testDisplay() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
-        assertNotNull("Value cannot be null", primitivesArray);
+        assertNotNull(primitivesArray);
         primitivesArray.display();
     }
 
@@ -27,7 +28,7 @@ public class PrimitivesArrayExampleTest {
     @Test
     public void testDisplayMatrix() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
-        assertNotNull("Value cannot be null", primitivesArray);
+        assertNotNull(primitivesArray);
         primitivesArray.displayMatrix();
     }
 
@@ -37,7 +38,7 @@ public class PrimitivesArrayExampleTest {
     @Test
     public void testDisplayArray() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
-        assertNotNull("Value cannot be null", primitivesArray);
+        assertNotNull(primitivesArray);
         primitivesArray.iterateArray();
     }
 }

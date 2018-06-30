@@ -40,6 +40,6 @@ public class ConditionalCommand extends AbstractCommand {
      * @return true, if successful, otherwise false.
      */
     private boolean isTrue() {
-        return this.predicate;
+        return predicate;
     }
 }

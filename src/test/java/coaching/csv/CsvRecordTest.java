@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public class CsvRecordTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CsvRecordTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CsvRecordTest.class);
 
     /**
      * Unit Test to csv record.
@@ -22,7 +22,7 @@ public class CsvRecordTest {
     @Test
     public void testCsvRecord() {
         LOG.info("testCsvRecord");
-        assertNotNull("Value cannot be null", new CsvRecord());
+        assertNotNull(new CsvRecord());
     }
 
     /**

@@ -23,10 +23,10 @@ public class ObjectTypesArray {
         values = new Long[ARRAY_SIZE];
         values[0] = 0L;
 
-        for(int i = 1; i < ARRAY_SIZE; i++) {
+        for (int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
             values[i] = (long) (i ^ i);
-            this.log.info("{}){}", i, values[i]);
+            log.info("{}){}", i, values[i]);
         }
     }
 
@@ -36,7 +36,7 @@ public class ObjectTypesArray {
     public void displayMatrix() {
         Long[][] matrix;
         matrix = new Long[ARRAY_SIZE][ARRAY_SIZE];
-        this.log.info("{}", looping(matrix));
+        log.info("{}", looping(matrix));
 
     }
 
@@ -45,7 +45,7 @@ public class ObjectTypesArray {
      */
     public void display() {
         final Long[][] vector = { { 0L, 1L, 2L }, { 3L, 4L, 5L }, { 6L, 7L, 8L } };
-        this.log.info("{}", looping(vector));
+        log.info("{}", looping(vector));
     }
 
     /**

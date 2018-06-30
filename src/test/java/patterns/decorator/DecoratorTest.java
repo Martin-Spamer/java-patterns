@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class DecoratorTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(DecoratorTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
 
     /**
      * Unit Test to operation.
@@ -21,8 +21,8 @@ public class DecoratorTest {
     @Test
     public void testDecoratedComponentOperation() {
         final DecoratedComponent component = new DecoratedComponent();
-        assertNotNull("Value cannot be null", component);
-        assertNotNull("Value cannot be null", component.operation());
+        assertNotNull(component);
+        assertNotNull(component.operation());
         LOG.info("{}", component.toString());
     }
 
@@ -32,13 +32,13 @@ public class DecoratorTest {
     @Test
     public void testBeforeOperation() {
         final DecoratedComponent component = new DecoratedComponent();
-        assertNotNull("Value cannot be null", component);
+        assertNotNull(component);
 
         final AbstractComponent behaviour = new ConcreteDecorator();
-        assertNotNull("Value cannot be null", component.attachBefore(behaviour));
-        assertNotNull("Value cannot be null", component.operation());
-        assertNotNull("Value cannot be null", component.detachBefore(behaviour));
-        assertNotNull("Value cannot be null", component.operation());
+        assertNotNull(component.attachBefore(behaviour));
+        assertNotNull(component.operation());
+        assertNotNull(component.detachBefore(behaviour));
+        assertNotNull(component.operation());
         LOG.info("{}", component.toString());
     }
 
@@ -48,7 +48,7 @@ public class DecoratorTest {
     @Test
     public void testAfter() {
         final DecoratedComponent component = new DecoratedComponent();
-        assertNotNull("Value cannot be null", component);
+        assertNotNull(component);
         final AbstractComponent behaviour = new ConcreteDecorator();
         component.attachAfter(behaviour);
         component.operation();

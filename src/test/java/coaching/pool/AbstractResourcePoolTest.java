@@ -5,7 +5,10 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * AbstractResourcePoolTest Class.
@@ -13,7 +16,7 @@ import static org.junit.Assert.*;
 public class AbstractResourcePoolTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(AbstractResourcePoolTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractResourcePoolTest.class);
 
     /**
      * TestResourcePool Class.
@@ -27,7 +30,7 @@ public class AbstractResourcePoolTest {
     @Test
     public void testAbstractResourcePool() {
         LOG.debug("testAbstractResourcePool");
-        assertNotNull("Value cannot be null", new MockResourcePool());
+        assertNotNull(new MockResourcePool());
     }
 
     /**
@@ -39,7 +42,7 @@ public class AbstractResourcePoolTest {
 
         // Given a resource pool
         final MockResourcePool testResourcePool = new MockResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
         testResourcePool.add(true);
@@ -69,8 +72,8 @@ public class AbstractResourcePoolTest {
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
-        assertNotNull("Value cannot be null", testResourcePool.add(true));
-        assertNotNull("Value cannot be null", testResourcePool.add(false));
+        assertNotNull(testResourcePool.add(true));
+        assertNotNull(testResourcePool.add(false));
         assertEquals(2, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
     }
@@ -97,7 +100,7 @@ public class AbstractResourcePoolTest {
     public void testOffer() {
         LOG.debug("testOffer");
         final MockResourcePool testResourcePool = new MockResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
         assertTrue(testResourcePool.offer(true));
@@ -113,10 +116,10 @@ public class AbstractResourcePoolTest {
     public void testRemoveWhenNull() {
         LOG.debug("testRemoveWhenNull");
         final MockResourcePool testResourcePool = new MockResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
-        assertNotNull("Value cannot be null", testResourcePool.remove(null));
+        assertNotNull(testResourcePool.remove(null));
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
     }
@@ -128,7 +131,7 @@ public class AbstractResourcePoolTest {
     public void testGetWhenEmpty() {
         LOG.debug("testGetWhenEmpty");
         final MockResourcePool testResourcePool = new MockResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
         assertNull(testResourcePool.take());
@@ -144,13 +147,13 @@ public class AbstractResourcePoolTest {
     public void testGet() {
         LOG.debug("testGet");
         final MockResourcePool testResourcePool = new MockResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
         testResourcePool.add(true);
         testResourcePool.add(false);
-        assertNotNull("Value cannot be null", testResourcePool.take());
-        assertNotNull("Value cannot be null", testResourcePool.take());
+        assertNotNull(testResourcePool.take());
+        assertNotNull(testResourcePool.take());
         assertNull(testResourcePool.take());
         assertEquals(0, testResourcePool.countFree());
         assertEquals(2, testResourcePool.countUsed());
@@ -163,7 +166,7 @@ public class AbstractResourcePoolTest {
     public void testRelease() {
         LOG.debug("testRelease");
         final MockResourcePool testResourcePool = new MockResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
         testResourcePool.add(true).add(false);

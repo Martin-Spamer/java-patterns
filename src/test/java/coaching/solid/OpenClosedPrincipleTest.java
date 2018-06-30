@@ -16,7 +16,7 @@ public class OpenClosedPrincipleTest {
     @Test
     public void testOpenClosedPrinciple() {
         final OpenClosedPrinciple ocp = new OpenClosedPrinciple();
-        assertNotNull("Value cannot be null", ocp);
+        assertNotNull(ocp);
     }
 
 }

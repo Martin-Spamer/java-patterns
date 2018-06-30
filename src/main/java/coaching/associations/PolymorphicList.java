@@ -1,11 +1,11 @@
 
 package coaching.associations;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * PolymorphicList Class.
@@ -13,7 +13,7 @@ import java.util.List;
 public class PolymorphicList {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(PolymorphicList.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PolymorphicList.class);
 
     /** The integer list. */
     private final List<Integer> integerList = new ArrayList<>();
@@ -35,7 +35,7 @@ public class PolymorphicList {
      */
     public PolymorphicList add(final Integer integerIn) {
         LOG.info("add({}", integerIn);
-        this.integerList.add(integerIn);
+        integerList.add(integerIn);
         return this;
     }
 
@@ -46,7 +46,7 @@ public class PolymorphicList {
      */
     @Override
     public String toString() {
-        return String.format("PolymorphicList [integerList=%s]", this.integerList);
+        return String.format("PolymorphicList [integerList=%s]", integerList);
     }
 
 }

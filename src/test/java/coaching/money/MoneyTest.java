@@ -1,14 +1,16 @@
 
 package coaching.money;
 
+import java.util.Currency;
+import java.util.Locale;
+
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Currency;
-import java.util.Locale;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import static org.junit.Assume.assumeTrue;
 
@@ -18,7 +20,7 @@ import static org.junit.Assume.assumeTrue;
 public class MoneyTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(MoneyTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
 
     /**
      * Unit Test for typical usage of Money class.
@@ -28,7 +30,7 @@ public class MoneyTest {
         LOG.info("testMoneyUsage");
 
         final Money money = new Money(10L);
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         LOG.info("new Money(10L) = {}", money.toString());
 
         money.add(1L);
@@ -65,10 +67,10 @@ public class MoneyTest {
         final Locale locale = Locale.getDefault();
         final Currency currency = Currency.getInstance(locale);
         final MoneyInterface money = new Money(currency);
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         assertTrue(money.isEqualTo(0));
         final Currency actualCurrency = money.getCurrency();
-        assertNotNull("Value cannot be null", actualCurrency);
+        assertNotNull(actualCurrency);
     }
 
     /**
@@ -78,7 +80,7 @@ public class MoneyTest {
     public void testMoneyLong() {
         LOG.info("testMoneyLong");
         final MoneyInterface money = new Money();
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         assertTrue(money.isEqualTo(0));
     }
 
@@ -89,7 +91,7 @@ public class MoneyTest {
     public void testMoneyCurrencyLong() {
         LOG.info("testMoneyCurrencyLong");
         final MoneyInterface money = new Money();
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         assertTrue(money.isEqualTo(0L));
     }
 
@@ -100,7 +102,7 @@ public class MoneyTest {
     public void testMoneyWithMinValueOfLong() {
         LOG.info("testMoneyWithMinValueOfLong");
         final MoneyInterface money = new Money(Long.MIN_VALUE);
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         LOG.info("{}", money.toString());
         assertTrue(money.isEqualTo(Long.MIN_VALUE));
     }
@@ -112,7 +114,7 @@ public class MoneyTest {
     public void testMoneyWithMaxValueOfLong() {
         LOG.info("testMoneyWithMaxValueOfLong");
         final MoneyInterface money = new Money(Long.MAX_VALUE);
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         LOG.info("{}", money.toString());
         assertTrue(money.isEqualTo(Long.MAX_VALUE));
     }
@@ -129,7 +131,7 @@ public class MoneyTest {
 
         final MoneyInterface money = new Money(gbp, Long.MAX_VALUE);
         LOG.info("{}", money.toString());
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         final String actual = money.toString();
         String expected = "£ 9,223,372,036,854,775,807";
         assertEquals(expected, actual);
@@ -146,7 +148,7 @@ public class MoneyTest {
         assumeTrue(eur.getSymbol().equals("€"));
 
         final MoneyInterface money = new Money(eur, Long.MAX_VALUE);
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         LOG.info("{}", money.toString());
         final String actual = money.toString();
         String expected = "€ 9,223,372,036,854,775,807";
@@ -166,7 +168,7 @@ public class MoneyTest {
         assumeTrue(usd.getSymbol().equals("$"));
 
         final MoneyInterface money = new Money(usd, Long.MAX_VALUE);
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         LOG.info("{}", money.toString());
         final String actual = money.toString();
         String expected = "$ 9,223,372,036,854,775,807";

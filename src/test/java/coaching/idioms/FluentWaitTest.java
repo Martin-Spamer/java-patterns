@@ -5,7 +5,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Fluent Wait Test Class.
@@ -13,7 +15,7 @@ import static org.junit.Assert.*;
 public class FluentWaitTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(FluentWaitTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FluentWaitTest.class);
 
     /**
      * class PassCondition.

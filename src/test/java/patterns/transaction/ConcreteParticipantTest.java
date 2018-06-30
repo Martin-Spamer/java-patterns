@@ -16,7 +16,7 @@ public class ConcreteParticipantTest {
     @Test
     public void testCommit() {
         final ConcreteParticipant testInstance = new ConcreteParticipant();
-        assertNotNull("Value cannot be null", testInstance);
+        assertNotNull(testInstance);
     }
 
 }

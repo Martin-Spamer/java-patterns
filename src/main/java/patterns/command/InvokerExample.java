@@ -35,33 +35,33 @@ public class InvokerExample implements InvokerInterface {
     @Override
     public ResultInterface execute(final String actionName) {
         ResultInterface result = null;
-        this.log.info("execute({})", actionName);
+        log.info("execute({})", actionName);
         switch (actionName) {
         case "ExampleCommand":
-            this.log.trace("case ExampleCommand");
-            result = this.exampleCommand.execute(new Parameters());
+            log.trace("case ExampleCommand");
+            result = exampleCommand.execute(new Parameters());
             break;
         case "CommandSequence":
-            this.log.trace("case CommandSequence");
-            result = this.commandSequence.execute(new Parameters());
+            log.trace("case CommandSequence");
+            result = commandSequence.execute(new Parameters());
             break;
         case "CompoundCommand":
-            this.log.trace("case CompoundCommand");
-            result = this.compoundCommand.execute(new Parameters());
+            log.trace("case CompoundCommand");
+            result = compoundCommand.execute(new Parameters());
             break;
         case "ConditionalCommand":
-            this.log.trace("case ConditionalCommand");
-            result = this.conditionalCommand.execute(new Parameters());
+            log.trace("case ConditionalCommand");
+            result = conditionalCommand.execute(new Parameters());
             break;
         case "SequenceCommand":
-            this.log.trace("case SequenceCommand");
-            result = this.sequenceCommand.execute(new Parameters());
+            log.trace("case SequenceCommand");
+            result = sequenceCommand.execute(new Parameters());
             break;
         default:
-            this.log.trace("unknown command");
+            log.trace("unknown command");
             break;
         }
-        this.log.info("result = {}", result);
+        log.info("result = {}", result);
         return result;
     }
 

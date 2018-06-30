@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class ManagerTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(ManagerTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ManagerTest.class);
 
     /**
      * Test delegation.
@@ -22,13 +22,13 @@ public class ManagerTest {
     public void testDelegation() {
         LOG.info("testDelegation");
         final Manager manager = new Manager();
-        assertNotNull("Value cannot be null", manager);
+        assertNotNull(manager);
 
         final Worker worker = new Worker();
-        assertNotNull("Value cannot be null", manager);
+        assertNotNull(manager);
 
-        assertNotNull("Value cannot be null", manager.setWorker(worker));
-        assertNotNull("Value cannot be null", manager.doProcess());
+        assertNotNull(manager.setWorker(worker));
+        assertNotNull(manager.doProcess());
     }
 
 }

@@ -16,7 +16,7 @@ public class ColleagueTest {
     @Test
     public void testColleague() {
         final Colleague colleague = new Colleague();
-        assertNotNull("Value cannot be null", colleague);
+        assertNotNull(colleague);
     }
 
 }

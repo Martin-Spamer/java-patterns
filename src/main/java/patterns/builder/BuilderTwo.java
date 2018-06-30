@@ -16,4 +16,9 @@ public class BuilderTwo extends AbstractBuilder {
         return new PartTwo();
     }
 
+    @Override
+    public Part build(final String partName) {
+        return new PartTwo(partName);
+    }
+
 }

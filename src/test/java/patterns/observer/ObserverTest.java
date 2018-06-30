@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class ObserverTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(ObserverTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ObserverTest.class);
 
     /**
      * Unit Test to update.
@@ -22,9 +22,9 @@ public class ObserverTest {
     public void testUpdate() {
         LOG.info("{}.testUpdate", this.getClass().getSimpleName());
         final Subject subject = new Subject();
-        assertNotNull("Value cannot be null", subject);
+        assertNotNull(subject);
         final Observer observer = new Observer();
-        assertNotNull("Value cannot be null", observer);
+        assertNotNull(observer);
 
         subject.attachObserver(observer);
         subject.setStatus(true);

@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class BridgeTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(BridgeTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BridgeTest.class);
 
     /**
      * Unit Test to operation.
@@ -21,7 +21,7 @@ public class BridgeTest {
     @Test
     public void testOperation() {
         final RefinedAbstraction instance = new RefinedAbstraction(new Implementor());
-        assertNotNull("Value cannot be null", instance);
+        assertNotNull(instance);
         LOG.info("{}", instance.toString());
     }
 

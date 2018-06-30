@@ -1,9 +1,9 @@
 
 package coaching.idioms;
 
-import org.junit.Test;
-
 import java.util.regex.Pattern;
+
+import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -12,10 +12,10 @@ import static org.junit.Assert.assertTrue;
  * Regular Expression Test Class.
  */
 public class RegularExpressionTest {
-    
+
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^XYZ$";
-    
+
     /** The pattern. */
     private final Pattern PATTERN = Pattern.compile(PATTERN_STRING);
 
@@ -25,7 +25,7 @@ public class RegularExpressionTest {
     @Test
     public void testRegularExpression() {
         final RegularExpression regularExpression = new RegularExpression();
-        assertNotNull("Value cannot be null", regularExpression);
+        assertNotNull(regularExpression);
     }
 
     /**
@@ -34,7 +34,7 @@ public class RegularExpressionTest {
     @Test
     public void testRegularExpressionString() {
         final RegularExpression regularExpression = new RegularExpression(PATTERN_STRING);
-        assertNotNull("Value cannot be null", regularExpression);
+        assertNotNull(regularExpression);
     }
 
     /**
@@ -42,8 +42,8 @@ public class RegularExpressionTest {
      */
     @Test
     public void testRegularExpressionPattern() {
-        final RegularExpression regularExpression = new RegularExpression(this.PATTERN);
-        assertNotNull("Value cannot be null", regularExpression);
+        final RegularExpression regularExpression = new RegularExpression(PATTERN);
+        assertNotNull(regularExpression);
     }
 
     /**
@@ -52,7 +52,7 @@ public class RegularExpressionTest {
     @Test
     public void testVerify() {
         final RegularExpression regularExpression = new RegularExpression();
-        assertNotNull("Value cannot be null", regularExpression);
+        assertNotNull(regularExpression);
         assertTrue(regularExpression.verify("ABC"));
     }
 
@@ -62,7 +62,7 @@ public class RegularExpressionTest {
     @Test
     public void testFind() {
         final RegularExpression regularExpression = new RegularExpression();
-        assertNotNull("Value cannot be null", regularExpression);
+        assertNotNull(regularExpression);
         regularExpression.find("ABC");
     }
 
@@ -72,7 +72,7 @@ public class RegularExpressionTest {
     @Test
     public void testReplace() {
         final RegularExpression regularExpression = new RegularExpression();
-        assertNotNull("Value cannot be null", regularExpression);
+        assertNotNull(regularExpression);
         regularExpression.replace("ABC", "ZYZ");
     }
 

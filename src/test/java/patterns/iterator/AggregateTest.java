@@ -16,7 +16,7 @@ public class AggregateTest {
     @Test
     public void testCreateIterator() {
         final Aggregate aggregate = new Aggregate();
-        assertNotNull("Value cannot be null", aggregate);
+        assertNotNull(aggregate);
     }
 
 }

@@ -19,7 +19,7 @@ public abstract class AbstractAdapter implements TargetInterface {
      */
     @Override
     public Result request() {
-        this.log.info("{}.request", this.getClass().getSimpleName());
+        log.info("{}.request", this.getClass().getSimpleName());
         return null;
     }
 

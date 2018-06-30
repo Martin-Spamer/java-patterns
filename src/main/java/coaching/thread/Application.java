@@ -1,21 +1,26 @@
 
 package coaching.thread;
 
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import java.io.InputStream;
-import java.io.StringWriter;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * a test harness for Java modules.
@@ -26,7 +31,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Application {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(Application.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 
     /** The thread map. */
     private final Map<String, AbstractProcess> threadMap = new ConcurrentHashMap<>();
@@ -56,7 +61,7 @@ public class Application {
             createThreads(document);
 
         } catch (final Exception exception) {
-            LOG.error("{}", exception.toString());
+            LOG.error(exception.toString());
         }
 
         return false;
@@ -100,7 +105,7 @@ public class Application {
                     abstractApplicationProcess.start();
                 }
 
-                this.threadMap.put(nameAttribute, abstractApplicationProcess);
+                threadMap.put(nameAttribute, abstractApplicationProcess);
             }
         }
     }
@@ -116,7 +121,7 @@ public class Application {
         try {
             return (AbstractProcess) Class.forName(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error("{}", e.toString());
+            LOG.error( e.toString());
         }
         return null;
     }
@@ -148,7 +153,7 @@ public class Application {
             transformer.transform(source, result);
             return result.getWriter().toString();
         } catch (IllegalArgumentException | TransformerFactoryConfigurationError | TransformerException e) {
-            LOG.error("{}", e.toString());
+            LOG.error( e.toString());
         }
         return null;
     }
@@ -163,7 +168,7 @@ public class Application {
         try {
             new Application();
         } catch (final Exception e) {
-            LOG.error("{}", e.toString());
+            LOG.error( e.toString());
         }
     }
 }

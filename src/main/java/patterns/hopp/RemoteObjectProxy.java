@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 class RemoteObjectProxy implements HoppInterface {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(RemoteObjectProxy.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
 
     /** The remote object. */
     private final HoppInterface remoteObject = new RemoteObject();
@@ -21,7 +21,7 @@ class RemoteObjectProxy implements HoppInterface {
      */
     public void remoteMethodProxy() {
         LOG.info("%s.remoteMethodProxy()", this.getClass().getSimpleName());
-        this.remoteObject.remoteMethod();
+        remoteObject.remoteMethod();
     }
 
     /*
@@ -32,7 +32,7 @@ class RemoteObjectProxy implements HoppInterface {
     @Override
     public void remoteMethod() {
         LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
-        this.remoteObject.remoteMethod();
+        remoteObject.remoteMethod();
     }
 
     /*
@@ -43,7 +43,7 @@ class RemoteObjectProxy implements HoppInterface {
     @Override
     public void localMethod() {
         LOG.info("%s.localMethod()", this.getClass().getSimpleName());
-        this.remoteObject.localMethod();
+        remoteObject.localMethod();
     }
 
 }

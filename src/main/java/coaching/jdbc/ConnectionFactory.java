@@ -1,11 +1,11 @@
 
 package coaching.jdbc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A factory for creating Connection objects.
@@ -65,7 +65,7 @@ public class ConnectionFactory {
         try {
             Class.forName(driverClassName);
         } catch (final ClassNotFoundException e) {
-            this.log.error("{}", e.toString());
+            log.error( e.toString());
         }
     }
 
@@ -76,9 +76,9 @@ public class ConnectionFactory {
      */
     public Connection getConnection() {
         try {
-            return DriverManager.getConnection(this.connectionUrl, this.username, this.password);
+            return DriverManager.getConnection(connectionUrl, username, password);
         } catch (final Exception e) {
-            this.log.error("{}", e.toString());
+            log.error( e.toString());
         }
         return null;
     }

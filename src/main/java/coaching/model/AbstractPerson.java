@@ -15,14 +15,14 @@ public abstract class AbstractPerson implements PersonInterface {
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** The name. */
+    /** person name. */
     private String name;
 
     /**
      * Instantiates a new person.
      */
     public AbstractPerson() {
-        this.name = "Name";
+        name = "Name";
     }
 
     /**
@@ -53,13 +53,17 @@ public abstract class AbstractPerson implements PersonInterface {
      */
     @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String.format("%s [name=%s]", this.getClass().getSimpleName(), name);
     }
 
-    
 }

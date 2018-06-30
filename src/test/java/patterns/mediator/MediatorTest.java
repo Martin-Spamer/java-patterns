@@ -16,6 +16,6 @@ public class MediatorTest {
     @Test
     public void test() {
         final Mediator mediator = new Mediator();
-        assertNotNull("Value cannot be null", mediator);
+        assertNotNull(mediator);
     }
 }

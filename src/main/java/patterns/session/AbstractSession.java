@@ -47,7 +47,7 @@ public abstract class AbstractSession {
      * @return the uuid
      */
     public UUID getUuid() {
-        return this.uuid;
+        return uuid;
     }
 
     /**
@@ -56,7 +56,7 @@ public abstract class AbstractSession {
      * @return the token
      */
     public String token() {
-        return this.token;
+        return token;
     }
 
     /*
@@ -66,7 +66,7 @@ public abstract class AbstractSession {
      */
     @Override
     public String toString() {
-        return String.format("AbstractSession [uuid=%s, token=%s]", this.uuid, this.token);
+        return String.format("AbstractSession [uuid=%s, token=%s]", uuid, token);
     }
 
 }

@@ -1,10 +1,11 @@
 
 package coaching.xml;
 
-import coaching.jdbc.MySqlDao;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.jdbc.MySqlDao;
 
 /**
  * Unit test for the XmlToJdbc class.
@@ -17,7 +18,7 @@ public class XmlToJdbcTest {
     @Test
     public void testXmlToJdbc() {
         final MySqlDao xmlToJdbc = new XmlToJdbc();
-        assertNotNull("Value cannot be null", xmlToJdbc);
+        assertNotNull(xmlToJdbc);
     }
 
 }

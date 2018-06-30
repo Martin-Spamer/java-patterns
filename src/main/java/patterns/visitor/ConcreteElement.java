@@ -14,7 +14,7 @@ public final class ConcreteElement extends AbstractElement {
      */
     @Override
     public void accept(final VisitorInterface visitor) {
-        this.log.info("{}.accept", this.getClass().getSimpleName());
+        log.info("{}.accept", this.getClass().getSimpleName());
     }
 
 }

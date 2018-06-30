@@ -6,4 +6,12 @@ package patterns.builder;
  */
 public class PartOne extends Part {
 
+    public PartOne() {
+        super();
+    }
+
+    public PartOne(final String partName) {
+        super(partName);
+    }
+
 }

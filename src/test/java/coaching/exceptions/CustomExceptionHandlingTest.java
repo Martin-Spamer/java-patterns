@@ -1,12 +1,13 @@
 
 package coaching.exceptions;
 
-import coaching.exceptions.CustomExceptionHandling.CustomCreationException;
-import coaching.exceptions.CustomExceptionHandling.CustomReadException;
-import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.exceptions.CustomExceptionHandling.CustomCreationException;
+import coaching.exceptions.CustomExceptionHandling.CustomReadException;
+import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
 
 /**
  * Custom Exception Handling Test class.
@@ -22,7 +23,7 @@ public class CustomExceptionHandlingTest {
     @Test(expected = CustomCreationException.class)
     public void testSubProcessA() throws CustomCreationException {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull("Value cannot be null", customExceptionHandling);
+        assertNotNull(customExceptionHandling);
         customExceptionHandling.subProcessA();
     }
 
@@ -35,7 +36,7 @@ public class CustomExceptionHandlingTest {
     @Test(expected = CustomReadException.class)
     public void testSubProcessB() throws CustomReadException {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull("Value cannot be null", customExceptionHandling);
+        assertNotNull(customExceptionHandling);
         customExceptionHandling.subProcessB();
     }
 
@@ -48,7 +49,7 @@ public class CustomExceptionHandlingTest {
     @Test(expected = CustomUpdateException.class)
     public void testSubProcessC() throws CustomUpdateException {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull("Value cannot be null", customExceptionHandling);
+        assertNotNull(customExceptionHandling);
         customExceptionHandling.subProcessC();
     }
 
@@ -61,7 +62,7 @@ public class CustomExceptionHandlingTest {
     @Test
     public void testProcess() throws Exception {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull("Value cannot be null", customExceptionHandling);
+        assertNotNull(customExceptionHandling);
         customExceptionHandling.process();
     }
 

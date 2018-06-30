@@ -22,7 +22,7 @@ public class SequenceCommand extends AbstractCommand {
      * @return true, if successful, otherwise false.
      */
     public boolean append(final AbstractCommand command) {
-        return this.sequence.add(command);
+        return sequence.add(command);
     }
 
     /**
@@ -36,7 +36,7 @@ public class SequenceCommand extends AbstractCommand {
      *            the element
      */
     public void add(final int index, final AbstractCommand element) {
-        this.sequence.add(index, element);
+        sequence.add(index, element);
     }
 
     /**
@@ -49,7 +49,7 @@ public class SequenceCommand extends AbstractCommand {
      * @return the abstract command
      */
     public AbstractCommand remove(final int index) {
-        return this.sequence.remove(index);
+        return sequence.remove(index);
     }
 
     /*
@@ -60,12 +60,12 @@ public class SequenceCommand extends AbstractCommand {
      */
     @Override
     public ResultInterface execute(final ParametersInterface commandParameters) {
-        this.result = new Result();
-        for (final AbstractCommand command : this.sequence) {
+        result = new Result();
+        for (final AbstractCommand command : sequence) {
             final ResultInterface newResult = command.execute(commandParameters);
-            this.result.and(newResult);
+            result.and(newResult);
         }
-        return this.result;
+        return result;
     }
 
     /*
@@ -76,10 +76,10 @@ public class SequenceCommand extends AbstractCommand {
      */
     @Override
     public ResultInterface undo(final ParametersInterface commandParameters) {
-        for (final AbstractCommand command : this.sequence) {
-            this.result = command.execute(commandParameters);
+        for (final AbstractCommand command : sequence) {
+            result = command.execute(commandParameters);
         }
-        return this.result;
+        return result;
     }
 
 }

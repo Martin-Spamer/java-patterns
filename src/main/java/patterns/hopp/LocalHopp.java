@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 class LocalHopp implements HoppInterface {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(LocalHopp.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LocalHopp.class);
 
     /** The remote object proxy. */
     public HoppInterface remoteObjectProxy = new RemoteObjectProxy();
@@ -23,7 +23,7 @@ class LocalHopp implements HoppInterface {
     @Override
     public void localMethod() {
         LOG.info("%s.localMethod()", this.getClass().getSimpleName());
-        this.remoteObjectProxy.localMethod();
+        remoteObjectProxy.localMethod();
     }
 
     /*
@@ -34,6 +34,6 @@ class LocalHopp implements HoppInterface {
     @Override
     public void remoteMethod() {
         LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
-        this.remoteObjectProxy.remoteMethod();
+        remoteObjectProxy.remoteMethod();
     }
 }

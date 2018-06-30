@@ -1,13 +1,16 @@
 
 package coaching.collections;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
-
 /**
- * Table Row class.
+ * A TableRow composed of TableCells class.
  */
 public class TableRow {
 
@@ -58,7 +61,7 @@ public class TableRow {
      */
     @Override
     public String toString() {
-        return String.format("TableRow [cols=%s]", Collections.singletonList(this.cols));
+        return String.format("%s [cols=%s]", this.getClass().getSimpleName(), Collections.singletonList(this.cols));
     }
 
 }

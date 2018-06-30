@@ -17,6 +17,6 @@ public class ControllerTest {
     @Test
     public void testController() {
         final Controller controller = new Controller();
-        assertNotNull("Value cannot be null", controller);
+        assertNotNull(controller);
     }
 }

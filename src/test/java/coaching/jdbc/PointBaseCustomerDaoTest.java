@@ -15,17 +15,17 @@ import static org.junit.Assert.assertNotNull;
 public class PointBaseCustomerDaoTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);
-    
+    private static final Logger LOG = LoggerFactory.getLogger(PointBaseCustomerDaoTest.class);
+
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-    
+
     /** The Constant JDBC_URL. */
     private final static String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
-    
+
     /** The Constant USER. */
     private final static String USER = "PBPUBLIC";
-    
+
     /** The Constant PASSWORD. */
     private final static String PASSWORD = "PBPUBLIC";
 
@@ -35,7 +35,7 @@ public class PointBaseCustomerDaoTest {
     @Test
     public void testPointBaseCustomerDao() {
         final DaoInterface dao = new PointBaseCustomerDao();
-        assertNotNull("Value cannot be null", dao);
+        assertNotNull(dao);
     }
 
     /**
@@ -43,12 +43,12 @@ public class PointBaseCustomerDaoTest {
      */
     @Test
     public void testPointBaseCustomerDaoUrlUserPassword() {
-        assertNotNull("Value cannot be null", new PointBaseCustomerDao());
+        assertNotNull(new PointBaseCustomerDao());
         try {
             final DaoInterface dao = new PointBaseCustomerDao();
-            assertNotNull("Value cannot be null", dao);
+            assertNotNull(dao);
         } catch (final Exception exception) {
-            LOG.error("{}", exception.toString());
+            LOG.error( exception.toString());
         }
     }
 
@@ -58,14 +58,14 @@ public class PointBaseCustomerDaoTest {
     @Test
     public void testPointBaseCustomerDaoTypical() {
         final PointBaseCustomerDao dao = new PointBaseCustomerDao();
-        assertNotNull("Value cannot be null", dao);
+        assertNotNull(dao);
         try {
             dao.create();
             dao.read();
             dao.update();
             dao.delete();
         } catch (final Exception exception) {
-            LOG.error("{}", exception.toString());
+            LOG.error( exception.toString());
         }
     }
 }

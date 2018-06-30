@@ -11,9 +11,9 @@ import static org.junit.Assert.assertNotNull;
  * The RulesEngineTest Class.
  */
 public class RulesEngineTest {
-    
+
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(RulesEngineTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RulesEngineTest.class);
 
     /**
      * Unit Test to rules engine.
@@ -22,7 +22,7 @@ public class RulesEngineTest {
     public void testRulesEngine() {
         LOG.info("testRulesEngine();");
         final RulesEngine rulesEngine = new RulesEngine();
-        assertNotNull("Value cannot be null", rulesEngine);
+        assertNotNull(rulesEngine);
     }
 
     /**
@@ -32,7 +32,7 @@ public class RulesEngineTest {
     public void testExecute() {
         LOG.info("new RulesEngine().execute();");
         final RulesEngine rulesEngine = new RulesEngine();
-        assertNotNull("Value cannot be null", rulesEngine.execute());
+        assertNotNull(rulesEngine.execute());
     }
 
 }

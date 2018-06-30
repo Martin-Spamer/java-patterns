@@ -1,13 +1,15 @@
 
 package coaching.test;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+
 import org.junit.AssumptionViolatedException;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
+
 import static org.junit.Assume.assumeNotNull;
 
 public class UnitTest {

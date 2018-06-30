@@ -3,6 +3,7 @@ package patterns.mvc.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import patterns.command.CommandFactory;
 import patterns.command.MissingCommandException;
 import patterns.mvc.ControllerInterface;
@@ -40,7 +41,7 @@ public abstract class AbstractController implements ControllerInterface {
      * Detach model.
      */
     public void detachModel() {
-        this.model = null;
+        model = null;
     }
 
     /**
@@ -57,7 +58,7 @@ public abstract class AbstractController implements ControllerInterface {
      * Detach view.
      */
     public void detachView() {
-        this.view = null;
+        view = null;
     }
 
     /**
@@ -70,7 +71,7 @@ public abstract class AbstractController implements ControllerInterface {
      *             the missing command exception
      */
     public AbstractController execute(final String commandName) throws MissingCommandException {
-        this.commands.execute(commandName);
+        commands.execute(commandName);
         return this;
     }
 

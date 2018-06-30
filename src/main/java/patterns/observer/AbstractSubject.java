@@ -1,11 +1,11 @@
 
 package patterns.observer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * AbstractSubject Class.
@@ -26,7 +26,7 @@ public abstract class AbstractSubject implements SubjectInterface {
      */
     @Override
     public void attachObserver(final AbstractObserver observer) {
-        this.observers.add(observer);
+        observers.add(observer);
     }
 
     /*
@@ -37,7 +37,7 @@ public abstract class AbstractSubject implements SubjectInterface {
      */
     @Override
     public void detachObserver(final ObserverInterface observer) {
-        this.observers.remove(observer);
+        observers.remove(observer);
     }
 
     /*
@@ -47,7 +47,7 @@ public abstract class AbstractSubject implements SubjectInterface {
      */
     @Override
     public void updateObservers() {
-        for (final ObserverInterface observer : this.observers) {
+        for (final ObserverInterface observer : observers) {
             observer.updateObservers();
         }
     }

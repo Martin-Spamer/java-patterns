@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class BuilderTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(BuilderTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BuilderTest.class);
 
     /**
      * Unit Test to build one.
@@ -21,7 +21,7 @@ public class BuilderTest {
     @Test
     public void testBuilderOne() {
         final BuilderOne builder = new BuilderOne();
-        assertNotNull("Value cannot be null", builder);
+        assertNotNull(builder);
         final Part product = builder.build();
         LOG.info("product = {}", product);
     }
@@ -32,7 +32,7 @@ public class BuilderTest {
     @Test
     public void testBuilderTwo() {
         final BuilderTwo builder = new BuilderTwo();
-        assertNotNull("Value cannot be null", builder);
+        assertNotNull(builder);
         final Part product = builder.build();
         LOG.info("product = {}", product);
     }

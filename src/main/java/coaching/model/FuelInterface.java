@@ -6,6 +6,17 @@ package coaching.model;
  */
 public interface FuelInterface {
 
-    void addFuel(int quantity);
-    void useFuel(int quantity);
+    /**
+     * Adds the fuel.
+     *
+     * @param quantity the quantity
+     */
+    void addFuel(final int quantity);
+
+    /**
+     * Use fuel.
+     *
+     * @param quantity the quantity
+     */
+    void useFuel(final int quantity);
 }

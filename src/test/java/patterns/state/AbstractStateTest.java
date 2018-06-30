@@ -16,9 +16,9 @@ public class AbstractStateTest {
     @Test
     public void testAbstractState() {
         final StateAlice stateAlice = new StateAlice();
-        assertNotNull("Value cannot be null", stateAlice);
+        assertNotNull(stateAlice);
         final StateBob stateBob = new StateBob();
-        assertNotNull("Value cannot be null", stateBob);
+        assertNotNull(stateBob);
     }
 
 }

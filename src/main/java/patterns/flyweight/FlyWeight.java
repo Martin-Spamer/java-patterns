@@ -34,7 +34,7 @@ public final class FlyWeight {
      */
     @Override
     public String toString() {
-        return String.format("FlyWeight [commonState=%s]", this.commonState);
+        return String.format("FlyWeight [commonState=%s]", commonState);
     }
 
 }

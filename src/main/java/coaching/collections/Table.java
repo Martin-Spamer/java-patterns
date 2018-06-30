@@ -1,16 +1,16 @@
 
 package coaching.collections;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * Table class.
+ * A Table composed of TableRows class.
  */
 public class Table {
 
@@ -20,10 +20,10 @@ public class Table {
     /** The table name. */
     private String tableName;
 
-    /** The col names. */
+    /** The column names. */
     private final List<String> colNames = new ArrayList<>();
 
-    /** The rows. */
+    /** The rows of the table. */
     private final List<TableRow> rows = new ArrayList<>();
 
     /**
@@ -166,7 +166,11 @@ public class Table {
      */
     @Override
     public String toString() {
-        return String.format("Table [tableName=%s, colNames=%s, rows=%s]", this.tableName, this.colNames, this.rows);
+        return String.format("%s [tableName=%s, colNames=%s, rows=%s]",
+                this.getClass().getSimpleName(),
+                this.tableName,
+                this.colNames,
+                this.rows);
     }
 
 }

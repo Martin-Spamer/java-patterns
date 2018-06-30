@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class CompositeClassArrayTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CompositeClassArrayTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArrayTest.class);
 
     /**
      * Unit Test to composite class array.
@@ -21,7 +21,7 @@ public class CompositeClassArrayTest {
     @Test
     public void testCompositeClassArray() {
         final CompositeClassArray compositeClassArray = new CompositeClassArray();
-        assertNotNull("Value cannot be null", compositeClassArray);
+        assertNotNull(compositeClassArray);
         LOG.info("{}", compositeClassArray.toString());
     }
 

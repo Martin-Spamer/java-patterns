@@ -8,12 +8,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * class TableTest.
+ * TableTest class.
  */
 public class TableTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(TableTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TableTest.class);
 
     /**
      * Unit Test to typical usage.
@@ -30,7 +30,7 @@ public class TableTest {
 
         // Then we can produce a table as csv.
         final String csvString = table.toCsvString();
-        LOG.info("{}", csvString);
+        LOG.trace(csvString);
     }
 
     /**
@@ -40,7 +40,7 @@ public class TableTest {
     public void testTable() {
         final Table table = new Table();
         assertNotNull(table);
-        LOG.info("{}", table.toString());
+        LOG.trace(table.toString());
     }
 
     /**
@@ -50,7 +50,7 @@ public class TableTest {
     public void testTableString() {
         final Table table = new Table("TableName");
         assertNotNull(table);
-        LOG.info("{}", table.toString());
+        LOG.trace(table.toString());
     }
 
     /**
@@ -63,7 +63,7 @@ public class TableTest {
         final TableRow tableRow = new TableRow();
         assertNotNull(tableRow);
         table.add(tableRow);
-        LOG.info("{}", table.toString());
+        LOG.trace(table.toString());
     }
 
 }

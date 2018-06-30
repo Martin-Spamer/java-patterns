@@ -12,17 +12,17 @@ import static org.junit.Assert.assertNotNull;
  */
 public class SingleResponsibilityPrincipleTest {
 
-    private static final Logger LOG  = LoggerFactory.getLogger(SingleResponsibilityPrincipleTest.class);
-    
+    private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrincipleTest.class);
+
     /**
      * Unit Test shows multiple responsibility.
      */
     @Test
     public void testMultipleResponsibility() {
         final SingleResponsibilityPrinciple multiple = new SingleResponsibilityPrinciple();
-        assertNotNull("Value cannot be null", multiple);
+        assertNotNull(multiple);
         multiple.multipleResponsibility();
-        LOG.debug("multiple = {}",multiple.toString());
+        LOG.debug("multiple = {}", multiple.toString());
     }
 
     /**
@@ -31,8 +31,8 @@ public class SingleResponsibilityPrincipleTest {
     @Test
     public void testSingleResponsibility() {
         final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
-        assertNotNull("Value cannot be null", srp);
+        assertNotNull(srp);
         srp.singleResponsibility();
-        LOG.debug("srp = {}",srp.toString());
+        LOG.debug("srp = {}", srp.toString());
     }
 }

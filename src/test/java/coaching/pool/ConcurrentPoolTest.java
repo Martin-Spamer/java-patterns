@@ -22,7 +22,7 @@ public class ConcurrentPoolTest {
      */
     @Test
     public void testAbstractResourcePool() {
-        assertNotNull("Value cannot be null", new TestResourcePool());
+        assertNotNull(new TestResourcePool());
     }
 
     /**
@@ -32,7 +32,7 @@ public class ConcurrentPoolTest {
     public void testTypicalUsage() {
         // Given a resource pool
         final TestResourcePool testResourcePool = new TestResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
         testResourcePool.add(true);
         testResourcePool.add(false);
         assertEquals(2, testResourcePool.countFree());
@@ -57,7 +57,7 @@ public class ConcurrentPoolTest {
     @Test
     public void testConcurrentPool() {
         final TestResourcePool testResourcePool = new TestResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
     }
 
 }

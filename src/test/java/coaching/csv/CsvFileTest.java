@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public class CsvFileTest {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(CsvFileTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CsvFileTest.class);
 
     /**
      * Unit Test to csv file.
@@ -22,7 +22,7 @@ public class CsvFileTest {
     public void testCsvFile() {
         LOG.info("testCsvFile()");
         final CsvFile csvFile = new CsvFile();
-        assertNotNull("Value cannot be null", csvFile);
+        assertNotNull(csvFile);
         assertEquals(4, csvFile.size());
         LOG.info("{}", csvFile);
         csvFile.logPretty();
@@ -35,7 +35,7 @@ public class CsvFileTest {
     public void testCsvFileString() {
         LOG.info("testCsvFileString()");
         final CsvFile csvFile = new CsvFile("/data.csv");
-        assertNotNull("Value cannot be null", csvFile);
+        assertNotNull(csvFile);
         assertEquals(4, csvFile.size());
         LOG.info("{}", csvFile);
         csvFile.logPretty();
@@ -48,10 +48,10 @@ public class CsvFileTest {
     public void testCsvFileHeader() {
         LOG.info("testCsvFileHeader()");
         final CsvFile csvFile = new CsvFile();
-        assertNotNull("Value cannot be null", csvFile);
+        assertNotNull(csvFile);
         LOG.info("{}", csvFile);
         final String header = csvFile.getHeader();
-        assertNotNull("Value cannot be null", header);
+        assertNotNull(header);
         LOG.info("{}", header);
     }
 
@@ -62,10 +62,10 @@ public class CsvFileTest {
     public void testCsvFileRecords() {
         LOG.info("testCsvFileRecords()");
         final CsvFile csvFile = new CsvFile();
-        assertNotNull("Value cannot be null", csvFile);
+        assertNotNull(csvFile);
         for (int index = 0; index < csvFile.size(); index++) {
             final CsvRecord record = csvFile.getRecord(index);
-            assertNotNull("Value cannot be null", record);
+            assertNotNull(record);
             LOG.info("{}", record);
         }
     }

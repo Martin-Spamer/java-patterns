@@ -13,7 +13,7 @@ public final class RealSubject extends AbstractSubject {
      */
     @Override
     public void request() {
-        this.log.info("request");
+        log.info("request");
     }
 
 }

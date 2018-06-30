@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 class Route implements InputChannelInterface, OutputChannelInterface {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(Route.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Route.class);
 
     /** The output channel. */
     private OutputChannelInterface outputChannel = null;
@@ -41,7 +41,7 @@ class Route implements InputChannelInterface, OutputChannelInterface {
     @Override
     public void sendMessage(final Message message) {
         LOG.info("sendMessage{}", message);
-        this.outputChannel.sendMessage(message);
+        outputChannel.sendMessage(message);
     }
 
     /*
@@ -52,7 +52,7 @@ class Route implements InputChannelInterface, OutputChannelInterface {
     @Override
     public Message receiveMessage() {
         LOG.info("receiveMessage{}");
-        return this.inputChannel.receiveMessage();
+        return inputChannel.receiveMessage();
     }
 
 }

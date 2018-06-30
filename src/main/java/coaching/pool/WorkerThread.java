@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class WorkerThread implements Runnable {
 
     /** provides logging. */
-    private static final Logger LOG  = LoggerFactory.getLogger(WorkerThread.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WorkerThread.class);
 
     /** The Constant INTERVAL. */
     private static final int INTERVAL = 5000;
@@ -25,7 +25,7 @@ public class WorkerThread implements Runnable {
      *            the command name as String object.
      */
     public WorkerThread(final String commandName) {
-        this.command = commandName;
+        command = commandName;
     }
 
     /**
@@ -49,7 +49,7 @@ public class WorkerThread implements Runnable {
     @Override
     public void run() {
         final String name = Thread.currentThread().getName();
-        WorkerThread.LOG.info("{}:{}", name, this.command);
+        WorkerThread.LOG.info("{}:{}", name, command);
         processCommand();
         WorkerThread.LOG.info("{}:exit", name);
     }

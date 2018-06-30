@@ -4,6 +4,7 @@ package patterns.hopp;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+
 import static org.junit.Assume.assumeNotNull;
 
 /**
@@ -41,7 +42,7 @@ public class RemoteObjectProxyTest {
     @Test
     public void testRemoteMethod() {
         final RemoteObjectProxy remoteObjectProxy = new RemoteObjectProxy();
-        assumeNotNull("Value cannot be null", remoteObjectProxy);
+        assumeNotNull(remoteObjectProxy);
         remoteObjectProxy.remoteMethod();
     }
 
@@ -51,7 +52,7 @@ public class RemoteObjectProxyTest {
     @Test
     public void testRemoteMethodProxy() {
         final RemoteObjectProxy remoteObjectProxy = new RemoteObjectProxy();
-        assumeNotNull("Value cannot be null", remoteObjectProxy);
+        assumeNotNull(remoteObjectProxy);
         remoteObjectProxy.remoteMethodProxy();
     }
 

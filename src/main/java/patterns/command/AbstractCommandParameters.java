@@ -1,11 +1,11 @@
 
 package patterns.command;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Properties;
 import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract class for Parameters to Commands.
@@ -45,7 +45,7 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      */
     @Override
     public AbstractCommandParameters setParameter(final String key, final String value) {
-        this.parameters.setProperty(key, value);
+        parameters.setProperty(key, value);
         return this;
     }
 
@@ -56,7 +56,7 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      */
     @Override
     public Set<String> stringPropertyNames() {
-        return this.parameters.stringPropertyNames();
+        return parameters.stringPropertyNames();
     }
 
     /*
@@ -66,7 +66,7 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      */
     @Override
     public String valueFor(final String key) {
-        return this.parameters.getProperty(key);
+        return parameters.getProperty(key);
     }
 
     /*
@@ -77,7 +77,7 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      */
     @Override
     public String valueFor(final String key, final String defaultValue) {
-        return this.parameters.getProperty(key, defaultValue);
+        return parameters.getProperty(key, defaultValue);
     }
 
     /*
@@ -88,7 +88,7 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      */
     @Override
     public Boolean valueFor(final String key, final Boolean defaultValue) {
-        final String property = this.parameters.getProperty(key, defaultValue.toString());
+        final String property = parameters.getProperty(key, defaultValue.toString());
         return Boolean.parseBoolean(property);
     }
 
@@ -100,7 +100,7 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      */
     @Override
     public Long valueFor(final String key, final Long defaultValue) {
-        final String property = this.parameters.getProperty(key, defaultValue.toString());
+        final String property = parameters.getProperty(key, defaultValue.toString());
         return Long.parseLong(property);
     }
 }

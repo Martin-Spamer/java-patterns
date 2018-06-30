@@ -25,7 +25,7 @@ public class MotorCycle extends AbstractVehicle {
      * @return the rider
      */
     public Rider getRider() {
-        return this.rider;
+        return rider;
     }
 
     /**

@@ -13,4 +13,6 @@ public interface BuilderInterface {
      */
     Part build();
 
+    Part build(final String partName);
+
 }
