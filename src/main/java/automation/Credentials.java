@@ -3,10 +3,12 @@ package automation;
 
 public class Credentials {
 
-    public Credentials() {
+    private Credentials() {
+        super();
     }
 
     public Credentials(final String platform) {
+        super();
         // TODO load credentials for platform
         // e.g. "classpath:dev/credentials.csv"
     }

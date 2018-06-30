@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<comment>Test XML Configuration properties</comment>
-	<entry key="Filename">TestXmlConfig.xml</entry>
+	<entry key="Filename">TestConfig.xml</entry>
 	<entry key="key">value</entry>
 	<entry key="000">Value.000</entry>
 	<entry key="001">Value.001</entry>

@@ -26,12 +26,12 @@ public class AbstractXmlConfigTest {
     /**
      * Test Configuration class.
      */
-    public class TestXmlConfig extends AbstractXmlConfig {
+    public class TestConfig extends AbstractXmlConfig {
 
         /**
          * Instantiates a new configuration.
          */
-        public TestXmlConfig() {
+        public TestConfig() {
             super();
         }
 
@@ -41,7 +41,7 @@ public class AbstractXmlConfigTest {
          * @param configFilename
          *            the config filename
          */
-        public TestXmlConfig(final String configFilename) {
+        public TestConfig(final String configFilename) {
             super(configFilename);
         }
     }
@@ -64,7 +64,7 @@ public class AbstractXmlConfigTest {
     @Test
     public void testTypicalUsage() {
         LOG.debug("testTypicalUsage");
-        final AbstractXmlConfig config = new TestXmlConfig();
+        final AbstractXmlConfig config = new TestConfig();
         assertNotNull(config);
         LOG.trace(config.toString());
 
@@ -89,7 +89,7 @@ public class AbstractXmlConfigTest {
     @Test
     public void testMissingConfigString() {
         LOG.debug("testMissingConfigString");
-        final ConfigInterface configuration = new TestXmlConfig("Missing");
+        final ConfigInterface configuration = new TestConfig("Missing");
         assertNotNull(configuration);
     }
 
@@ -113,7 +113,7 @@ public class AbstractXmlConfigTest {
         final String key = "systemPropertyKey";
         final String expectedValue = "systemPropertyValue";
         System.setProperty(key, expectedValue);
-        final ConfigInterface configuration = new TestXmlConfig();
+        final ConfigInterface configuration = new TestConfig();
         assertNotNull(configuration);
         assertNull(configuration.get(key));
         final String property = configuration.valueFor(key);
@@ -126,7 +126,7 @@ public class AbstractXmlConfigTest {
     @Test
     public void testToString() {
         LOG.debug("testToString");
-        final ConfigInterface configuration = new TestXmlConfig();
+        final ConfigInterface configuration = new TestConfig();
         assertNotNull(configuration);
         final String string = configuration.toString();
         assertNotNull(string);
@@ -139,7 +139,7 @@ public class AbstractXmlConfigTest {
     @Test
     public void testAbstractConfigString() {
         LOG.debug("testAbstractConfigString");
-        final ConfigInterface config = new TestXmlConfig("Configuration");
+        final ConfigInterface config = new TestConfig("Configuration");
         assertNotNull(config);
         LOG.debug(config.toString());
 
@@ -153,7 +153,7 @@ public class AbstractXmlConfigTest {
     @Test
     public void testAbstractConfigStringXml() {
         LOG.debug("testAbstractConfigString");
-        final ConfigInterface config = new TestXmlConfig(CONFIGURATION_XML);
+        final ConfigInterface config = new TestConfig(CONFIGURATION_XML);
         assertNotNull(config);
         LOG.debug(config.toString());
 
