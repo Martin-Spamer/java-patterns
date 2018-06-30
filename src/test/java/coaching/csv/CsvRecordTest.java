@@ -22,7 +22,7 @@ public class CsvRecordTest {
     @Test
     public void testCsvRecord() {
         LOG.info("testCsvRecord");
-        assertNotNull("Value cannot be null", new CsvRecord());
+        assertNotNull(new CsvRecord());
     }
 
     /**

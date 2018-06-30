@@ -20,4 +20,6 @@ public abstract class AbstractBuilder implements BuilderInterface {
     @Override
     public abstract Part build();
 
+    @Override
+    public abstract Part build(final String partName);
 }

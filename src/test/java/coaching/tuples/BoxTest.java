@@ -21,7 +21,7 @@ public class BoxTest {
     @Test
     public void testBox() {
         final Box<String> box = new Box<>();
-        assertNotNull("Value cannot be null", box);
+        assertNotNull(box);
     }
 
     /**
@@ -30,7 +30,7 @@ public class BoxTest {
     @Test
     public void testBoxObject() {
         final Box<Object> box = new Box<>();
-        assertNotNull("Value cannot be null", box);
+        assertNotNull(box);
         LOG.info(box.toString());
     }
 
@@ -40,7 +40,7 @@ public class BoxTest {
     @Test
     public void testBoxString() {
         final Box<String> box = new Box<>();
-        assertNotNull("Value cannot be null", box);
+        assertNotNull(box);
         LOG.info(box.toString());
     }
 

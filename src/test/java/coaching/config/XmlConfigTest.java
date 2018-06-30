@@ -20,8 +20,8 @@ public class XmlConfigTest {
      */
     @Test
     public void testXmlConfig() {
-        final XmlConfig instance = new XmlConfig();
-        assertNotNull("Value cannot be null", instance);
+        final XmlProperties instance = new XmlProperties();
+        assertNotNull(instance);
         LOG.debug("{}", instance.toString());
     }
 
@@ -30,8 +30,8 @@ public class XmlConfigTest {
      */
     @Test
     public void testXmlConfigString() {
-        final XmlConfig instance = new XmlConfig("Configuration.xml");
-        assertNotNull("Value cannot be null", instance);
+        final XmlProperties instance = new XmlProperties("Configuration.xml");
+        assertNotNull(instance);
         LOG.debug("{}", instance.toString());
     }
 

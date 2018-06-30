@@ -20,7 +20,7 @@ public class SingleResponsibilityPrincipleTest {
     @Test
     public void testMultipleResponsibility() {
         final SingleResponsibilityPrinciple multiple = new SingleResponsibilityPrinciple();
-        assertNotNull("Value cannot be null", multiple);
+        assertNotNull(multiple);
         multiple.multipleResponsibility();
         LOG.debug("multiple = {}", multiple.toString());
     }
@@ -31,7 +31,7 @@ public class SingleResponsibilityPrincipleTest {
     @Test
     public void testSingleResponsibility() {
         final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
-        assertNotNull("Value cannot be null", srp);
+        assertNotNull(srp);
         srp.singleResponsibility();
         LOG.debug("srp = {}", srp.toString());
     }

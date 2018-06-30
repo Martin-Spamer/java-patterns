@@ -18,7 +18,7 @@ public class XmlToJdbcTest {
     @Test
     public void testXmlToJdbc() {
         final MySqlDao xmlToJdbc = new XmlToJdbc();
-        assertNotNull("Value cannot be null", xmlToJdbc);
+        assertNotNull(xmlToJdbc);
     }
 
 }

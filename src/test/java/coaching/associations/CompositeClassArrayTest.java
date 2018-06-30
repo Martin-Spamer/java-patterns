@@ -21,7 +21,7 @@ public class CompositeClassArrayTest {
     @Test
     public void testCompositeClassArray() {
         final CompositeClassArray compositeClassArray = new CompositeClassArray();
-        assertNotNull("Value cannot be null", compositeClassArray);
+        assertNotNull(compositeClassArray);
         LOG.info("{}", compositeClassArray.toString());
     }
 

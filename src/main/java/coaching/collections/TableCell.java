@@ -12,7 +12,7 @@ public class TableCell {
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** The value. */
+    /** The cell value. */
     private String value;
 
     /**
@@ -31,7 +31,7 @@ public class TableCell {
      * @return the value
      */
     public String getValue() {
-        return value;
+        return this.value;
     }
 
     /**
@@ -53,7 +53,7 @@ public class TableCell {
      */
     @Override
     public String toString() {
-        return String.format("%s", value);
+        return String.format("%s [value=%s]", this.getClass().getSimpleName(), this.value);
     }
 
 }

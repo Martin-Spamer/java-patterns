@@ -9,9 +9,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * XML Configuration Class.
+ * XML Configuration Properties.
  */
-public class XmlConfig extends AbstractConfig {
+public class XmlProperties extends AbstractConfig {
 
     /** configuration element. */
     private final Element configElement = null;
@@ -19,20 +19,19 @@ public class XmlConfig extends AbstractConfig {
     /**
      * Instantiates a new XmlConfig.
      */
-    public XmlConfig() {
+    public XmlProperties() {
         super();
-        final Class<? extends XmlConfig> className = this.getClass();
+        final Class<? extends XmlProperties> className = this.getClass();
         final String simpleName = className.getSimpleName();
-        loadFromFilename(String.format("%s.xml", simpleName));
+        loadFrom(String.format("%s.xml", simpleName));
     }
 
     /**
      * Instantiates a new XmlConfig from configuration file name.
      *
-     * @param configFilename
-     *            the Configuration filename
+     * @param configFilename the Configuration filename
      */
-    public XmlConfig(final String configFilename) {
+    public XmlProperties(final String configFilename) {
         super();
         loadFromXmlFile(inputStream(toXmlFilename(configFilename)));
     }
@@ -40,8 +39,7 @@ public class XmlConfig extends AbstractConfig {
     /**
      * To xml filename.
      *
-     * @param configFilename
-     *            the Configuration filename
+     * @param configFilename the Configuration filename
      * @return the string
      */
     protected String toXmlFilename(final String configFilename) {
@@ -51,8 +49,7 @@ public class XmlConfig extends AbstractConfig {
     /**
      * Load from xml file resource as stream.
      *
-     * @param resourceAsStream
-     *            the resource as stream
+     * @param resourceAsStream the resource as stream
      */
     public void loadFromXmlFile(final InputStream resourceAsStream) {
         if (resourceAsStream != null) {
@@ -64,20 +61,13 @@ public class XmlConfig extends AbstractConfig {
         }
     }
 
+    /* (non-Javadoc)
+     * @see coaching.config.AbstractConfig#getProperty(java.lang.String, java.lang.String)
+     */
     @Override
     public String getProperty(final String key, final String defaultValue) {
         final String property = getProperty(key);
         return property == null ? defaultValue : property;
-    }
-
-    @Override
-    public String getProperty(final String key) {
-        final NodeList propertyElements = configElement.getElementsByTagName("property");
-        for (int i = 0; i < propertyElements.getLength(); i++) {
-            final Node item = propertyElements.item(i);
-            log.info("item={}", item.toString());
-        }
-        return null;
     }
 
 }

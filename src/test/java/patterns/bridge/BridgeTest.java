@@ -21,7 +21,7 @@ public class BridgeTest {
     @Test
     public void testOperation() {
         final RefinedAbstraction instance = new RefinedAbstraction(new Implementor());
-        assertNotNull("Value cannot be null", instance);
+        assertNotNull(instance);
         LOG.info("{}", instance.toString());
     }
 

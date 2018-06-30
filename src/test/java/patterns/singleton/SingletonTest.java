@@ -21,9 +21,9 @@ public class SingletonTest {
     @Test
     public void testSingleton() {
         final Singleton instance = Singleton.getInstance();
-        assertNotNull("Value cannot be null", instance);
+        assertNotNull(instance);
         final String string = instance.toString();
-        assertNotNull("Value cannot be null", instance);
+        assertNotNull(instance);
         LOG.info("{}", string);
     }
 

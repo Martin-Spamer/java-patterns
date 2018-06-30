@@ -60,7 +60,7 @@ public class ConjunctionTest {
     @Test
     public void testConjunction() {
         final Conjunction conjunction = new Conjunction(new Mock(true), new Mock(true));
-        assertNotNull("Value cannot be null", conjunction);
+        assertNotNull(conjunction);
     }
 
     /**
@@ -69,7 +69,7 @@ public class ConjunctionTest {
     @Test
     public void testInterpretPass() {
         final Conjunction conjunction = new Conjunction(new Pass(), new Pass());
-        assertNotNull("Value cannot be null", conjunction);
+        assertNotNull(conjunction);
         final boolean interpret = conjunction.interpret(new Context());
         assertTrue(interpret);
     }
@@ -80,7 +80,7 @@ public class ConjunctionTest {
     @Test
     public void testInterpretFail() {
         final Context context = new Context();
-        assertNotNull("Value cannot be null", context);
+        assertNotNull(context);
         assertFalse(new Conjunction(new Pass(), new Fail()).interpret(context));
         assertFalse(new Conjunction(new Fail(), new Pass()).interpret(context));
         assertFalse(new Conjunction(new Fail(), new Fail()).interpret(context));

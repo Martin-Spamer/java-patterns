@@ -1,17 +1,44 @@
 # java-coaching
 
-Design Patterns implemented in Java
+Java coding idioms and Design Patterns implemented in Java
 
-[Coaching](coaching.html)
+## Status
 
-## Java Patterns
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ff7e76d6a4924d5da8d9f1c1cc7fb035)](https://www.codacy.com/app/Martin-Spamer/java-coaching?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Martin-Spamer/java-coaching&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/Martin-Spamer/java-coaching.svg?branch=master)](https://travis-ci.org/Martin-Spamer/java-coaching)
+
+## Usage 
+
+You can clone the project locally for building with Maven or importing into an IDE as a Maven project.
+
+### Clone the project locally
+
+	git clone https://github.com/Martin-Spamer/java-coaching.git
+
+### Import Project, Build and Install using Maven
+
+Import the project into your choosen IDE as a Maven project, it can be run as JUnit test cases, to expose its behaviour or installed into your local repository to be used as a dependency.
+
+	mvn install
+
+### Maven dependency
+
+Add the following dependency to your projects pom.xml file.
 
 	<dependency>
 		<groupId>spamer.me.uk</groupId>
 		<artifactId>java-coaching</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<packaging>jar</packaging>
+		<version>...</version>
 	</dependency>
-	
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ff7e76d6a4924d5da8d9f1c1cc7fb035)](https://www.codacy.com/app/Martin-Spamer/java-coaching?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Martin-Spamer/java-coaching&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.org/Martin-Spamer/java-coaching.svg?branch=master)](https://travis-ci.org/Martin-Spamer/java-coaching)
+
+## Java xoding idioms
+
+- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
+-- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
+-- [Java Coaching](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/coaching/README.md)
+
+## Java Design Pattern examples
+
+- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
+-- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)
+-- [Java Patterns](https://github.com/Martin-Spamer/java-coaching/blob/master/src/main/java/patterns/README.md)

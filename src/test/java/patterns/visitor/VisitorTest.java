@@ -18,13 +18,13 @@ public class VisitorTest {
     @Test
     public void testOperation() {
         final ConcreteVisitorOne visitorOne = new ConcreteVisitorOne();
-        assertNotNull("Value cannot be null", visitorOne);
+        assertNotNull(visitorOne);
 
         final ConcreteVisitorTwo visitorTwo = new ConcreteVisitorTwo();
-        assertNotNull("Value cannot be null", visitorTwo);
+        assertNotNull(visitorTwo);
 
         final ConcreteElement element = new ConcreteElement();
-        assertNotNull("Value cannot be null", element);
+        assertNotNull(element);
     }
 
 }

@@ -25,7 +25,7 @@ public class MementoTest {
     public void testTypicalMemento() {
         final String state = UUID.randomUUID().toString();
         final Memento memento = new Memento(state);
-        assertNotNull("Value cannot be null", memento);
+        assertNotNull(memento);
         assertEquals(state, memento.getState());
         LOG.info("{}", memento);
     }
@@ -36,7 +36,7 @@ public class MementoTest {
     @Test
     public void testMemento() {
         final Memento memento = new Memento();
-        assertNotNull("Value cannot be null", memento);
+        assertNotNull(memento);
         LOG.info("{}", memento);
     }
 
@@ -46,7 +46,7 @@ public class MementoTest {
     @Test
     public void testMementoNull() {
         final Memento memento = new Memento(null);
-        assertNotNull("Value cannot be null", memento);
+        assertNotNull(memento);
         LOG.info("{}", memento);
     }
 

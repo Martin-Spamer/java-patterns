@@ -17,7 +17,7 @@ public class EnumExampleTest {
     @Test
     public void testEnumExample() {
         final EnumExample enumExample = EnumExample.Unknown;
-        assertNotNull("Value cannot be null", enumExample);
+        assertNotNull(enumExample);
     }
 
     /**
@@ -26,7 +26,7 @@ public class EnumExampleTest {
     @Test
     public void testFromString() {
         final EnumExample enumExample = EnumExample.Unknown;
-        assertNotNull("Value cannot be null", enumExample);
+        assertNotNull(enumExample);
         assertEquals("Unknown", enumExample.toString());
     }
 

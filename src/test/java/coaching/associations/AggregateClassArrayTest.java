@@ -21,7 +21,7 @@ public class AggregateClassArrayTest {
     @Test
     public void testExecute() {
         final AggregateClassArray aggregateClassArray = new AggregateClassArray();
-        assertNotNull("Value cannot be null", aggregateClassArray);
+        assertNotNull(aggregateClassArray);
         LOG.info("{}", aggregateClassArray.toString());
     }
 

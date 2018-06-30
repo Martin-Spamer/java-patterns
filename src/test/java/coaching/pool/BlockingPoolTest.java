@@ -28,7 +28,7 @@ public class BlockingPoolTest {
     @Test
     public void testBlockingPool() {
         final TestResourcePool resourcePool = new TestResourcePool();
-        assertNotNull("Value cannot be null", resourcePool);
+        assertNotNull(resourcePool);
         LOG.info(resourcePool.toString());
     }
 
@@ -39,7 +39,7 @@ public class BlockingPoolTest {
     public void testTypicalUsage() {
         // Given a resource pool
         final TestResourcePool testResourcePool = new TestResourcePool();
-        assertNotNull("Value cannot be null", testResourcePool);
+        assertNotNull(testResourcePool);
         testResourcePool.add(true);
         testResourcePool.add(false);
         assertEquals(2, testResourcePool.countFree());

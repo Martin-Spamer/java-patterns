@@ -8,33 +8,45 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
- * Abstract Configuration Class.
+ * An abstract Configuration Class.
  */
 public abstract class AbstractConfig implements ConfigInterface {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-
-    /** The properties. */
     protected final Properties properties = new Properties();
+
+    protected String propertyFilename;
 
     /**
      * Instantiates a new abstract configuration.
      */
     public AbstractConfig() {
-        final String propertyFilename = this.getClass().getSimpleName();
-        loadFromFilename(propertyFilename);
+        super();
+        loadFrom(defaultFilename());
     }
 
     /**
      * Instantiates a new abstract configuration.
      *
-     * @param configFilename
-     *            the Configuration filename
+     * @param configFilename the Configuration filename
      */
     public AbstractConfig(final String configFilename) {
-        loadFromFilename(configFilename);
+        this.propertyFilename = configFilename;
+        loadFrom(configFilename);
+    }
+
+    /**
+     * Default filename.
+     *
+     * @return the string
+     */
+    protected String defaultFilename() {
+        this.propertyFilename = this.getClass().getSimpleName();
+        return this.propertyFilename;
     }
 
     /**
@@ -43,10 +55,10 @@ public abstract class AbstractConfig implements ConfigInterface {
      * @param configFilename
      *            the Configuration filename
      */
-    protected void loadFromFilename(final String configFilename) {
+    protected void loadFrom(final String configFilename) {
         final String propertyFilename = toPropertyFilename(configFilename);
-        loadFromResourceStream(inputStream(propertyFilename));
-        properties.setProperty("propertyFilename", propertyFilename);
+        loadFrom(inputStream(propertyFilename));
+        this.properties.setProperty("propertyFilename", propertyFilename);
     }
 
     /**
@@ -57,7 +69,12 @@ public abstract class AbstractConfig implements ConfigInterface {
      * @return the string
      */
     protected String toPropertyFilename(final String configFilename) {
-        return String.format("%s.properties", configFilename);
+        assertNotNull(configFilename);
+        if (configFilename.endsWith(".properties")) {
+            return configFilename;
+        } else {
+            return String.format("%s.properties", configFilename);
+        }
     }
 
     /**
@@ -79,12 +96,12 @@ public abstract class AbstractConfig implements ConfigInterface {
      * @param resourceAsStream
      *            the resource as stream
      */
-    protected void loadFromResourceStream(final InputStream resourceAsStream) {
+    protected void loadFrom(final InputStream resourceAsStream) {
         if (resourceAsStream != null) {
             try {
-                properties.load(resourceAsStream);
+                this.properties.load(resourceAsStream);
             } catch (final IOException e) {
-                log.error(e.toString());
+                this.log.error(e.toString());
             }
         }
     }
@@ -98,9 +115,10 @@ public abstract class AbstractConfig implements ConfigInterface {
     public String getProperty(final String key) {
         String value = System.getProperty(key);
         if (value == null) {
-            value = properties.getProperty(key);
+            value = this.properties.getProperty(key);
+        } else {
+            this.log.warn("Using system property value {} for key {}", value, key);
         }
-        log.trace("{}={}", key, value);
         return value;
     }
 
@@ -114,9 +132,10 @@ public abstract class AbstractConfig implements ConfigInterface {
     public String getProperty(final String key, final String defaultValue) {
         String value = System.getProperty(key);
         if (value == null) {
-            value = properties.getProperty(key, defaultValue);
+            value = this.properties.getProperty(key, defaultValue);
+        } else {
+            this.log.warn("Using system property value {} for key {}", value, key);
         }
-        log.trace("{}={}", key, value);
         return value;
     }
 
@@ -130,7 +149,7 @@ public abstract class AbstractConfig implements ConfigInterface {
     public String valueFor(final String key) {
         final String property = System.getProperty(key);
         if (property == null) {
-            return properties.getProperty(key);
+            return this.properties.getProperty(key);
         }
         return property;
     }
@@ -147,7 +166,7 @@ public abstract class AbstractConfig implements ConfigInterface {
     public String valueFor(final String key, final String defaultValue) {
         final String property = System.getProperty(key);
         if (property == null) {
-            return properties.getProperty(key, defaultValue);
+            return this.properties.getProperty(key, defaultValue);
         }
         return property;
     }
@@ -159,7 +178,7 @@ public abstract class AbstractConfig implements ConfigInterface {
      */
     @Override
     public String toString() {
-        final String prettyProperties = prettyProperties(properties);
+        final String prettyProperties = prettyProperties(this.properties);
         return String.format("properties = %s", prettyProperties);
     }
 

@@ -21,7 +21,7 @@ public class TargetTest {
     @Test
     public void testRequest() {
         final TargetAdapter targetAdapter = new TargetAdapter();
-        assertNotNull("Value cannot be null", targetAdapter);
+        assertNotNull(targetAdapter);
         LOG.info("{}", targetAdapter.toString());
     }
 

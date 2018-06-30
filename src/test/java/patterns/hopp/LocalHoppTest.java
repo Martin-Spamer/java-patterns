@@ -38,7 +38,7 @@ public class LocalHoppTest {
     @Test
     public void testRemoteMethod() {
         final LocalHopp localHopp = new LocalHopp();
-        assumeNotNull("Value cannot be null", localHopp);
+        assumeNotNull(localHopp);
         localHopp.remoteMethod();
     }
 
@@ -48,7 +48,7 @@ public class LocalHoppTest {
     @Test
     public void testLocalMethod() {
         final LocalHopp localHopp = new LocalHopp();
-        assumeNotNull("Value cannot be null", localHopp);
+        assumeNotNull(localHopp);
         localHopp.localMethod();
     }
 

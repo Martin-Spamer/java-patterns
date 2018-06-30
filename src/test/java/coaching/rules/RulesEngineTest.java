@@ -22,7 +22,7 @@ public class RulesEngineTest {
     public void testRulesEngine() {
         LOG.info("testRulesEngine();");
         final RulesEngine rulesEngine = new RulesEngine();
-        assertNotNull("Value cannot be null", rulesEngine);
+        assertNotNull(rulesEngine);
     }
 
     /**
@@ -32,7 +32,7 @@ public class RulesEngineTest {
     public void testExecute() {
         LOG.info("new RulesEngine().execute();");
         final RulesEngine rulesEngine = new RulesEngine();
-        assertNotNull("Value cannot be null", rulesEngine.execute());
+        assertNotNull(rulesEngine.execute());
     }
 
 }

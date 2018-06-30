@@ -47,7 +47,7 @@ public class CommandParametersTest {
     @Test
     public void testCommandParameters() {
         final ParametersInterface commandParameters = new MockCommandParameters();
-        assertNotNull("Value cannot be null", commandParameters);
+        assertNotNull(commandParameters);
         String string = commandParameters.toString();
         log.trace("{}", string);
     }
@@ -58,7 +58,7 @@ public class CommandParametersTest {
     @Test
     public void testSetGetParameter() {
         final ParametersInterface commandParameters = new MockCommandParameters();
-        assertNotNull("Value cannot be null", commandParameters);
+        assertNotNull(commandParameters);
         commandParameters.setParameter("key", "value");
         assertEquals("value", commandParameters.valueFor("key"));
         log.trace("{}", commandParameters.toString());
@@ -70,7 +70,7 @@ public class CommandParametersTest {
     @Test
     public void testAbstractParametersStringString() {
         final ParametersInterface commandParameters = new MockCommandParameters("key", "value");
-        assertNotNull("Value cannot be null", commandParameters);
+        assertNotNull(commandParameters);
         assertEquals("value", commandParameters.valueFor("key"));
         log.trace("{}", commandParameters.toString());
     }

@@ -16,7 +16,7 @@ public class ProxySubjectTest {
     @Test
     public void testRequest() {
         final SubjectProxy proxySubject = new SubjectProxy();
-        assertNotNull("Value cannot be null", proxySubject);
+        assertNotNull(proxySubject);
         proxySubject.request();
     }
 }

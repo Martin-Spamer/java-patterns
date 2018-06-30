@@ -18,7 +18,7 @@ public class InterfaceSegregationPrincipleTest {
     @Test
     public void testInterfaceSegregationPrinciple() {
         final InterfaceSegregationPrinciple isp = new InterfaceSegregationPrinciple();
-        assertNotNull("Value cannot be null", isp);
+        assertNotNull(isp);
     }
 
 }

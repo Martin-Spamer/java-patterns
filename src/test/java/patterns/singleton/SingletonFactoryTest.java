@@ -21,9 +21,9 @@ public class SingletonFactoryTest {
     @Test
     public void testGetInstance() {
         final SingletonFactory instance = SingletonFactory.getInstance();
-        assertNotNull("Value cannot be null", instance);
+        assertNotNull(instance);
         final String string = instance.toString();
-        assertNotNull("Value cannot be null", instance);
+        assertNotNull(instance);
         LOG.info("{}", string);
 
     }

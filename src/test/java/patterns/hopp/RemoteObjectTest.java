@@ -43,7 +43,7 @@ public class RemoteObjectTest {
     @Test
     public void testRemoteMethod() {
         final RemoteObject remoteObject = new RemoteObject();
-        assumeNotNull("Value cannot be null", remoteObject);
+        assumeNotNull(remoteObject);
         remoteObject.remoteMethod();
     }
 
@@ -53,7 +53,7 @@ public class RemoteObjectTest {
     @Test
     public void testLocalMethod() {
         final RemoteObject remoteObject = new RemoteObject();
-        assumeNotNull("Value cannot be null", remoteObject);
+        assumeNotNull(remoteObject);
         remoteObject.localMethod();
     }
 

@@ -22,9 +22,9 @@ public class ObserverTest {
     public void testUpdate() {
         LOG.info("{}.testUpdate", this.getClass().getSimpleName());
         final Subject subject = new Subject();
-        assertNotNull("Value cannot be null", subject);
+        assertNotNull(subject);
         final Observer observer = new Observer();
-        assertNotNull("Value cannot be null", observer);
+        assertNotNull(observer);
 
         subject.attachObserver(observer);
         subject.setStatus(true);

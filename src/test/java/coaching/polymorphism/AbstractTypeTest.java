@@ -25,9 +25,9 @@ public class AbstractTypeTest {
     public void testSubTypeOne() {
         LOG.info("testPolymorphism");
         abstractType = new SubTypeOne();
-        assertNotNull("Value cannot be null", abstractType);
+        assertNotNull(abstractType);
         LOG.info("{}", abstractType);
-        assertNotNull("Value cannot be null", abstractType.operation());
+        assertNotNull(abstractType.operation());
         LOG.info("{}", abstractType);
     }
 
@@ -39,10 +39,10 @@ public class AbstractTypeTest {
         LOG.info("testPolymorphism");
         LOG.info("{}", abstractType);
         abstractType = new SubTypeTwo();
-        assertNotNull("Value cannot be null", abstractType);
+        assertNotNull(abstractType);
         LOG.info("{}", abstractType);
         abstractType.operation();
-        assertNotNull("Value cannot be null", abstractType.operation());
+        assertNotNull(abstractType.operation());
         LOG.info("{}", abstractType);
     }
 

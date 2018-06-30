@@ -27,7 +27,7 @@ public class AbstractLoggingTest {
     @Test
     public void testSendToLog() {
         final MockLog mockLog = new MockLog();
-        assertNotNull("Value cannot be null", mockLog);
+        assertNotNull(mockLog);
         mockLog.toLog();
     }
 
@@ -37,7 +37,7 @@ public class AbstractLoggingTest {
     @Test
     public void testSendLogTo() {
         final MockLog mockLog = new MockLog();
-        assertNotNull("Value cannot be null", mockLog);
+        assertNotNull(mockLog);
         mockLog.logTo(LOG);
     }
 

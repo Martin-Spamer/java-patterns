@@ -65,7 +65,7 @@ public class PoundsTest {
         assumeTrue(defaultCurrency.getSymbol().equals("£"));
 
         final Pounds pounds = new Pounds(10L);
-        assertNotNull("Value cannot be null", pounds);
+        assertNotNull(pounds);
         LOG.info("new Money(10L) = {}", pounds.toString());
 
         pounds.add(1L);
@@ -100,7 +100,7 @@ public class PoundsTest {
     public void testPoundsCurrency() {
         LOG.info("testPoundsCurrency");
         final MoneyInterface pounds = new Pounds();
-        assertNotNull("Value cannot be null", pounds);
+        assertNotNull(pounds);
         assertTrue(pounds.isEqualTo(0));
         LOG.info("pounds = {}", pounds.toString());
     }
@@ -112,7 +112,7 @@ public class PoundsTest {
     public void testPoundsCurrencyLong() {
         LOG.info("testPoundsCurrencyLong");
         final MoneyInterface pounds = new Pounds(0L);
-        assertNotNull("Value cannot be null", pounds);
+        assertNotNull(pounds);
         assertTrue(pounds.isEqualTo(0));
         LOG.info("pounds = {}", pounds.toString());
     }
@@ -124,7 +124,7 @@ public class PoundsTest {
     public void testMinValue() {
         LOG.info("testMinValue");
         final MoneyInterface money = new Money(Long.MIN_VALUE);
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         LOG.info("money = {}", money.toString());
         assertTrue(money.isEqualTo(Long.MIN_VALUE));
     }
@@ -136,7 +136,7 @@ public class PoundsTest {
     public void testMaxValue() {
         LOG.info("testMaxValue");
         final MoneyInterface money = new Money(Long.MAX_VALUE);
-        assertNotNull("Value cannot be null", money);
+        assertNotNull(money);
         LOG.info("money = {}", money.toString());
         assertTrue(money.isEqualTo(Long.MAX_VALUE));
     }
@@ -148,7 +148,7 @@ public class PoundsTest {
     public void testMaxPounds() {
         LOG.info("testMaxPounds");
         final MoneyInterface pounds = new Pounds(Long.MAX_VALUE);
-        assertNotNull("Value cannot be null", pounds);
+        assertNotNull(pounds);
         LOG.info("pounds = {}", pounds.toString());
         final String actual = pounds.toString();
         assertEquals("£ 9,223,372,036,854,775,807", actual);

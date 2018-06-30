@@ -24,7 +24,7 @@ public class DateHelperTest {
     public void testNow() {
         LOG.info("testNow");
         final Calendar now = DateHelper.now();
-        assertNotNull("Value cannot be null", now);
+        assertNotNull(now);
         LOG.info("testNow = {}", now.toString());
     }
 
@@ -35,7 +35,7 @@ public class DateHelperTest {
     public void testYesterday() {
         LOG.info("testYesterday");
         final Calendar yesterday = DateHelper.yesterday();
-        assertNotNull("Value cannot be null", yesterday);
+        assertNotNull(yesterday);
         LOG.info("testNow = {}", yesterday.toString());
         final Calendar now = Calendar.getInstance();
         now.add(Calendar.DAY_OF_YEAR, -1);
@@ -48,7 +48,7 @@ public class DateHelperTest {
     public void testTomorrow() {
         LOG.info("testTomorrow");
         final Calendar tomorrow = DateHelper.tomorrow();
-        assertNotNull("Value cannot be null", tomorrow);
+        assertNotNull(tomorrow);
         LOG.info("testNow = {}", tomorrow.toString());
         final Calendar now = Calendar.getInstance();
         now.add(Calendar.DAY_OF_YEAR, +1);

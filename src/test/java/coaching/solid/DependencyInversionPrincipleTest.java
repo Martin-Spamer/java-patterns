@@ -17,7 +17,7 @@ public class DependencyInversionPrincipleTest {
     @Test
     public void testDependencyInversionPrinciple() {
         final DependencyInversionPrinciple dip = new DependencyInversionPrinciple();
-        assertNotNull("Value cannot be null", dip);
+        assertNotNull(dip);
     }
 
 }

@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Table class.
+ * A Table composed of TableRows class.
  */
 public class Table {
 
@@ -20,10 +20,10 @@ public class Table {
     /** The table name. */
     private String tableName;
 
-    /** The col names. */
+    /** The column names. */
     private final List<String> colNames = new ArrayList<>();
 
-    /** The rows. */
+    /** The rows of the table. */
     private final List<TableRow> rows = new ArrayList<>();
 
     /**
@@ -61,7 +61,7 @@ public class Table {
      * @return the tableName
      */
     public String getTableName() {
-        return tableName;
+        return this.tableName;
     }
 
     /**
@@ -93,7 +93,7 @@ public class Table {
      * @see java.util.List#add(java.lang.Object)
      */
     public boolean add(final TableRow e) {
-        return rows.add(e);
+        return this.rows.add(e);
     }
 
     /**
@@ -105,7 +105,7 @@ public class Table {
      * @see java.util.List#get(int)
      */
     public TableRow get(final int index) {
-        return rows.get(index);
+        return this.rows.get(index);
     }
 
     /**
@@ -125,7 +125,7 @@ public class Table {
     protected String tableHeader() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<String> itemIterator = colNames.iterator();
+        final Iterator<String> itemIterator = this.colNames.iterator();
         if (itemIterator.hasNext()) {
             stringBuffer.append(itemIterator.next());
             while (itemIterator.hasNext()) {
@@ -146,7 +146,7 @@ public class Table {
     protected String tableBody() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableRow> tableRow = rows.iterator();
+        final Iterator<TableRow> tableRow = this.rows.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -166,7 +166,11 @@ public class Table {
      */
     @Override
     public String toString() {
-        return String.format("Table [tableName=%s, colNames=%s, rows=%s]", tableName, colNames, rows);
+        return String.format("%s [tableName=%s, colNames=%s, rows=%s]",
+                this.getClass().getSimpleName(),
+                this.tableName,
+                this.colNames,
+                this.rows);
     }
 
 }
