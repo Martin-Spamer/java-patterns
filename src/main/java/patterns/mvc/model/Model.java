@@ -1,8 +1,11 @@
 
 package patterns.mvc.model;
 
+import patterns.mvc.ModelInterface;
+
 /**
- * Model Class.
+ * And example Model class from the Model View Controller (MVC).
  */
-public class Model extends AbstractModel {
+public class Model extends AbstractModel implements ModelInterface {
+
 }

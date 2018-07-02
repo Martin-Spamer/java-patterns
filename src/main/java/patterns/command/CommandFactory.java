@@ -51,8 +51,8 @@ public final class CommandFactory implements InvokerInterface {
      */
     private void initialise(final String filename) {
         try {
-            properties.load(inputStream(filename));
-            LOG.info("properties = {}", properties);
+            this.properties.load(inputStream(filename));
+            LOG.info("properties = {}", this.properties);
         } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage());
         }
@@ -68,6 +68,10 @@ public final class CommandFactory implements InvokerInterface {
     private InputStream inputStream(final String resourceName) {
         final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         return classloader.getResourceAsStream(resourceName);
+    }
+
+    public ResultInterface execute() {
+        return null;
     }
 
     /*
@@ -100,7 +104,7 @@ public final class CommandFactory implements InvokerInterface {
      *             the missing command exception
      */
     private ResultInterface executeActionName(final String actionName) throws MissingCommandException {
-        final String className = properties.getProperty(actionName);
+        final String className = this.properties.getProperty(actionName);
         if (className != null) {
             if (className.length() > 0) {
                 return executeByClassName(className);

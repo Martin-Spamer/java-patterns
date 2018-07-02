@@ -6,28 +6,28 @@ package coaching.jdbc;
  */
 public final class OracleDao extends AbstractDataAccessObject {
 
-    /** The Constant JDBC_DRIVER. */
+    /** JDBC_URL to be used. */
     private static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
 
-    /** The Constant JDBC_URL. */
+    /** JDBC_URL to be used. */
     private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:sample";
 
-    /** The Constant USER. */
+    /** USERNAME to be used. */
     private static final String USER = "user";
 
-    /** The Constant PASSWORD. */
+    /** PASSWORD to be used. */
     private static final String PASSWORD = "password";
 
-    /** The Constant SELECT_SQL. */
+    /** SELECT_SQL. */
     private static final String SELECT_SQL = "SELECT * FROM table";
 
-    /** The Constant INSERT_SQL. */
+    /** INSERT_SQL. */
     private static final String INSERT_SQL = "INSERT INTO table (field-name...) VALUES (values...)";
 
-    /** The Constant UPDATE_SQL. */
+    /** UPDATE_SQL. */
     private static final String UPDATE_SQL = "UPDATE table SET field-name = field-value WHERE key=value";
 
-    /** The Constant DELETE_SQL. */
+    /** DELETE_SQL. */
     private static final String DELETE_SQL = "DELETE FROM table WHERE key=value";
 
     /**

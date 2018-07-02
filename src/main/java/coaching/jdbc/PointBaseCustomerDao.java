@@ -12,28 +12,28 @@ package coaching.jdbc;
  */
 public final class PointBaseCustomerDao extends AbstractDataAccessObject {
 
-    /** The Constant JDBC_DRIVER. */
+    /** JDBC_DRIVER to be used. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
 
-    /** The Constant JDBC_URL. */
+    /** JDBC_URL to be used. */
     private static final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
 
-    /** The Constant USER. */
+    /** USERNAME to be used. */
     private static final String USER = "PBPUBLIC";
 
-    /** The Constant PASSWORD. */
+    /** PASSWORD to be used. */
     private static final String PASSWORD = "PBPUBLIC";
 
-    /** The Constant SELECT_SQL. */
+    /** SELECT_SQL. */
     private static final String SELECT_SQL = "SELECT * FROM CUSTOMER_TBL";
 
-    /** The Constant INSERT_SQL. */
+    /** INSERT_SQL. */
     private static final String INSERT_SQL = "INSERT INTO CUSTOMER_TBL (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
 
-    /** The Constant UPDATE_SQL. */
+    /** UPDATE_SQL. */
     private static final String UPDATE_SQL = "UPDATE CUSTOMER_TBL SET NAME ='DataMentor' WHERE CUSTOMER_NUM=999";
 
-    /** The Constant DELETE_SQL. */
+    /** DELETE_SQL. */
     private static final String DELETE_SQL = "DELETE FROM CUSTOMER_TBL WHERE CUSTOMER_NUM=999";
 
     /**

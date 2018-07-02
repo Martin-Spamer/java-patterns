@@ -31,8 +31,9 @@ public abstract class AbstractModel implements ModelInterface {
      * patterns.mvc.model.AbstractModel)
      */
     @Override
-    public void attach(final String key, final AbstractModel model) {
-        models.put(key, model);
+    public ModelInterface attach(final String key, final AbstractModel model) {
+        this.models.put(key, model);
+        return this;
     }
 
     /*
@@ -42,8 +43,19 @@ public abstract class AbstractModel implements ModelInterface {
      * patterns.mvc.view.AbstractView)
      */
     @Override
-    public void attach(final String key, final AbstractView view) {
-        views.put(key, view);
+    public ModelInterface attach(final String key, final AbstractView view) {
+        this.views.put(key, view);
+        return this;
+    }
+
+    @Override
+    public ModelInterface update() {
+        return this;
+    }
+
+    @Override
+    public ModelInterface update(final String key, final String value) {
+        return this;
     }
 
     /*
@@ -52,8 +64,9 @@ public abstract class AbstractModel implements ModelInterface {
      * @see patterns.mvc.ModelInterface#detachModel(java.lang.String)
      */
     @Override
-    public void detachModel(final String key) {
-        models.remove(key);
+    public ModelInterface detachModel(final String key) {
+        this.models.remove(key);
+        return this;
     }
 
     /*
@@ -62,8 +75,8 @@ public abstract class AbstractModel implements ModelInterface {
      * @see patterns.mvc.ModelInterface#detachView(java.lang.String)
      */
     @Override
-    public void detachView(final String key) {
-        views.remove(key);
+    public ModelInterface detachView(final String key) {
+        this.views.remove(key);
+        return this;
     }
-
 }

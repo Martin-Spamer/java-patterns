@@ -1,5 +1,5 @@
 
-package coaching.csv;
+package coaching.jdbc;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -10,10 +10,10 @@ import static org.junit.Assert.assertEquals;
 /**
  * CsvToJdbcTest Class.
  */
-public class CsvToJdbcTest {
+public class JdbcToCsvTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CsvToJdbcTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(JdbcToCsvTest.class);
 
     /** Default JDBC DRIVER . */
     private static final String DRIVER = "org.postgresql.Driver";
@@ -39,7 +39,7 @@ public class CsvToJdbcTest {
      */
     @Test
     public void testFluentInterface() {
-        final CsvToJdbc instance = new CsvToJdbc();
+        final JdbcToCsv instance = new JdbcToCsv();
         assertEquals(instance, instance.setDriver(DRIVER));
         assertEquals(instance, instance.setUrl(URL));
         assertEquals(instance, instance.setUsername(USERNAME));

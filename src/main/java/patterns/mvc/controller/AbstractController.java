@@ -11,37 +11,46 @@ import patterns.mvc.ModelInterface;
 import patterns.mvc.ViewInterface;
 
 /**
- * AbstractController Class.
+ * An example abstract MVC Controller class.
  */
 public abstract class AbstractController implements ControllerInterface {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** The commands. */
+    /** provides command instances. */
     protected CommandFactory commands = new CommandFactory();
 
-    /** The model. */
+    /** The Model. */
     protected ModelInterface model;
 
-    /** The view. */
+    /** The View. */
     protected ViewInterface view;
 
-    /**
-     * Attach model.
-     *
-     * @param model
-     *            the model
-     */
-    public void attachModel(final ModelInterface model) {
+    public AbstractController() {
+    }
+
+    public AbstractController(final ModelInterface model, final ViewInterface view) {
         this.model = model;
+        this.view = view;
+    }
+
+    /**
+     * Attach a Model.
+     */
+    @Override
+    public ControllerInterface attachModel(final ModelInterface model) {
+        this.model = model;
+        return this;
     }
 
     /**
      * Detach model.
      */
-    public void detachModel() {
-        model = null;
+    @Override
+    public ControllerInterface detachModel() {
+        this.model = null;
+        return this;
     }
 
     /**
@@ -50,15 +59,24 @@ public abstract class AbstractController implements ControllerInterface {
      * @param view
      *            the view
      */
-    public void attachView(final ViewInterface view) {
+    @Override
+    public ControllerInterface attachView(final ViewInterface view) {
         this.view = view;
+        return this;
     }
 
     /**
      * Detach view.
      */
-    public void detachView() {
-        view = null;
+    @Override
+    public ControllerInterface detachView() {
+        this.view = null;
+        return this;
+    }
+
+    public ControllerInterface execute() throws MissingCommandException {
+        this.commands.execute();
+        return this;
     }
 
     /**
@@ -70,8 +88,9 @@ public abstract class AbstractController implements ControllerInterface {
      * @throws MissingCommandException
      *             the missing command exception
      */
-    public AbstractController execute(final String commandName) throws MissingCommandException {
-        commands.execute(commandName);
+    @Override
+    public ControllerInterface execute(final String commandName) throws MissingCommandException {
+        this.commands.execute(commandName);
         return this;
     }
 

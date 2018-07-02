@@ -20,19 +20,19 @@ import org.w3c.dom.Text;
  */
 public final class XmlDao extends AbstractDataAccessObject {
 
-    /** The Constant JDBC_DRIVER. */
+    /** JDBC_DRIVER to be used. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
 
-    /** The Constant JDBC_URL. */
+    /** JDBC_URL to be used. */
     private static final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
 
-    /** The Constant USER. */
+    /** USERNAME to be used. */
     private static final String USER = "PBPUBLIC";
 
-    /** The Constant PASSWORD. */
+    /** PASSWORD to be used. */
     private static final String PASSWORD = "PBPUBLIC";
 
-    /** The Constant SQL. */
+    /** SELECT_SQL. */
     private static final String SQL = "SELECT * from customers";
 
     /**
@@ -50,11 +50,11 @@ public final class XmlDao extends AbstractDataAccessObject {
     public Document toXmlDocument() {
         try {
             read(SQL);
-            final Document xmlDocument = toXmlDocument(resultSet);
-            resultSet.close();
+            final Document xmlDocument = toXmlDocument(this.resultSet);
+            this.resultSet.close();
             return xmlDocument;
         } catch (final SQLException e) {
-            log.error( e.toString());
+            this.log.error(e.toString());
         }
         return null;
     }
@@ -98,7 +98,7 @@ public final class XmlDao extends AbstractDataAccessObject {
                 }
             }
         } catch (final Exception e) {
-            log.error( e.toString());
+            this.log.error(e.toString());
         }
         return document;
     }
@@ -111,11 +111,11 @@ public final class XmlDao extends AbstractDataAccessObject {
     public String toXmlString() {
         try {
             read(SQL);
-            final String xmlString = toXmlString(resultSet);
-            resultSet.close();
+            final String xmlString = toXmlString(this.resultSet);
+            this.resultSet.close();
             return xmlString;
         } catch (final SQLException e) {
-            log.error( e.toString());
+            this.log.error(e.toString());
         }
         return null;
     }
@@ -149,7 +149,7 @@ public final class XmlDao extends AbstractDataAccessObject {
             xml.append("</TABLE>\n");
             resultSet.close();
         } catch (final Exception e) {
-            log.error( e.toString());
+            this.log.error(e.toString());
         }
         return xml.toString();
     }

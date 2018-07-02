@@ -34,11 +34,11 @@ public class CsvRecordTest {
 
         final String headerLine = new CsvRecord("#One,Two").toString();
         assertEquals("#One, Two", headerLine);
-        LOG.info("headerLine={}", headerLine);
+        LOG.info(headerLine.toString());
 
         final String dataLine = new CsvRecord("One,Two").toString();
         assertEquals("One, Two", dataLine);
-        LOG.info("dataLine={}", dataLine);
+        LOG.info(dataLine.toString());
     }
 
 }

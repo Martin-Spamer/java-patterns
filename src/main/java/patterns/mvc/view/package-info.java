@@ -1,5 +1,6 @@
 /**
- * Package provides an example of the Model View Controller (MVC) pattern.
+ * Package provides an example of the View class for the Model-View-Controller
+ * pattern.
  * <p>
  * Detailed description of package.
  */

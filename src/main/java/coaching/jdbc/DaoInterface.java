@@ -7,6 +7,38 @@ package coaching.jdbc;
 public interface DaoInterface {
 
     /**
+     * Sets the driver.
+     *
+     * @param driver the driver
+     * @return the dao interface
+     */
+    DaoInterface setDriver(final String driver);
+
+    /**
+     * Sets the url.
+     *
+     * @param url the url
+     * @return the dao interface
+     */
+    DaoInterface setUrl(final String url);
+
+    /**
+     * Sets the username.
+     *
+     * @param username the username
+     * @return the dao interface
+     */
+    DaoInterface setUsername(final String username);
+
+    /**
+     * Sets the password.
+     *
+     * @param password the password
+     * @return the dao interface
+     */
+    DaoInterface setPassword(final String password);
+
+    /**
      * Create record.
      *
      * @param sql
