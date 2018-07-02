@@ -90,11 +90,11 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.7.0</version>
 				<configuration>
-				<!-- 
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<!-- 
 					<source>${java.version}</source>
 					<target>${java.version}</target>
- 				-->					
-					<encoding>${project.build.sourceEncoding}</encoding>
+ 					-->
 				</configuration>
 			</plugin>
 
