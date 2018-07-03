@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Java Coaching">
-	<skin>
-		<groupId>org.apache.maven.skins</groupId>
-		<artifactId>maven-fluido-skin</artifactId>
-		<version>1.7</version>
-	</skin>
+
 	<bannerLeft>
 		<name>Java Coaching</name>
 		<src>http://maven.apache.org/images/apache-maven-project.png</src>
 		<href>http://maven.apache.org/</href>
 	</bannerLeft>
+
 	<bannerRight>
 		<src>http://maven.apache.org/images/maven-small.gif</src>
 	</bannerRight>
+
 	<body>
 		<links>
 			<item name="Cucumber" href="https://cucumber.io" />
@@ -36,6 +34,7 @@
 			<item name="ATF4J API" href="apidocs/index.html" />
 			<item name="Test API" href="testapidocs/index.html" />
 		</menu>
+
 		<menu ref="reports" />
 
 	</body>
