@@ -24,11 +24,4 @@ public abstract class AbstractComponent implements ComponentInterface {
         throw new UnsupportedOperationException();
     }
 
-    // @Override
-    // public AbstractComponent operation() {
-    // String simpleName = this.getClass().getSimpleName();
-    // log.info(simpleName.toString());
-    // return this;
-    // }
-
 }
