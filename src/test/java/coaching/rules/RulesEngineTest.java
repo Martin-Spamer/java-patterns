@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The RulesEngineTest Class.
+ * The RulesEngineTest class.
  */
 public class RulesEngineTest {
 

@@ -9,11 +9,10 @@ import org.slf4j.LoggerFactory;
  **/
 public class ObjectTypesArray {
 
+    private static final Logger LOG = LoggerFactory.getLogger(ObjectTypesArray.class);
+
     /** The Constant ARRAY_SIZE. */
     private static final int ARRAY_SIZE = 10;
-
-    /** provides logging. */
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * iterate the elements of an array for display.
@@ -26,7 +25,7 @@ public class ObjectTypesArray {
         for (int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
             values[i] = (long) (i ^ i);
-            log.info("{}){}", i, values[i]);
+            LOG.info("{}){}", i, values[i]);
         }
     }
 
@@ -36,7 +35,7 @@ public class ObjectTypesArray {
     public void displayMatrix() {
         Long[][] matrix;
         matrix = new Long[ARRAY_SIZE][ARRAY_SIZE];
-        log.info("{}", looping(matrix));
+        LOG.info(looping(matrix));
 
     }
 
@@ -45,7 +44,7 @@ public class ObjectTypesArray {
      */
     public void display() {
         final Long[][] vector = { { 0L, 1L, 2L }, { 3L, 4L, 5L }, { 6L, 7L, 8L } };
-        log.info("{}", looping(vector));
+        LOG.info(looping(vector));
     }
 
     /**

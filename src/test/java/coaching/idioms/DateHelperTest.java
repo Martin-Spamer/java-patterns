@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * DateHelperTest Class.
+ * DateHelperTest class.
  */
 public class DateHelperTest {
 

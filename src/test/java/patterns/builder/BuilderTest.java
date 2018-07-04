@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The BuilderTest Class.
+ * The BuilderTest class.
  */
 public class BuilderTest {
 

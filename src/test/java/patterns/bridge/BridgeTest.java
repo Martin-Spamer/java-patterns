@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * BridgeTest Class.
+ * BridgeTest class.
  */
 public class BridgeTest {
 
@@ -22,7 +22,7 @@ public class BridgeTest {
     public void testOperation() {
         final RefinedAbstraction instance = new RefinedAbstraction(new Implementor());
         assertNotNull(instance);
-        LOG.info("{}", instance.toString());
+        LOG.info(instance.toString());
     }
 
 }

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Fluent Wait Test Class.
+ * Fluent Wait Test class.
  */
 public class FluentWaitTest {
 

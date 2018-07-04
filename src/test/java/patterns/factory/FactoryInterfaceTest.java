@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * FactoryInterfaceTest Class.
+ * FactoryInterfaceTest class.
  */
 public class FactoryInterfaceTest {
 

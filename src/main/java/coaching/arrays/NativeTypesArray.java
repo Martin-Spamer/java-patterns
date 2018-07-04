@@ -9,11 +9,9 @@ import org.slf4j.LoggerFactory;
  **/
 public class NativeTypesArray {
 
-    /** The Constant ARRAY_SIZE. */
-    private static final int ARRAY_SIZE = 10;
+    private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArray.class);
 
-    /** provides logging. */
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    private static final int ARRAY_SIZE = 10;
 
     /**
      * iterate the elements of an array for display.
@@ -28,7 +26,7 @@ public class NativeTypesArray {
         for (int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
             values[i] = i ^ i;
-            log.info("{} = {}",i, values[i]);
+            LOG.info("{} = {}", i, values[i]);
         }
     }
 
@@ -40,7 +38,7 @@ public class NativeTypesArray {
         long[][] matrix;
         matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
 
-        log.info("{}", looping(matrix));
+        LOG.info(looping(matrix));
 
     }
 
@@ -49,7 +47,7 @@ public class NativeTypesArray {
      */
     public void display() {
         final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
-        log.info("{}", looping(vector));
+        LOG.info(looping(vector));
     }
 
     /**

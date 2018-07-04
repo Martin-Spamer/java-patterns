@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The CommandFactoryTest Class.
+ * The CommandFactoryTest class.
  */
 public class CommandFactoryTest {
 

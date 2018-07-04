@@ -22,7 +22,7 @@ public class CompositeClassArrayTest {
     public void testCompositeClassArray() {
         final CompositeClassArray compositeClassArray = new CompositeClassArray();
         assertNotNull(compositeClassArray);
-        LOG.info("{}", compositeClassArray.toString());
+        LOG.info(compositeClassArray.toString());
     }
 
 }

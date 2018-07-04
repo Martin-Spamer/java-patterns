@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * StaticLoggingTest Class.
+ * StaticLoggingTest class.
  */
 public class StaticLoggingTest {
 

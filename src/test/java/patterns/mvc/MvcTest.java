@@ -14,7 +14,7 @@ import patterns.mvc.view.AbstractView;
 import patterns.mvc.view.View;
 
 /**
- * Model View Controller Test Class.
+ * Model View Controller Test class.
  */
 public class MvcTest {
 

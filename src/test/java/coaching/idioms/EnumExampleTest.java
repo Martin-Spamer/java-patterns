@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The EnumExampleTest Class.
+ * The EnumExampleTest class.
  */
 public class EnumExampleTest {
 

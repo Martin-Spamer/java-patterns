@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 
 /**
- * CsvToJdbcTest Class.
+ * CsvToJdbcTest class.
  */
 public class CsvToJdbcTest {
 

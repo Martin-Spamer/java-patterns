@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The FilterManagerTest Class.
+ * The FilterManagerTest class.
  */
 public class FilterManagerTest {
 

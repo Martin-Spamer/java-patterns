@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The AbstractTypeTest Class.
+ * The AbstractTypeTest class.
  */
 public class AbstractTypeTest {
 
@@ -23,12 +23,12 @@ public class AbstractTypeTest {
      */
     @Test
     public void testSubTypeOne() {
-        LOG.info("testPolymorphism");
-        abstractType = new SubTypeOne();
-        assertNotNull(abstractType);
-        LOG.info("{}", abstractType);
-        assertNotNull(abstractType.operation());
-        LOG.info("{}", abstractType);
+        LOG.info("testSubTypeOnePolymorphism");
+        this.abstractType = new SubTypeOne();
+        assertNotNull(this.abstractType);
+        LOG.info(this.abstractType.toString());
+        assertNotNull(this.abstractType.operation());
+        LOG.info(this.abstractType.toString());
     }
 
     /**
@@ -36,14 +36,13 @@ public class AbstractTypeTest {
      */
     @Test
     public void testSubTypeTwo() {
-        LOG.info("testPolymorphism");
-        LOG.info("{}", abstractType);
-        abstractType = new SubTypeTwo();
-        assertNotNull(abstractType);
-        LOG.info("{}", abstractType);
-        abstractType.operation();
-        assertNotNull(abstractType.operation());
-        LOG.info("{}", abstractType);
+        LOG.info("testSubTypeOnePolymorphism");
+        this.abstractType = new SubTypeTwo();
+        assertNotNull(this.abstractType);
+        LOG.info(this.abstractType.toString());
+        this.abstractType.operation();
+        assertNotNull(this.abstractType.operation());
+        LOG.info(this.abstractType.toString());
     }
 
 }

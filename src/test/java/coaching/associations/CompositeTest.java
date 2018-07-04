@@ -22,7 +22,7 @@ public class CompositeTest {
     public void testComposite() {
         final Composite composite = new Composite();
         assertNotNull(composite);
-        LOG.info("{}", composite);
+        LOG.info(composite.toString());
     }
 
     /**
@@ -36,7 +36,7 @@ public class CompositeTest {
         final Dan dan = new Dan();
         final Composite composite = new Composite(alice, bob, charlie, dan);
         assertNotNull(composite);
-        LOG.info("{}", composite);
+        LOG.info(composite.toString());
     }
 
 }

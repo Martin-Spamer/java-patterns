@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The ChainOfResponsibilityTest Class.
+ * The ChainOfResponsibilityTest class.
  */
 public class ChainOfResponsibilityTest {
 

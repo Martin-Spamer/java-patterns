@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The ControllerTest Class.
+ * The ControllerTest class.
  */
 public class ControllerTest {
 

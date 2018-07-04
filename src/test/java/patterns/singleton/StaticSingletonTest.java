@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Static Singleton Test Class.
+ * Static Singleton Test class.
  */
 public class StaticSingletonTest {
 
@@ -24,7 +24,7 @@ public class StaticSingletonTest {
         assertNotNull(instance);
         final String string = instance.toString();
         assertNotNull(instance);
-        LOG.info("{}", string);
+        LOG.info(string);
     }
 
 }

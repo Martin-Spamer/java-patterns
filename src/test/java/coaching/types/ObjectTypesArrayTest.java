@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 import coaching.arrays.ObjectTypesArray;
 
 /**
- * The ObjectTypesArrayTest Class.
+ * The ObjectTypesArrayTest class.
  */
 public class ObjectTypesArrayTest {
 

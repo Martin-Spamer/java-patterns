@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
 /**
- * Pounds Test Class.
+ * Pounds Test class.
  */
 public class PoundsTest {
 
@@ -82,15 +82,15 @@ public class PoundsTest {
 
         assertTrue(pounds.isMoreThan(7L));
         assertTrue(pounds.isMoreThan(new Money(7L)));
-        LOG.info("{}", pounds.toString());
+        LOG.info(pounds.toString());
 
         assertTrue(pounds.isEqualTo(8L));
         assertTrue(pounds.isEqualTo(new Money(8L)));
-        LOG.info("{}", pounds.toString());
+        LOG.info(pounds.toString());
 
         assertTrue(pounds.isLessThan(9L));
         assertTrue(pounds.isLessThan(new Money(9L)));
-        LOG.info("{}", pounds.toString());
+        LOG.info(pounds.toString());
     }
 
     /**

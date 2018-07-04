@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * ViewTest Class.
+ * ViewTest class.
  */
 public class ViewTest {
 
