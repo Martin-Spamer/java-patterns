@@ -4,7 +4,7 @@ package patterns.builder;
 /**
  * PartOne class.
  */
-public class PartOne extends Part {
+public class PartOne extends AbstractPart {
 
     public PartOne() {
         super();

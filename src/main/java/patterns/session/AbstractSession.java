@@ -8,8 +8,8 @@ import java.util.UUID;
  */
 public abstract class AbstractSession {
 
-    /** The uuid. */
-    protected final UUID uuid = UUID.randomUUID();
+    /** A Universally Unique ID. */
+    protected UUID uuid = UUID.randomUUID();
 
     /** The token. */
     protected String token;
@@ -18,17 +18,11 @@ public abstract class AbstractSession {
      * Default Constructor.
      */
     public AbstractSession() {
-        this("");
+        this(UUID.randomUUID());
     }
 
-    /**
-     * Constructor with token.
-     *
-     * @param token the token
-     */
-    public AbstractSession(final String token) {
-        super();
-        setToken(token);
+    public AbstractSession(final UUID currentUUID) {
+        this.uuid = currentUUID;
     }
 
     /**
@@ -47,7 +41,7 @@ public abstract class AbstractSession {
      * @return the uuid
      */
     public UUID getUuid() {
-        return uuid;
+        return this.uuid;
     }
 
     /**
@@ -56,7 +50,7 @@ public abstract class AbstractSession {
      * @return the token
      */
     public String token() {
-        return token;
+        return this.token;
     }
 
     /*
@@ -66,7 +60,7 @@ public abstract class AbstractSession {
      */
     @Override
     public String toString() {
-        return String.format("AbstractSession [uuid=%s, token=%s]", uuid, token);
+        return String.format("%s [uuid=%s, token=%s]", this.getClass().getSimpleName(), this.uuid, this.token);
     }
 
 }

@@ -4,6 +4,8 @@ package coaching.solid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
  * A class to Demonstrate the Single Responsibility Principle (SRP).
  *
@@ -19,68 +21,73 @@ public class SingleResponsibilityPrinciple {
     private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
     /**
-     * The Class MultipleResponsibility.
+     * A class with Multiple Responsibilities.
      */
     public class MultipleResponsibility {
-        
+
         /** The foo. */
-        private boolean foo;
-        
+        private boolean foo = false;
+
         /** The bar. */
-        private boolean bar;
+        private boolean bar = false;
 
         /**
          * Foo and Bar responsibility.
          */
         public void responsibility() {
             LOG.info("responsibility");
-            foo = true;
-            bar = true;
+            this.foo = true;
+            this.bar = true;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("MultipleResponsibility [foo=%s, bar=%s]", this.foo, this.bar);
         }
     }
 
     /**
-     * The Class Foo.
+     * Split out the Foo responsibility into a separate class.
      */
     public class Foo {
-        
+
         /** The foo. */
         private boolean foo;
 
         /**
          * Foo.
          */
-        public void foo() {
-            LOG.info("foo");
-            foo = true;
+        public void doFoo() {
+            LOG.info("doFoo");
+            this.foo = true;
         }
     }
 
     /**
-     * The Class Bar.
+     * Split out the Bar responsibility into a separate class.
      */
     public class Bar {
-        
+
         /** The bar. */
         private boolean bar;
 
         /**
          * Bar.
          */
-        public void bar() {
-            LOG.info("bar");
-            bar = true;
+        public void doBar() {
+            LOG.info("doBar");
+            this.bar = true;
         }
     }
 
     /**
-     * The Class SingleResponsibility.
+     * A class with a Single Responsibility, a container for Foo and Bar.
      */
     public class SingleResponsibility {
-        
+
         /** The foo. */
         private final Foo foo = new Foo();
-        
+
         /** The bar. */
         private final Bar bar = new Bar();
 
@@ -89,21 +96,19 @@ public class SingleResponsibilityPrinciple {
          */
         public void responsibility() {
             LOG.info("responsibility");
-            foo.foo();
-            bar.bar();
+            this.foo.doFoo();
+            this.bar.doBar();
         }
     }
 
-    /**
-     * Multiple responsibility.
-     */
     public void multipleResponsibility() {
+        final MultipleResponsibility multipleResponsibility = new MultipleResponsibility();
+        assertNotNull(multipleResponsibility);
     }
 
-    /**
-     * Single responsibility.
-     */
     public void singleResponsibility() {
+        final SingleResponsibility singleResponsibility = new SingleResponsibility();
+        assertNotNull(singleResponsibility);
     }
 
 }

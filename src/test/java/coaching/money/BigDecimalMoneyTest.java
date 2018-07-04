@@ -22,72 +22,142 @@ public class BigDecimalMoneyTest {
     private static final Logger LOG = LoggerFactory.getLogger(BigDecimalMoneyTest.class);
 
     /**
-     * Test using the default locale.
+     * Report the details of the default locale.
      */
     @Test
-    public void testDefaultLocale() {
-        LOG.info("testDefaultLocale");
+    public void testReportDefaultLocale() {
+        LOG.info("testReportDefaultLocale");
 
-        final Locale defaultLocale = Locale.getDefault();
-        assertNotNull(defaultLocale);
-        LOG.info("defaultLocale = {}", defaultLocale);
-        LOG.info("defaultLocale = {}", defaultLocale.getDisplayName());
+        final Locale locale = Locale.getDefault();
+        assertNotNull(locale);
+        LOG.info("Locale = {}", locale);
+        LOG.info("Locale.getDisplayName() = {}", locale.getDisplayName());
 
-        final Currency currency = Currency.getInstance(defaultLocale);
+        final Currency currency = Currency.getInstance(locale);
         assertNotNull(currency);
-        LOG.info("currency  = {}", currency);
-        LOG.info("currency  = {}", currency.getDisplayName());
-        LOG.info("currency  = {}", currency.getCurrencyCode());
-        LOG.info("currency  = {}", currency.getSymbol());
+        LOG.info("currency  = {}", currency.toString());
+        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
-        BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
         LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
-     * Test French locale.
+     * Test Report on French locale.
      */
     @Test
     public void testFrenchLocale() {
         LOG.info("testFrenchLocale");
 
-        final Locale frenchLocale = Locale.FRANCE;
-        assertNotNull(frenchLocale);
-        LOG.info("frenchLocale = {}", frenchLocale);
-        LOG.info("frenchLocale = {}", frenchLocale.getDisplayName());
+        final Locale locale = Locale.FRANCE;
+        assertNotNull(locale);
 
-        final Currency currency = Currency.getInstance(frenchLocale);
+        LOG.info("Locale = {}", locale);
+        LOG.info("Locale.getDisplayName() = {}", locale.getDisplayName());
+
+        final Currency currency = Currency.getInstance(locale);
         assertNotNull(currency);
-        LOG.info("currency  = {}", currency);
-        LOG.info("currency  = {}", currency.getDisplayName());
-        LOG.info("currency  = {}", currency.getCurrencyCode());
-        LOG.info("currency  = {}", currency.getSymbol());
+        LOG.info("currency  = {}", currency.toString());
+        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
-        BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
         LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
-     * Test UK locale.
+     * Test Report on UK locale.
      */
     @Test
     public void testUkLocale() {
         LOG.info("testUkLocale");
 
-        final Locale ukLocale = Locale.UK;
-        assertNotNull(ukLocale);
-        LOG.info("ukLocale = {}", ukLocale);
-        LOG.info("ukLocale.getDisplayName = {}", ukLocale.getDisplayName());
+        final Locale locale = Locale.UK;
+        assertNotNull(locale);
+        LOG.info("Locale = {}", locale);
+        LOG.info("Locale.getDisplayName = {}", locale.getDisplayName());
 
-        final Currency currency = Currency.getInstance(ukLocale);
-        LOG.info("currency  = {}", currency);
-        LOG.info("currency  = {}", currency.getDisplayName());
-        LOG.info("currency  = {}", currency.getCurrencyCode());
-        LOG.info("currency  = {}", currency.getSymbol());
+        final Currency currency = Currency.getInstance(locale);
+        LOG.info("currency  = {}", currency.toString());
+        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
-        BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        assertNotNull(bigDecimalMoney);
+        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+    }
+
+    /**
+     * Test Report on US locale.
+     */
+    @Test
+    public void testUsLocale() {
+        LOG.info("testUsLocale");
+
+        final Locale locale = Locale.US;
+        assertNotNull(locale);
+        LOG.info("Locale = {}", locale);
+        LOG.info("Locale.getDisplayName = {}", locale.getDisplayName());
+
+        final Currency currency = Currency.getInstance(locale);
+        LOG.info("currency  = {}", currency.toString());
+        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+
+        final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        assertNotNull(bigDecimalMoney);
+        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+    }
+
+    /**
+     * Test Report on Japan locale.
+     */
+    @Test
+    public void testJapanLocale() {
+        LOG.info("testJapanLocale");
+
+        final Locale locale = Locale.JAPAN;
+        assertNotNull(locale);
+        LOG.info("Locale = {}", locale);
+        LOG.info("Locale.getDisplayName = {}", locale.getDisplayName());
+
+        final Currency currency = Currency.getInstance(locale);
+        LOG.info("currency  = {}", currency.toString());
+        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+
+        final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
+        assertNotNull(bigDecimalMoney);
+        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+    }
+
+    /**
+     * Test Report on English locale.
+     */
+    @Test
+    public void testCanadaLocale() {
+        LOG.info("testCanadaLocale");
+
+        final Locale locale = Locale.CANADA;
+        assertNotNull(locale);
+        LOG.info("Locale = {}", locale);
+        LOG.info("Locale.getDisplayName = {}", locale.getDisplayName());
+
+        final Currency currency = Currency.getInstance(locale);
+        LOG.info("currency  = {}", currency.toString());
+        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+
+        final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
         LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
     }
@@ -98,9 +168,9 @@ public class BigDecimalMoneyTest {
     @Test
     public void testBigDecimalMoney() {
         LOG.info("testBigDecimalMoney");
-        Locale defaultLocale = Locale.getDefault();
-        Currency defaultCurrency = Currency.getInstance(defaultLocale);
-        String currencySymbol = defaultCurrency.getSymbol();
+        final Locale defaultLocale = Locale.getDefault();
+        final Currency defaultCurrency = Currency.getInstance(defaultLocale);
+        final String currencySymbol = defaultCurrency.getSymbol();
         assumeTrue(currencySymbol.equals("£"));
 
         final BigDecimalMoney money = new BigDecimalMoney();

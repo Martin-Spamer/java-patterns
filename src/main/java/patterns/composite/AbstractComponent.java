@@ -2,7 +2,7 @@
 package patterns.composite;
 
 /**
- * Component Class.
+ * An abstract Component class.
  */
 public abstract class AbstractComponent implements ComponentInterface {
 

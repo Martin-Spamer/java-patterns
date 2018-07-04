@@ -4,6 +4,8 @@ package patterns.decorator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import patterns.composite.ComponentInterface;
+
 /**
  * AbstractComponent Class.
  */
@@ -18,10 +20,15 @@ public abstract class AbstractComponent implements ComponentInterface {
      * @see patterns.decorator.ComponentInterface#operation()
      */
     @Override
-    public AbstractComponent operation() {
-        String simpleName = this.getClass().getSimpleName();
-        log.info("{}", simpleName);
-        return this;
+    public ComponentInterface operation() {
+        throw new UnsupportedOperationException();
     }
+
+    // @Override
+    // public AbstractComponent operation() {
+    // String simpleName = this.getClass().getSimpleName();
+    // log.info(simpleName.toString());
+    // return this;
+    // }
 
 }

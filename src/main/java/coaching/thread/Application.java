@@ -49,7 +49,7 @@ public class Application {
      *
      * @return true, if successful, otherwise false., otherwise false.
      */
-    public boolean initialise() {
+    private boolean initialise() {
         try {
             final String configFilename = configFilename();
 
@@ -91,23 +91,42 @@ public class Application {
         if (documentElement != null) {
             // * threads we must start.
             final NodeList threadListConfig = document.getElementsByTagName("thread");
-            for (int i = 0; i < threadListConfig.getLength(); i++) {
-                final Element element = (Element) threadListConfig.item(i);
-
-                final String nameAttribute = element.getAttribute("name");
-                LOG.info("nameAttribute={}", nameAttribute);
-
-                final String className = element.getAttribute("class");
-                LOG.info("className={}", className);
-
-                final AbstractProcess abstractApplicationProcess = createProcess(className);
-                if (abstractApplicationProcess != null) {
-                    abstractApplicationProcess.start();
-                }
-
-                threadMap.put(nameAttribute, abstractApplicationProcess);
-            }
+            createThreads(threadListConfig);
         }
+    }
+
+    /**
+     * Creates the threads.
+     *
+     * @param threadListConfig the thread list config
+     */
+    private void createThreads(final NodeList threadListConfig) {
+        for (int i = 0; i < threadListConfig.getLength(); i++) {
+            createThread(threadListConfig, i);
+        }
+    }
+
+    /**
+     * Creates the thread.
+     *
+     * @param threadListConfig the thread list config
+     * @param i the i
+     */
+    private void createThread(final NodeList threadListConfig, final int i) {
+        final Element element = (Element) threadListConfig.item(i);
+
+        final String nameAttribute = element.getAttribute("name");
+        LOG.info("nameAttribute = {}", nameAttribute);
+
+        final String className = element.getAttribute("class");
+        LOG.info("className = {}", className);
+
+        final AbstractProcess abstractApplicationProcess = createProcess(className);
+        if (abstractApplicationProcess != null) {
+            abstractApplicationProcess.start();
+        }
+
+        this.threadMap.put(nameAttribute, abstractApplicationProcess);
     }
 
     /**
@@ -121,7 +140,7 @@ public class Application {
         try {
             return (AbstractProcess) Class.forName(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error( e.toString());
+            LOG.error(e.toString());
         }
         return null;
     }
@@ -139,21 +158,21 @@ public class Application {
     /**
      * Foo.
      *
-     * @param doc
+     * @param document
      *            the doc
      * @return the string
      */
-    protected String foo(final Document doc) {
+    protected String transform(final Document document) {
         try {
             final TransformerFactory transformerFactory = TransformerFactory.newInstance();
             final Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             final StreamResult result = new StreamResult(new StringWriter());
-            final DOMSource source = new DOMSource(doc);
+            final DOMSource source = new DOMSource(document);
             transformer.transform(source, result);
             return result.getWriter().toString();
         } catch (IllegalArgumentException | TransformerFactoryConfigurationError | TransformerException e) {
-            LOG.error( e.toString());
+            LOG.error(e.toString());
         }
         return null;
     }
@@ -168,7 +187,7 @@ public class Application {
         try {
             new Application();
         } catch (final Exception e) {
-            LOG.error( e.toString());
+            LOG.error(e.toString());
         }
     }
 }

@@ -36,10 +36,10 @@ public class Director {
      */
     public Product constructProduct() {
         final BuilderOne builderOne = new BuilderOne();
-        final Part partOne = builderOne.build();
+        final AbstractPart partOne = builderOne.build();
 
         final BuilderTwo builderTwo = new BuilderTwo();
-        final Part partTwo = builderTwo.build();
+        final AbstractPart partTwo = builderTwo.build();
 
         return new Product(partOne, partTwo);
     }
@@ -49,7 +49,7 @@ public class Director {
      */
     public void buildAll() {
         for (final BuilderInterface builder : builders) {
-            final Part part = builder.build();
+            final AbstractPart part = builder.build();
             LOG.info("part={}", part);
         }
     }

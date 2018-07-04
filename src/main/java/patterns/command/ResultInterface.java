@@ -7,11 +7,11 @@ package patterns.command;
 public interface ResultInterface {
 
     /**
-     * Result.
+     * Get the result of the operation.
      *
-     * @return the boolean
+     * @return the result as a boolean
      */
-    Boolean getResult();
+    boolean getResult();
 
     /**
      * And.
