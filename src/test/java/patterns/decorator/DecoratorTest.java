@@ -15,7 +15,7 @@ public class DecoratorTest {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
 
-    public class MissingOperation extends DecoratedComponent {
+    public class MissingOperation extends AbstractComponent {
     }
 
     public class ConcreteDecorator extends AbstractComponent {
