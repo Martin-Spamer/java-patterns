@@ -135,7 +135,7 @@ public class CsvToJdbc {
             final String table) {
         makeJdbcConnection(driver, url, user, password);
         csvFile = new CsvFile(filename);
-        for (int index = 0; index < csvFile.size(); index++) {
+        for (int index = 0; index < csvFile.rowCount(); index++) {
             final CsvRecord record = csvFile.getRecord(index);
             log.info(record.toString());
             writeRecord(record);
