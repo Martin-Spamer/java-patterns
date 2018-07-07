@@ -1,5 +1,5 @@
 /**
- * Package provides examples of the SOLID principles
+ * Package provides examples of the SOLID principles.
  * <p>
  * Detailed description of package.
  *
