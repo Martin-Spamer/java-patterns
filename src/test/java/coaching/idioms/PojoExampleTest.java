@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * PojoExampleTest Class.
+ * PojoExampleTest class.
  */
 @SuppressWarnings("SpellCheckingInspection")
 public class PojoExampleTest {

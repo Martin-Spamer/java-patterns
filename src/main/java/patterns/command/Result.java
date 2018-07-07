@@ -19,7 +19,7 @@ public final class Result implements ResultInterface {
      * Instantiates a new result.
      */
     public Result() {
-        value = PASS;
+        this.value = PASS;
     }
 
     /**
@@ -31,7 +31,7 @@ public final class Result implements ResultInterface {
      *            the result
      */
     public Result(final Boolean result) {
-        value = result;
+        this.value = result;
     }
 
     /*
@@ -41,8 +41,8 @@ public final class Result implements ResultInterface {
      * patterns.command.ResultInterface#result(patterns.command.ResultInterface)
      */
     @Override
-    public Boolean getResult() {
-        return value;
+    public boolean getResult() {
+        return this.value;
     }
 
     /*
@@ -53,8 +53,8 @@ public final class Result implements ResultInterface {
      */
     @Override
     public boolean and(final ResultInterface newResult) {
-        value &= newResult.getResult();
-        return value;
+        this.value &= newResult.getResult();
+        return this.value;
     }
 
     /*
@@ -64,7 +64,7 @@ public final class Result implements ResultInterface {
      */
     @Override
     public String toString() {
-        return String.format("Result [result=%s]", value);
+        return String.format("Result [result=%s]", this.value);
     }
 
 }

@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The ObjectTypesTest Class.
+ * The ObjectTypesTest class.
  */
 public class ObjectTypesTest {
 

@@ -9,10 +9,10 @@ import org.slf4j.LoggerFactory;
 /**
  * CurrentWorkingDirectory Class.
  */
-public class CurrentWorkingDirectory {
+public final class CurrentWorkingDirectory {
 
     /** provides logging */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectory.class);
 
     /**
      * Instantiates a new current working directory.
@@ -37,12 +37,12 @@ public class CurrentWorkingDirectory {
             try {
                 file.createNewFile();
                 absolutePath = file.getAbsolutePath();
-                log.info("{}", absolutePath);
+                LOG.info(absolutePath);
             } catch (final Exception exception) {
-                log.debug(exception.toString());
+                LOG.error(exception.toString());
             }
         } catch (final Exception exception) {
-            log.error(exception.toString());
+            LOG.error(exception.toString());
         }
         return absolutePath;
     }

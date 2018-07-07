@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The MementoTest Class.
+ * The MementoTest class.
  */
 public class MementoTest {
 
@@ -27,7 +27,7 @@ public class MementoTest {
         final Memento memento = new Memento(state);
         assertNotNull(memento);
         assertEquals(state, memento.getState());
-        LOG.info("{}", memento);
+        LOG.info(memento.toString());
     }
 
     /**
@@ -37,7 +37,7 @@ public class MementoTest {
     public void testMemento() {
         final Memento memento = new Memento();
         assertNotNull(memento);
-        LOG.info("{}", memento);
+        LOG.info(memento.toString());
     }
 
     /**
@@ -47,7 +47,7 @@ public class MementoTest {
     public void testMementoNull() {
         final Memento memento = new Memento(null);
         assertNotNull(memento);
-        LOG.info("{}", memento);
+        LOG.info(memento.toString());
     }
 
 }

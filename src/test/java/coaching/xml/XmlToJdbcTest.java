@@ -2,7 +2,10 @@
 package coaching.xml;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import coaching.jdbc.MySqlDao;
@@ -12,13 +15,42 @@ import coaching.jdbc.MySqlDao;
  */
 public class XmlToJdbcTest {
 
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbcTest.class);
+
+    /** Default JDBC DRIVER . */
+    private static final String DRIVER = "org.postgresql.Driver";
+
+    /** Default JDBC URL. */
+    private static final String URL = "jdbc:postgresql://localhost";
+
+    /** Default USERNAME for connection. */
+    private static final String USERNAME = "postgres";
+
+    /** Default PASSWORD for connection. */
+    private static final String PASSWORD = "password";
+
+    /** Default data source filename. */
+    private final String filename = "./data/data.csv";
+
+    /** Default table name. */
+    private final String tableName = "tableName";
+
     /**
      * Unit Test for xml to jdbc.
      */
     @Test
     public void testXmlToJdbc() {
-        final MySqlDao xmlToJdbc = new XmlToJdbc();
-        assertNotNull(xmlToJdbc);
+        final MySqlDao instance = new XmlToJdbc();
+        assertNotNull(instance);
+
+        assertEquals(instance, instance.setDriver(DRIVER));
+        assertEquals(instance, instance.setUrl(URL));
+        assertEquals(instance, instance.setUsername(USERNAME));
+        assertEquals(instance, instance.setPassword(PASSWORD));
+        assertEquals(instance, instance.setTableName(this.tableName));
+        assertEquals(instance, instance.setFilename(this.filename));
+
     }
 
 }

@@ -39,7 +39,7 @@ public class XmlDAOTest {
     public void testXmlDao() {
         final XmlDao dao = new XmlDao();
         assertNotNull(dao);
-        LOG.info("{}", dao);
+        LOG.info(dao.toString());
     }
 
     /**
@@ -49,7 +49,7 @@ public class XmlDAOTest {
     public void testXmlDaoUrlUserPassword() {
         final XmlDao dao = new XmlDao();
         assertNotNull(dao);
-        LOG.info("{}", dao);
+        LOG.info(dao.toString());
     }
 
 }

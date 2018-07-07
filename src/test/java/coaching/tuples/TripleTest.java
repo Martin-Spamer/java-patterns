@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The TripleTest Class.
+ * The TripleTest class.
  */
 public class TripleTest {
 

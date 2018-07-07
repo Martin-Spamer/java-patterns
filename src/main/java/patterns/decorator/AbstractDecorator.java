@@ -24,7 +24,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      */
     @Override
     public DecoratorInterface attachBefore(final AbstractComponent behaviour) {
-        beforeBehaviour.add(behaviour);
+        this.beforeBehaviour.add(behaviour);
         return this;
     }
 
@@ -37,7 +37,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      */
     @Override
     public DecoratorInterface detachBefore(final AbstractComponent behaviour) {
-        beforeBehaviour.remove(behaviour);
+        this.beforeBehaviour.remove(behaviour);
         return this;
     }
 
@@ -50,7 +50,7 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      */
     @Override
     public DecoratorInterface attachAfter(final AbstractComponent behaviour) {
-        afterBehaviour.add(behaviour);
+        this.afterBehaviour.add(behaviour);
         return this;
     }
 
@@ -63,17 +63,17 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
      */
     @Override
     public DecoratorInterface detachAfter(final AbstractComponent behaviour) {
-        afterBehaviour.remove(behaviour);
+        this.afterBehaviour.remove(behaviour);
         return this;
     }
 
     /**
      * Before operation.
-     * 
+     *
      * @return
      */
     protected DecoratorInterface beforeOperation() {
-        for (final ComponentInterface component : beforeBehaviour) {
+        for (final AbstractComponent component : this.beforeBehaviour) {
             component.operation();
         }
         return this;
@@ -81,11 +81,11 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 
     /**
      * After operation.
-     * 
+     *
      * @return
      */
     protected DecoratorInterface afterOperation() {
-        for (final ComponentInterface component : afterBehaviour) {
+        for (final AbstractComponent component : this.afterBehaviour) {
             component.operation();
         }
         return this;

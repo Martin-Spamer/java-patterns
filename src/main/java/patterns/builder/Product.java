@@ -7,10 +7,10 @@ package patterns.builder;
 public class Product {
 
     /** The part one. */
-    private Part partOne = null;
+    private AbstractPart partOne = null;
 
     /** The part two. */
-    private Part partTwo = null;
+    private AbstractPart partTwo = null;
 
     /**
      * Instantiates a new product.
@@ -20,7 +20,7 @@ public class Product {
      * @param partTwo
      *            the part two
      */
-    public Product(final Part partOne, final Part partTwo) {
+    public Product(final AbstractPart partOne, final AbstractPart partTwo) {
         super();
         this.partOne = partOne;
         this.partTwo = partTwo;

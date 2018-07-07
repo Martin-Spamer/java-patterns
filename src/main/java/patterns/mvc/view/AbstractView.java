@@ -24,7 +24,7 @@ public abstract class AbstractView implements ViewInterface {
      */
     public AbstractView() {
         super();
-        model = new Model();
+        this.model = new Model();
     }
 
     /*
@@ -33,8 +33,9 @@ public abstract class AbstractView implements ViewInterface {
      * @see patterns.mvc.ViewInterface#attachModel(patterns.mvc.ModelInterface)
      */
     @Override
-    public void attachModel(final ModelInterface model) {
+    public ViewInterface attachModel(final ModelInterface model) {
         this.model = model;
+        return this;
     }
 
     /*
@@ -43,8 +44,9 @@ public abstract class AbstractView implements ViewInterface {
      * @see patterns.mvc.ViewInterface#detach()
      */
     @Override
-    public void detachModel() {
-        model = null;
+    public ViewInterface detachModel() {
+        this.model = null;
+        return this;
     }
 
     /*
@@ -53,8 +55,9 @@ public abstract class AbstractView implements ViewInterface {
      * @see patterns.mvc.view.AbstractView#showView()
      */
     @Override
-    public void show() {
-        log.info("{}.showView", this.getClass().getSimpleName());
+    public ViewInterface show() {
+        this.log.info("{}.showView", this.getClass().getSimpleName());
+        return this;
     }
 
 }

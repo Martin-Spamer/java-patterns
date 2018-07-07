@@ -19,7 +19,7 @@ public class SessionTracker {
      */
     public AbstractSession createSession() {
         final Session session = new Session();
-        sessions.add(session);
+        this.sessions.add(session);
         return session;
     }
 
@@ -30,7 +30,12 @@ public class SessionTracker {
      *            the session
      */
     public void destroySession(final AbstractSession session) {
-        sessions.remove(session);
+        this.sessions.remove(session);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s [sessions=%s]", this.getClass().getSimpleName(), this.sessions);
     }
 
 }

@@ -9,7 +9,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Regular Expression Test Class.
+ * Regular Expression Test class.
  */
 public class RegularExpressionTest {
 

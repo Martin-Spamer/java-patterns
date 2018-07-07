@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * AbstractResourcePoolTest Class.
+ * AbstractResourcePoolTest class.
  */
 public class AbstractResourcePoolTest {
 

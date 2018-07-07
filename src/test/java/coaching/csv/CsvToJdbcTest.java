@@ -7,36 +7,31 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 
-import coaching.jdbc.XmlDAOTest;
-
 /**
- * CsvToJdbcTest Class.
+ * CsvToJdbcTest class.
  */
 public class CsvToJdbcTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlDAOTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CsvToJdbcTest.class);
 
-    /** JDBC DRIVER . */
+    /** Default JDBC DRIVER . */
     private static final String DRIVER = "org.postgresql.Driver";
 
-    /** JDBC URL. */
+    /** Default JDBC URL. */
     private static final String URL = "jdbc:postgresql://localhost";
 
-    /** USERNAME for connection. */
+    /** Default USERNAME for connection. */
     private static final String USERNAME = "postgres";
 
-    /** PASSWORD for connection. */
+    /** Default PASSWORD for connection. */
     private static final String PASSWORD = "password";
 
-    /** The filename. */
+    /** Default data source filename. */
     private final String filename = "./data/data.csv";
 
-    /** The table name. */
+    /** Default table name. */
     private final String tableName = "tableName";
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(CsvToJdbcTest.class);
 
     /**
      * Fluent Interface.
@@ -49,8 +44,8 @@ public class CsvToJdbcTest {
         assertEquals(instance, instance.setUrl(URL));
         assertEquals(instance, instance.setUsername(USERNAME));
         assertEquals(instance, instance.setPassword(PASSWORD));
-        assertEquals(instance, instance.setTableName(tableName));
-        assertEquals(instance, instance.setFilename(filename));
+        assertEquals(instance, instance.setTableName(this.tableName));
+        assertEquals(instance, instance.setFilename(this.filename));
     }
 
 }

@@ -8,14 +8,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SqliteTest {
+
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(SqliteTest.class);
+
+    private static final String JDBC_DRIVER = "org.sqlite.JDBC";
+    private static final String JDBC_URL = "jdbc:sqlite:sample.db";
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
+    private final String tableName = "tableName";
 
     @Test
     public void testSqlite() {
         Connection connection = null;
         try {
-            Class.forName("org.sqlite.JDBC");
+            Class.forName(JDBC_DRIVER);
 
             // create a database connection
             connection = DriverManager.getConnection("jdbc:sqlite:sample.db");

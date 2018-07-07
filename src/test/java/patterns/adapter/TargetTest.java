@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The TargetTest Class.
+ * The TargetTest class.
  */
 public class TargetTest {
 
@@ -22,7 +22,7 @@ public class TargetTest {
     public void testRequest() {
         final TargetAdapter targetAdapter = new TargetAdapter();
         assertNotNull(targetAdapter);
-        LOG.info("{}", targetAdapter.toString());
+        LOG.info(targetAdapter.toString());
     }
 
 }

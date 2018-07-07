@@ -21,14 +21,17 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** The connection factory. */
     protected ConnectionFactory connectionFactory;
-
-    /** The result set. */
     protected ResultSet resultSet;
-
-    /** The result set meta data. */
     protected ResultSetMetaData resultSetMetaData;
+
+    private String driver;
+    private String url;
+    private String username;
+    private String password;
+
+    public AbstractDataAccessObject() {
+    }
 
     /**
      * Creates a new instance of DaoTemplate.
@@ -40,7 +43,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
         try {
             Class.forName(driverClassName);
         } catch (final ClassNotFoundException e) {
-            log.error( e.toString());
+            this.log.error(e.toString());
         }
     }
 
@@ -61,7 +64,57 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
             final String username,
             final String password) {
         this(driverClassName);
-        connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
+        this.connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see coaching.jdbc.DaoInterface#setDriver(java.lang.String)
+     */
+    @Override
+    public DaoInterface setDriver(final String driverClassName) {
+        this.driver = driverClassName;
+        try {
+            Class.forName(driverClassName);
+        } catch (final ClassNotFoundException e) {
+            this.log.error(e.toString());
+        }
+
+        return this;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see coaching.jdbc.DaoInterface#setUrl(java.lang.String)
+     */
+    @Override
+    public DaoInterface setUrl(final String url) {
+        this.url = url;
+        return this;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see coaching.jdbc.DaoInterface#setUsername(java.lang.String)
+     */
+    @Override
+    public DaoInterface setUsername(final String username) {
+        this.username = username;
+        return this;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see coaching.jdbc.DaoInterface#setPassword(java.lang.String)
+     */
+    @Override
+    public DaoInterface setPassword(final String password) {
+        this.password = password;
+        return this;
     }
 
     /**
@@ -95,38 +148,38 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
         Connection connection = null;
         Statement statement = null;
         try {
-            connection = connectionFactory.getConnection();
+            connection = this.connectionFactory.getConnection();
             statement = connection.createStatement();
-            resultSet = statement.executeQuery(sql);
+            this.resultSet = statement.executeQuery(sql);
 
-            handleResultSet(resultSet);
+            handleResultSet(this.resultSet);
 
-            resultSet.close();
+            this.resultSet.close();
             statement.close();
             connection.close();
         } catch (final SQLException exception) {
-            log.error( exception.toString());
+            this.log.error(exception.toString());
         } finally {
             try {
-                if (resultSet != null) {
-                    resultSet.close();
+                if (this.resultSet != null) {
+                    this.resultSet.close();
                 }
             } catch (final Exception e) {
-                log.error(e.getLocalizedMessage());
+                this.log.error(e.getLocalizedMessage());
             }
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (final Exception e) {
-                log.error(e.getLocalizedMessage());
+                this.log.error(e.getLocalizedMessage());
             }
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (final Exception e) {
-                log.error(e.getLocalizedMessage());
+                this.log.error(e.getLocalizedMessage());
             }
         }
         return this;
@@ -146,7 +199,7 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
             output.append(processRow(resultSet));
             output.append('\n');
         }
-        log.info(output.toString());
+        this.log.info(output.toString());
     }
 
     /**
@@ -221,28 +274,28 @@ public abstract class AbstractDataAccessObject implements DaoInterface {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         try {
-            connection = connectionFactory.getConnection();
+            connection = this.connectionFactory.getConnection();
             preparedStatement = connection.prepareStatement(sql);
             final int result = preparedStatement.executeUpdate();
-            log.info("Rows updated: {}", result);
+            this.log.info("Rows updated: {}", result);
             preparedStatement.close();
             connection.close();
         } catch (final SQLException exception) {
-            log.error( exception.toString());
+            this.log.error(exception.toString());
         } finally {
             try {
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }
             } catch (final SQLException e) {
-                log.error(e.getLocalizedMessage());
+                this.log.error(e.getLocalizedMessage());
             }
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (final SQLException e) {
-                log.error(e.getLocalizedMessage());
+                this.log.error(e.getLocalizedMessage());
             }
         }
         return this;

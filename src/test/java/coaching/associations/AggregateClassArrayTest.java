@@ -22,7 +22,7 @@ public class AggregateClassArrayTest {
     public void testExecute() {
         final AggregateClassArray aggregateClassArray = new AggregateClassArray();
         assertNotNull(aggregateClassArray);
-        LOG.info("{}", aggregateClassArray.toString());
+        LOG.info(aggregateClassArray.toString());
     }
 
 }

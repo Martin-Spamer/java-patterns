@@ -29,6 +29,7 @@ public abstract class AbstractConfig extends AbstractConfiguration {
      * @param configFilename the Configuration filename
      */
     public AbstractConfig(final String configFilename) {
+        super();
         this.filename = configFilename;
         loadFrom(configFilename);
     }

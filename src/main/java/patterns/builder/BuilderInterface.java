@@ -11,8 +11,8 @@ public interface BuilderInterface {
      *
      * @return the part
      */
-    Part build();
+    AbstractPart build();
 
-    Part build(final String partName);
+    AbstractPart build(final String partName);
 
 }

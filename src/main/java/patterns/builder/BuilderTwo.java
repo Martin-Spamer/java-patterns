@@ -12,12 +12,12 @@ public class BuilderTwo extends AbstractBuilder {
      * @see patterns.gof.creational.builder.AbstractBuilder#build()
      */
     @Override
-    public Part build() {
+    public AbstractPart build() {
         return new PartTwo();
     }
 
     @Override
-    public Part build(final String partName) {
+    public AbstractPart build(final String partName) {
         return new PartTwo(partName);
     }
 

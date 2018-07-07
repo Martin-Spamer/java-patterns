@@ -1,5 +1,5 @@
 /**
- * Package provides example of the Template pattern...
+ * Package provides example of the Template method idiom.
  * <p>
  * Detailed description of package.
  */

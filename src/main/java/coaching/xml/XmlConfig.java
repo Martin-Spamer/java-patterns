@@ -95,7 +95,7 @@ public class XmlConfig {
                 LOG.error(parserConfigurationException.toString());
             }
         } catch (final Exception exception) {
-            LOG.info("{}", exception.toString());
+            LOG.info(exception.toString());
         }
     }
 

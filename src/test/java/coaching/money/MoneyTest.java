@@ -103,7 +103,7 @@ public class MoneyTest {
         LOG.info("testMoneyWithMinValueOfLong");
         final MoneyInterface money = new Money(Long.MIN_VALUE);
         assertNotNull(money);
-        LOG.info("{}", money.toString());
+        LOG.info(money.toString());
         assertTrue(money.isEqualTo(Long.MIN_VALUE));
     }
 
@@ -115,7 +115,7 @@ public class MoneyTest {
         LOG.info("testMoneyWithMaxValueOfLong");
         final MoneyInterface money = new Money(Long.MAX_VALUE);
         assertNotNull(money);
-        LOG.info("{}", money.toString());
+        LOG.info(money.toString());
         assertTrue(money.isEqualTo(Long.MAX_VALUE));
     }
 
@@ -130,7 +130,7 @@ public class MoneyTest {
         assumeTrue(gbp.getSymbol().equals("£"));
 
         final MoneyInterface money = new Money(gbp, Long.MAX_VALUE);
-        LOG.info("{}", money.toString());
+        LOG.info(money.toString());
         assertNotNull(money);
         final String actual = money.toString();
         String expected = "£ 9,223,372,036,854,775,807";
@@ -149,7 +149,7 @@ public class MoneyTest {
 
         final MoneyInterface money = new Money(eur, Long.MAX_VALUE);
         assertNotNull(money);
-        LOG.info("{}", money.toString());
+        LOG.info(money.toString());
         final String actual = money.toString();
         String expected = "€ 9,223,372,036,854,775,807";
         assertEquals(expected, actual);
@@ -169,7 +169,7 @@ public class MoneyTest {
 
         final MoneyInterface money = new Money(usd, Long.MAX_VALUE);
         assertNotNull(money);
-        LOG.info("{}", money.toString());
+        LOG.info(money.toString());
         final String actual = money.toString();
         String expected = "$ 9,223,372,036,854,775,807";
         assertEquals(expected, actual);

@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * BlockingPoolTest Class.
+ * BlockingPoolTest class.
  */
 public class BlockingPoolTest {
 

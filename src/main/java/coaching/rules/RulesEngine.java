@@ -159,11 +159,11 @@ public class RulesEngine {
             final int length = nodelist.getLength();
             if (length == 0) {
                 final String className = this.getClass().getSimpleName();
-                LOG.info("{}", className);
+                LOG.info(className);
                 LOG.info("Element {} is missing in element {}", elementName, documentElement.toString());
             } else if (length > 1) {
                 final String className = this.getClass().getSimpleName();
-                LOG.info("{}", className);
+                LOG.info(className);
                 LOG.info(" surplus Elements {} ignored in element: {}", elementName, documentElement.toString());
                 element = (Element) nodelist.item(0);
             }

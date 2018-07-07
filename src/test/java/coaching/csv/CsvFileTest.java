@@ -23,8 +23,8 @@ public class CsvFileTest {
         LOG.info("testCsvFile()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);
-        assertEquals(4, csvFile.size());
-        LOG.info("{}", csvFile);
+        assertEquals(4, csvFile.rowCount());
+        LOG.info(csvFile.toString());
         csvFile.logPretty();
     }
 
@@ -36,8 +36,8 @@ public class CsvFileTest {
         LOG.info("testCsvFileString()");
         final CsvFile csvFile = new CsvFile("/data.csv");
         assertNotNull(csvFile);
-        assertEquals(4, csvFile.size());
-        LOG.info("{}", csvFile);
+        assertEquals(4, csvFile.rowCount());
+        LOG.info(csvFile.toString());
         csvFile.logPretty();
     }
 
@@ -49,10 +49,10 @@ public class CsvFileTest {
         LOG.info("testCsvFileHeader()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);
-        LOG.info("{}", csvFile);
+        LOG.info(csvFile.toString());
         final String header = csvFile.getHeader();
         assertNotNull(header);
-        LOG.info("{}", header);
+        LOG.info(header.toString());
     }
 
     /**
@@ -63,10 +63,10 @@ public class CsvFileTest {
         LOG.info("testCsvFileRecords()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);
-        for (int index = 0; index < csvFile.size(); index++) {
+        for (int index = 0; index < csvFile.rowCount(); index++) {
             final CsvRecord record = csvFile.getRecord(index);
             assertNotNull(record);
-            LOG.info("{}", record);
+            LOG.info(record.toString());
         }
     }
 }

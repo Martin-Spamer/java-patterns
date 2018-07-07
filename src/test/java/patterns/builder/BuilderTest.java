@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The BuilderTest Class.
+ * The BuilderTest class.
  */
 public class BuilderTest {
 
@@ -22,7 +22,7 @@ public class BuilderTest {
     public void testBuilderOne() {
         final BuilderOne builder = new BuilderOne();
         assertNotNull(builder);
-        final Part product = builder.build();
+        final AbstractPart product = builder.build();
         LOG.info("product = {}", product);
     }
 
@@ -33,7 +33,7 @@ public class BuilderTest {
     public void testBuilderTwo() {
         final BuilderTwo builder = new BuilderTwo();
         assertNotNull(builder);
-        final Part product = builder.build();
+        final AbstractPart product = builder.build();
         LOG.info("product = {}", product);
     }
 

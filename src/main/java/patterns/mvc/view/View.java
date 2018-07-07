@@ -1,10 +1,13 @@
 
 package patterns.mvc.view;
 
+import patterns.mvc.ModelInterface;
+import patterns.mvc.ViewInterface;
+
 /**
- * View Class.
+ * An example View class from the Model View Controller (MVC).
  */
-public class View extends AbstractView {
+public class View extends AbstractView implements ViewInterface {
 
     /*
      * (non-Javadoc)
@@ -12,8 +15,14 @@ public class View extends AbstractView {
      * @see patterns.mvc.view.AbstractView#showView()
      */
     @Override
-    public void show() {
-        log.info("{}.showView", this.getClass().getSimpleName());
+    public ViewInterface show() {
+        this.log.info("{}.showView", this.getClass().getSimpleName());
+        return this;
     }
 
+    @Override
+    public ViewInterface show(final ModelInterface model) {
+        this.log.info("{}.showView({})", this.getClass().getSimpleName(), model);
+        return this;
+    }
 }

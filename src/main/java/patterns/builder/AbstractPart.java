@@ -4,16 +4,16 @@ package patterns.builder;
 /**
  * Part class.
  */
-public abstract class Part {
+public abstract class AbstractPart {
 
     private final String partName;
 
-    public Part() {
+    public AbstractPart() {
         super();
         this.partName = this.getClass().getSimpleName();
     }
 
-    public Part(final String partName) {
+    public AbstractPart(final String partName) {
         super();
         this.partName = partName;
     }

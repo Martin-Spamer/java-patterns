@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The FlyweightFactoryTest Class.
+ * The FlyweightFactoryTest class.
  */
 public class FlyweightFactoryTest {
 

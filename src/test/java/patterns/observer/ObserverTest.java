@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Observer Test Class.
+ * Observer Test class.
  */
 public class ObserverTest {
 

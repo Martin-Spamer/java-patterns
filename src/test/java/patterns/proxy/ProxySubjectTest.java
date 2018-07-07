@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Proxy Subject Test Class.
+ * Proxy Subject Test class.
  */
 public class ProxySubjectTest {
 

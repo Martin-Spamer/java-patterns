@@ -18,8 +18,8 @@ public abstract class AbstractBuilder implements BuilderInterface {
      * @see patterns.builder.BuilderInterface#build()
      */
     @Override
-    public abstract Part build();
+    public abstract AbstractPart build();
 
     @Override
-    public abstract Part build(final String partName);
+    public abstract AbstractPart build(final String partName);
 }
