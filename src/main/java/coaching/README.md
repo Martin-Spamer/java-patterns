@@ -1,4 +1,31 @@
 # Java Coaching Topics
+| [Automation](src/main/java/automation "Automated Testing with Java") | [Java Coaching](src/main/java/coaching "Coaching Java Idioms") | [Java Patterns](src/main/java/patterns "Design Patterns in Java") |
+
+ * [Arrays](arrays/)
+ * [Associations](associations/)
+ * [Bags](bags/)
+ * [Collections](collections/)
+ * [Configuration](config/)
+ * [Context](context/)
+ * [CSV resources](csv/)
+ * [Delegation](delegation/)
+ * [Exceptions](exceptions/)
+ * [Hollywood principle](hollywood/)
+ * [Idioms](idioms/)
+ * [JDBC](jdbc/)
+ * [Model](model/)
+ * [Money](money/)
+ * [Polymorphism](polymorphism/)
+ * [Pools](pool/)
+ * [Resources](resources/)
+ * [Rules engines](rules/)
+ * [SOLID](solid/)
+ * [Template](template/)
+ * [Thread](thread/)
+ * [Tuples](tuples/)
+ * [Types](types/)
+ * [Xml](xml/)
+
 ## Programming Fundamentals
 All programming statements are formed on three basic constructs
 ### Sequence
