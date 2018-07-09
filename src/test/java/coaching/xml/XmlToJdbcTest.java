@@ -19,10 +19,10 @@ public class XmlToJdbcTest {
     private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbcTest.class);
 
     /** Default JDBC DRIVER . */
-    private static final String DRIVER = "org.postgresql.Driver";
+    private static final String JDBC_DRIVER = "org.postgresql.Driver";
 
     /** Default JDBC URL. */
-    private static final String URL = "jdbc:postgresql://localhost";
+    private static final String JDBC_URL = "jdbc:postgresql://localhost";
 
     /** Default USERNAME for connection. */
     private static final String USERNAME = "postgres";
@@ -44,13 +44,10 @@ public class XmlToJdbcTest {
         final MySqlDao instance = new XmlToJdbc();
         assertNotNull(instance);
 
-        assertEquals(instance, instance.setDriver(DRIVER));
-        assertEquals(instance, instance.setUrl(URL));
+        assertEquals(instance, instance.setDriver(JDBC_DRIVER));
+        assertEquals(instance, instance.setUrl(JDBC_URL));
         assertEquals(instance, instance.setUsername(USERNAME));
         assertEquals(instance, instance.setPassword(PASSWORD));
-        assertEquals(instance, instance.setTableName(this.tableName));
-        assertEquals(instance, instance.setFilename(this.filename));
-
     }
 
 }

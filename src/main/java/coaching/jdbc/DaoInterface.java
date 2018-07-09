@@ -6,6 +6,18 @@ package coaching.jdbc;
  */
 public interface DaoInterface {
 
+    /** SELECT_SQL. */
+    static final String SELECT_SQL = "SELECT (*) FROM TABLE";
+
+    /** INSERT_SQL. */
+    static final String INSERT_SQL = "INSERT INTO TABLE (ID, FIELD, DATA) VALUES (999,'...','...')";
+
+    /** UPDATE_SQL. */
+    static final String UPDATE_SQL = "UPDATE TABLE SET FIELD = 'Value' WHERE ID=999";
+
+    /** DELETE_SQL. */
+    static final String DELETE_SQL = "DELETE FROM TABLE WHERE ID=999";
+
     /**
      * Sets the driver.
      *

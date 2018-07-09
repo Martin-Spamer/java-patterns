@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class MySqlDaoTest.
+ * Unit test for MySqlDao.
  */
 @Ignore("Requires MySQL DB availability")
 public class MySqlDaoTest {
@@ -28,7 +28,7 @@ public class MySqlDaoTest {
     public void testCreate() {
         final MySqlDao mySqlDao = new MySqlDao();
         assertNotNull(mySqlDao);
-        mySqlDao.create();
+        mySqlDao.create(DaoInterface.INSERT_SQL);
     }
 
     /**
@@ -38,7 +38,7 @@ public class MySqlDaoTest {
     public void testRead() {
         final MySqlDao mySqlDao = new MySqlDao();
         assertNotNull(mySqlDao);
-        mySqlDao.read();
+        mySqlDao.read(DaoInterface.SELECT_SQL);
     }
 
     /**
@@ -48,7 +48,7 @@ public class MySqlDaoTest {
     public void testUpdate() {
         final MySqlDao mySqlDao = new MySqlDao();
         assertNotNull(mySqlDao);
-        mySqlDao.update();
+        mySqlDao.update(DaoInterface.UPDATE_SQL);
     }
 
     /**
@@ -58,7 +58,7 @@ public class MySqlDaoTest {
     public void testDelete() {
         final MySqlDao mySqlDao = new MySqlDao();
         assertNotNull(mySqlDao);
-        mySqlDao.delete();
+        mySqlDao.delete(DaoInterface.DELETE_SQL);
     }
 
 }

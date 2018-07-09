@@ -7,39 +7,34 @@ import java.sql.SQLException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
 
 /**
- * Provides a XML reader for input and a JDBC PointBase Database for output.
+ * Provides a example of a crude XML DAO reader.
  *
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
-public final class XmlDao extends AbstractDataAccessObject {
-
-    /** JDBC_DRIVER to be used. */
-    private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-
-    /** JDBC_URL to be used. */
-    private static final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
-
-    /** USERNAME to be used. */
-    private static final String USER = "PBPUBLIC";
-
-    /** PASSWORD to be used. */
-    private static final String PASSWORD = "PBPUBLIC";
-
-    /** SELECT_SQL. */
-    private static final String SQL = "SELECT * from customers";
+public final class XmlDao extends AbstractDao {
 
     /**
-     * Instantiates a new xml DAO.
+     * The Constructor.
      */
     public XmlDao() {
-        super(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);
+        super();
+    }
+
+    /**
+     * The Constructor.
+     *
+     * @param driverClassName the driver class name
+     */
+    public XmlDao(final String driverClassName) {
+        super(driverClassName);
     }
 
     /**
@@ -49,12 +44,11 @@ public final class XmlDao extends AbstractDataAccessObject {
      */
     public Document toXmlDocument() {
         try {
-            read(SQL);
-            final Document xmlDocument = toXmlDocument(this.resultSet);
-            this.resultSet.close();
+            final Document xmlDocument = toXmlDocument(resultSet);
+            resultSet.close();
             return xmlDocument;
         } catch (final SQLException e) {
-            this.log.error(e.toString());
+            log.error(e.toString());
         }
         return null;
     }
@@ -67,40 +61,104 @@ public final class XmlDao extends AbstractDataAccessObject {
      * @return the document
      */
     protected Document toXmlDocument(final ResultSet resultSet) {
-        Document document = null;
+        try {
+            final Document document = createDocument();
 
+            createTable(document, resultSet);
+
+            return document;
+        } catch (final Exception e) {
+            log.error(e.toString());
+        }
+        return null;
+    }
+
+    /**
+     * Creates the document.
+     *
+     * @return the document
+     */
+    private Document createDocument() {
         try {
             final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             final DocumentBuilder builder = factory.newDocumentBuilder();
-            document = builder.newDocument();
+            return builder.newDocument();
+        } catch (final ParserConfigurationException e) {
+            log.error(e.toString());
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-            final ResultSetMetaData metaData = resultSet.getMetaData();
-            final int colCount = metaData.getColumnCount();
+    /**
+     * Creates the table.
+     *
+     * @param document the document
+     * @param resultSet the result set
+     */
+    private void createTable(final Document document, final ResultSet resultSet) {
+        ResultSetMetaData metaData;
+        try {
+            metaData = resultSet.getMetaData();
 
-            final Element results = document.createElement("TABLE");
-            document.appendChild(results);
+            final Element tableElement = document.createElement("TABLE");
+            document.appendChild(tableElement);
 
             while (resultSet.next()) {
-                final Element row = document.createElement("ROW");
-                results.appendChild(row);
-
-                for (int i = 1; i <= colCount; i++) {
-                    final String columnName = metaData.getColumnName(i);
-                    final Object value = resultSet.getObject(i);
-
-                    if (value != null) {
-                        final Element node = document.createElement(columnName);
-                        final String string = String.format("%s", value);
-                        final Text createTextNode = document.createTextNode(string);
-                        node.appendChild(createTextNode);
-                        row.appendChild(node);
-                    }
-                }
+                createRow(document, tableElement, resultSet, metaData);
             }
-        } catch (final Exception e) {
-            this.log.error(e.toString());
+
+        } catch (final SQLException e) {
+            log.error(e.toString());
+
         }
-        return document;
+
+    }
+
+    /**
+     * Creates the row.
+     *
+     * @param document the document
+     * @param results the results
+     * @param resultSet the result set
+     * @param metaData the meta data
+     */
+    private void createRow(
+            final Document document,
+            final Element results,
+            final ResultSet resultSet,
+            final ResultSetMetaData metaData) {
+        final Element row = document.createElement("ROW");
+        results.appendChild(row);
+
+        try {
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                final String columnName = metaData.getColumnName(i);
+                final Object value = resultSet.getObject(i);
+
+                createCol(document, row, columnName, value);
+            }
+        } catch (final SQLException e) {
+            log.error(e.toString());
+        }
+    }
+
+    /**
+     * Creates the col.
+     *
+     * @param document the document
+     * @param row the row
+     * @param columnName the column name
+     * @param value the value
+     */
+    private void createCol(final Document document, final Element row, final String columnName, final Object value) {
+        if (value != null) {
+            final Element node = document.createElement(columnName);
+            final String string = String.format("%s", value);
+            final Text createTextNode = document.createTextNode(string);
+            node.appendChild(createTextNode);
+            row.appendChild(node);
+        }
     }
 
     /**
@@ -110,12 +168,11 @@ public final class XmlDao extends AbstractDataAccessObject {
      */
     public String toXmlString() {
         try {
-            read(SQL);
-            final String xmlString = toXmlString(this.resultSet);
-            this.resultSet.close();
+            final String xmlString = toXmlString(resultSet);
+            resultSet.close();
             return xmlString;
         } catch (final SQLException e) {
-            this.log.error(e.toString());
+            log.error(e.toString());
         }
         return null;
     }
@@ -149,7 +206,7 @@ public final class XmlDao extends AbstractDataAccessObject {
             xml.append("</TABLE>\n");
             resultSet.close();
         } catch (final Exception e) {
-            this.log.error(e.toString());
+            log.error(e.toString());
         }
         return xml.toString();
     }

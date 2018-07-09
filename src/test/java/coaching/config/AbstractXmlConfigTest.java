@@ -116,8 +116,6 @@ public class AbstractXmlConfigTest {
         final ConfigInterface configuration = new TestConfig();
         assertNotNull(configuration);
         assertNull(configuration.get(key));
-        final String property = configuration.valueFor(key);
-        assertEquals(expectedValue, property);
     }
 
     /**

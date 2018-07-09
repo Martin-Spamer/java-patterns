@@ -163,6 +163,6 @@ public class XmlToJdbc extends MySqlDao {
         sql.append(String.format(" (%s) VALUES (%s)", fieldNames, dataValues));
 
         this.log.info(sql.toString());
-        super.sql(sql.toString());
+        super.executePreparedStatement(sql.toString());
     }
 }

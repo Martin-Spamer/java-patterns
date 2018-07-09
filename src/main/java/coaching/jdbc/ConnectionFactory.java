@@ -3,6 +3,7 @@ package coaching.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,33 +16,14 @@ public class ConnectionFactory {
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** JDBC_DRIVER to be used. */
-    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-
-    /** JDBC_URL to be used. */
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/student";
-
-    /** USER to be used. */
-    private static final String USER = "root";
-
-    /** PASSWORD to be used. */
-    private static final String PASSWORD = "root";
-
-    /** The connection url. */
-    private String connectionUrl = JDBC_URL;
-
     /** The username. */
-    private String username = USER;
+    private String username = null;
 
     /** The password. */
-    private String password = PASSWORD;
+    private String password = null;
 
-    /**
-     * Instantiates a new connection factory.
-     */
-    public ConnectionFactory() {
-        this(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);
-    }
+    /** The connection url. */
+    private String connectionUrl = null;
 
     /**
      * Instantiates a new connection factory.
@@ -65,7 +47,7 @@ public class ConnectionFactory {
         try {
             Class.forName(driverClassName);
         } catch (final ClassNotFoundException e) {
-            log.error( e.toString());
+            log.error(e.toString());
         }
     }
 
@@ -73,14 +55,10 @@ public class ConnectionFactory {
      * Get jdbc connection for the database.
      *
      * @return the connection
+     * @throws SQLException the SQL exception
      */
-    public Connection getConnection() {
-        try {
-            return DriverManager.getConnection(connectionUrl, username, password);
-        } catch (final Exception e) {
-            log.error( e.toString());
-        }
-        return null;
+    public Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(connectionUrl, username, password);
     }
 
 }

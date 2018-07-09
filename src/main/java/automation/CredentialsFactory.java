@@ -11,18 +11,10 @@ import static org.junit.Assume.assumeTrue;
 import coaching.csv.CsvFile;
 import coaching.csv.CsvRecord;
 
-/**
- * The Class CredentialsFactory.
- */
 public class CredentialsFactory implements ExpectedDataInterface {
 
-    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(CredentialsFactory.class);
-
-    /** The csv file. */
     private CsvFile csvFile;
-
-    /** The platform. */
     private String platform;
 
     /**
@@ -60,7 +52,7 @@ public class CredentialsFactory implements ExpectedDataInterface {
      * @param credentialsFilename the credentials filename
      */
     private void loadFrom(final String credentialsFilename) {
-        this.csvFile = new CsvFile(credentialsFilename);
+        csvFile = new CsvFile(credentialsFilename);
     }
 
     /**
@@ -97,7 +89,6 @@ public class CredentialsFactory implements ExpectedDataInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see automation.ExpectedDataInterface#onPlatform(java.lang.String)
      */
     @Override
@@ -108,15 +99,14 @@ public class CredentialsFactory implements ExpectedDataInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see automation.ExpectedDataInterface#tagged(java.lang.String)
      */
     @Override
     public Actor tagged(final String tag) {
-        assumeTrue(this.csvFile.isLoaded());
-        final int rowCount = this.csvFile.rowCount();
+        assumeTrue(csvFile.isLoaded());
+        final int rowCount = csvFile.rowCount();
         for (int index = 0; index < rowCount; index++) {
-            final CsvRecord record = this.csvFile.getRecord(index);
+            final CsvRecord record = csvFile.getRecord(index);
             assertNotNull(record);
             LOG.trace(record.toString());
             if (record.getColumn(0).contains(tag)) {
@@ -134,13 +124,12 @@ public class CredentialsFactory implements ExpectedDataInterface {
 
     /*
      * (non-Javadoc)
-     * 
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         return String
-            .format("%s [platform=%s, csvFile=%s]", this.getClass().getSimpleName(), this.platform, this.csvFile);
+            .format("%s [platform=%s, csvFile=%s]", this.getClass().getSimpleName(), platform, csvFile);
     }
 
 }

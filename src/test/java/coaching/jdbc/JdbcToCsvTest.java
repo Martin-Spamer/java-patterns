@@ -1,51 +1,27 @@
 
 package coaching.jdbc;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
- * CsvToJdbcTest class.
+ * Unit test the CsvToJdbc class.
  */
 public class JdbcToCsvTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(JdbcToCsvTest.class);
 
-    /** Default JDBC DRIVER . */
-    private static final String DRIVER = "org.postgresql.Driver";
-
-    /** Default JDBC URL. */
-    private static final String URL = "jdbc:postgresql://localhost";
-
-    /** Default USERNAME for connection. */
-    private static final String USERNAME = "postgres";
-
-    /** Default PASSWORD for connection. */
-    private static final String PASSWORD = "password";
-
-    /** Default data source filename. */
-    private final String filename = "./data/data.csv";
-
-    /** Default table name. */
-    private final String tableName = "tableName";
-
-    /**
-     * Fluent Interface.
-     *
-     */
     @Test
-    public void testFluentInterface() {
+    @Ignore("Requires Database")
+    public void testJdbcToCsv() throws Exception {
         final JdbcToCsv instance = new JdbcToCsv();
-        assertEquals(instance, instance.setDriver(DRIVER));
-        assertEquals(instance, instance.setUrl(URL));
-        assertEquals(instance, instance.setUsername(USERNAME));
-        assertEquals(instance, instance.setPassword(PASSWORD));
-        assertEquals(instance, instance.setTableName(this.tableName));
-        assertEquals(instance, instance.setFilename(this.filename));
+        assertNotNull(instance);
+        LOG.info(instance.toString());
     }
 
 }

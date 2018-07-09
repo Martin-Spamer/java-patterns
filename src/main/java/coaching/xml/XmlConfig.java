@@ -90,7 +90,7 @@ public class XmlConfig {
             try {
                 final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
                 final Document document = documentBuilder.parse(configFile);
-                configElement = document.getDocumentElement();
+                this.configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {
                 LOG.error(parserConfigurationException.toString());
             }
@@ -107,7 +107,7 @@ public class XmlConfig {
      * @return the attribute
      */
     protected String getAttribute(final String attributeName) {
-        return configElement.getAttribute(attributeName);
+        return this.configElement.getAttribute(attributeName);
     }
 
     /**
@@ -118,7 +118,7 @@ public class XmlConfig {
      * @return the elements by tag name
      */
     protected NodeList getElementsByTagName(final String elementName) {
-        return configElement.getElementsByTagName(elementName);
+        return this.configElement.getElementsByTagName(elementName);
     }
 
     /*
@@ -127,7 +127,7 @@ public class XmlConfig {
      * @see framework.config.ConfigInterface#getProperty(java.lang.String)
      */
     public String getProperty(final String key) {
-        final NodeList propertyElements = configElement.getElementsByTagName("property");
+        final NodeList propertyElements = this.configElement.getElementsByTagName("property");
         for (int i = 0; i < propertyElements.getLength(); i++) {
             final Node item = propertyElements.item(i);
             LOG.info("item = {}", item.toString());
@@ -152,7 +152,7 @@ public class XmlConfig {
      * @return the tag name
      */
     protected String getTagName() {
-        return configElement.getTagName();
+        return this.configElement.getTagName();
     }
 
     /*
@@ -162,7 +162,7 @@ public class XmlConfig {
      */
     @Override
     public String toString() {
-        return null != configElement ? toXml(configElement) : "null";
+        return null != this.configElement ? toXml(this.configElement) : "null";
     }
 
     /**
@@ -190,4 +190,5 @@ public class XmlConfig {
         }
         return text.toString();
     }
+
 }

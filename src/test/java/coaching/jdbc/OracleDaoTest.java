@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class OracleDaoTest.
+ * Unit test for OracleDao.
  */
 @Ignore("Requires Oracle DB availability")
 public class OracleDaoTest {
@@ -28,7 +28,7 @@ public class OracleDaoTest {
     public void testCreate() {
         final OracleDao oracleDao = new OracleDao();
         assertNotNull(oracleDao);
-        oracleDao.create();
+        oracleDao.create(DaoInterface.INSERT_SQL);
     }
 
     /**
@@ -38,7 +38,7 @@ public class OracleDaoTest {
     public void testRead() {
         final OracleDao oracleDao = new OracleDao();
         assertNotNull(oracleDao);
-        oracleDao.read();
+        oracleDao.read(DaoInterface.SELECT_SQL);
     }
 
     /**
@@ -48,7 +48,7 @@ public class OracleDaoTest {
     public void testUpdate() {
         final OracleDao oracleDao = new OracleDao();
         assertNotNull(oracleDao);
-        oracleDao.update();
+        oracleDao.update(DaoInterface.UPDATE_SQL);
     }
 
     /**
@@ -58,7 +58,7 @@ public class OracleDaoTest {
     public void testDelete() {
         final OracleDao oracleDao = new OracleDao();
         assertNotNull(oracleDao);
-        oracleDao.delete();
+        oracleDao.delete(DaoInterface.DELETE_SQL);
     }
 
 }

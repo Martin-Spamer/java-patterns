@@ -26,7 +26,7 @@ public class AbstractConfigTest {
     /**
      * Test Configuration class.
      */
-    public class TestConfig extends AbstractConfig {
+    public class TestConfig extends Configuration {
 
         /**
          * Instantiates a new configuration.
@@ -50,14 +50,14 @@ public class AbstractConfigTest {
      * Mock a MissingConfiguration.
      * The configuration file is missing so throws MissingConfigException.
      */
-    public class MissingConfiguration extends AbstractConfig {
+    public class MissingConfiguration extends Configuration {
     }
 
     /**
      * Mock a DefaultConfiguration.
      * When the configuration file is missing, provide default values.
      */
-    public class InvalidConfig extends AbstractConfig {
+    public class InvalidConfig extends Configuration {
     }
 
     @Test
@@ -103,8 +103,6 @@ public class AbstractConfigTest {
         final ConfigInterface configuration = new TestConfig();
         assertNotNull(configuration);
         assertNull(configuration.get(key));
-        final String property = configuration.valueFor(key);
-        assertEquals(expectedValue, property);
     }
 
     /**
