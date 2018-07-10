@@ -20,87 +20,86 @@ package coaching.thread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import framework.application.ApplicationException;
+import coaching.application.ApplicationException;
 
 public class ThreadTemplate implements Runnable {
 
-	private static final long TIME_OUT = 1000;
-	private static final long MAX_TICKS = 10;
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-	protected ThreadConfig config;
-	protected final Thread thread;
-	protected boolean exit = false;
-	protected long tick;
-	protected long startTime;
-	protected long timeOut = TIME_OUT;
-	protected long maxTicks = MAX_TICKS;
+    private static final long TIME_OUT = 1000;
+    private static final long MAX_TICKS = 10;
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected ThreadConfig config;
+    protected final Thread thread;
+    protected boolean exit = false;
+    protected long tick;
+    protected long startTime;
+    protected long timeOut = TIME_OUT;
+    protected long maxTicks = MAX_TICKS;
 
-	public ThreadTemplate() {
-		initialise(new ThreadConfig());
-		this.thread = new java.lang.Thread(this);
-	}
+    public ThreadTemplate() {
+        initialise(new ThreadConfig());
+        thread = new java.lang.Thread(this);
+    }
 
-	/**
-	 * Initialise.
-	 *
-	 * configuration element
-	 */
-	public void initialise(final ThreadConfig config) {
-		this.config = config;
-	}
+    /**
+     * Initialise.
+     *
+     * configuration element
+     */
+    public void initialise(final ThreadConfig config) {
+        this.config = config;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Runnable#run()
-	 */
-	@Override
-	public void run() {
-		do {
-			this.tick++;
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Runnable#run()
+     */
+    @Override
+    public void run() {
+        do {
+            tick++;
 
-			final String className = this.getClass().getSimpleName();
-			final String threadName = this.thread.getName();
-			final int priority = this.thread.getPriority();
-			this.log.info("classname:{}:threadName:{}({}).{}", className, threadName, priority, this.tick);
+            final String className = this.getClass().getSimpleName();
+            final String threadName = thread.getName();
+            final int priority = thread.getPriority();
+            log.info("classname:{}:threadName:{}({}).{}", className, threadName, priority, tick);
 
-			try {
-				execute();
-			} catch (final ApplicationException exception) {
-				this.log.error("{}", exception);
-			}
+            try {
+                execute();
+            } catch (final ApplicationException exception) {
+                log.error("{}", exception);
+            }
 
-			// Yield a little.
-			java.lang.Thread.yield();
+            // Yield a little.
+            java.lang.Thread.yield();
 
-			// * Thread ends.
-			if (this.tick >= this.maxTicks) {
-				this.exit = true;
-			}
+            // * Thread ends.
+            if (tick >= maxTicks) {
+                exit = true;
+            }
 
-			final long currentTimeMillis = System.currentTimeMillis();
-			if (currentTimeMillis - this.startTime > TIME_OUT) {
-				this.exit = true;
-			}
-		} while (!this.exit);
-	}
+            final long currentTimeMillis = System.currentTimeMillis();
+            if (currentTimeMillis - startTime > TIME_OUT) {
+                exit = true;
+            }
+        } while (!exit);
+    }
 
-	protected void execute() throws ApplicationException {
-		throw new ApplicationException("execute method must be overridden");
-	}
+    protected void execute() throws ApplicationException {
+        throw new ApplicationException("execute method must be overridden");
+    }
 
-	/**
-	 * Start.
-	 */
-	public void start() {
-		this.thread.start();
-	}
+    /**
+     * Start.
+     */
+    public void start() {
+        thread.start();
+    }
 
-	/**
-	 * Stop.
-	 */
-	public void stop() {
-		this.exit = true;
-	}
+    /**
+     * Stop.
+     */
+    public void stop() {
+        exit = true;
+    }
 
 }

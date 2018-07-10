@@ -7,13 +7,13 @@ package automation;
 public class Actor {
 
     /** The username. */
-    private String username;
+    private String username = "username";
 
     /** The password. */
-    private String password;
+    private String password = "password";
 
     /** The email. */
-    private String email;
+    private String email = "email@example.com";
 
     /**
      * Sets the username.
@@ -48,7 +48,7 @@ public class Actor {
      * @return the username
      */
     public String getUsername() {
-        return this.username;
+        return username;
     }
 
     /**
@@ -57,7 +57,7 @@ public class Actor {
      * @return the password
      */
     public String getPassword() {
-        return this.password;
+        return password;
     }
 
     /**
@@ -66,21 +66,21 @@ public class Actor {
      * @return the email
      */
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("%s [username=%s, password=%s, email=%s]",
-                this.getClass().getSimpleName(),
-                this.username,
-                this.password,
-                this.email);
+        return String
+            .format("%s [username=%s, password=%s, email=%s]",
+                    this.getClass().getSimpleName(),
+                    username,
+                    password,
+                    email);
     }
 
 }

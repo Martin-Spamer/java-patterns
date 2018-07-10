@@ -1,7 +1,13 @@
 # java-coaching - Automation
 | [Automation](src/main/java/automation "Automated Testing with Java") | [Java Coaching](src/main/java/coaching "Coaching Java Idioms") | [Java Patterns](src/main/java/patterns "Design Patterns in Java") |
 
-## Credentials Handling by tagged Characteristic
+## Expected Data handling using tags
+
+
+
+## Credentials with Characteristic tags
+
+
 
 ### Simple
 
@@ -9,17 +15,26 @@
 
 ### Platform management by System property
 
-	-Dplatform={dev|sit|pp}
+	-Dplatform={local|dev|sit|pp}
 
 	final Actor actor = credentials.tagged("@AUTHORISED");
 
 ### Customised Platform management 
 
-	final Actor actor = credentials.on(platform).tagged(this.tag);
+	final Actor actor = credentials.on(platform).tagged("@F");
 
-### Data-Source
+### Data-Source(s)
+
+#### Default folder location when no platform is specified.
 
 	{resource-root}/data/Credentials.csv
+
+#### Platform is used sub-folder under the default folder.
+	
+	{resource-root}/data/local/Credentials.csv
+	{resource-root}/data/dev/Credentials.csv
+	{resource-root}/data/sit/Credentials.csv
+	{resource-root}/data/pp/Credentials.csv
 
 ### Example Credentials.csv
 
@@ -28,3 +43,4 @@
 	@AUTHORISED,alice,password,alice@example.com
 	@AUTHORISED,bob,password,bob@example.com
 	@UNAUTHORISED,trudy,password,trudy@example.com
+

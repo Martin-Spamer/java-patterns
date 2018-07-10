@@ -1,3 +1,4 @@
+
 package coaching.net;
 
 import java.net.Socket;
@@ -7,52 +8,49 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * PicoProxy Class.
+ * PicoProxy class.
  */
 public class PicoProxy {
 
-	/**
-	 * PicoProxyDaemon Class.
-	 */
-	public class PicoProxyDaemon extends Thread {
+    /** Provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(NetInfo.class);
 
-		/**
-		 * Instantiates a new pico proxy daemon.
-		 */
-		public PicoProxyDaemon() {
-			boolean exit = false;
+    /**
+     * Instantiates a new pico proxy.
+     */
+    public PicoProxy() {
+        new PicoProxyDaemon();
+    }
 
-			// ServerSocket serverSocket = new ServerSocket( 8888 ) ;
+    /**
+     * PicoProxyDaemon Class.
+     */
+    public class PicoProxyDaemon extends Thread {
 
-			while (!exit) {
-				// * client and to the
-				// server.
-				final Socket client = null, server = null;
-				exit = true;
-			}
-		}
-	}
+        /**
+         * Instantiates a new pico proxy daemon.
+         */
+        public PicoProxyDaemon() {
+            boolean exit = false;
 
-	/** The Constant log. */
-	private static final Logger log = LoggerFactory.getLogger(PicoProxy.class);
+            // ServerSocket serverSocket = new ServerSocket( 8888 ) ;
 
-	/**
-	 * main method.
-	 *
-	 * arguments
-	 */
-	public static void main(final String[] args) {
-		PicoProxy.log.trace(System.getProperties().toString());
-		PicoProxy.log.debug("args[]={}", Arrays.toString(args));
+            while (!exit) {
+                final Socket client = null;
+                final Socket server = null;
+                exit = true;
+            }
+        }
+    }
 
-		new PicoProxy();
-	}
-
-	/**
-	 * Instantiates a new pico proxy.
-	 */
-	public PicoProxy() {
-		new PicoProxyDaemon();
-	}
-
+    /**
+     * main method.
+     *
+     * arguments
+     */
+    public static void main(final String[] args) {
+        LOG.trace(System.getProperties().toString());
+        LOG.debug("args[] = {}", Arrays.toString(args));
+        new PicoProxy();
+    }
 }

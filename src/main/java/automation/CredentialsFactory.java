@@ -11,7 +11,7 @@ import static org.junit.Assume.assumeTrue;
 import coaching.csv.CsvFile;
 import coaching.csv.CsvRecord;
 
-public class CredentialsFactory implements ExpectedDataInterface {
+public class CredentialsFactory extends AbstractExpectedData implements ExpectedDataInterface {
 
     private static final Logger LOG = LoggerFactory.getLogger(CredentialsFactory.class);
     private CsvFile csvFile;
@@ -87,35 +87,23 @@ public class CredentialsFactory implements ExpectedDataInterface {
         return "/data/Credentials.csv";
     }
 
-    /*
-     * (non-Javadoc)
-     * @see automation.ExpectedDataInterface#onPlatform(java.lang.String)
-     */
-    @Override
     public CredentialsFactory onPlatform(final String platform) {
         this.platform = platform;
         return this;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see automation.ExpectedDataInterface#tagged(java.lang.String)
-     */
-    @Override
     public Actor tagged(final String tag) {
         assumeTrue(csvFile.isLoaded());
         final int rowCount = csvFile.rowCount();
         for (int index = 0; index < rowCount; index++) {
             final CsvRecord record = csvFile.getRecord(index);
             assertNotNull(record);
-            LOG.trace(record.toString());
             if (record.getColumn(0).contains(tag)) {
                 final Actor credentials = new Actor();
                 assertNotNull(credentials);
                 credentials.setUsername(record.getColumn(1));
-                credentials.setEmail(record.getColumn(2));
-                credentials.setPassword(record.getColumn(3));
-                LOG.trace(record.toString());
+                credentials.setPassword(record.getColumn(2));
+                credentials.setEmail(record.getColumn(3));
                 return credentials;
             }
         }

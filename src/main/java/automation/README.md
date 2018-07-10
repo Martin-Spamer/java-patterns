@@ -4,7 +4,3 @@
 ## Unit Tests for java-automation
 
 Automated Testing with Java.
-
-## Java Automated Testing
-
-        final Actor actor = credentials.on(this.platform).tagged(this.tag);

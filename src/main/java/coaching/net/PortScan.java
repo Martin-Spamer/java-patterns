@@ -2,10 +2,13 @@
  * A Simple MultiThreaded Port Scanner
  * Created on 22 September 2004, 12:55
  */
+
 package coaching.net;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -13,89 +16,106 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * PortScan Class.
+ * PortScan class.
  */
 public class PortScan extends Thread {
 
-	private static final Logger log = LoggerFactory.getLogger(PortScan.class);
-	private static int loadFactor = 100;
-	private static Properties properties = new Properties();
-	private String ip = null;
-	private int port = 0;
-	private final boolean reportClosedPort = false;
+    private static final Logger LOG = LoggerFactory.getLogger(PortScan.class);
+    private static int loadFactor = 100;
+    private static Properties properties = null;
+    private String ip = "127.0.0.1";
+    private int port = 0;
 
-	/**
-	 * main method.
-	 *
-	 * arguments
-	 */
-	public static void main(final String[] args) {
-		PortScan.log.trace(System.getProperties().toString());
-		PortScan.log.debug("args[]={}", Arrays.toString(args));
+    public PortScan() {
+        super();
+        LOG.info(this.toString());
+        initialise();
+    }
 
-		// * port number
-		try {
-			PortScan.log.info("PortScan IP : {}", args[0]);
-			PortScan.properties.load(new FileInputStream(new File("ports.properties")));
+    public PortScan(final String[] args) {
+        super();
+        ip = args[0];
+        port = Integer.parseInt(args[1]);
+        LOG.info(this.toString());
+        initialise();
+    }
 
-			for (int port = 1; port < 64 * 1024;) {
-				if (Thread.activeCount() > PortScan.loadFactor) {
-					Thread.yield();
-				} else {
-					final PortScan portScan = new PortScan(args[0], port);
-					portScan.start();
-					port++;
-				}
-			}
-		} catch (final Exception exception) {
-			PortScan.log.info("Command line must include IP address");
-		}
-	}
+    public PortScan(final String ip, final int port) {
+        super();
+        this.ip = ip;
+        this.port = port;
+        LOG.info(this.toString());
+        initialise();
+    }
 
-	/**
-	 * Instantiates a new port scan.
-	 *
-	 * ip
-	 * port
-	 */
-	public PortScan(final String ip, final int port) {
-		super();
-		this.ip = ip;
-		this.port = port;
-	}
+    private void initialise() {
+        String filename = "ports.properties";
+        File file = new File(filename);
+        try {
+            FileInputStream inStream = new FileInputStream(file);
 
-	/**
-	 * Look up port.
-	 *
-	 * port
-	 * string
-	 */
-	public String lookUpPort(final int port) {
-		return PortScan.properties.getProperty(Integer.toString(port), "unknown");
-	}
+            try {
+                properties.load(inStream);
+            } catch (IOException e) {
+                LOG.error(e.toString());
+            }
+        } catch (FileNotFoundException e) {
+            LOG.error(e.toString());
+        }
+    }
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Thread#run()
-	 */
-	@Override
-	public void run() {
-		try {
-			final java.net.Socket socket = new java.net.Socket(this.ip, this.port);
+    public void execute() {
+        for (int port = 1; port < 64 * 1024;) {
+            if (Thread.activeCount() > PortScan.loadFactor) {
+                Thread.yield();
+            } else {
+                final PortScan portScan = new PortScan(ip, port);
+                portScan.start();
+                port++;
+            }
+        }
+    }
 
-			// report open port & try looking it up
-			PortScan.log.info("portscan = {} : {} ", this.ip, this.port);
-			PortScan.log.info("scanning = {} ", lookUpPort(this.port));
+    /**
+     * Look up port number for the service description.
+     */
+    public String lookUpPort(final int port) {
+        String portNo = Integer.toString(port);
+        return PortScan.properties.getProperty(portNo, "unknown");
+    }
 
-			Thread.yield();
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Thread#run()
+     */
+    @Override
+    public void run() {
+        LOG.info("run");
+        try {
+            final java.net.Socket socket = new java.net.Socket(ip, port);
 
-			socket.close();
-		} catch (final Exception exception) {
-			if (this.reportClosedPort == true) {
-				PortScan.log.info("portscan = {} : {} ", this.ip, this.port);
-				log.error(exception.toString());
-			}
-		}
-	}
+            // report open port & try looking it up
+            LOG.info("portscan = {} : {} ", ip, port);
+            LOG.info("scanning = {} ", lookUpPort(port));
+
+            Thread.yield();
+
+            socket.close();
+        } catch (final Exception exception) {
+            LOG.error(exception.toString());
+            LOG.info("portscan = {} : {} ", ip, port);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s [ip=%s, port=%s]", this.getClass().getSimpleName(), ip, port);
+    }
+
+    public static void main(final String[] args) {
+        LOG.trace("System properties = {}", System.getProperties().toString());
+        LOG.debug("args = {}", Arrays.toString(args));
+        new PortScan(args).execute();
+    }
+
 }

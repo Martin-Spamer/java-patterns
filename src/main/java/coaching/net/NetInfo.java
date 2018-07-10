@@ -3,6 +3,7 @@
  *  @description TODO
  *	Created      28-Oct-2004
  **/
+
 package coaching.net;
 
 import java.net.InetAddress;
@@ -14,47 +15,37 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * NetInfo Class.
+ * NetInfo class.
  */
 public class NetInfo {
 
-	/** The Constant log. */
-	private static final Logger log = LoggerFactory.getLogger(NetInfo.class);
+    /** Provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(NetInfo.class);
 
-	/**
-	 * main method.
-	 *
-	 * arguments
-	 */
-	public static void main(final String[] args) {
-		NetInfo.log.trace(System.getProperties().toString());
-		NetInfo.log.debug("args[]={}", Arrays.toString(args));
-		new NetInfo();
-	}
+    /**
+     * Instantiates a new net info.
+     */
+    public NetInfo() {
+        try {
+            final Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+            while (interfaces.hasMoreElements()) {
+                final NetworkInterface networkInterface = interfaces.nextElement();
+                LOG.info("networkInterface.getDisplayName() = {}", networkInterface.getDisplayName());
+                final Enumeration<InetAddress> bounded = networkInterface.getInetAddresses();
+                while (bounded.hasMoreElements()) {
+                    final InetAddress inetAddress = bounded.nextElement();
+                    LOG.info("inetAddress.getHostAddress() = {}", inetAddress.getHostAddress());
+                    LOG.info("inetAddress.getHostName() = {}", inetAddress.getHostName());
+                }
+            }
+        } catch (final Exception e) {
+            LOG.error(e.toString());
+        }
+    }
 
-	/**
-	 * Instantiates a new net info.
-	 */
-	public NetInfo() {
-		try {
-			final Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-			while (interfaces.hasMoreElements()) {
-				final NetworkInterface networkInterface = interfaces.nextElement();
-				NetInfo.log.info("networkInterface.getDisplayName()={}", networkInterface.getDisplayName());
-				final Enumeration<InetAddress> bounded = networkInterface.getInetAddresses();
-				while (bounded.hasMoreElements()) {
-					final InetAddress inetAddress = bounded.nextElement();
-					NetInfo.log.info("inetAddress.getHostAddress()={}", inetAddress.getHostAddress());
-					NetInfo.log.info("inetAddress.getHostName()={}", inetAddress.getHostName());
-				}
-			}
-
-			final Enumeration<Object> systemProperties = System.getProperties().elements();
-			while (systemProperties.hasMoreElements()) {
-				NetInfo.log.info(systemProperties.nextElement().toString());
-			}
-		} catch (final Exception e) {
-			NetInfo.log.info("{}", e);
-		}
-	}
+    public static void main(final String[] args) {
+        LOG.trace("System properties = {}", System.getProperties().toString());
+        LOG.debug("args = {}", Arrays.toString(args));
+        new NetInfo();
+    }
 }

@@ -1,3 +1,4 @@
+
 package coaching.net;
 
 import java.util.Arrays;
@@ -6,27 +7,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * PicoServer Class.
+ * PicoServer class.
  */
 public class PicoServer {
 
-	/** The Constant log. */
-	private static final Logger log = LoggerFactory.getLogger(PicoServer.class);
+    /** Provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(PicoServer.class);
 
-	/**
-	 * main method.
-	 *
-	 * arguments
-	 */
-	public static void main(final String[] args) {
-		PicoServer.log.trace(System.getProperties().toString());
-		PicoServer.log.debug("args[]={}", Arrays.toString(args));
+    final PicoDaemon picoDaemon = new PicoDaemon();
 
-		final PicoDaemon picoDaemon = new PicoDaemon();
+    public PicoServer() {
+        super();
+        final Thread thread = new Thread(picoDaemon, "picoDaemon");
+        thread.start();
+    }
 
-		final Thread thread = new Thread(picoDaemon, "picoDaemon");
-		thread.start();
-
-	}
+    public static void main(final String[] args) {
+        LOG.trace("System properties = {}", System.getProperties().toString());
+        LOG.debug("args = {}", Arrays.toString(args));
+        new PicoServer();
+    }
 
 }

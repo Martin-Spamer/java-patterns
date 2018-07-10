@@ -17,28 +17,25 @@ public class CsvRecordTest {
     private static final Logger LOG = LoggerFactory.getLogger(CsvRecordTest.class);
 
     /**
-     * Unit Test to csv record.
+     * Unit Test the CsvRecord default constructor.
      */
     @Test
     public void testCsvRecord() {
         LOG.info("testCsvRecord");
-        assertNotNull(new CsvRecord());
+        CsvRecord record = new CsvRecord();
+        assertNotNull(record);
+        LOG.info(record.toString());
     }
 
     /**
-     * Test CSV record.
+     * Unit Test the CsvRecord constructor with a String.
      */
     @Test
-    public void testCsvFileRecord() {
-        LOG.info("testCsvRecord");
-
-        final String headerLine = new CsvRecord("#One,Two").toString();
-        assertEquals("#One, Two", headerLine);
-        LOG.info(headerLine.toString());
-
-        final String dataLine = new CsvRecord("One,Two").toString();
-        assertEquals("One, Two", dataLine);
-        LOG.info(dataLine.toString());
+    public void testCsvRecordString() {
+        LOG.info("testCsvRecordString");
+        final String record = new CsvRecord("One,Two").toString();
+        assertEquals("CsvRecord [fields=[One, Two]]", record);
+        LOG.info(record.toString());
     }
 
 }

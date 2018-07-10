@@ -25,7 +25,6 @@ public class CsvFileTest {
         assertNotNull(csvFile);
         assertEquals(4, csvFile.rowCount());
         LOG.info(csvFile.toString());
-        csvFile.logPretty();
     }
 
     /**
@@ -38,7 +37,6 @@ public class CsvFileTest {
         assertNotNull(csvFile);
         assertEquals(4, csvFile.rowCount());
         LOG.info(csvFile.toString());
-        csvFile.logPretty();
     }
 
     /**

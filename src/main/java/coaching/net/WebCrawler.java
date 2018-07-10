@@ -13,31 +13,23 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Arrays;
 import java.util.StringTokenizer;
-import java.util.Vector;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
- * WebCrawler Class.
+ * A class to crawl a web site.
  */
 public class WebCrawler extends ThreadTemplate {
 
-    public static final int SEARCH_LIMIT = 50;
+    private static final String BASE_URL = "http://127.0.0.1:8080";
+
+    public static final int SEARCH_LIMIT = 4;
     public static final String SEARCH = "Search";
     public static final String STOP = "Stop";
     public static final String DISALLOW = "Disallow:";
-    private static final Logger log = LoggerFactory.getLogger(WebCrawler.class);
-    private Vector<?> vectorToSearch;
-    private Vector<?> vectorSearched;
-    private Vector<?> vectorMatches;
-    private Thread searchThread;
-    private final String textURL = "http://127.0.0.1:8080";
 
     @Override
     public void execute() {
         try {
-            final URL url = new URL(this.textURL);
+            final URL url = new URL(BASE_URL);
             if (isHttp(url)) {
                 crawlSite(url);
             }
@@ -46,7 +38,7 @@ public class WebCrawler extends ThreadTemplate {
         }
     }
 
-    protected boolean isHttp(final URL url) {
+    private boolean isHttp(final URL url) {
         return url.getProtocol().compareTo("http") == 0;
     }
 
@@ -55,19 +47,15 @@ public class WebCrawler extends ThreadTemplate {
      *
      * base url
      */
-    void crawlSite(final URL baseUrl) {
-        final String baseHost = baseUrl.getHost();
-
-        // form URL for any ROBOTS.TXT file
-        final String robotsTxtFile = String.format("%s/robots.txt", baseUrl);
-        URL robotsUrl = null;
+    protected void crawlSite(final URL baseUrl) {
         try {
-            robotsUrl = new URL(robotsTxtFile);
-
+            // form URL for any ROBOTS.TXT file
+            final String robotsTxtFile = String.format("%s/robots.txt", baseUrl);
+            URL robotsUrl = new URL(robotsTxtFile);
             String robotTxtContent = new String();
+
             final StringBuffer robotTxtContentBuffer = new StringBuffer();
             try {
-                // * ROBOT.TXT file one buffer at a time.
                 final byte buffer[] = new byte[1024];
                 final InputStream robotsTxtInputStream = robotsUrl.openStream();
                 int bufferContentSize = 0;
@@ -96,8 +84,7 @@ public class WebCrawler extends ThreadTemplate {
      * base url
      * robot txt content
      */
-    public void safeCrawlSite(final URL baseUrl, final String robotTxtContent) {
-        final String baseHost = baseUrl.getHost();
+    protected void safeCrawlSite(final URL baseUrl, final String robotTxtContent) {
 
         // search ROBOTS.TXT for "Disallow:" commands.
         final String baseFile = baseUrl.getFile();
@@ -129,7 +116,7 @@ public class WebCrawler extends ThreadTemplate {
      *
      * base url
      */
-    public void slowCrawlUrl(final URL baseUrl) {
+    protected void slowCrawlUrl(final URL baseUrl) {
         try {
             // * URL
             final URLConnection urlConnection = baseUrl.openConnection();
@@ -140,13 +127,10 @@ public class WebCrawler extends ThreadTemplate {
 
             if (mimeType != null) {
                 if (mimeType.compareTo("text/html") == 0) {
-                    // * input stream for links
-                    // * entire URL
                     String responseContent = new String();
                     final StringBuffer responseContentBuffer = new StringBuffer();
                     try {
                         final InputStream inputStream = baseUrl.openStream();
-                        // * resource one buffer at a time.
                         final byte buffer[] = new byte[1024];
                         int bufferContentSize = 0;
                         do {
@@ -159,16 +143,13 @@ public class WebCrawler extends ThreadTemplate {
 
                         inputStream.close();
 
-                        final String lowerCaseResponseContent = responseContent.toLowerCase();
-
                     } catch (final IOException ioException) {
-                        // if there is no robots.txt file, it is OK to search
-                        log.error("{}", ioException);
+                        log.error(ioException.toString());
                     }
                 }
             }
         } catch (final Exception exception) {
-            log.error("{}", exception);
+            log.error(exception.toString());
         }
     }
 

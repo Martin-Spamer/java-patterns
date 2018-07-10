@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * An abstract Configuration class.
- * Loads Configuration Properties from an .properties file.
+ * Loads Configuration Properties from a .properties file.
  */
 public class Configuration extends AbstractConfiguration {
 
@@ -30,7 +30,7 @@ public class Configuration extends AbstractConfiguration {
      */
     public Configuration(final String configFilename) {
         super();
-        this.filename = configFilename;
+        filename = configFilename;
         loadFrom(configFilename);
     }
 
@@ -40,8 +40,8 @@ public class Configuration extends AbstractConfiguration {
      * @return the string
      */
     protected String defaultFilename() {
-        this.filename = this.getClass().getSimpleName();
-        return this.filename;
+        filename = this.getClass().getSimpleName();
+        return filename;
     }
 
     /**
@@ -53,7 +53,7 @@ public class Configuration extends AbstractConfiguration {
     protected void loadFrom(final String configFilename) {
         final String propertyFilename = toPropertyFilename(configFilename);
         loadFrom(inputStream(propertyFilename));
-        this.properties.setProperty("propertyFilename", propertyFilename);
+        properties.setProperty("propertyFilename", propertyFilename);
     }
 
     /**
@@ -94,10 +94,10 @@ public class Configuration extends AbstractConfiguration {
     protected void loadFrom(final InputStream resourceAsStream) {
         if (resourceAsStream != null) {
             try {
-                this.properties.load(resourceAsStream);
-                this.loaded = true;
+                properties.load(resourceAsStream);
+                loaded = true;
             } catch (final IOException e) {
-                this.log.error(e.toString());
+                log.error(e.toString());
             }
         }
     }
@@ -111,9 +111,9 @@ public class Configuration extends AbstractConfiguration {
     public String valueFor(final String key) {
         final String value = System.getProperty(key);
         if (value == null) {
-            return this.properties.getProperty(key);
+            return properties.getProperty(key);
         } else {
-            this.log.warn("Using system property value {} for key {}", value, key);
+            log.warn("Using system property value {} for key {}", value, key);
         }
         return value;
     }
@@ -128,9 +128,9 @@ public class Configuration extends AbstractConfiguration {
     public String valueFor(final String key, final String defaultValue) {
         final String value = System.getProperty(key);
         if (value == null) {
-            return this.properties.getProperty(key, defaultValue);
+            return properties.getProperty(key, defaultValue);
         } else {
-            this.log.warn("Using system property value {} for key {}", value, key);
+            log.warn("Using system property value {} for key {}", value, key);
         }
         return value;
     }
