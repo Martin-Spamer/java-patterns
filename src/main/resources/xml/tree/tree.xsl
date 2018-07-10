@@ -1,5 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:tree="ddm"
+                xmlns:tree="ddm">
 
   <xsl:template match="ddm-tree">
   1
@@ -29,6 +29,5 @@
         </xsl:choose>
        </xsl:attribute>
      </xsl:for-each>
-
   </xsl:template>
 </xsl:stylesheet>

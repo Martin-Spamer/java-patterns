@@ -6,6 +6,7 @@
     SYSTEM ID: http://server/path/MainApp.dtd
 
 -->
+
 <!--
     An example how to use this DTD from your XML document:
 
@@ -26,3 +27,4 @@
 
 <!--- Put your DTDDoc comment here. -->
 <!ELEMENT root EMPTY>
+

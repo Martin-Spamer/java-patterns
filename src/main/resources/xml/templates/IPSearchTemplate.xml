@@ -2,23 +2,23 @@
 <provisionClientDevice>
 	<Header>
 		<Session>
-			<UserName/>
-			<Server/>
-			<SessionId/>
-			<ValidationTimeStamp/>
-			<Key/>
-			<ClientId/>
+			<UserName />
+			<Server />
+			<SessionId />
+			<ValidationTimeStamp />
+			<Key />
+			<ClientId />
 		</Session>
 	</Header>
 	<Body>
-            <ClientDeviceKey>
-                <BpNbr/>
-                <ExtClientDevStr/>
-            </ClientDeviceKey>
-            <ExternalClientDevice>
-                <BpNbr/>
-                <ExtConsStr/>
-                <ExtClientDevStr/>
-            </ExternalClientDevice>
-        </Body>
+		<ClientDeviceKey>
+			<BpNbr />
+			<ExtClientDevStr />
+		</ClientDeviceKey>
+		<ExternalClientDevice>
+			<BpNbr />
+			<ExtConsStr />
+			<ExtClientDevStr />
+		</ExternalClientDevice>
+	</Body>
 </provisionClientDevice>
