@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import patterns.composite.ComponentInterface;
 
 /**
- * AbstractComponent Class.
+ * An abstract Component class.
  */
 public abstract class AbstractComponent implements ComponentInterface {
 
@@ -16,7 +16,6 @@ public abstract class AbstractComponent implements ComponentInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.decorator.ComponentInterface#operation()
      */
     @Override
@@ -24,4 +23,8 @@ public abstract class AbstractComponent implements ComponentInterface {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s []", this.getClass().getSimpleName());
+    }
 }

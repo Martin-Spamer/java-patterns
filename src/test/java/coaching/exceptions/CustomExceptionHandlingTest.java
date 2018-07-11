@@ -24,7 +24,7 @@ public class CustomExceptionHandlingTest {
     public void testSubProcessA() throws CustomCreationException {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
         assertNotNull(customExceptionHandling);
-        customExceptionHandling.subProcessA();
+        customExceptionHandling.creationProcess();
     }
 
     /**
@@ -37,7 +37,7 @@ public class CustomExceptionHandlingTest {
     public void testSubProcessB() throws CustomReadException {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
         assertNotNull(customExceptionHandling);
-        customExceptionHandling.subProcessB();
+        customExceptionHandling.readProcess();
     }
 
     /**
@@ -50,7 +50,7 @@ public class CustomExceptionHandlingTest {
     public void testSubProcessC() throws CustomUpdateException {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
         assertNotNull(customExceptionHandling);
-        customExceptionHandling.subProcessC();
+        customExceptionHandling.updateProcess();
     }
 
     /**

@@ -17,9 +17,9 @@ public class ObjectTypesArrayTest {
      */
     @Test
     public void testDisplayObjectArray() {
-        final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull(objectTypes);
-        objectTypes.iterateArray();
+        final ObjectTypesArray objectArray = new ObjectTypesArray();
+        assertNotNull(objectArray);
+        objectArray.display();
     }
 
     /**
@@ -27,18 +27,18 @@ public class ObjectTypesArrayTest {
      */
     @Test
     public void testDisplayMatrix() {
-        final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull(objectTypes);
-        objectTypes.displayMatrix();
+        final ObjectTypesArray objectArray = new ObjectTypesArray();
+        assertNotNull(objectArray);
+        objectArray.displayMatrix();
     }
 
     /**
      * Unit Test to display.
      */
     @Test
-    public void testDisplay() {
-        final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull(objectTypes);
-        objectTypes.display();
+    public void testIterateArray() {
+        final ObjectTypesArray objectArray = new ObjectTypesArray();
+        assertNotNull(objectArray);
+        objectArray.iterateArray();
     }
 }

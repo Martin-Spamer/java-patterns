@@ -2,6 +2,7 @@
 package coaching.xml;
 
 import java.io.File;
+import java.io.InputStream;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -14,11 +15,14 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-/**
- * XML Configuration Class.
- */
-public class XmlConfig {
+import coaching.config.AbstractXmlConfig;
 
+/**
+ * XML Configuration class.
+ */
+public class XmlConfig extends AbstractXmlConfig {
+
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlConfig.class);
 
     /** configuration element. */
@@ -29,21 +33,6 @@ public class XmlConfig {
      */
     public XmlConfig() {
         super();
-        final Class<? extends XmlConfig> className = this.getClass();
-        final String simpleName = className.getSimpleName();
-        final File configFile = new File(toXmlFilename(simpleName));
-        loadXml(configFile);
-    }
-
-    /**
-     * Instantiates a new XmlConfig from configuration file.
-     *
-     * @param configFilename
-     *            the Configuration filename
-     */
-    public XmlConfig(final File configFilename) {
-        super();
-        loadXml(configFilename);
     }
 
     /**
@@ -53,8 +42,7 @@ public class XmlConfig {
      *            the Configuration filename
      */
     public XmlConfig(final String configFilename) {
-        super();
-        loadXml(configFilename);
+        super(configFilename);
     }
 
     /**
@@ -68,14 +56,17 @@ public class XmlConfig {
         return String.format("%s.xml", configFilename);
     }
 
-    /**
-     * Load configuration filename.
-     *
-     * @param configFilename
-     *            the Configuration filename
-     */
-    public void loadXml(final String configFilename) {
+    protected void loadXml(final File configFile) {
+        loadXml(configFile.getPath());
+    }
+
+    protected void loadXml(final String configFilename) {
         loadXml(new File(configFilename));
+    }
+
+    protected InputStream streamForResource(final String propertyFileName) {
+        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        return classLoader.getResourceAsStream(propertyFileName);
     }
 
     /**
@@ -84,18 +75,33 @@ public class XmlConfig {
      * @param configFile
      *            the Configuration file
      */
-    public void loadXml(final File configFile) {
+    protected void loadXmlStream(final InputStream configInputStream) {
+        try {
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            try {
+                final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+                final Document document = documentBuilder.parse(configInputStream);
+                configElement = document.getDocumentElement();
+            } catch (final ParserConfigurationException parserConfigurationException) {
+                LOG.error(parserConfigurationException.toString());
+            }
+        } catch (final Exception exception) {
+            LOG.error(exception.toString());
+        }
+    }
+
+    public void loadXmlFile(final File configFile) {
         try {
             final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             try {
                 final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
                 final Document document = documentBuilder.parse(configFile);
-                this.configElement = document.getDocumentElement();
+                configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {
                 LOG.error(parserConfigurationException.toString());
             }
         } catch (final Exception exception) {
-            LOG.info(exception.toString());
+            LOG.error(exception.toString());
         }
     }
 
@@ -107,7 +113,7 @@ public class XmlConfig {
      * @return the attribute
      */
     protected String getAttribute(final String attributeName) {
-        return this.configElement.getAttribute(attributeName);
+        return configElement.getAttribute(attributeName);
     }
 
     /**
@@ -118,16 +124,15 @@ public class XmlConfig {
      * @return the elements by tag name
      */
     protected NodeList getElementsByTagName(final String elementName) {
-        return this.configElement.getElementsByTagName(elementName);
+        return configElement.getElementsByTagName(elementName);
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see framework.config.ConfigInterface#getProperty(java.lang.String)
      */
     public String getProperty(final String key) {
-        final NodeList propertyElements = this.configElement.getElementsByTagName("property");
+        final NodeList propertyElements = configElement.getElementsByTagName("property");
         for (int i = 0; i < propertyElements.getLength(); i++) {
             final Node item = propertyElements.item(i);
             LOG.info("item = {}", item.toString());
@@ -137,7 +142,6 @@ public class XmlConfig {
 
     /*
      * (non-Javadoc)
-     *
      * @see framework.config.ConfigInterface#getProperty(java.lang.String,
      * java.lang.String)
      */
@@ -152,17 +156,16 @@ public class XmlConfig {
      * @return the tag name
      */
     protected String getTagName() {
-        return this.configElement.getTagName();
+        return configElement.getTagName();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return null != this.configElement ? toXml(this.configElement) : "null";
+        return null != configElement ? toXmlString(configElement) : "null";
     }
 
     /**
@@ -172,7 +175,7 @@ public class XmlConfig {
      *            the node
      * @return the string
      */
-    private String toXml(final Node node) {
+    private String toXmlString(final Node node) {
         StringBuffer text = new StringBuffer();
         if (node != null) {
             final String value = node.getNodeValue();
@@ -183,12 +186,11 @@ public class XmlConfig {
                 final NodeList children = node.getChildNodes();
                 for (int i = 0; i < children.getLength(); i++) {
                     final Node item = children.item(i);
-                    final String xml = toXml(item);
+                    final String xml = toXmlString(item);
                     text.append(xml);
                 }
             }
         }
         return text.toString();
     }
-
 }

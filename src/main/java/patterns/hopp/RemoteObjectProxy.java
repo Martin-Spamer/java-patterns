@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 /**
  * RemoteObjectProxy Class.
  */
-@SuppressWarnings("SpellCheckingInspection")
 class RemoteObjectProxy implements HoppInterface {
 
     /** provides logging. */
@@ -20,29 +19,27 @@ class RemoteObjectProxy implements HoppInterface {
      * Remote method proxy.
      */
     public void remoteMethodProxy() {
-        LOG.info("%s.remoteMethodProxy()", this.getClass().getSimpleName());
+        LOG.info("{}.remoteMethodProxy()", this.getClass().getSimpleName());
         remoteObject.remoteMethod();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.hopp.HoppInterface#remoteMethod()
      */
     @Override
     public void remoteMethod() {
-        LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
+        LOG.info("{}.remoteMethod()", this.getClass().getSimpleName());
         remoteObject.remoteMethod();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.hopp.HoppInterface#localMethod()
      */
     @Override
     public void localMethod() {
-        LOG.info("%s.localMethod()", this.getClass().getSimpleName());
+        LOG.info("{}.localMethod()", this.getClass().getSimpleName());
         remoteObject.localMethod();
     }
 

@@ -12,9 +12,6 @@ import static org.junit.Assert.assertNotNull;
  */
 public abstract class AbstractXmlConfig extends AbstractConfiguration {
 
-    /** The filename. */
-    protected String filename;
-
     /**
      * The Constructor.
      */
@@ -29,7 +26,7 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
      * @param configFilename the config filename
      */
     public AbstractXmlConfig(final String configFilename) {
-        this.filename = configFilename;
+        this.filenameStem = configFilename;
         loadFrom(configFilename);
     }
 
@@ -39,8 +36,8 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
      * @return the string
      */
     protected String defaultFilename() {
-        this.filename = this.getClass().getSimpleName();
-        return this.filename;
+        this.filenameStem = this.getClass().getSimpleName();
+        return this.filenameStem;
     }
 
     /**

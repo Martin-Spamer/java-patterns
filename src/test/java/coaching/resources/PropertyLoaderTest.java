@@ -1,58 +1,48 @@
 
 package coaching.resources;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
+import java.io.FileNotFoundException;
+import java.util.Properties;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
+/**
+ * Unit tests for PropertyLoader class.
+ */
 public class PropertyLoaderTest {
 
-    /**
-     * ConfigurationLoader class.
-     */
-    public class Configuration extends PropertiesLoader {
-        public Configuration() {
-            super("./Configuration.properties");
-        }
-    }
+    private static final Logger LOG = LoggerFactory.getLogger(PropertyLoaderTest.class);
 
-    /**
-     * Unit test to typical usage.
-     */
     @Test
-    public void testTypicalUsage() {
-        // Given a resource file exists called ResourceLoader.properties
-
-        // When
-        final PropertiesLoader propertiesLoader = new PropertiesLoader();
-
-        // Then
-        assertNotNull(propertiesLoader);
-        assertTrue(propertiesLoader.isLoaded());
-    }
-
-    /**
-     * Unit test to typical usage specific properties.
-     */
-    @Test
-    public void testTypicalUsageSpecificProperties() {
-        // Given a resource file exists called SpecificResource.properties
-
-        // When
-        final Configuration configuration = new Configuration();
-
-        // Then
-        assertNotNull(configuration);
-        assertTrue(configuration.isLoaded());
+    public void testGetProperties() throws Exception {
+        Properties properties = PropertiesLoader.getProperties("Configuration.properties");
+        assertNotNull(properties);
+        LOG.info(properties.toString());
     }
 
     @Test
-    public void testType() {
-        assertThat(PropertiesLoader.class, notNullValue());
+    public void testGetXmlProperties() throws Exception {
+        Properties properties = PropertiesLoader.getXmlProperties("Configuration.xml");
+        assertNotNull(properties);
+        LOG.info(properties.toString());
+    }
+
+    @Test(expected = FileNotFoundException.class)
+    public void testMissingFile() throws Exception {
+        Properties properties = PropertiesLoader.getProperties("missing.properties");
+        assertNotNull(properties);
+        LOG.info(properties.toString());
+    }
+
+    @Test(expected = FileNotFoundException.class)
+    public void testMissingXmlFile() throws Exception {
+        Properties properties = PropertiesLoader.getXmlProperties("missing.xml");
+        assertNotNull(properties);
+        LOG.info(properties.toString());
     }
 
 }

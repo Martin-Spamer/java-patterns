@@ -1,32 +1,34 @@
 
 package coaching.arrays;
 
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Example code of arrays of native/primitive types.
+ * One of the major downsides of arrays is their fixed size, hence ARRAY_SIZE.
  **/
 public class NativeTypesArray {
 
     private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArray.class);
 
+    /** ARRAY_SIZE constant. */
     private static final int ARRAY_SIZE = 10;
 
     /**
      * iterate the elements of an array for display.
      */
     public void iterateArray() {
-
         long[] values;
         values = new long[ARRAY_SIZE];
-
         values[0] = 0L;
 
         for (int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
-            values[i] = i ^ i;
-            LOG.info("{} = {}", i, values[i]);
+            values[i] = i * i;
+            LOG.info("values[{}] = {}", i, values[i]);
         }
     }
 
@@ -34,12 +36,9 @@ public class NativeTypesArray {
      * Display matrix, two dimensional array by nested iteration.
      */
     public void displayMatrix() {
-
         long[][] matrix;
         matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
-
         LOG.info(looping(matrix));
-
     }
 
     /**
@@ -47,6 +46,7 @@ public class NativeTypesArray {
      */
     public void display() {
         final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
+        LOG.info(Arrays.toString(vector));
         LOG.info(looping(vector));
     }
 

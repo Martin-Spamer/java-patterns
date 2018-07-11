@@ -1,26 +1,17 @@
 
 package coaching.config;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import static org.junit.Assert.assertNotNull;
-
 /**
  * An abstract Configuration class.
  * Loads Configuration Properties from a .properties file.
  */
 public class Configuration extends AbstractConfiguration {
 
-    /** The filename. */
-    protected String filename;
-
     /**
      * Instantiates a new abstract configuration.
      */
     public Configuration() {
         super();
-        loadFrom(defaultFilename());
     }
 
     /**
@@ -29,77 +20,7 @@ public class Configuration extends AbstractConfiguration {
      * @param configFilename the Configuration filename
      */
     public Configuration(final String configFilename) {
-        super();
-        filename = configFilename;
-        loadFrom(configFilename);
-    }
-
-    /**
-     * Default filename.
-     *
-     * @return the string
-     */
-    protected String defaultFilename() {
-        filename = this.getClass().getSimpleName();
-        return filename;
-    }
-
-    /**
-     * configuration from filename.
-     *
-     * @param configFilename
-     *            the Configuration filename
-     */
-    protected void loadFrom(final String configFilename) {
-        final String propertyFilename = toPropertyFilename(configFilename);
-        loadFrom(inputStream(propertyFilename));
-        properties.setProperty("propertyFilename", propertyFilename);
-    }
-
-    /**
-     * To property filename.
-     *
-     * @param configFilename
-     *            the Configuration filename
-     * @return the string
-     */
-    protected String toPropertyFilename(final String configFilename) {
-        assertNotNull(configFilename);
-        if (configFilename.endsWith(".properties")) {
-            return configFilename;
-        } else {
-            return String.format("%s.properties", configFilename);
-        }
-    }
-
-    /**
-     * Input stream from a resource filename.
-     *
-     * @param resourceName
-     *            the resource name
-     * @return the input stream
-     */
-    protected InputStream inputStream(final String resourceName) {
-        final Thread currentThread = Thread.currentThread();
-        final ClassLoader classloader = currentThread.getContextClassLoader();
-        return classloader.getResourceAsStream(resourceName);
-    }
-
-    /**
-     * Load from property file.
-     *
-     * @param resourceAsStream
-     *            the resource as stream
-     */
-    protected void loadFrom(final InputStream resourceAsStream) {
-        if (resourceAsStream != null) {
-            try {
-                properties.load(resourceAsStream);
-                loaded = true;
-            } catch (final IOException e) {
-                log.error(e.toString());
-            }
-        }
+        super(configFilename);
     }
 
     /**

@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Half Object Part Protocol class.
+ * Half-Object Part-Protocol class.
  */
 class LocalHopp implements HoppInterface {
 
@@ -17,23 +17,21 @@ class LocalHopp implements HoppInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.hopp.HoppInterface#localMethod()
      */
     @Override
     public void localMethod() {
-        LOG.info("%s.localMethod()", this.getClass().getSimpleName());
+        LOG.info("{}.localMethod()", this.getClass().getSimpleName());
         remoteObjectProxy.localMethod();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.hopp.HoppInterface#remoteMethod()
      */
     @Override
     public void remoteMethod() {
-        LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
+        LOG.info("{}.remoteMethod()", this.getClass().getSimpleName());
         remoteObjectProxy.remoteMethod();
     }
 }

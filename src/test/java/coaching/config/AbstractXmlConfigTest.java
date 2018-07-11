@@ -15,10 +15,7 @@ import static org.junit.Assert.assertNull;
 public class AbstractXmlConfigTest {
 
     private static final String FILENAME_KEY = "Filename";
-
-    private static final String CONFIGURATION_XML = "Configuration.xml";
-
-    private static final String TEST_CONFIG_XML = "TestConfig.xml";
+    private static final String CONFIG_XML = "Configuration.xml";
 
     /** provide logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractXmlConfigTest.class);
@@ -26,13 +23,13 @@ public class AbstractXmlConfigTest {
     /**
      * Test Configuration class.
      */
-    public class TestConfig extends AbstractXmlConfig {
+    public class XmlConfig extends AbstractXmlConfig {
 
         /**
          * Instantiates a new configuration.
          */
-        public TestConfig() {
-            super();
+        public XmlConfig() {
+            super(CONFIG_XML);
         }
 
         /**
@@ -41,7 +38,7 @@ public class AbstractXmlConfigTest {
          * @param configFilename
          *            the config filename
          */
-        public TestConfig(final String configFilename) {
+        public XmlConfig(final String configFilename) {
             super(configFilename);
         }
     }
@@ -64,11 +61,11 @@ public class AbstractXmlConfigTest {
     @Test
     public void testTypicalUsage() {
         LOG.debug("testTypicalUsage");
-        final AbstractXmlConfig config = new TestConfig();
+        final AbstractXmlConfig config = new XmlConfig();
         assertNotNull(config);
-        LOG.trace(config.toString());
+        LOG.debug(config.toString());
 
-        assertEquals(TEST_CONFIG_XML, config.get(FILENAME_KEY));
+        assertEquals(CONFIG_XML, config.get(FILENAME_KEY));
         verifyProperties(config);
     }
 
@@ -89,7 +86,7 @@ public class AbstractXmlConfigTest {
     @Test
     public void testMissingConfigString() {
         LOG.debug("testMissingConfigString");
-        final ConfigInterface configuration = new TestConfig("Missing");
+        final ConfigInterface configuration = new XmlConfig("Missing");
         assertNotNull(configuration);
     }
 
@@ -113,7 +110,7 @@ public class AbstractXmlConfigTest {
         final String key = "systemPropertyKey";
         final String expectedValue = "systemPropertyValue";
         System.setProperty(key, expectedValue);
-        final ConfigInterface configuration = new TestConfig();
+        final ConfigInterface configuration = new XmlConfig();
         assertNotNull(configuration);
         assertNull(configuration.get(key));
     }
@@ -124,7 +121,7 @@ public class AbstractXmlConfigTest {
     @Test
     public void testToString() {
         LOG.debug("testToString");
-        final ConfigInterface configuration = new TestConfig();
+        final ConfigInterface configuration = new XmlConfig();
         assertNotNull(configuration);
         final String string = configuration.toString();
         assertNotNull(string);
@@ -137,11 +134,11 @@ public class AbstractXmlConfigTest {
     @Test
     public void testAbstractConfigString() {
         LOG.debug("testAbstractConfigString");
-        final ConfigInterface config = new TestConfig("Configuration");
+        final ConfigInterface config = new XmlConfig("Configuration");
         assertNotNull(config);
         LOG.debug(config.toString());
 
-        assertEquals(CONFIGURATION_XML, config.get(FILENAME_KEY));
+        assertEquals(CONFIG_XML, config.get(FILENAME_KEY));
         verifyProperties(config);
     }
 
@@ -151,11 +148,11 @@ public class AbstractXmlConfigTest {
     @Test
     public void testAbstractConfigStringXml() {
         LOG.debug("testAbstractConfigString");
-        final ConfigInterface config = new TestConfig(CONFIGURATION_XML);
+        final ConfigInterface config = new XmlConfig(CONFIG_XML);
         assertNotNull(config);
         LOG.debug(config.toString());
 
-        assertEquals(CONFIGURATION_XML, config.get(FILENAME_KEY));
+        assertEquals(CONFIG_XML, config.get(FILENAME_KEY));
         verifyProperties(config);
     }
 

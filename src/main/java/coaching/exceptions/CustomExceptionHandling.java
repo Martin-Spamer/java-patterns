@@ -65,7 +65,7 @@ public class CustomExceptionHandling {
      * @throws CustomCreationException
      *             the custom creation exception
      */
-    public void subProcessA() throws CustomCreationException {
+    public void creationProcess() throws CustomCreationException {
         throw new CustomCreationException();
     }
 
@@ -75,7 +75,7 @@ public class CustomExceptionHandling {
      * @throws CustomReadException
      *             the custom read exception
      */
-    public void subProcessB() throws CustomReadException {
+    public void readProcess() throws CustomReadException {
         throw new CustomReadException();
     }
 
@@ -85,7 +85,7 @@ public class CustomExceptionHandling {
      * @throws CustomUpdateException
      *             the custom update exception
      */
-    public void subProcessC() throws CustomUpdateException {
+    public void updateProcess() throws CustomUpdateException {
         throw new CustomUpdateException();
     }
 
@@ -95,21 +95,21 @@ public class CustomExceptionHandling {
      */
     public void process() {
         try {
-            subProcessA();
+            creationProcess();
         } catch (final CustomException exception) {
-            LOG.error( exception.toString());
+            LOG.error(exception.toString());
         }
 
         try {
-            subProcessB();
+            readProcess();
         } catch (final CustomException exception) {
-            LOG.error( exception.toString());
+            LOG.error(exception.toString());
         }
 
         try {
-            subProcessC();
+            updateProcess();
         } catch (final CustomException exception) {
-            LOG.error( exception.toString());
+            LOG.error(exception.toString());
         }
     }
 }
