@@ -43,7 +43,6 @@ public class WorkerThread implements Runnable {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Runnable#run()
      */
     @Override

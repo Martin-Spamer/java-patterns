@@ -15,7 +15,7 @@ import coaching.config.Configuration;
  */
 public class ConfigurationTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ConfigurationTest.class);
 
     /**

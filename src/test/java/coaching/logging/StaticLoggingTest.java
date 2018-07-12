@@ -1,3 +1,4 @@
+
 package coaching.logging;
 
 import org.junit.Test;
@@ -9,23 +10,23 @@ import org.slf4j.LoggerFactory;
  */
 public class StaticLoggingTest {
 
-	/** The Constant LOG. */
-	private static final Logger LOG = LoggerFactory.getLogger(StaticLoggingTest.class);
+    /** Provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(StaticLoggingTest.class);
 
-	/**
-	 * Unit Test to send to log.
-	 */
-	@Test
-	public void testSendToLog() {
-		new StaticLogging().toLog();
-	}
+    /**
+     * Unit Test to send to log.
+     */
+    @Test
+    public void testSendToLog() {
+        new StaticLogging().toLog();
+    }
 
-	/**
-	 * Unit Test to send log to.
-	 */
-	@Test
-	public void testSendLogTo() {
-		new StaticLogging().logTo(LOG);
-	}
+    /**
+     * Unit Test to send log to.
+     */
+    @Test
+    public void testSendLogTo() {
+        new StaticLogging().logTo(LOG);
+    }
 
 }

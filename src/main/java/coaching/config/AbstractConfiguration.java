@@ -15,10 +15,10 @@ public abstract class AbstractConfiguration implements ConfigInterface {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The properties. */
     protected Properties properties = new Properties();
-    
+
     /** The loaded. */
     protected boolean loaded = false;
 

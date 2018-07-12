@@ -8,14 +8,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import coaching.automation.PlatformData;
-
 /**
  * The Class ExpectedDataTest.
  */
 public class ExpectedDataTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ExpectedDataTest.class);
 
     /**

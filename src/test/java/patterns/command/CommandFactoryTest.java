@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The CommandFactoryTest class.
+ * Unit test the CommandFactory class.
  */
 public class CommandFactoryTest {
 
@@ -21,10 +21,10 @@ public class CommandFactoryTest {
      */
     @Test
     public void testCommandFactory() {
-        LOG.debug("testCommandFactory");
+        LOG.info("testCommandFactory");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull(commandFactory);
-        LOG.info(commandFactory.toString());
+        LOG.debug(commandFactory.toString());
     }
 
     /**
@@ -33,10 +33,10 @@ public class CommandFactoryTest {
      */
     @Test
     public void testCommandFactoryFile() {
-        LOG.debug("testCommandFactoryFile");
+        LOG.info("testCommandFactoryFile");
         final InvokerInterface commandFactory = new CommandFactory("commands.properties");
         assertNotNull(commandFactory);
-        LOG.info(commandFactory.toString());
+        LOG.debug(commandFactory.toString());
     }
 
     /**
@@ -47,11 +47,12 @@ public class CommandFactoryTest {
      */
     @Test(expected = MissingCommandException.class)
     public void testMissingCommandExecute() throws Exception {
-        LOG.debug("testMissingCommandExecute");
+        LOG.info("testMissingCommandExecute");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull(commandFactory);
         final String actionName = "MissingCommand";
         commandFactory.execute(actionName);
+        LOG.debug(commandFactory.toString());
     }
 
     /**
@@ -62,11 +63,12 @@ public class CommandFactoryTest {
      */
     @Test(expected = MissingCommandException.class)
     public void testExecuteMissingCommand() throws Exception {
-        LOG.debug("testExecuteMissingCommand");
+        LOG.info("testExecuteMissingCommand");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull(commandFactory);
         final String actionName = "MissingCommand";
         commandFactory.execute(actionName);
+        LOG.debug(commandFactory.toString());
     }
 
     /**
@@ -77,11 +79,12 @@ public class CommandFactoryTest {
      */
     @Test(expected = MissingCommandException.class)
     public void testExecuteMissingClass() throws Exception {
-        LOG.debug("testExecuteMissingClass");
+        LOG.info("testExecuteMissingClass");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull(commandFactory);
         final String actionName = "MissingCommand";
         commandFactory.execute(actionName);
+        LOG.debug(commandFactory.toString());
     }
 
     /**
@@ -92,13 +95,13 @@ public class CommandFactoryTest {
      */
     @Test
     public void testExecuteExampleCommand() throws Exception {
-        LOG.debug("testExecuteExampleCommand");
+        LOG.info("testExecuteExampleCommand");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull(commandFactory);
         final String actionName = "ExampleCommand";
         final ResultInterface result = commandFactory.execute(actionName);
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -109,13 +112,13 @@ public class CommandFactoryTest {
      */
     @Test
     public void testExecuteSequenceCommand() throws Exception {
-        LOG.debug("testExecuteSequenceCommand");
+        LOG.info("testExecuteSequenceCommand");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull(commandFactory);
         final String actionName = "SequenceCommand";
         final ResultInterface result = commandFactory.execute(actionName);
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -126,13 +129,13 @@ public class CommandFactoryTest {
      */
     @Test
     public void testExecuteCompoundCommand() throws Exception {
-        LOG.debug("testExecuteCompoundCommand");
+        LOG.info("testExecuteCompoundCommand");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull(commandFactory);
         final String actionName = "CompoundCommand";
         final ResultInterface result = commandFactory.execute(actionName);
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -143,13 +146,13 @@ public class CommandFactoryTest {
      */
     @Test
     public void testExecuteConditionalCommand() throws Exception {
-        LOG.debug("testExecuteConditionalCommand");
+        LOG.info("testExecuteConditionalCommand");
         final InvokerInterface commandFactory = new CommandFactory();
         assertNotNull(commandFactory);
         final String actionName = "ConditionalCommand";
         final ResultInterface result = commandFactory.execute(actionName);
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
 }

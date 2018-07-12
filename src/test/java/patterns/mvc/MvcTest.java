@@ -20,7 +20,7 @@ import patterns.mvc.view.View;
  */
 public class MvcTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(MvcTest.class);
 
     /**

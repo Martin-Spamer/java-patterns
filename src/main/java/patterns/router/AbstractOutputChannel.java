@@ -14,7 +14,6 @@ public abstract class AbstractOutputChannel implements OutputChannelInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.router.OutputChannelInterface#sendMessage(patterns.router.
      * Message)
      */

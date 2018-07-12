@@ -29,7 +29,6 @@ public class InvokerExample implements InvokerInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.InvokerInterface#execute(java.lang.String)
      */
     @Override

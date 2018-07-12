@@ -14,7 +14,6 @@ public abstract class AbstractInputChannel implements InputChannelInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.router.InputChannelInterface#receiveMessage()
      */
     @Override

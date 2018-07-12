@@ -14,7 +14,7 @@ import coaching.xml.XmlConfig;
  */
 public class XmlConfigTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlConfigTest.class);
 
     /**

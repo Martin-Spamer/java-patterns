@@ -34,7 +34,6 @@ public class LiskovSubstitutionPrinciple {
 
         /*
          * (non-Javadoc)
-         * 
          * @see
          * coaching.solid.LiskovSubstitutionPrinciple.Abstraction#doSomething()
          */
@@ -49,7 +48,6 @@ public class LiskovSubstitutionPrinciple {
 
         /*
          * (non-Javadoc)
-         * 
          * @see
          * coaching.solid.LiskovSubstitutionPrinciple.BaseType#doSomething()
          */
@@ -73,7 +71,6 @@ public class LiskovSubstitutionPrinciple {
 
         /*
          * (non-Javadoc)
-         * 
          * @see
          * coaching.solid.LiskovSubstitutionPrinciple.BaseType#doSomething()
          */

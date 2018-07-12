@@ -21,28 +21,25 @@ public abstract class AbstractLogging implements LoggingInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.idioms.LoggingInterface#toLog()
      */
     @Override
     public void toLog() {
-        this.log.info("the.{}.toLog", this.getClass().getSimpleName());
+        log.info("the.{}.toLog", this.getClass().getSimpleName());
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.idioms.LoggingInterface#logTo(org.slf4j.Logger)
      */
     @Override
     public void logTo(final Logger destinationLog) {
         final String destinationLogName = destinationLog.getClass().getSimpleName();
-        destinationLog.info("{}.log({})", destinationLogName, this.toString());
+        destinationLog.info("{}.log({})", destinationLogName, toString());
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override

@@ -24,13 +24,13 @@ public class CsvFile {
 
     /** The csv filename. */
     private final String csvFilename;
-    
+
     /** The header line. */
     private String headerLine;
-    
+
     /** The column names. */
     private String[] columnNames;
-    
+
     /** The records. */
     private final List<CsvRecord> records = new ArrayList<>();
 

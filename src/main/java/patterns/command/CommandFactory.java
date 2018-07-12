@@ -29,6 +29,7 @@ public final class CommandFactory implements InvokerInterface {
      */
     public CommandFactory() {
         super();
+        LOG.info("");
         initialise(COMMANDS_PROPERTIES);
     }
 
@@ -51,8 +52,8 @@ public final class CommandFactory implements InvokerInterface {
      */
     private void initialise(final String filename) {
         try {
-            this.properties.load(inputStream(filename));
-            LOG.info("properties = {}", this.properties);
+            properties.load(inputStream(filename));
+            LOG.info("properties = {}", properties);
         } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage());
         }
@@ -81,7 +82,6 @@ public final class CommandFactory implements InvokerInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.InvokerInterface#execute(java.lang.String)
      */
     @Override
@@ -109,7 +109,7 @@ public final class CommandFactory implements InvokerInterface {
      *             the missing command exception
      */
     private ResultInterface executeActionName(final String actionName) throws MissingCommandException {
-        final String className = this.properties.getProperty(actionName);
+        final String className = properties.getProperty(actionName);
         if (className != null) {
             if (className.length() > 0) {
                 return executeByClassName(className);
@@ -147,4 +147,10 @@ public final class CommandFactory implements InvokerInterface {
             throw new MissingCommandException(e);
         }
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), properties);
+    }
+
 }

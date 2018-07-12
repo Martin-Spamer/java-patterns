@@ -17,7 +17,8 @@ public abstract class AbstractState {
      */
     public abstract void handle();
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

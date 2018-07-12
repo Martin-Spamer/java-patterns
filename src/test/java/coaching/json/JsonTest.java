@@ -20,7 +20,7 @@ import static org.junit.Assume.assumeNotNull;
  */
 public class JsonTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(JsonTest.class);
 
     /**

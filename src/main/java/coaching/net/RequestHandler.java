@@ -16,18 +16,18 @@ import org.slf4j.LoggerFactory;
  */
 class RequestHandler implements Runnable {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RequestHandler.class);
-    
+
     /** The exit. */
     private volatile boolean exit = false;
-    
+
     /** The connections count. */
     private static int connectionsCount;
-    
+
     /** The connection id. */
     private int connectionId = 0;
-    
+
     /** The client socket. */
     private Socket clientSocket;
 
@@ -43,7 +43,8 @@ class RequestHandler implements Runnable {
         connectionId = connectionsCount++;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Runnable#run()
      */
     @Override

@@ -33,7 +33,6 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#add(java.lang.Object)
      */
     @Override
@@ -44,7 +43,6 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#countFree()
      */
     @Override
@@ -54,7 +52,6 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#countUsed()
      */
     @Override
@@ -64,7 +61,6 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#take()
      */
     @Override
@@ -110,7 +106,6 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#release(java.lang.Object)
      */
     @Override
@@ -125,7 +120,6 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#remove(java.lang.Object)
      */
     @Override

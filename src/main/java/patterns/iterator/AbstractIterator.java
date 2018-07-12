@@ -37,7 +37,6 @@ public abstract class AbstractIterator implements IteratorInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.iterator.IteratorInterface#first()
      */
     @Override
@@ -48,7 +47,6 @@ public abstract class AbstractIterator implements IteratorInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.iterator.IteratorInterface#next()
      */
     @Override
@@ -59,7 +57,6 @@ public abstract class AbstractIterator implements IteratorInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.iterator.IteratorInterface#isDone()
      */
     @Override
@@ -69,7 +66,6 @@ public abstract class AbstractIterator implements IteratorInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.iterator.IteratorInterface#currentItem()
      */
     @Override

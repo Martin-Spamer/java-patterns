@@ -23,22 +23,22 @@ public abstract class AbstractDao implements DaoInterface {
 
     /** The connection factory. */
     protected ConnectionFactory connectionFactory;
-    
+
     /** The result set. */
     protected ResultSet resultSet;
-    
+
     /** The result set meta data. */
     protected ResultSetMetaData resultSetMetaData;
 
     /** The driver. */
     private String driver;
-    
+
     /** The url. */
     private String url;
-    
+
     /** The username. */
     private String username;
-    
+
     /** The password. */
     private String password;
 

@@ -32,7 +32,6 @@ public abstract class AbstractContext implements ContextInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.interpreter.ContextInterface#setProperties(java.util.Properties)
      */
@@ -44,7 +43,6 @@ public abstract class AbstractContext implements ContextInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.interpreter.ContextInterface#setProperty(java.lang.String,
      * java.lang.String)
      */
@@ -56,7 +54,6 @@ public abstract class AbstractContext implements ContextInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.interpreter.ContextInterface#getProperty(java.lang.String)
      */
     @Override
@@ -66,7 +63,6 @@ public abstract class AbstractContext implements ContextInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.context.ContextInterface#getProperty(java.lang.String,
      * java.lang.String)
      */

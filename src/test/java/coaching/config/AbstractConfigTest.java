@@ -16,7 +16,7 @@ public class AbstractConfigTest {
 
     /** The Constant FILENAME_KEY. */
     private static final String FILENAME_KEY = "Filename";
-    
+
     /** The Constant CONFIG_PROPERTIES. */
     private static final String CONFIG_PROPERTIES = "Configuration.properties";
 

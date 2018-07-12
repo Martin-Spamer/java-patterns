@@ -87,7 +87,8 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
         return this;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see patterns.decorator.AbstractComponent#toString()
      */
     @Override

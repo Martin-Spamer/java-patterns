@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class ThreadTemplateTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ThreadTemplateTest.class);
 
     /**

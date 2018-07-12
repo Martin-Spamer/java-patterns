@@ -6,13 +6,13 @@ package patterns.decorator;
  */
 public class ConcreteDecorator extends AbstractComponent {
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see patterns.decorator.AbstractComponent#operation()
      */
     @Override
     public AbstractComponent operation() {
-        final String simpleName = this.getClass().getSimpleName();
-        this.log.info(simpleName.toString());
+        log.info(this.getClass().getSimpleName());
         return this;
     }
 

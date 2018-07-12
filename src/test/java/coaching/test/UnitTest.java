@@ -21,7 +21,7 @@ public class UnitTest {
      * The Class ClassUnderTest.
      */
     public class ClassUnderTest {
-        
+
         /**
          * The Constructor.
          *

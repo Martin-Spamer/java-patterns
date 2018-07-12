@@ -46,7 +46,6 @@ public class Manager implements ProcessInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see delegation.ProcessInterface#doProcess()
      */
     @Override

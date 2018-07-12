@@ -9,7 +9,7 @@ public interface ViewInterface {
     /**
      * view.
      *
-     * @param model            the model
+     * @param model the model
      * @return the view interface
      */
     ViewInterface attachModel(final ModelInterface model);

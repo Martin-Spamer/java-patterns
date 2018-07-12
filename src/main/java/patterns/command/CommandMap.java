@@ -35,4 +35,10 @@ public final class CommandMap extends ConcurrentHashMap<String, AbstractCommand>
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s [toString()=%s]", this.getClass().getSimpleName(), super.toString());
+    }
+
 }

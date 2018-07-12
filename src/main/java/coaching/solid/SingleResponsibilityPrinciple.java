@@ -40,7 +40,8 @@ public class SingleResponsibilityPrinciple {
             bar = true;
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see java.lang.Object#toString()
          */
         @Override

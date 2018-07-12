@@ -16,33 +16,34 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractLogging {
 
-	/** The log. */
-	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    /** The log. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	/**
-	 * Law of Demeter (Tell Don't Ask).
-	 */
-	public void toLog() {
-		log.info("{}.toLog", this.getClass().getSimpleName());
-	}
+    /**
+     * Law of Demeter (Tell Don't Ask).
+     */
+    public void toLog() {
+        log.info("{}.toLog", this.getClass().getSimpleName());
+    }
 
-	/**
-	 * Law of Demeter (Tell Don't Ask).
-	 *
-	 * destination log
-	 *
-	 * @param destinationLog the destination log
-	 */
-	public void logTo(Logger destinationLog) {
-		destinationLog.info("{}.logTo", this.getClass().getSimpleName());
-	}
+    /**
+     * Law of Demeter (Tell Don't Ask).
+     *
+     * destination log
+     *
+     * @param destinationLog the destination log
+     */
+    public void logTo(final Logger destinationLog) {
+        destinationLog.info("{}.logTo", this.getClass().getSimpleName());
+    }
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.format("%s [...]", this.getClass().getSimpleName());
-	}
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("%s [...]", this.getClass().getSimpleName());
+    }
 
 }

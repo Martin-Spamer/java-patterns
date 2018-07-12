@@ -28,7 +28,6 @@ public class Conjunction extends NonTerminalExpression {
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.interpreter.NonTerminalExpression#interpret(patterns.interpreter
      * .ContextInterface)

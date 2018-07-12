@@ -10,8 +10,6 @@ public class Application extends AbstractApplication {
 
     /**
      * Instantiates a new application.
-     * 
-     * args
      *
      * @param args the args
      */

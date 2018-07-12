@@ -9,7 +9,7 @@ public interface DecoratorInterface {
     /**
      * Attach before behaviour.
      *
-     * @param behaviour            the behaviour
+     * @param behaviour the behaviour
      * @return the decorator interface
      */
     DecoratorInterface attachBefore(final AbstractComponent behaviour);
@@ -17,7 +17,7 @@ public interface DecoratorInterface {
     /**
      * Detach before behaviour.
      *
-     * @param behaviour            the behaviour
+     * @param behaviour the behaviour
      * @return the decorator interface
      */
     DecoratorInterface detachBefore(final AbstractComponent behaviour);
@@ -25,7 +25,7 @@ public interface DecoratorInterface {
     /**
      * Attach after behaviour.
      *
-     * @param behaviour            the behaviour
+     * @param behaviour the behaviour
      * @return the decorator interface
      */
     DecoratorInterface attachAfter(final AbstractComponent behaviour);
@@ -33,7 +33,7 @@ public interface DecoratorInterface {
     /**
      * Detach after behaviour.
      *
-     * @param behaviour            the behaviour
+     * @param behaviour the behaviour
      * @return the decorator interface
      */
     DecoratorInterface detachAfter(final AbstractComponent behaviour);

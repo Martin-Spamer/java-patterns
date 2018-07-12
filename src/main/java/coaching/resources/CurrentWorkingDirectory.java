@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CurrentWorkingDirectory {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectory.class);
 
     /**

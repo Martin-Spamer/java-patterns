@@ -12,8 +12,8 @@ public interface ModelInterface {
     /**
      * Attach.
      *
-     * @param key            the key
-     * @param model            the model
+     * @param key the key
+     * @param model the model
      * @return the model interface
      */
     ModelInterface attach(final String key, final AbstractModel model);
@@ -21,8 +21,8 @@ public interface ModelInterface {
     /**
      * Attach.
      *
-     * @param key            the key
-     * @param view            the view
+     * @param key the key
+     * @param view the view
      * @return the model interface
      */
     ModelInterface attach(final String key, final AbstractView view);
@@ -30,7 +30,7 @@ public interface ModelInterface {
     /**
      * Detach model.
      *
-     * @param key            the key
+     * @param key the key
      * @return the model interface
      */
     ModelInterface detachModel(final String key);
@@ -38,7 +38,7 @@ public interface ModelInterface {
     /**
      * Detach view.
      *
-     * @param key            the key
+     * @param key the key
      * @return the model interface
      */
     ModelInterface detachView(final String key);

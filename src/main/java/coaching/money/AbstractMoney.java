@@ -67,7 +67,6 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#setCurrency(java.util.Currency)
      */
     @Override
@@ -78,7 +77,6 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#setAmount(long)
      */
     @Override
@@ -89,7 +87,6 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#setAmount(coaching.money.Money)
      */
     @Override
@@ -100,57 +97,51 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#getCurrency()
      */
     @Override
     public Currency getCurrency() {
-        return this.currency;
+        return currency;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#getCurrencyCode()
      */
     @Override
     public String getCurrencyCode() {
-        return this.currency.getCurrencyCode();
+        return currency.getCurrencyCode();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#getAmount()
      */
     @Override
     public Long getAmount() {
-        return this.amount;
+        return amount;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#getSymbol()
      */
     @Override
     public String getSymbol() {
-        return this.currency.getSymbol();
+        return currency.getSymbol();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#getDisplayName()
      */
     @Override
     public String getDisplayName() {
-        return this.currency.getDisplayName();
+        return currency.getDisplayName();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#add(long)
      */
     @Override
@@ -161,7 +152,6 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#add(coaching.money.Money)
      */
     @Override
@@ -172,7 +162,6 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#subtract(long)
      */
     @Override
@@ -183,7 +172,6 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#subtract(coaching.money.Money)
      */
     @Override
@@ -194,7 +182,6 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#isMoreThan(long)
      */
     @Override
@@ -204,17 +191,15 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#isMoreThan(coaching.money.Money)
      */
     @Override
     public boolean isMoreThan(final MoneyInterface money) {
-        return this.amount > money.getAmount();
+        return amount > money.getAmount();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#isEqualTo(long)
      */
     @Override
@@ -224,17 +209,15 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#isEqualTo(coaching.money.Money)
      */
     @Override
     public boolean isEqualTo(final MoneyInterface money) {
-        return this.amount == money.getAmount();
+        return amount == money.getAmount();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#isLessThan(long)
      */
     @Override
@@ -244,33 +227,32 @@ public abstract class AbstractMoney implements MoneyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.money.MoneyInterface#isLessThan(coaching.money.Money)
      */
     @Override
     public boolean isLessThan(final MoneyInterface money) {
-        return this.amount < money.getAmount();
+        return amount < money.getAmount();
     }
 
     /**
      * To log.
      */
     public void toLog() {
-        final String debug = String.format("%s [currency=%s, amount=%s]", this.getClass().getSimpleName(), this.currency, this.amount);
-        this.log.info(debug);
+        final String debug = String
+            .format("%s [currency=%s, amount=%s]", this.getClass().getSimpleName(), currency, amount);
+        log.info(debug);
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        final String symbol = this.currency.getSymbol();
+        final String symbol = currency.getSymbol();
         final String pattern = String.format("%s ###,###.##", symbol);
         final DecimalFormat formatter = new DecimalFormat(pattern);
-        return formatter.format(this.amount);
+        return formatter.format(amount);
     }
 
 }

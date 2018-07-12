@@ -8,7 +8,6 @@ public final class ConcreteTemplate extends AbstractTemplate {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.gof.behavioural.template_method.AbstractClass#
      * primitiveOperationA()
      */
@@ -20,7 +19,6 @@ public final class ConcreteTemplate extends AbstractTemplate {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.gof.behavioural.template_method.AbstractClass#
      * primitiveOperationB()
      */

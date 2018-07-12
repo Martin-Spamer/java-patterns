@@ -75,7 +75,7 @@ public class RulesEngine {
                 }
             }
         } catch (final ParserConfigurationException e) {
-            LOG.error( e.toString());
+            LOG.error(e.toString());
         }
         return false;
     }
@@ -98,7 +98,7 @@ public class RulesEngine {
                 return true;
             }
         } catch (final Exception e) {
-            LOG.error( e.toString());
+            LOG.error(e.toString());
         }
         return false;
     }

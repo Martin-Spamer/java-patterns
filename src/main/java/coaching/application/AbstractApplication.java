@@ -13,38 +13,39 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * The Class AbstractApplication.
+ * The AbstractApplication class.
  */
 public abstract class AbstractApplication {
 
-    /** The Constant log. */
+    /** logging provided. */
     protected static final Logger log = LoggerFactory.getLogger(Application.class);
-    
-    /** The args. */
+
+    /** initialisation arguments. */
     protected String[] args = null;
-    
+
     /** The document builder factory. */
     private DocumentBuilderFactory documentBuilderFactory = null;
-    
+
     /** The document builder. */
     private DocumentBuilder documentBuilder = null;
-    
+
     /** The document. */
     private Document document = null;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public AbstractApplication() {
         super();
     }
 
     /**
-     * The Constructor.
+     * Constructor.
      *
      * @param args the args
      */
     public AbstractApplication(final String[] args) {
+        super();
         this.args = args;
     }
 
@@ -59,7 +60,7 @@ public abstract class AbstractApplication {
 
     /**
      * initialisation.
-     * 
+     *
      * configuration filename
      *
      * @param configFilename the config filename
@@ -71,7 +72,7 @@ public abstract class AbstractApplication {
 
     /**
      * initialisation the.
-     * 
+     *
      * configuration file
      *
      * @param configFile the config file
@@ -80,11 +81,11 @@ public abstract class AbstractApplication {
     public boolean initialisation(final File configFile) {
         boolean returnValue = false;
         try {
-            this.documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            this.documentBuilder = this.documentBuilderFactory.newDocumentBuilder();
-            this.document = this.documentBuilder.parse(configFile);
+            documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            document = documentBuilder.parse(configFile);
 
-            final Element documentElement = this.document.getDocumentElement();
+            final Element documentElement = document.getDocumentElement();
             if (documentElement != null) {
                 final Element commandHandlerElement = getElement(documentElement, "COMMAND_HANDLER");
                 log.info("commandHandlerElement = {}", commandHandlerElement);
@@ -104,7 +105,7 @@ public abstract class AbstractApplication {
 
     /**
      * element.
-     * 
+     *
      * document element
      * element name
      * element
@@ -131,7 +132,7 @@ public abstract class AbstractApplication {
 
     /**
      * element attribute.
-     * 
+     *
      * document element
      * element name
      * attribute name

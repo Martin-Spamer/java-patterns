@@ -20,18 +20,18 @@ import org.slf4j.LoggerFactory;
  */
 public class PortScan extends Thread {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PortScan.class);
-    
+
     /** The load factor. */
     private static int loadFactor = 100;
-    
+
     /** The properties. */
     private static Properties properties = null;
-    
+
     /** The ip. */
     private String ip = "127.0.0.1";
-    
+
     /** The port. */
     private int port = 0;
 
@@ -40,7 +40,7 @@ public class PortScan extends Thread {
      */
     public PortScan() {
         super();
-        LOG.info(this.toString());
+        LOG.info(toString());
         initialise();
     }
 
@@ -53,7 +53,7 @@ public class PortScan extends Thread {
         super();
         ip = args[0];
         port = Integer.parseInt(args[1]);
-        LOG.info(this.toString());
+        LOG.info(toString());
         initialise();
     }
 
@@ -67,7 +67,7 @@ public class PortScan extends Thread {
         super();
         this.ip = ip;
         this.port = port;
-        LOG.info(this.toString());
+        LOG.info(toString());
         initialise();
     }
 
@@ -94,7 +94,7 @@ public class PortScan extends Thread {
      * Execute.
      */
     public void execute() {
-        for (int port = 1; port < 64 * 1024;) {
+        for (int port = 1; port < (64 * 1024);) {
             if (Thread.activeCount() > PortScan.loadFactor) {
                 Thread.yield();
             } else {
@@ -139,7 +139,8 @@ public class PortScan extends Thread {
         }
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Thread#toString()
      */
     @Override

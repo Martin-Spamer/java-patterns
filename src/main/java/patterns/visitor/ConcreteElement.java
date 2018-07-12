@@ -8,7 +8,6 @@ public final class ConcreteElement extends AbstractElement {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.visitor.AbstractElement#accept(patterns.visitor.
      * VisitorInterface)
      */

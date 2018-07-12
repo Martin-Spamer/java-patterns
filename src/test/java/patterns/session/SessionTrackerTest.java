@@ -18,7 +18,7 @@ import static org.junit.Assume.assumeNotNull;
  */
 public class SessionTrackerTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SessionTrackerTest.class);
 
     /**

@@ -148,7 +148,8 @@ public abstract class AbstractPropertyResource implements PropertyInterface {
         return this;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

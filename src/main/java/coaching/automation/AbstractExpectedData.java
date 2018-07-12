@@ -17,7 +17,7 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
     /** The csv file. */
     protected CsvFile csvFile;
-    
+
     /** The path. */
     protected String path = "data/";
 

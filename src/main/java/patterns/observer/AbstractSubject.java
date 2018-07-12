@@ -20,7 +20,6 @@ public abstract class AbstractSubject implements SubjectInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.observer.SubjectInterface#attachObserver(patterns.observer.
      * AbstractObserver)
      */
@@ -31,7 +30,6 @@ public abstract class AbstractSubject implements SubjectInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.observer.SubjectInterface#detachObserver(patterns.observer.
      * ObserverInterface)
      */
@@ -42,7 +40,6 @@ public abstract class AbstractSubject implements SubjectInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.observer.SubjectInterface#updateObservers()
      */
     @Override

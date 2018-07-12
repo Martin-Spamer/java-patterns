@@ -13,9 +13,9 @@ import org.slf4j.LoggerFactory;
  */
 public class PicoDaemon implements Runnable {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PicoDaemon.class);
-    
+
     /** The keep running. */
     private volatile boolean keepRunning = true;
 
@@ -26,7 +26,8 @@ public class PicoDaemon implements Runnable {
         LOG.info("{} loaded...", this.getClass().getSimpleName());
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Runnable#run()
      */
     @Override

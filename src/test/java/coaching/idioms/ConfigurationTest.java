@@ -8,14 +8,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import coaching.idioms.Configuration;
-
 /**
  * ConfigurationTest Class.
  */
 public class ConfigurationTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ConfigurationTest.class);
 
     /**

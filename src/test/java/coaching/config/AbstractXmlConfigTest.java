@@ -16,7 +16,7 @@ public class AbstractXmlConfigTest {
 
     /** The Constant FILENAME_KEY. */
     private static final String FILENAME_KEY = "Filename";
-    
+
     /** The Constant CONFIG_XML. */
     private static final String CONFIG_XML = "Configuration.xml";
 

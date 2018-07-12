@@ -14,22 +14,22 @@ public class EnumTest {
      * The Enum TestEnum.
      */
     public enum TestEnum {
-        
-        /** The undefined. */
-        UNDEFINED(0),
-        
-        /** The a. */
-        A(1),
-        
-        /** The b. */
-        B(2);
+
+    /** The undefined. */
+    UNDEFINED(0),
+
+    /** The a. */
+    A(1),
+
+    /** The b. */
+    B(2);
 
         /** The number. */
         private final int number;
 
         /**
          * Instantiates a new test enum.
-         * 
+         *
          * co value
          *
          * @param coValue the co value
@@ -40,7 +40,7 @@ public class EnumTest {
 
         /**
          * From value.
-         * 
+         *
          * co value
          * test enum
          *

@@ -5,9 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 
+ *
  * An abstract base class for an Application.
- * 
+ *
  * @author martin.spamer.
  * @version 0.1 - first release.
  *          Created 17-Sep-2004 - 16:13:19
@@ -78,7 +78,7 @@ public abstract class AbstractProcess implements Runnable {
             } while (!exit);
 
         } catch (final InterruptedException exception) {
-            log.error( exception.toString());
+            log.error(exception.toString());
         }
         log.info("{}.ending", this.getClass().getSimpleName());
     }

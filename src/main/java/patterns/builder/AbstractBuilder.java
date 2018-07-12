@@ -14,13 +14,13 @@ public abstract class AbstractBuilder implements BuilderInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.builder.BuilderInterface#build()
      */
     @Override
     public abstract AbstractPart build();
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see patterns.builder.BuilderInterface#build(java.lang.String)
      */
     @Override

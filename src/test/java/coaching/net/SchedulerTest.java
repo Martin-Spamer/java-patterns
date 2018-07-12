@@ -17,7 +17,7 @@ import coaching.application.Scheduler;
  */
 public class SchedulerTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SchedulerTest.class);
 
     /**

@@ -41,7 +41,6 @@ public abstract class AbstractComponent implements ComponentInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.composite.ComponentInterface#operation()
      */
     @Override

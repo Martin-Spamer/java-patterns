@@ -8,7 +8,6 @@ public class BuilderTwo extends AbstractBuilder {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.gof.creational.builder.AbstractBuilder#build()
      */
     @Override
@@ -16,7 +15,8 @@ public class BuilderTwo extends AbstractBuilder {
         return new PartTwo();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see patterns.builder.AbstractBuilder#build(java.lang.String)
      */
     @Override

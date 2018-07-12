@@ -27,7 +27,8 @@ public abstract class AbstractPart {
         this.partName = partName;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

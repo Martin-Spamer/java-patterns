@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  **/
 public class ObjectTypesArray {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ObjectTypesArray.class);
 
     /** ARRAY_SIZE constant. */

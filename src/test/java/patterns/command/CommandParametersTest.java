@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Example of an abstract parameters class for commands.
+ * Unit test example of an abstract parameters class for command classes.
  */
 public class CommandParametersTest {
 
@@ -46,10 +46,11 @@ public class CommandParametersTest {
      */
     @Test
     public void testCommandParameters() {
+        log.info("testCommandParameters");
         final ParametersInterface commandParameters = new MockCommandParameters();
         assertNotNull(commandParameters);
         String string = commandParameters.toString();
-        log.trace("{}", string);
+        log.debug("{}", string);
     }
 
     /**
@@ -57,11 +58,12 @@ public class CommandParametersTest {
      */
     @Test
     public void testSetGetParameter() {
+        log.info("testInvokerConditionalCommand");
         final ParametersInterface commandParameters = new MockCommandParameters();
         assertNotNull(commandParameters);
         commandParameters.setParameter("key", "value");
         assertEquals("value", commandParameters.valueFor("key"));
-        log.trace("{}", commandParameters.toString());
+        log.debug("{}", commandParameters.toString());
     }
 
     /**
@@ -69,10 +71,11 @@ public class CommandParametersTest {
      */
     @Test
     public void testAbstractParametersStringString() {
+        log.info("testInvokerConditionalCommand");
         final ParametersInterface commandParameters = new MockCommandParameters("key", "value");
         assertNotNull(commandParameters);
         assertEquals("value", commandParameters.valueFor("key"));
-        log.trace("{}", commandParameters.toString());
+        log.debug("{}", commandParameters.toString());
     }
 
 }

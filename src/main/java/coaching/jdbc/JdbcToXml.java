@@ -91,7 +91,7 @@ class JdbcToXml extends JdbcBase {
     public String toXmlString() {
         StringBuffer xml = null;
 
-        if (resultSet != null && resultSetMetaData != null) {
+        if ((resultSet != null) && (resultSetMetaData != null)) {
             try {
                 final int colCount = resultSetMetaData.getColumnCount();
                 xml = new StringBuffer();

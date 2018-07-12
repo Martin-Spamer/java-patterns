@@ -4,7 +4,7 @@ package coaching.application;
 import java.util.Properties;
 
 /**
- * The Class Scheduler.
+ * Scheduler class.
  */
 public class Scheduler extends AbstractScheduler {
 

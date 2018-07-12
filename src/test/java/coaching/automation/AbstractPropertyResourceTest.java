@@ -12,15 +12,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import coaching.automation.AbstractPropertyResource;
-import coaching.automation.PropertyInterface;
-
 /**
  * Unit test for the abstract property resource class.
  */
 public class AbstractPropertyResourceTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractPropertyResourceTest.class);
 
     /**

@@ -52,7 +52,7 @@ public abstract class AbstractAltResourcePool<T> {
                 try {
                     resource = create();
                 } catch (final ResourceCreationException exception) {
-                    this.log.error( exception.toString());
+                    this.log.error(exception.toString());
                     throw new ResourceBorrowException(exception);
                 }
             } else {

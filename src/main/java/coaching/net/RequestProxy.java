@@ -15,18 +15,18 @@ import org.slf4j.LoggerFactory;
  */
 class RequestProxy implements Runnable {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RequestProxy.class);
-    
+
     /** The keep running. */
     private volatile boolean keepRunning = true;
-    
+
     /** The connections count. */
     private static int connectionsCount;
-    
+
     /** The connection id. */
     private int connectionId = 0;
-    
+
     /** The client socket. */
     private Socket clientSocket = null;
 
@@ -41,7 +41,8 @@ class RequestProxy implements Runnable {
         this.clientSocket = clientSocket;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Runnable#run()
      */
     @Override

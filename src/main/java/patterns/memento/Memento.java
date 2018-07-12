@@ -50,7 +50,8 @@ public class Memento {
         return state;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

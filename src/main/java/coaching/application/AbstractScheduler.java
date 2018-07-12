@@ -15,10 +15,10 @@ public abstract class AbstractScheduler {
 
     /** The log. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    
+
     /** The args. */
     private String[] args = null;
-    
+
     /** The properties. */
     private Properties properties = null;
 

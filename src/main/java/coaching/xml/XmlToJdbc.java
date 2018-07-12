@@ -42,7 +42,7 @@ public class XmlToJdbc extends MySqlDao {
             processTable(document);
 
         } catch (final Exception exception) {
-            this.log.error("Failed with {} ", exception);
+            log.error("Failed with {} ", exception);
         }
     }
 
@@ -96,7 +96,7 @@ public class XmlToJdbc extends MySqlDao {
             insertRow(table, fieldNames, dataValues);
 
         } catch (final Exception exception) {
-            this.log.error("Failed with {} ", exception);
+            log.error("Failed with {} ", exception);
         }
     }
 
@@ -113,7 +113,7 @@ public class XmlToJdbc extends MySqlDao {
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
             final Node item = fieldList.item(fieldNo);
-            this.log.info(item.toString());
+            log.info(item.toString());
             final Element fieldElement = (Element) item;
             fieldNames.append(columnSeparator).append(fieldElement.getAttribute("NAME"));
         }
@@ -133,7 +133,7 @@ public class XmlToJdbc extends MySqlDao {
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
             Node item = fieldList.item(fieldNo);
-            this.log.info(item.toString());
+            log.info(item.toString());
             final Element fieldElement = (Element) item;
             final String nodeValue = fieldElement.getChildNodes().item(0).getNodeValue();
             dataValues
@@ -162,7 +162,7 @@ public class XmlToJdbc extends MySqlDao {
         sql.append(String.format("insert into %s", table));
         sql.append(String.format(" (%s) VALUES (%s)", fieldNames, dataValues));
 
-        this.log.info(sql.toString());
+        log.info(sql.toString());
         super.executePreparedStatement(sql.toString());
     }
 }

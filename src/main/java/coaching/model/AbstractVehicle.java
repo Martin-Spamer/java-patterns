@@ -33,7 +33,6 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 
     /*
      * (non-Javadoc)
-     * 
      * @see coaching.model.FuelInterface#addFuel(int)
      */
     @Override
@@ -43,7 +42,6 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 
     /*
      * (non-Javadoc)
-     * 
      * @see coaching.model.FuelInterface#useFuel(int)
      */
     @Override
@@ -53,7 +51,6 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 
     /*
      * (non-Javadoc)
-     *
      * @see associations.Vehicle#setDriver(associations.Driver)
      */
     @Override
@@ -64,7 +61,6 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 
     /*
      * (non-Javadoc)
-     *
      * @see associations.Vehicle#getDriver()
      */
     @Override
@@ -74,7 +70,6 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 
     /*
      * (non-Javadoc)
-     *
      * @see associations.Vehicle#travel(java.lang.String)
      */
     @Override
@@ -86,7 +81,6 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
 
     /*
      * (non-Javadoc)
-     * 
      * @see java.lang.Object#toString()
      */
     @Override

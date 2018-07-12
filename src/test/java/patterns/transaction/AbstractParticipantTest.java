@@ -16,8 +16,9 @@ public class AbstractParticipantTest {
      * The Class TestMockParticipant.
      */
     public class TestMockParticipant extends AbstractParticipant {
-        
-        /* (non-Javadoc)
+
+        /*
+         * (non-Javadoc)
          * @see patterns.transaction.AbstractParticipant#operation1()
          */
         @Override
@@ -25,7 +26,8 @@ public class AbstractParticipantTest {
             return this;
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see patterns.transaction.AbstractParticipant#operation2()
          */
         @Override
@@ -33,7 +35,8 @@ public class AbstractParticipantTest {
             return this;
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see patterns.transaction.ParticipantInterface#join()
          */
         @Override
@@ -41,7 +44,8 @@ public class AbstractParticipantTest {
             return this;
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see patterns.transaction.ParticipantInterface#commit()
          */
         @Override
@@ -49,7 +53,8 @@ public class AbstractParticipantTest {
             return this;
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see patterns.transaction.ParticipantInterface#cancel()
          */
         @Override

@@ -16,12 +16,12 @@ import coaching.csv.CsvRecord;
  */
 public class CredentialsFactory extends AbstractExpectedData implements ExpectedDataInterface {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CredentialsFactory.class);
-    
+
     /** The csv file. */
     private CsvFile csvFile;
-    
+
     /** The platform. */
     private String platform;
 

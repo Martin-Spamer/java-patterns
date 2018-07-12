@@ -6,7 +6,8 @@ package patterns.adapter;
  */
 public class Adaptee implements AdapteeInterface {
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see patterns.adapter.AdapteeInterface#operation()
      */
     @Override

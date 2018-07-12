@@ -37,7 +37,6 @@ public abstract class AbstractPerson implements PersonInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see associations.PersonInterface#setName(java.lang.String)
      */
     @Override
@@ -58,7 +57,6 @@ public abstract class AbstractPerson implements PersonInterface {
 
     /*
      * (non-Javadoc)
-     * 
      * @see java.lang.Object#toString()
      */
     @Override

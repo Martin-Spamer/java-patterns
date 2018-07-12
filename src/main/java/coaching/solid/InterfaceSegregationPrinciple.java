@@ -17,7 +17,7 @@ public class InterfaceSegregationPrinciple {
      * Instead of one large interface;.
      */
     public interface Abstraction {
-        
+
         /**
          * Work.
          */
@@ -44,7 +44,7 @@ public class InterfaceSegregationPrinciple {
      *
      */
     public interface Work {
-        
+
         /**
          * Work.
          */
@@ -55,7 +55,7 @@ public class InterfaceSegregationPrinciple {
      * The Interface Rest.
      */
     public interface Rest {
-        
+
         /**
          * Rest.
          */
@@ -66,7 +66,7 @@ public class InterfaceSegregationPrinciple {
      * The Interface Play.
      */
     public interface Play {
-        
+
         /**
          * Play.
          */
@@ -77,7 +77,7 @@ public class InterfaceSegregationPrinciple {
      * The Interface Learn.
      */
     public interface Learn {
-        
+
         /**
          * Learn.
          */
@@ -94,8 +94,9 @@ public class InterfaceSegregationPrinciple {
      * The Class Teacher.
      */
     public class Teacher extends Person {
-        
-        /* (non-Javadoc)
+
+        /*
+         * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#work()
          */
         @Override
@@ -103,7 +104,8 @@ public class InterfaceSegregationPrinciple {
             // redundant
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#rest()
          */
         @Override
@@ -111,7 +113,8 @@ public class InterfaceSegregationPrinciple {
             // redundant
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#play()
          */
         @Override
@@ -119,7 +122,8 @@ public class InterfaceSegregationPrinciple {
             // redundant
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#learn()
          */
         @Override
@@ -132,8 +136,9 @@ public class InterfaceSegregationPrinciple {
      * The Class Boss.
      */
     public class Boss extends Person {
-        
-        /* (non-Javadoc)
+
+        /*
+         * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#learn()
          */
         @Override
@@ -141,7 +146,8 @@ public class InterfaceSegregationPrinciple {
             // redundant
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#work()
          */
         @Override
@@ -149,7 +155,8 @@ public class InterfaceSegregationPrinciple {
             // do some work
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#rest()
          */
         @Override
@@ -157,7 +164,8 @@ public class InterfaceSegregationPrinciple {
             // redundant
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#play()
          */
         @Override

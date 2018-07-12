@@ -39,7 +39,6 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.ParametersInterface#setParameter(java.lang.String,
      * java.lang.String)
      */
@@ -51,7 +50,6 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.ParametersInterface#stringPropertyNames()
      */
     @Override
@@ -61,7 +59,6 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.ParametersInterface#valueFor(java.lang.String)
      */
     @Override
@@ -71,7 +68,6 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.ParametersInterface#valueFor(java.lang.String,
      * java.lang.String)
      */
@@ -82,7 +78,6 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.ParametersInterface#valueFor(java.lang.String,
      * java.lang.Boolean)
      */
@@ -94,7 +89,6 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.ParametersInterface#valueFor(java.lang.String,
      * java.lang.Long)
      */
@@ -103,4 +97,10 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
         final String property = parameters.getProperty(key, defaultValue.toString());
         return Long.parseLong(property);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s [parameters=%s]", this.getClass().getSimpleName(), parameters);
+    }
+
 }

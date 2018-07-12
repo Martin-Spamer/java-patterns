@@ -24,17 +24,18 @@ public class WebCrawler extends ThreadTemplate {
 
     /** The Constant SEARCH_LIMIT. */
     public static final int SEARCH_LIMIT = 4;
-    
+
     /** The Constant SEARCH. */
     public static final String SEARCH = "Search";
-    
+
     /** The Constant STOP. */
     public static final String STOP = "Stop";
-    
+
     /** The Constant DISALLOW. */
     public static final String DISALLOW = "Disallow:";
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see coaching.net.ThreadTemplate#execute()
      */
     @Override
@@ -61,7 +62,7 @@ public class WebCrawler extends ThreadTemplate {
 
     /**
      * Crawl site.
-     * 
+     *
      * base url
      *
      * @param baseUrl the base url
@@ -99,7 +100,7 @@ public class WebCrawler extends ThreadTemplate {
 
     /**
      * Safe crawl site.
-     * 
+     *
      * base url
      * robot txt content
      *
@@ -135,7 +136,7 @@ public class WebCrawler extends ThreadTemplate {
 
     /**
      * Slow crawl url.
-     * 
+     *
      * base url
      *
      * @param baseUrl the base url
@@ -179,7 +180,7 @@ public class WebCrawler extends ThreadTemplate {
 
     /**
      * main method.
-     * 
+     *
      * arguments
      *
      * @param args the args

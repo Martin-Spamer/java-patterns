@@ -16,7 +16,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class RequestProxyTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RequestProxyTest.class);
 
     /**

@@ -10,20 +10,17 @@ import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeNotNull;
 
-import coaching.automation.Actor;
-import coaching.automation.CredentialsFactory;
-
 /**
  * The Class CredentialsTest.
  */
 public class CredentialsTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CredentialsTest.class);
-    
+
     /** The platform. */
     private final String platform = "dev";
-    
+
     /** The tag. */
     private final String tag = "@AUTHORISED";
 

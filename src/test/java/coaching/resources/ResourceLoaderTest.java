@@ -17,7 +17,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class ResourceLoaderTest {
 
-    /** The Constant LOG. */
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ResourceLoaderTest.class);
 
     /**

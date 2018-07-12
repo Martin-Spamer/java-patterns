@@ -8,7 +8,6 @@ public final class RealSubject extends AbstractSubject {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.gof.structural.proxy.Subject#request()
      */
     @Override
