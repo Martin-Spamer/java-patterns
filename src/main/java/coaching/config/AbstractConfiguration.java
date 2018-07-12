@@ -120,7 +120,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
     @Override
     public String toString() {
         final String prettyProperties = prettyProperties(properties);
-        return String.format("properties = %s", prettyProperties);
+        return String.format("%s [properties = %s]", this.getClass().getSimpleName(), prettyProperties);
     }
 
     /**

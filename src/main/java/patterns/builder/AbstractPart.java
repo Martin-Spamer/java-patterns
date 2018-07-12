@@ -10,7 +10,7 @@ public abstract class AbstractPart {
 
     public AbstractPart() {
         super();
-        this.partName = this.getClass().getSimpleName();
+        partName = this.getClass().getSimpleName();
     }
 
     public AbstractPart(final String partName) {
@@ -20,7 +20,7 @@ public abstract class AbstractPart {
 
     @Override
     public String toString() {
-        return String.format("%s", this.getClass().getSimpleName());
+        return String.format("%s [...]", this.getClass().getSimpleName());
     }
 
 }

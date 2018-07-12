@@ -316,14 +316,13 @@ public final class BigDecimalMoney {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
         final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
         final String currencyString = numberFormat.format(amount);
-        return String.format("%s", currencyString);
+        return String.format("%s [currencyString=%s]", this.getClass().getSimpleName(), currencyString);
     }
 
 }

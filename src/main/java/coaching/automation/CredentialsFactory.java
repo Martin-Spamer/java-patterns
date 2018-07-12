@@ -1,5 +1,5 @@
 
-package automation;
+package coaching.automation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

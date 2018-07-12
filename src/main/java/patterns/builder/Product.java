@@ -28,12 +28,11 @@ public class Product {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Product [partOne=%s, partTwo=%s]", partOne, partTwo);
+        return String.format("%s [partOne=%s, partTwo=%s]", this.getClass().getSimpleName(), partOne, partTwo);
     }
 
 }

@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * PolymorphicList Class.
+ * PolymorphicList class.
  */
 public class PolymorphicList {
 
@@ -23,7 +23,7 @@ public class PolymorphicList {
      */
     public PolymorphicList() {
         super();
-        LOG.info("PolymorphicList");
+        LOG.info("PolymorphicList()");
     }
 
     /**
@@ -34,19 +34,18 @@ public class PolymorphicList {
      * @return this for fluent interface.
      */
     public PolymorphicList add(final Integer integerIn) {
-        LOG.info("add({}", integerIn);
+        LOG.info("PolymorphicList({})", integerIn);
         integerList.add(integerIn);
         return this;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("PolymorphicList [integerList=%s]", integerList);
+        return String.format("%s [integerList=%s]", this.getClass().getSimpleName(), integerList);
     }
 
 }

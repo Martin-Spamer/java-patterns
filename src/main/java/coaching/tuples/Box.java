@@ -11,7 +11,7 @@ package coaching.tuples;
  */
 public class Box<T> {
 
-    /** The t. */
+    /** The boxed Object t of type T. */
     protected T t;
 
     /**
@@ -53,12 +53,11 @@ public class Box<T> {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Box [T=%s]", this.t);
+        return String.format("%s [T=%s]", this.t);
     }
 
 }

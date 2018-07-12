@@ -1,5 +1,5 @@
 
-package automation;
+package coaching.automation;
 
 /**
  * An Actor for automated testing.

@@ -49,12 +49,11 @@ public final class AggregateClassArray {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("AggregateClassArray [aggregate=%s]", Arrays.toString(aggregate));
+        return String.format("%s [aggregate=%s]", this.getClass().getSimpleName(), Arrays.toString(aggregate));
     }
 
 }

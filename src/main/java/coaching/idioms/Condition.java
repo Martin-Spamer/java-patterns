@@ -39,12 +39,11 @@ public class Condition implements ConditionInterface<Boolean> {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Condition [result=%s]", result);
+        return String.format("%s [result=%s]", this.getClass().getSimpleName(), result);
     }
 
 }

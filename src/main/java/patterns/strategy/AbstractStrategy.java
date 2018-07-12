@@ -28,7 +28,6 @@ public abstract class AbstractStrategy implements StrategyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.strategy.AbstractStrategy#operation()
      */
     @Override
@@ -38,12 +37,11 @@ public abstract class AbstractStrategy implements StrategyInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("AbstractStrategy [context=%s]", context);
+        return String.format("%s [context=%s]", this.getClass().getSimpleName(), context);
     }
 
 }

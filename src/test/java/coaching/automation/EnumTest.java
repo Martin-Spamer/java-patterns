@@ -1,5 +1,5 @@
 
-package automation;
+package coaching.automation;
 
 import org.junit.Test;
 

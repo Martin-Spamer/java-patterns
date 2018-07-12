@@ -78,8 +78,7 @@ public class CsvFile {
      * @return the header
      */
     public String getHeader() {
-        final String colNames = Arrays.toString(columnNames);
-        return String.format("#%s", colNames);
+        return headerLine;
     }
 
     /**
@@ -176,11 +175,12 @@ public class CsvFile {
     protected void processLine(final String line) {
         if (line.charAt(0) == '#') {
             setHeaderLine(line);
+            LOG.trace("headerLine = {}", line);
         } else {
             final CsvRecord record = new CsvRecord(line);
             records.add(record);
             final String recordString = record.toString();
-            LOG.debug("recordString = {}", recordString);
+            LOG.trace("recordString = {}", recordString);
         }
     }
 
@@ -205,7 +205,7 @@ public class CsvFile {
         try {
             final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
             for (final CsvRecord csvRecord : records) {
-                LOG.trace("csvRecord = {}", csvRecord);
+                LOG.trace("write csvRecord = {}", csvRecord);
                 writer.write(csvRecord.toString());
             }
             writer.close();
@@ -245,8 +245,10 @@ public class CsvFile {
     @Override
     public String toString() {
         return String
-            .format("%s [columnNames=%s, records=%s]",
+            .format("%s [csvFilename=%s, headerLine=%s, columnNames=%s, records=%s]",
                     this.getClass().getSimpleName(),
+                    csvFilename,
+                    headerLine,
                     Arrays.toString(columnNames),
                     records);
     }

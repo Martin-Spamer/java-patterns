@@ -31,12 +31,11 @@ public class Context {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Context [state=%s]", state);
+        return String.format("%s [state=%s]", this.getClass().getSimpleName(), state);
     }
 
 }

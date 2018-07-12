@@ -77,12 +77,12 @@ public final class PojoExample implements Cloneable {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("PojoExample [stringValue=%s, longValue=%s]", stringValue, longValue);
+        return String
+            .format("%s [stringValue=%s, longValue=%s]", this.getClass().getSimpleName(), stringValue, longValue);
     }
 
 }

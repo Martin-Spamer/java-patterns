@@ -1,5 +1,5 @@
 
-package automation;
+package coaching.automation;
 
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -11,6 +11,9 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+
+import coaching.automation.AbstractPropertyResource;
+import coaching.automation.PropertyInterface;
 
 /**
  * Unit test for the abstract property resource class.

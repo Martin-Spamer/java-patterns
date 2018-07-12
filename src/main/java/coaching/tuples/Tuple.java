@@ -55,7 +55,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 
     /*
      * (non-Javadoc)
-     *
      * @see idioms.tuples.TupleInterface#setLeft(L)
      */
     @Override
@@ -65,7 +64,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 
     /*
      * (non-Javadoc)
-     *
      * @see idioms.tuples.TupleInterface#setRight(R)
      */
     @Override
@@ -75,7 +73,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 
     /*
      * (non-Javadoc)
-     *
      * @see idioms.tuples.TupleInterface#getLeft()
      */
     @Override
@@ -85,7 +82,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 
     /*
      * (non-Javadoc)
-     *
      * @see idioms.tuples.TupleInterface#getRight()
      */
     @Override
@@ -106,7 +102,6 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 
     /*
      * (non-Javadoc)
-     *
      * @see idioms.tuples.TupleInterface#copy()
      */
     @Override
@@ -116,12 +111,11 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Tuple [left=%s, right=%s]", this.left, this.right);
+        return String.format("%s [left=%s, right=%s]", this.getClass().getSimpleName(), this.left, this.right);
     }
 
 }

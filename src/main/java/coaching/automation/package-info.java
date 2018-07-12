@@ -4,4 +4,4 @@
  * Detailed description of package.
  */
 
-package automation;
+package coaching.automation;

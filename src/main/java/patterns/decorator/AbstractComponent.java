@@ -25,6 +25,6 @@ public abstract class AbstractComponent implements ComponentInterface {
 
     @Override
     public String toString() {
-        return String.format("%s []", this.getClass().getSimpleName());
+        return String.format("%s [...]", this.getClass().getSimpleName());
     }
 }

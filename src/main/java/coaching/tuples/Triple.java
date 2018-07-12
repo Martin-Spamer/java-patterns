@@ -147,12 +147,11 @@ public class Triple<X, Y, Z> {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Triple [x=%s, y=%s, z=%s]", this.x, this.y, this.z);
+        return String.format("%s [x=%s, y=%s, z=%s]", this.getClass().getSimpleName(), this.x, this.y, this.z);
     }
 
 }

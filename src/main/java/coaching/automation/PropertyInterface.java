@@ -1,5 +1,5 @@
 
-package automation;
+package coaching.automation;
 
 import java.io.InputStream;
 import java.io.OutputStream;

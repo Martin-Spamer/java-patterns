@@ -1,20 +1,20 @@
 
-package automation;
+package coaching.automation;
 
-public final class PlatformData extends AbstractExpectedData implements ExpectedDataInterface {
+public final class ExpectedData extends AbstractExpectedData implements ExpectedDataInterface {
 
     /** single static instance within class loader. */
-    private static PlatformData instance;
+    private static ExpectedData instance;
 
     protected String platform = null;
 
-    private PlatformData() {
+    private ExpectedData() {
         super();
         setPlatform(System.getProperty("platform", "local"));
         loadPlatformData();
     }
 
-    public PlatformData(final String platform) {
+    public ExpectedData(final String platform) {
         super();
         setPlatform(platform);
         loadPlatformData();
@@ -24,18 +24,18 @@ public final class PlatformData extends AbstractExpectedData implements Expected
         super.loadData("Customer.csv");
     }
 
-    protected static synchronized PlatformData getInstance() {
+    protected static synchronized ExpectedData getInstance() {
         if (instance == null) {
-            instance = new PlatformData();
+            instance = new ExpectedData();
         }
         return instance;
     }
 
-    public static PlatformData platform(final String platform) {
-        return PlatformData.getInstance().setPlatform(platform);
+    public static ExpectedData platform(final String platform) {
+        return ExpectedData.getInstance().setPlatform(platform);
     }
 
-    protected PlatformData setPlatform(final String platform) {
+    protected ExpectedData setPlatform(final String platform) {
         this.platform = platform;
         return this;
     }
@@ -45,15 +45,15 @@ public final class PlatformData extends AbstractExpectedData implements Expected
     }
 
     public static String withTag(final String tag) {
-        return PlatformData.getInstance().getTagged(tag);
+        return ExpectedData.getInstance().getTagged(tag);
     }
 
     public static String withCharacteristic(final String tag) {
-        return PlatformData.getInstance().getTagged(tag);
+        return ExpectedData.getInstance().getTagged(tag);
     }
 
     public static String[] allWithTag(final String tag) {
-        return PlatformData.getInstance().getAllTagged(tag);
+        return ExpectedData.getInstance().getAllTagged(tag);
     }
 
 }

@@ -23,6 +23,7 @@ public class CsvRecord {
      */
     public CsvRecord() {
         super();
+        LOG.info("CsvRecord()");
         parse("");
     }
 
@@ -34,6 +35,7 @@ public class CsvRecord {
      */
     public CsvRecord(final String lineOfData) {
         super();
+        LOG.info("CsvRecord({})", lineOfData);
         parse(lineOfData);
     }
 

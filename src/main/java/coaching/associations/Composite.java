@@ -57,16 +57,17 @@ public final class Composite {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Composite [elementAlice=%s, elementBob=%s, elementCharlie=%s, elementDan=%s]",
-                elementAlice,
-                elementBob,
-                elementCharlie,
-                elementDan);
+        return String
+            .format("%s [elementAlice=%s, elementBob=%s, elementCharlie=%s, elementDan=%s]",
+                    this.getClass().getSimpleName(),
+                    elementAlice,
+                    elementBob,
+                    elementCharlie,
+                    elementDan);
     }
 
 }

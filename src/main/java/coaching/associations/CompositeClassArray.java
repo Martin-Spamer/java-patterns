@@ -30,12 +30,11 @@ public class CompositeClassArray {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("CompositeClassArray [composite=%s]", Arrays.toString(composite));
+        return String.format("%s [composite=%s]", this.getClass().getSimpleName(), Arrays.toString(composite));
     }
 
 }

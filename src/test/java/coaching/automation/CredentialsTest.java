@@ -1,5 +1,5 @@
 
-package automation;
+package coaching.automation;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -9,6 +9,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeNotNull;
+
+import coaching.automation.Actor;
+import coaching.automation.CredentialsFactory;
 
 public class CredentialsTest {
 

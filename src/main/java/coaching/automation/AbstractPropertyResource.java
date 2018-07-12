@@ -1,11 +1,17 @@
 
-package automation;
+package coaching.automation;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
+/**
+ * The AbstractPropertyResource class.
+ *
+ * @deprecated in favour of reusable Configuration
+ */
+@Deprecated
 public abstract class AbstractPropertyResource implements PropertyInterface {
 
     protected final Properties properties = new Properties();
@@ -125,6 +131,11 @@ public abstract class AbstractPropertyResource implements PropertyInterface {
     public PropertyInterface store(final OutputStream out, final String comment) throws IOException {
         properties.store(out, comment);
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), properties);
     }
 
 }
