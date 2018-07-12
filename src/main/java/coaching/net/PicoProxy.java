@@ -45,8 +45,10 @@ public class PicoProxy {
 
     /**
      * main method.
-     *
+     * 
      * arguments
+     *
+     * @param args the args
      */
     public static void main(final String[] args) {
         LOG.trace(System.getProperties().toString());

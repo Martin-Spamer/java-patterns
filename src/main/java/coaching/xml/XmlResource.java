@@ -29,8 +29,7 @@ public class XmlResource {
     /**
      * Load configuration file.
      *
-     * @param configFile
-     *            the Configuration file
+     * @param configInputStream the config input stream
      */
     protected void loadXmlFromStream(final InputStream configInputStream) {
         try {
@@ -47,6 +46,11 @@ public class XmlResource {
         }
     }
 
+    /**
+     * Load xml from file.
+     *
+     * @param configFile the config file
+     */
     public void loadXmlFromFile(final File configFile) {
         try {
             final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();

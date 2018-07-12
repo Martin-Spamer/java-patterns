@@ -11,10 +11,18 @@ import static org.junit.Assume.assumeTrue;
 import coaching.csv.CsvFile;
 import coaching.csv.CsvRecord;
 
+/**
+ * The Class CredentialsFactory.
+ */
 public class CredentialsFactory extends AbstractExpectedData implements ExpectedDataInterface {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(CredentialsFactory.class);
+    
+    /** The csv file. */
     private CsvFile csvFile;
+    
+    /** The platform. */
     private String platform;
 
     /**
@@ -87,11 +95,23 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
         return "/data/Credentials.csv";
     }
 
+    /**
+     * On platform.
+     *
+     * @param platform the platform
+     * @return the credentials factory
+     */
     public CredentialsFactory onPlatform(final String platform) {
         this.platform = platform;
         return this;
     }
 
+    /**
+     * Tagged.
+     *
+     * @param tag the tag
+     * @return the actor
+     */
     public Actor tagged(final String tag) {
         assumeTrue(csvFile.isLoaded());
         final int rowCount = csvFile.rowCount();

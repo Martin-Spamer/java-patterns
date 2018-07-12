@@ -20,18 +20,35 @@ import org.slf4j.LoggerFactory;
  */
 public class PortScan extends Thread {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(PortScan.class);
+    
+    /** The load factor. */
     private static int loadFactor = 100;
+    
+    /** The properties. */
     private static Properties properties = null;
+    
+    /** The ip. */
     private String ip = "127.0.0.1";
+    
+    /** The port. */
     private int port = 0;
 
+    /**
+     * The Constructor.
+     */
     public PortScan() {
         super();
         LOG.info(this.toString());
         initialise();
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param args the args
+     */
     public PortScan(final String[] args) {
         super();
         ip = args[0];
@@ -40,6 +57,12 @@ public class PortScan extends Thread {
         initialise();
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param ip the ip
+     * @param port the port
+     */
     public PortScan(final String ip, final int port) {
         super();
         this.ip = ip;
@@ -48,6 +71,9 @@ public class PortScan extends Thread {
         initialise();
     }
 
+    /**
+     * Initialise.
+     */
     private void initialise() {
         String filename = "ports.properties";
         File file = new File(filename);
@@ -64,6 +90,9 @@ public class PortScan extends Thread {
         }
     }
 
+    /**
+     * Execute.
+     */
     public void execute() {
         for (int port = 1; port < 64 * 1024;) {
             if (Thread.activeCount() > PortScan.loadFactor) {
@@ -78,6 +107,9 @@ public class PortScan extends Thread {
 
     /**
      * Look up port number for the service description.
+     *
+     * @param port the port
+     * @return the string
      */
     public String lookUpPort(final int port) {
         String portNo = Integer.toString(port);
@@ -107,11 +139,19 @@ public class PortScan extends Thread {
         }
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Thread#toString()
+     */
     @Override
     public String toString() {
         return String.format("%s [ip=%s, port=%s]", this.getClass().getSimpleName(), ip, port);
     }
 
+    /**
+     * The main method.
+     *
+     * @param args the args
+     */
     public static void main(final String[] args) {
         LOG.trace("System properties = {}", System.getProperties().toString());
         LOG.debug("args = {}", Arrays.toString(args));

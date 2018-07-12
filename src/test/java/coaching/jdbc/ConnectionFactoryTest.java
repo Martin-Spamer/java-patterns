@@ -14,6 +14,11 @@ import static org.junit.Assert.assertNotNull;
  */
 public class ConnectionFactoryTest {
 
+    /**
+     * Unit test to sq lite connection factory.
+     *
+     * @throws SQLException the SQL exception
+     */
     @Test
     @Ignore("Requires SQLite3")
     public void testSqLiteConnectionFactory() throws SQLException {
@@ -28,6 +33,11 @@ public class ConnectionFactoryTest {
         connection.close();
     }
 
+    /**
+     * Unit test to pointbase connection factory.
+     *
+     * @throws SQLException the SQL exception
+     */
     @Test
     @Ignore("Requires Pointbase")
     public void testPointbaseConnectionFactory() throws SQLException {
@@ -43,6 +53,11 @@ public class ConnectionFactoryTest {
         connection.close();
     }
 
+    /**
+     * Unit test to my sql connection factory.
+     *
+     * @throws SQLException the SQL exception
+     */
     @Test
     @Ignore("Requires MySQL")
     public void testMySqlConnectionFactory() throws SQLException {
@@ -58,6 +73,11 @@ public class ConnectionFactoryTest {
         connection.close();
     }
 
+    /**
+     * Unit test to connection factory.
+     *
+     * @throws SQLException the SQL exception
+     */
     @Test
     @Ignore("Requires Oracle")
     public void testConnectionFactory() throws SQLException {
@@ -73,6 +93,11 @@ public class ConnectionFactoryTest {
         connection.close();
     }
 
+    /**
+     * Unit test to postgresql connection factory.
+     *
+     * @throws SQLException the SQL exception
+     */
     @Test
     @Ignore("Requires PostgreSQL")
     public void testPostgresqlConnectionFactory() throws SQLException {

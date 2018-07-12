@@ -52,7 +52,7 @@ public class FluentWaitTest {
         final FluentWait wait = new FluentWait();
         final Condition pass = new PassCondition();
         assertTrue(wait.until(pass));
-        LOG.info("end = {}", System.currentTimeMillis());
+        LOG.debug("end = {}", System.currentTimeMillis());
     }
 
     /**
@@ -65,13 +65,15 @@ public class FluentWaitTest {
 
         assertEquals(wait, wait.setTimeOut(1000));
         assertEquals(1000, wait.setTimeOut());
+        LOG.debug("after interval = {}", System.currentTimeMillis());
 
         assertEquals(wait, wait.setInterval(100));
         assertEquals(1000, wait.setTimeOut());
+        LOG.debug("after interval = {}", System.currentTimeMillis());
 
         final Condition pass = new PassCondition();
         assertTrue(wait.until(pass));
-        LOG.info("end = {}", System.currentTimeMillis());
+        LOG.debug("end = {}", System.currentTimeMillis());
     }
 
     /**
@@ -82,7 +84,7 @@ public class FluentWaitTest {
         LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
         final FluentWait wait = new FluentWait();
         assertTrue(wait.until(new PassCondition()));
-        LOG.info("end = {}", System.currentTimeMillis());
+        LOG.debug("end = {}", System.currentTimeMillis());
     }
 
     /**
@@ -94,6 +96,6 @@ public class FluentWaitTest {
         final FluentWait wait = new FluentWait();
         // wait.until(new Condition(false));
         assertFalse(wait.until(new FailCondition()));
-        LOG.info("end = {}", System.currentTimeMillis());
+        LOG.debug("end = {}", System.currentTimeMillis());
     }
 }

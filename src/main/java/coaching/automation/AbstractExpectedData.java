@@ -15,17 +15,34 @@ import coaching.csv.CsvRecord;
  */
 public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
+    /** The csv file. */
     protected CsvFile csvFile;
+    
+    /** The path. */
     protected String path = "data/";
 
+    /**
+     * The Constructor.
+     */
     public AbstractExpectedData() {
         super();
     }
 
+    /**
+     * Load data.
+     *
+     * @param filename the filename
+     */
     public void loadData(final String filename) {
         csvFile = new CsvFile(filename);
     }
 
+    /**
+     * Gets the tagged.
+     *
+     * @param tag the tag
+     * @return the tagged
+     */
     protected String getTagged(final String tag) {
         assumeTrue(csvFile.isLoaded());
         final int rowCount = csvFile.rowCount();
@@ -39,6 +56,12 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
         return null;
     }
 
+    /**
+     * Gets the all tagged.
+     *
+     * @param tag the tag
+     * @return the all tagged
+     */
     protected String[] getAllTagged(final String tag) {
         assumeTrue(csvFile.isLoaded());
         ArrayList<String> all = new ArrayList<String>();

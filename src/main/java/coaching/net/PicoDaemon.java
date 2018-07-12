@@ -8,15 +8,27 @@ import java.net.Socket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class PicoDaemon.
+ */
 public class PicoDaemon implements Runnable {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(PicoDaemon.class);
+    
+    /** The keep running. */
     private volatile boolean keepRunning = true;
 
+    /**
+     * The Constructor.
+     */
     public PicoDaemon() {
         LOG.info("{} loaded...", this.getClass().getSimpleName());
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Runnable#run()
+     */
     @Override
     public void run() {
         LOG.info("{} running...", this.getClass().getSimpleName());
@@ -46,6 +58,9 @@ public class PicoDaemon implements Runnable {
         LOG.info("{} is stopping.....", this.getClass().getSimpleName());
     }
 
+    /**
+     * Stop.
+     */
     public synchronized void stop() {
         keepRunning = false;
     }

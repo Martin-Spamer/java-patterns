@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The BoxTest class.
+ * Unit test the Box class.
  */
 public class BoxTest {
 

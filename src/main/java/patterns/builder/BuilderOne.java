@@ -16,6 +16,9 @@ public class BuilderOne extends AbstractBuilder {
         return new PartOne();
     }
 
+    /* (non-Javadoc)
+     * @see patterns.builder.AbstractBuilder#build(java.lang.String)
+     */
     @Override
     public AbstractPart build(final String partName) {
         return new PartOne(partName);

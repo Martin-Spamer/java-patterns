@@ -43,6 +43,11 @@ public class NetInfo {
         }
     }
 
+    /**
+     * The main method.
+     *
+     * @param args the args
+     */
     public static void main(final String[] args) {
         LOG.trace("System properties = {}", System.getProperties().toString());
         LOG.debug("args = {}", Arrays.toString(args));

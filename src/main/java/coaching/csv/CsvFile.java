@@ -22,11 +22,19 @@ public class CsvFile {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvFile.class);
 
+    /** The csv filename. */
     private final String csvFilename;
+    
+    /** The header line. */
     private String headerLine;
+    
+    /** The column names. */
     private String[] columnNames;
+    
+    /** The records. */
     private final List<CsvRecord> records = new ArrayList<>();
 
+    /** The loaded. */
     private boolean loaded;
 
     /**
@@ -214,6 +222,11 @@ public class CsvFile {
         }
     }
 
+    /**
+     * Checks if is loaded.
+     *
+     * @return true, if checks if is loaded
+     */
     public boolean isLoaded() {
         return loaded;
     }
@@ -253,6 +266,12 @@ public class CsvFile {
                     records);
     }
 
+    /**
+     * Pretty.
+     *
+     * @param properties the properties
+     * @return the string
+     */
     protected String pretty(final String properties) {
         return properties
             .replace("[", "[\n\t")

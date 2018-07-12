@@ -1,6 +1,13 @@
 
 package coaching.automation;
 
+/**
+ * The Enum Characteristic.
+ */
 public enum Characteristic {
-    AUTHORISED, UNAUTHORISED
+    
+    /** The authorised. */
+    AUTHORISED, 
+ /** The unauthorised. */
+ UNAUTHORISED
 }

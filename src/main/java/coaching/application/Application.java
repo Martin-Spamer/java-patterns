@@ -3,12 +3,17 @@ package coaching.application;
 
 import java.util.Arrays;
 
+/**
+ * The Class Application.
+ */
 public class Application extends AbstractApplication {
 
     /**
      * Instantiates a new application.
-     *
+     * 
      * args
+     *
+     * @param args the args
      */
     public Application(final String[] args) {
         super(args);

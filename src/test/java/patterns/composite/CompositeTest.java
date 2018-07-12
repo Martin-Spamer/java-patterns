@@ -42,11 +42,17 @@ public class CompositeTest {
         LOG.debug("composite = {}", composite.toString());
     }
 
+    /**
+     * Type.
+     */
     @Test
     public void type() {
         assertThat(Composite.class, notNullValue());
     }
 
+    /**
+     * Unit test to add.
+     */
     @Test
     public void testAdd() {
         // Given a composite
@@ -63,6 +69,9 @@ public class CompositeTest {
         assertNotNull(actual);
     }
 
+    /**
+     * Unit test to remove.
+     */
     @Test
     public void testRemove() {
         // Given a composite
@@ -80,6 +89,9 @@ public class CompositeTest {
         assertNotNull(actual);
     }
 
+    /**
+     * Unit test to get child.
+     */
     @Test
     public void testGetChild() {
         // Given a composite
@@ -99,6 +111,9 @@ public class CompositeTest {
         assertNotNull(actual);
     }
 
+    /**
+     * Unit test to operation.
+     */
     @Test
     public void testOperation() {
         // Given a composite

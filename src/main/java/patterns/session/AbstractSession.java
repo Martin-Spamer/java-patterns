@@ -21,6 +21,11 @@ public abstract class AbstractSession {
         this(UUID.randomUUID());
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param currentUUID the current UUID
+     */
     public AbstractSession(final UUID currentUUID) {
         this.uuid = currentUUID;
     }

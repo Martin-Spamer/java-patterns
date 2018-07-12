@@ -32,6 +32,9 @@ public class AbstractSessionTest {
     public class TestMockSession extends AbstractSession {
     }
 
+    /**
+     * Unit test to typical usage.
+     */
     @Test
     public void testTypicalUsage() {
         // Given

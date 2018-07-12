@@ -10,8 +10,12 @@ import static org.junit.Assert.assertNotNull;
 import coaching.config.AbstractConfiguration;
 import coaching.config.Configuration;
 
+/**
+ * The Class ConfigurationTest.
+ */
 public class ConfigurationTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(ConfigurationTest.class);
 
     /**

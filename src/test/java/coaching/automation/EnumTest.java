@@ -5,11 +5,23 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The Class EnumTest.
+ */
 public class EnumTest {
 
+    /**
+     * The Enum TestEnum.
+     */
     public enum TestEnum {
+        
+        /** The undefined. */
         UNDEFINED(0),
+        
+        /** The a. */
         A(1),
+        
+        /** The b. */
         B(2);
 
         /** The number. */
@@ -17,8 +29,10 @@ public class EnumTest {
 
         /**
          * Instantiates a new test enum.
-         *
+         * 
          * co value
+         *
+         * @param coValue the co value
          */
         private TestEnum(final int coValue) {
             number = coValue;
@@ -26,9 +40,12 @@ public class EnumTest {
 
         /**
          * From value.
-         *
+         * 
          * co value
          * test enum
+         *
+         * @param coValue the co value
+         * @return the unit test to enum
          */
         public static TestEnum fromValue(final int coValue) {
             for (final TestEnum value : values()) {

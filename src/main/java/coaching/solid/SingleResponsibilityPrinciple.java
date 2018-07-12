@@ -40,6 +40,9 @@ public class SingleResponsibilityPrinciple {
             bar = true;
         }
 
+        /* (non-Javadoc)
+         * @see java.lang.Object#toString()
+         */
         @Override
         public String toString() {
             return String.format("%s [foo=%s, bar=%s]", this.getClass().getSimpleName(), foo, bar);
@@ -101,11 +104,17 @@ public class SingleResponsibilityPrinciple {
         }
     }
 
+    /**
+     * Multiple responsibility.
+     */
     public void multipleResponsibility() {
         final MultipleResponsibility multipleResponsibility = new MultipleResponsibility();
         assertNotNull(multipleResponsibility);
     }
 
+    /**
+     * Single responsibility.
+     */
     public void singleResponsibility() {
         final SingleResponsibility singleResponsibility = new SingleResponsibility();
         assertNotNull(singleResponsibility);

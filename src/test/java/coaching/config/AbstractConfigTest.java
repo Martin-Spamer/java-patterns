@@ -14,7 +14,10 @@ import static org.junit.Assert.assertNull;
  */
 public class AbstractConfigTest {
 
+    /** The Constant FILENAME_KEY. */
     private static final String FILENAME_KEY = "Filename";
+    
+    /** The Constant CONFIG_PROPERTIES. */
     private static final String CONFIG_PROPERTIES = "Configuration.properties";
 
     /** provide logging. */
@@ -122,6 +125,11 @@ public class AbstractConfigTest {
         verifyProperties(config);
     }
 
+    /**
+     * Verify properties.
+     *
+     * @param config the config
+     */
     private void verifyProperties(final ConfigInterface config) {
         assertNull(config.get("missing-key"));
         assertEquals("default", config.get("missing-key", "default"));

@@ -56,14 +56,30 @@ public class XmlConfig extends AbstractXmlConfig {
         return String.format("%s.xml", configFilename);
     }
 
+    /**
+     * Load xml.
+     *
+     * @param configFile the config file
+     */
     protected void loadXml(final File configFile) {
         loadXml(configFile.getPath());
     }
 
+    /**
+     * Load xml.
+     *
+     * @param configFilename the config filename
+     */
     protected void loadXml(final String configFilename) {
         loadXml(new File(configFilename));
     }
 
+    /**
+     * Stream for resource.
+     *
+     * @param propertyFileName the property file name
+     * @return the input stream
+     */
     protected InputStream streamForResource(final String propertyFileName) {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         return classLoader.getResourceAsStream(propertyFileName);
@@ -72,8 +88,7 @@ public class XmlConfig extends AbstractXmlConfig {
     /**
      * Load configuration file.
      *
-     * @param configFile
-     *            the Configuration file
+     * @param configInputStream the config input stream
      */
     protected void loadXmlStream(final InputStream configInputStream) {
         try {
@@ -90,6 +105,11 @@ public class XmlConfig extends AbstractXmlConfig {
         }
     }
 
+    /**
+     * Load xml file.
+     *
+     * @param configFile the config file
+     */
     public void loadXmlFile(final File configFile) {
         try {
             final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -127,6 +147,12 @@ public class XmlConfig extends AbstractXmlConfig {
         return configElement.getElementsByTagName(elementName);
     }
 
+    /**
+     * Gets the property.
+     *
+     * @param key the key
+     * @return the property
+     */
     /*
      * (non-Javadoc)
      * @see framework.config.ConfigInterface#getProperty(java.lang.String)
@@ -140,6 +166,13 @@ public class XmlConfig extends AbstractXmlConfig {
         return null;
     }
 
+    /**
+     * Gets the property.
+     *
+     * @param key the key
+     * @param defaultValue the default value
+     * @return the property
+     */
     /*
      * (non-Javadoc)
      * @see framework.config.ConfigInterface#getProperty(java.lang.String,

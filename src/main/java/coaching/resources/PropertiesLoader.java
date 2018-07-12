@@ -29,8 +29,9 @@ public class PropertiesLoader {
     /**
      * Gets the properties.
      *
+     * @param resourceFilename the resource filename
      * @return the properties
-     * @throws IOException
+     * @throws IOException the IO exception
      */
     public static Properties getProperties(final String resourceFilename) throws IOException {
         InputStream stream = ResourceLoader.getStream(resourceFilename);
@@ -39,6 +40,13 @@ public class PropertiesLoader {
         return properties;
     }
 
+    /**
+     * Gets the xml properties.
+     *
+     * @param xmlResourceFilename the xml resource filename
+     * @return the xml properties
+     * @throws IOException the IO exception
+     */
     public static Properties getXmlProperties(final String xmlResourceFilename) throws IOException {
         InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
         Properties properties = new Properties();

@@ -13,8 +13,10 @@ public class CommandPool {
 
 	/**
 	 * Creates the.
-	 *
+	 * 
 	 * command pool
+	 *
+	 * @return the command pool
 	 */
 	public static CommandPool create() {
 		return new CommandPool();

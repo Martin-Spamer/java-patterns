@@ -15,10 +15,17 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assume.assumeNotNull;
 
+/**
+ * The Class JsonTest.
+ */
 public class JsonTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(JsonTest.class);
 
+    /**
+     * Unit test to new.
+     */
     @Test
     public void testNew() {
         final JSONObject json = new JSONObject();
@@ -32,6 +39,9 @@ public class JsonTest {
         LOG.info(json.toString());
     }
 
+    /**
+     * Unit test to system.
+     */
     @Test
     public void testSystem() {
         final JSONObject json = new JSONObject();
@@ -48,6 +58,9 @@ public class JsonTest {
         LOG.info(json.toString());
     }
 
+    /**
+     * Unit test to.
+     */
     @Test
     public void test() {
         final JSONObject json = new JSONObject();
@@ -67,6 +80,11 @@ public class JsonTest {
 
     }
 
+    /**
+     * Write.
+     *
+     * @param json the json
+     */
     private void write(final JSONObject json) {
         try (FileWriter file = new FileWriter("./target/test.json")) {
 

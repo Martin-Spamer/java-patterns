@@ -10,10 +10,17 @@ import static org.junit.Assert.assertNull;
 
 import coaching.automation.PlatformData;
 
+/**
+ * The Class ExpectedDataTest.
+ */
 public class ExpectedDataTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(ExpectedDataTest.class);
 
+    /**
+     * Unit test to on platform.
+     */
     @Test
     public void testOnPlatform() {
         PlatformData expectedData;
@@ -31,6 +38,9 @@ public class ExpectedDataTest {
         assertNull(expectedData.getTagged("@bar"));
     }
 
+    /**
+     * Unit test to default platform domain language.
+     */
     @Test
     public void testDefaultPlatformDomainLanguage() {
         assertNotNull(PlatformData.withTag("@AUTHORISED"));

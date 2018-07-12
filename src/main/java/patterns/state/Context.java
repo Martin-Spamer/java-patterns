@@ -19,11 +19,21 @@ public class Context {
         this.state = state;
     }
 
+    /**
+     * To alice.
+     *
+     * @return the context
+     */
     public Context toAlice() {
         state = new StateAlice();
         return this;
     }
 
+    /**
+     * To bob.
+     *
+     * @return the context
+     */
     public Context toBob() {
         state = new StateBob();
         return this;

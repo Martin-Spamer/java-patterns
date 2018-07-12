@@ -1,8 +1,14 @@
 
 package coaching.hollywood;
 
+/**
+ * The Class HollywoodPrinciple.
+ */
 public class HollywoodPrinciple {
 
+    /**
+     * Dont call us.
+     */
     public void dontCallUs() {
         try {
             throw new Exception();
@@ -13,6 +19,9 @@ public class HollywoodPrinciple {
         }
     }
 
+    /**
+     * Well call you.
+     */
     public void wellCallYou() {
         try {
             throw new Exception();

@@ -22,8 +22,10 @@ public class ControllerException extends java.lang.Exception {
 
 	/**
 	 * Instantiates a new controller exception.
-	 *
+	 * 
 	 * msg
+	 *
+	 * @param msg the msg
 	 */
 	public ControllerException(final String msg) {
 		super(msg);

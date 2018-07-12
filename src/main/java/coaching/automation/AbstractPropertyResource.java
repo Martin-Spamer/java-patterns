@@ -14,6 +14,7 @@ import java.util.Properties;
 @Deprecated
 public abstract class AbstractPropertyResource implements PropertyInterface {
 
+    /** The properties. */
     protected final Properties properties = new Properties();
 
     /**
@@ -62,6 +63,13 @@ public abstract class AbstractPropertyResource implements PropertyInterface {
         return properties.getProperty(key, defaultValue);
     }
 
+    /**
+     * Load.
+     *
+     * @param resourceName the resource name
+     * @return the property interface
+     * @throws IOException the IO exception
+     */
     public PropertyInterface load(final String resourceName) throws IOException {
         if (resourceName != null) {
             final InputStream inputStream = this.getClass().getResourceAsStream(resourceName);
@@ -85,6 +93,13 @@ public abstract class AbstractPropertyResource implements PropertyInterface {
         return this;
     }
 
+    /**
+     * Load from XML.
+     *
+     * @param resourceName the resource name
+     * @return the property interface
+     * @throws IOException the IO exception
+     */
     public PropertyInterface loadFromXML(final String resourceName) throws IOException {
         final InputStream inputStream = this.getClass().getResourceAsStream(resourceName);
         return loadFromXML(inputStream);
@@ -93,7 +108,7 @@ public abstract class AbstractPropertyResource implements PropertyInterface {
     /**
      * Load properties from XML.
      *
-     * @param input stream.
+     * @param inputStream the input stream
      * @return this instance for a fluent interface.
      * @throws IOException Signals that an I/O exception has occurred.
      */
@@ -123,7 +138,7 @@ public abstract class AbstractPropertyResource implements PropertyInterface {
      * Store.
      *
      * @param out the out
-     * @param comments the comments
+     * @param comment the comment
      * @return this instance for a fluent interface.
      * @throws IOException Signals that an I/O exception has occurred.
      */
@@ -133,6 +148,9 @@ public abstract class AbstractPropertyResource implements PropertyInterface {
         return this;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String.format("%s [properties=%s]", this.getClass().getSimpleName(), properties);

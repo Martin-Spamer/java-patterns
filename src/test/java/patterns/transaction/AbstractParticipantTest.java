@@ -12,27 +12,46 @@ import static org.junit.Assert.assertThat;
  */
 public class AbstractParticipantTest {
 
+    /**
+     * The Class TestMockParticipant.
+     */
     public class TestMockParticipant extends AbstractParticipant {
+        
+        /* (non-Javadoc)
+         * @see patterns.transaction.AbstractParticipant#operation1()
+         */
         @Override
         public ParticipantInterface operation1() {
             return this;
         }
 
+        /* (non-Javadoc)
+         * @see patterns.transaction.AbstractParticipant#operation2()
+         */
         @Override
         public ParticipantInterface operation2() {
             return this;
         }
 
+        /* (non-Javadoc)
+         * @see patterns.transaction.ParticipantInterface#join()
+         */
         @Override
         public ParticipantInterface join() {
             return this;
         }
 
+        /* (non-Javadoc)
+         * @see patterns.transaction.ParticipantInterface#commit()
+         */
         @Override
         public ParticipantInterface commit() {
             return this;
         }
 
+        /* (non-Javadoc)
+         * @see patterns.transaction.ParticipantInterface#cancel()
+         */
         @Override
         public ParticipantInterface cancel() {
             return this;
@@ -40,6 +59,9 @@ public class AbstractParticipantTest {
 
     }
 
+    /**
+     * Unit test to typical usage commit.
+     */
     @Test
     public void testTypicalUsageCommit() {
         // Given
@@ -54,6 +76,9 @@ public class AbstractParticipantTest {
         target.commit();
     }
 
+    /**
+     * Unit test to typical usage cancel.
+     */
     @Test
     public void testTypicalUsageCancel() {
         // Given
@@ -68,6 +93,9 @@ public class AbstractParticipantTest {
         target.cancel();
     }
 
+    /**
+     * Type.
+     */
     @Test
     public void type() {
         assertThat(AbstractParticipant.class, notNullValue());

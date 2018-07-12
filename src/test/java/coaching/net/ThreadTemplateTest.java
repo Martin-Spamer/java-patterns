@@ -7,10 +7,17 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * The Class ThreadTemplateTest.
+ */
 public class ThreadTemplateTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(ThreadTemplateTest.class);
 
+    /**
+     * Unit test to thread template.
+     */
     @Test
     public void testThreadTemplate() {
         ThreadTemplate threadTemplate = new ThreadTemplate();

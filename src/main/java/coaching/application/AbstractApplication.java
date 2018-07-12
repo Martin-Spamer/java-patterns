@@ -12,18 +12,38 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+/**
+ * The Class AbstractApplication.
+ */
 public abstract class AbstractApplication {
 
+    /** The Constant log. */
     protected static final Logger log = LoggerFactory.getLogger(Application.class);
+    
+    /** The args. */
     protected String[] args = null;
+    
+    /** The document builder factory. */
     private DocumentBuilderFactory documentBuilderFactory = null;
+    
+    /** The document builder. */
     private DocumentBuilder documentBuilder = null;
+    
+    /** The document. */
     private Document document = null;
 
+    /**
+     * The Constructor.
+     */
     public AbstractApplication() {
         super();
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param args the args
+     */
     public AbstractApplication(final String[] args) {
         this.args = args;
     }
@@ -39,9 +59,10 @@ public abstract class AbstractApplication {
 
     /**
      * initialisation.
-     *
+     * 
      * configuration filename
      *
+     * @param configFilename the config filename
      * @return true, if successful
      */
     public boolean initialisation(final String configFilename) {
@@ -50,9 +71,10 @@ public abstract class AbstractApplication {
 
     /**
      * initialisation the.
-     *
+     * 
      * configuration file
      *
+     * @param configFile the config file
      * @return true, if successful
      */
     public boolean initialisation(final File configFile) {
@@ -82,10 +104,14 @@ public abstract class AbstractApplication {
 
     /**
      * element.
-     *
+     * 
      * document element
      * element name
      * element
+     *
+     * @param documentElement the document element
+     * @param elementName the element name
+     * @return the element
      */
     public Element getElement(final Element documentElement, final String elementName) {
         Element element = null;
@@ -105,11 +131,16 @@ public abstract class AbstractApplication {
 
     /**
      * element attribute.
-     *
+     * 
      * document element
      * element name
      * attribute name
      * element attribute
+     *
+     * @param documentElement the document element
+     * @param elementName the element name
+     * @param attributeName the attribute name
+     * @return the element attribute
      */
     public String getElementAttribute(final Element documentElement,
             final String elementName,

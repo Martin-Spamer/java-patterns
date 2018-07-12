@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
  **/
 public class NativeTypesArray {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArray.class);
 
     /** ARRAY_SIZE constant. */

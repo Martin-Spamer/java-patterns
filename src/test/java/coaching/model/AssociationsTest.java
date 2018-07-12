@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * The Class AssociationsTest.
+ */
 public class AssociationsTest {
 
     /** provides logging. */

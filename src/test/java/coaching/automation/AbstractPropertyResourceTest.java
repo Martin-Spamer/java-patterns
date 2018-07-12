@@ -20,11 +20,18 @@ import coaching.automation.PropertyInterface;
  */
 public class AbstractPropertyResourceTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractPropertyResourceTest.class);
 
+    /**
+     * The Class MockPropertyResource.
+     */
     public class MockPropertyResource extends AbstractPropertyResource {
     }
 
+    /**
+     * Unit test to abstract data.
+     */
     @Test
     public void testAbstractData() {
         PropertyInterface mock = new MockPropertyResource();
@@ -32,6 +39,11 @@ public class AbstractPropertyResourceTest {
         LOG.info(mock.toString());
     }
 
+    /**
+     * Unit test to load string.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testLoadString() throws Exception {
         // Given
@@ -40,6 +52,11 @@ public class AbstractPropertyResourceTest {
         LOG.info(mock.toString());
     }
 
+    /**
+     * Unit test to load stream.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testLoadStream() throws Exception {
         // Given
@@ -50,6 +67,11 @@ public class AbstractPropertyResourceTest {
         LOG.info(mock.toString());
     }
 
+    /**
+     * Unit test to load from XML.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testLoadFromXML() throws Exception {
         // Given
@@ -63,6 +85,11 @@ public class AbstractPropertyResourceTest {
         assertNotNull(mock.store(outStream));
     }
 
+    /**
+     * Unit test to load null string.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testLoadNullString() throws Exception {
         MockPropertyResource mock = new MockPropertyResource();
@@ -70,6 +97,11 @@ public class AbstractPropertyResourceTest {
         mock.load(nullString);
     }
 
+    /**
+     * Unit test to load null stream.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testLoadNullStream() throws Exception {
         MockPropertyResource mock = new MockPropertyResource();
@@ -77,11 +109,17 @@ public class AbstractPropertyResourceTest {
         mock.load(nullStream);
     }
 
+    /**
+     * Unit test to size.
+     */
     @Test
     public void testSize() {
         new MockPropertyResource().size();
     }
 
+    /**
+     * Unit test to set get property.
+     */
     @Test
     public void testSetGetProperty() {
         final MockPropertyResource testData = new MockPropertyResource();
@@ -92,6 +130,9 @@ public class AbstractPropertyResourceTest {
         assertEquals(value, actual);
     }
 
+    /**
+     * Unit test to get property string string.
+     */
     @Test
     public void testGetPropertyStringString() {
         final MockPropertyResource testData = new MockPropertyResource();

@@ -8,21 +8,36 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class AbstractConfiguration.
+ */
 public abstract class AbstractConfiguration implements ConfigInterface {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    
+    /** The properties. */
     protected Properties properties = new Properties();
+    
+    /** The loaded. */
     protected boolean loaded = false;
 
     /** The filename. */
     protected String filenameStem;
 
+    /**
+     * The Constructor.
+     */
     public AbstractConfiguration() {
         super();
         loadFrom(defaultFilename());
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param configFilename the config filename
+     */
     public AbstractConfiguration(final String configFilename) {
         super();
         loadFrom(configFilename);

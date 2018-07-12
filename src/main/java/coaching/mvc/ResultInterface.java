@@ -7,5 +7,8 @@
 
 package coaching.mvc;
 
+/**
+ * The Interface ResultInterface.
+ */
 public interface ResultInterface {
 }

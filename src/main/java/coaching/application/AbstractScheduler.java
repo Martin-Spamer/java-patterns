@@ -8,28 +8,52 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class AbstractScheduler.
+ */
 public abstract class AbstractScheduler {
 
+    /** The log. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    
+    /** The args. */
     private String[] args = null;
+    
+    /** The properties. */
     private Properties properties = null;
 
+    /**
+     * The Constructor.
+     */
     public AbstractScheduler() {
         super();
         loadConfiguration();
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param args the args
+     */
     public AbstractScheduler(final String[] args) {
         super();
         this.args = args;
         loadConfiguration(args);
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param properties the properties
+     */
     public AbstractScheduler(final Properties properties) {
         super();
         loadConfiguration(properties);
     }
 
+    /**
+     * Load configuration.
+     */
     private void loadConfiguration() {
         final String filename = defaultFilename();
         try {
@@ -40,14 +64,29 @@ public abstract class AbstractScheduler {
         }
     }
 
+    /**
+     * Default filename.
+     *
+     * @return the string
+     */
     private String defaultFilename() {
         return String.format("%s.properties", this.getClass().getSimpleName());
     }
 
+    /**
+     * Load configuration.
+     *
+     * @param properties the properties
+     */
     private void loadConfiguration(final Properties properties) {
         this.properties = properties;
     }
 
+    /**
+     * Load configuration.
+     *
+     * @param args the args
+     */
     private void loadConfiguration(final String[] args) {
         try {
             if (args != null) {
@@ -64,15 +103,32 @@ public abstract class AbstractScheduler {
         }
     }
 
+    /**
+     * Sets the properties.
+     *
+     * @param properties the properties
+     * @return the abstract scheduler
+     */
     public AbstractScheduler setProperties(final Properties properties) {
         this.properties = properties;
         return this;
     }
 
+    /**
+     * Execute.
+     *
+     * @return the abstract scheduler
+     */
     public AbstractScheduler execute() {
         return execute(properties);
     }
 
+    /**
+     * Execute.
+     *
+     * @param properties the properties
+     * @return the abstract scheduler
+     */
     public AbstractScheduler execute(final Properties properties) {
         final Enumeration<?> keys = properties.propertyNames();
         while (keys.hasMoreElements()) {

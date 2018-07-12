@@ -1,6 +1,9 @@
 
 package patterns.state;
 
+/**
+ * The Class StateAlice.
+ */
 class StateAlice extends AbstractState {
 
     /*

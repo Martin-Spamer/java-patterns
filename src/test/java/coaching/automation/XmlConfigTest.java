@@ -14,8 +14,12 @@ import coaching.xml.XmlConfig;
  */
 public class XmlConfigTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlConfigTest.class);
 
+    /**
+     * Unit test to xml config.
+     */
     @Test
     public void testXmlConfig() {
         final XmlConfig xmlConfig = new XmlConfig();
@@ -23,6 +27,9 @@ public class XmlConfigTest {
         LOG.info(xmlConfig.toString());
     }
 
+    /**
+     * Unit test to xml config string.
+     */
     @Test
     public void testXmlConfigString() {
         final XmlConfig xmlConfig = new XmlConfig("XmlConfig");
@@ -30,6 +37,9 @@ public class XmlConfigTest {
         LOG.info(xmlConfig.toString());
     }
 
+    /**
+     * Unit test to xml config xml string.
+     */
     @Test
     public void testXmlConfigXmlString() {
         final XmlConfig xmlConfig = new XmlConfig("XmlConfig.xml");
@@ -37,6 +47,9 @@ public class XmlConfigTest {
         LOG.info(xmlConfig.toString());
     }
 
+    /**
+     * Unit test to missing xml config.
+     */
     @Test
     public void testMissingXmlConfig() {
         final XmlConfig xmlConfig = new XmlConfig("missing.xml");

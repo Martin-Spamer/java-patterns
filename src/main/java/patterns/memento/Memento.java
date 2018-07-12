@@ -50,6 +50,9 @@ public class Memento {
         return state;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String.format("%s [state=%s]", this.getClass().getSimpleName(), state);

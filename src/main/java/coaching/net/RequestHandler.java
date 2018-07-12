@@ -11,14 +11,31 @@ import java.net.Socket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class RequestHandler.
+ */
 class RequestHandler implements Runnable {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(RequestHandler.class);
+    
+    /** The exit. */
     private volatile boolean exit = false;
+    
+    /** The connections count. */
     private static int connectionsCount;
+    
+    /** The connection id. */
     private int connectionId = 0;
+    
+    /** The client socket. */
     private Socket clientSocket;
 
+    /**
+     * The Constructor.
+     *
+     * @param clientSocket the client socket
+     */
     public RequestHandler(final Socket clientSocket) {
         super();
         LOG.info("handling connection {}", clientSocket);
@@ -26,6 +43,9 @@ class RequestHandler implements Runnable {
         connectionId = connectionsCount++;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Runnable#run()
+     */
     @Override
     public void run() {
         PrintWriter printWriter = null;

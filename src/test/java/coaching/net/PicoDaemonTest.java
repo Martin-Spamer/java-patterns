@@ -7,10 +7,17 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * The Class PicoDaemonTest.
+ */
 public class PicoDaemonTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(PicoDaemonTest.class);
 
+    /**
+     * Unit test to pico daemon.
+     */
     @Test
     public void testPicoDaemon() {
         PicoDaemon picoDaemon = new PicoDaemon();

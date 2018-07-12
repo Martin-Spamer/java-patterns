@@ -5,11 +5,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Simple Bag Class.
  */
 @SuppressWarnings("serial")
 public final class SimpleBag extends ArrayList<String> implements BagInterface {
+
+    /** The log. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The random. */
     private final Random random = new Random();
@@ -22,6 +28,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     public SimpleBag() {
         super();
+        log.info("SimpleBag()");
         fill(initialState);
     }
 
@@ -35,12 +42,12 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     public SimpleBag(final String... values) {
         super();
+        log.info("SimpleBag({})", Arrays.toString(values));
         fill(values == null ? new String[0] : values);
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.bags.BagInterface#fill(java.lang.String[])
      */
     @Override
@@ -54,21 +61,21 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.bags.BagInterface#pick()
      */
     @Override
     public String pick() {
+        log.debug("%s.pick()", this.getClass().getSimpleName());
         return choose();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.bags.BagInterface#choose()
      */
     @Override
     public String choose() {
+        log.debug("%s.choose()", this.getClass().getSimpleName());
         final int size = size();
         if (size > 0) {
             final int nextInt = random.nextInt(size);
@@ -80,11 +87,11 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.bags.BagInterface#reset()
      */
     @Override
     public BagInterface reset() {
+        log.debug("%s.reset()", this.getClass().getSimpleName());
         return fill(initialState);
     }
 

@@ -19,12 +19,24 @@ public class SqliteTest {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SqliteTest.class);
 
+    /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "org.sqlite.JDBC";
+    
+    /** The Constant JDBC_URL. */
     private static final String JDBC_URL = "jdbc:sqlite:sample.db";
+    
+    /** The Constant USERNAME. */
     private static final String USERNAME = "username";
+    
+    /** The Constant PASSWORD. */
     private static final String PASSWORD = "password";
+    
+    /** The table name. */
     private final String tableName = "tableName";
 
+    /**
+     * Unit test to sqlite.
+     */
     @Test
     public void testSqlite() {
         Connection connection = null;

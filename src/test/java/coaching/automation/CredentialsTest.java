@@ -13,12 +13,23 @@ import static org.junit.Assume.assumeNotNull;
 import coaching.automation.Actor;
 import coaching.automation.CredentialsFactory;
 
+/**
+ * The Class CredentialsTest.
+ */
 public class CredentialsTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(CredentialsTest.class);
+    
+    /** The platform. */
     private final String platform = "dev";
+    
+    /** The tag. */
     private final String tag = "@AUTHORISED";
 
+    /**
+     * Unit test to credentials factory static.
+     */
     @Test
     public void testCredentialsFactoryStatic() {
         final Actor actor = CredentialsFactory.on(platform).tagged(tag);
@@ -26,6 +37,9 @@ public class CredentialsTest {
         LOG.info(actor.toString());
     }
 
+    /**
+     * Unit test to credentials factory.
+     */
     @Test
     public void testCredentialsFactory() {
         final CredentialsFactory credentials = new CredentialsFactory();
@@ -37,6 +51,9 @@ public class CredentialsTest {
         LOG.info(actor.toString());
     }
 
+    /**
+     * Unit test to credentials factory platform.
+     */
     @Test
     public void testCredentialsFactoryPlatform() {
         final CredentialsFactory credentials = new CredentialsFactory(platform);

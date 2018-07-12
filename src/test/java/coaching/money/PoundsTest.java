@@ -46,6 +46,9 @@ public class PoundsTest {
         }
     }
 
+    /**
+     * Before test.
+     */
     @Before
     public void beforeTest() {
         LOG.info("beforeTest");

@@ -12,6 +12,11 @@ public class Originator {
     /** The memento. */
     private Memento memento;
 
+    /**
+     * The Constructor.
+     *
+     * @param state the state
+     */
     public Originator(final Object state) {
         this.state = state;
         memento = new Memento();
@@ -42,7 +47,7 @@ public class Originator {
     }
 
     /**
-     * memento factory method
+     * memento factory method.
      *
      * @param state the state
      * @return the memento

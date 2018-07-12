@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 public class StaticLoggingTest {
 
+	/** The Constant LOG. */
 	private static final Logger LOG = LoggerFactory.getLogger(StaticLoggingTest.class);
 
 	/**

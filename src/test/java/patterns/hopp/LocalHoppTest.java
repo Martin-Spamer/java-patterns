@@ -12,6 +12,9 @@ import static org.junit.Assume.assumeNotNull;
  */
 public class LocalHoppTest {
 
+    /**
+     * Unit test to typical usage.
+     */
     @Test
     public void testTypicalUsage() {
         // Given

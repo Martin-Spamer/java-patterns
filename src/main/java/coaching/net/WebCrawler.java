@@ -19,13 +19,24 @@ import java.util.StringTokenizer;
  */
 public class WebCrawler extends ThreadTemplate {
 
+    /** The Constant BASE_URL. */
     private static final String BASE_URL = "http://127.0.0.1:8080";
 
+    /** The Constant SEARCH_LIMIT. */
     public static final int SEARCH_LIMIT = 4;
+    
+    /** The Constant SEARCH. */
     public static final String SEARCH = "Search";
+    
+    /** The Constant STOP. */
     public static final String STOP = "Stop";
+    
+    /** The Constant DISALLOW. */
     public static final String DISALLOW = "Disallow:";
 
+    /* (non-Javadoc)
+     * @see coaching.net.ThreadTemplate#execute()
+     */
     @Override
     public void execute() {
         try {
@@ -38,14 +49,22 @@ public class WebCrawler extends ThreadTemplate {
         }
     }
 
+    /**
+     * Checks if is http.
+     *
+     * @param url the url
+     * @return true, if checks if is http
+     */
     private boolean isHttp(final URL url) {
         return url.getProtocol().compareTo("http") == 0;
     }
 
     /**
      * Crawl site.
-     *
+     * 
      * base url
+     *
+     * @param baseUrl the base url
      */
     protected void crawlSite(final URL baseUrl) {
         try {
@@ -80,9 +99,12 @@ public class WebCrawler extends ThreadTemplate {
 
     /**
      * Safe crawl site.
-     *
+     * 
      * base url
      * robot txt content
+     *
+     * @param baseUrl the base url
+     * @param robotTxtContent the robot txt content
      */
     protected void safeCrawlSite(final URL baseUrl, final String robotTxtContent) {
 
@@ -113,8 +135,10 @@ public class WebCrawler extends ThreadTemplate {
 
     /**
      * Slow crawl url.
-     *
+     * 
      * base url
+     *
+     * @param baseUrl the base url
      */
     protected void slowCrawlUrl(final URL baseUrl) {
         try {
@@ -155,8 +179,10 @@ public class WebCrawler extends ThreadTemplate {
 
     /**
      * main method.
-     *
+     * 
      * arguments
+     *
+     * @param args the args
      */
     public static void main(final String args[]) {
         new WebCrawler().start();

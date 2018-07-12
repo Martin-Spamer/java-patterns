@@ -17,8 +17,14 @@ import static org.junit.Assert.assertTrue;
  */
 public class ResourceLoaderTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(ResourceLoaderTest.class);
 
+    /**
+     * Unit test to get file.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testGetFile() throws Exception {
         File file = ResourceLoader.getFile("./Configuration.properties");
@@ -26,6 +32,11 @@ public class ResourceLoaderTest {
         LOG.info(file.toString());
     }
 
+    /**
+     * Unit test to get stream.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testGetStream() throws Exception {
         InputStream inStream = ResourceLoader.getStream("Configuration.properties");
@@ -34,6 +45,11 @@ public class ResourceLoaderTest {
         LOG.info(inStream.toString());
     }
 
+    /**
+     * Unit test to get missing file.
+     *
+     * @throws Exception the exception
+     */
     @Test(expected = FileNotFoundException.class)
     public void testGetMissingFile() throws Exception {
         File file = ResourceLoader.getFile("missing.resource");
@@ -41,6 +57,11 @@ public class ResourceLoaderTest {
         LOG.info(file.toString());
     }
 
+    /**
+     * Unit test to get missing stream.
+     *
+     * @throws Exception the exception
+     */
     @Test(expected = FileNotFoundException.class)
     public void testGetMissingStream() throws Exception {
         InputStream inStream = ResourceLoader.getStream("missing.resource");

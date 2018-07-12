@@ -11,10 +11,19 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * The Class RequestProxyTest.
+ */
 public class RequestProxyTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(RequestProxyTest.class);
 
+    /**
+     * Unit test to request proxy.
+     *
+     * @throws Exception the exception
+     */
     @Ignore("Work-in-progress")
     @Test
     public void testRequestProxy() throws Exception {

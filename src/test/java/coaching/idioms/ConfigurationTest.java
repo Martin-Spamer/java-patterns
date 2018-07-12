@@ -15,6 +15,7 @@ import coaching.idioms.Configuration;
  */
 public class ConfigurationTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(ConfigurationTest.class);
 
     /**

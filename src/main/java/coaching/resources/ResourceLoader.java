@@ -20,6 +20,13 @@ import java.net.URL;
  */
 public class ResourceLoader {
 
+    /**
+     * Gets the file.
+     *
+     * @param resourceFilename the resource filename
+     * @return the file
+     * @throws FileNotFoundException the file not found exception
+     */
     public static File getFile(final String resourceFilename) throws FileNotFoundException {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         URL resource = classLoader.getResource(resourceFilename);
@@ -31,6 +38,13 @@ public class ResourceLoader {
         }
     }
 
+    /**
+     * Gets the file.
+     *
+     * @param resourceUrl the resource url
+     * @return the file
+     * @throws FileNotFoundException the file not found exception
+     */
     public static File getFile(final URL resourceUrl) throws FileNotFoundException {
         String file = resourceUrl.getFile();
         if (file == null) {
@@ -41,6 +55,13 @@ public class ResourceLoader {
         }
     }
 
+    /**
+     * Gets the file.
+     *
+     * @param resourceUri the resource uri
+     * @return the file
+     * @throws FileNotFoundException the file not found exception
+     */
     public static File getFile(final URI resourceUri) throws FileNotFoundException {
         String path = resourceUri.normalize().getPath();
         if (path == null) {
@@ -51,6 +72,13 @@ public class ResourceLoader {
         }
     }
 
+    /**
+     * Gets the stream.
+     *
+     * @param resourceFilename the resource filename
+     * @return the stream
+     * @throws FileNotFoundException the file not found exception
+     */
     public static InputStream getStream(final String resourceFilename) throws FileNotFoundException {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream resourceAsStream = classLoader.getResourceAsStream(resourceFilename);
@@ -62,6 +90,13 @@ public class ResourceLoader {
         }
     }
 
+    /**
+     * Gets the stream.
+     *
+     * @param resourceUrl the resource url
+     * @return the stream
+     * @throws FileNotFoundException the file not found exception
+     */
     public static InputStream getStream(final URL resourceUrl) throws FileNotFoundException {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         String file = resourceUrl.getFile();
@@ -74,6 +109,13 @@ public class ResourceLoader {
         }
     }
 
+    /**
+     * Gets the stream.
+     *
+     * @param resourceUri the resource uri
+     * @return the stream
+     * @throws FileNotFoundException the file not found exception
+     */
     public static InputStream getStream(final URI resourceUri) throws FileNotFoundException {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         String path = resourceUri.normalize().getPath();

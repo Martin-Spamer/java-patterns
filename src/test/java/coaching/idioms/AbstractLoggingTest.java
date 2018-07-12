@@ -14,13 +14,20 @@ import static org.junit.Assert.assertNotNull;
  */
 public class AbstractLoggingTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
+    
+    /** The log. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * MockLog Class.
      */
     public final class MockLog extends AbstractLogging {
+        
+        /* (non-Javadoc)
+         * @see coaching.idioms.AbstractLogging#toString()
+         */
         @Override
         public String toString() {
             return String.format("%s [bool=%s, num=%s, uuid=%s]",
@@ -30,8 +37,13 @@ public class AbstractLoggingTest {
                     this.uuid);
         }
 
+        /** The num. */
         protected int num = Integer.MAX_VALUE;
+        
+        /** The bool. */
         protected Boolean bool = true;
+        
+        /** The uuid. */
         protected UUID uuid = UUID.randomUUID();
     }
 

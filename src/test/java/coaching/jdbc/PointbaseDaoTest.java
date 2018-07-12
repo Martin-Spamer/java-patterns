@@ -14,11 +14,19 @@ import static org.junit.Assert.assertNotNull;
 @Ignore("Requires PointBase DB availability")
 public class PointbaseDaoTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(PointbaseDaoTest.class);
 
+    /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
+    
+    /** The Constant JDBC_URL. */
     private final static String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
+    
+    /** The Constant USERNAME. */
     private final static String USERNAME = "PBPUBLIC";
+    
+    /** The Constant PASSWORD. */
     private final static String PASSWORD = "PBPUBLIC";
 
     /**

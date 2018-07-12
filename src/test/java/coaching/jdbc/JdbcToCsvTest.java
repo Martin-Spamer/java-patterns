@@ -16,6 +16,11 @@ public class JdbcToCsvTest {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(JdbcToCsvTest.class);
 
+    /**
+     * Unit test to jdbc to csv.
+     *
+     * @throws Exception the exception
+     */
     @Test
     @Ignore("Requires Database")
     public void testJdbcToCsv() throws Exception {

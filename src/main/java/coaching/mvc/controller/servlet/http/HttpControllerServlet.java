@@ -71,10 +71,14 @@ public class HttpControllerServlet extends HttpServlet {
 
     /**
      * Execute.
-     *
+     * 
      * parameters
      * string
      * controller exception
+     *
+     * @param parameters the parameters
+     * @return the string
+     * @throws ControllerException the controller exception
      */
     protected String execute(final Map<?, ?> parameters) throws ControllerException {
         if (parameters.get("EXCEPTION").equals("TRUE")) {

@@ -12,7 +12,11 @@ import org.slf4j.LoggerFactory;
  * propertyFilename.
  */
 public class Configuration {
+    
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    
+    /** The properties. */
     private final Properties properties = new Properties();
 
     /**

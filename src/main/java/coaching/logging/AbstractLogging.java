@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractLogging {
 
+	/** The log. */
 	protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	/**

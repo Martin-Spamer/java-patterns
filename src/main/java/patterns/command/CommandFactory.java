@@ -70,6 +70,11 @@ public final class CommandFactory implements InvokerInterface {
         return classloader.getResourceAsStream(resourceName);
     }
 
+    /**
+     * Execute.
+     *
+     * @return the result interface
+     */
     public ResultInterface execute() {
         return null;
     }

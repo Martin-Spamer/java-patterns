@@ -14,7 +14,10 @@ import static org.junit.Assert.assertNull;
  */
 public class AbstractXmlConfigTest {
 
+    /** The Constant FILENAME_KEY. */
     private static final String FILENAME_KEY = "Filename";
+    
+    /** The Constant CONFIG_XML. */
     private static final String CONFIG_XML = "Configuration.xml";
 
     /** provide logging. */
@@ -156,6 +159,11 @@ public class AbstractXmlConfigTest {
         verifyProperties(config);
     }
 
+    /**
+     * Verify properties.
+     *
+     * @param config the config
+     */
     private void verifyProperties(final ConfigInterface config) {
         assertNull(config.get("missing-key"));
         assertEquals("default", config.get("missing-key", "default"));

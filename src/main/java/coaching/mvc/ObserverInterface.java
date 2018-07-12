@@ -16,5 +16,11 @@ import java.util.Observable;
  */
 public interface ObserverInterface {
 
+    /**
+     * Update.
+     *
+     * @param observable the observable
+     * @param object the object
+     */
     public void update(Observable observable, Object object);
 }

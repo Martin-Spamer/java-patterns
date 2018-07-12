@@ -15,10 +15,20 @@ public class DecoratorTest {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
 
+    /**
+     * The Class MissingOperation.
+     */
     public class MissingOperation extends AbstractComponent {
     }
 
+    /**
+     * The Class ConcreteDecorator.
+     */
     public class ConcreteDecorator extends AbstractComponent {
+        
+        /* (non-Javadoc)
+         * @see patterns.decorator.AbstractComponent#operation()
+         */
         @Override
         public AbstractComponent operation() {
             final String simpleName = this.getClass().getSimpleName();

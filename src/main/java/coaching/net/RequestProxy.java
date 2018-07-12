@@ -10,20 +10,40 @@ import java.net.Socket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class RequestProxy.
+ */
 class RequestProxy implements Runnable {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(RequestProxy.class);
+    
+    /** The keep running. */
     private volatile boolean keepRunning = true;
+    
+    /** The connections count. */
     private static int connectionsCount;
+    
+    /** The connection id. */
     private int connectionId = 0;
+    
+    /** The client socket. */
     private Socket clientSocket = null;
 
+    /**
+     * The Constructor.
+     *
+     * @param clientSocket the client socket
+     */
     public RequestProxy(final Socket clientSocket) {
         connectionId = connectionsCount++;
         LOG.error("handling connection : {}", connectionId);
         this.clientSocket = clientSocket;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Runnable#run()
+     */
     @Override
     public void run() {
         final int localport = 8888;

@@ -22,19 +22,44 @@ import org.slf4j.LoggerFactory;
 
 import coaching.application.ApplicationException;
 
+/**
+ * The Class ThreadTemplate.
+ */
 public class ThreadTemplate implements Runnable {
 
+    /** The Constant TIME_OUT. */
     private static final long TIME_OUT = 1000;
+    
+    /** The Constant MAX_TICKS. */
     private static final long MAX_TICKS = 10;
+    
+    /** The log. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    
+    /** The config. */
     protected ThreadConfig config;
+    
+    /** The thread. */
     protected final Thread thread;
+    
+    /** The exit. */
     protected boolean exit = false;
+    
+    /** The tick. */
     protected long tick;
+    
+    /** The start time. */
     protected long startTime;
+    
+    /** The time out. */
     protected long timeOut = TIME_OUT;
+    
+    /** The max ticks. */
     protected long maxTicks = MAX_TICKS;
 
+    /**
+     * The Constructor.
+     */
     public ThreadTemplate() {
         initialise(new ThreadConfig());
         thread = new java.lang.Thread(this);
@@ -42,8 +67,10 @@ public class ThreadTemplate implements Runnable {
 
     /**
      * Initialise.
-     *
+     * 
      * configuration element
+     *
+     * @param config the config
      */
     public void initialise(final ThreadConfig config) {
         this.config = config;
@@ -84,6 +111,11 @@ public class ThreadTemplate implements Runnable {
         } while (!exit);
     }
 
+    /**
+     * Execute.
+     *
+     * @throws ApplicationException the application exception
+     */
     protected void execute() throws ApplicationException {
         throw new ApplicationException("execute method must be overridden");
     }

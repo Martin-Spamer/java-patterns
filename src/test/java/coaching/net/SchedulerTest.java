@@ -12,10 +12,17 @@ import static org.junit.Assert.assertNotNull;
 import coaching.application.AbstractScheduler;
 import coaching.application.Scheduler;
 
+/**
+ * The Class SchedulerTest.
+ */
 public class SchedulerTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(SchedulerTest.class);
 
+    /**
+     * Unit test to scheduler.
+     */
     @Test
     public void testScheduler() {
         AbstractScheduler scheduler = new Scheduler();
@@ -23,6 +30,9 @@ public class SchedulerTest {
         LOG.info(scheduler.toString());
     }
 
+    /**
+     * Unit test to scheduler properties.
+     */
     @Test
     public void testSchedulerProperties() {
         Properties properties = new Properties();
@@ -31,6 +41,9 @@ public class SchedulerTest {
         LOG.info(scheduler.toString());
     }
 
+    /**
+     * Unit test to scheduler null properties.
+     */
     @Test
     public void testSchedulerNullProperties() {
         Properties properties = null;
@@ -39,6 +52,9 @@ public class SchedulerTest {
         LOG.info(scheduler.toString());
     }
 
+    /**
+     * Unit test to scheduler string array.
+     */
     @Test
     public void testSchedulerStringArray() {
         String[] args = { "", "" };
@@ -47,6 +63,9 @@ public class SchedulerTest {
         LOG.info(scheduler.toString());
     }
 
+    /**
+     * Unit test to scheduler zero string array.
+     */
     @Test
     public void testSchedulerZeroStringArray() {
         AbstractScheduler scheduler = new Scheduler(new String[0]);
@@ -54,6 +73,9 @@ public class SchedulerTest {
         LOG.info(scheduler.toString());
     }
 
+    /**
+     * Unit test to scheduler null string array.
+     */
     @Test
     public void testSchedulerNullStringArray() {
         String[] args = null;

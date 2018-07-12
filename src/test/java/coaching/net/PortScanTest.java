@@ -7,10 +7,17 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * The Class PortScanTest.
+ */
 public class PortScanTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(PortScanTest.class);
 
+    /**
+     * Unit test to port scan.
+     */
     @Test
     public void testPortScan() {
         LOG.info("testPortScan");
@@ -19,6 +26,9 @@ public class PortScanTest {
         LOG.info(portScan.toString());
     }
 
+    /**
+     * Unit test to port scan string int.
+     */
     @Test
     public void testPortScanStringInt() {
         LOG.info("testPortScanStringInt");
@@ -27,6 +37,9 @@ public class PortScanTest {
         LOG.info(portScan.toString());
     }
 
+    /**
+     * Unit test to port scan null.
+     */
     @Test
     public void testPortScanNull() {
         LOG.info("testPortScanNull");
@@ -34,6 +47,9 @@ public class PortScanTest {
         assertNotNull(portScan);
     }
 
+    /**
+     * Unit test to port scan args.
+     */
     @Test
     public void testPortScanArgs() {
         LOG.info("testPortScanArgs");
@@ -43,6 +59,9 @@ public class PortScanTest {
         LOG.info(portScan.toString());
     }
 
+    /**
+     * Unit test to port scan null args.
+     */
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void testPortScanNullArgs() {
         LOG.info("testPortScanNullArgs");
@@ -51,6 +70,9 @@ public class PortScanTest {
         assertNotNull(portScan);
     }
 
+    /**
+     * Unit test to port scan empty args.
+     */
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void testPortScanEmptyArgs() {
         LOG.info("testPortScanEmptyArgs");
@@ -59,6 +81,9 @@ public class PortScanTest {
         assertNotNull(portScan);
     }
 
+    /**
+     * Unit test to port scan zero args.
+     */
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void testPortScanZeroArgs() {
         LOG.info("testPortScanZeroArgs");

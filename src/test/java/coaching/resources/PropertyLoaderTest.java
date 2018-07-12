@@ -15,8 +15,14 @@ import static org.junit.Assert.assertNotNull;
  */
 public class PropertyLoaderTest {
 
+    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(PropertyLoaderTest.class);
 
+    /**
+     * Unit test to get properties.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testGetProperties() throws Exception {
         Properties properties = PropertiesLoader.getProperties("Configuration.properties");
@@ -24,6 +30,11 @@ public class PropertyLoaderTest {
         LOG.info(properties.toString());
     }
 
+    /**
+     * Unit test to get xml properties.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testGetXmlProperties() throws Exception {
         Properties properties = PropertiesLoader.getXmlProperties("Configuration.xml");
@@ -31,6 +42,11 @@ public class PropertyLoaderTest {
         LOG.info(properties.toString());
     }
 
+    /**
+     * Unit test to missing file.
+     *
+     * @throws Exception the exception
+     */
     @Test(expected = FileNotFoundException.class)
     public void testMissingFile() throws Exception {
         Properties properties = PropertiesLoader.getProperties("missing.properties");
@@ -38,6 +54,11 @@ public class PropertyLoaderTest {
         LOG.info(properties.toString());
     }
 
+    /**
+     * Unit test to missing xml file.
+     *
+     * @throws Exception the exception
+     */
     @Test(expected = FileNotFoundException.class)
     public void testMissingXmlFile() throws Exception {
         Properties properties = PropertiesLoader.getXmlProperties("missing.xml");

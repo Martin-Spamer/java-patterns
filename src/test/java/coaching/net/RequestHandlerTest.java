@@ -9,8 +9,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * The Class RequestHandlerTest.
+ */
 public class RequestHandlerTest {
 
+    /**
+     * Unit test to request handler.
+     *
+     * @throws Exception the exception
+     */
     @Ignore("Work-in-progress")
     @Test
     public void testRequestHandler() throws Exception {
