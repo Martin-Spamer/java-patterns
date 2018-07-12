@@ -1,7 +1,7 @@
 
 package patterns.adapter;
 
-public interface TargetInterface {
+public interface AdapteeInterface {
 
     Result operation();
 
