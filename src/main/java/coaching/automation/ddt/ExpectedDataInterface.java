@@ -1,5 +1,5 @@
 
-package coaching.automation;
+package coaching.automation.ddt;
 
 /**
  * The Interface to the ExpectedData class.

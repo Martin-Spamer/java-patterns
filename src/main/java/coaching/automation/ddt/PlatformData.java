@@ -1,5 +1,5 @@
 
-package coaching.automation;
+package coaching.automation.ddt;
 
 import coaching.csv.CsvFile.FileNotLoadedException;
 

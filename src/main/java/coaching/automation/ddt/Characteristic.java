@@ -1,5 +1,5 @@
 
-package coaching.automation;
+package coaching.automation.ddt;
 
 /**
  * An example of Characteristics used to find the expected data.

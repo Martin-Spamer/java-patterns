@@ -10,6 +10,8 @@ import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeNotNull;
 
+import coaching.automation.ddt.Actor;
+import coaching.automation.ddt.CredentialsFactory;
 import coaching.csv.CsvFile.FileNotLoadedException;
 
 /**

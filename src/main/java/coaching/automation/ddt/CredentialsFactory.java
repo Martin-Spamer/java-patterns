@@ -1,5 +1,5 @@
 
-package coaching.automation;
+package coaching.automation.ddt;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
