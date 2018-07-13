@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The AbstractTypeTest class.
+ * Unit tests for the AbstractType class.
  */
-public class AbstractTypeTest {
+public final class AbstractTypeTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractTypeTest.class);

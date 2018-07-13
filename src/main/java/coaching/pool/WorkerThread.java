@@ -37,7 +37,7 @@ public class WorkerThread implements Runnable {
             Thread.sleep(WorkerThread.INTERVAL);
         } catch (final InterruptedException e) {
             Thread.currentThread().interrupt();
-            LOG.error(e.toString());
+            LOG.error(e.toString(), e);
         }
     }
 
@@ -48,9 +48,9 @@ public class WorkerThread implements Runnable {
     @Override
     public void run() {
         final String name = Thread.currentThread().getName();
-        WorkerThread.LOG.info("{}:{}", name, command);
+        LOG.info("{}:{}", name, command);
         processCommand();
-        WorkerThread.LOG.info("{}:exit", name);
+        LOG.info("{}:exit", name);
     }
 
 }

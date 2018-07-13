@@ -18,7 +18,7 @@ import java.net.URL;
  * ResourceBundle.getBundle ("some.pkg.resource");
  * </code>
  */
-public class ResourceLoader {
+public final class ResourceLoader {
 
     /**
      * Gets the file.

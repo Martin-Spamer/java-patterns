@@ -1,25 +1,28 @@
 
 package coaching.application;
 
-import java.io.InputStream;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import coaching.resources.PropertiesLoader;
+
 /**
- * The Class AbstractScheduler.
+ * An abstract Scheduler class.
  */
 public abstract class AbstractScheduler {
 
-    /** The log. */
+    /** logging provided. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** The args. */
+    /** initialisation arguments. */
     private String[] args = null;
 
-    /** The properties. */
+    /** initialisation arguments as properties. */
     private Properties properties = null;
 
     /**
@@ -28,39 +31,27 @@ public abstract class AbstractScheduler {
     public AbstractScheduler() {
         super();
         loadConfiguration();
+        log.info(toString());
     }
 
-    /**
-     * The Constructor.
-     *
-     * @param args the args
-     */
     public AbstractScheduler(final String[] args) {
         super();
         this.args = args;
-        loadConfiguration(args);
+        loadConfiguration();
     }
 
-    /**
-     * The Constructor.
-     *
-     * @param properties the properties
-     */
     public AbstractScheduler(final Properties properties) {
         super();
-        loadConfiguration(properties);
+        this.properties = properties;
+        loadConfiguration();
     }
 
-    /**
-     * Load configuration.
-     */
     private void loadConfiguration() {
-        final String filename = defaultFilename();
         try {
-            final InputStream resourceAsStream = getClass().getResourceAsStream(filename);
-            properties.load(resourceAsStream);
-        } catch (final Exception e) {
-            log.error(e.toString());
+            properties = PropertiesLoader.getProperties(defaultFilename());
+        } catch (IOException e) {
+            log.error(e.toString(), e);
+
         }
     }
 
@@ -71,47 +62,6 @@ public abstract class AbstractScheduler {
      */
     private String defaultFilename() {
         return String.format("%s.properties", this.getClass().getSimpleName());
-    }
-
-    /**
-     * Load configuration.
-     *
-     * @param properties the properties
-     */
-    private void loadConfiguration(final Properties properties) {
-        this.properties = properties;
-    }
-
-    /**
-     * Load configuration.
-     *
-     * @param args the args
-     */
-    private void loadConfiguration(final String[] args) {
-        try {
-            if (args != null) {
-                for (final String arg : this.args) {
-                    String key = arg.substring(0, arg.indexOf("="));
-                    log.info("key = {}", key);
-                    String value = arg.substring(arg.length());
-                    log.info("value = {}", value);
-                    properties.setProperty(key, value);
-                }
-            }
-        } catch (final IndexOutOfBoundsException indexOutOfBoundsException) {
-            log.error("{} : reading args", indexOutOfBoundsException, args);
-        }
-    }
-
-    /**
-     * Sets the properties.
-     *
-     * @param properties the properties
-     * @return the abstract scheduler
-     */
-    public AbstractScheduler setProperties(final Properties properties) {
-        this.properties = properties;
-        return this;
     }
 
     /**
@@ -136,11 +86,19 @@ public abstract class AbstractScheduler {
             final String value = properties.getProperty(key);
             try {
                 final Thread thread = (Thread) Class.forName(value).newInstance();
+                log.debug(thread.toString());
                 thread.start();
             } catch (final Exception exception) {
-                log.error(exception.toString());
+                log.error(exception.toString(), exception);
             }
         }
         return this;
     }
+
+    @Override
+    public String toString() {
+        return String
+            .format("%s [args=%s, properties=%s]", this.getClass().getSimpleName(), Arrays.toString(args), properties);
+    }
+
 }

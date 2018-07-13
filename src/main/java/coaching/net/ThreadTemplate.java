@@ -31,7 +31,7 @@ public class ThreadTemplate implements Runnable {
     /** The Constant MAX_TICKS. */
     private static final long MAX_TICKS = 10;
 
-    /** The log. */
+    /** Provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The config. */
@@ -91,12 +91,13 @@ public class ThreadTemplate implements Runnable {
             try {
                 // Let the thread execute a little
                 execute();
-            } catch (final ApplicationException exception) {
-                log.error(exception.toString());
-            }
 
-            // Yield a little.
-            java.lang.Thread.yield();
+                // Yield a little.
+                Thread.yield();
+
+            } catch (final ApplicationException exception) {
+                log.error(exception.toString(), exception);
+            }
 
             // * Thread ends.
             if (tick >= maxTicks) {
@@ -104,7 +105,7 @@ public class ThreadTemplate implements Runnable {
             }
 
             final long currentTimeMillis = System.currentTimeMillis();
-            if ((currentTimeMillis - startTime) > TIME_OUT) {
+            if (currentTimeMillis - startTime > TIME_OUT) {
                 exit = true;
             }
         } while (!exit);

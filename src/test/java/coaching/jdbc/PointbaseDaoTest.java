@@ -9,10 +9,10 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit test for PointbaseDao class.
+ * Unit tests for PointbaseDao class.
  */
 @Ignore("Requires PointBase DB availability")
-public class PointbaseDaoTest {
+public final class PointbaseDaoTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PointbaseDaoTest.class);
@@ -29,11 +29,32 @@ public class PointbaseDaoTest {
     /** The Constant PASSWORD. */
     private final static String PASSWORD = "PBPUBLIC";
 
+    /** SQL to DROP the table. */
+    static final String DROP_SQL = "DROP TABLE IF EXISTS {}";
+
+    /** SQL to create the table. */
+    static final String CREATE_SQL = "CREATE TABLE customer (id INTEGER, name STRING, details STRING)";
+
+    /** SQL to count the number of rows in the table. */
+    static final String COUNT_SQL = "SELECT (*) FROM customer";
+
+    /** SQL to select all rows in the table. */
+    static final String SELECT_SQL = "SELECT * FROM customer";
+
+    /** SQL to insert a row in the table. */
+    static final String INSERT_SQL = "INSERT INTO customer (ID, NAME, DATA VALUES (999,'...','...')";
+
+    /** SQL to update rows in the table. */
+    static final String UPDATE_SQL = "UPDATE TABLE SET FIELD = 'Value' WHERE ID=999";
+
+    /** SQL to delete rows in the table. */
+    static final String DELETE_SQL = "DELETE FROM TABLE WHERE ID=999";
+
     /**
      * Unit Test to point base customer dao.
      */
     @Test
-    public void testPointBaseCustomerDao() {
+    public void testPointBaseCustomerDao() throws ClassNotFoundException {
         final DaoInterface dao = new PointbaseDao();
         assertNotNull(dao);
     }
@@ -42,12 +63,12 @@ public class PointbaseDaoTest {
      * Unit Test to point base customer dao url user password.
      */
     @Test
-    public void testPointBaseCustomerDaoTypical() {
+    public void testPointBaseCustomerDaoTypical() throws ClassNotFoundException {
         final PointbaseDao dao = new PointbaseDao();
         assertNotNull(dao);
-        dao.create(DaoInterface.INSERT_SQL);
-        dao.read(DaoInterface.SELECT_SQL);
-        dao.update(DaoInterface.UPDATE_SQL);
-        dao.delete(DaoInterface.DELETE_SQL);
+        dao.create(INSERT_SQL);
+        dao.read(SELECT_SQL);
+        dao.update(UPDATE_SQL);
+        dao.delete(DELETE_SQL);
     }
 }

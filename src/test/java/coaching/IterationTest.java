@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Examples of a iteration (looping) programming instructions.
  */
-public class IterationTest {
+public final class IterationTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(IterationTest.class);

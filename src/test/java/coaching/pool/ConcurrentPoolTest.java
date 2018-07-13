@@ -2,19 +2,23 @@
 package coaching.pool;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * ConcurrentPoolTest class.
+ * Unit tests for the ConcurrentPool class.
  */
-public class ConcurrentPoolTest {
+public final class ConcurrentPoolTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ConcurrentPoolTest.class);
 
     /**
      * TestResourcePool Class.
      */
-    public class TestResourcePool extends AbstractConcurrentPool<Boolean> {
+    public final class TestResourcePool extends AbstractConcurrentPool<Boolean> {
     }
 
     /**

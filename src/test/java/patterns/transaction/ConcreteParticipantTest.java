@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class ConcreteParticipantTest.
  */
-public class ConcreteParticipantTest {
+public final class ConcreteParticipantTest {
 
     /**
      * Unit Test to commit.

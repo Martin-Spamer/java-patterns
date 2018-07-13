@@ -9,12 +9,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Simple Bag Class.
+ * Simple Bag class.
  */
 @SuppressWarnings("serial")
 public final class SimpleBag extends ArrayList<String> implements BagInterface {
 
-    /** The log. */
+    /** Provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The random. */

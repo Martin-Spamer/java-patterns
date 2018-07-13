@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The FlyweightFactoryTest class.
  */
-public class FlyweightFactoryTest {
+public final class FlyweightFactoryTest {
 
     /**
      * Unit Test to create.

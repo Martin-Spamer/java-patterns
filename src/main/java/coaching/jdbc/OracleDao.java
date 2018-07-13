@@ -6,10 +6,10 @@ package coaching.jdbc;
  */
 public final class OracleDao extends AbstractDao {
 
-    /** JDBC_URL to be used. */
+    /** The classname of the JDBC driver to use. */
     private static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
 
-    /** JDBC_URL to be used. */
+    /** The URL to use to make JDBC connection. */
     private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:sample";
 
     /** USERNAME to be used. */
@@ -19,9 +19,11 @@ public final class OracleDao extends AbstractDao {
     private static final String PASSWORD = "password";
 
     /**
-     * Instantiates a new oracle dao.
+     * Instantiates a new DAO for Oracle.
+     *
+     * @throws ClassNotFoundException
      */
-    public OracleDao() {
+    public OracleDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 

@@ -52,11 +52,11 @@ public abstract class AbstractAltResourcePool<T> {
                 try {
                     resource = create();
                 } catch (final ResourceCreationException exception) {
-                    this.log.error(exception.toString());
+                    log.error(exception.toString(), exception);
                     throw new ResourceBorrowException(exception);
                 }
             } else {
-                this.log.info("Used({}) < maxPoolSize({})", this.usedPool.size(), this.maxPoolSize);
+                log.info("Used({}) < maxPoolSize({})", this.usedPool.size(), this.maxPoolSize);
             }
         } else {
             // first valid resource

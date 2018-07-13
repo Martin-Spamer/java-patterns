@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test example of an abstract parameters class for command classes.
  */
-public class CommandParametersTest {
+public final class CommandParametersTest {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -19,7 +19,7 @@ public class CommandParametersTest {
     /**
      * MockCommandParameters Class to test abstract Parameters class.
      */
-    public class MockCommandParameters extends AbstractCommandParameters {
+    public final class MockCommandParameters extends AbstractCommandParameters {
 
         /**
          * Instantiates a new mock command parameters.

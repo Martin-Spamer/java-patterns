@@ -2,6 +2,7 @@
 package coaching.application;
 
 import java.io.File;
+import java.util.Arrays;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -13,30 +14,25 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * The AbstractApplication class.
+ * An abstract Application class.
  */
 public abstract class AbstractApplication {
 
     /** logging provided. */
-    protected static final Logger log = LoggerFactory.getLogger(Application.class);
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
     protected String[] args = null;
 
-    /** The document builder factory. */
-    private DocumentBuilderFactory documentBuilderFactory = null;
-
-    /** The document builder. */
-    private DocumentBuilder documentBuilder = null;
-
-    /** The document. */
-    private Document document = null;
+    protected Document document = null;
+    protected Element documentElement;
 
     /**
      * Default Constructor.
      */
     public AbstractApplication() {
         super();
+        log.info(toString());
     }
 
     /**
@@ -47,6 +43,7 @@ public abstract class AbstractApplication {
     public AbstractApplication(final String[] args) {
         super();
         this.args = args;
+        log.info(toString());
     }
 
     /**
@@ -54,7 +51,7 @@ public abstract class AbstractApplication {
      *
      * @return true, if successful
      */
-    public boolean initialisation() {
+    protected boolean initialisation() {
         return initialisation(this.getClass().getSimpleName() + ".xml");
     }
 
@@ -66,7 +63,7 @@ public abstract class AbstractApplication {
      * @param configFilename the config filename
      * @return true, if successful
      */
-    public boolean initialisation(final String configFilename) {
+    protected boolean initialisation(final String configFilename) {
         return initialisation(new File(configFilename));
     }
 
@@ -78,51 +75,46 @@ public abstract class AbstractApplication {
      * @param configFile the config file
      * @return true, if successful
      */
-    public boolean initialisation(final File configFile) {
+    protected boolean initialisation(final File configFile) {
         boolean returnValue = false;
         try {
-            documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             document = documentBuilder.parse(configFile);
+            documentElement = document.getDocumentElement();
 
-            final Element documentElement = document.getDocumentElement();
             if (documentElement != null) {
-                final Element commandHandlerElement = getElement(documentElement, "COMMAND_HANDLER");
+                final Element commandHandlerElement = getElement("COMMAND_HANDLER");
                 log.info("commandHandlerElement = {}", commandHandlerElement);
-                final String commandHandlerClassName = getElementAttribute(documentElement,
+                final String commandHandlerClassName = getElementAttribute(
                         "COMMAND_HANDLER",
                         "className");
                 log.info("commandHandlerClassName = {}", commandHandlerClassName);
             } else {
-                log.info("documentElement = null");
+                log.warn("documentElement = null");
             }
             returnValue = true;
         } catch (final Exception exception) {
-            log.error(exception.toString());
+            log.error(exception.toString(), exception);
         }
         return returnValue;
     }
 
     /**
-     * element.
+     * Gets the element.
      *
-     * document element
-     * element name
-     * element
-     *
-     * @param documentElement the document element
      * @param elementName the element name
      * @return the element
      */
-    public Element getElement(final Element documentElement, final String elementName) {
+    protected Element getElement(final String elementName) {
         Element element = null;
         final NodeList nodelist = documentElement.getElementsByTagName(elementName);
         if (nodelist != null) {
             if (nodelist.getLength() == 0) {
-                log.info("%s is missing for %s ", elementName, documentElement.toString());
+                log.debug("%s is missing for %s ", elementName, documentElement.toString());
             } else {
                 if (nodelist.getLength() > 1) {
-                    log.info("Surplus Elements %s ignored", elementName, documentElement.toString());
+                    log.trace("Surplus Elements %s ignored", elementName, documentElement.toString());
                 }
                 element = (Element) nodelist.item(0);
             }
@@ -131,23 +123,27 @@ public abstract class AbstractApplication {
     }
 
     /**
-     * element attribute.
+     * Gets the element attribute.
      *
-     * document element
-     * element name
-     * attribute name
-     * element attribute
-     *
-     * @param documentElement the document element
      * @param elementName the element name
      * @param attributeName the attribute name
      * @return the element attribute
      */
-    public String getElementAttribute(final Element documentElement,
+    protected String getElementAttribute(
             final String elementName,
             final String attributeName) {
-        final Element element = getElement(documentElement, elementName);
+        final Element element = getElement(elementName);
         return element.getAttribute(attributeName);
+    }
+
+    @Override
+    public String toString() {
+        return String
+            .format("%s [args=%s, document=%s, documentElement=%s]",
+                    this.getClass().getSimpleName(),
+                    Arrays.toString(args),
+                    document,
+                    documentElement);
     }
 
 }

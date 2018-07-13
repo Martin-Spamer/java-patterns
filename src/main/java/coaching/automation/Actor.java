@@ -3,6 +3,7 @@ package coaching.automation;
 
 /**
  * An Actor for automated testing.
+ * Represents a person using the system in a role.
  */
 public class Actor {
 

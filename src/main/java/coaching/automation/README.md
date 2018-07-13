@@ -9,7 +9,7 @@ Automated Testing with Java on different platforms.
 
 Shows how to handle credentials with differing characteristics using tags, includes handle these credentials on different testings platforms.
 
-### DatabaseProperties.
+### Database Properties.
 
 Show how to varying JDBC properties for different platforms.
 

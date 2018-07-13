@@ -11,9 +11,9 @@ import coaching.config.AbstractConfiguration;
 import coaching.config.Configuration;
 
 /**
- * The Class ConfigurationTest.
+ * Unit tests for Configuration class.
  */
-public class ConfigurationTest {
+public final class ConfigurationTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ConfigurationTest.class);

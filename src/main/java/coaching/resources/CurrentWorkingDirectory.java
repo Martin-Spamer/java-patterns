@@ -39,10 +39,10 @@ public final class CurrentWorkingDirectory {
                 absolutePath = file.getAbsolutePath();
                 LOG.info(absolutePath);
             } catch (final Exception exception) {
-                LOG.error(exception.toString());
+                LOG.error(exception.toString(),exception);
             }
         } catch (final Exception exception) {
-            LOG.error(exception.toString());
+            LOG.error(exception.toString(),exception);
         }
         return absolutePath;
     }

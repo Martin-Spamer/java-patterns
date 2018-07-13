@@ -12,9 +12,9 @@ import static org.junit.Assert.assertNull;
 import coaching.tuples.BoxTest;
 
 /**
- * Unit Test examples for a Bag Class.
+ * Unit test examples for a Bag class.
  */
-public class SimpleBagTest {
+public final class SimpleBagTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);

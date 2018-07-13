@@ -4,10 +4,8 @@ package coaching.tuples;
 /**
  * Twin Tuple Class.
  *
- * @param <L>
- *            the generic type
- * @param <R>
- *            the generic type
+ * @param <L> the generic type
+ * @param <R> the generic type
  */
 public class Tuple<L, R> implements TupleInterface<L, R> {
 

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class FacadeTest.
  */
-public class FacadeTest {
+public final class FacadeTest {
 
     /**
      * Unit Test to concrete facade operation.

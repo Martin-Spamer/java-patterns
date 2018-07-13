@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for GenericBag class.
  */
-public class GenericBagTest {
+public final class GenericBagTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(GenericBagTest.class);

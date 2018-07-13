@@ -10,9 +10,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class RequestHandlerTest.
+ * Unit tests for the RequestHandler class.
  */
-public class RequestHandlerTest {
+public final class RequestHandlerTest {
 
     /**
      * Unit test to request handler.

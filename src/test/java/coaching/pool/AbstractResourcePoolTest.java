@@ -11,9 +11,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * AbstractResourcePoolTest class.
+ * Unit tests for the AbstractResourcePoolTest class.
  */
-public class AbstractResourcePoolTest {
+public final class AbstractResourcePoolTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractResourcePoolTest.class);
@@ -21,7 +21,7 @@ public class AbstractResourcePoolTest {
     /**
      * TestResourcePool Class.
      */
-    public class MockResourcePool extends AbstractResourcePool<Boolean> {
+    public final class MockResourcePool extends AbstractResourcePool<Boolean> {
     }
 
     /**

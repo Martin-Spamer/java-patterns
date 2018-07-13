@@ -10,7 +10,7 @@ import static org.junit.Assert.assertThat;
 /**
  * The Class CaretakerTest.
  */
-public class CaretakerTest {
+public final class CaretakerTest {
 
     /**
      * Type.

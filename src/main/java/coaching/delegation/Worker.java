@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Worker Class.
+ * Worker class.
  */
 public class Worker implements ProcessInterface {
 

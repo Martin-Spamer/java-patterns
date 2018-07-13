@@ -2,6 +2,8 @@
 package coaching.types;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -10,7 +12,9 @@ import coaching.arrays.NativeTypesArray;
 /**
  * Unit Tests for Primitives Arrays.
  */
-public class NativeTypesArrayTest {
+public final class NativeTypesArrayTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArrayTest.class);
 
     /**
      * Unit Test to display array.

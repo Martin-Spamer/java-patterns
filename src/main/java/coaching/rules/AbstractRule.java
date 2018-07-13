@@ -4,7 +4,7 @@ package coaching.rules;
 import coaching.context.ContextInterface;
 
 /**
- * AbstractCommaAbstractRulend Class.
+ * An abstract Rule class.
  */
 public abstract class AbstractRule implements CommandInterface {
 

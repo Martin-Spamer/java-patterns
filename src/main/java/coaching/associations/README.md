@@ -3,3 +3,5 @@
 
 ## Java Coaching 
 ### Java Associations example
+### Java Aggregation example
+### Java Composition example

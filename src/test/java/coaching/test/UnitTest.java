@@ -6,6 +6,8 @@ import static org.hamcrest.CoreMatchers.is;
 
 import org.junit.AssumptionViolatedException;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
@@ -13,14 +15,13 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assume.assumeNotNull;
 
 /**
- * The Class UnitTest.
+ * Unit test for the UnitTest class.
  */
-public class UnitTest {
+public final class UnitTest {
 
-    /**
-     * The Class ClassUnderTest.
-     */
-    public class ClassUnderTest {
+    private static final Logger LOG = LoggerFactory.getLogger(UnitTest.class);
+
+    public final class ClassUnderTest {
 
         /**
          * The Constructor.

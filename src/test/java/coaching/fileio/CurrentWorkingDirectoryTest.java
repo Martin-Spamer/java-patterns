@@ -12,7 +12,7 @@ import coaching.resources.CurrentWorkingDirectory;
 /**
  * class CurrentWorkingDirectoryTest.
  */
-public class CurrentWorkingDirectoryTest {
+public final class CurrentWorkingDirectoryTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectoryTest.class);

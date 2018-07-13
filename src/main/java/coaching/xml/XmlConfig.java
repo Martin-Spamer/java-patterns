@@ -20,7 +20,7 @@ import coaching.config.AbstractXmlConfig;
 /**
  * XML Configuration class.
  */
-public class XmlConfig extends AbstractXmlConfig {
+public final class XmlConfig extends AbstractXmlConfig {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlConfig.class);
@@ -101,7 +101,7 @@ public class XmlConfig extends AbstractXmlConfig {
                 LOG.error(parserConfigurationException.toString());
             }
         } catch (final Exception exception) {
-            LOG.error(exception.toString());
+            LOG.error(exception.toString(), exception);
         }
     }
 
@@ -121,7 +121,7 @@ public class XmlConfig extends AbstractXmlConfig {
                 LOG.error(parserConfigurationException.toString());
             }
         } catch (final Exception exception) {
-            LOG.error(exception.toString());
+            LOG.error(exception.toString(), exception);
         }
     }
 

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test Controller class.
  */
-public class ControllerTest {
+public final class ControllerTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ControllerTest.class);

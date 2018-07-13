@@ -38,7 +38,7 @@ public final class DynamicDao extends JdbcBase {
         try {
             super.query();
         } catch (final SQLException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
     }
 }

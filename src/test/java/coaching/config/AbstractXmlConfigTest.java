@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNull;
 /**
  * A UnitTest for AbstractXmlConfig objects.
  */
-public class AbstractXmlConfigTest {
+public final class AbstractXmlConfigTest {
 
     /** The Constant FILENAME_KEY. */
     private static final String FILENAME_KEY = "Filename";
@@ -26,7 +26,7 @@ public class AbstractXmlConfigTest {
     /**
      * Test Configuration class.
      */
-    public class XmlConfig extends AbstractXmlConfig {
+    public final class XmlConfig extends AbstractXmlConfig {
 
         /**
          * Instantiates a new configuration.
@@ -49,13 +49,13 @@ public class AbstractXmlConfigTest {
     /**
      * Missing Configuration.
      */
-    public class MissingXmlConfig extends AbstractXmlConfig {
+    public final class MissingXmlConfig extends AbstractXmlConfig {
     }
 
     /**
      * Invalid Configuration.
      */
-    public class InvalidXmlConfig extends AbstractXmlConfig {
+    public final class InvalidXmlConfig extends AbstractXmlConfig {
     }
 
     /**

@@ -3,10 +3,15 @@ package coaching.context;
 
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * Abstract Context Class.
+ * An abstract class to manage the current Context.
  */
 public abstract class AbstractContext implements ContextInterface {
+
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     private Properties properties = null;
@@ -70,4 +75,5 @@ public abstract class AbstractContext implements ContextInterface {
     public String getProperty(final String key, final String defaultValue) {
         return properties.getProperty(key);
     }
+
 }

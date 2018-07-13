@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class ColleagueTest.
  */
-public class ColleagueTest {
+public final class ColleagueTest {
 
     /**
      * Unit Test to colleague.

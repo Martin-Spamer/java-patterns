@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for PropertyLoader class.
  */
-public class PropertyLoaderTest {
+public final class PropertyLoaderTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PropertyLoaderTest.class);

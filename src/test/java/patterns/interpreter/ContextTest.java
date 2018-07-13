@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class ContextTest.
  */
-public class ContextTest {
+public final class ContextTest {
 
     /**
      * Unit Test to context.

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The RulesEngineTest class.
  */
-public class RulesEngineTest {
+public final class RulesEngineTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RulesEngineTest.class);

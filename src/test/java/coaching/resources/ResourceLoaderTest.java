@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Unit tests for ResourceLoader class.
  */
-public class ResourceLoaderTest {
+public final class ResourceLoaderTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ResourceLoaderTest.class);

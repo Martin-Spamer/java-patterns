@@ -16,9 +16,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assume.assumeNotNull;
 
 /**
- * The Class JsonTest.
+ * Unit tests showing Json examples.
  */
-public class JsonTest {
+public final class JsonTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(JsonTest.class);

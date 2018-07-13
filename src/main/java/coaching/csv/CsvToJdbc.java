@@ -9,6 +9,8 @@ import java.sql.Statement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import coaching.csv.CsvFile.FileNotLoadedException;
+
 /**
  * CsvToJdbc Class.
  */
@@ -67,14 +69,10 @@ public class CsvToJdbc {
     /**
      * Make jdbc connection.
      *
-     * @param driver
-     *            the driver
-     * @param url
-     *            the url
-     * @param user
-     *            the user
-     * @param password
-     *            the password
+     * @param driver the driver
+     * @param url the url
+     * @param user the user
+     * @param password the password
      * @return the connection
      */
     private Connection makeJdbcConnection(final String driver,
@@ -86,10 +84,10 @@ public class CsvToJdbc {
             try {
                 return DriverManager.getConnection(url, user, password);
             } catch (final SQLException e) {
-                log.error(e.getLocalizedMessage());
+                log.error(e.getLocalizedMessage(), e);
             }
         } catch (final ClassNotFoundException e) {
-            log.error(e.getLocalizedMessage());
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -109,8 +107,10 @@ public class CsvToJdbc {
 
     /**
      * Process.
+     *
+     * @throws FileNotLoadedException
      */
-    public void process() {
+    public void process() throws FileNotLoadedException {
         process(driver, url, username, password, "tableName");
     }
 
@@ -127,12 +127,13 @@ public class CsvToJdbc {
      *            the password
      * @param table
      *            the table
+     * @throws FileNotLoadedException
      */
     protected void process(final String driver,
             final String url,
             final String user,
             final String password,
-            final String table) {
+            final String table) throws FileNotLoadedException {
         makeJdbcConnection(driver, url, user, password);
         csvFile = new CsvFile(filename);
         for (int index = 0; index < csvFile.rowCount(); index++) {
@@ -250,21 +251,21 @@ public class CsvToJdbc {
             statement.close();
             connection.close();
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage());
+            log.error(e.getLocalizedMessage(), e);
         } finally {
             try {
                 if (statement != null) {
                     statement.close();
                 }
             } catch (final SQLException e) {
-                log.error(e.getLocalizedMessage());
+                log.error(e.getLocalizedMessage(), e);
             }
             try {
                 if (connection != null) {
                     connection.close();
                 }
             } catch (final SQLException e) {
-                log.error(e.getLocalizedMessage());
+                log.error(e.getLocalizedMessage(), e);
             }
         }
     }

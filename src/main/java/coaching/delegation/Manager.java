@@ -2,7 +2,7 @@
 package coaching.delegation;
 
 /**
- * Manager Class with delegation.
+ * Manager class with delegation.
  */
 public class Manager implements ProcessInterface {
 

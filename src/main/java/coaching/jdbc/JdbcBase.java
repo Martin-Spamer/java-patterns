@@ -55,11 +55,11 @@ public abstract class JdbcBase {
                             JdbcConfig.username(),
                             JdbcConfig.password());
             } catch (final SQLException e) {
-                log.error(e.toString());
+                log.error(e.toString(),e);
             }
 
         } catch (final ClassNotFoundException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
     }
 
@@ -97,7 +97,7 @@ public abstract class JdbcBase {
             statement.close();
             connection.close();
         } catch (final SQLException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
     }
 

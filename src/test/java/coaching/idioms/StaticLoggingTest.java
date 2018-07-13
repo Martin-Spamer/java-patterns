@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * StaticLoggingTest class.
+ * Unit tests showing StaticLogging example.
  */
-public class StaticLoggingTest {
+public final class StaticLoggingTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(StaticLoggingTest.class);

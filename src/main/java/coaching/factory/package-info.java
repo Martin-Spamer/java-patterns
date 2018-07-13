@@ -1,5 +1,5 @@
 /**
- * Package provides examples of implementing Class Factories in Java.
+ * Package provides examples of implementing class Factories in Java.
  * <p>
  * Detailed description of package.
  *

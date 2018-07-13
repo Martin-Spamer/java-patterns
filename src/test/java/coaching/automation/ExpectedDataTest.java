@@ -1,6 +1,7 @@
 
 package coaching.automation;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,25 +10,28 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 /**
- * The Class ExpectedDataTest.
+ * Unit tests for ExpectedData class.
  */
-public class ExpectedDataTest {
+@Ignore("Work-in-Progress")
+public final class ExpectedDataTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ExpectedDataTest.class);
 
     /**
      * Unit test to on platform.
+     *
+     * @throws Exception
      */
     @Test
-    public void testOnPlatform() {
-        PlatformData expectedData;
+    public void testOnPlatform() throws Exception {
+        ExpectedData expectedData;
 
-        expectedData = new PlatformData("local");
+        expectedData = new ExpectedData("local");
         assertNotNull(expectedData);
         LOG.info(expectedData.toString());
 
-        expectedData = PlatformData.platform("local");
+        expectedData = ExpectedData.platform("local");
         assertNotNull(expectedData);
         LOG.info(expectedData.toString());
 
@@ -38,18 +42,20 @@ public class ExpectedDataTest {
 
     /**
      * Unit test to default platform domain language.
+     *
+     * @throws Exception
      */
     @Test
-    public void testDefaultPlatformDomainLanguage() {
-        assertNotNull(PlatformData.withTag("@AUTHORISED"));
-        assertNotNull(PlatformData.withTag("@UNAUTHORISED"));
-        assertNotNull(PlatformData.withCharacteristic("@AUTHORISED"));
-        assertNotNull(PlatformData.withCharacteristic("@UNAUTHORISED"));
-        assertNull(PlatformData.withTag("@tag"));
+    public void testDefaultPlatformDomainLanguage() throws Exception {
+        assertNotNull(ExpectedData.debugString(), ExpectedData.withTag("@AUTHORISED"));
+        assertNotNull(ExpectedData.withTag("@UNAUTHORISED"));
+        assertNotNull(ExpectedData.withCharacteristic("@AUTHORISED"));
+        assertNotNull(ExpectedData.withCharacteristic("@UNAUTHORISED"));
+        assertNull(ExpectedData.withTag("@tag"));
 
-        assertNotNull(PlatformData.allWithTag("@AUTHORISED"));
-        assertNotNull(PlatformData.allWithTag("@UNAUTHORISED"));
-        assertNull(PlatformData.allWithTag("@tag"));
+        assertNotNull(ExpectedData.allWithTag("@AUTHORISED"));
+        assertNotNull(ExpectedData.allWithTag("@UNAUTHORISED"));
+        assertNull(ExpectedData.allWithTag("@tag"));
     }
 
 }

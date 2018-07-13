@@ -1,9 +1,3 @@
-/**
- * Data Access Object Template.
- *
- * Created on 07 September 2004, 10:38
- * @author martin.spamer
- */
 
 package coaching.jdbc;
 
@@ -12,10 +6,10 @@ package coaching.jdbc;
  */
 public final class PointbaseDao extends AbstractDao {
 
-    /** JDBC_DRIVER to be used. */
+    /** The classname of the JDBC driver to use. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
 
-    /** JDBC_URL to be used. */
+    /** The URL to use to make JDBC connection. */
     private static final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
 
     /** USERNAME to be used. */
@@ -25,9 +19,11 @@ public final class PointbaseDao extends AbstractDao {
     private static final String PASSWORD = "PBPUBLIC";
 
     /**
-     * Instantiates a DAO for a point base customer.
+     * Instantiates a new DAO for Pointbase database.
+     *
+     * @throws ClassNotFoundException
      */
-    public PointbaseDao() {
+    public PointbaseDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 

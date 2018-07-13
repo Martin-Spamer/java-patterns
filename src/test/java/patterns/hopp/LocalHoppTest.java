@@ -10,7 +10,7 @@ import static org.junit.Assume.assumeNotNull;
 /**
  * class LocalHoppTest.
  */
-public class LocalHoppTest {
+public final class LocalHoppTest {
 
     /**
      * Unit test to typical usage.

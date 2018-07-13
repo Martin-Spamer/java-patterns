@@ -82,7 +82,7 @@ class RequestHandler implements Runnable {
                 }
             }
         } catch (final IOException e) {
-            LOG.error(e.toString());
+            LOG.error(e.toString(), e);
         }
     }
 }

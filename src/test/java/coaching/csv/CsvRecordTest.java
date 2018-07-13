@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * class CsvRecordTest.
+ * Unit tests for CsvRecord class.
  */
-public class CsvRecordTest {
+public final class CsvRecordTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvRecordTest.class);

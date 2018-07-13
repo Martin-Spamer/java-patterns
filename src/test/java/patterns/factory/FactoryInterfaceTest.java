@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * FactoryInterfaceTest class.
  */
-public class FactoryInterfaceTest {
+public final class FactoryInterfaceTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(FactoryInterfaceTest.class);

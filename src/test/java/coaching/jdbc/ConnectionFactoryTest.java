@@ -6,35 +6,41 @@ import java.sql.SQLException;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit test for the ConnectionFactory class.
+ * Unit tests for the ConnectionFactory class.
  */
-public class ConnectionFactoryTest {
+public final class ConnectionFactoryTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ConnectionFactoryTest.class);
+
+    private ConnectionFactory connectionFactory;
 
     /**
-     * Unit test to sq lite connection factory.
+     * Unit test for connection factory with SqLite.
      *
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires SQLite3")
     public void testSqLiteConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "org.sqlite.JDBC";
-        final String JDBC_URL = "jdbc:sqlite::memory";
-        final String USERNAME = "";
-        final String PASSWORD = "";
-        final ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        final String JDBC_URL = "jdbc:sqlite:memory";
+        final String USERNAME = "username";
+        final String PASSWORD = "password";
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
         assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.getConnection();
+        final Connection connection = connectionFactory.newConnection();
         assertNotNull(connection);
+        LOG.info(connection.toString());
         connection.close();
     }
 
     /**
-     * Unit test to pointbase connection factory.
+     * Unit test connection factory with Pointbase.
      *
      * @throws SQLException the SQL exception
      */
@@ -46,15 +52,17 @@ public class ConnectionFactoryTest {
         final String USERNAME = "PBPUBLIC";
         final String PASSWORD = "PBPUBLIC";
 
-        final ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+
         assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.getConnection();
+        final Connection connection = connectionFactory.newConnection();
         assertNotNull(connection);
+        LOG.info(connection.toString());
         connection.close();
     }
 
     /**
-     * Unit test to my sql connection factory.
+     * Unit test connection factory with MySQL.
      *
      * @throws SQLException the SQL exception
      */
@@ -66,15 +74,17 @@ public class ConnectionFactoryTest {
         final String USERNAME = "root";
         final String PASSWORD = "root";
 
-        final ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+
         assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.getConnection();
+        final Connection connection = connectionFactory.newConnection();
         assertNotNull(connection);
+        LOG.info(connection.toString());
         connection.close();
     }
 
     /**
-     * Unit test to connection factory.
+     * Unit test to connection factory with Oracle.
      *
      * @throws SQLException the SQL exception
      */
@@ -86,15 +96,17 @@ public class ConnectionFactoryTest {
         final String USERNAME = "user";
         final String PASSWORD = "password";
 
-        final ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+
         assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.getConnection();
+        final Connection connection = connectionFactory.newConnection();
         assertNotNull(connection);
+        LOG.info(connection.toString());
         connection.close();
     }
 
     /**
-     * Unit test to postgresql connection factory.
+     * Unit test the connection factory with PostgreSQL.
      *
      * @throws SQLException the SQL exception
      */
@@ -106,10 +118,12 @@ public class ConnectionFactoryTest {
         final String USERNAME = "postgres";
         final String PASSWORD = "password";
 
-        final ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+
         assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.getConnection();
+        final Connection connection = connectionFactory.newConnection();
         assertNotNull(connection);
+        LOG.info(connection.toString());
         connection.close();
     }
 

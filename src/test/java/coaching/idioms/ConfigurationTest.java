@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * ConfigurationTest Class.
+ * Unit test for the Configuration class.
  */
-public class ConfigurationTest {
+public final class ConfigurationTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ConfigurationTest.class);

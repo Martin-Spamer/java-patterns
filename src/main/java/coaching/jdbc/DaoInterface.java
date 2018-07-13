@@ -2,35 +2,24 @@
 package coaching.jdbc;
 
 /**
- * Data Access Object Interface.
+ * An interface for JDBC Data Access Object.
  */
 public interface DaoInterface {
-
-    /** SELECT_SQL. */
-    static final String SELECT_SQL = "SELECT (*) FROM TABLE";
-
-    /** INSERT_SQL. */
-    static final String INSERT_SQL = "INSERT INTO TABLE (ID, FIELD, DATA) VALUES (999,'...','...')";
-
-    /** UPDATE_SQL. */
-    static final String UPDATE_SQL = "UPDATE TABLE SET FIELD = 'Value' WHERE ID=999";
-
-    /** DELETE_SQL. */
-    static final String DELETE_SQL = "DELETE FROM TABLE WHERE ID=999";
 
     /**
      * Sets the driver.
      *
      * @param driver the driver
-     * @return the dao interface
+     * @return this for a fluent interface.
+     * @throws ClassNotFoundException
      */
-    DaoInterface setDriver(final String driver);
+    DaoInterface setDriver(final String driver) throws ClassNotFoundException;
 
     /**
      * Sets the url.
      *
-     * @param url the url
-     * @return the dao interface
+     * @param url the JDBC connection url.
+     * @return this for a fluent interface.
      */
     DaoInterface setUrl(final String url);
 
@@ -38,7 +27,7 @@ public interface DaoInterface {
      * Sets the username.
      *
      * @param username the username
-     * @return the dao interface
+     * @return this for a fluent interface.
      */
     DaoInterface setUsername(final String username);
 
@@ -46,44 +35,24 @@ public interface DaoInterface {
      * Sets the password.
      *
      * @param password the password
-     * @return the dao interface
+     * @return this for a fluent interface.
      */
     DaoInterface setPassword(final String password);
 
     /**
-     * Create record.
+     * Sets the schema name.
      *
-     * @param sql
-     *            the sql
-     * @return this as fluent interface.
+     * @param schemaName the schema
+     * @return this for a fluent interface.
      */
-    DaoInterface create(final String sql);
+    DaoInterface setSchemaName(final String schemaName);
 
     /**
-     * Read record.
+     * Sets the table name.
      *
-     * @param sql
-     *            the sql
-     * @return this as fluent interface.
+     * @param tableName the table
+     * @return this for a fluent interface.
      */
-    DaoInterface read(final String sql);
-
-    /**
-     * Update record.
-     *
-     * @param sql
-     *            the sql
-     * @return this as fluent interface.
-     */
-    DaoInterface update(final String sql);
-
-    /**
-     * Delete record.
-     *
-     * @param sql
-     *            the sql
-     * @return this as fluent interface.
-     */
-    DaoInterface delete(final String sql);
+    DaoInterface setTableName(final String tableName);
 
 }

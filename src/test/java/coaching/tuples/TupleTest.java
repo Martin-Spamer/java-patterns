@@ -2,6 +2,8 @@
 package coaching.tuples;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -9,8 +11,9 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test for Tuple Class.
  */
-public class TupleTest {
+public final class TupleTest {
 
+    private static final Logger LOG = LoggerFactory.getLogger(TupleTest.class);
     /** The Constant RIGHT. */
     private static final String RIGHT = "Right";
 
@@ -20,7 +23,7 @@ public class TupleTest {
     /**
      * The Point Class.
      */
-    public class Point extends Tuple<Float, Float> {
+    public final class Point extends Tuple<Float, Float> {
     }
 
     /**

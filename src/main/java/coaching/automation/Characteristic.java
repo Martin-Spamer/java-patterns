@@ -2,10 +2,9 @@
 package coaching.automation;
 
 /**
- * The Enum Characteristic.
+ * An example of Characteristics used to find the expected data.
  */
 public enum Characteristic {
-
     /** The authorised. */
     AUTHORISED,
     /** The unauthorised. */

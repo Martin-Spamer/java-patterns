@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
  *
  * Each command is statically constructed and invoked.
  */
-public class InvokerExampleTest {
+public final class InvokerExampleTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(InvokerExampleTest.class);

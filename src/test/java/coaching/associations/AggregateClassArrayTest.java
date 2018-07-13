@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * class AggregateClassArrayTest.
+ * Unit test for AggregateClassArray class.
  */
-public class AggregateClassArrayTest {
+public final class AggregateClassArrayTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArrayTest.class);

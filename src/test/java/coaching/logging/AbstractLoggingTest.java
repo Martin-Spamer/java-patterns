@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * AbstractLoggingTest Class.
+ * Unit tests for the AbstractLogging class.
  */
-public class AbstractLoggingTest {
+public final class AbstractLoggingTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);

@@ -6,7 +6,7 @@ import java.util.Properties;
 /**
  * Scheduler class.
  */
-public class Scheduler extends AbstractScheduler {
+public final class Scheduler extends AbstractScheduler {
 
     /**
      * The Constructor.
@@ -18,19 +18,19 @@ public class Scheduler extends AbstractScheduler {
     /**
      * The Constructor.
      *
-     * @param properties the properties
+     * @param args the args
      */
-    public Scheduler(final Properties properties) {
-        super(properties);
+    public Scheduler(final String[] args) {
+        super(args);
     }
 
     /**
      * The Constructor.
      *
-     * @param args the args
+     * @param properties the properties
      */
-    public Scheduler(final String[] args) {
-        super(args);
+    public Scheduler(final Properties properties) {
+        super(properties);
     }
 
     /**

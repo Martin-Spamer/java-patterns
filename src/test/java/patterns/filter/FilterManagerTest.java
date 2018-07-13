@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The FilterManagerTest class.
  */
-public class FilterManagerTest {
+public final class FilterManagerTest {
 
     /**
      * Unit Test to filter manager.

@@ -2,7 +2,7 @@
 package coaching.automation;
 
 /**
- * The Interface ExpectedDataInterface.
+ * The Interface to the ExpectedData class.
  */
 public interface ExpectedDataInterface {
 

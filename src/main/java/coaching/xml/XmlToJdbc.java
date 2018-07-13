@@ -6,17 +6,26 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import coaching.jdbc.MySqlDao;
+import coaching.WorkInProgress;
 
 /**
- * Class shows combining Xml and Jdbc responsibilities.
+ * Given an XML data file, use it to update a database via JDBC.
  */
-public class XmlToJdbc extends MySqlDao {
+@WorkInProgress("")
+public final class XmlToJdbc {
+
+    private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbc.class);
+
+    public XmlToJdbc() {
+        super();
+    }
 
     /**
      * Process.
@@ -42,7 +51,7 @@ public class XmlToJdbc extends MySqlDao {
             processTable(document);
 
         } catch (final Exception exception) {
-            log.error("Failed with {} ", exception);
+            LOG.error("Failed with {} ", exception);
         }
     }
 
@@ -52,7 +61,7 @@ public class XmlToJdbc extends MySqlDao {
      * @param document
      *            the document
      */
-    protected void processTable(final Document document) {
+    private void processTable(final Document document) {
         // root Document Element
         final Element tableElement = document.getDocumentElement();
 
@@ -82,7 +91,7 @@ public class XmlToJdbc extends MySqlDao {
      * @param temp
      *            the temp
      */
-    protected void processRow(final String table, final NodeList rowList, final int rowNo, final String temp) {
+    private void processRow(final String table, final NodeList rowList, final int rowNo, final String temp) {
         try {
             // * first row element by index.
             final Element rowElement = (Element) rowList.item(rowNo);
@@ -96,7 +105,7 @@ public class XmlToJdbc extends MySqlDao {
             insertRow(table, fieldNames, dataValues);
 
         } catch (final Exception exception) {
-            log.error("Failed with {} ", exception);
+            LOG.error("Failed with {} ", exception);
         }
     }
 
@@ -107,13 +116,13 @@ public class XmlToJdbc extends MySqlDao {
      *            the field list
      * @return the string
      */
-    protected String fieldNames(final NodeList fieldList) {
+    private String fieldNames(final NodeList fieldList) {
         final StringBuilder fieldNames = new StringBuilder();
         final char columnSeparator = ' ';
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
             final Node item = fieldList.item(fieldNo);
-            log.info(item.toString());
+            LOG.info(item.toString());
             final Element fieldElement = (Element) item;
             fieldNames.append(columnSeparator).append(fieldElement.getAttribute("NAME"));
         }
@@ -127,13 +136,13 @@ public class XmlToJdbc extends MySqlDao {
      *            the field list
      * @return the string
      */
-    protected String dataValues(final NodeList fieldList) {
+    private String dataValues(final NodeList fieldList) {
         final StringBuilder dataValues = new StringBuilder();
         final char columnSeperator = ',';
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
             Node item = fieldList.item(fieldNo);
-            log.info(item.toString());
+            LOG.info(item.toString());
             final Element fieldElement = (Element) item;
             final String nodeValue = fieldElement.getChildNodes().item(0).getNodeValue();
             dataValues
@@ -155,14 +164,16 @@ public class XmlToJdbc extends MySqlDao {
      * @param dataValues
      *            the data values
      */
-    protected void insertRow(final String table, final String fieldNames, final String dataValues) {
-        // sql = insert into %table (%field%,...) from
+    private void insertRow(final String table, final String fieldNames, final String dataValues) {
+        // insert into %table
+        // (%field%,...)
+        // from
         // (%value%,...)
         final StringBuilder sql = new StringBuilder();
         sql.append(String.format("insert into %s", table));
         sql.append(String.format(" (%s) VALUES (%s)", fieldNames, dataValues));
 
-        log.info(sql.toString());
-        super.executePreparedStatement(sql.toString());
+        LOG.info(sql.toString());
+        // super.executePreparedStatement(sql.toString());
     }
 }

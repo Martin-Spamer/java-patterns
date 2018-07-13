@@ -2,18 +2,19 @@
 package coaching.wip;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * The Class EnvironmentTest.
+ * Unit tests showing retrieval of system properties.
  */
-public class EnvironmentTest {
+public final class EnvironmentTest {
 
-    /**
-     * Test.
-     */
+    private static final Logger LOG = LoggerFactory.getLogger(EnvironmentTest.class);
+
     @Test
-    public void test() {
-        System.out.print(System.getProperties());
+    public void testLogSystemProperties() {
+        LOG.info("SystemProperties = {}", System.getProperties());
     }
 
 }

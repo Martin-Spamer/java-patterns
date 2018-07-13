@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * The Class Application.
  */
-public class Application extends AbstractApplication {
+public final class Application extends AbstractApplication {
 
     /**
      * Instantiates a new application.
@@ -15,6 +15,8 @@ public class Application extends AbstractApplication {
      */
     public Application(final String[] args) {
         super(args);
+        log.trace("System properties = {}", System.getProperties().toString());
+        log.debug("args = {}", Arrays.toString(args));
     }
 
     /**
@@ -23,13 +25,13 @@ public class Application extends AbstractApplication {
      * @return true, if successful
      */
     public boolean execute() {
-        boolean returnValue = false;
         try {
-            returnValue = true;
+            log.info(toString());
+            return true;
         } catch (final Exception exception) {
-            log.error(exception.toString());
+            log.error(exception.toString(), exception);
+            return false;
         }
-        return returnValue;
     }
 
     /**
@@ -48,15 +50,11 @@ public class Application extends AbstractApplication {
      * @param args the program arguments as a String array.
      */
     public static void main(final String[] args) {
-        log.trace("System properties = {}", System.getProperties().toString());
-        log.debug("args = {}", Arrays.toString(args));
-
         final Application application = new Application(args);
         if (application.initialisation()) {
             if (application.execute()) {
                 System.exit(0);
             } else {
-                log.info("application = {}", application.toString());
                 System.exit(1);
             }
         }

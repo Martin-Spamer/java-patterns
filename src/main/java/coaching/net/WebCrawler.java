@@ -46,7 +46,7 @@ public class WebCrawler extends ThreadTemplate {
                 crawlSite(url);
             }
         } catch (final Exception exception) {
-            log.error(exception.toString());
+            log.error(exception.toString(), exception);
         }
     }
 
@@ -174,7 +174,7 @@ public class WebCrawler extends ThreadTemplate {
                 }
             }
         } catch (final Exception exception) {
-            log.error(exception.toString());
+            log.error(exception.toString(), exception);
         }
     }
 

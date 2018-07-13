@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Context class tests.
  */
-public class ContextTest {
+public final class ContextTest {
 
     /**
      * Unit test to typical usage.

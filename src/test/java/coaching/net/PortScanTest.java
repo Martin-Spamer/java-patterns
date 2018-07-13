@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class PortScanTest.
+ * Unit tests for the PortScan class.
  */
-public class PortScanTest {
+public final class PortScanTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PortScanTest.class);

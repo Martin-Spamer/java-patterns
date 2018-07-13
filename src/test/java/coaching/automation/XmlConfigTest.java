@@ -10,9 +10,9 @@ import static org.junit.Assert.assertNotNull;
 import coaching.xml.XmlConfig;
 
 /**
- * XmlConfigTest Class.
+ * Unit tests for XmlConfig class.
  */
-public class XmlConfigTest {
+public final class XmlConfigTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlConfigTest.class);

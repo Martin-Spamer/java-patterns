@@ -2,7 +2,7 @@
 package coaching.bags;
 
 /**
- * Bag Interface with a fluent interface.
+ * A fluent interface for the Bag class.
  */
 public interface BagInterface {
 

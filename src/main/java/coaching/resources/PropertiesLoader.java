@@ -24,7 +24,7 @@ import java.util.Properties;
  * /some/pkg/Resource
  * /some/pkg/Resource.properties
  */
-public class PropertiesLoader {
+public final class PropertiesLoader {
 
     /**
      * Gets the properties.

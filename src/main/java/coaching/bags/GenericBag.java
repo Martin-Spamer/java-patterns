@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Generic Type Bag Class.
+ * Implements a Bag class with Generic Type.
  *
  * @param <T>
  *            the generic type
@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("serial")
 public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 
-    /** The log. */
+    /** Provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** random number generator. */

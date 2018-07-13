@@ -14,9 +14,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assume.assumeTrue;
 
 /**
- * Money Locale Test class.
+ * Unit tests for the BigDecimalMoney class.
  */
-public class BigDecimalMoneyTest {
+public final class BigDecimalMoneyTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BigDecimalMoneyTest.class);

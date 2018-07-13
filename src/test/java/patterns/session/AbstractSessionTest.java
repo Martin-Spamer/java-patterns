@@ -21,7 +21,7 @@ import patterns.composite.CompositeTest;
 /**
  * AbstractSession class tests.
  */
-public class AbstractSessionTest {
+public final class AbstractSessionTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
@@ -29,7 +29,7 @@ public class AbstractSessionTest {
     /**
      * Test Mock for AbstractSession.
      */
-    public class TestMockSession extends AbstractSession {
+    public final class TestMockSession extends AbstractSession {
     }
 
     /**

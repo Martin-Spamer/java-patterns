@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 /**
  * A factory for creating Connection objects.
  */
-public class ConnectionFactory {
+public class ConnectionFactory implements ConnectionFactoryInterface {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -47,17 +47,15 @@ public class ConnectionFactory {
         try {
             Class.forName(driverClassName);
         } catch (final ClassNotFoundException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
     }
 
-    /**
-     * Get jdbc connection for the database.
-     *
-     * @return the connection
-     * @throws SQLException the SQL exception
+    /* (non-Javadoc)
+     * @see coaching.jdbc.ConnectionFactoryInterface#newConnection()
      */
-    public Connection getConnection() throws SQLException {
+    @Override
+    public Connection newConnection() throws SQLException {
         return DriverManager.getConnection(connectionUrl, username, password);
     }
 

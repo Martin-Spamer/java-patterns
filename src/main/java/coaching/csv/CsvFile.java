@@ -39,8 +39,10 @@ public class CsvFile {
 
     /**
      * Instantiates a new csv file.
+     *
+     * @throws FileNotLoadedException
      */
-    public CsvFile() {
+    public CsvFile() throws FileNotLoadedException {
         super();
         csvFilename = String.format("%s.csv", this.getClass().getSimpleName());
         LOG.info("CsvFile({})", csvFilename);
@@ -52,8 +54,9 @@ public class CsvFile {
      *
      * @param csvFilename
      *            the csv filename
+     * @throws FileNotLoadedException
      */
-    public CsvFile(final String csvFilename) {
+    public CsvFile(final String csvFilename) throws FileNotLoadedException {
         super();
         this.csvFilename = csvFilename;
         LOG.info("CsvFile({})", csvFilename);
@@ -62,13 +65,11 @@ public class CsvFile {
 
     /**
      * Initialise.
+     *
+     * @throws FileNotLoadedException
      */
-    private void initialise() {
-        try {
-            read(csvFilename);
-        } catch (final IOException e) {
-            LOG.error(e.toString());
-        }
+    private void initialise() throws FileNotLoadedException {
+        read(csvFilename);
     }
 
     /**
@@ -101,18 +102,24 @@ public class CsvFile {
     /**
      * Read filename.
      *
-     * @param filename
-     *            the filename
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
+     * @param filename the filename
+     * @throws FileNotLoadedException
+     * @throws IOException Signals that an I/O exception has occurred.
      */
-    public void read(final String filename) throws IOException {
-        LOG.debug("read({})", filename);
-        if (filename != null) {
-            final InputStream resourceAsStream = getClass().getResourceAsStream(filename);
-            read(resourceAsStream);
-        } else {
-            LOG.error("unexpected that filename == null");
+    public void read(final String filename) throws FileNotLoadedException {
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        try {
+            LOG.debug("read({})", filename);
+            final InputStream resourceAsStream = classLoader.getResourceAsStream(filename);
+            if (resourceAsStream != null) {
+                read(resourceAsStream);
+                resourceAsStream.close();
+            } else {
+                String msg = String.format("Resource %s not found", filename);
+                throw new FileNotLoadedException(msg);
+            }
+        } catch (IOException e) {
+            throw new FileNotLoadedException(e.toString());
         }
     }
 
@@ -125,13 +132,9 @@ public class CsvFile {
      *             Signals that an I/O exception has occurred.
      */
     private void read(final InputStream resourceAsStream) throws IOException {
-        if (resourceAsStream != null) {
-            final InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
-            read(inputStreamReader);
-            resourceAsStream.close();
-        } else {
-            LOG.error("unexpected that resourceAsStream == null");
-        }
+        final InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
+        read(inputStreamReader);
+        inputStreamReader.close();
     }
 
     /**
@@ -143,35 +146,26 @@ public class CsvFile {
      *             Signals that an I/O exception has occurred.
      */
     private void read(final InputStreamReader inputStreamReader) throws IOException {
-        if (inputStreamReader != null) {
-            final BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            read(bufferedReader);
-            inputStreamReader.close();
-        }
+        final BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        read(bufferedReader);
+        bufferedReader.close();
     }
 
     /**
      * Read.
      *
-     * @param bufferedReader
-     *            the buffered reader
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
+     * @param bufferedReader the buffered reader
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     private void read(final BufferedReader bufferedReader) throws IOException {
-        if (bufferedReader != null) {
-            String line = bufferedReader.readLine().trim();
-            while (line != null) {
-                if (line.length() > 0) {
-                    processLine(line);
-                }
-                line = bufferedReader.readLine();
+        String line = bufferedReader.readLine().trim();
+        while (line != null) {
+            if (line.length() > 0) {
+                processLine(line);
             }
-            bufferedReader.close();
-            loaded = true;
-        } else {
-            LOG.error("unexpected that bufferedReader == null");
+            line = bufferedReader.readLine();
         }
+        loaded = true;
     }
 
     /**
@@ -206,20 +200,17 @@ public class CsvFile {
     /**
      * Write.
      *
-     * @param filename
-     *            the filename
+     * @param filename the filename
+     * @throws IOException
      */
-    public void write(final String filename) {
-        try {
-            final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-            for (final CsvRecord csvRecord : records) {
-                LOG.trace("write csvRecord = {}", csvRecord);
-                writer.write(csvRecord.toString());
-            }
-            writer.close();
-        } catch (final Exception exception) {
-            LOG.error(exception.toString());
+    public void write(final String filename) throws IOException {
+        FileWriter out = new FileWriter(filename);
+        final BufferedWriter writer = new BufferedWriter(out);
+        for (final CsvRecord csvRecord : records) {
+            LOG.trace("write csvRecord = {}", csvRecord);
+            writer.write(csvRecord.toString());
         }
+        writer.close();
     }
 
     /**
@@ -281,4 +272,15 @@ public class CsvFile {
             .replace("]", "\n\t]}");
     }
 
+    public class FileNotLoadedException extends Exception {
+        private static final long serialVersionUID = 1L;
+
+        private FileNotLoadedException() {
+            super();
+        }
+
+        private FileNotLoadedException(final String message) {
+            super(message);
+        }
+    }
 }

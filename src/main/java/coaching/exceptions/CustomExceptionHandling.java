@@ -5,9 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * ExceptionHandling Class.
+ * Example class of custom Exception handling.
+ *
+ * In general, exceptions should be handled as close to the cause as possible.
  */
-public class CustomExceptionHandling {
+public final class CustomExceptionHandling {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandling.class);
@@ -60,7 +62,123 @@ public class CustomExceptionHandling {
     }
 
     /**
-     * A SubProcess Throws a specialist exception.
+     * Process that propagates the custom exception.
+     *
+     * @throws CustomException the custom exception
+     */
+    public void propagateException() throws CustomException {
+        creationProcess();
+        readProcess();
+        updateProcess();
+        deleteProcess();
+    }
+
+    /**
+     * Process that catches the base CustomException.
+     */
+    public void catchBaseCustomException() {
+        try {
+            creationProcess();
+            readProcess();
+            updateProcess();
+            deleteProcess();
+        } catch (CustomException e) {
+            LOG.error(e.toString(), e);
+        }
+    }
+
+    /**
+     * Process that catch multiple exceptions.
+     */
+    public void catchMultiExceptions() {
+        try {
+            creationProcess();
+            readProcess();
+            updateProcess();
+            deleteProcess();
+        } catch (CustomCreationException | CustomReadException | CustomUpdateException | CustomDeleteException e) {
+            LOG.error(e.toString(), e);
+        }
+    }
+
+    /**
+     * Process that catches each type of Exception seperately.
+     */
+    public void catchEachException() {
+        try {
+            creationProcess();
+            readProcess();
+            updateProcess();
+            deleteProcess();
+        } catch (CustomCreationException e) {
+            LOG.error("Creation error", e);
+        } catch (CustomReadException e) {
+            LOG.error("Read error", e);
+        } catch (CustomUpdateException e) {
+            LOG.error("Update error", e);
+        } catch (CustomDeleteException e) {
+            LOG.error("Delete error", e);
+        }
+    }
+
+    /**
+     * A process that catches with a nested catches.
+     */
+    public void nestedProcess() {
+        try {
+            creationProcess();
+            try {
+                readProcess();
+                try {
+                    updateProcess();
+                    try {
+                        deleteProcess();
+                    } catch (final CustomException exception) {
+                        LOG.error(exception.toString(), exception);
+                    }
+                } catch (final CustomException exception) {
+                    LOG.error(exception.toString(), exception);
+                }
+            } catch (final CustomException exception) {
+                LOG.error(exception.toString(), exception);
+            }
+        } catch (final CustomException exception) {
+            LOG.error(exception.toString(), exception);
+        }
+    }
+
+    /**
+     * A process that will continue when an exception occurs.
+     */
+    public void failsafeProcess() {
+
+        try {
+            creationProcess();
+        } catch (final CustomException exception) {
+            LOG.error(exception.toString(), exception);
+        }
+
+        try {
+            readProcess();
+        } catch (final CustomException exception) {
+            LOG.error(exception.toString(), exception);
+        }
+
+        try {
+            updateProcess();
+        } catch (final CustomException exception) {
+            LOG.error(exception.toString(), exception);
+        }
+
+        try {
+            deleteProcess();
+        } catch (final CustomException exception) {
+            LOG.error(exception.toString(), exception);
+        }
+    }
+
+    /**
+     * A process that throws and propagates a specialist exception.
      *
      * @throws CustomCreationException
      *             the custom creation exception
@@ -70,7 +188,7 @@ public class CustomExceptionHandling {
     }
 
     /**
-     * A SubProcess Throws a specialist exception.
+     * A process that throws and propagates a specialist exception.
      *
      * @throws CustomReadException
      *             the custom read exception
@@ -80,7 +198,7 @@ public class CustomExceptionHandling {
     }
 
     /**
-     * A SubProcess Throws a specialist exception.
+     * A process that throws and propagates a specialist exception.
      *
      * @throws CustomUpdateException
      *             the custom update exception
@@ -90,26 +208,12 @@ public class CustomExceptionHandling {
     }
 
     /**
-     * sub processes, and replaces them with a simple generalised exception.
+     * A process that throws and propagates a specialist exception.
      *
+     * @throws CustomDeleteException the custom delete exception
      */
-    public void process() {
-        try {
-            creationProcess();
-        } catch (final CustomException exception) {
-            LOG.error(exception.toString());
-        }
-
-        try {
-            readProcess();
-        } catch (final CustomException exception) {
-            LOG.error(exception.toString());
-        }
-
-        try {
-            updateProcess();
-        } catch (final CustomException exception) {
-            LOG.error(exception.toString());
-        }
+    public void deleteProcess() throws CustomDeleteException {
+        throw new CustomDeleteException();
     }
+
 }

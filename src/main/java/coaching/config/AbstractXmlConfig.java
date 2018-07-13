@@ -7,7 +7,7 @@ import java.io.InputStream;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * An abstract Configuration class.
+ * An abstract XML Configuration class.
  * Loads the Configuration Properties from an XML file.
  */
 public abstract class AbstractXmlConfig extends AbstractConfiguration {
@@ -98,7 +98,7 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
                 properties.loadFromXML(resourceAsStream);
                 loaded = true;
             } catch (final IOException e) {
-                log.error(e.toString());
+                log.error(e.toString(),e);
             }
         }
     }

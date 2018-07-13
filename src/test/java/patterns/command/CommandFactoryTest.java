@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test the CommandFactory class.
  */
-public class CommandFactoryTest {
+public final class CommandFactoryTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);

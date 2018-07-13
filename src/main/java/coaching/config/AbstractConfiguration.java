@@ -9,7 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Class AbstractConfiguration.
+ * An abstract Configuration class.
+ * Loads the Configuration from an Properties file.
  */
 public abstract class AbstractConfiguration implements ConfigInterface {
 
@@ -104,7 +105,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
                 properties.load(resourceAsStream);
                 loaded = true;
             } catch (final IOException e) {
-                log.error(e.toString());
+                log.error(e.toString(),e);
             }
         }
     }

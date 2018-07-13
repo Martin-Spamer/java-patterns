@@ -55,7 +55,7 @@ public final class CommandFactory implements InvokerInterface {
             properties.load(inputStream(filename));
             LOG.info("properties = {}", properties);
         } catch (final IOException e) {
-            LOG.error(e.getLocalizedMessage());
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -91,10 +91,12 @@ public final class CommandFactory implements InvokerInterface {
                 return executeActionName(actionName);
             } else {
                 final String message = String.format("actionName '%s' cannot be zero length.", actionName);
+                LOG.error(message);
                 throw new MissingCommandException(message);
             }
         } else {
             final String message = "actionName cannot be null";
+            LOG.error(message);
             throw new MissingCommandException(message);
         }
     }
@@ -119,6 +121,7 @@ public final class CommandFactory implements InvokerInterface {
             }
         } else {
             final String message = String.format("className '%s' cannot be zero length.", className);
+            LOG.error(message);
             throw new MissingCommandException(message);
         }
     }
@@ -144,6 +147,7 @@ public final class CommandFactory implements InvokerInterface {
                 throw new MissingCommandException(message);
             }
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+            LOG.error(e.toString(), e);
             throw new MissingCommandException(e);
         }
     }

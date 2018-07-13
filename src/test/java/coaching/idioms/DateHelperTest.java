@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * DateHelperTest class.
+ * Unit test for the DateHelper class.
  */
-public class DateHelperTest {
+public final class DateHelperTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DateHelperTest.class);

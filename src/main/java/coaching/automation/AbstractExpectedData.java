@@ -3,11 +3,15 @@ package coaching.automation;
 
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeTrue;
 
 import coaching.csv.CsvFile;
+import coaching.csv.CsvFile.FileNotLoadedException;
 import coaching.csv.CsvRecord;
 
 /**
@@ -15,10 +19,12 @@ import coaching.csv.CsvRecord;
  */
 public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
-    /** The csv file. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+    /** Csvfile containing the expected data. */
     protected CsvFile csvFile;
 
-    /** The path. */
+    /** The path to the csv file. */
     protected String path = "data/";
 
     /**
@@ -32,8 +38,9 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      * Load data.
      *
      * @param filename the filename
+     * @throws FileNotLoadedException
      */
-    public void loadData(final String filename) {
+    protected void loadData(final String filename) throws FileNotLoadedException {
         csvFile = new CsvFile(filename);
     }
 

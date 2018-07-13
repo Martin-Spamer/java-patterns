@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit Test for an abstract Decorator class.
  */
-public class DecoratorTest {
+public final class DecoratorTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
@@ -18,13 +18,13 @@ public class DecoratorTest {
     /**
      * The Class MissingOperation.
      */
-    public class MissingOperation extends AbstractComponent {
+    public final class MissingOperation extends AbstractComponent {
     }
 
     /**
      * The Class ConcreteDecorator.
      */
-    public class ConcreteDecorator extends AbstractComponent {
+    public final class ConcreteDecorator extends AbstractComponent {
 
         /*
          * (non-Javadoc)

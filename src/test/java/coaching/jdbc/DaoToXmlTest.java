@@ -9,12 +9,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit test the CsvToJdbc class.
+ * Unit tests the CsvToJdbc class.
  */
-public class JdbcToCsvTest {
+public final class DaoToXmlTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(JdbcToCsvTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DaoToXmlTest.class);
 
     /**
      * Unit test to jdbc to csv.
@@ -23,8 +23,8 @@ public class JdbcToCsvTest {
      */
     @Test
     @Ignore("Requires Database")
-    public void testJdbcToCsv() throws Exception {
-        final JdbcToCsv instance = new JdbcToCsv();
+    public void testDaoToXml() throws Exception {
+        final DaoToXml instance = new DaoToXml();
         assertNotNull(instance);
         LOG.info(instance.toString());
     }

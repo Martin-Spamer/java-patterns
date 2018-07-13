@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The BuilderTest class.
  */
-public class BuilderTest {
+public final class BuilderTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BuilderTest.class);

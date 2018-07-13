@@ -3,11 +3,10 @@
 
 ## Expected Data handling using tags
 
+	ExpectedData.get("@Characteristic");
 
 
 ## Credentials with Characteristic tags
-
-
 
 ### Simple
 

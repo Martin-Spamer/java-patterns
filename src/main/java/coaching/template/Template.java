@@ -2,9 +2,9 @@
 package coaching.template;
 
 /**
- * Concrete Class.
+ * Concrete class.
  */
-public final class ConcreteTemplate extends AbstractTemplate {
+public final class Template extends AbstractTemplate {
 
     /*
      * (non-Javadoc)

@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class PicoProxyTest.
+ * Unit tests for the PicoProxy class.
  */
-public class PicoProxyTest {
+public final class PicoProxyTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PicoProxyTest.class);

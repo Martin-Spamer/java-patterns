@@ -10,10 +10,12 @@ import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeNotNull;
 
+import coaching.csv.CsvFile.FileNotLoadedException;
+
 /**
- * The Class CredentialsTest.
+ * Unit tests for Credentials class.
  */
-public class CredentialsTest {
+public final class CredentialsTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CredentialsTest.class);
@@ -26,9 +28,11 @@ public class CredentialsTest {
 
     /**
      * Unit test to credentials factory static.
+     *
+     * @throws FileNotLoadedException
      */
     @Test
-    public void testCredentialsFactoryStatic() {
+    public void testCredentialsFactoryStatic() throws FileNotLoadedException {
         final Actor actor = CredentialsFactory.on(platform).tagged(tag);
         assertNotNull(actor);
         LOG.info(actor.toString());
@@ -36,9 +40,11 @@ public class CredentialsTest {
 
     /**
      * Unit test to credentials factory.
+     *
+     * @throws FileNotLoadedException
      */
     @Test
-    public void testCredentialsFactory() {
+    public void testCredentialsFactory() throws FileNotLoadedException {
         final CredentialsFactory credentials = new CredentialsFactory();
         assertNotNull(credentials);
         LOG.info(credentials.toString());
@@ -50,9 +56,11 @@ public class CredentialsTest {
 
     /**
      * Unit test to credentials factory platform.
+     *
+     * @throws FileNotLoadedException
      */
     @Test
-    public void testCredentialsFactoryPlatform() {
+    public void testCredentialsFactoryPlatform() throws FileNotLoadedException {
         final CredentialsFactory credentials = new CredentialsFactory(platform);
         assertNotNull(credentials);
         LOG.info(credentials.toString());
@@ -72,9 +80,11 @@ public class CredentialsTest {
      *  &#64;AUTHORISED,bob,password,bob@example.com
      *  &#64;UNAUTHORISED,trudy,password,trudy@example.com
      * </code>
+     *
+     * @throws FileNotLoadedException
      */
     @Test
-    public void testCredentialsFactoryData() {
+    public void testCredentialsFactoryData() throws FileNotLoadedException {
         // Given a credentials factory
         final CredentialsFactory credentials = new CredentialsFactory(platform);
         assumeNotNull(credentials);

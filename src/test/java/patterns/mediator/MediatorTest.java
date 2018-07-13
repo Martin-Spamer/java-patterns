@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class MediatorTest.
  */
-public class MediatorTest {
+public final class MediatorTest {
 
     /**
      * Unit Test to.

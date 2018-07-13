@@ -8,18 +8,23 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import coaching.csv.CsvFile.FileNotLoadedException;
+
 /**
- * Unit test CSVFile.
+ * Unit tests CSVFile.
  */
-public class CsvFileTest {
+public final class CsvFileTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvFileTest.class);
 
     /**
      * Unit Test to csv file.
+     *
+     * @throws FileNotLoadedException
      */
-    public void testCsvFile() {
+    @Test
+    public void testCsvFile() throws FileNotLoadedException {
         LOG.info("testCsvFile()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);
@@ -31,9 +36,9 @@ public class CsvFileTest {
      * Unit Test to CsvFile class.
      */
     @Test
-    public void testCsvFileString() {
+    public void testCsvFileString() throws FileNotLoadedException {
         LOG.info("testCsvFileString()");
-        final CsvFile csvFile = new CsvFile("/data.csv");
+        final CsvFile csvFile = new CsvFile("data.csv");
         assertNotNull(csvFile);
         assertEquals(4, csvFile.rowCount());
         LOG.info(csvFile.toString());
@@ -43,21 +48,20 @@ public class CsvFileTest {
      * Unit Test to CsvFile class.
      */
     @Test
-    public void testCsvFileHeader() {
+    public void testCsvFileHeader() throws FileNotLoadedException {
         LOG.info("testCsvFileHeader()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);
         LOG.info(csvFile.toString());
-        final String header = csvFile.getHeader();
-        assertNotNull(header);
-        LOG.info(header.toString());
+        assertNotNull(csvFile.getHeaderLine());
+        LOG.info(csvFile.toString());
     }
 
     /**
      * Unit Test to CsvFile class.
      */
     @Test
-    public void testCsvFileRecords() {
+    public void testCsvFileRecords() throws FileNotLoadedException {
         LOG.info("testCsvFileRecords()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);

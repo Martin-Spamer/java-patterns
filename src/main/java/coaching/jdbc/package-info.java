@@ -1,5 +1,5 @@
 /**
- * Package provides Data Access Objects with jdbc.
+ * Package provides Data Access Objects with JDBC.
  * <p>
  * Detailed description of package.
  */

@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 /**
  * NetInfo class.
  */
-public class NetInfo {
+public final class NetInfo {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(NetInfo.class);
@@ -39,7 +39,7 @@ public class NetInfo {
                 }
             }
         } catch (final Exception e) {
-            LOG.error(e.toString());
+            LOG.error(e.toString(), e);
         }
     }
 

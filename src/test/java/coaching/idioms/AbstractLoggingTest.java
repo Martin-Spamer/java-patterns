@@ -12,12 +12,12 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test the AbstractLogging class.
  */
-public class AbstractLoggingTest {
+public final class AbstractLoggingTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
 
-    /** The log. */
+    /** Provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**

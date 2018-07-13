@@ -10,12 +10,12 @@ import static org.junit.Assert.assertThat;
 /**
  * AbstractParticipant class tests.
  */
-public class AbstractParticipantTest {
+public final class AbstractParticipantTest {
 
     /**
      * The Class TestMockParticipant.
      */
-    public class TestMockParticipant extends AbstractParticipant {
+    public final class TestMockParticipant extends AbstractParticipant {
 
         /*
          * (non-Javadoc)

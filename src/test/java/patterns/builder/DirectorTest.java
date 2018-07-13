@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class DirectorTest.
  */
-public class DirectorTest {
+public final class DirectorTest {
 
     /**
      * Unit Test to director.

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Manager Test.
  */
-public class ManagerTest {
+public final class ManagerTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ManagerTest.class);

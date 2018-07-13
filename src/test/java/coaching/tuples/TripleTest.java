@@ -2,6 +2,8 @@
 package coaching.tuples;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -9,12 +11,14 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The TripleTest class.
  */
-public class TripleTest {
+public final class TripleTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(TripleTest.class);
 
     /**
      * The Space Class.
      */
-    public class Space extends Triple<Double, Double, Double> {
+    public final class Space extends Triple<Double, Double, Double> {
 
         /**
          * Instantiates a new space.

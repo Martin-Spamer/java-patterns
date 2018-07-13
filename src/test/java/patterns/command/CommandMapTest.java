@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test example class for mapping Command classes.
  */
-public class CommandMapTest {
+public final class CommandMapTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);

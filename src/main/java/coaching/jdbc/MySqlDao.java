@@ -6,10 +6,10 @@ package coaching.jdbc;
  */
 public class MySqlDao extends AbstractDao {
 
-    /** JDBC_DRIVER to be used. */
+    /** The classname of the JDBC driver to use. */
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
-    /** JDBC_URL to be used. */
+    /** The URL to use to make JDBC connection. */
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/student";
 
     /** USER to be used. */
@@ -19,9 +19,11 @@ public class MySqlDao extends AbstractDao {
     private static final String PASSWORD = "root";
 
     /**
-     * Instantiates a new my sql dao.
+     * Instantiates a new DAO for MySql.
+     *
+     * @throws ClassNotFoundException
      */
-    public MySqlDao() {
+    public MySqlDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 

@@ -8,20 +8,24 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * PolymorphicList class.
+ * Aggregation with a Polymorphic List class.
+ *
+ * Objects can be added or removed from an aggregation at runtime.
+ * The lifetime of the parts is disconnected from the lifetime of the whole.
+ * We can describe this as having no life-time constraint.
  */
-public class PolymorphicList {
+public final class AggregatePolymorphicList {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PolymorphicList.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AggregatePolymorphicList.class);
 
     /** The integer list. */
-    private final List<Integer> integerList = new ArrayList<>();
+    private final List<AbstractPerson> integerList = new ArrayList<>();
 
     /**
      * Instantiates a new polymorphic list.
      */
-    public PolymorphicList() {
+    public AggregatePolymorphicList() {
         super();
         LOG.info("PolymorphicList()");
     }
@@ -29,13 +33,13 @@ public class PolymorphicList {
     /**
      * Integer object.
      *
-     * @param integerIn
+     * @param person
      *            the integer in
      * @return this for fluent interface.
      */
-    public PolymorphicList add(final Integer integerIn) {
-        LOG.info("PolymorphicList({})", integerIn);
-        integerList.add(integerIn);
+    public AggregatePolymorphicList add(final AbstractPerson person) {
+        LOG.info("PolymorphicList({})", person);
+        integerList.add(person);
         return this;
     }
 

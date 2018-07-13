@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * A Sequence of programming instructions, one follows another.
  */
-public class SequenceTest {
+public final class SequenceTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SequenceTest.class);

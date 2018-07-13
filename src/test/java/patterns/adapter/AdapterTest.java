@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * The Class AdapterTest.
  */
-public class AdapterTest {
+public final class AdapterTest {
 
     /**
      * Unit test to request.

@@ -4,14 +4,18 @@ package coaching.idioms;
 import java.util.regex.Pattern;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Regular Expression Test class.
+ * Unit test showing Regular Expression class.
  */
-public class RegularExpressionTest {
+public final class RegularExpressionTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(RegularExpressionTest.class);
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^XYZ$";

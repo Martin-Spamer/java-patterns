@@ -13,9 +13,9 @@ import coaching.application.AbstractScheduler;
 import coaching.application.Scheduler;
 
 /**
- * The Class SchedulerTest.
+ * Unit tests for the Scheduler class.
  */
-public class SchedulerTest {
+public final class SchedulerTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SchedulerTest.class);

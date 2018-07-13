@@ -4,7 +4,7 @@ package coaching.automation;
 import coaching.config.AbstractConfiguration;
 
 /**
- * The Class DatabaseProperties.
+ * A class to provide database connection properties.
  */
 public class DatabaseProperties extends AbstractConfiguration {
 

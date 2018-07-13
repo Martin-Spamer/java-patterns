@@ -7,19 +7,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Using a basic Java array to implement an example UML Aggregation. The
- * Lifetime of parts is unconstrained by lifetime of the parent.
+ * Using a basic Java array to implement an example UML Aggregation.
+ *
+ * Objects can be added or removed from an aggregation at runtime.
+ * The lifetime of the parts is disconnected from the lifetime of the whole.
+ * We can describe this as having no life-time constraint.
  **/
 public final class AggregateClassArray {
 
-    /** The Constant SIZE. */
+    /** The SIZE of the Aggregation. */
     private static final int SIZE = 4;
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArray.class);
 
-    /** The aggregate. */
-    // Implement an Aggregate using a Array of classes.
+    /** The aggregate Implement an Aggregate using a Array of classes. */
     private final AbstractPerson[] aggregate = new AbstractPerson[SIZE];
 
     /**

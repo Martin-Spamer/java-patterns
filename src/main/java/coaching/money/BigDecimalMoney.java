@@ -321,8 +321,16 @@ public final class BigDecimalMoney {
     @Override
     public String toString() {
         final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-        final String currencyString = numberFormat.format(amount);
-        return String.format("%s [currencyString=%s]", this.getClass().getSimpleName(), currencyString);
+        return numberFormat.format(amount);
     }
 
+    public String debugString() {
+        final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
+        final String currencyString = numberFormat.format(amount);
+        return String
+            .format("%s [currency=%s, currencyString=%s]",
+                    this.getClass().getSimpleName(),
+                    currency,
+                    currencyString);
+    }
 }

@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class PicoDaemonTest.
+ * Unit test for the PicoDaemon class.
  */
-public class PicoDaemonTest {
+public final class PicoDaemonTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PicoDaemonTest.class);

@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * StaticLoggingTest Class.
+ * Unit test for the StaticLogging example class.
  */
-public class StaticLoggingTest {
+public final class StaticLoggingTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(StaticLoggingTest.class);

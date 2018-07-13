@@ -12,27 +12,17 @@ import static org.junit.Assert.assertNotNull;
  * Unit test for XmlDAO class.
  */
 @Ignore("Requires PointBase DB availability")
-public class XmlDaoTest {
+public final class XmlToDaoTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlDaoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XmlToDaoTest.class);
 
     /**
      * Unit Test to xml DAO.
      */
     @Test
     public void testXmlDao() {
-        final XmlDao dao = new XmlDao();
-        assertNotNull(dao);
-        LOG.info(dao.toString());
-    }
-
-    /**
-     * Unit Test to xml dao url user password.
-     */
-    @Test
-    public void testXmlDaoUrlUserPassword() {
-        final XmlDao dao = new XmlDao();
+        final XmlToDao dao = new XmlToDao();
         assertNotNull(dao);
         LOG.info(dao.toString());
     }

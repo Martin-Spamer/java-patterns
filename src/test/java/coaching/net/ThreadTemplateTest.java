@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class ThreadTemplateTest.
+ * Unit tests for the ThreadTemplate.
  */
-public class ThreadTemplateTest {
+public final class ThreadTemplateTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ThreadTemplateTest.class);

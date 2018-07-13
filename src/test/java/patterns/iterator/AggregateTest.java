@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class AggregateTest.
  */
-public class AggregateTest {
+public final class AggregateTest {
 
     /**
      * Unit Test to create iterator.

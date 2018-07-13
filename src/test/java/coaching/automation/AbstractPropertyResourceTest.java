@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test for the abstract property resource class.
  */
-public class AbstractPropertyResourceTest {
+public final class AbstractPropertyResourceTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractPropertyResourceTest.class);
@@ -23,7 +23,7 @@ public class AbstractPropertyResourceTest {
     /**
      * The Class MockPropertyResource.
      */
-    public class MockPropertyResource extends AbstractPropertyResource {
+    public final class MockPropertyResource extends AbstractPropertyResource {
     }
 
     /**

@@ -80,7 +80,7 @@ class RequestProxy implements Runnable {
                                     clientResponseStream.flush();
                                 }
                             } catch (final IOException e) {
-                                LOG.error(e.toString());
+                                LOG.error(e.toString(), e);
                             }
                         }
                     };
@@ -95,17 +95,17 @@ class RequestProxy implements Runnable {
                                     serverRequestStream.flush();
                                 }
                             } catch (final IOException e) {
-                                LOG.error(e.toString());
+                                LOG.error(e.toString(), e);
                             }
                         }
                     };
 
                 } catch (final Exception e) {
-                    LOG.error(e.toString());
+                    LOG.error(e.toString(), e);
                 }
             }
         } catch (final Exception e) {
-            LOG.error(e.toString());
+            LOG.error(e.toString(), e);
         }
     }
 }

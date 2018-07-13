@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class NetInfoTest.
+ * Unit tests for the NetInfo class.
  */
-public class NetInfoTest {
+public final class NetInfoTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(NetInfoTest.class);

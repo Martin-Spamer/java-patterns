@@ -12,11 +12,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import coaching.csv.CsvFile;
+import coaching.csv.CsvFile.FileNotLoadedException;
 
 /**
- * The JdbcToCsv class.
+ * JdbcToCsv class.
  */
-class JdbcToCsv extends JdbcBase {
+class DaoToCsv extends JdbcBase {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -29,8 +30,10 @@ class JdbcToCsv extends JdbcBase {
 
     /**
      * Default constructor.
+     *
+     * @throws FileNotLoadedException
      */
-    public JdbcToCsv() {
+    public DaoToCsv() throws FileNotLoadedException {
         super();
         dao = new DynamicDao();
         csvFile = new CsvFile();
@@ -62,7 +65,7 @@ class JdbcToCsv extends JdbcBase {
         try {
             return resultSetMetaData.getTableName(1);
         } catch (final SQLException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
         return null;
     }
@@ -89,7 +92,7 @@ class JdbcToCsv extends JdbcBase {
             bufferedWriter.flush();
             bufferedWriter.close();
         } catch (IOException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
     }
 
@@ -116,10 +119,10 @@ class JdbcToCsv extends JdbcBase {
             try {
                 bufferedWriter.write(columns.toString());
             } catch (IOException e) {
-                log.error(e.toString());
+                log.error(e.toString(),e);
             }
         } catch (SQLException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
     }
 
@@ -147,7 +150,7 @@ class JdbcToCsv extends JdbcBase {
         try {
             bufferedWriter.write(bodyToString());
         } catch (IOException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
     }
 
@@ -168,7 +171,7 @@ class JdbcToCsv extends JdbcBase {
                 return values.toString();
             }
         } catch (SQLException e) {
-            log.error(e.toString());
+            log.error(e.toString(),e);
         }
         return null;
     }

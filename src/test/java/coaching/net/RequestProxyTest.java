@@ -12,9 +12,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class RequestProxyTest.
+ * Unit tests for the RequestProxy class.
  */
-public class RequestProxyTest {
+public final class RequestProxyTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RequestProxyTest.class);

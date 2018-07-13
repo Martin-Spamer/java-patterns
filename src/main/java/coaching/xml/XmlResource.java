@@ -18,7 +18,7 @@ import org.w3c.dom.NodeList;
 /**
  * XML Configuration class.
  */
-public class XmlResource {
+public final class XmlResource {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlResource.class);
@@ -42,7 +42,7 @@ public class XmlResource {
                 LOG.error(parserConfigurationException.toString());
             }
         } catch (final Exception exception) {
-            LOG.error(exception.toString());
+            LOG.error(exception.toString(), exception);
         }
     }
 
@@ -62,7 +62,7 @@ public class XmlResource {
                 LOG.error(parserConfigurationException.toString());
             }
         } catch (final Exception exception) {
-            LOG.error(exception.toString());
+            LOG.error(exception.toString(), exception);
         }
     }
 

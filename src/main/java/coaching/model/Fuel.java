@@ -2,7 +2,7 @@
 package coaching.model;
 
 /**
- * The Class Fuel.
+ * The Fuel class.
  */
 public class Fuel implements FuelInterface {
 

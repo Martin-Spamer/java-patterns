@@ -1,28 +1,32 @@
 
-package coaching.automation;
+package coaching.idioms;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 
 /**
- * The Class EnumTest.
+ * Unit test to show enum example.
  */
-public class EnumTest {
+public final class EnumTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(EnumTest.class);
 
     /**
      * The Enum TestEnum.
      */
     public enum TestEnum {
 
-    /** The undefined. */
-    UNDEFINED(0),
+        /** The undefined. */
+        UNDEFINED(0),
 
-    /** The a. */
-    A(1),
+        /** The a. */
+        A(1),
 
-    /** The b. */
-    B(2);
+        /** The b. */
+        B(2);
 
         /** The number. */
         private final int number;
@@ -64,9 +68,9 @@ public class EnumTest {
     @Test
     public void testMissing() {
         assertEquals(TestEnum.UNDEFINED, TestEnum.fromValue(Integer.MIN_VALUE));
+        assertEquals(TestEnum.UNDEFINED, TestEnum.fromValue(Integer.MAX_VALUE));
         assertEquals(TestEnum.UNDEFINED, TestEnum.fromValue(0));
         assertEquals(TestEnum.A, TestEnum.fromValue(1));
         assertEquals(TestEnum.B, TestEnum.fromValue(2));
-        assertEquals(TestEnum.UNDEFINED, TestEnum.fromValue(Integer.MAX_VALUE));
     }
 }

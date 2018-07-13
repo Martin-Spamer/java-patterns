@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * A Table composed of TableRows class.
+ * The class Table is composed of TableRow classes.
  */
 public class Table {
 

@@ -12,78 +12,67 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Unit test for Sqlite.
+ * Unit tests for Sqlite.
  */
-public class SqliteTest {
+public final class SqliteTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SqliteTest.class);
-
-    /** The Constant JDBC_DRIVER. */
-    private static final String JDBC_DRIVER = "org.sqlite.JDBC";
-
-    /** The Constant JDBC_URL. */
-    private static final String JDBC_URL = "jdbc:sqlite:sample.db";
-
-    /** The Constant USERNAME. */
-    private static final String USERNAME = "username";
-
-    /** The Constant PASSWORD. */
-    private static final String PASSWORD = "password";
-
-    /** The table name. */
-    private final String tableName = "tableName";
 
     /**
      * Unit test to sqlite.
      */
     @Test
-    public void testSqlite() {
-        Connection connection = null;
-        try {
-            Class.forName(JDBC_DRIVER);
+    public void testSqlite() throws Exception {
 
-            // create a database connection
-            connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
+        Class.forName("org.sqlite.JDBC");
+        final Connection connection = DriverManager.getConnection("jdbc:sqlite:memory");
 
-            final Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30); // set timeout to 30 sec.
+        final Statement statement = connection.createStatement();
+        statement.setQueryTimeout(30);
 
-            statement.executeUpdate("DROP TABLE IF EXISTS person");
-            statement.executeUpdate("CREATE TABLE person (id INTEGER, name STRING)");
+        createTable(statement);
 
-            final int ids[] = { 1, 2, 3, 4, 5 };
-            final String names[] = { "Peter", "Pallar", "William", "Paul", "James Bond" };
+        insertRecords(statement);
+        selectRecords(statement);
 
-            for (int i = 0; i < ids.length; i++) {
-                statement.executeUpdate("INSERT INTO person values(' " + ids[i] + "', '" + names[i] + "')");
-            }
+        updateRecords(statement);
+        selectRecords(statement);
 
-            // statement.executeUpdate("UPDATE person SET name='Peter' WHERE
-            // id='1'");
-            // statement.executeUpdate("DELETE FROM person WHERE id='1'");
+        deleteRecords(statement);
+        selectRecords(statement);
 
-            final ResultSet resultSet = statement.executeQuery("SELECT * from person");
+    }
 
-            while (resultSet.next()) {
-                // iterate & read the result set
-                System.out.println("name = " + resultSet.getString("name"));
-                System.out.println("id = " + resultSet.getInt("id"));
-            }
-        }
+    private void createTable(final Statement statement) throws SQLException {
+        statement.executeUpdate("DROP TABLE IF EXISTS customer");
+        statement.executeUpdate("CREATE TABLE customer (id INTEGER, name STRING, data STRING)");
+    }
 
-        catch (final SQLException e) {
-            System.err.println(e.getMessage());
-        } catch (final ClassNotFoundException e) {
-            System.err.println(e.getMessage());
-        } finally {
-            try {
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (final SQLException e) {
-                System.err.println(e);
-            }
+    private void insertRecords(final Statement statement) throws SQLException {
+        final int ids[] = { 1, 2, 3, 4, 5 };
+        final String names[] = { "Dick Turpin", "Robin Hood", "William Tell", "James Bond", "Robinson Crusoe" };
+
+        for (int i = 0; i < ids.length; i++) {
+            String insert = "INSERT INTO customer values('%s', '%s', null)";
+            String sql = String.format(insert, ids[i], names[i]);
+            statement.executeUpdate(sql);
         }
     }
+
+    private void updateRecords(final Statement statement) throws SQLException {
+        statement.executeUpdate("UPDATE customer SET data='VIP' WHERE id='1'");
+    }
+
+    private void selectRecords(final Statement statement) throws SQLException {
+        final ResultSet resultSet = statement.executeQuery("SELECT * from customer");
+        while (resultSet.next()) {
+            LOG.info("{}) {} {}", resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("data"));
+        }
+    }
+
+    private void deleteRecords(final Statement statement) throws SQLException {
+        statement.executeUpdate("DELETE FROM customer WHERE id='5'");
+    }
+
 }

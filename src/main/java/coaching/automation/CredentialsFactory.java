@@ -9,10 +9,11 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assume.assumeTrue;
 
 import coaching.csv.CsvFile;
+import coaching.csv.CsvFile.FileNotLoadedException;
 import coaching.csv.CsvRecord;
 
 /**
- * The Class CredentialsFactory.
+ * The CredentialsFactory class.
  */
 public class CredentialsFactory extends AbstractExpectedData implements ExpectedDataInterface {
 
@@ -30,15 +31,18 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      *
      * @param platform the platform
      * @return the credentials factory
+     * @throws FileNotLoadedException
      */
-    public static CredentialsFactory on(final String platform) {
+    public static CredentialsFactory on(final String platform) throws FileNotLoadedException {
         return new CredentialsFactory(platform);
     }
 
     /**
      * The Constructor.
+     *
+     * @throws FileNotLoadedException
      */
-    public CredentialsFactory() {
+    public CredentialsFactory() throws FileNotLoadedException {
         super();
         loadFrom(pathForPlatform());
     }
@@ -47,8 +51,9 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * The Constructor.
      *
      * @param platform the platform
+     * @throws FileNotLoadedException
      */
-    public CredentialsFactory(final String platform) {
+    public CredentialsFactory(final String platform) throws FileNotLoadedException {
         super();
         this.platform = platform;
         loadFrom(pathForPlatform());
@@ -58,8 +63,9 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * Load from.
      *
      * @param credentialsFilename the credentials filename
+     * @throws FileNotLoadedException
      */
-    private void loadFrom(final String credentialsFilename) {
+    private void loadFrom(final String credentialsFilename) throws FileNotLoadedException {
         csvFile = new CsvFile(credentialsFilename);
     }
 
@@ -83,7 +89,7 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * @return the string
      */
     private String pathFor(final String platform) {
-        return String.format("/data/%s/Credentials.csv", platform);
+        return String.format("data/%s/Credentials.csv", platform);
     }
 
     /**
@@ -92,7 +98,7 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * @return the string
      */
     private String defaultPath() {
-        return "/data/Credentials.csv";
+        return "data/Credentials.csv";
     }
 
     /**

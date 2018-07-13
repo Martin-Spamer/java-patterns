@@ -15,7 +15,7 @@ import static org.junit.Assume.assumeNotNull;
 /**
  * Composite class tests.
  */
-public class CompositeTest {
+public final class CompositeTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);

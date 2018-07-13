@@ -18,7 +18,7 @@ import patterns.mvc.view.View;
 /**
  * Model View Controller Test class.
  */
-public class MvcTest {
+public final class MvcTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(MvcTest.class);

@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 /**
  * The Class OriginatorTest.
  */
-public class OriginatorTest {
+public final class OriginatorTest {
 
     /**
      * Unit test to typical usage.

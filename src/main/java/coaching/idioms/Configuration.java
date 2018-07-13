@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Configuration {
 
-    /** The log. */
+    /** Provides logging. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The properties. */

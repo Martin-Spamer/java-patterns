@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Class FooTest.
+ * Unit tests for the logging the class loaders.
  */
-public class FooTest {
+public final class FooTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(FooTest.class);

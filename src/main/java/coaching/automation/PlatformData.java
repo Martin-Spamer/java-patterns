@@ -1,8 +1,10 @@
 
 package coaching.automation;
 
+import coaching.csv.CsvFile.FileNotLoadedException;
+
 /**
- * The Class PlatformData.
+ * The PlatformData class.
  */
 public final class PlatformData extends AbstractExpectedData implements ExpectedDataInterface {
 
@@ -14,8 +16,10 @@ public final class PlatformData extends AbstractExpectedData implements Expected
 
     /**
      * The Constructor.
+     *
+     * @throws FileNotLoadedException
      */
-    private PlatformData() {
+    private PlatformData() throws FileNotLoadedException {
         super();
         setPlatform(System.getProperty("platform", "local"));
         loadPlatformData();
@@ -25,8 +29,9 @@ public final class PlatformData extends AbstractExpectedData implements Expected
      * The Constructor.
      *
      * @param platform the platform
+     * @throws FileNotLoadedException
      */
-    public PlatformData(final String platform) {
+    public PlatformData(final String platform) throws FileNotLoadedException {
         super();
         setPlatform(platform);
         loadPlatformData();
@@ -34,17 +39,20 @@ public final class PlatformData extends AbstractExpectedData implements Expected
 
     /**
      * Load platform data.
+     *
+     * @throws FileNotLoadedException
      */
-    private void loadPlatformData() {
-        super.loadData("Customer.csv");
+    private void loadPlatformData() throws FileNotLoadedException {
+        super.loadData("PlatformData.csv");
     }
 
     /**
      * Gets the instance.
      *
      * @return the instance
+     * @throws FileNotLoadedException
      */
-    protected static synchronized PlatformData getInstance() {
+    protected static synchronized PlatformData getInstance() throws FileNotLoadedException {
         if (instance == null) {
             instance = new PlatformData();
         }
@@ -56,8 +64,9 @@ public final class PlatformData extends AbstractExpectedData implements Expected
      *
      * @param platform the platform
      * @return the platform data
+     * @throws FileNotLoadedException
      */
-    public static PlatformData platform(final String platform) {
+    public static PlatformData platform(final String platform) throws FileNotLoadedException {
         return PlatformData.getInstance().setPlatform(platform);
     }
 
@@ -86,8 +95,9 @@ public final class PlatformData extends AbstractExpectedData implements Expected
      *
      * @param tag the tag
      * @return the string
+     * @throws FileNotLoadedException
      */
-    public static String withTag(final String tag) {
+    public static String withTag(final String tag) throws FileNotLoadedException {
         return PlatformData.getInstance().getTagged(tag);
     }
 
@@ -96,8 +106,9 @@ public final class PlatformData extends AbstractExpectedData implements Expected
      *
      * @param tag the tag
      * @return the string
+     * @throws FileNotLoadedException
      */
-    public static String withCharacteristic(final String tag) {
+    public static String withCharacteristic(final String tag) throws FileNotLoadedException {
         return PlatformData.getInstance().getTagged(tag);
     }
 
@@ -106,8 +117,9 @@ public final class PlatformData extends AbstractExpectedData implements Expected
      *
      * @param tag the tag
      * @return the string[]
+     * @throws FileNotLoadedException
      */
-    public static String[] allWithTag(final String tag) {
+    public static String[] allWithTag(final String tag) throws FileNotLoadedException {
         return PlatformData.getInstance().getAllTagged(tag);
     }
 

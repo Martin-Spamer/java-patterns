@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class WebCrawlerTest.
+ * Unit tests for the WebCrawler class.
  */
-public class WebCrawlerTest {
+public final class WebCrawlerTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(WebCrawlerTest.class);

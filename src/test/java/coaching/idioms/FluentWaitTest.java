@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Fluent Wait Test class.
  */
-public class FluentWaitTest {
+public final class FluentWaitTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(FluentWaitTest.class);
@@ -20,7 +20,7 @@ public class FluentWaitTest {
     /**
      * class PassCondition.
      */
-    public class PassCondition extends Condition {
+    public final class PassCondition extends Condition {
 
         /**
          * Instantiates a new pass condition.
@@ -33,7 +33,7 @@ public class FluentWaitTest {
     /**
      * class FailCondition.
      */
-    public class FailCondition extends Condition {
+    public final class FailCondition extends Condition {
 
         /**
          * Instantiates a new fail condition.

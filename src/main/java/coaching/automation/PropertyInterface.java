@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * The Interface PropertyInterface.
+ * The Interface for Property handing classes.
  */
 public interface PropertyInterface {
 

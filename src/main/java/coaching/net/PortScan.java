@@ -83,10 +83,10 @@ public class PortScan extends Thread {
             try {
                 properties.load(inStream);
             } catch (IOException e) {
-                LOG.error(e.toString());
+                LOG.error(e.toString(), e);
             }
         } catch (FileNotFoundException e) {
-            LOG.error(e.toString());
+            LOG.error(e.toString(), e);
         }
     }
 
@@ -94,7 +94,7 @@ public class PortScan extends Thread {
      * Execute.
      */
     public void execute() {
-        for (int port = 1; port < (64 * 1024);) {
+        for (int port = 1; port < 64 * 1024;) {
             if (Thread.activeCount() > PortScan.loadFactor) {
                 Thread.yield();
             } else {
@@ -134,7 +134,7 @@ public class PortScan extends Thread {
 
             socket.close();
         } catch (final Exception exception) {
-            LOG.error(exception.toString());
+            LOG.error(exception.toString(), exception);
             LOG.info("portscan = {} : {} ", ip, port);
         }
     }

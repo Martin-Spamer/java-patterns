@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class AssociationsTest.
+ * Unit tests for the Associations class.
  */
-public class AssociationsTest {
+public final class AssociationsTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AssociationsTest.class);

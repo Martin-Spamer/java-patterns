@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNull;
 /**
  * Unit test for the AbstractConfig object.
  */
-public class AbstractConfigTest {
+public final class AbstractConfigTest {
 
     /** The Constant FILENAME_KEY. */
     private static final String FILENAME_KEY = "Filename";
@@ -27,14 +27,14 @@ public class AbstractConfigTest {
      * Mock a MissingConfiguration.
      * The configuration file is missing so throws MissingConfigException.
      */
-    public class MissingConfiguration extends Configuration {
+    public final class MissingConfiguration extends Configuration {
     }
 
     /**
      * Mock a DefaultConfiguration.
      * When the configuration file is missing, provide default values.
      */
-    public class InvalidConfig extends Configuration {
+    public final class InvalidConfig extends Configuration {
     }
 
     /**
