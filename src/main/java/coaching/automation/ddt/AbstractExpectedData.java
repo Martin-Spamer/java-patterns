@@ -40,7 +40,7 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      * @param filename the filename
      * @throws FileNotLoadedException
      */
-    protected void loadData(final String filename) throws FileNotLoadedException {
+    protected void loadData(final String filename) {
         csvFile = new CsvFile(filename);
     }
 

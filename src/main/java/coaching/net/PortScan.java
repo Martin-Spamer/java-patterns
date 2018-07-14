@@ -5,10 +5,9 @@
 
 package coaching.net;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -75,18 +74,14 @@ public class PortScan extends Thread {
      * Initialise.
      */
     private void initialise() {
-        String filename = "ports.properties";
-        File file = new File(filename);
+        final String filename = "ports.properties";
         try {
-            FileInputStream inStream = new FileInputStream(file);
-
-            try {
-                properties.load(inStream);
-            } catch (IOException e) {
-                LOG.error(e.toString(), e);
-            }
-        } catch (FileNotFoundException e) {
-            LOG.error(e.toString(), e);
+            final ClassLoader classLoader = this.getClass().getClassLoader();
+            final InputStream resourceAsStream = classLoader.getResourceAsStream(filename);
+            properties.load(resourceAsStream);
+        } catch (final IOException e) {
+            final String message = String.format("Resource %s not found.", filename);
+            LOG.error(message, e);
         }
     }
 
@@ -94,7 +89,7 @@ public class PortScan extends Thread {
      * Execute.
      */
     public void execute() {
-        for (int port = 1; port < 64 * 1024;) {
+        for (int port = 1; port < (64 * 1024);) {
             if (Thread.activeCount() > PortScan.loadFactor) {
                 Thread.yield();
             } else {
@@ -112,7 +107,7 @@ public class PortScan extends Thread {
      * @return the string
      */
     public String lookUpPort(final int port) {
-        String portNo = Integer.toString(port);
+        final String portNo = Integer.toString(port);
         return PortScan.properties.getProperty(portNo, "unknown");
     }
 
@@ -124,18 +119,18 @@ public class PortScan extends Thread {
     public void run() {
         LOG.info("run");
         try {
+            LOG.info("portscan = {} : {} ", ip, port);
             final java.net.Socket socket = new java.net.Socket(ip, port);
 
             // report open port & try looking it up
-            LOG.info("portscan = {} : {} ", ip, port);
             LOG.info("scanning = {} ", lookUpPort(port));
 
-            Thread.yield();
-
             socket.close();
-        } catch (final Exception exception) {
-            LOG.error(exception.toString(), exception);
-            LOG.info("portscan = {} : {} ", ip, port);
+            Thread.yield();
+        } catch (final UnknownHostException e) {
+            LOG.error(e.toString(), e);
+        } catch (final IOException e) {
+            LOG.error(e.toString(), e);
         }
     }
 

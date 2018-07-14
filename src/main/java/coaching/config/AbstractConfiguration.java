@@ -105,7 +105,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
                 properties.load(resourceAsStream);
                 loaded = true;
             } catch (final IOException e) {
-                log.error(e.toString(),e);
+                log.error(e.toString(), e);
             }
         }
     }

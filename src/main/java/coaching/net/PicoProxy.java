@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 /**
  * PicoProxy class.
  */
-public class PicoProxy {
+public final class PicoProxy {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(NetInfo.class);
@@ -19,6 +19,7 @@ public class PicoProxy {
      * Instantiates a new pico proxy.
      */
     public PicoProxy() {
+        super();
         new PicoProxyDaemon();
     }
 
@@ -31,6 +32,11 @@ public class PicoProxy {
          * Instantiates a new pico proxy daemon.
          */
         public PicoProxyDaemon() {
+            super();
+        }
+
+        @Override
+        public void run() {
             boolean exit = false;
 
             // ServerSocket serverSocket = new ServerSocket( 8888 ) ;

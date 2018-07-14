@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 /**
  * PicoServer class.
  */
-public class PicoServer {
+public final class PicoServer {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PicoServer.class);

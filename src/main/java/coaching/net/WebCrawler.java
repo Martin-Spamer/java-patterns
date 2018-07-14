@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
 /**
  * A class to crawl a web site.
  */
-public class WebCrawler extends ThreadTemplate {
+public final class WebCrawler extends ThreadTemplate {
 
     /** The Constant BASE_URL. */
     private static final String BASE_URL = "http://127.0.0.1:8080";
@@ -71,7 +71,7 @@ public class WebCrawler extends ThreadTemplate {
         try {
             // form URL for any ROBOTS.TXT file
             final String robotsTxtFile = String.format("%s/robots.txt", baseUrl);
-            URL robotsUrl = new URL(robotsTxtFile);
+            final URL robotsUrl = new URL(robotsTxtFile);
             String robotTxtContent = new String();
 
             final StringBuffer robotTxtContentBuffer = new StringBuffer();

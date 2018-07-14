@@ -49,7 +49,7 @@ public abstract class AbstractScheduler {
     private void loadConfiguration() {
         try {
             properties = PropertiesLoader.getProperties(defaultFilename());
-        } catch (IOException e) {
+        } catch (final IOException e) {
             log.error(e.toString(), e);
 
         }

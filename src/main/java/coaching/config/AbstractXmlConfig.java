@@ -98,7 +98,7 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
                 properties.loadFromXML(resourceAsStream);
                 loaded = true;
             } catch (final IOException e) {
-                log.error(e.toString(),e);
+                log.error(e.toString(), e);
             }
         }
     }

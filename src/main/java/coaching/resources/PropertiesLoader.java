@@ -26,6 +26,10 @@ import java.util.Properties;
  */
 public final class PropertiesLoader {
 
+    private PropertiesLoader() {
+        super();
+    }
+
     /**
      * Gets the properties.
      *
@@ -34,8 +38,8 @@ public final class PropertiesLoader {
      * @throws IOException the IO exception
      */
     public static Properties getProperties(final String resourceFilename) throws IOException {
-        InputStream stream = ResourceLoader.getStream(resourceFilename);
-        Properties properties = new Properties();
+        final InputStream stream = ResourceLoader.getStream(resourceFilename);
+        final Properties properties = new Properties();
         properties.load(stream);
         return properties;
     }
@@ -48,8 +52,8 @@ public final class PropertiesLoader {
      * @throws IOException the IO exception
      */
     public static Properties getXmlProperties(final String xmlResourceFilename) throws IOException {
-        InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
-        Properties properties = new Properties();
+        final InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
+        final Properties properties = new Properties();
         properties.loadFromXML(stream);
         return properties;
     }

@@ -5,7 +5,6 @@
 
 package coaching.jdbc;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -30,15 +29,12 @@ public class EntityMetaData extends JdbcBase {
     /** The output file. */
     private final File outputFile = null;
 
-    /** The buffered writer. */
-    private final BufferedWriter bufferedWriter = null;
-
     /**
      * The Constructor.
      *
      * @throws Exception the exception
      */
-    public EntityMetaData() throws Exception {
+    public EntityMetaData() {
         super();
     }
 
@@ -47,9 +43,39 @@ public class EntityMetaData extends JdbcBase {
      *
      * @throws Exception the exception
      */
-    public void process() throws Exception {
-        super.query();
-        toCsvFile(resultSetMetaData);
+    public void process() {
+        try {
+            super.query();
+        } catch (SQLException e) {
+            log.error(e.toString());
+
+        }
+        try {
+            toCsvFile(resultSetMetaData);
+        } catch (SQLException e) {
+            log.error(e.toString());
+
+        }
+    }
+
+    public char getSeparator() {
+        return separator;
+    }
+
+    public String getHeaderLine() {
+        return headerLine;
+    }
+
+    public String getFieldNames() {
+        return fieldNames;
+    }
+
+    public String getDataLine() {
+        return dataLine;
+    }
+
+    public File getOutputFile() {
+        return outputFile;
     }
 
     /**

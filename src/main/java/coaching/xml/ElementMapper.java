@@ -81,7 +81,7 @@ public final class ElementMapper {
         // references, CDATA sections, and text nodes; but not
         // comments or processing instructions
         final int type = node.getNodeType();
-        if (type == Node.COMMENT_NODE || type == Node.PROCESSING_INSTRUCTION_NODE) {
+        if ((type == Node.COMMENT_NODE) || (type == Node.PROCESSING_INSTRUCTION_NODE)) {
             return "";
         }
 

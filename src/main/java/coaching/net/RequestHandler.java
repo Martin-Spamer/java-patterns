@@ -53,8 +53,8 @@ class RequestHandler implements Runnable {
         BufferedReader bufferedReader = null;
         try {
             printWriter = new PrintWriter(clientSocket.getOutputStream(), true);
-            InputStream inStream = clientSocket.getInputStream();
-            InputStreamReader reader = new InputStreamReader(inStream);
+            final InputStream inStream = clientSocket.getInputStream();
+            final InputStreamReader reader = new InputStreamReader(inStream);
             bufferedReader = new BufferedReader(reader);
             String inputLine, outputLine;
             while (!exit) {

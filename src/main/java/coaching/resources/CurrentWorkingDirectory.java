@@ -28,7 +28,7 @@ public final class CurrentWorkingDirectory {
      *            the that
      * @return the string
      */
-    public String mark(final Object that) {
+    private String mark(final Object that) {
         String absolutePath = null;
         try {
             final String className = that.getClass().getSimpleName();
@@ -39,10 +39,10 @@ public final class CurrentWorkingDirectory {
                 absolutePath = file.getAbsolutePath();
                 LOG.info(absolutePath);
             } catch (final Exception exception) {
-                LOG.error(exception.toString(),exception);
+                LOG.error(exception.toString(), exception);
             }
         } catch (final Exception exception) {
-            LOG.error(exception.toString(),exception);
+            LOG.error(exception.toString(), exception);
         }
         return absolutePath;
     }

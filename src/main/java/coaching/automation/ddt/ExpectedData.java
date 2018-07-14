@@ -17,7 +17,7 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 public final class ExpectedData extends AbstractExpectedData implements ExpectedDataInterface {
 
     /** single static instance within the class loader. */
-    private static ExpectedData instance;
+    private static ExpectedData INSTANCE = new ExpectedData();
 
     /** The platform. */
     protected String platform = null;
@@ -29,10 +29,7 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
      * @throws FileNotLoadedException
      */
     protected static synchronized ExpectedData getInstance() {
-        if (instance == null) {
-            instance = new ExpectedData();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     /**
