@@ -11,16 +11,13 @@ package coaching.solid;
  * subtype S) without altering any of the desirable properties of the program
  * (correctness, task performed, etc.).
  *
- * @author martin.spamer.
- * @version 0.1 - first release.
- *          Created 13-Jan-2005 - 12:08:34
  */
 public class LiskovSubstitutionPrinciple {
 
     /**
      * Abstraction Interface.
      */
-    public interface Abstraction {
+    public interface AnAbstractInterface {
         /**
          * Do something.
          */
@@ -30,7 +27,7 @@ public class LiskovSubstitutionPrinciple {
     /**
      * BaseType class.
      */
-    public abstract class BaseType implements Abstraction {
+    public abstract class BaseType implements AnAbstractInterface {
 
         /*
          * (non-Javadoc)

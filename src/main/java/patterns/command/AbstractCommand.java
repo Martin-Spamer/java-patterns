@@ -75,7 +75,7 @@ public abstract class AbstractCommand implements CommandInterface {
      */
     @Override
     public Boolean getResult() {
-        return result.getResult();
+        return result.isPass();
     }
 
     @Override

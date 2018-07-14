@@ -88,10 +88,10 @@ public final class XmlToJdbc {
      *            the row list
      * @param rowNo
      *            the row no
-     * @param temp
+     * @param value
      *            the temp
      */
-    private void processRow(final String table, final NodeList rowList, final int rowNo, final String temp) {
+    private void processRow(final String table, final NodeList rowList, final int rowNo, final String value) {
         try {
             // * first row element by index.
             final Element rowElement = (Element) rowList.item(rowNo);

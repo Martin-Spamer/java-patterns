@@ -40,7 +40,7 @@ public final class Result implements ResultInterface {
      * patterns.command.ResultInterface#result(patterns.command.ResultInterface)
      */
     @Override
-    public boolean getResult() {
+    public boolean isPass() {
         return value;
     }
 
@@ -51,7 +51,7 @@ public final class Result implements ResultInterface {
      */
     @Override
     public boolean and(final ResultInterface newResult) {
-        value &= newResult.getResult();
+        value &= newResult.isPass();
         return value;
     }
 

@@ -11,9 +11,6 @@ import static org.junit.Assert.assertNotNull;
  *
  * Intent: A class should have only on reason to change, one responsibility.
  *
- * @author martin.spamer.
- * @version 0.1 - first release.
- *          Created 13-Jan-2005 - 12:05:35
  */
 public class SingleResponsibilityPrinciple {
 
@@ -21,23 +18,19 @@ public class SingleResponsibilityPrinciple {
     private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
     /**
-     * A class with Multiple Responsibilities.
+     * An example of a class with Multiple Responsibilities.
      */
     public class MultipleResponsibility {
-
-        /** The foo. */
         private boolean foo = false;
-
-        /** The bar. */
         private boolean bar = false;
 
         /**
          * Foo and Bar responsibility.
          */
-        public void responsibility() {
-            LOG.info("responsibility");
-            foo = true;
-            bar = true;
+        public void doSomething(final boolean newFoo, final boolean newBar) {
+            LOG.info("doSomething({},{})", newFoo, newBar);
+            foo = newFoo;
+            bar = newBar;
         }
 
         /*
@@ -54,16 +47,14 @@ public class SingleResponsibilityPrinciple {
      * Split out the Foo responsibility into a separate class.
      */
     public class Foo {
-
-        /** The foo. */
         private boolean foo;
 
         /**
          * Foo.
          */
-        public void doFoo() {
-            LOG.info("doFoo");
-            foo = true;
+        public void doFoo(final boolean newFoo) {
+            LOG.info("doFoo({})", newFoo);
+            foo = newFoo;
         }
     }
 
@@ -71,16 +62,16 @@ public class SingleResponsibilityPrinciple {
      * Split out the Bar responsibility into a separate class.
      */
     public class Bar {
-
-        /** The bar. */
         private boolean bar;
 
         /**
          * Bar.
+         *
+         * @param newBar
          */
-        public void doBar() {
-            LOG.info("doBar");
-            bar = true;
+        public void doBar(final boolean newBar) {
+            LOG.info("doBar({}", newBar);
+            bar = newBar;
         }
     }
 
@@ -88,11 +79,7 @@ public class SingleResponsibilityPrinciple {
      * A class with a Single Responsibility, a container for Foo and Bar.
      */
     public class SingleResponsibility {
-
-        /** The foo. */
         private final Foo foo = new Foo();
-
-        /** The bar. */
         private final Bar bar = new Bar();
 
         /**
@@ -100,8 +87,8 @@ public class SingleResponsibilityPrinciple {
          */
         public void responsibility() {
             LOG.info("responsibility");
-            foo.doFoo();
-            bar.doBar();
+            foo.doFoo(true);
+            bar.doBar(true);
         }
     }
 

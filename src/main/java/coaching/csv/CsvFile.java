@@ -15,26 +15,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Represent a comma separated value file class.
+ * The CsvFile class represents a data file containing comma separated values.
  */
 public class CsvFile {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvFile.class);
 
-    /** The csv filename. */
-    private final String csvFilename;
+    /** The filename. */
+    private String csvFilename;
 
-    /** The header line. */
+    /** The header line of the csv file */
     private String headerLine;
 
-    /** The column names. */
+    /** The column names for the csv file. */
     private String[] columnNames;
 
-    /** The records. */
+    /** The records, the rows of the csv file holding data. */
     private final List<CsvRecord> records = new ArrayList<>();
 
-    /** The loaded. */
+    /** The loaded successfully. */
     private boolean loaded;
 
     /**
@@ -44,9 +44,17 @@ public class CsvFile {
      */
     public CsvFile() {
         super();
-        csvFilename = String.format("%s.csv", this.getClass().getSimpleName());
-        LOG.info("CsvFile({})", csvFilename);
-        initialise();
+        LOG.debug("CsvFile()");
+        initialise(defaultFilename());
+        LOG.trace(toString());
+    }
+
+    private String defaultFilename() {
+        if (csvFilename == null) {
+            String stem = this.getClass().getSimpleName();
+            csvFilename = String.format("%s.csv", stem);
+        }
+        return csvFilename;
     }
 
     /**
@@ -58,9 +66,9 @@ public class CsvFile {
      */
     public CsvFile(final String csvFilename) {
         super();
-        this.csvFilename = csvFilename;
-        LOG.info("CsvFile({})", csvFilename);
-        initialise();
+        LOG.debug("CsvFile({})", csvFilename);
+        initialise(csvFilename);
+        LOG.trace(toString());
     }
 
     /**
@@ -68,35 +76,10 @@ public class CsvFile {
      *
      * @throws FileNotLoadedException
      */
-    private void initialise() {
-        read(csvFilename);
-    }
-
-    /**
-     * Gets the header line.
-     *
-     * @return the headerLine
-     */
-    public String getHeaderLine() {
-        return headerLine;
-    }
-
-    /**
-     * header.
-     *
-     * @return the header
-     */
-    public String getHeader() {
-        return headerLine;
-    }
-
-    /**
-     * column names.
-     *
-     * @return the column names
-     */
-    public String getColumnNames() {
-        return Arrays.toString(columnNames);
+    private void initialise(final String csvFilename) {
+        LOG.debug("initialise({})", csvFilename);
+        this.csvFilename = csvFilename;
+        read(this.csvFilename);
     }
 
     /**
@@ -107,19 +90,21 @@ public class CsvFile {
      * @throws IOException Signals that an I/O exception has occurred.
      */
     public void read(final String filename) {
+        LOG.debug("read({})", filename);
         final ClassLoader classLoader = this.getClass().getClassLoader();
         try {
-            LOG.debug("read({})", filename);
             final InputStream resourceAsStream = classLoader.getResourceAsStream(filename);
             if (resourceAsStream != null) {
                 read(resourceAsStream);
                 resourceAsStream.close();
             } else {
                 final String msg = String.format("Resource %s not found", filename);
+                LOG.warn("{} on read({})", msg, filename);
                 throw new FileNotLoadedException(msg);
             }
         } catch (final IOException e) {
-            throw new FileNotLoadedException(e.toString());
+            LOG.error(e.getMessage(), e);
+            throw new FileNotLoadedException(e.toString(), e);
         }
     }
 
@@ -175,9 +160,9 @@ public class CsvFile {
      *            the line
      */
     protected void processLine(final String line) {
+        LOG.debug("processLine({})", line);
         if (line.charAt(0) == '#') {
             setHeaderLine(line);
-            LOG.trace("headerLine = {}", line);
         } else {
             final CsvRecord record = new CsvRecord(line);
             records.add(record);
@@ -193,6 +178,7 @@ public class CsvFile {
      *            the new header line
      */
     private void setHeaderLine(final String line) {
+        LOG.debug("setHeaderLine({})", line);
         headerLine = line.substring(1);
         columnNames = headerLine.split(",");
     }
@@ -204,10 +190,11 @@ public class CsvFile {
      * @throws IOException
      */
     public void write(final String filename) throws IOException {
+        LOG.debug("write({})", filename);
         final FileWriter out = new FileWriter(filename);
         final BufferedWriter writer = new BufferedWriter(out);
         for (final CsvRecord csvRecord : records) {
-            LOG.trace("write csvRecord = {}", csvRecord);
+            LOG.trace("write csvRecord : {}", csvRecord);
             writer.write(csvRecord.toString());
         }
         writer.close();
@@ -220,6 +207,33 @@ public class CsvFile {
      */
     public boolean isLoaded() {
         return loaded;
+    }
+
+    /**
+     * Gets the header line.
+     *
+     * @return the headerLine
+     */
+    public String getHeaderLine() {
+        return headerLine;
+    }
+
+    /**
+     * header.
+     *
+     * @return the header
+     */
+    public String getHeader() {
+        return headerLine;
+    }
+
+    /**
+     * column names.
+     *
+     * @return the column names
+     */
+    public String getColumnNames() {
+        return Arrays.toString(columnNames);
     }
 
     /**
@@ -275,12 +289,16 @@ public class CsvFile {
     public class FileNotLoadedException extends AssertionError {
         private static final long serialVersionUID = 1L;
 
-        private FileNotLoadedException() {
+        public FileNotLoadedException() {
             super();
         }
 
-        private FileNotLoadedException(final String message) {
+        public FileNotLoadedException(final String message) {
             super(message);
+        }
+
+        public FileNotLoadedException(final String message, final Throwable cause) {
+            super(message, cause);
         }
     }
 }

@@ -11,7 +11,7 @@ public interface ResultInterface {
      *
      * @return the result as a boolean
      */
-    boolean getResult();
+    boolean isPass();
 
     /**
      * And.
