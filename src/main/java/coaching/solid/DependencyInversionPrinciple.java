@@ -2,8 +2,14 @@
 package coaching.solid;
 
 /**
- * A class to Demonstrate the Dependency Inversion Principle (DIP).
+ * A class to demonstrate the Dependency Inversion Principle (DIP).
  *
+ * The SOLID principle of dependency inversion (DIP) is an approach to reducing
+ * the coupling between software modules.
+ * 
+ * The dependencies are reversed, removing the depen of high-level modules on
+ * low-level implementation module, the rules of DIP state:
+ *  
  * Intent: High-level modules should remain independent of the implementation
  * details of low-level module.
  * - High-level modules should not depend on low-level modules, and both should
@@ -11,17 +17,13 @@ package coaching.solid;
  * - Abstractions should not depend on details, details should depend on
  * abstractions.
  *
- * @author martin.spamer.
- * @version 0.1 - first release.
- *          Created 13-Jan-2005 - 12:07:53
  */
 public class DependencyInversionPrinciple {
 
     /**
-     * The Interface Abstraction.
+     * The Abstraction.
      */
-    public interface Abstraction {
-
+    public interface AnAbstractInterface {
         /**
          * Do something.
          */
@@ -31,7 +33,7 @@ public class DependencyInversionPrinciple {
     /**
      * The Module class.
      */
-    public abstract class Module implements Abstraction {
+    public abstract class Module implements AnAbstractInterface {
     }
 
     /**
@@ -56,7 +58,7 @@ public class DependencyInversionPrinciple {
     public class HighLevelModule extends Module {
 
         /** The module. */
-        public Abstraction module = new LowLevelModule();
+        public AnAbstractInterface module = new LowLevelModule();
 
         /*
          * (non-Javadoc)

@@ -7,6 +7,9 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Resource Loader class.
  *
@@ -19,6 +22,8 @@ import java.net.URL;
  * </code>
  */
 public final class ResourceLoader {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ResourceLoader.class);
 
     private ResourceLoader() {
         super();
@@ -35,8 +40,7 @@ public final class ResourceLoader {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         final URL resource = classLoader.getResource(resourceFilename);
         if (resource == null) {
-            final String message = String.format("Resource file %s not found", resourceFilename);
-            throw new FileNotFoundException(message);
+            throw new FileNotFoundException(makeMsg(resourceFilename));
         } else {
             return new File(resource.toExternalForm());
         }
@@ -52,8 +56,7 @@ public final class ResourceLoader {
     public static File getFile(final URL resourceUrl) throws FileNotFoundException {
         final String file = resourceUrl.getFile();
         if (file == null) {
-            final String message = String.format("Resource file %s not found", resourceUrl);
-            throw new FileNotFoundException(message);
+            throw new FileNotFoundException(makeMsg(resourceUrl.toString()));
         } else {
             return new File(file);
         }
@@ -69,8 +72,7 @@ public final class ResourceLoader {
     public static File getFile(final URI resourceUri) throws FileNotFoundException {
         final String path = resourceUri.normalize().getPath();
         if (path == null) {
-            final String message = String.format("Resource file %s not found", resourceUri);
-            throw new FileNotFoundException(message);
+            throw new FileNotFoundException(makeMsg(resourceUri.toString()));
         } else {
             return new File(path);
         }
@@ -87,7 +89,7 @@ public final class ResourceLoader {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         final InputStream resourceAsStream = classLoader.getResourceAsStream(resourceFilename);
         if (resourceAsStream == null) {
-            final String message = String.format("Resource file %s not found", resourceFilename);
+            final String message = makeMsg(resourceFilename);
             throw new FileNotFoundException(message);
         } else {
             return resourceAsStream;
@@ -106,8 +108,7 @@ public final class ResourceLoader {
         final String file = resourceUrl.getFile();
         final InputStream resourceAsStream = classLoader.getResourceAsStream(file);
         if (resourceAsStream == null) {
-            final String message = String.format("Resource file %s not found", resourceUrl);
-            throw new FileNotFoundException(message);
+            throw new FileNotFoundException(makeMsg(resourceUrl.toString()));
         } else {
             return resourceAsStream;
         }
@@ -125,10 +126,15 @@ public final class ResourceLoader {
         final String path = resourceUri.normalize().getPath();
         final InputStream resourceAsStream = classLoader.getResourceAsStream(path);
         if (resourceAsStream == null) {
-            final String message = String.format("Resource file %s not found", resourceUri);
-            throw new FileNotFoundException(message);
+            throw new FileNotFoundException(makeMsg(resourceUri.toString()));
         } else {
             return resourceAsStream;
         }
     }
+
+    private static String makeMsg(final String resourceFilename) {
+        final String message = String.format("Resource file %s not found", resourceFilename);
+        return message;
+    }
+
 }

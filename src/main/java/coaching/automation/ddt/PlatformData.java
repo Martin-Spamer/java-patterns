@@ -9,7 +9,7 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 public final class PlatformData extends AbstractExpectedData implements ExpectedDataInterface {
 
     /** single static instance within class loader. */
-    private static PlatformData INSTANCE = new PlatformData();
+    private static final PlatformData INSTANCE = new PlatformData();
 
     /** The platform. */
     protected String platform = null;

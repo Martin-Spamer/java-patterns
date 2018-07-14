@@ -129,7 +129,7 @@ public abstract class AbstractPropertyResource implements PropertyInterface {
      */
     @Override
     public PropertyInterface store(final OutputStream outStream) throws IOException {
-        String simpleName = this.getClass().getSimpleName();
+        final String simpleName = this.getClass().getSimpleName();
         this.store(outStream, simpleName);
         return this;
     }

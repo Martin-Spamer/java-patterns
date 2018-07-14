@@ -5,18 +5,15 @@ package coaching.solid;
  * A class to Demonstrate the Interface Segregation Principle (ISP).
  *
  * Intent: Clients should not be forced to depend upon interfaces that they
- * don't use.
+ * do not use.
  *
- * @author martin.spamer.
- * @version 0.1 - first release.
- *          Created 13-Jan-2005 - 12:21:40
  */
 public class InterfaceSegregationPrinciple {
 
     /**
-     * Instead of one large interface;.
+     * Instead of one large interface; with multiple concerns.
      */
-    public interface Abstraction {
+    public interface LargeInterface {
 
         /**
          * Work.
@@ -41,7 +38,6 @@ public class InterfaceSegregationPrinciple {
 
     /**
      * Use separate multiple simple interfaces.
-     *
      */
     public interface Work {
 
@@ -85,13 +81,13 @@ public class InterfaceSegregationPrinciple {
     }
 
     /**
-     * The Class Person.
+     * Example Person class.
      */
-    public abstract class Person implements Abstraction {
+    public abstract class Person implements LargeInterface {
     }
 
     /**
-     * The Class Teacher.
+     * Example Teacher class.
      */
     public class Teacher extends Person {
 
@@ -133,7 +129,7 @@ public class InterfaceSegregationPrinciple {
     }
 
     /**
-     * The Class Boss.
+     * Example Boss class.
      */
     public class Boss extends Person {
 
