@@ -9,7 +9,7 @@ public class ApplicationException extends Exception {
 
     /**
      * Instantiates a new application exception.
-     * 
+     *
      * message
      *
      * @param message the message

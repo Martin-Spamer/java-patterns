@@ -7,7 +7,7 @@ package patterns.singleton;
 public final class StaticSingleton {
 
     /** The instance. */
-    private static StaticSingleton instance = new StaticSingleton();
+    private static final StaticSingleton INSTANCE = new StaticSingleton();
 
     /**
      * Instantiates a new static singleton.
@@ -22,7 +22,7 @@ public final class StaticSingleton {
      * @return single instance of StaticSingleton
      */
     public static synchronized StaticSingleton getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     /*

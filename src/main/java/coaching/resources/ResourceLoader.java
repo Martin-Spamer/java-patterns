@@ -20,6 +20,10 @@ import java.net.URL;
  */
 public final class ResourceLoader {
 
+    private ResourceLoader() {
+        super();
+    }
+
     /**
      * Gets the file.
      *
@@ -29,9 +33,9 @@ public final class ResourceLoader {
      */
     public static File getFile(final String resourceFilename) throws FileNotFoundException {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        URL resource = classLoader.getResource(resourceFilename);
+        final URL resource = classLoader.getResource(resourceFilename);
         if (resource == null) {
-            String message = String.format("Resource file %s not found", resourceFilename);
+            final String message = String.format("Resource file %s not found", resourceFilename);
             throw new FileNotFoundException(message);
         } else {
             return new File(resource.toExternalForm());
@@ -46,9 +50,9 @@ public final class ResourceLoader {
      * @throws FileNotFoundException the file not found exception
      */
     public static File getFile(final URL resourceUrl) throws FileNotFoundException {
-        String file = resourceUrl.getFile();
+        final String file = resourceUrl.getFile();
         if (file == null) {
-            String message = String.format("Resource file %s not found", resourceUrl);
+            final String message = String.format("Resource file %s not found", resourceUrl);
             throw new FileNotFoundException(message);
         } else {
             return new File(file);
@@ -63,9 +67,9 @@ public final class ResourceLoader {
      * @throws FileNotFoundException the file not found exception
      */
     public static File getFile(final URI resourceUri) throws FileNotFoundException {
-        String path = resourceUri.normalize().getPath();
+        final String path = resourceUri.normalize().getPath();
         if (path == null) {
-            String message = String.format("Resource file %s not found", resourceUri);
+            final String message = String.format("Resource file %s not found", resourceUri);
             throw new FileNotFoundException(message);
         } else {
             return new File(path);
@@ -81,9 +85,9 @@ public final class ResourceLoader {
      */
     public static InputStream getStream(final String resourceFilename) throws FileNotFoundException {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        InputStream resourceAsStream = classLoader.getResourceAsStream(resourceFilename);
+        final InputStream resourceAsStream = classLoader.getResourceAsStream(resourceFilename);
         if (resourceAsStream == null) {
-            String message = String.format("Resource file %s not found", resourceFilename);
+            final String message = String.format("Resource file %s not found", resourceFilename);
             throw new FileNotFoundException(message);
         } else {
             return resourceAsStream;
@@ -99,10 +103,10 @@ public final class ResourceLoader {
      */
     public static InputStream getStream(final URL resourceUrl) throws FileNotFoundException {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        String file = resourceUrl.getFile();
-        InputStream resourceAsStream = classLoader.getResourceAsStream(file);
+        final String file = resourceUrl.getFile();
+        final InputStream resourceAsStream = classLoader.getResourceAsStream(file);
         if (resourceAsStream == null) {
-            String message = String.format("Resource file %s not found", resourceUrl);
+            final String message = String.format("Resource file %s not found", resourceUrl);
             throw new FileNotFoundException(message);
         } else {
             return resourceAsStream;
@@ -118,10 +122,10 @@ public final class ResourceLoader {
      */
     public static InputStream getStream(final URI resourceUri) throws FileNotFoundException {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        String path = resourceUri.normalize().getPath();
-        InputStream resourceAsStream = classLoader.getResourceAsStream(path);
+        final String path = resourceUri.normalize().getPath();
+        final InputStream resourceAsStream = classLoader.getResourceAsStream(path);
         if (resourceAsStream == null) {
-            String message = String.format("Resource file %s not found", resourceUri);
+            final String message = String.format("Resource file %s not found", resourceUri);
             throw new FileNotFoundException(message);
         } else {
             return resourceAsStream;

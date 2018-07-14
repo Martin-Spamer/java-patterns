@@ -8,24 +8,21 @@ import static org.junit.Assert.assertNotNull;
 
 public class Verify {
 
-    private static Verify INSTANCE;
+    private static final Verify INSTANCE = new Verify();
 
     private static Verify getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new Verify();
-        }
         return INSTANCE;
     }
 
     public static void verifyThat() {
-        Throwable t = new Throwable();
+        final Throwable t = new Throwable();
         Verify.getInstance().verifyThat(t);
     }
 
     public void verifyThat(final Throwable caller) {
-        StackTraceElement directCaller = caller.getStackTrace()[1];
+        final StackTraceElement directCaller = caller.getStackTrace()[1];
         assertNotNull(directCaller);
-        Logger logger = LoggerFactory.getLogger(directCaller.getClassName());
+        final Logger logger = LoggerFactory.getLogger(directCaller.getClassName());
         assertNotNull(logger);
         logger.info("({}:)", directCaller.getClassName(), directCaller.getLineNumber());
     }

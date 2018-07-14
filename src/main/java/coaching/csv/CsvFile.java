@@ -42,7 +42,7 @@ public class CsvFile {
      *
      * @throws FileNotLoadedException
      */
-    public CsvFile() throws FileNotLoadedException {
+    public CsvFile() {
         super();
         csvFilename = String.format("%s.csv", this.getClass().getSimpleName());
         LOG.info("CsvFile({})", csvFilename);
@@ -56,7 +56,7 @@ public class CsvFile {
      *            the csv filename
      * @throws FileNotLoadedException
      */
-    public CsvFile(final String csvFilename) throws FileNotLoadedException {
+    public CsvFile(final String csvFilename) {
         super();
         this.csvFilename = csvFilename;
         LOG.info("CsvFile({})", csvFilename);
@@ -68,7 +68,7 @@ public class CsvFile {
      *
      * @throws FileNotLoadedException
      */
-    private void initialise() throws FileNotLoadedException {
+    private void initialise() {
         read(csvFilename);
     }
 
@@ -106,8 +106,8 @@ public class CsvFile {
      * @throws FileNotLoadedException
      * @throws IOException Signals that an I/O exception has occurred.
      */
-    public void read(final String filename) throws FileNotLoadedException {
-        ClassLoader classLoader = this.getClass().getClassLoader();
+    public void read(final String filename) {
+        final ClassLoader classLoader = this.getClass().getClassLoader();
         try {
             LOG.debug("read({})", filename);
             final InputStream resourceAsStream = classLoader.getResourceAsStream(filename);
@@ -115,10 +115,10 @@ public class CsvFile {
                 read(resourceAsStream);
                 resourceAsStream.close();
             } else {
-                String msg = String.format("Resource %s not found", filename);
+                final String msg = String.format("Resource %s not found", filename);
                 throw new FileNotLoadedException(msg);
             }
-        } catch (IOException e) {
+        } catch (final IOException e) {
             throw new FileNotLoadedException(e.toString());
         }
     }
@@ -204,7 +204,7 @@ public class CsvFile {
      * @throws IOException
      */
     public void write(final String filename) throws IOException {
-        FileWriter out = new FileWriter(filename);
+        final FileWriter out = new FileWriter(filename);
         final BufferedWriter writer = new BufferedWriter(out);
         for (final CsvRecord csvRecord : records) {
             LOG.trace("write csvRecord = {}", csvRecord);
@@ -272,7 +272,7 @@ public class CsvFile {
             .replace("]", "\n\t]}");
     }
 
-    public class FileNotLoadedException extends Exception {
+    public class FileNotLoadedException extends AssertionError {
         private static final long serialVersionUID = 1L;
 
         private FileNotLoadedException() {

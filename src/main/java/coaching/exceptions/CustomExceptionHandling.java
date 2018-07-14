@@ -82,7 +82,7 @@ public final class CustomExceptionHandling {
             readProcess();
             updateProcess();
             deleteProcess();
-        } catch (CustomException e) {
+        } catch (final CustomException e) {
             LOG.error(e.toString(), e);
         }
     }
@@ -110,13 +110,13 @@ public final class CustomExceptionHandling {
             readProcess();
             updateProcess();
             deleteProcess();
-        } catch (CustomCreationException e) {
+        } catch (final CustomCreationException e) {
             LOG.error("Creation error", e);
-        } catch (CustomReadException e) {
+        } catch (final CustomReadException e) {
             LOG.error("Read error", e);
-        } catch (CustomUpdateException e) {
+        } catch (final CustomUpdateException e) {
             LOG.error("Update error", e);
-        } catch (CustomDeleteException e) {
+        } catch (final CustomDeleteException e) {
             LOG.error("Delete error", e);
         }
     }

@@ -78,8 +78,8 @@ public abstract class AbstractApplication {
     protected boolean initialisation(final File configFile) {
         boolean returnValue = false;
         try {
-            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             document = documentBuilder.parse(configFile);
             documentElement = document.getDocumentElement();
 

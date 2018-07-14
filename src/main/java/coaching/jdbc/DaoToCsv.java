@@ -65,7 +65,7 @@ class DaoToCsv extends JdbcBase {
         try {
             return resultSetMetaData.getTableName(1);
         } catch (final SQLException e) {
-            log.error(e.toString(),e);
+            log.error(e.toString(), e);
         }
         return null;
     }
@@ -86,13 +86,13 @@ class DaoToCsv extends JdbcBase {
      */
     protected void toCsvFile(final File file) {
         try {
-            FileWriter writer = new FileWriter(file);
+            final FileWriter writer = new FileWriter(file);
             final BufferedWriter bufferedWriter = new BufferedWriter(writer);
             toCsvFile(bufferedWriter);
             bufferedWriter.flush();
             bufferedWriter.close();
-        } catch (IOException e) {
-            log.error(e.toString(),e);
+        } catch (final IOException e) {
+            log.error(e.toString(), e);
         }
     }
 
@@ -115,14 +115,14 @@ class DaoToCsv extends JdbcBase {
      */
     protected void csvHeaderTo(final BufferedWriter bufferedWriter) {
         try {
-            ArrayList<String> columns = columnLabels();
+            final ArrayList<String> columns = columnLabels();
             try {
                 bufferedWriter.write(columns.toString());
-            } catch (IOException e) {
-                log.error(e.toString(),e);
+            } catch (final IOException e) {
+                log.error(e.toString(), e);
             }
-        } catch (SQLException e) {
-            log.error(e.toString(),e);
+        } catch (final SQLException e) {
+            log.error(e.toString(), e);
         }
     }
 
@@ -133,9 +133,9 @@ class DaoToCsv extends JdbcBase {
      * @throws SQLException the SQL exception
      */
     private ArrayList<String> columnLabels() throws SQLException {
-        ArrayList<String> columns = new ArrayList<String>();
+        final ArrayList<String> columns = new ArrayList<String>();
         for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
-            String columnName = resultSetMetaData.getColumnName(i);
+            final String columnName = resultSetMetaData.getColumnName(i);
             columns.add(columnName);
         }
         return columns;
@@ -149,8 +149,8 @@ class DaoToCsv extends JdbcBase {
     protected void csvBodyTo(final BufferedWriter bufferedWriter) {
         try {
             bufferedWriter.write(bodyToString());
-        } catch (IOException e) {
-            log.error(e.toString(),e);
+        } catch (final IOException e) {
+            log.error(e.toString(), e);
         }
     }
 
@@ -161,17 +161,17 @@ class DaoToCsv extends JdbcBase {
      */
     private String bodyToString() {
         try {
-            ArrayList<String> columns = columnLabels();
-            ArrayList<String> values = new ArrayList<String>();
+            final ArrayList<String> columns = columnLabels();
+            final ArrayList<String> values = new ArrayList<String>();
 
             while (resultSet.next()) {
-                for (String columnName : columns) {
+                for (final String columnName : columns) {
                     values.add(resultSet.getString(columnName));
                 }
                 return values.toString();
             }
-        } catch (SQLException e) {
-            log.error(e.toString(),e);
+        } catch (final SQLException e) {
+            log.error(e.toString(), e);
         }
         return null;
     }

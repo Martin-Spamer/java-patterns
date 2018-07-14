@@ -47,11 +47,12 @@ public class ConnectionFactory implements ConnectionFactoryInterface {
         try {
             Class.forName(driverClassName);
         } catch (final ClassNotFoundException e) {
-            log.error(e.toString(),e);
+            log.error(e.toString(), e);
         }
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see coaching.jdbc.ConnectionFactoryInterface#newConnection()
      */
     @Override

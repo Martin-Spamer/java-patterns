@@ -29,7 +29,7 @@ public final class ResourceLoaderTest {
     public void testGetFile() throws Exception {
         File file = ResourceLoader.getFile("./Configuration.properties");
         assertNotNull(file);
-        LOG.info(file.toString());
+        LOG.info("ResourceLoader.getFile(...) = {}", file.toString());
     }
 
     /**
@@ -42,7 +42,7 @@ public final class ResourceLoaderTest {
         InputStream inStream = ResourceLoader.getStream("Configuration.properties");
         assertNotNull(inStream);
         assertTrue(inStream.available() > 0);
-        LOG.info(inStream.toString());
+        LOG.info("ResourceLoader.getStream = {}", inStream.toString());
     }
 
     /**
@@ -54,7 +54,7 @@ public final class ResourceLoaderTest {
     public void testGetMissingFile() throws Exception {
         File file = ResourceLoader.getFile("missing.resource");
         assertNotNull(file);
-        LOG.info(file.toString());
+        LOG.info("ResourceLoader.getFile(missing) = {}", file.toString());
     }
 
     /**
@@ -66,7 +66,7 @@ public final class ResourceLoaderTest {
     public void testGetMissingStream() throws Exception {
         InputStream inStream = ResourceLoader.getStream("missing.resource");
         assertNotNull(inStream);
-        LOG.info(inStream.toString());
+        LOG.info("ResourceLoader.getStream(missing) = {}", inStream.toString());
     }
 
 }

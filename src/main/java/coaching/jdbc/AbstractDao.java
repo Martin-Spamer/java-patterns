@@ -230,7 +230,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
             log.info("Rows updated: {}", result);
             preparedStatement.close();
             connection.close();
-        } catch (SQLException e) {
+        } catch (final SQLException e) {
             log.error(e.toString(), e);
         }
         return this;
@@ -244,9 +244,9 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
      */
     protected CrudInterface executeQuery(final String sql) {
         try {
-            Connection connection = connectionFactory.newConnection();
+            final Connection connection = connectionFactory.newConnection();
 
-            Statement statement = connection.createStatement();
+            final Statement statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
 
             processResultSet(resultSet);
@@ -254,7 +254,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
             resultSet.close();
             statement.close();
             connection.close();
-        } catch (SQLException e) {
+        } catch (final SQLException e) {
             log.error(e.toString(), e);
         }
         return this;

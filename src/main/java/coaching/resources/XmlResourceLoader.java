@@ -7,6 +7,10 @@ import java.util.Properties;
 
 public final class XmlResourceLoader {
 
+    private XmlResourceLoader() {
+        super();
+    }
+
     /**
      * Gets the xml properties.
      *
@@ -15,8 +19,8 @@ public final class XmlResourceLoader {
      * @throws IOException the IO exception
      */
     public static Properties getXmlProperties(final String xmlResourceFilename) throws IOException {
-        InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
-        Properties properties = new Properties();
+        final InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
+        final Properties properties = new Properties();
         properties.loadFromXML(stream);
         return properties;
     }

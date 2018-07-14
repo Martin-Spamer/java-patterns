@@ -15,10 +15,10 @@ public abstract class AbstractDto {
     protected HashMap<String, String> fields = new HashMap<String, String>();
 
     public void addField(final String keyValuePair) {
-        String[] pair = keyValuePair.split("=");
+        final String[] pair = keyValuePair.split("=");
         assertEquals(2, pair.length);
-        String value = pair[1];
-        String key = pair[0];
+        final String value = pair[1];
+        final String key = pair[0];
         addField(key, value);
     }
 

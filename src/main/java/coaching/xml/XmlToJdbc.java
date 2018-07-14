@@ -141,7 +141,7 @@ public final class XmlToJdbc {
         final char columnSeperator = ',';
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
-            Node item = fieldList.item(fieldNo);
+            final Node item = fieldList.item(fieldNo);
             LOG.info(item.toString());
             final Element fieldElement = (Element) item;
             final String nodeValue = fieldElement.getChildNodes().item(0).getNodeValue();

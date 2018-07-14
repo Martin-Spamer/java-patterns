@@ -38,7 +38,7 @@ class DaoToXml extends JdbcBase {
             final String filename = String.format("%s.xml", tableName);
             toXmlFile(filename);
         } catch (final Exception e) {
-            log.error(e.toString(),e);
+            log.error(e.toString(), e);
         }
     }
 
@@ -54,7 +54,7 @@ class DaoToXml extends JdbcBase {
             bufferedWriter.write(toXmlString());
             bufferedWriter.flush();
         } catch (final Exception e) {
-            log.error(e.toString(),e);
+            log.error(e.toString(), e);
         }
     }
 
@@ -77,7 +77,7 @@ class DaoToXml extends JdbcBase {
 
             bufferedWriter.close();
         } catch (final Exception e) {
-            log.error(e.toString(),e);
+            log.error(e.toString(), e);
         }
     }
 
@@ -91,7 +91,7 @@ class DaoToXml extends JdbcBase {
     public String toXmlString() {
         StringBuffer xml = null;
 
-        if (resultSet != null && resultSetMetaData != null) {
+        if ((resultSet != null) && (resultSetMetaData != null)) {
             try {
                 final int colCount = resultSetMetaData.getColumnCount();
                 xml = new StringBuffer();
@@ -116,7 +116,7 @@ class DaoToXml extends JdbcBase {
                 xml.append("</TABLE>\n");
                 return xml.toString();
             } catch (final Exception e) {
-                log.error(e.toString(),e);
+                log.error(e.toString(), e);
             }
         }
         return null;
