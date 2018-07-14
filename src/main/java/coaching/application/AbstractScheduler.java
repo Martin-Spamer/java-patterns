@@ -1,7 +1,6 @@
 
 package coaching.application;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Properties;
@@ -47,12 +46,7 @@ public abstract class AbstractScheduler {
     }
 
     private void loadConfiguration() {
-        try {
-            properties = PropertiesLoader.getProperties(defaultFilename());
-        } catch (final IOException e) {
-            log.error(e.toString(), e);
-
-        }
+        properties = PropertiesLoader.getProperties(defaultFilename());
     }
 
     /**

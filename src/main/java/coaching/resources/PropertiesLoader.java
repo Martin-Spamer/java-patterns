@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Property Loader class.
  *
@@ -26,6 +29,8 @@ import java.util.Properties;
  */
 public final class PropertiesLoader {
 
+    private static final Logger LOG = LoggerFactory.getLogger(PropertiesLoader.class);
+
     private PropertiesLoader() {
         super();
     }
@@ -37,10 +42,14 @@ public final class PropertiesLoader {
      * @return the properties
      * @throws IOException the IO exception
      */
-    public static Properties getProperties(final String resourceFilename) throws IOException {
-        final InputStream stream = ResourceLoader.getStream(resourceFilename);
-        final Properties properties = new Properties();
-        properties.load(stream);
+    public static Properties getProperties(final String resourceFilename) {
+        Properties properties = new Properties();
+        try {
+            final InputStream stream = ResourceLoader.getStream(resourceFilename);
+            properties.load(stream);
+        } catch (IOException e) {
+            LOG.error(e.getLocalizedMessage(), e);
+        }
         return properties;
     }
 
@@ -51,10 +60,14 @@ public final class PropertiesLoader {
      * @return the xml properties
      * @throws IOException the IO exception
      */
-    public static Properties getXmlProperties(final String xmlResourceFilename) throws IOException {
-        final InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
-        final Properties properties = new Properties();
-        properties.loadFromXML(stream);
+    public static Properties getXmlProperties(final String xmlResourceFilename) {
+        Properties properties = new Properties();
+        try {
+            final InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
+            properties.loadFromXML(stream);
+        } catch (IOException e) {
+            LOG.error(e.getLocalizedMessage(), e);
+        }
         return properties;
     }
 
