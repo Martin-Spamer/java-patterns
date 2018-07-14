@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * AbstractDecorator Class.
+ * An abstract Decorator class.
  */
 public abstract class AbstractDecorator extends AbstractComponent implements DecoratorInterface {
 
@@ -17,63 +17,59 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.decorator.DecoratorInterface#attachBefore(patterns.decorator.
      * AbstractComponent)
      */
     @Override
     public DecoratorInterface attachBefore(final AbstractComponent behaviour) {
-        this.beforeBehaviour.add(behaviour);
+        beforeBehaviour.add(behaviour);
         return this;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.decorator.DecoratorInterface#detachBefore(patterns.decorator.
      * AbstractComponent)
      */
     @Override
     public DecoratorInterface detachBefore(final AbstractComponent behaviour) {
-        this.beforeBehaviour.remove(behaviour);
+        beforeBehaviour.remove(behaviour);
         return this;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.decorator.DecoratorInterface#attachAfter(patterns.decorator.
      * AbstractComponent)
      */
     @Override
     public DecoratorInterface attachAfter(final AbstractComponent behaviour) {
-        this.afterBehaviour.add(behaviour);
+        afterBehaviour.add(behaviour);
         return this;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.decorator.DecoratorInterface#detachAfter(patterns.decorator.
      * AbstractComponent)
      */
     @Override
     public DecoratorInterface detachAfter(final AbstractComponent behaviour) {
-        this.afterBehaviour.remove(behaviour);
+        afterBehaviour.remove(behaviour);
         return this;
     }
 
     /**
      * Before operation.
      *
-     * @return
+     * @return the decorator interface
      */
     protected DecoratorInterface beforeOperation() {
-        for (final AbstractComponent component : this.beforeBehaviour) {
+        for (final AbstractComponent component : beforeBehaviour) {
             component.operation();
         }
         return this;
@@ -82,12 +78,22 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
     /**
      * After operation.
      *
-     * @return
+     * @return the decorator interface
      */
     protected DecoratorInterface afterOperation() {
-        for (final AbstractComponent component : this.afterBehaviour) {
+        for (final AbstractComponent component : afterBehaviour) {
             component.operation();
         }
         return this;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see patterns.decorator.AbstractComponent#toString()
+     */
+    @Override
+    public String toString() {
+        return String
+            .format("AbstractDecorator [beforeBehaviour=%s, afterBehaviour=%s]", beforeBehaviour, afterBehaviour);
     }
 }

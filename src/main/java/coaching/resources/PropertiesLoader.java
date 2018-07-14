@@ -24,53 +24,33 @@ import java.util.Properties;
  * /some/pkg/Resource
  * /some/pkg/Resource.properties
  */
-public class PropertiesLoader extends ResourceLoader {
-
-    private Properties properties;
-
-    /**
-     * Default Constructor.
-     */
-    public PropertiesLoader() {
-        super();
-        log.info("{}.{}", this.getClass().getSimpleName(), properties.toString());
-    }
-
-    /**
-     * Constructor taking property filename as String.
-     *
-     * @param propertyFileName the property file name
-     */
-    public PropertiesLoader(final String propertyFileName) {
-        super(propertyFileName);
-        log.info("{}.{}", this.getClass().getSimpleName(), properties.toString());
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see coaching.resources.ResourceLoader#load(java.io.InputStream)
-     */
-    @Override
-    public ResourceLoader load(final InputStream streamForResource) {
-        if (properties == null) {
-            properties = new Properties();
-        }
-        try {
-            properties.load(streamForResource);
-            loaded = true;
-        } catch (final IOException e) {
-            log.error(e.toString());
-        }
-        return this;
-    }
+public final class PropertiesLoader {
 
     /**
      * Gets the properties.
      *
+     * @param resourceFilename the resource filename
      * @return the properties
+     * @throws IOException the IO exception
      */
-    public Properties getProperties() {
+    public static Properties getProperties(final String resourceFilename) throws IOException {
+        InputStream stream = ResourceLoader.getStream(resourceFilename);
+        Properties properties = new Properties();
+        properties.load(stream);
+        return properties;
+    }
+
+    /**
+     * Gets the xml properties.
+     *
+     * @param xmlResourceFilename the xml resource filename
+     * @return the xml properties
+     * @throws IOException the IO exception
+     */
+    public static Properties getXmlProperties(final String xmlResourceFilename) throws IOException {
+        InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
+        Properties properties = new Properties();
+        properties.loadFromXML(stream);
         return properties;
     }
 

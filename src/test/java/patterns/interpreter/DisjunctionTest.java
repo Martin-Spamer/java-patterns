@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * class DisjunctionTest.
  */
-public class DisjunctionTest {
+public final class DisjunctionTest {
 
     /**
      * class Mock.

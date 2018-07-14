@@ -3,10 +3,15 @@ package coaching.context;
 
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * Abstract Context Class.
+ * An abstract class to manage the current Context.
  */
 public abstract class AbstractContext implements ContextInterface {
+
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     private Properties properties = null;
@@ -32,7 +37,6 @@ public abstract class AbstractContext implements ContextInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.interpreter.ContextInterface#setProperties(java.util.Properties)
      */
@@ -44,7 +48,6 @@ public abstract class AbstractContext implements ContextInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.interpreter.ContextInterface#setProperty(java.lang.String,
      * java.lang.String)
      */
@@ -56,7 +59,6 @@ public abstract class AbstractContext implements ContextInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.interpreter.ContextInterface#getProperty(java.lang.String)
      */
     @Override
@@ -66,7 +68,6 @@ public abstract class AbstractContext implements ContextInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see coaching.context.ContextInterface#getProperty(java.lang.String,
      * java.lang.String)
      */
@@ -74,4 +75,5 @@ public abstract class AbstractContext implements ContextInterface {
     public String getProperty(final String key, final String defaultValue) {
         return properties.getProperty(key);
     }
+
 }

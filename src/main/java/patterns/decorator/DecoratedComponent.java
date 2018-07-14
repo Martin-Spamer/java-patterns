@@ -8,7 +8,6 @@ public class DecoratedComponent extends AbstractDecorator implements DecoratorIn
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.decorator.AbstractComponent#operation()
      */
     @Override

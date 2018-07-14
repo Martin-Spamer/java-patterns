@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Examples of selection programming instructions.
  */
-public class SelectionTest {
+public final class SelectionTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SelectionTest.class);

@@ -6,7 +6,7 @@ package patterns.singleton;
  */
 public final class Singleton {
 
-    /** The instance. */
+    /** single static instance within class loader. */
     private static Singleton instance;
 
     /**
@@ -28,7 +28,6 @@ public final class Singleton {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override

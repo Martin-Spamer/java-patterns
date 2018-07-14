@@ -54,7 +54,6 @@ public class SequenceCommand extends AbstractCommand {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.AbstractCommand#execute(patterns.command.
      * ParametersInterface)
      */
@@ -70,7 +69,6 @@ public class SequenceCommand extends AbstractCommand {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.AbstractCommand#undo(patterns.command.
      * ParametersInterface)
      */

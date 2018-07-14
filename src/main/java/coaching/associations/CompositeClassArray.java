@@ -16,9 +16,10 @@ public class CompositeClassArray {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
 
-    /** The composite. */
-    // Implementing Composite using a Class Array
-    private final AbstractAssociatedClass[] composite = { new Alice(), new Bob(), new Charlie(), new Dan() };
+    /**
+     * The Composite implemented using a Class Array
+     */
+    private final AbstractPerson[] composite = { new Alice(), new Bob(), new Charlie(), new Dan() };
 
     /**
      * Instantiates a new composite class array.
@@ -30,12 +31,11 @@ public class CompositeClassArray {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("CompositeClassArray [composite=%s]", Arrays.toString(composite));
+        return String.format("%s [composite=%s]", this.getClass().getSimpleName(), Arrays.toString(composite));
     }
 
 }

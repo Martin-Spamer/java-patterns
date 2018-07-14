@@ -36,13 +36,17 @@ public class SingleResponsibilityPrinciple {
          */
         public void responsibility() {
             LOG.info("responsibility");
-            this.foo = true;
-            this.bar = true;
+            foo = true;
+            bar = true;
         }
 
+        /*
+         * (non-Javadoc)
+         * @see java.lang.Object#toString()
+         */
         @Override
         public String toString() {
-            return String.format("MultipleResponsibility [foo=%s, bar=%s]", this.foo, this.bar);
+            return String.format("%s [foo=%s, bar=%s]", this.getClass().getSimpleName(), foo, bar);
         }
     }
 
@@ -59,7 +63,7 @@ public class SingleResponsibilityPrinciple {
          */
         public void doFoo() {
             LOG.info("doFoo");
-            this.foo = true;
+            foo = true;
         }
     }
 
@@ -76,7 +80,7 @@ public class SingleResponsibilityPrinciple {
          */
         public void doBar() {
             LOG.info("doBar");
-            this.bar = true;
+            bar = true;
         }
     }
 
@@ -96,16 +100,22 @@ public class SingleResponsibilityPrinciple {
          */
         public void responsibility() {
             LOG.info("responsibility");
-            this.foo.doFoo();
-            this.bar.doBar();
+            foo.doFoo();
+            bar.doBar();
         }
     }
 
+    /**
+     * Multiple responsibility.
+     */
     public void multipleResponsibility() {
         final MultipleResponsibility multipleResponsibility = new MultipleResponsibility();
         assertNotNull(multipleResponsibility);
     }
 
+    /**
+     * Single responsibility.
+     */
     public void singleResponsibility() {
         final SingleResponsibility singleResponsibility = new SingleResponsibility();
         assertNotNull(singleResponsibility);

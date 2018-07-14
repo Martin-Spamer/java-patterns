@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The ChainOfResponsibilityTest class.
  */
-public class ChainOfResponsibilityTest {
+public final class ChainOfResponsibilityTest {
 
     /**
      * Unit Test to handle request.

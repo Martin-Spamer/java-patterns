@@ -23,6 +23,8 @@ public class CsvRecord {
      */
     public CsvRecord() {
         super();
+        LOG.info("CsvRecord()");
+        parse("");
     }
 
     /**
@@ -32,6 +34,8 @@ public class CsvRecord {
      *            the line of data.
      */
     public CsvRecord(final String lineOfData) {
+        super();
+        LOG.info("CsvRecord({})", lineOfData);
         parse(lineOfData);
     }
 
@@ -102,12 +106,12 @@ public class CsvRecord {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("%s", fields).replace("[", "").replace("]", "");
+        LOG.info(fields.toString());
+        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), fields.toString());
     }
 
 }

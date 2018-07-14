@@ -41,7 +41,6 @@ public class DependencyInversionPrinciple {
 
         /*
          * (non-Javadoc)
-         * 
          * @see
          * coaching.solid.DependencyInversionPrinciple.Abstraction#doSomething()
          */
@@ -61,7 +60,6 @@ public class DependencyInversionPrinciple {
 
         /*
          * (non-Javadoc)
-         * 
          * @see
          * coaching.solid.DependencyInversionPrinciple.Abstraction#doSomething()
          */

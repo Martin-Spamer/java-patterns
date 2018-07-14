@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
  *
  * Represent an operation to be performed on elements of an object structure.
  */
-public class VisitorTest {
+public final class VisitorTest {
 
     /**
      * Unit Test to operation.

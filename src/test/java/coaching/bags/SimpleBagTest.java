@@ -12,9 +12,9 @@ import static org.junit.Assert.assertNull;
 import coaching.tuples.BoxTest;
 
 /**
- * Unit Test examples for a Bag Class.
+ * Unit test examples for a Bag class.
  */
-public class SimpleBagTest {
+public final class SimpleBagTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
@@ -27,6 +27,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testBag() {
+        LOG.info("testBag()");
         final BagInterface bag = new SimpleBag();
         assertNotNull(bag);
     }
@@ -36,6 +37,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testBagStringArray() {
+        LOG.info("testBagStringArray()");
         final SimpleBag bag = new SimpleBag(VALUES);
         assertNotNull(bag);
         verify(bag);
@@ -46,6 +48,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testBagArray() {
+        LOG.info("testBagArray()");
         final String[] stuff = { "Cat", "Dog", "Rabbit" };
         final SimpleBag bag = new SimpleBag(stuff);
         assertNotNull(bag);
@@ -57,6 +60,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testBagVargs() {
+        LOG.info("testBagVargs()");
         final SimpleBag bag = new SimpleBag("Cat", "Dog", "Rabbit");
         assertNotNull(bag);
         verify(bag);
@@ -67,6 +71,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testFill() {
+        LOG.info("testFill()");
         final SimpleBag bag = new SimpleBag();
         assertNotNull(bag);
         bag.fill(VALUES);
@@ -78,6 +83,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testVargs() {
+        LOG.info("testVargs()");
         final SimpleBag bag = new SimpleBag();
         assertNotNull(bag);
         bag.fill("Cat", "Dog", "Rabbit");
@@ -89,6 +95,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testExhaustedBag() {
+        LOG.info("testExhaustedBag()");
         final String[] stuff = { "Cat", "Dog", "Rabbit" };
         final SimpleBag bag = new SimpleBag(stuff);
         assertNotNull(bag);
@@ -124,7 +131,8 @@ public class SimpleBagTest {
      * Unit Test to choose.
      */
     @Test
-    public void testChoose() {
+    public void testChooseFromBag() {
+        LOG.info("testChooseFromBag()");
         final BagInterface bag = new SimpleBag(VALUES);
         assertNotNull(bag);
         final String chosen = bag.choose();
@@ -136,6 +144,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testNullBag() {
+        LOG.info("testNullBag()");
         final String[] stuff = null;
         final SimpleBag bag = new SimpleBag(stuff);
         assertEquals(0, bag.size());
@@ -149,6 +158,7 @@ public class SimpleBagTest {
      */
     @Test
     public void testEmptyBag() {
+        LOG.info("testEmptyBag()");
         final String[] stuff = new String[0];
         final SimpleBag bag = new SimpleBag(stuff);
         assertEquals(0, bag.size());

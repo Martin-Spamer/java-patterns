@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Examples of Java Native Types.
- * 
+ *
  * @author martin spamer
  * @version 0.1 - first release.
  *          Created 07-Oct-2004 - 09:20:22
@@ -95,7 +95,7 @@ public class NativeTypes {
             log.info("aBooleanTrue has tested as true value : ", trueBoolean);
         }
 
-        if (falseBoolean == false) {
+        if (!falseBoolean) {
             log.info("aFalseBoolean has tested as false value : {}", falseBoolean);
         }
     }

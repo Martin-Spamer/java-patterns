@@ -29,12 +29,11 @@ public final class FlyWeight {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("FlyWeight [commonState=%s]", commonState);
+        return String.format("%s [commonState=%s]", this.getClass().getSimpleName(), commonState);
     }
 
 }

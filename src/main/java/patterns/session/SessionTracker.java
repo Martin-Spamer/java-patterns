@@ -19,7 +19,7 @@ public class SessionTracker {
      */
     public AbstractSession createSession() {
         final Session session = new Session();
-        this.sessions.add(session);
+        sessions.add(session);
         return session;
     }
 
@@ -30,12 +30,16 @@ public class SessionTracker {
      *            the session
      */
     public void destroySession(final AbstractSession session) {
-        this.sessions.remove(session);
+        sessions.remove(session);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
-        return String.format("%s [sessions=%s]", this.getClass().getSimpleName(), this.sessions);
+        return String.format("%s [sessions=%s]", this.getClass().getSimpleName(), sessions);
     }
 
 }

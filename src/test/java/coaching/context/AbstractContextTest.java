@@ -4,6 +4,8 @@ package coaching.context;
 import java.util.Properties;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -11,12 +13,14 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The Class AbstractContextTest.
  */
-public class AbstractContextTest {
+public final class AbstractContextTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractContextTest.class);
 
     /**
      * The Class TestContext.
      */
-    public class TestContext extends AbstractContext {
+    public final class TestContext extends AbstractContext {
 
         /**
          * The Constructor.

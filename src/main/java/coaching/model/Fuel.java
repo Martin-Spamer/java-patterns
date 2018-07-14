@@ -2,7 +2,7 @@
 package coaching.model;
 
 /**
- * The Class Fuel.
+ * The Fuel class.
  */
 public class Fuel implements FuelInterface {
 
@@ -18,7 +18,6 @@ public class Fuel implements FuelInterface {
 
     /*
      * (non-Javadoc)
-     * 
      * @see coaching.model.FuelInterface#addFuel(int)
      */
     @Override
@@ -28,7 +27,6 @@ public class Fuel implements FuelInterface {
 
     /*
      * (non-Javadoc)
-     * 
      * @see coaching.model.FuelInterface#useFuel(int)
      */
     @Override
@@ -38,7 +36,6 @@ public class Fuel implements FuelInterface {
 
     /*
      * (non-Javadoc)
-     * 
      * @see java.lang.Object#toString()
      */
     @Override

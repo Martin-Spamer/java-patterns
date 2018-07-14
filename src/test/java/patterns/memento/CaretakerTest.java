@@ -7,13 +7,22 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertThat;
 
-public class CaretakerTest {
+/**
+ * The Class CaretakerTest.
+ */
+public final class CaretakerTest {
 
+    /**
+     * Type.
+     */
     @Test
     public void type() {
         assertThat(Caretaker.class, notNullValue());
     }
 
+    /**
+     * Instantiation.
+     */
     @Test
     public void instantiation() {
         final Caretaker target = new Caretaker();

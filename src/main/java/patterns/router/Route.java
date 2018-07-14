@@ -34,7 +34,6 @@ class Route implements InputChannelInterface, OutputChannelInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.router.OutputChannelInterface#sendMessage(patterns.router.
      * Message)
      */
@@ -46,7 +45,6 @@ class Route implements InputChannelInterface, OutputChannelInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.router.InputChannelInterface#receiveMessage()
      */
     @Override

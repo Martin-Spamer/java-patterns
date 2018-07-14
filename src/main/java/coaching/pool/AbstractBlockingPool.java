@@ -35,7 +35,6 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#add(java.lang.Object)
      */
     @Override
@@ -46,7 +45,6 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#countFree()
      */
     @Override
@@ -56,7 +54,6 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#countUsed()
      */
     @Override
@@ -66,7 +63,6 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#get()
      */
     @Override
@@ -77,14 +73,13 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
             return resource;
         } catch (final InterruptedException e) {
             Thread.currentThread().interrupt();
-            this.log.error(e.toString());
+            this.log.error(e.toString(),e);
         }
         return null;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#release(java.lang.Object)
      */
     @Override
@@ -96,7 +91,6 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#remove(java.lang.Object)
      */
     @Override

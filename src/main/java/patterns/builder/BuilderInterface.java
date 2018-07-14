@@ -13,6 +13,12 @@ public interface BuilderInterface {
      */
     AbstractPart build();
 
+    /**
+     * Builds the.
+     *
+     * @param partName the part name
+     * @return the abstract part
+     */
     AbstractPart build(final String partName);
 
 }

@@ -28,7 +28,6 @@ public class Disjunction extends NonTerminalExpression {
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.interpreter.NonTerminalExpression#interpret(patterns.interpreter
      * .ContextInterface)

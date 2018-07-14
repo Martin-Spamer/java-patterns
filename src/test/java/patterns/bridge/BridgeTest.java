@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * BridgeTest class.
  */
-public class BridgeTest {
+public final class BridgeTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BridgeTest.class);

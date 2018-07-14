@@ -20,6 +20,9 @@ public class View extends AbstractView implements ViewInterface {
         return this;
     }
 
+    /* (non-Javadoc)
+     * @see patterns.mvc.ViewInterface#show(patterns.mvc.ModelInterface)
+     */
     @Override
     public ViewInterface show(final ModelInterface model) {
         this.log.info("{}.showView({})", this.getClass().getSimpleName(), model);

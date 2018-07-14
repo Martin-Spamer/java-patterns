@@ -7,13 +7,10 @@ import java.io.InputStream;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * An abstract Configuration class.
+ * An abstract XML Configuration class.
  * Loads the Configuration Properties from an XML file.
  */
 public abstract class AbstractXmlConfig extends AbstractConfiguration {
-
-    /** The filename. */
-    protected String filename;
 
     /**
      * The Constructor.
@@ -29,7 +26,7 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
      * @param configFilename the config filename
      */
     public AbstractXmlConfig(final String configFilename) {
-        this.filename = configFilename;
+        filenameStem = configFilename;
         loadFrom(configFilename);
     }
 
@@ -38,9 +35,10 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
      *
      * @return the string
      */
+    @Override
     protected String defaultFilename() {
-        this.filename = this.getClass().getSimpleName();
-        return this.filename;
+        filenameStem = this.getClass().getSimpleName();
+        return filenameStem;
     }
 
     /**
@@ -49,10 +47,11 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
      * @param configFilename
      *            the Configuration filename
      */
+    @Override
     protected void loadFrom(final String configFilename) {
         final String propertyFilename = toPropertyFilename(configFilename);
         loadFrom(inputStream(propertyFilename));
-        this.properties.setProperty("propertyFilename", propertyFilename);
+        properties.setProperty("propertyFilename", propertyFilename);
     }
 
     /**
@@ -62,6 +61,7 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
      *            the Configuration filename
      * @return the string
      */
+    @Override
     protected String toPropertyFilename(final String configFilename) {
         assertNotNull(configFilename);
         if (configFilename.endsWith(".xml")) {
@@ -78,6 +78,7 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
      *            the resource name
      * @return the input stream
      */
+    @Override
     protected InputStream inputStream(final String resourceName) {
         final Thread currentThread = Thread.currentThread();
         final ClassLoader classloader = currentThread.getContextClassLoader();
@@ -90,13 +91,14 @@ public abstract class AbstractXmlConfig extends AbstractConfiguration {
      * @param resourceAsStream
      *            the resource as stream
      */
+    @Override
     protected void loadFrom(final InputStream resourceAsStream) {
         if (resourceAsStream != null) {
             try {
-                this.properties.loadFromXML(resourceAsStream);
-                this.loaded = true;
+                properties.loadFromXML(resourceAsStream);
+                loaded = true;
             } catch (final IOException e) {
-                this.log.error(e.toString());
+                log.error(e.toString(),e);
             }
         }
     }

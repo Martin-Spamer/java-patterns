@@ -10,19 +10,30 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit Test for an abstract Decorator class.
  */
-public class DecoratorTest {
+public final class DecoratorTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
 
-    public class MissingOperation extends AbstractComponent {
+    /**
+     * The Class MissingOperation.
+     */
+    public final class MissingOperation extends AbstractComponent {
     }
 
-    public class ConcreteDecorator extends AbstractComponent {
+    /**
+     * The Class ConcreteDecorator.
+     */
+    public final class ConcreteDecorator extends AbstractComponent {
+
+        /*
+         * (non-Javadoc)
+         * @see patterns.decorator.AbstractComponent#operation()
+         */
         @Override
         public AbstractComponent operation() {
             final String simpleName = this.getClass().getSimpleName();
-            this.log.info(simpleName.toString());
+            log.info(simpleName.toString());
             return this;
         }
     }

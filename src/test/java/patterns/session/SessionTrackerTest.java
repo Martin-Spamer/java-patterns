@@ -16,12 +16,18 @@ import static org.junit.Assume.assumeNotNull;
 /**
  * SessionTracker class tests.
  */
-public class SessionTrackerTest {
+public final class SessionTrackerTest {
 
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SessionTrackerTest.class);
 
+    /**
+     * Unit test to typical usage.
+     */
     @Test
     public void testTypicalUsage() {
+        LOG.info("testTypicalUsage");
+
         // Given
         final SessionTracker sessionTracker = new SessionTracker();
         assumeNotNull(sessionTracker);
@@ -39,11 +45,17 @@ public class SessionTrackerTest {
         LOG.info(sessionTracker.toString());
     }
 
+    /**
+     * Type.
+     */
     @Test
     public void type() {
         assertThat(SessionTracker.class, notNullValue());
     }
 
+    /**
+     * Instantiation.
+     */
     @Test
     public void instantiation() {
         final SessionTracker target = new SessionTracker();

@@ -2,17 +2,15 @@
 package patterns.adapter;
 
 /**
- * Target Interface.
+ * The Interface TargetInterface.
  */
 public interface TargetInterface {
 
     /**
-     * Request.
-     *
-     * result
+     * Operation.
      *
      * @return the result
      */
-    Result request();
+    Result operation();
 
 }

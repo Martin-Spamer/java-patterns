@@ -8,7 +8,6 @@ public final class ConcreteParticipant extends AbstractParticipant {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.ajp.system.transaction.ParticipantInterfact#join()
      */
     @Override
@@ -18,7 +17,6 @@ public final class ConcreteParticipant extends AbstractParticipant {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.ajp.system.transaction.ParticipantInterfact#commit()
      */
     @Override
@@ -28,7 +26,6 @@ public final class ConcreteParticipant extends AbstractParticipant {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.ajp.system.transaction.ParticipantInterfact#cancel()
      */
     @Override

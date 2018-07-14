@@ -20,7 +20,6 @@ public abstract class AbstractAggregate implements AggregateInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.iterator.AggregateInterface#createIterator()
      */
     @Override

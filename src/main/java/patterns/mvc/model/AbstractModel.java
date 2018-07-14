@@ -48,11 +48,17 @@ public abstract class AbstractModel implements ModelInterface {
         return this;
     }
 
+    /* (non-Javadoc)
+     * @see patterns.mvc.ModelInterface#update()
+     */
     @Override
     public ModelInterface update() {
         return this;
     }
 
+    /* (non-Javadoc)
+     * @see patterns.mvc.ModelInterface#update(java.lang.String, java.lang.String)
+     */
     @Override
     public ModelInterface update(final String key, final String value) {
         return this;

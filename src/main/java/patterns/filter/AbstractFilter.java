@@ -29,7 +29,6 @@ public abstract class AbstractFilter implements FilterInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.filter.FilterInterface#addNextFilter(patterns.filter.
      * FilterInterface)
      */
@@ -45,7 +44,6 @@ public abstract class AbstractFilter implements FilterInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.filter.FilterInterface#handleRequest(patterns.filter.
      * PayloadInterface)
      */

@@ -27,7 +27,6 @@ public final class StaticSingleton {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override

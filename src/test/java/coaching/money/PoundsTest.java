@@ -16,9 +16,9 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
 /**
- * Pounds Test class.
+ * Unit tests for the Pounds class.
  */
-public class PoundsTest {
+public final class PoundsTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PoundsTest.class);
@@ -46,6 +46,9 @@ public class PoundsTest {
         }
     }
 
+    /**
+     * Before test.
+     */
     @Before
     public void beforeTest() {
         LOG.info("beforeTest");

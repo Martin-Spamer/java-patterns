@@ -11,7 +11,6 @@ public final class SubjectProxy extends AbstractSubject {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.gof.structural.proxy.Subject#request()
      */
     @Override

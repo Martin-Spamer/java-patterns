@@ -22,19 +22,30 @@ public class CsvFile {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvFile.class);
 
+    /** The csv filename. */
     private final String csvFilename;
+
+    /** The header line. */
     private String headerLine;
+
+    /** The column names. */
     private String[] columnNames;
+
+    /** The records. */
     private final List<CsvRecord> records = new ArrayList<>();
 
+    /** The loaded. */
     private boolean loaded;
 
     /**
      * Instantiates a new csv file.
+     *
+     * @throws FileNotLoadedException
      */
-    public CsvFile() {
-        LOG.info("CsvFile({})");
-        this.csvFilename = String.format("%s.csv", this.getClass().getSimpleName());
+    public CsvFile() throws FileNotLoadedException {
+        super();
+        csvFilename = String.format("%s.csv", this.getClass().getSimpleName());
+        LOG.info("CsvFile({})", csvFilename);
         initialise();
     }
 
@@ -43,22 +54,22 @@ public class CsvFile {
      *
      * @param csvFilename
      *            the csv filename
+     * @throws FileNotLoadedException
      */
-    public CsvFile(final String csvFilename) {
-        LOG.info("CsvFile({})", csvFilename);
+    public CsvFile(final String csvFilename) throws FileNotLoadedException {
+        super();
         this.csvFilename = csvFilename;
+        LOG.info("CsvFile({})", csvFilename);
         initialise();
     }
 
     /**
      * Initialise.
+     *
+     * @throws FileNotLoadedException
      */
-    private void initialise() {
-        try {
-            read(this.csvFilename);
-        } catch (final IOException e) {
-            LOG.error(e.toString());
-        }
+    private void initialise() throws FileNotLoadedException {
+        read(csvFilename);
     }
 
     /**
@@ -67,7 +78,7 @@ public class CsvFile {
      * @return the headerLine
      */
     public String getHeaderLine() {
-        return this.headerLine;
+        return headerLine;
     }
 
     /**
@@ -76,8 +87,7 @@ public class CsvFile {
      * @return the header
      */
     public String getHeader() {
-        final String colNames = Arrays.toString(this.columnNames);
-        return String.format("#%s", colNames);
+        return headerLine;
     }
 
     /**
@@ -86,24 +96,30 @@ public class CsvFile {
      * @return the column names
      */
     public String getColumnNames() {
-        return Arrays.toString(this.columnNames);
+        return Arrays.toString(columnNames);
     }
 
     /**
      * Read filename.
      *
-     * @param filename
-     *            the filename
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
+     * @param filename the filename
+     * @throws FileNotLoadedException
+     * @throws IOException Signals that an I/O exception has occurred.
      */
-    public void read(final String filename) throws IOException {
-        LOG.info("read({})", filename);
-        if (filename != null) {
-            final InputStream resourceAsStream = getClass().getResourceAsStream(filename);
-            read(resourceAsStream);
-        } else {
-            LOG.error("unexpected that filename == null");
+    public void read(final String filename) throws FileNotLoadedException {
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        try {
+            LOG.debug("read({})", filename);
+            final InputStream resourceAsStream = classLoader.getResourceAsStream(filename);
+            if (resourceAsStream != null) {
+                read(resourceAsStream);
+                resourceAsStream.close();
+            } else {
+                String msg = String.format("Resource %s not found", filename);
+                throw new FileNotLoadedException(msg);
+            }
+        } catch (IOException e) {
+            throw new FileNotLoadedException(e.toString());
         }
     }
 
@@ -116,13 +132,9 @@ public class CsvFile {
      *             Signals that an I/O exception has occurred.
      */
     private void read(final InputStream resourceAsStream) throws IOException {
-        if (resourceAsStream != null) {
-            final InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
-            read(inputStreamReader);
-            resourceAsStream.close();
-        } else {
-            LOG.error("unexpected that resourceAsStream == null");
-        }
+        final InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
+        read(inputStreamReader);
+        inputStreamReader.close();
     }
 
     /**
@@ -134,35 +146,26 @@ public class CsvFile {
      *             Signals that an I/O exception has occurred.
      */
     private void read(final InputStreamReader inputStreamReader) throws IOException {
-        if (inputStreamReader != null) {
-            final BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            read(bufferedReader);
-            inputStreamReader.close();
-        }
+        final BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        read(bufferedReader);
+        bufferedReader.close();
     }
 
     /**
      * Read.
      *
-     * @param bufferedReader
-     *            the buffered reader
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
+     * @param bufferedReader the buffered reader
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     private void read(final BufferedReader bufferedReader) throws IOException {
-        if (bufferedReader != null) {
-            String line = bufferedReader.readLine().trim();
-            while (line != null) {
-                if (line.length() > 0) {
-                    processLine(line);
-                }
-                line = bufferedReader.readLine();
+        String line = bufferedReader.readLine().trim();
+        while (line != null) {
+            if (line.length() > 0) {
+                processLine(line);
             }
-            bufferedReader.close();
-            this.loaded = true;
-        } else {
-            LOG.error("unexpected that bufferedReader == null");
+            line = bufferedReader.readLine();
         }
+        loaded = true;
     }
 
     /**
@@ -174,11 +177,12 @@ public class CsvFile {
     protected void processLine(final String line) {
         if (line.charAt(0) == '#') {
             setHeaderLine(line);
+            LOG.trace("headerLine = {}", line);
         } else {
             final CsvRecord record = new CsvRecord(line);
-            this.records.add(record);
+            records.add(record);
             final String recordString = record.toString();
-            LOG.debug("recordString = {}", recordString);
+            LOG.trace("recordString = {}", recordString);
         }
     }
 
@@ -189,31 +193,33 @@ public class CsvFile {
      *            the new header line
      */
     private void setHeaderLine(final String line) {
-        this.headerLine = line.substring(1);
-        this.columnNames = this.headerLine.split(",");
+        headerLine = line.substring(1);
+        columnNames = headerLine.split(",");
     }
 
     /**
      * Write.
      *
-     * @param filename
-     *            the filename
+     * @param filename the filename
+     * @throws IOException
      */
-    public void write(final String filename) {
-        try {
-            final BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-            for (final CsvRecord csvRecord : this.records) {
-                LOG.trace("csvRecord = {}", csvRecord);
-                writer.write(csvRecord.toString());
-            }
-            writer.close();
-        } catch (final Exception exception) {
-            LOG.error(exception.toString());
+    public void write(final String filename) throws IOException {
+        FileWriter out = new FileWriter(filename);
+        final BufferedWriter writer = new BufferedWriter(out);
+        for (final CsvRecord csvRecord : records) {
+            LOG.trace("write csvRecord = {}", csvRecord);
+            writer.write(csvRecord.toString());
         }
+        writer.close();
     }
 
+    /**
+     * Checks if is loaded.
+     *
+     * @return true, if checks if is loaded
+     */
     public boolean isLoaded() {
-        return this.loaded;
+        return loaded;
     }
 
     /**
@@ -224,14 +230,7 @@ public class CsvFile {
      * @return the record
      */
     public CsvRecord getRecord(final int index) {
-        return this.records.get(index);
-    }
-
-    /**
-     * Log pretty.
-     */
-    public void logPretty() {
-        CsvFile.LOG.debug(toString());
+        return records.get(index);
     }
 
     /**
@@ -240,17 +239,48 @@ public class CsvFile {
      * @return the int
      */
     public int rowCount() {
-        return this.records.size();
+        return records.size();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("CsvFile [columnNames=%s, records=%s]", Arrays.toString(this.columnNames), this.records);
+        return String
+            .format("%s [csvFilename=%s, headerLine=%s, columnNames=%s, records=%s]",
+                    this.getClass().getSimpleName(),
+                    csvFilename,
+                    headerLine,
+                    Arrays.toString(columnNames),
+                    records);
     }
 
+    /**
+     * Pretty.
+     *
+     * @param properties the properties
+     * @return the string
+     */
+    protected String pretty(final String properties) {
+        return properties
+            .replace("[", "[\n\t")
+            .replace("{", "{\n\t")
+            .replace(", ", "\n\t")
+            .replace("}", "\n\t}")
+            .replace("]", "\n\t]}");
+    }
+
+    public class FileNotLoadedException extends Exception {
+        private static final long serialVersionUID = 1L;
+
+        private FileNotLoadedException() {
+            super();
+        }
+
+        private FileNotLoadedException(final String message) {
+            super(message);
+        }
+    }
 }

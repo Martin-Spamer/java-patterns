@@ -2,75 +2,29 @@
 package coaching.jdbc;
 
 /**
- * MySqlDao class.
+ * A Data Access object for a MySQL database.
  */
-public class MySqlDao extends AbstractDataAccessObject {
+public class MySqlDao extends AbstractDao {
 
-    /** JDBC_DRIVER to be used. */
-    private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
+    /** The classname of the JDBC driver to use. */
+    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
-    /** JDBC_URL to be used. */
-    private static final String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
+    /** The URL to use to make JDBC connection. */
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/student";
 
-    /** USERNAME to be used. */
-    private static final String USERNAME = "pbpublic";
+    /** USER to be used. */
+    private static final String USERNAME = "root";
 
     /** PASSWORD to be used. */
-    private static final String PASSWORD = "pbpublic";
-
-    /** SELECT_SQL. */
-    private static final String SELECT_SQL = "SELECT * FROM customers";
-
-    /** INSERT_SQL. */
-    private static final String INSERT_SQL = "INSERT INTO customers (CUSTOMER_NUM, POSTCODE,DISCOUNT_CODE) VALUES (999,'AA99 9ZZ','N')";
-
-    /** UPDATE_SQL. */
-    private static final String UPDATE_SQL = "UPDATE customers SET field=value WHERE key=value";
-
-    /** DELETE_SQL. */
-    private static final String DELETE_SQL = "DELETE FROM customers WHERE key=value";
+    private static final String PASSWORD = "root";
 
     /**
-     * Instantiates a new my sql dao.
+     * Instantiates a new DAO for MySql.
+     *
+     * @throws ClassNotFoundException
      */
-    public MySqlDao() {
+    public MySqlDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
-    }
-
-    public Object setTableName(final String tableName) {
-        return this;
-    }
-
-    public Object setFilename(final String filename) {
-        return this;
-    }
-
-    /**
-     * Creates the.
-     */
-    public void create() {
-        super.create(INSERT_SQL);
-    }
-
-    /**
-     * Read.
-     */
-    public void read() {
-        super.read(SELECT_SQL);
-    }
-
-    /**
-     * Update.
-     */
-    public void update() {
-        super.update(UPDATE_SQL);
-    }
-
-    /**
-     * Delete.
-     */
-    public void delete() {
-        super.delete(DELETE_SQL);
     }
 
 }

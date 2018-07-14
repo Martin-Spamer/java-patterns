@@ -2,6 +2,8 @@
 package coaching.types;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -10,16 +12,18 @@ import coaching.arrays.ObjectTypesArray;
 /**
  * The ObjectTypesArrayTest class.
  */
-public class ObjectTypesArrayTest {
+public final class ObjectTypesArrayTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ObjectTypesArrayTest.class);
 
     /**
      * Unit Test to display.
      */
     @Test
     public void testDisplayObjectArray() {
-        final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull(objectTypes);
-        objectTypes.iterateArray();
+        final ObjectTypesArray objectArray = new ObjectTypesArray();
+        assertNotNull(objectArray);
+        objectArray.display();
     }
 
     /**
@@ -27,18 +31,18 @@ public class ObjectTypesArrayTest {
      */
     @Test
     public void testDisplayMatrix() {
-        final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull(objectTypes);
-        objectTypes.displayMatrix();
+        final ObjectTypesArray objectArray = new ObjectTypesArray();
+        assertNotNull(objectArray);
+        objectArray.displayMatrix();
     }
 
     /**
      * Unit Test to display.
      */
     @Test
-    public void testDisplay() {
-        final ObjectTypesArray objectTypes = new ObjectTypesArray();
-        assertNotNull(objectTypes);
-        objectTypes.display();
+    public void testIterateArray() {
+        final ObjectTypesArray objectArray = new ObjectTypesArray();
+        assertNotNull(objectArray);
+        objectArray.iterateArray();
     }
 }

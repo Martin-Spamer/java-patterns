@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * A TableRow composed of TableCells class.
+ * A TableRow class composed of TableCell classes.
  */
 public class TableRow {
 
@@ -29,7 +29,7 @@ public class TableRow {
     public TableRow(final String... values) {
         for (final String value : values) {
             final TableCell tableCell = new TableCell(value);
-            this.cols.add(tableCell);
+            cols.add(tableCell);
         }
     }
 
@@ -41,7 +41,7 @@ public class TableRow {
     public String toRowString() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableCell> tableRow = this.cols.iterator();
+        final Iterator<TableCell> tableRow = cols.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -56,12 +56,11 @@ public class TableRow {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("%s [cols=%s]", this.getClass().getSimpleName(), Collections.singletonList(this.cols));
+        return String.format("%s [cols=%s]", this.getClass().getSimpleName(), Collections.singletonList(cols));
     }
 
 }

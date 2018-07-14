@@ -17,6 +17,10 @@ public abstract class AbstractState {
      */
     public abstract void handle();
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return this.getClass().getSimpleName();

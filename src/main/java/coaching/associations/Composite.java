@@ -1,35 +1,37 @@
 
 package coaching.associations;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * Using a basic Java array to implement a UML Composite association.
+ * Show Java implement a UML Composite association.
  *
- * In a Composite the Lifetime of parts is time constrained by lifetime of
- * parent.
+ * In a Composite the Lifetime of parts is same as the lifetime of the parts.
+ * We call this a life-time constraint.
  **/
 public final class Composite {
 
-    /** The element alice. */
-    private Alice elementAlice = new Alice();
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(Composite.class);
 
-    /** The element bob. */
-    private Bob elementBob = new Bob();
-
-    /** The element charlie. */
-    private Charlie elementCharlie = new Charlie();
-
-    /** The element dan. */
-    private Dan elementDan = new Dan();
+    /**
+     * The Composite implemented using separate members.
+     */
+    private Alice alice = new Alice();
+    private Bob bob = new Bob();
+    private Charlie charlie = new Charlie();
+    private Dan dan = new Dan();
 
     /**
      * Instantiates a new composite class array.
      */
     public Composite() {
         super();
-        elementAlice = new Alice();
-        elementBob = new Bob();
-        elementCharlie = new Charlie();
-        elementDan = new Dan();
+        alice = new Alice();
+        bob = new Bob();
+        charlie = new Charlie();
+        dan = new Dan();
     }
 
     /**
@@ -49,24 +51,25 @@ public final class Composite {
             final Charlie elementCharlie,
             final Dan elementDan) {
         super();
-        this.elementAlice = elementAlice;
-        this.elementBob = elementBob;
-        this.elementCharlie = elementCharlie;
-        this.elementDan = elementDan;
+        alice = elementAlice;
+        bob = elementBob;
+        charlie = elementCharlie;
+        dan = elementDan;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Composite [elementAlice=%s, elementBob=%s, elementCharlie=%s, elementDan=%s]",
-                elementAlice,
-                elementBob,
-                elementCharlie,
-                elementDan);
+        return String
+            .format("%s [alice=%s, bob=%s, charlie=%s, dan=%s]",
+                    this.getClass().getSimpleName(),
+                    alice,
+                    bob,
+                    charlie,
+                    dan);
     }
 
 }

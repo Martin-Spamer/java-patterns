@@ -8,7 +8,6 @@ public final class ConcreteVisitorTwo extends AbstractVisitor {
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * patterns.visitor.AbstractVisitor#visit(patterns.visitor.ElementInterface)
      */

@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * TableTest class.
+ * Unit tests for Table class.
  */
-public class TableTest {
+public final class TableTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(TableTest.class);

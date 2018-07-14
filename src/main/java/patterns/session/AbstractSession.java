@@ -21,8 +21,13 @@ public abstract class AbstractSession {
         this(UUID.randomUUID());
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param currentUUID the current UUID
+     */
     public AbstractSession(final UUID currentUUID) {
-        this.uuid = currentUUID;
+        uuid = currentUUID;
     }
 
     /**
@@ -41,7 +46,7 @@ public abstract class AbstractSession {
      * @return the uuid
      */
     public UUID getUuid() {
-        return this.uuid;
+        return uuid;
     }
 
     /**
@@ -50,17 +55,16 @@ public abstract class AbstractSession {
      * @return the token
      */
     public String token() {
-        return this.token;
+        return token;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("%s [uuid=%s, token=%s]", this.getClass().getSimpleName(), this.uuid, this.token);
+        return String.format("%s [uuid=%s, token=%s]", this.getClass().getSimpleName(), uuid, token);
     }
 
 }

@@ -13,8 +13,11 @@ import static org.junit.Assert.assertThat;
 /**
  * Context class tests.
  */
-public class ContextTest {
+public final class ContextTest {
 
+    /**
+     * Unit test to typical usage.
+     */
     @Test
     public void testTypicalUsage() {
         final AbstractState state = null;
@@ -22,11 +25,17 @@ public class ContextTest {
         assertThat(target, notNullValue());
     }
 
+    /**
+     * Type.
+     */
     @Test
     public void type() {
         assertThat(Context.class, notNullValue());
     }
 
+    /**
+     * Instantiation.
+     */
     @Test
     public void instantiation() {
         final AbstractState state = null;
@@ -34,6 +43,9 @@ public class ContextTest {
         assertThat(target, notNullValue());
     }
 
+    /**
+     * Unit test to to alice.
+     */
     @Test
     public void testToAlice() {
         // Given
@@ -48,6 +60,9 @@ public class ContextTest {
         assertThat(context.toString(), is(equalTo(expected)));
     }
 
+    /**
+     * Unit test to to bob.
+     */
     @Test
     public void testToBob() {
         // Given
@@ -62,6 +77,9 @@ public class ContextTest {
         assertThat(context.toString(), is(equalTo(expected)));
     }
 
+    /**
+     * To string a$.
+     */
     @Test
     public void toString_A$() {
         // Given

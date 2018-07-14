@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Examples of Java Object Types.
- * 
+ *
  * @author martin.spamer.
  * @version 0.1 - first release.
  *          Created 07-Oct-2004 - 09:20:22

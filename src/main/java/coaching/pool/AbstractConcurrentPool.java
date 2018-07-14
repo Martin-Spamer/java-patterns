@@ -27,7 +27,6 @@ public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#add(java.lang.Object)
      */
     @Override
@@ -38,7 +37,6 @@ public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#countFree()
      */
     @Override
@@ -48,7 +46,6 @@ public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#countUsed()
      */
     @Override
@@ -58,7 +55,6 @@ public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see uk.me.spamer.pool.PoolInterface#take()
      */
     @Override
@@ -70,7 +66,6 @@ public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#release(java.lang.Object)
      */
     @Override
@@ -82,7 +77,6 @@ public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
     /*
      * (non-Javadoc)
-     *
      * @see code.pool.PoolInterface#remove(java.lang.Object)
      */
     @Override

@@ -2,6 +2,8 @@
 package patterns.mvc;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -16,13 +18,17 @@ import patterns.mvc.view.View;
 /**
  * Model View Controller Test class.
  */
-public class MvcTest {
+public final class MvcTest {
+
+    /** Provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(MvcTest.class);
 
     /**
      * Unit Test the MVC Model class.
      */
     @Test
     public void testModel() {
+        LOG.info("testModel()");
         final AbstractModel model = new Model();
         assertNotNull("Model cannot be null", model);
         assertEquals(model, model.update());
@@ -33,6 +39,7 @@ public class MvcTest {
      */
     @Test
     public void testView() {
+        LOG.info("testView()");
         final AbstractView view = new View();
         assertNotNull("View cannot be null", view);
         assertEquals(view, view.show());
@@ -41,10 +48,11 @@ public class MvcTest {
     /**
      * Unit Test the MVC Controller class.
      *
-     * @throws MissingCommandException
+     * @throws MissingCommandException the missing command exception
      */
     @Test
     public void testController() throws MissingCommandException {
+        LOG.info("testController()");
         final Controller controller = new Controller();
         assertNotNull("Controller cannot be null", controller);
         assertNotNull(controller.execute());
@@ -55,13 +63,12 @@ public class MvcTest {
      * initialise
      * model.
      *
-     * @throws MissingCommandException
-     *
-     * @throws Exception
-     *             the exception
+     * @throws MissingCommandException the missing command exception
      */
     @Test
     public void testBuildMvc() throws MissingCommandException {
+        LOG.info("testBuildMvc()");
+
         final ControllerInterface controller = new Controller();
         assertNotNull("controller  cannot be null", controller);
 
@@ -69,8 +76,15 @@ public class MvcTest {
         assertNotNull("execute cannot be null", execute);
     }
 
+    /**
+     * Unit test to setup mvc.
+     *
+     * @throws MissingCommandException the missing command exception
+     */
     @Test
     public void testSetupMvc() throws MissingCommandException {
+        LOG.info("testSetupMvc()");
+
         final ControllerInterface controller = new Controller();
         assertNotNull("controller  cannot be null", controller);
 
@@ -86,8 +100,15 @@ public class MvcTest {
         assertNotNull("execute cannot be null", execute);
     }
 
+    /**
+     * Unit test to mvc constructor.
+     *
+     * @throws MissingCommandException the missing command exception
+     */
     @Test
     public void testMvcConstructor() throws MissingCommandException {
+        LOG.info("testMvcConstructor()");
+
         final AbstractModel model = new Model();
         assertNotNull("Model cannot be null", model);
 
@@ -100,4 +121,5 @@ public class MvcTest {
         final ControllerInterface execute = controller.execute("ExampleCommand");
         assertNotNull("execute cannot be null", execute);
     }
+
 }

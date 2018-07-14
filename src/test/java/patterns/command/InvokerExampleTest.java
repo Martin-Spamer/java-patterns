@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Example of an Invoker class.
+ * Unit test example of an Invoker class.
  *
  * Each command is statically constructed and invoked.
  */
-public class InvokerExampleTest {
+public final class InvokerExampleTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(InvokerExampleTest.class);
@@ -22,10 +22,10 @@ public class InvokerExampleTest {
      */
     @Test
     public void testExampleCommand() {
-        LOG.debug("testExampleCommand");
+        LOG.info("testExampleCommand");
         final ResultInterface result = new ExampleCommand().execute();
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -33,11 +33,11 @@ public class InvokerExampleTest {
      */
     @Test
     public void testInvokerExampleCommand() {
-        LOG.debug("testInvokerExampleCommand");
+        LOG.info("testInvokerExampleCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("ExampleCommand");
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -45,10 +45,10 @@ public class InvokerExampleTest {
      */
     @Test
     public void testSequenceCommand() {
-        LOG.debug("testSequenceCommand");
+        LOG.info("testSequenceCommand");
         final ResultInterface result = new SequenceCommand().execute();
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -56,11 +56,11 @@ public class InvokerExampleTest {
      */
     @Test
     public void testInvokerSequenceCommand() {
-        LOG.debug("testInvokerSequenceCommand");
+        LOG.info("testInvokerSequenceCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("SequenceCommand");
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -68,10 +68,10 @@ public class InvokerExampleTest {
      */
     @Test
     public void testCompoundCommand() {
-        LOG.debug("testCompoundCommand");
+        LOG.info("testCompoundCommand");
         final ResultInterface result = new CompoundCommand().execute();
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -79,11 +79,11 @@ public class InvokerExampleTest {
      */
     @Test
     public void testInvokerCompoundCommand() {
-        LOG.debug("testInvokerCompoundCommand");
+        LOG.info("testInvokerCompoundCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("CompoundCommand");
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -91,10 +91,10 @@ public class InvokerExampleTest {
      */
     @Test
     public void testConditionalCommand() {
-        LOG.debug("testConditionalCommand");
+        LOG.info("testConditionalCommand");
         final ResultInterface result = new ConditionalCommand().execute();
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
     /**
@@ -102,11 +102,11 @@ public class InvokerExampleTest {
      */
     @Test
     public void testInvokerConditionalCommand() {
-        LOG.debug("testInvokerConditionalCommand");
+        LOG.info("testInvokerConditionalCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("ConditionalCommand");
         assertNotNull(result);
-        LOG.info(result.toString());
+        LOG.debug(result.toString());
     }
 
 }

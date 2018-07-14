@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * CsvToJdbcTest class.
+ * Unit tests for the CsvToJdbc class.
  */
-public class CsvToXmlTest {
+public final class CsvToXmlTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvToXmlTest.class);

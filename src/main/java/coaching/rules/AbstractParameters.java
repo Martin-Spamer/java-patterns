@@ -2,7 +2,7 @@
 package coaching.rules;
 
 /**
- * AbstractParameters Class.
+ * An abstract Parameters class.
  */
 public abstract class AbstractParameters {
 

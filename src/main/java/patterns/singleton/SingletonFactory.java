@@ -41,7 +41,6 @@ public final class SingletonFactory {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class PolymorphicListTest.
  */
-public class PolymorphicListTest {
+public final class PolymorphicListTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(PolymorphicListTest.class);
@@ -21,20 +21,8 @@ public class PolymorphicListTest {
     @Test
     public void testPolymorphicList() {
         LOG.info("testPolymorphicList");
-        final PolymorphicList polymorphicList = new PolymorphicList();
+        final AggregatePolymorphicList polymorphicList = new AggregatePolymorphicList();
         assertNotNull(polymorphicList);
-        LOG.info(polymorphicList.toString());
-    }
-
-    /**
-     * Unit Test to polymorphic list usage.
-     */
-    @Test
-    public void testPolymorphicListUsage() {
-        LOG.info("testPolymorphicList");
-        final PolymorphicList polymorphicList = new PolymorphicList();
-        assertNotNull(polymorphicList);
-        polymorphicList.add(0);
         LOG.info(polymorphicList.toString());
     }
 
@@ -44,9 +32,11 @@ public class PolymorphicListTest {
     @Test
     public void testAdd() {
         LOG.info("testAdd");
-        final PolymorphicList polymorphicList = new PolymorphicList();
+        final AggregatePolymorphicList polymorphicList = new AggregatePolymorphicList();
         assertNotNull(polymorphicList);
-        assertNotNull(polymorphicList.add(1));
+        polymorphicList.add(new Alice());
+        polymorphicList.add(new Bob());
+        polymorphicList.add(new Charlie());
         LOG.info(polymorphicList.toString());
     }
 

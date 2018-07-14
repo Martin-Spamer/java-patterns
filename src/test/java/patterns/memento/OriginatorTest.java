@@ -9,8 +9,14 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertThat;
 
-public class OriginatorTest {
+/**
+ * The Class OriginatorTest.
+ */
+public final class OriginatorTest {
 
+    /**
+     * Unit test to typical usage.
+     */
     @Test
     public void testTypicalUsage() {
         // Given
@@ -25,11 +31,17 @@ public class OriginatorTest {
         // Then
     }
 
+    /**
+     * Type.
+     */
     @Test
     public void type() {
         assertThat(Originator.class, notNullValue());
     }
 
+    /**
+     * Instantiation.
+     */
     @Test
     public void instantiation() {
         final Object state = null;
@@ -38,6 +50,9 @@ public class OriginatorTest {
         assertThat(target, notNullValue());
     }
 
+    /**
+     * Creates the memento a$.
+     */
     @Test
     public void createMemento_A$() {
         // Given
@@ -51,6 +66,9 @@ public class OriginatorTest {
         // Then
     }
 
+    /**
+     * Revert a$.
+     */
     @Test
     public void revert_A$() {
         // Given

@@ -25,7 +25,6 @@ public class HandlerOne extends AbstractHandler {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.chain.Handler#handleRequest()
      */
     @Override

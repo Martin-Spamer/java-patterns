@@ -8,7 +8,6 @@ public final class Leaf extends AbstractComponent {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.composite.Component#operation()
      */
     @Override

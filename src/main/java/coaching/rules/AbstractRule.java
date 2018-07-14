@@ -4,7 +4,7 @@ package coaching.rules;
 import coaching.context.ContextInterface;
 
 /**
- * AbstractCommaAbstractRulend Class.
+ * An abstract Rule class.
  */
 public abstract class AbstractRule implements CommandInterface {
 
@@ -25,7 +25,6 @@ public abstract class AbstractRule implements CommandInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see
      * javamentor.rules.CommandInterface#execute(javamentor.rules.Parameters)
      */

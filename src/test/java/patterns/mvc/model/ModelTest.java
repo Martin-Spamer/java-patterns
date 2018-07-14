@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The ModelTest class.
  */
-public class ModelTest {
+public final class ModelTest {
 
     /**
      * Unit Test to.

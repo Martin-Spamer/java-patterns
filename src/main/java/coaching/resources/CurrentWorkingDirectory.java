@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CurrentWorkingDirectory {
 
-    /** provides logging */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectory.class);
 
     /**
@@ -39,10 +39,10 @@ public final class CurrentWorkingDirectory {
                 absolutePath = file.getAbsolutePath();
                 LOG.info(absolutePath);
             } catch (final Exception exception) {
-                LOG.error(exception.toString());
+                LOG.error(exception.toString(),exception);
             }
         } catch (final Exception exception) {
-            LOG.error(exception.toString());
+            LOG.error(exception.toString(),exception);
         }
         return absolutePath;
     }

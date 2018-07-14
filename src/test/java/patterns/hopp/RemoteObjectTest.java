@@ -12,11 +12,14 @@ import static org.junit.Assume.assumeNotNull;
 /**
  * RemoteObjectTest class.
  */
-public class RemoteObjectTest {
+public final class RemoteObjectTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
 
+    /**
+     * Unit test to typical usage.
+     */
     @Test
     public void testTypicalUsage() {
         // Given

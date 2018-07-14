@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class RouteTest.
  */
-public class RouteTest {
+public final class RouteTest {
 
     /**
      * class InputChanel.

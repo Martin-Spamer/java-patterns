@@ -31,7 +31,7 @@ public class TableCell {
      * @return the value
      */
     public String getValue() {
-        return this.value;
+        return value;
     }
 
     /**
@@ -48,12 +48,11 @@ public class TableCell {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("%s [value=%s]", this.getClass().getSimpleName(), this.value);
+        return String.format("%s [value=%s]", this.getClass().getSimpleName(), value);
     }
 
 }

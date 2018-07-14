@@ -10,7 +10,7 @@ import static org.junit.Assume.assumeNotNull;
 /**
  * RemoteObjectProxy class tests.
  */
-public class RemoteObjectProxyTest {
+public final class RemoteObjectProxyTest {
 
     /**
      * Unit test of typical usage.

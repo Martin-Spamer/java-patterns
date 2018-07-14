@@ -32,7 +32,6 @@ public abstract class AbstractRequest implements RequestInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override

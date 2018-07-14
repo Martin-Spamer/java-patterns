@@ -14,22 +14,20 @@ class RemoteObject implements HoppInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.hopp.HoppInterface#remoteMethod()
      */
     @Override
     public void remoteMethod() {
-        LOG.info("%s.remoteMethod()", this.getClass().getSimpleName());
+        LOG.info("{}.remoteMethod()", this.getClass().getSimpleName());
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.hopp.HoppInterface#localMethod()
      */
     @Override
     public void localMethod() {
-        LOG.info("%s.localMethod()", this.getClass().getSimpleName());
+        LOG.info("{}.localMethod()", this.getClass().getSimpleName());
     }
 
 }

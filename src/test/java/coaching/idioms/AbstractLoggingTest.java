@@ -12,26 +12,40 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test the AbstractLogging class.
  */
-public class AbstractLoggingTest {
+public final class AbstractLoggingTest {
 
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
+
+    /** Provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * MockLog Class.
      */
     public final class MockLog extends AbstractLogging {
+
+        /*
+         * (non-Javadoc)
+         * @see coaching.idioms.AbstractLogging#toString()
+         */
         @Override
         public String toString() {
-            return String.format("%s [bool=%s, num=%s, uuid=%s]",
-                    this.getClass().getSimpleName(),
-                    this.bool,
-                    this.num,
-                    this.uuid);
+            return String
+                .format("%s [bool=%s, num=%s, uuid=%s]",
+                        this.getClass().getSimpleName(),
+                        bool,
+                        num,
+                        uuid);
         }
 
+        /** The num. */
         protected int num = Integer.MAX_VALUE;
+
+        /** The bool. */
         protected Boolean bool = true;
+
+        /** The uuid. */
         protected UUID uuid = UUID.randomUUID();
     }
 
@@ -53,7 +67,7 @@ public class AbstractLoggingTest {
         final MockLog mockLog = new MockLog();
         assertNotNull(mockLog);
         mockLog.logTo(LOG);
-        mockLog.logTo(this.log);
+        mockLog.logTo(log);
     }
 
 }

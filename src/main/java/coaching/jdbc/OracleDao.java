@@ -2,67 +2,29 @@
 package coaching.jdbc;
 
 /**
- * Data Access object for Oracle sample customer table.
+ * A Data Access object for an Oracle Database.
  */
-public final class OracleDao extends AbstractDataAccessObject {
+public final class OracleDao extends AbstractDao {
 
-    /** JDBC_URL to be used. */
+    /** The classname of the JDBC driver to use. */
     private static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
 
-    /** JDBC_URL to be used. */
+    /** The URL to use to make JDBC connection. */
     private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:sample";
 
     /** USERNAME to be used. */
-    private static final String USER = "user";
+    private static final String USERNAME = "user";
 
     /** PASSWORD to be used. */
     private static final String PASSWORD = "password";
 
-    /** SELECT_SQL. */
-    private static final String SELECT_SQL = "SELECT * FROM table";
-
-    /** INSERT_SQL. */
-    private static final String INSERT_SQL = "INSERT INTO table (field-name...) VALUES (values...)";
-
-    /** UPDATE_SQL. */
-    private static final String UPDATE_SQL = "UPDATE table SET field-name = field-value WHERE key=value";
-
-    /** DELETE_SQL. */
-    private static final String DELETE_SQL = "DELETE FROM table WHERE key=value";
-
     /**
-     * Instantiates a new oracle dao.
+     * Instantiates a new DAO for Oracle.
+     *
+     * @throws ClassNotFoundException
      */
-    public OracleDao() {
-        super(JDBC_DRIVER, JDBC_URL, USER, PASSWORD);
-    }
-
-    /**
-     * Creates the.
-     */
-    public void create() {
-        super.create(INSERT_SQL);
-    }
-
-    /**
-     * Read.
-     */
-    public void read() {
-        super.read(SELECT_SQL);
-    }
-
-    /**
-     * Update.
-     */
-    public void update() {
-        super.update(UPDATE_SQL);
-    }
-
-    /**
-     * Delete.
-     */
-    public void delete() {
-        super.delete(DELETE_SQL);
+    public OracleDao() throws ClassNotFoundException {
+        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 
 }

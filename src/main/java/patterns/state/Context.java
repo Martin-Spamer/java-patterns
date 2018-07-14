@@ -19,11 +19,21 @@ public class Context {
         this.state = state;
     }
 
+    /**
+     * To alice.
+     *
+     * @return the context
+     */
     public Context toAlice() {
         state = new StateAlice();
         return this;
     }
 
+    /**
+     * To bob.
+     *
+     * @return the context
+     */
     public Context toBob() {
         state = new StateBob();
         return this;
@@ -31,12 +41,11 @@ public class Context {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Context [state=%s]", state);
+        return String.format("%s [state=%s]", this.getClass().getSimpleName(), state);
     }
 
 }

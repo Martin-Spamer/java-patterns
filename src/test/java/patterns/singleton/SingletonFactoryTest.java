@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Singleton Factory Test class.
  */
-public class SingletonFactoryTest {
+public final class SingletonFactoryTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SingletonFactoryTest.class);

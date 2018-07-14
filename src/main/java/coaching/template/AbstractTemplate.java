@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Abstract Template Class.
+ * Abstract Template class.
  */
 public abstract class AbstractTemplate implements TemplateInterface {
 

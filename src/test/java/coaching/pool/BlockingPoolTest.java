@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * BlockingPoolTest class.
+ * Unit tests for the BlockingPool class.
  */
-public class BlockingPoolTest {
+public final class BlockingPoolTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(BlockingPoolTest.class);
@@ -19,7 +19,7 @@ public class BlockingPoolTest {
     /**
      * TestResourcePool Class.
      */
-    public class TestResourcePool extends AbstractBlockingPool<Boolean> {
+    public final class TestResourcePool extends AbstractBlockingPool<Boolean> {
     }
 
     /**

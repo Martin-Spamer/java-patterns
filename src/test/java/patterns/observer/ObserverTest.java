@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Observer Test class.
  */
-public class ObserverTest {
+public final class ObserverTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(ObserverTest.class);

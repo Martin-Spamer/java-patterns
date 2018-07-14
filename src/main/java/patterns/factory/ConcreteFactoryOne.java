@@ -8,7 +8,6 @@ class ConcreteFactoryOne extends AbstractFactory {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.factory.AbstractFactory#createProductA()
      */
     @Override
@@ -18,7 +17,6 @@ class ConcreteFactoryOne extends AbstractFactory {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.factory.AbstractFactory#createProductB()
      */
     @Override

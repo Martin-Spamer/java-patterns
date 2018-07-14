@@ -6,21 +6,34 @@ package patterns.builder;
  */
 public abstract class AbstractPart {
 
+    /** The part name. */
     private final String partName;
 
+    /**
+     * The Constructor.
+     */
     public AbstractPart() {
         super();
-        this.partName = this.getClass().getSimpleName();
+        partName = this.getClass().getSimpleName();
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param partName the part name
+     */
     public AbstractPart(final String partName) {
         super();
         this.partName = partName;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
-        return String.format("%s", this.getClass().getSimpleName());
+        return String.format("%s [...]", this.getClass().getSimpleName());
     }
 
 }

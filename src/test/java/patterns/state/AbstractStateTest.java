@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class AbstractStateTest.
  */
-public class AbstractStateTest {
+public final class AbstractStateTest {
 
     /**
      * Unit Test to abstract state.

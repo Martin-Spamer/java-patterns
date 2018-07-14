@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Proxy Subject Test class.
  */
-public class ProxySubjectTest {
+public final class ProxySubjectTest {
 
     /**
      * Unit Test to request.

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * ViewTest class.
  */
-public class ViewTest {
+public final class ViewTest {
 
     /**
      * view.

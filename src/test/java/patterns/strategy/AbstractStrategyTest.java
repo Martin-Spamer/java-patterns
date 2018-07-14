@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class AbstractStrategyTest.
  */
-public class AbstractStrategyTest {
+public final class AbstractStrategyTest {
 
     /**
      * Unit Test to operation.

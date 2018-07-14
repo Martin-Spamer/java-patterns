@@ -33,7 +33,6 @@ public abstract class AbstractCommand implements CommandInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.CommandInterface#execute(patterns.command.
      * ParametersInterface)
      */
@@ -59,7 +58,6 @@ public abstract class AbstractCommand implements CommandInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.CommandInterface#undo(patterns.command.
      * ParametersInterface)
      */
@@ -73,7 +71,6 @@ public abstract class AbstractCommand implements CommandInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.command.AbstractCommand#result()
      */
     @Override
@@ -81,4 +78,8 @@ public abstract class AbstractCommand implements CommandInterface {
         return result.getResult();
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s [context=%s, result=%s]", this.getClass().getSimpleName(), context, result);
+    }
 }

@@ -36,7 +36,6 @@ public abstract class AbstractEngine implements FuelInterface {
 
     /*
      * (non-Javadoc)
-     * 
      * @see coaching.model.FuelInterface#addFuel(int)
      */
     @Override
@@ -46,7 +45,6 @@ public abstract class AbstractEngine implements FuelInterface {
 
     /*
      * (non-Javadoc)
-     * 
      * @see coaching.model.FuelInterface#useFuel(int)
      */
     @Override
@@ -56,7 +54,6 @@ public abstract class AbstractEngine implements FuelInterface {
 
     /*
      * (non-Javadoc)
-     * 
      * @see java.lang.Object#toString()
      */
     @Override

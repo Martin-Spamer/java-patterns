@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * DateHelperTest class.
+ * Unit test for the DateHelper class.
  */
-public class DateHelperTest {
+public final class DateHelperTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DateHelperTest.class);
@@ -25,7 +25,7 @@ public class DateHelperTest {
         LOG.info("testNow");
         final Calendar now = DateHelper.now();
         assertNotNull(now);
-        LOG.info("testNow = {}", now.toString());
+        LOG.debug("testNow = {}", now.toString());
     }
 
     /**
@@ -36,7 +36,7 @@ public class DateHelperTest {
         LOG.info("testYesterday");
         final Calendar yesterday = DateHelper.yesterday();
         assertNotNull(yesterday);
-        LOG.info("testNow = {}", yesterday.toString());
+        LOG.debug("yesterday.toString() = {}", yesterday.toString());
         final Calendar now = Calendar.getInstance();
         now.add(Calendar.DAY_OF_YEAR, -1);
     }
@@ -49,7 +49,7 @@ public class DateHelperTest {
         LOG.info("testTomorrow");
         final Calendar tomorrow = DateHelper.tomorrow();
         assertNotNull(tomorrow);
-        LOG.info("testNow = {}", tomorrow.toString());
+        LOG.debug("tomorrow.toString() = {}", tomorrow.toString());
         final Calendar now = Calendar.getInstance();
         now.add(Calendar.DAY_OF_YEAR, +1);
     }

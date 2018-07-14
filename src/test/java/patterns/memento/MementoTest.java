@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * The MementoTest class.
  */
-public class MementoTest {
+public final class MementoTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(MementoTest.class);

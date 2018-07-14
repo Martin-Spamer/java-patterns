@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class CompositeClassArrayTest.
  */
-public class CompositeClassArrayTest {
+public final class CompositeClassArrayTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArrayTest.class);

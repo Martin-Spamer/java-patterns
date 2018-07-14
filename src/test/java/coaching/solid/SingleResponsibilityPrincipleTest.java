@@ -10,8 +10,9 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit Test for the Single Responsibility Principle (SIP) example class.
  */
-public class SingleResponsibilityPrincipleTest {
+public final class SingleResponsibilityPrincipleTest {
 
+    /** Provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrincipleTest.class);
 
     /**

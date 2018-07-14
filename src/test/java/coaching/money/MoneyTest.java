@@ -15,9 +15,9 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
 /**
- * Money Test class.
+ * Unit test for the Money class.
  */
-public class MoneyTest {
+public final class MoneyTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);

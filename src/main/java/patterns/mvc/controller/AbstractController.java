@@ -11,7 +11,7 @@ import patterns.mvc.ModelInterface;
 import patterns.mvc.ViewInterface;
 
 /**
- * An example abstract MVC Controller class.
+ * An example abstract Controller class for the Model View Controller.
  */
 public abstract class AbstractController implements ControllerInterface {
 
@@ -27,55 +27,86 @@ public abstract class AbstractController implements ControllerInterface {
     /** The View. */
     protected ViewInterface view;
 
+    /**
+     * The Constructor.
+     */
     public AbstractController() {
+        super();
+        log.debug("AbstractController()");
     }
 
+    /**
+     * The Constructor.
+     *
+     * @param model the model
+     * @param view the view
+     */
     public AbstractController(final ModelInterface model, final ViewInterface view) {
+        super();
+        log.debug("AbstractController({},{})", model, view);
         this.model = model;
         this.view = view;
     }
 
     /**
      * Attach a Model.
+     *
+     * @param model the model
+     * @return the controller interface
      */
     @Override
     public ControllerInterface attachModel(final ModelInterface model) {
+        log.debug("{}.attachModel({},{})", this.getClass().getSimpleName(), model);
         this.model = model;
         return this;
     }
 
     /**
      * Detach model.
+     *
+     * @return the controller interface
      */
     @Override
     public ControllerInterface detachModel() {
-        this.model = null;
+        log.debug("{}.detachModel({})", this.getClass().getSimpleName(), model);
+        model = null;
         return this;
     }
 
     /**
      * Attach view.
      *
-     * @param view
-     *            the view
+     * @param view the view
+     * @return the controller interface
      */
     @Override
     public ControllerInterface attachView(final ViewInterface view) {
+        log.debug("{}.attachView({},{})", this.getClass().getSimpleName(), view);
         this.view = view;
         return this;
     }
 
     /**
      * Detach view.
+     *
+     * @return the controller interface
      */
     @Override
     public ControllerInterface detachView() {
-        this.view = null;
+        log.debug("{}.detachView({},{})", this.getClass().getSimpleName(), model, view);
+        view = null;
         return this;
     }
 
+    /**
+     * Execute.
+     *
+     * @return the controller interface
+     * @throws MissingCommandException the missing command exception
+     */
     public ControllerInterface execute() throws MissingCommandException {
-        this.commands.execute();
+        log.debug("{}.execute()", this.getClass().getSimpleName());
+        commands.execute();
         return this;
     }
 
@@ -90,7 +121,8 @@ public abstract class AbstractController implements ControllerInterface {
      */
     @Override
     public ControllerInterface execute(final String commandName) throws MissingCommandException {
-        this.commands.execute(commandName);
+        log.debug("{}.execute({})", this.getClass().getSimpleName(), commandName);
+        commands.execute(commandName);
         return this;
     }
 

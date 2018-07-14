@@ -6,9 +6,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * class ElementMapperTest.
+ * Unit tests for the ElementMapper class.
  */
-public class ElementMapperTest {
+public final class ElementMapperTest {
 
     /**
      * Unit Test to element mapper.

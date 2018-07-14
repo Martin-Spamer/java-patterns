@@ -30,7 +30,7 @@ public final class FactoryMethod {
         try {
             return (String) Class.forName("java.lang.String").newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.getLocalizedMessage());
+            LOG.error(e.getLocalizedMessage(), e);
         }
         return null;
     }

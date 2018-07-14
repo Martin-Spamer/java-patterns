@@ -54,7 +54,6 @@ public class Taxi extends Car {
 
     /*
      * (non-Javadoc)
-     * 
      * @see coaching.model.AbstractVehicle#toString()
      */
     @Override

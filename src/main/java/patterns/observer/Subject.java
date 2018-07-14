@@ -31,12 +31,11 @@ public final class Subject extends AbstractSubject {
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("Subject [status=%s]", status);
+        return String.format("%s [status=%s]", this.getClass().getSimpleName(), status);
     }
 
 }

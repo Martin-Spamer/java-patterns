@@ -61,7 +61,7 @@ public class Application {
             createThreads(document);
 
         } catch (final Exception exception) {
-            LOG.error(exception.toString());
+            LOG.error(exception.toString(), exception);
         }
 
         return false;
@@ -126,7 +126,7 @@ public class Application {
             abstractApplicationProcess.start();
         }
 
-        this.threadMap.put(nameAttribute, abstractApplicationProcess);
+        threadMap.put(nameAttribute, abstractApplicationProcess);
     }
 
     /**
@@ -140,7 +140,7 @@ public class Application {
         try {
             return (AbstractProcess) Class.forName(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.toString());
+            LOG.error(e.toString(), e);
         }
         return null;
     }
@@ -172,7 +172,7 @@ public class Application {
             transformer.transform(source, result);
             return result.getWriter().toString();
         } catch (IllegalArgumentException | TransformerFactoryConfigurationError | TransformerException e) {
-            LOG.error(e.toString());
+            LOG.error(e.toString(), e);
         }
         return null;
     }
@@ -187,7 +187,7 @@ public class Application {
         try {
             new Application();
         } catch (final Exception e) {
-            LOG.error(e.toString());
+            LOG.error(e.toString(), e);
         }
     }
 }

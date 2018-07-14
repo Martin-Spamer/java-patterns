@@ -6,26 +6,52 @@ import static org.hamcrest.CoreMatchers.is;
 
 import org.junit.AssumptionViolatedException;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import static org.junit.Assume.assumeNotNull;
 
-public class UnitTest {
+/**
+ * Unit test for the UnitTest class.
+ */
+public final class UnitTest {
 
-    public class ClassUnderTest {
+    private static final Logger LOG = LoggerFactory.getLogger(UnitTest.class);
+
+    public final class ClassUnderTest {
+
+        /**
+         * The Constructor.
+         *
+         * @param object the object
+         */
         public ClassUnderTest(final Object object) {
         }
 
+        /**
+         * Do something.
+         *
+         * @param state the state
+         */
         public void doSomething(final Object state) {
         }
 
+        /**
+         * Passed.
+         *
+         * @return the object
+         */
         public Object passed() {
             return null;
         }
     }
 
+    /**
+     * Unit test to typical usage.
+     */
     @Test
     public void testTypicalUsage() {
         // Given
@@ -41,6 +67,9 @@ public class UnitTest {
         assertThat(classUnderTest.passed(), is(equalTo(expected)));
     }
 
+    /**
+     * Unit test to typical pass assume given.
+     */
     @Test
     public void testTypicalPassAssumeGiven() {
         // Given
@@ -56,6 +85,9 @@ public class UnitTest {
         assertThat(classUnderTest.passed(), is(equalTo(expected)));
     }
 
+    /**
+     * Unit test to typical pass assert given.
+     */
     @Test
     public void testTypicalPassAssertGiven() {
         // Given
@@ -71,6 +103,9 @@ public class UnitTest {
         assertThat(classUnderTest.passed(), is(equalTo(expected)));
     }
 
+    /**
+     * Unit test to typical fail assume given.
+     */
     @Test(expected = AssumptionViolatedException.class)
     public void testTypicalFailAssumeGiven() {
         // Given
@@ -80,6 +115,9 @@ public class UnitTest {
         // Then
     }
 
+    /**
+     * Unit test to typical fail assert given.
+     */
     @Test(expected = AssertionError.class)
     public void testTypicalFailAssertGiven() {
         // Given

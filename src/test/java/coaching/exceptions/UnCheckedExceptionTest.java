@@ -2,11 +2,15 @@
 package coaching.exceptions;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * UnCheckedExceptionTest class.
+ * Unit tests for the UnCheckedException class.
  */
-public class UnCheckedExceptionTest {
+public final class UnCheckedExceptionTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(UnCheckedExceptionTest.class);
 
     /**
      * Unit Test to unChecked exception.
