@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 public class RegularExpression {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RegularExpression.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(RegularExpression.class);
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^ABC$";
@@ -80,7 +81,11 @@ public class RegularExpression {
         final Matcher matcher = pattern.matcher(original);
         while (matcher.find()) {
             final String message = "Test %s starting at index %s and ending at index %s";
-            final String string = String.format(message, matcher.group(), matcher.start(), matcher.end());
+            final String string = String
+                .format(message,
+                        matcher.group(),
+                        matcher.start(),
+                        matcher.end());
             LOG.info(string);
         }
     }

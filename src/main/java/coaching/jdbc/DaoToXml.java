@@ -4,6 +4,8 @@ package coaching.jdbc;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * The JdbcToXml class.
@@ -65,18 +67,16 @@ class DaoToXml extends JdbcBase {
      *
      * @param filename the filename
      */
-    public void toXmlFile(String filename) {
+    private void toXmlFile(final String filename) {
         try {
-            if (filename.length() == 0) {
-                filename = resultSetMetaData.getTableName(1) + ".xml";
-            }
-
-            final BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(filename)));
+            final File file = new File(filename);
+            final FileWriter writer = new FileWriter(file);
+            final BufferedWriter bufferedWriter = new BufferedWriter(writer);
 
             toXmlFile(bufferedWriter);
 
             bufferedWriter.close();
-        } catch (final Exception e) {
+        } catch (IOException e) {
             log.error(e.toString(), e);
         }
     }
@@ -89,36 +89,50 @@ class DaoToXml extends JdbcBase {
      * @return the string
      */
     public String toXmlString() {
-        StringBuffer xml = null;
-
-        if ((resultSet != null) && (resultSetMetaData != null)) {
-            try {
-                final int colCount = resultSetMetaData.getColumnCount();
-                xml = new StringBuffer();
-                xml.append("<TABLE>\n");
-
-                while (resultSet.next()) {
-                    xml.append("\t<ROW>\n\t\t");
-
-                    for (int i = 1; i <= colCount; i++) {
-                        final String columnName = resultSetMetaData.getColumnName(i);
-                        final Object value = resultSet.getObject(i);
-
-                        if (value != null) {
-                            xml.append("<FIELD NAME=\"" + columnName + "\">");
-                            xml.append(value.toString().trim());
-                            xml.append("</FIELD>");
-                        }
-                    }
-                    xml.append("\n\t\t</ROW>\n");
+        StringBuilder xml = new StringBuilder();
+        if (resultSet != null) {
+            if (resultSetMetaData != null) {
+                try {
+                    xml.append("<TABLE>");
+                    xml.append(tableRows());
+                    xml.append("</TABLE>\n");
+                    return xml.toString();
+                } catch (final Exception e) {
+                    log.error(e.toString(), e);
                 }
-
-                xml.append("</TABLE>\n");
-                return xml.toString();
-            } catch (final Exception e) {
-                log.error(e.toString(), e);
+            } else {
+                log.warn("No metaData for decoration.");
             }
+        } else {
+            log.warn("No table data to write.");
         }
         return null;
+    }
+
+    private String tableRows() throws SQLException {
+        final StringBuilder xmlForBody = new StringBuilder();
+        while (resultSet.next()) {
+            xmlForBody.append(tableRow());
+        }
+        return xmlForBody.toString();
+    }
+
+    private String tableRow() throws SQLException {
+        StringBuilder xmlforRow = new StringBuilder();
+        xmlforRow.append("\t\t<ROW>\n\t\t");
+        for (int colNum = 1; colNum <= resultSetMetaData
+            .getColumnCount(); colNum++) {
+            final String columnName = resultSetMetaData.getColumnName(colNum);
+            final String value = resultSet.getString(colNum);
+
+            if (value != null) {
+                xmlforRow
+                    .append(String.format("<FIELD NAME='%s'>", columnName));
+                xmlforRow.append(value.trim());
+                xmlforRow.append("</FIELD>");
+            }
+        }
+        xmlforRow.append("\n\t\t</ROW>\n");
+        return xmlforRow.toString();
     }
 }

@@ -4,6 +4,7 @@
 
 package coaching.mvc.controller.servlet.http;
 
+import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.ServletConfig;
@@ -12,94 +13,82 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import coaching.mvc.controller.CommandPool;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import coaching.mvc.controller.ControllerException;
 
 /**
  * ControllerServlet Class.
  */
+@SuppressWarnings("serial")
 public class HttpControllerServlet extends HttpServlet {
 
-    static {
-        final CommandPool invoker = CommandPool.getInstance();
-    }
-
-    /** The debug level. */
-    private final int debugLevel = 3;
+    private static final Logger LOG = LoggerFactory
+        .getLogger(HttpControllerServlet.class);
 
     /*
      * (non-Javadoc)
-     *
      * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.
      * HttpServletRequest, javax.servlet.http.HttpServletResponse)
      */
     @Override
     protected void doGet(final HttpServletRequest request,
-            final HttpServletResponse response) throws ServletException {
+            final HttpServletResponse response)
+            throws ServletException {
         final Map<?, ?> parameters = request.getParameterMap();
         try {
             response.sendRedirect(execute(parameters));
-        } catch (final ControllerException controllerException) {
-            if (this.debugLevel >= 3) {
-                controllerException.printStackTrace(System.err);
-            }
-            throw new javax.servlet.ServletException(controllerException);
-        } catch (final java.io.IOException ioException) {
-            if (this.debugLevel >= 3) {
-                ioException.printStackTrace(System.err);
-            }
-            throw new javax.servlet.ServletException(ioException);
+        } catch (final ControllerException e) {
+            LOG.error(e.toString(), e);
+        } catch (final IOException e) {
+            LOG.error(e.toString(), e);
         }
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.
      * HttpServletRequest, javax.servlet.http.HttpServletResponse)
      */
     @Override
-    protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
+    protected void doPost(final HttpServletRequest request,
+            final HttpServletResponse response)
             throws ServletException {
         final Map<?, ?> parameters = request.getParameterMap();
         try {
             execute(parameters);
-        } catch (final ControllerException commandException) {
-            commandException.printStackTrace();
+        } catch (final ControllerException e) {
+            LOG.error(e.toString(), e);
         }
     }
 
     /**
      * Execute.
-     * 
-     * parameters
-     * string
-     * controller exception
      *
      * @param parameters the parameters
      * @return the string
      * @throws ControllerException the controller exception
      */
-    protected String execute(final Map<?, ?> parameters) throws ControllerException {
+    protected String execute(final Map<?, ?> parameters)
+            throws ControllerException {
         if (parameters.get("EXCEPTION").equals("TRUE")) {
-            throw new ControllerException();
+            throw new ControllerException("execute");
         }
         return (String) parameters.get("url");
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see javax.servlet.GenericServlet#getServletInfo()
      */
     @Override
     public String getServletInfo() {
-        return this.getClass().getSimpleName() + "- Short description";
+        return this.getClass().getSimpleName();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see javax.servlet.GenericServlet#init(javax.servlet.ServletConfig)
      */
     @Override

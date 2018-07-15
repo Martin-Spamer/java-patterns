@@ -11,7 +11,8 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractContext implements ContextInterface {
 
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     private Properties properties = null;

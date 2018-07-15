@@ -16,7 +16,8 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class ConnectionFactoryTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ConnectionFactoryTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ConnectionFactoryTest.class);
 
     private ConnectionFactory connectionFactory;
 
@@ -31,7 +32,8 @@ public final class ConnectionFactoryTest {
         final String JDBC_URL = "jdbc:sqlite:memory";
         final String USERNAME = "username";
         final String PASSWORD = "password";
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
+                USERNAME, PASSWORD);
         assertNotNull(connectionFactory);
         final Connection connection = connectionFactory.newConnection();
         assertNotNull(connection);
@@ -45,14 +47,15 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires Pointbase")
+    @Ignore("Requires Pointbase low-priority")
     public void testPointbaseConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
         final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
         final String USERNAME = "PBPUBLIC";
         final String PASSWORD = "PBPUBLIC";
 
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
+                USERNAME, PASSWORD);
 
         assertNotNull(connectionFactory);
         final Connection connection = connectionFactory.newConnection();
@@ -67,14 +70,15 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires MySQL")
+    @Ignore("Requires MySQL low-priority")
     public void testMySqlConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
         final String JDBC_URL = "jdbc:mysql://localhost:3306/student";
         final String USERNAME = "root";
         final String PASSWORD = "root";
 
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
+                USERNAME, PASSWORD);
 
         assertNotNull(connectionFactory);
         final Connection connection = connectionFactory.newConnection();
@@ -89,14 +93,15 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires Oracle")
+    @Ignore("Requires Oracle low-priority")
     public void testConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
         final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:sample";
         final String USERNAME = "user";
         final String PASSWORD = "password";
 
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
+                USERNAME, PASSWORD);
 
         assertNotNull(connectionFactory);
         final Connection connection = connectionFactory.newConnection();
@@ -111,14 +116,15 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires PostgreSQL")
+    @Ignore("Requires PostgreSQL low-priority")
     public void testPostgresqlConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "org.postgresql.Driver";
         final String JDBC_URL = "jdbc:postgresql://localhost";
         final String USERNAME = "postgres";
         final String PASSWORD = "password";
 
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
+                USERNAME, PASSWORD);
 
         assertNotNull(connectionFactory);
         final Connection connection = connectionFactory.newConnection();

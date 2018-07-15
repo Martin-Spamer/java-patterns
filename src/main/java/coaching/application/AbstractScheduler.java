@@ -7,8 +7,10 @@ import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
 
 import coaching.resources.PropertiesLoader;
+import coaching.resources.XmlResourceLoader;
 
 /**
  * An abstract Scheduler class.
@@ -16,46 +18,53 @@ import coaching.resources.PropertiesLoader;
 public abstract class AbstractScheduler {
 
     /** logging provided. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
     private String[] args = null;
 
     /** initialisation arguments as properties. */
     private Properties properties = null;
+    private Document xmlDoc = null;
 
     /**
      * The Constructor.
      */
     public AbstractScheduler() {
-        super();
-        loadConfiguration();
-        log.info(toString());
+        log.info("AbstractScheduler()");
+        initialisation();
+    }
+
+    public AbstractScheduler(final String resourceName) {
+        log.info("AbstractScheduler({})", resourceName);
+        initialisation();
     }
 
     public AbstractScheduler(final String[] args) {
-        super();
         this.args = args;
-        loadConfiguration();
+        log.info("AbstractScheduler({}) = {}", args, this);
+        initialisation();
     }
 
     public AbstractScheduler(final Properties properties) {
-        super();
         this.properties = properties;
-        loadConfiguration();
+        log.info("AbstractScheduler({}) = {}", properties, this);
+        initialisation();
     }
 
-    private void loadConfiguration() {
-        properties = PropertiesLoader.getProperties(defaultFilename());
+    private void initialisation() {
+        properties = PropertiesLoader.getProperties(propertiesFilename());
     }
 
     /**
-     * Default filename.
+     * Default properties filename.
      *
      * @return the string
      */
-    private String defaultFilename() {
-        return String.format("%s.properties", this.getClass().getSimpleName());
+    private String propertiesFilename() {
+        final String simpleName = this.getClass().getSimpleName();
+        return String.format("%s.properties", simpleName);
     }
 
     /**
@@ -64,7 +73,22 @@ public abstract class AbstractScheduler {
      * @return the abstract scheduler
      */
     public AbstractScheduler execute() {
-        return execute(properties);
+        xmlDoc = XmlResourceLoader.getXmlResource(resourceName());
+        return execute(xmlDoc);
+    }
+
+    /**
+     * Default xml schedule filename.
+     *
+     * @return the string
+     */
+    private String resourceName() {
+        final String simpleName = this.getClass().getSimpleName();
+        return String.format("%s.xml", simpleName);
+    }
+
+    private AbstractScheduler execute(final Document xmlDoc) {
+        return null;
     }
 
     /**
@@ -79,8 +103,10 @@ public abstract class AbstractScheduler {
             final String key = (String) keys.nextElement();
             final String value = properties.getProperty(key);
             try {
-                final Thread thread = (Thread) Class.forName(value).newInstance();
-                log.debug(thread.toString());
+                final Thread thread = (Thread) Class
+                    .forName(value)
+                    .newInstance();
+                log.debug("{}", thread);
                 thread.start();
             } catch (final Exception exception) {
                 log.error(exception.toString(), exception);
@@ -92,7 +118,10 @@ public abstract class AbstractScheduler {
     @Override
     public String toString() {
         return String
-            .format("%s [args=%s, properties=%s]", this.getClass().getSimpleName(), Arrays.toString(args), properties);
+            .format("%s [args=%s, properties=%s]",
+                    this.getClass().getSimpleName(),
+                    Arrays.toString(args),
+                    properties);
     }
 
 }

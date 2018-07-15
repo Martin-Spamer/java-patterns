@@ -20,7 +20,8 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 class DaoToCsv extends JdbcBase {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** Data access object. */
     private final DynamicDao dao;
@@ -182,6 +183,10 @@ class DaoToCsv extends JdbcBase {
      */
     @Override
     public String toString() {
-        return String.format("%s [dao=%s, csvFile=%s]", this.getClass().getSimpleName(), dao, csvFile);
+        return String
+            .format("%s [dao=%s, csvFile=%s]",
+                    this.getClass().getSimpleName(),
+                    dao,
+                    csvFile);
     }
 }

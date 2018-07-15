@@ -33,27 +33,29 @@ public final class XmlConfig extends AbstractXmlConfig {
      */
     public XmlConfig() {
         super();
+        log.debug("XmlConfig()");
     }
 
     /**
      * Instantiates a new XmlConfig from configuration file name.
      *
-     * @param configFilename
+     * @param filename
      *            the Configuration filename
      */
-    public XmlConfig(final String configFilename) {
-        super(configFilename);
+    public XmlConfig(final String filename) {
+        super(filename);
+        log.debug("XmlConfig({})", filename);
     }
 
     /**
      * To xml filename.
      *
-     * @param configFilename
+     * @param configName
      *            the Configuration filename
      * @return the string
      */
-    protected String toXmlFilename(final String configFilename) {
-        return String.format("%s.xml", configFilename);
+    protected String toXmlFilename(final String configName) {
+        return String.format("%s.xml", configName);
     }
 
     /**
@@ -71,7 +73,8 @@ public final class XmlConfig extends AbstractXmlConfig {
      * @param configFilename the config filename
      */
     protected void loadXml(final String configFilename) {
-        loadXml(new File(configFilename));
+        File configFile = new File(configFilename);
+        loadXml(configFile);
     }
 
     /**
@@ -81,7 +84,9 @@ public final class XmlConfig extends AbstractXmlConfig {
      * @return the input stream
      */
     protected InputStream streamForResource(final String propertyFileName) {
-        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        final ClassLoader classLoader = Thread
+            .currentThread()
+            .getContextClassLoader();
         return classLoader.getResourceAsStream(propertyFileName);
     }
 
@@ -92,10 +97,13 @@ public final class XmlConfig extends AbstractXmlConfig {
      */
     protected void loadXmlStream(final InputStream configInputStream) {
         try {
-            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
+                .newInstance();
             try {
-                final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-                final Document document = documentBuilder.parse(configInputStream);
+                final DocumentBuilder documentBuilder = documentBuilderFactory
+                    .newDocumentBuilder();
+                final Document document = documentBuilder
+                    .parse(configInputStream);
                 configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {
                 LOG.error(parserConfigurationException.toString());
@@ -112,9 +120,11 @@ public final class XmlConfig extends AbstractXmlConfig {
      */
     public void loadXmlFile(final File configFile) {
         try {
-            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
+                .newInstance();
             try {
-                final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+                final DocumentBuilder documentBuilder = documentBuilderFactory
+                    .newDocumentBuilder();
                 final Document document = documentBuilder.parse(configFile);
                 configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {
@@ -158,7 +168,8 @@ public final class XmlConfig extends AbstractXmlConfig {
      * @see framework.config.ConfigInterface#getProperty(java.lang.String)
      */
     public String getProperty(final String key) {
-        final NodeList propertyElements = configElement.getElementsByTagName("property");
+        final NodeList propertyElements = configElement
+            .getElementsByTagName("property");
         for (int i = 0; i < propertyElements.getLength(); i++) {
             final Node item = propertyElements.item(i);
             LOG.info("item = {}", item.toString());
@@ -209,11 +220,11 @@ public final class XmlConfig extends AbstractXmlConfig {
      * @return the string
      */
     private String toXmlString(final Node node) {
-        StringBuffer text = new StringBuffer();
+        StringBuilder text = new StringBuilder();
         if (node != null) {
             final String value = node.getNodeValue();
             if (value != null) {
-                text = new StringBuffer(value);
+                text = new StringBuilder(value);
             }
             if (node.hasChildNodes()) {
                 final NodeList children = node.getChildNodes();

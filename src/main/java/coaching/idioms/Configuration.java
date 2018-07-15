@@ -14,7 +14,8 @@ import org.slf4j.LoggerFactory;
 public class Configuration {
 
     /** Provides logging. */
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    private final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     private final Properties properties = new Properties();
@@ -58,8 +59,11 @@ public class Configuration {
      * @return the input stream
      */
     private InputStream inputStream(final String resourceName) {
-        final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
+        final ClassLoader classloader = Thread
+            .currentThread()
+            .getContextClassLoader();
+        final InputStream resourceAsStream = classloader
+            .getResourceAsStream(resourceName);
         return resourceAsStream;
     }
 
@@ -107,7 +111,10 @@ public class Configuration {
      * @return the string
      */
     public String toPrettyString() {
-        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), format(properties.toString()));
+        return String
+            .format("%s [properties=%s]",
+                    this.getClass().getSimpleName(),
+                    format(properties.toString()));
     }
 
     /**
@@ -120,7 +127,10 @@ public class Configuration {
      * @return the object
      */
     private Object format(final String string) {
-        return string.replace("{", "\n\t{\n\t").replace(", ", "\n\t").replace("}", "\n\t}\n");
+        return string
+            .replace("{", "\n\t{\n\t")
+            .replace(", ", "\n\t")
+            .replace("}", "\n\t}\n");
     }
 
     /*
@@ -129,6 +139,9 @@ public class Configuration {
      */
     @Override
     public String toString() {
-        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), properties);
+        return String
+            .format("%s [properties=%s]",
+                    this.getClass().getSimpleName(),
+                    properties);
     }
 }

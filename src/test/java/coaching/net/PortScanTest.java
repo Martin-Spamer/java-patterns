@@ -1,6 +1,7 @@
 
 package coaching.net;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,10 +11,12 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for the PortScan class.
  */
+@Ignore("work-in-progress low-priority")
 public final class PortScanTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PortScanTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PortScanTest.class);
 
     /**
      * Unit test to port scan.

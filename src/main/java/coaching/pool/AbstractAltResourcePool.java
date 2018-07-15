@@ -1,9 +1,10 @@
 
 package coaching.pool;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Stack;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +18,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractAltResourcePool<T> {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The max pool size. */
     protected int maxPoolSize = Integer.MAX_VALUE;
@@ -29,7 +31,7 @@ public abstract class AbstractAltResourcePool<T> {
     protected int minPoolSize = Integer.MIN_VALUE;
 
     /** The free pool. */
-    protected Stack<T> freePool = new Stack<>();
+    protected Deque<T> freePool = new ArrayDeque<T>();
 
     /** The used pool. */
     protected Set<T> usedPool = new HashSet<>();
@@ -56,7 +58,10 @@ public abstract class AbstractAltResourcePool<T> {
                     throw new ResourceBorrowException(exception);
                 }
             } else {
-                log.info("Used({}) < maxPoolSize({})", this.usedPool.size(), this.maxPoolSize);
+                log
+                    .info("Used({}) < maxPoolSize({})",
+                            this.usedPool.size(),
+                            this.maxPoolSize);
             }
         } else {
             // first valid resource
@@ -86,9 +91,6 @@ public abstract class AbstractAltResourcePool<T> {
     public synchronized void discard(final T resource) {
         // in use pool.
         this.usedPool.remove(resource);
-
-        // free pool
-        this.freePool.push(resource);
     }
 
     /**

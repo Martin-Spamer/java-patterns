@@ -19,6 +19,8 @@ import java.util.StringTokenizer;
  */
 public final class WebCrawler extends ThreadTemplate {
 
+    private static final int BUFFER_SIZE = 1024;
+
     /** The Constant BASE_URL. */
     private static final String BASE_URL = "http://127.0.0.1:8080";
 
@@ -70,31 +72,34 @@ public final class WebCrawler extends ThreadTemplate {
     protected void crawlSite(final URL baseUrl) {
         try {
             // form URL for any ROBOTS.TXT file
-            final String robotsTxtFile = String.format("%s/robots.txt", baseUrl);
+            final String robotsTxtFile = String
+                .format("%s/robots.txt", baseUrl);
             final URL robotsUrl = new URL(robotsTxtFile);
-            String robotTxtContent = new String();
+            final StringBuilder robotTxtContent = new StringBuilder();
+            final StringBuilder robotTxtContentBuffer = new StringBuilder();
 
-            final StringBuffer robotTxtContentBuffer = new StringBuffer();
             try {
-                final byte buffer[] = new byte[1024];
+                final byte[] buffer = new byte[1024];
                 final InputStream robotsTxtInputStream = robotsUrl.openStream();
                 int bufferContentSize = 0;
                 do {
                     bufferContentSize = robotsTxtInputStream.read(buffer);
                     if (bufferContentSize != -1) {
-                        robotTxtContent = robotTxtContent.concat(new String(buffer, 0, bufferContentSize));
+                        String str = new String(buffer, 0, bufferContentSize);
+                        robotTxtContent.append(str);
                         robotTxtContentBuffer.append(Arrays.toString(buffer));
                     }
                 } while (bufferContentSize != -1);
 
                 robotsTxtInputStream.close();
             } catch (final IOException ioException) {
-                log.error("{}", ioException.toString());
+                log.error("{}", ioException);
             }
 
-            safeCrawlSite(baseUrl, robotTxtContent);
+            safeCrawlSite(baseUrl, robotTxtContent.toString());
+
         } catch (final MalformedURLException malformedURLException) {
-            log.error("{}", malformedURLException.toString());
+            log.error("{}", malformedURLException);
         }
     }
 
@@ -107,7 +112,8 @@ public final class WebCrawler extends ThreadTemplate {
      * @param baseUrl the base url
      * @param robotTxtContent the robot txt content
      */
-    protected void safeCrawlSite(final URL baseUrl, final String robotTxtContent) {
+    protected void safeCrawlSite(final URL baseUrl,
+            final String robotTxtContent) {
 
         // search ROBOTS.TXT for "Disallow:" commands.
         final String baseFile = baseUrl.getFile();
@@ -148,33 +154,34 @@ public final class WebCrawler extends ThreadTemplate {
             urlConnection.setAllowUserInteraction(false);
 
             final InputStream urlStream = baseUrl.openStream();
-            final String mimeType = URLConnection.guessContentTypeFromStream(urlStream);
+            final String mimeType = URLConnection
+                .guessContentTypeFromStream(urlStream);
 
             if (mimeType != null) {
                 if (mimeType.compareTo("text/html") == 0) {
-                    String responseContent = new String();
-                    final StringBuffer responseContentBuffer = new StringBuffer();
-                    try {
-                        final InputStream inputStream = baseUrl.openStream();
-                        final byte buffer[] = new byte[1024];
-                        int bufferContentSize = 0;
-                        do {
-                            bufferContentSize = inputStream.read(buffer);
-                            if (bufferContentSize != -1) {
-                                responseContent = responseContent.concat(new String(buffer, 0, bufferContentSize));
-                                responseContentBuffer.append(Arrays.toString(buffer));
-                            }
-                        } while (bufferContentSize != -1);
+                    final StringBuilder responseContent = new StringBuilder();
+                    final StringBuilder responseContentBuffer = new StringBuilder();
 
-                        inputStream.close();
+                    final InputStream inputStream = baseUrl.openStream();
+                    final byte[] buffer = new byte[BUFFER_SIZE];
+                    int bufferContentSize = 0;
+                    do {
+                        bufferContentSize = inputStream.read(buffer);
+                        if (bufferContentSize != -1) {
+                            String strBuffer = new String(buffer, 0,
+                                    bufferContentSize);
+                            responseContent.append(strBuffer);
+                            responseContentBuffer
+                                .append(Arrays.toString(buffer));
+                        }
+                    } while (bufferContentSize != -1);
 
-                    } catch (final IOException ioException) {
-                        log.error(ioException.toString());
-                    }
+                    inputStream.close();
+
                 }
             }
-        } catch (final Exception exception) {
-            log.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            log.error("", e);
         }
     }
 

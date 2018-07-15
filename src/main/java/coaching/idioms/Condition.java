@@ -43,7 +43,8 @@ public class Condition implements ConditionInterface<Boolean> {
      */
     @Override
     public String toString() {
-        return String.format("%s [result=%s]", this.getClass().getSimpleName(), result);
+        return String
+            .format("%s [result=%s]", this.getClass().getSimpleName(), result);
     }
 
 }

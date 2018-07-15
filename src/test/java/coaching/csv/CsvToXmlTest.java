@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
  * Unit tests for the CsvToJdbc class.
  */
@@ -23,6 +25,7 @@ public final class CsvToXmlTest {
     @Test
     public void testFluentInterface() {
         final CsvToXml instance = new CsvToXml();
+        assertNotNull(instance);
     }
 
 }

@@ -3,8 +3,6 @@ package patterns.hopp;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
-
 import static org.junit.Assume.assumeNotNull;
 
 /**
@@ -26,14 +24,6 @@ public final class RemoteObjectProxyTest {
 
         // Then
         assumeNotNull(remoteObjectProxy);
-    }
-
-    /**
-     * Unit test to type.
-     */
-    @Test
-    public void testType() {
-        assertNotNull(RemoteObjectProxy.class);
     }
 
     /**

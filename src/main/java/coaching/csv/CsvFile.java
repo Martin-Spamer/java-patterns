@@ -46,12 +46,12 @@ public class CsvFile {
         super();
         LOG.debug("CsvFile()");
         initialise(defaultFilename());
-        LOG.trace(toString());
+        LOG.debug("TODO {}",this);
     }
 
     private String defaultFilename() {
         if (csvFilename == null) {
-            String stem = this.getClass().getSimpleName();
+            final String stem = this.getClass().getSimpleName();
             csvFilename = String.format("%s.csv", stem);
         }
         return csvFilename;
@@ -68,7 +68,7 @@ public class CsvFile {
         super();
         LOG.debug("CsvFile({})", csvFilename);
         initialise(csvFilename);
-        LOG.trace(toString());
+        LOG.debug("TODO {}",this);
     }
 
     /**
@@ -89,16 +89,18 @@ public class CsvFile {
      * @throws FileNotLoadedException
      * @throws IOException Signals that an I/O exception has occurred.
      */
-    public void read(final String filename) {
+    private void read(final String filename) {
         LOG.debug("read({})", filename);
         final ClassLoader classLoader = this.getClass().getClassLoader();
         try {
-            final InputStream resourceAsStream = classLoader.getResourceAsStream(filename);
+            final InputStream resourceAsStream = classLoader
+                .getResourceAsStream(filename);
             if (resourceAsStream != null) {
                 read(resourceAsStream);
                 resourceAsStream.close();
             } else {
-                final String msg = String.format("Resource %s not found", filename);
+                final String msg = String
+                    .format("Resource %s not found", filename);
                 LOG.warn("{} on read({})", msg, filename);
                 throw new FileNotLoadedException(msg);
             }
@@ -117,7 +119,8 @@ public class CsvFile {
      *             Signals that an I/O exception has occurred.
      */
     private void read(final InputStream resourceAsStream) throws IOException {
-        final InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
+        final InputStreamReader inputStreamReader = new InputStreamReader(
+                resourceAsStream);
         read(inputStreamReader);
         inputStreamReader.close();
     }
@@ -130,8 +133,10 @@ public class CsvFile {
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      */
-    private void read(final InputStreamReader inputStreamReader) throws IOException {
-        final BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+    private void read(final InputStreamReader inputStreamReader)
+            throws IOException {
+        final BufferedReader bufferedReader = new BufferedReader(
+                inputStreamReader);
         read(bufferedReader);
         bufferedReader.close();
     }
@@ -143,10 +148,10 @@ public class CsvFile {
      * @throws IOException Signals that an I/O exception has occurred.
      */
     private void read(final BufferedReader bufferedReader) throws IOException {
-        String line = bufferedReader.readLine().trim();
+        String line = bufferedReader.readLine();
         while (line != null) {
             if (line.length() > 0) {
-                processLine(line);
+                processLine(line.trim());
             }
             line = bufferedReader.readLine();
         }
@@ -297,7 +302,8 @@ public class CsvFile {
             super(message);
         }
 
-        public FileNotLoadedException(final String message, final Throwable cause) {
+        public FileNotLoadedException(final String message,
+                final Throwable cause) {
             super(message, cause);
         }
     }

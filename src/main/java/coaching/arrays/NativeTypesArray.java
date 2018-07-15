@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 public class NativeTypesArray {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArray.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(NativeTypesArray.class);
 
     /** ARRAY_SIZE constant. */
     private static final int ARRAY_SIZE = 10;

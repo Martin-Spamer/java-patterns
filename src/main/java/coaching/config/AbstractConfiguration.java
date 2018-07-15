@@ -15,7 +15,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractConfiguration implements ConfigInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     protected Properties properties = new Properties();
@@ -136,7 +137,10 @@ public abstract class AbstractConfiguration implements ConfigInterface {
     @Override
     public String toString() {
         final String prettyProperties = prettyProperties(properties);
-        return String.format("%s [properties = %s]", this.getClass().getSimpleName(), prettyProperties);
+        return String
+            .format("%s [properties = %s]",
+                    this.getClass().getSimpleName(),
+                    prettyProperties);
     }
 
     /**
@@ -146,7 +150,11 @@ public abstract class AbstractConfiguration implements ConfigInterface {
      * @return the properties as String object.
      */
     protected String prettyProperties(final Properties properties) {
-        return properties.toString().replace("{", "{\n\t").replace(", ", "\n\t").replace("}", "\n\t}");
+        return properties
+            .toString()
+            .replace("{", "{\n\t")
+            .replace(", ", "\n\t")
+            .replace("}", "\n\t}");
     }
 
 }

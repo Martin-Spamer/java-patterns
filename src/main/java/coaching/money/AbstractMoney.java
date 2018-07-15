@@ -14,7 +14,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractMoney implements MoneyInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The currency. */
     private Currency currency = Currency.getInstance(Locale.getDefault());
@@ -213,7 +214,7 @@ public abstract class AbstractMoney implements MoneyInterface {
      */
     @Override
     public boolean isEqualTo(final MoneyInterface money) {
-        return amount == money.getAmount();
+        return money.isEqualTo(amount);
     }
 
     /*
@@ -239,7 +240,10 @@ public abstract class AbstractMoney implements MoneyInterface {
      */
     public void toLog() {
         final String debug = String
-            .format("%s [currency=%s, amount=%s]", this.getClass().getSimpleName(), currency, amount);
+            .format("%s [currency=%s, amount=%s]",
+                    this.getClass().getSimpleName(),
+                    currency,
+                    amount);
         log.info(debug);
     }
 

@@ -19,11 +19,11 @@ import org.w3c.dom.NodeList;
 public abstract class AbstractApplication {
 
     /** logging provided. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
     protected String[] args = null;
-
     protected Document document = null;
     protected Element documentElement;
 
@@ -32,7 +32,7 @@ public abstract class AbstractApplication {
      */
     public AbstractApplication() {
         super();
-        log.info(toString());
+        log.info("AbstractApplication() = {}", this);
     }
 
     /**
@@ -43,7 +43,7 @@ public abstract class AbstractApplication {
     public AbstractApplication(final String[] args) {
         super();
         this.args = args;
-        log.info(toString());
+        log.info("AbstractApplication({}) = {}", args, this);
     }
 
     /**
@@ -52,7 +52,12 @@ public abstract class AbstractApplication {
      * @return true, if successful
      */
     protected boolean initialisation() {
-        return initialisation(this.getClass().getSimpleName() + ".xml");
+        return initialisation(defaultFilename());
+    }
+
+    private String defaultFilename() {
+        final String simpleName = this.getClass().getSimpleName();
+        return String.format("%s.xml", simpleName);
     }
 
     /**
@@ -76,28 +81,32 @@ public abstract class AbstractApplication {
      * @return true, if successful
      */
     protected boolean initialisation(final File configFile) {
-        boolean returnValue = false;
         try {
-            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
+                .newInstance();
+            final DocumentBuilder documentBuilder = documentBuilderFactory
+                .newDocumentBuilder();
             document = documentBuilder.parse(configFile);
             documentElement = document.getDocumentElement();
 
             if (documentElement != null) {
-                final Element commandHandlerElement = getElement("COMMAND_HANDLER");
+                final Element commandHandlerElement = getElement(
+                        "COMMAND_HANDLER");
                 log.info("commandHandlerElement = {}", commandHandlerElement);
                 final String commandHandlerClassName = getElementAttribute(
                         "COMMAND_HANDLER",
                         "className");
-                log.info("commandHandlerClassName = {}", commandHandlerClassName);
+                log
+                    .info("commandHandlerClassName = {}",
+                            commandHandlerClassName);
             } else {
                 log.warn("documentElement = null");
             }
-            returnValue = true;
+            return true;
         } catch (final Exception exception) {
             log.error(exception.toString(), exception);
         }
-        return returnValue;
+        return false;
     }
 
     /**
@@ -108,13 +117,14 @@ public abstract class AbstractApplication {
      */
     protected Element getElement(final String elementName) {
         Element element = null;
-        final NodeList nodelist = documentElement.getElementsByTagName(elementName);
+        final NodeList nodelist = documentElement
+            .getElementsByTagName(elementName);
         if (nodelist != null) {
             if (nodelist.getLength() == 0) {
-                log.debug("%s is missing for %s ", elementName, documentElement.toString());
+                log.debug("{} is missing for {}", elementName, documentElement);
             } else {
                 if (nodelist.getLength() > 1) {
-                    log.trace("Surplus Elements %s ignored", elementName, documentElement.toString());
+                    log.trace("Surplus {} elements ignored", elementName);
                 }
                 element = (Element) nodelist.item(0);
             }

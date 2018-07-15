@@ -46,7 +46,8 @@ public final class XmlToDao extends AbstractDao {
      * @param driverClassName the driver class name
      * @throws ClassNotFoundException
      */
-    public XmlToDao(final String driverClassName) throws ClassNotFoundException {
+    public XmlToDao(final String driverClassName)
+            throws ClassNotFoundException {
         super(driverClassName);
     }
 
@@ -93,7 +94,8 @@ public final class XmlToDao extends AbstractDao {
      */
     private Document createDocument() {
         try {
-            final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilderFactory factory = DocumentBuilderFactory
+                .newInstance();
             final DocumentBuilder builder = factory.newDocumentBuilder();
             return builder.newDocument();
         } catch (final ParserConfigurationException e) {
@@ -109,7 +111,8 @@ public final class XmlToDao extends AbstractDao {
      * @param document the document
      * @param resultSet the result set
      */
-    private void createTable(final Document document, final ResultSet resultSet) {
+    private void createTable(final Document document,
+            final ResultSet resultSet) {
         ResultSetMetaData metaData;
         try {
             metaData = resultSet.getMetaData();
@@ -164,7 +167,10 @@ public final class XmlToDao extends AbstractDao {
      * @param columnName the column name
      * @param value the value
      */
-    private void createCol(final Document document, final Element row, final String columnName, final Object value) {
+    private void createCol(final Document document,
+            final Element row,
+            final String columnName,
+            final Object value) {
         if (value != null) {
             final Element node = document.createElement(columnName);
             final String string = String.format("%s", value);

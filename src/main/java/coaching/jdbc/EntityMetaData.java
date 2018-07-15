@@ -46,13 +46,13 @@ public class EntityMetaData extends JdbcBase {
     public void process() {
         try {
             super.query();
-        } catch (SQLException e) {
+        } catch (final SQLException e) {
             log.error(e.toString());
 
         }
         try {
             toCsvFile(resultSetMetaData);
-        } catch (SQLException e) {
+        } catch (final SQLException e) {
             log.error(e.toString());
 
         }
@@ -84,28 +84,40 @@ public class EntityMetaData extends JdbcBase {
      * @param resultSetMetaData the result set meta data
      * @throws SQLException the SQL exception
      */
-    private void toCsvFile(final ResultSetMetaData resultSetMetaData) throws SQLException {
+    private void toCsvFile(final ResultSetMetaData resultSetMetaData)
+            throws SQLException {
+        StringBuffer classTypeLine = headerLine(resultSetMetaData);
         final int colCount = resultSetMetaData.getColumnCount();
 
         // * CSV header line
         final StringBuffer columnLabelLine = new StringBuffer("#");
         for (int column = 1; column < colCount; column++) {
-            columnLabelLine.append(resultSetMetaData.getColumnLabel(column) + separator);
+            columnLabelLine
+                .append(resultSetMetaData.getColumnLabel(column) + separator);
         }
         log.info("{}", columnLabelLine);
 
         // * type line
         final StringBuffer columnTypeLine = new StringBuffer("#");
         for (int column = 1; column < colCount; column++) {
-            columnTypeLine.append(resultSetMetaData.getColumnTypeName(column) + separator);
+            columnTypeLine
+                .append(resultSetMetaData.getColumnTypeName(column)
+                        + separator);
         }
         log.info("{}", columnTypeLine);
 
-        // * CSV header line
+        log.info("{}", classTypeLine);
+    }
+
+    private StringBuffer headerLine(final ResultSetMetaData resultSetMetaData)
+            throws java.sql.SQLException {
+        final int colCount = resultSetMetaData.getColumnCount();
         final StringBuffer classTypeLine = new StringBuffer("#");
         for (int column = 1; column < colCount; column++) {
-            classTypeLine.append(resultSetMetaData.getColumnClassName(column) + separator);
+            classTypeLine
+                .append(resultSetMetaData.getColumnClassName(column)
+                        + separator);
         }
-        log.info("{}", classTypeLine);
+        return classTypeLine;
     }
 }

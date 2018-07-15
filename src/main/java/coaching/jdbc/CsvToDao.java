@@ -34,7 +34,8 @@ public final class CsvToDao extends AbstractDao {
      * @param driverClassName the driver class name
      * @throws ClassNotFoundException
      */
-    public CsvToDao(final String driverClassName) throws ClassNotFoundException {
+    public CsvToDao(final String driverClassName)
+            throws ClassNotFoundException {
         super(driverClassName);
     }
 

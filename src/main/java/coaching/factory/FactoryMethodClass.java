@@ -6,7 +6,8 @@ import org.slf4j.LoggerFactory;
 
 public class FactoryMethodClass {
 
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
     private FactoryMethodClass parent = null;
 
     private FactoryMethodClass() {
@@ -31,7 +32,7 @@ public class FactoryMethodClass {
     }
 
     public void operation() {
-        log.info(toString());
+        log.info("TODO {}",this);
     }
 
     @Override

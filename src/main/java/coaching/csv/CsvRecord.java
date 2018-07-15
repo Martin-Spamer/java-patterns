@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 public class CsvRecord {
 
     /** provides logging. */
-    protected static final Logger LOG = LoggerFactory.getLogger(CsvRecord.class);
+    protected static final Logger LOG = LoggerFactory
+        .getLogger(CsvRecord.class);
 
     /** The fields. */
     private List<String> fields;
@@ -111,7 +112,10 @@ public class CsvRecord {
     @Override
     public String toString() {
         LOG.info(fields.toString());
-        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), fields.toString());
+        return String
+            .format("%s [fields=%s]",
+                    this.getClass().getSimpleName(),
+                    fields.toString());
     }
 
 }

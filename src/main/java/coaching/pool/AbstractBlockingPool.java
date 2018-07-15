@@ -17,7 +17,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The free pool. */
     protected LinkedBlockingDeque<E> freePool;
@@ -84,8 +85,9 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
      */
     @Override
     public PoolInterface<E> release(final E resource) {
-        this.usedPool.remove(resource);
-        this.freePool.add(resource);
+        if (this.usedPool.remove(resource)) {
+            this.freePool.add(resource);
+        }
         return this;
     }
 
@@ -95,7 +97,6 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
      */
     @Override
     public PoolInterface<E> remove(final E resource) {
-        this.freePool.remove(resource);
         this.usedPool.remove(resource);
         return this;
     }

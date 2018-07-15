@@ -17,7 +17,8 @@ import org.slf4j.LoggerFactory;
 public final class AggregatePolymorphicList {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AggregatePolymorphicList.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(AggregatePolymorphicList.class);
 
     /** The integer list. */
     private final List<AbstractPerson> integerList = new ArrayList<>();
@@ -49,7 +50,10 @@ public final class AggregatePolymorphicList {
      */
     @Override
     public String toString() {
-        return String.format("%s [integerList=%s]", this.getClass().getSimpleName(), integerList);
+        return String
+            .format("%s [integerList=%s]",
+                    this.getClass().getSimpleName(),
+                    integerList);
     }
 
 }

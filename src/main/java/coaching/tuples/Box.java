@@ -57,7 +57,8 @@ public class Box<T> {
      */
     @Override
     public String toString() {
-        return String.format("%s [T=%s]", this.getClass().getSimpleName(), this.t);
+        return String
+            .format("%s [T=%s]", this.getClass().getSimpleName(), this.t);
     }
 
 }

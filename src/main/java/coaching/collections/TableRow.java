@@ -15,7 +15,8 @@ import org.slf4j.LoggerFactory;
 public class TableRow {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The cols. */
     private final List<TableCell> cols = new ArrayList<>();
@@ -60,7 +61,10 @@ public class TableRow {
      */
     @Override
     public String toString() {
-        return String.format("%s [cols=%s]", this.getClass().getSimpleName(), Collections.singletonList(cols));
+        return String
+            .format("%s [cols=%s]",
+                    this.getClass().getSimpleName(),
+                    Collections.singletonList(cols));
     }
 
 }

@@ -12,7 +12,8 @@ import org.slf4j.LoggerFactory;
 public final class CustomExceptionHandling {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandling.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CustomExceptionHandling.class);
 
     /**
      * a Custom Exception. In most cases this all that is needed to implement a
@@ -96,7 +97,11 @@ public final class CustomExceptionHandling {
             readProcess();
             updateProcess();
             deleteProcess();
-        } catch (CustomCreationException | CustomReadException | CustomUpdateException | CustomDeleteException e) {
+        } catch (
+                CustomCreationException |
+                    CustomReadException |
+                    CustomUpdateException |
+                    CustomDeleteException e) {
             LOG.error(e.toString(), e);
         }
     }

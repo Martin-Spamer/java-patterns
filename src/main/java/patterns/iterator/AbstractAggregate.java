@@ -24,8 +24,13 @@ public abstract class AbstractAggregate implements AggregateInterface {
      */
     @Override
     public IteratorInterface createIterator() {
-        log.info("%s.createIterator()", this.getClass().getSimpleName());
+        log.info("{}.createIterator()", this.getClass().getSimpleName());
         return new Iterator(this);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s [itemList=%s]", this.getClass().getSimpleName(), itemList);
     }
 
 }

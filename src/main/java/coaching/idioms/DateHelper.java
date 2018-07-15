@@ -20,7 +20,8 @@ public final class DateHelper {
      */
     private DateHelper() {
         super();
-        throw new UnsupportedOperationException("Do not instantiate this class, use statically.");
+        throw new UnsupportedOperationException(
+                "Do not instantiate this class, use statically.");
     }
 
     /**
@@ -129,7 +130,8 @@ public final class DateHelper {
      */
     public static String fromCalendar(final Calendar calendar) {
         final Date date = calendar.getTime();
-        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(ISO_FORMAT, Locale.getDefault());
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(
+                ISO_FORMAT, Locale.getDefault());
         return simpleDateFormat.format(date);
     }
 
@@ -142,8 +144,10 @@ public final class DateHelper {
      * @throws ParseException
      *             the parse exception
      */
-    public static Calendar toCalendar(final String iso8601string) throws ParseException {
-        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(ISO_FORMAT, Locale.getDefault());
+    public static Calendar toCalendar(final String iso8601string)
+            throws ParseException {
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(
+                ISO_FORMAT, Locale.getDefault());
         final Date date = simpleDateFormat.parse(iso8601string);
         final Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);

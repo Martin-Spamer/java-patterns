@@ -11,11 +11,12 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for PointbaseDao class.
  */
-@Ignore("Requires PointBase DB availability")
+@Ignore("Requires PointBase DB availability work-in-progress low-priority")
 public final class PointbaseDaoTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PointbaseDaoTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PointbaseDaoTest.class);
 
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
@@ -63,7 +64,8 @@ public final class PointbaseDaoTest {
      * Unit Test to point base customer dao url user password.
      */
     @Test
-    public void testPointBaseCustomerDaoTypical() throws ClassNotFoundException {
+    public void testPointBaseCustomerDaoTypical()
+            throws ClassNotFoundException {
         final PointbaseDao dao = new PointbaseDao();
         assertNotNull(dao);
         dao.create(INSERT_SQL);

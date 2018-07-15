@@ -4,7 +4,7 @@ package coaching.application;
 import java.util.Arrays;
 
 /**
- * The Class Application.
+ * Example Application class.
  */
 public final class Application extends AbstractApplication {
 
@@ -26,7 +26,7 @@ public final class Application extends AbstractApplication {
      */
     public boolean execute() {
         try {
-            log.info(toString());
+            log.info("execute() : {}", this);
             return true;
         } catch (final Exception exception) {
             log.error(exception.toString(), exception);

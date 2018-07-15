@@ -12,6 +12,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for the RequestHandler class.
  */
+@Ignore("work-in-progress low-priority")
 public final class RequestHandlerTest {
 
     /**
@@ -19,7 +20,6 @@ public final class RequestHandlerTest {
      *
      * @throws Exception the exception
      */
-    @Ignore("Work-in-progress")
     @Test
     public void testRequestHandler() throws Exception {
         final ServerSocket serverSocket = new ServerSocket(8888);

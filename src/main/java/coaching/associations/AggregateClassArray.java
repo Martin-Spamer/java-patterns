@@ -19,7 +19,8 @@ public final class AggregateClassArray {
     private static final int SIZE = 4;
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArray.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(AggregateClassArray.class);
 
     /** The aggregate Implement an Aggregate using a Array of classes. */
     private final AbstractPerson[] aggregate = new AbstractPerson[SIZE];
@@ -55,7 +56,10 @@ public final class AggregateClassArray {
      */
     @Override
     public String toString() {
-        return String.format("%s [aggregate=%s]", this.getClass().getSimpleName(), Arrays.toString(aggregate));
+        return String
+            .format("%s [aggregate=%s]",
+                    this.getClass().getSimpleName(),
+                    Arrays.toString(aggregate));
     }
 
 }

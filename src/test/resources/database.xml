@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	<!DOCTYPE data SYSTEM "database.dtd">
+	<?xml-stylesheet type="text/xsl" href="database.xsl" ?>
+-->
+ 
+<database>
+	<table name='tableName'>
+		<record id='Table_1.Record_1'>
+			<field name='Table_1.Record_1.Field_1'>
+				<value>Value.1.1.1</value>
+			</field>
+			<field name='Table_1.Record_1.Field_2'>
+				<value>Value.1.1.2</value>
+			</field>
+			<field name='Table_1.Record_1.Field_3'>
+				<value>Value.1.1.3</value>
+			</field>
+		</record>
+		<record id='Table_1.Record_2'>
+			<field name='Table_1.Record_2.Field_1'>
+				<value>Value.1.2.1</value>
+			</field>
+			<field name='Table_1.Record_3.Field_2'>
+				<value>Value.1.2.2</value>
+			</field>
+			<field name='Table_1.Record_4.Field_3'>
+				<value>Value.1.2.3</value>
+			</field>
+		</record>
+		<record id='Table_1.Record_3'>
+			<field name='Table_1.Record_3.Field_'>
+				<value>Value.1.3.1</value>
+			</field>
+			<field name='Table_1.Record_3.Field_'>
+				<value>Value.1.3.2</value>
+			</field>
+			<field name='Table_1.Record_3.Field_'>
+				<value>Value.1.3.3</value>
+			</field>
+		</record>
+	</table>
+
+	<table name='tableName'>
+		<record id='Table_2.Record_1'>
+			<field name='Table_2.Record_1.Field_1'>
+				<value>Value.2.1.1</value>
+			</field>
+			<field name='Table_2.Record_1.Field_2'>
+				<value>Value.2.1.2</value>
+			</field>
+			<field name='Table_2.Record_1.Field_3'>
+				<value>Value.2.1.3</value>
+			</field>
+		</record>
+		<record id='Table_2.Record_2'>
+			<field name='Table_2.Record_2.Field_1'>
+				<value>Value.2.2.1</value>
+			</field>
+			<field name='Table_2.Record_3.Field_2'>
+				<value>Value.2.2.2</value>
+			</field>
+			<field name='Table_2.Record_4.Field_3'>
+				<value>Value.2.2.3</value>
+			</field>
+		</record>
+		<record id='Table_2.Record_3'>
+			<field name='Table_2.Record_3.Field_'>
+				<value>Value.2.3.1</value>
+			</field>
+			<field name='Table_2.Record_3.Field_'>
+				<value>Value.2.3.2</value>
+			</field>
+			<field name='Table_2.Record_3.Field_'>
+				<value>Value.2.3.3</value>
+			</field>
+		</record>
+	</table>
+</database>

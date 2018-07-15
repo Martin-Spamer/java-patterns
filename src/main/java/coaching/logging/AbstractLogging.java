@@ -17,13 +17,14 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractLogging {
 
     /** Provides logging to sub-classes. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /**
      * Law of Demeter (Tell Don't Ask).
      */
     public void toLog() {
-        log.info("{}.toLog() = {}", this.getClass().getSimpleName(), toString());
+        log.info("{}.toLog() = {}", this.getClass().getSimpleName(), this);
     }
 
     /**
@@ -34,7 +35,10 @@ public abstract class AbstractLogging {
      * @param destinationLog the destination log
      */
     public void logTo(final Logger destinationLog) {
-        destinationLog.info("{}.logTo({}) = {}", this.getClass().getSimpleName(), destinationLog);
+        destinationLog
+            .info("{}.logTo({}) = {}",
+                    this.getClass().getSimpleName(),
+                    destinationLog);
     }
 
     /*

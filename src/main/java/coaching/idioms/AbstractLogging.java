@@ -17,7 +17,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractLogging implements LoggingInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /*
      * (non-Javadoc)
@@ -34,8 +35,10 @@ public abstract class AbstractLogging implements LoggingInterface {
      */
     @Override
     public void logTo(final Logger destinationLog) {
-        final String destinationLogName = destinationLog.getClass().getSimpleName();
-        destinationLog.info("{}.log({})", destinationLogName, toString());
+        final String destinationLogName = destinationLog
+            .getClass()
+            .getSimpleName();
+        destinationLog.info("{}.log({})", destinationLogName, this);
     }
 
     /*

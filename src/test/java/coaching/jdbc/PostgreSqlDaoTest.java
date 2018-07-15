@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for PointbaseDao class.
  */
-@Ignore("Requires PointBase DB availability")
+@Ignore("Requires PointBase DB availability work-in-progress low-priority")
 public final class PostgreSqlDaoTest {
 
     /** SQL to DROP the table. */
@@ -36,7 +36,8 @@ public final class PostgreSqlDaoTest {
     static final String DELETE_SQL = "DELETE FROM TABLE WHERE ID=999";
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PostgreSqlDaoTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PostgreSqlDaoTest.class);
 
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
@@ -63,7 +64,8 @@ public final class PostgreSqlDaoTest {
      * Unit Test to point base customer dao url user password.
      */
     @Test
-    public void testPointBaseCustomerDaoTypical() throws ClassNotFoundException {
+    public void testPointBaseCustomerDaoTypical()
+            throws ClassNotFoundException {
         final PointbaseDao dao = new PointbaseDao();
         assertNotNull(dao);
         dao.create(INSERT_SQL);

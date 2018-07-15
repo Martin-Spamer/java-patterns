@@ -9,7 +9,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for OracleDao.
  */
-@Ignore("Requires Oracle DB availability")
+@Ignore("Requires Oracle DB availability work-in-progress low-priority")
 public final class OracleDaoTest {
 
     /** SQL to drop the table. */
