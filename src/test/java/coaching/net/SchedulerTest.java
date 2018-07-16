@@ -3,6 +3,7 @@ package coaching.net;
 
 import java.util.Properties;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,18 +16,21 @@ import coaching.application.Scheduler;
 /**
  * Unit tests for the Scheduler class.
  */
+@Ignore("work-in-progress")
 public final class SchedulerTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SchedulerTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(SchedulerTest.class);
 
     /**
-     * Unit test to scheduler.
+     * Unit test the Scheduler class default constructor.
      */
     @Test
     public void testScheduler() {
         AbstractScheduler scheduler = new Scheduler();
         assertNotNull(scheduler);
+        scheduler.execute();
         LOG.info(scheduler.toString());
     }
 
@@ -38,6 +42,7 @@ public final class SchedulerTest {
         Properties properties = new Properties();
         AbstractScheduler scheduler = new Scheduler(properties);
         assertNotNull(scheduler);
+        scheduler.execute();
         LOG.info(scheduler.toString());
     }
 
@@ -49,6 +54,7 @@ public final class SchedulerTest {
         Properties properties = null;
         AbstractScheduler scheduler = new Scheduler(properties);
         assertNotNull(scheduler);
+        scheduler.execute();
         LOG.info(scheduler.toString());
     }
 
@@ -60,6 +66,7 @@ public final class SchedulerTest {
         String[] args = { "", "" };
         AbstractScheduler scheduler = new Scheduler(args);
         assertNotNull(scheduler);
+        scheduler.execute();
         LOG.info(scheduler.toString());
     }
 
@@ -70,6 +77,7 @@ public final class SchedulerTest {
     public void testSchedulerZeroStringArray() {
         AbstractScheduler scheduler = new Scheduler(new String[0]);
         assertNotNull(scheduler);
+        scheduler.execute();
         LOG.info(scheduler.toString());
     }
 
@@ -81,6 +89,7 @@ public final class SchedulerTest {
         String[] args = null;
         AbstractScheduler scheduler = new Scheduler(args);
         assertNotNull(scheduler);
+        scheduler.execute();
         LOG.info(scheduler.toString());
     }
 }

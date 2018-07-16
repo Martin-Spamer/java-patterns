@@ -23,7 +23,8 @@ import org.slf4j.LoggerFactory;
 public abstract class JdbcBase {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The JDBC connection. */
     protected Connection connection = null;

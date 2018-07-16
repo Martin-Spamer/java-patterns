@@ -1,14 +1,14 @@
 
 package coaching.resources;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.junit.Assert.fail;
 
 /**
  * Resource Loader class.
@@ -23,74 +23,33 @@ import org.slf4j.LoggerFactory;
  */
 public final class ResourceLoader {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ResourceLoader.class);
+    /** provide logging. */
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ResourceLoader.class);
 
+    /**
+     * Instantiates a new resource loader.
+     */
     private ResourceLoader() {
-        super();
-    }
-
-    /**
-     * Gets the file.
-     *
-     * @param resourceFilename the resource filename
-     * @return the file
-     * @throws FileNotFoundException the file not found exception
-     */
-    public static File getFile(final String resourceFilename) throws FileNotFoundException {
-        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        final URL resource = classLoader.getResource(resourceFilename);
-        if (resource == null) {
-            throw new FileNotFoundException(makeMsg(resourceFilename));
-        } else {
-            return new File(resource.toExternalForm());
-        }
-    }
-
-    /**
-     * Gets the file.
-     *
-     * @param resourceUrl the resource url
-     * @return the file
-     * @throws FileNotFoundException the file not found exception
-     */
-    public static File getFile(final URL resourceUrl) throws FileNotFoundException {
-        final String file = resourceUrl.getFile();
-        if (file == null) {
-            throw new FileNotFoundException(makeMsg(resourceUrl.toString()));
-        } else {
-            return new File(file);
-        }
-    }
-
-    /**
-     * Gets the file.
-     *
-     * @param resourceUri the resource uri
-     * @return the file
-     * @throws FileNotFoundException the file not found exception
-     */
-    public static File getFile(final URI resourceUri) throws FileNotFoundException {
-        final String path = resourceUri.normalize().getPath();
-        if (path == null) {
-            throw new FileNotFoundException(makeMsg(resourceUri.toString()));
-        } else {
-            return new File(path);
-        }
+        fail("Use static methods");
     }
 
     /**
      * Gets the stream.
      *
-     * @param resourceFilename the resource filename
+     * @param resourceName the resource filename
      * @return the stream
-     * @throws FileNotFoundException the file not found exception
      */
-    public static InputStream getStream(final String resourceFilename) throws FileNotFoundException {
-        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        final InputStream resourceAsStream = classLoader.getResourceAsStream(resourceFilename);
+    public static InputStream getStream(final String resourceName) {
+        final ClassLoader classLoader = Thread
+            .currentThread()
+            .getContextClassLoader();
+        final InputStream resourceAsStream = classLoader
+            .getResourceAsStream(resourceName);
         if (resourceAsStream == null) {
-            final String message = makeMsg(resourceFilename);
-            throw new FileNotFoundException(message);
+            final String message = makeMsg(resourceName);
+            LOG.error("{}", message);
+            throw new ResourceNotLoadedException(message);
         } else {
             return resourceAsStream;
         }
@@ -101,14 +60,18 @@ public final class ResourceLoader {
      *
      * @param resourceUrl the resource url
      * @return the stream
-     * @throws FileNotFoundException the file not found exception
      */
-    public static InputStream getStream(final URL resourceUrl) throws FileNotFoundException {
-        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+    public static InputStream getStream(final URL resourceUrl) {
+        final ClassLoader classLoader = Thread
+            .currentThread()
+            .getContextClassLoader();
         final String file = resourceUrl.getFile();
-        final InputStream resourceAsStream = classLoader.getResourceAsStream(file);
+        final InputStream resourceAsStream = classLoader
+            .getResourceAsStream(file);
         if (resourceAsStream == null) {
-            throw new FileNotFoundException(makeMsg(resourceUrl.toString()));
+            String message = makeMsg(resourceUrl.toString());
+            LOG.error("{}", message);
+            throw new ResourceNotLoadedException(message);
         } else {
             return resourceAsStream;
         }
@@ -119,22 +82,32 @@ public final class ResourceLoader {
      *
      * @param resourceUri the resource uri
      * @return the stream
-     * @throws FileNotFoundException the file not found exception
      */
-    public static InputStream getStream(final URI resourceUri) throws FileNotFoundException {
-        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+    public static InputStream getStream(final URI resourceUri) {
+        final ClassLoader classLoader = Thread
+            .currentThread()
+            .getContextClassLoader();
         final String path = resourceUri.normalize().getPath();
-        final InputStream resourceAsStream = classLoader.getResourceAsStream(path);
+        final InputStream resourceAsStream = classLoader
+            .getResourceAsStream(path);
         if (resourceAsStream == null) {
-            throw new FileNotFoundException(makeMsg(resourceUri.toString()));
+            String message = makeMsg(resourceUri.toString());
+            LOG.error("{}", message);
+            throw new ResourceNotLoadedException(message);
         } else {
             return resourceAsStream;
         }
     }
 
-    private static String makeMsg(final String resourceFilename) {
-        final String message = String.format("Resource file %s not found", resourceFilename);
-        return message;
+    /**
+     * Make msg.
+     *
+     * @param resourceName the resource filename
+     * @return the string
+     */
+    private static String makeMsg(final String resourceName) {
+        return String
+            .format("Resource file %s not found", resourceName);
     }
 
 }

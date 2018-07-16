@@ -12,7 +12,8 @@ import org.slf4j.LoggerFactory;
 public final class CurrentWorkingDirectory {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectory.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CurrentWorkingDirectory.class);
 
     /**
      * Instantiates a new current working directory.
@@ -32,7 +33,8 @@ public final class CurrentWorkingDirectory {
         String absolutePath = null;
         try {
             final String className = that.getClass().getSimpleName();
-            final String fileName = String.format("./target/%s.CurrentWorkingDirectory", className);
+            final String fileName = String
+                .format("./target/%s.CurrentWorkingDirectory", className);
             final File file = new File(fileName);
             try {
                 file.createNewFile();

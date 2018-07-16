@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractEngine implements FuelInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** fuel. */
     private FuelInterface fuel;
@@ -58,7 +59,8 @@ public abstract class AbstractEngine implements FuelInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [fuel=%s]", this.getClass().getSimpleName(), fuel);
+        return String
+            .format("%s [fuel=%s]", this.getClass().getSimpleName(), fuel);
     }
 
 }

@@ -14,7 +14,8 @@ import org.slf4j.LoggerFactory;
 public class ConnectionFactory implements ConnectionFactoryInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The username. */
     private String username = null;

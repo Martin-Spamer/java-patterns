@@ -56,7 +56,7 @@ public abstract class AbstractController implements ControllerInterface {
      */
     @Override
     public ControllerInterface attachModel(final ModelInterface model) {
-        log.debug("{}.attachModel({},{})", this.getClass().getSimpleName(), model);
+        log.debug("{}.attachModel({})", this.getClass().getSimpleName(), model);
         this.model = model;
         return this;
     }
@@ -81,7 +81,7 @@ public abstract class AbstractController implements ControllerInterface {
      */
     @Override
     public ControllerInterface attachView(final ViewInterface view) {
-        log.debug("{}.attachView({},{})", this.getClass().getSimpleName(), view);
+        log.debug("{}.attachView({})", this.getClass().getSimpleName(), view);
         this.view = view;
         return this;
     }

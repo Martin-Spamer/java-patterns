@@ -15,10 +15,12 @@ import org.slf4j.LoggerFactory;
  *            the generic type
  */
 @SuppressWarnings("serial")
-public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
+public class GenericBag<T> extends ArrayList<T>
+        implements GenericBagInterface<T> {
 
     /** Provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** random number generator. */
     private final Random random = new Random();

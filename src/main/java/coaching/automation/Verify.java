@@ -22,9 +22,13 @@ public class Verify {
     public void verifyThat(final Throwable caller) {
         final StackTraceElement directCaller = caller.getStackTrace()[1];
         assertNotNull(directCaller);
-        final Logger logger = LoggerFactory.getLogger(directCaller.getClassName());
+        final Logger logger = LoggerFactory
+            .getLogger(directCaller.getClassName());
         assertNotNull(logger);
-        logger.info("({}:)", directCaller.getClassName(), directCaller.getLineNumber());
+        logger
+            .info("({}:)",
+                    directCaller.getClassName(),
+                    directCaller.getLineNumber());
     }
 
 }

@@ -17,7 +17,8 @@ import org.w3c.dom.NodeList;
 public final class ElementMapper {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ElementMapper.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ElementMapper.class);
 
     /** The index name. */
     private String indexName = "id";
@@ -81,7 +82,8 @@ public final class ElementMapper {
         // references, CDATA sections, and text nodes; but not
         // comments or processing instructions
         final int type = node.getNodeType();
-        if ((type == Node.COMMENT_NODE) || (type == Node.PROCESSING_INSTRUCTION_NODE)) {
+        if ((type == Node.COMMENT_NODE)
+                || (type == Node.PROCESSING_INSTRUCTION_NODE)) {
             return "";
         }
 

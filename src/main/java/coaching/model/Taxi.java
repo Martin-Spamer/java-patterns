@@ -58,6 +58,10 @@ public class Taxi extends Car {
      */
     @Override
     public String toString() {
-        return String.format("%s [%s[passenger=%s]]", this.getClass().getSimpleName(), super.toString(), passenger);
+        return String
+            .format("%s [%s[passenger=%s]]",
+                    this.getClass().getSimpleName(),
+                    super.toString(),
+                    passenger);
     }
 }

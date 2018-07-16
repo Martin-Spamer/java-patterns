@@ -34,7 +34,8 @@ public class ThreadTemplate implements Runnable {
     private static final long MAX_TICKS = 10;
 
     /** Provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The configuration. */
     protected ThreadConfig config;
@@ -88,7 +89,12 @@ public class ThreadTemplate implements Runnable {
             final String className = this.getClass().getSimpleName();
             final String threadName = thread.getName();
             final int priority = thread.getPriority();
-            log.info("classname:{}:threadName:{}({}).{}", className, threadName, priority, tick);
+            log
+                .info("classname:{}:threadName:{}({}).{}",
+                        className,
+                        threadName,
+                        priority,
+                        tick);
 
             try {
                 execute();

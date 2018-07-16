@@ -8,6 +8,8 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.fail;
+
 /**
  * Property Loader class.
  *
@@ -29,25 +31,27 @@ import org.slf4j.LoggerFactory;
  */
 public final class PropertiesLoader {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PropertiesLoader.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PropertiesLoader.class);
 
     private PropertiesLoader() {
-        super();
+        fail("Use static methods");
     }
 
     /**
      * Gets the properties.
      *
-     * @param resourceFilename the resource filename
+     * @param resourceName the resource filename
      * @return the properties
      * @throws IOException the IO exception
      */
-    public static Properties getProperties(final String resourceFilename) {
-        Properties properties = new Properties();
+    public static Properties getProperties(final String resourceName) {
+        final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader.getStream(resourceFilename);
+            final InputStream stream = ResourceLoader
+                .getStream(resourceName);
             properties.load(stream);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return properties;
@@ -56,16 +60,18 @@ public final class PropertiesLoader {
     /**
      * Gets the xml properties.
      *
-     * @param xmlResourceFilename the xml resource filename
+     * @param resourceName the xml resource filename
      * @return the xml properties
      * @throws IOException the IO exception
      */
-    public static Properties getXmlProperties(final String xmlResourceFilename) {
-        Properties properties = new Properties();
+    public static Properties getXmlProperties(
+            final String resourceName) {
+        final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader.getStream(xmlResourceFilename);
+            final InputStream stream = ResourceLoader
+                .getStream(resourceName);
             properties.loadFromXML(stream);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return properties;

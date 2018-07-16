@@ -82,7 +82,10 @@ public final class PojoExample implements Cloneable {
     @Override
     public String toString() {
         return String
-            .format("%s [stringValue=%s, longValue=%s]", this.getClass().getSimpleName(), stringValue, longValue);
+            .format("%s [stringValue=%s, longValue=%s]",
+                    this.getClass().getSimpleName(),
+                    stringValue,
+                    longValue);
     }
 
 }

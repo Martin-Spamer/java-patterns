@@ -11,11 +11,12 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit test for XmlDAO class.
  */
-@Ignore("Requires PointBase DB availability")
+@Ignore("Requires PointBase DB availability work-in-progress low-priority")
 public final class XmlToDaoTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlToDaoTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(XmlToDaoTest.class);
 
     /**
      * Unit Test to xml DAO.

@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 public class ObjectTypesArray {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ObjectTypesArray.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ObjectTypesArray.class);
 
     /** ARRAY_SIZE constant. */
     private static final int ARRAY_SIZE = 10;
@@ -46,7 +47,8 @@ public class ObjectTypesArray {
      * Display.
      */
     public void display() {
-        final Long[][] vector = { { 0L, 1L, 2L }, { 3L, 4L, 5L }, { 6L, 7L, 8L } };
+        final Long[][] vector = { { 0L, 1L, 2L }, { 3L, 4L, 5L },
+                { 6L, 7L, 8L } };
         LOG.info(Arrays.toString(vector));
         LOG.info(looping(vector));
 
@@ -63,7 +65,8 @@ public class ObjectTypesArray {
         final StringBuilder stringBuffer = new StringBuilder();
         for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
             for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
-                vector[firstIndex][secondIndex] = (long) (firstIndex * secondIndex);
+                vector[firstIndex][secondIndex] = (long) (firstIndex
+                        * secondIndex);
                 stringBuffer.append(vector[firstIndex][secondIndex]);
                 stringBuffer.append(',');
             }

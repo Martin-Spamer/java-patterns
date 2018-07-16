@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-    Document   : rules.xml
-    Created on : 27 August 2003, 16:01
-    Author     : mpamer.me.uk
-    Description:
-        Purpose of the document follows.
--->
-
+<!DOCTYPE root SYSTEM "rules.dtd">
 <rules>
-  <rule name="">
-    <sequence>
-      <sequence/>
-      <selection/>
-      <iteration/>
-    </sequence>
-
-    <selection>
-    </selection>
-
-    <iteration>
-      <sequence/>
-      <selection/>
-      <iteration/>
-    </iteration>
+  <rule id='001' name='name'/>
+  <rule>
+    <sequence/>
+  </rule>
+  <rule>
+    <selection/>
+  </rule>
+  <rule>
+    <iteration/>
   </rule>
 </rules>

@@ -1,16 +1,13 @@
 
 package coaching.test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-
 import org.junit.AssumptionViolatedException;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
 
 import static org.junit.Assume.assumeNotNull;
 
@@ -22,30 +19,36 @@ public final class UnitTest {
     private static final Logger LOG = LoggerFactory.getLogger(UnitTest.class);
 
     public final class ClassUnderTest {
+        public ClassUnderTest() {
+            super();
+            LOG.debug("ClassUnderTest() : {}", this);
+        }
 
-        /**
-         * The Constructor.
-         *
-         * @param object the object
-         */
         public ClassUnderTest(final Object object) {
+            super();
+            LOG.debug("ClassUnderTest({object}) : {}", object, this);
+            doSomething(object);
         }
 
-        /**
-         * Do something.
-         *
-         * @param state the state
-         */
-        public void doSomething(final Object state) {
+        public ClassUnderTest doSomething(final Object state) {
+            if (state == null) {
+                return (ClassUnderTest) failed();
+            } else {
+                return (ClassUnderTest) passed();
+            }
         }
 
-        /**
-         * Passed.
-         *
-         * @return the object
-         */
-        public Object passed() {
+        public Object failed() {
             return null;
+        }
+
+        public Object passed() {
+            return this;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s []", this.getClass().getSimpleName());
         }
     }
 
@@ -53,54 +56,52 @@ public final class UnitTest {
      * Unit test to typical usage.
      */
     @Test
-    public void testTypicalUsage() {
-        // Given
+    public void testTypicalGivenWhenThenPasses() {
+        // Given we have some state
         final Object state = new Object();
         assumeNotNull(state);
 
-        // When
+        // When the class under test does its thing.
         final ClassUnderTest classUnderTest = new ClassUnderTest(null);
         classUnderTest.doSomething(state);
 
-        // Then
-        final Object expected = null;
-        assertThat(classUnderTest.passed(), is(equalTo(expected)));
+        // Then the expected result is something
+        assertEquals(classUnderTest, classUnderTest.passed());
     }
 
     /**
      * Unit test to typical pass assume given.
      */
     @Test
-    public void testTypicalPassAssumeGiven() {
-        // Given
+    public void testTypicalAssumeGivenPasses() {
+        // Given should use assumptions not assertions.
         final Object state = new Object();
         assumeNotNull(state);
 
-        // When
+        // When can use assertions
         final ClassUnderTest classUnderTest = new ClassUnderTest(state);
-        classUnderTest.doSomething(state);
+        assertEquals(classUnderTest, classUnderTest.doSomething(state));
 
-        // Then
-        final Object expected = null;
-        assertThat(classUnderTest.passed(), is(equalTo(expected)));
+        // Then should use assertions
+        // Then the expected result is something
+        assertEquals(classUnderTest, classUnderTest.passed());
     }
 
     /**
-     * Unit test to typical pass assert given.
+     * Unit test to typical pass assume given.
      */
     @Test
-    public void testTypicalPassAssertGiven() {
-        // Given
-        final Object state = new Object();
-        assertNotNull(state);
+    public void testTypicalAssumeGivenFails() {
+        // Given should use assumptions not assertions.
+        final Object state = null;
+        assumeNotNull(state);
 
-        // When
-        final ClassUnderTest classUnderTest = new ClassUnderTest(state);
+        // When the class under test does its thing.
+        final ClassUnderTest classUnderTest = new ClassUnderTest(null);
         classUnderTest.doSomething(state);
 
-        // Then
-        final Object expected = null;
-        assertThat(classUnderTest.passed(), is(equalTo(expected)));
+        // Then the expected result is something
+        assertEquals(classUnderTest, classUnderTest.passed());
     }
 
     /**
@@ -108,7 +109,7 @@ public final class UnitTest {
      */
     @Test(expected = AssumptionViolatedException.class)
     public void testTypicalFailAssumeGiven() {
-        // Given
+        // Given assumptions fails
         final Object state = null;
         assumeNotNull(state);
         // When

@@ -3,8 +3,6 @@ package patterns.hopp;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
-
 import static org.junit.Assume.assumeNotNull;
 
 /**
@@ -25,14 +23,6 @@ public final class LocalHoppTest {
         localHopp.localMethod();
 
         // Then
-    }
-
-    /**
-     * Test type.
-     */
-    @Test
-    public void testType() {
-        assertNotNull(LocalHopp.class);
     }
 
     /**

@@ -21,7 +21,8 @@ public abstract class AbstractProcess implements Runnable {
     private static final int DEFAULT_WAIT = 1000;
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** thread. */
     private final Thread thread;

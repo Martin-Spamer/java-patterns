@@ -1,7 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
 <xsl:template>
-
-<!-- Created by mpamer.me.uk on 9 May 2003 -->
 
 <html>
   <head>
@@ -10,7 +9,7 @@
   </head>
   <body bgcolor="#FFFFF0">
 
-    <xsl:apply-template select"*"/>
+    <xsl:apply-template select="*"/>
   
   </body>
 </html>

@@ -2,20 +2,20 @@
 package coaching.hollywood;
 
 /**
- * The Class HollywoodPrinciple.
+ * A class showing the HollywoodPrinciple.
  */
 public class HollywoodPrinciple {
 
     /**
-     * Dont call us.
+     * Don't call us.
      */
     public void dontCallUs() {
         try {
-            throw new Exception();
+            throw new Exception("Don't call us.");
         } catch (final Exception e) {
             // increased coupling, two points of contact, two reasons to change.
             final String msg = e.getLocalizedMessage();
-            System.out.println(msg);
+            System.err.println(msg);
         }
     }
 
@@ -24,10 +24,10 @@ public class HollywoodPrinciple {
      */
     public void wellCallYou() {
         try {
-            throw new Exception();
+            throw new Exception("We'll call you.");
         } catch (final Exception e) {
             // decreased coupling, one point of contact, one reason to change.
-            e.printStackTrace(System.out);
+            e.printStackTrace(System.err);
         }
     }
 }

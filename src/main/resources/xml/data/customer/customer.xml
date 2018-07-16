@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="books-csv.xsl"?>
+
+<!DOCTYPE DDM-DATA SYSTEM "books.dtd">
+
+<DDM-DATA>
+	<TABLE>
+		<RECORD CAT="Category" TAX="Taxonomy">
+			<ID>0</ID>
+			<NAME>TEMPLATE</Name>
+			<DATA>EXAMPLE</DATA>
+		</RECORD>
+	
+		<RECORD>
+			<ID>1</ID>
+			<NAME>Alice</Name>
+			<DATA>Sender</DATA>
+		</RECORD>
+		<RECORD CAT="B">
+			<ID>2</ID>
+			<NAME>Bob</Name>
+			<DATA>Receiver</DATA>
+		</RECORD>
+		<RECORD CAT="C">
+			<ID>3</ID>
+			<NAME>Charlie</Name>
+			<DATA>Receiver</DATA>
+		</RECORD>
+		<RECORD CAT="T" TAX="Backhat">
+			<ID>3</ID>
+			<NAME>Trudy</Name>
+			<DATA>Intruder</DATA>
+		</RECORD>
+		<RECORD CAT="C" TAX="12.5">
+			<ID>3</ID>
+			<NAME>Charlie</Name>
+			<DATA>Receiver</DATA>
+		</RECORD>
+	</TABLE>
+	
+	<CATEGORIES DESC="Categories">
+		<h2>Categories</h2>
+		<CATEGORY CODE="A" DESC="Sender" />
+		<CATEGORY CODE="B" DESC="Receiver" />
+		<CATEGORY CODE="C" DESC="Man in the Middle" />
+		<CATEGORY CODE="T" DESC="Intruder" />
+	</CATEGORIES>
+</DDM-DATA>

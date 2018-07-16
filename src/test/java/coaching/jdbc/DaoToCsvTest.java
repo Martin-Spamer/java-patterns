@@ -14,7 +14,8 @@ import static org.junit.Assert.assertNotNull;
 public final class DaoToCsvTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(DaoToCsvTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(DaoToCsvTest.class);
 
     /**
      * Unit test to jdbc to csv.
@@ -22,7 +23,7 @@ public final class DaoToCsvTest {
      * @throws Exception the exception
      */
     @Test
-    @Ignore("Requires Database")
+    @Ignore("Requires Database work-in-progress low-priority")
     public void testJdbcToCsv() throws Exception {
         final DaoToCsv instance = new DaoToCsv();
         assertNotNull(instance);

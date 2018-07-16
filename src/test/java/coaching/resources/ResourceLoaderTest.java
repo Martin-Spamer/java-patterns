@@ -1,9 +1,9 @@
 
 package coaching.resources;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -17,44 +17,46 @@ import static org.junit.Assert.assertTrue;
  */
 public final class ResourceLoaderTest {
 
+    private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
+    private static final String CONFIGURATION_XML = "Configuration.xml";
+    private static final String MISSING_RESOURCE = "missing.resource";
+
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ResourceLoaderTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ResourceLoaderTest.class);
 
     /**
-     * Unit test to get file.
+     * Unit test to get stream.
      *
-     * @throws Exception the exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Test
-    public void testGetFile() throws Exception {
-        File file = ResourceLoader.getFile("./Configuration.properties");
-        assertNotNull(file);
-        LOG.info("ResourceLoader.getFile(...) = {}", file.toString());
+    public void testGetResource() throws IOException {
+        InputStream inStream = ResourceLoader
+            .getStream(CONFIGURATION_PROPERTIES);
+        assertNotNull(inStream);
+        assertTrue(inStream.available() > 0);
+        LOG.debug("ResourceLoader.getStream = {}", inStream.toString());
     }
 
     /**
      * Unit test to get stream.
      *
-     * @throws Exception the exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @Test
-    public void testGetStream() throws Exception {
-        InputStream inStream = ResourceLoader.getStream("Configuration.properties");
+    public void testGetXmlResource() throws IOException {
+        InputStream inStream = ResourceLoader.getStream(CONFIGURATION_XML);
         assertNotNull(inStream);
         assertTrue(inStream.available() > 0);
-        LOG.info("ResourceLoader.getStream = {}", inStream.toString());
+        LOG.debug("ResourceLoader.getStream = {}", streamToString(inStream));
     }
 
-    /**
-     * Unit test to get missing file.
-     *
-     * @throws Exception the exception
-     */
-    @Test(expected = FileNotFoundException.class)
-    public void testGetMissingFile() throws Exception {
-        File file = ResourceLoader.getFile("missing.resource");
-        assertNotNull(file);
-        LOG.info("ResourceLoader.getFile(missing) = {}", file.toString());
+    private String streamToString(final InputStream inStream) {
+        Scanner s = new Scanner(inStream).useDelimiter("\\A");
+        String string = s.hasNext() ? s.next() : "";
+        s.close();
+        return string;
     }
 
     /**
@@ -62,11 +64,10 @@ public final class ResourceLoaderTest {
      *
      * @throws Exception the exception
      */
-    @Test(expected = FileNotFoundException.class)
-    public void testGetMissingStream() throws Exception {
-        InputStream inStream = ResourceLoader.getStream("missing.resource");
+    @Test(expected = ResourceNotLoadedException.class)
+    public void testMissingXmlResource() {
+        InputStream inStream = ResourceLoader.getStream(MISSING_RESOURCE);
         assertNotNull(inStream);
-        LOG.info("ResourceLoader.getStream(missing) = {}", inStream.toString());
     }
 
 }

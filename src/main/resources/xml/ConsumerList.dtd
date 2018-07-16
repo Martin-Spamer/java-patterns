@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-
 <!--
     Typical usage:
 
-    <?xml version="1.0"?>
-    <!DOCTYPE ConsumerList SYSTEM "ConsumerList.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ConsumerList SYSTEM "ConsumerList.dtd">
+<ConsumerList>
+	<Consumer>
+		<ClientId />
+		<AccountId />
+	</Consumer>
+</ConsumerList>
 
-    <ConsumerList>
-    ...
-    </ConsumerList>
 -->
 
 <!ELEMENT AccountId EMPTY>

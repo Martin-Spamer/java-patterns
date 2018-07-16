@@ -47,7 +47,8 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
     static final String DELETE_SQL = "DELETE FROM {TABLE} WHERE ID= {KEY}999";
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** connection factory. */
     protected ConnectionFactoryInterface connectionFactory;
@@ -108,7 +109,8 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
             final String username,
             final String password) {
         this(driverClassName);
-        connectionFactory = new ConnectionFactory(driverClassName, connectionUrl, username, password);
+        connectionFactory = new ConnectionFactory(driverClassName,
+                connectionUrl, username, password);
     }
 
     /*
@@ -225,7 +227,8 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
     protected CrudInterface executePreparedStatement(final String sql) {
         try {
             final Connection connection = connectionFactory.newConnection();
-            final PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            final PreparedStatement preparedStatement = connection
+                .prepareStatement(sql);
             final int result = preparedStatement.executeUpdate();
             log.info("Rows updated: {}", result);
             preparedStatement.close();
@@ -268,7 +271,8 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
      * @throws SQLException
      *             the SQL exception
      */
-    private void processResultSet(final ResultSet resultSet) throws SQLException {
+    private void processResultSet(final ResultSet resultSet)
+            throws SQLException {
         while (resultSet.next()) {
             log.info(processRow(resultSet));
         }
@@ -286,14 +290,18 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
     private String processRow(final ResultSet resultSet) throws SQLException {
         final ResultSetMetaData metaData = resultSet.getMetaData();
         final int colCount = metaData.getColumnCount();
-        final StringBuffer output = new StringBuffer();
+        final StringBuilder output = new StringBuilder();
         for (int i = 1; i <= colCount; i++) {
             final String columnName = metaData.getColumnName(i);
             final Object value = resultSet.getObject(i);
             if (value == null) {
                 output.append(String.format("%s = null,", columnName));
             } else {
-                output.append(String.format("%s = %s,", columnName, value.toString().trim()));
+                output
+                    .append(String
+                        .format("%s = %s,",
+                                columnName,
+                                value.toString().trim()));
             }
         }
         return output.toString();

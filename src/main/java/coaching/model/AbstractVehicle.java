@@ -10,10 +10,12 @@ import org.slf4j.LoggerFactory;
 /**
  * An abstract Vehicle class.
  */
-public abstract class AbstractVehicle implements VehicleInterface, FuelInterface {
+public abstract class AbstractVehicle
+        implements VehicleInterface, FuelInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The engine. */
     protected AbstractEngine engine;
@@ -85,7 +87,11 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
      */
     @Override
     public String toString() {
-        return String.format("%s [engine=%s, driver=%s]", this.getClass().getSimpleName(), engine, driver);
+        return String
+            .format("%s [engine=%s, driver=%s]",
+                    this.getClass().getSimpleName(),
+                    engine,
+                    driver);
     }
 
 }

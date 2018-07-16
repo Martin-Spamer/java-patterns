@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.junit.Assert.assertNotNull;
-
 import static org.junit.Assume.assumeNotNull;
 
 /**
@@ -30,14 +28,6 @@ public final class RemoteObjectTest {
         remoteObject.remoteMethod();
 
         // Then
-    }
-
-    /**
-     * Unit test the type.
-     */
-    @Test
-    public void testType() {
-        assertNotNull(RemoteObject.class);
     }
 
     /**

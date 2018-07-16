@@ -3,6 +3,7 @@ package coaching.csv;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -17,7 +18,8 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 public class CsvToJdbc {
 
     /** provides logging. */
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    private final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The csv file. */
     private CsvFile csvFile;
@@ -101,7 +103,8 @@ public class CsvToJdbc {
      * @throws SQLException
      *             the SQL exception
      */
-    private Statement makeStatement(final Connection connection) throws SQLException {
+    private Statement makeStatement(final Connection connection)
+            throws SQLException {
         return connection.createStatement();
     }
 
@@ -233,17 +236,18 @@ public class CsvToJdbc {
      * @param record the record
      */
     public void writeRecord(final CsvRecord record) {
-        final StringBuffer sql = createSql(record);
+        final String sql = createSql(record);
         Connection connection = null;
         Statement statement = null;
         try {
             connection = DriverManager.getConnection(url, username, password);
             statement = makeStatement(connection);
-            if (statement.execute(sql.toString())) {
-                log.info("ok {}", statement.getResultSet().toString());
+            ResultSet resultSet = statement.getResultSet();
+            if (statement.execute(sql)) {
+                log.info("{} ok", resultSet);
             } else {
                 if (statement.getUpdateCount() == 1) {
-                    log.info("ok {}", statement.getResultSet().toString());
+                    log.info("{} ok", resultSet);
                 } else {
                     log.info("failed {}", statement.getWarnings());
                 }
@@ -279,14 +283,14 @@ public class CsvToJdbc {
      *            the record
      * @return the string buffer
      */
-    protected StringBuffer createSql(final CsvRecord record) {
-        final StringBuffer sql = new StringBuffer();
+    protected String createSql(final CsvRecord record) {
+        final StringBuilder sql = new StringBuilder();
         sql.append("insert into ");
         sql.append(tableName);
         sql.append(getColumnHeaders());
         sql.append(" VALUES ");
         sql.append(record.toString());
-        log.info(sql.toString());
-        return sql;
+        log.info("sql = {}", sql);
+        return sql.toString();
     }
 }

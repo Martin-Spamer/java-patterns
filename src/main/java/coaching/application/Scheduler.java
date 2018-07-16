@@ -12,7 +12,7 @@ public final class Scheduler extends AbstractScheduler {
      * The Constructor.
      */
     public Scheduler() {
-        super();
+        super("xml/Scheduler.xml");
     }
 
     /**

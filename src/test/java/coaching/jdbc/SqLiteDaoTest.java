@@ -12,11 +12,12 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for PointbaseDao class.
  */
-@Ignore("Requires PointBase DB availability")
+@Ignore("Requires PointBase DB availability work-in-progress low-priority")
 public final class SqLiteDaoTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SqLiteDaoTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(SqLiteDaoTest.class);
 
     /** SQL to DROP the table. */
     static final String DROP_SQL = "DROP TABLE IF EXISTS customer";

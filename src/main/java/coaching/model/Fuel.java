@@ -40,7 +40,10 @@ public class Fuel implements FuelInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [quantity=%s]", this.getClass().getSimpleName(), quantity);
+        return String
+            .format("%s [quantity=%s]",
+                    this.getClass().getSimpleName(),
+                    quantity);
     }
 
 }

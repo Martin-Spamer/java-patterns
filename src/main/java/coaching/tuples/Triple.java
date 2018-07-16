@@ -69,7 +69,9 @@ public class Triple<X, Y, Z> {
      * @param z the generic type Z
      * @return the triple
      */
-    public static <X, Y, Z> Triple<X, Y, Z> create(final X x, final Y y, final Z z) {
+    public static <X, Y, Z> Triple<X, Y, Z> create(final X x,
+            final Y y,
+            final Z z) {
         return new Triple<>(x, y, z);
     }
 
@@ -151,7 +153,12 @@ public class Triple<X, Y, Z> {
      */
     @Override
     public String toString() {
-        return String.format("%s [x=%s, y=%s, z=%s]", this.getClass().getSimpleName(), this.x, this.y, this.z);
+        return String
+            .format("%s [x=%s, y=%s, z=%s]",
+                    this.getClass().getSimpleName(),
+                    this.x,
+                    this.y,
+                    this.z);
     }
 
 }

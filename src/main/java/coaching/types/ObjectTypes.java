@@ -62,7 +62,8 @@ public class ObjectTypes {
     private final Boolean falseBoolean = false;
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /**
      * Display.
@@ -96,7 +97,9 @@ public class ObjectTypes {
         }
 
         if (falseBoolean == false) {
-            log.info("aFalseBoolean has tested as false value : {}", falseBoolean);
+            log
+                .info("aFalseBoolean has tested as false value : {}",
+                        falseBoolean);
         }
     }
 }

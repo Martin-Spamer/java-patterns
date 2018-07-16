@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 public class TableCell {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The cell value. */
     private String value;
@@ -52,7 +53,8 @@ public class TableCell {
      */
     @Override
     public String toString() {
-        return String.format("%s [value=%s]", this.getClass().getSimpleName(), value);
+        return String
+            .format("%s [value=%s]", this.getClass().getSimpleName(), value);
     }
 
 }

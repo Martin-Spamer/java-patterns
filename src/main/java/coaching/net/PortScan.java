@@ -39,7 +39,7 @@ public class PortScan extends Thread {
      */
     public PortScan() {
         super();
-        LOG.info(toString());
+        LOG.info("TODO {}",this);
         initialise();
     }
 
@@ -52,7 +52,7 @@ public class PortScan extends Thread {
         super();
         ip = args[0];
         port = Integer.parseInt(args[1]);
-        LOG.info(toString());
+        LOG.info("TODO {}",this);
         initialise();
     }
 
@@ -66,7 +66,7 @@ public class PortScan extends Thread {
         super();
         this.ip = ip;
         this.port = port;
-        LOG.info(toString());
+        LOG.info("TODO {}",this);
         initialise();
     }
 
@@ -77,10 +77,12 @@ public class PortScan extends Thread {
         final String filename = "ports.properties";
         try {
             final ClassLoader classLoader = this.getClass().getClassLoader();
-            final InputStream resourceAsStream = classLoader.getResourceAsStream(filename);
+            final InputStream resourceAsStream = classLoader
+                .getResourceAsStream(filename);
             properties.load(resourceAsStream);
         } catch (final IOException e) {
-            final String message = String.format("Resource %s not found.", filename);
+            final String message = String
+                .format("Resource %s not found.", filename);
             LOG.error(message, e);
         }
     }
@@ -140,7 +142,11 @@ public class PortScan extends Thread {
      */
     @Override
     public String toString() {
-        return String.format("%s [ip=%s, port=%s]", this.getClass().getSimpleName(), ip, port);
+        return String
+            .format("%s [ip=%s, port=%s]",
+                    this.getClass().getSimpleName(),
+                    ip,
+                    port);
     }
 
     /**

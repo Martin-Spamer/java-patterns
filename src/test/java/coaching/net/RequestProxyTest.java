@@ -14,17 +14,18 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for the RequestProxy class.
  */
+@Ignore("work-in-progress low-priority")
 public final class RequestProxyTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RequestProxyTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(RequestProxyTest.class);
 
     /**
      * Unit test to request proxy.
      *
      * @throws Exception the exception
      */
-    @Ignore("Work-in-progress")
     @Test
     public void testRequestProxy() throws Exception {
         final ServerSocket serverSocket = new ServerSocket(8888);

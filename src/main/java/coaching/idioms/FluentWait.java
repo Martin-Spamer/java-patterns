@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 public class FluentWait {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The DEFAULT_INTERVAL is Constant 100 milliseconds. */
     private static final int DEFAULT_INTERVAL = 100;
@@ -83,7 +84,10 @@ public class FluentWait {
                     return true;
                 } else {
                     try {
-                        log.debug("sleep {} at {}", interval, System.currentTimeMillis());
+                        log
+                            .debug("sleep {} at {}",
+                                    interval,
+                                    System.currentTimeMillis());
                         Thread.sleep(interval);
                     } catch (final InterruptedException ex) {
                         Thread.currentThread().interrupt();

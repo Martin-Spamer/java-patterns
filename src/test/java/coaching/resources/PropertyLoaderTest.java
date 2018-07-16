@@ -1,7 +1,6 @@
 
 package coaching.resources;
 
-import java.io.FileNotFoundException;
 import java.util.Properties;
 
 import org.junit.Test;
@@ -14,56 +13,50 @@ import static org.junit.Assert.assertNotNull;
  * Unit tests for PropertyLoader class.
  */
 public final class PropertyLoaderTest {
+    private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
+    private static final String CONFIGURATION_XML = "Configuration.xml";
+    private static final String MISSING_PROPERTIES = "missing.resource";
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PropertyLoaderTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PropertyLoaderTest.class);
 
     /**
      * Unit test to get properties.
-     *
-     * @throws Exception the exception
      */
     @Test
-    public void testGetProperties() throws Exception {
-        Properties properties = PropertiesLoader.getProperties("Configuration.properties");
+    public void testGetProperties() {
+        Properties properties = PropertiesLoader
+            .getProperties(CONFIGURATION_PROPERTIES);
         assertNotNull(properties);
         LOG.info(properties.toString());
     }
 
     /**
      * Unit test to get xml properties.
-     *
-     * @throws Exception the exception
      */
     @Test
-    public void testGetXmlProperties() throws Exception {
-        Properties properties = PropertiesLoader.getXmlProperties("Configuration.xml");
+    public void testGetXmlProperties() {
+        Properties properties = PropertiesLoader
+            .getXmlProperties(CONFIGURATION_XML);
         assertNotNull(properties);
         LOG.info(properties.toString());
     }
 
     /**
      * Unit test to missing file.
-     *
-     * @throws Exception the exception
      */
-    @Test(expected = FileNotFoundException.class)
-    public void testMissingFile() throws Exception {
-        Properties properties = PropertiesLoader.getProperties("missing.properties");
-        assertNotNull(properties);
-        LOG.info(properties.toString());
+    @Test(expected = ResourceNotLoadedException.class)
+    public void testMissingProperties() {
+        PropertiesLoader.getProperties(MISSING_PROPERTIES);
     }
 
     /**
      * Unit test to missing xml file.
-     *
-     * @throws Exception the exception
      */
-    @Test(expected = FileNotFoundException.class)
-    public void testMissingXmlFile() throws Exception {
-        Properties properties = PropertiesLoader.getXmlProperties("missing.xml");
-        assertNotNull(properties);
-        LOG.info(properties.toString());
+    @Test(expected = ResourceNotLoadedException.class)
+    public void testMissingXmlProperties() {
+        PropertiesLoader.getXmlProperties(MISSING_PROPERTIES);
     }
 
 }

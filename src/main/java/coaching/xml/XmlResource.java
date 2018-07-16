@@ -21,7 +21,8 @@ import org.w3c.dom.NodeList;
 public final class XmlResource {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlResource.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(XmlResource.class);
 
     /** configuration element. */
     private Element configElement = null;
@@ -33,10 +34,13 @@ public final class XmlResource {
      */
     protected void loadXmlFromStream(final InputStream configInputStream) {
         try {
-            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
+                .newInstance();
             try {
-                final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-                final Document document = documentBuilder.parse(configInputStream);
+                final DocumentBuilder documentBuilder = documentBuilderFactory
+                    .newDocumentBuilder();
+                final Document document = documentBuilder
+                    .parse(configInputStream);
                 configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {
                 LOG.error(parserConfigurationException.toString());
@@ -53,9 +57,11 @@ public final class XmlResource {
      */
     public void loadXmlFromFile(final File configFile) {
         try {
-            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
+                .newInstance();
             try {
-                final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+                final DocumentBuilder documentBuilder = documentBuilderFactory
+                    .newDocumentBuilder();
                 final Document document = documentBuilder.parse(configFile);
                 configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {
@@ -105,11 +111,11 @@ public final class XmlResource {
      * @return the string
      */
     private String toXmlString(final Node node) {
-        StringBuffer text = new StringBuffer();
+        StringBuilder text = new StringBuilder();
         if (node != null) {
             final String value = node.getNodeValue();
             if (value != null) {
-                text = new StringBuffer(value);
+                text = new StringBuilder(value);
             }
             if (node.hasChildNodes()) {
                 final NodeList children = node.getChildNodes();

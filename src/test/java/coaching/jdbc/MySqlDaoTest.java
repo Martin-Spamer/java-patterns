@@ -11,10 +11,11 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for MySqlDao.
  */
-@Ignore("Requires MySQL DB availability")
+@Ignore("Requires MySQL DB availability work-in-progress low-priority")
 public final class MySqlDaoTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(MySqlDaoTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(MySqlDaoTest.class);
 
     /** SQL to DROP the table. */
     static final String DROP_SQL = "DROP TABLE IF EXISTS {}";

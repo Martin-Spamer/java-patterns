@@ -19,7 +19,8 @@ import org.w3c.dom.NodeList;
 public class RulesEngine {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(RulesEngine.class);
 
     /** The document. */
     private Document document = null;
@@ -66,7 +67,8 @@ public class RulesEngine {
      */
     protected boolean readXmlDocument(final String configFilename) {
         try {
-            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
+                .newInstance();
             if (documentBuilderFactory != null) {
                 DocumentBuilder documentBuilder;
                 documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -89,7 +91,8 @@ public class RulesEngine {
      *            the document builder
      * @return the boolean
      */
-    protected boolean readXmlStream(final String configFilename, final DocumentBuilder documentBuilder) {
+    protected boolean readXmlStream(final String configFilename,
+            final DocumentBuilder documentBuilder) {
         final InputStream is = inputStreamFrom(configFilename);
         try {
             if (null != is) {
@@ -123,7 +126,10 @@ public class RulesEngine {
      */
     public boolean execute() {
         final boolean returnValue = false;
-        LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
+        LOG
+            .info("execute({}) = {}",
+                    this.getClass().getSimpleName(),
+                    returnValue);
         if (documentElement != null) {
             final NodeList childNodes = documentElement.getChildNodes();
             LOG.info("childNodes  = {}", childNodes);
@@ -140,7 +146,8 @@ public class RulesEngine {
      *            the attribute name
      * @return the element attribute
      */
-    protected String getElementAttribute(final String elementName, final String attributeName) {
+    protected String getElementAttribute(final String elementName,
+            final String attributeName) {
         final Element element = getElement(elementName);
         return element.getAttribute(attributeName);
     }
@@ -154,17 +161,24 @@ public class RulesEngine {
      */
     protected Element getElement(final String elementName) {
         Element element = null;
-        final NodeList nodelist = documentElement.getElementsByTagName(elementName);
+        final NodeList nodelist = documentElement
+            .getElementsByTagName(elementName);
         if (nodelist != null) {
             final int length = nodelist.getLength();
             if (length == 0) {
                 final String className = this.getClass().getSimpleName();
                 LOG.info(className);
-                LOG.info("Element {} is missing in element {}", elementName, documentElement.toString());
+                LOG
+                    .info("Element {} is missing in element {}",
+                            elementName,
+                            documentElement.toString());
             } else if (length > 1) {
                 final String className = this.getClass().getSimpleName();
                 LOG.info(className);
-                LOG.info(" surplus Elements {} ignored in element: {}", elementName, documentElement.toString());
+                LOG
+                    .info(" surplus Elements {} ignored in element: {}",
+                            elementName,
+                            documentElement.toString());
                 element = (Element) nodelist.item(0);
             }
         }
