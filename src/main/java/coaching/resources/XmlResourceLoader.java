@@ -10,13 +10,13 @@ import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 
 import static org.junit.Assert.fail;
 
@@ -44,25 +44,25 @@ public final class XmlResourceLoader {
         }
     }
 
-    private static String convertNodeToHtml(final Node node)
-            throws TransformerException {
-        TransformerFactory tf = TransformerFactory.newInstance();
-        Transformer t = tf.newTransformer();
-        t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-        StringWriter sw = new StringWriter();
-        t.transform(new DOMSource(node), new StreamResult(sw));
-        return sw.toString();
-    }
-
-    public static String xmlToString(final Document xmlResource)
-            throws Exception {
-        TransformerFactory tf = TransformerFactory.newInstance();
-        Transformer t = tf.newTransformer();
-        t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-        StringWriter sw = new StringWriter();
-        DOMSource xmlSource = new DOMSource(xmlResource);
-        StreamResult outputTarget = new StreamResult(sw);
-        t.transform(xmlSource, outputTarget);
-        return sw.toString();
+    public static String xmlToString(final Document xmlResource) {
+        try {
+            TransformerFactory tf = TransformerFactory.newInstance();
+            Transformer t = tf.newTransformer();
+            t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            StringWriter sw = new StringWriter();
+            DOMSource xmlSource = new DOMSource(xmlResource);
+            StreamResult outputTarget = new StreamResult(sw);
+            t.transform(xmlSource, outputTarget);
+            return sw.toString();
+        } catch (
+                IllegalArgumentException |
+                    TransformerFactoryConfigurationError |
+                    TransformerException e) {
+            String message = String
+                .format("Failed to parse XML Document. %s",
+                        e.getLocalizedMessage());
+            LOG.error(message, e);
+        }
+        return null;
     }
 }

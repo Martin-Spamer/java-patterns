@@ -46,7 +46,7 @@ public class CsvFile {
         super();
         LOG.debug("CsvFile()");
         initialise(defaultFilename());
-        LOG.debug("TODO {}",this);
+        LOG.debug("TODO {}", this);
     }
 
     private String defaultFilename() {
@@ -68,7 +68,7 @@ public class CsvFile {
         super();
         LOG.debug("CsvFile({})", csvFilename);
         initialise(csvFilename);
-        LOG.debug("TODO {}",this);
+        LOG.debug("TODO {}", this);
     }
 
     /**
@@ -220,15 +220,6 @@ public class CsvFile {
      * @return the headerLine
      */
     public String getHeaderLine() {
-        return headerLine;
-    }
-
-    /**
-     * header.
-     *
-     * @return the header
-     */
-    public String getHeader() {
         return headerLine;
     }
 

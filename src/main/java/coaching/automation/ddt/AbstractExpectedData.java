@@ -72,7 +72,7 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      */
     protected String[] getAllTagged(final String tag) {
         assumeTrue(csvFile.isLoaded());
-        final ArrayList<String> all = new ArrayList<String>();
+        final ArrayList<String> all = new ArrayList<>();
         assumeTrue(csvFile.isLoaded());
         final int rowCount = csvFile.rowCount();
         for (int index = 0; index < rowCount; index++) {
