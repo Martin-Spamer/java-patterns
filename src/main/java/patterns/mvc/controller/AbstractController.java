@@ -16,7 +16,8 @@ import patterns.mvc.ViewInterface;
 public abstract class AbstractController implements ControllerInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** provides command instances. */
     protected CommandFactory commands = new CommandFactory();
@@ -41,7 +42,8 @@ public abstract class AbstractController implements ControllerInterface {
      * @param model the model
      * @param view the view
      */
-    public AbstractController(final ModelInterface model, final ViewInterface view) {
+    public AbstractController(final ModelInterface model,
+            final ViewInterface view) {
         super();
         log.debug("AbstractController({},{})", model, view);
         this.model = model;
@@ -93,7 +95,11 @@ public abstract class AbstractController implements ControllerInterface {
      */
     @Override
     public ControllerInterface detachView() {
-        log.debug("{}.detachView({},{})", this.getClass().getSimpleName(), model, view);
+        log
+            .debug("{}.detachView({},{})",
+                    this.getClass().getSimpleName(),
+                    model,
+                    view);
         view = null;
         return this;
     }
@@ -120,8 +126,12 @@ public abstract class AbstractController implements ControllerInterface {
      *             the missing command exception
      */
     @Override
-    public ControllerInterface execute(final String commandName) throws MissingCommandException {
-        log.debug("{}.execute({})", this.getClass().getSimpleName(), commandName);
+    public ControllerInterface execute(final String commandName)
+            throws MissingCommandException {
+        log
+            .debug("{}.execute({})",
+                    this.getClass().getSimpleName(),
+                    commandName);
         commands.execute(commandName);
         return this;
     }

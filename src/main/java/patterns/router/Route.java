@@ -26,7 +26,8 @@ class Route implements InputChannelInterface, OutputChannelInterface {
      * @param inputChannel
      *            the input channel
      */
-    public Route(final OutputChannelInterface outputChannel, final InputChannelInterface inputChannel) {
+    public Route(final OutputChannelInterface outputChannel,
+            final InputChannelInterface inputChannel) {
         super();
         this.outputChannel = outputChannel;
         this.inputChannel = inputChannel;

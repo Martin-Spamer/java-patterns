@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractAggregate implements AggregateInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The item list. */
     protected final List<ItemInterface> itemList = new ArrayList<>();
@@ -30,7 +31,10 @@ public abstract class AbstractAggregate implements AggregateInterface {
 
     @Override
     public String toString() {
-        return String.format("%s [itemList=%s]", this.getClass().getSimpleName(), itemList);
+        return String
+            .format("%s [itemList=%s]",
+                    this.getClass().getSimpleName(),
+                    itemList);
     }
 
 }

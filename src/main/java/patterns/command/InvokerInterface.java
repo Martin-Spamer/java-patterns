@@ -15,6 +15,7 @@ public interface InvokerInterface {
      * @throws MissingCommandException
      *             the missing command exception
      */
-    ResultInterface execute(final String actionName) throws MissingCommandException;
+    ResultInterface execute(final String actionName)
+            throws MissingCommandException;
 
 }

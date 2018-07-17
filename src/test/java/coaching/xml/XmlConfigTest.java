@@ -1,5 +1,5 @@
 
-package coaching.automation;
+package coaching.xml;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -7,15 +7,14 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
-import coaching.xml.XmlConfig;
-
 /**
  * Unit tests for XmlConfig class.
  */
 public final class XmlConfigTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlConfigTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(XmlConfigTest.class);
 
     /**
      * Unit test to xml config.

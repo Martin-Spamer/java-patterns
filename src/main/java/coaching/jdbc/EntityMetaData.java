@@ -29,11 +29,6 @@ public class EntityMetaData extends JdbcBase {
     /** The output file. */
     private final File outputFile = null;
 
-    /**
-     * The Constructor.
-     *
-     * @throws Exception the exception
-     */
     public EntityMetaData() {
         super();
     }
@@ -82,42 +77,52 @@ public class EntityMetaData extends JdbcBase {
      * To csv file.
      *
      * @param resultSetMetaData the result set meta data
+     * @return
      * @throws SQLException the SQL exception
      */
-    private void toCsvFile(final ResultSetMetaData resultSetMetaData)
+    private String toCsvFile(final ResultSetMetaData resultSetMetaData)
             throws SQLException {
-        StringBuffer classTypeLine = headerLine(resultSetMetaData);
-        final int colCount = resultSetMetaData.getColumnCount();
+        final StringBuilder sb = new StringBuilder();
 
-        // * CSV header line
-        final StringBuffer columnLabelLine = new StringBuffer("#");
-        for (int column = 1; column < colCount; column++) {
-            columnLabelLine
-                .append(resultSetMetaData.getColumnLabel(column) + separator);
-        }
+        final String columnLabelLine = headerLine(resultSetMetaData);
         log.info("{}", columnLabelLine);
+        sb.append(columnLabelLine);
 
-        // * type line
-        final StringBuffer columnTypeLine = new StringBuffer("#");
-        for (int column = 1; column < colCount; column++) {
-            columnTypeLine
-                .append(resultSetMetaData.getColumnTypeName(column)
-                        + separator);
-        }
+        final String columnTypeLine = typeLine(resultSetMetaData);
         log.info("{}", columnTypeLine);
+        sb.append(columnLabelLine);
 
-        log.info("{}", classTypeLine);
+        return sb.toString();
     }
 
-    private StringBuffer headerLine(final ResultSetMetaData resultSetMetaData)
-            throws java.sql.SQLException {
+    private String headerLine(final ResultSetMetaData resultSetMetaData)
+            throws SQLException {
+        final StringBuilder columnLabelLine = new StringBuilder("#");
+
         final int colCount = resultSetMetaData.getColumnCount();
-        final StringBuffer classTypeLine = new StringBuffer("#");
         for (int column = 1; column < colCount; column++) {
-            classTypeLine
-                .append(resultSetMetaData.getColumnClassName(column)
-                        + separator);
+            final String str = String
+                .format("%s%s",
+                        resultSetMetaData.getColumnLabel(column),
+                        separator);
+            columnLabelLine.append(str);
         }
-        return classTypeLine;
+        return columnLabelLine.toString();
     }
+
+    private String typeLine(final ResultSetMetaData resultSetMetaData)
+            throws SQLException {
+        final StringBuilder columnTypeLine = new StringBuilder();
+
+        final int colCount = resultSetMetaData.getColumnCount();
+        for (int column = 1; column < colCount; column++) {
+            final String str = String
+                .format("%s%s",
+                        resultSetMetaData.getColumnTypeName(column),
+                        separator);
+            columnTypeLine.append(str);
+        }
+        return columnTypeLine.toString();
+    }
+
 }

@@ -6,29 +6,46 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
-public class Verify {
+public final class Verify {
 
-    private static final Verify INSTANCE = new Verify();
+    private static final Logger LOG = LoggerFactory.getLogger(Verify.class);
+    private boolean actual;
 
-    private static Verify getInstance() {
-        return INSTANCE;
+    private Verify() {
+        super();
     }
 
-    public static void verifyThat() {
+    private static Verify create() {
+        return new Verify();
+    }
+
+    public static Verify that(final boolean actual) {
         final Throwable t = new Throwable();
-        Verify.getInstance().verifyThat(t);
+        final Verify instance = Verify.create();
+        instance.that(t, actual);
+        return instance;
     }
 
-    public void verifyThat(final Throwable caller) {
+    public Verify that(final Throwable caller, final boolean actual) {
         final StackTraceElement directCaller = caller.getStackTrace()[1];
         assertNotNull(directCaller);
-        final Logger logger = LoggerFactory
+        final Logger callerLog = LoggerFactory
             .getLogger(directCaller.getClassName());
-        assertNotNull(logger);
-        logger
-            .info("({}:)",
+        assertNotNull(callerLog);
+        callerLog
+            .info("({}:{})",
                     directCaller.getClassName(),
                     directCaller.getLineNumber());
+        this.actual = actual;
+        return this;
+    }
+
+    public boolean isTrue() {
+        return actual;
+    }
+
+    public boolean isFalse() {
+        return actual == false;
     }
 
 }

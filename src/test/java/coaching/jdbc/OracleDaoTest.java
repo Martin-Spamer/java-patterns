@@ -38,7 +38,7 @@ public final class OracleDaoTest {
      */
     @Test
     public void testOracleDao() throws ClassNotFoundException {
-        DaoInterface dao = new OracleDao();
+        final DaoInterface dao = new OracleDao();
         assertNotNull(dao);
     }
 

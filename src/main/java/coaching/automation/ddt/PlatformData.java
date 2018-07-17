@@ -6,18 +6,17 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 /**
  * The PlatformData class.
  */
-public final class PlatformData extends AbstractExpectedData implements ExpectedDataInterface {
+public final class PlatformData extends AbstractExpectedData
+        implements ExpectedDataInterface {
 
     /** single static instance within class loader. */
     private static final PlatformData INSTANCE = new PlatformData();
 
     /** The platform. */
-    protected String platform = null;
+    private String platform = null;
 
     /**
-     * The Constructor.
-     *
-     * @throws FileNotLoadedException
+     * Default constructor.
      */
     private PlatformData() {
         super();
@@ -43,7 +42,7 @@ public final class PlatformData extends AbstractExpectedData implements Expected
      * @throws FileNotLoadedException
      */
     private void loadPlatformData() {
-        super.loadData("PlatformData.csv");
+        super.initialise("PlatformData.csv");
     }
 
     /**

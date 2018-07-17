@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 import coaching.application.ApplicationException;
 
 /**
- * The Class ThreadTemplate.
+ * A template for a Thread class.
  */
 public class ThreadTemplate implements Runnable {
 

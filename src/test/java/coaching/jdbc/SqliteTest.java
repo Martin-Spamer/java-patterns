@@ -26,7 +26,8 @@ public final class SqliteTest {
     public void testSqlite() throws Exception {
 
         Class.forName("org.sqlite.JDBC");
-        final Connection connection = DriverManager.getConnection("jdbc:sqlite:memory");
+        final Connection connection = DriverManager
+            .getConnection("jdbc:sqlite:memory");
 
         final Statement statement = connection.createStatement();
         statement.setQueryTimeout(30);
@@ -46,16 +47,19 @@ public final class SqliteTest {
 
     private void createTable(final Statement statement) throws SQLException {
         statement.executeUpdate("DROP TABLE IF EXISTS customer");
-        statement.executeUpdate("CREATE TABLE customer (id INTEGER, name STRING, data STRING)");
+        statement
+            .executeUpdate(
+                    "CREATE TABLE customer (id INTEGER, name STRING, data STRING)");
     }
 
     private void insertRecords(final Statement statement) throws SQLException {
         final int ids[] = { 1, 2, 3, 4, 5 };
-        final String names[] = { "Dick Turpin", "Robin Hood", "William Tell", "James Bond", "Robinson Crusoe" };
+        final String names[] = { "Dick Turpin", "Robin Hood", "William Tell",
+                "James Bond", "Robinson Crusoe" };
 
         for (int i = 0; i < ids.length; i++) {
-            String insert = "INSERT INTO customer values('%s', '%s', null)";
-            String sql = String.format(insert, ids[i], names[i]);
+            final String insert = "INSERT INTO customer values('%s', '%s', null)";
+            final String sql = String.format(insert, ids[i], names[i]);
             statement.executeUpdate(sql);
         }
     }
@@ -65,9 +69,14 @@ public final class SqliteTest {
     }
 
     private void selectRecords(final Statement statement) throws SQLException {
-        final ResultSet resultSet = statement.executeQuery("SELECT * from customer");
+        final ResultSet resultSet = statement
+            .executeQuery("SELECT * from customer");
         while (resultSet.next()) {
-            LOG.info("{}) {} {}", resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("data"));
+            LOG
+                .info("{}) {} {}",
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("data"));
         }
     }
 

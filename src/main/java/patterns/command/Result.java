@@ -61,7 +61,8 @@ public final class Result implements ResultInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [result=%s]", this.getClass().getSimpleName(), value);
+        return String
+            .format("%s [result=%s]", this.getClass().getSimpleName(), value);
     }
 
 }

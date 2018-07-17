@@ -15,7 +15,8 @@ import static org.junit.Assert.assertNotNull;
 public final class InvokerExampleTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(InvokerExampleTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(InvokerExampleTest.class);
 
     /**
      * Unit Test for example command.
@@ -58,7 +59,8 @@ public final class InvokerExampleTest {
     public void testInvokerSequenceCommand() {
         LOG.info("testInvokerSequenceCommand");
         final InvokerExample invokerExample = new InvokerExample();
-        final ResultInterface result = invokerExample.execute("SequenceCommand");
+        final ResultInterface result = invokerExample
+            .execute("SequenceCommand");
         assertNotNull(result);
         LOG.debug(result.toString());
     }
@@ -81,7 +83,8 @@ public final class InvokerExampleTest {
     public void testInvokerCompoundCommand() {
         LOG.info("testInvokerCompoundCommand");
         final InvokerExample invokerExample = new InvokerExample();
-        final ResultInterface result = invokerExample.execute("CompoundCommand");
+        final ResultInterface result = invokerExample
+            .execute("CompoundCommand");
         assertNotNull(result);
         LOG.debug(result.toString());
     }
@@ -104,7 +107,8 @@ public final class InvokerExampleTest {
     public void testInvokerConditionalCommand() {
         LOG.info("testInvokerConditionalCommand");
         final InvokerExample invokerExample = new InvokerExample();
-        final ResultInterface result = invokerExample.execute("ConditionalCommand");
+        final ResultInterface result = invokerExample
+            .execute("ConditionalCommand");
         assertNotNull(result);
         LOG.debug(result.toString());
     }

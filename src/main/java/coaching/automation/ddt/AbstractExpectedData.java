@@ -25,11 +25,11 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
     /** Csvfile containing the expected data. */
     protected CsvFile csvFile;
 
-    /** The path to the csv file. */
+    /** The path to the CSV file. */
     protected String path = "data/";
 
     /**
-     * The Constructor.
+     * Default constructor.
      */
     public AbstractExpectedData() {
         super();
@@ -41,7 +41,7 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      * @param filename the filename
      * @throws FileNotLoadedException
      */
-    protected void loadData(final String filename) {
+    protected void initialise(final String filename) {
         csvFile = new CsvFile(filename);
     }
 
@@ -82,6 +82,6 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
                 all.add(record.toString());
             }
         }
-        return all.toArray(new String[0]);
+        return all.toArray(new String[all.size()]);
     }
 }

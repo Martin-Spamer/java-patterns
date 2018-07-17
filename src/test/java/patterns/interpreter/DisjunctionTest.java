@@ -59,7 +59,8 @@ public final class DisjunctionTest {
      */
     @Test
     public void testDisjunction() {
-        final Disjunction disjunction = new Disjunction(new Mock(true), new Mock(true));
+        final Disjunction disjunction = new Disjunction(new Mock(true),
+                new Mock(true));
         assertNotNull(disjunction);
     }
 

@@ -4,7 +4,7 @@ package coaching.rules;
 /**
  * UndoCommand Interface.
  */
-public interface UndoCommand extends CommandInterface {
+public interface UndoInterface {
 
     /**
      * Redo.

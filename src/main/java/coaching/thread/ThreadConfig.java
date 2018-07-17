@@ -4,7 +4,7 @@ package coaching.thread;
 import coaching.config.Configuration;
 
 /**
- * The Class ThreadConfig.
+ * Thread configuration class.
  */
 public class ThreadConfig extends Configuration {
 

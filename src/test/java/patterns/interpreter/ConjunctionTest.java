@@ -59,7 +59,8 @@ public final class ConjunctionTest {
      */
     @Test
     public void testConjunction() {
-        final Conjunction conjunction = new Conjunction(new Mock(true), new Mock(true));
+        final Conjunction conjunction = new Conjunction(new Mock(true),
+                new Mock(true));
         assertNotNull(conjunction);
     }
 

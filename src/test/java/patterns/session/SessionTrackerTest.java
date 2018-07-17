@@ -19,7 +19,8 @@ import static org.junit.Assume.assumeNotNull;
 public final class SessionTrackerTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SessionTrackerTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(SessionTrackerTest.class);
 
     /**
      * Unit test to typical usage.

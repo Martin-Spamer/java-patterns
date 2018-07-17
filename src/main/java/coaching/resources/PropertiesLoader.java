@@ -48,8 +48,7 @@ public final class PropertiesLoader {
     public static Properties getProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader
-                .getStream(resourceName);
+            final InputStream stream = ResourceLoader.getStream(resourceName);
             properties.load(stream);
         } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);
@@ -64,12 +63,10 @@ public final class PropertiesLoader {
      * @return the xml properties
      * @throws IOException the IO exception
      */
-    public static Properties getXmlProperties(
-            final String resourceName) {
+    public static Properties getXmlProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader
-                .getStream(resourceName);
+            final InputStream stream = ResourceLoader.getStream(resourceName);
             properties.loadFromXML(stream);
         } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);

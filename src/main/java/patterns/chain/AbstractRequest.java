@@ -36,7 +36,10 @@ public abstract class AbstractRequest implements RequestInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [payload=%s]", this.getClass().getSimpleName(), payload);
+        return String
+            .format("%s [payload=%s]",
+                    this.getClass().getSimpleName(),
+                    payload);
     }
 
 }

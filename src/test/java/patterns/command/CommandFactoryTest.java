@@ -13,7 +13,8 @@ import static org.junit.Assert.assertNotNull;
 public final class CommandFactoryTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CommandFactoryTest.class);
 
     /**
      * Unit Test to command factory.
@@ -34,7 +35,8 @@ public final class CommandFactoryTest {
     @Test
     public void testCommandFactoryFile() {
         LOG.info("testCommandFactoryFile");
-        final InvokerInterface commandFactory = new CommandFactory("commands.properties");
+        final InvokerInterface commandFactory = new CommandFactory(
+                "commands.properties");
         assertNotNull(commandFactory);
         LOG.debug(commandFactory.toString());
     }

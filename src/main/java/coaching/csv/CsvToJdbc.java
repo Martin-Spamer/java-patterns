@@ -242,7 +242,7 @@ public class CsvToJdbc {
         try {
             connection = DriverManager.getConnection(url, username, password);
             statement = makeStatement(connection);
-            ResultSet resultSet = statement.getResultSet();
+            final ResultSet resultSet = statement.getResultSet();
             if (statement.execute(sql)) {
                 log.info("{} ok", resultSet);
             } else {

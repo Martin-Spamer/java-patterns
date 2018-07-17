@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractHandler implements HandlerInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The next. */
     private HandlerInterface next;

@@ -56,7 +56,8 @@ public class Memento {
      */
     @Override
     public String toString() {
-        return String.format("%s [state=%s]", this.getClass().getSimpleName(), state);
+        return String
+            .format("%s [state=%s]", this.getClass().getSimpleName(), state);
     }
 
 }

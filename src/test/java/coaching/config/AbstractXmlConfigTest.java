@@ -21,7 +21,8 @@ public final class AbstractXmlConfigTest {
     private static final String CONFIG_XML = "Configuration.xml";
 
     /** provide logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractXmlConfigTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(AbstractXmlConfigTest.class);
 
     /**
      * Test Configuration class.

@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractCommandParameters implements ParametersInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The parameters. */
     private final Properties parameters = new Properties();
@@ -43,7 +44,8 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      * java.lang.String)
      */
     @Override
-    public AbstractCommandParameters setParameter(final String key, final String value) {
+    public AbstractCommandParameters setParameter(final String key,
+            final String value) {
         parameters.setProperty(key, value);
         return this;
     }
@@ -83,7 +85,8 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      */
     @Override
     public Boolean valueFor(final String key, final Boolean defaultValue) {
-        final String property = parameters.getProperty(key, defaultValue.toString());
+        final String property = parameters
+            .getProperty(key, defaultValue.toString());
         return Boolean.parseBoolean(property);
     }
 
@@ -94,13 +97,17 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
      */
     @Override
     public Long valueFor(final String key, final Long defaultValue) {
-        final String property = parameters.getProperty(key, defaultValue.toString());
+        final String property = parameters
+            .getProperty(key, defaultValue.toString());
         return Long.parseLong(property);
     }
 
     @Override
     public String toString() {
-        return String.format("%s [parameters=%s]", this.getClass().getSimpleName(), parameters);
+        return String
+            .format("%s [parameters=%s]",
+                    this.getClass().getSimpleName(),
+                    parameters);
     }
 
 }

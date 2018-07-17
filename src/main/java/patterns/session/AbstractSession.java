@@ -64,7 +64,11 @@ public abstract class AbstractSession {
      */
     @Override
     public String toString() {
-        return String.format("%s [uuid=%s, token=%s]", this.getClass().getSimpleName(), uuid, token);
+        return String
+            .format("%s [uuid=%s, token=%s]",
+                    this.getClass().getSimpleName(),
+                    uuid,
+                    token);
     }
 
 }

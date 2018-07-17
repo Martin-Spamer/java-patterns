@@ -11,7 +11,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractObserver implements ObserverInterface {
 
     /** provides logging. */
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    private final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /*
      * (non-Javadoc)

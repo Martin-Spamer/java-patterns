@@ -19,7 +19,7 @@ public class ApplicationException extends Exception {
     }
 
     /**
-     * The Constructor.
+     * Instantiates a new application exception with root cause.
      *
      * @param exception the exception
      */

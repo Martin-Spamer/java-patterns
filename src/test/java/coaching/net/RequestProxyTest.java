@@ -30,7 +30,7 @@ public final class RequestProxyTest {
     public void testRequestProxy() throws Exception {
         final ServerSocket serverSocket = new ServerSocket(8888);
         final Socket socket = serverSocket.accept();
-        RequestProxy requestProxy = new RequestProxy(socket);
+        final RequestProxy requestProxy = new RequestProxy(socket);
         assertNotNull(requestProxy);
         socket.close();
         serverSocket.close();

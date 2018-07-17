@@ -11,7 +11,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractParticipant implements ParticipantInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /**
      * Operation One, must be implemented in the final class,

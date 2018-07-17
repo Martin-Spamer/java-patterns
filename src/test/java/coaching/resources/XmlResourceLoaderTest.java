@@ -5,41 +5,39 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
 
 import static org.junit.Assert.assertNotNull;
 
 public class XmlResourceLoaderTest {
 
+    private static final String CONFIGURATION_XML = "Configuration.xml";
+    private static final String DATABASE_XML = "database.xml";
+    private static final String CONFIGURATION_MISSING = "Missing.xml";
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlResourceLoaderTest.class);
 
     @Test
     public void testGetDatabaseXml() throws Exception {
-        Document xmlResource = XmlResourceLoader.getXmlResource("database.xml");
+        final Document xmlResource = XmlResourceLoader
+            .getXmlResource(DATABASE_XML);
         assertNotNull(xmlResource);
-        DocumentType doctype = xmlResource.getDoctype();
-        String xmlEncoding = xmlResource.getXmlEncoding();
+        LOG.info("{}", xmlResource.getDoctype());
+        LOG.info("{}", xmlResource.getXmlEncoding());
         LOG.info("\n{}", XmlResourceLoader.xmlToString(xmlResource));
     }
 
     @Test
     public void testGetConfigurationXml() throws Exception {
-        Document xmlResource = XmlResourceLoader
-            .getXmlResource("Configuration.xml");
+        final Document xmlResource = XmlResourceLoader
+            .getXmlResource(CONFIGURATION_XML);
         assertNotNull(xmlResource);
-        DocumentType doctype = xmlResource.getDoctype();
-        String xmlEncoding = xmlResource.getXmlEncoding();
+        LOG.info("{}", xmlResource.getDoctype());
+        LOG.info("{}", xmlResource.getXmlEncoding());
         LOG.info("\n{}", XmlResourceLoader.xmlToString(xmlResource));
     }
 
-    @Test
+    @Test(expected = ResourceNotLoadedException.class)
     public void testMissingConfiguration() throws Exception {
-        Document xmlResource = XmlResourceLoader
-            .getXmlResource("Configuration.missing");
-        assertNotNull(xmlResource);
-        DocumentType doctype = xmlResource.getDoctype();
-        String xmlEncoding = xmlResource.getXmlEncoding();
-        LOG.info("\n{}", XmlResourceLoader.xmlToString(xmlResource));
+        XmlResourceLoader.getXmlResource(CONFIGURATION_MISSING);
     }
 }

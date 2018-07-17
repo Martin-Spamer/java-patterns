@@ -12,7 +12,8 @@ import patterns.composite.ComponentInterface;
 public abstract class AbstractComponent implements ComponentInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /*
      * (non-Javadoc)

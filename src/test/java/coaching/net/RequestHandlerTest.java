@@ -24,7 +24,7 @@ public final class RequestHandlerTest {
     public void testRequestHandler() throws Exception {
         final ServerSocket serverSocket = new ServerSocket(8888);
         final Socket socket = serverSocket.accept();
-        RequestHandler requestHandler = new RequestHandler(socket);
+        final RequestHandler requestHandler = new RequestHandler(socket);
         assertNotNull(requestHandler);
         socket.close();
         serverSocket.close();

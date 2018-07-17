@@ -15,7 +15,8 @@ import static org.junit.Assert.assertTrue;
 public final class SelectionTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SelectionTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(SelectionTest.class);
 
     /**
      * The <code>if</code> statement is an example of selection.

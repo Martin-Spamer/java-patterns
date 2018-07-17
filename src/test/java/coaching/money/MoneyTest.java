@@ -133,7 +133,7 @@ public final class MoneyTest {
         LOG.info(money.toString());
         assertNotNull(money);
         final String actual = money.toString();
-        String expected = "£ 9,223,372,036,854,775,807";
+        final String expected = "£ 9,223,372,036,854,775,807";
         assertEquals(expected, actual);
     }
 
@@ -151,7 +151,7 @@ public final class MoneyTest {
         assertNotNull(money);
         LOG.info(money.toString());
         final String actual = money.toString();
-        String expected = "€ 9,223,372,036,854,775,807";
+        final String expected = "€ 9,223,372,036,854,775,807";
         assertEquals(expected, actual);
     }
 
@@ -171,7 +171,7 @@ public final class MoneyTest {
         assertNotNull(money);
         LOG.info(money.toString());
         final String actual = money.toString();
-        String expected = "$ 9,223,372,036,854,775,807";
+        final String expected = "$ 9,223,372,036,854,775,807";
         assertEquals(expected, actual);
     }
 

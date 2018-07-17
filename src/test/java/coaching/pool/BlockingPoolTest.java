@@ -14,7 +14,8 @@ import static org.junit.Assert.assertNotNull;
 public final class BlockingPoolTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BlockingPoolTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(BlockingPoolTest.class);
 
     /**
      * TestResourcePool Class.

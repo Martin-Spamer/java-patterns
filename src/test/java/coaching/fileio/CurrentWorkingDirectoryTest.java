@@ -15,7 +15,8 @@ import coaching.resources.CurrentWorkingDirectory;
 public final class CurrentWorkingDirectoryTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectoryTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CurrentWorkingDirectoryTest.class);
 
     /**
      * Unit Test to current working directory.

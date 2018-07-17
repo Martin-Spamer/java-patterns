@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractMediator implements MediatorInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
 }

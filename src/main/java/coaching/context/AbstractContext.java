@@ -74,7 +74,7 @@ public abstract class AbstractContext implements ContextInterface {
      */
     @Override
     public String getProperty(final String key, final String defaultValue) {
-        return properties.getProperty(key);
+        return properties.getProperty(key, defaultValue);
     }
 
 }

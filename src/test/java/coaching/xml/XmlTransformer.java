@@ -45,8 +45,8 @@ public class XmlTransformer {
     }
 
     private static String nodeToString(final Node node) throws Exception {
-        StringWriter sw = new StringWriter();
-        Transformer t = TransformerFactory.newInstance().newTransformer();
+        final StringWriter sw = new StringWriter();
+        final Transformer t = TransformerFactory.newInstance().newTransformer();
 
         t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
         t.setOutputProperty(OutputKeys.INDENT, "yes");

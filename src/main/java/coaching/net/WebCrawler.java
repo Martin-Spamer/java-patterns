@@ -85,7 +85,8 @@ public final class WebCrawler extends ThreadTemplate {
                 do {
                     bufferContentSize = robotsTxtInputStream.read(buffer);
                     if (bufferContentSize != -1) {
-                        String str = new String(buffer, 0, bufferContentSize);
+                        final String str = new String(buffer, 0,
+                                bufferContentSize);
                         robotTxtContent.append(str);
                         robotTxtContentBuffer.append(Arrays.toString(buffer));
                     }
@@ -168,7 +169,7 @@ public final class WebCrawler extends ThreadTemplate {
                     do {
                         bufferContentSize = inputStream.read(buffer);
                         if (bufferContentSize != -1) {
-                            String strBuffer = new String(buffer, 0,
+                            final String strBuffer = new String(buffer, 0,
                                     bufferContentSize);
                             responseContent.append(strBuffer);
                             responseContentBuffer

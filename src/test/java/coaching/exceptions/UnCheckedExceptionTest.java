@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
  */
 public final class UnCheckedExceptionTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(UnCheckedExceptionTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(UnCheckedExceptionTest.class);
 
     /**
      * Unit Test to unChecked exception.

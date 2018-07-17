@@ -12,7 +12,8 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class OpenClosedPrincipleTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(OpenClosedPrincipleTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(OpenClosedPrincipleTest.class);
 
     /**
      * Unit Test to open closed principle example.

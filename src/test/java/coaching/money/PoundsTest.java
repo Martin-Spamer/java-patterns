@@ -52,8 +52,8 @@ public final class PoundsTest {
     @Before
     public void beforeTest() {
         LOG.info("beforeTest");
-        Locale defaultLocale = Locale.getDefault();
-        Currency defaultCurrency = Currency.getInstance(defaultLocale);
+        final Locale defaultLocale = Locale.getDefault();
+        final Currency defaultCurrency = Currency.getInstance(defaultLocale);
         assumeTrue(defaultCurrency.getSymbol().equals("£"));
     }
 
@@ -63,8 +63,8 @@ public final class PoundsTest {
     @Test
     public void testPounds() {
         LOG.info("testPounds");
-        Locale defaultLocale = Locale.getDefault();
-        Currency defaultCurrency = Currency.getInstance(defaultLocale);
+        final Locale defaultLocale = Locale.getDefault();
+        final Currency defaultCurrency = Currency.getInstance(defaultLocale);
         assumeTrue(defaultCurrency.getSymbol().equals("£"));
 
         final Pounds pounds = new Pounds(10L);

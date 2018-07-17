@@ -49,7 +49,7 @@ public interface PropertyInterface {
      * @return the property interface
      * @throws Exception the exception
      */
-    PropertyInterface load(final InputStream inputStream) throws Exception;
+    PropertyInterface load(final InputStream inputStream);
 
     /**
      * Load from XML.
@@ -58,7 +58,7 @@ public interface PropertyInterface {
      * @return the property interface
      * @throws Exception the exception
      */
-    PropertyInterface loadFromXML(final InputStream inputStream) throws Exception;
+    PropertyInterface loadFromXML(final InputStream inputStream);
 
     /**
      * Store.
@@ -67,7 +67,7 @@ public interface PropertyInterface {
      * @return the property interface
      * @throws Exception the exception
      */
-    PropertyInterface store(final OutputStream outStream) throws Exception;
+    PropertyInterface store(final OutputStream outStream);
 
     /**
      * Store.
@@ -77,5 +77,6 @@ public interface PropertyInterface {
      * @return the property interface
      * @throws Exception the exception
      */
-    PropertyInterface store(final OutputStream outStream, final String comment) throws Exception;
+    PropertyInterface store(final OutputStream outStream, final String comment);
+
 }

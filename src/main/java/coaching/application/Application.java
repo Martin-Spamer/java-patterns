@@ -8,6 +8,10 @@ import java.util.Arrays;
  */
 public final class Application extends AbstractApplication {
 
+    public Application() {
+        super();
+    }
+
     /**
      * Instantiates a new application.
      *
@@ -15,7 +19,6 @@ public final class Application extends AbstractApplication {
      */
     public Application(final String[] args) {
         super(args);
-        log.trace("System properties = {}", System.getProperties().toString());
         log.debug("args = {}", Arrays.toString(args));
     }
 

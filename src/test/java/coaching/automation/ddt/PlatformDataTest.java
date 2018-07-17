@@ -1,5 +1,5 @@
 
-package coaching.automation;
+package coaching.automation.ddt;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -9,8 +9,6 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import coaching.automation.ddt.PlatformData;
-
 /**
  * Unit tests for PlatformData class.
  */
@@ -18,7 +16,8 @@ import coaching.automation.ddt.PlatformData;
 public final class PlatformDataTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PlatformDataTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PlatformDataTest.class);
 
     /**
      * Unit test to on platform.

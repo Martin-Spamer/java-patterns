@@ -39,7 +39,10 @@ public class SessionTracker {
      */
     @Override
     public String toString() {
-        return String.format("%s [sessions=%s]", this.getClass().getSimpleName(), sessions);
+        return String
+            .format("%s [sessions=%s]",
+                    this.getClass().getSimpleName(),
+                    sessions);
     }
 
 }

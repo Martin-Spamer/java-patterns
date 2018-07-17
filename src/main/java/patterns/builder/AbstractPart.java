@@ -33,7 +33,10 @@ public abstract class AbstractPart {
      */
     @Override
     public String toString() {
-        return String.format("%s [partName=%s]", this.getClass().getSimpleName(), partName);
+        return String
+            .format("%s [partName=%s]",
+                    this.getClass().getSimpleName(),
+                    partName);
     }
 
 }

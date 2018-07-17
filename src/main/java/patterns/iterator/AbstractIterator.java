@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractIterator implements IteratorInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The aggregate. */
     protected AggregateInterface aggregate = null;

@@ -49,7 +49,7 @@ public final class SqLiteDaoTest {
 
     @Test
     public void testTypical() throws Exception {
-        SqLiteDao dao = new SqLiteDao();
+        final SqLiteDao dao = new SqLiteDao();
         assertNotNull(dao);
 
         assertEquals(dao, dao.create(INSERT_SQL));

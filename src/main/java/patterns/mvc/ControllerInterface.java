@@ -15,7 +15,8 @@ public interface ControllerInterface {
      * @return the controller interface
      * @throws MissingCommandException the missing command exception
      */
-    ControllerInterface execute(final String commandName) throws MissingCommandException;
+    ControllerInterface execute(final String commandName)
+            throws MissingCommandException;
 
     /**
      * Detach view.

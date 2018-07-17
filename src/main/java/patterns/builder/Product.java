@@ -32,7 +32,11 @@ public class Product {
      */
     @Override
     public String toString() {
-        return String.format("%s [partOne=%s, partTwo=%s]", this.getClass().getSimpleName(), partOne, partTwo);
+        return String
+            .format("%s [partOne=%s, partTwo=%s]",
+                    this.getClass().getSimpleName(),
+                    partOne,
+                    partTwo);
     }
 
 }

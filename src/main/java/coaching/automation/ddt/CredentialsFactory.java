@@ -41,7 +41,7 @@ public class CredentialsFactory extends AbstractExpectedData
     }
 
     /**
-     * The Constructor.
+     * Default constructor.
      *
      * @throws FileNotLoadedException
      */

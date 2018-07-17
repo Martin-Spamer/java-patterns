@@ -1,5 +1,5 @@
 
-package coaching.automation;
+package coaching.automation.ddt;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -10,8 +10,6 @@ import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeNotNull;
 
-import coaching.automation.ddt.Actor;
-import coaching.automation.ddt.CredentialsFactory;
 import coaching.csv.CsvFile.FileNotLoadedException;
 
 /**
@@ -20,7 +18,8 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 public final class CredentialsTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CredentialsTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CredentialsTest.class);
 
     /** The platform. */
     private final String platform = "dev";

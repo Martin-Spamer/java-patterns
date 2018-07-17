@@ -29,42 +29,46 @@ public abstract class AbstractScheduler {
     private Document xmlDoc = null;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public AbstractScheduler() {
-        log.info("AbstractScheduler()");
-        initialisation();
+        initialise();
+        log.info("AbstractScheduler() : {}", this);
     }
 
     public AbstractScheduler(final String resourceName) {
-        log.info("AbstractScheduler({})", resourceName);
-        initialisation();
+        initialise(resourceName);
+        log.info("AbstractScheduler({}) : {}", resourceName, this);
     }
 
     public AbstractScheduler(final String[] args) {
-        this.args = args;
+        initialise(args);
         log.info("AbstractScheduler({}) = {}", args, this);
-        initialisation();
+    }
+
+    private void initialise(final String[] args) {
+        this.args = args;
+        initialise();
+    }
+
+    private void initialise() {
+        final String simpleName = this.getClass().getSimpleName();
+        properties = PropertiesLoader.getProperties(simpleName);
+        xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
+    }
+
+    private void initialise(final String resourceName) {
+        properties = PropertiesLoader.getProperties(resourceName);
+        xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
     }
 
     public AbstractScheduler(final Properties properties) {
-        this.properties = properties;
+        initialisation(properties);
         log.info("AbstractScheduler({}) = {}", properties, this);
-        initialisation();
     }
 
-    private void initialisation() {
-        properties = PropertiesLoader.getProperties(propertiesFilename());
-    }
-
-    /**
-     * Default properties filename.
-     *
-     * @return the string
-     */
-    private String propertiesFilename() {
-        final String simpleName = this.getClass().getSimpleName();
-        return String.format("%s.properties", simpleName);
+    private void initialisation(final Properties properties) {
+        this.properties = properties;
     }
 
     /**

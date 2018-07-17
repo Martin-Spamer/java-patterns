@@ -22,6 +22,8 @@ import static org.junit.Assert.fail;
 
 public final class XmlResourceLoader {
 
+    private static final String SUFFIX = ".xml";
+
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlResourceLoader.class);
 
@@ -30,35 +32,36 @@ public final class XmlResourceLoader {
     }
 
     public static Document getXmlResource(final String resourceName) {
-        InputStream stream = ResourceLoader.getStream(resourceName);
+        final InputStream stream = ResourceLoader.getStream(resourceName);
         try {
             final DocumentBuilder builder = DocumentBuilderFactory
                 .newInstance()
                 .newDocumentBuilder();
             return builder.parse(stream);
         } catch (final Exception exception) {
-            String message = String
+            final String message = String
                 .format("Failed to parse resource %s", resourceName);
             LOG.error(message, exception);
             throw new ResourceNotLoadedException(message, exception);
         }
     }
 
-    public static String xmlToString(final Document xmlResource) {
+    public static String xmlToString(final Document xml) {
         try {
-            TransformerFactory tf = TransformerFactory.newInstance();
-            Transformer t = tf.newTransformer();
-            t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-            StringWriter sw = new StringWriter();
-            DOMSource xmlSource = new DOMSource(xmlResource);
-            StreamResult outputTarget = new StreamResult(sw);
-            t.transform(xmlSource, outputTarget);
-            return sw.toString();
+            final TransformerFactory factory = TransformerFactory.newInstance();
+            final Transformer transformer = factory.newTransformer();
+            transformer
+                .setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            final StringWriter stringWriter = new StringWriter();
+            final DOMSource xmlSource = new DOMSource(xml);
+            final StreamResult outputTarget = new StreamResult(stringWriter);
+            transformer.transform(xmlSource, outputTarget);
+            return stringWriter.toString();
         } catch (
                 IllegalArgumentException |
                     TransformerFactoryConfigurationError |
                     TransformerException e) {
-            String message = String
+            final String message = String
                 .format("Failed to parse XML Document. %s",
                         e.getLocalizedMessage());
             LOG.error(message, e);

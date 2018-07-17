@@ -33,7 +33,7 @@ public final class ResourceLoaderTest {
      */
     @Test
     public void testGetResource() throws IOException {
-        InputStream inputStream = ResourceLoader
+        final InputStream inputStream = ResourceLoader
             .getStream(CONFIGURATION_PROPERTIES);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
@@ -48,7 +48,8 @@ public final class ResourceLoaderTest {
      */
     @Test
     public void testGetXmlResource() throws IOException {
-        InputStream inputStream = ResourceLoader.getStream(CONFIGURATION_XML);
+        final InputStream inputStream = ResourceLoader
+            .getStream(CONFIGURATION_XML);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
         LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
@@ -62,15 +63,16 @@ public final class ResourceLoaderTest {
      */
     @Test(expected = ResourceNotLoadedException.class)
     public void testMissingXmlResource() throws IOException {
-        InputStream inputStream = ResourceLoader.getStream(MISSING_RESOURCE);
+        final InputStream inputStream = ResourceLoader
+            .getStream(MISSING_RESOURCE);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
         LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
     }
 
     private String streamToString(final InputStream inputStream) {
-        Scanner s = new Scanner(inputStream).useDelimiter("\\A");
-        String string = s.hasNext() ? s.next() : "";
+        final Scanner s = new Scanner(inputStream).useDelimiter("\\A");
+        final String string = s.hasNext() ? s.next() : "";
         s.close();
         return string;
     }

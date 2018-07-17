@@ -33,7 +33,10 @@ public final class FlyWeight {
      */
     @Override
     public String toString() {
-        return String.format("%s [commonState=%s]", this.getClass().getSimpleName(), commonState);
+        return String
+            .format("%s [commonState=%s]",
+                    this.getClass().getSimpleName(),
+                    commonState);
     }
 
 }

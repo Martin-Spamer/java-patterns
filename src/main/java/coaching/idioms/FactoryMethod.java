@@ -39,4 +39,16 @@ public final class FactoryMethod {
         }
         return null;
     }
+
+    public static String create(final String className) {
+        try {
+            return (String) Class.forName(className).newInstance();
+        } catch (
+                InstantiationException |
+                    IllegalAccessException |
+                    ClassNotFoundException e) {
+            LOG.error(e.getLocalizedMessage(), e);
+        }
+        return null;
+    }
 }

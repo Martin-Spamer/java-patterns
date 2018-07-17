@@ -9,7 +9,7 @@ package coaching.solid;
  *
  * The dependencies are reversed, removing the depen of high-level modules on
  * low-level implementation module, the rules of DIP state:
- * 
+ *
  * Intent: High-level modules should remain independent of the implementation
  * details of low-level module.
  * - High-level modules should not depend on low-level modules, and both should

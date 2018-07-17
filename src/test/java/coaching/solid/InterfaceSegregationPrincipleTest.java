@@ -13,7 +13,8 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class InterfaceSegregationPrincipleTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(InterfaceSegregationPrincipleTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(InterfaceSegregationPrincipleTest.class);
 
     /**
      * Unit Test for the interface segregation principle example java example

@@ -7,7 +7,8 @@ import java.util.List;
 /**
  * An abstract Decorator class.
  */
-public abstract class AbstractDecorator extends AbstractComponent implements DecoratorInterface {
+public abstract class AbstractDecorator extends AbstractComponent
+        implements DecoratorInterface {
 
     /** The before behaviour. */
     private final List<AbstractComponent> beforeBehaviour = new ArrayList<>();
@@ -94,6 +95,8 @@ public abstract class AbstractDecorator extends AbstractComponent implements Dec
     @Override
     public String toString() {
         return String
-            .format("AbstractDecorator [beforeBehaviour=%s, afterBehaviour=%s]", beforeBehaviour, afterBehaviour);
+            .format("AbstractDecorator [beforeBehaviour=%s, afterBehaviour=%s]",
+                    beforeBehaviour,
+                    afterBehaviour);
     }
 }

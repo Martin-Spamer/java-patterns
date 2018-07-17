@@ -58,10 +58,12 @@ public class SequenceCommand extends AbstractCommand {
      * ParametersInterface)
      */
     @Override
-    public ResultInterface execute(final ParametersInterface commandParameters) {
+    public ResultInterface execute(
+            final ParametersInterface commandParameters) {
         result = new Result();
         for (final AbstractCommand command : sequence) {
-            final ResultInterface newResult = command.execute(commandParameters);
+            final ResultInterface newResult = command
+                .execute(commandParameters);
             result.and(newResult);
         }
         return result;

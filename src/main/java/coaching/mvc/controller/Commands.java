@@ -9,7 +9,7 @@ import coaching.mvc.CommandInterface;
 /**
  * CommandPool Class.
  */
-public class Commands {
+public final class Commands {
 
     /** The instance. */
     private static Commands instance;

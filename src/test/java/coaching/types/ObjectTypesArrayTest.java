@@ -14,7 +14,8 @@ import coaching.arrays.ObjectTypesArray;
  */
 public final class ObjectTypesArrayTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ObjectTypesArrayTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ObjectTypesArrayTest.class);
 
     /**
      * Unit Test to display.

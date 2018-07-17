@@ -15,7 +15,8 @@ import static org.junit.Assert.assertTrue;
  */
 public final class RegularExpressionTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(RegularExpressionTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(RegularExpressionTest.class);
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^XYZ$";
@@ -37,7 +38,8 @@ public final class RegularExpressionTest {
      */
     @Test
     public void testRegularExpressionString() {
-        final RegularExpression regularExpression = new RegularExpression(PATTERN_STRING);
+        final RegularExpression regularExpression = new RegularExpression(
+                PATTERN_STRING);
         assertNotNull(regularExpression);
     }
 
@@ -46,7 +48,8 @@ public final class RegularExpressionTest {
      */
     @Test
     public void testRegularExpressionPattern() {
-        final RegularExpression regularExpression = new RegularExpression(PATTERN);
+        final RegularExpression regularExpression = new RegularExpression(
+                PATTERN);
         assertNotNull(regularExpression);
     }
 

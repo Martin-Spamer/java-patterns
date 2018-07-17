@@ -39,7 +39,7 @@ public class PortScan extends Thread {
      */
     public PortScan() {
         super();
-        LOG.info("TODO {}",this);
+        LOG.info("TODO {}", this);
         initialise();
     }
 
@@ -52,7 +52,7 @@ public class PortScan extends Thread {
         super();
         ip = args[0];
         port = Integer.parseInt(args[1]);
-        LOG.info("TODO {}",this);
+        LOG.info("TODO {}", this);
         initialise();
     }
 
@@ -66,7 +66,7 @@ public class PortScan extends Thread {
         super();
         this.ip = ip;
         this.port = port;
-        LOG.info("TODO {}",this);
+        LOG.info("TODO {}", this);
         initialise();
     }
 

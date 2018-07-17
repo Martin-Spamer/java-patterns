@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
  */
 public final class EnvironmentTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(EnvironmentTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(EnvironmentTest.class);
 
     @Test
     public void testLogSystemProperties() {

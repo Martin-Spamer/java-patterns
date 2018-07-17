@@ -13,7 +13,8 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class PojoExampleTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PojoExampleTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PojoExampleTest.class);
 
     /**
      * Unit Test to pojo example.

@@ -72,7 +72,8 @@ public final class MvcTest {
         final ControllerInterface controller = new Controller();
         assertNotNull("controller  cannot be null", controller);
 
-        final ControllerInterface execute = controller.execute("ExampleCommand");
+        final ControllerInterface execute = controller
+            .execute("ExampleCommand");
         assertNotNull("execute cannot be null", execute);
     }
 
@@ -96,7 +97,8 @@ public final class MvcTest {
         assertNotNull("view cannot be null", view);
         assertEquals(controller, controller.attachView(view));
 
-        final ControllerInterface execute = controller.execute("ExampleCommand");
+        final ControllerInterface execute = controller
+            .execute("ExampleCommand");
         assertNotNull("execute cannot be null", execute);
     }
 
@@ -118,7 +120,8 @@ public final class MvcTest {
         final ControllerInterface controller = new Controller(model, view);
         assertNotNull("controller  cannot be null", controller);
 
-        final ControllerInterface execute = controller.execute("ExampleCommand");
+        final ControllerInterface execute = controller
+            .execute("ExampleCommand");
         assertNotNull("execute cannot be null", execute);
     }
 

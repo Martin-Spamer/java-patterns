@@ -17,7 +17,7 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 /**
  * JdbcToCsv class.
  */
-class DaoToCsv extends JdbcBase {
+public class DaoToCsv extends JdbcBase {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory

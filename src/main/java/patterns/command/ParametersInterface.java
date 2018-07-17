@@ -17,7 +17,8 @@ public interface ParametersInterface {
      *            the value
      * @return the abstract parameters
      */
-    AbstractCommandParameters setParameter(final String key, final String value);
+    AbstractCommandParameters setParameter(final String key,
+            final String value);
 
     /**
      * String property names.

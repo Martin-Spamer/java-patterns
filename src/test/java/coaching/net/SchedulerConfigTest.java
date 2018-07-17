@@ -12,14 +12,15 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class SchedulerConfigTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SchedulerConfigTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(SchedulerConfigTest.class);
 
     /**
      * Unit test to scheduler config.
      */
     @Test
     public void testSchedulerConfig() {
-        SchedulerConfig config = new SchedulerConfig();
+        final SchedulerConfig config = new SchedulerConfig();
         assertNotNull(config);
     }
 

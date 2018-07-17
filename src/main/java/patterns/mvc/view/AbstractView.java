@@ -14,7 +14,8 @@ import patterns.mvc.model.Model;
 public abstract class AbstractView implements ViewInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The model. */
     protected ModelInterface model = null;
@@ -24,12 +25,11 @@ public abstract class AbstractView implements ViewInterface {
      */
     public AbstractView() {
         super();
-        this.model = new Model();
+        model = new Model();
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.mvc.ViewInterface#attachModel(patterns.mvc.ModelInterface)
      */
     @Override
@@ -40,23 +40,21 @@ public abstract class AbstractView implements ViewInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.mvc.ViewInterface#detach()
      */
     @Override
     public ViewInterface detachModel() {
-        this.model = null;
+        model = null;
         return this;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.mvc.view.AbstractView#showView()
      */
     @Override
     public ViewInterface show() {
-        this.log.info("{}.showView", this.getClass().getSimpleName());
+        log.info("{}.showView", this.getClass().getSimpleName());
         return this;
     }
 

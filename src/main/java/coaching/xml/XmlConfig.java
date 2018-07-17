@@ -73,7 +73,7 @@ public final class XmlConfig extends AbstractXmlConfig {
      * @param configFilename the config filename
      */
     protected void loadXml(final String configFilename) {
-        File configFile = new File(configFilename);
+        final File configFile = new File(configFilename);
         loadXml(configFile);
     }
 

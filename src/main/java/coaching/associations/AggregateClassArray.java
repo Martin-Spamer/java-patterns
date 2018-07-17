@@ -33,9 +33,17 @@ public final class AggregateClassArray {
      * @param element
      *            the element
      */
-    public void setAggregate(final int index, final AbstractPerson element) {
-        LOG.info("{}.execute", this.getClass().getName());
+    public AggregateClassArray setAggregate(final int index,
+            final AbstractPerson element) {
+        LOG.info("setAggregate({},{}) = {}", index, element, this);
         aggregate[index] = element;
+        return this;
+    }
+
+    public AggregateClassArray execute(final int index) {
+        LOG.info("execute {}", this);
+        aggregate[index].execute();
+        return this;
     }
 
     /**

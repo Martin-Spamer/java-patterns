@@ -1,5 +1,5 @@
 
-package coaching.automation;
+package coaching.automation.ddt;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -9,8 +9,6 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import coaching.automation.ddt.ExpectedData;
-
 /**
  * Unit tests for ExpectedData class.
  */
@@ -18,7 +16,8 @@ import coaching.automation.ddt.ExpectedData;
 public final class ExpectedDataTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ExpectedDataTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ExpectedDataTest.class);
 
     /**
      * Unit test to on platform.
@@ -49,7 +48,8 @@ public final class ExpectedDataTest {
      */
     @Test
     public void testDefaultPlatformDomainLanguage() throws Exception {
-        assertNotNull(ExpectedData.debugString(), ExpectedData.withTag("@AUTHORISED"));
+        assertNotNull(ExpectedData.debugString(),
+                ExpectedData.withTag("@AUTHORISED"));
         assertNotNull(ExpectedData.withTag("@UNAUTHORISED"));
         assertNotNull(ExpectedData.withCharacteristic("@AUTHORISED"));
         assertNotNull(ExpectedData.withCharacteristic("@UNAUTHORISED"));

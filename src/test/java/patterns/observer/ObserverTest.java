@@ -13,7 +13,8 @@ import static org.junit.Assert.assertNotNull;
 public final class ObserverTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ObserverTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ObserverTest.class);
 
     /**
      * Unit Test to update.

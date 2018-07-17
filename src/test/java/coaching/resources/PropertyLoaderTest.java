@@ -17,7 +17,7 @@ public final class PropertyLoaderTest {
 
     private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
     private static final String CONFIGURATION_XML = "Configuration.xml";
-    private static final String MISSING_PROPERTIES = "Resource.missing";
+    private static final String MISSING_PROPERTIES = "Properties.missing";
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
@@ -28,7 +28,7 @@ public final class PropertyLoaderTest {
      */
     @Test
     public void testGetProperties() {
-        Properties properties = PropertiesLoader
+        final Properties properties = PropertiesLoader
             .getProperties(CONFIGURATION_PROPERTIES);
         assertNotNull(properties);
         assertTrue(properties.size() > 0);
@@ -40,7 +40,7 @@ public final class PropertyLoaderTest {
      */
     @Test
     public void testGetXmlProperties() {
-        Properties properties = PropertiesLoader
+        final Properties properties = PropertiesLoader
             .getXmlProperties(CONFIGURATION_XML);
         assertNotNull(properties);
         assertTrue(properties.size() > 0);

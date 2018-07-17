@@ -16,7 +16,8 @@ import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
  */
 public final class CustomExceptionHandlingTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandlingTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CustomExceptionHandlingTest.class);
 
     /**
      * Unit Test to sub process A.

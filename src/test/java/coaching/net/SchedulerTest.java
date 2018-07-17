@@ -28,7 +28,7 @@ public final class SchedulerTest {
      */
     @Test
     public void testScheduler() {
-        AbstractScheduler scheduler = new Scheduler();
+        final AbstractScheduler scheduler = new Scheduler();
         assertNotNull(scheduler);
         scheduler.execute();
         LOG.info(scheduler.toString());
@@ -39,8 +39,8 @@ public final class SchedulerTest {
      */
     @Test
     public void testSchedulerProperties() {
-        Properties properties = new Properties();
-        AbstractScheduler scheduler = new Scheduler(properties);
+        final Properties properties = new Properties();
+        final AbstractScheduler scheduler = new Scheduler(properties);
         assertNotNull(scheduler);
         scheduler.execute();
         LOG.info(scheduler.toString());
@@ -51,8 +51,8 @@ public final class SchedulerTest {
      */
     @Test
     public void testSchedulerNullProperties() {
-        Properties properties = null;
-        AbstractScheduler scheduler = new Scheduler(properties);
+        final Properties properties = null;
+        final AbstractScheduler scheduler = new Scheduler(properties);
         assertNotNull(scheduler);
         scheduler.execute();
         LOG.info(scheduler.toString());
@@ -63,8 +63,8 @@ public final class SchedulerTest {
      */
     @Test
     public void testSchedulerStringArray() {
-        String[] args = { "", "" };
-        AbstractScheduler scheduler = new Scheduler(args);
+        final String[] args = { "", "" };
+        final AbstractScheduler scheduler = new Scheduler(args);
         assertNotNull(scheduler);
         scheduler.execute();
         LOG.info(scheduler.toString());
@@ -75,7 +75,7 @@ public final class SchedulerTest {
      */
     @Test
     public void testSchedulerZeroStringArray() {
-        AbstractScheduler scheduler = new Scheduler(new String[0]);
+        final AbstractScheduler scheduler = new Scheduler(new String[0]);
         assertNotNull(scheduler);
         scheduler.execute();
         LOG.info(scheduler.toString());
@@ -86,8 +86,8 @@ public final class SchedulerTest {
      */
     @Test
     public void testSchedulerNullStringArray() {
-        String[] args = null;
-        AbstractScheduler scheduler = new Scheduler(args);
+        final String[] args = null;
+        final AbstractScheduler scheduler = new Scheduler(args);
         assertNotNull(scheduler);
         scheduler.execute();
         LOG.info(scheduler.toString());
