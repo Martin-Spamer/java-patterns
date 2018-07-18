@@ -17,7 +17,7 @@ public class LiskovSubstitutionPrinciple {
     /**
      * Abstraction Interface.
      */
-    public interface AnAbstractInterface {
+    public interface TypeInterface {
         /**
          * Do something.
          */
@@ -27,7 +27,7 @@ public class LiskovSubstitutionPrinciple {
     /**
      * BaseType class.
      */
-    public abstract class BaseType implements AnAbstractInterface {
+    public abstract class AbstractBaseType implements TypeInterface {
 
         /*
          * (non-Javadoc)
@@ -41,7 +41,7 @@ public class LiskovSubstitutionPrinciple {
     /**
      * TypeOne class.
      */
-    public class TypeOne extends BaseType {
+    public class TypeOne extends AbstractBaseType {
 
         /*
          * (non-Javadoc)
@@ -64,7 +64,7 @@ public class LiskovSubstitutionPrinciple {
     /**
      * TypeType class.
      */
-    public class TypeTwo extends BaseType {
+    public class TypeTwo extends AbstractBaseType {
 
         /*
          * (non-Javadoc)

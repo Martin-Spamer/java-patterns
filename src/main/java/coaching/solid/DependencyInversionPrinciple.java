@@ -1,6 +1,9 @@
 
 package coaching.solid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * A class to demonstrate the Dependency Inversion Principle (DIP).
  *
@@ -23,7 +26,7 @@ public class DependencyInversionPrinciple {
     /**
      * The Abstraction.
      */
-    public interface AnAbstractInterface {
+    public interface ModuleInterface {
         /**
          * Do something.
          */
@@ -33,7 +36,10 @@ public class DependencyInversionPrinciple {
     /**
      * The Module class.
      */
-    public abstract class Module implements AnAbstractInterface {
+    public abstract class Module implements ModuleInterface {
+
+        protected final Logger log = LoggerFactory
+            .getLogger(this.getClass().getSimpleName());
     }
 
     /**
@@ -48,6 +54,7 @@ public class DependencyInversionPrinciple {
          */
         @Override
         public void doSomething() {
+            log.info("{}.doSomething", this.getClass().getSimpleName());
         }
 
     }
@@ -58,7 +65,7 @@ public class DependencyInversionPrinciple {
     public class HighLevelModule extends Module {
 
         /** The module. */
-        public AnAbstractInterface module = new LowLevelModule();
+        public ModuleInterface module = new LowLevelModule();
 
         /*
          * (non-Javadoc)

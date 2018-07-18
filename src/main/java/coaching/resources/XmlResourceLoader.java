@@ -32,7 +32,8 @@ public final class XmlResourceLoader {
     }
 
     public static Document getXmlResource(final String resourceName) {
-        final InputStream stream = ResourceLoader.getStream(resourceName);
+        final InputStream stream = ResourceLoader
+            .getStream(xmlFilename(resourceName));
         try {
             final DocumentBuilder builder = DocumentBuilderFactory
                 .newInstance()
@@ -43,6 +44,15 @@ public final class XmlResourceLoader {
                 .format("Failed to parse resource %s", resourceName);
             LOG.error(message, exception);
             throw new ResourceNotLoadedException(message, exception);
+        }
+    }
+
+    private static String xmlFilename(final String resourceName) {
+        String suffix = ".xml";
+        if (resourceName.endsWith(suffix)) {
+            return resourceName;
+        } else {
+            return String.format("%s%s", resourceName, suffix);
         }
     }
 

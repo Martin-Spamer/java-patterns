@@ -34,14 +34,14 @@ public final class XmlToDao extends AbstractDao {
     private static final String PASSWORD = "password";
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public XmlToDao() {
         super();
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param driverClassName the driver class name
      * @throws ClassNotFoundException

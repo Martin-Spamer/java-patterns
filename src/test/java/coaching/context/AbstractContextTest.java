@@ -24,14 +24,14 @@ public final class AbstractContextTest {
     public final class TestContext extends AbstractContext {
 
         /**
-         * The Constructor.
+         * Default Constructor.
          */
         private TestContext() {
             super();
         }
 
         /**
-         * The Constructor.
+         * Default Constructor.
          *
          * @param properties the properties
          */

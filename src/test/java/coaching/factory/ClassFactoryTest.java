@@ -9,8 +9,15 @@ public class ClassFactoryTest {
 
     @Test
     public void testCreate() {
-        final Object object = ClassFactory.create();
-        assertNotNull(object);
+        final Object instance = ClassFactory.create();
+        assertNotNull(instance);
+    }
+
+    @Test
+    public void testCreateByKey() {
+        final Object instance = ClassFactory
+            .create("coaching.factory.ClassFactory");
+        assertNotNull(instance);
     }
 
 }

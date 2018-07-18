@@ -48,12 +48,23 @@ public final class PropertiesLoader {
     public static Properties getProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader.getStream(resourceName);
+            final InputStream stream = ResourceLoader
+                .getStream(propertiesFilename(resourceName));
             properties.load(stream);
+            properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return properties;
+    }
+
+    private static String propertiesFilename(final String resourceName) {
+        String suffix = ".properties";
+        if (resourceName.endsWith(suffix)) {
+            return resourceName;
+        } else {
+            return String.format("%s%s", resourceName, suffix);
+        }
     }
 
     /**
@@ -66,12 +77,24 @@ public final class PropertiesLoader {
     public static Properties getXmlProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader.getStream(resourceName);
+            final InputStream stream = ResourceLoader
+                .getStream(xmlPropertiesFilename(
+                        xmlPropertiesFilename(resourceName)));
             properties.loadFromXML(stream);
+            properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return properties;
+    }
+
+    private static String xmlPropertiesFilename(final String resourceName) {
+        String suffix = ".xml";
+        if (resourceName.endsWith(suffix)) {
+            return resourceName;
+        } else {
+            return String.format("%s%s", resourceName, suffix);
+        }
     }
 
 }

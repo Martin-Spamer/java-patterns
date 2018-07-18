@@ -93,6 +93,7 @@ public class HttpControllerServlet extends HttpServlet {
      */
     @Override
     public void init(final ServletConfig config) throws ServletException {
+        log(config.toString());
         super.init(config);
     }
 

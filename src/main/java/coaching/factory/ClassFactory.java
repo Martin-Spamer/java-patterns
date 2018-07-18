@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 public final class ClassFactory {
 
-    private static final String CLASS_NAME = "coaching.factory.ClassFactory.class";
+    private static final String CLASS_NAME = "coaching.factory.ClassFactory";
     private static final Logger LOG = LoggerFactory
         .getLogger(ClassFactory.class);
     private static ClassFactory instance;
@@ -18,9 +18,8 @@ public final class ClassFactory {
     public static ClassFactory getInstance() {
         if (instance == null) {
             return new ClassFactory();
-        } else {
-            return instance;
         }
+        return instance;
     }
 
     public static Object create() {
@@ -33,6 +32,11 @@ public final class ClassFactory {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return null;
+    }
+
+    public static Object create(final String key) {
+        // TODO className = Commands.get(key);
+        return key;
     }
 
 }

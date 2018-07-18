@@ -67,7 +67,7 @@ public interface PropertyInterface {
      * @return the property interface
      * @throws Exception the exception
      */
-    PropertyInterface store(final OutputStream outStream);
+    PropertyInterface store(final OutputStream outputStream);
 
     /**
      * Store.
@@ -77,6 +77,7 @@ public interface PropertyInterface {
      * @return the property interface
      * @throws Exception the exception
      */
-    PropertyInterface store(final OutputStream outStream, final String comment);
+    PropertyInterface store(final OutputStream outputStream,
+            final String comment);
 
 }

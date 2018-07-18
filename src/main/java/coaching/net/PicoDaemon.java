@@ -20,7 +20,7 @@ public class PicoDaemon implements Runnable {
     private volatile boolean keepRunning = true;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public PicoDaemon() {
         LOG.info("{} loaded...", this.getClass().getSimpleName());

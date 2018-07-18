@@ -6,16 +6,16 @@ import coaching.config.Configuration;
 /**
  * JDBC Configuration class.
  */
-public class JdbcConfig extends Configuration {
+public final class JdbcConfig extends Configuration {
 
-    /** The Constant INSTANCE. */
-    private static final JdbcConfig INSTANCE = new JdbcConfig();
+    /** Single instance. */
+    private static JdbcConfig INSTANCE;
 
     /**
      * Private constructor to prevent wild instantiation.
      */
     private JdbcConfig() {
-        super();
+        super("jdbc.properties");
     }
 
     /**
@@ -24,6 +24,9 @@ public class JdbcConfig extends Configuration {
      * @return the instance
      */
     public static JdbcConfig getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new JdbcConfig();
+        }
         return INSTANCE;
     }
 

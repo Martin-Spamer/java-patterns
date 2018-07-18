@@ -24,6 +24,8 @@ public final class NativeTypesArrayTest {
     public void testDisplayNativeArray() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
+        LOG.info("{}", primitivesArray);
+
         primitivesArray.display();
     }
 
@@ -34,6 +36,8 @@ public final class NativeTypesArrayTest {
     public void testDisplayMatrix() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
+        LOG.info("{}", primitivesArray);
+
         primitivesArray.displayMatrix();
     }
 
@@ -44,6 +48,8 @@ public final class NativeTypesArrayTest {
     public void testIterateArray() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
+        LOG.info("{}", primitivesArray);
+
         primitivesArray.iterateArray();
     }
 }

@@ -29,7 +29,7 @@ public abstract class AbstractController implements ControllerInterface {
     protected ViewInterface view;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public AbstractController() {
         super();
@@ -37,7 +37,7 @@ public abstract class AbstractController implements ControllerInterface {
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param model the model
      * @param view the view
