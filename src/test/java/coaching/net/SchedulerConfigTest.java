@@ -22,6 +22,18 @@ public final class SchedulerConfigTest {
     public void testSchedulerConfig() {
         final SchedulerConfig config = new SchedulerConfig();
         assertNotNull(config);
+        LOG.info("{}", config);
+    }
+
+    /**
+     * Unit test to scheduler config.
+     */
+    @Test
+    public void testSchedulerConfigString() {
+        final SchedulerConfig config = new SchedulerConfig(
+                "Scheduler.properties");
+        assertNotNull(config);
+        LOG.info("{}", config);
     }
 
 }

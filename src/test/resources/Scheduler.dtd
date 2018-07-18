@@ -17,10 +17,9 @@
     	</thread>
     </Scheduler>
 -->
-
 <!ELEMENT parameter >
 <!ATTLIST parameter name CDATA #IMPLIED>
-<!ATTLIST parameter name CDATA #IMPLIED>
+<!ATTLIST parameter value CDATA #IMPLIED>
 
 <!ELEMENT thread (parameter)*>
 <!ATTLIST thread name CDATA #IMPLIED>

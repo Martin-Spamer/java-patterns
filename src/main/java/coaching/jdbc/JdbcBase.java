@@ -45,7 +45,6 @@ public abstract class JdbcBase {
      * Instantiates a new jdbc base.
      */
     public JdbcBase() {
-        super();
         initialise();
     }
 

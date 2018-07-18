@@ -35,7 +35,7 @@ public class PortScan extends Thread {
     private int port = 0;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public PortScan() {
         super();
@@ -44,7 +44,7 @@ public class PortScan extends Thread {
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param args the args
      */
@@ -57,7 +57,7 @@ public class PortScan extends Thread {
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param ip the ip
      * @param port the port

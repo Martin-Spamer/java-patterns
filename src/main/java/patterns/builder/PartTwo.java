@@ -7,14 +7,14 @@ package patterns.builder;
 public class PartTwo extends AbstractPart {
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public PartTwo() {
         super();
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param partName the part name
      */

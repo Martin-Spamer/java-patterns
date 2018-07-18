@@ -52,14 +52,14 @@ public class SingleResponsibilityPrinciple {
      * Split out the Foo responsibility into a separate class.
      */
     public class Foo {
-        private boolean foo;
+        private boolean isFoo = true;
 
         /**
          * Foo.
          */
         public void doFoo(final boolean newFoo) {
             LOG.info("doFoo({})", newFoo);
-            foo = newFoo;
+            isFoo = newFoo;
         }
     }
 
@@ -67,7 +67,7 @@ public class SingleResponsibilityPrinciple {
      * Split out the Bar responsibility into a separate class.
      */
     public class Bar {
-        private boolean bar;
+        private boolean isBar = true;
 
         /**
          * Bar.
@@ -76,7 +76,7 @@ public class SingleResponsibilityPrinciple {
          */
         public void doBar(final boolean newBar) {
             LOG.info("doBar({}", newBar);
-            bar = newBar;
+            isBar = newBar;
         }
     }
 

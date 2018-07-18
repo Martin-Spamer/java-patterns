@@ -18,7 +18,7 @@ public final class PicoServer {
     final PicoDaemon picoDaemon = new PicoDaemon();
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public PicoServer() {
         super();

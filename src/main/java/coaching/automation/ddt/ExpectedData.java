@@ -21,7 +21,7 @@ public final class ExpectedData extends AbstractExpectedData
     private static final ExpectedData INSTANCE = new ExpectedData();
 
     /** The platform. */
-    protected String platform = null;
+    private String platform = null;
 
     /**
      * Gets the instance.
@@ -29,7 +29,7 @@ public final class ExpectedData extends AbstractExpectedData
      * @return the instance
      * @throws FileNotLoadedException
      */
-    protected static synchronized ExpectedData getInstance() {
+    private static synchronized ExpectedData getInstance() {
         return INSTANCE;
     }
 

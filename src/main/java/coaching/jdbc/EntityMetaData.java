@@ -10,7 +10,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 /**
- * The EntityMetaData class.
+ * The EntityMetaData class, query JDBC MetaData.
  */
 public class EntityMetaData extends JdbcBase {
 

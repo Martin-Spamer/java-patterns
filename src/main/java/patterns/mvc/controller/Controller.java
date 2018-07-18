@@ -12,7 +12,7 @@ public final class Controller extends AbstractController
         implements ControllerInterface {
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public Controller() {
         super();
@@ -20,7 +20,7 @@ public final class Controller extends AbstractController
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param model the model
      * @param view the view

@@ -14,6 +14,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import coaching.resources.ResourceLoader;
+
 /**
  * The CsvFile class represents a data file containing comma separated values.
  */
@@ -85,28 +87,17 @@ public class CsvFile {
     /**
      * Read filename.
      *
-     * @param filename the filename
+     * @param resourceName the filename of the resource
      * @throws FileNotLoadedException
      * @throws IOException Signals that an I/O exception has occurred.
      */
-    private void read(final String filename) {
-        LOG.debug("read({})", filename);
-        final ClassLoader classLoader = this.getClass().getClassLoader();
+    private void read(final String resourceName) {
+        LOG.debug("read({})", resourceName);
+        InputStream stream = ResourceLoader.getStream(resourceName);
         try {
-            final InputStream resourceAsStream = classLoader
-                .getResourceAsStream(filename);
-            if (resourceAsStream != null) {
-                read(resourceAsStream);
-                resourceAsStream.close();
-            } else {
-                final String msg = String
-                    .format("Resource %s not found", filename);
-                LOG.warn("{} on read({})", msg, filename);
-                throw new FileNotLoadedException(msg);
-            }
-        } catch (final IOException e) {
-            LOG.error(e.getMessage(), e);
-            throw new FileNotLoadedException(e.toString(), e);
+            read(stream);
+        } catch (IOException e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 

@@ -59,7 +59,7 @@ public class ThreadTemplate implements Runnable {
     protected long maxTicks = MAX_TICKS;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public ThreadTemplate() {
         initialise(new ThreadConfig());

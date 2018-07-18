@@ -231,7 +231,7 @@ public class CsvToJdbc {
     }
 
     /**
-     * Write.
+     * Write a row from a line to the CSV file.
      *
      * @param record the record
      */
@@ -252,6 +252,7 @@ public class CsvToJdbc {
                     log.info("failed {}", statement.getWarnings());
                 }
             }
+            resultSet.close();
             statement.close();
             connection.close();
         } catch (final SQLException e) {

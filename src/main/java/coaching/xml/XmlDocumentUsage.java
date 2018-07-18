@@ -18,13 +18,14 @@ import org.w3c.dom.NodeList;
 /**
  * XML Configuration class.
  */
-public final class XmlResource {
+public final class XmlDocumentUsage {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory
-        .getLogger(XmlResource.class);
+        .getLogger(XmlDocumentUsage.class);
 
     /** configuration element. */
+    private Document document = null;
     private Element configElement = null;
 
     /**
@@ -39,7 +40,7 @@ public final class XmlResource {
             try {
                 final DocumentBuilder documentBuilder = documentBuilderFactory
                     .newDocumentBuilder();
-                final Document document = documentBuilder
+                document = documentBuilder
                     .parse(configInputStream);
                 configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {

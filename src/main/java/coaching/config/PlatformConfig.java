@@ -6,8 +6,8 @@ package coaching.config;
  */
 public final class PlatformConfig extends AbstractConfiguration {
 
-    private PlatformConfig() {
-        super();
+    public PlatformConfig() {
+        this("Platform.properties");
     }
 
     public PlatformConfig(final String configFilename) {

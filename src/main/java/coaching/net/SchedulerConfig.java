@@ -4,8 +4,19 @@ package coaching.net;
 import coaching.config.Configuration;
 
 /**
- * The Class SchedulerConfig.
+ * A configuration class for the Scheduler.
  */
-public class SchedulerConfig extends Configuration {
+public final class SchedulerConfig extends Configuration {
+
+    public SchedulerConfig() {
+        this("Scheduler.properties");
+    }
+
+    /**
+     * @param configFilename
+     */
+    public SchedulerConfig(final String configFilename) {
+        super(configFilename);
+    }
 
 }
