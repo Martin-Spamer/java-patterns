@@ -29,7 +29,7 @@ public final class SqliteTest {
 
         Class.forName("org.sqlite.JDBC");
         final Connection connection = DriverManager
-            .getConnection("jdbc:sqlite:memory");
+            .getConnection("jdbc:sqlite::memory:");
 
         final Statement statement = connection.createStatement();
         statement.setQueryTimeout(30);

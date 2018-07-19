@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="database" type="databaseType">
+    <xs:annotation>
+      <xs:documentation>&lt;!DOCTYPE data SYSTEM "database.dtd">
+	&lt;?xml-stylesheet type="text/xsl" href="database.xsl" ?></xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="databaseType">
+    <xs:sequence>
+      <xs:element type="tableType" name="table" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tableType">
+    <xs:sequence>
+      <xs:element type="recordType" name="record" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="recordType">
+    <xs:sequence>
+      <xs:element type="fieldType" name="field" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="fieldType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="value"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+  </xs:complexType>
+</xs:schema>

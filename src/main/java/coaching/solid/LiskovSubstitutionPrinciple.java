@@ -28,14 +28,6 @@ public class LiskovSubstitutionPrinciple {
      * BaseType class.
      */
     public abstract class AbstractBaseType implements TypeInterface {
-
-        /*
-         * (non-Javadoc)
-         * @see
-         * coaching.solid.LiskovSubstitutionPrinciple.Abstraction#doSomething()
-         */
-        @Override
-        public abstract void doSomething();
     }
 
     /**

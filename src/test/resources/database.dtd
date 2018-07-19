@@ -8,7 +8,5 @@
 <!ELEMENT record (field)*>
 <!ATTLIST record id CDATA #IMPLIED >
 
-<!ELEMENT field value>
+<!ELEMENT field (#CDATA)>
 <!ATTLIST table name CDATA #IMPLIED >
-
-<!ELEMENT value (#PCDATA)>

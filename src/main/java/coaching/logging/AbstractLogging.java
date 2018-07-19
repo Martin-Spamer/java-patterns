@@ -36,7 +36,7 @@ public abstract class AbstractLogging {
      */
     public void logTo(final Logger destinationLog) {
         destinationLog
-            .info("{}.logTo({}) = {}",
+            .info("{}.logTo({})",
                     this.getClass().getSimpleName(),
                     destinationLog);
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE root SYSTEM "Batch.dtd">
+<!DOCTYPE batch SYSTEM "Batch.dtd">
 <batch>
-<transaction>
-</transaction>
+	<transaction>
+	</transaction>
 </batch>

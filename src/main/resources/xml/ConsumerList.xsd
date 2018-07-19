@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ConsumerList" type="ConsumerListType"/>
+  <xs:complexType name="ConsumerListType">
+    <xs:sequence>
+      <xs:element type="ConsumerType" name="Consumer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsumerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ClientId"/>
+      <xs:element type="xs:string" name="AccountId"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

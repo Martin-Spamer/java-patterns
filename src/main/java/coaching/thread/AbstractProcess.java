@@ -37,7 +37,7 @@ public abstract class AbstractProcess implements Runnable {
      * AbstractProcess.
      */
     public AbstractProcess() {
-        log.info("AbstractProcess()", this.getClass().getSimpleName());
+        log.info("AbstractProcess()");
         thread = new Thread(this);
     }
 

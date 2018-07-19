@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE root SYSTEM "rules.dtd">
+<!DOCTYPE rules SYSTEM "rules.dtd">
 <rules>
-  <rule id='001' name='name'/>
-  <rule>
-    <sequence/>
-  </rule>
-  <rule>
-    <selection/>
-  </rule>
-  <rule>
-    <iteration/>
-  </rule>
+	<rule id='001' name='name' />
+	<rule>
+		<sequence />
+	</rule>
+	<rule>
+		<selection />
+	</rule>
+	<rule>
+		<iteration />
+	</rule>
 </rules>

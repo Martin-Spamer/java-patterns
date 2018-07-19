@@ -25,7 +25,7 @@ public final class XmlToDao extends AbstractDao {
     public static final String JDBC_DRIVER = "org.sqlite.JDBC";
 
     /** The URL to use to make JDBC connection. */
-    public static final String JDBC_URL = "jdbc:sqlite:memory";
+    public static final String JDBC_URL = "jdbc:sqlite::memory:";
 
     /** USERNAME. */
     public static final String USERNAME = "username";

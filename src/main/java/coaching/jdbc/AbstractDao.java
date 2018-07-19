@@ -157,7 +157,8 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
         return this;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see coaching.jdbc.DaoInterface#setSchemaName(java.lang.String)
      */
     @Override
@@ -166,7 +167,8 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
         return this;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see coaching.jdbc.DaoInterface#setTableName(java.lang.String)
      */
     @Override
@@ -278,7 +280,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
     private void processResultSet(final ResultSet resultSet)
             throws SQLException {
         while (resultSet.next()) {
-            log.info(processRow(resultSet));
+            log.info("{}", processRow(resultSet));
         }
     }
 
@@ -312,11 +314,11 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
     }
 
     /**
-     * The Class DriverNotFoundException.
+     * DriverNotFoundException.
      */
     public class DriverNotFoundException extends ClassNotFoundException {
 
-        /** serialVersionUID 			constant. */
+        /** serialVersionUID constant. */
         private static final long serialVersionUID = 1L;
 
     }

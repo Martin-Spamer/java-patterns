@@ -31,7 +31,7 @@ public final class ConnectionFactoryTest {
     @Test
     public void testSqLiteConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "org.sqlite.JDBC";
-        final String JDBC_URL = "jdbc:sqlite:memory";
+        final String JDBC_URL = "jdbc:sqlite::memory:";
         final String USERNAME = "username";
         final String PASSWORD = "password";
         connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,

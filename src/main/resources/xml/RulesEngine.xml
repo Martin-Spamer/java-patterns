@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE root SYSTEM "RulesEngine.dtd">
-<RulesEngine>
-</RulesEngine>
+<!DOCTYPE rules-engine SYSTEM "RulesEngine.dtd">
+<rules-engine>
+</rules-engine>
