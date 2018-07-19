@@ -35,6 +35,9 @@ public final class PicoProxy {
             super();
         }
 
+        /* (non-Javadoc)
+         * @see java.lang.Thread#run()
+         */
         @Override
         public void run() {
             boolean exit = false;

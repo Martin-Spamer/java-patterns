@@ -21,7 +21,7 @@ public final class OracleDao extends AbstractDao {
     /**
      * Instantiates a new DAO for Oracle.
      *
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     public OracleDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);

@@ -13,6 +13,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class InterfaceSegregationPrincipleTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(InterfaceSegregationPrincipleTest.class);
 

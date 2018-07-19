@@ -84,7 +84,7 @@ public final class CustomExceptionHandling {
             updateProcess();
             deleteProcess();
         } catch (final CustomException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -102,7 +102,7 @@ public final class CustomExceptionHandling {
                     CustomReadException |
                     CustomUpdateException |
                     CustomDeleteException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -138,17 +138,17 @@ public final class CustomExceptionHandling {
                     updateProcess();
                     try {
                         deleteProcess();
-                    } catch (final CustomException exception) {
-                        LOG.error(exception.toString(), exception);
+                    } catch (final CustomException e) {
+                        LOG.error(e.getLocalizedMessage(), e);
                     }
-                } catch (final CustomException exception) {
-                    LOG.error(exception.toString(), exception);
+                } catch (final CustomException e) {
+                    LOG.error(e.getLocalizedMessage(), e);
                 }
-            } catch (final CustomException exception) {
-                LOG.error(exception.toString(), exception);
+            } catch (final CustomException e) {
+                LOG.error(e.getLocalizedMessage(), e);
             }
-        } catch (final CustomException exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final CustomException e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -159,26 +159,26 @@ public final class CustomExceptionHandling {
 
         try {
             creationProcess();
-        } catch (final CustomException exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final CustomException e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
 
         try {
             readProcess();
-        } catch (final CustomException exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final CustomException e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
 
         try {
             updateProcess();
-        } catch (final CustomException exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final CustomException e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
 
         try {
             deleteProcess();
-        } catch (final CustomException exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final CustomException e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 

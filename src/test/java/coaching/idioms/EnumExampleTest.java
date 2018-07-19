@@ -13,6 +13,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class EnumExampleTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(EnumExampleTest.class);
 

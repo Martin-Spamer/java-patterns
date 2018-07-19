@@ -20,10 +20,18 @@ public abstract class AbstractLogging {
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
+    /**
+     * To log.
+     */
     public void toLog() {
         log.info("the.{}.toLog", this.getClass().getSimpleName());
     }
 
+    /**
+     * Log to.
+     *
+     * @param destinationLog the destination log
+     */
     public void logTo(final Logger destinationLog) {
         final String destinationLogName = destinationLog
             .getClass()

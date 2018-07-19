@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CheckedExceptionTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(CheckedExceptionTest.class);
 

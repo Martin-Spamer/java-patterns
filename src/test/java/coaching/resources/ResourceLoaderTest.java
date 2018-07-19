@@ -17,8 +17,13 @@ import static org.junit.Assert.assertTrue;
  */
 public final class ResourceLoaderTest {
 
+    /** CONFIGURATION_PROPERTIES 			constant. */
     private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
+    
+    /** CONFIGURATION_XML 			constant. */
     private static final String CONFIGURATION_XML = "Configuration.xml";
+    
+    /** MISSING_RESOURCE 			constant. */
     private static final String MISSING_RESOURCE = "Resource.missing";
 
     /** Provides logging. */
@@ -70,6 +75,12 @@ public final class ResourceLoaderTest {
         LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
     }
 
+    /**
+     * Stream to string.
+     *
+     * @param inputStream the input stream
+     * @return the string
+     */
     private String streamToString(final InputStream inputStream) {
         final Scanner s = new Scanner(inputStream).useDelimiter("\\A");
         final String string = s.hasNext() ? s.next() : "";

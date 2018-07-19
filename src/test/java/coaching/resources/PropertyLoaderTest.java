@@ -15,8 +15,13 @@ import static org.junit.Assert.assertTrue;
  */
 public final class PropertyLoaderTest {
 
+    /** CONFIGURATION_PROPERTIES 			constant. */
     private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
+    
+    /** CONFIGURATION_XML 			constant. */
     private static final String CONFIGURATION_XML = "Configuration.xml";
+    
+    /** MISSING_PROPERTIES 			constant. */
     private static final String MISSING_PROPERTIES = "Properties.missing";
 
     /** Provides logging. */

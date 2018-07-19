@@ -13,6 +13,9 @@ import static org.junit.Assert.fail;
 
 import coaching.resources.ResourceLoader;
 
+/**
+ * Unit test class for XmlDocumentUsage.
+ */
 @Ignore("work-in-progress")
 public class XmlDocumentUsageTest {
 
@@ -20,6 +23,9 @@ public class XmlDocumentUsageTest {
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlDocumentUsageTest.class);
 
+    /**
+     * Unit test to load xml from stream.
+     */
     @Test
     public void testLoadXmlFromStream() {
         XmlDocumentUsage xml = new XmlDocumentUsage();

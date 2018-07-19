@@ -21,7 +21,7 @@ public class SqLiteDao extends AbstractDao {
     /**
      * Instantiates a new my SQL DAO.
      *
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     public SqLiteDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);

@@ -9,11 +9,18 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * Unit test class for Scheduler.
+ */
 public class SchedulerTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(SchedulerTest.class);
 
+    /**
+     * Unit test to scheduler.
+     */
     @Test
     public void testScheduler() {
         final Scheduler scheduler = new Scheduler();
@@ -22,6 +29,9 @@ public class SchedulerTest {
         scheduler.execute();
     }
 
+    /**
+     * Unit test to scheduler string array.
+     */
     @Test
     public void testSchedulerStringArray() {
         final String[] args = { "key=value" };
@@ -31,6 +41,9 @@ public class SchedulerTest {
         scheduler.execute();
     }
 
+    /**
+     * Unit test to scheduler null string array.
+     */
     @Test
     public void testSchedulerNullStringArray() {
         final String[] args = null;
@@ -39,6 +52,9 @@ public class SchedulerTest {
         LOG.info("{}", scheduler);
     }
 
+    /**
+     * Unit test to scheduler properties.
+     */
     @Test
     public void testSchedulerProperties() {
         final Properties properties = new Properties();
@@ -49,6 +65,9 @@ public class SchedulerTest {
         scheduler.execute();
     }
 
+    /**
+     * Unit test to scheduler null properties.
+     */
     @Test
     public void testSchedulerNullProperties() {
         final Properties properties = null;

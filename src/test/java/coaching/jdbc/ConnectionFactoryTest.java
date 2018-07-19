@@ -16,9 +16,11 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class ConnectionFactoryTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(ConnectionFactoryTest.class);
 
+    /** The connection factory. */
     private ConnectionFactory connectionFactory;
 
     /**

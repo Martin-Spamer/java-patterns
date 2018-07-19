@@ -16,6 +16,9 @@ public final class AbstractDtoTest {
     private static final Logger LOG = LoggerFactory
         .getLogger(AbstractDtoTest.class);
 
+    /**
+     * The Class MockDto.
+     */
     public final class MockDto extends AbstractDto {
     }
 

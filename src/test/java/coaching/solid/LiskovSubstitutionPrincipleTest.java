@@ -12,6 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class LiskovSubstitutionPrincipleTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(LiskovSubstitutionPrincipleTest.class);
 

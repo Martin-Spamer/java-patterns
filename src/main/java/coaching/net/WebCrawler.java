@@ -19,6 +19,7 @@ import java.util.StringTokenizer;
  */
 public final class WebCrawler extends ThreadTemplate {
 
+    /** BUFFER_SIZE constant. */
     private static final int BUFFER_SIZE = 1024;
 
     /** The Constant BASE_URL. */
@@ -47,8 +48,8 @@ public final class WebCrawler extends ThreadTemplate {
             if (isHttp(url)) {
                 crawlSite(url);
             }
-        } catch (final Exception exception) {
-            log.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 

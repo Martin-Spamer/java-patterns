@@ -5,11 +5,18 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Unit test class for Constants.
+ */
 public class ConstantsTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(ConstantsTest.class);
 
+    /**
+     * Unit test to.
+     */
     @Test
     public void test() {
         LOG.info("{}", Constants.COUNTRY_CODE);

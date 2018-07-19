@@ -14,15 +14,13 @@ class DaoToXml extends JdbcBase {
 
     /**
      * Default Constructor.
-     *
-     * @throws Exception the exception
      */
     public DaoToXml() {
         super();
     }
 
     /**
-     * Process the query
+     * Process the query.
      *
      * @throws SQLException the exception
      */
@@ -40,7 +38,7 @@ class DaoToXml extends JdbcBase {
             final String filename = String.format("%s.xml", tableName);
             toXmlFile(filename);
         } catch (final Exception e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -56,7 +54,7 @@ class DaoToXml extends JdbcBase {
             bufferedWriter.write(toXmlString());
             bufferedWriter.flush();
         } catch (final Exception e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -77,7 +75,7 @@ class DaoToXml extends JdbcBase {
 
             bufferedWriter.close();
         } catch (final IOException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -98,7 +96,7 @@ class DaoToXml extends JdbcBase {
                     xml.append("</TABLE>\n");
                     return xml.toString();
                 } catch (final Exception e) {
-                    log.error(e.toString(), e);
+                    log.error(e.getLocalizedMessage(), e);
                 }
             } else {
                 log.warn("No metaData for decoration.");
@@ -109,6 +107,12 @@ class DaoToXml extends JdbcBase {
         return null;
     }
 
+    /**
+     * Table rows.
+     *
+     * @return the string
+     * @throws SQLException the SQL exception
+     */
     private String tableRows() throws SQLException {
         final StringBuilder xmlForBody = new StringBuilder();
         while (resultSet.next()) {
@@ -117,6 +121,12 @@ class DaoToXml extends JdbcBase {
         return xmlForBody.toString();
     }
 
+    /**
+     * Table row.
+     *
+     * @return the string
+     * @throws SQLException the SQL exception
+     */
     private String tableRow() throws SQLException {
         final StringBuilder xmlforRow = new StringBuilder();
         xmlforRow.append("\t\t<ROW>\n\t\t");

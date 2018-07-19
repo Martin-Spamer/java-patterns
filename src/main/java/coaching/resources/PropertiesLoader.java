@@ -31,9 +31,13 @@ import static org.junit.Assert.fail;
  */
 public final class PropertiesLoader {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(PropertiesLoader.class);
 
+    /**
+     * Instantiates a new properties loader.
+     */
     private PropertiesLoader() {
         fail("Use static methods");
     }
@@ -43,7 +47,6 @@ public final class PropertiesLoader {
      *
      * @param resourceName the resource filename
      * @return the properties
-     * @throws IOException the IO exception
      */
     public static Properties getProperties(final String resourceName) {
         final Properties properties = new Properties();
@@ -58,6 +61,12 @@ public final class PropertiesLoader {
         return properties;
     }
 
+    /**
+     * Properties filename.
+     *
+     * @param resourceName the resource name
+     * @return the string
+     */
     private static String propertiesFilename(final String resourceName) {
         String suffix = ".properties";
         if (resourceName.endsWith(suffix)) {
@@ -72,7 +81,6 @@ public final class PropertiesLoader {
      *
      * @param resourceName the xml resource filename
      * @return the xml properties
-     * @throws IOException the IO exception
      */
     public static Properties getXmlProperties(final String resourceName) {
         final Properties properties = new Properties();
@@ -88,6 +96,12 @@ public final class PropertiesLoader {
         return properties;
     }
 
+    /**
+     * Xml properties filename.
+     *
+     * @param resourceName the resource name
+     * @return the string
+     */
     private static String xmlPropertiesFilename(final String resourceName) {
         String suffix = ".xml";
         if (resourceName.endsWith(suffix)) {

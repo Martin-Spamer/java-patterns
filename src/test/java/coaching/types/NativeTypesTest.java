@@ -12,6 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class NativeTypesTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(NativeTypesTest.class);
 

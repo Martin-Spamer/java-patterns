@@ -14,7 +14,7 @@ public interface SqlInterface {
     /**
      * Create the table.
      *
-     * @param sql the sql to create the table.
+     * @param createSql the create sql
      * @return this for a fluent interface.
      */
     DaoInterface create(final String createSql);
@@ -22,7 +22,7 @@ public interface SqlInterface {
     /**
      * Insert a row in the table.
      *
-     * @param sql the insert sql.
+     * @param insertSql the insert sql
      * @return this for a fluent interface.
      */
     DaoInterface insert(final String insertSql);

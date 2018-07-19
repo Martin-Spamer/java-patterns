@@ -27,7 +27,7 @@ public class CsvFile {
     /** The filename. */
     private String csvFilename;
 
-    /** The header line of the csv file */
+    /**  The header line of the csv file. */
     private String headerLine;
 
     /** The column names for the csv file. */
@@ -41,8 +41,6 @@ public class CsvFile {
 
     /**
      * Instantiates a new csv file.
-     *
-     * @throws FileNotLoadedException
      */
     public CsvFile() {
         super();
@@ -51,6 +49,11 @@ public class CsvFile {
         LOG.debug("TODO {}", this);
     }
 
+    /**
+     * Default filename.
+     *
+     * @return the string
+     */
     private String defaultFilename() {
         if (csvFilename == null) {
             final String stem = this.getClass().getSimpleName();
@@ -62,9 +65,7 @@ public class CsvFile {
     /**
      * Instantiates a new csv file from filename.
      *
-     * @param csvFilename
-     *            the csv filename
-     * @throws FileNotLoadedException
+     * @param csvFilename            the csv filename
      */
     public CsvFile(final String csvFilename) {
         super();
@@ -76,7 +77,7 @@ public class CsvFile {
     /**
      * Initialise.
      *
-     * @throws FileNotLoadedException
+     * @param csvFilename the csv filename
      */
     private void initialise(final String csvFilename) {
         LOG.debug("initialise({})", csvFilename);
@@ -88,8 +89,6 @@ public class CsvFile {
      * Read filename.
      *
      * @param resourceName the filename of the resource
-     * @throws FileNotLoadedException
-     * @throws IOException Signals that an I/O exception has occurred.
      */
     private void read(final String resourceName) {
         LOG.debug("read({})", resourceName);
@@ -183,7 +182,7 @@ public class CsvFile {
      * Write.
      *
      * @param filename the filename
-     * @throws IOException
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public void write(final String filename) throws IOException {
         LOG.debug("write({})", filename);
@@ -273,17 +272,36 @@ public class CsvFile {
             .replace("]", "\n\t]}");
     }
 
+    /**
+     * The Class FileNotLoadedException.
+     */
     public class FileNotLoadedException extends AssertionError {
+        
+        /** serialVersionUID 			constant. */
         private static final long serialVersionUID = 1L;
 
+        /**
+         * Instantiates a new file not loaded exception.
+         */
         public FileNotLoadedException() {
             super();
         }
 
+        /**
+         * Instantiates a new file not loaded exception.
+         *
+         * @param message the message
+         */
         public FileNotLoadedException(final String message) {
             super(message);
         }
 
+        /**
+         * Instantiates a new file not loaded exception.
+         *
+         * @param message the message
+         * @param cause the cause
+         */
         public FileNotLoadedException(final String message,
                 final Throwable cause) {
             super(message, cause);

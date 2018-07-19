@@ -12,6 +12,7 @@ import static org.junit.Assert.assertEquals;
  */
 public final class EnumTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory.getLogger(EnumTest.class);
 
     /**

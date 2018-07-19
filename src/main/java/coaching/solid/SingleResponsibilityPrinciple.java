@@ -22,11 +22,18 @@ public class SingleResponsibilityPrinciple {
      * An example of a class with Multiple Responsibilities.
      */
     public class MultipleResponsibility {
+        
+        /** The foo. */
         private boolean foo = false;
+        
+        /** The bar. */
         private boolean bar = false;
 
         /**
          * Foo and Bar responsibility.
+         *
+         * @param newFoo the new foo
+         * @param newBar the new bar
          */
         public void doSomething(final boolean newFoo, final boolean newBar) {
             LOG.info("doSomething({},{})", newFoo, newBar);
@@ -52,10 +59,14 @@ public class SingleResponsibilityPrinciple {
      * Split out the Foo responsibility into a separate class.
      */
     public class Foo {
+        
+        /** The is foo. */
         private boolean isFoo = true;
 
         /**
          * Foo.
+         *
+         * @param newFoo the new foo
          */
         public void doFoo(final boolean newFoo) {
             LOG.info("doFoo({})", newFoo);
@@ -67,12 +78,14 @@ public class SingleResponsibilityPrinciple {
      * Split out the Bar responsibility into a separate class.
      */
     public class Bar {
+        
+        /** The is bar. */
         private boolean isBar = true;
 
         /**
          * Bar.
          *
-         * @param newBar
+         * @param newBar the new bar
          */
         public void doBar(final boolean newBar) {
             LOG.info("doBar({}", newBar);
@@ -84,7 +97,11 @@ public class SingleResponsibilityPrinciple {
      * A class with a Single Responsibility, a container for Foo and Bar.
      */
     public class SingleResponsibility {
+        
+        /** The foo. */
         private final Foo foo = new Foo();
+        
+        /** The bar. */
         private final Bar bar = new Bar();
 
         /**

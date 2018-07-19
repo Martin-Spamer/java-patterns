@@ -32,7 +32,7 @@ public class DaoToCsv extends JdbcBase {
     /**
      * Default constructor.
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public DaoToCsv() throws FileNotLoadedException {
         super();
@@ -66,7 +66,7 @@ public class DaoToCsv extends JdbcBase {
         try {
             return resultSetMetaData.getTableName(1);
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -93,7 +93,7 @@ public class DaoToCsv extends JdbcBase {
             bufferedWriter.flush();
             bufferedWriter.close();
         } catch (final IOException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -120,10 +120,10 @@ public class DaoToCsv extends JdbcBase {
             try {
                 bufferedWriter.write(columns.toString());
             } catch (final IOException e) {
-                log.error(e.toString(), e);
+                log.error(e.getLocalizedMessage(), e);
             }
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -151,7 +151,7 @@ public class DaoToCsv extends JdbcBase {
         try {
             bufferedWriter.write(bodyToString());
         } catch (final IOException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -172,7 +172,7 @@ public class DaoToCsv extends JdbcBase {
                 return values.toString();
             }
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }

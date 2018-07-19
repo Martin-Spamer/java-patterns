@@ -33,7 +33,7 @@ public class CredentialsFactory extends AbstractExpectedData
      *
      * @param platform the platform
      * @return the credentials factory
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public static CredentialsFactory on(final String platform)
             throws FileNotLoadedException {
@@ -43,7 +43,7 @@ public class CredentialsFactory extends AbstractExpectedData
     /**
      * Default constructor.
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public CredentialsFactory() throws FileNotLoadedException {
         super();
@@ -55,7 +55,7 @@ public class CredentialsFactory extends AbstractExpectedData
      * The Constructor.
      *
      * @param platform the platform
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public CredentialsFactory(final String platform)
             throws FileNotLoadedException {
@@ -69,7 +69,7 @@ public class CredentialsFactory extends AbstractExpectedData
      * Load from.
      *
      * @param credentialsFilename the credentials filename
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     private void loadFrom(final String credentialsFilename)
             throws FileNotLoadedException {

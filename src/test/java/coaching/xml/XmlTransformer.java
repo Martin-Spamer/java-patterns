@@ -18,11 +18,23 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
+/**
+ * The Class XmlTransformer.
+ */
 public class XmlTransformer {
+    
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlTransformer.class);
+    
+    /** The dbf. */
     final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
+    /**
+     * Instantiates a new xml transformer.
+     *
+     * @throws Exception the exception
+     */
     public XmlTransformer() throws Exception {
         super();
 
@@ -44,6 +56,13 @@ public class XmlTransformer {
         LOG.info(XmlTransformer.nodeToString(rootElement));
     }
 
+    /**
+     * Node to string.
+     *
+     * @param node the node
+     * @return the string
+     * @throws Exception the exception
+     */
     private static String nodeToString(final Node node) throws Exception {
         final StringWriter sw = new StringWriter();
         final Transformer t = TransformerFactory.newInstance().newTransformer();

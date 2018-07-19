@@ -20,17 +20,31 @@ import org.w3c.dom.Document;
 
 import static org.junit.Assert.fail;
 
+/**
+ * The Class XmlResourceLoader.
+ */
 public final class XmlResourceLoader {
 
+    /** SUFFIX 			constant. */
     private static final String SUFFIX = ".xml";
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlResourceLoader.class);
 
+    /**
+     * Instantiates a new xml resource loader.
+     */
     private XmlResourceLoader() {
         fail("Use static methods");
     }
 
+    /**
+     * Gets the xml resource.
+     *
+     * @param resourceName the resource name
+     * @return the xml resource
+     */
     public static Document getXmlResource(final String resourceName) {
         final InputStream stream = ResourceLoader
             .getStream(xmlFilename(resourceName));
@@ -47,6 +61,12 @@ public final class XmlResourceLoader {
         }
     }
 
+    /**
+     * Xml filename.
+     *
+     * @param resourceName the resource name
+     * @return the string
+     */
     private static String xmlFilename(final String resourceName) {
         String suffix = ".xml";
         if (resourceName.endsWith(suffix)) {
@@ -56,6 +76,12 @@ public final class XmlResourceLoader {
         }
     }
 
+    /**
+     * Xml to string.
+     *
+     * @param xml the xml
+     * @return the string
+     */
     public static String xmlToString(final Document xml) {
         try {
             final TransformerFactory factory = TransformerFactory.newInstance();

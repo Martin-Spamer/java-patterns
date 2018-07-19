@@ -30,7 +30,7 @@ public final class CredentialsTest {
     /**
      * Unit test to credentials factory static.
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCredentialsFactoryStatic() throws FileNotLoadedException {
@@ -42,7 +42,7 @@ public final class CredentialsTest {
     /**
      * Unit test to credentials factory.
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCredentialsFactory() throws FileNotLoadedException {
@@ -58,7 +58,7 @@ public final class CredentialsTest {
     /**
      * Unit test to credentials factory platform.
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCredentialsFactoryPlatform() throws FileNotLoadedException {
@@ -73,7 +73,7 @@ public final class CredentialsTest {
 
     /**
      * Unit test to credentials factory data.
-     *
+     * 
      * <code>
      *  # tags, username, password, email
      *  &#64;ADMIN,admin,password,admin@example.com
@@ -82,7 +82,7 @@ public final class CredentialsTest {
      *  &#64;UNAUTHORISED,trudy,password,trudy@example.com
      * </code>
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCredentialsFactoryData() throws FileNotLoadedException {

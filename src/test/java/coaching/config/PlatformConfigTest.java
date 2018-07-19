@@ -7,11 +7,18 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * Unit test class for PlatformConfig.
+ */
 public class PlatformConfigTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(PlatformConfigTest.class);
 
+    /**
+     * Unit test to platform config.
+     */
     @Test
     public void testPlatformConfig() {
         final PlatformConfig config = new PlatformConfig();

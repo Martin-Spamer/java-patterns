@@ -111,7 +111,7 @@ public class CsvToJdbc {
     /**
      * Process.
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public void process() throws FileNotLoadedException {
         process(driver, url, username, password, "tableName");
@@ -120,17 +120,12 @@ public class CsvToJdbc {
     /**
      * Process.
      *
-     * @param driver
-     *            the driver
-     * @param url
-     *            the url
-     * @param user
-     *            the user
-     * @param password
-     *            the password
-     * @param table
-     *            the table
-     * @throws FileNotLoadedException
+     * @param driver            the driver
+     * @param url            the url
+     * @param user            the user
+     * @param password            the password
+     * @param table            the table
+     * @throws FileNotLoadedException the file not loaded exception
      */
     protected void process(final String driver,
             final String url,

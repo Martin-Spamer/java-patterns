@@ -53,9 +53,9 @@ public abstract class AbstractAltResourcePool<T> {
                 // make a new object
                 try {
                     resource = create();
-                } catch (final ResourceCreationException exception) {
-                    log.error(exception.toString(), exception);
-                    throw new ResourceBorrowException(exception);
+                } catch (final ResourceCreationException e) {
+                    log.error(e.getLocalizedMessage(), e);
+                    throw new ResourceBorrowException(e);
                 }
             } else {
                 log

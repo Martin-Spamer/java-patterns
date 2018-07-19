@@ -24,6 +24,7 @@ import coaching.mvc.controller.ControllerException;
 @SuppressWarnings("serial")
 public class HttpControllerServlet extends HttpServlet {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(HttpControllerServlet.class);
 
@@ -40,9 +41,9 @@ public class HttpControllerServlet extends HttpServlet {
         try {
             response.sendRedirect(execute(parameters));
         } catch (final ControllerException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         } catch (final IOException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -59,7 +60,7 @@ public class HttpControllerServlet extends HttpServlet {
         try {
             execute(parameters);
         } catch (final ControllerException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 

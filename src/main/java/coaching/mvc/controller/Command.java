@@ -5,8 +5,14 @@ import java.util.Properties;
 
 import coaching.mvc.CommandInterface;
 
+/**
+ * The Class Command.
+ */
 public class Command implements CommandInterface {
 
+    /* (non-Javadoc)
+     * @see coaching.mvc.CommandInterface#execute(java.util.Properties)
+     */
     @Override
     public Properties execute(final Properties parameters) {
         return parameters;

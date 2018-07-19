@@ -6,6 +6,7 @@ package coaching.generics;
  */
 public class TableCell {
 
+    /** The value. */
     private final String value;
 
     /**

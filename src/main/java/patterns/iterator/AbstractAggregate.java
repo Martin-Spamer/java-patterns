@@ -29,6 +29,9 @@ public abstract class AbstractAggregate implements AggregateInterface {
         return new Iterator(this);
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String

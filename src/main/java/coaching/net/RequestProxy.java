@@ -86,7 +86,7 @@ class RequestProxy implements Runnable {
                                     clientResponseStream.flush();
                                 }
                             } catch (final IOException e) {
-                                LOG.error(e.toString(), e);
+                                LOG.error(e.getLocalizedMessage(), e);
                             }
                         }
                     };
@@ -103,18 +103,18 @@ class RequestProxy implements Runnable {
                                     serverRequestStream.flush();
                                 }
                             } catch (final IOException e) {
-                                LOG.error(e.toString(), e);
+                                LOG.error(e.getLocalizedMessage(), e);
                             }
                         }
                     };
 
                 } catch (final Exception e) {
-                    LOG.error(e.toString(), e);
+                    LOG.error(e.getLocalizedMessage(), e);
                 }
             }
             clientSocket.close();
         } catch (final Exception e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 }

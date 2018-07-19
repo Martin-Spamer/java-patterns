@@ -9,10 +9,18 @@ import static org.junit.Assert.fail;
  */
 public final class UtilityClass {
 
+    /**
+     * Instantiates a new utility class.
+     */
     private UtilityClass() {
         fail("The UtilityClass methods should be accessed statically");
     }
 
+    /**
+     * Operation.
+     *
+     * @return true, if successful
+     */
     public static boolean operation() {
         return true;
     }

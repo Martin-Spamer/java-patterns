@@ -35,6 +35,8 @@ public final class OracleDaoTest {
 
     /**
      * Test OracleDao default constructor.
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testOracleDao() throws ClassNotFoundException {
@@ -44,6 +46,8 @@ public final class OracleDaoTest {
 
     /**
      * Test create.
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testCreate() throws ClassNotFoundException {
@@ -54,6 +58,8 @@ public final class OracleDaoTest {
 
     /**
      * Test read.
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testRead() throws ClassNotFoundException {
@@ -64,6 +70,8 @@ public final class OracleDaoTest {
 
     /**
      * Test update.
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testUpdate() throws ClassNotFoundException {
@@ -74,6 +82,8 @@ public final class OracleDaoTest {
 
     /**
      * Test delete.
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testDelete() throws ClassNotFoundException {

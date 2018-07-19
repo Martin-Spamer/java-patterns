@@ -40,6 +40,11 @@ public final class SqLiteDaoTest {
     /** SQL to delete rows in the table. */
     static final String DELETE_SQL = "DELETE FROM customer WHERE ID=999";
 
+    /**
+     * Unit test to sq lite dao.
+     *
+     * @throws ClassNotFoundException the class not found exception
+     */
     @Test
     public void testSqLiteDao() throws ClassNotFoundException {
         final DaoInterface dao = new SqLiteDao();
@@ -47,6 +52,11 @@ public final class SqLiteDaoTest {
         LOG.info(dao.toString());
     }
 
+    /**
+     * Unit test to typical.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testTypical() throws Exception {
         final SqLiteDao dao = new SqLiteDao();

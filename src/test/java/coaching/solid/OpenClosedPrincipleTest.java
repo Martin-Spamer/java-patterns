@@ -12,6 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class OpenClosedPrincipleTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(OpenClosedPrincipleTest.class);
 

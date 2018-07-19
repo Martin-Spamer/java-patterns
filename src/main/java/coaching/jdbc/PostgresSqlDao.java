@@ -21,7 +21,7 @@ public final class PostgresSqlDao extends AbstractDao {
     /**
      * Instantiates a new DAO for PostgreSQL.
      *
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     public PostgresSqlDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);

@@ -28,7 +28,6 @@ public final class PlatformData extends AbstractExpectedData
      * The Constructor.
      *
      * @param platform the platform
-     * @throws FileNotLoadedException
      */
     public PlatformData(final String platform) {
         super();
@@ -38,8 +37,6 @@ public final class PlatformData extends AbstractExpectedData
 
     /**
      * Load platform data.
-     *
-     * @throws FileNotLoadedException
      */
     private void loadPlatformData() {
         super.initialise("PlatformData.csv");
@@ -49,7 +46,6 @@ public final class PlatformData extends AbstractExpectedData
      * Gets the instance.
      *
      * @return the instance
-     * @throws FileNotLoadedException
      */
     protected static synchronized PlatformData getInstance() {
         return INSTANCE;
@@ -60,7 +56,6 @@ public final class PlatformData extends AbstractExpectedData
      *
      * @param platform the platform
      * @return the platform data
-     * @throws FileNotLoadedException
      */
     public static PlatformData platform(final String platform) {
         return PlatformData.getInstance().setPlatform(platform);
@@ -91,7 +86,6 @@ public final class PlatformData extends AbstractExpectedData
      *
      * @param tag the tag
      * @return the string
-     * @throws FileNotLoadedException
      */
     public static String withTag(final String tag) {
         return PlatformData.getInstance().getTagged(tag);
@@ -102,7 +96,6 @@ public final class PlatformData extends AbstractExpectedData
      *
      * @param tag the tag
      * @return the string
-     * @throws FileNotLoadedException
      */
     public static String withCharacteristic(final String tag) {
         return PlatformData.getInstance().getTagged(tag);
@@ -113,7 +106,6 @@ public final class PlatformData extends AbstractExpectedData
      *
      * @param tag the tag
      * @return the string[]
-     * @throws FileNotLoadedException
      */
     public static String[] allWithTag(final String tag) {
         return PlatformData.getInstance().getAllTagged(tag);

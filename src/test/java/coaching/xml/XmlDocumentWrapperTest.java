@@ -14,8 +14,13 @@ import coaching.resources.ResourceNotLoadedException;
  */
 public final class XmlDocumentWrapperTest {
 
+    /** FILENAME 			constant. */
     private static final String FILENAME = "database";
+    
+    /** FILENAME_XML 			constant. */
     private static final String FILENAME_XML = FILENAME + ".xml";
+    
+    /** MISSING_XML 			constant. */
     private static final String MISSING_XML = "missing.xml";
 
     /** Provides logging. */

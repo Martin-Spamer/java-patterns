@@ -10,10 +10,17 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Unit test class for Dedupe.
+ */
 public class DedupeTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory.getLogger(DedupeTest.class);
 
+    /**
+     * Unit test to.
+     */
     @Test
     public void test() {
         final Integer[] withDups = { 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 0, 0 };

@@ -8,12 +8,17 @@ import coaching.config.Configuration;
  */
 public final class SchedulerConfig extends Configuration {
 
+    /**
+     * Instantiates a new scheduler config.
+     */
     public SchedulerConfig() {
         this("Scheduler.properties");
     }
 
     /**
-     * @param configFilename
+     * Instantiates a new scheduler config.
+     *
+     * @param configFilename the config filename
      */
     public SchedulerConfig(final String configFilename) {
         super(configFilename);

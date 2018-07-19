@@ -27,7 +27,7 @@ public final class Commands {
     }
 
     /**
-     * Creates the new command
+     * Creates the new command.
      *
      * @return the command pool
      */

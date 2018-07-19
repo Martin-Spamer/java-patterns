@@ -24,8 +24,10 @@ public final class XmlDocumentUsage {
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlDocumentUsage.class);
 
-    /** configuration element. */
+    /** configuration document. */
     private Document document = null;
+
+    /** configuration element. */
     private Element configElement = null;
 
     /**
@@ -46,8 +48,8 @@ public final class XmlDocumentUsage {
             } catch (final ParserConfigurationException parserConfigurationException) {
                 LOG.error(parserConfigurationException.toString());
             }
-        } catch (final Exception exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -63,13 +65,13 @@ public final class XmlDocumentUsage {
             try {
                 final DocumentBuilder documentBuilder = documentBuilderFactory
                     .newDocumentBuilder();
-                final Document document = documentBuilder.parse(configFile);
+                document = documentBuilder.parse(configFile);
                 configElement = document.getDocumentElement();
             } catch (final ParserConfigurationException parserConfigurationException) {
                 LOG.error(parserConfigurationException.toString());
             }
-        } catch (final Exception exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 

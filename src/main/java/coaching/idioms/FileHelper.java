@@ -5,8 +5,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * The Class FileHelper.
+ */
 public final class FileHelper {
 
+    /**
+     * Instantiates a new file helper.
+     */
     private FileHelper() {
         throw new UnsupportedOperationException(
                 "Do not instantiate this class, use staticly.");

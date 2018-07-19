@@ -80,6 +80,9 @@ public abstract class AbstractCommand implements CommandInterface {
         return result.isPass();
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String

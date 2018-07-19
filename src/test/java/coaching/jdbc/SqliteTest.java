@@ -21,6 +21,8 @@ public final class SqliteTest {
 
     /**
      * Unit test to sqlite.
+     *
+     * @throws Exception the exception
      */
     @Test
     public void testSqlite() throws Exception {
@@ -45,6 +47,12 @@ public final class SqliteTest {
 
     }
 
+    /**
+     * Creates the table.
+     *
+     * @param statement the statement
+     * @throws SQLException the SQL exception
+     */
     private void createTable(final Statement statement) throws SQLException {
         statement.executeUpdate("DROP TABLE IF EXISTS customer");
         statement
@@ -52,6 +60,12 @@ public final class SqliteTest {
                     "CREATE TABLE customer (id INTEGER, name STRING, data STRING)");
     }
 
+    /**
+     * Insert records.
+     *
+     * @param statement the statement
+     * @throws SQLException the SQL exception
+     */
     private void insertRecords(final Statement statement) throws SQLException {
         final int ids[] = { 1, 2, 3, 4, 5 };
         final String names[] = { "Dick Turpin", "Robin Hood", "William Tell",
@@ -64,10 +78,22 @@ public final class SqliteTest {
         }
     }
 
+    /**
+     * Update records.
+     *
+     * @param statement the statement
+     * @throws SQLException the SQL exception
+     */
     private void updateRecords(final Statement statement) throws SQLException {
         statement.executeUpdate("UPDATE customer SET data='VIP' WHERE id='1'");
     }
 
+    /**
+     * Select records.
+     *
+     * @param statement the statement
+     * @throws SQLException the SQL exception
+     */
     private void selectRecords(final Statement statement) throws SQLException {
         final ResultSet resultSet = statement
             .executeQuery("SELECT * from customer");
@@ -80,6 +106,12 @@ public final class SqliteTest {
         }
     }
 
+    /**
+     * Delete records.
+     *
+     * @param statement the statement
+     * @throws SQLException the SQL exception
+     */
     private void deleteRecords(final Statement statement) throws SQLException {
         statement.executeUpdate("DELETE FROM customer WHERE id='5'");
     }

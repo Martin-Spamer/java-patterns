@@ -27,6 +27,8 @@ public abstract class JdbcBase {
 
     /** The JDBC connection. */
     protected ConnectionFactory connectionFactory = null;
+    
+    /** The connection. */
     protected Connection connection = null;
 
     /** The SQL statement. */
@@ -48,6 +50,9 @@ public abstract class JdbcBase {
         initialise();
     }
 
+    /**
+     * Initialise.
+     */
     private void initialise() {
         connectionFactory = new ConnectionFactory(
                 JdbcConfig.driver(),
@@ -91,7 +96,7 @@ public abstract class JdbcBase {
             statement.close();
             connection.close();
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 

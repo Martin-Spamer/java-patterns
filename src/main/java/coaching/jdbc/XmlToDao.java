@@ -44,7 +44,7 @@ public final class XmlToDao extends AbstractDao {
      * Default Constructor.
      *
      * @param driverClassName the driver class name
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     public XmlToDao(final String driverClassName)
             throws ClassNotFoundException {
@@ -62,7 +62,7 @@ public final class XmlToDao extends AbstractDao {
             resultSet.close();
             return xmlDocument;
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -82,7 +82,7 @@ public final class XmlToDao extends AbstractDao {
 
             return document;
         } catch (final Exception e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -99,7 +99,7 @@ public final class XmlToDao extends AbstractDao {
             final DocumentBuilder builder = factory.newDocumentBuilder();
             return builder.newDocument();
         } catch (final ParserConfigurationException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
             e.printStackTrace();
         }
         return null;
@@ -125,7 +125,7 @@ public final class XmlToDao extends AbstractDao {
             }
 
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
 
         }
 
@@ -155,7 +155,7 @@ public final class XmlToDao extends AbstractDao {
                 createCol(document, row, columnName, value);
             }
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -191,7 +191,7 @@ public final class XmlToDao extends AbstractDao {
             resultSet.close();
             return xmlString;
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -225,7 +225,7 @@ public final class XmlToDao extends AbstractDao {
             xml.append("</TABLE>\n");
             resultSet.close();
         } catch (final Exception e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return xml.toString();
     }

@@ -21,7 +21,7 @@ public final class PointbaseDao extends AbstractDao {
     /**
      * Instantiates a new DAO for Pointbase database.
      *
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     public PointbaseDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);

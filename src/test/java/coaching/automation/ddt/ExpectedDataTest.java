@@ -22,7 +22,7 @@ public final class ExpectedDataTest {
     /**
      * Unit test to on platform.
      *
-     * @throws Exception
+     * @throws Exception the exception
      */
     @Test
     public void testOnPlatform() throws Exception {
@@ -44,7 +44,7 @@ public final class ExpectedDataTest {
     /**
      * Unit test to default platform domain language.
      *
-     * @throws Exception
+     * @throws Exception the exception
      */
     @Test
     public void testDefaultPlatformDomainLanguage() throws Exception {

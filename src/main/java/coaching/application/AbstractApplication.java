@@ -24,7 +24,11 @@ public abstract class AbstractApplication {
 
     /** initialisation arguments. */
     protected String[] args = null;
+
+    /** The document. */
     protected Document document = null;
+
+    /** The document element. */
     protected Element documentElement;
 
     /**
@@ -55,6 +59,11 @@ public abstract class AbstractApplication {
         return initialisation(defaultFilename());
     }
 
+    /**
+     * Default filename.
+     *
+     * @return the string
+     */
     private String defaultFilename() {
         final String simpleName = this.getClass().getSimpleName();
         return String.format("%s.xml", simpleName);
@@ -103,8 +112,8 @@ public abstract class AbstractApplication {
                 log.warn("documentElement = null");
             }
             return true;
-        } catch (final Exception exception) {
-            log.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            log.error(e.getLocalizedMessage(), e);
         }
         return false;
     }
@@ -146,6 +155,10 @@ public abstract class AbstractApplication {
         return element.getAttribute(attributeName);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String

@@ -44,6 +44,11 @@ public final class AggregatePolymorphicList {
         return this;
     }
 
+    /**
+     * Execute.
+     *
+     * @return the aggregate polymorphic list
+     */
     public AggregatePolymorphicList execute() {
         for (final AbstractPerson abstractPerson : aggregation) {
             abstractPerson.execute();

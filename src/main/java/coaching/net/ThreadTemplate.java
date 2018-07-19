@@ -101,8 +101,8 @@ public class ThreadTemplate implements Runnable {
                 // Yield a little.
                 Thread.yield();
 
-            } catch (final ApplicationException exception) {
-                log.error(exception.toString(), exception);
+            } catch (final ApplicationException e) {
+                log.error(e.getLocalizedMessage(), e);
             }
 
             // * Thread ends.
@@ -111,7 +111,7 @@ public class ThreadTemplate implements Runnable {
             }
 
             final long currentTimeMillis = System.currentTimeMillis();
-            if ((currentTimeMillis - startTime) > TIME_OUT) {
+            if (currentTimeMillis - startTime > TIME_OUT) {
                 exit = true;
             }
         } while (!exit);

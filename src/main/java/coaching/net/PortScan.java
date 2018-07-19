@@ -130,9 +130,9 @@ public class PortScan extends Thread {
             socket.close();
             Thread.yield();
         } catch (final UnknownHostException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         } catch (final IOException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 

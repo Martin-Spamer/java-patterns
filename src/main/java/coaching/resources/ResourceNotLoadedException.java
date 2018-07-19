@@ -1,8 +1,12 @@
 
 package coaching.resources;
 
+/**
+ * The Class ResourceNotLoadedException.
+ */
 public class ResourceNotLoadedException extends AssertionError {
 
+    /** serialVersionUID 			constant. */
     private static final long serialVersionUID = 1L;
 
     /**

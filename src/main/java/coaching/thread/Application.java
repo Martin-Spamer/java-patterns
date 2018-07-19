@@ -63,8 +63,8 @@ public class Application {
 
             createThreads(document);
 
-        } catch (final Exception exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
 
         return false;
@@ -150,7 +150,7 @@ public class Application {
                 InstantiationException |
                     IllegalAccessException |
                     ClassNotFoundException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -186,7 +186,7 @@ public class Application {
                 IllegalArgumentException |
                     TransformerFactoryConfigurationError |
                     TransformerException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -201,7 +201,7 @@ public class Application {
         try {
             new Application();
         } catch (final Exception e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 }

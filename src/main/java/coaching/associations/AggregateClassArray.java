@@ -28,10 +28,9 @@ public final class AggregateClassArray {
     /**
      * Sets the aggregate.
      *
-     * @param index
-     *            the index
-     * @param element
-     *            the element
+     * @param index            the index
+     * @param element            the element
+     * @return the aggregate class array
      */
     public AggregateClassArray setAggregate(final int index,
             final AbstractPerson element) {
@@ -40,6 +39,12 @@ public final class AggregateClassArray {
         return this;
     }
 
+    /**
+     * Execute.
+     *
+     * @param index the index
+     * @return the aggregate class array
+     */
     public AggregateClassArray execute(final int index) {
         LOG.info("execute {}", this);
         aggregate[index].execute();

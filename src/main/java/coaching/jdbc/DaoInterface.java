@@ -11,7 +11,7 @@ public interface DaoInterface {
      *
      * @param driver the driver
      * @return this for a fluent interface.
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     DaoInterface setDriver(final String driver) throws ClassNotFoundException;
 

@@ -47,7 +47,6 @@ public interface PropertyInterface {
      *
      * @param inputStream the input stream
      * @return the property interface
-     * @throws Exception the exception
      */
     PropertyInterface load(final InputStream inputStream);
 
@@ -56,26 +55,23 @@ public interface PropertyInterface {
      *
      * @param inputStream the input stream
      * @return the property interface
-     * @throws Exception the exception
      */
     PropertyInterface loadFromXML(final InputStream inputStream);
 
     /**
      * Store.
      *
-     * @param outStream the out stream
+     * @param outputStream the output stream
      * @return the property interface
-     * @throws Exception the exception
      */
     PropertyInterface store(final OutputStream outputStream);
 
     /**
      * Store.
      *
-     * @param outStream the out stream
+     * @param outputStream the output stream
      * @param comment the comment
      * @return the property interface
-     * @throws Exception the exception
      */
     PropertyInterface store(final OutputStream outputStream,
             final String comment);

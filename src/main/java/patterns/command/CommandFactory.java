@@ -161,11 +161,14 @@ public final class CommandFactory implements InvokerInterface {
                 InstantiationException |
                     IllegalAccessException |
                     ClassNotFoundException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
             throw new MissingCommandException(e);
         }
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String

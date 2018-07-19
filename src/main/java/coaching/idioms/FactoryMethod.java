@@ -40,6 +40,12 @@ public final class FactoryMethod {
         return null;
     }
 
+    /**
+     * Factory method to create a new instance of FactoryMethod.
+     *
+     * @param className the class name
+     * @return new instance of FactoryMethod
+     */
     public static String create(final String className) {
         try {
             return (String) Class.forName(className).newInstance();

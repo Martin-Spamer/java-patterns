@@ -12,6 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class SchedulerConfigTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory
         .getLogger(SchedulerConfigTest.class);
 

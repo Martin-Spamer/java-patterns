@@ -27,7 +27,6 @@ public final class ExpectedData extends AbstractExpectedData
      * Gets the instance.
      *
      * @return the instance
-     * @throws FileNotLoadedException
      */
     private static synchronized ExpectedData getInstance() {
         return INSTANCE;
@@ -55,8 +54,6 @@ public final class ExpectedData extends AbstractExpectedData
 
     /**
      * Load platform data.
-     *
-     * @throws FileNotLoadedException
      */
     private void initialise() {
         try {
@@ -71,7 +68,7 @@ public final class ExpectedData extends AbstractExpectedData
      *
      * @param platform the platform
      * @return the expected data
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public static ExpectedData platform(final String platform)
             throws FileNotLoadedException {
@@ -103,7 +100,7 @@ public final class ExpectedData extends AbstractExpectedData
      *
      * @param tag the tag
      * @return the string
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public static String withTag(final String tag)
             throws FileNotLoadedException {
@@ -115,7 +112,7 @@ public final class ExpectedData extends AbstractExpectedData
      *
      * @param tag the tag
      * @return the string
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public static String withCharacteristic(final String tag)
             throws FileNotLoadedException {
@@ -127,17 +124,25 @@ public final class ExpectedData extends AbstractExpectedData
      *
      * @param tag the tag
      * @return the string[]
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public static String[] allWithTag(final String tag)
             throws FileNotLoadedException {
         return ExpectedData.getInstance().getAllTagged(tag);
     }
 
+    /**
+     * Debug string.
+     *
+     * @return the string
+     */
     public static String debugString() {
         return ExpectedData.getInstance().toString();
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String.format("ExpectedData [platform=%s]", platform);

@@ -8,6 +8,9 @@ import java.util.Arrays;
  */
 public final class Application extends AbstractApplication {
 
+    /**
+     * Instantiates a new application.
+     */
     public Application() {
         super();
     }
@@ -31,8 +34,8 @@ public final class Application extends AbstractApplication {
         try {
             log.info("execute() : {}", this);
             return true;
-        } catch (final Exception exception) {
-            log.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            log.error(e.getLocalizedMessage(), e);
             return false;
         }
     }
