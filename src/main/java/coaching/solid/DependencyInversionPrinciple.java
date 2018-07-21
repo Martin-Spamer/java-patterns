@@ -38,7 +38,7 @@ public class DependencyInversionPrinciple {
      */
     public abstract class Module implements ModuleInterface {
 
-        /** The log. */
+        /** provides logging. */
         protected final Logger log = LoggerFactory
             .getLogger(this.getClass().getSimpleName());
     }

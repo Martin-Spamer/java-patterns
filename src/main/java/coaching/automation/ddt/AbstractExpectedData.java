@@ -19,7 +19,7 @@ import coaching.csv.CsvRecord;
  */
 public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
-    /** The log. */
+    /** provides logging. */
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
