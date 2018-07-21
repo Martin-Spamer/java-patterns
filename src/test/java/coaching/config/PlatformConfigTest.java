@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class PlatformConfigTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(PlatformConfigTest.class);
 

@@ -9,13 +9,13 @@ import org.slf4j.LoggerFactory;
  */
 public final class ClassFactory {
 
-    /** CLASS_NAME 			constant. */
+    /** CLASS_NAME constant. */
     private static final String CLASS_NAME = "coaching.factory.ClassFactory";
-    
-    /** LOG 			constant. */
+
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(ClassFactory.class);
-    
+
     /** The instance. */
     private static ClassFactory instance;
 

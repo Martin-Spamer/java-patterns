@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class ConcurrentPoolTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(ConcurrentPoolTest.class);
 

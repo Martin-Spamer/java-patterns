@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class KeyValueTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(KeyValueTest.class);
 

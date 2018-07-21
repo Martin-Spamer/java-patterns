@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ConstantsTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(ConstantsTest.class);
 

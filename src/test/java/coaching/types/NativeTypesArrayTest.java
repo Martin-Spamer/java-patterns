@@ -14,7 +14,7 @@ import coaching.arrays.NativeTypesArray;
  */
 public final class NativeTypesArrayTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(NativeTypesArrayTest.class);
 

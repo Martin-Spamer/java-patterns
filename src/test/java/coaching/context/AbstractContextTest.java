@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class AbstractContextTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(AbstractContextTest.class);
 

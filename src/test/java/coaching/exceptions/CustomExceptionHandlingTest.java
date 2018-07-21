@@ -16,7 +16,7 @@ import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
  */
 public final class CustomExceptionHandlingTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(CustomExceptionHandlingTest.class);
 

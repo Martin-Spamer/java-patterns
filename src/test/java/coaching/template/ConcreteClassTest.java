@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class ConcreteClassTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(ConcreteClassTest.class);
 

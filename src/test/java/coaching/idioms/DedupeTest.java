@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  */
 public class DedupeTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DedupeTest.class);
 
     /**

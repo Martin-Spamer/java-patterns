@@ -11,9 +11,9 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class Verify {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(Verify.class);
-    
+
     /** The actual. */
     private boolean actual;
 
@@ -71,7 +71,7 @@ public final class Verify {
      * Checks if is true.
      *
      * @return true, if is
-     * 			true
+     *         true
      */
     public boolean isTrue() {
         return actual;
@@ -81,7 +81,7 @@ public final class Verify {
      * Checks if is false.
      *
      * @return true, if is
-     * 			false
+     *         false
      */
     public boolean isFalse() {
         return actual == false;

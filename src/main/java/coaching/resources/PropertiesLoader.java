@@ -31,7 +31,7 @@ import static org.junit.Assert.fail;
  */
 public final class PropertiesLoader {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(PropertiesLoader.class);
 

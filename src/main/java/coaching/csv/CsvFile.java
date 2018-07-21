@@ -27,7 +27,7 @@ public class CsvFile {
     /** The filename. */
     private String csvFilename;
 
-    /**  The header line of the csv file. */
+    /** The header line of the csv file. */
     private String headerLine;
 
     /** The column names for the csv file. */
@@ -65,7 +65,7 @@ public class CsvFile {
     /**
      * Instantiates a new csv file from filename.
      *
-     * @param csvFilename            the csv filename
+     * @param csvFilename the csv filename
      */
     public CsvFile(final String csvFilename) {
         super();
@@ -273,11 +273,11 @@ public class CsvFile {
     }
 
     /**
-     * The Class FileNotLoadedException.
+     * FileNotLoadedException.
      */
     public class FileNotLoadedException extends AssertionError {
-        
-        /** serialVersionUID 			constant. */
+
+        /** serialVersionUID constant. */
         private static final long serialVersionUID = 1L;
 
         /**

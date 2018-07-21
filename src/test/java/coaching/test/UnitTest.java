@@ -16,7 +16,7 @@ import static org.junit.Assume.assumeNotNull;
  */
 public final class UnitTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(UnitTest.class);
 
     /**

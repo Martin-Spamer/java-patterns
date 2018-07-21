@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class ObjectTypesTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(ObjectTypesTest.class);
 

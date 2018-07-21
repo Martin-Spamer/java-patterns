@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
  */
 public final class RegularExpressionTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(RegularExpressionTest.class);
 

@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class TupleTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(TupleTest.class);
     /** The Constant RIGHT. */
     private static final String RIGHT = "Right";

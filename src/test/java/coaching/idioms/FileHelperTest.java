@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  */
 public class FileHelperTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(FileHelperTest.class);
 

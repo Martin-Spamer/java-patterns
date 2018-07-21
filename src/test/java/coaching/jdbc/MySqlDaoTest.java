@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
 @Ignore("Requires MySQL DB availability work-in-progress low-priority")
 public final class MySqlDaoTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(MySqlDaoTest.class);
 

@@ -25,10 +25,10 @@ import static org.junit.Assert.fail;
  */
 public final class XmlResourceLoader {
 
-    /** SUFFIX 			constant. */
+    /** SUFFIX constant. */
     private static final String SUFFIX = ".xml";
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlResourceLoader.class);
 

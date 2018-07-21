@@ -23,7 +23,7 @@ import org.w3c.dom.Node;
  */
 public class XmlTransformer {
     
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlTransformer.class);
     

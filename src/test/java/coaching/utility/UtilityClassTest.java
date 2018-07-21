@@ -12,7 +12,7 @@ import static org.junit.Assert.fail;
  */
 public class UtilityClassTest {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(UtilityClassTest.class);
 

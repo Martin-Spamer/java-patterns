@@ -24,7 +24,7 @@ import coaching.mvc.controller.ControllerException;
 @SuppressWarnings("serial")
 public class HttpControllerServlet extends HttpServlet {
 
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(HttpControllerServlet.class);
 

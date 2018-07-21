@@ -22,7 +22,7 @@ public class XmlResourceLoaderTest {
     /** CONFIGURATION_MISSING 			constant. */
     private static final String CONFIGURATION_MISSING = "Missing.xml";
     
-    /** LOG 			constant. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlResourceLoaderTest.class);
 

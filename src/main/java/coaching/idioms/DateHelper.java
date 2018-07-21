@@ -12,7 +12,7 @@ import java.util.Locale;
  */
 public final class DateHelper {
 
-    /** The Constant ISO_FORMAT. */
+    /** ISO FORMAT date time stamp. */
     private static final String ISO_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
     /**
