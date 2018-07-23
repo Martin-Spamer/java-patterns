@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 import coaching.mvc.controller.ControllerException;
 
 /**
- * ControllerServlet Class.
+ * ControllerServlet class.
  */
 @SuppressWarnings("serial")
 public class HttpControllerServlet extends HttpServlet {

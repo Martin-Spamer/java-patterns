@@ -95,6 +95,39 @@ public final class ExpectedData extends AbstractExpectedData
         return platform;
     }
 
+    public static ExpectedData fromCsv() {
+        return ExpectedData.getInstance().loadFromCsv();
+    }
+
+    private ExpectedData loadFromCsv() {
+        String simpleName = this.getClass().getSimpleName();
+        String filename = String.format("%s.csv", simpleName);
+        log.info("{}", filename);
+        return this;
+    }
+
+    public static ExpectedData fromXml() {
+        return ExpectedData.getInstance().loadFromXml();
+    }
+
+    private ExpectedData loadFromXml() {
+        String simpleName = this.getClass().getSimpleName();
+        String filename = String.format("%s.xml", simpleName);
+        log.info("{}", filename);
+        return this;
+    }
+
+    public static ExpectedData fromJson() {
+        return ExpectedData.getInstance().loadFromJson("");
+    }
+
+    private ExpectedData loadFromJson(final String jsonFilename) {
+        String simpleName = this.getClass().getSimpleName();
+        String filename = String.format("%s.json", simpleName);
+        log.info("{}", filename);
+        return this;
+    }
+
     /**
      * With tag.
      *
@@ -140,7 +173,8 @@ public final class ExpectedData extends AbstractExpectedData
         return ExpectedData.getInstance().toString();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

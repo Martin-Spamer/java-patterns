@@ -19,6 +19,13 @@ public final class ExpectedDataTest {
     private static final Logger LOG = LoggerFactory
         .getLogger(ExpectedDataTest.class);
 
+    @Test
+    public void testExpectedData() throws Exception {
+        ExpectedData.fromCsv();
+        ExpectedData.fromXml();
+        ExpectedData.fromJson();
+    }
+
     /**
      * Unit test to on platform.
      *

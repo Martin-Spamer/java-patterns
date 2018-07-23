@@ -19,14 +19,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 /**
- * The Class XmlTransformer.
+ * XML Transformer class.
  */
 public class XmlTransformer {
-    
+
     /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlTransformer.class);
-    
+
     /** The dbf. */
     final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 

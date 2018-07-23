@@ -16,4 +16,9 @@ public class Table extends ArrayList<TableRow> {
         super();
     }
 
+    public Table newRow(final String row) {
+        add(new TableRow(row));
+        return this;
+    }
+
 }

@@ -4,7 +4,7 @@ package coaching.xml;
 import org.junit.Test;
 
 /**
- * Unit test class for XmlTransformer.
+ * Unit test for XmlTransformer class.
  */
 public class XmlTransformerTest {
 

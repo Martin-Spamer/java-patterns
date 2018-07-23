@@ -21,7 +21,7 @@ import org.w3c.dom.Document;
 import static org.junit.Assert.fail;
 
 /**
- * The Class XmlResourceLoader.
+ * XML resource loader class.
  */
 public final class XmlResourceLoader {
 
@@ -77,7 +77,7 @@ public final class XmlResourceLoader {
     }
 
     /**
-     * Xml to string.
+     * XML Document to string.
      *
      * @param xml the xml
      * @return the string
@@ -104,4 +104,5 @@ public final class XmlResourceLoader {
         }
         return null;
     }
+
 }

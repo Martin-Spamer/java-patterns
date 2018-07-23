@@ -11,13 +11,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * The Class AbstractContextTest.
+ * The abstract ContextTest class.
  */
-public final class AbstractContextTest {
+public final class ContextTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory
-        .getLogger(AbstractContextTest.class);
+        .getLogger(ContextTest.class);
 
     /**
      * The Class TestContext.
@@ -29,6 +29,7 @@ public final class AbstractContextTest {
          */
         private TestContext() {
             super();
+            LOG.info("TestContext()");
         }
 
         /**
@@ -38,6 +39,7 @@ public final class AbstractContextTest {
          */
         private TestContext(final Properties properties) {
             super(properties);
+            LOG.info("TestContext({})", properties);
         }
     }
 
@@ -48,6 +50,7 @@ public final class AbstractContextTest {
     public void testAbstractContext() {
         final TestContext testContext = new TestContext();
         assertNotNull(testContext);
+        LOG.info("{}", testContext);
     }
 
     /**
@@ -57,6 +60,7 @@ public final class AbstractContextTest {
     public void testAbstractContextProperties() {
         final TestContext testContext = new TestContext(new Properties());
         assertNotNull(testContext);
+        LOG.info("{}", testContext);
     }
 
     /**
@@ -67,6 +71,7 @@ public final class AbstractContextTest {
         final TestContext testContext = new TestContext();
         assertNotNull(testContext);
         testContext.setProperties(new Properties());
+        LOG.info("{}", testContext);
     }
 
     /**
@@ -80,6 +85,8 @@ public final class AbstractContextTest {
         final String value = "value";
         testContext.setProperty(key, value);
         assertEquals(value, testContext.getProperty(key));
+        assertEquals("value", testContext.getProperty("missing", "value"));
+        LOG.info("{}", testContext);
     }
 
 }

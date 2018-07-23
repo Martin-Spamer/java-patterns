@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * class AbstractOutputChannel.
+ * An abstract OutputChannel class.
  */
 public abstract class AbstractOutputChannel implements OutputChannelInterface {
 

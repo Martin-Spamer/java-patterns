@@ -63,7 +63,8 @@ public class ThreadTemplate implements Runnable {
      */
     public ThreadTemplate() {
         initialise(new ThreadConfig());
-        thread = new java.lang.Thread(this);
+        thread = new Thread(this);
+        log.info("{}", this);
     }
 
     /**
@@ -74,6 +75,7 @@ public class ThreadTemplate implements Runnable {
      * @param config the config
      */
     public void initialise(final ThreadConfig config) {
+        log.info("{}", config);
         this.config = config;
     }
 
@@ -83,6 +85,8 @@ public class ThreadTemplate implements Runnable {
      */
     @Override
     public void run() {
+        log.info("run");
+
         do {
             tick++;
 
@@ -103,7 +107,7 @@ public class ThreadTemplate implements Runnable {
             }
 
             // Yield a little.
-            java.lang.Thread.yield();
+            Thread.yield();
 
             // * Thread ends.
             if (tick >= maxTicks) {
@@ -111,7 +115,7 @@ public class ThreadTemplate implements Runnable {
             }
 
             final long currentTimeMillis = System.currentTimeMillis();
-            if ((currentTimeMillis - startTime) > TIME_OUT) {
+            if (currentTimeMillis - startTime > TIME_OUT) {
                 exit = true;
             }
         } while (!exit);

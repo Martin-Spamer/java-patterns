@@ -1,8 +1,3 @@
-/**
- *  @title       CommandInterface.java
- *  @description See Command Pattern [GOF:233]
- *	Created      27-Sep-2004
- **/
 
 package coaching.mvc;
 

@@ -28,9 +28,9 @@ public class HandlerOne extends AbstractHandler {
      * @see patterns.chain.Handler#handleRequest()
      */
     @Override
-    public void handleRequest(final RequestInterface request) {
+    public AbstractHandler handleRequest(final RequestInterface request) {
         doSomething(request);
-        super.handleRequest(request);
+        return super.handleRequest(request);
     }
 
     /**
@@ -40,7 +40,7 @@ public class HandlerOne extends AbstractHandler {
      *            the request
      */
     private void doSomething(final RequestInterface request) {
-        log.info("doSomething {}", request);
+        log.info("doSomething {}", this);
     }
 
 }

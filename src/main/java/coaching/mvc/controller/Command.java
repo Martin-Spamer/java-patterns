@@ -6,11 +6,12 @@ import java.util.Properties;
 import coaching.mvc.CommandInterface;
 
 /**
- * The Class Command.
+ * Command class.
  */
 public class Command implements CommandInterface {
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see coaching.mvc.CommandInterface#execute(java.util.Properties)
      */
     @Override

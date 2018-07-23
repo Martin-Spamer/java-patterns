@@ -9,4 +9,14 @@ import java.util.ArrayList;
 @SuppressWarnings("serial")
 public class TableRow extends ArrayList<TableCell> {
 
+    public TableRow() {
+        super();
+    }
+
+    public TableRow(final String row) {
+        String[] values = row.split(",");
+        for (String value : values) {
+            add(new TableCell(value));
+        }
+    }
 }
