@@ -102,7 +102,8 @@ public abstract class AbstractCommandParameters implements ParametersInterface {
         return Long.parseLong(property);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

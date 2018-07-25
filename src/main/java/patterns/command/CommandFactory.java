@@ -166,7 +166,8 @@ public final class CommandFactory implements InvokerInterface {
         }
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

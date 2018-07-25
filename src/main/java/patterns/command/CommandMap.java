@@ -39,7 +39,8 @@ public final class CommandMap
         }
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.util.AbstractMap#toString()
      */
     @Override
