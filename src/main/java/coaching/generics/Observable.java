@@ -142,7 +142,7 @@ public class Observable<T> {
             toNotify = new ArrayList<>(observers);
             changed = false;
         }
-        for (Observer<? super T> observer : toNotify) {
+        for (final Observer<? super T> observer : toNotify) {
             observer.update(this, value);
         }
     }

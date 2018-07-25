@@ -8,6 +8,8 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import coaching.resources.PropertiesLoader;
 import coaching.resources.XmlResourceLoader;
@@ -133,7 +135,18 @@ public abstract class AbstractScheduler {
      * @return the abstract scheduler
      */
     private AbstractScheduler execute(final Document xmlDoc) {
-        return null;
+
+        final NodeList list = xmlDoc.getElementsByTagName("*");
+        for (int i = 0; i < list.getLength(); i++) {
+            final Element element = (Element) list.item(i);
+            final String nodeName = element.getNodeName();
+            log.info("{}", nodeName);
+            final String nameAttribute = element.getAttribute("name");
+            log.info("{}", nameAttribute);
+            final String classAttribute = element.getAttribute("class");
+            log.info("{}", classAttribute);
+        }
+        return this;
     }
 
     /**

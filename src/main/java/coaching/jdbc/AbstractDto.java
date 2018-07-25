@@ -63,7 +63,8 @@ public abstract class AbstractDto {
         return fields.containsKey(key);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

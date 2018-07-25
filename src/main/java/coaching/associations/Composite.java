@@ -19,13 +19,13 @@ public final class Composite {
      * The Composite implemented using separate members.
      */
     private AbstractPerson alice = new Alice();
-    
+
     /** The bob. */
     private AbstractPerson bob = new Bob();
-    
+
     /** The charlie. */
     private AbstractPerson charlie = new Charlie();
-    
+
     /** The dan. */
     private AbstractPerson dan = new Dan();
 

@@ -68,7 +68,7 @@ public final class XmlResourceLoader {
      * @return the string
      */
     private static String xmlFilename(final String resourceName) {
-        String suffix = ".xml";
+        final String suffix = ".xml";
         if (resourceName.endsWith(suffix)) {
             return resourceName;
         } else {

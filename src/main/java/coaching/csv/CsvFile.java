@@ -92,10 +92,10 @@ public class CsvFile {
      */
     private void read(final String resourceName) {
         LOG.debug("read({})", resourceName);
-        InputStream stream = ResourceLoader.getStream(resourceName);
+        final InputStream stream = ResourceLoader.getStream(resourceName);
         try {
             read(stream);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
     }

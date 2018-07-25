@@ -38,6 +38,7 @@ public class TimeStamp {
      */
     @Override
     public String toString() {
-        return new SimpleDateFormat(TimeStamp.TIMESTAMP_FORMAT, Locale.getDefault()).format(time);
+        return new SimpleDateFormat(TimeStamp.TIMESTAMP_FORMAT,
+                Locale.getDefault()).format(time);
     }
 }

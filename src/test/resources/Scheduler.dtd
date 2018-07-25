@@ -7,7 +7,7 @@
    	An example how to use this DTD from your XML document:
 
     <!DOCTYPE Scheduler SYSTEM "Scheduler.dtd">
-    <Scheduler>
+    <scheduler>
     	<command name="" class="">
     		<parameter name="" value=""/>
     	</command>
@@ -15,7 +15,7 @@
     	<thread name="" class="">
     		<parameter name="" value=""/>    	
     	</thread>
-    </Scheduler>
+    </scheduler>
 -->
 
 <!ELEMENT scheduler (command|thread)*>

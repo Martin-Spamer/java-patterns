@@ -115,7 +115,7 @@ public class ThreadTemplate implements Runnable {
             }
 
             final long currentTimeMillis = System.currentTimeMillis();
-            if (currentTimeMillis - startTime > TIME_OUT) {
+            if ((currentTimeMillis - startTime) > TIME_OUT) {
                 exit = true;
             }
         } while (!exit);

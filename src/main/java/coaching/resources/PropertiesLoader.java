@@ -68,7 +68,7 @@ public final class PropertiesLoader {
      * @return the string
      */
     private static String propertiesFilename(final String resourceName) {
-        String suffix = ".properties";
+        final String suffix = ".properties";
         if (resourceName.endsWith(suffix)) {
             return resourceName;
         } else {
@@ -103,7 +103,7 @@ public final class PropertiesLoader {
      * @return the string
      */
     private static String xmlPropertiesFilename(final String resourceName) {
-        String suffix = ".xml";
+        final String suffix = ".xml";
         if (resourceName.endsWith(suffix)) {
             return resourceName;
         } else {

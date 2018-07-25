@@ -13,7 +13,7 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
 
     /** The key. */
     private K key;
-    
+
     /** The value. */
     private V value;
 
@@ -28,7 +28,8 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
         this.value = value;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.util.Map.Entry#getKey()
      */
     @Override
@@ -36,7 +37,8 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
         return this.key;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.util.Map.Entry#getValue()
      */
     @Override
@@ -54,7 +56,8 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
         return this.key = key;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.util.Map.Entry#setValue(java.lang.Object)
      */
     @Override
@@ -62,7 +65,8 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
         return this.value = value;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

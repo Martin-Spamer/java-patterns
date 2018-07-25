@@ -27,7 +27,7 @@ public abstract class JdbcBase {
 
     /** The JDBC connection. */
     protected ConnectionFactory connectionFactory = null;
-    
+
     /** The connection. */
     protected Connection connection = null;
 
