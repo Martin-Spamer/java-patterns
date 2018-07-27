@@ -17,9 +17,14 @@ import static org.junit.Assert.assertTrue;
  */
 public final class ResourceLoaderTest {
 
+    /** CONFIGURATION_PROPERTIES 			constant. */
     private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
+    
+    /** CONFIGURATION_XML 			constant. */
     private static final String CONFIGURATION_XML = "Configuration.xml";
-    private static final String MISSING_RESOURCE = "missing.resource";
+    
+    /** MISSING_RESOURCE 			constant. */
+    private static final String MISSING_RESOURCE = "Resource.missing";
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
@@ -28,46 +33,59 @@ public final class ResourceLoaderTest {
     /**
      * Unit test to get stream.
      *
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws IOException Signals that an I/O exception has occurred while
+     *             reading the stream.
      */
     @Test
     public void testGetResource() throws IOException {
-        InputStream inStream = ResourceLoader
+        final InputStream inputStream = ResourceLoader
             .getStream(CONFIGURATION_PROPERTIES);
-        assertNotNull(inStream);
-        assertTrue(inStream.available() > 0);
-        LOG.debug("ResourceLoader.getStream = {}", inStream.toString());
+        assertNotNull(inputStream);
+        assertTrue(inputStream.available() > 0);
+        LOG.debug("ResourceLoader.getStream = {}", inputStream.toString());
     }
 
     /**
      * Unit test to get stream.
      *
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws IOException Signals that an I/O exception has occurred while
+     *             reading the stream.
      */
     @Test
     public void testGetXmlResource() throws IOException {
-        InputStream inStream = ResourceLoader.getStream(CONFIGURATION_XML);
-        assertNotNull(inStream);
-        assertTrue(inStream.available() > 0);
-        LOG.debug("ResourceLoader.getStream = {}", streamToString(inStream));
-    }
-
-    private String streamToString(final InputStream inStream) {
-        Scanner s = new Scanner(inStream).useDelimiter("\\A");
-        String string = s.hasNext() ? s.next() : "";
-        s.close();
-        return string;
+        final InputStream inputStream = ResourceLoader
+            .getStream(CONFIGURATION_XML);
+        assertNotNull(inputStream);
+        assertTrue(inputStream.available() > 0);
+        LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
     }
 
     /**
      * Unit test to get missing stream.
      *
-     * @throws Exception the exception
+     * @throws IOException Signals that an I/O exception has occurred while
+     *             reading the stream.
      */
     @Test(expected = ResourceNotLoadedException.class)
-    public void testMissingXmlResource() {
-        InputStream inStream = ResourceLoader.getStream(MISSING_RESOURCE);
-        assertNotNull(inStream);
+    public void testMissingXmlResource() throws IOException {
+        final InputStream inputStream = ResourceLoader
+            .getStream(MISSING_RESOURCE);
+        assertNotNull(inputStream);
+        assertTrue(inputStream.available() > 0);
+        LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
+    }
+
+    /**
+     * Stream to string.
+     *
+     * @param inputStream the input stream
+     * @return the string
+     */
+    private String streamToString(final InputStream inputStream) {
+        final Scanner s = new Scanner(inputStream).useDelimiter("\\A");
+        final String string = s.hasNext() ? s.next() : "";
+        s.close();
+        return string;
     }
 
 }

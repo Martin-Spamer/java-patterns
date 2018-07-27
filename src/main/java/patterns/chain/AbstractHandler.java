@@ -5,12 +5,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Abstract Handler Class.
+ * Abstract Handler class.
  */
 public abstract class AbstractHandler implements HandlerInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The next. */
     private HandlerInterface next;
@@ -54,8 +55,12 @@ public abstract class AbstractHandler implements HandlerInterface {
      * @see patterns.chain.HandlerInterface#handleRequest()
      */
     @Override
-    public void handleRequest(final RequestInterface request) {
-        next.handleRequest(request);
+    public AbstractHandler handleRequest(final RequestInterface request) {
+        log.info("handleRequest({}", request);
+        if (next != null) {
+            next.handleRequest(request);
+        }
+        return this;
     }
 
 }

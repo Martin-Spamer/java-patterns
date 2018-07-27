@@ -21,7 +21,7 @@ public class MySqlDao extends AbstractDao {
     /**
      * Instantiates a new DAO for MySql.
      *
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     public MySqlDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);

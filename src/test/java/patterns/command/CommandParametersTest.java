@@ -14,7 +14,8 @@ import static org.junit.Assert.assertNotNull;
 public final class CommandParametersTest {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /**
      * MockCommandParameters Class to test abstract Parameters class.
@@ -49,7 +50,7 @@ public final class CommandParametersTest {
         log.info("testCommandParameters");
         final ParametersInterface commandParameters = new MockCommandParameters();
         assertNotNull(commandParameters);
-        String string = commandParameters.toString();
+        final String string = commandParameters.toString();
         log.debug("{}", string);
     }
 
@@ -72,7 +73,8 @@ public final class CommandParametersTest {
     @Test
     public void testAbstractParametersStringString() {
         log.info("testInvokerConditionalCommand");
-        final ParametersInterface commandParameters = new MockCommandParameters("key", "value");
+        final ParametersInterface commandParameters = new MockCommandParameters(
+                "key", "value");
         assertNotNull(commandParameters);
         assertEquals("value", commandParameters.valueFor("key"));
         log.debug("{}", commandParameters.toString());

@@ -21,8 +21,12 @@ import coaching.WorkInProgress;
 @WorkInProgress("")
 public final class XmlToJdbc {
 
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbc.class);
 
+    /**
+     * Instantiates a new xml to jdbc.
+     */
     public XmlToJdbc() {
         super();
     }

@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 import coaching.application.ApplicationException;
 
 /**
- * The Class ThreadTemplate.
+ * A template for a Thread class.
  */
 public class ThreadTemplate implements Runnable {
 
@@ -59,11 +59,12 @@ public class ThreadTemplate implements Runnable {
     protected long maxTicks = MAX_TICKS;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public ThreadTemplate() {
         initialise(new ThreadConfig());
-        thread = new java.lang.Thread(this);
+        thread = new Thread(this);
+        log.info("{}", this);
     }
 
     /**
@@ -74,6 +75,7 @@ public class ThreadTemplate implements Runnable {
      * @param config the config
      */
     public void initialise(final ThreadConfig config) {
+        log.info("{}", config);
         this.config = config;
     }
 
@@ -83,6 +85,8 @@ public class ThreadTemplate implements Runnable {
      */
     @Override
     public void run() {
+        log.info("run");
+
         do {
             tick++;
 
@@ -103,7 +107,7 @@ public class ThreadTemplate implements Runnable {
             }
 
             // Yield a little.
-            java.lang.Thread.yield();
+            Thread.yield();
 
             // * Thread ends.
             if (tick >= maxTicks) {

@@ -3,6 +3,7 @@ package patterns.chain;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -15,14 +16,17 @@ public final class ChainOfResponsibilityTest {
      */
     @Test
     public void testHandleRequest() {
+        final Request request = new Request("Payload");
+        assertNotNull(request);
+
         final AbstractHandler one = new HandlerOne();
         assertNotNull(one);
 
         final AbstractHandler two = new HandlerTwo();
         assertNotNull(two);
 
-        final Request request = new Request("Payload");
-        assertNotNull(request);
+        assertEquals(one, one.setNext(two));
+        assertEquals(one, one.handleRequest(request));
     }
 
 }

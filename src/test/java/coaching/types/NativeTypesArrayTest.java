@@ -14,7 +14,9 @@ import coaching.arrays.NativeTypesArray;
  */
 public final class NativeTypesArrayTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArrayTest.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory
+        .getLogger(NativeTypesArrayTest.class);
 
     /**
      * Unit Test to display array.
@@ -23,6 +25,8 @@ public final class NativeTypesArrayTest {
     public void testDisplayNativeArray() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
+        LOG.info("{}", primitivesArray);
+
         primitivesArray.display();
     }
 
@@ -33,6 +37,8 @@ public final class NativeTypesArrayTest {
     public void testDisplayMatrix() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
+        LOG.info("{}", primitivesArray);
+
         primitivesArray.displayMatrix();
     }
 
@@ -43,6 +49,8 @@ public final class NativeTypesArrayTest {
     public void testIterateArray() {
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
+        LOG.info("{}", primitivesArray);
+
         primitivesArray.iterateArray();
     }
 }

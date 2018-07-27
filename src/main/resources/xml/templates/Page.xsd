@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="page" type="pageType"/>
+  <xs:complexType name="styleType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name"/>
+        <xs:attribute type="xs:string" name="source"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="tdType">
+    <xs:sequence>
+      <xs:element type="bannerType" name="banner" minOccurs="0"/>
+      <xs:element type="xs:string" name="billboard" minOccurs="0"/>
+      <xs:element type="xs:string" name="menu-panel" minOccurs="0"/>
+      <xs:element type="xs:string" name="mini-banner" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tableType">
+    <xs:sequence>
+      <xs:element type="trType" name="tr" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="pager"/>
+      <xs:element type="xs:string" name="default-key-handler"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="page-loaderType">
+    <xs:sequence>
+      <xs:element type="styleType" name="style"/>
+      <xs:element type="tableType" name="table"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pageType">
+    <xs:sequence>
+      <xs:element type="page-loaderType" name="page-loader"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="bannerType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="source"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="trType">
+    <xs:sequence>
+      <xs:element type="tdType" name="td" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

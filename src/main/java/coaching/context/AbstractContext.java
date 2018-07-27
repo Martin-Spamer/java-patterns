@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractContext implements ContextInterface {
 
+    /** provides logging. */
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
@@ -74,7 +75,7 @@ public abstract class AbstractContext implements ContextInterface {
      */
     @Override
     public String getProperty(final String key, final String defaultValue) {
-        return properties.getProperty(key);
+        return properties.getProperty(key, defaultValue);
     }
 
 }

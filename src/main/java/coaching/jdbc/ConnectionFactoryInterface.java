@@ -4,6 +4,9 @@ package coaching.jdbc;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * The Interface ConnectionFactoryInterface.
+ */
 public interface ConnectionFactoryInterface {
 
     /**

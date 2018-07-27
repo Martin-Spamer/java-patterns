@@ -18,7 +18,8 @@ import static org.junit.Assert.assertNotNull;
 public final class CommandMapTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CommandFactoryTest.class);
 
     /** The command map. */
     private final CommandMap commandMap = new CommandMap();
@@ -41,7 +42,9 @@ public final class CommandMapTest {
             final String className = (String) entry.getValue();
             LOG.trace("\t{} = {}", key, className);
             try {
-                final AbstractCommand instance = (AbstractCommand) Class.forName(className).newInstance();
+                final AbstractCommand instance = (AbstractCommand) Class
+                    .forName(className)
+                    .newInstance();
                 commandMap.put(key, instance);
             } catch (final ClassNotFoundException e) {
                 LOG.error("Class not found for command {}", key);
@@ -57,7 +60,9 @@ public final class CommandMapTest {
      * @return the input stream
      */
     private InputStream inputStream(final String resourceName) {
-        final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        final ClassLoader classloader = Thread
+            .currentThread()
+            .getContextClassLoader();
         return classloader.getResourceAsStream(resourceName);
     }
 

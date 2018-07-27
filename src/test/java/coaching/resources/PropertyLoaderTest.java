@@ -8,14 +8,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit tests for PropertyLoader class.
  */
 public final class PropertyLoaderTest {
+
+    /** CONFIGURATION_PROPERTIES 			constant. */
     private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
+    
+    /** CONFIGURATION_XML 			constant. */
     private static final String CONFIGURATION_XML = "Configuration.xml";
-    private static final String MISSING_PROPERTIES = "missing.resource";
+    
+    /** MISSING_PROPERTIES 			constant. */
+    private static final String MISSING_PROPERTIES = "Properties.missing";
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
@@ -26,9 +33,10 @@ public final class PropertyLoaderTest {
      */
     @Test
     public void testGetProperties() {
-        Properties properties = PropertiesLoader
+        final Properties properties = PropertiesLoader
             .getProperties(CONFIGURATION_PROPERTIES);
         assertNotNull(properties);
+        assertTrue(properties.size() > 0);
         LOG.info(properties.toString());
     }
 
@@ -37,9 +45,10 @@ public final class PropertyLoaderTest {
      */
     @Test
     public void testGetXmlProperties() {
-        Properties properties = PropertiesLoader
+        final Properties properties = PropertiesLoader
             .getXmlProperties(CONFIGURATION_XML);
         assertNotNull(properties);
+        assertTrue(properties.size() > 0);
         LOG.info(properties.toString());
     }
 

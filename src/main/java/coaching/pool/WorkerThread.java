@@ -38,7 +38,7 @@ public class WorkerThread implements Runnable {
             Thread.sleep(WorkerThread.INTERVAL);
         } catch (final InterruptedException e) {
             Thread.currentThread().interrupt();
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 

@@ -16,12 +16,13 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 public final class CsvFileTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CsvFileTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CsvFileTest.class);
 
     /**
      * Unit Test to csv file.
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCsvFile() throws FileNotLoadedException {
@@ -34,6 +35,8 @@ public final class CsvFileTest {
 
     /**
      * Unit Test to CsvFile class.
+     *
+     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCsvFileString() throws FileNotLoadedException {
@@ -46,6 +49,8 @@ public final class CsvFileTest {
 
     /**
      * Unit Test to CsvFile class.
+     *
+     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCsvFileHeader() throws FileNotLoadedException {
@@ -59,6 +64,8 @@ public final class CsvFileTest {
 
     /**
      * Unit Test to CsvFile class.
+     *
+     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCsvFileRecords() throws FileNotLoadedException {

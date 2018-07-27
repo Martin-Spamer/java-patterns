@@ -62,7 +62,8 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      */
-    public AbstractPayload load(final InputStream inputStream) throws IOException {
+    public AbstractPayload load(final InputStream inputStream)
+            throws IOException {
         properties.load(inputStream);
         return this;
     }
@@ -96,7 +97,8 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      */
-    public AbstractPayload store(final OutputStream outputStream) throws IOException {
+    public AbstractPayload store(final OutputStream outputStream)
+            throws IOException {
         return this.store(outputStream, "");
     }
 
@@ -111,7 +113,8 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      */
-    public AbstractPayload store(final OutputStream outputStream, final String comments) throws IOException {
+    public AbstractPayload store(final OutputStream outputStream,
+            final String comments) throws IOException {
         properties.store(outputStream, comments);
         return this;
     }

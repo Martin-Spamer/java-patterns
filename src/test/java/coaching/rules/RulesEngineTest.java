@@ -13,7 +13,8 @@ import static org.junit.Assert.assertNotNull;
 public final class RulesEngineTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RulesEngineTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(RulesEngineTest.class);
 
     /**
      * Unit Test to rules engine.

@@ -324,6 +324,11 @@ public final class BigDecimalMoney {
         return numberFormat.format(amount);
     }
 
+    /**
+     * Debug string.
+     *
+     * @return the string
+     */
     public String debugString() {
         final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
         final String currencyString = numberFormat.format(amount);

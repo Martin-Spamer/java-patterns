@@ -9,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import coaching.resources.ResourceNotLoadedException;
+
 /**
  * Unit test for the AbstractConfig object.
  */
@@ -21,7 +23,8 @@ public final class AbstractConfigTest {
     private static final String CONFIG_PROPERTIES = "Configuration.properties";
 
     /** provide logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractConfigTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(AbstractConfigTest.class);
 
     /**
      * Mock a MissingConfiguration.
@@ -53,7 +56,7 @@ public final class AbstractConfigTest {
     /**
      * Unit Test with missing property file.
      */
-    @Test
+    @Test(expected = ResourceNotLoadedException.class)
     public void testMissingConfig() {
         LOG.debug("testMissingConfig");
         final ConfigInterface configuration = new MissingConfiguration();
@@ -63,7 +66,7 @@ public final class AbstractConfigTest {
     /**
      * Unit Test with missing property file.
      */
-    @Test
+    @Test(expected = ResourceNotLoadedException.class)
     public void testMissingConfigString() {
         LOG.debug("testMissingConfigString");
         final ConfigInterface configuration = new Configuration("Missing");

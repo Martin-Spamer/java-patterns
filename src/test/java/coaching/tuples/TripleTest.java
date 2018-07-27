@@ -13,6 +13,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class TripleTest {
 
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(TripleTest.class);
 
     /**

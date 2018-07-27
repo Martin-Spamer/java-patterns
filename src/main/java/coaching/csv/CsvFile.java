@@ -14,6 +14,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import coaching.resources.ResourceLoader;
+
 /**
  * The CsvFile class represents a data file containing comma separated values.
  */
@@ -25,7 +27,7 @@ public class CsvFile {
     /** The filename. */
     private String csvFilename;
 
-    /** The header line of the csv file */
+    /** The header line of the csv file. */
     private String headerLine;
 
     /** The column names for the csv file. */
@@ -39,16 +41,19 @@ public class CsvFile {
 
     /**
      * Instantiates a new csv file.
-     *
-     * @throws FileNotLoadedException
      */
     public CsvFile() {
         super();
         LOG.debug("CsvFile()");
         initialise(defaultFilename());
-        LOG.debug("TODO {}",this);
+        LOG.debug("TODO {}", this);
     }
 
+    /**
+     * Default filename.
+     *
+     * @return the string
+     */
     private String defaultFilename() {
         if (csvFilename == null) {
             final String stem = this.getClass().getSimpleName();
@@ -60,21 +65,19 @@ public class CsvFile {
     /**
      * Instantiates a new csv file from filename.
      *
-     * @param csvFilename
-     *            the csv filename
-     * @throws FileNotLoadedException
+     * @param csvFilename the csv filename
      */
     public CsvFile(final String csvFilename) {
         super();
         LOG.debug("CsvFile({})", csvFilename);
         initialise(csvFilename);
-        LOG.debug("TODO {}",this);
+        LOG.debug("TODO {}", this);
     }
 
     /**
      * Initialise.
      *
-     * @throws FileNotLoadedException
+     * @param csvFilename the csv filename
      */
     private void initialise(final String csvFilename) {
         LOG.debug("initialise({})", csvFilename);
@@ -85,28 +88,15 @@ public class CsvFile {
     /**
      * Read filename.
      *
-     * @param filename the filename
-     * @throws FileNotLoadedException
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @param resourceName the filename of the resource
      */
-    private void read(final String filename) {
-        LOG.debug("read({})", filename);
-        final ClassLoader classLoader = this.getClass().getClassLoader();
+    private void read(final String resourceName) {
+        LOG.debug("read({})", resourceName);
+        final InputStream stream = ResourceLoader.getStream(resourceName);
         try {
-            final InputStream resourceAsStream = classLoader
-                .getResourceAsStream(filename);
-            if (resourceAsStream != null) {
-                read(resourceAsStream);
-                resourceAsStream.close();
-            } else {
-                final String msg = String
-                    .format("Resource %s not found", filename);
-                LOG.warn("{} on read({})", msg, filename);
-                throw new FileNotLoadedException(msg);
-            }
+            read(stream);
         } catch (final IOException e) {
-            LOG.error(e.getMessage(), e);
-            throw new FileNotLoadedException(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -192,7 +182,7 @@ public class CsvFile {
      * Write.
      *
      * @param filename the filename
-     * @throws IOException
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public void write(final String filename) throws IOException {
         LOG.debug("write({})", filename);
@@ -220,15 +210,6 @@ public class CsvFile {
      * @return the headerLine
      */
     public String getHeaderLine() {
-        return headerLine;
-    }
-
-    /**
-     * header.
-     *
-     * @return the header
-     */
-    public String getHeader() {
         return headerLine;
     }
 
@@ -291,17 +272,36 @@ public class CsvFile {
             .replace("]", "\n\t]}");
     }
 
+    /**
+     * FileNotLoadedException.
+     */
     public class FileNotLoadedException extends AssertionError {
+
+        /** serialVersionUID constant. */
         private static final long serialVersionUID = 1L;
 
+        /**
+         * Instantiates a new file not loaded exception.
+         */
         public FileNotLoadedException() {
             super();
         }
 
+        /**
+         * Instantiates a new file not loaded exception.
+         *
+         * @param message the message
+         */
         public FileNotLoadedException(final String message) {
             super(message);
         }
 
+        /**
+         * Instantiates a new file not loaded exception.
+         *
+         * @param message the message
+         * @param cause the cause
+         */
         public FileNotLoadedException(final String message,
                 final Throwable cause) {
             super(message, cause);

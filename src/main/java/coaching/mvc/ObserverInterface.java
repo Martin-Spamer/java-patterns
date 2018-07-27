@@ -1,11 +1,3 @@
-/*
- * ObserverInterface.java
- *
- * Created on 06 May 2006, 13:07
- *
- * To change this template, choose Tools | Template Manager
- * editor.
- */
 
 package coaching.mvc;
 

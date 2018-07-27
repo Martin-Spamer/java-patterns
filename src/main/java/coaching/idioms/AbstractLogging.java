@@ -14,40 +14,29 @@ import org.slf4j.LoggerFactory;
  *
  * logging layout formater (%F:%L) for click through in most IDEs.
  */
-public abstract class AbstractLogging implements LoggingInterface {
+public abstract class AbstractLogging {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.idioms.LoggingInterface#toLog()
+    /**
+     * To log.
      */
-    @Override
     public void toLog() {
         log.info("the.{}.toLog", this.getClass().getSimpleName());
     }
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.idioms.LoggingInterface#logTo(org.slf4j.Logger)
+    /**
+     * Log to.
+     *
+     * @param destinationLog the destination log
      */
-    @Override
     public void logTo(final Logger destinationLog) {
         final String destinationLogName = destinationLog
             .getClass()
             .getSimpleName();
         destinationLog.info("{}.log({})", destinationLogName, this);
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-        return String.format("%s [...]", this.getClass().getSimpleName());
     }
 
 }

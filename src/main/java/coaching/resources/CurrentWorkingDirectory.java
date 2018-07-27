@@ -40,11 +40,11 @@ public final class CurrentWorkingDirectory {
                 file.createNewFile();
                 absolutePath = file.getAbsolutePath();
                 LOG.info(absolutePath);
-            } catch (final Exception exception) {
-                LOG.error(exception.toString(), exception);
+            } catch (final Exception e) {
+                LOG.error(e.getLocalizedMessage(), e);
             }
-        } catch (final Exception exception) {
-            LOG.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            LOG.error(e.getLocalizedMessage(), e);
         }
         return absolutePath;
     }

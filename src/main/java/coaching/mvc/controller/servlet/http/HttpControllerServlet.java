@@ -19,11 +19,12 @@ import org.slf4j.LoggerFactory;
 import coaching.mvc.controller.ControllerException;
 
 /**
- * ControllerServlet Class.
+ * ControllerServlet class.
  */
 @SuppressWarnings("serial")
 public class HttpControllerServlet extends HttpServlet {
 
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(HttpControllerServlet.class);
 
@@ -40,9 +41,9 @@ public class HttpControllerServlet extends HttpServlet {
         try {
             response.sendRedirect(execute(parameters));
         } catch (final ControllerException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         } catch (final IOException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -59,7 +60,7 @@ public class HttpControllerServlet extends HttpServlet {
         try {
             execute(parameters);
         } catch (final ControllerException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -93,6 +94,7 @@ public class HttpControllerServlet extends HttpServlet {
      */
     @Override
     public void init(final ServletConfig config) throws ServletException {
+        log(config.toString());
         super.init(config);
     }
 

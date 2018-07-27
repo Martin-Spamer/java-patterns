@@ -5,7 +5,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class FileHelper {
+/**
+ * The Class FileHelper.
+ */
+public final class FileHelper {
+
+    /**
+     * Instantiates a new file helper.
+     */
+    private FileHelper() {
+        throw new UnsupportedOperationException(
+                "Do not instantiate this class, use staticly.");
+    }
 
     /**
      * Loads filename into a string.
@@ -14,8 +25,10 @@ public class FileHelper {
      * @return the string
      * @throws FileNotFoundException the file not found exception
      */
-    public String toString(final String filename) throws FileNotFoundException {
-        return new Scanner(new File(filename)).useDelimiter("\\A").next();
+    public static String getAsString(final String filename)
+            throws FileNotFoundException {
+        final File file = new File(filename);
+        return new Scanner(file).useDelimiter("\\A").next();
     }
 
 }

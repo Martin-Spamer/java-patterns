@@ -8,10 +8,11 @@ import patterns.mvc.ViewInterface;
 /**
  * Example Controller class from the Model View Controller (MVC).
  */
-public final class Controller extends AbstractController implements ControllerInterface {
+public final class Controller extends AbstractController
+        implements ControllerInterface {
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public Controller() {
         super();
@@ -19,7 +20,7 @@ public final class Controller extends AbstractController implements ControllerIn
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param model the model
      * @param view the view

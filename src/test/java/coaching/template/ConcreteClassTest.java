@@ -12,7 +12,9 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class ConcreteClassTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ConcreteClassTest.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ConcreteClassTest.class);
 
     /**
      * Unit Test to primitive operation A.

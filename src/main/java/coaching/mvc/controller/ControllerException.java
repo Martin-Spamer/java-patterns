@@ -10,10 +10,10 @@
 package coaching.mvc.controller;
 
 /**
- * ControllerException Class.
+ * ControllerException class.
  */
 @SuppressWarnings("serial")
-public class ControllerException extends java.lang.Exception {
+public class ControllerException extends Exception {
 
     /**
      * Instantiates a new controller exception.

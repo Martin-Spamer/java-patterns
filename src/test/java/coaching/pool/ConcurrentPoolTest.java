@@ -13,12 +13,15 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class ConcurrentPoolTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ConcurrentPoolTest.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ConcurrentPoolTest.class);
 
     /**
      * TestResourcePool Class.
      */
-    public final class TestResourcePool extends AbstractConcurrentPool<Boolean> {
+    public final class TestResourcePool
+            extends AbstractConcurrentPool<Boolean> {
     }
 
     /**

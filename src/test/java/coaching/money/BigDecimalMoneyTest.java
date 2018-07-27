@@ -19,7 +19,8 @@ import static org.junit.Assume.assumeTrue;
 public final class BigDecimalMoneyTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BigDecimalMoneyTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(BigDecimalMoneyTest.class);
 
     /**
      * Report the details of the default locale.

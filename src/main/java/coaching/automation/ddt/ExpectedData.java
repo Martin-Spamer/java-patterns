@@ -14,56 +14,51 @@ import coaching.csv.CsvFile.FileNotLoadedException;
  * Given a cash customer ...
  *
  */
-public final class ExpectedData extends AbstractExpectedData implements ExpectedDataInterface {
+public final class ExpectedData extends AbstractExpectedData
+        implements ExpectedDataInterface {
 
     /** single static instance within the class loader. */
     private static final ExpectedData INSTANCE = new ExpectedData();
 
     /** The platform. */
-    protected String platform = null;
+    private String platform = null;
 
     /**
      * Gets the instance.
      *
      * @return the instance
-     * @throws FileNotLoadedException
      */
-    protected static synchronized ExpectedData getInstance() {
+    private static synchronized ExpectedData getInstance() {
         return INSTANCE;
     }
 
     /**
-     * The Constructor.
-     *
-     * @throws FileNotLoadedException
+     * Default constructor.
      */
     private ExpectedData() {
         super();
         setPlatform(System.getProperty("platform", "local"));
-        loadPlatformData();
+        initialise();
     }
 
     /**
-     * The Constructor.
+     * Constructor for specific platform.
      *
      * @param platform the platform
-     * @throws FileNotLoadedException
      */
     public ExpectedData(final String platform) {
         super();
         setPlatform(platform);
-        loadPlatformData();
+        initialise();
     }
 
     /**
      * Load platform data.
-     *
-     * @throws FileNotLoadedException
      */
-    private void loadPlatformData() {
+    private void initialise() {
         try {
-            super.loadData("ExpectedData.csv");
-        } catch (FileNotLoadedException e) {
+            super.initialise("ExpectedData.csv");
+        } catch (final FileNotLoadedException e) {
             log.error(e.toString());
         }
     }
@@ -73,9 +68,10 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
      *
      * @param platform the platform
      * @return the expected data
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
-    public static ExpectedData platform(final String platform) throws FileNotLoadedException {
+    public static ExpectedData platform(final String platform)
+            throws FileNotLoadedException {
         return ExpectedData.getInstance().setPlatform(platform);
     }
 
@@ -99,14 +95,48 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return platform;
     }
 
+    public static ExpectedData fromCsv() {
+        return ExpectedData.getInstance().loadFromCsv();
+    }
+
+    private ExpectedData loadFromCsv() {
+        String simpleName = this.getClass().getSimpleName();
+        String filename = String.format("%s.csv", simpleName);
+        log.info("{}", filename);
+        return this;
+    }
+
+    public static ExpectedData fromXml() {
+        return ExpectedData.getInstance().loadFromXml();
+    }
+
+    private ExpectedData loadFromXml() {
+        String simpleName = this.getClass().getSimpleName();
+        String filename = String.format("%s.xml", simpleName);
+        log.info("{}", filename);
+        return this;
+    }
+
+    public static ExpectedData fromJson() {
+        return ExpectedData.getInstance().loadFromJson("");
+    }
+
+    private ExpectedData loadFromJson(final String jsonFilename) {
+        String simpleName = this.getClass().getSimpleName();
+        String filename = String.format("%s.json", simpleName);
+        log.info("{}", filename);
+        return this;
+    }
+
     /**
      * With tag.
      *
      * @param tag the tag
      * @return the string
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
-    public static String withTag(final String tag) throws FileNotLoadedException {
+    public static String withTag(final String tag)
+            throws FileNotLoadedException {
         return ExpectedData.getInstance().getTagged(tag);
     }
 
@@ -115,9 +145,10 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
      *
      * @param tag the tag
      * @return the string
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
-    public static String withCharacteristic(final String tag) throws FileNotLoadedException {
+    public static String withCharacteristic(final String tag)
+            throws FileNotLoadedException {
         return ExpectedData.getInstance().getTagged(tag);
     }
 
@@ -126,16 +157,26 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
      *
      * @param tag the tag
      * @return the string[]
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
-    public static String[] allWithTag(final String tag) throws FileNotLoadedException {
+    public static String[] allWithTag(final String tag)
+            throws FileNotLoadedException {
         return ExpectedData.getInstance().getAllTagged(tag);
     }
 
+    /**
+     * Debug string.
+     *
+     * @return the string
+     */
     public static String debugString() {
         return ExpectedData.getInstance().toString();
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String.format("ExpectedData [platform=%s]", platform);

@@ -35,7 +35,8 @@ public final class Subject extends AbstractSubject {
      */
     @Override
     public String toString() {
-        return String.format("%s [status=%s]", this.getClass().getSimpleName(), status);
+        return String
+            .format("%s [status=%s]", this.getClass().getSimpleName(), status);
     }
 
 }

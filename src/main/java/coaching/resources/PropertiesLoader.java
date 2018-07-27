@@ -31,9 +31,13 @@ import static org.junit.Assert.fail;
  */
 public final class PropertiesLoader {
 
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(PropertiesLoader.class);
 
+    /**
+     * Instantiates a new properties loader.
+     */
     private PropertiesLoader() {
         fail("Use static methods");
     }
@@ -43,14 +47,14 @@ public final class PropertiesLoader {
      *
      * @param resourceName the resource filename
      * @return the properties
-     * @throws IOException the IO exception
      */
     public static Properties getProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
             final InputStream stream = ResourceLoader
-                .getStream(resourceName);
+                .getStream(propertiesFilename(resourceName));
             properties.load(stream);
+            properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
@@ -58,23 +62,53 @@ public final class PropertiesLoader {
     }
 
     /**
+     * Properties filename.
+     *
+     * @param resourceName the resource name
+     * @return the string
+     */
+    private static String propertiesFilename(final String resourceName) {
+        final String suffix = ".properties";
+        if (resourceName.endsWith(suffix)) {
+            return resourceName;
+        } else {
+            return String.format("%s%s", resourceName, suffix);
+        }
+    }
+
+    /**
      * Gets the xml properties.
      *
      * @param resourceName the xml resource filename
      * @return the xml properties
-     * @throws IOException the IO exception
      */
-    public static Properties getXmlProperties(
-            final String resourceName) {
+    public static Properties getXmlProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
             final InputStream stream = ResourceLoader
-                .getStream(resourceName);
+                .getStream(xmlPropertiesFilename(
+                        xmlPropertiesFilename(resourceName)));
             properties.loadFromXML(stream);
+            properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return properties;
+    }
+
+    /**
+     * Xml properties filename.
+     *
+     * @param resourceName the resource name
+     * @return the string
+     */
+    private static String xmlPropertiesFilename(final String resourceName) {
+        final String suffix = ".xml";
+        if (resourceName.endsWith(suffix)) {
+            return resourceName;
+        } else {
+            return String.format("%s%s", resourceName, suffix);
+        }
     }
 
 }

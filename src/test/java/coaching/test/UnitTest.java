@@ -16,20 +16,39 @@ import static org.junit.Assume.assumeNotNull;
  */
 public final class UnitTest {
 
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(UnitTest.class);
 
+    /**
+     * Unit test class for ClassUnder.
+     */
     public final class ClassUnderTest {
+        
+        /**
+         * Instantiates a new class under test.
+         */
         public ClassUnderTest() {
             super();
             LOG.debug("ClassUnderTest() : {}", this);
         }
 
+        /**
+         * Instantiates a new class under test.
+         *
+         * @param object the object
+         */
         public ClassUnderTest(final Object object) {
             super();
             LOG.debug("ClassUnderTest({object}) : {}", object, this);
             doSomething(object);
         }
 
+        /**
+         * Do something.
+         *
+         * @param state the state
+         * @return the class under test
+         */
         public ClassUnderTest doSomething(final Object state) {
             if (state == null) {
                 return (ClassUnderTest) failed();
@@ -38,14 +57,27 @@ public final class UnitTest {
             }
         }
 
+        /**
+         * Failed.
+         *
+         * @return the object
+         */
         public Object failed() {
             return null;
         }
 
+        /**
+         * Passed.
+         *
+         * @return the object
+         */
         public Object passed() {
             return this;
         }
 
+        /* (non-Javadoc)
+         * @see java.lang.Object#toString()
+         */
         @Override
         public String toString() {
             return String.format("%s []", this.getClass().getSimpleName());

@@ -20,7 +20,8 @@ public class Disjunction extends NonTerminalExpression {
      * @param rhs
      *            sub-expression on right hand side.
      */
-    public Disjunction(final AbstractExpression lhs, final AbstractExpression rhs) {
+    public Disjunction(final AbstractExpression lhs,
+            final AbstractExpression rhs) {
         super();
         this.lhs = lhs;
         this.rhs = rhs;

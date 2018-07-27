@@ -74,7 +74,7 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
             return resource;
         } catch (final InterruptedException e) {
             Thread.currentThread().interrupt();
-            this.log.error(e.toString(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }

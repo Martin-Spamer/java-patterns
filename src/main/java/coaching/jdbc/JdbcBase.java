@@ -8,7 +8,6 @@ package coaching.jdbc;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -27,6 +26,9 @@ public abstract class JdbcBase {
         .getLogger(this.getClass().getSimpleName());
 
     /** The JDBC connection. */
+    protected ConnectionFactory connectionFactory = null;
+
+    /** The connection. */
     protected Connection connection = null;
 
     /** The SQL statement. */
@@ -45,23 +47,18 @@ public abstract class JdbcBase {
      * Instantiates a new jdbc base.
      */
     public JdbcBase() {
-        super();
-        try {
-            Class.forName(JdbcConfig.driver());
+        initialise();
+    }
 
-            try {
-                connection = DriverManager
-                    .getConnection(
-                            JdbcConfig.url(),
-                            JdbcConfig.username(),
-                            JdbcConfig.password());
-            } catch (final SQLException e) {
-                log.error(e.toString(), e);
-            }
-
-        } catch (final ClassNotFoundException e) {
-            log.error(e.toString(), e);
-        }
+    /**
+     * Initialise.
+     */
+    private void initialise() {
+        connectionFactory = new ConnectionFactory(
+                JdbcConfig.driver(),
+                JdbcConfig.url(),
+                JdbcConfig.username(),
+                JdbcConfig.password());
     }
 
     /**
@@ -83,6 +80,7 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase query(final String query) throws SQLException {
+        connection = connectionFactory.newConnection();
         statement = connection.createStatement();
         resultSet = statement.executeQuery(query);
         resultSetMetaData = resultSet.getMetaData();
@@ -98,7 +96,7 @@ public abstract class JdbcBase {
             statement.close();
             connection.close();
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 

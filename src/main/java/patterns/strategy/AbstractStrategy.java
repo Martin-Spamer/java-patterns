@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractStrategy implements StrategyInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The context. */
     private Context context = null;
@@ -32,7 +33,9 @@ public abstract class AbstractStrategy implements StrategyInterface {
      */
     @Override
     public void operation() {
-        log.info("{}.operation() should be overridden.", this.getClass().getSimpleName());
+        log
+            .info("{}.operation() should be overridden.",
+                    this.getClass().getSimpleName());
     }
 
     /*
@@ -41,7 +44,10 @@ public abstract class AbstractStrategy implements StrategyInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [context=%s]", this.getClass().getSimpleName(), context);
+        return String
+            .format("%s [context=%s]",
+                    this.getClass().getSimpleName(),
+                    context);
     }
 
 }

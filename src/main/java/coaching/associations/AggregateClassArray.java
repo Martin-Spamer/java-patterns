@@ -15,12 +15,12 @@ import org.slf4j.LoggerFactory;
  **/
 public final class AggregateClassArray {
 
-    /** The SIZE of the Aggregation. */
-    private static final int SIZE = 4;
-
     /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(AggregateClassArray.class);
+
+    /** The SIZE of the Aggregation. */
+    private static final int SIZE = 4;
 
     /** The aggregate Implement an Aggregate using a Array of classes. */
     private final AbstractPerson[] aggregate = new AbstractPerson[SIZE];
@@ -28,14 +28,27 @@ public final class AggregateClassArray {
     /**
      * Sets the aggregate.
      *
-     * @param index
-     *            the index
-     * @param element
-     *            the element
+     * @param index the index
+     * @param element the element
+     * @return the aggregate class array
      */
-    public void setAggregate(final int index, final AbstractPerson element) {
-        LOG.info("{}.execute", this.getClass().getName());
+    public AggregateClassArray setAggregate(final int index,
+            final AbstractPerson element) {
+        LOG.info("setAggregate({},{}) = {}", index, element, this);
         aggregate[index] = element;
+        return this;
+    }
+
+    /**
+     * Execute.
+     *
+     * @param index the index
+     * @return the aggregate class array
+     */
+    public AggregateClassArray execute(final int index) {
+        LOG.info("execute {}", this);
+        aggregate[index].execute();
+        return this;
     }
 
     /**

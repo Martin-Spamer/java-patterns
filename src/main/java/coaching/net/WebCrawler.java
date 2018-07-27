@@ -19,6 +19,7 @@ import java.util.StringTokenizer;
  */
 public final class WebCrawler extends ThreadTemplate {
 
+    /** BUFFER_SIZE constant. */
     private static final int BUFFER_SIZE = 1024;
 
     /** The Constant BASE_URL. */
@@ -47,8 +48,8 @@ public final class WebCrawler extends ThreadTemplate {
             if (isHttp(url)) {
                 crawlSite(url);
             }
-        } catch (final Exception exception) {
-            log.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -85,7 +86,8 @@ public final class WebCrawler extends ThreadTemplate {
                 do {
                     bufferContentSize = robotsTxtInputStream.read(buffer);
                     if (bufferContentSize != -1) {
-                        String str = new String(buffer, 0, bufferContentSize);
+                        final String str = new String(buffer, 0,
+                                bufferContentSize);
                         robotTxtContent.append(str);
                         robotTxtContentBuffer.append(Arrays.toString(buffer));
                     }
@@ -168,7 +170,7 @@ public final class WebCrawler extends ThreadTemplate {
                     do {
                         bufferContentSize = inputStream.read(buffer);
                         if (bufferContentSize != -1) {
-                            String strBuffer = new String(buffer, 0,
+                            final String strBuffer = new String(buffer, 0,
                                     bufferContentSize);
                             responseContent.append(strBuffer);
                             responseContentBuffer

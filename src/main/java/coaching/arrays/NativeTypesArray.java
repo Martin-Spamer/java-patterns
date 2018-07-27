@@ -40,7 +40,7 @@ public class NativeTypesArray {
     public void displayMatrix() {
         long[][] matrix;
         matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
-        LOG.info(looping(matrix));
+        LOG.info("looping(matrix) = {}", looping(matrix));
     }
 
     /**
@@ -48,26 +48,25 @@ public class NativeTypesArray {
      */
     public void display() {
         final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
-        LOG.info(Arrays.toString(vector));
-        LOG.info(looping(vector));
+        LOG.info("Arrays.toString(vector)) = {}", Arrays.toString(vector));
+        LOG.info("looping(vector) = {}", looping(vector));
     }
 
     /**
      * Looping.
      *
-     * @param vector
-     *            the vector
+     * @param vector the vector
      * @return the string
      */
     private String looping(final long[][] vector) {
         final StringBuilder stringBuffer = new StringBuilder();
         for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
+            stringBuffer.append('\n');
             for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
                 vector[firstIndex][secondIndex] = firstIndex * secondIndex;
                 stringBuffer.append(vector[firstIndex][secondIndex]);
                 stringBuffer.append(',');
             }
-            stringBuffer.append('\n');
         }
         return stringBuffer.toString();
     }

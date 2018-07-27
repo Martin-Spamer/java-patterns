@@ -16,7 +16,9 @@ import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
  */
 public final class CustomExceptionHandlingTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandlingTest.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CustomExceptionHandlingTest.class);
 
     /**
      * Unit Test to sub process A.
@@ -70,6 +72,9 @@ public final class CustomExceptionHandlingTest {
         customExceptionHandling.propagateException();
     }
 
+    /**
+     * Catch base custom exception.
+     */
     @Test
     public void catchBaseCustomException() {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
@@ -77,6 +82,9 @@ public final class CustomExceptionHandlingTest {
         customExceptionHandling.catchBaseCustomException();
     }
 
+    /**
+     * Catch multi exceptions.
+     */
     @Test
     public void catchMultiExceptions() {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
@@ -84,6 +92,9 @@ public final class CustomExceptionHandlingTest {
         customExceptionHandling.catchMultiExceptions();
     }
 
+    /**
+     * Catch each exception.
+     */
     @Test
     public void catchEachException() {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
@@ -91,6 +102,11 @@ public final class CustomExceptionHandlingTest {
         customExceptionHandling.catchEachException();
     }
 
+    /**
+     * Nested process.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void nestedProcess() throws Exception {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
@@ -98,6 +114,11 @@ public final class CustomExceptionHandlingTest {
         customExceptionHandling.nestedProcess();
     }
 
+    /**
+     * Failsafe process.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void failsafeProcess() throws Exception {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();

@@ -25,7 +25,7 @@ import java.sql.SQLException;
 public final class DynamicDao extends JdbcBase {
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public DynamicDao() {
         super();
@@ -38,7 +38,7 @@ public final class DynamicDao extends JdbcBase {
         try {
             super.query();
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 }

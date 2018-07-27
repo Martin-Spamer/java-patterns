@@ -12,15 +12,29 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class SchedulerConfigTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SchedulerConfigTest.class);
+    /** provides logging. */
+    private static final Logger LOG = LoggerFactory
+        .getLogger(SchedulerConfigTest.class);
 
     /**
      * Unit test to scheduler config.
      */
     @Test
     public void testSchedulerConfig() {
-        SchedulerConfig config = new SchedulerConfig();
+        final SchedulerConfig config = new SchedulerConfig();
         assertNotNull(config);
+        LOG.info("{}", config);
+    }
+
+    /**
+     * Unit test to scheduler config.
+     */
+    @Test
+    public void testSchedulerConfigString() {
+        final SchedulerConfig config = new SchedulerConfig(
+                "Scheduler.properties");
+        assertNotNull(config);
+        LOG.info("{}", config);
     }
 
 }

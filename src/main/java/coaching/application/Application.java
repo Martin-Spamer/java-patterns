@@ -10,12 +10,18 @@ public final class Application extends AbstractApplication {
 
     /**
      * Instantiates a new application.
+     */
+    public Application() {
+        super();
+    }
+
+    /**
+     * Instantiates a new application.
      *
      * @param args the args
      */
     public Application(final String[] args) {
         super(args);
-        log.trace("System properties = {}", System.getProperties().toString());
         log.debug("args = {}", Arrays.toString(args));
     }
 
@@ -28,8 +34,8 @@ public final class Application extends AbstractApplication {
         try {
             log.info("execute() : {}", this);
             return true;
-        } catch (final Exception exception) {
-            log.error(exception.toString(), exception);
+        } catch (final Exception e) {
+            log.error(e.getLocalizedMessage(), e);
             return false;
         }
     }

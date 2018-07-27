@@ -17,9 +17,7 @@ public class CompositeClassArray {
     private static final Logger LOG = LoggerFactory
         .getLogger(CompositeClassArray.class);
 
-    /**
-     * The Composite implemented using a Class Array
-     */
+    /** The Composite implemented using a class array. */
     private final AbstractPerson[] composite = { new Alice(), new Bob(),
             new Charlie(), new Dan() };
 
@@ -28,7 +26,7 @@ public class CompositeClassArray {
      */
     public CompositeClassArray() {
         super();
-        LOG.info("CompositeClassArray");
+        LOG.info("CompositeClassArray() {}", this);
     }
 
     /*

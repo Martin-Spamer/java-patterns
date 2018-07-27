@@ -13,7 +13,8 @@ import static org.junit.Assert.assertNotNull;
 public final class ManagerTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ManagerTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ManagerTest.class);
 
     /**
      * Test delegation.

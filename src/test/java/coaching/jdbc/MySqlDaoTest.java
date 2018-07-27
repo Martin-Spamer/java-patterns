@@ -14,6 +14,7 @@ import static org.junit.Assert.assertNotNull;
 @Ignore("Requires MySQL DB availability work-in-progress low-priority")
 public final class MySqlDaoTest {
 
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(MySqlDaoTest.class);
 
@@ -41,7 +42,7 @@ public final class MySqlDaoTest {
     /**
      * Test the default constructor with typical usage.
      *
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testMySqlDao() throws ClassNotFoundException {
@@ -53,7 +54,7 @@ public final class MySqlDaoTest {
     /**
      * Test create.
      *
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testCreate() throws ClassNotFoundException {
@@ -65,6 +66,8 @@ public final class MySqlDaoTest {
 
     /**
      * Test read.
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testRead() throws ClassNotFoundException {
@@ -77,6 +80,8 @@ public final class MySqlDaoTest {
 
     /**
      * Test update.
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testUpdate() throws ClassNotFoundException {
@@ -88,6 +93,8 @@ public final class MySqlDaoTest {
 
     /**
      * Test delete.
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testDelete() throws ClassNotFoundException {

@@ -24,7 +24,7 @@ public final class PortScanTest {
     @Test
     public void testPortScan() {
         LOG.info("testPortScan");
-        PortScan portScan = new PortScan();
+        final PortScan portScan = new PortScan();
         assertNotNull(portScan);
         LOG.info(portScan.toString());
     }
@@ -35,7 +35,7 @@ public final class PortScanTest {
     @Test
     public void testPortScanStringInt() {
         LOG.info("testPortScanStringInt");
-        PortScan portScan = new PortScan("127.0.0.1", 8080);
+        final PortScan portScan = new PortScan("127.0.0.1", 8080);
         assertNotNull(portScan);
         LOG.info(portScan.toString());
     }
@@ -46,7 +46,7 @@ public final class PortScanTest {
     @Test
     public void testPortScanNull() {
         LOG.info("testPortScanNull");
-        PortScan portScan = new PortScan(null, 8080);
+        final PortScan portScan = new PortScan(null, 8080);
         assertNotNull(portScan);
     }
 
@@ -56,8 +56,8 @@ public final class PortScanTest {
     @Test
     public void testPortScanArgs() {
         LOG.info("testPortScanArgs");
-        String[] args = { "127.0.0.1", "8080" };
-        PortScan portScan = new PortScan(args);
+        final String[] args = { "127.0.0.1", "8080" };
+        final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);
         LOG.info(portScan.toString());
     }
@@ -68,8 +68,8 @@ public final class PortScanTest {
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void testPortScanNullArgs() {
         LOG.info("testPortScanNullArgs");
-        String[] args = {};
-        PortScan portScan = new PortScan(args);
+        final String[] args = {};
+        final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);
     }
 
@@ -79,8 +79,8 @@ public final class PortScanTest {
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void testPortScanEmptyArgs() {
         LOG.info("testPortScanEmptyArgs");
-        String[] args = {};
-        PortScan portScan = new PortScan(args);
+        final String[] args = {};
+        final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);
     }
 
@@ -90,8 +90,8 @@ public final class PortScanTest {
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void testPortScanZeroArgs() {
         LOG.info("testPortScanZeroArgs");
-        String[] args = new String[0];
-        PortScan portScan = new PortScan(args);
+        final String[] args = new String[0];
+        final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);
     }
 }

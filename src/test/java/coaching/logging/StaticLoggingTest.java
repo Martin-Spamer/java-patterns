@@ -11,7 +11,8 @@ import org.slf4j.LoggerFactory;
 public final class StaticLoggingTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(StaticLoggingTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(StaticLoggingTest.class);
 
     /**
      * Unit Test to send to log.

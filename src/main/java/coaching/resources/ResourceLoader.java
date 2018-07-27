@@ -62,19 +62,7 @@ public final class ResourceLoader {
      * @return the stream
      */
     public static InputStream getStream(final URL resourceUrl) {
-        final ClassLoader classLoader = Thread
-            .currentThread()
-            .getContextClassLoader();
-        final String file = resourceUrl.getFile();
-        final InputStream resourceAsStream = classLoader
-            .getResourceAsStream(file);
-        if (resourceAsStream == null) {
-            String message = makeMsg(resourceUrl.toString());
-            LOG.error("{}", message);
-            throw new ResourceNotLoadedException(message);
-        } else {
-            return resourceAsStream;
-        }
+        return getStream(resourceUrl.getFile());
     }
 
     /**
@@ -84,19 +72,8 @@ public final class ResourceLoader {
      * @return the stream
      */
     public static InputStream getStream(final URI resourceUri) {
-        final ClassLoader classLoader = Thread
-            .currentThread()
-            .getContextClassLoader();
         final String path = resourceUri.normalize().getPath();
-        final InputStream resourceAsStream = classLoader
-            .getResourceAsStream(path);
-        if (resourceAsStream == null) {
-            String message = makeMsg(resourceUri.toString());
-            LOG.error("{}", message);
-            throw new ResourceNotLoadedException(message);
-        } else {
-            return resourceAsStream;
-        }
+        return getStream(path);
     }
 
     /**

@@ -13,14 +13,15 @@ import static org.junit.Assert.assertNotNull;
 public final class PicoProxyTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PicoProxyTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PicoProxyTest.class);
 
     /**
      * Unit test to pico proxy.
      */
     @Test
     public void testPicoProxy() {
-        PicoProxy picoProxy = new PicoProxy();
+        final PicoProxy picoProxy = new PicoProxy();
         assertNotNull(picoProxy);
         LOG.info(picoProxy.toString());
     }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	<!DOCTYPE scheduler SYSTEM "Scheduler.dtd">
+-->
+<scheduler>
+	<thread name="Process Alice" class="coaching.thread.ProcessAlice" />
+	<thread name="Process Bob" class="coaching.thread.ProcessBob" ></thread>
+	<thread name="Process Charlie" class="coaching.thread.ProcessCharlie" >
+    	<parameter name="name" value="value"/>
+	</thread>
+
+	<command name="CommandAlice" class="coaching.thread.CommandAlice" />
+	<command name="CommandBob" class="coaching.thread.CommandBob" ></command>
+	<command name="CommandCharlie" class="coaching.thread.CommandCharlie">
+    	<parameter name="name" value="value"/>
+	</command>
+
+</scheduler>

@@ -10,7 +10,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * when finished.
  */
 @SuppressWarnings("serial")
-public final class CommandMap extends ConcurrentHashMap<String, AbstractCommand> {
+public final class CommandMap
+        extends ConcurrentHashMap<String, AbstractCommand> {
 
     /**
      * Execute.
@@ -21,14 +22,16 @@ public final class CommandMap extends ConcurrentHashMap<String, AbstractCommand>
      * @throws MissingCommandException
      *             the missing command exception
      */
-    public ResultInterface execute(final String actionName) throws MissingCommandException {
+    public ResultInterface execute(final String actionName)
+            throws MissingCommandException {
         if (actionName == null) {
             final String message = "actionName cannot be null";
             throw new MissingCommandException(message);
         } else {
             final CommandInterface command = get(actionName);
             if (command == null) {
-                final String message = String.format("command %s not found", actionName);
+                final String message = String
+                    .format("command %s not found", actionName);
                 throw new MissingCommandException(message);
             } else {
                 return command.execute(new Parameters());
@@ -36,9 +39,16 @@ public final class CommandMap extends ConcurrentHashMap<String, AbstractCommand>
         }
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.util.AbstractMap#toString()
+     */
     @Override
     public String toString() {
-        return String.format("%s [toString()=%s]", this.getClass().getSimpleName(), super.toString());
+        return String
+            .format("%s [toString()=%s]",
+                    this.getClass().getSimpleName(),
+                    super.toString());
     }
 
 }

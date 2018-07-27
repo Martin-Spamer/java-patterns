@@ -16,7 +16,8 @@ import static org.junit.Assert.assertTrue;
 public final class AbstractResourcePoolTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractResourcePoolTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(AbstractResourcePoolTest.class);
 
     /**
      * TestResourcePool Class.

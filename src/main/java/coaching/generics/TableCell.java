@@ -6,7 +6,12 @@ package coaching.generics;
  */
 public class TableCell {
 
+    /** The value. */
     private final String value;
+
+    public TableCell() {
+        value = "";
+    }
 
     /**
      * Instantiates a new table cell.

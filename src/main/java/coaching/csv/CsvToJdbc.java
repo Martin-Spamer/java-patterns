@@ -111,7 +111,7 @@ public class CsvToJdbc {
     /**
      * Process.
      *
-     * @throws FileNotLoadedException
+     * @throws FileNotLoadedException the file not loaded exception
      */
     public void process() throws FileNotLoadedException {
         process(driver, url, username, password, "tableName");
@@ -120,17 +120,12 @@ public class CsvToJdbc {
     /**
      * Process.
      *
-     * @param driver
-     *            the driver
-     * @param url
-     *            the url
-     * @param user
-     *            the user
-     * @param password
-     *            the password
-     * @param table
-     *            the table
-     * @throws FileNotLoadedException
+     * @param driver the driver
+     * @param url the url
+     * @param user the user
+     * @param password the password
+     * @param table the table
+     * @throws FileNotLoadedException the file not loaded exception
      */
     protected void process(final String driver,
             final String url,
@@ -231,7 +226,7 @@ public class CsvToJdbc {
     }
 
     /**
-     * Write.
+     * Write a row from a line to the CSV file.
      *
      * @param record the record
      */
@@ -242,7 +237,7 @@ public class CsvToJdbc {
         try {
             connection = DriverManager.getConnection(url, username, password);
             statement = makeStatement(connection);
-            ResultSet resultSet = statement.getResultSet();
+            final ResultSet resultSet = statement.getResultSet();
             if (statement.execute(sql)) {
                 log.info("{} ok", resultSet);
             } else {
@@ -252,6 +247,7 @@ public class CsvToJdbc {
                     log.info("failed {}", statement.getWarnings());
                 }
             }
+            resultSet.close();
             statement.close();
             connection.close();
         } catch (final SQLException e) {

@@ -35,16 +35,16 @@ public class PortScan extends Thread {
     private int port = 0;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public PortScan() {
         super();
-        LOG.info("TODO {}",this);
+        LOG.info("TODO {}", this);
         initialise();
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param args the args
      */
@@ -52,12 +52,12 @@ public class PortScan extends Thread {
         super();
         ip = args[0];
         port = Integer.parseInt(args[1]);
-        LOG.info("TODO {}",this);
+        LOG.info("TODO {}", this);
         initialise();
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param ip the ip
      * @param port the port
@@ -66,7 +66,7 @@ public class PortScan extends Thread {
         super();
         this.ip = ip;
         this.port = port;
-        LOG.info("TODO {}",this);
+        LOG.info("TODO {}", this);
         initialise();
     }
 
@@ -130,9 +130,9 @@ public class PortScan extends Thread {
             socket.close();
             Thread.yield();
         } catch (final UnknownHostException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         } catch (final IOException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 

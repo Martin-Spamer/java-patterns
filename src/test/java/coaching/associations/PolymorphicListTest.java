@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -13,7 +14,8 @@ import static org.junit.Assert.assertNotNull;
 public final class PolymorphicListTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PolymorphicListTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PolymorphicListTest.class);
 
     /**
      * Unit Test to polymorphic list.
@@ -23,6 +25,7 @@ public final class PolymorphicListTest {
         LOG.info("testPolymorphicList");
         final AggregatePolymorphicList polymorphicList = new AggregatePolymorphicList();
         assertNotNull(polymorphicList);
+        polymorphicList.execute();
         LOG.info(polymorphicList.toString());
     }
 
@@ -34,9 +37,10 @@ public final class PolymorphicListTest {
         LOG.info("testAdd");
         final AggregatePolymorphicList polymorphicList = new AggregatePolymorphicList();
         assertNotNull(polymorphicList);
-        polymorphicList.add(new Alice());
-        polymorphicList.add(new Bob());
-        polymorphicList.add(new Charlie());
+        assertEquals(polymorphicList, polymorphicList.add(new Alice()));
+        assertEquals(polymorphicList, polymorphicList.add(new Bob()));
+        assertEquals(polymorphicList, polymorphicList.add(new Charlie()));
+        assertEquals(polymorphicList, polymorphicList.execute());
         LOG.info(polymorphicList.toString());
     }
 

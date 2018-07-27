@@ -15,7 +15,8 @@ public class ConditionalCommand extends AbstractCommand {
      * ParametersInterface)
      */
     @Override
-    public ResultInterface execute(final ParametersInterface commandParameters) {
+    public ResultInterface execute(
+            final ParametersInterface commandParameters) {
         if (isTrue()) {
             return super.execute(commandParameters);
         }

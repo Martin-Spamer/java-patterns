@@ -13,8 +13,12 @@ import static org.junit.Assert.assertNotNull;
 public final class AbstractDtoTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractDtoTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(AbstractDtoTest.class);
 
+    /**
+     * The Class MockDto.
+     */
     public final class MockDto extends AbstractDto {
     }
 
@@ -23,7 +27,7 @@ public final class AbstractDtoTest {
      */
     @Test
     public void testAbstractDto() {
-        MockDto dto = new MockDto();
+        final MockDto dto = new MockDto();
         assertNotNull(dto);
         dto.addField("id=1");
         dto.addField("name=martin");

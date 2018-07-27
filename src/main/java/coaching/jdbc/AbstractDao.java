@@ -88,7 +88,6 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
      * Creates a new instance of AbstractDao.
      *
      * @param driverClassName the driver class name
-     * @throws ClassNotFoundException
      */
     public AbstractDao(final String driverClassName) {
         super();
@@ -102,7 +101,6 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
      * @param connectionUrl the connection url
      * @param username the username
      * @param password the password
-     * @throws ClassNotFoundException
      */
     public AbstractDao(final String driverClassName,
             final String connectionUrl,
@@ -123,7 +121,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
             Class.forName(driverClassName);
             driver = driverClassName;
         } catch (final ClassNotFoundException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
             fail(String.format("JDBC Driver %s not found", driverClassName));
         }
         return this;
@@ -159,12 +157,20 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
         return this;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#setSchemaName(java.lang.String)
+     */
     @Override
     public DaoInterface setSchemaName(final String schemaName) {
         this.schemaName = schemaName;
         return this;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#setTableName(java.lang.String)
+     */
     @Override
     public DaoInterface setTableName(final String tableName) {
         this.tableName = tableName;
@@ -234,7 +240,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
             preparedStatement.close();
             connection.close();
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -258,7 +264,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
             statement.close();
             connection.close();
         } catch (final SQLException e) {
-            log.error(e.toString(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -274,7 +280,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
     private void processResultSet(final ResultSet resultSet)
             throws SQLException {
         while (resultSet.next()) {
-            log.info(processRow(resultSet));
+            log.info("{}", processRow(resultSet));
         }
     }
 
@@ -307,8 +313,12 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
         return output.toString();
     }
 
+    /**
+     * DriverNotFoundException.
+     */
     public class DriverNotFoundException extends ClassNotFoundException {
 
+        /** serialVersionUID constant. */
         private static final long serialVersionUID = 1L;
 
     }

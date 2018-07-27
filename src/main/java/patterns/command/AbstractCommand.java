@@ -15,7 +15,8 @@ public abstract class AbstractCommand implements CommandInterface {
     private final ContextInterface context = CommandContext.getInstance();
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The result. */
     protected ResultInterface result = null;
@@ -37,7 +38,8 @@ public abstract class AbstractCommand implements CommandInterface {
      * ParametersInterface)
      */
     @Override
-    public ResultInterface execute(final ParametersInterface commandParameters) {
+    public ResultInterface execute(
+            final ParametersInterface commandParameters) {
         log.debug("{}.execute", this.getClass().getSimpleName());
         log.debug("context={}", context);
         commandParameters.setParameter("result", "pass");
@@ -78,8 +80,16 @@ public abstract class AbstractCommand implements CommandInterface {
         return result.isPass();
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
-        return String.format("%s [context=%s, result=%s]", this.getClass().getSimpleName(), context, result);
+        return String
+            .format("%s [context=%s, result=%s]",
+                    this.getClass().getSimpleName(),
+                    context,
+                    result);
     }
 }

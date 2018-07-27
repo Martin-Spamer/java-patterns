@@ -6,7 +6,7 @@
 
 	<groupId>spamer.me.uk</groupId>
 	<artifactId>java-coaching</artifactId>
-	<version>0.10.0-SNAPSHOT</version>
+	<version>0.12.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Maven project for coaching java</name>
@@ -125,6 +125,10 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.0.1</version>
+		        <configuration>
+					<reportOutputDirectory>${project.reporting.outputDirectory}/target</reportOutputDirectory>
+					<destDir>javadoc</destDir>
+		        </configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>

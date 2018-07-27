@@ -57,7 +57,7 @@ public class ThreadTemplate implements Runnable {
     protected long maxTicks = MAX_TICKS;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public ThreadTemplate() {
         initialise(new SchedulerConfig());
@@ -101,8 +101,8 @@ public class ThreadTemplate implements Runnable {
                 // Yield a little.
                 Thread.yield();
 
-            } catch (final ApplicationException exception) {
-                log.error(exception.toString(), exception);
+            } catch (final ApplicationException e) {
+                log.error(e.getLocalizedMessage(), e);
             }
 
             // * Thread ends.

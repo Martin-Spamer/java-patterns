@@ -15,10 +15,12 @@ import static org.junit.Assert.assertNotNull;
 public final class AbstractLoggingTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(AbstractLoggingTest.class);
 
     /** Provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /**
      * MockLog Class.

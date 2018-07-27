@@ -34,7 +34,7 @@ public class Condition implements ConditionInterface<Boolean> {
      * @return the condition
      */
     public boolean isFalse() {
-        return result;
+        return result == false;
     }
 
     /*

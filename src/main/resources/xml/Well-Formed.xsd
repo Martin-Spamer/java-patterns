@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root" type="rootType">
+    <xs:annotation>
+      <xs:documentation>Document : Well-Formed.xml
+	Created : 16 September 2004, 14:46 
+	Author : martin.spamer
+	Description: Shows a Simple Well Formed XML Document File.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="groupType">
+    <xs:sequence>
+      <xs:element name="element" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute type="xs:string" name="attribute" use="optional"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="attribute"/>
+  </xs:complexType>
+  <xs:complexType name="rootType">
+    <xs:sequence>
+      <xs:element type="groupType" name="group">
+        <xs:annotation>
+          <xs:documentation>Comment</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="attribute"/>
+  </xs:complexType>
+  <xs:complexType name="elementType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="attribute" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

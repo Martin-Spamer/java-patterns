@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT database (table)*>
+
+<!ELEMENT table (record)*>
+<!ATTLIST table name CDATA #IMPLIED >
+
+<!ELEMENT record (field)*>
+<!ATTLIST record id CDATA #IMPLIED >
+
+<!ELEMENT field (#CDATA)>
+<!ATTLIST table name CDATA #IMPLIED >

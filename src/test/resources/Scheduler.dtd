@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/MainApp.dtd
+
+   	An example how to use this DTD from your XML document:
+
+    <!DOCTYPE Scheduler SYSTEM "Scheduler.dtd">
+    <scheduler>
+    	<command name="" class="">
+    		<parameter name="" value=""/>
+    	</command>
+    	
+    	<thread name="" class="">
+    		<parameter name="" value=""/>    	
+    	</thread>
+    </scheduler>
+-->
+
+<!ELEMENT scheduler (command|thread)*>
+
+<!ELEMENT command (parameter)*>
+<!ATTLIST command name CDATA #IMPLIED>
+<!ATTLIST command class CDATA #IMPLIED>
+
+<!ELEMENT thread (parameter)*>
+<!ATTLIST thread name CDATA #IMPLIED>
+<!ATTLIST thread class CDATA #IMPLIED>
+
+<!ELEMENT parameter >
+<!ATTLIST parameter name CDATA #IMPLIED>
+<!ATTLIST parameter value CDATA #IMPLIED>

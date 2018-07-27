@@ -13,14 +13,15 @@ import static org.junit.Assert.assertNotNull;
 public final class PicoDaemonTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PicoDaemonTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PicoDaemonTest.class);
 
     /**
      * Unit test to pico daemon.
      */
     @Test
     public void testPicoDaemon() {
-        PicoDaemon picoDaemon = new PicoDaemon();
+        final PicoDaemon picoDaemon = new PicoDaemon();
         assertNotNull(picoDaemon);
         LOG.info(picoDaemon.toString());
     }

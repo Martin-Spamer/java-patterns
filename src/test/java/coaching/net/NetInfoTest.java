@@ -13,14 +13,15 @@ import static org.junit.Assert.assertNotNull;
 public final class NetInfoTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(NetInfoTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(NetInfoTest.class);
 
     /**
      * Unit test to net info.
      */
     @Test
     public void testNetInfo() {
-        NetInfo netInfo = new NetInfo();
+        final NetInfo netInfo = new NetInfo();
         assertNotNull(netInfo);
         LOG.info(netInfo.toString());
     }

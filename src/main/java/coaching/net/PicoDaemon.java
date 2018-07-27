@@ -20,7 +20,7 @@ public class PicoDaemon implements Runnable {
     private volatile boolean keepRunning = true;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public PicoDaemon() {
         LOG.info("{} loaded...", this.getClass().getSimpleName());
@@ -45,7 +45,7 @@ public class PicoDaemon implements Runnable {
                 clientThread.start();
             }
         } catch (final IOException e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         } finally {
             try {
                 LOG.info("closing server socket");
@@ -53,7 +53,7 @@ public class PicoDaemon implements Runnable {
                     serverSocket.close();
                 }
             } catch (final IOException e) {
-                LOG.error(e.toString(), e);
+                LOG.error(e.getLocalizedMessage(), e);
             }
         }
         LOG.info("{} is stopping.....", this.getClass().getSimpleName());

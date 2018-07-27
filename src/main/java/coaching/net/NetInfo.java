@@ -48,7 +48,7 @@ public final class NetInfo {
                 }
             }
         } catch (final Exception e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 

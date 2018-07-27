@@ -19,17 +19,18 @@ import coaching.csv.CsvRecord;
  */
 public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
+    /** provides logging. */
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
     /** Csvfile containing the expected data. */
     protected CsvFile csvFile;
 
-    /** The path to the csv file. */
+    /** The path to the CSV file. */
     protected String path = "data/";
 
     /**
-     * The Constructor.
+     * Default constructor.
      */
     public AbstractExpectedData() {
         super();
@@ -39,9 +40,8 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      * Load data.
      *
      * @param filename the filename
-     * @throws FileNotLoadedException
      */
-    protected void loadData(final String filename) {
+    protected void initialise(final String filename) {
         csvFile = new CsvFile(filename);
     }
 
@@ -72,7 +72,7 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      */
     protected String[] getAllTagged(final String tag) {
         assumeTrue(csvFile.isLoaded());
-        final ArrayList<String> all = new ArrayList<String>();
+        final ArrayList<String> all = new ArrayList<>();
         assumeTrue(csvFile.isLoaded());
         final int rowCount = csvFile.rowCount();
         for (int index = 0; index < rowCount; index++) {
@@ -82,6 +82,6 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
                 all.add(record.toString());
             }
         }
-        return all.toArray(new String[0]);
+        return all.toArray(new String[all.size()]);
     }
 }

@@ -20,7 +20,8 @@ public class Conjunction extends NonTerminalExpression {
      * @param rhs
      *            sub-expression on right hand side.
      */
-    public Conjunction(final AbstractExpression lhs, final AbstractExpression rhs) {
+    public Conjunction(final AbstractExpression lhs,
+            final AbstractExpression rhs) {
         super();
         this.lhs = lhs;
         this.rhs = rhs;

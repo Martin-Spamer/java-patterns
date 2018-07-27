@@ -16,7 +16,8 @@ import org.slf4j.LoggerFactory;
 public final class CommandFactory implements InvokerInterface {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CommandFactory.class);
 
     /** The Constant COMMANDS_PROPERTIES. */
     private static final String COMMANDS_PROPERTIES = "commands.properties";
@@ -67,7 +68,9 @@ public final class CommandFactory implements InvokerInterface {
      * @return the input stream
      */
     private InputStream inputStream(final String resourceName) {
-        final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        final ClassLoader classloader = Thread
+            .currentThread()
+            .getContextClassLoader();
         return classloader.getResourceAsStream(resourceName);
     }
 
@@ -85,12 +88,15 @@ public final class CommandFactory implements InvokerInterface {
      * @see patterns.command.InvokerInterface#execute(java.lang.String)
      */
     @Override
-    public ResultInterface execute(final String actionName) throws MissingCommandException {
+    public ResultInterface execute(final String actionName)
+            throws MissingCommandException {
         if (actionName != null) {
             if (actionName.length() > 0) {
                 return executeActionName(actionName);
             } else {
-                final String message = String.format("actionName '%s' cannot be zero length.", actionName);
+                final String message = String
+                    .format("actionName '%s' cannot be zero length.",
+                            actionName);
                 LOG.error(message);
                 throw new MissingCommandException(message);
             }
@@ -110,17 +116,20 @@ public final class CommandFactory implements InvokerInterface {
      * @throws MissingCommandException
      *             the missing command exception
      */
-    private ResultInterface executeActionName(final String actionName) throws MissingCommandException {
+    private ResultInterface executeActionName(final String actionName)
+            throws MissingCommandException {
         final String className = properties.getProperty(actionName);
         if (className != null) {
             if (className.length() > 0) {
                 return executeByClassName(className);
             } else {
-                final String message = String.format("className '%s' cannot be zero length.", className);
+                final String message = String
+                    .format("className '%s' cannot be zero length.", className);
                 throw new MissingCommandException(message);
             }
         } else {
-            final String message = String.format("className '%s' cannot be zero length.", className);
+            final String message = String
+                .format("className '%s' cannot be zero length.", className);
             LOG.error(message);
             throw new MissingCommandException(message);
         }
@@ -135,7 +144,8 @@ public final class CommandFactory implements InvokerInterface {
      * @throws MissingCommandException
      *             the missing command exception
      */
-    private ResultInterface executeByClassName(final String className) throws MissingCommandException {
+    private ResultInterface executeByClassName(final String className)
+            throws MissingCommandException {
         AbstractCommand action = null;
         try {
             action = (AbstractCommand) Class.forName(className).newInstance();
@@ -143,18 +153,29 @@ public final class CommandFactory implements InvokerInterface {
                 final Parameters commandParameters = new Parameters();
                 return action.execute(commandParameters);
             } else {
-                final String message = String.format("%s Class not found. ", className);
+                final String message = String
+                    .format("%s Class not found. ", className);
                 throw new MissingCommandException(message);
             }
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.toString(), e);
+        } catch (
+                InstantiationException |
+                    IllegalAccessException |
+                    ClassNotFoundException e) {
+            LOG.error(e.getLocalizedMessage(), e);
             throw new MissingCommandException(e);
         }
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
-        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), properties);
+        return String
+            .format("%s [properties=%s]",
+                    this.getClass().getSimpleName(),
+                    properties);
     }
 
 }

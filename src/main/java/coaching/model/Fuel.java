@@ -10,7 +10,7 @@ public class Fuel implements FuelInterface {
     private int quantity = 0;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public Fuel() {
         super();

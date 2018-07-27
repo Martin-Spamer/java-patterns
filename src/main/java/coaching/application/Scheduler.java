@@ -9,14 +9,14 @@ import java.util.Properties;
 public final class Scheduler extends AbstractScheduler {
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public Scheduler() {
-        super("xml/Scheduler.xml");
+        super();
     }
 
     /**
-     * The Constructor.
+     * Constructor configured with array if Strings.
      *
      * @param args the args
      */
@@ -25,7 +25,7 @@ public final class Scheduler extends AbstractScheduler {
     }
 
     /**
-     * The Constructor.
+     * Constructor configured with Properties.
      *
      * @param properties the properties
      */

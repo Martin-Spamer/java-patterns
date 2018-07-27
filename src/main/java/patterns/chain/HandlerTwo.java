@@ -28,9 +28,9 @@ public class HandlerTwo extends AbstractHandler {
      * @see patterns.chain.Handler#handleRequest()
      */
     @Override
-    public void handleRequest(final RequestInterface request) {
+    public AbstractHandler handleRequest(final RequestInterface request) {
         doSomething(request);
-        super.handleRequest(request);
+        return super.handleRequest(request);
     }
 
     /**

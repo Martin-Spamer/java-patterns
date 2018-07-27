@@ -21,7 +21,7 @@ public final class AggregatePolymorphicList {
         .getLogger(AggregatePolymorphicList.class);
 
     /** The integer list. */
-    private final List<AbstractPerson> integerList = new ArrayList<>();
+    private final List<AbstractPerson> aggregation = new ArrayList<>();
 
     /**
      * Instantiates a new polymorphic list.
@@ -40,7 +40,19 @@ public final class AggregatePolymorphicList {
      */
     public AggregatePolymorphicList add(final AbstractPerson person) {
         LOG.info("PolymorphicList({})", person);
-        integerList.add(person);
+        aggregation.add(person);
+        return this;
+    }
+
+    /**
+     * Execute.
+     *
+     * @return the aggregate polymorphic list
+     */
+    public AggregatePolymorphicList execute() {
+        for (final AbstractPerson abstractPerson : aggregation) {
+            abstractPerson.execute();
+        }
         return this;
     }
 
@@ -53,7 +65,7 @@ public final class AggregatePolymorphicList {
         return String
             .format("%s [integerList=%s]",
                     this.getClass().getSimpleName(),
-                    integerList);
+                    aggregation);
     }
 
 }

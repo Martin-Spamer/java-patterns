@@ -13,7 +13,7 @@ public final class CsvToDao extends AbstractDao {
     public static final String JDBC_DRIVER = "org.sqlite.JDBC";
 
     /** The URL to use to make JDBC connection. */
-    public static final String JDBC_URL = "jdbc:sqlite:memory";
+    public static final String JDBC_URL = "jdbc:sqlite::memory:";
 
     /** USERNAME. */
     public static final String USERNAME = "username";
@@ -32,7 +32,7 @@ public final class CsvToDao extends AbstractDao {
      * CSV file to DAO.
      *
      * @param driverClassName the driver class name
-     * @throws ClassNotFoundException
+     * @throws ClassNotFoundException the class not found exception
      */
     public CsvToDao(final String driverClassName)
             throws ClassNotFoundException {

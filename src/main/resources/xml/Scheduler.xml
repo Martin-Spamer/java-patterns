@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE root SYSTEM "Scheduler.dtd">
-<Scheduler>
+<!DOCTYPE scheduler SYSTEM "Scheduler.dtd">
+<scheduler>
 	<thread name="Process Alice"
 		class="coaching.thread.ProcessAlice" />
 	<thread name="Process Bob" class="coaching.thread.ProcessBob" />
 	<thread name="Process Charlie"
 		class="coaching.thread.ProcessCharlie" />
-</Scheduler>
+</scheduler>

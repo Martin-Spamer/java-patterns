@@ -13,14 +13,15 @@ import static org.junit.Assert.assertNotNull;
 public final class ThreadTemplateTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ThreadTemplateTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(ThreadTemplateTest.class);
 
     /**
      * Unit test to thread template.
      */
     @Test
     public void testThreadTemplate() {
-        ThreadTemplate threadTemplate = new ThreadTemplate();
+        final ThreadTemplate threadTemplate = new ThreadTemplate();
         assertNotNull(threadTemplate);
         LOG.info(threadTemplate.toString());
     }

@@ -9,7 +9,7 @@ import coaching.config.AbstractConfiguration;
 public class DatabaseProperties extends AbstractConfiguration {
 
     /**
-     * The Constructor.
+     * Default constructor.
      */
     public DatabaseProperties() {
         super("database.properties");

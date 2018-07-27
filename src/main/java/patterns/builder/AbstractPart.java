@@ -10,7 +10,7 @@ public abstract class AbstractPart {
     private final String partName;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public AbstractPart() {
         super();
@@ -18,7 +18,7 @@ public abstract class AbstractPart {
     }
 
     /**
-     * The Constructor.
+     * Default Constructor.
      *
      * @param partName the part name
      */
@@ -33,7 +33,10 @@ public abstract class AbstractPart {
      */
     @Override
     public String toString() {
-        return String.format("%s [partName=%s]", this.getClass().getSimpleName(), partName);
+        return String
+            .format("%s [partName=%s]",
+                    this.getClass().getSimpleName(),
+                    partName);
     }
 
 }

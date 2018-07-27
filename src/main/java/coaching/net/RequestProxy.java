@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Class RequestProxy.
+ * A RequestProxy class.
  */
 class RequestProxy implements Runnable {
 
@@ -19,10 +19,10 @@ class RequestProxy implements Runnable {
     private static final Logger LOG = LoggerFactory
         .getLogger(RequestProxy.class);
 
-    /** The keep running. */
+    /** keep the thread running. */
     private volatile boolean keepRunning = true;
 
-    /** The connections count. */
+    /** The number of connections. */
     private static int connectionsCount;
 
     /** The connection id. */
@@ -54,11 +54,10 @@ class RequestProxy implements Runnable {
         final byte[] reply = new byte[4096];
 
         try {
+            Socket serverSocket = null;
             listeningSocket = new ServerSocket(localport);
 
             while (keepRunning) {
-                Socket clientSocket = null;
-                Socket serverSocket = null;
 
                 try {
                     clientSocket = listeningSocket.accept();
@@ -87,7 +86,7 @@ class RequestProxy implements Runnable {
                                     clientResponseStream.flush();
                                 }
                             } catch (final IOException e) {
-                                LOG.error(e.toString(), e);
+                                LOG.error(e.getLocalizedMessage(), e);
                             }
                         }
                     };
@@ -104,17 +103,18 @@ class RequestProxy implements Runnable {
                                     serverRequestStream.flush();
                                 }
                             } catch (final IOException e) {
-                                LOG.error(e.toString(), e);
+                                LOG.error(e.getLocalizedMessage(), e);
                             }
                         }
                     };
 
                 } catch (final Exception e) {
-                    LOG.error(e.toString(), e);
+                    LOG.error(e.getLocalizedMessage(), e);
                 }
             }
+            clientSocket.close();
         } catch (final Exception e) {
-            LOG.error(e.toString(), e);
+            LOG.error(e.getLocalizedMessage(), e);
         }
     }
 }

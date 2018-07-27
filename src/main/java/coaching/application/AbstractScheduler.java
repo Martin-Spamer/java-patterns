@@ -8,6 +8,8 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import coaching.resources.PropertiesLoader;
 import coaching.resources.XmlResourceLoader;
@@ -26,45 +28,84 @@ public abstract class AbstractScheduler {
 
     /** initialisation arguments as properties. */
     private Properties properties = null;
+
+    /** The xml doc. */
     private Document xmlDoc = null;
 
     /**
-     * The Constructor.
+     * Default Constructor.
      */
     public AbstractScheduler() {
-        log.info("AbstractScheduler()");
-        initialisation();
-    }
-
-    public AbstractScheduler(final String resourceName) {
-        log.info("AbstractScheduler({})", resourceName);
-        initialisation();
-    }
-
-    public AbstractScheduler(final String[] args) {
-        this.args = args;
-        log.info("AbstractScheduler({}) = {}", args, this);
-        initialisation();
-    }
-
-    public AbstractScheduler(final Properties properties) {
-        this.properties = properties;
-        log.info("AbstractScheduler({}) = {}", properties, this);
-        initialisation();
-    }
-
-    private void initialisation() {
-        properties = PropertiesLoader.getProperties(propertiesFilename());
+        initialise();
+        log.info("AbstractScheduler() : {}", this);
     }
 
     /**
-     * Default properties filename.
+     * Instantiates a new abstract scheduler.
      *
-     * @return the string
+     * @param resourceName the resource name
      */
-    private String propertiesFilename() {
+    public AbstractScheduler(final String resourceName) {
+        initialise(resourceName);
+        log.info("AbstractScheduler({}) : {}", resourceName, this);
+    }
+
+    /**
+     * Instantiates a new abstract scheduler.
+     *
+     * @param args the args
+     */
+    public AbstractScheduler(final String[] args) {
+        initialise(args);
+        log.info("AbstractScheduler({}) = {}", args, this);
+    }
+
+    /**
+     * Initialise.
+     *
+     * @param args the args
+     */
+    private void initialise(final String[] args) {
+        this.args = args;
+        initialise();
+    }
+
+    /**
+     * Initialise.
+     */
+    private void initialise() {
         final String simpleName = this.getClass().getSimpleName();
-        return String.format("%s.properties", simpleName);
+        properties = PropertiesLoader.getProperties(simpleName);
+        xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
+    }
+
+    /**
+     * Initialise.
+     *
+     * @param resourceName the resource name
+     */
+    private void initialise(final String resourceName) {
+        properties = PropertiesLoader.getProperties(resourceName);
+        xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
+    }
+
+    /**
+     * Instantiates a new abstract scheduler.
+     *
+     * @param properties the properties
+     */
+    public AbstractScheduler(final Properties properties) {
+        initialisation(properties);
+        log.info("AbstractScheduler({}) = {}", properties, this);
+    }
+
+    /**
+     * Initialisation.
+     *
+     * @param properties the properties
+     */
+    private void initialisation(final Properties properties) {
+        this.properties = properties;
     }
 
     /**
@@ -87,8 +128,25 @@ public abstract class AbstractScheduler {
         return String.format("%s.xml", simpleName);
     }
 
+    /**
+     * Execute.
+     *
+     * @param xmlDoc the xml doc
+     * @return the abstract scheduler
+     */
     private AbstractScheduler execute(final Document xmlDoc) {
-        return null;
+
+        final NodeList list = xmlDoc.getElementsByTagName("*");
+        for (int i = 0; i < list.getLength(); i++) {
+            final Element element = (Element) list.item(i);
+            final String nodeName = element.getNodeName();
+            log.info("{}", nodeName);
+            final String nameAttribute = element.getAttribute("name");
+            log.info("{}", nameAttribute);
+            final String classAttribute = element.getAttribute("class");
+            log.info("{}", classAttribute);
+        }
+        return this;
     }
 
     /**
@@ -108,13 +166,17 @@ public abstract class AbstractScheduler {
                     .newInstance();
                 log.debug("{}", thread);
                 thread.start();
-            } catch (final Exception exception) {
-                log.error(exception.toString(), exception);
+            } catch (final Exception e) {
+                log.error(e.getLocalizedMessage(), e);
             }
         }
         return this;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String

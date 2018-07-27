@@ -13,7 +13,8 @@ import static org.junit.Assert.assertEquals;
 public final class CsvToJdbcTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CsvToJdbcTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CsvToJdbcTest.class);
 
     /** Default JDBC DRIVER . */
     private static final String DRIVER = "org.sqlite.JDBC";

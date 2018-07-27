@@ -1,15 +1,14 @@
-/** CommandPool.java
- * Created on 17 April 2006, 21:02
- */
 
 package coaching.mvc.controller;
+
+import java.util.HashMap;
 
 import coaching.mvc.CommandInterface;
 
 /**
- * CommandPool Class.
+ * A collection of Commands.
  */
-public class Commands {
+public final class Commands extends HashMap<String, Commands> {
 
     /** The instance. */
     private static Commands instance;
@@ -27,7 +26,7 @@ public class Commands {
     }
 
     /**
-     * Creates the new command
+     * Creates the new command.
      *
      * @return the command pool
      */

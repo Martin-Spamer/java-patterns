@@ -16,7 +16,8 @@ import patterns.mvc.view.AbstractView;
 public abstract class AbstractModel implements ModelInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** The models. */
     protected final Map<String, AbstractModel> models = new ConcurrentHashMap<>();
@@ -26,29 +27,28 @@ public abstract class AbstractModel implements ModelInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.mvc.ModelInterface#attach(java.lang.String,
      * patterns.mvc.model.AbstractModel)
      */
     @Override
     public ModelInterface attach(final String key, final AbstractModel model) {
-        this.models.put(key, model);
+        models.put(key, model);
         return this;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.mvc.ModelInterface#attach(java.lang.String,
      * patterns.mvc.view.AbstractView)
      */
     @Override
     public ModelInterface attach(final String key, final AbstractView view) {
-        this.views.put(key, view);
+        views.put(key, view);
         return this;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see patterns.mvc.ModelInterface#update()
      */
     @Override
@@ -56,8 +56,10 @@ public abstract class AbstractModel implements ModelInterface {
         return this;
     }
 
-    /* (non-Javadoc)
-     * @see patterns.mvc.ModelInterface#update(java.lang.String, java.lang.String)
+    /*
+     * (non-Javadoc)
+     * @see patterns.mvc.ModelInterface#update(java.lang.String,
+     * java.lang.String)
      */
     @Override
     public ModelInterface update(final String key, final String value) {
@@ -66,23 +68,21 @@ public abstract class AbstractModel implements ModelInterface {
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.mvc.ModelInterface#detachModel(java.lang.String)
      */
     @Override
     public ModelInterface detachModel(final String key) {
-        this.models.remove(key);
+        models.remove(key);
         return this;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see patterns.mvc.ModelInterface#detachView(java.lang.String)
      */
     @Override
     public ModelInterface detachView(final String key) {
-        this.views.remove(key);
+        views.remove(key);
         return this;
     }
 }
