@@ -51,6 +51,17 @@ public class Box<T> {
         return this.t;
     }
 
+    /**
+     * Checks if is equal.
+     *
+     * @param t the t
+     * @return true, if is
+     *         equal
+     */
+    public boolean isEqual(final T t) {
+        return this.t == t;
+    }
+
     /*
      * (non-Javadoc)
      * @see java.lang.Object#toString()

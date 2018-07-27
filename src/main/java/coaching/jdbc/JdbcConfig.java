@@ -75,6 +75,10 @@ public final class JdbcConfig extends Configuration {
         return JdbcConfig.getInstance().valueFor("schema");
     }
 
+    public static String table() {
+        return JdbcConfig.getInstance().valueFor("table");
+    }
+
     /**
      * Get the Query.
      *

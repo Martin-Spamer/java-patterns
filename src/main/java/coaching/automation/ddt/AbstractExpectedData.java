@@ -11,7 +11,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assume.assumeTrue;
 
 import coaching.csv.CsvFile;
-import coaching.csv.CsvFile.FileNotLoadedException;
 import coaching.csv.CsvRecord;
 
 /**
@@ -21,7 +20,7 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+            .getLogger(this.getClass().getSimpleName());
 
     /** Csvfile containing the expected data. */
     protected CsvFile csvFile;
@@ -84,4 +83,14 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
         }
         return all.toArray(new String[all.size()]);
     }
+
+    @Override
+    public String toString() {
+        return String
+                .format("%s [path=%s, csvFile=%s]",
+                        this.getClass().getSimpleName(),
+                        path,
+                        csvFile);
+    }
+
 }

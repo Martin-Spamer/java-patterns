@@ -8,7 +8,7 @@ import coaching.mvc.CommandInterface;
 /**
  * A collection of Commands.
  */
-public final class Commands extends HashMap<String, Commands> {
+public final class Commands extends HashMap<String, Command> {
 
     /** The instance. */
     private static Commands instance;

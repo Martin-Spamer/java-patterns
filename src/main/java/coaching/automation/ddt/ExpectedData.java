@@ -15,7 +15,7 @@ import coaching.csv.CsvFile.FileNotLoadedException;
  *
  */
 public final class ExpectedData extends AbstractExpectedData
-        implements ExpectedDataInterface {
+implements ExpectedDataInterface {
 
     /** single static instance within the class loader. */
     private static final ExpectedData INSTANCE = new ExpectedData();
@@ -173,13 +173,13 @@ public final class ExpectedData extends AbstractExpectedData
         return ExpectedData.getInstance().toString();
     }
 
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
     @Override
     public String toString() {
-        return String.format("ExpectedData [platform=%s]", platform);
+        return String
+                .format("%s [platform=%s %s]",
+                        this.getClass().getSimpleName(),
+                        platform,
+                        super.toString());
     }
 
 }
