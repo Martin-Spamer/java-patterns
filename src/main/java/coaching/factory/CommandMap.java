@@ -1,3 +1,4 @@
+
 package coaching.factory;
 
 import java.util.Properties;
@@ -23,7 +24,6 @@ public final class CommandMap {
         properties = PropertiesLoader.getProperties(resourceName);
         return INSTANCE;
     }
-
 
     public String get(final String key) {
         return properties.getProperty(key);

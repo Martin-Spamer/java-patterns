@@ -13,15 +13,15 @@ import static org.junit.Assert.assertNotNull;
  */
 public class XmlResourceLoaderTest {
 
-    /** CONFIGURATION_XML 			constant. */
+    /** CONFIGURATION_XML constant. */
     private static final String CONFIGURATION_XML = "Configuration.xml";
-    
-    /** DATABASE_XML 			constant. */
+
+    /** DATABASE_XML constant. */
     private static final String DATABASE_XML = "database.xml";
-    
-    /** CONFIGURATION_MISSING 			constant. */
+
+    /** CONFIGURATION_MISSING constant. */
     private static final String CONFIGURATION_MISSING = "Missing.xml";
-    
+
     /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(XmlResourceLoaderTest.class);

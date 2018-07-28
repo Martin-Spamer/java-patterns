@@ -100,8 +100,8 @@ implements ExpectedDataInterface {
     }
 
     private ExpectedData loadFromCsv() {
-        String simpleName = this.getClass().getSimpleName();
-        String filename = String.format("%s.csv", simpleName);
+        final String simpleName = this.getClass().getSimpleName();
+        final String filename = String.format("%s.csv", simpleName);
         log.info("{}", filename);
         return this;
     }
@@ -111,8 +111,8 @@ implements ExpectedDataInterface {
     }
 
     private ExpectedData loadFromXml() {
-        String simpleName = this.getClass().getSimpleName();
-        String filename = String.format("%s.xml", simpleName);
+        final String simpleName = this.getClass().getSimpleName();
+        final String filename = String.format("%s.xml", simpleName);
         log.info("{}", filename);
         return this;
     }
@@ -122,8 +122,8 @@ implements ExpectedDataInterface {
     }
 
     private ExpectedData loadFromJson(final String jsonFilename) {
-        String simpleName = this.getClass().getSimpleName();
-        String filename = String.format("%s.json", simpleName);
+        final String simpleName = this.getClass().getSimpleName();
+        final String filename = String.format("%s.json", simpleName);
         log.info("{}", filename);
         return this;
     }

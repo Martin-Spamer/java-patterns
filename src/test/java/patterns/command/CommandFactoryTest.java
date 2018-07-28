@@ -20,7 +20,6 @@ public final class CommandFactoryTest {
 
     /**
      * Unit Test to command factory.
-     *
      */
     @Test
     public void testCommandFactory() {
@@ -32,7 +31,6 @@ public final class CommandFactoryTest {
 
     /**
      * Unit Test to command factory file.
-     *
      */
     @Test
     public void testCommandFactoryFile() {

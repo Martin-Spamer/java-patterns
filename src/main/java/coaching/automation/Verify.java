@@ -19,9 +19,6 @@ public final class Verify {
     /** The boxed. */
     private Box<?> boxed;
 
-    /** The actual. */
-    private boolean actual;
-
     /**
      * Instantiates a new verify.
      */
@@ -46,7 +43,9 @@ public final class Verify {
      */
     public static Verify that(final boolean actual) {
         final Verify instance = Verify.create();
-        instance.that(new Throwable(), actual);
+        final Box<Boolean> boxed = new Box<>(actual);
+        instance.that(new Throwable(), boxed);
+        LOG.info("{}", boxed);
         return instance;
     }
 
@@ -58,21 +57,33 @@ public final class Verify {
      */
     public static Verify that(final int actual) {
         final Verify instance = Verify.create();
-        Box<Integer> boxed = new Box<>(actual);
+        final Box<Integer> boxed = new Box<>(actual);
         instance.that(new Throwable(), boxed);
+        LOG.info("{}", boxed);
         return instance;
     }
 
-    /**
-     * That.
-     *
-     * @param actual the actual
-     * @return the verify
-     */
-    public static Verify that(final long actual) {
+    public static Verify that(final double actual) {
         final Verify instance = Verify.create();
-        Box<Long> boxed = new Box<>(actual);
+        final Box<Double> boxed = new Box<>(actual);
         instance.that(new Throwable(), boxed);
+        LOG.info("{}", boxed);
+        return instance;
+    }
+
+    public static Verify that(final char actual) {
+        final Verify instance = Verify.create();
+        final Box<Character> boxed = new Box<>(actual);
+        instance.that(new Throwable(), boxed);
+        LOG.info("{}", boxed);
+        return instance;
+    }
+
+    public static Verify that(final byte actual) {
+        final Verify instance = Verify.create();
+        final Box<Byte> boxed = new Box<>(actual);
+        instance.that(new Throwable(), boxed);
+        LOG.info("{}", boxed);
         return instance;
     }
 
@@ -98,20 +109,20 @@ public final class Verify {
      * @param actual the actual
      * @return the verify
      */
-    public Verify that(final Throwable caller, final boolean actual) {
-        final StackTraceElement directCaller = caller.getStackTrace()[1];
-        assertNotNull(directCaller);
-        LOG.info("{}", actual);
-        LOG.info("{}", entryPoint(directCaller));
-        this.actual = actual;
-        return this;
-    }
+    // public Verify that(final Throwable caller, final boolean actual) {
+    // final StackTraceElement directCaller = caller.getStackTrace()[1];
+    // assertNotNull(directCaller);
+    // LOG.info("{}", actual);
+    // LOG.info("{}", entryPoint(directCaller));
+    // this.actual = actual;
+    // return this;
+    // }
 
     private String entryPoint(final StackTraceElement directCaller) {
         return String
-                .format("(%s:%s)",
-                        directCaller.getFileName(),
-                        directCaller.getLineNumber());
+            .format("(%s:%s)",
+                    directCaller.getFileName(),
+                    directCaller.getLineNumber());
     }
 
     /**
@@ -121,7 +132,7 @@ public final class Verify {
      *         true
      */
     public boolean isTrue() {
-        return actual;
+        return boxed.equals(true);
     }
 
     /**
@@ -131,7 +142,7 @@ public final class Verify {
      *         false
      */
     public boolean isFalse() {
-        return actual == false;
+        return boxed.equals(false);
     }
 
     /**

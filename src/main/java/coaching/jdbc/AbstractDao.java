@@ -36,7 +36,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
 
     /** SQL to insert a row in the table. */
     // {FIELDS} = ({ID}, {NAME}, {DETAILS})
-    // {DATA}   = ({ID}, {NAME}, {DETAILS})
+    // {DATA} = ({ID}, {NAME}, {DETAILS})
     public static final String INSERT_SQL = "INSERT INTO {TableName} {FIELDS} VALUES {DATA}";
 
     /** SQL to update rows in the table. */
@@ -47,7 +47,7 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory
-            .getLogger(this.getClass().getSimpleName());
+        .getLogger(this.getClass().getSimpleName());
 
     /** connection factory. */
     protected ConnectionFactoryInterface connectionFactory;
@@ -85,7 +85,6 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
         makeConnectionFactory();
     }
 
-
     /**
      * Creates a new instance of AbstractDao.
      *
@@ -118,20 +117,18 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
     }
 
     private ConnectionFactoryInterface makeConnectionFactory() {
-        return new ConnectionFactory(driverClassName, connectionUrl, username, password);
+        return new ConnectionFactory(driverClassName, connectionUrl, username,
+                password);
     }
 
     private void initialise() {
         driverClassName = JdbcConfig.driver();
         connectionUrl = JdbcConfig.url();
-        username  = JdbcConfig.username();
-        password  = JdbcConfig.password();
+        username = JdbcConfig.username();
+        password = JdbcConfig.password();
         schemaName = JdbcConfig.schema();
         tableName = JdbcConfig.table();
     }
-
-
-
 
     /*
      * (non-Javadoc)
@@ -144,7 +141,8 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
             this.driverClassName = driverClassName;
         } catch (final ClassNotFoundException e) {
             log.error(e.getLocalizedMessage(), e);
-            String message = String.format("Class not found for JDBC Driver %s", driverClassName);
+            final String message = String
+                .format("Class not found for JDBC Driver %s", driverClassName);
             fail(message);
             /** Consider throwing a new DriverNotFoundException */
         }
@@ -201,11 +199,11 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
         return this;
     }
 
-    public DaoInterface setConnectionFactory(final ConnectionFactoryInterface connectionFactory) {
+    public DaoInterface setConnectionFactory(
+            final ConnectionFactoryInterface connectionFactory) {
         this.connectionFactory = connectionFactory;
         return this;
     }
-
 
     /**
      * Execute a SQL insert statement for CRUD interface.
@@ -260,10 +258,11 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
      * @return the dao interface
      */
     protected CrudInterface executePreparedStatement(final String sql) {
-        log.info("executePreparedStatement({}",sql);
+        log.info("executePreparedStatement({}", sql);
         try {
             final Connection connection = connectionFactory.newConnection();
-            final PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            final PreparedStatement preparedStatement = connection
+                .prepareStatement(sql);
             final int result = preparedStatement.executeUpdate();
             log.info("Rows updated: {}", result);
             preparedStatement.close();
@@ -303,11 +302,12 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
      * @throws SQLException
      *             the SQL exception
      */
-    private void processResultSet(final ResultSet resultSet) throws SQLException {
+    private void processResultSet(final ResultSet resultSet)
+            throws SQLException {
         final StringBuilder output = new StringBuilder();
         while (resultSet.next()) {
             log.debug("resultSet = {}", resultSet);
-            String rowAsString = processRow(resultSet);
+            final String rowAsString = processRow(resultSet);
             log.info("rowAsString = {}", rowAsString);
             output.append(rowAsString);
         }
@@ -330,15 +330,16 @@ public abstract class AbstractDao implements CrudInterface, DaoInterface {
             final String columnName = metaData.getColumnName(i);
             final Object value = resultSet.getObject(i);
             if (value == null) {
-                String msg = String.format("%s = null,", columnName);
-                log.info("{}",msg);
+                final String msg = String.format("%s = null,", columnName);
+                log.info("{}", msg);
                 output.append(msg);
             } else {
-                String msg = String.format(
-                        "%s = %s,",
-                        columnName,
-                        value.toString().trim());
-                log.info("{}",msg);
+                final String msg = String
+                    .format(
+                            "%s = %s,",
+                            columnName,
+                            value.toString().trim());
+                log.info("{}", msg);
                 output.append(msg);
             }
         }

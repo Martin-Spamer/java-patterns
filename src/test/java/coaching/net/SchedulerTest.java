@@ -15,7 +15,6 @@ import coaching.application.Scheduler;
 /**
  * Unit tests for the Scheduler class.
  */
-// @Ignore("work-in-progress")
 public final class SchedulerTest {
 
     /** Provides logging. */
@@ -91,4 +90,5 @@ public final class SchedulerTest {
         scheduler.execute();
         LOG.info("{}", scheduler);
     }
+
 }
