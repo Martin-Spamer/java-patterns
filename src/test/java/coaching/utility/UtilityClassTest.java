@@ -20,7 +20,7 @@ public class UtilityClassTest {
      * The Class UtilityClass.
      */
     public class UtilityClass {
-        
+
         /**
          * Instantiates a new utility class.
          */
@@ -33,7 +33,7 @@ public class UtilityClassTest {
      * The Class UtilityClassTwo.
      */
     public class UtilityClassTwo {
-        
+
         /**
          * Instantiates a new utility class two.
          */
@@ -47,7 +47,7 @@ public class UtilityClassTest {
      * The Class UtilityClassThree.
      */
     public class UtilityClassThree {
-        
+
         /**
          * Instantiates a new utility class three.
          */

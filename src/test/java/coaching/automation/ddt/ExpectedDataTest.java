@@ -17,13 +17,27 @@ public final class ExpectedDataTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
-        .getLogger(ExpectedDataTest.class);
+            .getLogger(ExpectedDataTest.class);
 
     @Test
-    public void testExpectedData() throws Exception {
-        ExpectedData.fromCsv();
-        ExpectedData.fromXml();
-        ExpectedData.fromJson();
+    public void testExpectedDataFromCsv() throws Exception {
+        ExpectedData fromCsv = ExpectedData.fromCsv();
+        assertNotNull(fromCsv);
+        LOG.info("{}", fromCsv);
+    }
+
+    @Test
+    public void testExpectedDataFromXml() throws Exception {
+        ExpectedData fromXml = ExpectedData.fromXml();
+        assertNotNull(fromXml);
+        LOG.info("{}", fromXml);
+    }
+
+    @Test
+    public void testExpectedDataFromJson() throws Exception {
+        ExpectedData fromJson = ExpectedData.fromJson();
+        assertNotNull(fromJson);
+        LOG.info("{}", fromJson);
     }
 
     /**
@@ -37,11 +51,11 @@ public final class ExpectedDataTest {
 
         expectedData = new ExpectedData("local");
         assertNotNull(expectedData);
-        LOG.info(expectedData.toString());
+        LOG.info("{}", expectedData.toString());
 
         expectedData = ExpectedData.platform("local");
         assertNotNull(expectedData);
-        LOG.info(expectedData.toString());
+        LOG.info("{}", expectedData.toString());
 
         // String tagged = expectedData.getTagged("@foo");
         // assertNull(tagged);

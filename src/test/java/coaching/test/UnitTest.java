@@ -23,7 +23,7 @@ public final class UnitTest {
      * Unit test class for ClassUnder.
      */
     public final class ClassUnderTest {
-        
+
         /**
          * Instantiates a new class under test.
          */
@@ -75,7 +75,8 @@ public final class UnitTest {
             return this;
         }
 
-        /* (non-Javadoc)
+        /*
+         * (non-Javadoc)
          * @see java.lang.Object#toString()
          */
         @Override

@@ -17,13 +17,13 @@ import static org.junit.Assert.assertTrue;
  */
 public final class ResourceLoaderTest {
 
-    /** CONFIGURATION_PROPERTIES 			constant. */
+    /** CONFIGURATION_PROPERTIES constant. */
     private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
-    
-    /** CONFIGURATION_XML 			constant. */
+
+    /** CONFIGURATION_XML constant. */
     private static final String CONFIGURATION_XML = "Configuration.xml";
-    
-    /** MISSING_RESOURCE 			constant. */
+
+    /** MISSING_RESOURCE constant. */
     private static final String MISSING_RESOURCE = "Resource.missing";
 
     /** Provides logging. */

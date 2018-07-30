@@ -15,7 +15,7 @@ import coaching.csv.CsvFile.FileNotLoadedException;
  *
  */
 public final class ExpectedData extends AbstractExpectedData
-        implements ExpectedDataInterface {
+implements ExpectedDataInterface {
 
     /** single static instance within the class loader. */
     private static final ExpectedData INSTANCE = new ExpectedData();
@@ -100,8 +100,8 @@ public final class ExpectedData extends AbstractExpectedData
     }
 
     private ExpectedData loadFromCsv() {
-        String simpleName = this.getClass().getSimpleName();
-        String filename = String.format("%s.csv", simpleName);
+        final String simpleName = this.getClass().getSimpleName();
+        final String filename = String.format("%s.csv", simpleName);
         log.info("{}", filename);
         return this;
     }
@@ -111,8 +111,8 @@ public final class ExpectedData extends AbstractExpectedData
     }
 
     private ExpectedData loadFromXml() {
-        String simpleName = this.getClass().getSimpleName();
-        String filename = String.format("%s.xml", simpleName);
+        final String simpleName = this.getClass().getSimpleName();
+        final String filename = String.format("%s.xml", simpleName);
         log.info("{}", filename);
         return this;
     }
@@ -122,8 +122,8 @@ public final class ExpectedData extends AbstractExpectedData
     }
 
     private ExpectedData loadFromJson(final String jsonFilename) {
-        String simpleName = this.getClass().getSimpleName();
-        String filename = String.format("%s.json", simpleName);
+        final String simpleName = this.getClass().getSimpleName();
+        final String filename = String.format("%s.json", simpleName);
         log.info("{}", filename);
         return this;
     }
@@ -173,13 +173,13 @@ public final class ExpectedData extends AbstractExpectedData
         return ExpectedData.getInstance().toString();
     }
 
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
     @Override
     public String toString() {
-        return String.format("ExpectedData [platform=%s]", platform);
+        return String
+                .format("%s [platform=%s %s]",
+                        this.getClass().getSimpleName(),
+                        platform,
+                        super.toString());
     }
 
 }

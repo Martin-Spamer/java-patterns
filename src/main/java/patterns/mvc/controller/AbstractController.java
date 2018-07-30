@@ -4,7 +4,7 @@ package patterns.mvc.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import patterns.command.CommandFactory;
+import patterns.command.AbstractCommandFactory;
 import patterns.command.MissingCommandException;
 import patterns.mvc.ControllerInterface;
 import patterns.mvc.ModelInterface;
@@ -20,7 +20,7 @@ public abstract class AbstractController implements ControllerInterface {
         .getLogger(this.getClass().getSimpleName());
 
     /** provides command instances. */
-    protected CommandFactory commands = new CommandFactory();
+    protected AbstractCommandFactory commands = new AbstractCommandFactory();
 
     /** The Model. */
     protected ModelInterface model;
