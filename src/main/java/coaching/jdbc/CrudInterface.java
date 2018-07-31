@@ -16,7 +16,7 @@ public interface CrudInterface {
      * @param sql the sql to create the table.
      * @return this for a fluent interface.
      */
-    CrudInterface create(final String sql);
+    CrudInterface createRow();
 
     /**
      * Read record or row in the table.
@@ -24,7 +24,7 @@ public interface CrudInterface {
      * @param sql the sql to select rows.
      * @return this for a fluent interface.
      */
-    CrudInterface read(final String sql);
+    CrudInterface readRows();
 
     /**
      * Update record or row in the table.
@@ -32,7 +32,7 @@ public interface CrudInterface {
      * @param sql the sql to update a row.
      * @return this for a fluent interface.
      */
-    CrudInterface update(final String sql);
+    CrudInterface updateRow();
 
     /**
      * Delete record or row in the table.
@@ -40,6 +40,6 @@ public interface CrudInterface {
      * @param sql the sql to delete a row.
      * @return this for a fluent interface.
      */
-    CrudInterface delete(final String sql);
+    CrudInterface deleteRow();
 
 }

@@ -1,13 +1,10 @@
 
 package coaching.automation.ddt;
 
-import coaching.csv.CsvFile.FileNotLoadedException;
-
 /**
  * The PlatformData class.
  */
-public final class PlatformData extends AbstractExpectedData
-        implements ExpectedDataInterface {
+public final class PlatformData extends AbstractExpectedData implements ExpectedDataInterface {
 
     /** single static instance within class loader. */
     private static final PlatformData INSTANCE = new PlatformData();
@@ -109,6 +106,15 @@ public final class PlatformData extends AbstractExpectedData
      */
     public static String[] allWithTag(final String tag) {
         return PlatformData.getInstance().getAllTagged(tag);
+    }
+
+    @Override
+    public String toString() {
+        return String
+                .format("%s [platform=%s %s]",
+                        this.getClass().getSimpleName(),
+                        platform,
+                        super.toString());
     }
 
 }

@@ -62,9 +62,9 @@ public final class SqLiteDaoTest {
         final SqLiteDao dao = new SqLiteDao();
         assertNotNull(dao);
 
-        assertEquals(dao, dao.create(INSERT_SQL));
-        assertEquals(dao, dao.read(SELECT_SQL));
-        assertEquals(dao, dao.update(UPDATE_SQL));
-        assertEquals(dao, dao.delete(DELETE_SQL));
+        assertEquals(dao, dao.createRow(INSERT_SQL));
+        assertEquals(dao, dao.readRows(SELECT_SQL));
+        assertEquals(dao, dao.updateRow(UPDATE_SQL));
+        assertEquals(dao, dao.deleteRow(DELETE_SQL));
     }
 }

@@ -9,13 +9,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 
 /**
- * The Class AbstractDto.
+ * An abstract DTO (data transfer object) class.
  */
 public abstract class AbstractDto {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The fields. */
     protected HashMap<String, String> fields = new HashMap<String, String>();
@@ -70,7 +69,7 @@ public abstract class AbstractDto {
     @Override
     public String toString() {
         return String
-            .format("%s [fields=%s]", this.getClass().getSimpleName(), fields);
+                .format("%s [fields=%s]", this.getClass().getSimpleName(), fields);
     }
 
 }

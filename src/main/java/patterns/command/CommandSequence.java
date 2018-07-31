@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Sequence of Commands example.
  */
-public class SequenceCommand extends AbstractCommand {
+public class CommandSequence extends AbstractCommand {
 
     /** The sequence. */
     private final List<AbstractCommand> sequence = new ArrayList<>();

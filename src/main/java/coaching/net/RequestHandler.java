@@ -14,11 +14,11 @@ import org.slf4j.LoggerFactory;
 /**
  * The Class RequestHandler.
  */
-class RequestHandler implements Runnable {
+public class RequestHandler implements Runnable {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
-        .getLogger(RequestHandler.class);
+            .getLogger(RequestHandler.class);
 
     /** The exit. */
     private volatile boolean exit = false;

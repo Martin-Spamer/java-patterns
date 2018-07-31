@@ -7,8 +7,6 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
-import coaching.factory.CommandFactory;
-
 /**
  * Unit test the CommandFactory class.
  */
@@ -19,37 +17,74 @@ public final class CommandFactoryTest {
             .getLogger(CommandFactoryTest.class);
 
     /**
+     * Unit test to create a default command.
+     */
+    @Test
+    public void testCreate() {
+        AbstractCommand command = CommandFactory.create();
+        assertNotNull(command);
+    }
+
+    //  MissingClass=pattern.command.MissingClass
+    //  ExampleCommand=patterns.command.ExampleCommand
+    //  SequenceCommand=patterns.command.SequenceCommand
+    //  CompoundCommand=patterns.command.CompoundCommand
+    //  ConditionalCommand=patterns.command.ConditionalCommand
+
+    /**
+     * Unit test to create by key.
+     */
+    @Test
+    public void testCreateMissingClass() {
+        AbstractCommand command = CommandFactory.create("MissingClass");
+        assertNotNull(command);
+    }
+
+    /**
+     * Unit test to create by key.
+     */
+    @Test
+    public void testExampleCommand() {
+        AbstractCommand command = CommandFactory.create("ExampleCommand");
+        assertNotNull(command);
+    }
+
+    /**
+     * Unit test to create by key.
+     */
+    @Test
+    public void testCreateSequenceCommand() {
+        AbstractCommand command = CommandFactory.create("SequenceCommand");
+        assertNotNull(command);
+    }
+
+    /**
+     * Unit test to create by key.
+     */
+    @Test
+    public void testCreateCompoundCommand() {
+        AbstractCommand command = CommandFactory.create("CompoundCommand");
+        assertNotNull(command);
+    }
+
+    /**
+     * Unit test to create by key.
+     */
+    @Test
+    public void testCreateConditionalCommand() {
+        AbstractCommand command = CommandFactory.create("ConditionalCommand");
+        assertNotNull(command);
+    }
+
+    /**
      * Unit Test to command factory.
      */
     @Test
     public void testCommandFactory() {
-        LOG.info("testCommandFactory");
         CommandFactory commandFactory = CommandFactory.getInstance();
         assertNotNull(commandFactory);
         LOG.debug(commandFactory.toString());
     }
-
-    /**
-     * Unit Test to command factory file.
-     */
-    @Test
-    public void testCommandFactoryFile() {
-        LOG.info("testCommandFactoryFile");
-        CommandFactory commandFactory = CommandFactory.getInstance("commands.properties");
-        commandFactory.load("commands.properties");
-        assertNotNull(commandFactory);
-        LOG.debug(commandFactory.toString());
-    }
-
-    @Test
-    public void testCommandFactoryMissingFile() {
-        LOG.info("testCommandFactoryFile");
-        CommandFactory commandFactory = CommandFactory.getInstance("missing.properties");
-        commandFactory.load("missing.properties");
-        assertNotNull(commandFactory);
-        LOG.debug(commandFactory.toString());
-    }
-
 
     //    /**
     //     * Unit Test to missing command execute.
@@ -66,7 +101,7 @@ public final class CommandFactoryTest {
     //        commandFactory.execute(actionName);
     //        LOG.debug(commandFactory.toString());
     //    }
-    //
+
     //    /**
     //     * Unit Test to execute missing command.
     //     *
@@ -82,7 +117,7 @@ public final class CommandFactoryTest {
     //        commandFactory.execute(actionName);
     //        LOG.debug(commandFactory.toString());
     //    }
-    //
+
     //    /**
     //     * Unit Test to execute missing class.
     //     *
@@ -98,7 +133,7 @@ public final class CommandFactoryTest {
     //        commandFactory.execute(actionName);
     //        LOG.debug(commandFactory.toString());
     //    }
-    //
+
     //    /**
     //     * Unit Test to execute example command.
     //     *
@@ -115,7 +150,7 @@ public final class CommandFactoryTest {
     //        assertNotNull(result);
     //        LOG.debug(result.toString());
     //    }
-    //
+
     //    /**
     //     * Unit Test to execute sequence command.
     //     *
@@ -132,7 +167,7 @@ public final class CommandFactoryTest {
     //        assertNotNull(result);
     //        LOG.debug(result.toString());
     //    }
-    //
+
     //    /**
     //     * Unit Test to execute compound command.
     //     *
@@ -149,7 +184,7 @@ public final class CommandFactoryTest {
     //        assertNotNull(result);
     //        LOG.debug(result.toString());
     //    }
-    //
+
     //    /**
     //     * Unit Test to execute conditional command.
     //     *

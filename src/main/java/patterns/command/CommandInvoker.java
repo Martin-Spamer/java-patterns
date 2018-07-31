@@ -3,6 +3,8 @@ package patterns.command;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import coaching.factory.ClassFactory;
+
 public final class CommandInvoker {
 
     /** provides logging */
@@ -32,7 +34,7 @@ public final class CommandInvoker {
      * @throws MissingCommandException the missing command exception
      */
     private ResultInterface executeActionName(final String actionName) throws MissingCommandException {
-        final String className = "";
+        final String className = ClassFactory.classNameFor(actionName);
         if (className != null) {
             if (className.length() > 0) {
                 return executeByClassName(className);
@@ -58,8 +60,7 @@ public final class CommandInvoker {
      * @throws MissingCommandException
      *             the missing command exception
      */
-    private ResultInterface executeByClassName(final String className)
-            throws MissingCommandException {
+    private ResultInterface executeByClassName(final String className) throws MissingCommandException {
         AbstractCommand action = null;
         try {
             action = (AbstractCommand) Class.forName(className).newInstance();
@@ -79,7 +80,4 @@ public final class CommandInvoker {
             throw new MissingCommandException(e);
         }
     }
-
-
-
 }
