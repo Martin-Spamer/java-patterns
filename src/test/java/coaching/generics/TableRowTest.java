@@ -21,7 +21,7 @@ public class TableRowTest {
      */
     @Test
     public void testTableRow() {
-        TableRow tableRow = new TableRow();
+        final TableRow tableRow = new TableRow();
         assertNotNull(tableRow);
         LOG.info("{}", tableRow.toString());
     }
@@ -31,7 +31,7 @@ public class TableRowTest {
      */
     @Test
     public void testTableRowString() {
-        TableRow tableRow = new TableRow("value");
+        final TableRow tableRow = new TableRow("value");
         assertNotNull(tableRow);
         LOG.info("{}", tableRow.toString());
     }
@@ -41,7 +41,7 @@ public class TableRowTest {
      */
     @Test
     public void testTableRowStringString() {
-        TableRow tableRow = new TableRow("one,two");
+        final TableRow tableRow = new TableRow("one,two");
         assertNotNull(tableRow);
         LOG.info("{}", tableRow.toString());
     }

@@ -14,7 +14,8 @@ import coaching.resources.PropertiesLoader;
 public final class CommandFactory {
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(CommandFactory.class);
     private static final String DEFAULT = "patterns.command.ExampleCommand";
     private static final CommandFactory INSTANCE = new CommandFactory();
     private final Properties properties;
@@ -41,7 +42,7 @@ public final class CommandFactory {
 
     public static AbstractCommand create(final String string) {
         final CommandFactory commandFactory = getInstance();
-        String className = DEFAULT;
+        final String className = DEFAULT;
         return commandFactory.createByClassName(className);
     }
 
@@ -50,8 +51,8 @@ public final class CommandFactory {
             return (AbstractCommand) Class.forName(className).newInstance();
         } catch (
                 InstantiationException |
-                IllegalAccessException |
-                ClassNotFoundException e) {
+                    IllegalAccessException |
+                    ClassNotFoundException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return null;

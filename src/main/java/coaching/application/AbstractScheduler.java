@@ -21,7 +21,7 @@ public abstract class AbstractScheduler {
 
     /** logging provided. */
     protected final Logger log = LoggerFactory
-            .getLogger(this.getClass().getSimpleName());
+        .getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
     private String[] args = null;
@@ -162,8 +162,8 @@ public abstract class AbstractScheduler {
                 final String value = properties.getProperty(key);
                 try {
                     final Thread thread = (Thread) Class
-                            .forName(value)
-                            .newInstance();
+                        .forName(value)
+                        .newInstance();
                     log.debug("{}", thread);
                     thread.start();
                 } catch (final Exception e) {
@@ -183,10 +183,10 @@ public abstract class AbstractScheduler {
     @Override
     public String toString() {
         return String
-                .format("%s [args=%s, properties=%s]",
-                        this.getClass().getSimpleName(),
-                        Arrays.toString(args),
-                        properties);
+            .format("%s [args=%s, properties=%s]",
+                    this.getClass().getSimpleName(),
+                    Arrays.toString(args),
+                    properties);
     }
 
 }

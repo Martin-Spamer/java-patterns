@@ -55,7 +55,9 @@ public final class SqliteTest {
      */
     private void createTable(final Statement statement) throws SQLException {
         statement.executeUpdate("DROP TABLE IF EXISTS customer");
-        statement.executeUpdate("CREATE TABLE customer (id INTEGER, name STRING, data STRING)");
+        statement
+            .executeUpdate(
+                    "CREATE TABLE customer (id INTEGER, name STRING, data STRING)");
     }
 
     /**
@@ -98,12 +100,13 @@ public final class SqliteTest {
      */
     private void selectRecords(final Statement statement) throws SQLException {
         final ResultSet resultSet = statement
-                .executeQuery("SELECT * from customer");
+            .executeQuery("SELECT * from customer");
         while (resultSet.next()) {
-            LOG.info("{}) {} {}",
-                    resultSet.getInt("id"),
-                    resultSet.getString("name"),
-                    resultSet.getString("data"));
+            LOG
+                .info("{}) {} {}",
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("data"));
         }
     }
 

@@ -69,7 +69,7 @@ public class ClassFactory {
     public static Object newInstance(final String key)
             throws ClassNotFoundException, InstantiationException,
             IllegalAccessException {
-        String className = properties.getProperty(key);
+        final String className = properties.getProperty(key);
         return Class.forName(className).newInstance();
     }
 
@@ -99,7 +99,7 @@ public class ClassFactory {
             throws ClassNotFoundException, InstantiationException,
             IllegalAccessException {
         new BigDecimalMoney();
-        String className = properties.getProperty(key);
+        final String className = properties.getProperty(key);
         return (MoneyInterface) Class.forName(className).newInstance();
     }
 

@@ -1,3 +1,4 @@
+
 package coaching.factory;
 
 import org.junit.Test;
@@ -10,14 +11,15 @@ public class ClassFactoryTest {
 
     @Test
     public void testGetInstance() {
-        ClassFactory classFactory = ClassFactory.getInstance();
+        final ClassFactory classFactory = ClassFactory.getInstance();
         assertEquals(classFactory, ClassFactory.getInstance());
     }
 
     @Test
     public void testGetInstanceString() {
-        ClassFactory classFactory = ClassFactory.getInstance("ClassFactory");
-        assertEquals(classFactory,ClassFactory.getInstance());
+        final ClassFactory classFactory = ClassFactory
+            .getInstance("ClassFactory");
+        assertEquals(classFactory, ClassFactory.getInstance());
     }
 
     @Test
@@ -27,7 +29,7 @@ public class ClassFactoryTest {
         assertNotNull(ClassFactory.create("big-money"));
     }
 
-    @Test(expected=ClassCastException.class)
+    @Test(expected = ClassCastException.class)
     public void testCreateString() throws Exception {
         assertNotNull(ClassFactory.create("string"));
     }
@@ -44,9 +46,12 @@ public class ClassFactoryTest {
     public void testClassNameFor() {
         // Verify.that(ClassFactory.classNameFor("string")).is("java.lang.String");
         assertEquals("java.lang.String", ClassFactory.classNameFor("string"));
-        assertEquals("coaching.money.Money", ClassFactory.classNameFor("money"));
-        assertEquals("coaching.money.Pounds", ClassFactory.classNameFor("pounds"));
-        assertEquals("coaching.money.BigDecimalMoney", ClassFactory.classNameFor("big-money"));
+        assertEquals("coaching.money.Money",
+                ClassFactory.classNameFor("money"));
+        assertEquals("coaching.money.Pounds",
+                ClassFactory.classNameFor("pounds"));
+        assertEquals("coaching.money.BigDecimalMoney",
+                ClassFactory.classNameFor("big-money"));
     }
 
     @Test

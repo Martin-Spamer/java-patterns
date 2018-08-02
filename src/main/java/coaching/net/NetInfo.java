@@ -29,18 +29,20 @@ public final class NetInfo {
      */
     public NetInfo() throws SocketException {
         final Enumeration<NetworkInterface> interfaces = NetworkInterface
-                .getNetworkInterfaces();
+            .getNetworkInterfaces();
         while (interfaces.hasMoreElements()) {
             final NetworkInterface networkInterface = interfaces.nextElement();
             LOG.info("{}", networkInterface.getDisplayName());
             final Enumeration<InetAddress> bounded = networkInterface
-                    .getInetAddresses();
+                .getInetAddresses();
             while (bounded.hasMoreElements()) {
                 final InetAddress inetAddress = bounded.nextElement();
-                LOG.info("inetAddress.getHostAddress() = {}",
-                        inetAddress.getHostAddress());
-                LOG.info("inetAddress.getHostName() = {}",
-                        inetAddress.getHostName());
+                LOG
+                    .info("inetAddress.getHostAddress() = {}",
+                            inetAddress.getHostAddress());
+                LOG
+                    .info("inetAddress.getHostName() = {}",
+                            inetAddress.getHostName());
             }
         }
     }

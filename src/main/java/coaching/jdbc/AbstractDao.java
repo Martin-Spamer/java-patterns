@@ -106,12 +106,12 @@ public abstract class AbstractDao extends JdbcBase
      * Initialise.
      */
     private void initialise() {
-        this.driverClassName = JdbcConfig.driver();
-        this.connectionUrl = JdbcConfig.url();
-        this.username = JdbcConfig.username();
-        this.password = JdbcConfig.password();
-        this.schemaName = JdbcConfig.schema();
-        this.tableName = JdbcConfig.table();
+        driverClassName = JdbcConfig.driver();
+        connectionUrl = JdbcConfig.url();
+        username = JdbcConfig.username();
+        password = JdbcConfig.password();
+        schemaName = JdbcConfig.schema();
+        tableName = JdbcConfig.table();
     }
 
     /*
@@ -126,7 +126,7 @@ public abstract class AbstractDao extends JdbcBase
         } catch (final ClassNotFoundException e) {
             final String errMsg = String
                 .format(JDBC_DRIVER_NOT_FOUND, driverClassName);
-            this.log.error(errMsg, e);
+            log.error(errMsg, e);
             fail(errMsg);
         }
         return this;
@@ -138,7 +138,7 @@ public abstract class AbstractDao extends JdbcBase
      */
     @Override
     public DaoInterface setUrl(final String url) {
-        this.connectionUrl = url;
+        connectionUrl = url;
         return this;
     }
 
@@ -211,7 +211,7 @@ public abstract class AbstractDao extends JdbcBase
     }
 
     private String prepareInsert() {
-        String columns = prepareColumns();
+        final String columns = prepareColumns();
         return CREATE_SQL.replace("{ColumnNames}", columns);
     }
 
@@ -257,8 +257,8 @@ public abstract class AbstractDao extends JdbcBase
 
     private String prepareUpdateSql() {
         return UPDATE_SQL
-            .replace("{SchemaName}", this.schemaName)
-            .replace("{TableName}", this.tableName);
+            .replace("{SchemaName}", schemaName)
+            .replace("{TableName}", tableName);
     }
 
     /**
@@ -279,8 +279,8 @@ public abstract class AbstractDao extends JdbcBase
 
     private String prepareDeleteSql() {
         return DELETE_SQL
-            .replace("{SchemaName}", this.schemaName)
-            .replace("{TableName}", this.tableName);
+            .replace("{SchemaName}", schemaName)
+            .replace("{TableName}", tableName);
     }
 
     /**
@@ -290,22 +290,22 @@ public abstract class AbstractDao extends JdbcBase
      * @return the dao interface
      */
     protected void executePreparedStatement(final String sql) {
-        this.log.info("executePreparedStatement({}", sql);
+        log.info("executePreparedStatement({}", sql);
 
-        String statement = prepare(sql);
+        final String statement = prepare(sql);
 
         try {
             final Connection connection = ConnectionFactory.getConnection();
             final PreparedStatement preparedStatement = connection
                 .prepareStatement(statement);
             final int result = preparedStatement.executeUpdate();
-            this.log.info("Rows updated: {}", result);
+            log.info("Rows updated: {}", result);
             preparedStatement.close();
             connection.close();
         } catch (final SQLException e) {
-            String errMsg = String
+            final String errMsg = String
                 .format(EXECUTION_ERROR, sql, e.getLocalizedMessage());
-            this.log.error(errMsg, e);
+            log.error(errMsg, e);
             fail(errMsg);
         }
     }
@@ -318,8 +318,8 @@ public abstract class AbstractDao extends JdbcBase
      */
     private String prepare(final String sql) {
         return sql
-            .replace("{SchemaName}", this.schemaName)
-            .replace("{TableName}", this.tableName);
+            .replace("{SchemaName}", schemaName)
+            .replace("{TableName}", tableName);
     }
 
     /**
@@ -332,13 +332,13 @@ public abstract class AbstractDao extends JdbcBase
         try {
             final Connection connection = ConnectionFactory.getConnection();
             final Statement statement = connection.createStatement();
-            this.resultSet = statement.executeQuery(sql);
-            processResultSet(this.resultSet);
-            this.resultSet.close();
+            resultSet = statement.executeQuery(sql);
+            processResultSet(resultSet);
+            resultSet.close();
             statement.close();
             connection.close();
         } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -355,9 +355,9 @@ public abstract class AbstractDao extends JdbcBase
             throws SQLException {
         final StringBuilder output = new StringBuilder();
         while (resultSet.next()) {
-            this.log.debug("resultSet = {}", resultSet);
+            log.debug("resultSet = {}", resultSet);
             final String rowAsString = processRow(resultSet);
-            this.log.info("rowAsString = {}", rowAsString);
+            log.info("rowAsString = {}", rowAsString);
             output.append(rowAsString);
         }
     }
@@ -380,7 +380,7 @@ public abstract class AbstractDao extends JdbcBase
             final Object value = resultSet.getObject(i);
             if (value == null) {
                 final String msg = String.format("%s = null,", columnName);
-                this.log.info("{}", msg);
+                log.info("{}", msg);
                 output.append(msg);
             } else {
                 final String msg = String
@@ -388,7 +388,7 @@ public abstract class AbstractDao extends JdbcBase
                             "%s = %s,",
                             columnName,
                             value.toString().trim());
-                this.log.info("{}", msg);
+                log.info("{}", msg);
                 output.append(msg);
             }
         }

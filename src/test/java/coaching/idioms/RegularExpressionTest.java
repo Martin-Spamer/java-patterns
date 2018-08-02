@@ -17,7 +17,7 @@ public final class RegularExpressionTest {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory
-            .getLogger(RegularExpressionTest.class);
+        .getLogger(RegularExpressionTest.class);
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^XYZ$";
@@ -88,10 +88,10 @@ public final class RegularExpressionTest {
     public void testQuoted() {
         final RegularExpression regularExpression = new RegularExpression();
         assertNotNull(regularExpression);
-        String original = "\"Some Stuff\"";
-        LOG.info("{}",original);
-        String quoted = regularExpression.getQuoted(original);
-        LOG.info("{}",quoted);
+        final String original = "\"Some Stuff\"";
+        LOG.info("{}", original);
+        final String quoted = regularExpression.getQuoted(original);
+        LOG.info("{}", quoted);
         assertTrue(quoted.equals("Some Stuff"));
     }
 

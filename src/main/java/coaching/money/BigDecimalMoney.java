@@ -240,7 +240,7 @@ public final class BigDecimalMoney implements MoneyInterface {
      */
     @Override
     public Currency getCurrency() {
-        return this.currency;
+        return currency;
     }
 
     /**
@@ -250,7 +250,7 @@ public final class BigDecimalMoney implements MoneyInterface {
      */
     @Override
     public String getCurrencyCode() {
-        return this.currency.getCurrencyCode();
+        return currency.getCurrencyCode();
     }
 
     /**
@@ -260,7 +260,7 @@ public final class BigDecimalMoney implements MoneyInterface {
      */
     @Override
     public String getSymbol() {
-        return this.currency.getSymbol();
+        return currency.getSymbol();
     }
 
     /**
@@ -270,7 +270,7 @@ public final class BigDecimalMoney implements MoneyInterface {
      */
     @Override
     public String getDisplayName() {
-        return this.currency.getDisplayName();
+        return currency.getDisplayName();
     }
 
     /**
@@ -280,7 +280,7 @@ public final class BigDecimalMoney implements MoneyInterface {
      */
     @Override
     public Long getAmount() {
-        return this.amount.longValue();
+        return amount.longValue();
     }
 
     /**
@@ -289,7 +289,7 @@ public final class BigDecimalMoney implements MoneyInterface {
      * @return the long
      */
     public long asLong() {
-        return this.amount.longValue();
+        return amount.longValue();
     }
 
     /**
@@ -298,7 +298,7 @@ public final class BigDecimalMoney implements MoneyInterface {
      * @return the big decimal
      */
     private BigDecimal asBigDecimal() {
-        return this.amount;
+        return amount;
     }
 
     /**
@@ -359,7 +359,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     @Override
     public String toString() {
         final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-        return numberFormat.format(this.amount);
+        return numberFormat.format(amount);
     }
 
     /**
@@ -369,11 +369,11 @@ public final class BigDecimalMoney implements MoneyInterface {
      */
     public String debugString() {
         final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-        final String currencyString = numberFormat.format(this.amount);
+        final String currencyString = numberFormat.format(amount);
         return String
             .format("%s [currency=%s, currencyString=%s]",
                     this.getClass().getSimpleName(),
-                    this.currency,
+                    currency,
                     currencyString);
     }
 

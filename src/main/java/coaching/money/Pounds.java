@@ -1,3 +1,4 @@
+
 package coaching.money;
 
 import java.util.Currency;
@@ -25,4 +26,3 @@ public final class Pounds extends Money {
         super(Currency.getInstance(Locale.UK), amount);
     }
 }
-

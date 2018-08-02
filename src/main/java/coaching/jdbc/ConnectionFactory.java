@@ -14,7 +14,8 @@ import org.slf4j.LoggerFactory;
 public final class ConnectionFactory implements ConnectionFactoryInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** Instantiate the single instance of this class. */
     private static final ConnectionFactory INSTANCE = new ConnectionFactory();
@@ -25,7 +26,7 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
     private ConnectionFactory() {
         super();
         try {
-            String driver = JdbcConfig.driver();
+            final String driver = JdbcConfig.driver();
             Class.forName(driver);
         } catch (final ClassNotFoundException e) {
             log.error(e.getLocalizedMessage(), e);
@@ -48,19 +49,23 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
      * @return the connection
      */
     public static Connection getConnection() {
-        Connection newConnection = INSTANCE.newConnection();
+        final Connection newConnection = INSTANCE.newConnection();
         return newConnection;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see coaching.jdbc.ConnectionFactoryInterface#newConnection()
      */
     @Override
     public Connection newConnection() {
         try {
-            Connection connection = DriverManager.getConnection(JdbcConfig.url(), JdbcConfig.username(), JdbcConfig.password());
+            final Connection connection = DriverManager
+                .getConnection(JdbcConfig.url(),
+                        JdbcConfig.username(),
+                        JdbcConfig.password());
             return connection;
-        } catch (SQLException e) {
+        } catch (final SQLException e) {
             log.error(e.getLocalizedMessage(), e);
         }
         return null;
@@ -69,8 +74,8 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
     @Override
     public String toString() {
         return String
-                .format("%s [JdbcConfig=%s]",
-                        this.getClass().getSimpleName(),
-                        JdbcConfig.getInstance().toString());
+            .format("%s [JdbcConfig=%s]",
+                    this.getClass().getSimpleName(),
+                    JdbcConfig.getInstance().toString());
     }
 }

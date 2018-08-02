@@ -29,13 +29,13 @@ public class DaoToCsv extends AbstractDao {
      */
     public DaoToCsv() throws FileNotLoadedException {
         super();
-        this.dao = new DynamicDao();
-        this.csvFile = new CsvFile();
+        dao = new DynamicDao();
+        csvFile = new CsvFile();
     }
 
     /**
      * To csv file.
-     * 
+     *
      * @throws SQLException
      */
     protected void toCsvFile() throws SQLException {
@@ -59,9 +59,9 @@ public class DaoToCsv extends AbstractDao {
      */
     private String getTableName() {
         try {
-            return this.resultSetMetaData.getTableName(1);
+            return resultSetMetaData.getTableName(1);
         } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -90,7 +90,7 @@ public class DaoToCsv extends AbstractDao {
             bufferedWriter.flush();
             bufferedWriter.close();
         } catch (final IOException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -102,7 +102,7 @@ public class DaoToCsv extends AbstractDao {
      */
     protected void toCsvFile(final BufferedWriter bufferedWriter)
             throws SQLException {
-        if (this.resultSetMetaData != null) {
+        if (resultSetMetaData != null) {
             csvHeaderTo(bufferedWriter);
         }
         csvBodyTo(bufferedWriter);
@@ -119,10 +119,10 @@ public class DaoToCsv extends AbstractDao {
             try {
                 bufferedWriter.write(columns.toString());
             } catch (final IOException e) {
-                this.log.error(e.getLocalizedMessage(), e);
+                log.error(e.getLocalizedMessage(), e);
             }
         } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -137,7 +137,7 @@ public class DaoToCsv extends AbstractDao {
         try {
             bufferedWriter.write(bodyToString());
         } catch (final IOException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -150,7 +150,7 @@ public class DaoToCsv extends AbstractDao {
         return String
             .format("%s [dao=%s, csvFile=%s]",
                     this.getClass().getSimpleName(),
-                    this.dao,
-                    this.csvFile);
+                    dao,
+                    csvFile);
     }
 }

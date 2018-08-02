@@ -40,10 +40,10 @@ public class NativeTypesArray {
     public void displayEmptyMatrix() {
         final long[][] matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
 
-        String deepToString = Arrays.deepToString(matrix);
+        final String deepToString = Arrays.deepToString(matrix);
         LOG.info("displayEmptyMatrix = {}", deepToString);
 
-        String content = initialiseMatrix(matrix);
+        final String content = initialiseMatrix(matrix);
         LOG.info("looping(matrix) = {}", content);
     }
 
@@ -53,10 +53,10 @@ public class NativeTypesArray {
     public void displayMatrix() {
         final long[][] matrix = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
 
-        String deepToString = Arrays.deepToString(matrix);
+        final String deepToString = Arrays.deepToString(matrix);
         LOG.info("displayMatrix  = {}", deepToString);
 
-        String content = loopMatrix(matrix);
+        final String content = loopMatrix(matrix);
         LOG.info("looping(vector) = {}", content);
     }
 
@@ -87,9 +87,9 @@ public class NativeTypesArray {
      */
     private String loopMatrix(final long[][] matrix) {
         final StringBuilder stringBuffer = new StringBuilder();
-        for (long[] element : matrix) {
+        for (final long[] element : matrix) {
             stringBuffer.append('\n');
-            for (long element2 : element) {
+            for (final long element2 : element) {
                 stringBuffer.append(element2);
                 stringBuffer.append(',');
             }

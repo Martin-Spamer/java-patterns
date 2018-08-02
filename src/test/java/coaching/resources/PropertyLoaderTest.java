@@ -26,7 +26,7 @@ public final class PropertyLoaderTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
-            .getLogger(PropertyLoaderTest.class);
+        .getLogger(PropertyLoaderTest.class);
 
     /**
      * Unit test to get properties.
@@ -34,7 +34,7 @@ public final class PropertyLoaderTest {
     @Test
     public void testGetProperties() {
         final Properties properties = PropertiesLoader
-                .getProperties(CONFIGURATION_PROPERTIES);
+            .getProperties(CONFIGURATION_PROPERTIES);
         assertNotNull(properties);
         assertTrue(properties.size() > 0);
         LOG.info(properties.toString());
@@ -46,7 +46,7 @@ public final class PropertyLoaderTest {
     @Test
     public void testGetXmlProperties() {
         final Properties properties = PropertiesLoader
-                .getXmlProperties(CONFIGURATION_XML);
+            .getXmlProperties(CONFIGURATION_XML);
         assertNotNull(properties);
         assertTrue(properties.size() > 0);
         LOG.info(properties.toString());

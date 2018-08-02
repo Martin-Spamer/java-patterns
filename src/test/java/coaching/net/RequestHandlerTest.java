@@ -18,7 +18,8 @@ import static org.junit.Assert.assertNotNull;
 public final class RequestHandlerTest {
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory.getLogger(RequestHandlerTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(RequestHandlerTest.class);
 
     /**
      * Unit test to request handler.

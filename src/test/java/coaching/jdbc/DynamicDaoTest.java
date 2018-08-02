@@ -29,9 +29,9 @@ public class DynamicDaoTest {
         assertNotNull(dao);
         LOG.info("{}", dao);
         dao.process();
-        ArrayList<String> columnLabels = dao.columnLabels();
+        final ArrayList<String> columnLabels = dao.columnLabels();
         LOG.info("{}", columnLabels);
-        String bodyToString = dao.bodyToString();
+        final String bodyToString = dao.bodyToString();
         LOG.info("{}", bodyToString);
     }
 

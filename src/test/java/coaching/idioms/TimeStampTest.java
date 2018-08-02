@@ -22,7 +22,7 @@ public class TimeStampTest {
      */
     @Test
     public final void testTimeStampNow() {
-        String testTimeStamp = TimeStamp.now();
+        final String testTimeStamp = TimeStamp.now();
         assertNotNull("Value cannot be null", testTimeStamp);
         LOG.debug("TimeStamp = {}");
     }

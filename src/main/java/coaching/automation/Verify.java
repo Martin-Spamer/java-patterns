@@ -127,9 +127,10 @@ public final class Verify {
     // }
 
     private String entryPoint(final StackTraceElement directCaller) {
-        return String.format("(%s:%s)",
-                directCaller.getFileName(),
-                directCaller.getLineNumber());
+        return String
+            .format("(%s:%s)",
+                    directCaller.getFileName(),
+                    directCaller.getLineNumber());
     }
 
     /**
@@ -139,7 +140,7 @@ public final class Verify {
      *         true
      */
     public boolean isTrue() {
-        Object x = boxed.get();
+        final Object x = boxed.get();
         return x.equals(true);
     }
 

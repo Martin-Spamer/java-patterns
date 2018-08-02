@@ -38,7 +38,7 @@ public final class DynamicDao extends AbstractDao {
         try {
             super.query("select * from sqlite_master");
         } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 }

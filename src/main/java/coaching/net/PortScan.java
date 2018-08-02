@@ -55,8 +55,8 @@ public class PortScan extends Thread {
     public PortScan(final String[] args) {
         super();
         assertTrue(args.length == 2);
-        this.ip = args[0];
-        this.portNo = Integer.parseInt(args[1]);
+        ip = args[0];
+        portNo = Integer.parseInt(args[1]);
         initialise();
         LOG.info("{}", this);
     }
@@ -72,7 +72,7 @@ public class PortScan extends Thread {
         assertNotNull(ip);
         assertNotNull(port);
         this.ip = ip;
-        this.portNo = port;
+        portNo = port;
         initialise();
         LOG.info("{}", this);
     }
@@ -89,11 +89,11 @@ public class PortScan extends Thread {
      * Execute.
      */
     public void execute() {
-        for (int port = 1; port < 64 * 1024;) {
+        for (int port = 1; port < (64 * 1024);) {
             if (Thread.activeCount() > PortScan.loadFactor) {
                 Thread.yield();
             } else {
-                final PortScan portScan = new PortScan(this.ip, port);
+                final PortScan portScan = new PortScan(ip, port);
                 portScan.start();
                 port++;
             }
@@ -119,12 +119,12 @@ public class PortScan extends Thread {
     public void run() {
         LOG.info("run");
         try {
-            LOG.info("portscan = {} : {} ", this.ip, this.portNo);
-            final java.net.Socket socket = new java.net.Socket(this.ip,
-                    this.portNo);
+            LOG.info("portscan = {} : {} ", ip, portNo);
+            final java.net.Socket socket = new java.net.Socket(ip,
+                    portNo);
 
             // report open port & try looking it up
-            String lookUpPort = lookUpPort(this.portNo);
+            final String lookUpPort = lookUpPort(portNo);
             LOG.info("scanning = {} ", lookUpPort);
 
             socket.close();
@@ -143,8 +143,8 @@ public class PortScan extends Thread {
         return String
             .format("%s [ip=%s, port=%s]",
                     this.getClass().getSimpleName(),
-                    this.ip,
-                    this.portNo);
+                    ip,
+                    portNo);
     }
 
 }

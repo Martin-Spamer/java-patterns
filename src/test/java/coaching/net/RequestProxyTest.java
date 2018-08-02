@@ -19,7 +19,7 @@ public final class RequestProxyTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
-            .getLogger(RequestProxyTest.class);
+        .getLogger(RequestProxyTest.class);
 
     /**
      * Unit test to request proxy.

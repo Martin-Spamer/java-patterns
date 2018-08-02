@@ -18,14 +18,14 @@ public class ThreadTemplateTest {
 
     @Test
     public void testThreadTemplate() throws ApplicationException {
-        ThreadTemplate threadTemplate = new ThreadTemplate();
+        final ThreadTemplate threadTemplate = new ThreadTemplate();
         assertNotNull(threadTemplate);
         threadTemplate.start();
     }
 
     @Test
     public void testTestThread() throws ApplicationException {
-        ThreadTemplate threadTemplate = new TestThread();
+        final ThreadTemplate threadTemplate = new TestThread();
         assertNotNull(threadTemplate);
         threadTemplate.start();
     }

@@ -55,7 +55,7 @@ public abstract class JdbcBase {
      * Initialise.
      */
     private void initialise() {
-        this.connectionFactory = ConnectionFactory.getInstance();
+        connectionFactory = ConnectionFactory.getInstance();
     }
 
     /**
@@ -77,10 +77,10 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase query(final String query) throws SQLException {
-        this.connection = this.connectionFactory.newConnection();
-        this.statement = this.connection.createStatement();
-        this.resultSet = this.statement.executeQuery(query);
-        this.resultSetMetaData = this.resultSet.getMetaData();
+        connection = connectionFactory.newConnection();
+        statement = connection.createStatement();
+        resultSet = statement.executeQuery(query);
+        resultSetMetaData = resultSet.getMetaData();
         return this;
     }
 
@@ -92,8 +92,8 @@ public abstract class JdbcBase {
      */
     protected ArrayList<String> columnLabels() throws SQLException {
         final ArrayList<String> columns = new ArrayList<String>();
-        for (int i = 1; i < this.resultSetMetaData.getColumnCount(); i++) {
-            final String columnName = this.resultSetMetaData.getColumnName(i);
+        for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
+            final String columnName = resultSetMetaData.getColumnName(i);
             columns.add(columnName);
         }
         return columns;
@@ -109,9 +109,9 @@ public abstract class JdbcBase {
         final ArrayList<String> columns = columnLabels();
         final ArrayList<String> values = new ArrayList<String>();
 
-        while (this.resultSet.next()) {
+        while (resultSet.next()) {
             for (final String columnName : columns) {
-                values.add(this.resultSet.getString(columnName));
+                values.add(resultSet.getString(columnName));
             }
             return values.toString();
         }
@@ -123,11 +123,11 @@ public abstract class JdbcBase {
      */
     public void close() {
         try {
-            this.resultSet.close();
-            this.statement.close();
-            this.connection.close();
+            resultSet.close();
+            statement.close();
+            connection.close();
         } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -145,10 +145,10 @@ public abstract class JdbcBase {
         return String
             .format("%s [statement=%s, resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]",
                     this.getClass().getSimpleName(),
-                    this.statement,
-                    this.resultSet,
-                    this.resultSetMetaData,
-                    this.databaseMetaData);
+                    statement,
+                    resultSet,
+                    resultSetMetaData,
+                    databaseMetaData);
     }
 
 }

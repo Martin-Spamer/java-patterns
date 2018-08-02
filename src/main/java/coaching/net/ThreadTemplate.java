@@ -34,7 +34,8 @@ public class ThreadTemplate implements Runnable {
     private static final long MAX_TICKS = 10;
 
     /** Provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory
+        .getLogger(this.getClass().getSimpleName());
 
     /** configuration. */
     protected SchedulerConfig config = new SchedulerConfig();
@@ -72,7 +73,7 @@ public class ThreadTemplate implements Runnable {
     public void run() {
         startTime = System.currentTimeMillis();
         do {
-            log.info("{}",this);
+            log.info("{}", this);
 
             try {
                 // Let the thread execute a little
@@ -91,7 +92,7 @@ public class ThreadTemplate implements Runnable {
             }
 
             final long currentTimeMillis = System.currentTimeMillis();
-            if (currentTimeMillis - startTime > TIME_OUT) {
+            if ((currentTimeMillis - startTime) > TIME_OUT) {
                 exit = true;
             }
             tick++;
@@ -124,16 +125,16 @@ public class ThreadTemplate implements Runnable {
     @Override
     public String toString() {
         return String
-                .format("%s [config=%s, thread=%s, priority=%s exit=%s, tick=%s, startTime=%s, timeOut=%s, maxTicks=%s]",
-                        this.getClass().getSimpleName(),
-                        config,
-                        thread.getName(),
-                        thread.getPriority(),
-                        exit,
-                        tick,
-                        startTime,
-                        timeOut,
-                        maxTicks);
+            .format("%s [config=%s, thread=%s, priority=%s exit=%s, tick=%s, startTime=%s, timeOut=%s, maxTicks=%s]",
+                    this.getClass().getSimpleName(),
+                    config,
+                    thread.getName(),
+                    thread.getPriority(),
+                    exit,
+                    tick,
+                    startTime,
+                    timeOut,
+                    maxTicks);
     }
 
 }

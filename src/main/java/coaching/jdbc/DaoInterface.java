@@ -50,5 +50,6 @@ public interface DaoInterface {
     DaoInterface setTableName(String tableName);
 
     DaoInterface createTable();
+
     DaoInterface dropTable();
 }

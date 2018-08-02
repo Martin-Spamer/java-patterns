@@ -34,11 +34,11 @@ class DaoToXml extends AbstractDao {
      */
     public void toXmlFile() {
         try {
-            final String tableName = this.resultSetMetaData.getTableName(1);
+            final String tableName = resultSetMetaData.getTableName(1);
             final String filename = String.format("%s.xml", tableName);
             toXmlFile(filename);
         } catch (final Exception e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -54,7 +54,7 @@ class DaoToXml extends AbstractDao {
             bufferedWriter.write(toXmlString());
             bufferedWriter.flush();
         } catch (final Exception e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -75,7 +75,7 @@ class DaoToXml extends AbstractDao {
 
             bufferedWriter.close();
         } catch (final IOException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -88,21 +88,21 @@ class DaoToXml extends AbstractDao {
      */
     public String toXmlString() {
         final StringBuilder xml = new StringBuilder();
-        if (this.resultSet != null) {
-            if (this.resultSetMetaData != null) {
+        if (resultSet != null) {
+            if (resultSetMetaData != null) {
                 try {
                     xml.append("<TABLE>");
                     xml.append(tableRows());
                     xml.append("</TABLE>\n");
                     return xml.toString();
                 } catch (final Exception e) {
-                    this.log.error(e.getLocalizedMessage(), e);
+                    log.error(e.getLocalizedMessage(), e);
                 }
             } else {
-                this.log.warn("No metaData for decoration.");
+                log.warn("No metaData for decoration.");
             }
         } else {
-            this.log.warn("No table data to write.");
+            log.warn("No table data to write.");
         }
         return null;
     }
@@ -115,7 +115,7 @@ class DaoToXml extends AbstractDao {
      */
     private String tableRows() throws SQLException {
         final StringBuilder xmlForBody = new StringBuilder();
-        while (this.resultSet.next()) {
+        while (resultSet.next()) {
             xmlForBody.append(tableRow());
         }
         return xmlForBody.toString();
@@ -130,11 +130,11 @@ class DaoToXml extends AbstractDao {
     private String tableRow() throws SQLException {
         final StringBuilder xmlforRow = new StringBuilder();
         xmlforRow.append("\t\t<ROW>\n\t\t");
-        for (int colNum = 1; colNum <= this.resultSetMetaData
+        for (int colNum = 1; colNum <= resultSetMetaData
             .getColumnCount(); colNum++) {
-            final String columnName = this.resultSetMetaData
+            final String columnName = resultSetMetaData
                 .getColumnName(colNum);
-            final String value = this.resultSet.getString(colNum);
+            final String value = resultSet.getString(colNum);
 
             if (value != null) {
                 xmlforRow

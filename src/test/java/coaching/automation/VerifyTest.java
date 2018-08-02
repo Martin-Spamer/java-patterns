@@ -34,6 +34,7 @@ public class VerifyTest {
         Verify.that(new Integer(1)).equalTo(1);
         Verify.that(new Integer(0)).equalTo(0);
     }
+
     /**
      * Unit test to verify that.
      */
@@ -58,27 +59,27 @@ public class VerifyTest {
 
     @Test
     public void testVerifyThatByte() {
-        byte zero = 0x0;
-        byte one = 0x1;
+        final byte zero = 0x0;
+        final byte one = 0x1;
         Verify.that(zero).equalTo(0);
         Verify.that(one).equalTo(1);
         Verify.that(new Byte(zero)).equalTo(0);
         Verify.that(new Byte(one)).equalTo(1);
     }
 
-    //    @Test
-    //    public void testVerifyThatMoney() {
-    //        Verify.that(new Money()).equalTo(new Money());
-    //        Verify.that(new Money()).equalTo(new Money());
-    //    }
-    //    @Test
-    //    public void testVerifyThatPounds() {
-    //        Verify.that(new Pounds()).equalTo(new Pounds());
-    //        Verify.that(new Pounds()).equalTo(new Pounds());
-    //    }
-    //    @Test
-    //    public void testVerifyThatB() {
-    //        Verify.that(new BigDecimalMoney()).equalTo(new BigDecimalMoney());
-    //        Verify.that(new BigDecimalMoney()).equalTo(new BigDecimalMoney());
-    //    }
+    // @Test
+    // public void testVerifyThatMoney() {
+    // Verify.that(new Money()).equalTo(new Money());
+    // Verify.that(new Money()).equalTo(new Money());
+    // }
+    // @Test
+    // public void testVerifyThatPounds() {
+    // Verify.that(new Pounds()).equalTo(new Pounds());
+    // Verify.that(new Pounds()).equalTo(new Pounds());
+    // }
+    // @Test
+    // public void testVerifyThatB() {
+    // Verify.that(new BigDecimalMoney()).equalTo(new BigDecimalMoney());
+    // Verify.that(new BigDecimalMoney()).equalTo(new BigDecimalMoney());
+    // }
 }

@@ -14,7 +14,8 @@ import static org.junit.Assert.assertNotNull;
 public final class PortScanTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PortScanTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PortScanTest.class);
 
     /**
      * Unit test <code>PortScan</code> with defaults.
@@ -41,7 +42,7 @@ public final class PortScanTest {
     /**
      * Unit test <code>PortScan</code> with null IP.
      */
-    @Test(expected=AssertionError.class)
+    @Test(expected = AssertionError.class)
     public void testPortScanNull() {
         LOG.info("testPortScanNull");
         final PortScan portScan = new PortScan(null, 8080);
@@ -63,7 +64,7 @@ public final class PortScanTest {
     /**
      * Unit test <code>PortScan</code> with null String[] arguments.
      */
-    @Test(expected=AssertionError.class)
+    @Test(expected = AssertionError.class)
     public void testPortScanNullArgs() {
         LOG.info("testPortScanNullArgs");
         final String[] args = {};
@@ -74,7 +75,7 @@ public final class PortScanTest {
     /**
      * Unit test <code>PortScan</code> with empty String[] arguments.
      */
-    @Test(expected=AssertionError.class)
+    @Test(expected = AssertionError.class)
     public void testPortScanEmptyArgs() {
         LOG.info("testPortScanEmptyArgs");
         final String[] args = {};
@@ -85,7 +86,7 @@ public final class PortScanTest {
     /**
      * Unit test <code>PortScan</code> with zero String[] arguments.
      */
-    @Test(expected=AssertionError.class)
+    @Test(expected = AssertionError.class)
     public void testPortScanZeroArgs() {
         LOG.info("testPortScanZeroArgs");
         final String[] args = new String[0];

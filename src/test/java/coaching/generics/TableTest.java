@@ -21,7 +21,7 @@ public class TableTest {
      */
     @Test
     public void testTable() {
-        Table table = new Table();
+        final Table table = new Table();
         assertNotNull(table);
         LOG.info("{}", table);
         assertEquals(table, table.newRow("one,two"));

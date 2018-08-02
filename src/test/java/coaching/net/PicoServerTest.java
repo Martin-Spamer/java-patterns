@@ -1,3 +1,4 @@
+
 package coaching.net;
 
 import org.junit.Test;
@@ -9,13 +10,14 @@ import static org.junit.Assert.assertNotNull;
 public class PicoServerTest {
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory.getLogger(PicoServerTest.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(PicoServerTest.class);
 
     @Test
     public void testPicoServer() {
-        PicoServer picoServer = new PicoServer();
+        final PicoServer picoServer = new PicoServer();
         assertNotNull(picoServer);
-        LOG.info("{}",picoServer);
+        LOG.info("{}", picoServer);
     }
 
 }

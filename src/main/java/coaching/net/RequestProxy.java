@@ -18,7 +18,8 @@ public class RequestProxy implements Runnable {
     private static final String LOCAL_HOST = "127.0.0.1";
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RequestProxy.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(RequestProxy.class);
 
     /** keep the thread running. */
     private volatile boolean keepRunning = true;
@@ -62,17 +63,17 @@ public class RequestProxy implements Runnable {
                 try {
                     clientSocket = listeningSocket.accept();
                     final InputStream clientRequestStream = clientSocket
-                            .getInputStream();
+                        .getInputStream();
                     final OutputStream clientResponseStream = clientSocket
-                            .getOutputStream();
+                        .getOutputStream();
 
                     final String remoteHost = LOCAL_HOST;
                     final int remotePort = 80;
                     serverSocket = new Socket(remoteHost, remotePort);
                     final OutputStream serverRequestStream = serverSocket
-                            .getOutputStream();
+                        .getOutputStream();
                     final InputStream serverResponseStream = serverSocket
-                            .getInputStream();
+                        .getInputStream();
 
                     new Thread() {
                         @Override
@@ -80,9 +81,9 @@ public class RequestProxy implements Runnable {
                             int bytesRead;
                             try {
                                 while ((bytesRead = clientRequestStream
-                                        .read(request)) != -1) {
+                                    .read(request)) != -1) {
                                     clientResponseStream
-                                    .write(request, 0, bytesRead);
+                                        .write(request, 0, bytesRead);
                                     clientResponseStream.flush();
                                 }
                             } catch (final IOException e) {
@@ -97,9 +98,9 @@ public class RequestProxy implements Runnable {
                             int bytesRead;
                             try {
                                 while ((bytesRead = serverResponseStream
-                                        .read(reply)) != -1) {
+                                    .read(reply)) != -1) {
                                     serverRequestStream
-                                    .write(reply, 0, bytesRead);
+                                        .write(reply, 0, bytesRead);
                                     serverRequestStream.flush();
                                 }
                             } catch (final IOException e) {
