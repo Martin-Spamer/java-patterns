@@ -23,7 +23,7 @@ public abstract class JdbcBase {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+            .getLogger(this.getClass().getSimpleName());
 
     /** The JDBC connection. */
     protected ConnectionFactory connectionFactory = null;
@@ -54,11 +54,7 @@ public abstract class JdbcBase {
      * Initialise.
      */
     private void initialise() {
-        connectionFactory = new ConnectionFactory(
-                JdbcConfig.driver(),
-                JdbcConfig.url(),
-                JdbcConfig.username(),
-                JdbcConfig.password());
+        connectionFactory = ConnectionFactory.getInstance();
     }
 
     /**

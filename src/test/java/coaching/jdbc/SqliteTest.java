@@ -2,7 +2,6 @@
 package coaching.jdbc;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,16 +19,18 @@ public final class SqliteTest {
     private static final Logger LOG = LoggerFactory.getLogger(SqliteTest.class);
 
     /**
-     * Unit test to sqlite.
+     * Unit test to Sqlite.
      *
      * @throws Exception the exception
      */
     @Test
     public void testSqlite() throws Exception {
+        final String JDBC_DRIVER = "org.sqlite.JDBC";
+        final String JDBC_URL = "jdbc:sqlite::memory:";
+        final String USERNAME = "username";
+        final String PASSWORD = "password";
 
-        Class.forName("org.sqlite.JDBC");
-        final Connection connection = DriverManager
-            .getConnection("jdbc:sqlite::memory:");
+        final Connection connection = ConnectionFactory.getConnection();
 
         final Statement statement = connection.createStatement();
         statement.setQueryTimeout(30);
@@ -44,7 +45,6 @@ public final class SqliteTest {
 
         deleteRecords(statement);
         selectRecords(statement);
-
     }
 
     /**
@@ -55,9 +55,7 @@ public final class SqliteTest {
      */
     private void createTable(final Statement statement) throws SQLException {
         statement.executeUpdate("DROP TABLE IF EXISTS customer");
-        statement
-            .executeUpdate(
-                    "CREATE TABLE customer (id INTEGER, name STRING, data STRING)");
+        statement.executeUpdate("CREATE TABLE customer (id INTEGER, name STRING, data STRING)");
     }
 
     /**
@@ -68,9 +66,13 @@ public final class SqliteTest {
      */
     private void insertRecords(final Statement statement) throws SQLException {
         final int ids[] = { 1, 2, 3, 4, 5 };
-        final String names[] = { "Dick Turpin", "Robin Hood", "William Tell",
-                "James Bond", "Robinson Crusoe" };
-
+        final String names[] = {
+                "Dick Turpin",
+                "Robin Hood",
+                "William Tell",
+                "James Bond",
+                "Robinson Crusoe"
+        };
         for (int i = 0; i < ids.length; i++) {
             final String insert = "INSERT INTO customer values('%s', '%s', null)";
             final String sql = String.format(insert, ids[i], names[i]);
@@ -96,13 +98,12 @@ public final class SqliteTest {
      */
     private void selectRecords(final Statement statement) throws SQLException {
         final ResultSet resultSet = statement
-            .executeQuery("SELECT * from customer");
+                .executeQuery("SELECT * from customer");
         while (resultSet.next()) {
-            LOG
-                .info("{}) {} {}",
-                        resultSet.getInt("id"),
-                        resultSet.getString("name"),
-                        resultSet.getString("data"));
+            LOG.info("{}) {} {}",
+                    resultSet.getInt("id"),
+                    resultSet.getString("name"),
+                    resultSet.getString("data"));
         }
     }
 

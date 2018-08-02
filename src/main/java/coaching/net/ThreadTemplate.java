@@ -20,8 +20,10 @@ package coaching.net;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import coaching.application.ApplicationException;
+
 /**
- * The Class ThreadTemplate.
+ * A Template for Thread classes.
  */
 public class ThreadTemplate implements Runnable {
 
@@ -32,11 +34,10 @@ public class ThreadTemplate implements Runnable {
     private static final long MAX_TICKS = 10;
 
     /** Provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    /** The config. */
-    protected SchedulerConfig config;
+    /** configuration. */
+    protected SchedulerConfig config = new SchedulerConfig();
 
     /** The thread. */
     protected final Thread thread;
@@ -45,7 +46,7 @@ public class ThreadTemplate implements Runnable {
     protected boolean exit = false;
 
     /** The tick. */
-    protected long tick;
+    protected long tick = 0;
 
     /** The start time. */
     protected long startTime;
@@ -60,19 +61,7 @@ public class ThreadTemplate implements Runnable {
      * Default Constructor.
      */
     public ThreadTemplate() {
-        initialise(new SchedulerConfig());
         thread = new java.lang.Thread(this);
-    }
-
-    /**
-     * Initialise.
-     *
-     * configuration element
-     *
-     * @param config the config
-     */
-    public void initialise(final SchedulerConfig config) {
-        this.config = config;
     }
 
     /*
@@ -81,18 +70,9 @@ public class ThreadTemplate implements Runnable {
      */
     @Override
     public void run() {
+        startTime = System.currentTimeMillis();
         do {
-            tick++;
-
-            final String className = this.getClass().getSimpleName();
-            final String threadName = thread.getName();
-            final int priority = thread.getPriority();
-            log
-                .info("classname:{}:threadName:{}({}).{}",
-                        className,
-                        threadName,
-                        priority,
-                        tick);
+            log.info("{}",this);
 
             try {
                 // Let the thread execute a little
@@ -111,9 +91,10 @@ public class ThreadTemplate implements Runnable {
             }
 
             final long currentTimeMillis = System.currentTimeMillis();
-            if ((currentTimeMillis - startTime) > TIME_OUT) {
+            if (currentTimeMillis - startTime > TIME_OUT) {
                 exit = true;
             }
+            tick++;
         } while (!exit);
     }
 
@@ -138,6 +119,21 @@ public class ThreadTemplate implements Runnable {
      */
     public void stop() {
         exit = true;
+    }
+
+    @Override
+    public String toString() {
+        return String
+                .format("%s [config=%s, thread=%s, priority=%s exit=%s, tick=%s, startTime=%s, timeOut=%s, maxTicks=%s]",
+                        this.getClass().getSimpleName(),
+                        config,
+                        thread.getName(),
+                        thread.getPriority(),
+                        exit,
+                        tick,
+                        startTime,
+                        timeOut,
+                        maxTicks);
     }
 
 }

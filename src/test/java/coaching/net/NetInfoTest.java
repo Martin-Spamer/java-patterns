@@ -14,13 +14,14 @@ public final class NetInfoTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
-        .getLogger(NetInfoTest.class);
+            .getLogger(NetInfoTest.class);
 
     /**
      * Unit test to net info.
+     * @throws Exception
      */
     @Test
-    public void testNetInfo() {
+    public void testNetInfo() throws Exception {
         final NetInfo netInfo = new NetInfo();
         assertNotNull(netInfo);
         LOG.info(netInfo.toString());

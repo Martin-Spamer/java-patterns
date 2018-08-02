@@ -14,10 +14,11 @@ public class RegularExpression {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory
-        .getLogger(RegularExpression.class);
+            .getLogger(RegularExpression.class);
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^ABC$";
+    private static final String QUOTED_STRING = "^\"(.*?)\"$";
 
     /** The pattern. */
     private Pattern pattern = Pattern.compile(PATTERN_STRING);
@@ -82,12 +83,26 @@ public class RegularExpression {
         while (matcher.find()) {
             final String message = "Test %s starting at index %s and ending at index %s";
             final String string = String
-                .format(message,
-                        matcher.group(),
-                        matcher.start(),
-                        matcher.end());
+                    .format(message,
+                            matcher.group(),
+                            matcher.start(),
+                            matcher.end());
             LOG.info(string);
         }
+    }
+
+    /**
+     * Gets the quoted string.
+     *
+     * @param original the original string.
+     * @return the quoted part of the original string.
+     */
+    public String getQuoted(final String original) {
+        final Matcher matcher = Pattern.compile(QUOTED_STRING).matcher(original);
+        if (matcher.find()) {
+            return matcher.group(1);
+        }
+        return null;
     }
 
     /**
@@ -102,7 +117,6 @@ public class RegularExpression {
      * @return the string
      */
     public String replace(final String original, final String newSubString) {
-        // final Matcher matcher = this.PATTERN.matcher(original);
         return pattern.matcher(original).replaceAll(newSubString);
     }
 

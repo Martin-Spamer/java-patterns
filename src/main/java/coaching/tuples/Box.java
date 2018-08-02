@@ -59,7 +59,7 @@ public class Box<T> {
      *         equal
      */
     public boolean isEqual(final T t) {
-        return this.t == t;
+        return this.t.equals(t);
     }
 
     /*
@@ -69,7 +69,7 @@ public class Box<T> {
     @Override
     public String toString() {
         return String
-            .format("%s [T=%s]", this.getClass().getSimpleName(), this.t);
+                .format("%s [T=%s]", this.getClass().getSimpleName(), this.t);
     }
 
 }

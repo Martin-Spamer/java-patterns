@@ -37,37 +37,64 @@ public class NativeTypesArray {
     /**
      * Display matrix, two dimensional array by nested iteration.
      */
-    public void displayMatrix() {
-        long[][] matrix;
-        matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
-        LOG.info("looping(matrix) = {}", looping(matrix));
+    public void displayEmptyMatrix() {
+        final long[][] matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
+
+        String deepToString = Arrays.deepToString(matrix);
+        LOG.info("displayEmptyMatrix = {}", deepToString);
+
+        String content = initialiseMatrix(matrix);
+        LOG.info("looping(matrix) = {}", content);
     }
 
     /**
      * Display.
      */
-    public void display() {
-        final long[][] vector = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
-        LOG.info("Arrays.toString(vector)) = {}", Arrays.toString(vector));
-        LOG.info("looping(vector) = {}", looping(vector));
+    public void displayMatrix() {
+        final long[][] matrix = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
+
+        String deepToString = Arrays.deepToString(matrix);
+        LOG.info("displayMatrix  = {}", deepToString);
+
+        String content = loopMatrix(matrix);
+        LOG.info("looping(vector) = {}", content);
     }
 
     /**
      * Looping.
      *
-     * @param vector the vector
+     * @param matrix the vector
      * @return the string
      */
-    private String looping(final long[][] vector) {
+    private String initialiseMatrix(final long[][] matrix) {
         final StringBuilder stringBuffer = new StringBuilder();
-        for (int firstIndex = 0; firstIndex < vector.length; firstIndex++) {
+        for (int firstIndex = 0; firstIndex < matrix.length; firstIndex++) {
             stringBuffer.append('\n');
-            for (int secondIndex = 0; secondIndex < vector[firstIndex].length; secondIndex++) {
-                vector[firstIndex][secondIndex] = firstIndex * secondIndex;
-                stringBuffer.append(vector[firstIndex][secondIndex]);
+            for (int secondIndex = 0; secondIndex < matrix[firstIndex].length; secondIndex++) {
+                matrix[firstIndex][secondIndex] = firstIndex * secondIndex;
+                stringBuffer.append(matrix[firstIndex][secondIndex]);
                 stringBuffer.append(',');
             }
         }
         return stringBuffer.toString();
     }
+
+    /**
+     * Looping.
+     *
+     * @param matrix the vector
+     * @return the string
+     */
+    private String loopMatrix(final long[][] matrix) {
+        final StringBuilder stringBuffer = new StringBuilder();
+        for (long[] element : matrix) {
+            stringBuffer.append('\n');
+            for (long element2 : element) {
+                stringBuffer.append(element2);
+                stringBuffer.append(',');
+            }
+        }
+        return stringBuffer.toString();
+    }
+
 }

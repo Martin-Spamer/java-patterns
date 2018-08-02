@@ -1,7 +1,10 @@
+
 package coaching.factory;
 
 import java.util.Properties;
 
+import coaching.money.BigDecimalMoney;
+import coaching.money.MoneyInterface;
 import coaching.resources.PropertiesLoader;
 
 /**
@@ -13,7 +16,8 @@ public class ClassFactory {
     private static ClassFactory instance = new ClassFactory();
 
     /** properties holding mappings for a key to a class name. */
-    private static Properties properties = PropertiesLoader.getProperties("ClassFactory.properties");
+    private static Properties properties = PropertiesLoader
+        .getProperties("ClassFactory.properties");
 
     /**
      * Private constructor prevents wild instantiations.
@@ -62,13 +66,24 @@ public class ClassFactory {
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
-    public static Object newInstance(final String key) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public static Object newInstance(final String key)
+            throws ClassNotFoundException, InstantiationException,
+            IllegalAccessException {
         String className = properties.getProperty(key);
         return Class.forName(className).newInstance();
     }
 
-    public static Number create() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        return create("number");
+    /**
+     * Factory method to create a new instance of ClassFactory.
+     *
+     * @return new instance of ClassFactory
+     * @throws ClassNotFoundException the class not found exception
+     * @throws InstantiationException the instantiation exception
+     * @throws IllegalAccessException the illegal access exception
+     */
+    public static Object create() throws ClassNotFoundException,
+            InstantiationException, IllegalAccessException {
+        return create("money");
     }
 
     /**
@@ -80,9 +95,12 @@ public class ClassFactory {
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
-    public static Number create(final String key) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public static MoneyInterface create(final String key)
+            throws ClassNotFoundException, InstantiationException,
+            IllegalAccessException {
+        new BigDecimalMoney();
         String className = properties.getProperty(key);
-        return (Number) Class.forName(className).newInstance();
+        return (MoneyInterface) Class.forName(className).newInstance();
     }
 
 }

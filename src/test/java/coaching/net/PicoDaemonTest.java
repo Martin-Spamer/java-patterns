@@ -14,7 +14,7 @@ public final class PicoDaemonTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
-        .getLogger(PicoDaemonTest.class);
+            .getLogger(PicoDaemonTest.class);
 
     /**
      * Unit test to pico daemon.
@@ -23,6 +23,11 @@ public final class PicoDaemonTest {
     public void testPicoDaemon() {
         final PicoDaemon picoDaemon = new PicoDaemon();
         assertNotNull(picoDaemon);
+        LOG.info(picoDaemon.toString());
+        Thread thread = new Thread(picoDaemon);
+        thread.start();
+        // open socket localhost:8888
+        thread.interrupt();
         LOG.info(picoDaemon.toString());
     }
 

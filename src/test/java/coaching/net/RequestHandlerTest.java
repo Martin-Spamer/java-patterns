@@ -6,6 +6,8 @@ import java.net.Socket;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -14,6 +16,9 @@ import static org.junit.Assert.assertNotNull;
  */
 @Ignore("work-in-progress low-priority")
 public final class RequestHandlerTest {
+
+    /** provides logging */
+    private static final Logger LOG = LoggerFactory.getLogger(RequestHandlerTest.class);
 
     /**
      * Unit test to request handler.
@@ -26,6 +31,7 @@ public final class RequestHandlerTest {
         final Socket socket = serverSocket.accept();
         final RequestHandler requestHandler = new RequestHandler(socket);
         assertNotNull(requestHandler);
+        LOG.info(requestHandler.toString());
         socket.close();
         serverSocket.close();
     }

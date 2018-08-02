@@ -21,9 +21,7 @@ public final class ConnectionFactoryTest {
 
     @Test
     public void testConnectionFactory() {
-
-        ConnectionFactory.getConnection();
-
+        assertNotNull(ConnectionFactory.getConnection());
     }
 
     /**
@@ -32,20 +30,11 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    public void testSqLiteConnectionFactory() throws SQLException {
-        final String JDBC_DRIVER = "org.sqlite.JDBC";
-        final String JDBC_URL = "jdbc:sqlite::memory:";
-        final String USERNAME = "username";
-        final String PASSWORD = "password";
-
-        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
-        assertNotNull(connectionFactory);
-        LOG.info("{}", connectionFactory.toString());
-
-        final Connection connection = connectionFactory.newConnection();
+    public void testSqLiteConnection() throws SQLException {
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
-        LOG.info("{}", connection.toString());
-
+        LOG.info("Schema {}", connection.getSchema());
+        LOG.info("Catalog {}", connection.getCatalog());
         connection.close();
     }
 
@@ -62,11 +51,11 @@ public final class ConnectionFactoryTest {
         final String USERNAME = "PBPUBLIC";
         final String PASSWORD = "PBPUBLIC";
 
-        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
-        assertNotNull(connectionFactory);
-        LOG.info("{}", connectionFactory.toString());
+        //        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
+        //        assertNotNull(connectionFactory);
+        //        LOG.info("{}", connectionFactory.toString());
 
-        final Connection connection = connectionFactory.newConnection();
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
         LOG.info(connection.toString());
         connection.close();
@@ -85,11 +74,11 @@ public final class ConnectionFactoryTest {
         final String USERNAME = "root";
         final String PASSWORD = "root";
 
-        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
-        assertNotNull(connectionFactory);
-        LOG.info("{}", connectionFactory.toString());
+        //        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
+        //        assertNotNull(connectionFactory);
+        //        LOG.info("{}", connectionFactory.toString());
 
-        final Connection connection = connectionFactory.newConnection();
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
         LOG.info(connection.toString());
 
@@ -110,11 +99,11 @@ public final class ConnectionFactoryTest {
         final String USERNAME = "user";
         final String PASSWORD = "password";
 
-        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
-        assertNotNull(connectionFactory);
-        LOG.info("{}", connectionFactory.toString());
+        //        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
+        //        assertNotNull(connectionFactory);
+        //        LOG.info("{}", connectionFactory.toString());
 
-        final Connection connection = connectionFactory.newConnection();
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
         LOG.info(connection.toString());
 
@@ -134,11 +123,11 @@ public final class ConnectionFactoryTest {
         final String USERNAME = "postgres";
         final String PASSWORD = "password";
 
-        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
-        assertNotNull(connectionFactory);
-        LOG.info("{}", connectionFactory.toString());
+        //        ConnectionFactory connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
+        //        assertNotNull(connectionFactory);
+        //        LOG.info("{}", connectionFactory.toString());
 
-        final Connection connection = connectionFactory.newConnection();
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
         LOG.info(connection.toString());
 

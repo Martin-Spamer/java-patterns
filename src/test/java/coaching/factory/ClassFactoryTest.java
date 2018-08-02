@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class ClassFactoryTest {
 
@@ -20,28 +21,10 @@ public class ClassFactoryTest {
     }
 
     @Test
-    public void testClassNameFor() {
-        assertEquals("java.math.BigDecimal", ClassFactory.classNameFor("big-decimal"));
-        assertEquals("java.math.BigInteger", ClassFactory.classNameFor("big-integer"));
-        assertEquals("java.lang.Boolean", ClassFactory.classNameFor("boolean"));
-        assertEquals("java.lang.Byte", ClassFactory.classNameFor("byte"));
-        assertEquals("java.lang.Character", ClassFactory.classNameFor("character"));
-        assertEquals("java.lang.Double", ClassFactory.classNameFor("double"));
-        assertEquals("java.lang.Float", ClassFactory.classNameFor("float"));
-        assertEquals("java.lang.Integer", ClassFactory.classNameFor("integer"));
-        assertEquals("java.lang.Long", ClassFactory.classNameFor("long"));
-        assertEquals("java.lang.Short", ClassFactory.classNameFor("short"));
-        assertEquals("java.lang.String",ClassFactory.classNameFor("string"));
-    }
-
-    @Test
     public void testCreate() throws Exception {
-        assertNotNull(ClassFactory.create());
-    }
-
-    @Test
-    public void testCreateNumber() throws Exception {
-        assertNotNull(ClassFactory.create("number"));
+        assertNotNull(ClassFactory.create("money"));
+        assertNotNull(ClassFactory.create("pounds"));
+        assertNotNull(ClassFactory.create("big-money"));
     }
 
     @Test(expected=ClassCastException.class)
@@ -52,6 +35,23 @@ public class ClassFactoryTest {
     @Test
     public void testNewInstance() throws Exception {
         assertNotNull(ClassFactory.newInstance("string"));
+        assertNotNull(ClassFactory.newInstance("money"));
+        assertNotNull(ClassFactory.newInstance("pounds"));
+        assertNotNull(ClassFactory.newInstance("big-money"));
+    }
+
+    @Test
+    public void testClassNameFor() {
+        // Verify.that(ClassFactory.classNameFor("string")).is("java.lang.String");
+        assertEquals("java.lang.String", ClassFactory.classNameFor("string"));
+        assertEquals("coaching.money.Money", ClassFactory.classNameFor("money"));
+        assertEquals("coaching.money.Pounds", ClassFactory.classNameFor("pounds"));
+        assertEquals("coaching.money.BigDecimalMoney", ClassFactory.classNameFor("big-money"));
+    }
+
+    @Test
+    public void testClassNameForMissing() {
+        assertNull(ClassFactory.classNameFor("missing"));
     }
 
 }

@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 /**
  * A factory for creating Connection objects.
  */
-public class ConnectionFactory implements ConnectionFactoryInterface {
+public final class ConnectionFactory implements ConnectionFactoryInterface {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -19,40 +19,14 @@ public class ConnectionFactory implements ConnectionFactoryInterface {
     /** Instantiate the single instance of this class. */
     private static final ConnectionFactory INSTANCE = new ConnectionFactory();
 
-    /** The username. */
-    private String username = null;
-
-    /** The password. */
-    private String password = null;
-
-    /** The connection url. */
-    private String connectionUrl = null;
-
     /**
      * Private constructor prevents wild instantiations.
      */
     private ConnectionFactory() {
         super();
-    }
-
-    /**
-     * Instantiates a new connection factory.
-     *
-     * @param driverClassName the driver class name
-     * @param connectionUrl the connection url
-     * @param username the username
-     * @param password the password
-     */
-    public ConnectionFactory(final String driverClassName,
-            final String connectionUrl,
-            final String username,
-            final String password) {
-        super();
-        this.connectionUrl = connectionUrl;
-        this.username = username;
-        this.password = password;
         try {
-            Class.forName(driverClassName);
+            String driver = JdbcConfig.driver();
+            Class.forName(driver);
         } catch (final ClassNotFoundException e) {
             log.error(e.getLocalizedMessage(), e);
         }
@@ -61,21 +35,30 @@ public class ConnectionFactory implements ConnectionFactoryInterface {
     /**
      * Returns this single shared instance.
      *
+     * @return the instance
      * @returns the single instance.
      */
     public static ConnectionFactory getInstance() {
         return INSTANCE;
     }
 
+    /**
+     * Gets the connection.
+     *
+     * @return the connection
+     */
     public static Connection getConnection() {
-        return getInstance().newConnection();
+        Connection newConnection = INSTANCE.newConnection();
+        return newConnection;
     }
 
+    /* (non-Javadoc)
+     * @see coaching.jdbc.ConnectionFactoryInterface#newConnection()
+     */
     @Override
     public Connection newConnection() {
-        Connection connection;
         try {
-            connection = DriverManager.getConnection(connectionUrl, username, password);
+            Connection connection = DriverManager.getConnection(JdbcConfig.url(), JdbcConfig.username(), JdbcConfig.password());
             return connection;
         } catch (SQLException e) {
             log.error(e.getLocalizedMessage(), e);
@@ -83,4 +66,11 @@ public class ConnectionFactory implements ConnectionFactoryInterface {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return String
+                .format("%s [JdbcConfig=%s]",
+                        this.getClass().getSimpleName(),
+                        JdbcConfig.getInstance().toString());
+    }
 }

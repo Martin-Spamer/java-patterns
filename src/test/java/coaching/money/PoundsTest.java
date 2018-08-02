@@ -24,29 +24,6 @@ public final class PoundsTest {
     private static final Logger LOG = LoggerFactory.getLogger(PoundsTest.class);
 
     /**
-     * A class for Pounds as Money.
-     */
-    public final class Pounds extends Money {
-
-        /**
-         * Instantiates a new pounds.
-         */
-        public Pounds() {
-            super(Currency.getInstance(Locale.UK), 0);
-        }
-
-        /**
-         * Instantiates a new pounds.
-         *
-         * @param amount
-         *            the amount
-         */
-        public Pounds(final long amount) {
-            super(Currency.getInstance(Locale.UK), amount);
-        }
-    }
-
-    /**
      * Before test.
      */
     @Before

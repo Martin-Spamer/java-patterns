@@ -5,10 +5,12 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.StringWriter;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
@@ -25,10 +27,10 @@ public class XmlTransformer {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory
-        .getLogger(XmlTransformer.class);
+            .getLogger(XmlTransformer.class);
 
-    /** The dbf. */
-    final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    /** A Document Builder Factory. */
+    private final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
     /**
      * Instantiates a new xml transformer.
@@ -37,23 +39,18 @@ public class XmlTransformer {
      */
     public XmlTransformer() throws Exception {
         super();
-
-        final DocumentBuilder db = dbf.newDocumentBuilder();
-        final StringBuilder s = new StringBuilder()
-            .append("<row>")
-            .append(" <name>Alice</name>")
-            .append(" <id>1</id>")
-            .append(" <data>sender</data>")
-            .append("</row>");
-
-        final InputStream is = new ByteArrayInputStream(
-                s.toString().getBytes());
-
-        final Document d = db.parse(is);
-
-        final Node rootElement = d.getDocumentElement();
-
-        LOG.info(XmlTransformer.nodeToString(rootElement));
+        final DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
+        final StringBuilder stringBuilder = new StringBuilder()
+                .append("<row>")
+                .append(" <name>Alice</name>")
+                .append(" <id>1</id>")
+                .append(" <data>sender</data>")
+                .append("</row>");
+        final InputStream inputStream = new ByteArrayInputStream(stringBuilder.toString().getBytes());
+        final Document document = documentBuilder.parse(inputStream);
+        final Node rootElement = document.getDocumentElement();
+        String nodeAsString = XmlTransformer.nodeToString(rootElement);
+        LOG.info(nodeAsString);
     }
 
     /**
@@ -61,16 +58,17 @@ public class XmlTransformer {
      *
      * @param node the node
      * @return the string
-     * @throws Exception the exception
+     * @throws TransformerException
      */
-    private static String nodeToString(final Node node) throws Exception {
-        final StringWriter sw = new StringWriter();
-        final Transformer t = TransformerFactory.newInstance().newTransformer();
+    private static String nodeToString(final Node node) throws TransformerException {
+        final StringWriter stringWriter = new StringWriter();
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        transformerFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 
-        t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-        t.setOutputProperty(OutputKeys.INDENT, "yes");
-        t.transform(new DOMSource(node), new StreamResult(sw));
-
-        return sw.toString();
+        final Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.transform(new DOMSource(node), new StreamResult(stringWriter));
+        return stringWriter.toString();
     }
 }
