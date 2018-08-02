@@ -8,20 +8,13 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import coaching.csv.CsvFile;
 import coaching.csv.CsvFile.FileNotLoadedException;
 
 /**
  * JdbcToCsv class.
  */
-public class DaoToCsv extends JdbcBase {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+public class DaoToCsv extends AbstractDao {
 
     /** Data access object. */
     private final DynamicDao dao;
@@ -36,14 +29,16 @@ public class DaoToCsv extends JdbcBase {
      */
     public DaoToCsv() throws FileNotLoadedException {
         super();
-        dao = new DynamicDao();
-        csvFile = new CsvFile();
+        this.dao = new DynamicDao();
+        this.csvFile = new CsvFile();
     }
 
     /**
      * To csv file.
+     * 
+     * @throws SQLException
      */
-    protected void toCsvFile() {
+    protected void toCsvFile() throws SQLException {
         toCsvFile(getFilename(getTableName()));
     }
 
@@ -64,9 +59,9 @@ public class DaoToCsv extends JdbcBase {
      */
     private String getTableName() {
         try {
-            return resultSetMetaData.getTableName(1);
+            return this.resultSetMetaData.getTableName(1);
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -75,8 +70,9 @@ public class DaoToCsv extends JdbcBase {
      * To csv file.
      *
      * @param filename the filename
+     * @throws SQLException
      */
-    protected void toCsvFile(final String filename) {
+    protected void toCsvFile(final String filename) throws SQLException {
         toCsvFile(new File(filename));
     }
 
@@ -84,8 +80,9 @@ public class DaoToCsv extends JdbcBase {
      * To csv file.
      *
      * @param file the file
+     * @throws SQLException
      */
-    protected void toCsvFile(final File file) {
+    protected void toCsvFile(final File file) throws SQLException {
         try {
             final FileWriter writer = new FileWriter(file);
             final BufferedWriter bufferedWriter = new BufferedWriter(writer);
@@ -93,7 +90,7 @@ public class DaoToCsv extends JdbcBase {
             bufferedWriter.flush();
             bufferedWriter.close();
         } catch (final IOException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -101,9 +98,11 @@ public class DaoToCsv extends JdbcBase {
      * To csv file.
      *
      * @param bufferedWriter the buffered writer
+     * @throws SQLException
      */
-    protected void toCsvFile(final BufferedWriter bufferedWriter) {
-        if (resultSetMetaData != null) {
+    protected void toCsvFile(final BufferedWriter bufferedWriter)
+            throws SQLException {
+        if (this.resultSetMetaData != null) {
             csvHeaderTo(bufferedWriter);
         }
         csvBodyTo(bufferedWriter);
@@ -120,61 +119,26 @@ public class DaoToCsv extends JdbcBase {
             try {
                 bufferedWriter.write(columns.toString());
             } catch (final IOException e) {
-                log.error(e.getLocalizedMessage(), e);
+                this.log.error(e.getLocalizedMessage(), e);
             }
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
-    }
-
-    /**
-     * Column labels.
-     *
-     * @return the array list< string>
-     * @throws SQLException the SQL exception
-     */
-    private ArrayList<String> columnLabels() throws SQLException {
-        final ArrayList<String> columns = new ArrayList<String>();
-        for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
-            final String columnName = resultSetMetaData.getColumnName(i);
-            columns.add(columnName);
-        }
-        return columns;
     }
 
     /**
      * Csv body to.
      *
      * @param bufferedWriter the buffered writer
+     * @throws SQLException
      */
-    protected void csvBodyTo(final BufferedWriter bufferedWriter) {
+    protected void csvBodyTo(final BufferedWriter bufferedWriter)
+            throws SQLException {
         try {
             bufferedWriter.write(bodyToString());
         } catch (final IOException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
-    }
-
-    /**
-     * Body to string.
-     *
-     * @return the string
-     */
-    private String bodyToString() {
-        try {
-            final ArrayList<String> columns = columnLabels();
-            final ArrayList<String> values = new ArrayList<String>();
-
-            while (resultSet.next()) {
-                for (final String columnName : columns) {
-                    values.add(resultSet.getString(columnName));
-                }
-                return values.toString();
-            }
-        } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
-        }
-        return null;
     }
 
     /*
@@ -186,7 +150,7 @@ public class DaoToCsv extends JdbcBase {
         return String
             .format("%s [dao=%s, csvFile=%s]",
                     this.getClass().getSimpleName(),
-                    dao,
-                    csvFile);
+                    this.dao,
+                    this.csvFile);
     }
 }

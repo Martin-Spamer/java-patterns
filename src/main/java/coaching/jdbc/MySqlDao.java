@@ -4,7 +4,7 @@ package coaching.jdbc;
 /**
  * A Data Access object for a MySQL database.
  */
-public class MySqlDao extends AbstractDao {
+public final class MySqlDao extends AbstractDao {
 
     /** The classname of the JDBC driver to use. */
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";

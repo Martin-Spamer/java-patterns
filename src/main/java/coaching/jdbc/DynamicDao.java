@@ -22,7 +22,7 @@ import java.sql.SQLException;
 /**
  * A dynamic data access object.
  */
-public final class DynamicDao extends JdbcBase {
+public final class DynamicDao extends AbstractDao {
 
     /**
      * Default Constructor.
@@ -36,9 +36,9 @@ public final class DynamicDao extends JdbcBase {
      */
     public void process() {
         try {
-            super.query();
+            super.query("select * from sqlite_master");
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 }

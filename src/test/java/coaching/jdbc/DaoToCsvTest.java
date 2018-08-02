@@ -25,7 +25,7 @@ public final class DaoToCsvTest {
     @Test
     @Ignore("Requires Database work-in-progress low-priority")
     public void testJdbcToCsv() throws Exception {
-        final DaoToCsv instance = new DaoToCsv();
+        final JdbcBase instance = new DaoToCsv();
         assertNotNull(instance);
         LOG.info(instance.toString());
     }

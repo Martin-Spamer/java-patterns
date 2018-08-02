@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
- * The JdbcToXml class.
+ * DaoToXml class.
  */
-class DaoToXml extends JdbcBase {
+class DaoToXml extends AbstractDao {
 
     /**
      * Default Constructor.
@@ -24,9 +24,9 @@ class DaoToXml extends JdbcBase {
      *
      * @throws SQLException the exception
      */
-    public void process() throws SQLException {
-        super.query();
-        toXmlFile();
+    public void process() {
+        // super.query();
+        // toXmlFile();
     }
 
     /**
@@ -34,11 +34,11 @@ class DaoToXml extends JdbcBase {
      */
     public void toXmlFile() {
         try {
-            final String tableName = resultSetMetaData.getTableName(1);
+            final String tableName = this.resultSetMetaData.getTableName(1);
             final String filename = String.format("%s.xml", tableName);
             toXmlFile(filename);
         } catch (final Exception e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -54,7 +54,7 @@ class DaoToXml extends JdbcBase {
             bufferedWriter.write(toXmlString());
             bufferedWriter.flush();
         } catch (final Exception e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -75,7 +75,7 @@ class DaoToXml extends JdbcBase {
 
             bufferedWriter.close();
         } catch (final IOException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -88,21 +88,21 @@ class DaoToXml extends JdbcBase {
      */
     public String toXmlString() {
         final StringBuilder xml = new StringBuilder();
-        if (resultSet != null) {
-            if (resultSetMetaData != null) {
+        if (this.resultSet != null) {
+            if (this.resultSetMetaData != null) {
                 try {
                     xml.append("<TABLE>");
                     xml.append(tableRows());
                     xml.append("</TABLE>\n");
                     return xml.toString();
                 } catch (final Exception e) {
-                    log.error(e.getLocalizedMessage(), e);
+                    this.log.error(e.getLocalizedMessage(), e);
                 }
             } else {
-                log.warn("No metaData for decoration.");
+                this.log.warn("No metaData for decoration.");
             }
         } else {
-            log.warn("No table data to write.");
+            this.log.warn("No table data to write.");
         }
         return null;
     }
@@ -115,7 +115,7 @@ class DaoToXml extends JdbcBase {
      */
     private String tableRows() throws SQLException {
         final StringBuilder xmlForBody = new StringBuilder();
-        while (resultSet.next()) {
+        while (this.resultSet.next()) {
             xmlForBody.append(tableRow());
         }
         return xmlForBody.toString();
@@ -130,10 +130,11 @@ class DaoToXml extends JdbcBase {
     private String tableRow() throws SQLException {
         final StringBuilder xmlforRow = new StringBuilder();
         xmlforRow.append("\t\t<ROW>\n\t\t");
-        for (int colNum = 1; colNum <= resultSetMetaData
+        for (int colNum = 1; colNum <= this.resultSetMetaData
             .getColumnCount(); colNum++) {
-            final String columnName = resultSetMetaData.getColumnName(colNum);
-            final String value = resultSet.getString(colNum);
+            final String columnName = this.resultSetMetaData
+                .getColumnName(colNum);
+            final String value = this.resultSet.getString(colNum);
 
             if (value != null) {
                 xmlforRow
