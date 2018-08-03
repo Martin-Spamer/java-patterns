@@ -30,6 +30,8 @@ public class Configuration {
             final InputStream inputStream = inputStream(resourceName);
             if (inputStream != null) {
                 properties.load(inputStream);
+            } else {
+                log.error("Resource {} not found", resourceName);
             }
         } catch (final IOException e) {
             log.error("{}", e);

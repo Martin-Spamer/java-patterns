@@ -8,13 +8,16 @@ public class HollywoodPrinciple {
 
     /**
      * Don't call us.
+     * Getting a value and sending it to something else,
+     * has two points of coupling.
+     *
      */
     public void dontCallUs() {
         try {
-            throw new Exception("Don't call us.");
-        } catch (final Exception e) {
+            throw new RuntimeException("Don't call us.");
+        } catch (final RuntimeException e) {
             // increased coupling, two points of contact, two reasons to change.
-            final String msg = e.getLocalizedMessage();
+            final String msg = e.toString();
             System.err.println(msg);
         }
     }
@@ -24,8 +27,8 @@ public class HollywoodPrinciple {
      */
     public void wellCallYou() {
         try {
-            throw new Exception("We'll call you.");
-        } catch (final Exception e) {
+            throw new RuntimeException("We'll call you.");
+        } catch (final RuntimeException e) {
             // decreased coupling, one point of contact, one reason to change.
             e.printStackTrace(System.err);
         }

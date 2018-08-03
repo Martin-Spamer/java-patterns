@@ -68,4 +68,7 @@ public final class PropertyLoaderTest {
         PropertiesLoader.getXmlProperties(MISSING_PROPERTIES);
     }
 
+    public void testNullProperties() {
+        PropertiesLoader.getXmlProperties(null);
+    }
 }

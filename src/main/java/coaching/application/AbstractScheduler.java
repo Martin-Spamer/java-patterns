@@ -135,7 +135,6 @@ public abstract class AbstractScheduler {
      * @return the abstract scheduler
      */
     private AbstractScheduler execute(final Document xmlDoc) {
-
         final NodeList list = xmlDoc.getElementsByTagName("*");
         for (int i = 0; i < list.getLength(); i++) {
             final Element element = (Element) list.item(i);
@@ -156,19 +155,23 @@ public abstract class AbstractScheduler {
      * @return the abstract scheduler
      */
     public AbstractScheduler execute(final Properties properties) {
-        final Enumeration<?> keys = properties.propertyNames();
-        while (keys.hasMoreElements()) {
-            final String key = (String) keys.nextElement();
-            final String value = properties.getProperty(key);
-            try {
-                final Thread thread = (Thread) Class
-                    .forName(value)
-                    .newInstance();
-                log.debug("{}", thread);
-                thread.start();
-            } catch (final Exception e) {
-                log.error(e.getLocalizedMessage(), e);
+        if (properties != null) {
+            final Enumeration<?> keys = properties.propertyNames();
+            while (keys.hasMoreElements()) {
+                final String key = (String) keys.nextElement();
+                final String value = properties.getProperty(key);
+                try {
+                    final Thread thread = (Thread) Class
+                        .forName(value)
+                        .newInstance();
+                    log.debug("{}", thread);
+                    thread.start();
+                } catch (final Exception e) {
+                    log.error(e.getLocalizedMessage(), e);
+                }
             }
+        } else {
+            log.warn("Properties cannot be null");
         }
         return this;
     }

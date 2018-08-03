@@ -4,7 +4,7 @@ package coaching.jdbc;
 /**
  * A Data Access Object for a Sqlite3 database.
  */
-public class SqLiteDao extends AbstractDao {
+public final class SqLiteDao extends AbstractDao {
 
     /** The classname of the JDBC driver to use. */
     public static final String JDBC_DRIVER = "org.sqlite.JDBC";

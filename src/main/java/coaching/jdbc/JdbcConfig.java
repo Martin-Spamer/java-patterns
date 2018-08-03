@@ -123,4 +123,5 @@ public final class JdbcConfig extends Configuration {
     public static String delete() {
         return JdbcConfig.getInstance().valueFor("sql.delete");
     }
+
 }

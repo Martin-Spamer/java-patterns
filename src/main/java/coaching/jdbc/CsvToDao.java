@@ -9,18 +9,6 @@ package coaching.jdbc;
  */
 public final class CsvToDao extends AbstractDao {
 
-    /** The classname of the JDBC driver to use. */
-    public static final String JDBC_DRIVER = "org.sqlite.JDBC";
-
-    /** The URL to use to make JDBC connection. */
-    public static final String JDBC_URL = "jdbc:sqlite::memory:";
-
-    /** USERNAME. */
-    public static final String USERNAME = "username";
-
-    /** PASSWORD. */
-    private static final String PASSWORD = "password";
-
     /**
      * Default Constructor.
      */
@@ -34,8 +22,7 @@ public final class CsvToDao extends AbstractDao {
      * @param driverClassName the driver class name
      * @throws ClassNotFoundException the class not found exception
      */
-    public CsvToDao(final String driverClassName)
-            throws ClassNotFoundException {
+    public CsvToDao(final String driverClassName) {
         super(driverClassName);
     }
 

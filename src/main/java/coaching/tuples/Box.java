@@ -59,7 +59,7 @@ public class Box<T> {
      *         equal
      */
     public boolean isEqual(final T t) {
-        return this.t == t;
+        return this.t.equals(t);
     }
 
     /*

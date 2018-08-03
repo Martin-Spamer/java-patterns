@@ -9,7 +9,7 @@ public class ObservableTest {
 
     @Test
     public void testObservable() {
-        Observable<Object> observable = new Observable<Object>();
+        final Observable<Object> observable = new Observable<Object>();
         assertNotNull(observable);
     }
 

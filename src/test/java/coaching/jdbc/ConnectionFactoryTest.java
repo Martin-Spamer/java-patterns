@@ -20,8 +20,10 @@ public final class ConnectionFactoryTest {
     private static final Logger LOG = LoggerFactory
         .getLogger(ConnectionFactoryTest.class);
 
-    /** The connection factory. */
-    private ConnectionFactory connectionFactory;
+    @Test
+    public void testConnectionFactory() {
+        assertNotNull(ConnectionFactory.getConnection());
+    }
 
     /**
      * Unit test for connection factory with SqLite.
@@ -29,17 +31,11 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    public void testSqLiteConnectionFactory() throws SQLException {
-        final String JDBC_DRIVER = "org.sqlite.JDBC";
-        final String JDBC_URL = "jdbc:sqlite::memory:";
-        final String USERNAME = "username";
-        final String PASSWORD = "password";
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
-                USERNAME, PASSWORD);
-        assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.newConnection();
+    public void testSqLiteConnection() throws SQLException {
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
-        LOG.info(connection.toString());
+        LOG.info("Schema {}", connection.getSchema());
+        LOG.info("Catalog {}", connection.getCatalog());
         connection.close();
     }
 
@@ -49,18 +45,19 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires Pointbase low-priority")
+    @Ignore("Low-Priority - Requires Pointbase")
     public void testPointbaseConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
         final String JDBC_URL = "jdbc:pointbase:server://localhost/sample";
         final String USERNAME = "PBPUBLIC";
         final String PASSWORD = "PBPUBLIC";
 
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
-                USERNAME, PASSWORD);
+        // ConnectionFactory connectionFactory = new
+        // ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
+        // assertNotNull(connectionFactory);
+        // LOG.info("{}", connectionFactory.toString());
 
-        assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.newConnection();
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
         LOG.info(connection.toString());
         connection.close();
@@ -72,20 +69,22 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires MySQL low-priority")
+    @Ignore("Low-Priority - Requires MySQL")
     public void testMySqlConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
         final String JDBC_URL = "jdbc:mysql://localhost:3306/student";
         final String USERNAME = "root";
         final String PASSWORD = "root";
 
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
-                USERNAME, PASSWORD);
+        // ConnectionFactory connectionFactory = new
+        // ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
+        // assertNotNull(connectionFactory);
+        // LOG.info("{}", connectionFactory.toString());
 
-        assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.newConnection();
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
         LOG.info(connection.toString());
+
         connection.close();
     }
 
@@ -95,20 +94,22 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires Oracle low-priority")
-    public void testConnectionFactory() throws SQLException {
+    @Ignore("Low-Priority - Requires Oracle")
+    public void testOracleConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
         final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:sample";
         final String USERNAME = "user";
         final String PASSWORD = "password";
 
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
-                USERNAME, PASSWORD);
+        // ConnectionFactory connectionFactory = new
+        // ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
+        // assertNotNull(connectionFactory);
+        // LOG.info("{}", connectionFactory.toString());
 
-        assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.newConnection();
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
         LOG.info(connection.toString());
+
         connection.close();
     }
 
@@ -118,20 +119,22 @@ public final class ConnectionFactoryTest {
      * @throws SQLException the SQL exception
      */
     @Test
-    @Ignore("Requires PostgreSQL low-priority")
+    @Ignore("Low-Priority - Requires PostgreSQL ")
     public void testPostgresqlConnectionFactory() throws SQLException {
         final String JDBC_DRIVER = "org.postgresql.Driver";
         final String JDBC_URL = "jdbc:postgresql://localhost";
         final String USERNAME = "postgres";
         final String PASSWORD = "password";
 
-        connectionFactory = new ConnectionFactory(JDBC_DRIVER, JDBC_URL,
-                USERNAME, PASSWORD);
+        // ConnectionFactory connectionFactory = new
+        // ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
+        // assertNotNull(connectionFactory);
+        // LOG.info("{}", connectionFactory.toString());
 
-        assertNotNull(connectionFactory);
-        final Connection connection = connectionFactory.newConnection();
+        final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
         LOG.info(connection.toString());
+
         connection.close();
     }
 

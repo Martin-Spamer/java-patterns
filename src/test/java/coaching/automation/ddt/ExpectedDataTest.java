@@ -40,27 +40,6 @@ public final class ExpectedDataTest {
         LOG.info("{}", fromJson);
     }
 
-    /**
-     * Unit test to on platform.
-     *
-     * @throws Exception the exception
-     */
-    @Test
-    public void testOnPlatform() throws Exception {
-        ExpectedData expectedData;
-
-        expectedData = new ExpectedData("local");
-        assertNotNull(expectedData);
-        LOG.info("{}", expectedData.toString());
-
-        expectedData = ExpectedData.platform("local");
-        assertNotNull(expectedData);
-        LOG.info("{}", expectedData.toString());
-
-        // String tagged = expectedData.getTagged("@foo");
-        // assertNull(tagged);
-        // assertNull(expectedData.getTagged("@bar"));
-    }
 
     /**
      * Unit test to default platform domain language.

@@ -72,9 +72,9 @@ public final class PostgreSqlDaoTest {
             throws ClassNotFoundException {
         final PointbaseDao dao = new PointbaseDao();
         assertNotNull(dao);
-        dao.create(INSERT_SQL);
-        dao.read(SELECT_SQL);
-        dao.update(UPDATE_SQL);
-        dao.delete(DELETE_SQL);
+        dao.createRow(INSERT_SQL);
+        dao.readRows(SELECT_SQL);
+        dao.updateRow(UPDATE_SQL);
+        dao.deleteRow(DELETE_SQL);
     }
 }

@@ -24,6 +24,11 @@ public final class PicoDaemonTest {
         final PicoDaemon picoDaemon = new PicoDaemon();
         assertNotNull(picoDaemon);
         LOG.info(picoDaemon.toString());
+        final Thread thread = new Thread(picoDaemon);
+        thread.start();
+        // open socket localhost:8888
+        thread.interrupt();
+        LOG.info(picoDaemon.toString());
     }
 
 }

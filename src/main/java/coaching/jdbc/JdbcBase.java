@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,16 +26,16 @@ public abstract class JdbcBase {
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
-    /** The JDBC connection. */
+    /** Provides JDBC connections. */
     protected ConnectionFactory connectionFactory = null;
 
-    /** The connection. */
+    /** Current connection. */
     protected Connection connection = null;
 
     /** The SQL statement. */
     protected Statement statement = null;
 
-    /** The results of the query. */
+    /** The query results. */
     protected ResultSet resultSet = null;
 
     /** The metadata for the results. */
@@ -54,11 +55,7 @@ public abstract class JdbcBase {
      * Initialise.
      */
     private void initialise() {
-        connectionFactory = new ConnectionFactory(
-                JdbcConfig.driver(),
-                JdbcConfig.url(),
-                JdbcConfig.username(),
-                JdbcConfig.password());
+        connectionFactory = ConnectionFactory.getInstance();
     }
 
     /**
@@ -88,6 +85,40 @@ public abstract class JdbcBase {
     }
 
     /**
+     * Column labels.
+     *
+     * @return the array list< string>
+     * @throws SQLException the SQL exception
+     */
+    protected ArrayList<String> columnLabels() throws SQLException {
+        final ArrayList<String> columns = new ArrayList<String>();
+        for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
+            final String columnName = resultSetMetaData.getColumnName(i);
+            columns.add(columnName);
+        }
+        return columns;
+    }
+
+    /**
+     * Body to string.
+     *
+     * @return the string
+     * @throws SQLException
+     */
+    protected String bodyToString() throws SQLException {
+        final ArrayList<String> columns = columnLabels();
+        final ArrayList<String> values = new ArrayList<String>();
+
+        while (resultSet.next()) {
+            for (final String columnName : columns) {
+                values.add(resultSet.getString(columnName));
+            }
+            return values.toString();
+        }
+        return null;
+    }
+
+    /**
      * Close.
      */
     public void close() {
@@ -107,6 +138,17 @@ public abstract class JdbcBase {
     @Override
     public void finalize() {
         close();
+    }
+
+    @Override
+    public String toString() {
+        return String
+            .format("%s [statement=%s, resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]",
+                    this.getClass().getSimpleName(),
+                    statement,
+                    resultSet,
+                    resultSetMetaData,
+                    databaseMetaData);
     }
 
 }

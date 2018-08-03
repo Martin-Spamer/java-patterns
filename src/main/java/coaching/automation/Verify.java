@@ -45,7 +45,7 @@ public final class Verify {
         final Verify instance = Verify.create();
         final Box<Boolean> boxed = new Box<>(actual);
         instance.that(new Throwable(), boxed);
-        LOG.info("{}", boxed);
+        LOG.debug("{}", boxed);
         return instance;
     }
 
@@ -59,7 +59,7 @@ public final class Verify {
         final Verify instance = Verify.create();
         final Box<Integer> boxed = new Box<>(actual);
         instance.that(new Throwable(), boxed);
-        LOG.info("{}", boxed);
+        LOG.debug("{}", boxed);
         return instance;
     }
 
@@ -67,7 +67,7 @@ public final class Verify {
         final Verify instance = Verify.create();
         final Box<Double> boxed = new Box<>(actual);
         instance.that(new Throwable(), boxed);
-        LOG.info("{}", boxed);
+        LOG.debug("{}", boxed);
         return instance;
     }
 
@@ -75,7 +75,7 @@ public final class Verify {
         final Verify instance = Verify.create();
         final Box<Character> boxed = new Box<>(actual);
         instance.that(new Throwable(), boxed);
-        LOG.info("{}", boxed);
+        LOG.debug("{}", boxed);
         return instance;
     }
 
@@ -83,7 +83,15 @@ public final class Verify {
         final Verify instance = Verify.create();
         final Box<Byte> boxed = new Box<>(actual);
         instance.that(new Throwable(), boxed);
-        LOG.info("{}", boxed);
+        LOG.debug("{}", boxed);
+        return instance;
+    }
+
+    public static Verify that(final Object actual) {
+        final Verify instance = Verify.create();
+        final Box<Object> boxed = new Box<>(actual);
+        instance.that(new Throwable(), boxed);
+        LOG.debug("{}", boxed);
         return instance;
     }
 
@@ -96,8 +104,8 @@ public final class Verify {
     private Verify that(final Throwable caller, final Box<?> boxed) {
         final StackTraceElement directCaller = caller.getStackTrace()[1];
         assertNotNull(directCaller);
-        LOG.info("{}", boxed);
-        LOG.info("{}", entryPoint(directCaller));
+        LOG.debug("{}", boxed);
+        LOG.debug("{}", entryPoint(directCaller));
         this.boxed = boxed;
         return this;
     }
@@ -132,7 +140,8 @@ public final class Verify {
      *         true
      */
     public boolean isTrue() {
-        return boxed.equals(true);
+        final Object x = boxed.get();
+        return x.equals(true);
     }
 
     /**
@@ -142,7 +151,7 @@ public final class Verify {
      *         false
      */
     public boolean isFalse() {
-        return boxed.equals(false);
+        return boxed.get().equals(false);
     }
 
     /**
@@ -152,7 +161,7 @@ public final class Verify {
      * @return true, if successful
      */
     public boolean equalTo(final int i) {
-        return boxed.equals(i);
+        return boxed.get().equals(i);
     }
 
     /**
@@ -162,7 +171,11 @@ public final class Verify {
      * @return true, if successful
      */
     public boolean equalTo(final long l) {
-        return boxed.equals(l);
+        return boxed.get().equals(l);
+    }
+
+    public boolean equalTo(final Box<?> boxed) {
+        return boxed.equals(boxed);
     }
 
 }

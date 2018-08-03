@@ -18,9 +18,11 @@ public final class NetInfoTest {
 
     /**
      * Unit test to net info.
+     * 
+     * @throws Exception
      */
     @Test
-    public void testNetInfo() {
+    public void testNetInfo() throws Exception {
         final NetInfo netInfo = new NetInfo();
         assertNotNull(netInfo);
         LOG.info(netInfo.toString());

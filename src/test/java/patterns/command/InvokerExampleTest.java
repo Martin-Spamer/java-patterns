@@ -47,7 +47,7 @@ public final class InvokerExampleTest {
     @Test
     public void testSequenceCommand() {
         LOG.info("testSequenceCommand");
-        final ResultInterface result = new SequenceCommand().execute();
+        final ResultInterface result = new CommandSequence().execute();
         assertNotNull(result);
         LOG.debug(result.toString());
     }

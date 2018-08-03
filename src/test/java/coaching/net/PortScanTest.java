@@ -1,7 +1,6 @@
 
 package coaching.net;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Unit tests for the PortScan class.
  */
-@Ignore("work-in-progress low-priority")
+// @Ignore("work-in-progress low-priority")
 public final class PortScanTest {
 
     /** Provides logging. */
@@ -19,7 +18,7 @@ public final class PortScanTest {
         .getLogger(PortScanTest.class);
 
     /**
-     * Unit test to port scan.
+     * Unit test <code>PortScan</code> with defaults.
      */
     @Test
     public void testPortScan() {
@@ -30,20 +29,20 @@ public final class PortScanTest {
     }
 
     /**
-     * Unit test to port scan string int.
+     * Unit test <code>PortScan</code> with IP and portNo.
      */
     @Test
-    public void testPortScanStringInt() {
-        LOG.info("testPortScanStringInt");
+    public void testPortScanIpPort() {
+        LOG.info("testPortScanIpPort");
         final PortScan portScan = new PortScan("127.0.0.1", 8080);
         assertNotNull(portScan);
         LOG.info(portScan.toString());
     }
 
     /**
-     * Unit test to port scan null.
+     * Unit test <code>PortScan</code> with null IP.
      */
-    @Test
+    @Test(expected = AssertionError.class)
     public void testPortScanNull() {
         LOG.info("testPortScanNull");
         final PortScan portScan = new PortScan(null, 8080);
@@ -51,7 +50,7 @@ public final class PortScanTest {
     }
 
     /**
-     * Unit test to port scan args.
+     * Unit test <code>PortScan</code> with String[] arguments.
      */
     @Test
     public void testPortScanArgs() {
@@ -63,9 +62,9 @@ public final class PortScanTest {
     }
 
     /**
-     * Unit test to port scan null args.
+     * Unit test <code>PortScan</code> with null String[] arguments.
      */
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test(expected = AssertionError.class)
     public void testPortScanNullArgs() {
         LOG.info("testPortScanNullArgs");
         final String[] args = {};
@@ -74,9 +73,9 @@ public final class PortScanTest {
     }
 
     /**
-     * Unit test to port scan empty args.
+     * Unit test <code>PortScan</code> with empty String[] arguments.
      */
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test(expected = AssertionError.class)
     public void testPortScanEmptyArgs() {
         LOG.info("testPortScanEmptyArgs");
         final String[] args = {};
@@ -85,13 +84,14 @@ public final class PortScanTest {
     }
 
     /**
-     * Unit test to port scan zero args.
+     * Unit test <code>PortScan</code> with zero String[] arguments.
      */
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test(expected = AssertionError.class)
     public void testPortScanZeroArgs() {
         LOG.info("testPortScanZeroArgs");
         final String[] args = new String[0];
         final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);
     }
+
 }

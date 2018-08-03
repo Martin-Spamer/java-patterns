@@ -47,12 +47,9 @@ public interface DaoInterface {
      */
     DaoInterface setSchemaName(final String schemaName);
 
-    /**
-     * Sets the table name.
-     *
-     * @param tableName the table
-     * @return this for a fluent interface.
-     */
-    DaoInterface setTableName(final String tableName);
+    DaoInterface setTableName(String tableName);
 
+    DaoInterface createTable();
+
+    DaoInterface dropTable();
 }

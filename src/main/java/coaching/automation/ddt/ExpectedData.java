@@ -14,14 +14,10 @@ import coaching.csv.CsvFile.FileNotLoadedException;
  * Given a cash customer ...
  *
  */
-public final class ExpectedData extends AbstractExpectedData
-implements ExpectedDataInterface {
+public final class ExpectedData extends AbstractExpectedData implements ExpectedDataInterface {
 
     /** single static instance within the class loader. */
     private static final ExpectedData INSTANCE = new ExpectedData();
-
-    /** The platform. */
-    private String platform = null;
 
     /**
      * Gets the instance.
@@ -37,18 +33,6 @@ implements ExpectedDataInterface {
      */
     private ExpectedData() {
         super();
-        setPlatform(System.getProperty("platform", "local"));
-        initialise();
-    }
-
-    /**
-     * Constructor for specific platform.
-     *
-     * @param platform the platform
-     */
-    public ExpectedData(final String platform) {
-        super();
-        setPlatform(platform);
         initialise();
     }
 
@@ -64,41 +48,19 @@ implements ExpectedDataInterface {
     }
 
     /**
-     * Platform.
+     * From csv.
      *
-     * @param platform the platform
-     * @return the expected data
-     * @throws FileNotLoadedException the file not loaded exception
-     */
-    public static ExpectedData platform(final String platform)
-            throws FileNotLoadedException {
-        return ExpectedData.getInstance().setPlatform(platform);
-    }
-
-    /**
-     * Sets the platform.
-     *
-     * @param platform the platform
      * @return the expected data
      */
-    protected ExpectedData setPlatform(final String platform) {
-        this.platform = platform;
-        return this;
-    }
-
-    /**
-     * Gets the platform.
-     *
-     * @return the platform
-     */
-    protected String getPlatform() {
-        return platform;
-    }
-
     public static ExpectedData fromCsv() {
         return ExpectedData.getInstance().loadFromCsv();
     }
 
+    /**
+     * Load from csv.
+     *
+     * @return the expected data
+     */
     private ExpectedData loadFromCsv() {
         final String simpleName = this.getClass().getSimpleName();
         final String filename = String.format("%s.csv", simpleName);
@@ -106,10 +68,20 @@ implements ExpectedDataInterface {
         return this;
     }
 
+    /**
+     * From xml.
+     *
+     * @return the expected data
+     */
     public static ExpectedData fromXml() {
         return ExpectedData.getInstance().loadFromXml();
     }
 
+    /**
+     * Load from xml.
+     *
+     * @return the expected data
+     */
     private ExpectedData loadFromXml() {
         final String simpleName = this.getClass().getSimpleName();
         final String filename = String.format("%s.xml", simpleName);
@@ -117,11 +89,21 @@ implements ExpectedDataInterface {
         return this;
     }
 
+    /**
+     * From json.
+     *
+     * @return the expected data
+     */
     public static ExpectedData fromJson() {
-        return ExpectedData.getInstance().loadFromJson("");
+        return ExpectedData.getInstance().loadFromJson();
     }
 
-    private ExpectedData loadFromJson(final String jsonFilename) {
+    /**
+     * Load from json.
+     *
+     * @return the expected data
+     */
+    private ExpectedData loadFromJson() {
         final String simpleName = this.getClass().getSimpleName();
         final String filename = String.format("%s.json", simpleName);
         log.info("{}", filename);
@@ -173,12 +155,14 @@ implements ExpectedDataInterface {
         return ExpectedData.getInstance().toString();
     }
 
+    /* (non-Javadoc)
+     * @see coaching.automation.ddt.AbstractExpectedData#toString()
+     */
     @Override
     public String toString() {
         return String
-                .format("%s [platform=%s %s]",
+                .format("%s [%s]",
                         this.getClass().getSimpleName(),
-                        platform,
                         super.toString());
     }
 

@@ -17,7 +17,7 @@ public class InvokerExample implements InvokerInterface {
     private final ExampleCommand exampleCommand = new ExampleCommand();
 
     /** static instance of the command sequence. */
-    private final SequenceCommand commandSequence = new SequenceCommand();
+    private final CommandSequence commandSequence = new CommandSequence();
 
     /** static instance of the compound command. */
     private final CompoundCommand compoundCommand = new CompoundCommand();
@@ -26,7 +26,7 @@ public class InvokerExample implements InvokerInterface {
     private final ConditionalCommand conditionalCommand = new ConditionalCommand();
 
     /** static instance of the sequence command. */
-    private final SequenceCommand sequenceCommand = new SequenceCommand();
+    private final CommandSequence sequenceCommand = new CommandSequence();
 
     /*
      * (non-Javadoc)

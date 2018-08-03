@@ -13,7 +13,9 @@ import org.slf4j.LoggerFactory;
 /**
  * A RequestProxy class.
  */
-class RequestProxy implements Runnable {
+public class RequestProxy implements Runnable {
+
+    private static final String LOCAL_HOST = "127.0.0.1";
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
@@ -58,7 +60,6 @@ class RequestProxy implements Runnable {
             listeningSocket = new ServerSocket(localport);
 
             while (keepRunning) {
-
                 try {
                     clientSocket = listeningSocket.accept();
                     final InputStream clientRequestStream = clientSocket
@@ -66,7 +67,7 @@ class RequestProxy implements Runnable {
                     final OutputStream clientResponseStream = clientSocket
                         .getOutputStream();
 
-                    final String remoteHost = "127.0.0.1";
+                    final String remoteHost = LOCAL_HOST;
                     final int remotePort = 80;
                     serverSocket = new Socket(remoteHost, remotePort);
                     final OutputStream serverRequestStream = serverSocket
@@ -113,6 +114,7 @@ class RequestProxy implements Runnable {
                 }
             }
             clientSocket.close();
+            LOG.info("Exit ...");
         } catch (final Exception e) {
             LOG.error(e.getLocalizedMessage(), e);
         }

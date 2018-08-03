@@ -78,4 +78,12 @@ public abstract class AbstractContext implements ContextInterface {
         return properties.getProperty(key, defaultValue);
     }
 
+    @Override
+    public String toString() {
+        return String
+            .format("%s [properties=%s]",
+                    this.getClass().getSimpleName(),
+                    properties);
+    }
+
 }

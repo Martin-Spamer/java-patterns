@@ -32,9 +32,9 @@ public final class RequestProxyTest {
         final Socket socket = serverSocket.accept();
         final RequestProxy requestProxy = new RequestProxy(socket);
         assertNotNull(requestProxy);
+        LOG.info(requestProxy.toString());
         socket.close();
         serverSocket.close();
-        LOG.info(requestProxy.toString());
     }
 
 }

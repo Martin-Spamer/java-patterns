@@ -11,9 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import coaching.csv.CsvFile.FileNotLoadedException;
+import coaching.jdbc.DynamicDao;
 
 /**
- * CsvToJdbc Class.
+ * A class to read a CSV file and write data to JDBC table.
  */
 public class CsvToJdbc {
 
@@ -21,25 +22,27 @@ public class CsvToJdbc {
     private final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
-    /** The csv file. */
+    /** CSV file. */
     private CsvFile csvFile;
 
-    /** The filename. */
+    private DynamicDao dao;
+
+    /** filename. */
     private String filename;
 
-    /** The driver. */
+    /** JDBC driver. */
     private String driver;
 
-    /** The url. */
+    /** JDBC connection url. */
     private String url;
 
-    /** The username. */
+    /** username. */
     private String username;
 
-    /** The password. */
+    /** password. */
     private String password;
 
-    /** The table name. */
+    /** tableName. */
     private String tableName;
 
     /**

@@ -84,4 +84,15 @@ public final class RegularExpressionTest {
         regularExpression.replace("ABC", "ZYZ");
     }
 
+    @Test
+    public void testQuoted() {
+        final RegularExpression regularExpression = new RegularExpression();
+        assertNotNull(regularExpression);
+        final String original = "\"Some Stuff\"";
+        LOG.info("{}", original);
+        final String quoted = regularExpression.getQuoted(original);
+        LOG.info("{}", quoted);
+        assertTrue(quoted.equals("Some Stuff"));
+    }
+
 }

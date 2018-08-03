@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
- * The JdbcToXml class.
+ * DaoToXml class.
  */
-class DaoToXml extends JdbcBase {
+class DaoToXml extends AbstractDao {
 
     /**
      * Default Constructor.
@@ -24,9 +24,9 @@ class DaoToXml extends JdbcBase {
      *
      * @throws SQLException the exception
      */
-    public void process() throws SQLException {
-        super.query();
-        toXmlFile();
+    public void process() {
+        // super.query();
+        // toXmlFile();
     }
 
     /**
@@ -132,7 +132,8 @@ class DaoToXml extends JdbcBase {
         xmlforRow.append("\t\t<ROW>\n\t\t");
         for (int colNum = 1; colNum <= resultSetMetaData
             .getColumnCount(); colNum++) {
-            final String columnName = resultSetMetaData.getColumnName(colNum);
+            final String columnName = resultSetMetaData
+                .getColumnName(colNum);
             final String value = resultSet.getString(colNum);
 
             if (value != null) {

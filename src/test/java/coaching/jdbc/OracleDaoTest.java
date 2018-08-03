@@ -53,7 +53,7 @@ public final class OracleDaoTest {
     public void testCreate() throws ClassNotFoundException {
         final OracleDao oracleDao = new OracleDao();
         assertNotNull(oracleDao);
-        oracleDao.create(INSERT_SQL);
+        oracleDao.createRow(INSERT_SQL);
     }
 
     /**
@@ -65,7 +65,7 @@ public final class OracleDaoTest {
     public void testRead() throws ClassNotFoundException {
         final OracleDao oracleDao = new OracleDao();
         assertNotNull(oracleDao);
-        oracleDao.read(SELECT_SQL);
+        oracleDao.readRows(SELECT_SQL);
     }
 
     /**
@@ -77,7 +77,7 @@ public final class OracleDaoTest {
     public void testUpdate() throws ClassNotFoundException {
         final OracleDao oracleDao = new OracleDao();
         assertNotNull(oracleDao);
-        oracleDao.update(UPDATE_SQL);
+        oracleDao.updateRow(UPDATE_SQL);
     }
 
     /**
@@ -89,7 +89,7 @@ public final class OracleDaoTest {
     public void testDelete() throws ClassNotFoundException {
         final OracleDao oracleDao = new OracleDao();
         assertNotNull(oracleDao);
-        oracleDao.delete(DELETE_SQL);
+        oracleDao.deleteRow(DELETE_SQL);
     }
 
 }

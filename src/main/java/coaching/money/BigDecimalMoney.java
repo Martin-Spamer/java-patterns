@@ -14,7 +14,7 @@ import java.util.Locale;
 /**
  * Big Decimal Money class.
  */
-public final class BigDecimalMoney {
+public final class BigDecimalMoney implements MoneyInterface {
 
     /** The currency. */
     private Currency currency = Currency.getInstance(Locale.getDefault());
@@ -117,6 +117,7 @@ public final class BigDecimalMoney {
      *            the currency
      * @return the big decimal money
      */
+    @Override
     public BigDecimalMoney setCurrency(final Currency currency) {
         this.currency = currency;
         return this;
@@ -129,6 +130,7 @@ public final class BigDecimalMoney {
      *            the amount
      * @return the big decimal money
      */
+    @Override
     public BigDecimalMoney setAmount(final long amount) {
         this.amount = new BigDecimal(amount);
         return this;
@@ -141,6 +143,7 @@ public final class BigDecimalMoney {
      *            the amount
      * @return the big decimal money
      */
+    @Override
     public BigDecimalMoney setAmount(final MoneyInterface amount) {
         this.amount = new BigDecimal(amount.getAmount());
         return this;
@@ -165,6 +168,7 @@ public final class BigDecimalMoney {
      *            the amount
      * @return the big decimal money
      */
+    @Override
     public BigDecimalMoney add(final long amount) {
         this.amount = this.amount.add(new BigDecimal(amount));
         return this;
@@ -182,6 +186,11 @@ public final class BigDecimalMoney {
         return this;
     }
 
+    @Override
+    public BigDecimalMoney add(final MoneyInterface amount) {
+        return null;
+    }
+
     /**
      * Subtract.
      *
@@ -189,6 +198,7 @@ public final class BigDecimalMoney {
      *            the amount
      * @return the big decimal money
      */
+    @Override
     public BigDecimalMoney subtract(final long amount) {
         this.amount = this.amount.subtract(new BigDecimal(amount));
         return this;
@@ -218,11 +228,17 @@ public final class BigDecimalMoney {
         return this;
     }
 
+    @Override
+    public MoneyInterface subtract(final MoneyInterface amount) {
+        return null;
+    }
+
     /**
      * currency.
      *
      * @return the currency
      */
+    @Override
     public Currency getCurrency() {
         return currency;
     }
@@ -232,6 +248,7 @@ public final class BigDecimalMoney {
      *
      * @return the currency code
      */
+    @Override
     public String getCurrencyCode() {
         return currency.getCurrencyCode();
     }
@@ -241,6 +258,7 @@ public final class BigDecimalMoney {
      *
      * @return the symbol
      */
+    @Override
     public String getSymbol() {
         return currency.getSymbol();
     }
@@ -250,6 +268,7 @@ public final class BigDecimalMoney {
      *
      * @return the display name
      */
+    @Override
     public String getDisplayName() {
         return currency.getDisplayName();
     }
@@ -259,6 +278,7 @@ public final class BigDecimalMoney {
      *
      * @return the amount
      */
+    @Override
     public Long getAmount() {
         return amount.longValue();
     }
@@ -288,6 +308,7 @@ public final class BigDecimalMoney {
      *            the amount
      * @return true, if successful, otherwise false., otherwise false. more than
      */
+    @Override
     public boolean isMoreThan(final long amount) {
         return this.amount.longValue() > amount;
     }
@@ -299,6 +320,7 @@ public final class BigDecimalMoney {
      *            the amount
      * @return true, if successful, otherwise false., otherwise false. equal to
      */
+    @Override
     public boolean isEqualTo(final long amount) {
         return this.amount.longValue() == amount;
     }
@@ -310,8 +332,24 @@ public final class BigDecimalMoney {
      *            the amount
      * @return true, if successful, otherwise false., otherwise false. less than
      */
+    @Override
     public boolean isLessThan(final long amount) {
         return this.amount.longValue() < amount;
+    }
+
+    @Override
+    public boolean isMoreThan(final MoneyInterface money) {
+        return false;
+    }
+
+    @Override
+    public boolean isEqualTo(final MoneyInterface money) {
+        return false;
+    }
+
+    @Override
+    public boolean isLessThan(final MoneyInterface money) {
+        return false;
     }
 
     /*
@@ -338,4 +376,5 @@ public final class BigDecimalMoney {
                     currency,
                     currencyString);
     }
+
 }

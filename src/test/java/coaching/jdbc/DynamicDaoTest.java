@@ -1,7 +1,11 @@
 
 package coaching.jdbc;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -10,14 +14,25 @@ import static org.junit.Assert.assertNotNull;
  */
 public class DynamicDaoTest {
 
+    /** provides logging */
+    private static final Logger LOG = LoggerFactory
+        .getLogger(DynamicDaoTest.class);
+
     /**
-     * Unit test to dynamic dao.
+     * Unit test to DynamicDAO, data access object.
+     *
+     * @throws Exception the exception
      */
     @Test
-    public void testDynamicDao() {
-        final DynamicDao dynamicDao = new DynamicDao();
-        assertNotNull(dynamicDao);
-        dynamicDao.process();
+    public void testDynamicDao() throws Exception {
+        final DynamicDao dao = new DynamicDao();
+        assertNotNull(dao);
+        LOG.info("{}", dao);
+        dao.process();
+        final ArrayList<String> columnLabels = dao.columnLabels();
+        LOG.info("{}", columnLabels);
+        final String bodyToString = dao.bodyToString();
+        LOG.info("{}", bodyToString);
     }
 
 }
