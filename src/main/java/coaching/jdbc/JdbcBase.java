@@ -13,6 +13,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,7 +56,7 @@ public abstract class JdbcBase {
      * Initialise.
      */
     private void initialise() {
-        connectionFactory = ConnectionFactory.getInstance();
+        this.connectionFactory = ConnectionFactory.getInstance();
     }
 
     /**
@@ -77,10 +78,10 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase query(final String query) throws SQLException {
-        connection = connectionFactory.newConnection();
-        statement = connection.createStatement();
-        resultSet = statement.executeQuery(query);
-        resultSetMetaData = resultSet.getMetaData();
+        this.connection = this.connectionFactory.newConnection();
+        this.statement = this.connection.createStatement();
+        this.resultSet = this.statement.executeQuery(query);
+        this.resultSetMetaData = this.resultSet.getMetaData();
         return this;
     }
 
@@ -90,10 +91,10 @@ public abstract class JdbcBase {
      * @return the array list< string>
      * @throws SQLException the SQL exception
      */
-    protected ArrayList<String> columnLabels() throws SQLException {
-        final ArrayList<String> columns = new ArrayList<String>();
-        for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
-            final String columnName = resultSetMetaData.getColumnName(i);
+    protected List<String> columnLabels() throws SQLException {
+        final List<String> columns = new ArrayList<String>();
+        for (int i = 1; i < this.resultSetMetaData.getColumnCount(); i++) {
+            final String columnName = this.resultSetMetaData.getColumnName(i);
             columns.add(columnName);
         }
         return columns;
@@ -106,38 +107,29 @@ public abstract class JdbcBase {
      * @throws SQLException
      */
     protected String bodyToString() throws SQLException {
-        final ArrayList<String> columns = columnLabels();
-        final ArrayList<String> values = new ArrayList<String>();
+        final List<String> columns = columnLabels();
+        final List<String> values = new ArrayList<String>();
 
-        while (resultSet.next()) {
+        while (this.resultSet.next()) {
             for (final String columnName : columns) {
-                values.add(resultSet.getString(columnName));
+                values.add(this.resultSet.getString(columnName));
             }
-            return values.toString();
         }
-        return null;
+        return values.toString();
     }
 
     /**
      * Close.
      */
-    public void close() {
-        try {
-            resultSet.close();
-            statement.close();
-            connection.close();
-        } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
-        }
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#finalize()
-     */
     @Override
-    public void finalize() {
-        close();
+    protected void finalize() {
+        try {
+            this.resultSet.close();
+            this.statement.close();
+            this.connection.close();
+        } catch (final SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
     }
 
     @Override
@@ -145,10 +137,10 @@ public abstract class JdbcBase {
         return String
             .format("%s [statement=%s, resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]",
                     this.getClass().getSimpleName(),
-                    statement,
-                    resultSet,
-                    resultSetMetaData,
-                    databaseMetaData);
+                    this.statement,
+                    this.resultSet,
+                    this.resultSetMetaData,
+                    this.databaseMetaData);
     }
 
 }

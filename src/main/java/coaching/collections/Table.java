@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The class Table is composed of TableRow classes.
+ * The Table class is composed of TableRow classes.
  */
 public class Table {
 
@@ -72,7 +72,7 @@ public class Table {
      * @param colNames
      *            the col names
      */
-    public void addCols(final String... colNames) {
+    public void addColNames(final String... colNames) {
         this.colNames.addAll(Arrays.asList(colNames));
     }
 

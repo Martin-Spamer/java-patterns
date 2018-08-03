@@ -18,7 +18,7 @@ public class TableRow {
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
-    /** The cols. */
+    /** the columns in the row */
     private final List<TableCell> cols = new ArrayList<>();
 
     public TableRow() {
@@ -33,10 +33,25 @@ public class TableRow {
      */
     public TableRow(final String... values) {
         super();
-        for (final String value : values) {
-            final TableCell tableCell = new TableCell(value);
-            this.cols.add(tableCell);
+        addCells(values);
+    }
+
+    public void addCells(final String... strings) {
+        for (String string : strings) {
+            addCells(string);
         }
+    }
+
+    public void addCells(final String string) {
+        String[] tuple = string.split(",");
+        for (String value : tuple) {
+            TableCell cell = new TableCell(value);
+            this.cols.add(cell);
+        }
+    }
+
+    public int length() {
+        return this.cols.size();
     }
 
     /**
@@ -60,16 +75,20 @@ public class TableRow {
         return stringBuffer.toString();
     }
 
+    public String debugString() {
+        return String
+            .format("%s [cols=%s]",
+                    this.getClass().getSimpleName(),
+                    Collections.singletonList(this.cols));
+    }
+
     /*
      * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [cols=%s]",
-                    this.getClass().getSimpleName(),
-                    Collections.singletonList(this.cols));
+        return Collections.singletonList(this.cols).toString();
     }
 
 }

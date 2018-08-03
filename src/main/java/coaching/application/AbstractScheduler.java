@@ -37,7 +37,7 @@ public abstract class AbstractScheduler {
      */
     public AbstractScheduler() {
         initialise();
-        log.info("AbstractScheduler() : {}", this);
+        this.log.info("AbstractScheduler() : {}", this);
     }
 
     /**
@@ -47,7 +47,7 @@ public abstract class AbstractScheduler {
      */
     public AbstractScheduler(final String resourceName) {
         initialise(resourceName);
-        log.info("AbstractScheduler({}) : {}", resourceName, this);
+        this.log.info("AbstractScheduler({}) : {}", resourceName, this);
     }
 
     /**
@@ -57,7 +57,7 @@ public abstract class AbstractScheduler {
      */
     public AbstractScheduler(final String[] args) {
         initialise(args);
-        log.info("AbstractScheduler({}) = {}", args, this);
+        this.log.info("AbstractScheduler({}) = {}", args, this);
     }
 
     /**
@@ -75,8 +75,8 @@ public abstract class AbstractScheduler {
      */
     private void initialise() {
         final String simpleName = this.getClass().getSimpleName();
-        properties = PropertiesLoader.getProperties(simpleName);
-        xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
+        this.properties = PropertiesLoader.getProperties(simpleName);
+        this.xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
     }
 
     /**
@@ -85,8 +85,8 @@ public abstract class AbstractScheduler {
      * @param resourceName the resource name
      */
     private void initialise(final String resourceName) {
-        properties = PropertiesLoader.getProperties(resourceName);
-        xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
+        this.properties = PropertiesLoader.getProperties(resourceName);
+        this.xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
     }
 
     /**
@@ -96,7 +96,7 @@ public abstract class AbstractScheduler {
      */
     public AbstractScheduler(final Properties properties) {
         initialisation(properties);
-        log.info("AbstractScheduler({}) = {}", properties, this);
+        this.log.info("AbstractScheduler({}) = {}", properties, this);
     }
 
     /**
@@ -114,8 +114,8 @@ public abstract class AbstractScheduler {
      * @return the abstract scheduler
      */
     public AbstractScheduler execute() {
-        xmlDoc = XmlResourceLoader.getXmlResource(resourceName());
-        return execute(xmlDoc);
+        this.xmlDoc = XmlResourceLoader.getXmlResource(resourceName());
+        return execute(this.xmlDoc);
     }
 
     /**
@@ -139,11 +139,11 @@ public abstract class AbstractScheduler {
         for (int i = 0; i < list.getLength(); i++) {
             final Element element = (Element) list.item(i);
             final String nodeName = element.getNodeName();
-            log.info("{}", nodeName);
+            this.log.info("{}", nodeName);
             final String nameAttribute = element.getAttribute("name");
-            log.info("{}", nameAttribute);
+            this.log.info("{}", nameAttribute);
             final String classAttribute = element.getAttribute("class");
-            log.info("{}", classAttribute);
+            this.log.info("{}", classAttribute);
         }
         return this;
     }
@@ -164,14 +164,14 @@ public abstract class AbstractScheduler {
                     final Thread thread = (Thread) Class
                         .forName(value)
                         .newInstance();
-                    log.debug("{}", thread);
+                    this.log.debug("{}", thread);
                     thread.start();
                 } catch (final Exception e) {
-                    log.error(e.getLocalizedMessage(), e);
+                    this.log.error(e.getLocalizedMessage(), e);
                 }
             }
         } else {
-            log.warn("Properties cannot be null");
+            this.log.warn("Properties cannot be null");
         }
         return this;
     }
@@ -185,8 +185,8 @@ public abstract class AbstractScheduler {
         return String
             .format("%s [args=%s, properties=%s]",
                     this.getClass().getSimpleName(),
-                    Arrays.toString(args),
-                    properties);
+                    Arrays.toString(this.args),
+                    this.properties);
     }
 
 }

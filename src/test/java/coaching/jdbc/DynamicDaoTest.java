@@ -1,7 +1,7 @@
 
 package coaching.jdbc;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -29,7 +29,7 @@ public class DynamicDaoTest {
         assertNotNull(dao);
         LOG.info("{}", dao);
         dao.process();
-        final ArrayList<String> columnLabels = dao.columnLabels();
+        List<String> columnLabels = dao.columnLabels();
         LOG.info("{}", columnLabels);
         final String bodyToString = dao.bodyToString();
         LOG.info("{}", bodyToString);
