@@ -20,7 +20,6 @@ public final class CsvToDao extends AbstractDao {
      * CSV file to DAO.
      *
      * @param driverClassName the driver class name
-     * @throws ClassNotFoundException the class not found exception
      */
     public CsvToDao(final String driverClassName) {
         super(driverClassName);

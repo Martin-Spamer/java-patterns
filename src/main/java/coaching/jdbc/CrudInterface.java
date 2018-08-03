@@ -13,7 +13,6 @@ public interface CrudInterface {
     /**
      * Create record or row in the table.
      *
-     * @param sql the sql to create the table.
      * @return this for a fluent interface.
      */
     CrudInterface createRow();
@@ -21,7 +20,6 @@ public interface CrudInterface {
     /**
      * Read record or row in the table.
      *
-     * @param sql the sql to select rows.
      * @return this for a fluent interface.
      */
     CrudInterface readRows();
@@ -29,7 +27,6 @@ public interface CrudInterface {
     /**
      * Update record or row in the table.
      *
-     * @param sql the sql to update a row.
      * @return this for a fluent interface.
      */
     CrudInterface updateRow();
@@ -37,7 +34,6 @@ public interface CrudInterface {
     /**
      * Delete record or row in the table.
      *
-     * @param sql the sql to delete a row.
      * @return this for a fluent interface.
      */
     CrudInterface deleteRow();

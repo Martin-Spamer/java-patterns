@@ -25,7 +25,7 @@ public final class NetInfo {
     /**
      * Instantiates a new net info.
      *
-     * @throws SocketException
+     * @throws SocketException the socket exception
      */
     public NetInfo() throws SocketException {
         final Enumeration<NetworkInterface> interfaces = NetworkInterface

@@ -18,8 +18,8 @@ public final class NetInfoTest {
 
     /**
      * Unit test to net info.
-     * 
-     * @throws Exception
+     *
+     * @throws Exception the exception
      */
     @Test
     public void testNetInfo() throws Exception {

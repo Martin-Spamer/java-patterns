@@ -9,8 +9,8 @@ public interface HandlerInterface {
     /**
      * Handle request.
      *
-     * @param request
-     *            the request
+     * @param request the request
+     * @return the handler interface
      */
     HandlerInterface handleRequest(final RequestInterface request);
 

@@ -29,7 +29,7 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
             final String driver = JdbcConfig.driver();
             Class.forName(driver);
         } catch (final ClassNotFoundException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -37,7 +37,6 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
      * Returns this single shared instance.
      *
      * @return the instance
-     * @returns the single instance.
      */
     public static ConnectionFactory getInstance() {
         return INSTANCE;
@@ -66,7 +65,7 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
                         JdbcConfig.password());
             return connection;
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
