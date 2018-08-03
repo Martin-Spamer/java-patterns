@@ -14,7 +14,11 @@ public class TableCell {
         .getLogger(this.getClass().getSimpleName());
 
     /** The cell value. */
-    private String value;
+    private String value = "";
+
+    public TableCell() {
+        super();
+    }
 
     /**
      * Instantiates a new table cell.
@@ -23,6 +27,7 @@ public class TableCell {
      *            the value
      */
     public TableCell(final String value) {
+        super();
         this.value = value;
     }
 
@@ -32,7 +37,7 @@ public class TableCell {
      * @return the value
      */
     public String getValue() {
-        return value;
+        return this.value;
     }
 
     /**
@@ -54,7 +59,9 @@ public class TableCell {
     @Override
     public String toString() {
         return String
-            .format("%s [value=%s]", this.getClass().getSimpleName(), value);
+            .format("%s [value=%s]",
+                    this.getClass().getSimpleName(),
+                    this.value);
     }
 
 }
