@@ -14,6 +14,8 @@ import java.net.URLConnection;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+import coaching.thread.ThreadTemplate;
+
 /**
  * A class to crawl a web site.
  */
@@ -49,7 +51,7 @@ public final class WebCrawler extends ThreadTemplate {
                 crawlSite(url);
             }
         } catch (final Exception e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -95,13 +97,13 @@ public final class WebCrawler extends ThreadTemplate {
 
                 robotsTxtInputStream.close();
             } catch (final IOException ioException) {
-                log.error("{}", ioException);
+                this.log.error("{}", ioException);
             }
 
             safeCrawlSite(baseUrl, robotTxtContent.toString());
 
         } catch (final MalformedURLException malformedURLException) {
-            log.error("{}", malformedURLException);
+            this.log.error("{}", malformedURLException);
         }
     }
 
@@ -183,7 +185,7 @@ public final class WebCrawler extends ThreadTemplate {
                 }
             }
         } catch (final Exception e) {
-            log.error("", e);
+            this.log.error("", e);
         }
     }
 

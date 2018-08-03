@@ -41,6 +41,7 @@ public class Table {
      *            the table name
      */
     public Table(final String tableName) {
+        super();
         this.tableName = tableName;
     }
 
@@ -62,7 +63,7 @@ public class Table {
      * @return the tableName
      */
     public String getTableName() {
-        return tableName;
+        return this.tableName;
     }
 
     /**
@@ -94,7 +95,7 @@ public class Table {
      * @see java.util.List#add(java.lang.Object)
      */
     public boolean add(final TableRow e) {
-        return rows.add(e);
+        return this.rows.add(e);
     }
 
     /**
@@ -106,7 +107,7 @@ public class Table {
      * @see java.util.List#get(int)
      */
     public TableRow get(final int index) {
-        return rows.get(index);
+        return this.rows.get(index);
     }
 
     /**
@@ -126,7 +127,7 @@ public class Table {
     protected String tableHeader() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<String> itemIterator = colNames.iterator();
+        final Iterator<String> itemIterator = this.colNames.iterator();
         if (itemIterator.hasNext()) {
             stringBuffer.append(itemIterator.next());
             while (itemIterator.hasNext()) {
@@ -147,7 +148,7 @@ public class Table {
     protected String tableBody() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableRow> tableRow = rows.iterator();
+        final Iterator<TableRow> tableRow = this.rows.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -169,9 +170,9 @@ public class Table {
         return String
             .format("%s [tableName=%s, colNames=%s, rows=%s]",
                     this.getClass().getSimpleName(),
-                    tableName,
-                    colNames,
-                    rows);
+                    this.tableName,
+                    this.colNames,
+                    this.rows);
     }
 
 }

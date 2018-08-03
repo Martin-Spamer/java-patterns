@@ -21,6 +21,10 @@ public class TableRow {
     /** The cols. */
     private final List<TableCell> cols = new ArrayList<>();
 
+    public TableRow() {
+        super();
+    }
+
     /**
      * Instantiates a new table row.
      *
@@ -28,9 +32,10 @@ public class TableRow {
      *            the values
      */
     public TableRow(final String... values) {
+        super();
         for (final String value : values) {
             final TableCell tableCell = new TableCell(value);
-            cols.add(tableCell);
+            this.cols.add(tableCell);
         }
     }
 
@@ -42,7 +47,7 @@ public class TableRow {
     public String toRowString() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableCell> tableRow = cols.iterator();
+        final Iterator<TableCell> tableRow = this.cols.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -64,7 +69,7 @@ public class TableRow {
         return String
             .format("%s [cols=%s]",
                     this.getClass().getSimpleName(),
-                    Collections.singletonList(cols));
+                    Collections.singletonList(this.cols));
     }
 
 }
