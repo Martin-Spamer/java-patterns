@@ -18,4 +18,8 @@ public class OracleDao extends AbstractDao {
     /** PASSWORD to be used. */
     private static final String PASSWORD = "password";
 
+    public OracleDao() {
+        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+    }
+
 }

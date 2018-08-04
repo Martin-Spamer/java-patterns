@@ -1,9 +1,15 @@
 
 package coaching.csv;
 
-/**
- * TODO: A class to load a Csv file and output an Xml file.
- */
-public class CsvToXml {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public final class CsvToXml {
+
+    /** provides logging */
+    private static final Logger LOG = LoggerFactory.getLogger(CsvToXml.class);
+
+    /** CSV file. */
+    private final CsvFile csvFile = new CsvFile();
 
 }

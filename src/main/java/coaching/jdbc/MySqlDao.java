@@ -18,4 +18,8 @@ public class MySqlDao extends AbstractDao {
     /** PASSWORD to be used. */
     private static final String PASSWORD = "root";
 
+    public MySqlDao() {
+        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+    }
+
 }

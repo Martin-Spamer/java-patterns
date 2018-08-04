@@ -1,9 +1,15 @@
 
 package coaching.csv;
 
-/**
- * TODO: A class to load a Csv file and output an Json file.
- */
-public class CsvToJson {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public final class CsvToJson {
+
+    /** provides logging */
+    private static final Logger LOG = LoggerFactory.getLogger(CsvToJson.class);
+
+    /** CSV file. */
+    private final CsvFile csvFile = new CsvFile();
 
 }

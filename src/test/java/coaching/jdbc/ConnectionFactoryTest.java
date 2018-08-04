@@ -22,7 +22,12 @@ public final class ConnectionFactoryTest {
 
     @Test
     public void testConnectionFactory() throws SQLException {
-        assertNotNull(ConnectionFactory.getConnection());
+        ConnectionFactory connectionFactory = new ConnectionFactory(
+                JdbcConfig.driver(),
+                JdbcConfig.url(),
+                JdbcConfig.username(),
+                JdbcConfig.password());
+        assertNotNull(connectionFactory);
     }
 
     /**

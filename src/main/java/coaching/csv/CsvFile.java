@@ -55,11 +55,11 @@ public class CsvFile {
      * @return the string
      */
     private String defaultFilename() {
-        if (csvFilename == null) {
+        if (this.csvFilename == null) {
             final String stem = this.getClass().getSimpleName();
-            csvFilename = String.format("%s.csv", stem);
+            this.csvFilename = String.format("%s.csv", stem);
         }
-        return csvFilename;
+        return this.csvFilename;
     }
 
     /**
@@ -90,7 +90,7 @@ public class CsvFile {
      *
      * @param resourceName the filename of the resource
      */
-    private void read(final String resourceName) {
+    public void read(final String resourceName) {
         LOG.debug("read({})", resourceName);
         final InputStream stream = ResourceLoader.getStream(resourceName);
         try {
@@ -145,7 +145,7 @@ public class CsvFile {
             }
             line = bufferedReader.readLine();
         }
-        loaded = true;
+        this.loaded = true;
     }
 
     /**
@@ -160,7 +160,7 @@ public class CsvFile {
             setHeaderLine(line);
         } else {
             final CsvRecord record = new CsvRecord(line);
-            records.add(record);
+            this.records.add(record);
             final String recordString = record.toString();
             LOG.trace("recordString = {}", recordString);
         }
@@ -174,8 +174,8 @@ public class CsvFile {
      */
     private void setHeaderLine(final String line) {
         LOG.debug("setHeaderLine({})", line);
-        headerLine = line.substring(1);
-        columnNames = headerLine.split(",");
+        this.headerLine = line.substring(1);
+        this.columnNames = this.headerLine.split(",");
     }
 
     /**
@@ -188,7 +188,7 @@ public class CsvFile {
         LOG.debug("write({})", filename);
         final FileWriter out = new FileWriter(filename);
         final BufferedWriter writer = new BufferedWriter(out);
-        for (final CsvRecord csvRecord : records) {
+        for (final CsvRecord csvRecord : this.records) {
             LOG.trace("write csvRecord : {}", csvRecord);
             writer.write(csvRecord.toString());
         }
@@ -201,7 +201,7 @@ public class CsvFile {
      * @return true, if checks if is loaded
      */
     public boolean isLoaded() {
-        return loaded;
+        return this.loaded;
     }
 
     /**
@@ -210,7 +210,7 @@ public class CsvFile {
      * @return the headerLine
      */
     public String getHeaderLine() {
-        return headerLine;
+        return this.headerLine;
     }
 
     /**
@@ -219,7 +219,7 @@ public class CsvFile {
      * @return the column names
      */
     public String getColumnNames() {
-        return Arrays.toString(columnNames);
+        return Arrays.toString(this.columnNames);
     }
 
     /**
@@ -230,7 +230,7 @@ public class CsvFile {
      * @return the record
      */
     public CsvRecord getRecord(final int index) {
-        return records.get(index);
+        return this.records.get(index);
     }
 
     /**
@@ -239,7 +239,7 @@ public class CsvFile {
      * @return the int
      */
     public int rowCount() {
-        return records.size();
+        return this.records.size();
     }
 
     /*
@@ -251,10 +251,10 @@ public class CsvFile {
         return String
             .format("%s [csvFilename=%s, headerLine=%s, columnNames=%s, records=%s]",
                     this.getClass().getSimpleName(),
-                    csvFilename,
-                    headerLine,
-                    Arrays.toString(columnNames),
-                    records);
+                    this.csvFilename,
+                    this.headerLine,
+                    Arrays.toString(this.columnNames),
+                    this.records);
     }
 
     /**

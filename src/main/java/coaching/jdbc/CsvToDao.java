@@ -19,4 +19,17 @@ public final class CsvToDao {
     private final CsvFile csv = new CsvFile();
     private final DaoInterface dao = new DynamicDao();
 
+    public CsvToDao() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        return String
+            .format("%s [csv=%s, dao=%s]",
+                    this.getClass().getSimpleName(),
+                    this.csv,
+                    this.dao);
+    }
+
 }

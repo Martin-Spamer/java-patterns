@@ -61,6 +61,7 @@ public abstract class AbstractDao extends JdbcBase
             final String username,
             final String password) {
         super();
+        new ConnectionFactory(jdbcDriver, jdbcUrl, username, password);
     }
 
     @Override

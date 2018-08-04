@@ -1,7 +1,6 @@
 
 package coaching.automation.ddt;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,12 +11,11 @@ import static org.junit.Assert.assertNull;
 /**
  * Unit tests for ExpectedData class.
  */
-@Ignore("Work-in-Progress")
 public final class ExpectedDataTest {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
-            .getLogger(ExpectedDataTest.class);
+        .getLogger(ExpectedDataTest.class);
 
     @Test
     public void testExpectedDataFromCsv() throws Exception {
@@ -39,7 +37,6 @@ public final class ExpectedDataTest {
         assertNotNull(fromJson);
         LOG.info("{}", fromJson);
     }
-
 
     /**
      * Unit test to default platform domain language.

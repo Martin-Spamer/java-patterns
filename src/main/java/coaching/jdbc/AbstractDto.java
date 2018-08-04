@@ -19,7 +19,7 @@ public abstract class AbstractDto {
         .getLogger(this.getClass().getSimpleName());
 
     /** The fields. */
-    protected Map<String, String> fields = new HashMap<String, String>();
+    protected Map<String, String> fields = new HashMap<>();
 
     /**
      * Adds the field.
@@ -50,7 +50,7 @@ public abstract class AbstractDto {
      * @param key the key
      * @return the string
      */
-    public String get(final String key) {
+    public String getField(final String key) {
         return this.fields.get(key);
     }
 

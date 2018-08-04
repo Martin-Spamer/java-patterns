@@ -1,6 +1,8 @@
 
 package coaching.text;
 
+import java.math.BigInteger;
+
 public final class TextHelper {
 
     private TextHelper() {
@@ -8,15 +10,8 @@ public final class TextHelper {
     }
 
     public static byte[] hexToBytes(final String hexString) {
-        final byte[] data = new byte[hexString.length() / 2];
-        for (int i = 0; i < hexString.length(); i += 2) {
-            final byte lsb = (byte) Character
-                .digit(hexString.charAt(i + 1), 16);
-            final byte msb = (byte) (Character
-                .digit(hexString.charAt(i), 16) << 4);
-            data[i / 2] = (byte) (msb + lsb);
-        }
-        return data;
+        BigInteger bigInteger = new BigInteger(hexString, 16);
+        return bigInteger.toByteArray();
     }
 
     public static String bytesToHex(final byte[] byteData) {
