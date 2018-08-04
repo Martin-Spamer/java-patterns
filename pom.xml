@@ -127,7 +127,7 @@
 				<version>3.0.1</version>
 		        <configuration>
 					<reportOutputDirectory>${project.reporting.outputDirectory}/target</reportOutputDirectory>
-					<destDir>javadoc</destDir>
+					<destDir>${project.reporting.outputDirectory}/target/javadoc</destDir>
 		        </configuration>
 				<executions>
 					<execution>

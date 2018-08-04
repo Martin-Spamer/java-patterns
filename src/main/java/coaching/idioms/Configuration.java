@@ -29,12 +29,12 @@ public class Configuration {
             final String resourceName = resourceName();
             final InputStream inputStream = inputStream(resourceName);
             if (inputStream != null) {
-                properties.load(inputStream);
+                this.properties.load(inputStream);
             } else {
-                log.error("Resource {} not found", resourceName);
+                this.log.error("Resource {} not found", resourceName);
             }
         } catch (final IOException e) {
-            log.error("{}", e);
+            this.log.error("{}", e);
         }
     }
 
@@ -52,18 +52,14 @@ public class Configuration {
     }
 
     /**
-     * Input stream for resourceName.
-     *
-     * resource name
-     * input stream
+     * Input stream from resource name.
      *
      * @param resourceName the resource name
      * @return the input stream
      */
-    private InputStream inputStream(final String resourceName) {
-        final ClassLoader classloader = Thread
-            .currentThread()
-            .getContextClassLoader();
+    protected InputStream inputStream(final String resourceName) {
+        final Thread currentThread = Thread.currentThread();
+        final ClassLoader classloader = currentThread.getContextClassLoader();
         final InputStream resourceAsStream = classloader
             .getResourceAsStream(resourceName);
         return resourceAsStream;
@@ -81,7 +77,7 @@ public class Configuration {
     public String valueFor(final String key) {
         final String property = System.getProperty(key);
         if (property == null) {
-            return properties.getProperty(key);
+            return this.properties.getProperty(key);
         }
         return property;
     }
@@ -100,7 +96,7 @@ public class Configuration {
     public String valueFor(final String key, final String defaultValue) {
         final String property = System.getProperty(key);
         if (property == null) {
-            return properties.getProperty(key, defaultValue);
+            return this.properties.getProperty(key, defaultValue);
         }
         return property;
     }
@@ -116,7 +112,7 @@ public class Configuration {
         return String
             .format("%s [properties=%s]",
                     this.getClass().getSimpleName(),
-                    format(properties.toString()));
+                    format(this.properties.toString()));
     }
 
     /**
@@ -144,6 +140,6 @@ public class Configuration {
         return String
             .format("%s [properties=%s]",
                     this.getClass().getSimpleName(),
-                    properties);
+                    this.properties);
     }
 }
