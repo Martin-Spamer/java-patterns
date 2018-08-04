@@ -15,10 +15,13 @@ public final class DaoToCsv {
     private static final Logger LOG = LoggerFactory.getLogger(DaoToCsv.class);
 
     /** Data access object. */
-    private DaoInterface dao;
+    private final DaoInterface dao = new DynamicDao();
 
     /** Output CSV file. */
     private final CsvFile csv = new CsvFile();
+
+    public void process(final String resourceName) {
+    }
 
     /*
      * (non-Javadoc)

@@ -13,6 +13,6 @@ public final class DaoToXml {
     private static final Logger LOG = LoggerFactory.getLogger(DaoToXml.class);
 
     /** Data access object. */
-    private DaoInterface dao;
+    private final DaoInterface dao = new DynamicDao();
 
 }

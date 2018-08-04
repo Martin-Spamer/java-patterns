@@ -1,6 +1,8 @@
 
 package coaching.jdbc;
 
+import coaching.csv.CsvFile;
+
 /**
  * Provides a example of a crude XML DAO reader.
  *
@@ -9,16 +11,7 @@ package coaching.jdbc;
  */
 public final class XmlToDao {
 
-    /** The classname of the JDBC driver to use. */
-    public static final String JDBC_DRIVER = "org.sqlite.JDBC";
-
-    /** The URL to use to make JDBC connection. */
-    public static final String JDBC_URL = "jdbc:sqlite::memory:";
-
-    /** USERNAME. */
-    public static final String USERNAME = "username";
-
-    /** PASSWORD. */
-    private static final String PASSWORD = "password";
+    private final CsvFile csv = new CsvFile();
+    private final DaoInterface dao = new DynamicDao();
 
 }

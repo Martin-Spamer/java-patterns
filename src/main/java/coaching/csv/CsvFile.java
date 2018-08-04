@@ -223,6 +223,20 @@ public class CsvFile {
     }
 
     /**
+     * Gets the column name.
+     *
+     * @param colNo the col no
+     * @return the column name
+     */
+    public String getColumnName(final int colNo) {
+        return this.columnNames[colNo];
+    }
+
+    public List<CsvRecord> rows() {
+        return this.records;
+    }
+
+    /**
      * record.
      *
      * @param index
@@ -307,4 +321,5 @@ public class CsvFile {
             super(message, cause);
         }
     }
+
 }

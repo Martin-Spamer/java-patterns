@@ -12,4 +12,8 @@ public final class CsvToXml {
     /** CSV file. */
     private final CsvFile csvFile = new CsvFile();
 
+    public CsvToXml() {
+        super();
+    }
+
 }

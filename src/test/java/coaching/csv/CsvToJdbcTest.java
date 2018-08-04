@@ -27,8 +27,6 @@ public final class CsvToJdbcTest {
     @Test
     public void testFluentInterface() {
         final CsvToJdbc dao = new CsvToJdbc();
-        dao.setSource(this.filename);
-        dao.setDestination(this.tableName);
         dao.transfer(this.filename, this.tableName);
     }
 

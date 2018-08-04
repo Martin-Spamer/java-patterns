@@ -23,6 +23,10 @@ public final class CsvToDao {
         super();
     }
 
+    public void process(final String resourceName) {
+        this.csv.read(resourceName);
+    }
+
     @Override
     public String toString() {
         return String

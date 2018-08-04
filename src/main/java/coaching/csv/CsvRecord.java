@@ -46,7 +46,7 @@ public class CsvRecord {
      * @return the number of field columns as int.
      */
     public int columnCount() {
-        return fields.size();
+        return this.fields.size();
     }
 
     /**
@@ -57,7 +57,7 @@ public class CsvRecord {
      * @return the column.
      */
     public String getColumn(final int index) {
-        return fields.get(index);
+        return this.fields.get(index);
     }
 
     /**
@@ -66,7 +66,7 @@ public class CsvRecord {
      * @return true, if record is empty.
      */
     public boolean isEmpty() {
-        return fields.isEmpty();
+        return this.fields.isEmpty();
     }
 
     /**
@@ -76,7 +76,7 @@ public class CsvRecord {
      *            the line of data
      */
     private void parse(final String lineOfData) {
-        fields = Arrays.asList(lineOfData.split(","));
+        this.fields = Arrays.asList(lineOfData.split(","));
     }
 
     /**
@@ -87,7 +87,7 @@ public class CsvRecord {
      * @return the CSV record
      */
     public CsvRecord remove(final int index) {
-        fields.remove(index);
+        this.fields.remove(index);
         return this;
     }
 
@@ -101,8 +101,12 @@ public class CsvRecord {
      * @return the CSV record
      */
     public CsvRecord set(final int index, final String field) {
-        fields.set(index, field);
+        this.fields.set(index, field);
         return this;
+    }
+
+    public List<String> fields() {
+        return this.fields;
     }
 
     /*
@@ -111,11 +115,11 @@ public class CsvRecord {
      */
     @Override
     public String toString() {
-        LOG.info(fields.toString());
+        LOG.info(this.fields.toString());
         return String
             .format("%s [fields=%s]",
                     this.getClass().getSimpleName(),
-                    fields.toString());
+                    this.fields.toString());
     }
 
 }

@@ -27,15 +27,10 @@ public final class CsvToJdbc {
         super();
     }
 
-    public void setSource(final String filename) {
-        this.csvFile.read(filename);
-    }
-
-    public void setDestination(final String tableName) {
-        this.dao.setTableName(tableName);
-    }
-
     public void transfer(final String filename, final String tableName) {
+        this.csvFile.read(filename);
+        this.csvFile.rows();
+        this.dao.setTableName(tableName);
     }
 
 }
