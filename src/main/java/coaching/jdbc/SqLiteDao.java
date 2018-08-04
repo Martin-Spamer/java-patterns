@@ -24,23 +24,7 @@ public final class SqLiteDao extends AbstractDao {
      * @throws ClassNotFoundException the class not found exception
      */
     public SqLiteDao() throws ClassNotFoundException {
-        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
-    }
-
-    /**
-     * Instantiates a new sq lite dao.
-     *
-     * @param driverClassName the driver class name
-     * @param connectionUrl the connection url
-     * @param username the username
-     * @param password the password
-     * @throws ClassNotFoundException the class not found exception
-     */
-    public SqLiteDao(final String driverClassName,
-            final String connectionUrl,
-            final String username,
-            final String password) throws ClassNotFoundException {
-        super(driverClassName, connectionUrl, username, password);
+        new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 
 }

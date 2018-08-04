@@ -96,8 +96,8 @@ public class RulesEngine {
         final InputStream is = inputStreamFrom(configFilename);
         try {
             if (null != is) {
-                document = documentBuilder.parse(is);
-                documentElement = document.getDocumentElement();
+                this.document = documentBuilder.parse(is);
+                this.documentElement = this.document.getDocumentElement();
                 return true;
             }
         } catch (final Exception e) {
@@ -109,14 +109,15 @@ public class RulesEngine {
     /**
      * Input stream.
      *
-     * @param resourceName
-     *            the resource name
+     * @param resourceName the resource name
      * @return the input stream
      */
     private InputStream inputStreamFrom(final String resourceName) {
         final Thread currentThread = Thread.currentThread();
         final ClassLoader classloader = currentThread.getContextClassLoader();
-        return classloader.getResourceAsStream(resourceName);
+        final InputStream resourceAsStream = classloader
+            .getResourceAsStream(resourceName);
+        return resourceAsStream;
     }
 
     /**
@@ -130,8 +131,8 @@ public class RulesEngine {
             .info("execute({}) = {}",
                     this.getClass().getSimpleName(),
                     returnValue);
-        if (documentElement != null) {
-            final NodeList childNodes = documentElement.getChildNodes();
+        if (this.documentElement != null) {
+            final NodeList childNodes = this.documentElement.getChildNodes();
             LOG.info("childNodes  = {}", childNodes);
         }
         return returnValue;
@@ -161,7 +162,7 @@ public class RulesEngine {
      */
     protected Element getElement(final String elementName) {
         Element element = null;
-        final NodeList nodelist = documentElement
+        final NodeList nodelist = this.documentElement
             .getElementsByTagName(elementName);
         if (nodelist != null) {
             final int length = nodelist.getLength();
@@ -171,14 +172,14 @@ public class RulesEngine {
                 LOG
                     .info("Element {} is missing in element {}",
                             elementName,
-                            documentElement.toString());
+                            this.documentElement.toString());
             } else if (length > 1) {
                 final String className = this.getClass().getSimpleName();
                 LOG.info(className);
                 LOG
                     .info(" surplus Elements {} ignored in element: {}",
                             elementName,
-                            documentElement.toString());
+                            this.documentElement.toString());
                 element = (Element) nodelist.item(0);
             }
         }

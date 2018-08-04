@@ -1,9 +1,6 @@
 
 package coaching.associations;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Show Java implement a UML Composite association.
  *
@@ -11,9 +8,6 @@ import org.slf4j.LoggerFactory;
  * We call this a life-time constraint.
  **/
 public final class Composite {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(Composite.class);
 
     /**
      * The Composite implemented using separate members.
@@ -34,10 +28,10 @@ public final class Composite {
      */
     public Composite() {
         super();
-        alice = new Alice();
-        bob = new Bob();
-        charlie = new Charlie();
-        dan = new Dan();
+        this.alice = new Alice();
+        this.bob = new Bob();
+        this.charlie = new Charlie();
+        this.dan = new Dan();
     }
 
     /*
@@ -49,10 +43,10 @@ public final class Composite {
         return String
             .format("%s [alice=%s, bob=%s, charlie=%s, dan=%s]",
                     this.getClass().getSimpleName(),
-                    alice,
-                    bob,
-                    charlie,
-                    dan);
+                    this.alice,
+                    this.bob,
+                    this.charlie,
+                    this.dan);
     }
 
 }

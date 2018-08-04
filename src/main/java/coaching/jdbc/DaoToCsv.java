@@ -1,143 +1,24 @@
 
 package coaching.jdbc;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import coaching.csv.CsvFile;
-import coaching.csv.CsvFile.FileNotLoadedException;
 
 /**
  * JdbcToCsv class.
  */
-public class DaoToCsv extends AbstractDao {
+public final class DaoToCsv {
+
+    /** provides logging */
+    private static final Logger LOG = LoggerFactory.getLogger(DaoToCsv.class);
 
     /** Data access object. */
-    private final DynamicDao dao = new DynamicDao();
+    private DaoInterface dao;
 
     /** Output CSV file. */
-    private final CsvFile csvFile = new CsvFile();
-
-    /**
-     * Default constructor.
-     *
-     * @throws FileNotLoadedException the file not loaded exception
-     */
-    public DaoToCsv() {
-        super();
-    }
-
-    /**
-     * To csv file.
-     *
-     * @throws SQLException
-     */
-    protected void toCsvFile() throws SQLException {
-        toCsvFile(getFilename(getTableName()));
-    }
-
-    /**
-     * Gets the filename.
-     *
-     * @param nameStem the name stem
-     * @return the filename
-     */
-    protected String getFilename(final String nameStem) {
-        return String.format("%s.csv", nameStem);
-    }
-
-    /**
-     * Get the name of the table.
-     *
-     * @return the string
-     */
-    private String getTableName() {
-        try {
-            return this.resultSetMetaData.getTableName(1);
-        } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
-        }
-        return null;
-    }
-
-    /**
-     * To csv file.
-     *
-     * @param filename the filename
-     * @throws SQLException
-     */
-    protected void toCsvFile(final String filename) throws SQLException {
-        toCsvFile(new File(filename));
-    }
-
-    /**
-     * To csv file.
-     *
-     * @param file the file
-     * @throws SQLException
-     */
-    protected void toCsvFile(final File file) throws SQLException {
-        try {
-            final FileWriter writer = new FileWriter(file);
-            final BufferedWriter bufferedWriter = new BufferedWriter(writer);
-            toCsvFile(bufferedWriter);
-            bufferedWriter.flush();
-            bufferedWriter.close();
-        } catch (final IOException e) {
-            this.log.error(e.getLocalizedMessage(), e);
-        }
-    }
-
-    /**
-     * To csv file.
-     *
-     * @param bufferedWriter the buffered writer
-     * @throws SQLException
-     */
-    protected void toCsvFile(final BufferedWriter bufferedWriter)
-            throws SQLException {
-        if (this.resultSetMetaData != null) {
-            csvHeaderTo(bufferedWriter);
-        }
-        csvBodyTo(bufferedWriter);
-    }
-
-    /**
-     * Csv header to.
-     *
-     * @param bufferedWriter the buffered writer
-     */
-    protected void csvHeaderTo(final BufferedWriter bufferedWriter) {
-        try {
-            final List<String> columns = columnLabels();
-            try {
-                bufferedWriter.write(columns.toString());
-            } catch (final IOException e) {
-                this.log.error(e.getLocalizedMessage(), e);
-            }
-        } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
-        }
-    }
-
-    /**
-     * Csv body to.
-     *
-     * @param bufferedWriter the buffered writer
-     * @throws SQLException
-     */
-    protected void csvBodyTo(final BufferedWriter bufferedWriter)
-            throws SQLException {
-        try {
-            bufferedWriter.write(bodyToString());
-        } catch (final IOException e) {
-            this.log.error(e.getLocalizedMessage(), e);
-        }
-    }
+    private final CsvFile csv = new CsvFile();
 
     /*
      * (non-Javadoc)
@@ -149,6 +30,7 @@ public class DaoToCsv extends AbstractDao {
             .format("%s [dao=%s, csvFile=%s]",
                     this.getClass().getSimpleName(),
                     this.dao,
-                    this.csvFile);
+                    this.csv);
     }
+
 }

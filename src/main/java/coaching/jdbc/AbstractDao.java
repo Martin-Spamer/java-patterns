@@ -1,17 +1,12 @@
 
 package coaching.jdbc;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.junit.Assert.fail;
 
 /**
  * Abstract Data Access object.
@@ -19,12 +14,8 @@ import static org.junit.Assert.fail;
  * Uses domain language to provide a CRUD interface.
  * Create Read Update Delete interface.
  */
-public abstract class AbstractDao
-        extends JdbcBase
+public abstract class AbstractDao extends JdbcBase
         implements CrudInterface, DaoInterface {
-
-    private static final String JDBC_DRIVER_NOT_FOUND = "Class not found for JDBC Driver %s";
-    private static final String EXECUTION_ERROR = "Executing the SQL\n\t%s\nfailed with error\n\t%s";
 
     public static final String DROP_SQL = "DROP TABLE IF EXISTS {TableName}";
     // Columns = (id INTEGER, name STRING, details STRING)
@@ -42,16 +33,8 @@ public abstract class AbstractDao
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
-    /** JDBC driver class. */
-    private String driverClassName;
-
-    /** JDBC Connection URL. */
-    private String connectionUrl;
-
-    /** JDBC username. */
+    private String jdbcUrl;
     private String username;
-
-    /** JDBC password. */
     private String password;
 
     /** Name of schema. */
@@ -71,95 +54,33 @@ public abstract class AbstractDao
      */
     public AbstractDao() {
         super();
-        initialise();
     }
 
-    /**
-     * Creates a new instance of AbstractDao.
-     *
-     * @param driverClassName the driver class name
-     */
-    public AbstractDao(final String driverClassName) {
-        super();
-        initialise();
-        setDriver(driverClassName);
-    }
-
-    /**
-     * Creates a new instance of AbstractDao.
-     *
-     * @param driverClassName the driver class name
-     * @param connectionUrl the connection url
-     * @param username the username
-     * @param password the password
-     */
-    public AbstractDao(final String driverClassName,
-            final String connectionUrl,
+    public AbstractDao(final String jdbcDriver,
+            final String jdbcUrl,
             final String username,
             final String password) {
-        setDriver(driverClassName);
-        setUrl(connectionUrl);
-        setUsername(username);
-        setPassword(password);
+        super();
     }
 
-    /**
-     * Initialise.
-     */
-    private void initialise() {
-        this.driverClassName = JdbcConfig.driver();
-        this.connectionUrl = JdbcConfig.url();
-        this.username = JdbcConfig.username();
-        this.password = JdbcConfig.password();
-        this.schemaName = JdbcConfig.schema();
-        this.tableName = JdbcConfig.table();
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see coaching.jdbc.DaoInterface#setDriver(java.lang.String)
-     */
     @Override
-    public DaoInterface setDriver(final String driverClassName) {
-        try {
-            Class.forName(driverClassName);
-            this.driverClassName = driverClassName;
-        } catch (final ClassNotFoundException e) {
-            final String errMsg = String
-                .format(JDBC_DRIVER_NOT_FOUND, driverClassName);
-            this.log.error(errMsg, e);
-            fail(errMsg);
-        }
+    public DaoInterface setDriver(final String driver)
+            throws ClassNotFoundException {
         return this;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.jdbc.DaoInterface#setUrl(java.lang.String)
-     */
     @Override
     public DaoInterface setUrl(final String url) {
-        this.connectionUrl = url;
         return this;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.jdbc.DaoInterface#setUsername(java.lang.String)
-     */
     @Override
     public DaoInterface setUsername(final String username) {
-        this.username = username;
         return this;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.jdbc.DaoInterface#setPassword(java.lang.String)
-     */
     @Override
     public DaoInterface setPassword(final String password) {
-        this.password = password;
         return this;
     }
 
@@ -185,13 +106,21 @@ public abstract class AbstractDao
 
     @Override
     public DaoInterface createTable() {
-        executePreparedStatement(CREATE_SQL);
+        try {
+            executePreparedStatement(prepare(CREATE_SQL));
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
     @Override
     public DaoInterface dropTable() {
-        executePreparedStatement(DROP_SQL);
+        try {
+            executePreparedStatement(prepare(DROP_SQL));
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
@@ -202,12 +131,20 @@ public abstract class AbstractDao
      */
     @Override
     public CrudInterface createRow() {
-        executePreparedStatement(prepareInsert());
+        try {
+            executePreparedStatement(prepareInsert());
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
     protected CrudInterface createRow(final String sql) {
-        executePreparedStatement(sql);
+        try {
+            executePreparedStatement(sql);
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
@@ -221,7 +158,11 @@ public abstract class AbstractDao
     }
 
     public CrudInterface countRows() {
-        executePreparedStatement(COUNT_SQL);
+        try {
+            executePreparedStatement(prepare(COUNT_SQL));
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
@@ -232,12 +173,20 @@ public abstract class AbstractDao
      */
     @Override
     public CrudInterface readRows() {
-        executePreparedStatement(SELECT_SQL);
+        try {
+            executePreparedStatement(prepare(SELECT_SQL));
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
     protected CrudInterface readRows(final String sql) {
-        executePreparedStatement(sql);
+        try {
+            executePreparedStatement(sql);
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
@@ -252,14 +201,16 @@ public abstract class AbstractDao
     }
 
     public CrudInterface updateRow(final String sql) {
-        executePreparedStatement(sql);
+        try {
+            executePreparedStatement(sql);
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
     private String prepareUpdateSql() {
-        return UPDATE_SQL
-            .replace("{SchemaName}", this.schemaName)
-            .replace("{TableName}", this.tableName);
+        return prepare(UPDATE_SQL);
     }
 
     /**
@@ -269,46 +220,25 @@ public abstract class AbstractDao
      */
     @Override
     public CrudInterface deleteRow() {
-        executePreparedStatement(prepareDeleteSql());
+        try {
+            executePreparedStatement(prepareDeleteSql());
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
     public CrudInterface deleteRow(final String sql) {
-        executePreparedStatement(sql);
+        try {
+            executePreparedStatement(sql);
+        } catch (SQLException e) {
+            this.log.error(e.getLocalizedMessage(), e);
+        }
         return this;
     }
 
     private String prepareDeleteSql() {
-        return DELETE_SQL
-            .replace("{SchemaName}", this.schemaName)
-            .replace("{TableName}", this.tableName);
-    }
-
-    /**
-     * execute an SQL statement.
-     *
-     * @param sql the sql
-     * @return the dao interface
-     */
-    protected void executePreparedStatement(final String sql) {
-        this.log.info("executePreparedStatement({}", sql);
-
-        final String statement = prepare(sql);
-
-        try {
-            final Connection connection = ConnectionFactory.getConnection();
-            final PreparedStatement preparedStatement = connection
-                .prepareStatement(statement);
-            final int result = preparedStatement.executeUpdate();
-            this.log.info("Rows updated: {}", result);
-            preparedStatement.close();
-            connection.close();
-        } catch (final SQLException e) {
-            final String errMsg = String
-                .format(EXECUTION_ERROR, sql, e.getLocalizedMessage());
-            this.log.error(errMsg, e);
-            fail(errMsg);
-        }
+        return prepare(DELETE_SQL);
     }
 
     /**
@@ -321,99 +251,6 @@ public abstract class AbstractDao
         return sql
             .replace("{SchemaName}", this.schemaName)
             .replace("{TableName}", this.tableName);
-    }
-
-    /**
-     * Execute query.
-     *
-     * @param sql the sql
-     * @return the dao interface
-     */
-    protected CrudInterface executeQuery(final String sql) {
-        try {
-            final Connection connection = ConnectionFactory.getConnection();
-            final Statement statement = connection.createStatement();
-            this.resultSet = statement.executeQuery(sql);
-            processResultSet(this.resultSet);
-            this.resultSet.close();
-            statement.close();
-            connection.close();
-        } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
-        }
-        return this;
-    }
-
-    /**
-     * Handle result set.
-     *
-     * @param resultSet
-     *            the result set
-     * @throws SQLException
-     *             the SQL exception
-     */
-    private void processResultSet(final ResultSet resultSet)
-            throws SQLException {
-        final StringBuilder output = new StringBuilder();
-        while (resultSet.next()) {
-            this.log.debug("resultSet = {}", resultSet);
-            final String rowAsString = processRow(resultSet);
-            this.log.info("rowAsString = {}", rowAsString);
-            output.append(rowAsString);
-        }
-    }
-
-    /**
-     * Process row.
-     *
-     * @param resultSet
-     *            the result set
-     * @return the string
-     * @throws SQLException
-     *             the SQL exception
-     */
-    private String processRow(final ResultSet resultSet) throws SQLException {
-        final ResultSetMetaData metaData = resultSet.getMetaData();
-        final int colCount = metaData.getColumnCount();
-        final StringBuilder output = new StringBuilder();
-        for (int i = 1; i <= colCount; i++) {
-            final String columnName = metaData.getColumnName(i);
-            final Object value = resultSet.getObject(i);
-            if (value == null) {
-                final String msg = String.format("%s = null,", columnName);
-                this.log.info("{}", msg);
-                output.append(msg);
-            } else {
-                final String msg = String
-                    .format(
-                            "%s = %s,",
-                            columnName,
-                            value.toString().trim());
-                this.log.info("{}", msg);
-                output.append(msg);
-            }
-        }
-        return output.toString();
-    }
-
-    /**
-     * DriverNotFoundException.
-     */
-    public class DriverNotFoundException extends ClassNotFoundException {
-        /** serialVersionUID constant. */
-        private static final long serialVersionUID = 1L;
-
-        /**
-         * Instantiates a new driver not found exception.
-         *
-         * @param message the message
-         * @param e the e
-         */
-        public DriverNotFoundException(final String message,
-                final ClassNotFoundException e) {
-            super(message, e);
-        }
-
     }
 
 }

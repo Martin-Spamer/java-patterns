@@ -3,6 +3,8 @@ package coaching.thread;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
  * Unit test class for Application.
  */
@@ -13,7 +15,7 @@ public class ApplicationTest {
      */
     @Test
     public void testApplication() {
-        new Application();
+        assertNotNull(new Application());
     }
 
 }

@@ -16,7 +16,7 @@ public final class DaemonThread extends Thread {
     /**
      * Returns this single shared instance.
      *
-     * @returns the single instance.
+     * @return the singleton
      */
     public static DaemonThread getSingleton() {
         return INSTANCE;

@@ -10,7 +10,7 @@ import coaching.resources.PropertiesLoader;
 /**
  * A Factory class for creating Class objects.
  */
-public class ClassFactory {
+public final class ClassFactory {
 
     /** Instantiate the single instance of this class. */
     private static ClassFactory instance = new ClassFactory();

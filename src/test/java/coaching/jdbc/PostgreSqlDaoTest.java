@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit tests for PointbaseDao class.
+ * Unit tests for PostgreSqlDao class.
  */
-@Ignore("Requires PointBase DB availability work-in-progress low-priority")
+@Ignore("Requires PostgreSqlDao DB availability work-in-progress low-priority")
 public final class PostgreSqlDaoTest {
 
     /** SQL to DROP the table. */
@@ -58,7 +58,7 @@ public final class PostgreSqlDaoTest {
      */
     @Test
     public void testPointBaseCustomerDao() throws ClassNotFoundException {
-        final DaoInterface dao = new PointbaseDao();
+        final DaoInterface dao = new PostgresSqlDao();
         assertNotNull(dao);
     }
 
@@ -70,7 +70,7 @@ public final class PostgreSqlDaoTest {
     @Test
     public void testPointBaseCustomerDaoTypical()
             throws ClassNotFoundException {
-        final PointbaseDao dao = new PointbaseDao();
+        PostgresSqlDao dao = new PostgresSqlDao();
         assertNotNull(dao);
         dao.createRow(INSERT_SQL);
         dao.readRows(SELECT_SQL);

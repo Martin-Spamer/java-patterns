@@ -32,9 +32,10 @@ public class Configuration extends AbstractConfiguration {
     public String valueFor(final String key) {
         final String value = System.getProperty(key);
         if (value == null) {
-            return properties.getProperty(key);
+            return this.properties.getProperty(key);
         } else {
-            log.warn("Using system property value {} for key {}", value, key);
+            this.log
+                .warn("Using system property value {} for key {}", value, key);
         }
         return value;
     }
@@ -49,9 +50,10 @@ public class Configuration extends AbstractConfiguration {
     public String valueFor(final String key, final String defaultValue) {
         final String value = System.getProperty(key);
         if (value == null) {
-            return properties.getProperty(key, defaultValue);
+            return this.properties.getProperty(key, defaultValue);
         } else {
-            log.warn("Using system property value {} for key {}", value, key);
+            this.log
+                .warn("Using system property value {} for key {}", value, key);
         }
         return value;
     }

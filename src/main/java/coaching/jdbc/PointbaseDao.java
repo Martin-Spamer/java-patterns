@@ -4,7 +4,7 @@ package coaching.jdbc;
 /**
  * A Data Access object for Pointbase Database.
  */
-public final class PointbaseDao extends AbstractDao {
+public class PointbaseDao extends AbstractDao {
 
     /** The classname of the JDBC driver to use. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
@@ -17,14 +17,5 @@ public final class PointbaseDao extends AbstractDao {
 
     /** PASSWORD to be used. */
     private static final String PASSWORD = "PBPUBLIC";
-
-    /**
-     * Instantiates a new DAO for Pointbase database.
-     *
-     * @throws ClassNotFoundException the class not found exception
-     */
-    public PointbaseDao() throws ClassNotFoundException {
-        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
-    }
 
 }

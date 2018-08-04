@@ -9,7 +9,7 @@ import coaching.config.Configuration;
 public final class JdbcConfig extends Configuration {
 
     /** Single instance. */
-    private static JdbcConfig INSTANCE;
+    private static JdbcConfig instance = new JdbcConfig();
 
     /**
      * Private constructor to prevent wild instantiation.
@@ -24,10 +24,7 @@ public final class JdbcConfig extends Configuration {
      * @return the instance
      */
     public static JdbcConfig getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new JdbcConfig();
-        }
-        return INSTANCE;
+        return instance;
     }
 
     /**

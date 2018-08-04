@@ -13,8 +13,12 @@ public class TableCell {
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
+    /** The value. */
     private String value = "";
 
+    /**
+     * Instantiates a new table cell.
+     */
     public TableCell() {
         super();
     }
@@ -51,6 +55,11 @@ public class TableCell {
         return this;
     }
 
+    /**
+     * Debug string.
+     *
+     * @return the string
+     */
     public String debugString() {
         final String message = String
             .format("%s [value=%s]",
