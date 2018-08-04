@@ -10,7 +10,7 @@ public class TableCell {
     private final String value;
 
     public TableCell() {
-        value = "";
+        this.value = "";
     }
 
     /**
@@ -21,6 +21,18 @@ public class TableCell {
      */
     public TableCell(final String value) {
         this.value = value;
+    }
+
+    public String debugString() {
+        return String
+            .format("%a [value=%s]",
+                    this.getClass().getSimpleName(),
+                    this.value);
+    }
+
+    @Override
+    public String toString() {
+        return this.value;
     }
 
 }

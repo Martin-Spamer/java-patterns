@@ -14,6 +14,11 @@ public class TableRow extends ArrayList<TableCell> {
     }
 
     public TableRow(final String row) {
+        super();
+        addCells(row);
+    }
+
+    private void addCells(final String row) {
         final String[] values = row.split(",");
         for (final String value : values) {
             add(new TableCell(value));

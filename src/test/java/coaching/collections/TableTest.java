@@ -25,12 +25,15 @@ public final class TableTest {
         assertNotNull(table);
 
         // When we add columns and rows.
-        table.addCols("ColOne", "ColTwo");
+        table.addColNames("ColOne", "ColTwo");
+        table.addColNames("ColThree", "ColFour");
         table.addRow("ValueOne", "ValueTwo");
+
+        table.addRow("one,two");
 
         // Then we can produce a table as csv.
         final String csvString = table.toCsvString();
-        LOG.trace(csvString);
+        LOG.debug(csvString);
     }
 
     /**
@@ -40,7 +43,7 @@ public final class TableTest {
     public void testTable() {
         final Table table = new Table();
         assertNotNull(table);
-        LOG.trace(table.toString());
+        LOG.debug("{}", table);
     }
 
     /**
@@ -50,7 +53,7 @@ public final class TableTest {
     public void testTableString() {
         final Table table = new Table("TableName");
         assertNotNull(table);
-        LOG.trace(table.toString());
+        LOG.debug("{}", table);
     }
 
     /**
@@ -60,10 +63,15 @@ public final class TableTest {
     public void testTableRows() {
         final Table table = new Table();
         assertNotNull(table);
+        LOG.debug("{}", table);
+
         final TableRow tableRow = new TableRow();
         assertNotNull(tableRow);
+        tableRow.addCells("one,two");
+        tableRow.addCells("three", "four");
         table.add(tableRow);
-        LOG.trace(table.toString());
+
+        LOG.debug("{}", table);
     }
 
 }

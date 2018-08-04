@@ -13,7 +13,6 @@ public class TableCell {
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
-    /** The cell value. */
     private String value = "";
 
     public TableCell() {
@@ -37,7 +36,7 @@ public class TableCell {
      * @return the value
      */
     public String getValue() {
-        return this.value;
+        return value;
     }
 
     /**
@@ -52,16 +51,22 @@ public class TableCell {
         return this;
     }
 
+    public String debugString() {
+        final String message = String
+            .format("%s [value=%s]",
+                    this.getClass().getSimpleName(),
+                    value);
+        log.trace(message);
+        return message;
+    }
+
     /*
      * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [value=%s]",
-                    this.getClass().getSimpleName(),
-                    this.value);
+        return value;
     }
 
 }

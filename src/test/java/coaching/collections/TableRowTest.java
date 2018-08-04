@@ -1,10 +1,11 @@
 
-package coaching.generics;
+package coaching.collections;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -12,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class TableRowTest {
 
-    /** provides logging */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(TableRowTest.class);
 
@@ -23,7 +24,7 @@ public class TableRowTest {
     public void testTableRow() {
         final TableRow tableRow = new TableRow();
         assertNotNull(tableRow);
-        LOG.info("{}", tableRow.toString());
+        LOG.info("{}", tableRow);
     }
 
     /**
@@ -33,7 +34,7 @@ public class TableRowTest {
     public void testTableRowString() {
         final TableRow tableRow = new TableRow("value");
         assertNotNull(tableRow);
-        LOG.info("{}", tableRow.toString());
+        LOG.info("{}", tableRow);
     }
 
     /**
@@ -43,7 +44,9 @@ public class TableRowTest {
     public void testTableRowStringString() {
         final TableRow tableRow = new TableRow("one,two");
         assertNotNull(tableRow);
-        LOG.info("{}", tableRow.toString());
+        tableRow.addCells("three,four");
+        assertEquals(4, tableRow.length());
+        LOG.info("{}", tableRow);
     }
 
 }
