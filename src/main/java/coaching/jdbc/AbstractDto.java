@@ -2,6 +2,7 @@
 package coaching.jdbc;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +19,7 @@ public abstract class AbstractDto {
         .getLogger(this.getClass().getSimpleName());
 
     /** The fields. */
-    protected HashMap<String, String> fields = new HashMap<String, String>();
+    protected Map<String, String> fields = new HashMap<String, String>();
 
     /**
      * Adds the field.
@@ -40,7 +41,7 @@ public abstract class AbstractDto {
      * @param value the value
      */
     public void addField(final String key, final String value) {
-        fields.put(key, value);
+        this.fields.put(key, value);
     }
 
     /**
@@ -50,7 +51,7 @@ public abstract class AbstractDto {
      * @return the string
      */
     public String get(final String key) {
-        return fields.get(key);
+        return this.fields.get(key);
     }
 
     /**
@@ -60,7 +61,7 @@ public abstract class AbstractDto {
      * @return true, if successful
      */
     public boolean containsKey(final String key) {
-        return fields.containsKey(key);
+        return this.fields.containsKey(key);
     }
 
     /*
@@ -70,7 +71,9 @@ public abstract class AbstractDto {
     @Override
     public String toString() {
         return String
-            .format("%s [fields=%s]", this.getClass().getSimpleName(), fields);
+            .format("%s [fields=%s]",
+                    this.getClass().getSimpleName(),
+                    this.fields);
     }
 
 }

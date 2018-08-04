@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  * Simple Bag class.
  */
 @SuppressWarnings("serial")
-public final class SimpleBag extends ArrayList<String> implements BagInterface {
+public class SimpleBag extends ArrayList<String> implements BagInterface {
 
     /** Provides logging. */
     protected final Logger log = LoggerFactory
@@ -29,8 +29,8 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     public SimpleBag() {
         super();
-        log.info("SimpleBag()");
-        fill(initialState);
+        this.log.info("SimpleBag()");
+        fill(this.initialState);
     }
 
     /**
@@ -43,7 +43,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     public SimpleBag(final String... values) {
         super();
-        log.info("SimpleBag({})", Arrays.toString(values));
+        this.log.info("SimpleBag({})", Arrays.toString(values));
         fill(values == null ? new String[0] : values);
     }
 
@@ -54,7 +54,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
     @Override
     public BagInterface fill(final String... values) {
         if (values != null) {
-            initialState = values;
+            this.initialState = values;
             this.addAll(Arrays.asList(values));
         }
         return this;
@@ -66,7 +66,7 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public String pick() {
-        log.debug("%s.pick()", this.getClass().getSimpleName());
+        this.log.debug("%s.pick()", this.getClass().getSimpleName());
         return choose();
     }
 
@@ -76,10 +76,10 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public String choose() {
-        log.debug("%s.choose()", this.getClass().getSimpleName());
+        this.log.debug("%s.choose()", this.getClass().getSimpleName());
         final int size = size();
         if (size > 0) {
-            final int nextInt = random.nextInt(size);
+            final int nextInt = this.random.nextInt(size);
             return this.remove(nextInt);
         } else {
             return null;
@@ -92,8 +92,8 @@ public final class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public BagInterface reset() {
-        log.debug("%s.reset()", this.getClass().getSimpleName());
-        return fill(initialState);
+        this.log.debug("%s.reset()", this.getClass().getSimpleName());
+        return fill(this.initialState);
     }
 
 }

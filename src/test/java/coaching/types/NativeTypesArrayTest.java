@@ -22,10 +22,10 @@ public final class NativeTypesArrayTest {
      * Unit Test to display array.
      */
     @Test
-    public void testDisplayNativeArray() {
+    public void testDisplayMatrix() {
+        LOG.info("testDisplayMatrix");
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
-        LOG.info("{}", primitivesArray);
         primitivesArray.displayMatrix();
     }
 
@@ -33,10 +33,10 @@ public final class NativeTypesArrayTest {
      * Unit Test to display array.
      */
     @Test
-    public void testDisplayMatrix() {
+    public void testDisplayEmptyMatrix() {
+        LOG.info("testDisplayEmptyMatrix");
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
-        LOG.info("{}", primitivesArray);
         primitivesArray.displayEmptyMatrix();
     }
 
@@ -45,9 +45,9 @@ public final class NativeTypesArrayTest {
      */
     @Test
     public void testIterateArray() {
+        LOG.info("testIterateArray");
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
-        LOG.info("{}", primitivesArray);
         primitivesArray.iterateArray();
     }
 }

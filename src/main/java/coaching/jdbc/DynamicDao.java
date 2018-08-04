@@ -38,7 +38,28 @@ public final class DynamicDao extends AbstractDao {
         try {
             super.query("select * from sqlite_master");
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
+    }
+
+    @Override
+    public DaoInterface setDriver(final String driver)
+            throws ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public DaoInterface setUrl(final String url) {
+        return null;
+    }
+
+    @Override
+    public DaoInterface setUsername(final String username) {
+        return null;
+    }
+
+    @Override
+    public DaoInterface setPassword(final String password) {
+        return null;
     }
 }

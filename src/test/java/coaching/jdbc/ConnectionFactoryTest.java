@@ -21,7 +21,7 @@ public final class ConnectionFactoryTest {
         .getLogger(ConnectionFactoryTest.class);
 
     @Test
-    public void testConnectionFactory() {
+    public void testConnectionFactory() throws SQLException {
         assertNotNull(ConnectionFactory.getConnection());
     }
 

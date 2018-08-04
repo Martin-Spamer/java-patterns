@@ -18,9 +18,12 @@ public class TableRow {
     protected final Logger log = LoggerFactory
         .getLogger(this.getClass().getSimpleName());
 
-    /** the columns in the row */
+    /** the columns in the row. */
     private final List<TableCell> cols = new ArrayList<>();
 
+    /**
+     * Instantiates a new table row.
+     */
     public TableRow() {
         super();
     }
@@ -36,22 +39,37 @@ public class TableRow {
         addCells(values);
     }
 
-    public void addCells(final String... strings) {
-        for (String string : strings) {
+    /**
+     * Adds the cells.
+     *
+     * @param values the strings
+     */
+    public void addCells(final String... values) {
+        for (final String string : values) {
             addCells(string);
         }
     }
 
-    public void addCells(final String string) {
-        String[] tuple = string.split(",");
-        for (String value : tuple) {
-            TableCell cell = new TableCell(value);
-            this.cols.add(cell);
+    /**
+     * Adds the cells.
+     *
+     * @param values the string
+     */
+    public void addCells(final String values) {
+        final String[] tuple = values.split(",");
+        for (final String value : tuple) {
+            final TableCell cell = new TableCell(value);
+            cols.add(cell);
         }
     }
 
+    /**
+     * Length.
+     *
+     * @return the int
+     */
     public int length() {
-        return this.cols.size();
+        return cols.size();
     }
 
     /**
@@ -62,7 +80,7 @@ public class TableRow {
     public String toRowString() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableCell> tableRow = this.cols.iterator();
+        final Iterator<TableCell> tableRow = cols.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -75,11 +93,16 @@ public class TableRow {
         return stringBuffer.toString();
     }
 
+    /**
+     * Debug string.
+     *
+     * @return the string
+     */
     public String debugString() {
         return String
             .format("%s [cols=%s]",
                     this.getClass().getSimpleName(),
-                    Collections.singletonList(this.cols));
+                    Collections.singletonList(cols));
     }
 
     /*
@@ -88,7 +111,7 @@ public class TableRow {
      */
     @Override
     public String toString() {
-        return Collections.singletonList(this.cols).toString();
+        return Collections.singletonList(cols).toString();
     }
 
 }

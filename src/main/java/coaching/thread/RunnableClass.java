@@ -10,7 +10,7 @@ public final class RunnableClass implements Runnable {
     private static final Logger LOG = LoggerFactory
         .getLogger(RunnableClass.class);
 
-    private RunnableClass() {
+    public RunnableClass() {
         super();
         LOG.info("{} loaded...", this.getClass().getSimpleName());
     }
@@ -18,6 +18,13 @@ public final class RunnableClass implements Runnable {
     @Override
     public void run() {
         LOG.info("{} running... ", this.getClass().getSimpleName());
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            LOG.error(e.getLocalizedMessage(), e);
+            Thread.currentThread().interrupt();
+        }
+
     }
 
 }

@@ -133,7 +133,7 @@ public class Application {
             abstractApplicationProcess.start();
         }
 
-        threadMap.put(nameAttribute, abstractApplicationProcess);
+        this.threadMap.put(nameAttribute, abstractApplicationProcess);
     }
 
     /**
@@ -191,17 +191,12 @@ public class Application {
         return null;
     }
 
-    /**
-     * main method.
-     *
-     * @param args
-     *            the arguments as String array.
-     */
-    public static void main(final String[] args) {
-        try {
-            new Application();
-        } catch (final Exception e) {
-            LOG.error(e.getLocalizedMessage(), e);
-        }
+    @Override
+    public String toString() {
+        return String
+            .format("%s [threadMap=%s]",
+                    this.getClass().getSimpleName(),
+                    this.threadMap);
     }
+
 }

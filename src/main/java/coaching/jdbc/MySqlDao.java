@@ -4,7 +4,7 @@ package coaching.jdbc;
 /**
  * A Data Access object for a MySQL database.
  */
-public final class MySqlDao extends AbstractDao {
+public class MySqlDao extends AbstractDao {
 
     /** The classname of the JDBC driver to use. */
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -17,14 +17,5 @@ public final class MySqlDao extends AbstractDao {
 
     /** PASSWORD to be used. */
     private static final String PASSWORD = "root";
-
-    /**
-     * Instantiates a new DAO for MySql.
-     *
-     * @throws ClassNotFoundException the class not found exception
-     */
-    public MySqlDao() throws ClassNotFoundException {
-        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
-    }
 
 }
