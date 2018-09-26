@@ -1,6 +1,10 @@
 
 package coaching.jdbc;
 
+import java.util.List;
+
+import coaching.csv.CsvRecord;
+
 /**
  * A Data Access object for an Oracle Database.
  */
@@ -20,6 +24,10 @@ public class OracleDao extends AbstractDao {
 
     public OracleDao() {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+    }
+
+    @Override
+    public void insertRows(final List<CsvRecord> rowList) {
     }
 
 }

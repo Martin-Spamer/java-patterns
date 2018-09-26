@@ -17,15 +17,12 @@ import coaching.csv.CsvFile.FileNotLoadedException;
  */
 public final class CredentialsTest {
 
+    private static final String PLATFORM = "dev";
+    private static final String TAG = "@AUTHORISED";
+
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
         .getLogger(CredentialsTest.class);
-
-    /** The platform. */
-    private final String platform = "dev";
-
-    /** The tag. */
-    private final String tag = "@AUTHORISED";
 
     /**
      * Unit test to credentials factory static.
@@ -33,8 +30,8 @@ public final class CredentialsTest {
      * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
-    public void testCredentialsFactoryStatic() throws FileNotLoadedException {
-        final Actor actor = CredentialsFactory.on(platform).tagged(tag);
+    public void testCredentialsFactoryStatic() {
+        final Actor actor = CredentialsFactory.on(PLATFORM).tagged(TAG);
         assertNotNull(actor);
         LOG.info(actor.toString());
     }
@@ -45,12 +42,13 @@ public final class CredentialsTest {
      * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
-    public void testCredentialsFactory() throws FileNotLoadedException {
+    public void testCredentialsFactory() {
+        // Given a credentials factory
         final CredentialsFactory credentials = new CredentialsFactory();
         assertNotNull(credentials);
         LOG.info(credentials.toString());
 
-        final Actor actor = credentials.onPlatform(platform).tagged(tag);
+        final Actor actor = credentials.onPlatform(PLATFORM).tagged(TAG);
         assertNotNull(actor);
         LOG.info(actor.toString());
     }
@@ -61,19 +59,20 @@ public final class CredentialsTest {
      * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
-    public void testCredentialsFactoryPlatform() throws FileNotLoadedException {
-        final CredentialsFactory credentials = new CredentialsFactory(platform);
+    public void testCredentialsFactoryPlatform() {
+        // Given a credentials factory
+        final CredentialsFactory credentials = new CredentialsFactory(PLATFORM);
         assertNotNull(credentials);
         LOG.info(credentials.toString());
 
-        final Actor actor = credentials.tagged(tag);
+        final Actor actor = credentials.tagged(TAG);
         assertNotNull(actor);
         LOG.info(actor.toString());
     }
 
     /**
      * Unit test to credentials factory data.
-     * 
+     *
      * <code>
      *  # tags, username, password, email
      *  &#64;ADMIN,admin,password,admin@example.com
@@ -85,9 +84,9 @@ public final class CredentialsTest {
      * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
-    public void testCredentialsFactoryData() throws FileNotLoadedException {
+    public void testCredentialsFactoryData() {
         // Given a credentials factory
-        final CredentialsFactory credentials = new CredentialsFactory(platform);
+        final CredentialsFactory credentials = new CredentialsFactory(PLATFORM);
         assumeNotNull(credentials);
         LOG.info(credentials.toString());
 
@@ -99,4 +98,25 @@ public final class CredentialsTest {
         assertEquals("admin@example.com", actor.getEmail());
         LOG.info(actor.toString());
     }
+
+    /**
+     * Unit test to default platform domain language.
+     *
+     * @throws Exception the exception
+     */
+    // @Test
+    // public void testDefaultPlatformDomainLanguage() throws Exception {
+    // assertNotNull(CredentialsFactory.withTag("@AUTHORISED"));
+    // assertNotNull(CredentialsFactory.withTag("@UNAUTHORISED"));
+    // assertNull(CredentialsFactory.withTag("@missing"));
+    //
+    // assertNotNull(CredentialsFactory.withCharacteristic("@AUTHORISED"));
+    // assertNotNull(CredentialsFactory.withCharacteristic("@UNAUTHORISED"));
+    // assertNull(CredentialsFactory.withCharacteristic("@missing"));
+    //
+    // assertNotNull(CredentialsFactory.allWithTag("@AUTHORISED"));
+    // assertNotNull(CredentialsFactory.allWithTag("@UNAUTHORISED"));
+    // assertNull(CredentialsFactory.allWithTag("@missing"));
+    // }
+
 }

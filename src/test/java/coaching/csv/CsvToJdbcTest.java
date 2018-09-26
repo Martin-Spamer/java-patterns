@@ -22,12 +22,10 @@ public final class CsvToJdbcTest {
 
     /**
      * Fluent Interface.
-     *
      */
     @Test
     public void testFluentInterface() {
-        final CsvToJdbc dao = new CsvToJdbc();
-        dao.transfer(this.filename, this.tableName);
+        new CsvToJdbc().transfer(this.filename, this.tableName);
     }
 
 }

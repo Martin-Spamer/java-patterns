@@ -154,7 +154,7 @@ public class CsvFile {
      * @param line
      *            the line
      */
-    protected void processLine(final String line) {
+    private void processLine(final String line) {
         LOG.debug("processLine({})", line);
         if (line.charAt(0) == '#') {
             setHeaderLine(line);
@@ -176,6 +176,18 @@ public class CsvFile {
         LOG.debug("setHeaderLine({})", line);
         this.headerLine = line.substring(1);
         this.columnNames = this.headerLine.split(",");
+    }
+
+    public CsvRecord getRow(final int index) {
+        return this.records.get(index);
+    }
+
+    public List<CsvRecord> getRowList() {
+        return this.records;
+    }
+
+    public CsvRecord[] getRecordArray() {
+        return this.records.toArray(new CsvRecord[this.records.size()]);
     }
 
     /**

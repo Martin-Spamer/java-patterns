@@ -14,7 +14,8 @@ import coaching.csv.CsvFile.FileNotLoadedException;
  * Given a cash customer ...
  *
  */
-public final class ExpectedData extends AbstractExpectedData implements ExpectedDataInterface {
+public final class ExpectedData extends AbstractExpectedData
+        implements ExpectedDataInterface {
 
     /** single static instance within the class loader. */
     private static final ExpectedData INSTANCE = new ExpectedData();
@@ -43,7 +44,7 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         try {
             super.initialise("ExpectedData.csv");
         } catch (final FileNotLoadedException e) {
-            log.error(e.toString());
+            this.log.error(e.toString());
         }
     }
 
@@ -56,6 +57,10 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return ExpectedData.getInstance().loadFromCsv();
     }
 
+    public static ExpectedData fromCsv(final String filename) {
+        return ExpectedData.getInstance().loadFromCsv(filename);
+    }
+
     /**
      * Load from csv.
      *
@@ -64,7 +69,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
     private ExpectedData loadFromCsv() {
         final String simpleName = this.getClass().getSimpleName();
         final String filename = String.format("%s.csv", simpleName);
-        log.info("{}", filename);
+        this.log.info("{}", filename);
+        return this;
+    }
+
+    private ExpectedData loadFromCsv(final String filename) {
+        this.log.info("{}", filename);
         return this;
     }
 
@@ -77,6 +87,10 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return ExpectedData.getInstance().loadFromXml();
     }
 
+    public static ExpectedData fromXml(final String filename) {
+        return ExpectedData.getInstance().loadFromXml(filename);
+    }
+
     /**
      * Load from xml.
      *
@@ -85,7 +99,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
     private ExpectedData loadFromXml() {
         final String simpleName = this.getClass().getSimpleName();
         final String filename = String.format("%s.xml", simpleName);
-        log.info("{}", filename);
+        this.log.info("{}", filename);
+        return this;
+    }
+
+    private ExpectedData loadFromXml(final String filename) {
+        this.log.info("{}", filename);
         return this;
     }
 
@@ -98,6 +117,10 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return ExpectedData.getInstance().loadFromJson();
     }
 
+    public static ExpectedData fromJson(final String filename) {
+        return ExpectedData.getInstance().loadFromJson(filename);
+    }
+
     /**
      * Load from json.
      *
@@ -106,7 +129,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
     private ExpectedData loadFromJson() {
         final String simpleName = this.getClass().getSimpleName();
         final String filename = String.format("%s.json", simpleName);
-        log.info("{}", filename);
+        this.log.info("{}", filename);
+        return this;
+    }
+
+    private ExpectedData loadFromJson(final String filename) {
+        this.log.info("{}", filename);
         return this;
     }
 
@@ -155,15 +183,16 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return ExpectedData.getInstance().toString();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see coaching.automation.ddt.AbstractExpectedData#toString()
      */
     @Override
     public String toString() {
         return String
-                .format("%s [%s]",
-                        this.getClass().getSimpleName(),
-                        super.toString());
+            .format("%s [%s]",
+                    this.getClass().getSimpleName(),
+                    super.toString());
     }
 
 }

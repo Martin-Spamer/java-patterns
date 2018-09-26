@@ -12,9 +12,13 @@ import static org.junit.Assert.assertNotNull;
  */
 public class DatabasePropertiesTest {
 
+    private static final String PLATFORM = "dev";
+    private static final String TAG = "@AUTHORISED";
+
     /** provides logging */
     private static final Logger LOG = LoggerFactory
-            .getLogger(DatabasePropertiesTest.class);
+        .getLogger(DatabasePropertiesTest.class);
+
     /**
      * Unit test to database properties.
      */
@@ -22,7 +26,15 @@ public class DatabasePropertiesTest {
     public void testDatabaseProperties() {
         final DatabaseProperties databaseProperties = new DatabaseProperties();
         assertNotNull(databaseProperties);
-        LOG.info("{}",databaseProperties);
+        LOG.info("{}", databaseProperties);
+    }
+
+    @Test
+    public void testDatabasePropertiesNamed() {
+        final DatabaseProperties databaseProperties = new DatabaseProperties(
+                PLATFORM);
+        assertNotNull(databaseProperties);
+        LOG.info("{}", databaseProperties);
     }
 
 }

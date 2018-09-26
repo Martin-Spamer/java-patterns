@@ -15,11 +15,12 @@ import coaching.csv.CsvRecord;
 /**
  * The CredentialsFactory class.
  */
-public class CredentialsFactory extends AbstractExpectedData implements ExpectedDataInterface {
+public class CredentialsFactory extends AbstractExpectedData
+        implements ExpectedDataInterface {
 
     /** Provides logging. */
     private static final Logger LOG = LoggerFactory
-            .getLogger(CredentialsFactory.class);
+        .getLogger(CredentialsFactory.class);
 
     /** The csv file. */
     private CsvFile csvFile;
@@ -56,7 +57,8 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * @param platform the platform
      * @throws FileNotLoadedException the file not loaded exception
      */
-    public CredentialsFactory(final String platform) throws FileNotLoadedException {
+    public CredentialsFactory(final String platform)
+            throws FileNotLoadedException {
         super();
         this.platform = platform;
         LOG.debug("CredentialsFactory({}) : {}", platform, this);
@@ -69,8 +71,9 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * @param credentialsFilename the credentials filename
      * @throws FileNotLoadedException the file not loaded exception
      */
-    private void loadFrom(final String credentialsFilename) throws FileNotLoadedException {
-        csvFile = new CsvFile(credentialsFilename);
+    private void loadFrom(final String credentialsFilename)
+            throws FileNotLoadedException {
+        this.csvFile = new CsvFile(credentialsFilename);
     }
 
     /**
@@ -123,10 +126,10 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * @return the actor
      */
     public Actor tagged(final String tag) {
-        assumeTrue(csvFile.isLoaded());
-        final int rowCount = csvFile.rowCount();
+        assumeTrue(this.csvFile.isLoaded());
+        final int rowCount = this.csvFile.rowCount();
         for (int index = 0; index < rowCount; index++) {
-            final CsvRecord record = csvFile.getRecord(index);
+            final CsvRecord record = this.csvFile.getRecord(index);
             assertNotNull(record);
             if (record.getColumn(0).contains(tag)) {
                 final Actor credentials = new Actor();
@@ -147,10 +150,10 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
     @Override
     public String toString() {
         return String
-                .format("%s [platform=%s, csvFile=%s]",
-                        this.getClass().getSimpleName(),
-                        platform,
-                        csvFile);
+            .format("%s [platform=%s, csvFile=%s]",
+                    this.getClass().getSimpleName(),
+                    this.platform,
+                    this.csvFile);
     }
 
 }

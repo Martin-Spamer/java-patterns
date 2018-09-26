@@ -18,6 +18,9 @@
 package coaching.jdbc;
 
 import java.sql.SQLException;
+import java.util.List;
+
+import coaching.csv.CsvRecord;
 
 /**
  * A dynamic data access object.
@@ -61,5 +64,9 @@ public final class DynamicDao extends AbstractDao {
     @Override
     public DaoInterface setPassword(final String password) {
         return null;
+    }
+
+    @Override
+    public void insertRows(final List<CsvRecord> rowList) {
     }
 }

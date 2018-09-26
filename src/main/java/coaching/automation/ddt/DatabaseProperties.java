@@ -8,11 +8,17 @@ import coaching.config.AbstractConfiguration;
  */
 public class DatabaseProperties extends AbstractConfiguration {
 
+    private static final String DATABASE_PROPERTIES = "database.properties";
+
     /**
      * Default constructor.
      */
     public DatabaseProperties() {
-        super("database.properties");
+        super(DATABASE_PROPERTIES);
+    }
+
+    public DatabaseProperties(final String platform) {
+        super(String.format("%s/%s", platform, DATABASE_PROPERTIES));
     }
 
 }

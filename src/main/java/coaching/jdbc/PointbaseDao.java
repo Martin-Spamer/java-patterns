@@ -1,6 +1,10 @@
 
 package coaching.jdbc;
 
+import java.util.List;
+
+import coaching.csv.CsvRecord;
+
 /**
  * A Data Access object for Pointbase Database.
  */
@@ -20,5 +24,9 @@ public class PointbaseDao extends AbstractDao {
 
     public PointbaseDao() {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+    }
+
+    @Override
+    public void insertRows(final List<CsvRecord> rowList) {
     }
 }
