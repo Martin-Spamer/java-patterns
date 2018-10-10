@@ -31,6 +31,11 @@ public final class SqLiteDao extends AbstractDao {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 
+    /**
+     * Insert rows.
+     *
+     * @param rowList the row list
+     */
     public void insertRows(final List<CsvRecord> rowList) {
     }
 

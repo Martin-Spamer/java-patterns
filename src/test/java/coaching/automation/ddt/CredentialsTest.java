@@ -17,7 +17,10 @@ import coaching.csv.CsvFile.FileNotLoadedException;
  */
 public final class CredentialsTest {
 
+    /** PLATFORM 			constant. */
     private static final String PLATFORM = "dev";
+    
+    /** TAG 			constant. */
     private static final String TAG = "@AUTHORISED";
 
     /** Provides logging. */
@@ -25,8 +28,6 @@ public final class CredentialsTest {
 
     /**
      * Unit test to credentials factory static.
-     *
-     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCredentialsFactoryStatic() {
@@ -37,8 +38,6 @@ public final class CredentialsTest {
 
     /**
      * Unit test to credentials factory.
-     *
-     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCredentialsFactory() {
@@ -54,8 +53,6 @@ public final class CredentialsTest {
 
     /**
      * Unit test to credentials factory platform.
-     *
-     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCredentialsFactoryPlatform() {
@@ -71,7 +68,7 @@ public final class CredentialsTest {
 
     /**
      * Unit test to credentials factory data.
-     *
+     * 
      * <code>
      *  # tags, username, password, email
      *  &#64;ADMIN,admin,password,admin@example.com
@@ -79,8 +76,6 @@ public final class CredentialsTest {
      *  &#64;AUTHORISED,bob,password,bob@example.com
      *  &#64;UNAUTHORISED,trudy,password,trudy@example.com
      * </code>
-     *
-     * @throws FileNotLoadedException the file not loaded exception
      */
     @Test
     public void testCredentialsFactoryData() {

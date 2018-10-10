@@ -63,6 +63,12 @@ public final class Verify {
         return instance;
     }
 
+    /**
+     * That.
+     *
+     * @param actual the actual
+     * @return the verify
+     */
     public static Verify that(final double actual) {
         final Verify instance = Verify.create();
         final Box<Double> boxed = new Box<>(actual);
@@ -71,6 +77,12 @@ public final class Verify {
         return instance;
     }
 
+    /**
+     * That.
+     *
+     * @param actual the actual
+     * @return the verify
+     */
     public static Verify that(final char actual) {
         final Verify instance = Verify.create();
         final Box<Character> boxed = new Box<>(actual);
@@ -79,6 +91,12 @@ public final class Verify {
         return instance;
     }
 
+    /**
+     * That.
+     *
+     * @param actual the actual
+     * @return the verify
+     */
     public static Verify that(final byte actual) {
         final Verify instance = Verify.create();
         final Box<Byte> boxed = new Box<>(actual);
@@ -87,6 +105,12 @@ public final class Verify {
         return instance;
     }
 
+    /**
+     * That.
+     *
+     * @param actual the actual
+     * @return the verify
+     */
     public static Verify that(final Object actual) {
         final Verify instance = Verify.create();
         final Box<Object> boxed = new Box<>(actual);
@@ -100,6 +124,7 @@ public final class Verify {
      *
      * @param caller the caller
      * @param boxed the boxed
+     * @return the verify
      */
     private Verify that(final Throwable caller, final Box<?> boxed) {
         final StackTraceElement directCaller = caller.getStackTrace()[1];
@@ -113,8 +138,7 @@ public final class Verify {
     /**
      * Verify that something.
      *
-     * @param caller the caller
-     * @param actual the actual
+     * @param directCaller the direct caller
      * @return the verify
      */
     // public Verify that(final Throwable caller, final boolean actual) {
@@ -169,6 +193,12 @@ public final class Verify {
         return boxed.get().equals(l);
     }
 
+    /**
+     * Equal to.
+     *
+     * @param boxed the boxed
+     * @return true, if successful
+     */
     public boolean equalTo(final Box<?> boxed) {
         return boxed.equals(boxed);
     }

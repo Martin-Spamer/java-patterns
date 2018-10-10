@@ -9,6 +9,9 @@ public class Originator {
     /** The memento. */
     private Memento memento;
 
+    /**
+     * Instantiates a new originator.
+     */
     public Originator() {
         this.memento = createMemento();
     }

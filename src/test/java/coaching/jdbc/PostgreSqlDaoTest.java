@@ -52,8 +52,6 @@ public final class PostgreSqlDaoTest {
 
     /**
      * Unit Test to point base customer dao.
-     *
-     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testPostgresSqlDao() {
@@ -63,8 +61,6 @@ public final class PostgreSqlDaoTest {
 
     /**
      * Unit Test to point base customer dao url user password.
-     *
-     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testPostgresSqlDaoTypical() {

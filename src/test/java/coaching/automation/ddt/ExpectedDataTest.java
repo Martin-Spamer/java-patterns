@@ -14,7 +14,10 @@ import static org.junit.Assert.assertNull;
  */
 public final class ExpectedDataTest {
 
+    /** PLATFORM 			constant. */
     private static final String PLATFORM = "dev";
+    
+    /** TAG 			constant. */
     private static final String TAG = "@AUTHORISED";
 
     /** Provides logging. */

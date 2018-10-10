@@ -6,11 +6,21 @@ import org.slf4j.LoggerFactory;
 
 import coaching.factory.ClassFactory;
 
+/**
+ * The Class CommandInvoker.
+ */
 public final class CommandInvoker {
 
-    /** provides logging */
+    /**  provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CommandInvoker.class);
 
+    /**
+     * Execute.
+     *
+     * @param actionName the action name
+     * @return the result interface
+     * @throws MissingCommandException the missing command exception
+     */
     public ResultInterface execute(final String actionName) throws MissingCommandException {
         if (actionName != null) {
             if (actionName.length() > 0) {

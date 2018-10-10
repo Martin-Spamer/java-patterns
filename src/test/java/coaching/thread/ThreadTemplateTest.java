@@ -7,15 +7,30 @@ import static org.junit.Assert.assertNotNull;
 
 import coaching.application.ApplicationException;
 
+/**
+ * Unit test class for ThreadTemplate.
+ */
 public class ThreadTemplateTest {
 
+    /**
+     * The Class TestThread.
+     */
     public class TestThread extends ThreadTemplate {
+        
+        /* (non-Javadoc)
+        * @see coaching.thread.ThreadTemplate#execute()
+        */
         @Override
         protected void execute() throws ApplicationException {
             log.info("execute");
         }
     }
 
+    /**
+     * Unit test to thread template.
+     *
+     * @throws ApplicationException the application exception
+     */
     @Test
     public void testThreadTemplate() throws ApplicationException {
         final ThreadTemplate threadTemplate = new ThreadTemplate();
@@ -23,6 +38,11 @@ public class ThreadTemplateTest {
         threadTemplate.start();
     }
 
+    /**
+     * Unit test to test thread.
+     *
+     * @throws ApplicationException the application exception
+     */
     @Test
     public void testTestThread() throws ApplicationException {
         final ThreadTemplate threadTemplate = new TestThread();

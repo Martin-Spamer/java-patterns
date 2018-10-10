@@ -21,6 +21,7 @@ import coaching.resources.PropertiesLoader;
  */
 public class PortScan extends Thread {
 
+    /** LOCALHOST 			constant. */
     private static final String LOCALHOST = "127.0.0.1";
 
     /** Provides logging. */

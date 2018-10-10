@@ -7,10 +7,17 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Unit test class for TextHelper.
+ */
 public class TextHelperTest {
 
+    /** LOG 			constant. */
     private static final Logger LOG = LoggerFactory.getLogger(TextHelperTest.class);
 
+    /**
+     * Unit test to hex to bytes.
+     */
     @Test
     public void testHexToBytes() {
         byte[] byteData = TextHelper.hexToBytes("0123456789");

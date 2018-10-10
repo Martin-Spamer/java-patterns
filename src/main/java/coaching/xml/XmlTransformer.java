@@ -52,7 +52,7 @@ public class XmlTransformer {
      *
      * @param node the node
      * @return the string
-     * @throws TransformerException
+     * @throws TransformerException the transformer exception
      */
     private static String nodeToString(final Node node) throws TransformerException {
         final StringWriter stringWriter = new StringWriter();

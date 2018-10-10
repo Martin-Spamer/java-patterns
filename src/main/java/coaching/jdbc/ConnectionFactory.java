@@ -18,8 +18,13 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
     /** provides logging. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
+    /** The jdbc url. */
     private String jdbcUrl;
+    
+    /** The username. */
     private String username;
+    
+    /** The password. */
     private String password;
 
     /**
@@ -37,6 +42,14 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
         }
     }
 
+    /**
+     * Instantiates a new connection factory.
+     *
+     * @param jdbcDriver the jdbc driver
+     * @param jdbcUrl the jdbc url
+     * @param username the username
+     * @param password the password
+     */
     public ConnectionFactory(final String jdbcDriver, final String jdbcUrl, final String username, final String password) {
         super();
         try {
@@ -49,6 +62,12 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
         }
     }
 
+    /**
+     * Gets the connection.
+     *
+     * @return the connection
+     * @throws SQLException the SQL exception
+     */
     public static Connection getConnection() throws SQLException {
         return new ConnectionFactory().newConnection();
     }
@@ -66,6 +85,9 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
         return DriverManager.getConnection(this.jdbcUrl, this.username, this.password);
     }
 
+    /* (non-Javadoc)
+    * @see java.lang.Object#toString()
+    */
     @Override
     public String toString() {
         return String.format("%s [JdbcConfig=%s]", this.getClass().getSimpleName(), JdbcConfig.getInstance().toString());

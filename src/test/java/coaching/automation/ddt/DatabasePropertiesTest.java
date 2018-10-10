@@ -12,10 +12,13 @@ import static org.junit.Assert.assertNotNull;
  */
 public class DatabasePropertiesTest {
 
+    /** PLATFORM 			constant. */
     private static final String PLATFORM = "dev";
+    
+    /** TAG 			constant. */
     private static final String TAG = "@AUTHORISED";
 
-    /** provides logging */
+    /**  provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DatabasePropertiesTest.class);
 
     /**
@@ -28,6 +31,9 @@ public class DatabasePropertiesTest {
         LOG.info("{}", databaseProperties);
     }
 
+    /**
+     * Unit test to database properties named.
+     */
     @Test
     public void testDatabasePropertiesNamed() {
         final DatabaseProperties databaseProperties = new DatabaseProperties(PLATFORM);

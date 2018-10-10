@@ -81,6 +81,9 @@ public final class RegularExpressionTest {
         regularExpression.replace("ABC", "ZYZ");
     }
 
+    /**
+     * Unit test to quoted.
+     */
     @Test
     public void testQuoted() {
         final RegularExpression regularExpression = new RegularExpression();

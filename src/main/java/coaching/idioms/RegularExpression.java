@@ -17,6 +17,8 @@ public class RegularExpression {
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^ABC$";
+    
+    /** QUOTED_STRING 			constant. */
     private static final String QUOTED_STRING = "^\"(.*?)\"$";
 
     /** The pattern. */

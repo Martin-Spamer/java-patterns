@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class CsvToDaoTest {
 
-    /** provides logging */
+    /**  provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvToDaoTest.class);
 
     /**

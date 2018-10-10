@@ -7,27 +7,44 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assume.assumeNotNull;
 
+/**
+ * The Class CsvToJson.
+ */
 public final class CsvToJson {
 
-    /** provides logging */
+    /**  provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvToJson.class);
 
     /** CSV file. */
     private final CsvFile csvFile = new CsvFile();
 
+    /**
+     * Instantiates a new csv to json.
+     */
     public CsvToJson() {
         super();
     }
 
+    /**
+     * Process.
+     */
     public void process() {
         read("");
         write();
     }
 
+    /**
+     * Read.
+     *
+     * @param resourceName the resource name
+     */
     public void read(final String resourceName) {
         this.csvFile.read(resourceName);
     }
 
+    /**
+     * Write.
+     */
     public void write() {
         final JSONObject json = new JSONObject();
         assumeNotNull(json);

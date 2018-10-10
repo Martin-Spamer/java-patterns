@@ -174,6 +174,9 @@ public class Application {
         return null;
     }
 
+    /* (non-Javadoc)
+    * @see java.lang.Object#toString()
+    */
     @Override
     public String toString() {
         return String.format("%s [threadMap=%s]", this.getClass().getSimpleName(), this.threadMap);

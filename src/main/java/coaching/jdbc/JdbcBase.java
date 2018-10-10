@@ -73,7 +73,7 @@ public abstract class JdbcBase {
      *
      * @param sql the sql
      * @return this for a fluent interface.
-     * @throws SQLException
+     * @throws SQLException the SQL exception
      */
     protected JdbcBase executeQuery(final String sql) throws SQLException {
         this.log.info("executeQuery({})", sql);
@@ -95,7 +95,7 @@ public abstract class JdbcBase {
      *
      * @param sql the sql
      * @return this for a fluent interface.
-     * @throws SQLException
+     * @throws SQLException the SQL exception
      */
     protected JdbcBase executePreparedStatement(final String sql) throws SQLException {
         this.log.info("executePreparedStatement({})", sql);

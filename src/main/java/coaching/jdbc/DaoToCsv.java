@@ -11,7 +11,7 @@ import coaching.csv.CsvFile;
  */
 public final class DaoToCsv {
 
-    /** provides logging */
+    /**  provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DaoToCsv.class);
 
     /** Data access object. */
@@ -20,6 +20,11 @@ public final class DaoToCsv {
     /** Output CSV file. */
     private final CsvFile csv = new CsvFile();
 
+    /**
+     * Process.
+     *
+     * @param resourceName the resource name
+     */
     public void process(final String resourceName) {
     }
 

@@ -17,6 +17,7 @@ public final class CsvToJdbc {
     /** CSV file. */
     private final CsvFile csvFile = new CsvFile();
 
+    /** The dao. */
     private final DynamicDao dao = new DynamicDao();
 
     /**
@@ -26,6 +27,12 @@ public final class CsvToJdbc {
         super();
     }
 
+    /**
+     * Transfer.
+     *
+     * @param filename the filename
+     * @param tableName the table name
+     */
     public void transfer(final String filename, final String tableName) {
         this.csvFile.read(filename);
         this.csvFile.rows();

@@ -55,6 +55,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return ExpectedData.getInstance().loadFromCsv();
     }
 
+    /**
+     * From csv.
+     *
+     * @param filename the filename
+     * @return the expected data
+     */
     public static ExpectedData fromCsv(final String filename) {
         return ExpectedData.getInstance().loadFromCsv(filename);
     }
@@ -71,6 +77,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return this;
     }
 
+    /**
+     * Load from csv.
+     *
+     * @param filename the filename
+     * @return the expected data
+     */
     private ExpectedData loadFromCsv(final String filename) {
         this.log.info("{}", filename);
         return this;
@@ -85,6 +97,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return ExpectedData.getInstance().loadFromXml();
     }
 
+    /**
+     * From xml.
+     *
+     * @param filename the filename
+     * @return the expected data
+     */
     public static ExpectedData fromXml(final String filename) {
         return ExpectedData.getInstance().loadFromXml(filename);
     }
@@ -101,6 +119,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return this;
     }
 
+    /**
+     * Load from xml.
+     *
+     * @param filename the filename
+     * @return the expected data
+     */
     private ExpectedData loadFromXml(final String filename) {
         this.log.info("{}", filename);
         return this;
@@ -115,6 +139,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return ExpectedData.getInstance().loadFromJson();
     }
 
+    /**
+     * From json.
+     *
+     * @param filename the filename
+     * @return the expected data
+     */
     public static ExpectedData fromJson(final String filename) {
         return ExpectedData.getInstance().loadFromJson(filename);
     }
@@ -131,6 +161,12 @@ public final class ExpectedData extends AbstractExpectedData implements Expected
         return this;
     }
 
+    /**
+     * Load from json.
+     *
+     * @param filename the filename
+     * @return the expected data
+     */
     private ExpectedData loadFromJson(final String filename) {
         this.log.info("{}", filename);
         return this;

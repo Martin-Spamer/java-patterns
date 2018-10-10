@@ -169,14 +169,30 @@ public class CsvFile {
         this.columnNames = this.headerLine.split(",");
     }
 
+    /**
+     * Gets the row.
+     *
+     * @param index the index
+     * @return the row
+     */
     public CsvRecord getRow(final int index) {
         return this.records.get(index);
     }
 
+    /**
+     * Gets the row list.
+     *
+     * @return the row list
+     */
     public List<CsvRecord> getRowList() {
         return this.records;
     }
 
+    /**
+     * Gets the record array.
+     *
+     * @return the record array
+     */
     public CsvRecord[] getRecordArray() {
         return this.records.toArray(new CsvRecord[this.records.size()]);
     }
@@ -235,6 +251,11 @@ public class CsvFile {
         return this.columnNames[colNo];
     }
 
+    /**
+     * Rows.
+     *
+     * @return the list
+     */
     public List<CsvRecord> rows() {
         return this.records;
     }

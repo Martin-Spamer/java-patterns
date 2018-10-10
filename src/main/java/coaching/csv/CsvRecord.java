@@ -98,6 +98,11 @@ public class CsvRecord {
         return this;
     }
 
+    /**
+     * Fields.
+     *
+     * @return the list
+     */
     public List<String> fields() {
         return this.fields;
     }

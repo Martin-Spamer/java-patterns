@@ -7,11 +7,17 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * Unit test class for Table.
+ */
 public class TableTest {
 
-    /** provides logging */
+    /**  provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(TableTest.class);
 
+    /**
+     * Unit test to table.
+     */
     @Test
     public void testTable() {
         Table table = new Table();
@@ -19,6 +25,9 @@ public class TableTest {
         LOG.info("{}", table);
     }
 
+    /**
+     * Unit test to table row.
+     */
     @Test
     public void testTableRow() {
         TableRow row = new TableRow();
@@ -26,6 +35,9 @@ public class TableTest {
         LOG.info("{}", row);
     }
 
+    /**
+     * Unit test to table cell.
+     */
     @Test
     public void testTableCell() {
         TableCell cell = new TableCell();

@@ -22,10 +22,18 @@ public class PointbaseDao extends AbstractDao {
     /** PASSWORD to be used. */
     private static final String PASSWORD = "PBPUBLIC";
 
+    /**
+     * Instantiates a new pointbase dao.
+     */
     public PointbaseDao() {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 
+    /**
+     * Insert rows.
+     *
+     * @param rowList the row list
+     */
     public void insertRows(final List<CsvRecord> rowList) {
     }
 }
