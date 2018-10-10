@@ -13,8 +13,7 @@ import static org.junit.Assert.assertEquals;
 public final class IterationTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(IterationTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(IterationTest.class);
 
     /**
      * The <code>for()</code> loop statement is an example of iteration.

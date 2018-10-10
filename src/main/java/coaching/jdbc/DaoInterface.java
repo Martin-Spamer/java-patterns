@@ -1,10 +1,6 @@
 
 package coaching.jdbc;
 
-import java.util.List;
-
-import coaching.csv.CsvRecord;
-
 /**
  * An interface for JDBC Data Access Object.
  */
@@ -57,5 +53,4 @@ public interface DaoInterface {
 
     DaoInterface dropTable();
 
-    void insertRows(List<CsvRecord> rowList);
 }

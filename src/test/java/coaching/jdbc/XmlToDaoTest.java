@@ -15,8 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public final class XmlToDaoTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(XmlToDaoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XmlToDaoTest.class);
 
     /**
      * Unit Test to xml DAO.

@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public class EntityMetaDataTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(EntityMetaDataTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EntityMetaDataTest.class);
 
     /**
      * Unit test to entity meta data.

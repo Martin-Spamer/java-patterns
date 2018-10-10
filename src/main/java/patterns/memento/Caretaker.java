@@ -21,8 +21,7 @@ class Caretaker {
     /**
      * memento.
      *
-     * @param memento
-     *            the new memento
+     * @param memento the new memento
      */
     public void setMemento(final Memento memento) {
         this.memento = memento;

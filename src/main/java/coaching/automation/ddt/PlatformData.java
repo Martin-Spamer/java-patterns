@@ -110,11 +110,7 @@ public final class PlatformData extends AbstractExpectedData implements Expected
 
     @Override
     public String toString() {
-        return String
-                .format("%s [platform=%s %s]",
-                        this.getClass().getSimpleName(),
-                        platform,
-                        super.toString());
+        return String.format("%s [platform=%s %s]", this.getClass().getSimpleName(), platform, super.toString());
     }
 
 }

@@ -18,8 +18,7 @@ public final class ExpectedDataTest {
     private static final String TAG = "@AUTHORISED";
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(ExpectedDataTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ExpectedDataTest.class);
 
     /**
      * Unit test to expected data from csv.

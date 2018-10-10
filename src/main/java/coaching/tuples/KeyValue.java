@@ -80,10 +80,6 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
      * @return the string
      */
     public String debugString() {
-        return String
-            .format("%s [key=%s, value=%s]",
-                    this.getClass().getSimpleName(),
-                    key,
-                    value);
+        return String.format("%s [key=%s, value=%s]", this.getClass().getSimpleName(), key, value);
     }
 }

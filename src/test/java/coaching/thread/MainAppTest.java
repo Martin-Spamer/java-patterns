@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class MainAppTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(MainAppTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MainAppTest.class);
 
     /**
      * Unit test to main app.

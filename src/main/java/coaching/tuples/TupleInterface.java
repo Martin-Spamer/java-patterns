@@ -4,10 +4,8 @@ package coaching.tuples;
 /**
  * Tuple Interface.
  *
- * @param <L>
- *            the l generic type L.
- * @param <R>
- *            the r generic type R.
+ * @param <L> the l generic type L.
+ * @param <R> the r generic type R.
  */
 public interface TupleInterface<L, R> {
 
@@ -16,16 +14,14 @@ public interface TupleInterface<L, R> {
      *
      * new left
      *
-     * @param left
-     *            the new left
+     * @param left the new left
      */
     void setLeft(final L left);
 
     /**
      * right.
      *
-     * @param right
-     *            the new right
+     * @param right the new right
      */
     void setRight(final R right);
 

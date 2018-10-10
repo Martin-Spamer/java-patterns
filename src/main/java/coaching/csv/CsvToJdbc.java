@@ -12,8 +12,7 @@ import coaching.jdbc.DynamicDao;
 public final class CsvToJdbc {
 
     /** provides logging. */
-    private final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** CSV file. */
     private final CsvFile csvFile = new CsvFile();

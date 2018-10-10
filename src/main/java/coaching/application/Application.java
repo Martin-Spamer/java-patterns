@@ -41,17 +41,10 @@ public final class Application extends AbstractApplication {
     }
 
     /**
-     * The main entry method.
-     * exit codes
-     * 0 Success
-     * 1 Catchall for general errors
-     * 2 Misuse of shell builtins (according to Bash documentation)
-     * 126 Command invoked cannot execute
-     * 127 Command not found
-     * 128 Invalid argument to exit
-     * 128+n Fatal error signal “n”
-     * 130 Control+C
-     * 255 Exit status out of range
+     * The main entry method. exit codes 0 Success 1 Catchall for general errors
+     * 2 Misuse of shell builtins (according to Bash documentation) 126 Command
+     * invoked cannot execute 127 Command not found 128 Invalid argument to exit
+     * 128+n Fatal error signal “n” 130 Control+C 255 Exit status out of range
      *
      * @param args the program arguments as a String array.
      */

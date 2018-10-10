@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public final class PolymorphicListTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(PolymorphicListTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PolymorphicListTest.class);
 
     /**
      * Unit Test to polymorphic list.

@@ -17,8 +17,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractLogging {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * To log.
@@ -33,9 +32,7 @@ public abstract class AbstractLogging {
      * @param destinationLog the destination log
      */
     public void logTo(final Logger destinationLog) {
-        final String destinationLogName = destinationLog
-            .getClass()
-            .getSimpleName();
+        final String destinationLogName = destinationLog.getClass().getSimpleName();
         destinationLog.info("{}.log({})", destinationLogName, this);
     }
 

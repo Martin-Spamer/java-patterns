@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class SchedulerTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(SchedulerTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SchedulerTest.class);
 
     /**
      * Unit test to scheduler.

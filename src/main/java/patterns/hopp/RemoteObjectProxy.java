@@ -10,8 +10,7 @@ import org.slf4j.LoggerFactory;
 class RemoteObjectProxy implements HoppInterface {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(RemoteObjectProxy.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
 
     /** The remote object. */
     private final HoppInterface remoteObject = new RemoteObject();

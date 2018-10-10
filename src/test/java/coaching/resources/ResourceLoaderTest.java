@@ -27,8 +27,7 @@ public final class ResourceLoaderTest {
     private static final String MISSING_RESOURCE = "Resource.missing";
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(ResourceLoaderTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ResourceLoaderTest.class);
 
     /**
      * Unit test to get stream.
@@ -38,8 +37,7 @@ public final class ResourceLoaderTest {
      */
     @Test
     public void testGetResource() throws IOException {
-        final InputStream inputStream = ResourceLoader
-            .getStream(CONFIGURATION_PROPERTIES);
+        final InputStream inputStream = ResourceLoader.getStream(CONFIGURATION_PROPERTIES);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
         LOG.debug("ResourceLoader.getStream = {}", inputStream.toString());
@@ -53,8 +51,7 @@ public final class ResourceLoaderTest {
      */
     @Test
     public void testGetXmlResource() throws IOException {
-        final InputStream inputStream = ResourceLoader
-            .getStream(CONFIGURATION_XML);
+        final InputStream inputStream = ResourceLoader.getStream(CONFIGURATION_XML);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
         LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
@@ -68,8 +65,7 @@ public final class ResourceLoaderTest {
      */
     @Test(expected = ResourceNotLoadedException.class)
     public void testMissingXmlResource() throws IOException {
-        final InputStream inputStream = ResourceLoader
-            .getStream(MISSING_RESOURCE);
+        final InputStream inputStream = ResourceLoader.getStream(MISSING_RESOURCE);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
         LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));

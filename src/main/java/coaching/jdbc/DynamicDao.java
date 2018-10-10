@@ -46,8 +46,7 @@ public final class DynamicDao extends AbstractDao {
     }
 
     @Override
-    public DaoInterface setDriver(final String driver)
-            throws ClassNotFoundException {
+    public DaoInterface setDriver(final String driver) throws ClassNotFoundException {
         return null;
     }
 
@@ -66,7 +65,6 @@ public final class DynamicDao extends AbstractDao {
         return null;
     }
 
-    @Override
     public void insertRows(final List<CsvRecord> rowList) {
     }
 }

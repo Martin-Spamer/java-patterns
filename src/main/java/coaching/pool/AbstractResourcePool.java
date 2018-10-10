@@ -9,14 +9,12 @@ import org.slf4j.LoggerFactory;
 /**
  * Abstract Resource Pool class.
  *
- * @param <E>
- *            the element type
+ * @param <E> the element type
  */
 public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The free pool. */
     protected LinkedBlockingDeque<E> freePool;
@@ -97,8 +95,7 @@ public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
      *
      * resource
      *
-     * @param resource
-     *            the resource
+     * @param resource the resource
      * @return true, if successful, otherwise false.
      */
     protected synchronized boolean offer(final E resource) {

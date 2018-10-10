@@ -19,8 +19,7 @@ import org.w3c.dom.NodeList;
 public abstract class AbstractApplication {
 
     /** logging provided. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
     protected String[] args = null;
@@ -91,23 +90,16 @@ public abstract class AbstractApplication {
      */
     protected boolean initialisation(final File configFile) {
         try {
-            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
-                .newInstance();
-            final DocumentBuilder documentBuilder = documentBuilderFactory
-                .newDocumentBuilder();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             document = documentBuilder.parse(configFile);
             documentElement = document.getDocumentElement();
 
             if (documentElement != null) {
-                final Element commandHandlerElement = getElement(
-                        "COMMAND_HANDLER");
+                final Element commandHandlerElement = getElement("COMMAND_HANDLER");
                 log.info("commandHandlerElement = {}", commandHandlerElement);
-                final String commandHandlerClassName = getElementAttribute(
-                        "COMMAND_HANDLER",
-                        "className");
-                log
-                    .info("commandHandlerClassName = {}",
-                            commandHandlerClassName);
+                final String commandHandlerClassName = getElementAttribute("COMMAND_HANDLER", "className");
+                log.info("commandHandlerClassName = {}", commandHandlerClassName);
             } else {
                 log.warn("documentElement = null");
             }
@@ -126,8 +118,7 @@ public abstract class AbstractApplication {
      */
     protected Element getElement(final String elementName) {
         Element element = null;
-        final NodeList nodelist = documentElement
-            .getElementsByTagName(elementName);
+        final NodeList nodelist = documentElement.getElementsByTagName(elementName);
         if (nodelist != null) {
             if (nodelist.getLength() == 0) {
                 log.debug("{} is missing for {}", elementName, documentElement);
@@ -148,9 +139,7 @@ public abstract class AbstractApplication {
      * @param attributeName the attribute name
      * @return the element attribute
      */
-    protected String getElementAttribute(
-            final String elementName,
-            final String attributeName) {
+    protected String getElementAttribute(final String elementName, final String attributeName) {
         final Element element = getElement(elementName);
         return element.getAttribute(attributeName);
     }
@@ -161,12 +150,7 @@ public abstract class AbstractApplication {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [args=%s, document=%s, documentElement=%s]",
-                    this.getClass().getSimpleName(),
-                    Arrays.toString(args),
-                    document,
-                    documentElement);
+        return String.format("%s [args=%s, document=%s, documentElement=%s]", this.getClass().getSimpleName(), Arrays.toString(args), document, documentElement);
     }
 
 }

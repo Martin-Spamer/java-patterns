@@ -7,8 +7,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Route a Message, from the input channel to the output channel.
  */
-public final class Route
-        implements InputChannelInterface, OutputChannelInterface {
+public final class Route implements InputChannelInterface, OutputChannelInterface {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(Route.class);
@@ -22,13 +21,10 @@ public final class Route
     /**
      * Instantiates a new route.
      *
-     * @param outputChannel
-     *            the output channel
-     * @param inputChannel
-     *            the input channel
+     * @param outputChannel the output channel
+     * @param inputChannel the input channel
      */
-    public Route(final OutputChannelInterface outputChannel,
-            final InputChannelInterface inputChannel) {
+    public Route(final OutputChannelInterface outputChannel, final InputChannelInterface inputChannel) {
         super();
         this.outputChannel = outputChannel;
         this.inputChannel = inputChannel;

@@ -19,8 +19,7 @@ public final class Pounds extends Money {
     /**
      * Instantiates a new pounds.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      */
     public Pounds(final long amount) {
         super(Currency.getInstance(Locale.UK), amount);

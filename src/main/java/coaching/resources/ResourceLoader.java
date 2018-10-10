@@ -13,8 +13,7 @@ import static org.junit.Assert.fail;
 /**
  * Resource Loader class.
  *
- * Load the resource file from the resources.
- * <code>
+ * Load the resource file from the resources. <code>
  * Class.getResourceAsStream ("resource.properties");
  * Class.getResourceAsStream ("/some/pkg/resource.properties");
  * ClassLoader.getResourceAsStream ("some/pkg/resource.properties");
@@ -24,8 +23,7 @@ import static org.junit.Assert.fail;
 public final class ResourceLoader {
 
     /** provide logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(ResourceLoader.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ResourceLoader.class);
 
     /**
      * Instantiates a new resource loader.
@@ -41,11 +39,8 @@ public final class ResourceLoader {
      * @return the stream
      */
     public static InputStream getStream(final String resourceName) {
-        final ClassLoader classLoader = Thread
-            .currentThread()
-            .getContextClassLoader();
-        final InputStream resourceAsStream = classLoader
-            .getResourceAsStream(resourceName);
+        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        final InputStream resourceAsStream = classLoader.getResourceAsStream(resourceName);
         if (resourceAsStream == null) {
             final String message = makeMsg(resourceName);
             LOG.error("{}", message);
@@ -83,8 +78,7 @@ public final class ResourceLoader {
      * @return the string
      */
     private static String makeMsg(final String resourceName) {
-        return String
-            .format("Resource file %s not found", resourceName);
+        return String.format("Resource file %s not found", resourceName);
     }
 
 }

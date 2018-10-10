@@ -14,8 +14,7 @@ import org.slf4j.LoggerFactory;
 public class Configuration {
 
     /** Provides logging. */
-    private final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     private final Properties properties = new Properties();
@@ -60,16 +59,14 @@ public class Configuration {
     protected InputStream inputStream(final String resourceName) {
         final Thread currentThread = Thread.currentThread();
         final ClassLoader classloader = currentThread.getContextClassLoader();
-        final InputStream resourceAsStream = classloader
-            .getResourceAsStream(resourceName);
+        final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
         return resourceAsStream;
     }
 
     /**
      * Value for.
      *
-     * key
-     * string
+     * key string
      *
      * @param key the key
      * @return the string
@@ -85,9 +82,7 @@ public class Configuration {
     /**
      * Value for.
      *
-     * key
-     * default value
-     * string
+     * key default value string
      *
      * @param key the key
      * @param defaultValue the default value
@@ -109,26 +104,19 @@ public class Configuration {
      * @return the string
      */
     public String toPrettyString() {
-        return String
-            .format("%s [properties=%s]",
-                    this.getClass().getSimpleName(),
-                    format(this.properties.toString()));
+        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), format(this.properties.toString()));
     }
 
     /**
      * Format.
      *
-     * string
-     * object
+     * string object
      *
      * @param string the string
      * @return the object
      */
     private Object format(final String string) {
-        return string
-            .replace("{", "\n\t{\n\t")
-            .replace(", ", "\n\t")
-            .replace("}", "\n\t}\n");
+        return string.replace("{", "\n\t{\n\t").replace(", ", "\n\t").replace("}", "\n\t}\n");
     }
 
     /*
@@ -137,9 +125,6 @@ public class Configuration {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [properties=%s]",
-                    this.getClass().getSimpleName(),
-                    this.properties);
+        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), this.properties);
     }
 }

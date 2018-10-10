@@ -16,18 +16,14 @@ public class TableCell {
     /**
      * Instantiates a new table cell.
      *
-     * @param value
-     *            the value
+     * @param value the value
      */
     public TableCell(final String value) {
         this.value = value;
     }
 
     public String debugString() {
-        return String
-            .format("%a [value=%s]",
-                    this.getClass().getSimpleName(),
-                    this.value);
+        return String.format("%a [value=%s]", this.getClass().getSimpleName(), this.value);
     }
 
     @Override

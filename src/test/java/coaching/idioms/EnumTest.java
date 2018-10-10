@@ -46,8 +46,7 @@ public final class EnumTest {
         /**
          * From value.
          *
-         * co value
-         * test enum
+         * co value test enum
          *
          * @param coValue the co value
          * @return the unit test to enum

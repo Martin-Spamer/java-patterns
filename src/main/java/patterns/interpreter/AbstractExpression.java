@@ -19,8 +19,7 @@ public abstract class AbstractExpression {
     /**
      * Instantiates a new abstract expression.
      *
-     * @param result
-     *            the result
+     * @param result the result
      */
     public AbstractExpression(final boolean result) {
         super();
@@ -30,8 +29,7 @@ public abstract class AbstractExpression {
     /**
      * Interpret.
      *
-     * @param context
-     *            the context
+     * @param context the context
      * @return true, if successful, otherwise false., otherwise false.
      */
     public boolean interpret(final Context context) {

@@ -15,12 +15,10 @@ import static org.junit.Assert.assertNotNull;
 public final class AbstractLoggingTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AbstractLoggingTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
 
     /** Provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * MockLog Class.
@@ -33,12 +31,7 @@ public final class AbstractLoggingTest {
          */
         @Override
         public String toString() {
-            return String
-                .format("%s [bool=%s, num=%s, uuid=%s]",
-                        this.getClass().getSimpleName(),
-                        bool,
-                        num,
-                        uuid);
+            return String.format("%s [bool=%s, num=%s, uuid=%s]", this.getClass().getSimpleName(), bool, num, uuid);
         }
 
         /** The num. */

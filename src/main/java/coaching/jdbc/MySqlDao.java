@@ -3,6 +3,7 @@ package coaching.jdbc;
 
 import java.util.List;
 
+import coaching.csv.CsvFile;
 import coaching.csv.CsvRecord;
 
 /**
@@ -26,8 +27,18 @@ public class MySqlDao extends AbstractDao {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 
-    @Override
+    public void insertRows(final CsvFile csvFile) {
+        insertRows(csvFile.getRowList());
+    }
+
     public void insertRows(final List<CsvRecord> rowList) {
+        for (CsvRecord csvRecord : rowList) {
+            createRow(csvRecord);
+        }
+    }
+
+    private void createRow(final CsvRecord csvRecord) {
+        super.createRow(INSERT_SQL);
     }
 
 }

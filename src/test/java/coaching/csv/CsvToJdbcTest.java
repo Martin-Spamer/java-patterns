@@ -11,8 +11,7 @@ import org.slf4j.LoggerFactory;
 public final class CsvToJdbcTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CsvToJdbcTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CsvToJdbcTest.class);
 
     /** Default data source filename. */
     private final String filename = "./data/data.csv";

@@ -13,8 +13,7 @@ import org.slf4j.LoggerFactory;
 public class CsvRecord {
 
     /** provides logging. */
-    protected static final Logger LOG = LoggerFactory
-        .getLogger(CsvRecord.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(CsvRecord.class);
 
     /** The fields. */
     private List<String> fields;
@@ -31,8 +30,7 @@ public class CsvRecord {
     /**
      * Instantiates a new CSV record from a line of data.
      *
-     * @param lineOfData
-     *            the line of data.
+     * @param lineOfData the line of data.
      */
     public CsvRecord(final String lineOfData) {
         super();
@@ -52,8 +50,7 @@ public class CsvRecord {
     /**
      * column.
      *
-     * @param index
-     *            the index.
+     * @param index the index.
      * @return the column.
      */
     public String getColumn(final int index) {
@@ -72,8 +69,7 @@ public class CsvRecord {
     /**
      * Parses the line of data into fields.
      *
-     * @param lineOfData
-     *            the line of data
+     * @param lineOfData the line of data
      */
     private void parse(final String lineOfData) {
         this.fields = Arrays.asList(lineOfData.split(","));
@@ -82,8 +78,7 @@ public class CsvRecord {
     /**
      * Removes the field value by index.
      *
-     * @param index
-     *            the index
+     * @param index the index
      * @return the CSV record
      */
     public CsvRecord remove(final int index) {
@@ -94,10 +89,8 @@ public class CsvRecord {
     /**
      * Sets the field value at index.
      *
-     * @param index
-     *            the index
-     * @param field
-     *            the field
+     * @param index the index
+     * @param field the field
      * @return the CSV record
      */
     public CsvRecord set(final int index, final String field) {
@@ -116,10 +109,7 @@ public class CsvRecord {
     @Override
     public String toString() {
         LOG.info(this.fields.toString());
-        return String
-            .format("%s [fields=%s]",
-                    this.getClass().getSimpleName(),
-                    this.fields.toString());
+        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), this.fields.toString());
     }
 
 }

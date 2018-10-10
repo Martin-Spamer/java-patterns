@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class GenericBagTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(GenericBagTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GenericBagTest.class);
 
     /** VALUES Constants. */
     private static final String[] VALUES = { "Heads", "Tails" };
@@ -36,8 +35,7 @@ public final class GenericBagTest {
     @Test
     public void testGenericBagNull() {
         LOG.info("testGenericBagNull()");
-        final GenericBag<String> genericBag = new GenericBag<String>(
-                (String[]) null);
+        final GenericBag<String> genericBag = new GenericBag<String>((String[]) null);
         assertNotNull(genericBag);
         LOG.debug("genericBag = {}", genericBag);
     }
@@ -59,8 +57,7 @@ public final class GenericBagTest {
     @Test
     public void testGenericBagVargs() {
         LOG.info("testGenericBagVargs()");
-        final GenericBag<String> genericBag = new GenericBag<>("Heads",
-                "Tails");
+        final GenericBag<String> genericBag = new GenericBag<>("Heads", "Tails");
         assertNotNull(genericBag);
         LOG.debug("genericBag = {}", genericBag);
     }
@@ -118,8 +115,7 @@ public final class GenericBagTest {
     @Test
     public void testPick() {
         LOG.info("testPick()");
-        final GenericBag<String> genericBag = new GenericBag<>("Heads",
-                "Tails");
+        final GenericBag<String> genericBag = new GenericBag<>("Heads", "Tails");
         assertNotNull(genericBag);
         LOG.debug("genericBag = {}", genericBag.pick());
     }
@@ -130,8 +126,7 @@ public final class GenericBagTest {
     @Test
     public void testChoose() {
         LOG.info("testChoose()");
-        final GenericBag<String> genericBag = new GenericBag<>("Heads",
-                "Tails");
+        final GenericBag<String> genericBag = new GenericBag<>("Heads", "Tails");
         assertNotNull(genericBag);
         LOG.debug("genericBag = {}", genericBag.choose());
     }
@@ -142,8 +137,7 @@ public final class GenericBagTest {
     @Test
     public void testAddT() {
         LOG.info("testAddT()");
-        final GenericBag<String> genericBag = new GenericBag<>("Heads",
-                "Tails");
+        final GenericBag<String> genericBag = new GenericBag<>("Heads", "Tails");
         assertNotNull(genericBag);
         genericBag.add("Edge");
         LOG.trace("genericBag.choose() = {}", genericBag.choose());
@@ -158,8 +152,7 @@ public final class GenericBagTest {
     @Test
     public void testReset() {
         LOG.info("testReset()");
-        final GenericBag<String> genericBag = new GenericBag<>("Heads",
-                "Tails");
+        final GenericBag<String> genericBag = new GenericBag<>("Heads", "Tails");
         assertNotNull(genericBag);
         LOG.debug("genericBag = {}", genericBag);
         LOG.trace("genericBag.choose() = {}", genericBag.choose());

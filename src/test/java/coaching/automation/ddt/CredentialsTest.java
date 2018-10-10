@@ -21,8 +21,7 @@ public final class CredentialsTest {
     private static final String TAG = "@AUTHORISED";
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CredentialsTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CredentialsTest.class);
 
     /**
      * Unit test to credentials factory static.

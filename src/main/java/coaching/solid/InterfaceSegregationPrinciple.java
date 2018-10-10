@@ -4,8 +4,8 @@ package coaching.solid;
 /**
  * A class to Demonstrate the Interface Segregation Principle (ISP).
  *
- * Intent: Clients should not be forced to depend upon interfaces that they
- * do not use.
+ * Intent: Clients should not be forced to depend upon interfaces that they do
+ * not use.
  *
  */
 public class InterfaceSegregationPrinciple {

@@ -11,8 +11,7 @@ public interface MoneyInterface {
     /**
      * set the currency.
      *
-     * @param currency
-     *            the currency
+     * @param currency the currency
      * @return this as fluent interface.
      */
     MoneyInterface setCurrency(final Currency currency);
@@ -20,8 +19,7 @@ public interface MoneyInterface {
     /**
      * set the amount using long.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return this as fluent interface.
      */
     MoneyInterface setAmount(final long amount);
@@ -29,8 +27,7 @@ public interface MoneyInterface {
     /**
      * set the amount using Money instance.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return this as fluent interface.
      */
     MoneyInterface setAmount(final MoneyInterface amount);
@@ -73,8 +70,7 @@ public interface MoneyInterface {
     /**
      * Add an amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return this as fluent interface.
      */
     MoneyInterface add(final long amount);
@@ -82,8 +78,7 @@ public interface MoneyInterface {
     /**
      * Adds an amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return this as fluent interface.
      */
     MoneyInterface add(final MoneyInterface amount);
@@ -91,8 +86,7 @@ public interface MoneyInterface {
     /**
      * Subtract.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return this as fluent interface.
      */
     MoneyInterface subtract(final long amount);
@@ -100,8 +94,7 @@ public interface MoneyInterface {
     /**
      * Subtract.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return this as fluent interface.
      */
     MoneyInterface subtract(final MoneyInterface amount);
@@ -109,8 +102,7 @@ public interface MoneyInterface {
     /**
      * Checks if more than amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return true, if is more than
      */
     boolean isMoreThan(final long amount);
@@ -118,8 +110,7 @@ public interface MoneyInterface {
     /**
      * Checks if is more than.
      *
-     * @param money
-     *            the money
+     * @param money the money
      * @return true, if successful, otherwise false., otherwise false. more than
      */
     boolean isMoreThan(final MoneyInterface money);
@@ -127,8 +118,7 @@ public interface MoneyInterface {
     /**
      * Checks if equal to amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return true, if is equal to
      */
     boolean isEqualTo(final long amount);
@@ -136,8 +126,7 @@ public interface MoneyInterface {
     /**
      * Checks if is equal to.
      *
-     * @param money
-     *            the money
+     * @param money the money
      * @return true, if successful, otherwise false., otherwise false. equal to
      */
     boolean isEqualTo(final MoneyInterface money);
@@ -145,8 +134,7 @@ public interface MoneyInterface {
     /**
      * Checks if less than amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return true, if is less than
      */
     boolean isLessThan(final long amount);
@@ -154,8 +142,7 @@ public interface MoneyInterface {
     /**
      * Checks if is less than.
      *
-     * @param money
-     *            the money
+     * @param money the money
      * @return true, if successful, otherwise false., otherwise false. less than
      */
     boolean isLessThan(final MoneyInterface money);

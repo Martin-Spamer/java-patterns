@@ -31,12 +31,9 @@ public final class TripleTest {
         /**
          * Instantiates a new space.
          *
-         * @param x
-         *            the x
-         * @param y
-         *            the y
-         * @param z
-         *            the z
+         * @param x the x
+         * @param y the y
+         * @param z the z
          */
         public Space(final Double x, final Double y, final Double z) {
             super(x, y, z);

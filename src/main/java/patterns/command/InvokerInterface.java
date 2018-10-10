@@ -9,13 +9,10 @@ public interface InvokerInterface {
     /**
      * Execute.
      *
-     * @param actionName
-     *            the action name
+     * @param actionName the action name
      * @return the result interface
-     * @throws MissingCommandException
-     *             the missing command exception
+     * @throws MissingCommandException the missing command exception
      */
-    ResultInterface execute(final String actionName)
-            throws MissingCommandException;
+    ResultInterface execute(final String actionName) throws MissingCommandException;
 
 }

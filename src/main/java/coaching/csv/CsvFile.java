@@ -103,14 +103,11 @@ public class CsvFile {
     /**
      * Read a resource as a stream.
      *
-     * @param resourceAsStream
-     *            the resource as stream
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
+     * @param resourceAsStream the resource as stream
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     private void read(final InputStream resourceAsStream) throws IOException {
-        final InputStreamReader inputStreamReader = new InputStreamReader(
-                resourceAsStream);
+        final InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
         read(inputStreamReader);
         inputStreamReader.close();
     }
@@ -118,15 +115,11 @@ public class CsvFile {
     /**
      * Read input stream reader.
      *
-     * @param inputStreamReader
-     *            the input stream reader
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
+     * @param inputStreamReader the input stream reader
+     * @throws IOException Signals that an I/O exception has occurred.
      */
-    private void read(final InputStreamReader inputStreamReader)
-            throws IOException {
-        final BufferedReader bufferedReader = new BufferedReader(
-                inputStreamReader);
+    private void read(final InputStreamReader inputStreamReader) throws IOException {
+        final BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         read(bufferedReader);
         bufferedReader.close();
     }
@@ -151,8 +144,7 @@ public class CsvFile {
     /**
      * Process line.
      *
-     * @param line
-     *            the line
+     * @param line the line
      */
     private void processLine(final String line) {
         LOG.debug("processLine({})", line);
@@ -169,8 +161,7 @@ public class CsvFile {
     /**
      * header line new header line.
      *
-     * @param line
-     *            the new header line
+     * @param line the new header line
      */
     private void setHeaderLine(final String line) {
         LOG.debug("setHeaderLine({})", line);
@@ -251,8 +242,7 @@ public class CsvFile {
     /**
      * record.
      *
-     * @param index
-     *            the index
+     * @param index the index
      * @return the record
      */
     public CsvRecord getRecord(final int index) {
@@ -274,13 +264,7 @@ public class CsvFile {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [csvFilename=%s, headerLine=%s, columnNames=%s, records=%s]",
-                    this.getClass().getSimpleName(),
-                    this.csvFilename,
-                    this.headerLine,
-                    Arrays.toString(this.columnNames),
-                    this.records);
+        return String.format("%s [csvFilename=%s, headerLine=%s, columnNames=%s, records=%s]", this.getClass().getSimpleName(), this.csvFilename, this.headerLine, Arrays.toString(this.columnNames), this.records);
     }
 
     /**
@@ -290,12 +274,7 @@ public class CsvFile {
      * @return the string
      */
     protected String pretty(final String properties) {
-        return properties
-            .replace("[", "[\n\t")
-            .replace("{", "{\n\t")
-            .replace(", ", "\n\t")
-            .replace("}", "\n\t}")
-            .replace("]", "\n\t]}");
+        return properties.replace("[", "[\n\t").replace("{", "{\n\t").replace(", ", "\n\t").replace("}", "\n\t}").replace("]", "\n\t]}");
     }
 
     /**
@@ -328,8 +307,7 @@ public class CsvFile {
          * @param message the message
          * @param cause the cause
          */
-        public FileNotLoadedException(final String message,
-                final Throwable cause) {
+        public FileNotLoadedException(final String message, final Throwable cause) {
             super(message, cause);
         }
     }

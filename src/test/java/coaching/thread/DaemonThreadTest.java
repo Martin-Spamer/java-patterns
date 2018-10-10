@@ -10,8 +10,7 @@ import static org.junit.Assert.assertNotNull;
 public class DaemonThreadTest {
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(DaemonThreadTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DaemonThreadTest.class);
 
     @Test
     public void testRunDaemonThread() {

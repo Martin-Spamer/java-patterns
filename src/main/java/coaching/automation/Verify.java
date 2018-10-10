@@ -127,17 +127,13 @@ public final class Verify {
     // }
 
     private String entryPoint(final StackTraceElement directCaller) {
-        return String
-            .format("(%s:%s)",
-                    directCaller.getFileName(),
-                    directCaller.getLineNumber());
+        return String.format("(%s:%s)", directCaller.getFileName(), directCaller.getLineNumber());
     }
 
     /**
      * Checks if is true.
      *
-     * @return true, if is
-     *         true
+     * @return true, if is true
      */
     public boolean isTrue() {
         final Object x = boxed.get();
@@ -147,8 +143,7 @@ public final class Verify {
     /**
      * Checks if is false.
      *
-     * @return true, if is
-     *         false
+     * @return true, if is false
      */
     public boolean isFalse() {
         return boxed.get().equals(false);

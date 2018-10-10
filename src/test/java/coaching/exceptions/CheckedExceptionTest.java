@@ -11,14 +11,12 @@ import org.slf4j.LoggerFactory;
 public final class CheckedExceptionTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CheckedExceptionTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CheckedExceptionTest.class);
 
     /**
      * Unit Test to checked exception.
      *
-     * @throws CheckedException
-     *             the checked exception
+     * @throws CheckedException the checked exception
      */
     @Test(expected = CheckedException.class)
     public void testCheckedException() throws CheckedException {

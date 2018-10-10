@@ -26,7 +26,6 @@ public class PointbaseDao extends AbstractDao {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 
-    @Override
     public void insertRows(final List<CsvRecord> rowList) {
     }
 }

@@ -93,8 +93,7 @@ public final class SimpleBagTest {
     /**
      * Verify that.
      *
-     * @param bag
-     *            the bag
+     * @param bag the bag
      */
     private void verify(final SimpleBag bag) {
         assertNotNull(bag);

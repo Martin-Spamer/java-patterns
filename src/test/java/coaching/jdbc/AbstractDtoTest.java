@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public final class AbstractDtoTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AbstractDtoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractDtoTest.class);
 
     /**
      * The Mock data transfer objects.

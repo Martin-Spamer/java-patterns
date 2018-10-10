@@ -16,8 +16,7 @@ public class DatabasePropertiesTest {
     private static final String TAG = "@AUTHORISED";
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(DatabasePropertiesTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DatabasePropertiesTest.class);
 
     /**
      * Unit test to database properties.
@@ -31,8 +30,7 @@ public class DatabasePropertiesTest {
 
     @Test
     public void testDatabasePropertiesNamed() {
-        final DatabaseProperties databaseProperties = new DatabaseProperties(
-                PLATFORM);
+        final DatabaseProperties databaseProperties = new DatabaseProperties(PLATFORM);
         assertNotNull(databaseProperties);
         LOG.info("{}", databaseProperties);
     }

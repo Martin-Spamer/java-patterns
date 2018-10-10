@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public final class CsvRecordTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CsvRecordTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CsvRecordTest.class);
 
     /**
      * Unit Test the CsvRecord default constructor.

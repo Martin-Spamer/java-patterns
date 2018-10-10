@@ -11,14 +11,11 @@ public interface ParametersInterface {
     /**
      * prameter.
      *
-     * @param key
-     *            the key
-     * @param value
-     *            the value
+     * @param key the key
+     * @param value the value
      * @return the abstract parameters
      */
-    AbstractCommandParameters setParameter(final String key,
-            final String value);
+    AbstractCommandParameters setParameter(final String key, final String value);
 
     /**
      * String property names.
@@ -30,8 +27,7 @@ public interface ParametersInterface {
     /**
      * Value for.
      *
-     * @param key
-     *            the key
+     * @param key the key
      * @return the string
      */
     String valueFor(final String key);
@@ -39,10 +35,8 @@ public interface ParametersInterface {
     /**
      * Value for.
      *
-     * @param key
-     *            the key
-     * @param defaultValue
-     *            the default value
+     * @param key the key
+     * @param defaultValue the default value
      * @return the boolean
      */
     Boolean valueFor(final String key, final Boolean defaultValue);
@@ -50,10 +44,8 @@ public interface ParametersInterface {
     /**
      * Value for.
      *
-     * @param key
-     *            the key
-     * @param defaultValue
-     *            the default value
+     * @param key the key
+     * @param defaultValue the default value
      * @return the string
      */
     String valueFor(final String key, final String defaultValue);
@@ -61,10 +53,8 @@ public interface ParametersInterface {
     /**
      * Value for.
      *
-     * @param key
-     *            the key
-     * @param defaultValue
-     *            the default value
+     * @param key the key
+     * @param defaultValue the default value
      * @return the long
      */
     Long valueFor(final String key, final Long defaultValue);

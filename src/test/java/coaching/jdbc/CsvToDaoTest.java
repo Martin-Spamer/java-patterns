@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public class CsvToDaoTest {
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CsvToDaoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CsvToDaoTest.class);
 
     /**
      * Unit test to csv to dao.

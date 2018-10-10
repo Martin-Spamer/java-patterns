@@ -9,8 +9,7 @@ public abstract class AbstractComponent implements ComponentInterface {
     /**
      * Adds the component.
      *
-     * @param component
-     *            the component
+     * @param component the component
      * @return the component interface
      */
     public ComponentInterface add(final AbstractComponent component) {
@@ -20,8 +19,7 @@ public abstract class AbstractComponent implements ComponentInterface {
     /**
      * Remove the component.
      *
-     * @param component
-     *            the component
+     * @param component the component
      * @return the component interface
      */
     public ComponentInterface remove(final AbstractComponent component) {
@@ -31,8 +29,7 @@ public abstract class AbstractComponent implements ComponentInterface {
     /**
      * Get child component.
      *
-     * @param index
-     *            the index
+     * @param index the index
      * @return the child
      */
     public ComponentInterface getChild(final int index) {

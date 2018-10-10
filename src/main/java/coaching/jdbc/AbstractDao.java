@@ -11,11 +11,10 @@ import org.slf4j.LoggerFactory;
 /**
  * Abstract Data Access object.
  *
- * Uses domain language to provide a CRUD interface.
- * Create Read Update Delete interface.
+ * Uses domain language to provide a CRUD interface. Create Read Update Delete
+ * interface.
  */
-public abstract class AbstractDao extends JdbcBase
-        implements CrudInterface, DaoInterface {
+public abstract class AbstractDao extends JdbcBase implements CrudInterface, DaoInterface {
 
     public static final String DROP_SQL = "DROP TABLE IF EXISTS {TableName}";
     // Columns = (id INTEGER, name STRING, details STRING)
@@ -30,8 +29,7 @@ public abstract class AbstractDao extends JdbcBase
     public static final String DELETE_SQL = "DELETE FROM {TableName} WHERE ID={Key}";
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     private String jdbcUrl;
     private String username;
@@ -56,17 +54,13 @@ public abstract class AbstractDao extends JdbcBase
         super();
     }
 
-    public AbstractDao(final String jdbcDriver,
-            final String jdbcUrl,
-            final String username,
-            final String password) {
+    public AbstractDao(final String jdbcDriver, final String jdbcUrl, final String username, final String password) {
         super();
         new ConnectionFactory(jdbcDriver, jdbcUrl, username, password);
     }
 
     @Override
-    public DaoInterface setDriver(final String driver)
-            throws ClassNotFoundException {
+    public DaoInterface setDriver(final String driver) throws ClassNotFoundException {
         return this;
     }
 
@@ -249,9 +243,7 @@ public abstract class AbstractDao extends JdbcBase
      * @return the prepare
      */
     private String prepare(final String sql) {
-        return sql
-            .replace("{SchemaName}", this.schemaName)
-            .replace("{TableName}", this.tableName);
+        return sql.replace("{SchemaName}", this.schemaName).replace("{TableName}", this.tableName);
     }
 
 }

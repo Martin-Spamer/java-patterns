@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class DependencyInversionPrincipleTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(DependencyInversionPrincipleTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DependencyInversionPrincipleTest.class);
 
     /**
      * Unit Test to demonstrate the dependency inversion principle with java

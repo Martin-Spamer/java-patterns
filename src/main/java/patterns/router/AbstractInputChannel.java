@@ -10,8 +10,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractInputChannel implements InputChannelInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*
      * (non-Javadoc)

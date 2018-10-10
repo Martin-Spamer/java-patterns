@@ -19,8 +19,7 @@ import coaching.csv.CsvRecord;
 public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-            .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** CSV file containing the expected data. */
     protected CsvFile csvFile;
@@ -86,11 +85,7 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
     @Override
     public String toString() {
-        return String
-                .format("%s [path=%s, csvFile=%s]",
-                        this.getClass().getSimpleName(),
-                        path,
-                        csvFile);
+        return String.format("%s [path=%s, csvFile=%s]", this.getClass().getSimpleName(), path, csvFile);
     }
 
 }

@@ -10,15 +10,14 @@ import org.slf4j.LoggerFactory;
 /**
  * Aggregation with a Polymorphic List class.
  *
- * Objects can be added or removed from an aggregation at runtime.
- * The lifetime of the parts is disconnected from the lifetime of the whole.
- * We can describe this as having no life-time constraint.
+ * Objects can be added or removed from an aggregation at runtime. The lifetime
+ * of the parts is disconnected from the lifetime of the whole. We can describe
+ * this as having no life-time constraint.
  */
 public final class AggregatePolymorphicList {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AggregatePolymorphicList.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AggregatePolymorphicList.class);
 
     /** The integer list. */
     private final List<AbstractPerson> aggregation = new ArrayList<>();
@@ -34,8 +33,7 @@ public final class AggregatePolymorphicList {
     /**
      * Integer object.
      *
-     * @param person
-     *            the integer in
+     * @param person the integer in
      * @return this for fluent interface.
      */
     public AggregatePolymorphicList add(final AbstractPerson person) {
@@ -62,10 +60,7 @@ public final class AggregatePolymorphicList {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [integerList=%s]",
-                    this.getClass().getSimpleName(),
-                    aggregation);
+        return String.format("%s [integerList=%s]", this.getClass().getSimpleName(), aggregation);
     }
 
 }

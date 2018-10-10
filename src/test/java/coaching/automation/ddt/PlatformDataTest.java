@@ -16,8 +16,7 @@ import static org.junit.Assert.assertNull;
 public final class PlatformDataTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(PlatformDataTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PlatformDataTest.class);
 
     /**
      * Unit test to on platform.

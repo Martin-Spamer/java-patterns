@@ -9,14 +9,13 @@ import org.slf4j.LoggerFactory;
 import coaching.resources.PropertiesLoader;
 
 /**
- * An abstract Configuration class.
- * Loads the Configuration from an Properties file.
+ * An abstract Configuration class. Loads the Configuration from an Properties
+ * file.
  */
 public abstract class AbstractConfiguration implements ConfigInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     protected Properties properties;
@@ -55,8 +54,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
     /**
      * Load the configuration from the resource with the configFilename.
      *
-     * @param configFilename
-     *            the Configuration filename
+     * @param configFilename the Configuration filename
      */
     protected void loadFrom(final String configFilename) {
         properties = PropertiesLoader.getProperties(configFilename);
@@ -65,8 +63,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
     /**
      * Fixup the property file extension if necessary.
      *
-     * @param configFilename
-     *            the Configuration filename
+     * @param configFilename the Configuration filename
      * @return the string
      */
     protected String toPropertyFilename(final String configFilename) {
@@ -103,10 +100,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
     @Override
     public String toString() {
         final String prettyProperties = prettyProperties(properties);
-        return String
-            .format("%s [properties = %s]",
-                    this.getClass().getSimpleName(),
-                    prettyProperties);
+        return String.format("%s [properties = %s]", this.getClass().getSimpleName(), prettyProperties);
     }
 
     /**
@@ -116,11 +110,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
      * @return the properties as String object.
      */
     protected String prettyProperties(final Properties properties) {
-        return properties
-            .toString()
-            .replace("{", "{\n\t")
-            .replace(", ", "\n\t")
-            .replace("}", "\n\t}");
+        return properties.toString().replace("{", "{\n\t").replace(", ", "\n\t").replace("}", "\n\t}");
     }
 
 }

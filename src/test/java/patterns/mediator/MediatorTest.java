@@ -6,15 +6,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * class MediatorTest.
+ * Unit test Mediator class.
  */
 public final class MediatorTest {
 
     /**
-     * Unit Test to.
+     * Unit Test for Mediator class.
      */
     @Test
-    public void test() {
+    public void testMediator() {
         final Mediator mediator = new Mediator();
         assertNotNull(mediator);
     }

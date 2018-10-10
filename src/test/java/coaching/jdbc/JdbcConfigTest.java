@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class JdbcConfigTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(JdbcConfigTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(JdbcConfigTest.class);
 
     @Test
     public void testGetInstance() {

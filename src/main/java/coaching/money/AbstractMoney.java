@@ -14,8 +14,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractMoney implements MoneyInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The currency. */
     private Currency currency = Currency.getInstance(Locale.getDefault());
@@ -33,8 +32,7 @@ public abstract class AbstractMoney implements MoneyInterface {
     /**
      * Instantiates a new abstract money.
      *
-     * @param currency
-     *            the currency
+     * @param currency the currency
      */
     public AbstractMoney(final Currency currency) {
         super();
@@ -44,8 +42,7 @@ public abstract class AbstractMoney implements MoneyInterface {
     /**
      * Instantiates a new abstract money.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      */
     public AbstractMoney(final long amount) {
         setCurrency(Currency.getInstance(Locale.getDefault()));
@@ -55,10 +52,8 @@ public abstract class AbstractMoney implements MoneyInterface {
     /**
      * Instantiates a new abstract money.
      *
-     * @param currency
-     *            the currency
-     * @param amount
-     *            the amount
+     * @param currency the currency
+     * @param amount the amount
      */
     public AbstractMoney(final Currency currency, final Long amount) {
         super();
@@ -239,11 +234,7 @@ public abstract class AbstractMoney implements MoneyInterface {
      * To log.
      */
     public void toLog() {
-        final String debug = String
-            .format("%s [currency=%s, amount=%s]",
-                    this.getClass().getSimpleName(),
-                    currency,
-                    amount);
+        final String debug = String.format("%s [currency=%s, amount=%s]", this.getClass().getSimpleName(), currency, amount);
         log.info(debug);
     }
 

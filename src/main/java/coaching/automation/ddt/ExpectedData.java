@@ -10,12 +10,10 @@ import coaching.csv.CsvFile.FileNotLoadedException;
  * platform away behind a label and allows the automated test data to be
  * smoothly retrieved based on a characteristic of the data. e.g.
  *
- * Given a credit customer ...
- * Given a cash customer ...
+ * Given a credit customer ... Given a cash customer ...
  *
  */
-public final class ExpectedData extends AbstractExpectedData
-        implements ExpectedDataInterface {
+public final class ExpectedData extends AbstractExpectedData implements ExpectedDataInterface {
 
     /** single static instance within the class loader. */
     private static final ExpectedData INSTANCE = new ExpectedData();
@@ -145,8 +143,7 @@ public final class ExpectedData extends AbstractExpectedData
      * @return the string
      * @throws FileNotLoadedException the file not loaded exception
      */
-    public static String withTag(final String tag)
-            throws FileNotLoadedException {
+    public static String withTag(final String tag) throws FileNotLoadedException {
         return ExpectedData.getInstance().getTagged(tag);
     }
 
@@ -157,8 +154,7 @@ public final class ExpectedData extends AbstractExpectedData
      * @return the string
      * @throws FileNotLoadedException the file not loaded exception
      */
-    public static String withCharacteristic(final String tag)
-            throws FileNotLoadedException {
+    public static String withCharacteristic(final String tag) throws FileNotLoadedException {
         return ExpectedData.getInstance().getTagged(tag);
     }
 
@@ -169,8 +165,7 @@ public final class ExpectedData extends AbstractExpectedData
      * @return the string[]
      * @throws FileNotLoadedException the file not loaded exception
      */
-    public static String[] allWithTag(final String tag)
-            throws FileNotLoadedException {
+    public static String[] allWithTag(final String tag) throws FileNotLoadedException {
         return ExpectedData.getInstance().getAllTagged(tag);
     }
 
@@ -189,10 +184,7 @@ public final class ExpectedData extends AbstractExpectedData
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [%s]",
-                    this.getClass().getSimpleName(),
-                    super.toString());
+        return String.format("%s [%s]", this.getClass().getSimpleName(), super.toString());
     }
 
 }

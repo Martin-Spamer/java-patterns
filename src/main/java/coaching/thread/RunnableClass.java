@@ -7,8 +7,7 @@ import org.slf4j.LoggerFactory;
 public final class RunnableClass implements Runnable {
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(RunnableClass.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RunnableClass.class);
 
     public RunnableClass() {
         super();

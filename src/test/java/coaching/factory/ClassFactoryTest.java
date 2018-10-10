@@ -17,8 +17,7 @@ public class ClassFactoryTest {
 
     @Test
     public void testGetInstanceString() {
-        final ClassFactory classFactory = ClassFactory
-            .getInstance("ClassFactory");
+        final ClassFactory classFactory = ClassFactory.getInstance("ClassFactory");
         assertEquals(classFactory, ClassFactory.getInstance());
     }
 
@@ -46,12 +45,9 @@ public class ClassFactoryTest {
     public void testClassNameFor() {
         // Verify.that(ClassFactory.classNameFor("string")).is("java.lang.String");
         assertEquals("java.lang.String", ClassFactory.classNameFor("string"));
-        assertEquals("coaching.money.Money",
-                ClassFactory.classNameFor("money"));
-        assertEquals("coaching.money.Pounds",
-                ClassFactory.classNameFor("pounds"));
-        assertEquals("coaching.money.BigDecimalMoney",
-                ClassFactory.classNameFor("big-money"));
+        assertEquals("coaching.money.Money", ClassFactory.classNameFor("money"));
+        assertEquals("coaching.money.Pounds", ClassFactory.classNameFor("pounds"));
+        assertEquals("coaching.money.BigDecimalMoney", ClassFactory.classNameFor("big-money"));
     }
 
     @Test

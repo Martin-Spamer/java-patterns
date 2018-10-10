@@ -9,9 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class TextHelperTest {
 
-    /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(TextHelperTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TextHelperTest.class);
 
     @Test
     public void testHexToBytes() {

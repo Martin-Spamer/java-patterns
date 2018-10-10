@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public final class DaoToXmlTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(DaoToXmlTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DaoToXmlTest.class);
 
     /**
      * Unit test to jdbc to csv.

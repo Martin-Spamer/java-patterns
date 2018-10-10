@@ -15,8 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public final class MySqlDaoTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(MySqlDaoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MySqlDaoTest.class);
 
     /** SQL to DROP the table. */
     static final String DROP_SQL = "DROP TABLE IF EXISTS {}";

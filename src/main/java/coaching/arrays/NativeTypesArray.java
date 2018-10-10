@@ -7,14 +7,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example code of arrays of native/primitive types.
- * One of the major downsides of arrays is their fixed size, hence ARRAY_SIZE.
+ * Example code of arrays of native/primitive types. One of the major downsides
+ * of arrays is their fixed size, hence ARRAY_SIZE.
  **/
 public class NativeTypesArray {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(NativeTypesArray.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArray.class);
 
     /** ARRAY_SIZE constant. */
     private static final int ARRAY_SIZE = 10;

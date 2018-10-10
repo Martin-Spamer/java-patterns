@@ -9,8 +9,7 @@ public interface OutputChannelInterface {
     /**
      * Send message.
      *
-     * @param message
-     *            the message
+     * @param message the message
      */
     void sendMessage(final Message message);
 

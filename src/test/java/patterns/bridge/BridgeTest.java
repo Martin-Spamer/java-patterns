@@ -20,8 +20,7 @@ public final class BridgeTest {
      */
     @Test
     public void testOperation() {
-        final RefinedAbstraction instance = new RefinedAbstraction(
-                new Implementor());
+        final RefinedAbstraction instance = new RefinedAbstraction(new Implementor());
         assertNotNull(instance);
         LOG.info(instance.toString());
     }

@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class AbstractTypeTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AbstractTypeTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractTypeTest.class);
 
     /** The abstract type. */
     private TypeInterface abstractType;

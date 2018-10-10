@@ -12,8 +12,7 @@ public class Condition implements ConditionInterface<Boolean> {
     /**
      * Instantiates a new condition.
      *
-     * @param result
-     *            the result
+     * @param result the result
      */
     protected Condition(final boolean result) {
         this.result = result;
@@ -43,8 +42,7 @@ public class Condition implements ConditionInterface<Boolean> {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [result=%s]", this.getClass().getSimpleName(), result);
+        return String.format("%s [result=%s]", this.getClass().getSimpleName(), result);
     }
 
 }

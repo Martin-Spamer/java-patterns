@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public class TableCellTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(TableCellTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TableCellTest.class);
 
     /**
      * Unit test to table cell.

@@ -14,6 +14,18 @@ import static org.junit.Assert.assertNotNull;
 @Ignore("Requires PostgreSqlDao DB availability work-in-progress low-priority")
 public final class PostgreSqlDaoTest {
 
+    /** The classname of the JDBC driver to use. */
+    private static final String JDBC_DRIVER = "org.postgresql.Driver";
+
+    /** The URL to use to make JDBC connection. */
+    private static final String JDBC_URL = "jdbc:postgresql://localhost";
+
+    /** USERNAME to be used. */
+    private static final String USERNAME = "postgres";
+
+    /** PASSWORD to be used. */
+    private static final String PASSWORD = "password";
+
     /** SQL to DROP the table. */
     static final String DROP_SQL = "DROP TABLE IF EXISTS {}";
 
@@ -36,20 +48,7 @@ public final class PostgreSqlDaoTest {
     static final String DELETE_SQL = "DELETE FROM TABLE WHERE ID=999";
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(PostgreSqlDaoTest.class);
-
-    /** The Constant JDBC_DRIVER. */
-    private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
-
-    /** The Constant JDBC_URL. */
-    private final static String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
-
-    /** The Constant USERNAME. */
-    private final static String USERNAME = "PBPUBLIC";
-
-    /** The Constant PASSWORD. */
-    private final static String PASSWORD = "PBPUBLIC";
+    private static final Logger LOG = LoggerFactory.getLogger(PostgreSqlDaoTest.class);
 
     /**
      * Unit Test to point base customer dao.
@@ -57,7 +56,7 @@ public final class PostgreSqlDaoTest {
      * @throws ClassNotFoundException the class not found exception
      */
     @Test
-    public void testPointBaseCustomerDao() throws ClassNotFoundException {
+    public void testPostgresSqlDao() {
         final DaoInterface dao = new PostgresSqlDao();
         assertNotNull(dao);
     }
@@ -68,8 +67,7 @@ public final class PostgreSqlDaoTest {
      * @throws ClassNotFoundException the class not found exception
      */
     @Test
-    public void testPointBaseCustomerDaoTypical()
-            throws ClassNotFoundException {
+    public void testPostgresSqlDaoTypical() {
         PostgresSqlDao dao = new PostgresSqlDao();
         assertNotNull(dao);
         dao.createRow(INSERT_SQL);
@@ -77,4 +75,5 @@ public final class PostgreSqlDaoTest {
         dao.updateRow(UPDATE_SQL);
         dao.deleteRow(DELETE_SQL);
     }
+
 }

@@ -14,8 +14,7 @@ public final class FileHelper {
      * Instantiates a new file helper.
      */
     private FileHelper() {
-        throw new UnsupportedOperationException(
-                "Do not instantiate this class, use staticly.");
+        throw new UnsupportedOperationException("Do not instantiate this class, use staticly.");
     }
 
     /**
@@ -25,8 +24,7 @@ public final class FileHelper {
      * @return the string
      * @throws FileNotFoundException the file not found exception
      */
-    public static String getAsString(final String filename)
-            throws FileNotFoundException {
+    public static String getAsString(final String filename) throws FileNotFoundException {
         final File file = new File(filename);
         return new Scanner(file).useDelimiter("\\A").next();
     }

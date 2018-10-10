@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class WebCrawlerTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(WebCrawlerTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WebCrawlerTest.class);
 
     /**
      * Unit test to web crawler.

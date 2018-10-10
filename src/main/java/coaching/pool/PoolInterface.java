@@ -4,16 +4,14 @@ package coaching.pool;
 /**
  * Pool Interface.
  *
- * @param <E>
- *            the element type
+ * @param <E> the element type
  */
 public interface PoolInterface<E> {
 
     /**
      * Adds element to the pool.
      *
-     * @param element
-     *            the element
+     * @param element the element
      * @return the pool interface
      */
     PoolInterface<E> add(final E element);
@@ -42,8 +40,7 @@ public interface PoolInterface<E> {
     /**
      * Release element back to pool.
      *
-     * @param t
-     *            the t
+     * @param t the t
      * @return the pool interface
      */
     PoolInterface<E> release(final E t);
@@ -51,8 +48,7 @@ public interface PoolInterface<E> {
     /**
      * remove an from the pool.
      *
-     * @param element
-     *            the element
+     * @param element the element
      * @return the pool interface
      */
     PoolInterface<E> remove(final E element);

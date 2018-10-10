@@ -19,8 +19,7 @@ import org.w3c.dom.NodeList;
 public class RulesEngine {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(RulesEngine.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
 
     /** The document. */
     private Document document = null;
@@ -49,8 +48,7 @@ public class RulesEngine {
     /**
      * Initialise with configuration filename.
      *
-     * @param configFilename
-     *            the configuration filename
+     * @param configFilename the configuration filename
      * @return true, if successful, otherwise false.
      */
     public boolean initialise(final String configFilename) {
@@ -61,14 +59,12 @@ public class RulesEngine {
     /**
      * Read xml document.
      *
-     * @param configFilename
-     *            the config filename
+     * @param configFilename the config filename
      * @return the boolean
      */
     protected boolean readXmlDocument(final String configFilename) {
         try {
-            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
-                .newInstance();
+            final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             if (documentBuilderFactory != null) {
                 DocumentBuilder documentBuilder;
                 documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -85,14 +81,11 @@ public class RulesEngine {
     /**
      * Read xml stream.
      *
-     * @param configFilename
-     *            the config filename
-     * @param documentBuilder
-     *            the document builder
+     * @param configFilename the config filename
+     * @param documentBuilder the document builder
      * @return the boolean
      */
-    protected boolean readXmlStream(final String configFilename,
-            final DocumentBuilder documentBuilder) {
+    protected boolean readXmlStream(final String configFilename, final DocumentBuilder documentBuilder) {
         final InputStream is = inputStreamFrom(configFilename);
         try {
             if (null != is) {
@@ -115,8 +108,7 @@ public class RulesEngine {
     private InputStream inputStreamFrom(final String resourceName) {
         final Thread currentThread = Thread.currentThread();
         final ClassLoader classloader = currentThread.getContextClassLoader();
-        final InputStream resourceAsStream = classloader
-            .getResourceAsStream(resourceName);
+        final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
         return resourceAsStream;
     }
 
@@ -127,10 +119,7 @@ public class RulesEngine {
      */
     public boolean execute() {
         final boolean returnValue = false;
-        LOG
-            .info("execute({}) = {}",
-                    this.getClass().getSimpleName(),
-                    returnValue);
+        LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
         if (this.documentElement != null) {
             final NodeList childNodes = this.documentElement.getChildNodes();
             LOG.info("childNodes  = {}", childNodes);
@@ -141,14 +130,11 @@ public class RulesEngine {
     /**
      * get element attribute.
      *
-     * @param elementName
-     *            the element name
-     * @param attributeName
-     *            the attribute name
+     * @param elementName the element name
+     * @param attributeName the attribute name
      * @return the element attribute
      */
-    protected String getElementAttribute(final String elementName,
-            final String attributeName) {
+    protected String getElementAttribute(final String elementName, final String attributeName) {
         final Element element = getElement(elementName);
         return element.getAttribute(attributeName);
     }
@@ -156,30 +142,22 @@ public class RulesEngine {
     /**
      * get element.
      *
-     * @param elementName
-     *            the element name
+     * @param elementName the element name
      * @return the element
      */
     protected Element getElement(final String elementName) {
         Element element = null;
-        final NodeList nodelist = this.documentElement
-            .getElementsByTagName(elementName);
+        final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
         if (nodelist != null) {
             final int length = nodelist.getLength();
             if (length == 0) {
                 final String className = this.getClass().getSimpleName();
                 LOG.info(className);
-                LOG
-                    .info("Element {} is missing in element {}",
-                            elementName,
-                            this.documentElement.toString());
+                LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
             } else if (length > 1) {
                 final String className = this.getClass().getSimpleName();
                 LOG.info(className);
-                LOG
-                    .info(" surplus Elements {} ignored in element: {}",
-                            elementName,
-                            this.documentElement.toString());
+                LOG.info(" surplus Elements {} ignored in element: {}", elementName, this.documentElement.toString());
                 element = (Element) nodelist.item(0);
             }
         }

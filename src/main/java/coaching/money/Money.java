@@ -18,8 +18,7 @@ public class Money extends AbstractMoney {
     /**
      * Instantiates a new money.
      *
-     * @param currency
-     *            the currency
+     * @param currency the currency
      */
     public Money(final Currency currency) {
         super(currency);
@@ -28,8 +27,7 @@ public class Money extends AbstractMoney {
     /**
      * Instantiates a new money.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      */
     public Money(final long amount) {
         super(amount);
@@ -38,10 +36,8 @@ public class Money extends AbstractMoney {
     /**
      * Instantiates a new money.
      *
-     * @param currency
-     *            the currency
-     * @param amount
-     *            the amount
+     * @param currency the currency
+     * @param amount the amount
      */
     public Money(final Currency currency, final long amount) {
         super();

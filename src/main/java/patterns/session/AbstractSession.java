@@ -33,8 +33,7 @@ public abstract class AbstractSession {
     /**
      * Sets the token.
      *
-     * @param token
-     *            the token to set
+     * @param token the token to set
      */
     public void setToken(final String token) {
         this.token = token;
@@ -64,11 +63,7 @@ public abstract class AbstractSession {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [uuid=%s, token=%s]",
-                    this.getClass().getSimpleName(),
-                    uuid,
-                    token);
+        return String.format("%s [uuid=%s, token=%s]", this.getClass().getSimpleName(), uuid, token);
     }
 
 }

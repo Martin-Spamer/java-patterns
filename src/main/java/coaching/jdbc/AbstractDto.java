@@ -15,8 +15,7 @@ import static org.junit.Assert.assertEquals;
 public abstract class AbstractDto {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The fields. */
     protected Map<String, String> fields = new HashMap<>();
@@ -70,10 +69,7 @@ public abstract class AbstractDto {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [fields=%s]",
-                    this.getClass().getSimpleName(),
-                    this.fields);
+        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), this.fields);
     }
 
 }

@@ -24,7 +24,7 @@ public final class XmlToDao {
     public void process(final String resourceName, final String tableName) {
         this.csv.read(resourceName);
         List<CsvRecord> rowList = this.csv.getRowList();
-        this.dao.insertRows(rowList);
+        // this.dao.insertRows(rowList);
     }
 
     @Override

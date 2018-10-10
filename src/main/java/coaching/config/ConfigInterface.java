@@ -9,8 +9,7 @@ public interface ConfigInterface {
     /**
      * get property by key.
      *
-     * @param key
-     *            the name of key
+     * @param key the name of key
      * @return the property value as a String object.
      */
     String get(final String key);
@@ -18,10 +17,8 @@ public interface ConfigInterface {
     /**
      * property, with default if not found.
      *
-     * @param key
-     *            the name of key
-     * @param defaultValue
-     *            the default value
+     * @param key the name of key
+     * @param defaultValue the default value
      * @return the property value as a String object.
      */
     String get(final String key, final String defaultValue);

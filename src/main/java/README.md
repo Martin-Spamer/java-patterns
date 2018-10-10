@@ -4,12 +4,6 @@
 
 The main source code for coaching Java, examples provided for Java language features and programming idioms, design pattern examples and automated testing. 
 
-## Java Automated Testing
-
- - [Java Coaching](src/main/java/coaching)
- - [Java Coaching](src/main/java/coaching/README.md)
- - [Java Coaching](src/main/java/coaching/automation.md)
-
 ## Java coding idioms
 
  - [Java Coaching](src/main/java/coaching)

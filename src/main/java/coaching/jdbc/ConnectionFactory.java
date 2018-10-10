@@ -16,8 +16,7 @@ import static org.junit.Assert.assertNotNull;
 public final class ConnectionFactory implements ConnectionFactoryInterface {
 
     /** provides logging. */
-    private final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     private String jdbcUrl;
     private String username;
@@ -38,10 +37,7 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
         }
     }
 
-    public ConnectionFactory(final String jdbcDriver,
-            final String jdbcUrl,
-            final String username,
-            final String password) {
+    public ConnectionFactory(final String jdbcDriver, final String jdbcUrl, final String username, final String password) {
         super();
         try {
             Class.forName(jdbcDriver);
@@ -67,19 +63,12 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
         assertNotNull(this.username);
         assertNotNull(this.password);
 
-        return DriverManager
-            .getConnection(
-                    this.jdbcUrl,
-                    this.username,
-                    this.password);
+        return DriverManager.getConnection(this.jdbcUrl, this.username, this.password);
     }
 
     @Override
     public String toString() {
-        return String
-            .format("%s [JdbcConfig=%s]",
-                    this.getClass().getSimpleName(),
-                    JdbcConfig.getInstance().toString());
+        return String.format("%s [JdbcConfig=%s]", this.getClass().getSimpleName(), JdbcConfig.getInstance().toString());
     }
 
 }

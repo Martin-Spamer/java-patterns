@@ -20,8 +20,7 @@ public final class ConjunctionTest {
         /**
          * Instantiates a new mock.
          *
-         * @param result
-         *            the result
+         * @param result the result
          */
         public Mock(final boolean result) {
             super(result);
@@ -59,8 +58,7 @@ public final class ConjunctionTest {
      */
     @Test
     public void testConjunction() {
-        final Conjunction conjunction = new Conjunction(new Mock(true),
-                new Mock(true));
+        final Conjunction conjunction = new Conjunction(new Mock(true), new Mock(true));
         assertNotNull(conjunction);
     }
 

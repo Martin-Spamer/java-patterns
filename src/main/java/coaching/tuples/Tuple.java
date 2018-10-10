@@ -27,10 +27,8 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
     /**
      * Instantiates a new tuple.
      *
-     * @param left
-     *            the generic type L
-     * @param right
-     *            the generic type R
+     * @param left the generic type L
+     * @param right the generic type R
      */
     public Tuple(final L left, final R right) {
         super();
@@ -47,8 +45,7 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
      * @param right the generic type R
      * @return the tuple interface
      */
-    public static <L, R> TupleInterface<L, R> pair(final L left,
-            final R right) {
+    public static <L, R> TupleInterface<L, R> pair(final L left, final R right) {
         return new Tuple<>(left, right);
     }
 
@@ -91,13 +88,11 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
     /**
      * Checks if is equal to.
      *
-     * @param tuple
-     *            the tuple
+     * @param tuple the tuple
      * @return true, if is equal to
      */
     public boolean isEqualTo(final TupleInterface<L, R> tuple) {
-        return this.left.equals(tuple.getLeft())
-                && this.right.equals(tuple.getRight());
+        return this.left.equals(tuple.getLeft()) && this.right.equals(tuple.getRight());
     }
 
     /*
@@ -115,11 +110,7 @@ public class Tuple<L, R> implements TupleInterface<L, R> {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [left=%s, right=%s]",
-                    this.getClass().getSimpleName(),
-                    this.left,
-                    this.right);
+        return String.format("%s [left=%s, right=%s]", this.getClass().getSimpleName(), this.left, this.right);
     }
 
 }

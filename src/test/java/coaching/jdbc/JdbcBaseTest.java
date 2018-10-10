@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class JdbcBaseTest {
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(JdbcBaseTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(JdbcBaseTest.class);
 
     public class MockJdbcBase extends JdbcBase {
     }
@@ -40,8 +39,7 @@ public class JdbcBaseTest {
     public void testQueryString() throws SQLException {
         JdbcBase jdbcBase = new MockJdbcBase();
         assertNotNull(jdbcBase);
-        assertEquals(jdbcBase,
-                jdbcBase.query("select count(*) from sqlite_master"));
+        assertEquals(jdbcBase, jdbcBase.query("select count(*) from sqlite_master"));
         LOG.info("{}", jdbcBase);
     }
 

@@ -2,8 +2,8 @@
 package coaching.automation.ddt;
 
 /**
- * An Actor for automated testing.
- * Represents a person using the system in a role.
+ * An Actor for automated testing. Represents a person using the system in a
+ * role.
  */
 public class Actor {
 
@@ -76,12 +76,7 @@ public class Actor {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [username=%s, password=%s, email=%s]",
-                    this.getClass().getSimpleName(),
-                    username,
-                    password,
-                    email);
+        return String.format("%s [username=%s, password=%s, email=%s]", this.getClass().getSimpleName(), username, password, email);
     }
 
 }

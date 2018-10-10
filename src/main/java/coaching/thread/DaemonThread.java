@@ -7,8 +7,7 @@ import org.slf4j.LoggerFactory;
 public final class DaemonThread extends Thread {
 
     /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(DaemonThread.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DaemonThread.class);
 
     /** Instantiate the single instance of this class. */
     private static final DaemonThread INSTANCE = new DaemonThread();
@@ -47,15 +46,7 @@ public final class DaemonThread extends Thread {
 
     @Override
     public String toString() {
-        return String
-            .format("%s [id=%s, name=%s, state=%s, priority=%s, isAlive=%s, isDaemon=%s]",
-                    getClass(),
-                    getId(),
-                    getName(),
-                    getState(),
-                    getPriority(),
-                    isAlive(),
-                    isDaemon());
+        return String.format("%s [id=%s, name=%s, state=%s, priority=%s, isAlive=%s, isDaemon=%s]", getClass(), getId(), getName(), getState(), getPriority(), isAlive(), isDaemon());
     }
 
 }

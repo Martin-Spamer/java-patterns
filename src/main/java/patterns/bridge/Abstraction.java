@@ -14,8 +14,7 @@ public abstract class Abstraction {
      *
      * implementor
      *
-     * @param implementor
-     *            the implementor
+     * @param implementor the implementor
      */
     public Abstraction(final AbstractImplementor implementor) {
         super();

@@ -31,8 +31,7 @@ public class MotorCycle extends AbstractVehicle {
     /**
      * rider.
      *
-     * @param rider
-     *            the new rider
+     * @param rider the new rider
      */
     public void setRider(final Rider rider) {
         this.rider = rider;

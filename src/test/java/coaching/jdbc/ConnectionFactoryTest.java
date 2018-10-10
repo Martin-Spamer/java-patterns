@@ -17,16 +17,11 @@ import static org.junit.Assert.assertNotNull;
 public final class ConnectionFactoryTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(ConnectionFactoryTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ConnectionFactoryTest.class);
 
     @Test
     public void testConnectionFactory() throws SQLException {
-        ConnectionFactory connectionFactory = new ConnectionFactory(
-                JdbcConfig.driver(),
-                JdbcConfig.url(),
-                JdbcConfig.username(),
-                JdbcConfig.password());
+        ConnectionFactory connectionFactory = new ConnectionFactory(JdbcConfig.driver(), JdbcConfig.url(), JdbcConfig.username(), JdbcConfig.password());
         assertNotNull(connectionFactory);
     }
 

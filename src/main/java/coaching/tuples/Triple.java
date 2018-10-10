@@ -4,12 +4,9 @@ package coaching.tuples;
 /**
  * Triple, 3 Tuple class.
  *
- * @param <X>
- *            the x element type X
- * @param <Y>
- *            the y element type Y
- * @param <Z>
- *            the z element type Z
+ * @param <X> the x element type X
+ * @param <Y> the y element type Y
+ * @param <Z> the z element type Z
  */
 public class Triple<X, Y, Z> {
 
@@ -32,12 +29,9 @@ public class Triple<X, Y, Z> {
     /**
      * Instantiates a new triple.
      *
-     * @param x
-     *            the generic type X
-     * @param y
-     *            the generic type Y
-     * @param z
-     *            the generic type Z
+     * @param x the generic type X
+     * @param y the generic type Y
+     * @param z the generic type Z
      */
     public Triple(final X x, final Y y, final Z z) {
         super();
@@ -69,9 +63,7 @@ public class Triple<X, Y, Z> {
      * @param z the generic type Z
      * @return the triple
      */
-    public static <X, Y, Z> Triple<X, Y, Z> create(final X x,
-            final Y y,
-            final Z z) {
+    public static <X, Y, Z> Triple<X, Y, Z> create(final X x, final Y y, final Z z) {
         return new Triple<>(x, y, z);
     }
 
@@ -87,8 +79,7 @@ public class Triple<X, Y, Z> {
     /**
      * set the value of x.
      *
-     * @param x
-     *            the X
+     * @param x the X
      * @return this for fluent interface.
      */
     public Triple<X, Y, Z> setX(final X x) {
@@ -99,8 +90,7 @@ public class Triple<X, Y, Z> {
     /**
      * set the value of y.
      *
-     * @param y
-     *            the Y
+     * @param y the Y
      * @return this for fluent interface.
      */
     public Triple<X, Y, Z> setY(final Y y) {
@@ -111,8 +101,7 @@ public class Triple<X, Y, Z> {
     /**
      * set the value of z.
      *
-     * @param z
-     *            the Z
+     * @param z the Z
      * @return this for fluent interface.
      */
     public Triple<X, Y, Z> setZ(final Z z) {
@@ -153,12 +142,7 @@ public class Triple<X, Y, Z> {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [x=%s, y=%s, z=%s]",
-                    this.getClass().getSimpleName(),
-                    this.x,
-                    this.y,
-                    this.z);
+        return String.format("%s [x=%s, y=%s, z=%s]", this.getClass().getSimpleName(), this.x, this.y, this.z);
     }
 
 }

@@ -29,11 +29,7 @@ public final class CsvToDao {
 
     @Override
     public String toString() {
-        return String
-            .format("%s [csv=%s, dao=%s]",
-                    this.getClass().getSimpleName(),
-                    this.csv,
-                    this.dao);
+        return String.format("%s [csv=%s, dao=%s]", this.getClass().getSimpleName(), this.csv, this.dao);
     }
 
 }

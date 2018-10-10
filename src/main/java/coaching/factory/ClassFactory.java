@@ -16,8 +16,7 @@ public final class ClassFactory {
     private static ClassFactory instance = new ClassFactory();
 
     /** properties holding mappings for a key to a class name. */
-    private static Properties properties = PropertiesLoader
-        .getProperties("ClassFactory.properties");
+    private static Properties properties = PropertiesLoader.getProperties("ClassFactory.properties");
 
     /**
      * Private constructor prevents wild instantiations.
@@ -47,8 +46,8 @@ public final class ClassFactory {
     }
 
     /**
-     * Get the classname for the key.
-     * The classname will be fully qualified by package/namespace.
+     * Get the classname for the key. The classname will be fully qualified by
+     * package/namespace.
      *
      * @param key the key
      * @return the string
@@ -66,9 +65,7 @@ public final class ClassFactory {
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
-    public static Object newInstance(final String key)
-            throws ClassNotFoundException, InstantiationException,
-            IllegalAccessException {
+    public static Object newInstance(final String key) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         final String className = properties.getProperty(key);
         return Class.forName(className).newInstance();
     }
@@ -81,8 +78,7 @@ public final class ClassFactory {
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
-    public static Object create() throws ClassNotFoundException,
-            InstantiationException, IllegalAccessException {
+    public static Object create() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         return create("money");
     }
 
@@ -95,9 +91,7 @@ public final class ClassFactory {
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
-    public static MoneyInterface create(final String key)
-            throws ClassNotFoundException, InstantiationException,
-            IllegalAccessException {
+    public static MoneyInterface create(final String key) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         new BigDecimalMoney();
         final String className = properties.getProperty(key);
         return (MoneyInterface) Class.forName(className).newInstance();

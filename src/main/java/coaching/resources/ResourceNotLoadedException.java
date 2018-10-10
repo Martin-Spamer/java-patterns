@@ -24,8 +24,7 @@ public class ResourceNotLoadedException extends AssertionError {
      * @param assumption the assumption
      * @param t the t
      */
-    public ResourceNotLoadedException(final String assumption,
-            final Throwable t) {
+    public ResourceNotLoadedException(final String assumption, final Throwable t) {
         super(assumption, t);
     }
 }

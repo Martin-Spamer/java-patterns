@@ -11,8 +11,7 @@ import org.slf4j.LoggerFactory;
 public class FileHelperTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(FileHelperTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FileHelperTest.class);
 
     /**
      * Unit test to to string string.

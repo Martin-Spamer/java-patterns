@@ -9,8 +9,7 @@ public interface FilterInterface {
     /**
      * next filter.
      *
-     * @param newFilter
-     *            the new filter
+     * @param newFilter the new filter
      * @return the filter interface
      */
     FilterInterface addNextFilter(final FilterInterface newFilter);
@@ -18,8 +17,7 @@ public interface FilterInterface {
     /**
      * handleRequest.
      *
-     * @param payload
-     *            the payload
+     * @param payload the payload
      */
     void handleRequest(final PayloadInterface payload);
 

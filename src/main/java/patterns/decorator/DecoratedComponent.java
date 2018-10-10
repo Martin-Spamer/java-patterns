@@ -4,8 +4,7 @@ package patterns.decorator;
 /**
  * DecoratedComponent Class.
  */
-public class DecoratedComponent extends AbstractDecorator
-        implements DecoratorInterface {
+public class DecoratedComponent extends AbstractDecorator implements DecoratorInterface {
 
     /*
      * (non-Javadoc)

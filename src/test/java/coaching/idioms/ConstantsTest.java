@@ -11,8 +11,7 @@ import org.slf4j.LoggerFactory;
 public class ConstantsTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(ConstantsTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ConstantsTest.class);
 
     /**
      * Unit test to.

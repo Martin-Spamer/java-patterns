@@ -18,8 +18,7 @@ public final class FilterCharlie extends AbstractFilter {
      *
      * filter
      *
-     * @param filter
-     *            the filter
+     * @param filter the filter
      */
     public FilterCharlie(final FilterInterface filter) {
         super(filter);

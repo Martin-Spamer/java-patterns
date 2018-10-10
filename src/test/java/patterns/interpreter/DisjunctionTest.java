@@ -20,8 +20,7 @@ public final class DisjunctionTest {
         /**
          * Instantiates a new mock.
          *
-         * @param result
-         *            the result
+         * @param result the result
          */
         public Mock(final boolean result) {
             super(result);
@@ -59,8 +58,7 @@ public final class DisjunctionTest {
      */
     @Test
     public void testDisjunction() {
-        final Disjunction disjunction = new Disjunction(new Mock(true),
-                new Mock(true));
+        final Disjunction disjunction = new Disjunction(new Mock(true), new Mock(true));
         assertNotNull(disjunction);
     }
 

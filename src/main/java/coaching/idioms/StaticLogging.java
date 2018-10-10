@@ -13,8 +13,7 @@ import org.slf4j.LoggerFactory;
 public final class StaticLogging {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(StaticLogging.class);
+    private static final Logger LOG = LoggerFactory.getLogger(StaticLogging.class);
 
     /**
      * Law of Demeter (Tell Don't Ask).

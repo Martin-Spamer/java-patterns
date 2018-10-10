@@ -9,8 +9,7 @@ public interface JourneyInterface {
     /**
      * set the destination of the journey.
      *
-     * @param destination
-     *            the new destination
+     * @param destination the new destination
      * @return this as fluent interface.
      */
     JourneyInterface setDestination(final String destination);

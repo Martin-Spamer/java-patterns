@@ -13,17 +13,13 @@ import org.slf4j.LoggerFactory;
 public final class StaticLogging {
 
     /** Logging provided. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(StaticLogging.class);
+    private static final Logger LOG = LoggerFactory.getLogger(StaticLogging.class);
 
     /**
      * Law of Demeter (Tell Don't Ask).
      */
     public void toLog() {
-        LOG
-            .info("{}.toLog() = {}",
-                    this.getClass().getSimpleName(),
-                    toString());
+        LOG.info("{}.toLog() = {}", this.getClass().getSimpleName(), toString());
     }
 
     /**
@@ -34,10 +30,7 @@ public final class StaticLogging {
      * @param destinationLog the destination log
      */
     public void logTo(final Logger destinationLog) {
-        destinationLog
-            .info("{}.logTo({}) = {}",
-                    this.getClass().getSimpleName(),
-                    destinationLog);
+        destinationLog.info("{}.logTo({}) = {}", this.getClass().getSimpleName(), destinationLog);
     }
 
     /*

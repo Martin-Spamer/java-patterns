@@ -11,8 +11,7 @@ import org.slf4j.LoggerFactory;
 public final class AbstractLoggingTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AbstractLoggingTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
 
     /**
      * MockLog Class.

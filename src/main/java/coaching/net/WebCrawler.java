@@ -75,8 +75,7 @@ public final class WebCrawler extends ThreadTemplate {
     protected void crawlSite(final URL baseUrl) {
         try {
             // form URL for any ROBOTS.TXT file
-            final String robotsTxtFile = String
-                .format("%s/robots.txt", baseUrl);
+            final String robotsTxtFile = String.format("%s/robots.txt", baseUrl);
             final URL robotsUrl = new URL(robotsTxtFile);
             final StringBuilder robotTxtContent = new StringBuilder();
             final StringBuilder robotTxtContentBuffer = new StringBuilder();
@@ -88,8 +87,7 @@ public final class WebCrawler extends ThreadTemplate {
                 do {
                     bufferContentSize = robotsTxtInputStream.read(buffer);
                     if (bufferContentSize != -1) {
-                        final String str = new String(buffer, 0,
-                                bufferContentSize);
+                        final String str = new String(buffer, 0, bufferContentSize);
                         robotTxtContent.append(str);
                         robotTxtContentBuffer.append(Arrays.toString(buffer));
                     }
@@ -110,14 +108,12 @@ public final class WebCrawler extends ThreadTemplate {
     /**
      * Safe crawl site.
      *
-     * base url
-     * robot txt content
+     * base url robot txt content
      *
      * @param baseUrl the base url
      * @param robotTxtContent the robot txt content
      */
-    protected void safeCrawlSite(final URL baseUrl,
-            final String robotTxtContent) {
+    protected void safeCrawlSite(final URL baseUrl, final String robotTxtContent) {
 
         // search ROBOTS.TXT for "Disallow:" commands.
         final String baseFile = baseUrl.getFile();
@@ -158,8 +154,7 @@ public final class WebCrawler extends ThreadTemplate {
             urlConnection.setAllowUserInteraction(false);
 
             final InputStream urlStream = baseUrl.openStream();
-            final String mimeType = URLConnection
-                .guessContentTypeFromStream(urlStream);
+            final String mimeType = URLConnection.guessContentTypeFromStream(urlStream);
 
             if (mimeType != null) {
                 if (mimeType.compareTo("text/html") == 0) {
@@ -172,11 +167,9 @@ public final class WebCrawler extends ThreadTemplate {
                     do {
                         bufferContentSize = inputStream.read(buffer);
                         if (bufferContentSize != -1) {
-                            final String strBuffer = new String(buffer, 0,
-                                    bufferContentSize);
+                            final String strBuffer = new String(buffer, 0, bufferContentSize);
                             responseContent.append(strBuffer);
-                            responseContentBuffer
-                                .append(Arrays.toString(buffer));
+                            responseContentBuffer.append(Arrays.toString(buffer));
                         }
                     } while (bufferContentSize != -1);
 

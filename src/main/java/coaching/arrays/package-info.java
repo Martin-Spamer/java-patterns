@@ -4,8 +4,8 @@
  *
  * NativeTypesArray.java - Arrays of Native types.
  *
- * ObjectTypesArray.java - Arrays of Java Objects, for the most part,
- * generics offer a better solution.
+ * ObjectTypesArray.java - Arrays of Java Objects, for the most part, generics
+ * offer a better solution.
  */
 
 package coaching.arrays;

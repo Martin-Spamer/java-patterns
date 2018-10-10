@@ -4,9 +4,8 @@ package coaching.jdbc;
 /**
  * The SQL Interface.
  *
- * Good mapping with SQL domain language.
- * Poor mapping with with business domain language.
- * API includes the SQL admin commands.
+ * Good mapping with SQL domain language. Poor mapping with with business domain
+ * language. API includes the SQL admin commands.
  *
  */
 public interface SqlInterface {
