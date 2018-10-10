@@ -16,8 +16,7 @@ import static org.junit.Assert.assertNotNull;
 public final class SqLiteDaoTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(SqLiteDaoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SqLiteDaoTest.class);
 
     /** SQL to DROP the table. */
     static final String DROP_SQL = "DROP TABLE IF EXISTS customer";

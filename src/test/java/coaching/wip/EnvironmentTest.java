@@ -11,8 +11,7 @@ import org.slf4j.LoggerFactory;
 public final class EnvironmentTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(EnvironmentTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EnvironmentTest.class);
 
     /**
      * Unit test to log system properties.

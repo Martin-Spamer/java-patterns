@@ -10,8 +10,7 @@ import org.slf4j.LoggerFactory;
 public class InvokerExample implements InvokerInterface {
 
     /** provides logging. */
-    private final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** static instance of the example command. */
     private final ExampleCommand exampleCommand = new ExampleCommand();

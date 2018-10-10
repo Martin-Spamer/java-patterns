@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public final class PortScanTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(PortScanTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PortScanTest.class);
 
     /**
      * Unit test <code>PortScan</code> with defaults.

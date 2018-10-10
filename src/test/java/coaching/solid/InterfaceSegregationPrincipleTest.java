@@ -8,14 +8,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit Test for the Interface Segregation Principle (ISP) example class.
- * .
+ * Unit Test for the Interface Segregation Principle (ISP) example class. .
  */
 public final class InterfaceSegregationPrincipleTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(InterfaceSegregationPrincipleTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(InterfaceSegregationPrincipleTest.class);
 
     /**
      * Unit Test for the interface segregation principle example java example

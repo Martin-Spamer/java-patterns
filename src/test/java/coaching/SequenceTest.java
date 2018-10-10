@@ -13,8 +13,7 @@ import static org.junit.Assert.assertEquals;
 public final class SequenceTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(SequenceTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SequenceTest.class);
 
     /**
      * Example of a sequence of programming instructions.

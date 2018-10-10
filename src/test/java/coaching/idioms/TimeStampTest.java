@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotSame;
 public class TimeStampTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(TimeStampTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TimeStampTest.class);
 
     /**
      * Unit test case for the TimeStamp class.

@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class ObjectTypesTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(ObjectTypesTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ObjectTypesTest.class);
 
     /**
      * Unit Test to display.

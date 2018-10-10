@@ -13,11 +13,12 @@ import org.slf4j.LoggerFactory;
 public class RegularExpression {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(RegularExpression.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RegularExpression.class);
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^ABC$";
+    
+    /** QUOTED_STRING 			constant. */
     private static final String QUOTED_STRING = "^\"(.*?)\"$";
 
     /** The pattern. */
@@ -35,8 +36,7 @@ public class RegularExpression {
      *
      * pattern string
      *
-     * @param patternString
-     *            the pattern string
+     * @param patternString the pattern string
      */
     public RegularExpression(final String patternString) {
         super();
@@ -48,8 +48,7 @@ public class RegularExpression {
      *
      * pattern
      *
-     * @param pattern
-     *            the pattern
+     * @param pattern the pattern
      */
     public RegularExpression(final Pattern pattern) {
         super();
@@ -61,8 +60,7 @@ public class RegularExpression {
      *
      * code
      *
-     * @param code
-     *            the code
+     * @param code the code
      * @return true, if successful, otherwise false.
      */
     public boolean verify(final String code) {
@@ -75,18 +73,13 @@ public class RegularExpression {
      *
      * original
      *
-     * @param original
-     *            the original
+     * @param original the original
      */
     public void find(final String original) {
         final Matcher matcher = pattern.matcher(original);
         while (matcher.find()) {
             final String message = "Test %s starting at index %s and ending at index %s";
-            final String string = String
-                .format(message,
-                        matcher.group(),
-                        matcher.start(),
-                        matcher.end());
+            final String string = String.format(message, matcher.group(), matcher.start(), matcher.end());
             LOG.info(string);
         }
     }
@@ -98,9 +91,7 @@ public class RegularExpression {
      * @return the quoted part of the original string.
      */
     public String getQuoted(final String original) {
-        final Matcher matcher = Pattern
-            .compile(QUOTED_STRING)
-            .matcher(original);
+        final Matcher matcher = Pattern.compile(QUOTED_STRING).matcher(original);
         if (matcher.find()) {
             return matcher.group(1);
         }
@@ -112,10 +103,8 @@ public class RegularExpression {
      *
      * original new sub string string
      *
-     * @param original
-     *            the original
-     * @param newSubString
-     *            the new sub string
+     * @param original the original
+     * @param newSubString the new sub string
      * @return the string
      */
     public String replace(final String original, final String newSubString) {

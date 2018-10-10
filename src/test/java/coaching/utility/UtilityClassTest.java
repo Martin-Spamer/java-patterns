@@ -13,8 +13,7 @@ import static org.junit.Assert.fail;
 public class UtilityClassTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(UtilityClassTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UtilityClassTest.class);
 
     /**
      * The Class UtilityClass.
@@ -38,8 +37,7 @@ public class UtilityClassTest {
          * Instantiates a new utility class two.
          */
         private UtilityClassTwo() {
-            Error
-                .fail("The UtilityClass methods should be accessed statically");
+            Error.fail("The UtilityClass methods should be accessed statically");
         }
     }
 

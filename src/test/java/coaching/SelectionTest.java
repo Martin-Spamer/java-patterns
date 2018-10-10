@@ -15,8 +15,7 @@ import static org.junit.Assert.assertTrue;
 public final class SelectionTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(SelectionTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SelectionTest.class);
 
     /**
      * The <code>if</code> statement is an example of selection.
@@ -98,8 +97,7 @@ public final class SelectionTest {
 
     /**
      * Unit Test to show a switch on an string. The <code>if</code> statement is
-     * an
-     * example of selection.
+     * an example of selection.
      */
     @Test
     public void testExampleSwitchString() {

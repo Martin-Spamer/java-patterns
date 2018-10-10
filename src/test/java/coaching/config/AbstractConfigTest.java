@@ -23,19 +23,18 @@ public final class AbstractConfigTest {
     private static final String CONFIG_PROPERTIES = "Configuration.properties";
 
     /** provide logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AbstractConfigTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractConfigTest.class);
 
     /**
-     * Mock a MissingConfiguration.
-     * The configuration file is missing so throws MissingConfigException.
+     * Mock a MissingConfiguration. The configuration file is missing so throws
+     * MissingConfigException.
      */
     public final class MissingConfiguration extends Configuration {
     }
 
     /**
-     * Mock a DefaultConfiguration.
-     * When the configuration file is missing, provide default values.
+     * Mock a DefaultConfiguration. When the configuration file is missing,
+     * provide default values.
      */
     public final class InvalidConfig extends Configuration {
     }

@@ -19,8 +19,7 @@ public class Taxi extends Car {
     /**
      * Instantiates a new taxi with engine.
      *
-     * @param engine
-     *            the engine
+     * @param engine the engine
      */
     public Taxi(final DieselEngine engine) {
         super(engine);
@@ -29,8 +28,7 @@ public class Taxi extends Car {
     /**
      * new passenger.
      *
-     * @param passenger
-     *            the new passenger
+     * @param passenger the new passenger
      */
     public void setPassenger(final Passenger passenger) {
         this.passenger = passenger;
@@ -58,10 +56,6 @@ public class Taxi extends Car {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [%s[passenger=%s]]",
-                    this.getClass().getSimpleName(),
-                    super.toString(),
-                    passenger);
+        return String.format("%s [%s[passenger=%s]]", this.getClass().getSimpleName(), super.toString(), passenger);
     }
 }

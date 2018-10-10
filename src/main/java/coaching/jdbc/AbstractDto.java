@@ -15,11 +15,10 @@ import static org.junit.Assert.assertEquals;
 public abstract class AbstractDto {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The fields. */
-    protected Map<String, String> fields = new HashMap<String, String>();
+    protected Map<String, String> fields = new HashMap<>();
 
     /**
      * Adds the field.
@@ -50,7 +49,7 @@ public abstract class AbstractDto {
      * @param key the key
      * @return the string
      */
-    public String get(final String key) {
+    public String getField(final String key) {
         return this.fields.get(key);
     }
 
@@ -70,10 +69,7 @@ public abstract class AbstractDto {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [fields=%s]",
-                    this.getClass().getSimpleName(),
-                    this.fields);
+        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), this.fields);
     }
 
 }

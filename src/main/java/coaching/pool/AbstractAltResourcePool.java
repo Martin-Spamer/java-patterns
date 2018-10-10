@@ -12,14 +12,12 @@ import org.slf4j.LoggerFactory;
 /**
  * AbstractResourcePool Class.
  *
- * @param <T>
- *            the generic type T
+ * @param <T> the generic type T
  */
 public abstract class AbstractAltResourcePool<T> {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The max pool size. */
     protected int maxPoolSize = Integer.MAX_VALUE;
@@ -40,8 +38,7 @@ public abstract class AbstractAltResourcePool<T> {
      * Borrow resource from pool.
      *
      * @return the t
-     * @throws ResourceBorrowException
-     *             the resource borrow exception
+     * @throws ResourceBorrowException the resource borrow exception
      */
     public synchronized T borrow() throws ResourceBorrowException {
         T resource = null;
@@ -58,10 +55,7 @@ public abstract class AbstractAltResourcePool<T> {
                     throw new ResourceBorrowException(e);
                 }
             } else {
-                log
-                    .info("Used({}) < maxPoolSize({})",
-                            this.usedPool.size(),
-                            this.maxPoolSize);
+                log.info("Used({}) < maxPoolSize({})", this.usedPool.size(), this.maxPoolSize);
             }
         } else {
             // first valid resource
@@ -77,16 +71,14 @@ public abstract class AbstractAltResourcePool<T> {
      * Allows pool to create resources to re-populate the pool.
      *
      * @return the t
-     * @throws ResourceCreationException
-     *             the resource creation exception
+     * @throws ResourceCreationException the resource creation exception
      */
     public abstract T create() throws ResourceCreationException;
 
     /**
      * Discard a resource to the pool.
      *
-     * @param resource
-     *            the resource
+     * @param resource the resource
      */
     public synchronized void discard(final T resource) {
         // in use pool.
@@ -96,8 +88,7 @@ public abstract class AbstractAltResourcePool<T> {
     /**
      * Grow the pool.
      *
-     * @param growthRate
-     *            the growth rate
+     * @param growthRate the growth rate
      */
     public synchronized void grow(final int growthRate) {
         this.defaultPoolSize += growthRate;
@@ -106,8 +97,7 @@ public abstract class AbstractAltResourcePool<T> {
     /**
      * Release a resource back to pool.
      *
-     * @param resource
-     *            the resource
+     * @param resource the resource
      */
     public synchronized void release(final T resource) {
         // * in use pool.
@@ -120,8 +110,7 @@ public abstract class AbstractAltResourcePool<T> {
     /**
      * Shrink the pool size.
      *
-     * @param shrinkRate
-     *            the shrink rate
+     * @param shrinkRate the shrink rate
      */
     public synchronized void shrink(final int shrinkRate) {
         this.defaultPoolSize -= shrinkRate;

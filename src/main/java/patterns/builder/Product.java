@@ -15,10 +15,8 @@ public class Product {
     /**
      * Instantiates a new product.
      *
-     * @param partOne
-     *            the part one
-     * @param partTwo
-     *            the part two
+     * @param partOne the part one
+     * @param partTwo the part two
      */
     public Product(final AbstractPart partOne, final AbstractPart partTwo) {
         super();
@@ -32,11 +30,7 @@ public class Product {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [partOne=%s, partTwo=%s]",
-                    this.getClass().getSimpleName(),
-                    partOne,
-                    partTwo);
+        return String.format("%s [partOne=%s, partTwo=%s]", this.getClass().getSimpleName(), partOne, partTwo);
     }
 
 }

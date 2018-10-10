@@ -31,8 +31,7 @@ public final class Constants {
      * Prevent wild instantiation.
      */
     private Constants() {
-        throw new UnsupportedOperationException(
-                "Do not instantiate this class, use statically.");
+        throw new UnsupportedOperationException("Do not instantiate this class, use statically.");
     }
 
 }

@@ -15,13 +15,10 @@ public class Conjunction extends NonTerminalExpression {
     /**
      * Instantiates a new and expression.
      *
-     * @param lhs
-     *            sub-expression on left hand side.
-     * @param rhs
-     *            sub-expression on right hand side.
+     * @param lhs sub-expression on left hand side.
+     * @param rhs sub-expression on right hand side.
      */
-    public Conjunction(final AbstractExpression lhs,
-            final AbstractExpression rhs) {
+    public Conjunction(final AbstractExpression lhs, final AbstractExpression rhs) {
         super();
         this.lhs = lhs;
         this.rhs = rhs;

@@ -14,8 +14,7 @@ import static org.junit.Assert.assertNotNull;
 public final class EnumExampleTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(EnumExampleTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EnumExampleTest.class);
 
     /**
      * Unit Test to enum example.

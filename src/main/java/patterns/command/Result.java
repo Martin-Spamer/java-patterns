@@ -27,8 +27,7 @@ public final class Result implements ResultInterface {
      *
      * result
      *
-     * @param result
-     *            the result
+     * @param result the result
      */
     public Result(final Boolean result) {
         value = result;
@@ -61,8 +60,7 @@ public final class Result implements ResultInterface {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [result=%s]", this.getClass().getSimpleName(), value);
+        return String.format("%s [result=%s]", this.getClass().getSimpleName(), value);
     }
 
 }

@@ -9,15 +9,14 @@ import org.slf4j.LoggerFactory;
 /**
  * Using a basic Java array to implement an example UML Aggregation.
  *
- * Objects can be added or removed from an aggregation at runtime.
- * The lifetime of the parts is disconnected from the lifetime of the whole.
- * We can describe this as having no life-time constraint.
+ * Objects can be added or removed from an aggregation at runtime. The lifetime
+ * of the parts is disconnected from the lifetime of the whole. We can describe
+ * this as having no life-time constraint.
  **/
 public final class AggregateClassArray {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AggregateClassArray.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArray.class);
 
     /** The SIZE of the Aggregation. */
     private static final int SIZE = 4;
@@ -32,8 +31,7 @@ public final class AggregateClassArray {
      * @param element the element
      * @return the aggregate class array
      */
-    public AggregateClassArray setAggregate(final int index,
-            final AbstractPerson element) {
+    public AggregateClassArray setAggregate(final int index, final AbstractPerson element) {
         LOG.info("setAggregate({},{}) = {}", index, element, this);
         aggregate[index] = element;
         return this;
@@ -54,8 +52,7 @@ public final class AggregateClassArray {
     /**
      * Gets the aggregate.
      *
-     * @param index
-     *            the index
+     * @param index the index
      * @return the aggregate
      */
     public AbstractPerson getAggregate(final int index) {
@@ -69,10 +66,7 @@ public final class AggregateClassArray {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [aggregate=%s]",
-                    this.getClass().getSimpleName(),
-                    Arrays.toString(aggregate));
+        return String.format("%s [aggregate=%s]", this.getClass().getSimpleName(), Arrays.toString(aggregate));
     }
 
 }

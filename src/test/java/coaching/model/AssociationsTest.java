@@ -16,8 +16,7 @@ import static org.junit.Assert.assertNotNull;
 public final class AssociationsTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AssociationsTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AssociationsTest.class);
 
     /**
      * Unit Test for Car example.

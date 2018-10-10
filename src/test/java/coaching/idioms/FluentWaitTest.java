@@ -15,8 +15,7 @@ import static org.junit.Assert.assertTrue;
 public final class FluentWaitTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(FluentWaitTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FluentWaitTest.class);
 
     /**
      * class PassCondition.

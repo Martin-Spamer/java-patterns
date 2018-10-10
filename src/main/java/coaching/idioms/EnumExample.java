@@ -19,8 +19,7 @@ public enum EnumExample {
     /**
      * Instantiates a new enum example.
      *
-     * @param textValue
-     *            the text value
+     * @param textValue the text value
      */
     EnumExample(final String textValue) {
         this.textValue = textValue;
@@ -38,8 +37,7 @@ public enum EnumExample {
     /**
      * Factory method Enum value from string.
      *
-     * @param textValue
-     *            the text value
+     * @param textValue the text value
      * @return the enum example
      */
     public static EnumExample fromString(final String textValue) {

@@ -12,13 +12,22 @@ import static org.junit.Assert.assertNull;
 /**
  * Unit tests for ExpectedData class.
  */
-@Ignore("Work-in-Progress")
 public final class ExpectedDataTest {
 
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-            .getLogger(ExpectedDataTest.class);
+    /** PLATFORM 			constant. */
+    private static final String PLATFORM = "dev";
+    
+    /** TAG 			constant. */
+    private static final String TAG = "@AUTHORISED";
 
+    /** Provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(ExpectedDataTest.class);
+
+    /**
+     * Unit test to expected data from csv.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testExpectedDataFromCsv() throws Exception {
         ExpectedData fromCsv = ExpectedData.fromCsv();
@@ -26,6 +35,23 @@ public final class ExpectedDataTest {
         LOG.info("{}", fromCsv);
     }
 
+    /**
+     * Unit test to expected data from named csv.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void testExpectedDataFromNamedCsv() throws Exception {
+        ExpectedData fromCsv = ExpectedData.fromCsv("data.csv");
+        assertNotNull(fromCsv);
+        LOG.info("{}", fromCsv);
+    }
+
+    /**
+     * Unit test to expected data from xml.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testExpectedDataFromXml() throws Exception {
         ExpectedData fromXml = ExpectedData.fromXml();
@@ -33,6 +59,23 @@ public final class ExpectedDataTest {
         LOG.info("{}", fromXml);
     }
 
+    /**
+     * Unit test to expected data from named xml.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void testExpectedDataFromNamedXml() throws Exception {
+        ExpectedData fromXml = ExpectedData.fromXml("data.xml");
+        assertNotNull(fromXml);
+        LOG.info("{}", fromXml);
+    }
+
+    /**
+     * Unit test to expected data from json.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testExpectedDataFromJson() throws Exception {
         ExpectedData fromJson = ExpectedData.fromJson();
@@ -40,24 +83,37 @@ public final class ExpectedDataTest {
         LOG.info("{}", fromJson);
     }
 
+    /**
+     * Unit test to expected data from named json.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void testExpectedDataFromNamedJson() throws Exception {
+        ExpectedData fromJson = ExpectedData.fromJson("data.json");
+        assertNotNull(fromJson);
+        LOG.info("{}", fromJson);
+    }
 
     /**
      * Unit test to default platform domain language.
      *
      * @throws Exception the exception
      */
+    @Ignore
     @Test
     public void testDefaultPlatformDomainLanguage() throws Exception {
-        assertNotNull(ExpectedData.debugString(),
-                ExpectedData.withTag("@AUTHORISED"));
+        assertNotNull(ExpectedData.withTag("@AUTHORISED"));
         assertNotNull(ExpectedData.withTag("@UNAUTHORISED"));
+        assertNull(ExpectedData.withTag("@missing"));
+
         assertNotNull(ExpectedData.withCharacteristic("@AUTHORISED"));
         assertNotNull(ExpectedData.withCharacteristic("@UNAUTHORISED"));
-        assertNull(ExpectedData.withTag("@tag"));
+        assertNull(ExpectedData.withCharacteristic("@missing"));
 
         assertNotNull(ExpectedData.allWithTag("@AUTHORISED"));
         assertNotNull(ExpectedData.allWithTag("@UNAUTHORISED"));
-        assertNull(ExpectedData.allWithTag("@tag"));
+        assertNull(ExpectedData.allWithTag("@missing"));
     }
 
 }

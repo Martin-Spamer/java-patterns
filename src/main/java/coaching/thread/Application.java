@@ -23,16 +23,14 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * a test harness for Java modules.
- * Application.java
+ * a test harness for Java modules. Application.java
  *
  * Created on 30 June 2004 - 13:07
  **/
 public class Application {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(Application.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 
     /** The thread map. */
     private final Map<String, AbstractProcess> threadMap = new ConcurrentHashMap<>();
@@ -55,11 +53,9 @@ public class Application {
             final String configFilename = configFilename();
 
             // * XML file into a DOM
-            final DocumentBuilderFactory builderFactory = DocumentBuilderFactory
-                .newInstance();
+            final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
             final DocumentBuilder builder = builderFactory.newDocumentBuilder();
-            final Document document = builder
-                .parse(inputStream(configFilename));
+            final Document document = builder.parse(inputStream(configFilename));
 
             createThreads(document);
 
@@ -79,24 +75,21 @@ public class Application {
     protected InputStream inputStream(final String resourceName) {
         final Thread currentThread = Thread.currentThread();
         final ClassLoader classloader = currentThread.getContextClassLoader();
-        final InputStream resourceAsStream = classloader
-            .getResourceAsStream(resourceName);
+        final InputStream resourceAsStream = classloader.getResourceAsStream(resourceName);
         return resourceAsStream;
     }
 
     /**
      * Creates the threads.
      *
-     * @param document
-     *            the document
+     * @param document the document
      */
     protected void createThreads(final Document document) {
         final Element documentElement = document.getDocumentElement();
 
         if (documentElement != null) {
             // * threads we must start.
-            final NodeList threadListConfig = document
-                .getElementsByTagName("thread");
+            final NodeList threadListConfig = document.getElementsByTagName("thread");
             createThreads(threadListConfig);
         }
     }
@@ -127,8 +120,7 @@ public class Application {
         final String className = element.getAttribute("class");
         LOG.info("className = {}", className);
 
-        final AbstractProcess abstractApplicationProcess = createProcess(
-                className);
+        final AbstractProcess abstractApplicationProcess = createProcess(className);
         if (abstractApplicationProcess != null) {
             abstractApplicationProcess.start();
         }
@@ -139,17 +131,13 @@ public class Application {
     /**
      * Creates the process.
      *
-     * @param className
-     *            the class name
+     * @param className the class name
      * @return the abstract process
      */
     protected AbstractProcess createProcess(final String className) {
         try {
             return (AbstractProcess) Class.forName(className).newInstance();
-        } catch (
-                InstantiationException |
-                    IllegalAccessException |
-                    ClassNotFoundException e) {
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return null;
@@ -168,35 +156,30 @@ public class Application {
     /**
      * Foo.
      *
-     * @param document
-     *            the doc
+     * @param document the doc
      * @return the string
      */
     protected String transform(final Document document) {
         try {
-            final TransformerFactory transformerFactory = TransformerFactory
-                .newInstance();
+            final TransformerFactory transformerFactory = TransformerFactory.newInstance();
             final Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             final StreamResult result = new StreamResult(new StringWriter());
             final DOMSource source = new DOMSource(document);
             transformer.transform(source, result);
             return result.getWriter().toString();
-        } catch (
-                IllegalArgumentException |
-                    TransformerFactoryConfigurationError |
-                    TransformerException e) {
+        } catch (IllegalArgumentException | TransformerFactoryConfigurationError | TransformerException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
 
+    /* (non-Javadoc)
+    * @see java.lang.Object#toString()
+    */
     @Override
     public String toString() {
-        return String
-            .format("%s [threadMap=%s]",
-                    this.getClass().getSimpleName(),
-                    this.threadMap);
+        return String.format("%s [threadMap=%s]", this.getClass().getSimpleName(), this.threadMap);
     }
 
 }

@@ -21,6 +21,7 @@ import coaching.resources.PropertiesLoader;
  */
 public class PortScan extends Thread {
 
+    /** LOCALHOST 			constant. */
     private static final String LOCALHOST = "127.0.0.1";
 
     /** Provides logging. */
@@ -107,8 +108,7 @@ public class PortScan extends Thread {
      * @return the string
      */
     public String lookUpPort(final int port) {
-        return PortScan.properties
-            .getProperty(Integer.toString(port), "unknown");
+        return PortScan.properties.getProperty(Integer.toString(port), "unknown");
     }
 
     /*
@@ -120,8 +120,7 @@ public class PortScan extends Thread {
         LOG.info("run");
         try {
             LOG.info("portscan = {} : {} ", ip, portNo);
-            final java.net.Socket socket = new java.net.Socket(ip,
-                    portNo);
+            final java.net.Socket socket = new java.net.Socket(ip, portNo);
 
             // report open port & try looking it up
             final String lookUpPort = lookUpPort(portNo);
@@ -140,11 +139,7 @@ public class PortScan extends Thread {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [ip=%s, port=%s]",
-                    this.getClass().getSimpleName(),
-                    ip,
-                    portNo);
+        return String.format("%s [ip=%s, port=%s]", this.getClass().getSimpleName(), ip, portNo);
     }
 
 }

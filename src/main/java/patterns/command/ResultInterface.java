@@ -16,8 +16,7 @@ public interface ResultInterface {
     /**
      * And.
      *
-     * @param execute
-     *            the execute
+     * @param execute the execute
      * @return true, if successful, otherwise false.
      */
     boolean and(final ResultInterface execute);

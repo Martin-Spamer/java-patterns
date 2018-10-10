@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  */
 public class VerifyTest {
 
-    /** provides logging */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(VerifyTest.class);
 
     /**
@@ -57,6 +57,9 @@ public class VerifyTest {
         Verify.that(1L).equalTo(0);
     }
 
+    /**
+     * Unit test to verify that byte.
+     */
     @Test
     public void testVerifyThatByte() {
         final byte zero = 0x0;
@@ -72,14 +75,17 @@ public class VerifyTest {
     // Verify.that(new Money()).equalTo(new Money());
     // Verify.that(new Money()).equalTo(new Money());
     // }
+
     // @Test
     // public void testVerifyThatPounds() {
     // Verify.that(new Pounds()).equalTo(new Pounds());
     // Verify.that(new Pounds()).equalTo(new Pounds());
     // }
+
     // @Test
     // public void testVerifyThatB() {
     // Verify.that(new BigDecimalMoney()).equalTo(new BigDecimalMoney());
     // Verify.that(new BigDecimalMoney()).equalTo(new BigDecimalMoney());
     // }
+
 }

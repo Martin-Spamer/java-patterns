@@ -7,12 +7,17 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * Unit test class for DaemonThread.
+ */
 public class DaemonThreadTest {
 
-    /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(DaemonThreadTest.class);
+    /**  provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(DaemonThreadTest.class);
 
+    /**
+     * Unit test to run daemon thread.
+     */
     @Test
     public void testRunDaemonThread() {
         DaemonThread daemon = DaemonThread.getSingleton();

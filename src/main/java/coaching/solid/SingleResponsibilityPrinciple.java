@@ -15,8 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public class SingleResponsibilityPrinciple {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(SingleResponsibilityPrinciple.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
     /**
      * An example of a class with Multiple Responsibilities.
@@ -47,11 +46,7 @@ public class SingleResponsibilityPrinciple {
          */
         @Override
         public String toString() {
-            return String
-                .format("%s [foo=%s, bar=%s]",
-                        this.getClass().getSimpleName(),
-                        foo,
-                        bar);
+            return String.format("%s [foo=%s, bar=%s]", this.getClass().getSimpleName(), foo, bar);
         }
     }
 

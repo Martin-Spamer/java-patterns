@@ -26,12 +26,10 @@ import org.w3c.dom.Node;
 public class XmlTransformer {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(XmlTransformer.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XmlTransformer.class);
 
     /** A Document Builder Factory. */
-    private final DocumentBuilderFactory dbf = DocumentBuilderFactory
-        .newInstance();
+    private final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
     /**
      * Instantiates a new xml transformer.
@@ -41,14 +39,8 @@ public class XmlTransformer {
     public XmlTransformer() throws Exception {
         super();
         final DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
-        final StringBuilder stringBuilder = new StringBuilder()
-            .append("<row>")
-            .append(" <name>Alice</name>")
-            .append(" <id>1</id>")
-            .append(" <data>sender</data>")
-            .append("</row>");
-        final InputStream inputStream = new ByteArrayInputStream(
-                stringBuilder.toString().getBytes());
+        final StringBuilder stringBuilder = new StringBuilder().append("<row>").append(" <name>Alice</name>").append(" <id>1</id>").append(" <data>sender</data>").append("</row>");
+        final InputStream inputStream = new ByteArrayInputStream(stringBuilder.toString().getBytes());
         final Document document = documentBuilder.parse(inputStream);
         final Node rootElement = document.getDocumentElement();
         final String nodeAsString = XmlTransformer.nodeToString(rootElement);
@@ -60,21 +52,17 @@ public class XmlTransformer {
      *
      * @param node the node
      * @return the string
-     * @throws TransformerException
+     * @throws TransformerException the transformer exception
      */
-    private static String nodeToString(final Node node)
-            throws TransformerException {
+    private static String nodeToString(final Node node) throws TransformerException {
         final StringWriter stringWriter = new StringWriter();
-        final TransformerFactory transformerFactory = TransformerFactory
-            .newInstance();
-        transformerFactory
-            .setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+        final TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        transformerFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 
         final Transformer transformer = transformerFactory.newTransformer();
         transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer
-            .transform(new DOMSource(node), new StreamResult(stringWriter));
+        transformer.transform(new DOMSource(node), new StreamResult(stringWriter));
         return stringWriter.toString();
     }
 }

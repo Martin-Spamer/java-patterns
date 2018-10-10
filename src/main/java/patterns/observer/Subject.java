@@ -21,8 +21,7 @@ public final class Subject extends AbstractSubject {
     /**
      * status.
      *
-     * @param status
-     *            the new status
+     * @param status the new status
      */
     public void setStatus(final Boolean status) {
         this.status = status;
@@ -35,8 +34,7 @@ public final class Subject extends AbstractSubject {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [status=%s]", this.getClass().getSimpleName(), status);
+        return String.format("%s [status=%s]", this.getClass().getSimpleName(), status);
     }
 
 }

@@ -22,10 +22,8 @@ public final class PojoExample implements Cloneable {
     /**
      * Instantiates a new pojo example.
      *
-     * @param stringValue
-     *            the string value
-     * @param longValue
-     *            the long value
+     * @param stringValue the string value
+     * @param longValue the long value
      */
     public PojoExample(final String stringValue, final long longValue) {
         super();
@@ -36,8 +34,7 @@ public final class PojoExample implements Cloneable {
     /**
      * Sets the string value.
      *
-     * @param stringValue
-     *            the string value
+     * @param stringValue the string value
      * @return this instance for a fluent interface.
      */
     public PojoExample setStringValue(final String stringValue) {
@@ -48,8 +45,7 @@ public final class PojoExample implements Cloneable {
     /**
      * Sets the long value.
      *
-     * @param longValue
-     *            the long value
+     * @param longValue the long value
      * @return this instance for a fluent interface.
      */
     public PojoExample setLongValue(final long longValue) {
@@ -81,11 +77,7 @@ public final class PojoExample implements Cloneable {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [stringValue=%s, longValue=%s]",
-                    this.getClass().getSimpleName(),
-                    stringValue,
-                    longValue);
+        return String.format("%s [stringValue=%s, longValue=%s]", this.getClass().getSimpleName(), stringValue, longValue);
     }
 
 }

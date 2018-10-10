@@ -22,7 +22,7 @@ public class DedupeTest {
      * Unit test to.
      */
     @Test
-    public void test() {
+    public void testDeDuplicating() {
         final Integer[] withDups = { 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 0, 0 };
         final List<Integer> asList = Arrays.asList(withDups);
         final Set<Integer> withoutDups = new HashSet<Integer>(asList);

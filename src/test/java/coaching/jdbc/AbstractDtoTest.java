@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -13,11 +14,10 @@ import static org.junit.Assert.assertNotNull;
 public final class AbstractDtoTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(AbstractDtoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AbstractDtoTest.class);
 
     /**
-     * The Class MockDto.
+     * The Mock data transfer objects.
      */
     public final class MockDto extends AbstractDto {
     }
@@ -33,6 +33,9 @@ public final class AbstractDtoTest {
         dto.addField("name=martin");
         dto.addField("data=foobar");
         LOG.info("{}", dto);
+        assertEquals("1", dto.getField("id"));
+        assertEquals("martin", dto.getField("name"));
+        assertEquals("foobar", dto.getField("data"));
     }
 
 }

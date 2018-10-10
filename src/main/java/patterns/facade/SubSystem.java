@@ -10,8 +10,7 @@ import org.slf4j.LoggerFactory;
 public class SubSystem {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * Operation.

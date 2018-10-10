@@ -9,8 +9,7 @@ public interface CommandInterface {
     /**
      * Execute.
      *
-     * @param parameters
-     *            the parameters
+     * @param parameters the parameters
      */
     void execute(final AbstractParameters parameters);
 

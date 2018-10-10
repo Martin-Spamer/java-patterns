@@ -15,8 +15,7 @@ import org.slf4j.LoggerFactory;
 public class SimpleBag extends ArrayList<String> implements BagInterface {
 
     /** Provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The random. */
     private final Random random = new Random();
@@ -38,8 +37,7 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      *
      * values varargs
      *
-     * @param values
-     *            the values
+     * @param values the values
      */
     public SimpleBag(final String... values) {
         super();

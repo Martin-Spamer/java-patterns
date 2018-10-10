@@ -16,8 +16,7 @@ public class HandlerOne extends AbstractHandler {
     /**
      * Instantiates a new handler one.
      *
-     * @param next
-     *            the next
+     * @param next the next
      */
     public HandlerOne(final HandlerInterface next) {
         super(next);
@@ -36,8 +35,7 @@ public class HandlerOne extends AbstractHandler {
     /**
      * Do something.
      *
-     * @param request
-     *            the request
+     * @param request the request
      */
     private void doSomething(final RequestInterface request) {
         log.info("doSomething {}", this);

@@ -10,8 +10,7 @@ import org.slf4j.LoggerFactory;
 public class WorkerThread implements Runnable {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(WorkerThread.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WorkerThread.class);
 
     /** The Constant INTERVAL. */
     private static final int INTERVAL = 5000;
@@ -22,8 +21,7 @@ public class WorkerThread implements Runnable {
     /**
      * Instantiates a new worker thread.
      *
-     * @param commandName
-     *            the command name as String object.
+     * @param commandName the command name as String object.
      */
     public WorkerThread(final String commandName) {
         command = commandName;

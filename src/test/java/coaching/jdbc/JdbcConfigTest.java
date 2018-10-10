@@ -13,9 +13,11 @@ import static org.junit.Assert.assertNotNull;
 public class JdbcConfigTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(JdbcConfigTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(JdbcConfigTest.class);
 
+    /**
+     * Unit test to get instance.
+     */
     @Test
     public void testGetInstance() {
         final JdbcConfig instance = JdbcConfig.getInstance();
@@ -23,6 +25,9 @@ public class JdbcConfigTest {
         LOG.info("{}", instance.toString());
     }
 
+    /**
+     * Unit test to values.
+     */
     @Test
     public void testValues() {
         final JdbcConfig instance = JdbcConfig.getInstance();

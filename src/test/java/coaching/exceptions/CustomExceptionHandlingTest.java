@@ -17,14 +17,12 @@ import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
 public final class CustomExceptionHandlingTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CustomExceptionHandlingTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandlingTest.class);
 
     /**
      * Unit Test to sub process A.
      *
-     * @throws CustomCreationException
-     *             the custom creation exception
+     * @throws CustomCreationException the custom creation exception
      */
     @Test(expected = CustomCreationException.class)
     public void testSubProcessA() throws CustomCreationException {
@@ -36,8 +34,7 @@ public final class CustomExceptionHandlingTest {
     /**
      * Unit Test to sub process B.
      *
-     * @throws CustomReadException
-     *             the custom read exception
+     * @throws CustomReadException the custom read exception
      */
     @Test(expected = CustomReadException.class)
     public void testSubProcessB() throws CustomReadException {
@@ -49,8 +46,7 @@ public final class CustomExceptionHandlingTest {
     /**
      * Unit Test to sub process C.
      *
-     * @throws CustomUpdateException
-     *             the custom update exception
+     * @throws CustomUpdateException the custom update exception
      */
     @Test(expected = CustomUpdateException.class)
     public void testSubProcessC() throws CustomUpdateException {
@@ -62,8 +58,7 @@ public final class CustomExceptionHandlingTest {
     /**
      * Unit Test to process.
      *
-     * @throws Exception
-     *             the exception
+     * @throws Exception the exception
      */
     @Test(expected = CustomCreationException.class)
     public void propagateException() throws Exception {

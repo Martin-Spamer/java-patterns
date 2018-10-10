@@ -11,14 +11,12 @@ import org.slf4j.LoggerFactory;
  *
  * generic type
  *
- * @param <E>
- *            the element type
+ * @param <E> the element type
  */
 public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The free pool. */
     protected LinkedBlockingDeque<E> freePool;

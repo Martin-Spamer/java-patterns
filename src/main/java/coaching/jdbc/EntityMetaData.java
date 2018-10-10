@@ -106,8 +106,7 @@ public class EntityMetaData extends JdbcBase {
      * @return the string
      * @throws SQLException the SQL exception
      */
-    private String toCsvFile(final ResultSetMetaData resultSetMetaData)
-            throws SQLException {
+    private String toCsvFile(final ResultSetMetaData resultSetMetaData) throws SQLException {
         final StringBuilder sb = new StringBuilder();
 
         final String columnLabelLine = headerLine(resultSetMetaData);
@@ -128,16 +127,12 @@ public class EntityMetaData extends JdbcBase {
      * @return the string
      * @throws SQLException the SQL exception
      */
-    private String headerLine(final ResultSetMetaData resultSetMetaData)
-            throws SQLException {
+    private String headerLine(final ResultSetMetaData resultSetMetaData) throws SQLException {
         final StringBuilder columnLabelLine = new StringBuilder("#");
 
         final int colCount = resultSetMetaData.getColumnCount();
         for (int column = 1; column < colCount; column++) {
-            final String str = String
-                .format("%s%s",
-                        resultSetMetaData.getColumnLabel(column),
-                        separator);
+            final String str = String.format("%s%s", resultSetMetaData.getColumnLabel(column), separator);
             columnLabelLine.append(str);
         }
         return columnLabelLine.toString();
@@ -150,16 +145,12 @@ public class EntityMetaData extends JdbcBase {
      * @return the string
      * @throws SQLException the SQL exception
      */
-    private String typeLine(final ResultSetMetaData resultSetMetaData)
-            throws SQLException {
+    private String typeLine(final ResultSetMetaData resultSetMetaData) throws SQLException {
         final StringBuilder columnTypeLine = new StringBuilder();
 
         final int colCount = resultSetMetaData.getColumnCount();
         for (int column = 1; column < colCount; column++) {
-            final String str = String
-                .format("%s%s",
-                        resultSetMetaData.getColumnTypeName(column),
-                        separator);
+            final String str = String.format("%s%s", resultSetMetaData.getColumnTypeName(column), separator);
             columnTypeLine.append(str);
         }
         return columnTypeLine.toString();

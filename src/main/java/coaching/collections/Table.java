@@ -15,8 +15,7 @@ import org.slf4j.LoggerFactory;
 public class Table {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The table name. */
     private String tableName;
@@ -37,8 +36,7 @@ public class Table {
     /**
      * Instantiates a new table.
      *
-     * @param tableName
-     *            the table name
+     * @param tableName the table name
      */
     public Table(final String tableName) {
         super();
@@ -48,8 +46,7 @@ public class Table {
     /**
      * Sets the table name.
      *
-     * @param tableName
-     *            the tableName to set
+     * @param tableName the tableName to set
      * @return the table
      */
     public Table setTableName(final String tableName) {
@@ -69,8 +66,7 @@ public class Table {
     /**
      * Adds an cols.
      *
-     * @param colNames
-     *            the col names
+     * @param colNames the col names
      */
     public void addColNames(final String... colNames) {
         this.colNames.addAll(Arrays.asList(colNames));
@@ -79,8 +75,7 @@ public class Table {
     /**
      * Adds an row.
      *
-     * @param values
-     *            the values
+     * @param values the values
      */
     public void addRow(final String... values) {
         add(new TableRow(values));
@@ -89,8 +84,7 @@ public class Table {
     /**
      * Adds a table row.
      *
-     * @param e
-     *            the e
+     * @param e the e
      * @return the boolean
      * @see java.util.List#add(java.lang.Object)
      */
@@ -101,8 +95,7 @@ public class Table {
     /**
      * Gets the row at index.
      *
-     * @param index
-     *            the index
+     * @param index the index
      * @return the table row
      * @see java.util.List#get(int)
      */
@@ -167,12 +160,7 @@ public class Table {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [tableName=%s, colNames=%s, rows=%s]",
-                    this.getClass().getSimpleName(),
-                    tableName,
-                    colNames,
-                    rows);
+        return String.format("%s [tableName=%s, colNames=%s, rows=%s]", this.getClass().getSimpleName(), tableName, colNames, rows);
     }
 
 }

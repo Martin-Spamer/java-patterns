@@ -15,8 +15,7 @@ import static org.junit.Assert.assertNotNull;
 public final class PointbaseDaoTest {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(PointbaseDaoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PointbaseDaoTest.class);
 
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";
@@ -68,8 +67,7 @@ public final class PointbaseDaoTest {
      * @throws ClassNotFoundException the class not found exception
      */
     @Test
-    public void testPointBaseCustomerDaoTypical()
-            throws ClassNotFoundException {
+    public void testPointBaseCustomerDaoTypical() throws ClassNotFoundException {
         final PointbaseDao dao = new PointbaseDao();
         assertNotNull(dao);
         dao.createRow(INSERT_SQL);

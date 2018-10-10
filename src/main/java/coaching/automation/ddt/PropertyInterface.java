@@ -73,7 +73,6 @@ public interface PropertyInterface {
      * @param comment the comment
      * @return the property interface
      */
-    PropertyInterface store(final OutputStream outputStream,
-            final String comment);
+    PropertyInterface store(final OutputStream outputStream, final String comment);
 
 }

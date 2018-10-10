@@ -12,8 +12,7 @@ import org.slf4j.LoggerFactory;
 public final class CustomExceptionHandling {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CustomExceptionHandling.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandling.class);
 
     /**
      * a Custom Exception. In most cases this all that is needed to implement a
@@ -97,11 +96,7 @@ public final class CustomExceptionHandling {
             readProcess();
             updateProcess();
             deleteProcess();
-        } catch (
-                CustomCreationException |
-                    CustomReadException |
-                    CustomUpdateException |
-                    CustomDeleteException e) {
+        } catch (CustomCreationException | CustomReadException | CustomUpdateException | CustomDeleteException e) {
             LOG.error(e.getLocalizedMessage(), e);
         }
     }
@@ -185,8 +180,7 @@ public final class CustomExceptionHandling {
     /**
      * A process that throws and propagates a specialist exception.
      *
-     * @throws CustomCreationException
-     *             the custom creation exception
+     * @throws CustomCreationException the custom creation exception
      */
     public void creationProcess() throws CustomCreationException {
         throw new CustomCreationException();
@@ -195,8 +189,7 @@ public final class CustomExceptionHandling {
     /**
      * A process that throws and propagates a specialist exception.
      *
-     * @throws CustomReadException
-     *             the custom read exception
+     * @throws CustomReadException the custom read exception
      */
     public void readProcess() throws CustomReadException {
         throw new CustomReadException();
@@ -205,8 +198,7 @@ public final class CustomExceptionHandling {
     /**
      * A process that throws and propagates a specialist exception.
      *
-     * @throws CustomUpdateException
-     *             the custom update exception
+     * @throws CustomUpdateException the custom update exception
      */
     public void updateProcess() throws CustomUpdateException {
         throw new CustomUpdateException();

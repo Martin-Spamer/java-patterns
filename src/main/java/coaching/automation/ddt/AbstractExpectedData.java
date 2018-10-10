@@ -19,8 +19,7 @@ import coaching.csv.CsvRecord;
 public abstract class AbstractExpectedData implements ExpectedDataInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-            .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** CSV file containing the expected data. */
     protected CsvFile csvFile;
@@ -41,7 +40,7 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      * @param filename the filename
      */
     protected void initialise(final String filename) {
-        csvFile = new CsvFile(filename);
+        this.csvFile = new CsvFile(filename);
     }
 
     /**
@@ -51,10 +50,10 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      * @return the tagged
      */
     protected String getTagged(final String tag) {
-        assumeTrue(csvFile.isLoaded());
-        final int rowCount = csvFile.rowCount();
+        assumeTrue(this.csvFile.isLoaded());
+        final int rowCount = this.csvFile.rowCount();
         for (int index = 0; index < rowCount; index++) {
-            final CsvRecord record = csvFile.getRecord(index);
+            final CsvRecord record = this.csvFile.getRecord(index);
             assertNotNull(record);
             if (record.getColumn(0).toUpperCase().contains(tag.toUpperCase())) {
                 return record.toString();
@@ -70,12 +69,12 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
      * @return the all tagged
      */
     protected String[] getAllTagged(final String tag) {
-        assumeTrue(csvFile.isLoaded());
+        assumeTrue(this.csvFile.isLoaded());
         final ArrayList<String> all = new ArrayList<>();
-        assumeTrue(csvFile.isLoaded());
-        final int rowCount = csvFile.rowCount();
+        assumeTrue(this.csvFile.isLoaded());
+        final int rowCount = this.csvFile.rowCount();
         for (int index = 0; index < rowCount; index++) {
-            final CsvRecord record = csvFile.getRecord(index);
+            final CsvRecord record = this.csvFile.getRecord(index);
             assertNotNull(record);
             if (record.getColumn(0).toUpperCase().contains(tag.toUpperCase())) {
                 all.add(record.toString());
@@ -84,13 +83,13 @@ public abstract class AbstractExpectedData implements ExpectedDataInterface {
         return all.toArray(new String[all.size()]);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
-        return String
-                .format("%s [path=%s, csvFile=%s]",
-                        this.getClass().getSimpleName(),
-                        path,
-                        csvFile);
+        return String.format("%s [path=%s, csvFile=%s]", this.getClass().getSimpleName(), this.path, this.csvFile);
     }
 
 }

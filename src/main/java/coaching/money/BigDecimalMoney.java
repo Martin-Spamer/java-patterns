@@ -32,8 +32,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Instantiates a new money instance.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      */
     public BigDecimalMoney(final long amount) {
         this(new BigDecimal(amount));
@@ -42,8 +41,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Instantiates a new money instance.
      *
-     * @param bigDecimal
-     *            the big decimal
+     * @param bigDecimal the big decimal
      */
     public BigDecimalMoney(final BigDecimal bigDecimal) {
         this(bigDecimal, Locale.getDefault());
@@ -52,8 +50,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Instantiates a new money instance.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      */
     public BigDecimalMoney(final String amount) {
         setCurrency(Currency.getInstance(Locale.getDefault()));
@@ -63,10 +60,8 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Instantiates a new money instance.
      *
-     * @param amount
-     *            the amount
-     * @param locale
-     *            the locale
+     * @param amount the amount
+     * @param locale the locale
      */
     public BigDecimalMoney(final BigDecimal amount, final Locale locale) {
         this(amount, Currency.getInstance(locale));
@@ -75,10 +70,8 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Instantiates a new money instance.
      *
-     * @param amount
-     *            the amount
-     * @param currency
-     *            the currency
+     * @param amount the amount
+     * @param currency the currency
      */
     public BigDecimalMoney(final BigDecimal amount, final Currency currency) {
         super();
@@ -89,8 +82,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Instantiates a new money instance.
      *
-     * @param currency
-     *            the currency
+     * @param currency the currency
      */
     public BigDecimalMoney(final Currency currency) {
         this(currency, BigDecimal.ZERO);
@@ -99,10 +91,8 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Instantiates a new money instance.
      *
-     * @param currency
-     *            the currency
-     * @param amount
-     *            the amount
+     * @param currency the currency
+     * @param amount the amount
      */
     public BigDecimalMoney(final Currency currency, final BigDecimal amount) {
         super();
@@ -113,8 +103,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * set the currency.
      *
-     * @param currency
-     *            the currency
+     * @param currency the currency
      * @return the big decimal money
      */
     @Override
@@ -126,8 +115,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Sets the amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return the big decimal money
      */
     @Override
@@ -139,8 +127,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Sets the amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return the big decimal money
      */
     @Override
@@ -152,8 +139,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Sets the amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return the big decimal money
      */
     public BigDecimalMoney setAmount(final BigDecimal amount) {
@@ -164,8 +150,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Adds a long value.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return the big decimal money
      */
     @Override
@@ -177,8 +162,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Adds a BigDecimal amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return the big decimal money
      */
     public BigDecimalMoney add(final BigDecimalMoney amount) {
@@ -186,6 +170,9 @@ public final class BigDecimalMoney implements MoneyInterface {
         return this;
     }
 
+    /* (non-Javadoc)
+    * @see coaching.money.MoneyInterface#add(coaching.money.MoneyInterface)
+    */
     @Override
     public BigDecimalMoney add(final MoneyInterface amount) {
         return null;
@@ -194,8 +181,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Subtract.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return the big decimal money
      */
     @Override
@@ -207,8 +193,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Subtract an BigDecimal amount.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return the big decimal money
      */
     public BigDecimalMoney subtract(final BigDecimal amount) {
@@ -219,8 +204,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Subtract.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return the big decimal money
      */
     public BigDecimalMoney subtract(final BigDecimalMoney amount) {
@@ -228,6 +212,9 @@ public final class BigDecimalMoney implements MoneyInterface {
         return this;
     }
 
+    /* (non-Javadoc)
+    * @see coaching.money.MoneyInterface#subtract(coaching.money.MoneyInterface)
+    */
     @Override
     public MoneyInterface subtract(final MoneyInterface amount) {
         return null;
@@ -304,8 +291,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Checks if is more than.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return true, if successful, otherwise false., otherwise false. more than
      */
     @Override
@@ -316,8 +302,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Checks if is equal to.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return true, if successful, otherwise false., otherwise false. equal to
      */
     @Override
@@ -328,8 +313,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     /**
      * Checks if is less than.
      *
-     * @param amount
-     *            the amount
+     * @param amount the amount
      * @return true, if successful, otherwise false., otherwise false. less than
      */
     @Override
@@ -337,16 +321,25 @@ public final class BigDecimalMoney implements MoneyInterface {
         return this.amount.longValue() < amount;
     }
 
+    /* (non-Javadoc)
+    * @see coaching.money.MoneyInterface#isMoreThan(coaching.money.MoneyInterface)
+    */
     @Override
     public boolean isMoreThan(final MoneyInterface money) {
         return false;
     }
 
+    /* (non-Javadoc)
+    * @see coaching.money.MoneyInterface#isEqualTo(coaching.money.MoneyInterface)
+    */
     @Override
     public boolean isEqualTo(final MoneyInterface money) {
         return false;
     }
 
+    /* (non-Javadoc)
+    * @see coaching.money.MoneyInterface#isLessThan(coaching.money.MoneyInterface)
+    */
     @Override
     public boolean isLessThan(final MoneyInterface money) {
         return false;
@@ -370,11 +363,7 @@ public final class BigDecimalMoney implements MoneyInterface {
     public String debugString() {
         final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
         final String currencyString = numberFormat.format(amount);
-        return String
-            .format("%s [currency=%s, currencyString=%s]",
-                    this.getClass().getSimpleName(),
-                    currency,
-                    currencyString);
+        return String.format("%s [currency=%s, currencyString=%s]", this.getClass().getSimpleName(), currency, currencyString);
     }
 
 }

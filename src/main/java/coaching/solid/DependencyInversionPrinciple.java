@@ -14,11 +14,9 @@ import org.slf4j.LoggerFactory;
  * low-level implementation module, the rules of DIP state:
  *
  * Intent: High-level modules should remain independent of the implementation
- * details of low-level module.
- * - High-level modules should not depend on low-level modules, and both should
- * depend on abstractions.
- * - Abstractions should not depend on details, details should depend on
- * abstractions.
+ * details of low-level module. - High-level modules should not depend on
+ * low-level modules, and both should depend on abstractions. - Abstractions
+ * should not depend on details, details should depend on abstractions.
  *
  */
 public class DependencyInversionPrinciple {
@@ -39,8 +37,7 @@ public class DependencyInversionPrinciple {
     public abstract class Module implements ModuleInterface {
 
         /** provides logging. */
-        protected final Logger log = LoggerFactory
-            .getLogger(this.getClass().getSimpleName());
+        protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
     }
 
     /**

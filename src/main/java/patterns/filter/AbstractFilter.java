@@ -19,8 +19,7 @@ public abstract class AbstractFilter implements FilterInterface {
     /**
      * Instantiates a new abstract filter.
      *
-     * @param filter
-     *            the filter
+     * @param filter the filter
      */
     public AbstractFilter(final FilterInterface filter) {
         super();

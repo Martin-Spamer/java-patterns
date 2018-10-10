@@ -15,8 +15,7 @@ public final class FilterManagerTest {
      */
     @Test
     public void testFilter() {
-        final FilterAlice filterChain = new FilterAlice(
-                new FilterBob(new FilterCharlie()));
+        final FilterAlice filterChain = new FilterAlice(new FilterBob(new FilterCharlie()));
         assertNotNull(filterChain);
         filterChain.handleRequest(new Payload());
     }

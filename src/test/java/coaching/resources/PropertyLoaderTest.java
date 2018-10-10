@@ -25,16 +25,14 @@ public final class PropertyLoaderTest {
     private static final String MISSING_PROPERTIES = "Properties.missing";
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(PropertyLoaderTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PropertyLoaderTest.class);
 
     /**
      * Unit test to get properties.
      */
     @Test
     public void testGetProperties() {
-        final Properties properties = PropertiesLoader
-            .getProperties(CONFIGURATION_PROPERTIES);
+        final Properties properties = PropertiesLoader.getProperties(CONFIGURATION_PROPERTIES);
         assertNotNull(properties);
         assertTrue(properties.size() > 0);
         LOG.info(properties.toString());
@@ -45,8 +43,7 @@ public final class PropertyLoaderTest {
      */
     @Test
     public void testGetXmlProperties() {
-        final Properties properties = PropertiesLoader
-            .getXmlProperties(CONFIGURATION_XML);
+        final Properties properties = PropertiesLoader.getXmlProperties(CONFIGURATION_XML);
         assertNotNull(properties);
         assertTrue(properties.size() > 0);
         LOG.info(properties.toString());
@@ -68,6 +65,9 @@ public final class PropertyLoaderTest {
         PropertiesLoader.getXmlProperties(MISSING_PROPERTIES);
     }
 
+    /**
+     * Unit test to null properties.
+     */
     public void testNullProperties() {
         PropertiesLoader.getXmlProperties(null);
     }

@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public class KeyValueTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(KeyValueTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(KeyValueTest.class);
 
     /**
      * Unit test to key value.
@@ -23,8 +22,7 @@ public class KeyValueTest {
     public void testKeyValue() {
         final String key = new String();
         final Boolean value = true;
-        final KeyValue<String, Boolean> keyValue = new KeyValue<String, Boolean>(
-                key, value);
+        final KeyValue<String, Boolean> keyValue = new KeyValue<String, Boolean>(key, value);
         assertNotNull(keyValue);
         LOG.info("{}", keyValue);
     }

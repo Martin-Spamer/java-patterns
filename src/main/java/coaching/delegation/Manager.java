@@ -22,8 +22,7 @@ public class Manager implements ProcessInterface {
      *
      * worker
      *
-     * @param worker
-     *            the worker
+     * @param worker the worker
      */
     public Manager(final Worker worker) {
         super();
@@ -35,8 +34,7 @@ public class Manager implements ProcessInterface {
      *
      * worker manager
      *
-     * @param worker
-     *            the worker
+     * @param worker the worker
      * @return the manager
      */
     public Manager setWorker(final Worker worker) {

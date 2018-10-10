@@ -12,8 +12,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractContext implements ContextInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     private Properties properties = null;
@@ -29,8 +28,7 @@ public abstract class AbstractContext implements ContextInterface {
     /**
      * Instantiates a new abstract context.
      *
-     * @param properties
-     *            the properties
+     * @param properties the properties
      */
     public AbstractContext(final Properties properties) {
         super();
@@ -78,12 +76,12 @@ public abstract class AbstractContext implements ContextInterface {
         return properties.getProperty(key, defaultValue);
     }
 
+    /* (non-Javadoc)
+    * @see java.lang.Object#toString()
+    */
     @Override
     public String toString() {
-        return String
-            .format("%s [properties=%s]",
-                    this.getClass().getSimpleName(),
-                    properties);
+        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), properties);
     }
 
 }

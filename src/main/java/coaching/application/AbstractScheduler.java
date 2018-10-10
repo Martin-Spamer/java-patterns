@@ -20,8 +20,7 @@ import coaching.resources.XmlResourceLoader;
 public abstract class AbstractScheduler {
 
     /** logging provided. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
     private String[] args = null;
@@ -161,9 +160,7 @@ public abstract class AbstractScheduler {
                 final String key = (String) keys.nextElement();
                 final String value = properties.getProperty(key);
                 try {
-                    final Thread thread = (Thread) Class
-                        .forName(value)
-                        .newInstance();
+                    final Thread thread = (Thread) Class.forName(value).newInstance();
                     this.log.debug("{}", thread);
                     thread.start();
                 } catch (final Exception e) {
@@ -182,11 +179,7 @@ public abstract class AbstractScheduler {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [args=%s, properties=%s]",
-                    this.getClass().getSimpleName(),
-                    Arrays.toString(this.args),
-                    this.properties);
+        return String.format("%s [args=%s, properties=%s]", this.getClass().getSimpleName(), Arrays.toString(this.args), this.properties);
     }
 
 }

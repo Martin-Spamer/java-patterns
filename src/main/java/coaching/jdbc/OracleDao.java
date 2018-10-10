@@ -1,6 +1,10 @@
 
 package coaching.jdbc;
 
+import java.util.List;
+
+import coaching.csv.CsvRecord;
+
 /**
  * A Data Access object for an Oracle Database.
  */
@@ -17,5 +21,20 @@ public class OracleDao extends AbstractDao {
 
     /** PASSWORD to be used. */
     private static final String PASSWORD = "password";
+
+    /**
+     * Instantiates a new oracle dao.
+     */
+    public OracleDao() {
+        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+    }
+
+    /**
+     * Insert rows.
+     *
+     * @param rowList the row list
+     */
+    public void insertRows(final List<CsvRecord> rowList) {
+    }
 
 }

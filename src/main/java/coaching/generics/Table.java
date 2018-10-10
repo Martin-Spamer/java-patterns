@@ -16,6 +16,12 @@ public class Table extends ArrayList<TableRow> {
         super();
     }
 
+    /**
+     * New row.
+     *
+     * @param row the row
+     * @return the table
+     */
     public Table newRow(final String row) {
         add(new TableRow(row));
         return this;

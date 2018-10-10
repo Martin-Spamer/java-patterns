@@ -11,14 +11,22 @@ import coaching.csv.CsvFile;
  */
 public final class DaoToCsv {
 
-    /** provides logging */
+    /**  provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DaoToCsv.class);
 
     /** Data access object. */
-    private DaoInterface dao;
+    private final DaoInterface dao = new DynamicDao();
 
     /** Output CSV file. */
     private final CsvFile csv = new CsvFile();
+
+    /**
+     * Process.
+     *
+     * @param resourceName the resource name
+     */
+    public void process(final String resourceName) {
+    }
 
     /*
      * (non-Javadoc)
@@ -26,11 +34,7 @@ public final class DaoToCsv {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [dao=%s, csvFile=%s]",
-                    this.getClass().getSimpleName(),
-                    this.dao,
-                    this.csv);
+        return String.format("%s [dao=%s, csvFile=%s]", this.getClass().getSimpleName(), this.dao, this.csv);
     }
 
 }

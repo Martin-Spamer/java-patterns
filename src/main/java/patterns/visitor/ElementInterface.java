@@ -9,8 +9,7 @@ public interface ElementInterface {
     /**
      * Accept visitor.
      *
-     * @param visitor
-     *            the visitor
+     * @param visitor the visitor
      */
     void accept(final VisitorInterface visitor);
 

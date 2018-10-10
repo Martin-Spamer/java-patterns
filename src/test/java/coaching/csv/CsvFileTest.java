@@ -16,8 +16,7 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 public final class CsvFileTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CsvFileTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CsvFileTest.class);
 
     /**
      * Unit Test to csv file.

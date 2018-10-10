@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class CsvToXmlTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CsvToXmlTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CsvToXmlTest.class);
 
     /** The filename. */
     private final String filename = "./data/data.csv";

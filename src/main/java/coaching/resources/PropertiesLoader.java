@@ -18,22 +18,15 @@ import static org.junit.Assert.fail;
  * The resource must be a file with .properties extension.
  *
  * The name is assumed to be absolute and can use either "/" or "." for package
- * segment separation with an
- * optional leading "/" and
- * The ".properties" suffix optional.
- * The following names refer to the same resource:
- * some.pkg.Resource
- * some.pkg.Resource.properties
- * some/pkg/Resource
- * some/pkg/Resource.properties
- * /some/pkg/Resource
- * /some/pkg/Resource.properties
+ * segment separation with an optional leading "/" and The ".properties" suffix
+ * optional. The following names refer to the same resource: some.pkg.Resource
+ * some.pkg.Resource.properties some/pkg/Resource some/pkg/Resource.properties
+ * /some/pkg/Resource /some/pkg/Resource.properties
  */
 public final class PropertiesLoader {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(PropertiesLoader.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PropertiesLoader.class);
 
     /**
      * Instantiates a new properties loader.
@@ -51,8 +44,7 @@ public final class PropertiesLoader {
     public static Properties getProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader
-                .getStream(propertiesFilename(resourceName));
+            final InputStream stream = ResourceLoader.getStream(propertiesFilename(resourceName));
             properties.load(stream);
             properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {
@@ -85,9 +77,7 @@ public final class PropertiesLoader {
     public static Properties getXmlProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader
-                .getStream(xmlPropertiesFilename(
-                        xmlPropertiesFilename(resourceName)));
+            final InputStream stream = ResourceLoader.getStream(xmlPropertiesFilename(xmlPropertiesFilename(resourceName)));
             properties.loadFromXML(stream);
             properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {

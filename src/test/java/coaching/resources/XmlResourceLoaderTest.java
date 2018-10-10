@@ -23,8 +23,7 @@ public class XmlResourceLoaderTest {
     private static final String CONFIGURATION_MISSING = "Missing.xml";
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(XmlResourceLoaderTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XmlResourceLoaderTest.class);
 
     /**
      * Unit test to get database xml.
@@ -33,8 +32,7 @@ public class XmlResourceLoaderTest {
      */
     @Test
     public void testGetDatabaseXml() throws Exception {
-        final Document xmlResource = XmlResourceLoader
-            .getXmlResource(DATABASE_XML);
+        final Document xmlResource = XmlResourceLoader.getXmlResource(DATABASE_XML);
         assertNotNull(xmlResource);
         LOG.info("{}", xmlResource.getDoctype());
         LOG.info("{}", xmlResource.getXmlEncoding());
@@ -48,8 +46,7 @@ public class XmlResourceLoaderTest {
      */
     @Test
     public void testGetConfigurationXml() throws Exception {
-        final Document xmlResource = XmlResourceLoader
-            .getXmlResource(CONFIGURATION_XML);
+        final Document xmlResource = XmlResourceLoader.getXmlResource(CONFIGURATION_XML);
         assertNotNull(xmlResource);
         LOG.info("{}", xmlResource.getDoctype());
         LOG.info("{}", xmlResource.getXmlEncoding());

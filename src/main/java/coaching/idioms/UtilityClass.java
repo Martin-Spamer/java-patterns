@@ -4,8 +4,8 @@ package coaching.idioms;
 import static org.junit.Assert.fail;
 
 /**
- * Example Utility class, contains only static methods. It is a final class
- * and uses a private constructor to prevent wild instantiation.
+ * Example Utility class, contains only static methods. It is a final class and
+ * uses a private constructor to prevent wild instantiation.
  */
 public final class UtilityClass {
 

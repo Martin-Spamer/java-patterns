@@ -12,8 +12,7 @@ public class ResourceBorrowException extends ResourcePoolException {
      *
      * exception message
      *
-     * @param exceptionMessage
-     *            the exception message
+     * @param exceptionMessage the exception message
      */
     public ResourceBorrowException(final String exceptionMessage) {
         super(exceptionMessage);
@@ -24,8 +23,7 @@ public class ResourceBorrowException extends ResourcePoolException {
      *
      * exception
      *
-     * @param exception
-     *            the exception
+     * @param exception the exception
      */
     public ResourceBorrowException(final Exception exception) {
         super(exception);

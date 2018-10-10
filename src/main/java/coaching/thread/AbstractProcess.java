@@ -9,8 +9,7 @@ import org.slf4j.LoggerFactory;
  * An abstract base class for an Application.
  *
  * @author martin.spamer.
- * @version 0.1 - first release.
- *          Created 17-Sep-2004 - 16:13:19
+ * @version 0.1 - first release. Created 17-Sep-2004 - 16:13:19
  */
 public abstract class AbstractProcess implements Runnable {
 
@@ -21,8 +20,7 @@ public abstract class AbstractProcess implements Runnable {
     private static final int DEFAULT_WAIT = 1000;
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** thread. */
     private final Thread thread;
@@ -51,8 +49,7 @@ public abstract class AbstractProcess implements Runnable {
 
     /**
      * thread executes when it receives a time thread this function should
-     * simple
-     * exit.
+     * simple exit.
      */
     @Override
     public void run() {

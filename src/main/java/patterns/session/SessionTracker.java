@@ -26,8 +26,7 @@ public class SessionTracker {
     /**
      * Destroy session.
      *
-     * @param session
-     *            the session
+     * @param session the session
      */
     public void destroySession(final AbstractSession session) {
         sessions.remove(session);
@@ -39,10 +38,7 @@ public class SessionTracker {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [sessions=%s]",
-                    this.getClass().getSimpleName(),
-                    sessions);
+        return String.format("%s [sessions=%s]", this.getClass().getSimpleName(), sessions);
     }
 
 }

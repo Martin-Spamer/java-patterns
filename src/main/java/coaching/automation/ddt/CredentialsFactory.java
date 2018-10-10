@@ -18,8 +18,7 @@ import coaching.csv.CsvRecord;
 public class CredentialsFactory extends AbstractExpectedData implements ExpectedDataInterface {
 
     /** Provides logging. */
-    private static final Logger LOG = LoggerFactory
-            .getLogger(CredentialsFactory.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CredentialsFactory.class);
 
     /** The csv file. */
     private CsvFile csvFile;
@@ -34,8 +33,7 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * @return the credentials factory
      * @throws FileNotLoadedException the file not loaded exception
      */
-    public static CredentialsFactory on(final String platform)
-            throws FileNotLoadedException {
+    public static CredentialsFactory on(final String platform) throws FileNotLoadedException {
         return new CredentialsFactory(platform);
     }
 
@@ -70,7 +68,7 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * @throws FileNotLoadedException the file not loaded exception
      */
     private void loadFrom(final String credentialsFilename) throws FileNotLoadedException {
-        csvFile = new CsvFile(credentialsFilename);
+        this.csvFile = new CsvFile(credentialsFilename);
     }
 
     /**
@@ -123,10 +121,10 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      * @return the actor
      */
     public Actor tagged(final String tag) {
-        assumeTrue(csvFile.isLoaded());
-        final int rowCount = csvFile.rowCount();
+        assumeTrue(this.csvFile.isLoaded());
+        final int rowCount = this.csvFile.rowCount();
         for (int index = 0; index < rowCount; index++) {
-            final CsvRecord record = csvFile.getRecord(index);
+            final CsvRecord record = this.csvFile.getRecord(index);
             assertNotNull(record);
             if (record.getColumn(0).contains(tag)) {
                 final Actor credentials = new Actor();
@@ -146,11 +144,7 @@ public class CredentialsFactory extends AbstractExpectedData implements Expected
      */
     @Override
     public String toString() {
-        return String
-                .format("%s [platform=%s, csvFile=%s]",
-                        this.getClass().getSimpleName(),
-                        platform,
-                        csvFile);
+        return String.format("%s [platform=%s, csvFile=%s]", this.getClass().getSimpleName(), this.platform, this.csvFile);
     }
 
 }

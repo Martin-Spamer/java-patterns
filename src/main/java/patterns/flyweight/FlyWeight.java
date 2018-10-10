@@ -20,8 +20,7 @@ public final class FlyWeight {
     /**
      * Instantiates a new fly weight.
      *
-     * @param commonState
-     *            the common state
+     * @param commonState the common state
      */
     public FlyWeight(final String commonState) {
         this.commonState = commonState;
@@ -33,10 +32,7 @@ public final class FlyWeight {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [commonState=%s]",
-                    this.getClass().getSimpleName(),
-                    commonState);
+        return String.format("%s [commonState=%s]", this.getClass().getSimpleName(), commonState);
     }
 
 }

@@ -75,7 +75,7 @@ public final class PlatformData extends AbstractExpectedData implements Expected
      * @return the platform
      */
     protected String getPlatform() {
-        return platform;
+        return this.platform;
     }
 
     /**
@@ -108,13 +108,13 @@ public final class PlatformData extends AbstractExpectedData implements Expected
         return PlatformData.getInstance().getAllTagged(tag);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see coaching.automation.ddt.AbstractExpectedData#toString()
+     */
     @Override
     public String toString() {
-        return String
-                .format("%s [platform=%s %s]",
-                        this.getClass().getSimpleName(),
-                        platform,
-                        super.toString());
+        return String.format("%s [platform=%s %s]", this.getClass().getSimpleName(), this.platform, super.toString());
     }
 
 }

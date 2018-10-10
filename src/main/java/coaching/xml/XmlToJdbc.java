@@ -35,22 +35,19 @@ public final class XmlToJdbc {
      * Process.
      */
     public void process() {
-        final String simpleName = String
-            .format("%s.xml", this.getClass().getSimpleName());
+        final String simpleName = String.format("%s.xml", this.getClass().getSimpleName());
         processFile(simpleName);
     }
 
     /**
      * Process.
      *
-     * @param filename
-     *            the filename
+     * @param filename the filename
      */
     public void processFile(final String filename) {
         try {
             final File configFile = new File(filename);
-            final DocumentBuilderFactory builderFactory = DocumentBuilderFactory
-                .newInstance();
+            final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
             final DocumentBuilder builder = builderFactory.newDocumentBuilder();
             final Document document = builder.parse(configFile);
 
@@ -64,8 +61,7 @@ public final class XmlToJdbc {
     /**
      * Process table.
      *
-     * @param document
-     *            the document
+     * @param document the document
      */
     private void processTable(final Document document) {
         // root Document Element
@@ -88,19 +84,12 @@ public final class XmlToJdbc {
     /**
      * Process row.
      *
-     * @param table
-     *            the table
-     * @param rowList
-     *            the row list
-     * @param rowNo
-     *            the row no
-     * @param value
-     *            the temp
+     * @param table the table
+     * @param rowList the row list
+     * @param rowNo the row no
+     * @param value the temp
      */
-    private void processRow(final String table,
-            final NodeList rowList,
-            final int rowNo,
-            final String value) {
+    private void processRow(final String table, final NodeList rowList, final int rowNo, final String value) {
         try {
             // * first row element by index.
             final Element rowElement = (Element) rowList.item(rowNo);
@@ -121,8 +110,7 @@ public final class XmlToJdbc {
     /**
      * Field names.
      *
-     * @param fieldList
-     *            the field list
+     * @param fieldList the field list
      * @return the string
      */
     private String fieldNames(final NodeList fieldList) {
@@ -133,9 +121,7 @@ public final class XmlToJdbc {
             final Node item = fieldList.item(fieldNo);
             LOG.info(item.toString());
             final Element fieldElement = (Element) item;
-            fieldNames
-                .append(columnSeparator)
-                .append(fieldElement.getAttribute("NAME"));
+            fieldNames.append(columnSeparator).append(fieldElement.getAttribute("NAME"));
         }
         return fieldNames.toString();
     }
@@ -143,8 +129,7 @@ public final class XmlToJdbc {
     /**
      * Data values.
      *
-     * @param fieldList
-     *            the field list
+     * @param fieldList the field list
      * @return the string
      */
     private String dataValues(final NodeList fieldList) {
@@ -155,15 +140,8 @@ public final class XmlToJdbc {
             final Node item = fieldList.item(fieldNo);
             LOG.info(item.toString());
             final Element fieldElement = (Element) item;
-            final String nodeValue = fieldElement
-                .getChildNodes()
-                .item(0)
-                .getNodeValue();
-            dataValues
-                .append(columnSeperator)
-                .append("'")
-                .append(nodeValue)
-                .append("'");
+            final String nodeValue = fieldElement.getChildNodes().item(0).getNodeValue();
+            dataValues.append(columnSeperator).append("'").append(nodeValue).append("'");
         }
         return dataValues.toString();
     }
@@ -171,16 +149,11 @@ public final class XmlToJdbc {
     /**
      * Insert row.
      *
-     * @param table
-     *            the table
-     * @param fieldNames
-     *            the field names
-     * @param dataValues
-     *            the data values
+     * @param table the table
+     * @param fieldNames the field names
+     * @param dataValues the data values
      */
-    private void insertRow(final String table,
-            final String fieldNames,
-            final String dataValues) {
+    private void insertRow(final String table, final String fieldNames, final String dataValues) {
         // insert into %table
         // (%field%,...)
         // from

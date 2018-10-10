@@ -28,8 +28,7 @@ public abstract class JdbcBase {
     private static final String EXECUTION_ERROR = "Executing the SQL\n\t%s\nfailed with error\n\t%s";
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The query results. */
     protected ResultSet resultSet = null;
@@ -74,7 +73,7 @@ public abstract class JdbcBase {
      *
      * @param sql the sql
      * @return this for a fluent interface.
-     * @throws SQLException
+     * @throws SQLException the SQL exception
      */
     protected JdbcBase executeQuery(final String sql) throws SQLException {
         this.log.info("executeQuery({})", sql);
@@ -96,15 +95,13 @@ public abstract class JdbcBase {
      *
      * @param sql the sql
      * @return this for a fluent interface.
-     * @throws SQLException
+     * @throws SQLException the SQL exception
      */
-    protected JdbcBase executePreparedStatement(final String sql)
-            throws SQLException {
+    protected JdbcBase executePreparedStatement(final String sql) throws SQLException {
         this.log.info("executePreparedStatement({})", sql);
 
         final Connection connection = ConnectionFactory.getConnection();
-        final PreparedStatement preparedStatement = connection
-            .prepareStatement(sql);
+        final PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         boolean result = preparedStatement.execute();
         this.log.info("Rows updated : {}", result);
@@ -118,13 +115,10 @@ public abstract class JdbcBase {
     /**
      * Handle result set.
      *
-     * @param resultSet
-     *            the result set
-     * @throws SQLException
-     *             the SQL exception
+     * @param resultSet the result set
+     * @throws SQLException the SQL exception
      */
-    private void processResultSet(final ResultSet resultSet)
-            throws SQLException {
+    private void processResultSet(final ResultSet resultSet) throws SQLException {
         final StringBuilder output = new StringBuilder();
         while (resultSet.next()) {
             this.log.debug("resultSet = {}", resultSet);
@@ -137,11 +131,9 @@ public abstract class JdbcBase {
     /**
      * Process row.
      *
-     * @param resultSet
-     *            the result set
+     * @param resultSet the result set
      * @return the string
-     * @throws SQLException
-     *             the SQL exception
+     * @throws SQLException the SQL exception
      */
     private String processRow(final ResultSet resultSet) throws SQLException {
         final ResultSetMetaData metaData = resultSet.getMetaData();
@@ -155,11 +147,7 @@ public abstract class JdbcBase {
                 this.log.info("{}", msg);
                 output.append(msg);
             } else {
-                final String msg = String
-                    .format(
-                            "%s = %s,",
-                            columnName,
-                            value.toString().trim());
+                final String msg = String.format("%s = %s,", columnName, value.toString().trim());
                 this.log.info("{}", msg);
                 output.append(msg);
             }
@@ -180,8 +168,7 @@ public abstract class JdbcBase {
          * @param message the message
          * @param e the e
          */
-        public DriverNotFoundException(final String message,
-                final ClassNotFoundException e) {
+        public DriverNotFoundException(final String message, final ClassNotFoundException e) {
             super(message, e);
         }
 
@@ -216,8 +203,7 @@ public abstract class JdbcBase {
         final List<String> columns = new ArrayList<>();
         if (this.resultSetMetaData != null) {
             for (int i = 1; i < this.resultSetMetaData.getColumnCount(); i++) {
-                final String columnName = this.resultSetMetaData
-                    .getColumnName(i);
+                final String columnName = this.resultSetMetaData.getColumnName(i);
                 columns.add(columnName);
             }
         }
@@ -242,12 +228,7 @@ public abstract class JdbcBase {
      */
     @Override
     public String toString() {
-        return String
-            .format("%s [resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]",
-                    this.getClass().getSimpleName(),
-                    this.resultSet,
-                    this.resultSetMetaData,
-                    this.databaseMetaData);
+        return String.format("%s [resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]", this.getClass().getSimpleName(), this.resultSet, this.resultSetMetaData, this.databaseMetaData);
     }
 
 }

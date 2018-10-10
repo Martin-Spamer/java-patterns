@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class DecoratorTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(DecoratorTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
 
     /**
      * The Class MissingOperation.

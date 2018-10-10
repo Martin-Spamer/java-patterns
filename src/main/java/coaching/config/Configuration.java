@@ -2,8 +2,8 @@
 package coaching.config;
 
 /**
- * An abstract Configuration class.
- * Loads Configuration Properties from a .properties file.
+ * An abstract Configuration class. Loads Configuration Properties from a
+ * .properties file.
  */
 public class Configuration extends AbstractConfiguration {
 
@@ -34,8 +34,7 @@ public class Configuration extends AbstractConfiguration {
         if (value == null) {
             return this.properties.getProperty(key);
         } else {
-            this.log
-                .warn("Using system property value {} for key {}", value, key);
+            this.log.warn("Using system property value {} for key {}", value, key);
         }
         return value;
     }
@@ -52,8 +51,7 @@ public class Configuration extends AbstractConfiguration {
         if (value == null) {
             return this.properties.getProperty(key, defaultValue);
         } else {
-            this.log
-                .warn("Using system property value {} for key {}", value, key);
+            this.log.warn("Using system property value {} for key {}", value, key);
         }
         return value;
     }

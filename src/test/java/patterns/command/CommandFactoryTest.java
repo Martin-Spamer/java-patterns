@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class CommandFactoryTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(CommandFactoryTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);
 
     /**
      * Unit test to create a default command.
@@ -54,8 +53,7 @@ public final class CommandFactoryTest {
      */
     @Test
     public void testCreateSequenceCommand() {
-        final AbstractCommand command = CommandFactory
-            .create("SequenceCommand");
+        final AbstractCommand command = CommandFactory.create("SequenceCommand");
         assertNotNull(command);
     }
 
@@ -64,8 +62,7 @@ public final class CommandFactoryTest {
      */
     @Test
     public void testCreateCompoundCommand() {
-        final AbstractCommand command = CommandFactory
-            .create("CompoundCommand");
+        final AbstractCommand command = CommandFactory.create("CompoundCommand");
         assertNotNull(command);
     }
 
@@ -74,8 +71,7 @@ public final class CommandFactoryTest {
      */
     @Test
     public void testCreateConditionalCommand() {
-        final AbstractCommand command = CommandFactory
-            .create("ConditionalCommand");
+        final AbstractCommand command = CommandFactory.create("ConditionalCommand");
         assertNotNull(command);
     }
 

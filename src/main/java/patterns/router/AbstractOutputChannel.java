@@ -10,8 +10,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractOutputChannel implements OutputChannelInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*
      * (non-Javadoc)
@@ -20,10 +19,7 @@ public abstract class AbstractOutputChannel implements OutputChannelInterface {
      */
     @Override
     public void sendMessage(final Message message) {
-        log
-            .info("{}.sendMessage({})",
-                    this.getClass().getSimpleName(),
-                    message);
+        log.info("{}.sendMessage({})", this.getClass().getSimpleName(), message);
     }
 
 }

@@ -11,16 +11,13 @@ import org.slf4j.LoggerFactory;
 /**
  * Implements a Bag class with Generic Type.
  *
- * @param <T>
- *            the generic type
+ * @param <T> the generic type
  */
 @SuppressWarnings("serial")
-public class GenericBag<T> extends ArrayList<T>
-        implements GenericBagInterface<T> {
+public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 
     /** Provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** random number generator. */
     private final Random random = new Random();
@@ -39,8 +36,7 @@ public class GenericBag<T> extends ArrayList<T>
     /**
      * Instantiates a new bag from string array. Accepts 0..N arguments.
      *
-     * @param values
-     *            the values
+     * @param values the values
      */
     @SafeVarargs
     public GenericBag(final T... values) {

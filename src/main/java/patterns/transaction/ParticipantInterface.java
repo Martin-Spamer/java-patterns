@@ -7,24 +7,21 @@ package patterns.transaction;
 public interface ParticipantInterface {
 
     /**
-     * Join operation.
-     * Must return this for fluent interface.
+     * Join operation. Must return this for fluent interface.
      *
      * @return this to provide a participant with a fluent interface.
      */
     ParticipantInterface join();
 
     /**
-     * Commit operation.
-     * Must return this for fluent interface.
+     * Commit operation. Must return this for fluent interface.
      *
      * @return this to provide a participant with a fluent interface.
      */
     ParticipantInterface commit();
 
     /**
-     * Cancel operation.
-     * Must return this for fluent interface.
+     * Cancel operation. Must return this for fluent interface.
      *
      * @return this to provide a participant with a fluent interface.
      */

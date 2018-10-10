@@ -10,8 +10,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractHandler implements HandlerInterface {
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The next. */
     private HandlerInterface next;
@@ -28,8 +27,7 @@ public abstract class AbstractHandler implements HandlerInterface {
      *
      * next
      *
-     * @param next
-     *            the next
+     * @param next the next
      */
     public AbstractHandler(final HandlerInterface next) {
         super();
@@ -41,8 +39,7 @@ public abstract class AbstractHandler implements HandlerInterface {
      *
      * next handler
      *
-     * @param next
-     *            the next
+     * @param next the next
      * @return the abstract handler
      */
     public AbstractHandler setNext(final HandlerInterface next) {

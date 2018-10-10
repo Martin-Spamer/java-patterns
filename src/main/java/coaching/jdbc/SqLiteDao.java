@@ -1,6 +1,10 @@
 
 package coaching.jdbc;
 
+import java.util.List;
+
+import coaching.csv.CsvRecord;
+
 /**
  * A Data Access Object for a Sqlite3 database.
  */
@@ -24,7 +28,15 @@ public final class SqLiteDao extends AbstractDao {
      * @throws ClassNotFoundException the class not found exception
      */
     public SqLiteDao() throws ClassNotFoundException {
-        new ConnectionFactory(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+        super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
+    }
+
+    /**
+     * Insert rows.
+     *
+     * @param rowList the row list
+     */
+    public void insertRows(final List<CsvRecord> rowList) {
     }
 
 }

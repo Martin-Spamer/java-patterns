@@ -16,8 +16,7 @@ public abstract class AbstractRule implements CommandInterface {
      *
      * context
      *
-     * @param context
-     *            the context
+     * @param context the context
      */
     public AbstractRule(final ContextInterface context) {
         this.context = context;
@@ -31,8 +30,7 @@ public abstract class AbstractRule implements CommandInterface {
     @Override
     public void execute(final AbstractParameters parameters) {
         final String className = this.getClass().getSimpleName();
-        final String message = String
-            .format("%s.execute(%s) must be declared", className, parameters);
+        final String message = String.format("%s.execute(%s) must be declared", className, parameters);
         throw new UnsupportedOperationException(message);
     }
 

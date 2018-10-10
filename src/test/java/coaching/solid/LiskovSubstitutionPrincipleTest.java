@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class LiskovSubstitutionPrincipleTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(LiskovSubstitutionPrincipleTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LiskovSubstitutionPrincipleTest.class);
 
     /**
      * Unit Test for the Liskov substitution principle example class..

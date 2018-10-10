@@ -13,8 +13,7 @@ import static org.junit.Assert.assertNotNull;
 public final class XmlToJdbcTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(XmlToJdbcTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbcTest.class);
 
     /** The classname of the JDBC driver to use. */
     public static final String JDBC_DRIVER = "org.sqlite.JDBC";

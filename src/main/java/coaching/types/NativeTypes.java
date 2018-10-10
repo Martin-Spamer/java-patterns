@@ -8,8 +8,7 @@ import org.slf4j.LoggerFactory;
  * Examples of Java Native Types.
  *
  * @author martin spamer
- * @version 0.1 - first release.
- *          Created 07-Oct-2004 - 09:20:22
+ * @version 0.1 - first release. Created 07-Oct-2004 - 09:20:22
  */
 public class NativeTypes {
 
@@ -62,8 +61,7 @@ public class NativeTypes {
     private final boolean falseBoolean = false;
 
     /** provides logging. */
-    protected final Logger log = LoggerFactory
-        .getLogger(this.getClass().getSimpleName());
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * Display.
@@ -97,9 +95,7 @@ public class NativeTypes {
         }
 
         if (!falseBoolean) {
-            log
-                .info("aFalseBoolean has tested as false value : {}",
-                        falseBoolean);
+            log.info("aFalseBoolean has tested as false value : {}", falseBoolean);
         }
     }
 }

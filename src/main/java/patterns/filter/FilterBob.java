@@ -18,8 +18,7 @@ public final class FilterBob extends AbstractFilter {
      *
      * filter
      *
-     * @param filter
-     *            the filter
+     * @param filter the filter
      */
     public FilterBob(final FilterInterface filter) {
         super(filter);

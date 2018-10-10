@@ -72,6 +72,11 @@ public final class JdbcConfig extends Configuration {
         return JdbcConfig.getInstance().valueFor("schema");
     }
 
+    /**
+     * Table.
+     *
+     * @return the string
+     */
     public static String table() {
         return JdbcConfig.getInstance().valueFor("table");
     }

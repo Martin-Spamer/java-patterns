@@ -14,9 +14,8 @@ import static org.junit.Assert.assertNotNull;
  */
 public class DynamicDaoTest {
 
-    /** provides logging */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(DynamicDaoTest.class);
+    /**  provides logging. */
+    private static final Logger LOG = LoggerFactory.getLogger(DynamicDaoTest.class);
 
     /**
      * Unit test to DynamicDAO, data access object.

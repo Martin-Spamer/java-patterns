@@ -2,10 +2,9 @@
 package coaching.jdbc;
 
 /**
- * The CRUD (Create, Read, Update, Delete) Interface.
- * Good mapping with business domain language.
- * Useful to isolate the dangerous admin SQL commands.
- * Poor mapping with SQL domain language. ++
+ * The CRUD (Create, Read, Update, Delete) Interface. Good mapping with business
+ * domain language. Useful to isolate the dangerous admin SQL commands. Poor
+ * mapping with SQL domain language. ++
  *
  */
 public interface CrudInterface {

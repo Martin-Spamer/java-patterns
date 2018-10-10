@@ -16,8 +16,7 @@ import static org.junit.Assert.assertNotNull;
 public final class MementoTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory
-        .getLogger(MementoTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MementoTest.class);
 
     /**
      * Unit Test to memento typical usage.
