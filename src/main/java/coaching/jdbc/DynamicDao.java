@@ -45,33 +45,37 @@ public final class DynamicDao extends AbstractDao {
         }
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.AbstractDao#setDriver(java.lang.String)
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.AbstractDao#setDriver(java.lang.String)
+     */
     @Override
     public DaoInterface setDriver(final String driver) throws ClassNotFoundException {
         return null;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.AbstractDao#setUrl(java.lang.String)
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.AbstractDao#setUrl(java.lang.String)
+     */
     @Override
     public DaoInterface setUrl(final String url) {
         return null;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.AbstractDao#setUsername(java.lang.String)
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.AbstractDao#setUsername(java.lang.String)
+     */
     @Override
     public DaoInterface setUsername(final String username) {
         return null;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.AbstractDao#setPassword(java.lang.String)
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.AbstractDao#setPassword(java.lang.String)
+     */
     @Override
     public DaoInterface setPassword(final String password) {
         return null;

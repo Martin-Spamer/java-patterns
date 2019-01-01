@@ -20,10 +20,10 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
 
     /** The jdbc url. */
     private String jdbcUrl;
-    
+
     /** The username. */
     private String username;
-    
+
     /** The password. */
     private String password;
 
@@ -85,9 +85,10 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
         return DriverManager.getConnection(this.jdbcUrl, this.username, this.password);
     }
 
-    /* (non-Javadoc)
-    * @see java.lang.Object#toString()
-    */
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String.format("%s [JdbcConfig=%s]", this.getClass().getSimpleName(), JdbcConfig.getInstance().toString());

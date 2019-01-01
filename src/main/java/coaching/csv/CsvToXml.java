@@ -12,12 +12,12 @@ import org.w3c.dom.Document;
  */
 public final class CsvToXml {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvToXml.class);
 
     /** CSV file. */
     private final CsvFile csv = new CsvFile();
-    
+
     /** The doc. */
     private final Document doc = null;
 

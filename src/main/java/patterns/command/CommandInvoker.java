@@ -11,7 +11,7 @@ import coaching.factory.ClassFactory;
  */
 public final class CommandInvoker {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CommandInvoker.class);
 
     /**

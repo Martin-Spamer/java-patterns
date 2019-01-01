@@ -16,7 +16,7 @@ public final class XmlToDao {
 
     /** The csv. */
     private final CsvFile csv = new CsvFile();
-    
+
     /** The dao. */
     private final DaoInterface dao = new DynamicDao();
 
@@ -39,9 +39,10 @@ public final class XmlToDao {
         // this.dao.insertRows(rowList);
     }
 
-    /* (non-Javadoc)
-    * @see java.lang.Object#toString()
-    */
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return String.format("XmlToDao [csv=%s, dao=%s]", this.csv, this.dao);

@@ -26,7 +26,7 @@ import static org.junit.Assert.fail;
 public final class XmlResourceLoader {
 
     /** SUFFIX constant. */
-    private static final String SUFFIX = ".xml";
+    private static final String DEFAULT_SUFFIX = ".xml";
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(XmlResourceLoader.class);
@@ -63,7 +63,7 @@ public final class XmlResourceLoader {
      * @return the string
      */
     private static String xmlFilename(final String resourceName) {
-        final String suffix = ".xml";
+        final String suffix = DEFAULT_SUFFIX;
         if (resourceName.endsWith(suffix)) {
             return resourceName;
         } else {

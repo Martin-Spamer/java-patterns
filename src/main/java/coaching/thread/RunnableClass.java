@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class RunnableClass implements Runnable {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(RunnableClass.class);
 
     /**
@@ -20,9 +20,10 @@ public final class RunnableClass implements Runnable {
         LOG.info("{} loaded...", this.getClass().getSimpleName());
     }
 
-    /* (non-Javadoc)
-    * @see java.lang.Runnable#run()
-    */
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Runnable#run()
+     */
     @Override
     public void run() {
         LOG.info("{} running... ", this.getClass().getSimpleName());

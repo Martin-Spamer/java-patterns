@@ -16,30 +16,30 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractDao extends JdbcBase implements CrudInterface, DaoInterface {
 
-    /** DROP_SQL 			constant. */
+    /** DROP_SQL constant. */
     public static final String DROP_SQL = "DROP TABLE IF EXISTS {TableName}";
-    
-    /** CREATE_SQL 			constant. */
+
+    /** CREATE_SQL constant. */
     // Columns = (id INTEGER, name STRING, details STRING)
     public static final String CREATE_SQL = "CREATE TABLE {TableName} {ColumnNames}";
-    
-    /** COUNT_SQL 			constant. */
+
+    /** COUNT_SQL constant. */
     public static final String COUNT_SQL = "SELECT COUNT(*) FROM {TableName}";
-    
-    /** SELECT_SQL 			constant. */
+
+    /** SELECT_SQL constant. */
     public static final String SELECT_SQL = "SELECT * FROM {TableName}";
-    
-    /** SELECT_COLUMNS_SQL 			constant. */
+
+    /** SELECT_COLUMNS_SQL constant. */
     public static final String SELECT_COLUMNS_SQL = "SELECT {ColumnNames} FROM {TableName}";
     // {FIELDS} = ({ID}, {NAME}, {DETAILS})
-    /** INSERT_SQL 			constant. */
+    /** INSERT_SQL constant. */
     // {DATA} = ({ID}, {NAME}, {DETAILS})
     public static final String INSERT_SQL = "INSERT INTO {TableName} {ColumnNames} VALUES {ColumnValues}";
-    
-    /** UPDATE_SQL 			constant. */
+
+    /** UPDATE_SQL constant. */
     public static final String UPDATE_SQL = "UPDATE {TableName} SET {Field} = {Value} WHERE ID = {Key}";
-    
-    /** DELETE_SQL 			constant. */
+
+    /** DELETE_SQL constant. */
     public static final String DELETE_SQL = "DELETE FROM {TableName} WHERE ID={Key}";
 
     /** provides logging. */
@@ -47,10 +47,10 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
 
     /** The jdbc url. */
     private String jdbcUrl;
-    
+
     /** The username. */
     private String username;
-    
+
     /** The password. */
     private String password;
 
@@ -86,33 +86,37 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         new ConnectionFactory(jdbcDriver, jdbcUrl, username, password);
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.DaoInterface#setDriver(java.lang.String)
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#setDriver(java.lang.String)
+     */
     @Override
     public DaoInterface setDriver(final String driver) throws ClassNotFoundException {
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.DaoInterface#setUrl(java.lang.String)
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#setUrl(java.lang.String)
+     */
     @Override
     public DaoInterface setUrl(final String url) {
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.DaoInterface#setUsername(java.lang.String)
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#setUsername(java.lang.String)
+     */
     @Override
     public DaoInterface setUsername(final String username) {
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.DaoInterface#setPassword(java.lang.String)
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#setPassword(java.lang.String)
+     */
     @Override
     public DaoInterface setPassword(final String password) {
         return this;
@@ -138,9 +142,10 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.DaoInterface#createTable()
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#createTable()
+     */
     @Override
     public DaoInterface createTable() {
         try {
@@ -151,9 +156,10 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.DaoInterface#dropTable()
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#dropTable()
+     */
     @Override
     public DaoInterface dropTable() {
         try {

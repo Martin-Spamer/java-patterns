@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class DaoToXml {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DaoToXml.class);
 
     /** Data access object. */

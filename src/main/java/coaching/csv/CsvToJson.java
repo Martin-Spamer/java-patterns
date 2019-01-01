@@ -12,7 +12,7 @@ import static org.junit.Assume.assumeNotNull;
  */
 public final class CsvToJson {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CsvToJson.class);
 
     /** CSV file. */
