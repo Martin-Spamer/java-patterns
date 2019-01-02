@@ -2,16 +2,11 @@
 package coaching.automation;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Unit test class for Verify.
  */
 public class VerifyTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(VerifyTest.class);
 
     /**
      * Unit test to verify that.

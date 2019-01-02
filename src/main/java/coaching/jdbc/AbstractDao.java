@@ -45,6 +45,8 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
+    private String jdbcDriver;
+
     /** The jdbc url. */
     private String jdbcUrl;
 
@@ -66,6 +68,8 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
     /** resultSetMetaData. */
     protected ResultSetMetaData resultSetMetaData;
 
+    protected ConnectionFactory connectionFactory;
+
     /**
      * Default Constructor.
      */
@@ -83,7 +87,11 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
      */
     public AbstractDao(final String jdbcDriver, final String jdbcUrl, final String username, final String password) {
         super();
-        new ConnectionFactory(jdbcDriver, jdbcUrl, username, password);
+        this.jdbcDriver = jdbcDriver;
+        this.jdbcUrl = jdbcUrl;
+        this.username = username;
+        this.password = password;
+        this.connectionFactory = new ConnectionFactory(this.jdbcDriver, this.jdbcUrl, this.username, this.password);
     }
 
     /*
@@ -91,7 +99,8 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
      * @see coaching.jdbc.DaoInterface#setDriver(java.lang.String)
      */
     @Override
-    public DaoInterface setDriver(final String driver) throws ClassNotFoundException {
+    public DaoInterface setDriver(final String jdbcDriver) throws ClassNotFoundException {
+        this.jdbcDriver = jdbcDriver;
         return this;
     }
 
@@ -100,7 +109,8 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
      * @see coaching.jdbc.DaoInterface#setUrl(java.lang.String)
      */
     @Override
-    public DaoInterface setUrl(final String url) {
+    public DaoInterface setUrl(final String jdbcUrl) {
+        this.jdbcUrl = jdbcUrl;
         return this;
     }
 
@@ -110,6 +120,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
      */
     @Override
     public DaoInterface setUsername(final String username) {
+        this.username = username;
         return this;
     }
 
@@ -119,6 +130,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
      */
     @Override
     public DaoInterface setPassword(final String password) {
+        this.password = password;
         return this;
     }
 

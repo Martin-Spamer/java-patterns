@@ -2,8 +2,6 @@
 package coaching.exceptions;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -15,9 +13,6 @@ import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
  * Unit test for showing Custom Exception Handling.
  */
 public final class CustomExceptionHandlingTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandlingTest.class);
 
     /**
      * Unit Test to sub process A.

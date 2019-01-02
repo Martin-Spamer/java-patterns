@@ -23,14 +23,14 @@ public final class CommandFactory {
     private static final CommandFactory INSTANCE = new CommandFactory();
 
     /** The properties. */
-    private final Properties properties;
+    protected final Properties properties;
 
     /**
      * Instantiates a new command factory.
      */
     private CommandFactory() {
         super();
-        properties = PropertiesLoader.getProperties("commands.properties");
+        this.properties = PropertiesLoader.getProperties("commands.properties");
     }
 
     /**

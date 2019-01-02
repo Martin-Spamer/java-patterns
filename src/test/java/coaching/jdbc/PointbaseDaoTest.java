@@ -3,8 +3,6 @@ package coaching.jdbc;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -13,9 +11,6 @@ import static org.junit.Assert.assertNotNull;
  */
 @Ignore("Requires PointBase DB availability work-in-progress low-priority")
 public final class PointbaseDaoTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PointbaseDaoTest.class);
 
     /** The Constant JDBC_DRIVER. */
     private static final String JDBC_DRIVER = "com.pointbase.jdbc.jdbcUniversalDriver";

@@ -3,8 +3,6 @@ package coaching.jdbc;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -46,9 +44,6 @@ public final class PostgreSqlDaoTest {
 
     /** SQL to delete rows in the table. */
     static final String DELETE_SQL = "DELETE FROM TABLE WHERE ID=999";
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PostgreSqlDaoTest.class);
 
     /**
      * Unit Test to point base customer dao.

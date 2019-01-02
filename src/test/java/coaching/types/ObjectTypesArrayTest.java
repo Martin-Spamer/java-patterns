@@ -2,8 +2,6 @@
 package coaching.types;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -13,9 +11,6 @@ import coaching.arrays.ObjectTypesArray;
  * The ObjectTypesArrayTest class.
  */
 public final class ObjectTypesArrayTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ObjectTypesArrayTest.class);
 
     /**
      * Unit Test to display.

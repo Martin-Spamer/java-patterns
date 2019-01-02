@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * The Class FileHelper.
+ * FileHelper class.
  */
 public final class FileHelper {
 
@@ -18,15 +18,14 @@ public final class FileHelper {
     }
 
     /**
-     * Loads filename into a string.
+     * Loads file into a string.
      *
      * @param filename the filename
      * @return the string
      * @throws FileNotFoundException the file not found exception
      */
     public static String getAsString(final String filename) throws FileNotFoundException {
-        final File file = new File(filename);
-        return new Scanner(file).useDelimiter("\\A").next();
+        return new Scanner(new File(filename)).useDelimiter("\\A").next();
     }
 
 }

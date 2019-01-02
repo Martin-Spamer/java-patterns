@@ -10,17 +10,15 @@ import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeNotNull;
 
-import coaching.csv.CsvFile.FileNotLoadedException;
-
 /**
  * Unit tests for Credentials class.
  */
 public final class CredentialsTest {
 
-    /** PLATFORM 			constant. */
+    /** PLATFORM constant. */
     private static final String PLATFORM = "dev";
-    
-    /** TAG 			constant. */
+
+    /** TAG constant. */
     private static final String TAG = "@AUTHORISED";
 
     /** Provides logging. */
@@ -68,7 +66,7 @@ public final class CredentialsTest {
 
     /**
      * Unit test to credentials factory data.
-     * 
+     *
      * <code>
      *  # tags, username, password, email
      *  &#64;ADMIN,admin,password,admin@example.com
