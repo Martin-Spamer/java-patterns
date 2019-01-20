@@ -40,7 +40,7 @@ public abstract class AbstractDto {
      * @param value the value
      */
     public void addField(final String key, final String value) {
-        this.fields.put(key, value);
+        fields.put(key, value);
     }
 
     /**
@@ -50,7 +50,7 @@ public abstract class AbstractDto {
      * @return the string
      */
     public String getField(final String key) {
-        return this.fields.get(key);
+        return fields.get(key);
     }
 
     /**
@@ -60,7 +60,7 @@ public abstract class AbstractDto {
      * @return true, if successful
      */
     public boolean containsKey(final String key) {
-        return this.fields.containsKey(key);
+        return fields.containsKey(key);
     }
 
     /*
@@ -69,7 +69,7 @@ public abstract class AbstractDto {
      */
     @Override
     public String toString() {
-        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), this.fields);
+        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), fields);
     }
 
 }

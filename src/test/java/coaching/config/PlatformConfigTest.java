@@ -16,7 +16,7 @@ public class PlatformConfigTest {
     private static final Logger LOG = LoggerFactory.getLogger(PlatformConfigTest.class);
 
     /**
-     * Unit test to platform config.
+     * Unit test platform configuration.
      */
     @Test
     public void testPlatformConfig() {

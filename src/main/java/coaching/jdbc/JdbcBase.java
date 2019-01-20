@@ -58,13 +58,13 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase query(final String query) throws SQLException {
-        this.log.info("query({})", query);
+        log.info("query({})", query);
 
         final Connection connection = ConnectionFactory.getConnection();
         final Statement statement = connection.createStatement();
 
-        this.resultSet = statement.executeQuery(query);
-        this.resultSetMetaData = this.resultSet.getMetaData();
+        resultSet = statement.executeQuery(query);
+        resultSetMetaData = resultSet.getMetaData();
         return this;
     }
 
@@ -76,15 +76,15 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase executeQuery(final String sql) throws SQLException {
-        this.log.info("executeQuery({})", sql);
+        log.info("executeQuery({})", sql);
 
         final Connection connection = ConnectionFactory.getConnection();
         final Statement statement = connection.createStatement();
 
-        this.resultSet = statement.executeQuery(sql);
-        processResultSet(this.resultSet);
+        resultSet = statement.executeQuery(sql);
+        processResultSet(resultSet);
 
-        this.resultSet.close();
+        resultSet.close();
         statement.close();
         connection.close();
         return this;
@@ -98,13 +98,13 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase executePreparedStatement(final String sql) throws SQLException {
-        this.log.info("executePreparedStatement({})", sql);
+        log.info("executePreparedStatement({})", sql);
 
         final Connection connection = ConnectionFactory.getConnection();
         final PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-        boolean result = preparedStatement.execute();
-        this.log.info("Rows updated : {}", result);
+        final boolean result = preparedStatement.execute();
+        log.info("Rows updated : {}", result);
 
         preparedStatement.close();
         connection.close();
@@ -121,9 +121,9 @@ public abstract class JdbcBase {
     private void processResultSet(final ResultSet resultSet) throws SQLException {
         final StringBuilder output = new StringBuilder();
         while (resultSet.next()) {
-            this.log.debug("resultSet = {}", resultSet);
+            log.debug("resultSet = {}", resultSet);
             final String rowAsString = processRow(resultSet);
-            this.log.info("rowAsString = {}", rowAsString);
+            log.info("rowAsString = {}", rowAsString);
             output.append(rowAsString);
         }
     }
@@ -144,11 +144,11 @@ public abstract class JdbcBase {
             final Object value = resultSet.getObject(i);
             if (value == null) {
                 final String msg = String.format("%s = null,", columnName);
-                this.log.info("{}", msg);
+                log.info("{}", msg);
                 output.append(msg);
             } else {
                 final String msg = String.format("%s = %s,", columnName, value.toString().trim());
-                this.log.info("{}", msg);
+                log.info("{}", msg);
                 output.append(msg);
             }
         }
@@ -183,10 +183,10 @@ public abstract class JdbcBase {
     protected String bodyToString() throws SQLException {
         final List<String> columns = columnLabels();
         final List<String> values = new ArrayList<>();
-        if (this.resultSet != null) {
-            while (this.resultSet.next()) {
+        if (resultSet != null) {
+            while (resultSet.next()) {
                 for (final String columnName : columns) {
-                    values.add(this.resultSet.getString(columnName));
+                    values.add(resultSet.getString(columnName));
                 }
             }
         }
@@ -201,9 +201,9 @@ public abstract class JdbcBase {
      */
     protected List<String> columnLabels() throws SQLException {
         final List<String> columns = new ArrayList<>();
-        if (this.resultSetMetaData != null) {
-            for (int i = 1; i < this.resultSetMetaData.getColumnCount(); i++) {
-                final String columnName = this.resultSetMetaData.getColumnName(i);
+        if (resultSetMetaData != null) {
+            for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
+                final String columnName = resultSetMetaData.getColumnName(i);
                 columns.add(columnName);
             }
         }
@@ -216,9 +216,9 @@ public abstract class JdbcBase {
     @Override
     protected void finalize() {
         try {
-            this.resultSet.close();
+            resultSet.close();
         } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -228,7 +228,7 @@ public abstract class JdbcBase {
      */
     @Override
     public String toString() {
-        return String.format("%s [resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]", this.getClass().getSimpleName(), this.resultSet, this.resultSetMetaData, this.databaseMetaData);
+        return String.format("%s [resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]", this.getClass().getSimpleName(), resultSet, resultSetMetaData, databaseMetaData);
     }
 
 }

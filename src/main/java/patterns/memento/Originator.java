@@ -13,7 +13,7 @@ public class Originator {
      * Instantiates a new originator.
      */
     public Originator() {
-        this.memento = createMemento();
+        memento = createMemento();
     }
 
     /**
@@ -22,7 +22,7 @@ public class Originator {
      * @param state the state
      */
     public Originator(final Object state) {
-        this.memento = createMemento(state);
+        memento = createMemento(state);
     }
 
     /**
@@ -31,8 +31,8 @@ public class Originator {
      * @return the memento
      */
     public Memento createMemento() {
-        this.memento = new Memento();
-        return this.memento;
+        memento = new Memento();
+        return memento;
     }
 
     /**
@@ -42,8 +42,8 @@ public class Originator {
      * @return the memento
      */
     public Memento createMemento(final Object state) {
-        this.memento = new Memento(state);
-        return this.memento;
+        memento = new Memento(state);
+        return memento;
     }
 
     /**
@@ -61,7 +61,7 @@ public class Originator {
      * @return the memento
      */
     public Memento getMemento() {
-        return this.memento;
+        return memento;
     }
 
 }

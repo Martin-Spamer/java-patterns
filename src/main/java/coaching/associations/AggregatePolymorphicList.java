@@ -49,7 +49,7 @@ public final class AggregatePolymorphicList {
      */
     public AggregatePolymorphicList execute() {
         for (final AbstractPerson abstractPerson : aggregation) {
-            abstractPerson.execute();
+            abstractPerson.doWork();
         }
         return this;
     }

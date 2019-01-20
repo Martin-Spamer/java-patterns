@@ -41,6 +41,17 @@ public final class XmlResourceLoader {
     /**
      * Gets the xml resource.
      *
+     * @param resourceLocation the resource location
+     * @param resourceName the resource name
+     * @return the xml resource
+     */
+    public static Document getXmlResource(final String resourceLocation, final String resourceName) {
+        return getXmlResource(resourceLocation + resourceName);
+    }
+
+    /**
+     * Gets the xml resource.
+     *
      * @param resourceName the resource name
      * @return the xml resource
      */

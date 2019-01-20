@@ -64,7 +64,7 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public String pick() {
-        this.log.debug("%s.pick()", this.getClass().getSimpleName());
+        this.log.debug("{}.pick()", this.getClass().getSimpleName());
         return choose();
     }
 
@@ -74,7 +74,7 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public String choose() {
-        this.log.debug("%s.choose()", this.getClass().getSimpleName());
+        this.log.debug("{}.choose()", this.getClass().getSimpleName());
         final int size = size();
         if (size > 0) {
             final int nextInt = this.random.nextInt(size);
@@ -90,7 +90,7 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public BagInterface reset() {
-        this.log.debug("%s.reset()", this.getClass().getSimpleName());
+        this.log.debug("{}.reset()", this.getClass().getSimpleName());
         return fill(this.initialState);
     }
 

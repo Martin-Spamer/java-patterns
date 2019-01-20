@@ -12,12 +12,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assume.assumeNotNull;
 
 /**
- * Unit test for the UnitTest class.
+ * Unit test for the ExampleUnitTest class.
  */
-public final class UnitTest {
+public final class ExampleUnitTest {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(UnitTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ExampleUnitTest.class);
 
     /**
      * Unit test class for ClassUnder.
@@ -123,7 +123,7 @@ public final class UnitTest {
     /**
      * Unit test to typical pass assume given.
      */
-    @Test
+    @Test(expected = AssumptionViolatedException.class)
     public void testTypicalAssumeGivenFails() {
         // Given should use assumptions not assertions.
         final Object state = null;

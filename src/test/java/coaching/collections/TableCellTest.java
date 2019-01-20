@@ -34,8 +34,8 @@ public class TableCellTest {
         final TableCell tableCell = new TableCell("value");
         assertNotNull(tableCell);
         LOG.info("{}", tableCell);
-        assertEquals("new", tableCell.setValue("new").getValue());
+        String newValue = "newValue";
+        assertEquals(newValue, tableCell.setValue(newValue).getValue());
         LOG.info("{}", tableCell);
     }
-
 }

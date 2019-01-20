@@ -34,8 +34,8 @@ public final class XmlToDao {
      * @param tableName the table name
      */
     public void process(final String resourceName, final String tableName) {
-        this.csv.read(resourceName);
-        List<CsvRecord> rowList = this.csv.getRowList();
+        csv.read(resourceName);
+        final List<CsvRecord> rowList = csv.getRowList();
         // this.dao.insertRows(rowList);
     }
 
@@ -45,7 +45,7 @@ public final class XmlToDao {
      */
     @Override
     public String toString() {
-        return String.format("XmlToDao [csv=%s, dao=%s]", this.csv, this.dao);
+        return String.format("XmlToDao [csv=%s, dao=%s]", csv, dao);
     }
 
 }

@@ -17,9 +17,9 @@ public final class FooTest {
      * Unit test to.
      */
     @Test
-    public void test() {
-        LOG.info(Thread.currentThread().getContextClassLoader().toString());
-        LOG.info(this.getClass().getClassLoader().toString());
+    public void testShowClassLoader() {
+        LOG.info("this.getClass().getClassLoader() : {}", this.getClass().getClassLoader());
+        LOG.info("Thread.currentThread().getContextClassLoader() : {}", Thread.currentThread().getContextClassLoader());
     }
 
 }

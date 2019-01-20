@@ -19,7 +19,7 @@ public final class ContextTest {
     private static final Logger LOG = LoggerFactory.getLogger(ContextTest.class);
 
     /**
-     * The Class TestContext.
+     * TestContext Class.
      */
     public final class TestContext extends AbstractContext {
 

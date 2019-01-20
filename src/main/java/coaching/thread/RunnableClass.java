@@ -29,7 +29,7 @@ public final class RunnableClass implements Runnable {
         LOG.info("{} running... ", this.getClass().getSimpleName());
         try {
             Thread.sleep(1000);
-        } catch (InterruptedException e) {
+        } catch (final InterruptedException e) {
             LOG.error(e.getLocalizedMessage(), e);
             Thread.currentThread().interrupt();
         }

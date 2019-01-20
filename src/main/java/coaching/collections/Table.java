@@ -21,10 +21,10 @@ public class Table {
     private String tableName;
 
     /** The column names. */
-    private final List<String> colNames = new ArrayList<>();
+    private final List<String> colNames = new ArrayList<String>();
 
     /** The rows of the table. */
-    private final List<TableRow> rows = new ArrayList<>();
+    private final List<TableRow> rows = new ArrayList<TableRow>();
 
     /**
      * Instantiates a new table.
@@ -49,7 +49,7 @@ public class Table {
      * @param tableName the tableName to set
      * @return the table
      */
-    public Table setTableName(final String tableName) {
+    public Table setName(final String tableName) {
         this.tableName = tableName;
         return this;
     }
@@ -59,26 +59,86 @@ public class Table {
      *
      * @return the tableName
      */
-    public String getTableName() {
-        return tableName;
+    public String getName() {
+        return this.tableName;
     }
 
     /**
-     * Adds an cols.
+     * Adds the column name.
+     *
+     * @param colName the col name
+     * @return the table
+     */
+    public Table addColumnName(final String colName) {
+        this.colNames.add(colName);
+        return this;
+    }
+
+    /**
+     * Adds a multiple column names.
      *
      * @param colNames the col names
+     * @return the table
      */
-    public void addColNames(final String... colNames) {
+    public Table addColumnNames(final String... colNames) {
         this.colNames.addAll(Arrays.asList(colNames));
+        return this;
     }
 
     /**
-     * Adds an row.
+     * Adds a new column from data.
+     *
+     * @param colData the col data
+     * @return the table
+     */
+    public Table addColumn(final String... colData) {
+        this.log.info("{}", colData);
+        this.log.info("{}", colData.length);
+
+        for (String value : colData) {
+            this.log.info("{}", value);
+        }
+
+        for (int i = 0; i < colData.length; i++) {
+            String value = colData[i];
+            this.log.info("{}", value);
+            TableRow tableRow = this.rows.get(i);
+            if (tableRow != null) {
+                tableRow.addCell(value);
+            }
+        }
+        return this;
+    }
+
+    /**
+     * Gets the column names.
+     *
+     * @return the column names
+     */
+    public List<String> getColumnNames() {
+        return this.colNames;
+    }
+
+    /**
+     * Adds a row.
      *
      * @param values the values
+     * @return the table
      */
-    public void addRow(final String... values) {
-        add(new TableRow(values));
+    public Table addRow(final String values) {
+        addRow(new TableRow(values));
+        return this;
+    }
+
+    /**
+     * Adds a row.
+     *
+     * @param values the values
+     * @return the table
+     */
+    public Table addRow(final String... values) {
+        addRow(new TableRow(values));
+        return this;
     }
 
     /**
@@ -88,8 +148,18 @@ public class Table {
      * @return the boolean
      * @see java.util.List#add(java.lang.Object)
      */
-    public boolean add(final TableRow e) {
-        return rows.add(e);
+    public Table addRow(final TableRow e) {
+        this.rows.add(e);
+        return this;
+    }
+
+    /**
+     * Adds the rows.
+     *
+     * @param tableRows the table rows
+     */
+    public Table addRows(final TableRow[] tableRows) {
+        return this;
     }
 
     /**
@@ -99,8 +169,8 @@ public class Table {
      * @return the table row
      * @see java.util.List#get(int)
      */
-    public TableRow get(final int index) {
-        return rows.get(index);
+    public TableRow getRow(final int index) {
+        return this.rows.get(index);
     }
 
     /**
@@ -120,7 +190,7 @@ public class Table {
     protected String tableHeader() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<String> itemIterator = colNames.iterator();
+        final Iterator<String> itemIterator = this.colNames.iterator();
         if (itemIterator.hasNext()) {
             stringBuffer.append(itemIterator.next());
             while (itemIterator.hasNext()) {
@@ -141,7 +211,7 @@ public class Table {
     protected String tableBody() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableRow> tableRow = rows.iterator();
+        final Iterator<TableRow> tableRow = this.rows.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -160,7 +230,7 @@ public class Table {
      */
     @Override
     public String toString() {
-        return String.format("%s [tableName=%s, colNames=%s, rows=%s]", this.getClass().getSimpleName(), tableName, colNames, rows);
+        return String.format("%s [tableName=%s, colNames=%s, rows=%s]", this.getClass().getSimpleName(), this.tableName, this.colNames, this.rows);
     }
 
 }

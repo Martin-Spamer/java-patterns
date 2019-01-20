@@ -39,7 +39,7 @@ public final class CsvToJson {
      * @param resourceName the resource name
      */
     public void read(final String resourceName) {
-        this.csvFile.read(resourceName);
+        csvFile.read(resourceName);
     }
 
     /**
@@ -48,12 +48,12 @@ public final class CsvToJson {
     public void write() {
         final JSONObject json = new JSONObject();
         assumeNotNull(json);
-        for (int rowIndex = 0; rowIndex < this.csvFile.rowCount(); rowIndex++) {
+        for (int rowIndex = 0; rowIndex < csvFile.rowCount(); rowIndex++) {
             final JSONObject rowJson = new JSONObject();
-            CsvRecord record = this.csvFile.getRecord(rowIndex);
+            final CsvRecord record = csvFile.getRecord(rowIndex);
             for (int colNo = 0; colNo < record.columnCount(); colNo++) {
-                String name = this.csvFile.getColumnName(colNo);
-                String value = record.getColumn(colNo);
+                final String name = csvFile.getColumnName(colNo);
+                final String value = record.getColumn(colNo);
                 rowJson.put(name, value);
             }
             json.put("row", record);

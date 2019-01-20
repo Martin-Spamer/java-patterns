@@ -1,11 +1,6 @@
 
 package coaching.jdbc;
 
-import java.util.List;
-
-import coaching.csv.CsvFile;
-import coaching.csv.CsvRecord;
-
 /**
  * A Data Access object for PostgreSql Database.
  */
@@ -23,6 +18,28 @@ public class PostgresSqlDao extends AbstractDao {
     /** PASSWORD to be used. */
     private static final String PASSWORD = "password";
 
+    /** The classname of the JDBC driver to use. */
+    /** SQL to DROP the table. */
+    static final String DROP_SQL = "DROP TABLE IF EXISTS {}";
+
+    /** SQL to create the table. */
+    static final String CREATE_SQL = "CREATE TABLE customer (id INTEGER, name STRING, details STRING)";
+
+    /** SQL to count the number of rows in the table. */
+    static final String COUNT_SQL = "SELECT (*) FROM customer";
+
+    /** SQL to select all rows in the table. */
+    static final String SELECT_SQL = "SELECT * FROM customer";
+
+    /** SQL to insert a row in the table. */
+    static final String INSERT_SQL = "INSERT INTO customer (ID, NAME, DATA VALUES (999,'...','...')";
+
+    /** SQL to update rows in the table. */
+    static final String UPDATE_SQL = "UPDATE TABLE SET FIELD = 'Value' WHERE ID=999";
+
+    /** SQL to delete rows in the table. */
+    static final String DELETE_SQL = "DELETE FROM TABLE WHERE ID=999";
+
     /**
      * Instantiates a new postgres sql dao.
      */
@@ -30,32 +47,4 @@ public class PostgresSqlDao extends AbstractDao {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
     }
 
-    /**
-     * Insert rows.
-     *
-     * @param csvFile the csv file
-     */
-    public void insertRows(final CsvFile csvFile) {
-        insertRows(csvFile.getRowList());
-    }
-
-    /**
-     * Insert rows.
-     *
-     * @param rowList the row list
-     */
-    public void insertRows(final List<CsvRecord> rowList) {
-        for (CsvRecord csvRecord : rowList) {
-            createRow(csvRecord);
-        }
-    }
-
-    /**
-     * Creates the row.
-     *
-     * @param csvRecord the csv record
-     */
-    private void createRow(final CsvRecord csvRecord) {
-        super.createRow(INSERT_SQL);
-    }
 }

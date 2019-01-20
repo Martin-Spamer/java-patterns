@@ -13,13 +13,31 @@
 	<description>Java coaching project.</description>
 	<url>http://spamer.me.uk</url>
 
+	<licenses>
+	    <license>
+	      <name>GPL-v3.0</name>
+	      <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+	    </license>
+	</licenses>
+
 	<developers>
 		<developer>
 			<id>martin-spamer</id>
 			<name>Martin Spamer</name>
-			<roles><role>Owner</role></roles>
+			<roles><role>developer</role></roles>
 		</developer>
 	</developers>
+
+ 	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/Martin-Spamer/java-coaching/issues</url>
+  	</issueManagement>
+
+	<scm>
+	    <connection>scm:git:https://github.com/Martin-Spamer/java-coaching</connection>
+    	<url>https://github.com/Martin-Spamer/java-coaching</url>
+    	<tag>HEAD</tag>
+  	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -105,8 +123,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.0.1</version>
 		        <configuration>
-					<reportOutputDirectory>${project.reporting.outputDirectory}/target</reportOutputDirectory>
-					<destDir>${project.reporting.outputDirectory}/target/javadoc</destDir>
+					<destDir>${basedir}/target/javadoc</destDir>
 		        </configuration>
 				<executions>
 					<execution>
@@ -189,6 +206,12 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.0.1</version>
+		        <configuration>
+					<stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
+					<reportOutputDirectory>${basedir}/target/site/javadoc</reportOutputDirectory>
+					<keywords>java coaching</keywords>
+					<show>public</show>
+        		</configuration>				
 			</plugin>
 
 			<plugin>

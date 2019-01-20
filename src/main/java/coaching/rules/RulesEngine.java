@@ -88,7 +88,7 @@ public class RulesEngine {
     protected boolean readXmlStream(final String configFilename, final DocumentBuilder documentBuilder) {
         final InputStream is = inputStreamFrom(configFilename);
         try {
-            if (null != is) {
+            if (is != null) {
                 this.document = documentBuilder.parse(is);
                 this.documentElement = this.document.getDocumentElement();
                 return true;

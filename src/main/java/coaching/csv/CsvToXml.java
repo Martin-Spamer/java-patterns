@@ -30,8 +30,8 @@ public final class CsvToXml {
      * @param tableName the table name
      */
     public void process(final String resourceName, final String tableName) {
-        this.csv.read(resourceName);
-        List<CsvRecord> rowList = this.csv.getRowList();
+        csv.read(resourceName);
+        final List<CsvRecord> rowList = csv.getRowList();
     }
 
 }

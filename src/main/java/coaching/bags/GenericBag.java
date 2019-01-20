@@ -30,7 +30,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
      */
     public GenericBag() {
         super();
-        log.info("GenericBag({})");
+        this.log.info("GenericBag({})");
     }
 
     /**
@@ -41,7 +41,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
     @SafeVarargs
     public GenericBag(final T... values) {
         super();
-        log.info("GenericBag({})", values);
+        this.log.info("GenericBag({})", values);
         fill(values);
     }
 
@@ -52,7 +52,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
     @SuppressWarnings("unchecked")
     @Override
     public GenericBagInterface<T> fill(final T... values) {
-        log.debug("%s.fill({})", this.getClass().getSimpleName(), values);
+        this.log.debug("{}.fill({})", this.getClass().getSimpleName(), values);
         if (values != null) {
             this.initialState = values;
             this.addAll(Arrays.asList(values));
@@ -66,7 +66,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
      */
     @Override
     public T pick() {
-        log.debug("%s.pick()", this.getClass().getSimpleName());
+        this.log.debug("{}.pick()", this.getClass().getSimpleName());
         return choose();
     }
 
@@ -76,7 +76,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
      */
     @Override
     public T choose() {
-        log.debug("%s.choose()", this.getClass().getSimpleName());
+        this.log.debug("{}.choose()", this.getClass().getSimpleName());
         final int size = size();
         if (size > 0) {
             final int nextInt = this.random.nextInt(size);
@@ -92,7 +92,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
      */
     @Override
     public GenericBagInterface<T> reset() {
-        log.debug("%s.reset()", this.getClass().getSimpleName());
+        this.log.debug("{}.reset()", this.getClass().getSimpleName());
         return fill(this.initialState);
     }
 

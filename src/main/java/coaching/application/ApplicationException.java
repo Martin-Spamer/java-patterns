@@ -18,13 +18,4 @@ public class ApplicationException extends Exception {
         super(message);
     }
 
-    /**
-     * Instantiates a new application exception with root cause.
-     *
-     * @param exception the exception
-     */
-    public ApplicationException(final Exception exception) {
-        super(exception);
-    }
-
 }

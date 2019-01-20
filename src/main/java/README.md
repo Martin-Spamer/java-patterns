@@ -6,12 +6,13 @@ The main source code for coaching Java, examples provided for Java language feat
 
 ## Java coding idioms
 
- - [Java Coaching](src/main/java/coaching)
- - [Java Coaching](src/main/java/coaching/README.md)
+ - [README](src/main/java/coaching/README.md)
  - [Java Coaching](src/main/java/coaching/coaching.md)
+ - [Source Code](src/main/java/coaching)
 
 ## Java Design Pattern examples
 
- - [Java Patterns](src/main/java/patterns)
- - [Java Patterns](src/main/java/patterns/README.md)
- - [Java Patterns](src/main/java/patterns/patterns.md)
+ - [README](src/main/java/patterns/README.md)
+ - [Pattern Coaching](src/main/java/patterns/patterns.md)
+ - [Source Code](src/main/java/patterns)
+ 

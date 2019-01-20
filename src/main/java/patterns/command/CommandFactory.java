@@ -30,7 +30,7 @@ public final class CommandFactory {
      */
     private CommandFactory() {
         super();
-        this.properties = PropertiesLoader.getProperties("commands.properties");
+        properties = PropertiesLoader.getProperties("commands.properties");
     }
 
     /**

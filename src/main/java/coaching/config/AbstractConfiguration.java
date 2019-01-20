@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import coaching.resources.PropertiesLoader;
 
 /**
- * An abstract Configuration class. Loads the Configuration from an Properties
+ * An abstract Configuration class. Loads the Configuration from a Properties
  * file.
  */
 public abstract class AbstractConfiguration implements ConfigInterface {
@@ -57,7 +57,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
      * @param configFilename the Configuration filename
      */
     protected void loadFrom(final String configFilename) {
-        properties = PropertiesLoader.getProperties(configFilename);
+        this.properties = PropertiesLoader.getProperties(configFilename);
     }
 
     /**
@@ -80,7 +80,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
      */
     @Override
     public String get(final String key) {
-        return properties.getProperty(key);
+        return this.properties.getProperty(key);
     }
 
     /*
@@ -90,7 +90,42 @@ public abstract class AbstractConfiguration implements ConfigInterface {
      */
     @Override
     public String get(final String key, final String defaultValue) {
-        return properties.getProperty(key, defaultValue);
+        return this.properties.getProperty(key, defaultValue);
+    }
+
+    /**
+     * Value for key, allows an environment value to override the property.
+     *
+     * @param key the key
+     * @return the value as a String object.
+     */
+    @Override
+    public String valueFor(final String key) {
+        final String value = System.getProperty(key);
+        if (value == null) {
+            return this.properties.getProperty(key);
+        } else {
+            this.log.warn("Using system property value {} for key {}", value, key);
+        }
+        return value;
+    }
+
+    /**
+     * Value for key, allows an environment value to override the property.
+     *
+     * @param key the key
+     * @param defaultValue the default value, if no property found.
+     * @return the property value as a String object.
+     */
+    @Override
+    public String valueFor(final String key, final String defaultValue) {
+        final String value = System.getProperty(key);
+        if (value == null) {
+            return this.properties.getProperty(key, defaultValue);
+        } else {
+            this.log.warn("Using system property value {} for key {}", value, key);
+        }
+        return value;
     }
 
     /*
@@ -99,7 +134,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
      */
     @Override
     public String toString() {
-        final String prettyProperties = prettyProperties(properties);
+        final String prettyProperties = prettyProperties(this.properties);
         return String.format("%s [properties = %s]", this.getClass().getSimpleName(), prettyProperties);
     }
 

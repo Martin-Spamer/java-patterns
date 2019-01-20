@@ -30,7 +30,7 @@ public final class CsvToDao {
      * @param resourceName the resource name
      */
     public void process(final String resourceName) {
-        this.csv.read(resourceName);
+        csv.read(resourceName);
     }
 
     /*
@@ -39,7 +39,7 @@ public final class CsvToDao {
      */
     @Override
     public String toString() {
-        return String.format("%s [csv=%s, dao=%s]", this.getClass().getSimpleName(), this.csv, this.dao);
+        return String.format("%s [csv=%s, dao=%s]", this.getClass().getSimpleName(), csv, dao);
     }
 
 }

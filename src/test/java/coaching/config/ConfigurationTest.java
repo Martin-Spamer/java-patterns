@@ -20,9 +20,11 @@ public final class ConfigurationTest {
      */
     @Test
     public void testConfiguration() {
-        final AbstractConfiguration config = new Configuration();
+        final Configuration config = new Configuration();
         assertNotNull(config);
         LOG.info(config.toString());
+        config.valueFor("Missing");
+        config.valueFor("Missing", "default");
     }
 
 }

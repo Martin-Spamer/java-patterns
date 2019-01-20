@@ -35,7 +35,8 @@ public abstract class AbstractApplication {
      */
     public AbstractApplication() {
         super();
-        log.info("AbstractApplication() = {}", this);
+        this.log.info("AbstractApplication() = {}", this);
+        initialisation(defaultFilename());
     }
 
     /**
@@ -46,16 +47,8 @@ public abstract class AbstractApplication {
     public AbstractApplication(final String[] args) {
         super();
         this.args = args;
-        log.info("AbstractApplication({}) = {}", args, this);
-    }
-
-    /**
-     * Initialisation.
-     *
-     * @return true, if successful
-     */
-    protected boolean initialisation() {
-        return initialisation(defaultFilename());
+        this.log.info("AbstractApplication({}) = {}", args, this);
+        initialisation(defaultFilename());
     }
 
     /**
@@ -92,20 +85,20 @@ public abstract class AbstractApplication {
         try {
             final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             final DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            document = documentBuilder.parse(configFile);
-            documentElement = document.getDocumentElement();
+            this.document = documentBuilder.parse(configFile);
+            this.documentElement = this.document.getDocumentElement();
 
-            if (documentElement != null) {
+            if (this.documentElement != null) {
                 final Element commandHandlerElement = getElement("COMMAND_HANDLER");
-                log.info("commandHandlerElement = {}", commandHandlerElement);
+                this.log.info("commandHandlerElement = {}", commandHandlerElement);
                 final String commandHandlerClassName = getElementAttribute("COMMAND_HANDLER", "className");
-                log.info("commandHandlerClassName = {}", commandHandlerClassName);
+                this.log.info("commandHandlerClassName = {}", commandHandlerClassName);
             } else {
-                log.warn("documentElement = null");
+                this.log.warn("documentElement = null");
             }
             return true;
         } catch (final Exception e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage());
         }
         return false;
     }
@@ -118,13 +111,13 @@ public abstract class AbstractApplication {
      */
     protected Element getElement(final String elementName) {
         Element element = null;
-        final NodeList nodelist = documentElement.getElementsByTagName(elementName);
+        final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
         if (nodelist != null) {
             if (nodelist.getLength() == 0) {
-                log.debug("{} is missing for {}", elementName, documentElement);
+                this.log.debug("{} is missing for {}", elementName, this.documentElement);
             } else {
                 if (nodelist.getLength() > 1) {
-                    log.trace("Surplus {} elements ignored", elementName);
+                    this.log.trace("Surplus {} elements ignored", elementName);
                 }
                 element = (Element) nodelist.item(0);
             }
@@ -150,7 +143,7 @@ public abstract class AbstractApplication {
      */
     @Override
     public String toString() {
-        return String.format("%s [args=%s, document=%s, documentElement=%s]", this.getClass().getSimpleName(), Arrays.toString(args), document, documentElement);
+        return String.format("%s [args=%s, document=%s, documentElement=%s]", this.getClass().getSimpleName(), Arrays.toString(this.args), this.document, this.documentElement);
     }
 
 }

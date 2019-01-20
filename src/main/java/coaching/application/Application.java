@@ -22,7 +22,7 @@ public final class Application extends AbstractApplication {
      */
     public Application(final String[] args) {
         super(args);
-        log.debug("args = {}", Arrays.toString(args));
+        this.log.debug("args = {}", Arrays.toString(args));
     }
 
     /**
@@ -32,10 +32,10 @@ public final class Application extends AbstractApplication {
      */
     public boolean execute() {
         try {
-            log.info("execute() : {}", this);
+            this.log.info("execute() : {}", this);
             return true;
         } catch (final Exception e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
             return false;
         }
     }
@@ -48,14 +48,12 @@ public final class Application extends AbstractApplication {
      *
      * @param args the program arguments as a String array.
      */
-    public static void main(final String[] args) {
+    public static int main(final String[] args) {
         final Application application = new Application(args);
-        if (application.initialisation()) {
-            if (application.execute()) {
-                System.exit(0);
-            } else {
-                System.exit(1);
-            }
+        if (application.execute()) {
+            return 0;
+        } else {
+            return 1;
         }
     }
 }

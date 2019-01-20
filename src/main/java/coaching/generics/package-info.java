@@ -1,5 +1,5 @@
 /**
- * Package examples of working with java generic collections.
+ * Package examples of working with java collections.
  * <p>
  * Detailed description of package.
  */

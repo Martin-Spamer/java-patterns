@@ -36,7 +36,7 @@ public abstract class AbstractScheduler {
      */
     public AbstractScheduler() {
         initialise();
-        this.log.info("AbstractScheduler() : {}", this);
+        log.debug("AbstractScheduler() : {}", this);
     }
 
     /**
@@ -45,8 +45,12 @@ public abstract class AbstractScheduler {
      * @param resourceName the resource name
      */
     public AbstractScheduler(final String resourceName) {
-        initialise(resourceName);
-        this.log.info("AbstractScheduler({}) : {}", resourceName, this);
+        log.debug("AbstractScheduler({}) : {}", resourceName, this);
+        if (resourceName != null) {
+            initialise(resourceName);
+        } else {
+            initialise();
+        }
     }
 
     /**
@@ -55,37 +59,12 @@ public abstract class AbstractScheduler {
      * @param args the args
      */
     public AbstractScheduler(final String[] args) {
-        initialise(args);
-        this.log.info("AbstractScheduler({}) = {}", args, this);
-    }
-
-    /**
-     * Initialise.
-     *
-     * @param args the args
-     */
-    private void initialise(final String[] args) {
-        this.args = args;
-        initialise();
-    }
-
-    /**
-     * Initialise.
-     */
-    private void initialise() {
-        final String simpleName = this.getClass().getSimpleName();
-        this.properties = PropertiesLoader.getProperties(simpleName);
-        this.xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
-    }
-
-    /**
-     * Initialise.
-     *
-     * @param resourceName the resource name
-     */
-    private void initialise(final String resourceName) {
-        this.properties = PropertiesLoader.getProperties(resourceName);
-        this.xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
+        log.debug("AbstractScheduler({}) = {}", args, this);
+        if (args != null) {
+            initialise(args);
+        } else {
+            initialise();
+        }
     }
 
     /**
@@ -94,27 +73,55 @@ public abstract class AbstractScheduler {
      * @param properties the properties
      */
     public AbstractScheduler(final Properties properties) {
+        log.debug("AbstractScheduler({}) = {}", properties, this);
         initialisation(properties);
-        this.log.info("AbstractScheduler({}) = {}", properties, this);
     }
 
     /**
-     * Initialisation.
+     * Initialise from default property file.
+     */
+    private void initialise() {
+        final String simpleName = this.getClass().getSimpleName();
+        properties = PropertiesLoader.getProperties(simpleName);
+        xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
+    }
+
+    /**
+     * Initialise from named resource file.
+     *
+     * @param resourceName the resource name
+     */
+    private void initialise(final String resourceName) {
+        try {
+            properties = PropertiesLoader.getProperties(resourceName);
+        } catch (final Exception e) {
+            log.error(e.getLocalizedMessage(), e);
+        }
+
+        try {
+            xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
+        } catch (final Exception e) {
+            log.error(e.getLocalizedMessage(), e);
+        }
+    }
+
+    /**
+     * Initialise with String array.
+     *
+     * @param args the args
+     */
+    private void initialise(final String[] args) {
+        initialise();
+        this.args = args;
+    }
+
+    /**
+     * Initialisation from properties.
      *
      * @param properties the properties
      */
     private void initialisation(final Properties properties) {
         this.properties = properties;
-    }
-
-    /**
-     * Execute.
-     *
-     * @return the abstract scheduler
-     */
-    public AbstractScheduler execute() {
-        this.xmlDoc = XmlResourceLoader.getXmlResource(resourceName());
-        return execute(this.xmlDoc);
     }
 
     /**
@@ -130,6 +137,16 @@ public abstract class AbstractScheduler {
     /**
      * Execute.
      *
+     * @return the abstract scheduler
+     */
+    public AbstractScheduler execute() {
+        xmlDoc = XmlResourceLoader.getXmlResource(resourceName());
+        return execute(xmlDoc);
+    }
+
+    /**
+     * Execute.
+     *
      * @param xmlDoc the xml doc
      * @return the abstract scheduler
      */
@@ -138,11 +155,13 @@ public abstract class AbstractScheduler {
         for (int i = 0; i < list.getLength(); i++) {
             final Element element = (Element) list.item(i);
             final String nodeName = element.getNodeName();
-            this.log.info("{}", nodeName);
+            log.debug("nodeName : {}", nodeName);
             final String nameAttribute = element.getAttribute("name");
-            this.log.info("{}", nameAttribute);
+            log.debug("nameAttribute : {}", nameAttribute);
             final String classAttribute = element.getAttribute("class");
-            this.log.info("{}", classAttribute);
+            log.debug("classAttribute : {}", classAttribute);
+            final String valueAttribute = element.getAttribute("value");
+            log.debug("valueAttribute : {}", valueAttribute);
         }
         return this;
     }
@@ -159,16 +178,17 @@ public abstract class AbstractScheduler {
             while (keys.hasMoreElements()) {
                 final String key = (String) keys.nextElement();
                 final String value = properties.getProperty(key);
+                log.debug("{} = {}", key, value);
                 try {
                     final Thread thread = (Thread) Class.forName(value).newInstance();
-                    this.log.debug("{}", thread);
+                    log.debug("thread : {}", thread);
                     thread.start();
                 } catch (final Exception e) {
-                    this.log.error(e.getLocalizedMessage(), e);
+                    log.error(e.getLocalizedMessage(), e);
                 }
             }
         } else {
-            this.log.warn("Properties cannot be null");
+            log.warn("Properties cannot be null");
         }
         return this;
     }
@@ -179,7 +199,7 @@ public abstract class AbstractScheduler {
      */
     @Override
     public String toString() {
-        return String.format("%s [args=%s, properties=%s]", this.getClass().getSimpleName(), Arrays.toString(this.args), this.properties);
+        return String.format("%s [args=%s, properties=%s]", this.getClass().getSimpleName(), Arrays.toString(args), properties);
     }
 
 }

@@ -18,9 +18,6 @@
 package coaching.jdbc;
 
 import java.sql.SQLException;
-import java.util.List;
-
-import coaching.csv.CsvRecord;
 
 /**
  * A dynamic data access object.
@@ -41,51 +38,40 @@ public final class DynamicDao extends AbstractDao {
         try {
             super.query("select * from sqlite_master");
         } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.jdbc.AbstractDao#setDriver(java.lang.String)
-     */
+    /* (non-Javadoc)
+    * @see coaching.jdbc.AbstractDao#createRow()
+    */
     @Override
-    public DaoInterface setDriver(final String driver) throws ClassNotFoundException {
-        return null;
+    public CrudInterface createRow() {
+        return this;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.jdbc.AbstractDao#setUrl(java.lang.String)
-     */
+    /* (non-Javadoc)
+    * @see coaching.jdbc.AbstractDao#readRow()
+    */
     @Override
-    public DaoInterface setUrl(final String url) {
-        return null;
+    public CrudInterface readRow() {
+        return this;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.jdbc.AbstractDao#setUsername(java.lang.String)
-     */
+    /* (non-Javadoc)
+    * @see coaching.jdbc.AbstractDao#updateRow()
+    */
     @Override
-    public DaoInterface setUsername(final String username) {
-        return null;
+    public CrudInterface updateRow() {
+        return this;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see coaching.jdbc.AbstractDao#setPassword(java.lang.String)
-     */
+    /* (non-Javadoc)
+    * @see coaching.jdbc.AbstractDao#deleteRow()
+    */
     @Override
-    public DaoInterface setPassword(final String password) {
-        return null;
+    public CrudInterface deleteRow() {
+        return this;
     }
 
-    /**
-     * Insert rows.
-     *
-     * @param rowList the row list
-     */
-    public void insertRows(final List<CsvRecord> rowList) {
-    }
 }

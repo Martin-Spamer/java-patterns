@@ -17,34 +17,11 @@ public final class MySqlDaoTest {
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(MySqlDaoTest.class);
 
-    /** SQL to DROP the table. */
-    static final String DROP_SQL = "DROP TABLE IF EXISTS {}";
-
-    /** SQL to create the table. */
-    static final String CREATE_SQL = "CREATE TABLE customer (id INTEGER, name STRING, details STRING)";
-
-    /** SQL to count the number of rows in the table. */
-    static final String COUNT_SQL = "SELECT (*) FROM customer";
-
-    /** SQL to select all rows in the table. */
-    static final String SELECT_SQL = "SELECT * FROM customer";
-
-    /** SQL to insert a row in the table. */
-    static final String INSERT_SQL = "INSERT INTO customer (ID, NAME, DATA VALUES (999,'...','...')";
-
-    /** SQL to update rows in the table. */
-    static final String UPDATE_SQL = "UPDATE TABLE SET FIELD = 'Value' WHERE ID=999";
-
-    /** SQL to delete rows in the table. */
-    static final String DELETE_SQL = "DELETE FROM TABLE WHERE ID=999";
-
     /**
      * Test the default constructor with typical usage.
-     *
-     * @throws ClassNotFoundException the class not found exception
      */
     @Test
-    public void testMySqlDao() throws ClassNotFoundException {
+    public void testMySqlDao() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
         LOG.info(dao.toString());
@@ -52,55 +29,46 @@ public final class MySqlDaoTest {
 
     /**
      * Test create.
-     *
-     * @throws ClassNotFoundException the class not found exception
      */
     @Test
-    public void testCreate() throws ClassNotFoundException {
+    public void testCreate() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
         LOG.info(dao.toString());
-        dao.createRow(INSERT_SQL);
+        dao.createRow();
     }
 
     /**
      * Test read.
-     *
-     * @throws ClassNotFoundException the class not found exception
      */
     @Test
-    public void testRead() throws ClassNotFoundException {
+    public void testRead() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
         LOG.info(dao.toString());
-
-        dao.readRows(SELECT_SQL);
+        dao.readRow();
     }
 
     /**
      * Test update.
-     *
-     * @throws ClassNotFoundException the class not found exception
      */
     @Test
-    public void testUpdate() throws ClassNotFoundException {
+    public void testUpdate() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
         LOG.info(dao.toString());
-        dao.updateRow(UPDATE_SQL);
+        dao.updateRow();
     }
 
     /**
      * Test delete.
-     *
-     * @throws ClassNotFoundException the class not found exception
      */
     @Test
-    public void testDelete() throws ClassNotFoundException {
+    public void testDelete() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
         LOG.info(dao.toString());
-        dao.deleteRow(DELETE_SQL);
+        dao.deleteRow();
     }
 
 }

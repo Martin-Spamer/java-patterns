@@ -138,11 +138,16 @@ Why Declarative programming is more appropriate for FDD/BDD than Imperative prog
 	https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
 	http://www.oodesign.com/design-principles.html
 
+## Further Reading
+
 ### Code to a Contract / Design by Contract
 		http://wiki.c2.com/?DesignByContract 
-	Data Driven Testing		
+	Test Driven Development
+	Behaviour Driven Development
+	Data Driven Testing	
+	Contract First development
 
-## Advanced Programming Topics
+### Advanced Programming Topics
 	Big-O Complexity
 	https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
 

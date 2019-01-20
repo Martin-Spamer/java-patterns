@@ -58,8 +58,7 @@ public final class AbstractConfigTest {
     @Test(expected = ResourceNotLoadedException.class)
     public void testMissingConfig() {
         LOG.debug("testMissingConfig");
-        final ConfigInterface configuration = new MissingConfiguration();
-        assertNotNull(configuration);
+        assertNotNull(new MissingConfiguration());
     }
 
     /**
@@ -68,8 +67,7 @@ public final class AbstractConfigTest {
     @Test(expected = ResourceNotLoadedException.class)
     public void testMissingConfigString() {
         LOG.debug("testMissingConfigString");
-        final ConfigInterface configuration = new Configuration("Missing");
-        assertNotNull(configuration);
+        assertNotNull(new Configuration("Missing"));
     }
 
     /**

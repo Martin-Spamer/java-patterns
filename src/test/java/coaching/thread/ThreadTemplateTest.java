@@ -16,13 +16,14 @@ public class ThreadTemplateTest {
      * The Class TestThread.
      */
     public class TestThread extends ThreadTemplate {
-        
-        /* (non-Javadoc)
-        * @see coaching.thread.ThreadTemplate#execute()
-        */
+
+        /*
+         * (non-Javadoc)
+         * @see coaching.thread.ThreadTemplate#execute()
+         */
         @Override
         protected void execute() throws ApplicationException {
-            log.info("execute");
+            this.log.info("execute");
         }
     }
 
@@ -36,6 +37,7 @@ public class ThreadTemplateTest {
         final ThreadTemplate threadTemplate = new ThreadTemplate();
         assertNotNull(threadTemplate);
         threadTemplate.start();
+        threadTemplate.stop();
     }
 
     /**
@@ -48,6 +50,7 @@ public class ThreadTemplateTest {
         final ThreadTemplate threadTemplate = new TestThread();
         assertNotNull(threadTemplate);
         threadTemplate.start();
+        threadTemplate.stop();
     }
 
 }

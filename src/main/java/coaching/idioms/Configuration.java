@@ -28,12 +28,12 @@ public class Configuration {
             final String resourceName = resourceName();
             final InputStream inputStream = inputStream(resourceName);
             if (inputStream != null) {
-                this.properties.load(inputStream);
+                properties.load(inputStream);
             } else {
-                this.log.error("Resource {} not found", resourceName);
+                log.error("Resource {} not found", resourceName);
             }
         } catch (final IOException e) {
-            this.log.error("{}", e);
+            log.error("{}", e);
         }
     }
 
@@ -74,7 +74,7 @@ public class Configuration {
     public String valueFor(final String key) {
         final String property = System.getProperty(key);
         if (property == null) {
-            return this.properties.getProperty(key);
+            return properties.getProperty(key);
         }
         return property;
     }
@@ -91,7 +91,7 @@ public class Configuration {
     public String valueFor(final String key, final String defaultValue) {
         final String property = System.getProperty(key);
         if (property == null) {
-            return this.properties.getProperty(key, defaultValue);
+            return properties.getProperty(key, defaultValue);
         }
         return property;
     }
@@ -104,7 +104,7 @@ public class Configuration {
      * @return the string
      */
     public String toPrettyString() {
-        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), format(this.properties.toString()));
+        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), format(properties.toString()));
     }
 
     /**
@@ -125,6 +125,6 @@ public class Configuration {
      */
     @Override
     public String toString() {
-        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), this.properties);
+        return String.format("%s [properties=%s]", this.getClass().getSimpleName(), properties);
     }
 }

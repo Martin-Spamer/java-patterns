@@ -1,19 +1,25 @@
 
 package coaching.generics;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * Table Cell class.
+ * Generic Table Cell class.
  */
-public class TableCell {
+public class TableCell<T> {
+
+    /** provides logging. */
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The value. */
-    private final String value;
+    private T value;
 
     /**
      * Instantiates a new table cell.
      */
     public TableCell() {
-        this.value = "";
+        super();
     }
 
     /**
@@ -21,17 +27,29 @@ public class TableCell {
      *
      * @param value the value
      */
-    public TableCell(final String value) {
+    public TableCell(final T value) {
+        super();
         this.value = value;
     }
 
     /**
-     * Debug string.
+     * Gets the value.
      *
-     * @return the string
+     * @return the value
      */
-    public String debugString() {
-        return String.format("%a [value=%s]", this.getClass().getSimpleName(), this.value);
+    public T getValue() {
+        return this.value;
+    }
+
+    /**
+     * Sets the value.
+     *
+     * @param value the value to set
+     * @return the table cell
+     */
+    public TableCell<T> setValue(final T value) {
+        this.value = value;
+        return this;
     }
 
     /*
@@ -40,7 +58,7 @@ public class TableCell {
      */
     @Override
     public String toString() {
-        return this.value;
+        return String.format("%s", this.value);
     }
 
 }

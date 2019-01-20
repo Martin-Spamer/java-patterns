@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 import coaching.exceptions.CustomExceptionHandling.CustomCreationException;
+import coaching.exceptions.CustomExceptionHandling.CustomException;
 import coaching.exceptions.CustomExceptionHandling.CustomReadException;
 import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
 
@@ -52,11 +53,13 @@ public final class CustomExceptionHandlingTest {
 
     /**
      * Unit Test to process.
+     * 
+     * @throws CustomException
      *
      * @throws Exception the exception
      */
     @Test(expected = CustomCreationException.class)
-    public void propagateException() throws Exception {
+    public void propagateException() throws CustomException {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
         assertNotNull(customExceptionHandling);
         customExceptionHandling.propagateException();
@@ -98,7 +101,7 @@ public final class CustomExceptionHandlingTest {
      * @throws Exception the exception
      */
     @Test
-    public void nestedProcess() throws Exception {
+    public void nestedProcess() {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
         assertNotNull(customExceptionHandling);
         customExceptionHandling.nestedProcess();
@@ -110,7 +113,7 @@ public final class CustomExceptionHandlingTest {
      * @throws Exception the exception
      */
     @Test
-    public void failsafeProcess() throws Exception {
+    public void failsafeProcess() {
         final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
         assertNotNull(customExceptionHandling);
         customExceptionHandling.failsafeProcess();

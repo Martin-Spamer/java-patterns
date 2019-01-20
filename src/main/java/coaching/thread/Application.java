@@ -23,7 +23,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * a test harness for Java modules. Application.java
+ * Application, an example harness for Java Threads.
  *
  * Created on 30 June 2004 - 13:07
  **/
@@ -31,6 +31,9 @@ public class Application {
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
+
+    /** The document. */
+    private Document document;
 
     /** The thread map. */
     private final Map<String, AbstractProcess> threadMap = new ConcurrentHashMap<>();
@@ -40,7 +43,9 @@ public class Application {
      */
     public Application() {
         super();
-        initialise();
+        if (initialise()) {
+            createThreads(this.document);
+        }
     }
 
     /**
@@ -49,21 +54,18 @@ public class Application {
      * @return true, if successful, otherwise false., otherwise false.
      */
     private boolean initialise() {
-        try {
-            final String configFilename = configFilename();
+        final String configFilename = configFilename();
 
+        try {
             // * XML file into a DOM
             final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
             final DocumentBuilder builder = builderFactory.newDocumentBuilder();
-            final Document document = builder.parse(inputStream(configFilename));
-
-            createThreads(document);
-
+            this.document = builder.parse(inputStream(configFilename));
+            return true;
         } catch (final Exception e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            LOG.warn("Configuration file : {} not found.", configFilename);
+            return false;
         }
-
-        return false;
     }
 
     /**
@@ -154,7 +156,7 @@ public class Application {
     }
 
     /**
-     * Foo.
+     * transform the xml document.
      *
      * @param document the doc
      * @return the string
