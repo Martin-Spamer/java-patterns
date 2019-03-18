@@ -3,8 +3,6 @@ package coaching.exceptions;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
-
 import coaching.exceptions.CustomExceptionHandling.CustomCreationException;
 import coaching.exceptions.CustomExceptionHandling.CustomException;
 import coaching.exceptions.CustomExceptionHandling.CustomReadException;
@@ -22,9 +20,7 @@ public final class CustomExceptionHandlingTest {
      */
     @Test(expected = CustomCreationException.class)
     public void testSubProcessA() throws CustomCreationException {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.creationProcess();
+        new CustomExceptionHandling().creationProcess();
     }
 
     /**
@@ -34,9 +30,7 @@ public final class CustomExceptionHandlingTest {
      */
     @Test(expected = CustomReadException.class)
     public void testSubProcessB() throws CustomReadException {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.readProcess();
+        new CustomExceptionHandling().readProcess();
     }
 
     /**
@@ -46,23 +40,17 @@ public final class CustomExceptionHandlingTest {
      */
     @Test(expected = CustomUpdateException.class)
     public void testSubProcessC() throws CustomUpdateException {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.updateProcess();
+        new CustomExceptionHandling().updateProcess();
     }
 
     /**
      * Unit Test to process.
-     * 
-     * @throws CustomException
      *
-     * @throws Exception the exception
+     * @throws CustomException the exception
      */
     @Test(expected = CustomCreationException.class)
     public void propagateException() throws CustomException {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.propagateException();
+        new CustomExceptionHandling().propagateException();
     }
 
     /**
@@ -70,19 +58,15 @@ public final class CustomExceptionHandlingTest {
      */
     @Test
     public void catchBaseCustomException() {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.catchBaseCustomException();
+        new CustomExceptionHandling().catchBaseCustomException();
     }
 
     /**
-     * Catch multi exceptions.
+     * Catch multiple exceptions.
      */
     @Test
     public void catchMultiExceptions() {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.catchMultiExceptions();
+        new CustomExceptionHandling().catchMultiExceptions();
     }
 
     /**
@@ -90,33 +74,22 @@ public final class CustomExceptionHandlingTest {
      */
     @Test
     public void catchEachException() {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.catchEachException();
+        new CustomExceptionHandling().catchEachException();
     }
 
     /**
      * Nested process.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void nestedProcess() {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.nestedProcess();
+        new CustomExceptionHandling().nestedProcess();
     }
 
     /**
      * Failsafe process.
-     *
-     * @throws Exception the exception
      */
     @Test
     public void failsafeProcess() {
-        final CustomExceptionHandling customExceptionHandling = new CustomExceptionHandling();
-        assertNotNull(customExceptionHandling);
-        customExceptionHandling.failsafeProcess();
+        new CustomExceptionHandling().failsafeProcess();
     }
-
 }

@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Class DaemonThread.
+ * DaemonThread class.
  */
 public final class DaemonThread extends Thread {
 
@@ -42,13 +42,14 @@ public final class DaemonThread extends Thread {
         LOG.info("{} running... ", this.getClass().getSimpleName());
         LOG.info("sleep 500 at {} ", System.currentTimeMillis());
         try {
+            yield();
             Thread.sleep(500);
         } catch (final InterruptedException e) {
             LOG.error(e.getLocalizedMessage(), e);
             currentThread().interrupt();
         }
         LOG.info("until {} ", System.currentTimeMillis());
-        yield();
+
     }
 
     /*
@@ -59,5 +60,4 @@ public final class DaemonThread extends Thread {
     public String toString() {
         return String.format("%s [id=%s, name=%s, state=%s, priority=%s, isAlive=%s, isDaemon=%s]", getClass(), getId(), getName(), getState(), getPriority(), isAlive(), isDaemon());
     }
-
 }

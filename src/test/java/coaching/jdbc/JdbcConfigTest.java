@@ -32,15 +32,15 @@ public class JdbcConfigTest {
     public void testValues() {
         final JdbcConfig instance = JdbcConfig.getInstance();
         assertNotNull(instance);
-        LOG.info("{}", JdbcConfig.driver());
-        LOG.info("{}", JdbcConfig.url());
-        LOG.info("{}", JdbcConfig.username());
-        LOG.info("{}", JdbcConfig.password());
-        LOG.info("{}", JdbcConfig.schema());
-        LOG.info("{}", JdbcConfig.select());
-        LOG.info("{}", JdbcConfig.update());
-        LOG.info("{}", JdbcConfig.insert());
-        LOG.info("{}", JdbcConfig.delete());
+        LOG.info("\tJdbcConfig.driver() : {}", JdbcConfig.driver());
+        LOG.info("\tJdbcConfig.url() : {}", JdbcConfig.url());
+        LOG.info("\tJdbcConfig.username() : {}", JdbcConfig.username());
+        LOG.info("\tJdbcConfig.password() : {}", JdbcConfig.password());
+        LOG.info("\tJdbcConfig.schema() : {}", JdbcConfig.schema());
+        LOG.info("\tJdbcConfig.select() : {}", JdbcConfig.select());
+        LOG.info("\tJdbcConfig.update() : {}", JdbcConfig.update());
+        LOG.info("\tJdbcConfig.insert() : {}", JdbcConfig.insert());
+        LOG.info("\tJdbcConfig.delete() : {}", JdbcConfig.delete());
     }
 
 }

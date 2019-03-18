@@ -25,7 +25,7 @@ public class TableCellTest {
         assertNotNull(tableCell);
         String cellValue = "";
         assertEquals(cellValue, tableCell.setValue(cellValue).getValue());
-        LOG.info("{}", tableCell);
+        LOG.info("tableCell : {}", tableCell);
     }
 
 }

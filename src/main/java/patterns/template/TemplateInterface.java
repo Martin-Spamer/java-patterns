@@ -1,8 +1,8 @@
 
-package coaching.template;
+package patterns.template;
 
 /**
- * Template Interface.
+ * TemplateClass Interface.
  */
 public interface TemplateInterface {
 

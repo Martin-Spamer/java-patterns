@@ -27,7 +27,7 @@ public final class SqLiteDaoTest {
     public void testSqLiteDao() throws ClassNotFoundException {
         final DaoInterface dao = new SqLiteDao();
         assertNotNull(dao);
-        LOG.info(dao.toString());
+        LOG.info("dao : {} ", dao.toString());
     }
 
     /**

@@ -25,7 +25,7 @@ public class EntityMetaDataTest {
         final EntityMetaData entityMetaData = new EntityMetaData();
         assertNotNull(entityMetaData);
         entityMetaData.process();
-        LOG.info("{}", entityMetaData);
+        LOG.info("\tentityMetaData : {}", entityMetaData);
     }
 
 }

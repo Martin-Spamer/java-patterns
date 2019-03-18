@@ -1,5 +1,5 @@
 
-package coaching.resources;
+package coaching.fileio;
 
 import java.io.File;
 

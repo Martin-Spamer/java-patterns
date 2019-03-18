@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * A TableRow class composed of TableCell classes.
+ *
+ * @param <T> the generic type
  */
 public class TableRow<T> {
 
@@ -42,6 +44,7 @@ public class TableRow<T> {
      *
      * @param values the values
      */
+    @SafeVarargs
     public TableRow(final T... values) {
         super();
         // addCells(values);
@@ -51,11 +54,12 @@ public class TableRow<T> {
      * Adds the cells.
      *
      * @param values the string
+     * @return the table row
      */
     public TableRow<T> addCells(final String values) {
         final String[] tuple = values.split(",");
         for (final String value : tuple) {
-            final TableCell<T> cell = new TableCell<T>();
+            final TableCell<T> cell = new TableCell<T>().setValue((T) value);
             this.cols.add(cell);
         }
         return this;
@@ -65,6 +69,7 @@ public class TableRow<T> {
      * Adds the cells.
      *
      * @param values the strings
+     * @return the table row
      */
     public TableRow<?> addCells(final T... values) {
         for (final T value : values) {

@@ -81,25 +81,18 @@ public class SchedulerTest {
     /**
      * Unit test to scheduler resource name.
      */
-    @Test
+    @Test(expected = ResourceNotLoadedException.class)
     public void testSchedulerMissingResource() {
-        String resourceName = "Missing.xml";
-        final ExampleScheduler scheduler = new ExampleScheduler(resourceName);
-        assertNotNull(scheduler);
-        assertNotNull(scheduler.execute());
-        LOG.debug("testSchedulerResourceName : {}", scheduler);
+        new ExampleScheduler("Missing.xml");
     }
 
     /**
      * Unit test to scheduler null resource name.
      */
-    @Test(expected = ResourceNotLoadedException.class)
+    @Test
     public void testSchedulerNullResourceName() {
-        String nullStr = null;
-        final ExampleScheduler scheduler = new ExampleScheduler(nullStr);
-        assertNotNull(scheduler);
-        assertNotNull(scheduler.execute());
-        LOG.debug("testSchedulerNullResourceName : {}", scheduler);
+        String nullString = null;
+        final ExampleScheduler scheduler = new ExampleScheduler(nullString);
     }
 
     /**

@@ -92,20 +92,15 @@ public class Table {
      * @return the table
      */
     public Table addColumn(final String... colData) {
-        this.log.info("{}", colData);
-        this.log.info("{}", colData.length);
-
         for (String value : colData) {
             this.log.info("{}", value);
         }
 
-        for (int i = 0; i < colData.length; i++) {
-            String value = colData[i];
-            this.log.info("{}", value);
-            TableRow tableRow = this.rows.get(i);
-            if (tableRow != null) {
-                tableRow.addCell(value);
-            }
+        int size = this.rows.size();
+        for (int i = 0; i < size; i++) {
+            TableRow row = this.rows.get(i);
+            row.addCell(colData[i]);
+            this.log.info("{}", row);
         }
         return this;
     }
@@ -230,7 +225,11 @@ public class Table {
      */
     @Override
     public String toString() {
-        return String.format("%s [tableName=%s, colNames=%s, rows=%s]", this.getClass().getSimpleName(), this.tableName, this.colNames, this.rows);
+        return String.format("%s [tableName=%s, colNames=%s, rows=%s]",
+            this.getClass().getSimpleName(),
+            this.tableName,
+            this.colNames,
+            this.rows);
     }
 
 }

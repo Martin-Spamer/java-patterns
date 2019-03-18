@@ -24,7 +24,7 @@ public final class MySqlDaoTest {
     public void testMySqlDao() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info(dao.toString());
+        LOG.info("dao : {}", dao.toString());
     }
 
     /**
@@ -34,7 +34,7 @@ public final class MySqlDaoTest {
     public void testCreate() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info(dao.toString());
+        LOG.info("dao : {}", dao.toString());
         dao.createRow();
     }
 
@@ -45,7 +45,7 @@ public final class MySqlDaoTest {
     public void testRead() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info(dao.toString());
+        LOG.info("dao : {}", dao.toString());
         dao.readRow();
     }
 
@@ -56,7 +56,7 @@ public final class MySqlDaoTest {
     public void testUpdate() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info(dao.toString());
+        LOG.info("dao : {}", dao.toString());
         dao.updateRow();
     }
 
@@ -67,7 +67,7 @@ public final class MySqlDaoTest {
     public void testDelete() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info(dao.toString());
+        LOG.info("dao : {}", dao.toString());
         dao.deleteRow();
     }
 

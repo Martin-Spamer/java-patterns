@@ -36,7 +36,7 @@ public abstract class AbstractScheduler {
      */
     public AbstractScheduler() {
         initialise();
-        log.debug("AbstractScheduler() : {}", this);
+        this.log.debug("AbstractScheduler() : {}", this);
     }
 
     /**
@@ -45,7 +45,7 @@ public abstract class AbstractScheduler {
      * @param resourceName the resource name
      */
     public AbstractScheduler(final String resourceName) {
-        log.debug("AbstractScheduler({}) : {}", resourceName, this);
+        this.log.debug("AbstractScheduler({}) : {}", resourceName, this);
         if (resourceName != null) {
             initialise(resourceName);
         } else {
@@ -59,7 +59,7 @@ public abstract class AbstractScheduler {
      * @param args the args
      */
     public AbstractScheduler(final String[] args) {
-        log.debug("AbstractScheduler({}) = {}", args, this);
+        this.log.debug("AbstractScheduler({}) = {}", args, this);
         if (args != null) {
             initialise(args);
         } else {
@@ -73,7 +73,7 @@ public abstract class AbstractScheduler {
      * @param properties the properties
      */
     public AbstractScheduler(final Properties properties) {
-        log.debug("AbstractScheduler({}) = {}", properties, this);
+        this.log.debug("AbstractScheduler({}) = {}", properties, this);
         initialisation(properties);
     }
 
@@ -82,8 +82,8 @@ public abstract class AbstractScheduler {
      */
     private void initialise() {
         final String simpleName = this.getClass().getSimpleName();
-        properties = PropertiesLoader.getProperties(simpleName);
-        xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
+        this.properties = PropertiesLoader.getProperties(simpleName);
+        this.xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
     }
 
     /**
@@ -93,15 +93,15 @@ public abstract class AbstractScheduler {
      */
     private void initialise(final String resourceName) {
         try {
-            properties = PropertiesLoader.getProperties(resourceName);
+            this.properties = PropertiesLoader.getProperties(resourceName);
         } catch (final Exception e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
 
         try {
-            xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
+            this.xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
         } catch (final Exception e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -140,8 +140,8 @@ public abstract class AbstractScheduler {
      * @return the abstract scheduler
      */
     public AbstractScheduler execute() {
-        xmlDoc = XmlResourceLoader.getXmlResource(resourceName());
-        return execute(xmlDoc);
+        this.xmlDoc = XmlResourceLoader.getXmlResource(resourceName());
+        return execute(this.xmlDoc);
     }
 
     /**
@@ -155,13 +155,13 @@ public abstract class AbstractScheduler {
         for (int i = 0; i < list.getLength(); i++) {
             final Element element = (Element) list.item(i);
             final String nodeName = element.getNodeName();
-            log.debug("nodeName : {}", nodeName);
+            this.log.debug("nodeName : {}", nodeName);
             final String nameAttribute = element.getAttribute("name");
-            log.debug("nameAttribute : {}", nameAttribute);
+            this.log.debug("nameAttribute : {}", nameAttribute);
             final String classAttribute = element.getAttribute("class");
-            log.debug("classAttribute : {}", classAttribute);
+            this.log.debug("classAttribute : {}", classAttribute);
             final String valueAttribute = element.getAttribute("value");
-            log.debug("valueAttribute : {}", valueAttribute);
+            this.log.debug("valueAttribute : {}", valueAttribute);
         }
         return this;
     }
@@ -178,17 +178,17 @@ public abstract class AbstractScheduler {
             while (keys.hasMoreElements()) {
                 final String key = (String) keys.nextElement();
                 final String value = properties.getProperty(key);
-                log.debug("{} = {}", key, value);
+                this.log.debug("{} = {}", key, value);
                 try {
                     final Thread thread = (Thread) Class.forName(value).newInstance();
-                    log.debug("thread : {}", thread);
+                    this.log.debug("thread : {}", thread);
                     thread.start();
                 } catch (final Exception e) {
-                    log.error(e.getLocalizedMessage(), e);
+                    this.log.error(e.getLocalizedMessage(), e);
                 }
             }
         } else {
-            log.warn("Properties cannot be null");
+            this.log.warn("Properties cannot be null");
         }
         return this;
     }
@@ -199,7 +199,6 @@ public abstract class AbstractScheduler {
      */
     @Override
     public String toString() {
-        return String.format("%s [args=%s, properties=%s]", this.getClass().getSimpleName(), Arrays.toString(args), properties);
+        return String.format("%s [args=%s, properties=%s]", this.getClass().getSimpleName(), Arrays.toString(this.args), this.properties);
     }
-
 }

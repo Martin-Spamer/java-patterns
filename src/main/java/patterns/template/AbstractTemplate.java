@@ -1,11 +1,11 @@
 
-package coaching.template;
+package patterns.template;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Abstract Template class.
+ * Abstract TemplateClass class.
  */
 public abstract class AbstractTemplate implements TemplateInterface {
 
@@ -13,7 +13,7 @@ public abstract class AbstractTemplate implements TemplateInterface {
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
-     * Template method provides common entry.
+     * TemplateClass method provides common entry.
      */
     public void templateMethod() {
         primitiveOperationAlice();

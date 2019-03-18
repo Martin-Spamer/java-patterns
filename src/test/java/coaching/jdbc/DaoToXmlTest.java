@@ -24,9 +24,9 @@ public final class DaoToXmlTest {
     @Test
     @Ignore("Requires Database work-in-progress low-priority")
     public void testDaoToXml() throws Exception {
-        final DaoToXml instance = new DaoToXml();
-        assertNotNull(instance);
-        LOG.info(instance.toString());
+        final DaoToXml dao = new DaoToXml();
+        assertNotNull(dao);
+        LOG.info("dao : {}", dao.toString());
     }
 
 }

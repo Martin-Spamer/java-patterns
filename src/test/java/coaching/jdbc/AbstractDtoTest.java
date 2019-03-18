@@ -32,7 +32,7 @@ public final class AbstractDtoTest {
         dto.addField("id=1");
         dto.addField("name=martin");
         dto.addField("data=foobar");
-        LOG.info("{}", dto);
+        LOG.info("dto : {}", dto);
         assertEquals("1", dto.getField("id"));
         assertEquals("martin", dto.getField("name"));
         assertEquals("foobar", dto.getField("data"));

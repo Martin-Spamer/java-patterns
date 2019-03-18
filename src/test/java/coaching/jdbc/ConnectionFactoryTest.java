@@ -26,7 +26,10 @@ public final class ConnectionFactoryTest {
      */
     @Test
     public void testConnectionFactory() throws SQLException {
-        ConnectionFactory connectionFactory = new ConnectionFactory(JdbcConfig.driver(), JdbcConfig.url(), JdbcConfig.username(), JdbcConfig.password());
+        ConnectionFactory connectionFactory = new ConnectionFactory(JdbcConfig.driver(),
+                JdbcConfig.url(),
+                JdbcConfig.username(),
+                JdbcConfig.password());
         assertNotNull(connectionFactory);
     }
 
@@ -138,8 +141,7 @@ public final class ConnectionFactoryTest {
 
         final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
-        LOG.info(connection.toString());
-
+        LOG.info("connection : {}", connection.toString());
         connection.close();
     }
 
