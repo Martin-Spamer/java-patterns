@@ -127,7 +127,6 @@ public final class TextTest {
     }
 
     public void testJoin() {
-        Text.join(null, "");
         Text.join(new String[1], "");
         String[] fields = { "A", "B", "C" };
         assertEquals("A,B,C", Text.join(fields, ","));

@@ -23,14 +23,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.Random;
 
-import javax.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Text utilities class.
  */
 public final class Text {
+
+    /** provides logging. */
+    private static final Logger log = LoggerFactory.getLogger(Text.class);
 
     /** RND constant. */
     private static final Random RND = new Random(System.currentTimeMillis());
@@ -113,7 +120,7 @@ public final class Text {
     }
 
     /**
-     * Fill a String
+     * Fill a String.
      *
      * @param length the length
      * @return the string
@@ -164,11 +171,35 @@ public final class Text {
      * Join an array of strings.
      *
      * @param strings the strings
-     * @param string the string
+     * @param delimiter the delimiter
      * @return the string
      */
-    public static String join(final String[] strings, final String string) {
-        return "";
+    public static String join(final String[] strings, final String delimiter) {
+        StringBuffer buffer = new StringBuffer();
+        for (String value : strings) {
+            buffer.append(value);
+            buffer.append(delimiter);
+        }
+        return buffer.toString();
+    }
+
+    /**
+     * Join.
+     *
+     * @param collection the collection
+     * @param delimiter the delimiter
+     * @return the string
+     */
+    public static String join(final Collection<String> collection, final String delimiter) {
+        StringBuffer buffer = new StringBuffer();
+        Iterator<?> it = collection.iterator();
+        while (it.hasNext()) {
+            buffer.append(it.next());
+            if (it.hasNext()) {
+                buffer.append(delimiter);
+            }
+        }
+        return buffer.toString();
     }
 
     /**
@@ -205,36 +236,58 @@ public final class Text {
         return "";
     }
 
-    public String from(final InputStream inputStream) {
+    /**
+     * String from an Input Stream.
+     *
+     * @param inputStream the input stream
+     * @return the string
+     */
+    public static String from(final InputStream inputStream) {
         return from(inputStream, Charset.defaultCharset());
     }
 
     /**
-     * String from From an Input Stream.
+     * String from an Input Stream.
      *
      * @param inputStream the input stream
      * @param charset the charset
      * @return the string
      */
-    public String from(final InputStream inputStream, final Charset charset) {
+    public static String from(final InputStream inputStream, final Charset charset) {
+        StringBuffer stringBuffer = new StringBuffer();
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, charset))) {
-            StringBuilder stringBuilder = new StringBuilder();
             String line = null;
             while ((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line);
+                stringBuffer.append(line);
             }
-            return stringBuilder.toString();
         } catch (IOException ignore) {
-            return "";
+            ignore.printStackTrace(System.err);
+            // log.error("{}", ignore);
         }
+        return stringBuffer.toString();
     }
 
-    public String from(final File file, final Charset charset) {
-        return null;
+    /**
+     * String from a File.
+     *
+     * @param file the file
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    public static String from(final File file) throws IOException {
+        return from(file, Charset.forName("UTF-8"));
     }
 
-    public String from(final Resource file, final Charset charset) {
-        return null;
+    /**
+     * String from a File.
+     *
+     * @param file the file
+     * @param charset the charset
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    public static String from(final File file, final Charset charset) throws IOException {
+        return new String(Files.readAllBytes(file.toPath()), charset);
     }
 
     /**

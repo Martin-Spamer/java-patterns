@@ -47,14 +47,8 @@ public final class Application extends AbstractApplication {
      * 128+n Fatal error signal “n” 130 Control+C 255 Exit status out of range
      *
      * @param args the program arguments as a String array.
-     * @return the int
      */
-    public static int main(final String[] args) {
-        final Application application = new Application(args);
-        if (application.execute()) {
-            return 0;
-        } else {
-            return 1;
-        }
+    public static void main(final String[] args) {
+        new Application(args).execute();
     }
 }

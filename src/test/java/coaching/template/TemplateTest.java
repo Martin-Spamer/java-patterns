@@ -11,10 +11,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
+import static org.junit.Assume.assumeNotNull;
+
 import coaching.resources.ResourceLoader;
+import coaching.template.Template.TemplateException;
 
 public class TemplateTest {
 
@@ -22,40 +24,90 @@ public class TemplateTest {
     private static final Logger log = LoggerFactory.getLogger(TemplateTest.class);
 
     @Test
-    public void testTemplateTypicalUsage() {
+    public void testTemplateFromStream() throws TemplateException {
         InputStream stream = ResourceLoader.getStream("Test.template");
+        assumeNotNull(stream);
+
         Template template = Template.from(stream);
+        assumeNotNull(stream);
+
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("Name", "Alice");
-        map.put("Age", new Integer(21));
-        map.put("Data", Boolean.TRUE);
+        map.put("String", "Alice");
+        map.put("Number", new Integer(21));
+        map.put("Boolean", Boolean.TRUE);
+
         assertEquals(template, template.merge(map));
-        log.info("{}", template);
+        template.toLog();
     }
 
     @Test
-    public void testTemplateLoadJson() {
-        Template template = new Template();
-        String filename = "./resources/Json.Template";
-        assertNotEquals(template, template.load(filename));
+    public void testJsonTemplateFromStream() throws TemplateException {
+        InputStream stream = ResourceLoader.getStream("Json.template");
+        assumeNotNull(stream);
+
+        Template template = Template.from(stream);
+        assumeNotNull(stream);
+
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("Name", "Alice");
-        map.put("Age", new Integer(21));
-        map.put("Data", Boolean.TRUE);
+        map.put("String", "Alice");
+        map.put("Number", new Integer(21));
+        map.put("Boolean", Boolean.TRUE);
+
         assertEquals(template, template.merge(map));
-        log.info("{}", template);
+        template.toLog();
     }
 
     @Test
-    public void testTemplateLoadCode() {
-        Template template = new Template();
-        String filename = "./resources/Code.Template";
-        assertNotEquals(template, template.load(filename));
+    public void testTemplateJson() throws TemplateException {
+        Template template = Template.from("src/test/resources/Json.template");
+
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("package", "example");
+        map.put("Name", "Alice");
+        map.put("Number", new Integer(21));
+        map.put("Boolean", Boolean.TRUE);
+
+        assertEquals(template, template.merge(map));
+        template.toLog();
+    }
+
+    @Test
+    public void testTemplateLoadJson() throws TemplateException {
+        Template template = new Template();
+        String filename = "src/test/resources/Json.template";
+        assertEquals(template, template.load(filename));
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("Name", "Alice");
+        map.put("Number", new Integer(21));
+        map.put("Boolean", Boolean.TRUE);
+
+        assertEquals(template, template.merge(map));
+        template.toLog();
+    }
+
+    @Test
+    public void testTemplateFromFilename() throws TemplateException {
+        Template template = new Template();
+        String filename = "src/test/resources/Code.template";
+        assertEquals(template, template.load(filename));
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("package", "com.example");
         map.put("className", "FooBar");
+
         assertEquals(template, template.merge(map));
-        log.info("{}", template);
+        template.toLog();
+    }
+
+    @Test
+    public void testTemplateLoadCode() throws TemplateException {
+        Template template = new Template();
+        String filename = "src/test/resources/Code.template";
+        assertEquals(template, template.load(filename));
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("package", "com.example");
+        map.put("className", "FooBar");
+
+        assertEquals(template, template.merge(map));
+        template.toLog();
     }
 
     @Test
@@ -68,34 +120,34 @@ public class TemplateTest {
         assertNotNull(new Template(""));
     }
 
-    @Test
-    public void testTemplateLoadString() {
+    @Test(expected = TemplateException.class)
+    public void testTemplateLoadString() throws TemplateException {
         Template template = new Template();
-        assertEquals(template, template.load(""));
+        template.load("");
     }
 
     @Test
-    public void testTemplateReplaceNullProperties() {
+    public void testTemplateReplaceNullProperties() throws TemplateException {
         Template template = new Template();
         Properties nullProperties = null;
         assertEquals(template, template.merge(nullProperties));
     }
 
     @Test
-    public void testTemplateReplaceProperties() {
+    public void testTemplateReplaceProperties() throws TemplateException {
         Template template = new Template();
         assertEquals(template, template.merge(new Properties()));
     }
 
     @Test
-    public void testTemplateReplaceNullMap() {
+    public void testTemplateReplaceNullMap() throws TemplateException {
         Template template = new Template();
         Map<String, Object> map = null;
         assertEquals(template, template.merge(map));
     }
 
     @Test
-    public void testTemplateReplaceEmptyMap() {
+    public void testTemplateReplaceEmptyMap() throws TemplateException {
         Template template = new Template();
         Map<String, Object> map = new HashMap<String, Object>();
         assertEquals(template, template.merge(map));

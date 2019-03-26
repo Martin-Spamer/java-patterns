@@ -1,1 +1,1 @@
-{ "String" : "${Name}", "Number" : "${Age}" "Boolean" : "${Boolean}" }
+{ "String" : "${String}", "Number" : "${Number}" "Boolean" : "${Boolean}" }

@@ -1,4 +1,4 @@
 # Test.template
-String : ${Name}
-Number : ${Age}
+String : ${String}
+Number : ${Number}
 Boolean : ${Boolean}
