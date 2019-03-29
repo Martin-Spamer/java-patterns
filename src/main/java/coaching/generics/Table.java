@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * The Table class is composed of TableRow classes.
+ *
+ * @param <T> the generic type
  */
 public class Table<T> {
 

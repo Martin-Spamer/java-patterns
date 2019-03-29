@@ -16,18 +16,42 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * The Class IO.
+ */
 public class IO {
 
+    /**
+     * From.
+     *
+     * @param filename the filename
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static String from(final String filename) throws IOException {
         FileReader in = new FileReader(filename);
         return from(in);
     }
 
+    /**
+     * From.
+     *
+     * @param in the in
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static String from(final FileReader in) throws IOException {
         BufferedReader reader = new BufferedReader(in);
         return from(reader);
     }
 
+    /**
+     * From.
+     *
+     * @param reader the reader
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static String from(final BufferedReader reader) throws IOException {
         String line = null;
         StringBuffer fileContents = new StringBuffer();
@@ -45,6 +69,13 @@ public class IO {
         }
     }
 
+    /**
+     * From.
+     *
+     * @param stream the stream
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static String from(final InputStream stream) throws IOException {
         Reader reader = null;
         StringBuffer fileContents = new StringBuffer();
@@ -64,11 +95,25 @@ public class IO {
         }
     }
 
+    /**
+     * Scan lines from.
+     *
+     * @param pathname the pathname
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static String scanLinesFrom(final String pathname) throws IOException {
         File file = new File(pathname);
         return scanLinesFrom(file);
     }
 
+    /**
+     * Scan lines from.
+     *
+     * @param file the file
+     * @return the string
+     * @throws FileNotFoundException the file not found exception
+     */
     public static String scanLinesFrom(final File file) throws FileNotFoundException {
         StringBuilder fileContents = new StringBuilder((int) file.length());
         try (Scanner scanner = new Scanner(file)) {
@@ -80,6 +125,13 @@ public class IO {
         }
     }
 
+    /**
+     * Scan.
+     *
+     * @param filename the filename
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static String scan(final String filename) throws IOException {
         Scanner scanner = null;
         try {
@@ -92,6 +144,13 @@ public class IO {
         }
     }
 
+    /**
+     * Load.
+     *
+     * @param filename the filename
+     * @return the string
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static String load(final String filename) throws IOException {
         StringBuilder sb = new StringBuilder();
         final String EoL = System.getProperty("line.separator");

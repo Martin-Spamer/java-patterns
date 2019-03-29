@@ -152,6 +152,7 @@ public class Table {
      * Adds the rows.
      *
      * @param tableRows the table rows
+     * @return the table
      */
     public Table addRows(final TableRow[] tableRows) {
         return this;

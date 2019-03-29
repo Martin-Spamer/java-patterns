@@ -1,12 +1,15 @@
 
 package coaching.range;
 
+/**
+ * The Class LongRange.
+ */
 public class LongRange {
 
     /** The start of the range. */
     private final long start;
 
-    /** The end of the range */
+    /**  The end of the range. */
     private final long end;
 
     /** The steps in the range. */
@@ -116,8 +119,6 @@ public class LongRange {
     /**
      * The range as an array of real numbers.
      *
-     * @param start the start
-     * @param end the end
      * @return the range as an int[]
      */
     public long[] asArray() {

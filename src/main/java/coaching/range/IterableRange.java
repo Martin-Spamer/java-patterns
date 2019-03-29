@@ -3,16 +3,39 @@ package coaching.range;
 
 import java.util.Iterator;
 
+/**
+ * The Class IterableRange.
+ */
 public class IterableRange implements Iterable {
 
+    /** The start. */
     private final int start;
+    
+    /** The stop. */
     private final int stop;
+    
+    /** The step. */
     private final int step;
 
+    /**
+     * As array.
+     *
+     * @param start the start
+     * @param end the end
+     * @return the int[]
+     */
     public static int[] asArray(final int start, final int end) {
         return asArray(start, end, 1);
     }
 
+    /**
+     * As array.
+     *
+     * @param start the start
+     * @param end the end
+     * @param step the step
+     * @return the int[]
+     */
     public static int[] asArray(final int start, final int end, final int step) {
         int size = end - start;
         int[] range = new int[size + 1];
@@ -22,34 +45,77 @@ public class IterableRange implements Iterable {
         return range;
     }
 
+    /**
+     * Of.
+     *
+     * @param start the start
+     * @param end the end
+     * @return the iterable range
+     */
     public static IterableRange of(final int start, final int end) {
         return new IterableRange(start, end);
     }
 
+    /**
+     * Of.
+     *
+     * @param start the start
+     * @param end the end
+     * @param step the step
+     * @return the iterable range
+     */
     public static IterableRange of(final int start, final int end, final int step) {
         return new IterableRange(start, end, step);
     }
 
+    /**
+     * Instantiates a new iterable range.
+     *
+     * @param start the start
+     * @param stop the stop
+     */
     public IterableRange(final int start, final int stop) {
         this.start = start;
         this.stop = stop;
         this.step = 1;
     }
 
+    /**
+     * Instantiates a new iterable range.
+     *
+     * @param start the start
+     * @param stop the stop
+     * @param step the step
+     */
     public IterableRange(final int start, final int stop, final int step) {
         this.start = start;
         this.stop = stop;
         this.step = step;
     }
 
+    /**
+     * Includes.
+     *
+     * @param i the i
+     * @return true, if successful
+     */
     public boolean includes(final int i) {
         return this.start <= i && i <= this.stop;
     }
 
+    /**
+     * Excludes.
+     *
+     * @param i the i
+     * @return true, if successful
+     */
     public boolean excludes(final int i) {
         return this.start > i || i > this.stop;
     }
 
+    /* (non-Javadoc)
+    * @see java.lang.Iterable#iterator()
+    */
     @Override
     public Iterator iterator() {
         return new Iterator() {
@@ -72,6 +138,14 @@ public class IterableRange implements Iterable {
         };
     }
 
+    /**
+     * Range.
+     *
+     * @param start the start
+     * @param stop the stop
+     * @param step the step
+     * @return the iterable
+     */
     public static Iterable range(final int start, final int stop, final int step) {
         if (step <= 0) {
             throw new IllegalArgumentException("step must be greate than zero!");

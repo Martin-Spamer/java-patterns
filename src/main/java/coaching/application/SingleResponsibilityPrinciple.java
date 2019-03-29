@@ -1,5 +1,5 @@
 
-package coaching.solid;
+package coaching.application;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,15 +13,6 @@ import static org.junit.Assert.assertNotNull;
  *
  */
 public class SingleResponsibilityPrinciple {
-
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-        return String.format("SingleResponsibilityPrinciple []");
-    }
 
     /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
@@ -132,6 +123,15 @@ public class SingleResponsibilityPrinciple {
     public void singleResponsibility() {
         final SingleResponsibility singleResponsibility = new SingleResponsibility();
         assertNotNull(singleResponsibility);
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("SingleResponsibilityPrinciple []");
     }
 
 }

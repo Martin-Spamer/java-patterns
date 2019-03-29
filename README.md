@@ -31,20 +31,14 @@ Add the following dependency to your projects pom.xml file.
 		<version>...</version>
 	</dependency>
 
-## Java Automated Testing
+## Java Coaching examples
 
- - [Java Coaching](src/main/java/coaching)
- - [Java Coaching](src/main/java/coaching/README.md)
- - [Java Coaching](src/main/java/coaching/automation.md)
-
-## Java coding idioms
-
- - [Java Coaching](src/main/java/coaching)
- - [Java Coaching](src/main/java/coaching/README.md)
- - [Java Coaching](src/main/java/coaching/coaching.md)
+ - [Java Coaching README](src/main/java/coaching/README.md)
+ - [Java Coaching Overview](src/main/java/coaching/coaching.md)
+ - [Java Coaching Source](src/main/java/coaching)
 
 ## Java Design Pattern examples
 
- - [Java Patterns](src/main/java/patterns)
- - [Java Patterns](src/main/java/patterns/README.md)
- - [Java Patterns](src/main/java/patterns/patterns.md)
+ - [Java Patterns README](src/main/java/patterns/README.md)
+ - [Java Patterns Overview](src/main/java/patterns/patterns.md)
+ - [Java Patterns Source ](src/main/java/patterns)

@@ -9,7 +9,7 @@ public class Range {
     /** The start of the range. */
     private final int start;
 
-    /** The end of the range */
+    /**  The end of the range. */
     private final int end;
 
     /** The steps in the range. */
@@ -120,8 +120,6 @@ public class Range {
     /**
      * The range as an array of real numbers.
      *
-     * @param start the start
-     * @param end the end
      * @return the range as an int[]
      */
     public int[] asArray() {

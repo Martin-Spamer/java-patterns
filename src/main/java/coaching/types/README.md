@@ -1,10 +1,10 @@
-# Java Patterns
-| [Automation](src/main/java/automation "Automated Testing with Java") | [Java Coaching](src/main/java/coaching "Coaching Java Idioms") | [Java Patterns](src/main/java/patterns "Design Patterns in Java") |
+# Java Coaching
+| [Java Coaching](src/main/java/coaching "Coaching Java Idioms") | [Java Patterns](src/main/java/patterns "Design Patterns in Java") |
 
-## Java Coaching
+## Java types
 
-### Java types
+Java support both primative native types and objects.
 
-#### Java Native types
+#### Working with Java Native types
 
-#### Java Object types
+#### Working with Java Object types

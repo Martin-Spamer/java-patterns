@@ -1,5 +1,5 @@
 
-package coaching.application;
+package coaching.solid;
 
 import java.io.File;
 import java.util.Arrays;

@@ -1,5 +1,5 @@
 
-package coaching;
+package coaching.generics;
 
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class BoxTest {
 
     /**
-     * The Class Box.
+     * Example Box class.
      *
      * @param <V> the value type
      */

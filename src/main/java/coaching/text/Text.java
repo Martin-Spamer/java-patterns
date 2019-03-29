@@ -176,9 +176,11 @@ public final class Text {
      */
     public static String join(final String[] strings, final String delimiter) {
         StringBuffer buffer = new StringBuffer();
-        for (String value : strings) {
-            buffer.append(value);
-            buffer.append(delimiter);
+        if (strings != null) {
+            for (String value : strings) {
+                buffer.append(value);
+                buffer.append(delimiter);
+            }
         }
         return buffer.toString();
     }

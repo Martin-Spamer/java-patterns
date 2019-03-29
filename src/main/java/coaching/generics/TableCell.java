@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Generic Table Cell class.
+ *
+ * @param <T> the generic type
  */
 public class TableCell<T> {
 

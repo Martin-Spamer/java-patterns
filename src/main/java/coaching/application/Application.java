@@ -3,6 +3,8 @@ package coaching.application;
 
 import java.util.Arrays;
 
+import coaching.solid.AbstractApplication;
+
 /**
  * Example Application class.
  */
@@ -51,4 +53,5 @@ public final class Application extends AbstractApplication {
     public static void main(final String[] args) {
         new Application(args).execute();
     }
+
 }

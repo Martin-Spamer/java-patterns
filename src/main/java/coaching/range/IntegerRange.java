@@ -1,10 +1,18 @@
 
 package coaching.range;
 
+/**
+ * The Class IntegerRange.
+ */
 public class IntegerRange {
 
+    /** The start. */
     private final Integer start;
+    
+    /** The end. */
     private final Integer end;
+    
+    /** The step. */
     private final Integer step;
 
     /**
@@ -30,6 +38,12 @@ public class IntegerRange {
         return new Range(start, end, step);
     }
 
+    /**
+     * Instantiates a new integer range.
+     *
+     * @param start the start
+     * @param stop the stop
+     */
     public IntegerRange(final Integer start, final Integer stop) {
         super();
         this.start = start;
@@ -37,6 +51,13 @@ public class IntegerRange {
         this.step = new Integer(1);
     }
 
+    /**
+     * Instantiates a new integer range.
+     *
+     * @param start the start
+     * @param end the end
+     * @param step the step
+     */
     public IntegerRange(final Integer start, final Integer end, final Integer step) {
         super();
         this.start = start;
@@ -44,10 +65,22 @@ public class IntegerRange {
         this.step = step;
     }
 
+    /**
+     * Includes.
+     *
+     * @param number the number
+     * @return true, if successful
+     */
     public boolean includes(final Integer number) {
         return this.start <= number && number <= this.end;
     }
 
+    /**
+     * Excludes.
+     *
+     * @param number the number
+     * @return true, if successful
+     */
     public boolean excludes(final Integer number) {
         return this.start > number || number > this.end;
     }
