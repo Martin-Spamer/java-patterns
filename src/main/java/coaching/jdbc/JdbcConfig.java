@@ -73,7 +73,7 @@ public final class JdbcConfig extends Configuration {
     }
 
     /**
-     * Table.
+     * GenericTable.
      *
      * @return the string
      */

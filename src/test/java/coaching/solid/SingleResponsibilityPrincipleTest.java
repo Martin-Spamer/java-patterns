@@ -7,8 +7,6 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
-import coaching.application.SingleResponsibilityPrinciple;
-
 /**
  * Unit Test for the Single Responsibility Principle (SIP) example class.
  */

@@ -20,8 +20,6 @@ package coaching.thread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import coaching.application.ApplicationException;
-
 /**
  * A template for a Thread class.
  */
@@ -62,8 +60,8 @@ public class ThreadTemplate implements Runnable {
      */
     public ThreadTemplate() {
         initialise(new ThreadConfig());
-        thread = new Thread(this);
-        log.info("{}", this);
+        this.thread = new Thread(this);
+        this.log.info("{}", this);
     }
 
     /**
@@ -74,7 +72,7 @@ public class ThreadTemplate implements Runnable {
      * @param config the config
      */
     public void initialise(final ThreadConfig config) {
-        log.info("{}", config);
+        this.log.info("{}", config);
         this.config = config;
     }
 
@@ -84,35 +82,35 @@ public class ThreadTemplate implements Runnable {
      */
     @Override
     public void run() {
-        log.info("run");
+        this.log.info("run");
 
         do {
-            tick++;
+            this.tick++;
 
             final String className = this.getClass().getSimpleName();
-            final String threadName = thread.getName();
-            final int priority = thread.getPriority();
-            log.info("classname:{}:threadName:{}({}).{}", className, threadName, priority, tick);
+            final String threadName = this.thread.getName();
+            final int priority = this.thread.getPriority();
+            this.log.info("classname:{}:threadName:{}({}).{}", className, threadName, priority, this.tick);
 
             try {
                 execute();
             } catch (final ApplicationException exception) {
-                log.error("{}", exception);
+                this.log.error("{}", exception);
             }
 
             // Yield a little.
             Thread.yield();
 
             // * Thread ends.
-            if (tick >= maxTicks) {
-                exit = true;
+            if (this.tick >= this.maxTicks) {
+                this.exit = true;
             }
 
             final long currentTimeMillis = System.currentTimeMillis();
-            if ((currentTimeMillis - startTime) > TIME_OUT) {
-                exit = true;
+            if (currentTimeMillis - this.startTime > TIME_OUT) {
+                this.exit = true;
             }
-        } while (!exit);
+        } while (!this.exit);
     }
 
     /**
@@ -128,14 +126,29 @@ public class ThreadTemplate implements Runnable {
      * Start.
      */
     public void start() {
-        thread.start();
+        this.thread.start();
     }
 
     /**
      * Stop.
      */
     public void stop() {
-        exit = true;
+        this.exit = true;
+    }
+
+    /**
+     * The Class ApplicationException.
+     */
+    public class ApplicationException extends Exception {
+
+        /**
+         * Instantiates a new application exception.
+         *
+         * @param message the message
+         */
+        public ApplicationException(final String message) {
+            super(message);
+        }
     }
 
 }

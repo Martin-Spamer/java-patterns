@@ -15,7 +15,7 @@ public final class MainAppTest {
      */
     @Test
     public void testMainApp() {
-        final Application mainApp = new Application();
+        final ThreadedApplication mainApp = new ThreadedApplication();
         assertNotNull(mainApp);
     }
 

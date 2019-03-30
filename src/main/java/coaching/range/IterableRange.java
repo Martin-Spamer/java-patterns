@@ -6,14 +6,14 @@ import java.util.Iterator;
 /**
  * The Class IterableRange.
  */
-public class IterableRange implements Iterable {
+public class IterableRange implements Iterable<Object> {
 
     /** The start. */
     private final int start;
-    
+
     /** The stop. */
     private final int stop;
-    
+
     /** The step. */
     private final int step;
 
@@ -113,9 +113,10 @@ public class IterableRange implements Iterable {
         return this.start > i || i > this.stop;
     }
 
-    /* (non-Javadoc)
-    * @see java.lang.Iterable#iterator()
-    */
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Iterable#iterator()
+     */
     @Override
     public Iterator iterator() {
         return new Iterator() {

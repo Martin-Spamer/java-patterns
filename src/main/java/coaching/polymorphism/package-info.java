@@ -1,7 +1,10 @@
 /**
  * Package provides an example of polymorphism.
  * <p>
- * Detailed description of package.
+ * TypeInterface.java
+ * AbstractType.java
+ * SubTypeOne.java
+ * SubTypeTwo.java
  */
 
 package coaching.polymorphism;

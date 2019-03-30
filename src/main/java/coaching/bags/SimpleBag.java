@@ -64,16 +64,6 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public String pick() {
-        this.log.debug("{}.pick()", this.getClass().getSimpleName());
-        return choose();
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see coaching.bags.BagInterface#choose()
-     */
-    @Override
-    public String choose() {
         this.log.debug("{}.choose()", this.getClass().getSimpleName());
         final int size = size();
         if (size > 0) {

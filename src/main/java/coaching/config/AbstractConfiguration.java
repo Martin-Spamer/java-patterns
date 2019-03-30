@@ -130,6 +130,26 @@ public abstract class AbstractConfiguration implements ConfigInterface {
 
     /*
      * (non-Javadoc)
+     * @see coaching.config.ConfigInterface#valueFor(java.lang.String,
+     * java.lang.Boolean)
+     */
+    @Override
+    public Boolean valueFor(final String key, final Boolean defaultValue) {
+        return Boolean.valueOf(valueFor(key, defaultValue.toString()));
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see coaching.config.ConfigInterface#valueFor(java.lang.String,
+     * java.lang.Number)
+     */
+    @Override
+    public Long valueFor(final String key, final Long defaultValue) {
+        return new Long(valueFor(key, defaultValue.toString()));
+    }
+
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override

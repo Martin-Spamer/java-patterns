@@ -1,5 +1,5 @@
 
-package coaching.collections;
+package coaching.generics;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,19 +11,21 @@ import org.slf4j.LoggerFactory;
 
 /**
  * A GenericTableRow class composed of GenericTableCell classes.
+ *
+ * @param <T> the generic type
  */
-public class TableRow {
+public class GenericTableRow<T> {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** the columns in the row. */
-    private final List<TableCell> cols = new ArrayList<>();
+    private final List<GenericTableCell<T>> cols = new ArrayList<>();
 
     /**
      * Instantiates a new table row.
      */
-    public TableRow() {
+    public GenericTableRow() {
         super();
     }
 
@@ -32,9 +34,9 @@ public class TableRow {
      *
      * @param values the values
      */
-    public TableRow(final String values) {
+    public GenericTableRow(final String values) {
         super();
-        addCells(values);
+        // addCells(values);
     }
 
     /**
@@ -42,48 +44,44 @@ public class TableRow {
      *
      * @param values the values
      */
-    public TableRow(final String... values) {
+    @SafeVarargs
+    public GenericTableRow(final T... values) {
         super();
-        addCells(values);
+        // addCells(values);
     }
 
     /**
      * Adds the cells.
      *
      * @param values the string
+     * @return the table row
      */
-    public void addCells(final String values) {
+    public GenericTableRow<T> addCells(final String values) {
         final String[] tuple = values.split(",");
         for (final String value : tuple) {
-            final TableCell cell = new TableCell(value);
+            final GenericTableCell<T> cell = new GenericTableCell<T>().setValue((T) value);
             this.cols.add(cell);
         }
+        return this;
     }
 
     /**
      * Adds the cells.
      *
      * @param values the strings
+     * @return the table row
      */
-    public void addCells(final String... values) {
-        for (final String value : values) {
-            addCell(value);
+    public GenericTableRow<?> addCells(final T... values) {
+        for (final T value : values) {
+            addCells(value);
         }
+        return this;
     }
 
     /**
-     * Adds the cell.
+     * Length.
      *
-     * @param value the value
-     */
-    public void addCell(final String value) {
-        this.cols.add(new TableCell(value));
-    }
-
-    /**
-     * Length, number of columns.
-     *
-     * @return the number of columns as int.
+     * @return the int
      */
     public int length() {
         return this.cols.size();
@@ -96,7 +94,7 @@ public class TableRow {
      */
     public String toRowString() {
         final StringBuilder stringBuffer = new StringBuilder();
-        final Iterator<TableCell> tableRow = this.cols.iterator();
+        final Iterator<GenericTableCell<T>> tableRow = this.cols.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -104,6 +102,7 @@ public class TableRow {
                 stringBuffer.append(tableRow.next());
             }
         }
+
         stringBuffer.append('\n');
         return stringBuffer.toString();
     }

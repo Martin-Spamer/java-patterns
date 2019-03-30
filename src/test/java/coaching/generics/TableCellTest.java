@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit test class for TableCell.
+ * Unit test class for GenericTableCell.
  */
 public class TableCellTest {
 
@@ -21,7 +21,7 @@ public class TableCellTest {
      */
     @Test
     public void testTableCell() {
-        TableCell<String> tableCell = new TableCell<String>();
+        GenericTableCell<String> tableCell = new GenericTableCell<String>();
         assertNotNull(tableCell);
         String cellValue = "";
         assertEquals(cellValue, tableCell.setValue(cellValue).getValue());

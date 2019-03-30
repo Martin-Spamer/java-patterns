@@ -3,10 +3,8 @@ package coaching.application;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
-
 /**
- * Unit test class for Application.
+ * Unit test class for ThreadedApplication.
  */
 public class ApplicationTest {
 
@@ -15,7 +13,7 @@ public class ApplicationTest {
      */
     @Test
     public void testApplication() {
-        assertTrue(new Application().execute());
+        new Application().execute();
     }
 
     /**
@@ -23,17 +21,12 @@ public class ApplicationTest {
      */
     @Test
     public void testApplicationArgs() {
-        String[] args = new String[0];
-        assertTrue(new Application(args).execute());
+        new Application(new String[0]).execute();
     }
 
-    /**
-     * Unit test to application main.
-     */
     @Test
-    public void testApplicationMain() {
-        String[] args = new String[0];
-        Application.main(args);
+    public void testApplicationNullArgs() {
+        new Application(null).execute();
     }
 
     /**
@@ -41,7 +34,20 @@ public class ApplicationTest {
      */
     @Test
     public void testApplicationMainArgs() {
-        String[] args = { "Application.config" };
+        String[] args = { "ThreadedApplication.config" };
         Application.main(args);
     }
+
+    @Test
+    public void testApplicationMain() {
+        String[] args = new String[0];
+        Application.main(args);
+    }
+
+    @Test
+    public void testApplicationMainNull() {
+        String[] args = null;
+        Application.main(args);
+    }
+
 }

@@ -1,5 +1,5 @@
 
-package coaching.generics;
+package coaching.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,22 +10,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * A TableRow class composed of TableCell classes.
- *
- * @param <T> the generic type
+ * A GenericTableRow class composed of GenericTableCell classes.
  */
-public class TableRow<T> {
+public class TableColumn {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** the columns in the row. */
-    private final List<TableCell<T>> cols = new ArrayList<>();
+    private final List<TableCell> cols = new ArrayList<>();
 
     /**
      * Instantiates a new table row.
      */
-    public TableRow() {
+    public TableColumn() {
         super();
     }
 
@@ -34,9 +32,9 @@ public class TableRow<T> {
      *
      * @param values the values
      */
-    public TableRow(final String values) {
+    public TableColumn(final String values) {
         super();
-        // addCells(values);
+        addCells(values);
     }
 
     /**
@@ -44,44 +42,48 @@ public class TableRow<T> {
      *
      * @param values the values
      */
-    @SafeVarargs
-    public TableRow(final T... values) {
+    public TableColumn(final String... values) {
         super();
-        // addCells(values);
+        addCells(values);
     }
 
     /**
      * Adds the cells.
      *
      * @param values the string
-     * @return the table row
      */
-    public TableRow<T> addCells(final String values) {
+    public void addCells(final String values) {
         final String[] tuple = values.split(",");
         for (final String value : tuple) {
-            final TableCell<T> cell = new TableCell<T>().setValue((T) value);
+            final TableCell cell = new TableCell(value);
             this.cols.add(cell);
         }
-        return this;
     }
 
     /**
      * Adds the cells.
      *
      * @param values the strings
-     * @return the table row
      */
-    public TableRow<?> addCells(final T... values) {
-        for (final T value : values) {
-            addCells(value);
+    public void addCells(final String... values) {
+        for (final String value : values) {
+            addCell(value);
         }
-        return this;
     }
 
     /**
-     * Length.
+     * Adds the cell.
      *
-     * @return the int
+     * @param value the value
+     */
+    public void addCell(final String value) {
+        this.cols.add(new TableCell(value));
+    }
+
+    /**
+     * Length, number of columns.
+     *
+     * @return the number of columns as int.
      */
     public int length() {
         return this.cols.size();
@@ -94,7 +96,7 @@ public class TableRow<T> {
      */
     public String toRowString() {
         final StringBuilder stringBuffer = new StringBuilder();
-        final Iterator<TableCell<T>> tableRow = this.cols.iterator();
+        final Iterator<TableCell> tableRow = this.cols.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -102,7 +104,6 @@ public class TableRow<T> {
                 stringBuffer.append(tableRow.next());
             }
         }
-
         stringBuffer.append('\n');
         return stringBuffer.toString();
     }

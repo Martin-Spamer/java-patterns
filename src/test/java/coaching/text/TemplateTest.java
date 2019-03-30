@@ -1,5 +1,5 @@
 
-package coaching.template;
+package coaching.text;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -16,7 +16,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assume.assumeNotNull;
 
 import coaching.resources.ResourceLoader;
-import coaching.template.Template.TemplateException;
+import coaching.text.Template;
+import coaching.text.Template.TemplateException;
 
 public class TemplateTest {
 

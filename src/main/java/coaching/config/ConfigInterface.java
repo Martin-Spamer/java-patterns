@@ -40,4 +40,22 @@ public interface ConfigInterface {
      */
     String valueFor(final String key);
 
+    /**
+     * Value for.
+     *
+     * @param key the key
+     * @param defaultValue the default value
+     * @return the boolean
+     */
+    Boolean valueFor(final String key, final Boolean defaultValue);
+
+    /**
+     * Value for.
+     *
+     * @param key the key
+     * @param defaultValue the default value
+     * @return the long
+     */
+    Long valueFor(String key, Long defaultValue);
+
 }

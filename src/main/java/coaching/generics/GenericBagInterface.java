@@ -1,5 +1,5 @@
 
-package coaching.bags;
+package coaching.generics;
 
 /**
  * Generic Bag Interface.

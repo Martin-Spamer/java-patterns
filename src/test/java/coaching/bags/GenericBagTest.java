@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import coaching.generics.GenericBag;
+
 /**
  * Unit tests for GenericBag class.
  */

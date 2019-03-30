@@ -3,6 +3,11 @@
 
 ## Java Coaching
 
+ * Package provides examples of java exception handling.
+ * CheckedException.java
+ * UnCheckedException.java *
+ * CustomExceptionHandling.java
+
 ### Java Exceptions types & handling
 
 - Don't ignore exceptions

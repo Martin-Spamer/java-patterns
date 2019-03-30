@@ -3,5 +3,7 @@
 
 ## Java Coaching
 ### Java Configuration examples
-#### Property files
-#### XML Configuration
+ * Package provides examples of how to provide and manage configuration.
+ * AbstractConfiguration
+ * Configuration
+

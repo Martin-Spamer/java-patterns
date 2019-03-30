@@ -196,7 +196,7 @@ public abstract class JdbcBase {
     /**
      * Column labels.
      *
-     * @return the array list<String>
+     * @return the list
      * @throws SQLException the SQL exception
      */
     protected List<String> columnLabels() throws SQLException {

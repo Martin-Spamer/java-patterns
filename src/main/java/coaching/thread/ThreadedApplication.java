@@ -23,14 +23,14 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * Application, an example harness for Java Threads.
+ * ThreadedApplication, an example harness for Java Threads.
  *
  * Created on 30 June 2004 - 13:07
  **/
-public class Application {
+public class ThreadedApplication {
 
     /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(Application.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ThreadedApplication.class);
 
     /** The document. */
     private Document document;
@@ -41,7 +41,7 @@ public class Application {
     /**
      * Instantiates a new main application.
      */
-    public Application() {
+    public ThreadedApplication() {
         super();
         if (initialise()) {
             createThreads(this.document);

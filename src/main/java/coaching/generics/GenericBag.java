@@ -1,5 +1,5 @@
 
-package coaching.bags;
+package coaching.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * The Class IO.
+ * Java IO (Input & Output) class.
  */
 public class IO {
 

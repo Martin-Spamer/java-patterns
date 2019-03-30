@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Table class is composed of TableRow classes.
+ * The GenericTable class is composed of GenericTableRow classes.
  */
 public class Table {
 
@@ -25,6 +25,9 @@ public class Table {
 
     /** The rows of the table. */
     private final List<TableRow> rows = new ArrayList<TableRow>();
+
+    /** The rows of the table. */
+    private final List<TableColumn> columns = new ArrayList<TableColumn>();
 
     /**
      * Instantiates a new table.
@@ -179,7 +182,7 @@ public class Table {
     }
 
     /**
-     * Table header.
+     * GenericTable header.
      *
      * @return the string
      */
@@ -200,7 +203,7 @@ public class Table {
     }
 
     /**
-     * Table body.
+     * GenericTable body.
      *
      * @return the string
      */
@@ -226,11 +229,12 @@ public class Table {
      */
     @Override
     public String toString() {
-        return String.format("%s [tableName=%s, colNames=%s, rows=%s]",
+        return String.format("%s [tableName=%s, colNames=%s, rows=%s, columns]",
             this.getClass().getSimpleName(),
             this.tableName,
             this.colNames,
-            this.rows);
+            this.rows,
+            this.columns);
     }
 
 }

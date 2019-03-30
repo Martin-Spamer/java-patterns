@@ -4,9 +4,7 @@
 ## Expected Data handling using tags
 
 
-
 ## Credentials with Characteristic tags
-
 
 
 ### Simple

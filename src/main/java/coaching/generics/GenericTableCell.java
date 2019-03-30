@@ -5,11 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Generic Table Cell class.
+ * Generic GenericTable Cell class.
  *
  * @param <T> the generic type
  */
-public class TableCell<T> {
+public class GenericTableCell<T> {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -20,7 +20,7 @@ public class TableCell<T> {
     /**
      * Instantiates a new table cell.
      */
-    public TableCell() {
+    public GenericTableCell() {
         super();
     }
 
@@ -29,7 +29,7 @@ public class TableCell<T> {
      *
      * @param value the value
      */
-    public TableCell(final T value) {
+    public GenericTableCell(final T value) {
         super();
         this.value = value;
     }
@@ -49,7 +49,7 @@ public class TableCell<T> {
      * @param value the value to set
      * @return the table cell
      */
-    public TableCell<T> setValue(final T value) {
+    public GenericTableCell<T> setValue(final T value) {
         this.value = value;
         return this;
     }

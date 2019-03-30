@@ -30,13 +30,6 @@ public interface BagInterface {
     String pick();
 
     /**
-     * choose item from bag.
-     *
-     * @return the string
-     */
-    String choose();
-
-    /**
      * reset the back to its initial state.
      *
      * @return this bag for a fluent interface

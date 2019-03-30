@@ -3,3 +3,10 @@
 
 ## Coaching Java 
 ### Java Collections example
+
+ * GenericBagInterface.java
+ * GenericBag.java
+
+ * GenericTable.java
+ * GenericTableRow.java
+ * GenericTableCell.java

@@ -10,11 +10,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Table class is composed of TableRow classes.
+ * The GenericTable class is composed of GenericTableRow classes.
  *
  * @param <T> the generic type
  */
-public class Table<T> {
+public class GenericTable<T> {
 
     /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -26,12 +26,12 @@ public class Table<T> {
     private final List<String> colNames = new ArrayList<String>();
 
     /** The rows of the table. */
-    private final List<TableRow> rows = new ArrayList<TableRow>();
+    private final List<GenericTableRow> rows = new ArrayList<GenericTableRow>();
 
     /**
      * Instantiates a new table.
      */
-    public Table() {
+    public GenericTable() {
         super();
     }
 
@@ -40,7 +40,7 @@ public class Table<T> {
      *
      * @param tableName the table name
      */
-    public Table(final String tableName) {
+    public GenericTable(final String tableName) {
         super();
         this.tableName = tableName;
     }
@@ -51,7 +51,7 @@ public class Table<T> {
      * @param tableName the tableName to set
      * @return the table
      */
-    public Table setName(final String tableName) {
+    public GenericTable setName(final String tableName) {
         this.tableName = tableName;
         return this;
     }
@@ -71,7 +71,7 @@ public class Table<T> {
      * @param colName the col name
      * @return the table
      */
-    public Table addColumnName(final String colName) {
+    public GenericTable addColumnName(final String colName) {
         this.colNames.add(colName);
         return this;
     }
@@ -83,7 +83,7 @@ public class Table<T> {
      * @return the table
      */
 
-    public Table addColumnNames(final String... colNames) {
+    public GenericTable addColumnNames(final String... colNames) {
         this.colNames.addAll(Arrays.asList(colNames));
         return this;
     }
@@ -94,7 +94,7 @@ public class Table<T> {
      * @param colData the col data
      * @return the table
      */
-    public Table addColumn(final String... colData) {
+    public GenericTable addColumn(final String... colData) {
         for (int i = 0; i < colData.length; i++) {
             this.rows.get(i).addCells(colData[i]);
         }
@@ -107,8 +107,8 @@ public class Table<T> {
      * @param values the values
      * @return the table
      */
-    public Table addRow(final String values) {
-        addRow(new TableRow(values));
+    public GenericTable addRow(final String values) {
+        addRow(new GenericTableRow(values));
         return this;
     }
 
@@ -118,8 +118,8 @@ public class Table<T> {
      * @param values the values
      * @return the table
      */
-    public Table addRow(final String... values) {
-        addRow(new TableRow(values));
+    public GenericTable addRow(final String... values) {
+        addRow(new GenericTableRow(values));
         return this;
     }
 
@@ -130,7 +130,7 @@ public class Table<T> {
      * @return the boolean
      * @see java.util.List#add(java.lang.Object)
      */
-    public Table addRow(final TableRow e) {
+    public GenericTable addRow(final GenericTableRow e) {
         this.rows.add(e);
         return this;
     }
@@ -142,7 +142,7 @@ public class Table<T> {
      * @return the table row
      * @see java.util.List#get(int)
      */
-    public TableRow getRow(final int index) {
+    public GenericTableRow getRow(final int index) {
         return this.rows.get(index);
     }
 
@@ -156,7 +156,7 @@ public class Table<T> {
     }
 
     /**
-     * Table header.
+     * GenericTable header.
      *
      * @return the string
      */
@@ -177,14 +177,14 @@ public class Table<T> {
     }
 
     /**
-     * Table body.
+     * GenericTable body.
      *
      * @return the string
      */
     protected String tableBody() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<TableRow> tableRow = this.rows.iterator();
+        final Iterator<GenericTableRow> tableRow = this.rows.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {

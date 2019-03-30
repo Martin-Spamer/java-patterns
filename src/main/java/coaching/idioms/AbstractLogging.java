@@ -5,12 +5,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * An AbstractLogging logging class.
+ * An example of using an abstract logging class.
  *
  * a protected logger can be used by any inheriting specialisation class.
  *
  * Each Class has its own logger, but uses this.getClass().getSimpleName() to
- * ensure polymorphic sub-classes always log under their name.
+ * ensure polymorphic sub-classes always log under their own name.
  *
  * logging layout formater (%F:%L) for click through in most IDEs.
  */
@@ -23,7 +23,7 @@ public abstract class AbstractLogging {
      * To log.
      */
     public void toLog() {
-        log.info("the.{}.toLog", this.getClass().getSimpleName());
+        this.log.info("the.{}.toLog", this.getClass().getSimpleName());
     }
 
     /**

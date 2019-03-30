@@ -2,7 +2,6 @@
 package coaching.application;
 
 import java.util.Arrays;
-import java.util.Enumeration;
 import java.util.Properties;
 
 import org.slf4j.Logger;
@@ -16,6 +15,10 @@ import coaching.resources.XmlResourceLoader;
 
 /**
  * An abstract Scheduler class.
+ *
+ * A Scheduler is specials application used for starting other Applications
+ * under specific circumstances, at certain times or in response to specific
+ * events.
  */
 public abstract class AbstractScheduler {
 
@@ -23,7 +26,7 @@ public abstract class AbstractScheduler {
     protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
-    private String[] args = null;
+    private final String[] args = null;
 
     /** initialisation arguments as properties. */
     private Properties properties = null;
@@ -32,96 +35,14 @@ public abstract class AbstractScheduler {
     private Document xmlDoc = null;
 
     /**
-     * Default Constructor.
-     */
-    public AbstractScheduler() {
-        initialise();
-        this.log.debug("AbstractScheduler() : {}", this);
-    }
-
-    /**
-     * Instantiates a new abstract scheduler.
-     *
-     * @param resourceName the resource name
-     */
-    public AbstractScheduler(final String resourceName) {
-        this.log.debug("AbstractScheduler({}) : {}", resourceName, this);
-        if (resourceName != null) {
-            initialise(resourceName);
-        } else {
-            initialise();
-        }
-    }
-
-    /**
      * Instantiates a new abstract scheduler.
      *
      * @param args the args
      */
     public AbstractScheduler(final String[] args) {
-        this.log.debug("AbstractScheduler({}) = {}", args, this);
-        if (args != null) {
-            initialise(args);
-        } else {
-            initialise();
-        }
-    }
-
-    /**
-     * Instantiates a new abstract scheduler.
-     *
-     * @param properties the properties
-     */
-    public AbstractScheduler(final Properties properties) {
-        this.log.debug("AbstractScheduler({}) = {}", properties, this);
-        initialisation(properties);
-    }
-
-    /**
-     * Initialise from default property file.
-     */
-    private void initialise() {
         final String simpleName = this.getClass().getSimpleName();
         this.properties = PropertiesLoader.getProperties(simpleName);
         this.xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
-    }
-
-    /**
-     * Initialise from named resource file.
-     *
-     * @param resourceName the resource name
-     */
-    private void initialise(final String resourceName) {
-        try {
-            this.properties = PropertiesLoader.getProperties(resourceName);
-        } catch (final Exception e) {
-            this.log.error(e.getLocalizedMessage(), e);
-        }
-
-        try {
-            this.xmlDoc = XmlResourceLoader.getXmlResource(resourceName);
-        } catch (final Exception e) {
-            this.log.error(e.getLocalizedMessage(), e);
-        }
-    }
-
-    /**
-     * Initialise with String array.
-     *
-     * @param args the args
-     */
-    private void initialise(final String[] args) {
-        initialise();
-        this.args = args;
-    }
-
-    /**
-     * Initialisation from properties.
-     *
-     * @param properties the properties
-     */
-    private void initialisation(final Properties properties) {
-        this.properties = properties;
     }
 
     /**
@@ -166,39 +87,15 @@ public abstract class AbstractScheduler {
         return this;
     }
 
-    /**
-     * Execute.
-     *
-     * @param properties the properties
-     * @return the abstract scheduler
-     */
-    public AbstractScheduler execute(final Properties properties) {
-        if (properties != null) {
-            final Enumeration<?> keys = properties.propertyNames();
-            while (keys.hasMoreElements()) {
-                final String key = (String) keys.nextElement();
-                final String value = properties.getProperty(key);
-                this.log.debug("{} = {}", key, value);
-                try {
-                    final Thread thread = (Thread) Class.forName(value).newInstance();
-                    this.log.debug("thread : {}", thread);
-                    thread.start();
-                } catch (final Exception e) {
-                    this.log.error(e.getLocalizedMessage(), e);
-                }
-            }
-        } else {
-            this.log.warn("Properties cannot be null");
-        }
-        return this;
-    }
-
     /*
      * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return String.format("%s [args=%s, properties=%s]", this.getClass().getSimpleName(), Arrays.toString(this.args), this.properties);
+        return String.format("%s [args=%s, properties=%s]",
+            this.getClass().getSimpleName(),
+            Arrays.toString(this.args),
+            this.properties);
     }
 }

@@ -98,17 +98,17 @@ public final class SimpleBagTest {
     private void verify(final SimpleBag bag) {
         assertNotNull(bag);
         assertEquals(3, bag.size());
-        String choice = bag.choose();
+        String choice = bag.pick();
         assertNotNull(choice);
         LOG.info(choice);
         assertEquals(2, bag.size());
 
-        choice = bag.choose();
+        choice = bag.pick();
         assertNotNull(choice);
         LOG.info(choice);
         assertEquals(1, bag.size());
 
-        choice = bag.choose();
+        choice = bag.pick();
         assertNotNull(choice);
         LOG.info(choice);
         assertEquals(0, bag.size());
@@ -122,7 +122,7 @@ public final class SimpleBagTest {
         LOG.info("testChooseFromBag()");
         final BagInterface bag = new SimpleBag(VALUES);
         assertNotNull(bag);
-        final String chosen = bag.choose();
+        final String chosen = bag.pick();
         assertNotNull(chosen);
         final String pick = bag.pick();
         assertNotNull(pick);
@@ -138,7 +138,7 @@ public final class SimpleBagTest {
         final String[] stuff = null;
         final SimpleBag bag = new SimpleBag(stuff);
         assertEquals(0, bag.size());
-        final String choice = bag.choose();
+        final String choice = bag.pick();
         assertNull(choice);
         assertEquals(0, bag.size());
     }
@@ -152,7 +152,7 @@ public final class SimpleBagTest {
         final String[] stuff = new String[0];
         final SimpleBag bag = new SimpleBag(stuff);
         assertEquals(0, bag.size());
-        final String choice = bag.choose();
+        final String choice = bag.pick();
         assertNull(choice);
         assertEquals(0, bag.size());
     }

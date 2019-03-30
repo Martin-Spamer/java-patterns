@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 
 /**
- * An abstract DTO (data transfer object) class.
+ * An abstract data transfer object class.
+ * Usage <code>Address extends AbstractDto</code>
  */
 public abstract class AbstractDto {
 
@@ -40,7 +41,7 @@ public abstract class AbstractDto {
      * @param value the value
      */
     public void addField(final String key, final String value) {
-        fields.put(key, value);
+        this.fields.put(key, value);
     }
 
     /**
@@ -50,7 +51,7 @@ public abstract class AbstractDto {
      * @return the string
      */
     public String getField(final String key) {
-        return fields.get(key);
+        return this.fields.get(key);
     }
 
     /**
@@ -60,7 +61,7 @@ public abstract class AbstractDto {
      * @return true, if successful
      */
     public boolean containsKey(final String key) {
-        return fields.containsKey(key);
+        return this.fields.containsKey(key);
     }
 
     /*
@@ -69,7 +70,7 @@ public abstract class AbstractDto {
      */
     @Override
     public String toString() {
-        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), fields);
+        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), this.fields);
     }
 
 }

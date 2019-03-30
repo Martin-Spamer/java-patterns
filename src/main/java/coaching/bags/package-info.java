@@ -1,7 +1,8 @@
 /**
- * Package provides examples of bag collection.
+ * Package provides examples of bag collection,
  * <p>
- * Detailed description of package.
+ * A bag is similar to a set but may contain the same value multiple times.
+ *
  */
 
 package coaching.bags;

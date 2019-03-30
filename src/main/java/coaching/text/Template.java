@@ -1,5 +1,5 @@
 
-package coaching.template;
+package coaching.text;
 
 import java.io.BufferedReader;
 import java.io.IOException;

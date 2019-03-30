@@ -1,7 +1,10 @@
 /**
- * Package provides ...
+ * Package provides example of Java applications.
+ *
  * <p>
- * Detailed description of package.
+ * ThreadedApplication class
+ * <p>
+ * AbstractScheduler class
  */
 
 package coaching.application;

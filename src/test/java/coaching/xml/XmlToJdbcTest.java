@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
+import coaching.jdbc.XmlToJdbc;
+
 /**
  * Unit test for the XmlToJdbc class.
  */

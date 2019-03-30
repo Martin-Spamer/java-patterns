@@ -370,7 +370,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
     }
 
     /**
-     * Prepare the SQL with Schema and Table names.
+     * Prepare the SQL with Schema and GenericTable names.
      *
      * @param sql the SQL statement
      * @return the prepare

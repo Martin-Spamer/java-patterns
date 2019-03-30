@@ -1,37 +1,14 @@
 
 package coaching.application;
 
-import java.util.Properties;
-
 /**
  * Example Scheduler class.
+ *
+ * A Scheduler is specials application used for starting other Applications
+ * under specific circumstances, at certain times or in response to specific
+ * events.
  */
 public final class ExampleScheduler extends AbstractScheduler {
-
-    /**
-     * Instantiates a new example scheduler.
-     */
-    public ExampleScheduler() {
-        super();
-    }
-
-    /**
-     * Instantiates a new example scheduler.
-     *
-     * @param properties the properties
-     */
-    public ExampleScheduler(final Properties properties) {
-        super(properties);
-    }
-
-    /**
-     * Instantiates a new example scheduler.
-     *
-     * @param resourceName the resource name
-     */
-    public ExampleScheduler(final String resourceName) {
-        super(resourceName);
-    }
 
     /**
      * Instantiates a new example scheduler.
@@ -40,6 +17,18 @@ public final class ExampleScheduler extends AbstractScheduler {
      */
     public ExampleScheduler(final String[] args) {
         super(args);
+    }
+
+    /**
+     * The main entry method for the application.
+     * Create a new instance of the ThreadedApplication with its default constructor,
+     * using any command line parameters from the args,
+     * and calling the execute method.
+     *
+     * @param args the program arguments as a array of strings.
+     */
+    public static void main(final String[] args) {
+        new ExampleScheduler(args).execute();
     }
 
 }

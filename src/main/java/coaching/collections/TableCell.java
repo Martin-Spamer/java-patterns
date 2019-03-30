@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Table Cell class.
+ * GenericTable Cell class.
  */
 public class TableCell {
 

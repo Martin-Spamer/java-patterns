@@ -14,7 +14,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * An abstract Application class.
+ * An abstract ThreadedApplication class.
  */
 public abstract class AbstractApplication {
 

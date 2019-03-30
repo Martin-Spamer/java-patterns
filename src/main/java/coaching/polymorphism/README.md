@@ -3,3 +3,8 @@
 
 ## Java Coaching
 ### Polymorphism in Java example
+
+TypeInterface.java
+AbstractType.java
+SubTypeOne.java
+SubTypeTwo.java

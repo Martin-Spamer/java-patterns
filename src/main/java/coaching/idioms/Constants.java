@@ -2,7 +2,8 @@
 package coaching.idioms;
 
 /**
- * Constants Class.
+ * Place an organisational Constants class in the organisations root namespace.
+ * e.g The files might exist in uk.co.company
  */
 public final class Constants {
 

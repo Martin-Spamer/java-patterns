@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-import coaching.application.ApplicationException;
+import coaching.thread.ThreadTemplate.ApplicationException;
 
 /**
  * Unit test class for ThreadTemplate.
