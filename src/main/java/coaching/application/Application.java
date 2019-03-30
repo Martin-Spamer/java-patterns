@@ -29,8 +29,6 @@ public final class Application extends AbstractApplication {
 
     /**
      * Execute the ThreadedApplication.
-     *
-     * @return true, if successful, otherwise false.
      */
     public void execute() {
         this.log.info("execute() : {}", this.toString());
