@@ -13,17 +13,17 @@ import coaching.resources.PropertiesLoader;
  */
 public final class CommandFactory {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
-    
-    /** DEFAULT 			constant. */
+
+    /** DEFAULT constant. */
     private static final String DEFAULT = "patterns.command.ExampleCommand";
-    
-    /** INSTANCE 			constant. */
+
+    /** INSTANCE constant. */
     private static final CommandFactory INSTANCE = new CommandFactory();
-    
+
     /** The properties. */
-    private final Properties properties;
+    protected final Properties properties;
 
     /**
      * Instantiates a new command factory.

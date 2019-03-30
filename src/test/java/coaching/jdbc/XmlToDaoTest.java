@@ -24,7 +24,7 @@ public final class XmlToDaoTest {
     public void testXmlDao() {
         final XmlToDao dao = new XmlToDao();
         assertNotNull(dao);
-        LOG.info(dao.toString());
+        LOG.info("dao : {}", dao.toString());
     }
 
 }

@@ -2,7 +2,9 @@
 package coaching.jdbc;
 
 /**
- * An interface for JDBC Data Access Object.
+ * An interface for JDBC Data Access Object. Good mapping with JDBC/SQL domain
+ * language, poor mapping with business domain language. Useful to isolate the
+ * dangerous admin SQL commands.
  */
 public interface DaoInterface {
 
@@ -69,4 +71,10 @@ public interface DaoInterface {
      */
     DaoInterface dropTable();
 
+    /**
+     * Describe table.
+     *
+     * @return the dao interface
+     */
+    DaoInterface describeTable();
 }

@@ -4,7 +4,7 @@ package coaching.tuples;
 import java.util.Map;
 
 /**
- * The Class KeyValue.
+ * A KeyValue class.
  *
  * @param <K> the key type
  * @param <V> the value type
@@ -71,7 +71,7 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
      */
     @Override
     public String toString() {
-        return String.format("%s=%s", key, value);
+        return String.format("%s=%s", this.key, this.value);
     }
 
     /**
@@ -80,6 +80,6 @@ public class KeyValue<K, V> implements Map.Entry<K, V> {
      * @return the string
      */
     public String debugString() {
-        return String.format("%s [key=%s, value=%s]", this.getClass().getSimpleName(), key, value);
+        return String.format("%s [key=%s, value=%s]", this.getClass().getSimpleName(), this.key, this.value);
     }
 }

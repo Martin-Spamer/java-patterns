@@ -1,0 +1,4 @@
+# Test.template
+String : ${String}
+Number : ${Number}
+Boolean : ${Boolean}

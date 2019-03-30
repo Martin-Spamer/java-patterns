@@ -15,8 +15,8 @@ public abstract class AbstractPerson {
     /**
      * execute.
      */
-    public void execute() {
-        log.info("{}.execute", this.getClass().getName());
+    public void doWork() {
+        log.info("{}.doWork", this.getClass().getName());
     }
 
     /*

@@ -70,7 +70,7 @@ public class FluentWait {
      * @param condition the condition
      * @return true, if successful, otherwise false., otherwise false.
      */
-    public boolean until(final Condition condition) {
+    public boolean until(final ConditionInterface<Boolean> condition) {
         if (condition != null) {
             final long startTime = System.currentTimeMillis();
             final long endTime = startTime + timeOut;

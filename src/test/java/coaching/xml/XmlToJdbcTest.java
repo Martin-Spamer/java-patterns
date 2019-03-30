@@ -2,18 +2,15 @@
 package coaching.xml;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import coaching.jdbc.XmlToJdbc;
 
 /**
  * Unit test for the XmlToJdbc class.
  */
 public final class XmlToJdbcTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbcTest.class);
 
     /** The classname of the JDBC driver to use. */
     public static final String JDBC_DRIVER = "org.sqlite.JDBC";

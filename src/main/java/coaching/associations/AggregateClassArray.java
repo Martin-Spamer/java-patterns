@@ -39,13 +39,22 @@ public final class AggregateClassArray {
 
     /**
      * Execute.
+     */
+    public void execute() {
+        for (final AbstractPerson person : aggregate) {
+            person.doWork();
+        }
+    }
+
+    /**
+     * Execute.
      *
      * @param index the index
      * @return the aggregate class array
      */
     public AggregateClassArray execute(final int index) {
         LOG.info("execute {}", this);
-        aggregate[index].execute();
+        aggregate[index].doWork();
         return this;
     }
 

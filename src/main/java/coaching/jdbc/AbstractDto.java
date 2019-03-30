@@ -10,7 +10,8 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 
 /**
- * An abstract DTO (data transfer object) class.
+ * An abstract data transfer object class.
+ * Usage <code>Address extends AbstractDto</code>
  */
 public abstract class AbstractDto {
 

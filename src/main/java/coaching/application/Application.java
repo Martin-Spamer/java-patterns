@@ -3,8 +3,10 @@ package coaching.application;
 
 import java.util.Arrays;
 
+import coaching.solid.AbstractApplication;
+
 /**
- * Example Application class.
+ * Example ThreadedApplication class.
  */
 public final class Application extends AbstractApplication {
 
@@ -16,46 +18,47 @@ public final class Application extends AbstractApplication {
     }
 
     /**
-     * Instantiates a new application.
+     * Instantiates a new ThreadedApplication class.
      *
-     * @param args the args
+     * @param args an array of string objects.
      */
     public Application(final String[] args) {
         super(args);
-        log.debug("args = {}", Arrays.toString(args));
+        this.log.debug("args = {}", Arrays.toString(args));
     }
 
     /**
-     * Execute.
-     *
-     * @return true, if successful
+     * Execute the ThreadedApplication.
      */
-    public boolean execute() {
-        try {
-            log.info("execute() : {}", this);
-            return true;
-        } catch (final Exception e) {
-            log.error(e.getLocalizedMessage(), e);
-            return false;
-        }
+    public void execute() {
+        this.log.info("execute() : {}", this.toString());
     }
 
     /**
-     * The main entry method. exit codes 0 Success 1 Catchall for general errors
-     * 2 Misuse of shell builtins (according to Bash documentation) 126 Command
-     * invoked cannot execute 127 Command not found 128 Invalid argument to exit
-     * 128+n Fatal error signal “n” 130 Control+C 255 Exit status out of range
+     * The main entry method for the application.
+     * Create a new instance of the ThreadedApplication with its default
+     * constructor,
+     * using any command line parameters from the args,
+     * and calling the execute method.
      *
-     * @param args the program arguments as a String array.
+     * @param args the program arguments as a array of strings.
      */
     public static void main(final String[] args) {
-        final Application application = new Application(args);
-        if (application.initialisation()) {
-            if (application.execute()) {
-                System.exit(0);
-            } else {
-                System.exit(1);
-            }
+        new Application(args).execute();
+    }
+
+    /**
+     * The Class ApplicationException.
+     */
+    public class ApplicationException extends Exception {
+
+        /**
+         * Instantiates a new application exception.
+         *
+         * @param message the message
+         */
+        public ApplicationException(final String message) {
+            super(message);
         }
     }
 }

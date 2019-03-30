@@ -18,18 +18,6 @@ public class Manager implements ProcessInterface {
     }
 
     /**
-     * Instantiates a new manager with a passed Worker instance.
-     *
-     * worker
-     *
-     * @param worker the worker
-     */
-    public Manager(final Worker worker) {
-        super();
-        setWorker(worker);
-    }
-
-    /**
      * configure the worker to receive delegation.
      *
      * worker manager

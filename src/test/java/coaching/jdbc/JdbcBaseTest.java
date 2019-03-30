@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class JdbcBaseTest {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(JdbcBaseTest.class);
 
     /**
@@ -31,7 +31,7 @@ public class JdbcBaseTest {
     public void testJdbcBase() {
         JdbcBase jdbcBase = new MockJdbcBase();
         assertNotNull(jdbcBase);
-        LOG.info("{}", jdbcBase);
+        LOG.info("\tjdbcBase :{}", jdbcBase);
     }
 
     /**
@@ -44,9 +44,9 @@ public class JdbcBaseTest {
         JdbcBase jdbcBase = new MockJdbcBase();
         assertNotNull(jdbcBase);
         assertEquals(jdbcBase, jdbcBase.query());
-        LOG.info("{}", jdbcBase);
-        LOG.info("{}", jdbcBase.columnLabels());
-        LOG.info("{}", jdbcBase.bodyToString());
+        LOG.info("\tjdbcBase : {}", jdbcBase);
+        LOG.info("\tjdbcBase.columnLabels() : {}", jdbcBase.columnLabels());
+        LOG.info("\tjdbcBase.bodyToString() : {}", jdbcBase.bodyToString());
     }
 
     /**
@@ -59,7 +59,7 @@ public class JdbcBaseTest {
         JdbcBase jdbcBase = new MockJdbcBase();
         assertNotNull(jdbcBase);
         assertEquals(jdbcBase, jdbcBase.query("select count(*) from sqlite_master"));
-        LOG.info("{}", jdbcBase);
+        LOG.info("\tjdbcBase : {}", jdbcBase);
     }
 
     /**
@@ -71,7 +71,7 @@ public class JdbcBaseTest {
     public void testColumnLabels() throws SQLException {
         JdbcBase jdbcBase = new MockJdbcBase();
         assertNotNull(jdbcBase);
-        LOG.info("{}", jdbcBase.columnLabels());
+        LOG.info("\tjdbcBase.columnLabels() : {}", jdbcBase.columnLabels());
     }
 
     /**
@@ -83,7 +83,7 @@ public class JdbcBaseTest {
     public void testBodyToString() throws SQLException {
         JdbcBase jdbcBase = new MockJdbcBase();
         assertNotNull(jdbcBase);
-        LOG.info("{}", jdbcBase.bodyToString());
+        LOG.info("\tjdbcBase.bodyToString() : {}", jdbcBase.bodyToString());
     }
 
     /**
@@ -97,9 +97,9 @@ public class JdbcBaseTest {
         assertNotNull(jdbcBase);
         String sql = "select count(*) from sqlite_master";
         assertEquals(jdbcBase, jdbcBase.executePreparedStatement(sql));
-        LOG.info("{}", jdbcBase);
-        LOG.info("{}", jdbcBase.columnLabels());
-        LOG.info("{}", jdbcBase.bodyToString());
+        LOG.info("\tjdbcBase : {}", jdbcBase);
+        LOG.info("\tjdbcBase.columnLabels() : {}", jdbcBase.columnLabels());
+        LOG.info("\tjdbcBase.bodyToString() : {}", jdbcBase.bodyToString());
     }
 
 }

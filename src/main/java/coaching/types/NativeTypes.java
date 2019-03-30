@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 public class NativeTypes {
 
     /** The largest byte. */
-    // integer types
     private final byte largestByte = Byte.MAX_VALUE;
 
     /** The smallest byte. */
@@ -34,11 +33,10 @@ public class NativeTypes {
     /** The largest long. */
     private final long largestLong = Long.MAX_VALUE;
 
-    /** The smallestt long. */
+    /** The smallest long. */
     private final long smallesttLong = Long.MIN_VALUE;
 
     /** The largest float. */
-    // real number types
     private final float largestFloat = Float.MAX_VALUE;
 
     /** The smallest float. */
@@ -50,8 +48,7 @@ public class NativeTypes {
     /** The smallest double. */
     private final double smallestDouble = Double.MIN_VALUE;
 
-    /** The a char. */
-    // other primitive types
+    /** The char. */
     private final char aChar = 'A';
 
     /** The true boolean. */
@@ -68,34 +65,34 @@ public class NativeTypes {
      */
     public void display() {
         // display all member types.
-        log.info("largest byte value : {}", largestByte);
-        log.info("smallest byte value : {}", smallestByte);
+        this.log.info("largest byte value : {}", this.largestByte);
+        this.log.info("smallest byte value : {}", this.smallestByte);
 
-        log.info("largest short value is {}", largestShort);
-        log.info("smallest short value is {}", smallestShort);
+        this.log.info("largest short value is {}", this.largestShort);
+        this.log.info("smallest short value is {}", this.smallestShort);
 
-        log.info("largest integer value is {}", largestInteger);
-        log.info("smallest integer value is {}", smallestInteger);
+        this.log.info("largest integer value is {}", this.largestInteger);
+        this.log.info("smallest integer value is {}", this.smallestInteger);
 
-        log.info("largest long value is {}", largestLong);
-        log.info("smallest long value is {}", smallesttLong);
+        this.log.info("largest long value is {}", this.largestLong);
+        this.log.info("smallest long value is {}", this.smallesttLong);
 
-        log.info("largest float value is {}", largestFloat);
-        log.info("smallest float value is {}", smallestFloat);
+        this.log.info("largest float value is {}", this.largestFloat);
+        this.log.info("smallest float value is {}", this.smallestFloat);
 
-        log.info("largest double value is {}", largestDouble);
-        log.info("smallest double value is {}", smallestDouble);
+        this.log.info("largest double value is {}", this.largestDouble);
+        this.log.info("smallest double value is {}", this.smallestDouble);
 
-        if (Character.isUpperCase(aChar)) {
-            log.info("The character {} is upper case.", aChar);
+        if (Character.isUpperCase(this.aChar)) {
+            this.log.info("The character {} is upper case.", this.aChar);
         }
 
-        if (trueBoolean) {
-            log.info("aBooleanTrue has tested as true value : ", trueBoolean);
+        if (this.trueBoolean) {
+            this.log.info("aBooleanTrue has tested as true value : ", this.trueBoolean);
         }
 
-        if (!falseBoolean) {
-            log.info("aFalseBoolean has tested as false value : {}", falseBoolean);
+        if (!this.falseBoolean) {
+            this.log.info("aFalseBoolean has tested as false value : {}", this.falseBoolean);
         }
     }
 }

@@ -60,11 +60,10 @@ public final class PropertiesLoader {
      * @return the string
      */
     private static String propertiesFilename(final String resourceName) {
-        final String suffix = ".properties";
-        if (resourceName.endsWith(suffix)) {
+        if (resourceName.endsWith(".properties")) {
             return resourceName;
         } else {
-            return String.format("%s%s", resourceName, suffix);
+            return String.format("%s.properties", resourceName);
         }
     }
 
@@ -93,12 +92,10 @@ public final class PropertiesLoader {
      * @return the string
      */
     private static String xmlPropertiesFilename(final String resourceName) {
-        final String suffix = ".xml";
-        if (resourceName.endsWith(suffix)) {
+        if (resourceName.endsWith(".xml")) {
             return resourceName;
         } else {
-            return String.format("%s%s", resourceName, suffix);
+            return String.format("%s.xml", resourceName);
         }
     }
-
 }

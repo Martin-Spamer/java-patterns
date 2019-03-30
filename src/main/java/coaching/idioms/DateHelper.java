@@ -16,14 +16,6 @@ public final class DateHelper {
     private static final String ISO_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
     /**
-     * Instantiates a new date helper.
-     */
-    private DateHelper() {
-        super();
-        throw new UnsupportedOperationException("Do not instantiate this class, use statically.");
-    }
-
-    /**
      * Now.
      *
      * @return the calendar
@@ -146,4 +138,12 @@ public final class DateHelper {
         calendar.setTime(date);
         return calendar;
     }
+
+    /**
+     * Instantiates a new date helper.
+     */
+    private DateHelper() {
+        throw new UnsupportedOperationException("Do not instantiate this class, use statically.");
+    }
+
 }

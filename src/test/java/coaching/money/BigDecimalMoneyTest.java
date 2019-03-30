@@ -30,19 +30,19 @@ public final class BigDecimalMoneyTest {
 
         final Locale locale = Locale.getDefault();
         assertNotNull(locale);
-        LOG.info("Locale = {}", locale);
-        LOG.info("Locale.getDisplayName() = {}", locale.getDisplayName());
+        LOG.info("\tLocale = {}", locale);
+        LOG.info("\tLocale.getDisplayName() = {}", locale.getDisplayName());
 
         final Currency currency = Currency.getInstance(locale);
         assertNotNull(currency);
-        LOG.info("currency  = {}", currency.toString());
-        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
-        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
-        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+        LOG.info("\tcurrency  = {}", currency.toString());
+        LOG.info("\tcurrency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("\tcurrency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("\tcurrency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
         final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
-        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+        LOG.info("\tbigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -55,19 +55,19 @@ public final class BigDecimalMoneyTest {
         final Locale locale = Locale.FRANCE;
         assertNotNull(locale);
 
-        LOG.info("Locale = {}", locale);
+        LOG.info("\tLocale = {}", locale);
         LOG.info("Locale.getDisplayName() = {}", locale.getDisplayName());
 
         final Currency currency = Currency.getInstance(locale);
         assertNotNull(currency);
-        LOG.info("currency  = {}", currency.toString());
-        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
-        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
-        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+        LOG.info("\tcurrency  = {}", currency.toString());
+        LOG.info("\tcurrency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("\tcurrency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("\tcurrency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
         final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
-        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+        LOG.info("\tbigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -79,18 +79,18 @@ public final class BigDecimalMoneyTest {
 
         final Locale locale = Locale.UK;
         assertNotNull(locale);
-        LOG.info("Locale = {}", locale);
-        LOG.info("Locale.getDisplayName = {}", locale.getDisplayName());
+        LOG.info("\tLocale = {}", locale);
+        LOG.info("\tLocale.getDisplayName = {}", locale.getDisplayName());
 
         final Currency currency = Currency.getInstance(locale);
-        LOG.info("currency  = {}", currency.toString());
-        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
-        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
-        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+        LOG.info("\tcurrency  = {}", currency.toString());
+        LOG.info("\tcurrency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("\tcurrency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("\tcurrency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
         final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
-        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+        LOG.info("\tbigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -102,18 +102,18 @@ public final class BigDecimalMoneyTest {
 
         final Locale locale = Locale.US;
         assertNotNull(locale);
-        LOG.info("Locale = {}", locale);
-        LOG.info("Locale.getDisplayName = {}", locale.getDisplayName());
+        LOG.info("\tLocale = {}", locale);
+        LOG.info("\tLocale.getDisplayName = {}", locale.getDisplayName());
 
         final Currency currency = Currency.getInstance(locale);
-        LOG.info("currency  = {}", currency.toString());
-        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
-        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
-        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+        LOG.info("\tcurrency  = {}", currency.toString());
+        LOG.info("\tcurrency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("\tcurrency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("\tcurrency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
         final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
-        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+        LOG.info("\tbigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -125,18 +125,18 @@ public final class BigDecimalMoneyTest {
 
         final Locale locale = Locale.JAPAN;
         assertNotNull(locale);
-        LOG.info("Locale = {}", locale);
-        LOG.info("Locale.getDisplayName = {}", locale.getDisplayName());
+        LOG.info("\tLocale = {}", locale);
+        LOG.info("\tLocale.getDisplayName = {}", locale.getDisplayName());
 
         final Currency currency = Currency.getInstance(locale);
-        LOG.info("currency  = {}", currency.toString());
-        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
-        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
-        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+        LOG.info("\tcurrency  = {}", currency.toString());
+        LOG.info("\tcurrency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("\tcurrency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("\tcurrency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
         final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
-        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+        LOG.info("\tbigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -148,18 +148,18 @@ public final class BigDecimalMoneyTest {
 
         final Locale locale = Locale.CANADA;
         assertNotNull(locale);
-        LOG.info("Locale = {}", locale);
-        LOG.info("Locale.getDisplayName = {}", locale.getDisplayName());
+        LOG.info("\tLocale = {}", locale);
+        LOG.info("\tLocale.getDisplayName = {}", locale.getDisplayName());
 
         final Currency currency = Currency.getInstance(locale);
-        LOG.info("currency  = {}", currency.toString());
-        LOG.info("currency.getSymbol()  = {}", currency.getSymbol());
-        LOG.info("currency.getDisplayName() = {}", currency.getDisplayName());
-        LOG.info("currency.getCurrencyCode() = {}", currency.getCurrencyCode());
+        LOG.info("\tcurrency  = {}", currency.toString());
+        LOG.info("\tcurrency.getSymbol()  = {}", currency.getSymbol());
+        LOG.info("\tcurrency.getDisplayName() = {}", currency.getDisplayName());
+        LOG.info("\tcurrency.getCurrencyCode() = {}", currency.getCurrencyCode());
 
         final BigDecimalMoney bigDecimalMoney = new BigDecimalMoney(currency);
         assertNotNull(bigDecimalMoney);
-        LOG.info("bigDecimalMoney = {}", bigDecimalMoney);
+        LOG.info("\tbigDecimalMoney = {}", bigDecimalMoney);
     }
 
     /**
@@ -178,27 +178,27 @@ public final class BigDecimalMoneyTest {
         final Currency currency = money.getCurrency();
         assertNotNull(currency);
         assertEquals(currencySymbol + "0.00", money.toString());
-        LOG.info("money = {}", money);
+        LOG.info("\tmoney = {}", money);
 
         final BigDecimalMoney money0 = new BigDecimalMoney();
         assertNotNull(money);
         assertEquals(currencySymbol + "0.00", money0.toString());
-        LOG.info("money = {}", money0);
+        LOG.info("\tmoney = {}", money0);
 
         final BigDecimalMoney money1 = new BigDecimalMoney("1.00");
         assertNotNull(money);
         assertEquals(currencySymbol + "1.00", money1.toString());
-        LOG.info("money = {}", money1);
+        LOG.info("\tmoney = {}", money1);
 
         final BigDecimalMoney moneyStr99 = new BigDecimalMoney("99.99");
         assertNotNull(money);
         assertEquals(currencySymbol + "99.99", moneyStr99.toString());
-        LOG.info("money = {}", moneyStr99);
+        LOG.info("\tmoney = {}", moneyStr99);
 
         final BigDecimalMoney moneyStr100 = new BigDecimalMoney("100.00");
         assertNotNull(money);
         assertEquals(currencySymbol + "100.00", moneyStr100.toString());
-        LOG.info("money = {}", moneyStr100);
+        LOG.info("\tmoney = {}", moneyStr100);
     }
 
     /**
@@ -209,31 +209,31 @@ public final class BigDecimalMoneyTest {
         LOG.info("testAddition");
         final BigDecimalMoney total = new BigDecimalMoney(0);
         assertNotNull(total);
-        LOG.info("money = {}", total.toString());
+        LOG.info("\tmoney = {}", total.toString());
 
         final BigDecimalMoney number1 = new BigDecimalMoney(1);
         assertNotNull(number1);
-        LOG.info("number1 = {}", number1.toString());
+        LOG.info("\tnumber1 = {}", number1.toString());
         total.add(number1);
-        LOG.info("total + number1 = {}", total.toString());
+        LOG.info("\ttotal + number1 = {}", total.toString());
 
         final BigDecimalMoney number2 = new BigDecimalMoney("2");
         assertNotNull(number2);
-        LOG.info("number2 = {}", number2.toString());
+        LOG.info("\tnumber2 = {}", number2.toString());
         total.add(number2);
-        LOG.info("total + number2 = {}", total.toString());
+        LOG.info("\ttotal + number2 = {}", total.toString());
 
         final BigDecimalMoney number3 = new BigDecimalMoney(3);
         assertNotNull(number3);
-        LOG.info("number3 = {}", number3.toString());
+        LOG.info("\tnumber3 = {}", number3.toString());
         total.add(number3);
-        LOG.info("total + number3 = {}", total.toString());
+        LOG.info("\ttotal + number3 = {}", total.toString());
 
         final BigDecimalMoney number4 = new BigDecimalMoney("4.0");
         assertNotNull(number4);
-        LOG.info("number4 = {}", number4.toString());
+        LOG.info("\tnumber4 = {}", number4.toString());
         total.add(number4);
-        LOG.info("total+number4 = {}", total.toString());
+        LOG.info("\ttotal+number4 = {}", total.toString());
 
         BigDecimalMoney balance = new BigDecimalMoney("1234567.89");
         assertNotNull(balance);

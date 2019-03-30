@@ -30,7 +30,7 @@ public interface ConfigInterface {
      * @param defaultValue the default value, if no property found.
      * @return the property value as a String object.
      */
-    // String valueFor(final String key, final String defaultValue);
+    String valueFor(final String key, final String defaultValue);
 
     /**
      * Value for key, allows an environment value to override the property.
@@ -38,6 +38,24 @@ public interface ConfigInterface {
      * @param key the key
      * @return the value as a String object.
      */
-    // String valueFor(final String key);
+    String valueFor(final String key);
+
+    /**
+     * Value for.
+     *
+     * @param key the key
+     * @param defaultValue the default value
+     * @return the boolean
+     */
+    Boolean valueFor(final String key, final Boolean defaultValue);
+
+    /**
+     * Value for.
+     *
+     * @param key the key
+     * @param defaultValue the default value
+     * @return the long
+     */
+    Long valueFor(String key, Long defaultValue);
 
 }

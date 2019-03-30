@@ -1,6 +1,8 @@
 
 package coaching.idioms;
 
+import java.util.Random;
+
 /**
  * Enum Example with textValues.
  */
@@ -8,8 +10,10 @@ public enum EnumExample {
 
     /** The Unknown. */
     Unknown("Unknown"),
+    
     /** The Heads. */
     Heads("Heads"),
+    
     /** The Tails. */
     Tails("Tails");
 
@@ -26,16 +30,29 @@ public enum EnumExample {
     }
 
     /**
-     * text.
+     * Initial.
      *
-     * @return the text
+     * @return the enum example
      */
-    public String getText() {
-        return textValue;
+    public static EnumExample initial() {
+        return Unknown;
     }
 
     /**
-     * Factory method Enum value from string.
+     * Flip.
+     *
+     * @return the enum example
+     */
+    public static EnumExample flip() {
+        if (new Random().nextBoolean()) {
+            return Heads;
+        } else {
+            return Tails;
+        }
+    }
+
+    /**
+     * Factory method to create instance from string value.
      *
      * @param textValue the text value
      * @return the enum example
@@ -47,5 +64,15 @@ public enum EnumExample {
             }
         }
         return null;
+    }
+
+    /**
+     * to String, the current text value.
+     *
+     * @return the text
+     */
+    @Override
+    public String toString() {
+        return this.textValue;
     }
 }

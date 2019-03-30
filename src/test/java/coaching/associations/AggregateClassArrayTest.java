@@ -23,17 +23,25 @@ public final class AggregateClassArrayTest {
     public void testExecute() {
         final AggregateClassArray aggregateClassArray = new AggregateClassArray();
         assertNotNull(aggregateClassArray);
-        LOG.info(aggregateClassArray.toString());
+        LOG.info("Empty : {}", aggregateClassArray.toString());
 
         final Alice alice = new Alice();
         assertEquals(alice, aggregateClassArray.setAggregate(0, alice).getAggregate(0));
-        final Bob bob = new Bob();
-        assertEquals(bob, aggregateClassArray.setAggregate(0, bob).getAggregate(0));
-        final Charlie charlie = new Charlie();
-        assertEquals(charlie, aggregateClassArray.setAggregate(0, charlie).getAggregate(0));
-        final Dan dan = new Dan();
-        assertEquals(dan, aggregateClassArray.setAggregate(0, dan).getAggregate(0));
 
+        final Bob bob = new Bob();
+        assertEquals(bob, aggregateClassArray.setAggregate(1, bob).getAggregate(1));
+
+        final Charlie charlie = new Charlie();
+        assertEquals(charlie, aggregateClassArray.setAggregate(2, charlie).getAggregate(2));
+
+        final Dan dan = new Dan();
+        assertEquals(dan, aggregateClassArray.setAggregate(3, dan).getAggregate(3));
+
+        aggregateClassArray.execute();
+
+        aggregateClassArray.execute(3).execute(2).execute(1).execute(0);
+
+        LOG.info("Empty : {}", aggregateClassArray.toString());
     }
 
 }

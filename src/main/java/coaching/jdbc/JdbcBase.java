@@ -103,7 +103,7 @@ public abstract class JdbcBase {
         final Connection connection = ConnectionFactory.getConnection();
         final PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-        boolean result = preparedStatement.execute();
+        final boolean result = preparedStatement.execute();
         this.log.info("Rows updated : {}", result);
 
         preparedStatement.close();
@@ -196,7 +196,7 @@ public abstract class JdbcBase {
     /**
      * Column labels.
      *
-     * @return the array list< string>
+     * @return the list
      * @throws SQLException the SQL exception
      */
     protected List<String> columnLabels() throws SQLException {
@@ -228,7 +228,11 @@ public abstract class JdbcBase {
      */
     @Override
     public String toString() {
-        return String.format("%s [resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]", this.getClass().getSimpleName(), this.resultSet, this.resultSetMetaData, this.databaseMetaData);
+        return String.format("%s [resultSet=%s, resultSetMetaData=%s, databaseMetaData=%s]",
+            this.getClass().getSimpleName(),
+            this.resultSet,
+            this.resultSetMetaData,
+            this.databaseMetaData);
     }
 
 }

@@ -36,8 +36,8 @@ public class SingleResponsibilityPrinciple {
          */
         public void doSomething(final boolean newFoo, final boolean newBar) {
             LOG.info("doSomething({},{})", newFoo, newBar);
-            foo = newFoo;
-            bar = newBar;
+            this.foo = newFoo;
+            this.bar = newBar;
         }
 
         /*
@@ -46,7 +46,7 @@ public class SingleResponsibilityPrinciple {
          */
         @Override
         public String toString() {
-            return String.format("%s [foo=%s, bar=%s]", this.getClass().getSimpleName(), foo, bar);
+            return String.format("%s [foo=%s, bar=%s]", this.getClass().getSimpleName(), this.foo, this.bar);
         }
     }
 
@@ -65,7 +65,7 @@ public class SingleResponsibilityPrinciple {
          */
         public void doFoo(final boolean newFoo) {
             LOG.info("doFoo({})", newFoo);
-            isFoo = newFoo;
+            this.isFoo = newFoo;
         }
     }
 
@@ -84,7 +84,7 @@ public class SingleResponsibilityPrinciple {
          */
         public void doBar(final boolean newBar) {
             LOG.info("doBar({}", newBar);
-            isBar = newBar;
+            this.isBar = newBar;
         }
     }
 
@@ -104,8 +104,8 @@ public class SingleResponsibilityPrinciple {
          */
         public void responsibility() {
             LOG.info("responsibility");
-            foo.doFoo(true);
-            bar.doBar(true);
+            this.foo.doFoo(true);
+            this.bar.doBar(true);
         }
     }
 
@@ -123,6 +123,15 @@ public class SingleResponsibilityPrinciple {
     public void singleResponsibility() {
         final SingleResponsibility singleResponsibility = new SingleResponsibility();
         assertNotNull(singleResponsibility);
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("SingleResponsibilityPrinciple []");
     }
 
 }

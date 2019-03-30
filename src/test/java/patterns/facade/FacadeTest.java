@@ -15,7 +15,9 @@ public final class FacadeTest {
      */
     @Test
     public void testConcreteFacadeOperation() {
-        assertNotNull(new ConcreteFacade());
+        ConcreteFacade object = new ConcreteFacade();
+        assertNotNull(object);
+        object.operation();
     }
 
 }

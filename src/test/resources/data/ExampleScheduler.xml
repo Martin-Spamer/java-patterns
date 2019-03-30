@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheduler name="Scheduler Process">
+	<thread name="Process Alice" class="coaching.thread.ProcessAlice" />
+	<thread name="Process Bob" class="coaching.thread.ProcessBob" />
+	<thread name="Process Charlie" class="coaching.thread.ProcessCharlie">
+		<parameter name="name" value="value"/> 
+	</thread>
+</scheduler>

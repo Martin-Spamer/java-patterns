@@ -1,10 +1,6 @@
 
 package coaching.jdbc;
 
-import java.util.List;
-
-import coaching.csv.CsvRecord;
-
 /**
  * A Data Access Object for a Sqlite3 database.
  */
@@ -22,6 +18,27 @@ public final class SqLiteDao extends AbstractDao {
     /** PASSWORD. */
     private static final String PASSWORD = "password";
 
+    /** SQL to DROP the table. */
+    static final String DROP_SQL = "DROP TABLE IF EXISTS customer";
+
+    /** SQL to create the table. */
+    static final String CREATE_SQL = "CREATE TABLE customer (id INTEGER, name STRING, details STRING)";
+
+    /** SQL to count the number of rows in the table. */
+    static final String COUNT_SQL = "SELECT (*) FROM customer";
+
+    /** SQL to select all rows in the table. */
+    static final String SELECT_SQL = "SELECT * FROM customer";
+
+    /** SQL to insert a row in the table. */
+    static final String INSERT_SQL = "INSERT INTO customer (ID, NAME, DATA) VALUES (999,'...','...')";
+
+    /** SQL to update rows in the table. */
+    static final String UPDATE_SQL = "UPDATE customer SET FIELD = 'Value' WHERE ID=999";
+
+    /** SQL to delete rows in the table. */
+    static final String DELETE_SQL = "DELETE FROM customer WHERE ID=999";
+
     /**
      * Instantiates a new my SQL DAO.
      *
@@ -29,14 +46,6 @@ public final class SqLiteDao extends AbstractDao {
      */
     public SqLiteDao() throws ClassNotFoundException {
         super(JDBC_DRIVER, JDBC_URL, USERNAME, PASSWORD);
-    }
-
-    /**
-     * Insert rows.
-     *
-     * @param rowList the row list
-     */
-    public void insertRows(final List<CsvRecord> rowList) {
     }
 
 }

@@ -34,28 +34,27 @@ public final class MoneyTest {
         LOG.info("new Money(10L) = {}", money.toString());
 
         money.add(1L);
-        LOG.info(".add(1L) = {}", money.toString());
+        LOG.info("\t.add(1L) = {}", money.toString());
 
         money.add(new Money(1L));
-        LOG.info(".add(1L) = {}", money.toString());
+        LOG.info("\t.add(1L) = {}", money.toString());
 
         money.subtract(2L);
-        LOG.info(".subtract(2L) = {}", money.toString());
+        LOG.info("\t.subtract(2L) = {}", money.toString());
 
         money.subtract(new Money(2L));
-        LOG.info(".subtract(2L) = {}", money.toString());
+        LOG.info("\t.subtract(2L) = {}", money.toString());
+
+        LOG.info("money = {}", money.toString());
 
         assertTrue(money.isMoreThan(7L));
         assertTrue(money.isMoreThan(new Money(7L)));
-        LOG.info("money = {}", money.toString());
 
         assertTrue(money.isEqualTo(8L));
         assertTrue(money.isEqualTo(new Money(8L)));
-        LOG.info("money = {}", money.toString());
 
         assertTrue(money.isLessThan(9L));
         assertTrue(money.isLessThan(new Money(9L)));
-        LOG.info("money = {}", money.toString());
     }
 
     /**
@@ -162,9 +161,9 @@ public final class MoneyTest {
     public void testMaxDollar() {
         LOG.info("testMaxDollar");
         final Currency usd = Currency.getInstance(Locale.US);
-        LOG.info("usd.getSymbol = {}", usd.getSymbol());
-        LOG.info("usd.getDisplayName = {}", usd.getDisplayName());
-        LOG.info("usd.getCurrencyCode = {}", usd.getCurrencyCode());
+        LOG.info("\tusd.getSymbol = {}", usd.getSymbol());
+        LOG.info("\tusd.getDisplayName = {}", usd.getDisplayName());
+        LOG.info("\tusd.getCurrencyCode = {}", usd.getCurrencyCode());
         assumeTrue(usd.getSymbol().equals("$"));
 
         final MoneyInterface money = new Money(usd, Long.MAX_VALUE);

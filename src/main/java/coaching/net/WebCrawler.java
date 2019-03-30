@@ -66,9 +66,7 @@ public final class WebCrawler extends ThreadTemplate {
     }
 
     /**
-     * Crawl site.
-     *
-     * base url
+     * Crawl site from the baseURL of site.
      *
      * @param baseUrl the base url
      */
@@ -178,7 +176,7 @@ public final class WebCrawler extends ThreadTemplate {
                 }
             }
         } catch (final Exception e) {
-            this.log.error("", e);
+            this.log.error("slowCrawlUrl", e);
         }
     }
 

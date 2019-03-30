@@ -2,8 +2,6 @@
 package patterns.hopp;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assume.assumeNotNull;
 
@@ -11,9 +9,6 @@ import static org.junit.Assume.assumeNotNull;
  * RemoteObjectTest class.
  */
 public final class RemoteObjectTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
 
     /**
      * Unit test to typical usage.

@@ -1,5 +1,5 @@
 /**
- * Package provides and example of who to use delegation in Java.
+ * Package provides and example of delegation in Java.
  * <p>
  * Detailed description of package.
  */

@@ -17,14 +17,14 @@ public class ConstantsTest {
      * Unit test to.
      */
     @Test
-    public void test() {
-        LOG.info("{}", Constants.COUNTRY_CODE);
-        LOG.info("{}", Constants.COUNTRY_NAME);
-        LOG.info("{}", Constants.CURRENCY_CODE);
-        LOG.info("{}", Constants.CURRENCY_GLYPH);
-        LOG.info("{}", Constants.CURRENCY_NAME);
-        LOG.info("{}", Constants.LANGUAGE_CODE);
-        LOG.info("{}", Constants.LANGUAGE_NAME);
+    public void testConstants() {
+        LOG.info("COUNTRY_CODE : {}", Constants.COUNTRY_CODE);
+        LOG.info("COUNTRY_NAME : {}", Constants.COUNTRY_NAME);
+        LOG.info("CURRENCY_GLYPH : {}", Constants.CURRENCY_GLYPH);
+        LOG.info("CURRENCY_CODE : {}", Constants.CURRENCY_CODE);
+        LOG.info("CURRENCY_NAME : {}", Constants.CURRENCY_NAME);
+        LOG.info("LANGUAGE_CODE : {}", Constants.LANGUAGE_CODE);
+        LOG.info("LANGUAGE_NAME : {}", Constants.LANGUAGE_NAME);
     }
 
 }

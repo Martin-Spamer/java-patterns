@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * A StaticLogging logging class.
+ * An example of using a static logging class.
  *
  * a static logger is common to all instances.
  *

@@ -1,8 +1,11 @@
 /**
- * Package provides...
+ * Package provides examples of java exception handling.
  * <p>
- * Detailed description of package.
- *
+ * CheckedException.java
+ * <p>
+ * UnCheckedException.java *
+ * <p>
+ * CustomExceptionHandling.java
  */
 
 package coaching.exceptions;

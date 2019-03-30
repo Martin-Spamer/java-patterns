@@ -8,7 +8,10 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 
 /**
- * A Sequence of programming instructions, one follows another.
+ * A <i>Sequence</i> of instructions is one of the most basic idioms in
+ * programming.
+ *
+ * In a Sequence, one programming instruction follows another.
  */
 public final class SequenceTest {
 
@@ -16,7 +19,7 @@ public final class SequenceTest {
     private static final Logger LOG = LoggerFactory.getLogger(SequenceTest.class);
 
     /**
-     * Example of a sequence of programming instructions.
+     * Example of a simple sequence of programming instructions.
      */
     @Test
     public void testSimpleSequenceExample() {
@@ -28,32 +31,51 @@ public final class SequenceTest {
     }
 
     /**
-     * Test function sequence example.
+     * Example of a sequence of function calls.
      */
     @Test
-    public void testFunctionSequenceExample() {
+    public void testFunctionSequence() {
         foo();
         bar();
     }
 
     /**
-     * Bar.
-     *
-     * @return true, if bar
+     * Example of a sequence of function calls.
      */
-    private boolean bar() {
-        LOG.info("bar()");
+    @Test
+    public void testAnotherFunctionSequence() {
+        bar(foo());
+    }
+
+    /**
+     * foo function.
+     *
+     * @return true
+     */
+    boolean foo() {
+        LOG.info("foo()");
         return true;
     }
 
     /**
-     * Foo.
+     * bar function.
      *
-     * @return true, if foo
+     * @return true
      */
-    private boolean foo() {
-        LOG.info("foo()");
+    boolean bar() {
+        LOG.info("bar()");
         return true;
+    }
+
+    boolean bar(final boolean bar) {
+        if (bar == true) {
+            LOG.info("the bar function of run");
+        }
+        return bar;
+    }
+
+    int add(final int x, final int y) {
+        return x + y;
     }
 
 }

@@ -28,10 +28,10 @@ public final class Composite {
      */
     public Composite() {
         super();
-        this.alice = new Alice();
-        this.bob = new Bob();
-        this.charlie = new Charlie();
-        this.dan = new Dan();
+        alice = new Alice();
+        bob = new Bob();
+        charlie = new Charlie();
+        dan = new Dan();
     }
 
     /*
@@ -40,7 +40,7 @@ public final class Composite {
      */
     @Override
     public String toString() {
-        return String.format("%s [alice=%s, bob=%s, charlie=%s, dan=%s]", this.getClass().getSimpleName(), this.alice, this.bob, this.charlie, this.dan);
+        return String.format("%s [alice=%s, bob=%s, charlie=%s, dan=%s]", this.getClass().getSimpleName(), alice, bob, charlie, dan);
     }
 
 }

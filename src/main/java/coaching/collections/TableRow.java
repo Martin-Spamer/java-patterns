@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * A TableRow class composed of TableCell classes.
+ * A GenericTableRow class composed of GenericTableCell classes.
  */
 public class TableRow {
 
@@ -32,20 +32,19 @@ public class TableRow {
      *
      * @param values the values
      */
-    public TableRow(final String... values) {
+    public TableRow(final String values) {
         super();
         addCells(values);
     }
 
     /**
-     * Adds the cells.
+     * Instantiates a new table row.
      *
-     * @param values the strings
+     * @param values the values
      */
-    public void addCells(final String... values) {
-        for (final String string : values) {
-            addCells(string);
-        }
+    public TableRow(final String... values) {
+        super();
+        addCells(values);
     }
 
     /**
@@ -57,17 +56,37 @@ public class TableRow {
         final String[] tuple = values.split(",");
         for (final String value : tuple) {
             final TableCell cell = new TableCell(value);
-            cols.add(cell);
+            this.cols.add(cell);
         }
     }
 
     /**
-     * Length.
+     * Adds the cells.
      *
-     * @return the int
+     * @param values the strings
+     */
+    public void addCells(final String... values) {
+        for (final String value : values) {
+            addCell(value);
+        }
+    }
+
+    /**
+     * Adds the cell.
+     *
+     * @param value the value
+     */
+    public void addCell(final String value) {
+        this.cols.add(new TableCell(value));
+    }
+
+    /**
+     * Length, number of columns.
+     *
+     * @return the number of columns as int.
      */
     public int length() {
-        return cols.size();
+        return this.cols.size();
     }
 
     /**
@@ -77,8 +96,7 @@ public class TableRow {
      */
     public String toRowString() {
         final StringBuilder stringBuffer = new StringBuilder();
-
-        final Iterator<TableCell> tableRow = cols.iterator();
+        final Iterator<TableCell> tableRow = this.cols.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -86,18 +104,8 @@ public class TableRow {
                 stringBuffer.append(tableRow.next());
             }
         }
-
         stringBuffer.append('\n');
         return stringBuffer.toString();
-    }
-
-    /**
-     * Debug string.
-     *
-     * @return the string
-     */
-    public String debugString() {
-        return String.format("%s [cols=%s]", this.getClass().getSimpleName(), Collections.singletonList(cols));
     }
 
     /*
@@ -106,7 +114,7 @@ public class TableRow {
      */
     @Override
     public String toString() {
-        return Collections.singletonList(cols).toString();
+        return Collections.singletonList(this.cols).toString();
     }
 
 }

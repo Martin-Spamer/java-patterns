@@ -1,0 +1,8 @@
+
+package ${package};
+
+public class ${className} {
+    public ${className}(final String string) {
+    	super();
+    }
+}

@@ -2,8 +2,6 @@
 package coaching.utility;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.fail;
 
@@ -11,9 +9,6 @@ import static org.junit.Assert.fail;
  * Unit test class for UtilityClass.
  */
 public class UtilityClassTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(UtilityClassTest.class);
 
     /**
      * The Class UtilityClass.

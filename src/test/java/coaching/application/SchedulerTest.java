@@ -16,14 +16,27 @@ public class SchedulerTest {
     private static final Logger LOG = LoggerFactory.getLogger(SchedulerTest.class);
 
     /**
-     * Unit test to scheduler.
+     * Unit test to scheduler string array.
      */
     @Test
-    public void testScheduler() {
-        final Scheduler scheduler = new Scheduler();
+    public void testSchedulerStringArray() {
+        String[] strArray = new String[10];
+        final ExampleScheduler scheduler = new ExampleScheduler(strArray);
         assertNotNull(scheduler);
-        LOG.info("{}", scheduler);
-        scheduler.execute();
+        assertNotNull(scheduler.execute());
+        LOG.debug("testSchedulerStringArray : {}", scheduler);
+    }
+
+    /**
+     * Unit test to scheduler string array.
+     */
+    @Test
+    public void testSchedulerNullStringArray() {
+        String[] nullArray = null;
+        final ExampleScheduler scheduler = new ExampleScheduler(nullArray);
+        assertNotNull(scheduler);
+        assertNotNull(scheduler.execute());
+        LOG.debug("testSchedulerNullStringArray : {}", scheduler);
     }
 
 }

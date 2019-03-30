@@ -50,7 +50,7 @@ public final class FluentWaitTest {
     public void testFluentWaitDefault() {
         LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
         final FluentWait wait = new FluentWait();
-        final Condition pass = new PassCondition();
+        final ConditionInterface<Boolean> pass = new PassCondition();
         assertTrue(wait.until(pass));
         LOG.debug("end = {}", System.currentTimeMillis());
     }
@@ -71,7 +71,7 @@ public final class FluentWaitTest {
         assertEquals(1000, wait.setTimeOut());
         LOG.debug("after interval = {}", System.currentTimeMillis());
 
-        final Condition pass = new PassCondition();
+        final ConditionInterface<Boolean> pass = new PassCondition();
         assertTrue(wait.until(pass));
         LOG.debug("end = {}", System.currentTimeMillis());
     }

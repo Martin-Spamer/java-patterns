@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Table Cell class.
+ * GenericTable Cell class.
  */
 public class TableCell {
 
@@ -33,16 +33,16 @@ public class TableCell {
     }
 
     /**
-     * Gets the value.
+     * Gets the value of the cell.
      *
      * @return the value
      */
     public String getValue() {
-        return value;
+        return this.value;
     }
 
     /**
-     * Sets the value.
+     * Sets the value of the cell.
      *
      * @param value the value to set
      * @return the table cell
@@ -52,24 +52,13 @@ public class TableCell {
         return this;
     }
 
-    /**
-     * Debug string.
-     *
-     * @return the string
-     */
-    public String debugString() {
-        final String message = String.format("%s [value=%s]", this.getClass().getSimpleName(), value);
-        log.trace(message);
-        return message;
-    }
-
     /*
      * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return value;
+        return this.value;
     }
 
 }

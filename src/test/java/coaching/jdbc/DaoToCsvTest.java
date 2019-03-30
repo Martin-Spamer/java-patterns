@@ -26,7 +26,7 @@ public final class DaoToCsvTest {
     public void testJdbcToCsv() throws Exception {
         DaoToCsv dao = new DaoToCsv();
         assertNotNull(dao);
-        LOG.info("{}", dao);
+        LOG.info("dao : {}", dao);
     }
 
 }

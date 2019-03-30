@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit test class for TableRow.
+ * Unit test class for GenericTableRow.
  */
 public class TableRowTest {
 

@@ -3,9 +3,8 @@ package coaching.jdbc;
 
 /**
  * The CRUD (Create, Read, Update, Delete) Interface. Good mapping with business
- * domain language. Useful to isolate the dangerous admin SQL commands. Poor
- * mapping with SQL domain language. ++
- *
+ * domain language. Useful to isolate potentially dangerous admin JDBC/SQL
+ * commands. Poor mapping with SQL domain language. ++
  */
 public interface CrudInterface {
 
@@ -21,7 +20,7 @@ public interface CrudInterface {
      *
      * @return this for a fluent interface.
      */
-    CrudInterface readRows();
+    CrudInterface readRow();
 
     /**
      * Update record or row in the table.

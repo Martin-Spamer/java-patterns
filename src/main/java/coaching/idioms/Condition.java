@@ -23,6 +23,7 @@ public class Condition implements ConditionInterface<Boolean> {
      *
      * @return the condition
      */
+    @Override
     public boolean isTrue() {
         return result;
     }
@@ -32,6 +33,7 @@ public class Condition implements ConditionInterface<Boolean> {
      *
      * @return the condition
      */
+    @Override
     public boolean isFalse() {
         return result == false;
     }

@@ -1,7 +1,12 @@
 /**
  * Package provides an example of a money class.
  * <p>
- * Detailed description of package.
+ * MoneyInterface.java
+ * 
+ * AbstractMoney.java
+ * BigDecimalMoney.java
+ * Money.java
+ * Pounds.java
  */
 
 package coaching.money;

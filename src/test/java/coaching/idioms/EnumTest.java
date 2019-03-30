@@ -2,8 +2,6 @@
 package coaching.idioms;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,9 +9,6 @@ import static org.junit.Assert.assertEquals;
  * Unit test to show enum example.
  */
 public final class EnumTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(EnumTest.class);
 
     /**
      * The Enum TestEnum.
@@ -40,7 +35,7 @@ public final class EnumTest {
          * @param coValue the co value
          */
         private TestEnum(final int coValue) {
-            number = coValue;
+            this.number = coValue;
         }
 
         /**

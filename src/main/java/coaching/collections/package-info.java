@@ -1,7 +1,7 @@
 /**
  * Package examples of working with java collections.
  * <p>
- * Detailed description of package.
+ * A GenericTable make of rows and columns.
  */
 
 package coaching.collections;

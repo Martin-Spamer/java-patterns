@@ -5,11 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Class DaemonThread.
+ * DaemonThread class.
  */
 public final class DaemonThread extends Thread {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DaemonThread.class);
 
     /** Instantiate the single instance of this class. */
@@ -33,29 +33,31 @@ public final class DaemonThread extends Thread {
         LOG.info("{} loaded...", this.getClass().getSimpleName());
     }
 
-    /* (non-Javadoc)
-    * @see java.lang.Thread#run()
-    */
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Thread#run()
+     */
     @Override
     public void run() {
         LOG.info("{} running... ", this.getClass().getSimpleName());
         LOG.info("sleep 500 at {} ", System.currentTimeMillis());
         try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
+            yield();
+            Thread.sleep(500);
+        } catch (final InterruptedException e) {
             LOG.error(e.getLocalizedMessage(), e);
             currentThread().interrupt();
         }
         LOG.info("until {} ", System.currentTimeMillis());
-        yield();
+
     }
 
-    /* (non-Javadoc)
-    * @see java.lang.Thread#toString()
-    */
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Thread#toString()
+     */
     @Override
     public String toString() {
         return String.format("%s [id=%s, name=%s, state=%s, priority=%s, isAlive=%s, isDaemon=%s]", getClass(), getId(), getName(), getState(), getPriority(), isAlive(), isDaemon());
     }
-
 }

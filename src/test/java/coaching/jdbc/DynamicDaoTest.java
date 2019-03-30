@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class DynamicDaoTest {
 
-    /**  provides logging. */
+    /** provides logging. */
     private static final Logger LOG = LoggerFactory.getLogger(DynamicDaoTest.class);
 
     /**
@@ -26,12 +26,12 @@ public class DynamicDaoTest {
     public void testDynamicDao() throws Exception {
         final DynamicDao dao = new DynamicDao();
         assertNotNull(dao);
-        LOG.info("{}", dao);
+        LOG.info("dao : {}", dao);
         dao.process();
         List<String> columnLabels = dao.columnLabels();
-        LOG.info("{}", columnLabels);
+        LOG.info("columnLabels : {}", columnLabels);
         final String bodyToString = dao.bodyToString();
-        LOG.info("{}", bodyToString);
+        LOG.info("bodyToString : {}", bodyToString);
     }
 
 }

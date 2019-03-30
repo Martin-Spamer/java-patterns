@@ -2,8 +2,6 @@
 package coaching.tuples;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -13,8 +11,6 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class TupleTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(TupleTest.class);
     /** The Constant RIGHT. */
     private static final String RIGHT = "Right";
 

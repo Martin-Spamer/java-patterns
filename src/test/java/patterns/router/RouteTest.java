@@ -31,6 +31,9 @@ public final class RouteTest {
         final InputChanel inputChannel = new InputChanel();
         final Route route = new Route(outputChannel, inputChannel);
         assertNotNull(route);
+        route.sendMessage(new Message());
+        Message receivedMessage = route.receiveMessage();
+        assertNotNull(receivedMessage);
     }
 
 }

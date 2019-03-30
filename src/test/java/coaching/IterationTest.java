@@ -27,7 +27,7 @@ public final class IterationTest {
         int count = 0;
 
         LOG.debug("for(i = 0; i > {} ; i--)", max);
-        for (int i = 0; i < max; i++) {
+        for (int index = 0; index < max; index++) {
             count++;
         }
 
@@ -48,7 +48,7 @@ public final class IterationTest {
         int count = 0;
 
         LOG.debug("for(i={}; i > {} ; i--)", start, end);
-        for (int i = start; i > end; i--) {
+        for (int index = start; index > end; index--) {
             count++;
         }
 

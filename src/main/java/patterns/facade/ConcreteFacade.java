@@ -29,22 +29,22 @@ public final class ConcreteFacade implements FacadeInterface {
     /**
      * Sub system one operation.
      */
-    public void subSystemOneOperation() {
-        subSystemOne.operation();
+    private void subSystemOneOperation() {
+        this.subSystemOne.operation();
     }
 
     /**
      * Sub system two operation.
      */
-    public void subSystemTwoOperation() {
-        subSystemTwo.operation();
+    private void subSystemTwoOperation() {
+        this.subSystemTwo.operation();
     }
 
     /**
      * Sub system three operation.
      */
-    public void subSystemThreeOperation() {
-        subSystemThree.operation();
+    private void subSystemThreeOperation() {
+        this.subSystemThree.operation();
     }
 
 }
