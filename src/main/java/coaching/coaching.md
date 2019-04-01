@@ -1,6 +1,8 @@
 # Java Coaching Topics
+
 ## Programming Fundamentals
 All programming statements are formed on three basic constructs
+
 ### Sequence
 One instruction follows another e.g.
 
@@ -65,10 +67,13 @@ An Instruction is performed repeatedly in a loop. e.g.
  * Polymorphism
 
 ## Different Programming Paradigms
+
 ### Imperative Programming
 https://en.wikipedia.org/wiki/Imperative_programming
+
 ### Declarative & Functional programming
 https://en.wikipedia.org/wiki/Declarative_programming 
+
 ### Object Oriented Programming		
 Why Declarative programming is more appropriate for FDD/BDD than Imperative programming 
 
@@ -160,9 +165,12 @@ Why Declarative programming is more appropriate for FDD/BDD than Imperative prog
 	https://en.wikipedia.org/wiki/Design_Patterns
 
 ## Computer Science Topics
+
 ### Type Theory
 	https://en.wikipedia.org/wiki/Type_theory
+
 ### Set Theory
+
 ### Taxonomy
 	https://en.wikipedia.org/wiki/Taxonomy_(general)
 ### Ontology

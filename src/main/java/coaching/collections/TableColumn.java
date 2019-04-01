@@ -55,7 +55,7 @@ public class TableColumn {
     public void addCells(final String values) {
         final String[] tuple = values.split(",");
         for (final String value : tuple) {
-            final TableCell cell = new TableCell(value);
+            final TableCell cell = new TableCell(value.trim());
             this.cols.add(cell);
         }
     }
@@ -67,7 +67,7 @@ public class TableColumn {
      */
     public void addCells(final String... values) {
         for (final String value : values) {
-            addCell(value);
+            addCell(value.trim());
         }
     }
 
