@@ -5,20 +5,20 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests showing retrieval of system properties.
  */
+@Slf4j
 public final class EnvironmentTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(EnvironmentTest.class);
 
     /**
      * Unit test to log system properties.
      */
     @Test
     public void testLogSystemProperties() {
-        LOG.info("SystemProperties = {}", System.getProperties());
+        log.info("SystemProperties = {}", System.getProperties());
     }
 
 }

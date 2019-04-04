@@ -1,12 +1,15 @@
 
 package coaching.associations;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Show Java implement a UML Composite association.
  *
  * In a Composite the Lifetime of parts is same as the lifetime of the parts. We
  * call this a life-time constraint.
  **/
+@Slf4j
 public final class Composite {
 
     /**
@@ -40,7 +43,12 @@ public final class Composite {
      */
     @Override
     public String toString() {
-        return String.format("%s [alice=%s, bob=%s, charlie=%s, dan=%s]", this.getClass().getSimpleName(), alice, bob, charlie, dan);
+        return String.format("%s [alice=%s, bob=%s, charlie=%s, dan=%s]",
+            this.getClass().getSimpleName(),
+            alice,
+            bob,
+            charlie,
+            dan);
     }
 
 }

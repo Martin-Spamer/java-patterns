@@ -9,14 +9,14 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for PointbaseDao class.
  */
 @Ignore("Requires PointBase DB availability work-in-progress low-priority")
+@Slf4j
 public final class SqLiteDaoTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SqLiteDaoTest.class);
 
     /**
      * Unit test to sq lite dao.
@@ -27,7 +27,7 @@ public final class SqLiteDaoTest {
     public void testSqLiteDao() throws ClassNotFoundException {
         final DaoInterface dao = new SqLiteDao();
         assertNotNull(dao);
-        LOG.info("dao : {} ", dao.toString());
+        log.info("dao : {} ", dao.toString());
     }
 
     /**

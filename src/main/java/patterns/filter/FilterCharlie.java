@@ -1,9 +1,12 @@
 
 package patterns.filter;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Third Filter.
  */
+@Slf4j
 public final class FilterCharlie extends AbstractFilter {
 
     /**

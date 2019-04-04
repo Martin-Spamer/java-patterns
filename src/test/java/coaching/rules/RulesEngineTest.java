@@ -7,20 +7,20 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * The RulesEngineTest class.
  */
+@Slf4j
 public final class RulesEngineTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RulesEngineTest.class);
 
     /**
      * Unit Test to rules engine.
      */
     @Test
     public void testRulesEngine() {
-        LOG.info("testRulesEngine();");
+        log.info("testRulesEngine();");
         final RulesEngine rulesEngine = new RulesEngine();
         assertNotNull(rulesEngine);
     }
@@ -30,7 +30,7 @@ public final class RulesEngineTest {
      */
     @Test
     public void testExecute() {
-        LOG.info("new RulesEngine().execute();");
+        log.info("new RulesEngine().execute();");
         final RulesEngine rulesEngine = new RulesEngine();
         assertNotNull(rulesEngine.execute());
     }

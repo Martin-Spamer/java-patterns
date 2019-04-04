@@ -1,10 +1,9 @@
 
 package coaching.solid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A class to Demonstrate the Single Responsibility Principle (SRP).
@@ -12,20 +11,14 @@ import static org.junit.Assert.assertNotNull;
  * Intent: A class should have only on reason to change, one responsibility.
  *
  */
+@Slf4j
 public class SingleResponsibilityPrinciple {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrinciple.class);
 
     /**
      * An example of a class with Multiple Responsibilities.
      */
     public class MultipleResponsibility {
-
-        /** The foo. */
         private boolean foo = false;
-
-        /** The bar. */
         private boolean bar = false;
 
         /**
@@ -35,7 +28,7 @@ public class SingleResponsibilityPrinciple {
          * @param newBar the new bar
          */
         public void doSomething(final boolean newFoo, final boolean newBar) {
-            LOG.info("doSomething({},{})", newFoo, newBar);
+            log.info("doSomething({},{})", newFoo, newBar);
             this.foo = newFoo;
             this.bar = newBar;
         }
@@ -64,7 +57,7 @@ public class SingleResponsibilityPrinciple {
          * @param newFoo the new foo
          */
         public void doFoo(final boolean newFoo) {
-            LOG.info("doFoo({})", newFoo);
+            log.info("doFoo({})", newFoo);
             this.isFoo = newFoo;
         }
     }
@@ -83,7 +76,7 @@ public class SingleResponsibilityPrinciple {
          * @param newBar the new bar
          */
         public void doBar(final boolean newBar) {
-            LOG.info("doBar({}", newBar);
+            log.info("doBar({}", newBar);
             this.isBar = newBar;
         }
     }
@@ -103,7 +96,7 @@ public class SingleResponsibilityPrinciple {
          * Responsibility.
          */
         public void responsibility() {
-            LOG.info("responsibility");
+            log.info("responsibility");
             this.foo.doFoo(true);
             this.bar.doBar(true);
         }

@@ -1,18 +1,15 @@
 
 package coaching.generics;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Generic GenericTable Cell class.
  *
  * @param <T> the generic type
  */
+@Slf4j
 public class GenericTableCell<T> {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The value. */
     private T value;

@@ -3,17 +3,14 @@ package coaching.arrays;
 
 import java.util.Arrays;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Example code of arrays of native/primitive types. One of the major downsides
  * of arrays is their fixed size, hence ARRAY_SIZE.
  **/
+@Slf4j
 public class NativeTypesArray {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArray.class);
 
     /** ARRAY_SIZE constant. */
     private static final int ARRAY_SIZE = 10;
@@ -29,7 +26,7 @@ public class NativeTypesArray {
         for (int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
             values[i] = i * i;
-            LOG.info("values[{}] = {}", i, values[i]);
+            log.info("values[{}] = {}", i, values[i]);
         }
     }
 
@@ -40,10 +37,10 @@ public class NativeTypesArray {
         final long[][] matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
 
         final String deepToString = Arrays.deepToString(matrix);
-        LOG.info("displayEmptyMatrix = {}", deepToString);
+        log.info("displayEmptyMatrix = {}", deepToString);
 
         final String content = initialiseMatrix(matrix);
-        LOG.info("looping(matrix) = {}", content);
+        log.info("looping(matrix) = {}", content);
     }
 
     /**
@@ -53,10 +50,10 @@ public class NativeTypesArray {
         final long[][] matrix = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
 
         final String deepToString = Arrays.deepToString(matrix);
-        LOG.info("displayMatrix  = {}", deepToString);
+        log.info("displayMatrix  = {}", deepToString);
 
         final String content = loopMatrix(matrix);
-        LOG.info("looping(vector) = {}", content);
+        log.info("looping(vector) = {}", content);
     }
 
     /**

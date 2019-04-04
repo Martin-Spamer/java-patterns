@@ -3,18 +3,15 @@ package coaching.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Abstract Resource Pool class.
  *
  * @param <E> the element type
  */
+@Slf4j
 public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The free pool. */
     protected LinkedBlockingDeque<E> freePool;

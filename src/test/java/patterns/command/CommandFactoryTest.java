@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test the CommandFactory class.
  */
+@Slf4j
 public final class CommandFactoryTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactoryTest.class);
 
     /**
      * Unit test to create a default command.
@@ -82,7 +82,7 @@ public final class CommandFactoryTest {
     public void testCommandFactory() {
         final CommandFactory commandFactory = CommandFactory.getInstance();
         assertNotNull(commandFactory);
-        LOG.debug(commandFactory.toString());
+        log.debug(commandFactory.toString());
     }
 
     // /**
@@ -93,12 +93,12 @@ public final class CommandFactoryTest {
     // */
     // @Test(expected = MissingCommandException.class)
     // public void testMissingCommandExecute() throws Exception {
-    // LOG.info("testMissingCommandExecute");
+    // log.info("testMissingCommandExecute");
     // CommandFactory commandFactory = CommandFactory.getInstance();
     // assertNotNull(commandFactory);
     // final String actionName = "MissingCommand";
     // commandFactory.execute(actionName);
-    // LOG.debug(commandFactory.toString());
+    // log.debug(commandFactory.toString());
     // }
 
     // /**
@@ -109,12 +109,12 @@ public final class CommandFactoryTest {
     // */
     // @Test(expected = MissingCommandException.class)
     // public void testExecuteMissingCommand() throws Exception {
-    // LOG.info("testExecuteMissingCommand");
+    // log.info("testExecuteMissingCommand");
     // CommandFactory commandFactory = CommandFactory.getInstance();
     // assertNotNull(commandFactory);
     // final String actionName = "MissingCommand";
     // commandFactory.execute(actionName);
-    // LOG.debug(commandFactory.toString());
+    // log.debug(commandFactory.toString());
     // }
 
     // /**
@@ -125,12 +125,12 @@ public final class CommandFactoryTest {
     // */
     // @Test(expected = MissingCommandException.class)
     // public void testExecuteMissingClass() throws Exception {
-    // LOG.info("testExecuteMissingClass");
+    // log.info("testExecuteMissingClass");
     // CommandFactory commandFactory = CommandFactory.getInstance();
     // assertNotNull(commandFactory);
     // final String actionName = "MissingCommand";
     // commandFactory.execute(actionName);
-    // LOG.debug(commandFactory.toString());
+    // log.debug(commandFactory.toString());
     // }
 
     // /**
@@ -141,13 +141,13 @@ public final class CommandFactoryTest {
     // */
     // @Test
     // public void testExecuteExampleCommand() throws Exception {
-    // LOG.info("testExecuteExampleCommand");
+    // log.info("testExecuteExampleCommand");
     // CommandFactory commandFactory = CommandFactory.getInstance();
     // assertNotNull(commandFactory);
     // final String actionName = "ExampleCommand";
     // final ResultInterface result = commandFactory.execute(actionName);
     // assertNotNull(result);
-    // LOG.debug(result.toString());
+    // log.debug(result.toString());
     // }
 
     // /**
@@ -158,13 +158,13 @@ public final class CommandFactoryTest {
     // */
     // @Test
     // public void testExecuteSequenceCommand() throws Exception {
-    // LOG.info("testExecuteSequenceCommand");
+    // log.info("testExecuteSequenceCommand");
     // CommandFactory commandFactory = CommandFactory.getInstance();
     // assertNotNull(commandFactory);
     // final String actionName = "SequenceCommand";
     // final ResultInterface result = commandFactory.execute(actionName);
     // assertNotNull(result);
-    // LOG.debug(result.toString());
+    // log.debug(result.toString());
     // }
 
     // /**
@@ -175,13 +175,13 @@ public final class CommandFactoryTest {
     // */
     // @Test
     // public void testExecuteCompoundCommand() throws Exception {
-    // LOG.info("testExecuteCompoundCommand");
+    // log.info("testExecuteCompoundCommand");
     // CommandFactory commandFactory = CommandFactory.getInstance();
     // assertNotNull(commandFactory);
     // final String actionName = "CompoundCommand";
     // final ResultInterface result = commandFactory.execute(actionName);
     // assertNotNull(result);
-    // LOG.debug(result.toString());
+    // log.debug(result.toString());
     // }
 
     // /**
@@ -192,13 +192,13 @@ public final class CommandFactoryTest {
     // */
     // @Test
     // public void testExecuteConditionalCommand() throws Exception {
-    // LOG.info("testExecuteConditionalCommand");
+    // log.info("testExecuteConditionalCommand");
     // CommandFactory commandFactory = CommandFactory.getInstance();
     // assertNotNull(commandFactory);
     // final String actionName = "ConditionalCommand";
     // final ResultInterface result = commandFactory.execute(actionName);
     // assertNotNull(result);
-    // LOG.debug(result.toString());
+    // log.debug(result.toString());
     // }
 
 }

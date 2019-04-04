@@ -9,13 +9,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Examples of selection programming instructions.
  */
+@Slf4j
 public final class SelectionTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SelectionTest.class);
 
     /**
      * The <code>if</code> statement is an example of selection.
@@ -25,7 +25,7 @@ public final class SelectionTest {
         boolean selection;
         selection = true;
         if (selection) {
-            LOG.info("testExampleIfTrue");
+            log.info("testExampleIfTrue");
         }
         assertTrue(selection);
     }
@@ -38,7 +38,7 @@ public final class SelectionTest {
         boolean selection;
         selection = false;
         if (selection) {
-            LOG.info("testExampleIfFalse");
+            log.info("testExampleIfFalse");
         }
         assertFalse(selection);
     }
@@ -51,9 +51,9 @@ public final class SelectionTest {
         boolean selection;
         selection = false;
         if (selection) {
-            LOG.info("if true");
+            log.info("if true");
         } else {
-            LOG.info("else false");
+            log.info("else false");
         }
         assertFalse(selection);
     }
@@ -66,11 +66,11 @@ public final class SelectionTest {
         int selection;
         selection = 1;
         if (selection == 0) {
-            LOG.info("selection == 0");
+            log.info("selection == 0");
         } else if (selection == 1) {
-            LOG.info("selection == 1");
+            log.info("selection == 1");
         } else {
-            LOG.info("else");
+            log.info("else");
         }
         assertTrue(selection == 1);
     }
@@ -83,13 +83,13 @@ public final class SelectionTest {
         final int selection = 0;
         switch (selection) {
         case 0:
-            LOG.info("case 0");
+            log.info("case 0");
             break;
         case 1:
-            LOG.info("case 1");
+            log.info("case 1");
             break;
         default:
-            LOG.info("default");
+            log.info("default");
             break;
         }
         assertEquals(0, selection);
@@ -104,13 +104,13 @@ public final class SelectionTest {
         final String selection = "TRUE";
         switch (selection) {
         case "TRUE":
-            LOG.info("true case");
+            log.info("true case");
             break;
         case "FALSE":
-            LOG.info("false case");
+            log.info("false case");
             break;
         default:
-            LOG.info("default");
+            log.info("default");
             break;
         }
         assertEquals("TRUE", selection);
@@ -138,16 +138,16 @@ public final class SelectionTest {
         final STATEMENT statement = STATEMENT.SELECTION;
         switch (statement) {
         case SEQUENCE:
-            LOG.info("SEQUENCE");
+            log.info("SEQUENCE");
             break;
         case SELECTION:
-            LOG.info("SELECTION");
+            log.info("SELECTION");
             break;
         case ITERATION:
-            LOG.info("ITERATION");
+            log.info("ITERATION");
             break;
         default:
-            LOG.info("default");
+            log.info("default");
             break;
         }
         assertEquals(STATEMENT.SELECTION, statement);

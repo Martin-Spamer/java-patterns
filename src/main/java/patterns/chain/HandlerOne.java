@@ -1,9 +1,12 @@
 
 package patterns.chain;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * HandlerOne Class.
  */
+@Slf4j
 public class HandlerOne extends AbstractHandler {
 
     /**

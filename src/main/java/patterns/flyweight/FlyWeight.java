@@ -1,9 +1,12 @@
 
 package patterns.flyweight;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * FlyWeight Class.
  */
+@Slf4j
 public final class FlyWeight {
 
     /** The common state. */

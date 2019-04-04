@@ -1,10 +1,13 @@
 
 package coaching.pool;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * ResourceBorrowException Class.
  */
 @SuppressWarnings("serial")
+@Slf4j
 public class ResourceBorrowException extends ResourcePoolException {
 
     /**

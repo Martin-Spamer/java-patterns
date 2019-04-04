@@ -3,16 +3,13 @@ package coaching.context;
 
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An abstract class to manage the current Context.
  */
+@Slf4j
 public abstract class AbstractContext implements ContextInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The properties. */
     private Properties properties = null;

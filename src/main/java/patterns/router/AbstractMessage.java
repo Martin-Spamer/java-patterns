@@ -1,15 +1,12 @@
 
 package patterns.router;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An abstract Message class.
  */
+@Slf4j
 public abstract class AbstractMessage implements MessageInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 }

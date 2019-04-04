@@ -1,18 +1,14 @@
 
 package patterns.decorator;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import lombok.extern.slf4j.Slf4j;
 import patterns.composite.ComponentInterface;
 
 /**
  * An abstract Component class.
  */
+@Slf4j
 public abstract class AbstractComponent implements ComponentInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*
      * (non-Javadoc)

@@ -6,18 +6,15 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A GenericTableRow class composed of GenericTableCell classes.
  *
  * @param <T> the generic type
  */
+@Slf4j
 public class GenericTableRow<T> {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** the columns in the row. */
     private final List<GenericTableCell<T>> cols = new ArrayList<>();

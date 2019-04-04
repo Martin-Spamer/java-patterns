@@ -9,13 +9,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * class AbstractStrategyTest.
  */
+@Slf4j
 public final class AbstractStrategyTest {
-
-    /**  provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractStrategyTest.class);
 
     /**
      * Unit Test to operation.
@@ -24,22 +24,22 @@ public final class AbstractStrategyTest {
     public void testContext() {
         final Context context = new Context();
         assertNotNull(context);
-        LOG.info(context.toString());
+        log.info(context.toString());
 
         final StrategyInterface strategyAlice = new StrategyAlice(context);
         assertNotNull(strategyAlice);
         strategyAlice.operation();
-        LOG.info(strategyAlice.toString());
+        log.info(strategyAlice.toString());
 
         final StrategyInterface strategyBob = new StrategyBob(context);
         assertNotNull(strategyBob);
         strategyAlice.operation();
-        LOG.info(strategyAlice.toString());
+        log.info(strategyAlice.toString());
 
         final StrategyInterface strategyCharlie = new StrategyCharlie(context);
         assertNotNull(strategyCharlie);
         strategyAlice.operation();
-        LOG.info(strategyAlice.toString());
+        log.info(strategyAlice.toString());
     }
 
     /**
@@ -49,21 +49,21 @@ public final class AbstractStrategyTest {
     public void testContextProperties() {
         final Context context = new Context(new Properties());
         assertNotNull(context);
-        LOG.info(context.toString());
+        log.info(context.toString());
 
         final StrategyInterface strategyAlice = new StrategyAlice(context);
         assertNotNull(strategyAlice);
         strategyAlice.operation();
-        LOG.info(strategyAlice.toString());
+        log.info(strategyAlice.toString());
 
         final StrategyInterface strategyBob = new StrategyBob(context);
         assertNotNull(strategyBob);
         strategyAlice.operation();
-        LOG.info(strategyAlice.toString());
+        log.info(strategyAlice.toString());
 
         final StrategyInterface strategyCharlie = new StrategyCharlie(context);
         assertNotNull(strategyCharlie);
         strategyAlice.operation();
-        LOG.info(strategyAlice.toString());
+        log.info(strategyAlice.toString());
     }
 }

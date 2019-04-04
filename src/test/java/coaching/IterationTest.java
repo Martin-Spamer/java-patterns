@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Examples of a iteration (looping) programming instructions.
  */
+@Slf4j
 public final class IterationTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(IterationTest.class);
 
     /**
      * The <code>for()</code> loop statement is an example of iteration.
@@ -22,16 +22,16 @@ public final class IterationTest {
      */
     @Test
     public void testExampleFor() {
-        LOG.info("testExampleFor");
+        log.info("testExampleFor");
         final int max = 0;
         int count = 0;
 
-        LOG.debug("for(i = 0; i > {} ; i--)", max);
+        log.debug("for(i = 0; i > {} ; i--)", max);
         for (int index = 0; index < max; index++) {
             count++;
         }
 
-        LOG.info("loop count = {} ", count);
+        log.info("loop count = {} ", count);
         assertEquals(0, count);
     }
 
@@ -42,17 +42,17 @@ public final class IterationTest {
      */
     @Test
     public void testExampleForCountDown() {
-        LOG.info("testExampleFor");
+        log.info("testExampleFor");
         final int start = 10;
         final int end = 10;
         int count = 0;
 
-        LOG.debug("for(i={}; i > {} ; i--)", start, end);
+        log.debug("for(i={}; i > {} ; i--)", start, end);
         for (int index = start; index > end; index--) {
             count++;
         }
 
-        LOG.debug("loop count = {} ", count);
+        log.debug("loop count = {} ", count);
         assertEquals(0, count);
     }
 
@@ -63,18 +63,18 @@ public final class IterationTest {
      */
     @Test
     public void testExampleWhileNotFalse() {
-        LOG.info("testExampleFor");
+        log.info("testExampleFor");
         boolean loop;
         loop = false;
         int count = 0;
 
-        LOG.debug("while({})", loop);
+        log.debug("while({})", loop);
         while (loop) {
             count++;
             loop = false;
         }
 
-        LOG.debug("loop count = {} ", count);
+        log.debug("loop count = {} ", count);
         assertEquals(0, count);
     }
 
@@ -85,16 +85,16 @@ public final class IterationTest {
      */
     @Test
     public void testExampleWhileTrue() {
-        LOG.info("testExampleFor");
+        log.info("testExampleFor");
         boolean exit = false;
         int count = 0;
 
-        LOG.debug("while({})", exit);
+        log.debug("while({})", exit);
         while (!exit) {
             count++;
             exit = true;
         }
-        LOG.debug("loop count = {} ", count);
+        log.debug("loop count = {} ", count);
         assertEquals(1, count);
     }
 
@@ -106,17 +106,17 @@ public final class IterationTest {
      */
     @Test
     public void testExampleDoWhileTrue() {
-        LOG.info("testExampleFor");
+        log.info("testExampleFor");
         boolean loop = true;
         int count = 0;
 
-        LOG.debug("do while({})", loop);
+        log.debug("do while({})", loop);
         do {
             count++;
             loop = true;
         } while (!loop);
 
-        LOG.debug("loop count = {} ", count);
+        log.debug("loop count = {} ", count);
         assertEquals(1, count);
     }
 
@@ -128,17 +128,17 @@ public final class IterationTest {
      */
     @Test
     public void testExampleDoWhileFalse() {
-        LOG.info("testExampleFor");
+        log.info("testExampleFor");
         boolean exit = false;
         int count = 0;
 
-        LOG.debug("do while({})", exit);
+        log.debug("do while({})", exit);
         do {
             count++;
             exit = true;
         } while (!exit);
 
-        LOG.debug("loop count = {} ", count);
+        log.debug("loop count = {} ", count);
         assertEquals(1, count);
     }
 

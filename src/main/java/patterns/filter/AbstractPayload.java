@@ -7,9 +7,12 @@ import java.io.OutputStream;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * AbstractPayload Class.
  */
+@Slf4j
 public abstract class AbstractPayload implements PayloadInterface {
 
     /** The properties. */

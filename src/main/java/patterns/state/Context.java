@@ -1,9 +1,12 @@
 
 package patterns.state;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Context Class.
  */
+@Slf4j
 public class Context {
 
     /** state. */

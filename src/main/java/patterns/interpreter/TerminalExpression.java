@@ -1,9 +1,12 @@
 
 package patterns.interpreter;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Terminal Expression Class.
  */
+@Slf4j
 public class TerminalExpression extends AbstractExpression {
 
     /**

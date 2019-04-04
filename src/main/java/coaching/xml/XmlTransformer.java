@@ -15,18 +15,16 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * XML Transformer class.
  */
+@Slf4j
 public class XmlTransformer {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlTransformer.class);
 
     /** A Document Builder Factory. */
     private final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -38,13 +36,17 @@ public class XmlTransformer {
      */
     public XmlTransformer() throws Exception {
         super();
-        final DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
-        final StringBuilder stringBuilder = new StringBuilder().append("<row>").append(" <name>Alice</name>").append(" <id>1</id>").append(" <data>sender</data>").append("</row>");
+        final DocumentBuilder documentBuilder = this.dbf.newDocumentBuilder();
+        final StringBuilder stringBuilder = new StringBuilder().append("<row>")
+                .append(" <name>Alice</name>")
+                .append(" <id>1</id>")
+                .append(" <data>sender</data>")
+                .append("</row>");
         final InputStream inputStream = new ByteArrayInputStream(stringBuilder.toString().getBytes());
         final Document document = documentBuilder.parse(inputStream);
         final Node rootElement = document.getDocumentElement();
         final String nodeAsString = XmlTransformer.nodeToString(rootElement);
-        LOG.info(nodeAsString);
+        log.info(nodeAsString);
     }
 
     /**

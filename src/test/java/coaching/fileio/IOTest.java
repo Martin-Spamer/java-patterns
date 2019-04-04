@@ -8,7 +8,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 import coaching.resources.ResourceLoader;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class IOTest {
 
     private static String TEST_FILENAME = "src/test/resources/Configuration.properties";

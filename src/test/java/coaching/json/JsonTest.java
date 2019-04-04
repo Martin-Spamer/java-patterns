@@ -15,13 +15,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assume.assumeNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests showing Json examples.
  */
+@Slf4j
 public final class JsonTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(JsonTest.class);
 
     /**
      * Unit test to new.
@@ -36,7 +36,7 @@ public final class JsonTest {
         json.put("aBalance", new BigDecimal("12345678.90"));
         json.put("aBoolean", new Boolean(true));
 
-        LOG.info(json.toString());
+        log.info(json.toString());
     }
 
     /**
@@ -55,7 +55,7 @@ public final class JsonTest {
             json.put(keyString, property);
         }
 
-        LOG.info(json.toString());
+        log.info(json.toString());
     }
 
     /**
@@ -76,7 +76,7 @@ public final class JsonTest {
 
         write(json);
 
-        LOG.info(json.toString());
+        log.info(json.toString());
 
     }
 

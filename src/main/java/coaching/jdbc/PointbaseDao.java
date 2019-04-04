@@ -1,9 +1,12 @@
 
 package coaching.jdbc;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * A Data Access object for Pointbase Database.
  */
+@Slf4j
 public class PointbaseDao extends AbstractDao {
 
     /** JDBC_DRIVER. */
@@ -12,7 +15,7 @@ public class PointbaseDao extends AbstractDao {
     /** DEFAULT JDBC_URL. */
     private final static String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
 
-    /**  USERNAME. */
+    /** USERNAME. */
     private final static String USERNAME = "PBPUBLIC";
 
     /** PASSWORD. */

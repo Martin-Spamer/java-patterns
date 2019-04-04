@@ -4,14 +4,13 @@ package coaching.application;
 import java.util.Arrays;
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import coaching.resources.PropertiesLoader;
 import coaching.resources.XmlResourceLoader;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An abstract Scheduler class.
@@ -20,10 +19,8 @@ import coaching.resources.XmlResourceLoader;
  * under specific circumstances, at certain times or in response to specific
  * events.
  */
+@Slf4j
 public abstract class AbstractScheduler {
-
-    /** logging provided. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
     private final String[] args = null;
@@ -76,13 +73,13 @@ public abstract class AbstractScheduler {
         for (int i = 0; i < list.getLength(); i++) {
             final Element element = (Element) list.item(i);
             final String nodeName = element.getNodeName();
-            this.log.debug("nodeName : {}", nodeName);
+            log.debug("nodeName : {}", nodeName);
             final String nameAttribute = element.getAttribute("name");
-            this.log.debug("nameAttribute : {}", nameAttribute);
+            log.debug("nameAttribute : {}", nameAttribute);
             final String classAttribute = element.getAttribute("class");
-            this.log.debug("classAttribute : {}", classAttribute);
+            log.debug("classAttribute : {}", classAttribute);
             final String valueAttribute = element.getAttribute("value");
-            this.log.debug("valueAttribute : {}", valueAttribute);
+            log.debug("valueAttribute : {}", valueAttribute);
         }
         return this;
     }

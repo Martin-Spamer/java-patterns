@@ -1,6 +1,8 @@
 
 package coaching.tuples;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Example of Boxing class for the generic type T.
  *
@@ -8,6 +10,7 @@ package coaching.tuples;
  *
  * @param <T> the generic type
  */
+@Slf4j
 public class Box<T> {
 
     /** The boxed Object t of type T. */

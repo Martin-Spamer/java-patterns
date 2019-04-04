@@ -5,9 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Proxy Subject Test class.
  */
+@Slf4j
 public final class ProxySubjectTest {
 
     /**

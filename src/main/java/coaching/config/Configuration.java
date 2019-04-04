@@ -1,10 +1,13 @@
 
 package coaching.config;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * An abstract Configuration class. Loads Configuration Properties from a
  * .properties file.
  */
+@Slf4j
 public class Configuration extends AbstractConfiguration {
 
     /**

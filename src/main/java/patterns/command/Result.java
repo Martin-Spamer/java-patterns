@@ -1,9 +1,12 @@
 
 package patterns.command;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Result of Command execution.
  */
+@Slf4j
 public final class Result implements ResultInterface {
 
     /** The Constant PASS. */

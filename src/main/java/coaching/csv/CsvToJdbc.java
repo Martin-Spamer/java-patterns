@@ -2,10 +2,12 @@
 package coaching.csv;
 
 import coaching.jdbc.DynamicDao;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A class to read a CSV file and write data to JDBC table.
  */
+@Slf4j
 public final class CsvToJdbc {
 
     /** CSV file. */

@@ -5,6 +5,7 @@ import java.util.List;
 
 import coaching.csv.CsvFile;
 import coaching.csv.CsvRecord;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Provides a example of a crude XML DAO reader.
@@ -12,6 +13,7 @@ import coaching.csv.CsvRecord;
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
+@Slf4j
 public final class XmlToDao {
 
     /** The csv. */

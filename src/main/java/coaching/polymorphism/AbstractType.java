@@ -1,16 +1,13 @@
 
 package coaching.polymorphism;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An abstract Class providing a polymorphic base.
  */
+@Slf4j
 public abstract class AbstractType implements TypeInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*
      * (non-Javadoc)

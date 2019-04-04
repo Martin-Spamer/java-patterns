@@ -3,18 +3,14 @@ package patterns.command;
 
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import coaching.resources.PropertiesLoader;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An example class factory for creating Class objects.
  */
+@Slf4j
 public final class CommandFactory {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
 
     /** DEFAULT constant. */
     private static final String DEFAULT = "patterns.command.ExampleCommand";
@@ -30,7 +26,7 @@ public final class CommandFactory {
      */
     private CommandFactory() {
         super();
-        properties = PropertiesLoader.getProperties("commands.properties");
+        this.properties = PropertiesLoader.getProperties("commands.properties");
     }
 
     /**
@@ -75,7 +71,7 @@ public final class CommandFactory {
         try {
             return (AbstractCommand) Class.forName(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }

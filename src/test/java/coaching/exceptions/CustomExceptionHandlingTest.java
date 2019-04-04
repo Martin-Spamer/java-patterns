@@ -7,10 +7,12 @@ import coaching.exceptions.CustomExceptionHandling.CustomCreationException;
 import coaching.exceptions.CustomExceptionHandling.CustomException;
 import coaching.exceptions.CustomExceptionHandling.CustomReadException;
 import coaching.exceptions.CustomExceptionHandling.CustomUpdateException;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test for showing Custom Exception Handling.
  */
+@Slf4j
 public final class CustomExceptionHandlingTest {
 
     /**

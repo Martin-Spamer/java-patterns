@@ -12,13 +12,13 @@ import static org.junit.Assert.assertThat;
 
 import static org.junit.Assume.assumeNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Composite class tests.
  */
+@Slf4j
 public final class CompositeTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
 
     /**
      * Unit Test a typical usage of composite.
@@ -39,7 +39,7 @@ public final class CompositeTest {
         // Then
         final ComponentInterface operation = composite.operation();
         assertNotNull("composite cannot be null", operation);
-        LOG.debug("composite = {}", composite.toString());
+        log.debug("composite = {}", composite.toString());
     }
 
     /**

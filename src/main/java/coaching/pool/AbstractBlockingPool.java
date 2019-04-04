@@ -3,8 +3,7 @@ package coaching.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * BlockingPool Class.
@@ -13,10 +12,8 @@ import org.slf4j.LoggerFactory;
  *
  * @param <E> the element type
  */
+@Slf4j
 public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The free pool. */
     protected LinkedBlockingDeque<E> freePool;
@@ -72,7 +69,7 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
             return resource;
         } catch (final InterruptedException e) {
             Thread.currentThread().interrupt();
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }

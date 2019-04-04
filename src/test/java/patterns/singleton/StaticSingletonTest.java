@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Static Singleton Test class.
  */
+@Slf4j
 public final class StaticSingletonTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(StaticSingletonTest.class);
 
     /**
      * Unit Test to get instance.
@@ -24,7 +24,7 @@ public final class StaticSingletonTest {
         assertNotNull(instance);
         final String string = instance.toString();
         assertNotNull(instance);
-        LOG.info(string);
+        log.info(string);
     }
 
 }

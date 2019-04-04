@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test class for JdbcConfig.
  */
+@Slf4j
 public class JdbcConfigTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(JdbcConfigTest.class);
 
     /**
      * Unit test to get instance.
@@ -22,7 +22,7 @@ public class JdbcConfigTest {
     public void testGetInstance() {
         final JdbcConfig instance = JdbcConfig.getInstance();
         assertNotNull(instance);
-        LOG.info("{}", instance.toString());
+        log.info("{}", instance.toString());
     }
 
     /**
@@ -32,15 +32,15 @@ public class JdbcConfigTest {
     public void testValues() {
         final JdbcConfig instance = JdbcConfig.getInstance();
         assertNotNull(instance);
-        LOG.info("\tJdbcConfig.driver() : {}", JdbcConfig.driver());
-        LOG.info("\tJdbcConfig.url() : {}", JdbcConfig.url());
-        LOG.info("\tJdbcConfig.username() : {}", JdbcConfig.username());
-        LOG.info("\tJdbcConfig.password() : {}", JdbcConfig.password());
-        LOG.info("\tJdbcConfig.schema() : {}", JdbcConfig.schema());
-        LOG.info("\tJdbcConfig.select() : {}", JdbcConfig.select());
-        LOG.info("\tJdbcConfig.update() : {}", JdbcConfig.update());
-        LOG.info("\tJdbcConfig.insert() : {}", JdbcConfig.insert());
-        LOG.info("\tJdbcConfig.delete() : {}", JdbcConfig.delete());
+        log.info("\tJdbcConfig.driver() : {}", JdbcConfig.driver());
+        log.info("\tJdbcConfig.url() : {}", JdbcConfig.url());
+        log.info("\tJdbcConfig.username() : {}", JdbcConfig.username());
+        log.info("\tJdbcConfig.password() : {}", JdbcConfig.password());
+        log.info("\tJdbcConfig.schema() : {}", JdbcConfig.schema());
+        log.info("\tJdbcConfig.select() : {}", JdbcConfig.select());
+        log.info("\tJdbcConfig.update() : {}", JdbcConfig.update());
+        log.info("\tJdbcConfig.insert() : {}", JdbcConfig.insert());
+        log.info("\tJdbcConfig.delete() : {}", JdbcConfig.delete());
     }
 
 }

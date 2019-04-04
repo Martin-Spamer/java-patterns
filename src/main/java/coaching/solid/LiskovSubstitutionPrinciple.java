@@ -1,6 +1,8 @@
 
 package coaching.solid;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * A class to Demonstrate the Liskov Substitution Principle (LSP).
  *
@@ -12,6 +14,7 @@ package coaching.solid;
  * (correctness, task performed, etc.).
  *
  */
+@Slf4j
 public class LiskovSubstitutionPrinciple {
 
     /**

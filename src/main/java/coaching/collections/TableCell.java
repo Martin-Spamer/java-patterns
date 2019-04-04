@@ -1,16 +1,13 @@
 
 package coaching.collections;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * GenericTable Cell class.
  */
+@Slf4j
 public class TableCell {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The value. */
     private String value = "";

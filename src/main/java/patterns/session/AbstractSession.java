@@ -3,9 +3,12 @@ package patterns.session;
 
 import java.util.UUID;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Abstract Session class.
  */
+@Slf4j
 public abstract class AbstractSession {
 
     /** A Universally Unique ID. */

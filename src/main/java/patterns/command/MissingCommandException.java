@@ -1,10 +1,13 @@
 
 package patterns.command;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * MissingCommandException Class.
  */
 @SuppressWarnings("serial")
+@Slf4j
 public class MissingCommandException extends Exception {
 
     /**

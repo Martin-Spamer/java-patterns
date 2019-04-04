@@ -1,9 +1,12 @@
 
 package patterns.command;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * ConditionalCommand Class.
  */
+@Slf4j
 public class ConditionalCommand extends AbstractCommand {
 
     /** The predicate. */

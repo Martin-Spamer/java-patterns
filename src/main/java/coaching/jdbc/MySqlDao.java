@@ -1,9 +1,12 @@
 
 package coaching.jdbc;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * A Data Access object for a MySQL database.
  */
+@Slf4j
 public class MySqlDao extends AbstractDao {
 
     /** The classname of the JDBC driver to use. */

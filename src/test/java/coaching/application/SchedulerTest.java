@@ -2,18 +2,16 @@
 package coaching.application;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test class for Scheduler.
  */
+@Slf4j
 public class SchedulerTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SchedulerTest.class);
 
     /**
      * Unit test to scheduler string array.
@@ -24,7 +22,7 @@ public class SchedulerTest {
         final ExampleScheduler scheduler = new ExampleScheduler(strArray);
         assertNotNull(scheduler);
         assertNotNull(scheduler.execute());
-        LOG.debug("testSchedulerStringArray : {}", scheduler);
+        log.debug("testSchedulerStringArray : {}", scheduler);
     }
 
     /**
@@ -36,7 +34,7 @@ public class SchedulerTest {
         final ExampleScheduler scheduler = new ExampleScheduler(nullArray);
         assertNotNull(scheduler);
         assertNotNull(scheduler.execute());
-        LOG.debug("testSchedulerNullStringArray : {}", scheduler);
+        log.debug("testSchedulerNullStringArray : {}", scheduler);
     }
 
 }

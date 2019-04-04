@@ -17,12 +17,12 @@
 
 package coaching.thread;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A template for a Thread class.
  */
+@Slf4j
 public class ThreadTemplate implements Runnable {
 
     /** The Constant TIME_OUT. */
@@ -30,9 +30,6 @@ public class ThreadTemplate implements Runnable {
 
     /** The Constant MAX_TICKS. */
     private static final long MAX_TICKS = 10;
-
-    /** Provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The configuration. */
     protected ThreadConfig config;
@@ -61,7 +58,7 @@ public class ThreadTemplate implements Runnable {
     public ThreadTemplate() {
         initialise(new ThreadConfig());
         this.thread = new Thread(this);
-        this.log.info("{}", this);
+        log.info("{}", this);
     }
 
     /**
@@ -72,7 +69,7 @@ public class ThreadTemplate implements Runnable {
      * @param config the config
      */
     public void initialise(final ThreadConfig config) {
-        this.log.info("{}", config);
+        log.info("{}", config);
         this.config = config;
     }
 
@@ -82,7 +79,7 @@ public class ThreadTemplate implements Runnable {
      */
     @Override
     public void run() {
-        this.log.info("run");
+        log.info("run");
 
         do {
             this.tick++;
@@ -90,12 +87,12 @@ public class ThreadTemplate implements Runnable {
             final String className = this.getClass().getSimpleName();
             final String threadName = this.thread.getName();
             final int priority = this.thread.getPriority();
-            this.log.info("classname:{}:threadName:{}({}).{}", className, threadName, priority, this.tick);
+            log.info("classname:{}:threadName:{}({}).{}", className, threadName, priority, this.tick);
 
             try {
                 execute();
             } catch (final ApplicationException exception) {
-                this.log.error("{}", exception);
+                log.error("{}", exception);
             }
 
             // Yield a little.
@@ -137,7 +134,7 @@ public class ThreadTemplate implements Runnable {
     }
 
     /**
-     * The Class ApplicationException.
+     * The ApplicationException class.
      */
     public class ApplicationException extends Exception {
 

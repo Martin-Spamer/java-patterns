@@ -1,16 +1,13 @@
 
 package patterns.transaction;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Abstract Participant class. https://en.wikipedia.org/wiki/ACID
  */
+@Slf4j
 public abstract class AbstractParticipant implements ParticipantInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * Operation One, must be implemented in the final class, otherwise will

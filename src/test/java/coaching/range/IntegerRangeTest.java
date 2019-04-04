@@ -10,10 +10,12 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class IntegerRangeTest {
 
     /** provides logging */
-    private static final Logger log = LoggerFactory.getLogger(IntegerRangeTest.class);
 
     @Test
     public void testIntegerRange() {

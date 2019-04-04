@@ -3,17 +3,14 @@ package coaching.arrays;
 
 import java.util.Arrays;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Example code of arrays of objects. One of the major downsides of arrays is
  * their fixed size, hence ARRAY_SIZE.
  **/
+@Slf4j
 public class ObjectTypesArray {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ObjectTypesArray.class);
 
     /** ARRAY_SIZE constant. */
     private static final int ARRAY_SIZE = 10;
@@ -29,7 +26,7 @@ public class ObjectTypesArray {
         for (int i = 1; i < ARRAY_SIZE; i++) {
             // assign a value to an element of array
             values[i] = (long) (i * i);
-            LOG.info("values[{}] = {}", i, values[i]);
+            log.info("values[{}] = {}", i, values[i]);
         }
     }
 
@@ -39,7 +36,7 @@ public class ObjectTypesArray {
     public void displayMatrix() {
         Long[][] matrix;
         matrix = new Long[ARRAY_SIZE][ARRAY_SIZE];
-        LOG.info(looping(matrix));
+        log.info(looping(matrix));
     }
 
     /**
@@ -47,8 +44,8 @@ public class ObjectTypesArray {
      */
     public void display() {
         final Long[][] vector = { { 0L, 1L, 2L }, { 3L, 4L, 5L }, { 6L, 7L, 8L } };
-        LOG.info(Arrays.toString(vector));
-        LOG.info(looping(vector));
+        log.info(Arrays.toString(vector));
+        log.info(looping(vector));
 
     }
 

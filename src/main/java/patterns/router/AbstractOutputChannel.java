@@ -1,16 +1,13 @@
 
 package patterns.router;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An abstract OutputChannel class.
  */
+@Slf4j
 public abstract class AbstractOutputChannel implements OutputChannelInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*
      * (non-Javadoc)

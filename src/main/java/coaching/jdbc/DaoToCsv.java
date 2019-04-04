@@ -2,10 +2,12 @@
 package coaching.jdbc;
 
 import coaching.csv.CsvFile;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * JdbcToCsv class.
  */
+@Slf4j
 public final class DaoToCsv {
 
     /** Data access object. */

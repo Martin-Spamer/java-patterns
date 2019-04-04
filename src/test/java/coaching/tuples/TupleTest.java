@@ -6,15 +6,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test for Tuple Class.
  */
+@Slf4j
 public final class TupleTest {
 
-    /** The Constant RIGHT. */
     private static final String RIGHT = "Right";
-
-    /** The Constant LEFT. */
     private static final String LEFT = "Left";
 
     /**

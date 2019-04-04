@@ -6,16 +6,18 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * The TripleTest class.
  */
+@Slf4j
 public final class TripleTest {
 
     /**
      * The Space Class.
      */
     public final class Space extends Triple<Double, Double, Double> {
-
         /**
          * Instantiates a new space.
          */

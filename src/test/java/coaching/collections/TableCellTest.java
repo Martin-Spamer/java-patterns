@@ -8,13 +8,13 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test class for GenericTableCell.
  */
+@Slf4j
 public class TableCellTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(TableCellTest.class);
 
     /**
      * Unit test to table cell.
@@ -23,7 +23,7 @@ public class TableCellTest {
     public void testTableCell() {
         final TableCell tableCell = new TableCell();
         assertNotNull(tableCell);
-        LOG.info("{}", tableCell);
+        log.info("{}", tableCell);
     }
 
     /**
@@ -33,9 +33,9 @@ public class TableCellTest {
     public void testTableCellString() {
         final TableCell tableCell = new TableCell("value");
         assertNotNull(tableCell);
-        LOG.info("{}", tableCell);
+        log.info("{}", tableCell);
         String newValue = "newValue";
         assertEquals(newValue, tableCell.setValue(newValue).getValue());
-        LOG.info("{}", tableCell);
+        log.info("{}", tableCell);
     }
 }

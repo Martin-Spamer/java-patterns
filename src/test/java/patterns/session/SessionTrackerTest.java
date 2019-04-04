@@ -13,36 +13,36 @@ import static org.junit.Assert.assertThat;
 
 import static org.junit.Assume.assumeNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * SessionTracker class tests.
  */
+@Slf4j
 public final class SessionTrackerTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SessionTrackerTest.class);
 
     /**
      * Unit test to typical usage.
      */
     @Test
     public void testTypicalUsage() {
-        LOG.info("testTypicalUsage");
+        log.info("testTypicalUsage");
 
         // Given
         final SessionTracker sessionTracker = new SessionTracker();
         assumeNotNull(sessionTracker);
-        LOG.info(sessionTracker.toString());
+        log.info(sessionTracker.toString());
 
         // When
         final AbstractSession session = sessionTracker.createSession();
         session.setToken("TestToken");
         assertNotNull(session);
-        LOG.info(session.toString());
+        log.info(session.toString());
 
         // Then
         assertEquals("TestToken", session.token());
         sessionTracker.destroySession(session);
-        LOG.info(sessionTracker.toString());
+        log.info(sessionTracker.toString());
     }
 
     /**

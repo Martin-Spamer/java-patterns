@@ -3,14 +3,17 @@ package coaching.range;
 
 import java.util.Date;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * The Class DateRange.
  */
+@Slf4j
 public class DateRange {
 
     /** The start. */
     private final Date start;
-    
+
     /** The stop. */
     private final Date stop;
 

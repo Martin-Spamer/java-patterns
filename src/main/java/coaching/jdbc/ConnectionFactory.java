@@ -10,12 +10,14 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * A factory for creating Connection objects.
  */
+@Slf4j
 public final class ConnectionFactory implements ConnectionFactoryInterface {
 
-    /** provides logging. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The jdbc url. */

@@ -7,9 +7,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertThat;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * The Class CaretakerTest.
  */
+@Slf4j
 public final class CaretakerTest {
 
     /**

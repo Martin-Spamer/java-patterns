@@ -5,9 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test to show enum example.
  */
+@Slf4j
 public final class EnumTest {
 
     /**

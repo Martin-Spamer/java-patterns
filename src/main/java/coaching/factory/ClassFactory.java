@@ -6,10 +6,12 @@ import java.util.Properties;
 import coaching.money.BigDecimalMoney;
 import coaching.money.MoneyInterface;
 import coaching.resources.PropertiesLoader;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A Factory class for creating Class objects.
  */
+@Slf4j
 public final class ClassFactory {
 
     /** Instantiate the single instance of this class. */

@@ -2,18 +2,18 @@
 package coaching.config;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import coaching.resources.ResourceNotLoadedException;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test for the AbstractConfig object.
  */
+@Slf4j
 public final class AbstractConfigTest {
 
     /** The Constant FILENAME_KEY. */
@@ -21,9 +21,6 @@ public final class AbstractConfigTest {
 
     /** The Constant CONFIG_PROPERTIES. */
     private static final String CONFIG_PROPERTIES = "Configuration.properties";
-
-    /** provide logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractConfigTest.class);
 
     /**
      * Mock a MissingConfiguration. The configuration file is missing so throws
@@ -44,10 +41,10 @@ public final class AbstractConfigTest {
      */
     @Test
     public void testTypicalUsage() {
-        LOG.debug("testTypicalUsage");
+        log.debug("testTypicalUsage");
         final ConfigInterface config = new Configuration();
         assertNotNull(config);
-        LOG.trace(config.toString());
+        log.trace(config.toString());
         assertEquals(CONFIG_PROPERTIES, config.get(FILENAME_KEY));
         verifyProperties(config);
     }
@@ -57,7 +54,7 @@ public final class AbstractConfigTest {
      */
     @Test(expected = ResourceNotLoadedException.class)
     public void testMissingConfig() {
-        LOG.debug("testMissingConfig");
+        log.debug("testMissingConfig");
         assertNotNull(new MissingConfiguration());
     }
 
@@ -66,7 +63,7 @@ public final class AbstractConfigTest {
      */
     @Test(expected = ResourceNotLoadedException.class)
     public void testMissingConfigString() {
-        LOG.debug("testMissingConfigString");
+        log.debug("testMissingConfigString");
         assertNotNull(new Configuration("Missing"));
     }
 
@@ -75,7 +72,7 @@ public final class AbstractConfigTest {
      */
     @Test
     public void testGetSystemProperty() {
-        LOG.debug("testGetSystemProperty");
+        log.debug("testGetSystemProperty");
         final String key = "systemPropertyKey";
         final String expectedValue = "systemPropertyValue";
         System.setProperty(key, expectedValue);
@@ -89,12 +86,12 @@ public final class AbstractConfigTest {
      */
     @Test
     public void testToString() {
-        LOG.debug("testToString");
+        log.debug("testToString");
         final ConfigInterface configuration = new Configuration();
         assertNotNull(configuration);
         final String string = configuration.toString();
         assertNotNull(string);
-        LOG.debug("{}.{}", this.getClass().getSimpleName(), string);
+        log.debug("{}.{}", this.getClass().getSimpleName(), string);
     }
 
     /**
@@ -102,10 +99,10 @@ public final class AbstractConfigTest {
      */
     @Test
     public void testConfiguration() {
-        LOG.debug("testConfiguration");
+        log.debug("testConfiguration");
         final ConfigInterface config = new Configuration(CONFIG_PROPERTIES);
         assertNotNull(config);
-        LOG.debug(config.toString());
+        log.debug(config.toString());
 
         assertEquals(CONFIG_PROPERTIES, config.get(FILENAME_KEY));
         verifyProperties(config);
@@ -116,10 +113,10 @@ public final class AbstractConfigTest {
      */
     @Test
     public void testAbstractConfigStringXml() {
-        LOG.debug("testAbstractConfigStringXml");
+        log.debug("testAbstractConfigStringXml");
         final ConfigInterface config = new Configuration(CONFIG_PROPERTIES);
         assertNotNull(config);
-        LOG.trace(config.toString());
+        log.trace(config.toString());
 
         assertEquals(CONFIG_PROPERTIES, config.get(FILENAME_KEY));
         verifyProperties(config);
@@ -137,7 +134,7 @@ public final class AbstractConfigTest {
         assertEquals("Value.000", config.get("000"));
         assertEquals("Value.001", config.get("001"));
         assertEquals("Value.002", config.get("002"));
-        LOG.debug(config.toString());
+        log.debug(config.toString());
     }
 
 }

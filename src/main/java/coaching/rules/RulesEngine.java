@@ -7,19 +7,17 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Rules Engine Class.
  */
+@Slf4j
 public class RulesEngine {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RulesEngine.class);
 
     /** The document. */
     private Document document = null;
@@ -39,7 +37,7 @@ public class RulesEngine {
      * Initialise.
      */
     protected void initialise() {
-        LOG.trace(System.getProperties().toString());
+        log.trace(System.getProperties().toString());
         final String className = this.getClass().getSimpleName();
         final String configFilename = String.format("%s.xml", className);
         initialise(configFilename);
@@ -52,7 +50,7 @@ public class RulesEngine {
      * @return true, if successful, otherwise false.
      */
     public boolean initialise(final String configFilename) {
-        LOG.info("initialise({})", configFilename);
+        log.info("initialise({})", configFilename);
         return readXmlDocument(configFilename);
     }
 
@@ -73,7 +71,7 @@ public class RulesEngine {
                 }
             }
         } catch (final ParserConfigurationException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return false;
     }
@@ -94,7 +92,7 @@ public class RulesEngine {
                 return true;
             }
         } catch (final Exception e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return false;
     }
@@ -119,10 +117,10 @@ public class RulesEngine {
      */
     public boolean execute() {
         final boolean returnValue = false;
-        LOG.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
+        log.info("execute({}) = {}", this.getClass().getSimpleName(), returnValue);
         if (this.documentElement != null) {
             final NodeList childNodes = this.documentElement.getChildNodes();
-            LOG.info("childNodes  = {}", childNodes);
+            log.info("childNodes  = {}", childNodes);
         }
         return returnValue;
     }
@@ -152,12 +150,12 @@ public class RulesEngine {
             final int length = nodelist.getLength();
             if (length == 0) {
                 final String className = this.getClass().getSimpleName();
-                LOG.info(className);
-                LOG.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
+                log.info(className);
+                log.info("Element {} is missing in element {}", elementName, this.documentElement.toString());
             } else if (length > 1) {
                 final String className = this.getClass().getSimpleName();
-                LOG.info(className);
-                LOG.info(" surplus Elements {} ignored in element: {}", elementName, this.documentElement.toString());
+                log.info(className);
+                log.info(" surplus Elements {} ignored in element: {}", elementName, this.documentElement.toString());
                 element = (Element) nodelist.item(0);
             }
         }

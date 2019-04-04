@@ -14,22 +14,18 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The Template class.
  */
+@Slf4j
 public class Template {
 
     /**
      * TemplateException class.
      */
     public class TemplateException extends Exception {
-
-        /** serialVersionUID constant. */
-        private static final long serialVersionUID = -7339416432777745473L;
-
         /**
          * Instantiates a new template exception.
          *
@@ -39,9 +35,6 @@ public class Template {
             super(message);
         }
     }
-
-    /** provide logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The template. */
     protected StringBuffer template;
@@ -153,7 +146,7 @@ public class Template {
                 int endOfTarget = startOfTarget + target.length();
                 this.template.replace(startOfTarget, endOfTarget, replacement);
             } else {
-                this.log.error("target {} not found in template\n\t{}", target, this.template.toString());
+                log.error("target {} not found in template\n\t{}", target, this.template.toString());
             }
         }
         return this;
@@ -205,7 +198,7 @@ public class Template {
      * @return the template
      */
     public Template toLog() {
-        this.log.info(toString());
+        log.info(toString());
         return this;
     }
 

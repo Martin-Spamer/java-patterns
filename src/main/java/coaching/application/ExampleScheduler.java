@@ -1,6 +1,8 @@
 
 package coaching.application;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Example Scheduler class.
  *
@@ -8,6 +10,7 @@ package coaching.application;
  * under specific circumstances, at certain times or in response to specific
  * events.
  */
+@Slf4j
 public final class ExampleScheduler extends AbstractScheduler {
 
     /**
@@ -21,7 +24,8 @@ public final class ExampleScheduler extends AbstractScheduler {
 
     /**
      * The main entry method for the application.
-     * Create a new instance of the ThreadedApplication with its default constructor,
+     * Create a new instance of the ThreadedApplication with its default
+     * constructor,
      * using any command line parameters from the args,
      * and calling the execute method.
      *

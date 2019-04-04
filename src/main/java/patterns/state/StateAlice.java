@@ -1,9 +1,12 @@
 
 package patterns.state;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
- * The Class StateAlice.
+ * The StateAlice class.
  */
+@Slf4j
 class StateAlice extends AbstractState {
 
     /*

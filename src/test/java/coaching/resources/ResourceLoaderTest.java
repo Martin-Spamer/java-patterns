@@ -12,9 +12,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for ResourceLoader class.
  */
+@Slf4j
 public final class ResourceLoaderTest {
 
     /** CONFIGURATION_PROPERTIES constant. */
@@ -25,9 +28,6 @@ public final class ResourceLoaderTest {
 
     /** MISSING_RESOURCE constant. */
     private static final String MISSING_RESOURCE = "Resource.missing";
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ResourceLoaderTest.class);
 
     /**
      * Unit test to get stream.
@@ -40,7 +40,7 @@ public final class ResourceLoaderTest {
         final InputStream inputStream = ResourceLoader.getStream(CONFIGURATION_PROPERTIES);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
-        LOG.debug("ResourceLoader.getStream = {}", inputStream.toString());
+        log.debug("ResourceLoader.getStream = {}", inputStream.toString());
     }
 
     /**
@@ -54,7 +54,7 @@ public final class ResourceLoaderTest {
         final InputStream inputStream = ResourceLoader.getStream(CONFIGURATION_XML);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
-        LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
+        log.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
     }
 
     /**
@@ -68,7 +68,7 @@ public final class ResourceLoaderTest {
         final InputStream inputStream = ResourceLoader.getStream(MISSING_RESOURCE);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
-        LOG.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
+        log.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
     }
 
     /**

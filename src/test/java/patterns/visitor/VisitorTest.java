@@ -5,11 +5,14 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit Test for Visitor class.
  *
  * Represent an operation to be performed on elements of an object structure.
  */
+@Slf4j
 public final class VisitorTest {
 
     /**

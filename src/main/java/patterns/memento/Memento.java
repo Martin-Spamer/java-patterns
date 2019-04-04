@@ -1,9 +1,12 @@
 
 package patterns.memento;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Memento class, See GOF Design Patterns.
  */
+@Slf4j
 public class Memento {
 
     /** The state to be encapsulated. */

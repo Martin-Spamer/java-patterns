@@ -1,17 +1,20 @@
 
 package coaching.range;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * The Class IntegerRange.
  */
+@Slf4j
 public class IntegerRange {
 
     /** The start. */
     private final Integer start;
-    
+
     /** The end. */
     private final Integer end;
-    
+
     /** The step. */
     private final Integer step;
 

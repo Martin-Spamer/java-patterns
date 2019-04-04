@@ -8,14 +8,14 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for MySqlDao.
  */
 @Ignore("Requires MySQL DB availability work-in-progress low-priority")
+@Slf4j
 public final class MySqlDaoTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(MySqlDaoTest.class);
 
     /**
      * Test the default constructor with typical usage.
@@ -24,7 +24,7 @@ public final class MySqlDaoTest {
     public void testMySqlDao() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info("dao : {}", dao.toString());
+        log.info("dao : {}", dao.toString());
     }
 
     /**
@@ -34,7 +34,7 @@ public final class MySqlDaoTest {
     public void testCreate() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info("dao : {}", dao.toString());
+        log.info("dao : {}", dao.toString());
         dao.createRow();
     }
 
@@ -45,7 +45,7 @@ public final class MySqlDaoTest {
     public void testRead() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info("dao : {}", dao.toString());
+        log.info("dao : {}", dao.toString());
         dao.readRow();
     }
 
@@ -56,7 +56,7 @@ public final class MySqlDaoTest {
     public void testUpdate() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info("dao : {}", dao.toString());
+        log.info("dao : {}", dao.toString());
         dao.updateRow();
     }
 
@@ -67,7 +67,7 @@ public final class MySqlDaoTest {
     public void testDelete() {
         final MySqlDao dao = new MySqlDao();
         assertNotNull(dao);
-        LOG.info("dao : {}", dao.toString());
+        log.info("dao : {}", dao.toString());
         dao.deleteRow();
     }
 

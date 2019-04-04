@@ -7,20 +7,20 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Observer Test class.
  */
+@Slf4j
 public final class ObserverTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ObserverTest.class);
 
     /**
      * Unit Test to update.
      */
     @Test
     public void testUpdate() {
-        LOG.info("{}.testUpdate", this.getClass().getSimpleName());
+        log.info("{}.testUpdate", this.getClass().getSimpleName());
         final Subject subject = new Subject();
         assertNotNull(subject);
         final Observer observer = new Observer();

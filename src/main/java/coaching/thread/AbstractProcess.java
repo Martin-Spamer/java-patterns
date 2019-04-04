@@ -1,8 +1,7 @@
 
 package coaching.thread;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  *
@@ -11,6 +10,7 @@ import org.slf4j.LoggerFactory;
  * @author martin.spamer.
  * @version 0.1 - first release. Created 17-Sep-2004 - 16:13:19
  */
+@Slf4j
 public abstract class AbstractProcess implements Runnable {
 
     /** MAX_TICKS. */
@@ -18,9 +18,6 @@ public abstract class AbstractProcess implements Runnable {
 
     /** DEFAULT_WAIT. */
     private static final int DEFAULT_WAIT = 1000;
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** thread. */
     private final Thread thread;

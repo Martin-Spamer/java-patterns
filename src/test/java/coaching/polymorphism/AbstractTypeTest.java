@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for the AbstractType class.
  */
+@Slf4j
 public final class AbstractTypeTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractTypeTest.class);
 
     /** The abstract type. */
     private TypeInterface abstractType;
@@ -23,12 +23,12 @@ public final class AbstractTypeTest {
      */
     @Test
     public void testSubTypeOne() {
-        LOG.info("testSubTypeOnePolymorphism");
+        log.info("testSubTypeOnePolymorphism");
         abstractType = new SubTypeOne();
         assertNotNull(abstractType);
-        LOG.info(abstractType.toString());
+        log.info(abstractType.toString());
         assertNotNull(abstractType.operation());
-        LOG.info(abstractType.toString());
+        log.info(abstractType.toString());
     }
 
     /**
@@ -36,13 +36,13 @@ public final class AbstractTypeTest {
      */
     @Test
     public void testSubTypeTwo() {
-        LOG.info("testSubTypeOnePolymorphism");
+        log.info("testSubTypeOnePolymorphism");
         abstractType = new SubTypeTwo();
         assertNotNull(abstractType);
-        LOG.info(abstractType.toString());
+        log.info(abstractType.toString());
         abstractType.operation();
         assertNotNull(abstractType.operation());
-        LOG.info(abstractType.toString());
+        log.info(abstractType.toString());
     }
 
 }

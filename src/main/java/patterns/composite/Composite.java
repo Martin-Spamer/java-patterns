@@ -4,9 +4,12 @@ package patterns.composite;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Composite Class.
  */
+@Slf4j
 public final class Composite extends AbstractComponent {
 
     /** The leaves. */

@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test the Box class.
  */
+@Slf4j
 public final class BoxTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BoxTest.class);
 
     /**
      * Test box object.
@@ -22,7 +22,7 @@ public final class BoxTest {
     public void testBoxObject() {
         final Box<Object> box = new Box<Object>();
         assertNotNull(box);
-        LOG.info(box.toString());
+        log.info(box.toString());
     }
 
     /**
@@ -32,7 +32,7 @@ public final class BoxTest {
     public void testBoxString() {
         final Box<String> box = new Box<String>();
         assertNotNull(box);
-        LOG.info(box.toString());
+        log.info(box.toString());
     }
 
 }

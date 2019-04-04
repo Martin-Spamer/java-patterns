@@ -1,9 +1,12 @@
 
 package coaching.idioms;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Condition Class.
  */
+@Slf4j
 public class Condition implements ConditionInterface<Boolean> {
 
     /** The result. */

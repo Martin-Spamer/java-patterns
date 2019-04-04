@@ -6,18 +6,15 @@ import java.util.Deque;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * AbstractResourcePool Class.
  *
  * @param <T> the generic type T
  */
+@Slf4j
 public abstract class AbstractAltResourcePool<T> {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The max pool size. */
     protected int maxPoolSize = Integer.MAX_VALUE;

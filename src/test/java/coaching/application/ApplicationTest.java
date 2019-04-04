@@ -3,9 +3,12 @@ package coaching.application;
 
 import org.junit.Test;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test class for ThreadedApplication.
  */
+@Slf4j
 public class ApplicationTest {
 
     /**

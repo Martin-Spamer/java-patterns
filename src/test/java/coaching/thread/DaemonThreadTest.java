@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test class for DaemonThread.
  */
+@Slf4j
 public class DaemonThreadTest {
-
-    /**  provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(DaemonThreadTest.class);
 
     /**
      * Unit test to run daemon thread.
@@ -22,11 +22,11 @@ public class DaemonThreadTest {
     public void testRunDaemonThread() {
         DaemonThread daemon = DaemonThread.getSingleton();
         assertNotNull(daemon);
-        LOG.info("{}", daemon);
+        log.info("{}", daemon);
         daemon.start();
-        LOG.info("{}", daemon);
+        log.info("{}", daemon);
         daemon.interrupt();
-        LOG.info("{}", daemon);
+        log.info("{}", daemon);
     }
 
 }

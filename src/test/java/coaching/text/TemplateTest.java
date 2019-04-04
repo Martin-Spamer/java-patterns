@@ -16,13 +16,13 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assume.assumeNotNull;
 
 import coaching.resources.ResourceLoader;
-import coaching.text.Template;
 import coaching.text.Template.TemplateException;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class TemplateTest {
 
     /** provides logging */
-    private static final Logger log = LoggerFactory.getLogger(TemplateTest.class);
 
     @Test
     public void testTemplateFromStream() throws TemplateException {

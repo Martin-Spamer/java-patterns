@@ -1,9 +1,12 @@
 
 package patterns.builder;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * PartTwo class.
  */
+@Slf4j
 public class PartTwo extends AbstractPart {
 
     /**

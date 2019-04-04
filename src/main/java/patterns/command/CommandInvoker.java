@@ -1,18 +1,14 @@
 
 package patterns.command;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import coaching.factory.ClassFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The Class CommandInvoker.
  */
+@Slf4j
 public final class CommandInvoker {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandInvoker.class);
 
     /**
      * Execute.
@@ -27,12 +23,12 @@ public final class CommandInvoker {
                 return executeActionName(actionName);
             } else {
                 final String message = "actionName must be define, cannot be zero length.";
-                LOG.error(message);
+                log.error(message);
                 throw new MissingCommandException(message);
             }
         } else {
             final String message = "actionName cannot be null";
-            LOG.error(message);
+            log.error(message);
             throw new MissingCommandException(message);
         }
     }
@@ -55,7 +51,7 @@ public final class CommandInvoker {
             }
         } else {
             final String message = String.format("className '%s' cannot be zero length.", className);
-            LOG.error(message);
+            log.error(message);
             throw new MissingCommandException(message);
         }
     }
@@ -79,7 +75,7 @@ public final class CommandInvoker {
                 throw new MissingCommandException(message);
             }
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
             throw new MissingCommandException(e);
         }
     }

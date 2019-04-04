@@ -7,9 +7,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test for Originator class.
  */
+@Slf4j
 public final class OriginatorTest {
 
     /**

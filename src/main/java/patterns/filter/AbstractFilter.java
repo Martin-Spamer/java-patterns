@@ -1,9 +1,12 @@
 
 package patterns.filter;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * AbstractFilter Class.
  */
+@Slf4j
 public abstract class AbstractFilter implements FilterInterface {
 
     /** The next filter. */

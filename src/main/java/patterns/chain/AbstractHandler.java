@@ -1,16 +1,13 @@
 
 package patterns.chain;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Abstract Handler class.
  */
+@Slf4j
 public abstract class AbstractHandler implements HandlerInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The next. */
     private HandlerInterface next;

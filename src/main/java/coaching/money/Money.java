@@ -3,9 +3,12 @@ package coaching.money;
 
 import java.util.Currency;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Money class.
  */
+@Slf4j
 public class Money extends AbstractMoney {
 
     /**

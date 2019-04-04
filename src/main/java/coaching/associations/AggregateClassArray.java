@@ -3,8 +3,7 @@ package coaching.associations;
 
 import java.util.Arrays;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Using a basic Java array to implement an example UML Aggregation.
@@ -13,10 +12,8 @@ import org.slf4j.LoggerFactory;
  * of the parts is disconnected from the lifetime of the whole. We can describe
  * this as having no life-time constraint.
  **/
+@Slf4j
 public final class AggregateClassArray {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArray.class);
 
     /** The SIZE of the Aggregation. */
     private static final int SIZE = 4;
@@ -32,8 +29,8 @@ public final class AggregateClassArray {
      * @return the aggregate class array
      */
     public AggregateClassArray setAggregate(final int index, final AbstractPerson element) {
-        LOG.info("setAggregate({},{}) = {}", index, element, this);
-        aggregate[index] = element;
+        log.info("setAggregate({},{}) = {}", index, element, this);
+        this.aggregate[index] = element;
         return this;
     }
 
@@ -41,7 +38,7 @@ public final class AggregateClassArray {
      * Execute.
      */
     public void execute() {
-        for (final AbstractPerson person : aggregate) {
+        for (final AbstractPerson person : this.aggregate) {
             person.doWork();
         }
     }
@@ -53,8 +50,8 @@ public final class AggregateClassArray {
      * @return the aggregate class array
      */
     public AggregateClassArray execute(final int index) {
-        LOG.info("execute {}", this);
-        aggregate[index].doWork();
+        log.info("execute {}", this);
+        this.aggregate[index].doWork();
         return this;
     }
 
@@ -65,8 +62,8 @@ public final class AggregateClassArray {
      * @return the aggregate
      */
     public AbstractPerson getAggregate(final int index) {
-        LOG.info("{}.execute", this.getClass().getName());
-        return aggregate[index];
+        log.info("{}.execute", this.getClass().getName());
+        return this.aggregate[index];
     }
 
     /*
@@ -75,7 +72,7 @@ public final class AggregateClassArray {
      */
     @Override
     public String toString() {
-        return String.format("%s [aggregate=%s]", this.getClass().getSimpleName(), Arrays.toString(aggregate));
+        return String.format("%s [aggregate=%s]", this.getClass().getSimpleName(), Arrays.toString(this.aggregate));
     }
 
 }

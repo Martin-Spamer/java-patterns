@@ -8,13 +8,13 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for Configuration class.
  */
+@Slf4j
 public final class ConfigurationTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ConfigurationTest.class);
 
     /**
      * Test configuration.
@@ -23,7 +23,7 @@ public final class ConfigurationTest {
     public void testConfiguration() {
         final Configuration config = new Configuration();
         assertNotNull(config);
-        LOG.info(config.toString());
+        log.info(config.toString());
         config.valueFor("Missing");
         config.valueFor("Missing", "default");
     }
@@ -40,7 +40,7 @@ public final class ConfigurationTest {
         assertEquals("Value.000", config.valueFor("000"));
         assertEquals("Value.001", config.valueFor("001"));
         assertEquals("Value.002", config.valueFor("002"));
-        LOG.info(config.toString());
+        log.info(config.toString());
     }
 
 }

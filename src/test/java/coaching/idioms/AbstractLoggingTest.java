@@ -4,21 +4,16 @@ package coaching.idioms;
 import java.util.UUID;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test the AbstractLogging class.
  */
+@Slf4j
 public final class AbstractLoggingTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractLoggingTest.class);
-
-    /** Provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * MockLog Class.
@@ -31,7 +26,7 @@ public final class AbstractLoggingTest {
          */
         @Override
         public String toString() {
-            return String.format("%s [bool=%s, num=%s, uuid=%s]", this.getClass().getSimpleName(), bool, num, uuid);
+            return String.format("%s [bool=%s, num=%s, uuid=%s]", this.getClass().getSimpleName(), this.bool, this.num, this.uuid);
         }
 
         /** The num. */
@@ -61,7 +56,6 @@ public final class AbstractLoggingTest {
     public void testSendLogTo() {
         final MockLog mockLog = new MockLog();
         assertNotNull(mockLog);
-        mockLog.logTo(LOG);
         mockLog.logTo(log);
     }
 

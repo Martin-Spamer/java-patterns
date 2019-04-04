@@ -1,23 +1,20 @@
 
 package coaching.thread;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The Class RunnableClass.
  */
+@Slf4j
 public final class RunnableClass implements Runnable {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RunnableClass.class);
 
     /**
      * Instantiates a new runnable class.
      */
     public RunnableClass() {
         super();
-        LOG.info("{} loaded...", this.getClass().getSimpleName());
+        log.info("{} loaded...", this.getClass().getSimpleName());
     }
 
     /*
@@ -26,11 +23,11 @@ public final class RunnableClass implements Runnable {
      */
     @Override
     public void run() {
-        LOG.info("{} running... ", this.getClass().getSimpleName());
+        log.info("{} running... ", this.getClass().getSimpleName());
         try {
             Thread.sleep(1000);
         } catch (final InterruptedException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
             Thread.currentThread().interrupt();
         }
 

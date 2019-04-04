@@ -2,23 +2,20 @@
 package coaching.pool;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test class for AbstractAltResourcePool.
  */
+@Slf4j
 public class AbstractAltResourcePoolTest {
-
-    /**  provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractAltResourcePoolTest.class);
-
     /**
-     * The Class ValueObject.
+     * The ValueObject class.
      */
     public class ValueObject extends AbstractValueObject {
     }
@@ -27,10 +24,10 @@ public class AbstractAltResourcePoolTest {
      * The Class MockResourcePool.
      */
     public class MockResourcePool extends AbstractAltResourcePool<ValueObject> {
-        
-        /* (non-Javadoc)
-        * @see coaching.pool.AbstractAltResourcePool#create()
-        */
+        /*
+         * (non-Javadoc)
+         * @see coaching.pool.AbstractAltResourcePool#create()
+         */
         @Override
         public ValueObject create() throws ResourceCreationException {
             return new ValueObject();
@@ -44,7 +41,7 @@ public class AbstractAltResourcePoolTest {
      */
     @Test
     public void testDefaultConstructor() throws ResourceBorrowException {
-        LOG.debug("testAbstractResourcePool");
+        log.debug("testAbstractResourcePool");
         MockResourcePool pool = new MockResourcePool();
         assertNotNull(pool);
         ValueObject obj = pool.borrow();

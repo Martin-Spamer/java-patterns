@@ -6,23 +6,20 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import coaching.WorkInProgress;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Given an XML data file, use it to update a database via JDBC.
  */
 @WorkInProgress("")
+@Slf4j
 public final class XmlToJdbc {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlToJdbc.class);
 
     /**
      * Instantiates a new xml to jdbc.
@@ -54,7 +51,7 @@ public final class XmlToJdbc {
             processTable(document);
 
         } catch (final Exception exception) {
-            LOG.error("Failed with {} ", exception);
+            log.error("Failed with {} ", exception);
         }
     }
 
@@ -103,7 +100,7 @@ public final class XmlToJdbc {
             insertRow(table, fieldNames, dataValues);
 
         } catch (final Exception exception) {
-            LOG.error("Failed with {} ", exception);
+            log.error("Failed with {} ", exception);
         }
     }
 
@@ -119,7 +116,7 @@ public final class XmlToJdbc {
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
             final Node item = fieldList.item(fieldNo);
-            LOG.info(item.toString());
+            log.info(item.toString());
             final Element fieldElement = (Element) item;
             fieldNames.append(columnSeparator).append(fieldElement.getAttribute("NAME"));
         }
@@ -138,7 +135,7 @@ public final class XmlToJdbc {
 
         for (int fieldNo = 0; fieldNo < fieldList.getLength(); fieldNo++) {
             final Node item = fieldList.item(fieldNo);
-            LOG.info(item.toString());
+            log.info(item.toString());
             final Element fieldElement = (Element) item;
             final String nodeValue = fieldElement.getChildNodes().item(0).getNodeValue();
             dataValues.append(columnSeperator).append("'").append(nodeValue).append("'");
@@ -162,7 +159,7 @@ public final class XmlToJdbc {
         sql.append(String.format("insert into %s", table));
         sql.append(String.format(" (%s) VALUES (%s)", fieldNames, dataValues));
 
-        LOG.info(sql.toString());
+        log.info(sql.toString());
         // super.executePreparedStatement(sql.toString());
     }
 }

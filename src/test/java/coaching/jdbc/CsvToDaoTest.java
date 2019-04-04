@@ -8,13 +8,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test class for CsvToDao.
  */
+@Slf4j
 public class CsvToDaoTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CsvToDaoTest.class);
 
     /**
      * Unit test to csv to dao.
@@ -24,7 +24,7 @@ public class CsvToDaoTest {
     public void testCsvToDao() {
         CsvToDao dao = new CsvToDao();
         assertNotNull(dao);
-        LOG.info("dao : {}", dao);
+        log.info("dao : {}", dao);
     }
 
 }

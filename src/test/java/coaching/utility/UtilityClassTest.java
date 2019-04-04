@@ -5,13 +5,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.fail;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test class for UtilityClass.
  */
+@Slf4j
 public class UtilityClassTest {
 
     /**
-     * The Class UtilityClass.
+     * The UtilityClass.
      */
     public class UtilityClass {
 
@@ -24,10 +27,9 @@ public class UtilityClassTest {
     }
 
     /**
-     * The Class UtilityClassTwo.
+     * The UtilityClassTwo.
      */
     public class UtilityClassTwo {
-
         /**
          * Instantiates a new utility class two.
          */
@@ -37,7 +39,7 @@ public class UtilityClassTest {
     }
 
     /**
-     * The Class UtilityClassThree.
+     * The UtilityClassThree.
      */
     public class UtilityClassThree {
 

@@ -5,10 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static org.junit.Assert.fail;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Property Loader class.
@@ -23,10 +22,8 @@ import static org.junit.Assert.fail;
  * some.pkg.Resource.properties some/pkg/Resource some/pkg/Resource.properties
  * /some/pkg/Resource /some/pkg/Resource.properties
  */
+@Slf4j
 public final class PropertiesLoader {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PropertiesLoader.class);
 
     /**
      * Instantiates a new properties loader.
@@ -48,7 +45,7 @@ public final class PropertiesLoader {
             properties.load(stream);
             properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return properties;
     }
@@ -80,7 +77,7 @@ public final class PropertiesLoader {
             properties.loadFromXML(stream);
             properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return properties;
     }

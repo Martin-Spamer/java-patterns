@@ -8,23 +8,23 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for CsvRecord class.
  */
+@Slf4j
 public final class CsvRecordTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CsvRecordTest.class);
 
     /**
      * Unit Test the CsvRecord default constructor.
      */
     @Test
     public void testCsvRecord() {
-        LOG.info("testCsvRecord");
+        log.info("testCsvRecord");
         final CsvRecord record = new CsvRecord();
         assertNotNull(record);
-        LOG.info(record.toString());
+        log.info(record.toString());
     }
 
     /**
@@ -32,10 +32,10 @@ public final class CsvRecordTest {
      */
     @Test
     public void testCsvRecordString() {
-        LOG.info("testCsvRecordString");
+        log.info("testCsvRecordString");
         final String record = new CsvRecord("One,Two").toString();
         assertEquals("CsvRecord [fields=[One, Two]]", record);
-        LOG.info(record.toString());
+        log.info(record.toString());
     }
 
 }

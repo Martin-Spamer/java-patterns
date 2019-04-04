@@ -6,18 +6,15 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The GenericTable class is composed of GenericTableRow classes.
  *
  * @param <T> the generic type
  */
+@Slf4j
 public class GenericTable<T> {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The table name. */
     private String tableName;
@@ -203,7 +200,11 @@ public class GenericTable<T> {
      */
     @Override
     public String toString() {
-        return String.format("%s [tableName=%s, colNames=%s, rows=%s]", this.getClass().getSimpleName(), this.tableName, this.colNames, this.rows);
+        return String.format("%s [tableName=%s, colNames=%s, rows=%s]",
+            this.getClass().getSimpleName(),
+            this.tableName,
+            this.colNames,
+            this.rows);
     }
 
 }

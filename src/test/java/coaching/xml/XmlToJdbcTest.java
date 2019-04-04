@@ -6,10 +6,12 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 import coaching.jdbc.XmlToJdbc;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test for the XmlToJdbc class.
  */
+@Slf4j
 public final class XmlToJdbcTest {
 
     /** The classname of the JDBC driver to use. */

@@ -8,24 +8,19 @@ package coaching.net;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import coaching.resources.PropertiesLoader;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * PortScan class.
  */
+@Slf4j
 public class PortScan extends Thread {
 
-    /** LOCALHOST constant. */
     private static final String LOCALHOST = "127.0.0.1";
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PortScan.class);
 
     /** The load factor. */
     private static int loadFactor = 100;
@@ -45,7 +40,7 @@ public class PortScan extends Thread {
     public PortScan() {
         super();
         initialise();
-        LOG.info("{}", this);
+        log.info("{}", this);
     }
 
     /**
@@ -56,10 +51,10 @@ public class PortScan extends Thread {
     public PortScan(final String[] args) {
         super();
         assertTrue(args.length == 2);
-        ip = args[0];
-        portNo = Integer.parseInt(args[1]);
+        this.ip = args[0];
+        this.portNo = Integer.parseInt(args[1]);
         initialise();
-        LOG.info("{}", this);
+        log.info("{}", this);
     }
 
     /**
@@ -73,9 +68,9 @@ public class PortScan extends Thread {
         assertNotNull(ip);
         assertNotNull(port);
         this.ip = ip;
-        portNo = port;
+        this.portNo = port;
         initialise();
-        LOG.info("{}", this);
+        log.info("{}", this);
     }
 
     /**
@@ -90,11 +85,11 @@ public class PortScan extends Thread {
      * Execute.
      */
     public void execute() {
-        for (int port = 1; port < (64 * 1024);) {
+        for (int port = 1; port < 64 * 1024;) {
             if (Thread.activeCount() > PortScan.loadFactor) {
                 Thread.yield();
             } else {
-                final PortScan portScan = new PortScan(ip, port);
+                final PortScan portScan = new PortScan(this.ip, port);
                 portScan.start();
                 port++;
             }
@@ -117,19 +112,19 @@ public class PortScan extends Thread {
      */
     @Override
     public void run() {
-        LOG.info("run");
+        log.info("run");
         try {
-            LOG.info("portscan = {} : {} ", ip, portNo);
-            final java.net.Socket socket = new java.net.Socket(ip, portNo);
+            log.info("portscan = {} : {} ", this.ip, this.portNo);
+            final java.net.Socket socket = new java.net.Socket(this.ip, this.portNo);
 
             // report open port & try looking it up
-            final String lookUpPort = lookUpPort(portNo);
-            LOG.info("scanning = {} ", lookUpPort);
+            final String lookUpPort = lookUpPort(this.portNo);
+            log.info("scanning = {} ", lookUpPort);
 
             socket.close();
             Thread.yield();
         } catch (final IOException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -139,7 +134,7 @@ public class PortScan extends Thread {
      */
     @Override
     public String toString() {
-        return String.format("%s [ip=%s, port=%s]", this.getClass().getSimpleName(), ip, portNo);
+        return String.format("%s [ip=%s, port=%s]", this.getClass().getSimpleName(), this.ip, this.portNo);
     }
 
 }

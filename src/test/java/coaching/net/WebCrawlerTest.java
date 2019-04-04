@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for the WebCrawler class.
  */
+@Slf4j
 public final class WebCrawlerTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(WebCrawlerTest.class);
 
     /**
      * Unit test to web crawler.
@@ -22,7 +22,7 @@ public final class WebCrawlerTest {
     public void testWebCrawler() {
         final WebCrawler webCrawler = new WebCrawler();
         assertNotNull(webCrawler);
-        LOG.info(webCrawler.toString());
+        log.info(webCrawler.toString());
     }
 
     /**
@@ -33,7 +33,7 @@ public final class WebCrawlerTest {
         final WebCrawler webCrawler = new WebCrawler();
         assertNotNull(webCrawler);
         webCrawler.execute();
-        LOG.info(webCrawler.toString());
+        log.info(webCrawler.toString());
     }
 
 }

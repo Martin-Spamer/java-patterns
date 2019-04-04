@@ -1,9 +1,12 @@
 
 package patterns.memento;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Originator Class.
  */
+@Slf4j
 public class Originator {
 
     /** The memento. */

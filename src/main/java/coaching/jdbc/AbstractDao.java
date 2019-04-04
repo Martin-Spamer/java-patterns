@@ -8,12 +8,15 @@ import java.sql.SQLException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Abstract Data Access object.
  *
  * Uses domain language to provide a CRUD interface. Create Read Update Delete
  * interface.
  */
+@Slf4j
 public abstract class AbstractDao extends JdbcBase implements CrudInterface, DaoInterface {
 
     /** DROP_SQL constant. */
@@ -43,7 +46,6 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
     /** DELETE_SQL constant. */
     public static final String DELETE_SQL = "DELETE FROM {TableName} WHERE ID={Key}";
 
-    /** provides logging. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
 
     /** The jdbc driver. */
@@ -185,9 +187,10 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.DaoInterface#describeTable()
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#describeTable()
+     */
     @Override
     public DaoInterface describeTable() {
         return null;

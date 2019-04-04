@@ -1,16 +1,13 @@
 
 package patterns.strategy;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Abstract Strategy Class.
  */
+@Slf4j
 public abstract class AbstractStrategy implements StrategyInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The context. */
     private Context context = null;

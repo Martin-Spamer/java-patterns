@@ -1,9 +1,12 @@
 
 package patterns.strategy;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * StrategyAlice Class.
  */
+@Slf4j
 public class StrategyAlice extends AbstractStrategy {
 
     /**

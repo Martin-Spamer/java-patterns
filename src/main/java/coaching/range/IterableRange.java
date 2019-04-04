@@ -3,9 +3,12 @@ package coaching.range;
 
 import java.util.Iterator;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * The Class IterableRange.
  */
+@Slf4j
 public class IterableRange implements Iterable<Object> {
 
     /** The start. */

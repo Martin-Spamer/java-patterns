@@ -4,16 +4,15 @@ package coaching.scripting;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The Class Equation.
  */
+@Slf4j
 public class Equation {
 
     /** The log. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The manager. */
     private final ScriptEngineManager manager = new ScriptEngineManager();

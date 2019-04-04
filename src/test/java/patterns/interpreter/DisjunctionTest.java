@@ -7,16 +7,18 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * class DisjunctionTest.
  */
+@Slf4j
 public final class DisjunctionTest {
 
     /**
      * class Mock.
      */
     public final class Mock extends AbstractExpression {
-
         /**
          * Instantiates a new mock.
          *
@@ -31,7 +33,6 @@ public final class DisjunctionTest {
      * class Pass.
      */
     public final class Pass extends AbstractExpression {
-
         /**
          * Instantiates a new pass.
          */

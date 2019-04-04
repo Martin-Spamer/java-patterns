@@ -7,12 +7,14 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * CsvRecord Class.
  */
+@Slf4j
 public class CsvRecord {
 
-    /** provides logging. */
     protected static final Logger LOG = LoggerFactory.getLogger(CsvRecord.class);
 
     /** The fields. */
@@ -23,7 +25,7 @@ public class CsvRecord {
      */
     public CsvRecord() {
         super();
-        LOG.info("CsvRecord()");
+        log.info("CsvRecord()");
         parse("");
     }
 
@@ -34,7 +36,7 @@ public class CsvRecord {
      */
     public CsvRecord(final String lineOfData) {
         super();
-        LOG.info("CsvRecord({})", lineOfData);
+        log.info("CsvRecord({})", lineOfData);
         parse(lineOfData);
     }
 
@@ -113,7 +115,7 @@ public class CsvRecord {
      */
     @Override
     public String toString() {
-        LOG.info(fields.toString());
+        log.info(fields.toString());
         return String.format("%s [fields=%s]", this.getClass().getSimpleName(), fields.toString());
     }
 

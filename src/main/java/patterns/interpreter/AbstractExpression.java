@@ -1,9 +1,12 @@
 
 package patterns.interpreter;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * An abstract Expression Class.
  */
+@Slf4j
 public abstract class AbstractExpression {
 
     /** The result. */

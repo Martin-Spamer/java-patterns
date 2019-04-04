@@ -1,9 +1,12 @@
 
 package coaching.idioms;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Example plain old java object class.
  */
+@Slf4j
 public final class PojoExample implements Cloneable {
 
     /** The string value. */

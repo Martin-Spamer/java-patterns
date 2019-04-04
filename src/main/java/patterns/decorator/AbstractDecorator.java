@@ -4,9 +4,12 @@ package patterns.decorator;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * An abstract Decorator class.
  */
+@Slf4j
 public abstract class AbstractDecorator extends AbstractComponent implements DecoratorInterface {
 
     /** The before behaviour. */

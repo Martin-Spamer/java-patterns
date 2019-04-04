@@ -16,19 +16,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An abstract JDBC base class to be extended to create a DAO.
  */
+@Slf4j
 public abstract class JdbcBase {
 
     /** EXECUTION_ERROR constant. */
     private static final String EXECUTION_ERROR = "Executing the SQL\n\t%s\nfailed with error\n\t%s";
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The query results. */
     protected ResultSet resultSet = null;
@@ -58,7 +55,7 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase query(final String query) throws SQLException {
-        this.log.info("query({})", query);
+        log.info("query({})", query);
 
         final Connection connection = ConnectionFactory.getConnection();
         final Statement statement = connection.createStatement();
@@ -76,7 +73,7 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase executeQuery(final String sql) throws SQLException {
-        this.log.info("executeQuery({})", sql);
+        log.info("executeQuery({})", sql);
 
         final Connection connection = ConnectionFactory.getConnection();
         final Statement statement = connection.createStatement();
@@ -98,13 +95,13 @@ public abstract class JdbcBase {
      * @throws SQLException the SQL exception
      */
     protected JdbcBase executePreparedStatement(final String sql) throws SQLException {
-        this.log.info("executePreparedStatement({})", sql);
+        log.info("executePreparedStatement({})", sql);
 
         final Connection connection = ConnectionFactory.getConnection();
         final PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         final boolean result = preparedStatement.execute();
-        this.log.info("Rows updated : {}", result);
+        log.info("Rows updated : {}", result);
 
         preparedStatement.close();
         connection.close();
@@ -121,9 +118,9 @@ public abstract class JdbcBase {
     private void processResultSet(final ResultSet resultSet) throws SQLException {
         final StringBuilder output = new StringBuilder();
         while (resultSet.next()) {
-            this.log.debug("resultSet = {}", resultSet);
+            log.debug("resultSet = {}", resultSet);
             final String rowAsString = processRow(resultSet);
-            this.log.info("rowAsString = {}", rowAsString);
+            log.info("rowAsString = {}", rowAsString);
             output.append(rowAsString);
         }
     }
@@ -144,11 +141,11 @@ public abstract class JdbcBase {
             final Object value = resultSet.getObject(i);
             if (value == null) {
                 final String msg = String.format("%s = null,", columnName);
-                this.log.info("{}", msg);
+                log.info("{}", msg);
                 output.append(msg);
             } else {
                 final String msg = String.format("%s = %s,", columnName, value.toString().trim());
-                this.log.info("{}", msg);
+                log.info("{}", msg);
                 output.append(msg);
             }
         }
@@ -218,7 +215,7 @@ public abstract class JdbcBase {
         try {
             this.resultSet.close();
         } catch (final SQLException e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 

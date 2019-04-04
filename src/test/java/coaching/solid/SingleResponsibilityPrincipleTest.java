@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit Test for the Single Responsibility Principle (SIP) example class.
  */
+@Slf4j
 public final class SingleResponsibilityPrincipleTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SingleResponsibilityPrincipleTest.class);
 
     /**
      * Unit Test shows multiple responsibility.
@@ -23,7 +23,7 @@ public final class SingleResponsibilityPrincipleTest {
         final SingleResponsibilityPrinciple multiple = new SingleResponsibilityPrinciple();
         assertNotNull(multiple);
         multiple.multipleResponsibility();
-        LOG.debug("multiple = {}", multiple.toString());
+        log.debug("multiple = {}", multiple.toString());
     }
 
     /**
@@ -34,6 +34,6 @@ public final class SingleResponsibilityPrincipleTest {
         final SingleResponsibilityPrinciple srp = new SingleResponsibilityPrinciple();
         assertNotNull(srp);
         srp.singleResponsibility();
-        LOG.debug("srp = {}", srp.toString());
+        log.debug("srp = {}", srp.toString());
     }
 }

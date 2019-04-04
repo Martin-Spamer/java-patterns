@@ -7,19 +7,17 @@ import java.util.Arrays;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * An abstract ThreadedApplication class.
  */
+@Slf4j
 public abstract class AbstractApplication {
-
-    /** logging provided. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** initialisation arguments. */
     protected String[] args = null;
@@ -35,7 +33,7 @@ public abstract class AbstractApplication {
      */
     public AbstractApplication() {
         super();
-        this.log.info("AbstractApplication() = {}", this);
+        log.info("AbstractApplication() = {}", this);
         initialisation(defaultFilename());
     }
 
@@ -47,7 +45,7 @@ public abstract class AbstractApplication {
     public AbstractApplication(final String[] args) {
         super();
         this.args = args;
-        this.log.info("AbstractApplication({}) = {}", args, this);
+        log.info("AbstractApplication({}) = {}", args, this);
         initialisation(defaultFilename());
     }
 
@@ -90,15 +88,15 @@ public abstract class AbstractApplication {
 
             if (this.documentElement != null) {
                 final Element commandHandlerElement = getElement("COMMAND_HANDLER");
-                this.log.info("commandHandlerElement = {}", commandHandlerElement);
+                log.info("commandHandlerElement = {}", commandHandlerElement);
                 final String commandHandlerClassName = getElementAttribute("COMMAND_HANDLER", "className");
-                this.log.info("commandHandlerClassName = {}", commandHandlerClassName);
+                log.info("commandHandlerClassName = {}", commandHandlerClassName);
             } else {
-                this.log.warn("documentElement = null");
+                log.warn("documentElement = null");
             }
             return true;
         } catch (final Exception e) {
-            this.log.error(e.getLocalizedMessage());
+            log.error(e.getLocalizedMessage());
         }
         return false;
     }
@@ -114,10 +112,10 @@ public abstract class AbstractApplication {
         final NodeList nodelist = this.documentElement.getElementsByTagName(elementName);
         if (nodelist != null) {
             if (nodelist.getLength() == 0) {
-                this.log.debug("{} is missing for {}", elementName, this.documentElement);
+                log.debug("{} is missing for {}", elementName, this.documentElement);
             } else {
                 if (nodelist.getLength() > 1) {
-                    this.log.trace("Surplus {} elements ignored", elementName);
+                    log.trace("Surplus {} elements ignored", elementName);
                 }
                 element = (Element) nodelist.item(0);
             }
@@ -143,7 +141,11 @@ public abstract class AbstractApplication {
      */
     @Override
     public String toString() {
-        return String.format("%s [args=%s, document=%s, documentElement=%s]", this.getClass().getSimpleName(), Arrays.toString(this.args), this.document, this.documentElement);
+        return String.format("%s [args=%s, document=%s, documentElement=%s]",
+            this.getClass().getSimpleName(),
+            Arrays.toString(this.args),
+            this.document,
+            this.documentElement);
     }
 
 }

@@ -4,16 +4,13 @@ package patterns.command;
 import java.util.Properties;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Abstract class for Parameters to Commands.
  */
+@Slf4j
 public abstract class AbstractCommandParameters implements ParametersInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The parameters. */
     private final Properties parameters = new Properties();

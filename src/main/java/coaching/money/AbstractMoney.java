@@ -5,16 +5,13 @@ import java.text.DecimalFormat;
 import java.util.Currency;
 import java.util.Locale;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An Abstract Money class.
  */
+@Slf4j
 public abstract class AbstractMoney implements MoneyInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The currency. */
     private Currency currency = Currency.getInstance(Locale.getDefault());

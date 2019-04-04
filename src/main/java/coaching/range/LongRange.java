@@ -1,15 +1,18 @@
 
 package coaching.range;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * The Class LongRange.
  */
+@Slf4j
 public class LongRange {
 
     /** The start of the range. */
     private final long start;
 
-    /**  The end of the range. */
+    /** The end of the range. */
     private final long end;
 
     /** The steps in the range. */

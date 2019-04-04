@@ -11,9 +11,12 @@ import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Locale;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Big Decimal Money class.
  */
+@Slf4j
 public final class BigDecimalMoney implements MoneyInterface {
 
     /** The currency. */

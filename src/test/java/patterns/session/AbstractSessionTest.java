@@ -8,23 +8,19 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import java.util.UUID;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import static org.junit.Assume.assumeNotNull;
 
-import patterns.composite.CompositeTest;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * AbstractSession class tests.
  */
+@Slf4j
 public final class AbstractSessionTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
 
     /**
      * Test Mock for AbstractSession.
@@ -105,7 +101,7 @@ public final class AbstractSessionTest {
 
         // Then
         assertNotNull(actual);
-        LOG.debug("toString = {}", actual);
+        log.debug("toString = {}", actual);
     }
 
 }

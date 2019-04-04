@@ -10,9 +10,12 @@ import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for PropertyLoader class.
  */
+@Slf4j
 public final class PropertyLoaderTest {
 
     /** CONFIGURATION_PROPERTIES constant. */
@@ -24,9 +27,6 @@ public final class PropertyLoaderTest {
     /** MISSING_PROPERTIES constant. */
     private static final String MISSING_PROPERTIES = "Properties.missing";
 
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PropertyLoaderTest.class);
-
     /**
      * Unit test to get properties.
      */
@@ -35,7 +35,7 @@ public final class PropertyLoaderTest {
         final Properties properties = PropertiesLoader.getProperties(CONFIGURATION_PROPERTIES);
         assertNotNull(properties);
         assertTrue(properties.size() > 0);
-        LOG.info(properties.toString());
+        log.info(properties.toString());
     }
 
     /**
@@ -46,7 +46,7 @@ public final class PropertyLoaderTest {
         final Properties properties = PropertiesLoader.getXmlProperties(CONFIGURATION_XML);
         assertNotNull(properties);
         assertTrue(properties.size() > 0);
-        LOG.info(properties.toString());
+        log.info(properties.toString());
     }
 
     /**

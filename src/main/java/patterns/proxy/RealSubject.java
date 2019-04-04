@@ -1,9 +1,12 @@
 
 package patterns.proxy;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * RealSubject Class.
  */
+@Slf4j
 public final class RealSubject extends AbstractSubject {
 
     /*

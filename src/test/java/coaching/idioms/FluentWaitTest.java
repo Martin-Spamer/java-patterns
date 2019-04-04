@@ -2,20 +2,18 @@
 package coaching.idioms;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Fluent Wait Test class.
  */
+@Slf4j
 public final class FluentWaitTest {
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(FluentWaitTest.class);
 
     /**
      * class PassCondition.
@@ -48,11 +46,11 @@ public final class FluentWaitTest {
      */
     @Test
     public void testFluentWaitDefault() {
-        LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
+        log.info("testFluentWaitDefault = {}", System.currentTimeMillis());
         final FluentWait wait = new FluentWait();
         final ConditionInterface<Boolean> pass = new PassCondition();
         assertTrue(wait.until(pass));
-        LOG.debug("end = {}", System.currentTimeMillis());
+        log.debug("end = {}", System.currentTimeMillis());
     }
 
     /**
@@ -60,20 +58,20 @@ public final class FluentWaitTest {
      */
     @Test
     public void testFluentWaitWithOverrides() {
-        LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
+        log.info("testFluentWaitDefault = {}", System.currentTimeMillis());
         final FluentWait wait = new FluentWait();
 
         assertEquals(wait, wait.setTimeOut(1000));
         assertEquals(1000, wait.setTimeOut());
-        LOG.debug("after interval = {}", System.currentTimeMillis());
+        log.debug("after interval = {}", System.currentTimeMillis());
 
         assertEquals(wait, wait.setInterval(100));
         assertEquals(1000, wait.setTimeOut());
-        LOG.debug("after interval = {}", System.currentTimeMillis());
+        log.debug("after interval = {}", System.currentTimeMillis());
 
         final ConditionInterface<Boolean> pass = new PassCondition();
         assertTrue(wait.until(pass));
-        LOG.debug("end = {}", System.currentTimeMillis());
+        log.debug("end = {}", System.currentTimeMillis());
     }
 
     /**
@@ -81,10 +79,10 @@ public final class FluentWaitTest {
      */
     @Test
     public void testWaitUntilConditionTrue() {
-        LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
+        log.info("testFluentWaitDefault = {}", System.currentTimeMillis());
         final FluentWait wait = new FluentWait();
         assertTrue(wait.until(new PassCondition()));
-        LOG.debug("end = {}", System.currentTimeMillis());
+        log.debug("end = {}", System.currentTimeMillis());
     }
 
     /**
@@ -92,10 +90,10 @@ public final class FluentWaitTest {
      */
     @Test
     public void testWaitUntilConditionFalse() {
-        LOG.info("testFluentWaitDefault = {}", System.currentTimeMillis());
+        log.info("testFluentWaitDefault = {}", System.currentTimeMillis());
         final FluentWait wait = new FluentWait();
         // wait.until(new Condition(false));
         assertFalse(wait.until(new FailCondition()));
-        LOG.debug("end = {}", System.currentTimeMillis());
+        log.debug("end = {}", System.currentTimeMillis());
     }
 }

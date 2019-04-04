@@ -2,7 +2,8 @@
 package coaching.idioms;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An example of using an abstract logging class.
@@ -14,16 +15,14 @@ import org.slf4j.LoggerFactory;
  *
  * logging layout formater (%F:%L) for click through in most IDEs.
  */
+@Slf4j
 public abstract class AbstractLogging {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * To log.
      */
     public void toLog() {
-        this.log.info("the.{}.toLog", this.getClass().getSimpleName());
+        log.info("the.{}.toLog", this.getClass().getSimpleName());
     }
 
     /**

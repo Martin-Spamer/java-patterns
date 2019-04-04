@@ -1,9 +1,12 @@
 
 package patterns.builder;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Product Class.
  */
+@Slf4j
 public class Product {
 
     /** The part one. */

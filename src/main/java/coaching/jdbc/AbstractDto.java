@@ -4,19 +4,16 @@ package coaching.jdbc;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static org.junit.Assert.assertEquals;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An abstract data transfer object class.
  * Usage <code>Address extends AbstractDto</code>
  */
+@Slf4j
 public abstract class AbstractDto {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The fields. */
     protected Map<String, String> fields = new HashMap<>();

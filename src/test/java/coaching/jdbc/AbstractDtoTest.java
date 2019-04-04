@@ -2,21 +2,19 @@
 package coaching.jdbc;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test the AbstractDto class.
  */
+@Slf4j
 public final class AbstractDtoTest {
-
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractDtoTest.class);
 
     /**
      * A Mock data transfer objects.
@@ -44,7 +42,7 @@ public final class AbstractDtoTest {
         assertEquals("Alice", dto.getField("name"));
         assertEquals("sender", dto.getField("role"));
 
-        LOG.info("dto : {}", dto);
+        log.info("dto : {}", dto);
     }
 
 }

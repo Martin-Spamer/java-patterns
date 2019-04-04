@@ -1,9 +1,12 @@
 
 package coaching.jdbc;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * A Data Access Object for a Sqlite3 database.
  */
+@Slf4j
 public final class SqLiteDao extends AbstractDao {
 
     /** The classname of the JDBC driver to use. */

@@ -1,22 +1,19 @@
 
 package patterns.facade;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * class SubSystem.
  */
+@Slf4j
 public class SubSystem {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * Operation.
      */
     public void operation() {
-        this.log.info("{}.operation", toString());
+        log.info("{}.operation", toString());
     }
 
     /*
