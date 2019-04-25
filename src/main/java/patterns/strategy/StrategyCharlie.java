@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 public class StrategyCharlie extends AbstractStrategy {
 
     /**
-     * Instantiates a new strategy charlie.
+     * Instantiates a new charlie strategy.
      *
      * @param context the context
      */

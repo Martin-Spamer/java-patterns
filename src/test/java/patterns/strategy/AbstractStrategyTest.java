@@ -4,8 +4,6 @@ package patterns.strategy;
 import java.util.Properties;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -33,13 +31,13 @@ public final class AbstractStrategyTest {
 
         final StrategyInterface strategyBob = new StrategyBob(context);
         assertNotNull(strategyBob);
-        strategyAlice.operation();
-        log.info(strategyAlice.toString());
+        strategyBob.operation();
+        log.info(strategyBob.toString());
 
         final StrategyInterface strategyCharlie = new StrategyCharlie(context);
         assertNotNull(strategyCharlie);
-        strategyAlice.operation();
-        log.info(strategyAlice.toString());
+        strategyCharlie.operation();
+        log.info(strategyCharlie.toString());
     }
 
     /**
@@ -58,12 +56,12 @@ public final class AbstractStrategyTest {
 
         final StrategyInterface strategyBob = new StrategyBob(context);
         assertNotNull(strategyBob);
-        strategyAlice.operation();
-        log.info(strategyAlice.toString());
+        strategyBob.operation();
+        log.info(strategyBob.toString());
 
         final StrategyInterface strategyCharlie = new StrategyCharlie(context);
         assertNotNull(strategyCharlie);
-        strategyAlice.operation();
-        log.info(strategyAlice.toString());
+        strategyCharlie.operation();
+        log.info(strategyCharlie.toString());
     }
 }

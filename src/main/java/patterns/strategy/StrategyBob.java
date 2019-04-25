@@ -10,12 +10,17 @@ import lombok.extern.slf4j.Slf4j;
 public class StrategyBob extends AbstractStrategy {
 
     /**
-     * Instantiates a new strategy bob.
+     * Instantiates a new bob strategy.
      *
      * @param context the context
      */
     public StrategyBob(final Context context) {
         super(context);
+    }
+
+    @Override
+    public void operation() {
+        log.info("{}.operation()", this.getClass().getSimpleName());
     }
 
 }
