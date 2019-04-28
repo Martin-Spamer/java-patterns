@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  * Abstract Strategy Class.
  */
 @Slf4j
-public abstract class AbstractStrategy implements StrategyInterface {
+public abstract class AbstractStrategy implements Strategy {
 
     /** The context. */
     private Context context = null;

@@ -4,7 +4,7 @@ package patterns.strategy;
 /**
  * Strategy Interface.
  */
-public interface StrategyInterface {
+public interface Strategy {
 
     /**
      * Operation.
