@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * StrategyAlice Class.
  */
+
+/** log 			constant. */
 @Slf4j
 public class StrategyAlice extends AbstractStrategy {
 
@@ -18,6 +20,9 @@ public class StrategyAlice extends AbstractStrategy {
         super(context);
     }
 
+    /* (non-Javadoc)
+    * @see patterns.strategy.AbstractStrategy#operation()
+    */
     @Override
     public void operation() {
         log.info("{}.operation()", this.getClass().getSimpleName());

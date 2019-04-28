@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Abstract Strategy Class.
  */
+
+/** log 			constant. */
 @Slf4j
 public abstract class AbstractStrategy implements Strategy {
 

@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Context Class.
  */
+
+/** log 			constant. */
 @Slf4j
 public final class Context extends AbstractContext {
 
