@@ -2,8 +2,6 @@
 package coaching.collections;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -51,6 +49,28 @@ public final class TableTest {
         final TableRow tableRow = new TableRow();
         assertNotNull(tableRow);
         table.addRow(tableRow);
+        log.debug("{}", table);
+    }
+
+    @Test
+    public void testAddTableRowString() {
+        final Table table = new Table();
+        assertNotNull(table);
+        log.debug("{}", table);
+        final TableRow tableRow = new TableRow("one,two");
+        assertNotNull(tableRow);
+        table.addRow(tableRow);
+        log.debug("{}", table);
+    }
+
+    @Test
+    public void testAddTableRowArray() {
+        final Table table = new Table();
+        assertNotNull(table);
+        log.debug("{}", table);
+        final TableRow tableRow = new TableRow();
+        assertNotNull(tableRow);
+        table.addRow(new String[] { "one", "two" });
         log.debug("{}", table);
     }
 

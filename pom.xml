@@ -207,7 +207,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.0.1</version>
 		        <configuration>
-					<stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
+					<stylesheetfile>${basedir}/src/main/resource/javadoc/stylesheet.css</stylesheetfile>
 					<reportOutputDirectory>${basedir}/target/site/javadoc</reportOutputDirectory>
 					<keywords>java coaching</keywords>
 					<show>public</show>

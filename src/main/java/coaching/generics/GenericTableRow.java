@@ -33,7 +33,7 @@ public class GenericTableRow<T> {
      */
     public GenericTableRow(final String values) {
         super();
-        // addCells(values);
+        addCells(values.split(","));
     }
 
     /**
@@ -44,18 +44,15 @@ public class GenericTableRow<T> {
     @SafeVarargs
     public GenericTableRow(final T... values) {
         super();
-        // addCells(values);
+        addCells(values);
     }
 
-    /**
-     * Adds the cells.
-     *
-     * @param values the string
-     * @return the table row
-     */
     public GenericTableRow<T> addCells(final String values) {
-        final String[] tuple = values.split(",");
-        for (final String value : tuple) {
+        return addCells(values.split(","));
+    }
+
+    public GenericTableRow<T> addCells(final String[] values) {
+        for (final String value : values) {
             final GenericTableCell<T> cell = new GenericTableCell<T>().setValue((T) value);
             this.cols.add(cell);
         }
@@ -68,10 +65,16 @@ public class GenericTableRow<T> {
      * @param values the strings
      * @return the table row
      */
-    public GenericTableRow<?> addCells(final T... values) {
+    public GenericTableRow<T> addCells(final T... values) {
         for (final T value : values) {
-            addCells(value);
+            addCell(value);
         }
+        return this;
+    }
+
+    public GenericTableRow<T> addCell(final T value) {
+        final GenericTableCell<T> cell = new GenericTableCell<T>().setValue(value);
+        this.cols.add(cell);
         return this;
     }
 

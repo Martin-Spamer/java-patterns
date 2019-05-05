@@ -2,18 +2,12 @@
 package coaching.csv;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
-import lombok.extern.slf4j.Slf4j;
-
-/**
- * Unit tests for CsvRecord class.
- */
-@Slf4j
 public final class CsvRecordTest {
 
     /**
@@ -21,10 +15,16 @@ public final class CsvRecordTest {
      */
     @Test
     public void testCsvRecord() {
-        log.info("testCsvRecord");
-        final CsvRecord record = new CsvRecord();
-        assertNotNull(record);
-        log.info(record.toString());
+        final CsvRecord csvRecord = new CsvRecord();
+        assertNotNull(csvRecord);
+        assertTrue(csvRecord.isEmpty());
+        assertEquals(0, csvRecord.columnCount());
+        csvRecord.add("One");
+        csvRecord.add("Two");
+        assertEquals(2, csvRecord.columnCount());
+        assertEquals("One", csvRecord.getColumn(0));
+        assertEquals("Two", csvRecord.getColumn(1));
+        assertEquals("CsvRecord [fields=[One, Two]]", csvRecord.toString());
     }
 
     /**
@@ -32,10 +32,13 @@ public final class CsvRecordTest {
      */
     @Test
     public void testCsvRecordString() {
-        log.info("testCsvRecordString");
-        final String record = new CsvRecord("One,Two").toString();
-        assertEquals("CsvRecord [fields=[One, Two]]", record);
-        log.info(record.toString());
+        CsvRecord csvRecord = new CsvRecord("One, Two");
+        assertNotNull(csvRecord);
+        assertFalse(csvRecord.isEmpty());
+        assertEquals(2, csvRecord.columnCount());
+        assertEquals("One", csvRecord.getColumn(0));
+        assertEquals("Two", csvRecord.getColumn(1));
+        assertEquals("CsvRecord [fields=[One, Two]]", csvRecord.toString());
     }
 
 }
