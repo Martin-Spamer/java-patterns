@@ -61,7 +61,7 @@ public final class ClassFactory {
      *
      * @param key the key
      * @return the object
-     *         The not found exception
+     * @throws ClassNotFoundException the class not found exception
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
@@ -76,7 +76,7 @@ public final class ClassFactory {
      * Factory method to create a new instance of ClassFactory.
      *
      * @return new instance of ClassFactory
-     *         The not found exception
+     * @throws ClassNotFoundException the class not found exception
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
@@ -89,7 +89,7 @@ public final class ClassFactory {
      *
      * @param key the key
      * @return new instance of ClassFactory
-     *         The not found exception
+     * @throws ClassNotFoundException the class not found exception
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */

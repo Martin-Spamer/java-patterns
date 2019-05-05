@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
  * Created on 30 June 2004 - 13:07
  **/
 
-
+/** The Constant log. */
 @Slf4j
 public class ThreadedApplication {
 
@@ -133,7 +133,7 @@ public class ThreadedApplication {
     /**
      * Creates the process.
      *
- * The name
+     * @param className the class name
      * @return the abstract process
      */
     protected AbstractProcess createProcess(final String className) {

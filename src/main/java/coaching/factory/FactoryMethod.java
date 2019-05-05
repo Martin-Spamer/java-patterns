@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  * Factory Method Example.
  */
 
-
+/** The Constant log. */
 @Slf4j
 public final class FactoryMethod {
 
@@ -36,7 +36,9 @@ public final class FactoryMethod {
     /**
      * Factory method to create a new instance of FactoryMethod.
      *
- * The name
+     * The name
+     *
+     * @param className the class name
      * @return new instance of FactoryMethod
      */
     public static String create(final String className) {
