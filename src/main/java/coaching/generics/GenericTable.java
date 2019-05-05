@@ -6,18 +6,12 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * The GenericTable class is composed of GenericTableRow classes.
  *
  * @param <T> the generic type
  */
 public class GenericTable<T> {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The table name. */
     private String tableName;
@@ -26,7 +20,7 @@ public class GenericTable<T> {
     private final List<String> colNames = new ArrayList<String>();
 
     /** The rows of the table. */
-    private final List<GenericTableRow> rows = new ArrayList<GenericTableRow>();
+    private final List<GenericTableRow<T>> rows = new ArrayList<GenericTableRow<T>>();
 
     /**
      * Instantiates a new table.
@@ -51,7 +45,7 @@ public class GenericTable<T> {
      * @param tableName the tableName to set
      * @return the table
      */
-    public GenericTable setName(final String tableName) {
+    public GenericTable<T> setName(final String tableName) {
         this.tableName = tableName;
         return this;
     }
@@ -71,7 +65,7 @@ public class GenericTable<T> {
      * @param colName the col name
      * @return the table
      */
-    public GenericTable addColumnName(final String colName) {
+    public GenericTable<T> addColumnName(final String colName) {
         this.colNames.add(colName);
         return this;
     }
@@ -82,10 +76,18 @@ public class GenericTable<T> {
      * @param colNames the col names
      * @return the table
      */
-
-    public GenericTable addColumnNames(final String... colNames) {
+    public GenericTable<T> addColumnNames(final String... colNames) {
         this.colNames.addAll(Arrays.asList(colNames));
         return this;
+    }
+
+    /**
+     * Gets the column names.
+     *
+     * @return the column names
+     */
+    public String getColumnNames() {
+        return this.colNames.toString();
     }
 
     /**
@@ -94,9 +96,14 @@ public class GenericTable<T> {
      * @param colData the col data
      * @return the table
      */
-    public GenericTable addColumn(final String... colData) {
-        for (int i = 0; i < colData.length; i++) {
-            this.rows.get(i).addCells(colData[i]);
+    public GenericTable<T> addColumn(final T... colData) {
+        if (colData != null) {
+            for (int i = 0; i < colData.length; i++) {
+                if (this.rows.size() > i) {
+                    GenericTableRow<T> row = this.rows.get(i);
+                    row.addCell(colData[i]);
+                }
+            }
         }
         return this;
     }
@@ -107,19 +114,8 @@ public class GenericTable<T> {
      * @param values the values
      * @return the table
      */
-    public GenericTable addRow(final String values) {
-        addRow(new GenericTableRow(values));
-        return this;
-    }
-
-    /**
-     * Adds a row.
-     *
-     * @param values the values
-     * @return the table
-     */
-    public GenericTable addRow(final String... values) {
-        addRow(new GenericTableRow(values));
+    public GenericTable<T> addRow(final T values) {
+        addRow(new GenericTableRow<T>(values));
         return this;
     }
 
@@ -130,7 +126,7 @@ public class GenericTable<T> {
      * @return the boolean
      * @see java.util.List#add(java.lang.Object)
      */
-    public GenericTable addRow(final GenericTableRow e) {
+    public GenericTable<T> addRow(final GenericTableRow<T> e) {
         this.rows.add(e);
         return this;
     }
@@ -142,7 +138,7 @@ public class GenericTable<T> {
      * @return the table row
      * @see java.util.List#get(int)
      */
-    public GenericTableRow getRow(final int index) {
+    public GenericTableRow<T> getRow(final int index) {
         return this.rows.get(index);
     }
 
@@ -184,7 +180,7 @@ public class GenericTable<T> {
     protected String tableBody() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<GenericTableRow> tableRow = this.rows.iterator();
+        final Iterator<GenericTableRow<T>> tableRow = this.rows.iterator();
         if (tableRow.hasNext()) {
             stringBuffer.append(tableRow.next());
             while (tableRow.hasNext()) {
@@ -192,7 +188,6 @@ public class GenericTable<T> {
                 stringBuffer.append(tableRow.next().toRowString());
             }
         }
-
         stringBuffer.append('\n');
         return stringBuffer.toString();
     }
@@ -203,7 +198,11 @@ public class GenericTable<T> {
      */
     @Override
     public String toString() {
-        return String.format("%s [tableName=%s, colNames=%s, rows=%s]", this.getClass().getSimpleName(), this.tableName, this.colNames, this.rows);
+        return String.format("%s [tableName=%s, colNames=%s, rows=%s]",
+            this.getClass().getSimpleName(),
+            this.tableName,
+            this.colNames,
+            this.rows);
     }
 
 }

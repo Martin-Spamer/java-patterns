@@ -15,7 +15,6 @@ public final class TripleTest {
      * The Space Class.
      */
     public final class Space extends Triple<Double, Double, Double> {
-
         /**
          * Instantiates a new space.
          */

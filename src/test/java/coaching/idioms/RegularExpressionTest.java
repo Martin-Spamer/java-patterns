@@ -4,19 +4,19 @@ package coaching.idioms;
 import java.util.regex.Pattern;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test showing Regular Expression class.
  */
-public final class RegularExpressionTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RegularExpressionTest.class);
+
+@Slf4j
+public final class RegularExpressionTest {
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^XYZ$";
@@ -89,9 +89,9 @@ public final class RegularExpressionTest {
         final RegularExpression regularExpression = new RegularExpression();
         assertNotNull(regularExpression);
         final String original = "\"Some Stuff\"";
-        LOG.info("{}", original);
+        log.info("{}", original);
         final String quoted = regularExpression.getQuoted(original);
-        LOG.info("{}", quoted);
+        log.info("{}", quoted);
         assertTrue(quoted.equals("Some Stuff"));
     }
 

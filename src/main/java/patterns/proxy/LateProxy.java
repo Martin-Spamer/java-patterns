@@ -15,10 +15,10 @@ public final class LateProxy extends AbstractSubject {
      */
     @Override
     public void request() {
-        if (realSubject == null) {
-            realSubject = new RealSubject();
+        if (this.realSubject == null) {
+            this.realSubject = new RealSubject();
         }
-        realSubject.request();
+        this.realSubject.request();
     }
 
 }

@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 public class InvokerExample implements InvokerInterface {
 
-    /** provides logging. */
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** static instance of the example command. */
@@ -34,33 +34,33 @@ public class InvokerExample implements InvokerInterface {
     @Override
     public ResultInterface execute(final String actionName) {
         ResultInterface result = null;
-        log.info("execute({})", actionName);
+        this.log.info("execute({})", actionName);
         switch (actionName) {
         case "ExampleCommand":
-            log.trace("case ExampleCommand");
-            result = exampleCommand.execute(new Parameters());
+            this.log.trace("case ExampleCommand");
+            result = this.exampleCommand.execute(new Parameters());
             break;
         case "CommandSequence":
-            log.trace("case CommandSequence");
-            result = commandSequence.execute(new Parameters());
+            this.log.trace("case CommandSequence");
+            result = this.commandSequence.execute(new Parameters());
             break;
         case "CompoundCommand":
-            log.trace("case CompoundCommand");
-            result = compoundCommand.execute(new Parameters());
+            this.log.trace("case CompoundCommand");
+            result = this.compoundCommand.execute(new Parameters());
             break;
         case "ConditionalCommand":
-            log.trace("case ConditionalCommand");
-            result = conditionalCommand.execute(new Parameters());
+            this.log.trace("case ConditionalCommand");
+            result = this.conditionalCommand.execute(new Parameters());
             break;
         case "SequenceCommand":
-            log.trace("case SequenceCommand");
-            result = sequenceCommand.execute(new Parameters());
+            this.log.trace("case SequenceCommand");
+            result = this.sequenceCommand.execute(new Parameters());
             break;
         default:
-            log.trace("unknown command");
+            this.log.trace("unknown command");
             break;
         }
-        log.info("result = {}", result);
+        this.log.info("result = {}", result);
         return result;
     }
 

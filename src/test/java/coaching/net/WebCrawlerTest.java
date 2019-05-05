@@ -2,18 +2,18 @@
 package coaching.net;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit tests for the WebCrawler class.
  */
-public final class WebCrawlerTest {
 
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(WebCrawlerTest.class);
+
+@Slf4j
+public final class WebCrawlerTest {
 
     /**
      * Unit test to web crawler.
@@ -22,7 +22,7 @@ public final class WebCrawlerTest {
     public void testWebCrawler() {
         final WebCrawler webCrawler = new WebCrawler();
         assertNotNull(webCrawler);
-        LOG.info(webCrawler.toString());
+        log.info(webCrawler.toString());
     }
 
     /**
@@ -33,7 +33,7 @@ public final class WebCrawlerTest {
         final WebCrawler webCrawler = new WebCrawler();
         assertNotNull(webCrawler);
         webCrawler.execute();
-        LOG.info(webCrawler.toString());
+        log.info(webCrawler.toString());
     }
 
 }

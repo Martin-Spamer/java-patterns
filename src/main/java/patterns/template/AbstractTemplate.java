@@ -1,16 +1,10 @@
 
 package patterns.template;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Abstract TemplateClass class.
  */
 public abstract class AbstractTemplate implements TemplateInterface {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * TemplateClass method provides common entry.

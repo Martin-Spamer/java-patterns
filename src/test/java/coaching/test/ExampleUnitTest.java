@@ -3,24 +3,24 @@ package coaching.test;
 
 import org.junit.AssumptionViolatedException;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test for the ExampleUnitTest class.
  */
+
+
+@Slf4j
 public final class ExampleUnitTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ExampleUnitTest.class);
-
     /**
-     * Unit test class for ClassUnder.
+     * An example Class Under test.
      */
     public final class ClassUnderTest {
 
@@ -29,7 +29,7 @@ public final class ExampleUnitTest {
          */
         public ClassUnderTest() {
             super();
-            LOG.debug("ClassUnderTest() : {}", this);
+            log.debug("ClassUnderTest() : {}", this);
         }
 
         /**
@@ -39,7 +39,7 @@ public final class ExampleUnitTest {
          */
         public ClassUnderTest(final Object object) {
             super();
-            LOG.debug("ClassUnderTest({object}) : {}", object, this);
+            log.debug("ClassUnderTest({object}) : {}", object, this);
             doSomething(object);
         }
 

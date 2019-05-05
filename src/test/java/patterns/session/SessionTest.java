@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertThat;
 
 /**
- * The Class SessionTest.
+ * The SessionTest.
  */
 public final class SessionTest {
 

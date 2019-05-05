@@ -15,10 +15,14 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 import coaching.thread.ThreadTemplate;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A class to crawl a web site.
  */
+
+
+@Slf4j
 public final class WebCrawler extends ThreadTemplate {
 
     /** BUFFER_SIZE constant. */
@@ -51,7 +55,7 @@ public final class WebCrawler extends ThreadTemplate {
                 crawlSite(url);
             }
         } catch (final Exception e) {
-            this.log.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -93,13 +97,13 @@ public final class WebCrawler extends ThreadTemplate {
 
                 robotsTxtInputStream.close();
             } catch (final IOException ioException) {
-                this.log.error("{}", ioException);
+                log.error("{}", ioException);
             }
 
             safeCrawlSite(baseUrl, robotTxtContent.toString());
 
         } catch (final MalformedURLException malformedURLException) {
-            this.log.error("{}", malformedURLException);
+            log.error("{}", malformedURLException);
         }
     }
 
@@ -176,7 +180,7 @@ public final class WebCrawler extends ThreadTemplate {
                 }
             }
         } catch (final Exception e) {
-            this.log.error("slowCrawlUrl", e);
+            log.error("slowCrawlUrl", e);
         }
     }
 

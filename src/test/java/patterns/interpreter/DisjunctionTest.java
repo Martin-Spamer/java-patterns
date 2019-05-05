@@ -16,7 +16,6 @@ public final class DisjunctionTest {
      * class Mock.
      */
     public final class Mock extends AbstractExpression {
-
         /**
          * Instantiates a new mock.
          *
@@ -31,7 +30,6 @@ public final class DisjunctionTest {
      * class Pass.
      */
     public final class Pass extends AbstractExpression {
-
         /**
          * Instantiates a new pass.
          */

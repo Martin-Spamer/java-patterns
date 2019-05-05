@@ -6,7 +6,7 @@ import java.util.List;
 import org.w3c.dom.Document;
 
 /**
- * The Class CsvToXml.
+ * The CsvToXml.
  */
 public final class CsvToXml {
 
@@ -30,8 +30,8 @@ public final class CsvToXml {
      * @param tableName the table name
      */
     public void process(final String resourceName, final String tableName) {
-        csv.read(resourceName);
-        final List<CsvRecord> rowList = csv.getRowList();
+        this.csv.read(resourceName);
+        final List<CsvRecord> rowList = this.csv.getRowList();
     }
 
 }

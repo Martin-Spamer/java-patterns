@@ -14,7 +14,7 @@ public abstract class AbstractPart {
      */
     public AbstractPart() {
         super();
-        partName = this.getClass().getSimpleName();
+        this.partName = this.getClass().getSimpleName();
     }
 
     /**
@@ -33,7 +33,7 @@ public abstract class AbstractPart {
      */
     @Override
     public String toString() {
-        return String.format("%s [partName=%s]", this.getClass().getSimpleName(), partName);
+        return String.format("%s [partName=%s]", this.getClass().getSimpleName(), this.partName);
     }
 
 }

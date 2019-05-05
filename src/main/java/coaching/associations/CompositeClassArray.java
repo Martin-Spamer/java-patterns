@@ -3,18 +3,17 @@ package coaching.associations;
 
 import java.util.Arrays;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Using a basic Java array to implement a UML Composite.
  *
  * The Lifetime of parts is constraint bound by lifetime of parent.
  **/
-public class CompositeClassArray {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CompositeClassArray.class);
+
+@Slf4j
+public class CompositeClassArray {
 
     /** The Composite implemented using a class array. */
     private final AbstractPerson[] composite = { new Alice(), new Bob(), new Charlie(), new Dan() };
@@ -24,7 +23,7 @@ public class CompositeClassArray {
      */
     public CompositeClassArray() {
         super();
-        LOG.info("CompositeClassArray() {}", this);
+        log.info("CompositeClassArray() {}", this);
     }
 
     /*
@@ -33,7 +32,7 @@ public class CompositeClassArray {
      */
     @Override
     public String toString() {
-        return String.format("%s [composite=%s]", this.getClass().getSimpleName(), Arrays.toString(composite));
+        return String.format("%s [composite=%s]", this.getClass().getSimpleName(), Arrays.toString(this.composite));
     }
 
 }

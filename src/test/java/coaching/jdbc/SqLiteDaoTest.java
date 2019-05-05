@@ -3,31 +3,31 @@ package coaching.jdbc;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit tests for PointbaseDao class.
  */
 @Ignore("Requires PointBase DB availability work-in-progress low-priority")
-public final class SqLiteDaoTest {
 
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SqLiteDaoTest.class);
+
+@Slf4j
+public final class SqLiteDaoTest {
 
     /**
      * Unit test to sq lite dao.
      *
-     * @throws ClassNotFoundException the class not found exception
+ * The not found exception
      */
     @Test
     public void testSqLiteDao() throws ClassNotFoundException {
         final DaoInterface dao = new SqLiteDao();
         assertNotNull(dao);
-        LOG.info("dao : {} ", dao.toString());
+        log.info("dao : {} ", dao.toString());
     }
 
     /**

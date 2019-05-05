@@ -2,18 +2,21 @@
 package coaching.range;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
 public class LongRangeTest {
 
-    /** provides logging */
-    private static final Logger log = LoggerFactory.getLogger(LongRangeTest.class);
+    /**
+     *  provides logging.
+     */
 
     @Test
     public void testLongRange() {
@@ -23,6 +26,9 @@ public class LongRangeTest {
         log.info("{}", new LongRange(Long.MAX_VALUE, Long.MIN_VALUE));
     }
 
+    /**
+     * test LongRange object.
+     */
     @Test
     public void testRangeOf() {
         assertNotNull(LongRange.of(0L, 0L));
@@ -37,6 +43,9 @@ public class LongRangeTest {
         assertEquals(expected.toString(), actual.toString());
     }
 
+    /**
+     * test LongRange object.
+     */
     @Test
     public void testLongRangeIncludes() {
         LongRange range1to3 = new LongRange(1, 3);
@@ -47,6 +56,9 @@ public class LongRangeTest {
         // assertFalse(range1to3.includes(4));
     }
 
+    /**
+     * test LongRange object.
+     */
     @Test
     public void testRangeIncludes() {
         assertTrue(LongRange.of(0, 0).includes(0));
@@ -57,6 +69,9 @@ public class LongRangeTest {
         // assertFalse(Range.of(0, 0).includes(1));
     }
 
+    /**
+     * test LongRange object.
+     */
     @Test
     public void testLongRangeExcludes() {
         LongRange range1to3 = new LongRange(1, 3);
@@ -67,6 +82,9 @@ public class LongRangeTest {
         assertFalse(range1to3.excludes(3));
     }
 
+    /**
+     * test LongRange object.
+     */
     @Test
     public void testRangeExcludes() {
         assertTrue(Range.of(0, 0).excludes(1));

@@ -14,22 +14,22 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import static org.junit.Assert.fail;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * XML resource loader class.
  */
+
+
+@Slf4j
 public final class XmlResourceLoader {
 
     /** SUFFIX constant. */
     private static final String DEFAULT_SUFFIX = ".xml";
-
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlResourceLoader.class);
 
     /**
      * Instantiates a new xml resource loader.
@@ -62,7 +62,7 @@ public final class XmlResourceLoader {
             return builder.parse(stream);
         } catch (final Exception exception) {
             final String message = String.format("Failed to parse resource %s", resourceName);
-            LOG.error(message, exception);
+            log.error(message, exception);
             throw new ResourceNotLoadedException(message, exception);
         }
     }
@@ -100,7 +100,7 @@ public final class XmlResourceLoader {
             return stringWriter.toString();
         } catch (IllegalArgumentException | TransformerFactoryConfigurationError | TransformerException e) {
             final String message = String.format("Failed to parse XML Document. %s", e.getLocalizedMessage());
-            LOG.error(message, e);
+            log.error(message, e);
         }
         return null;
     }

@@ -6,16 +6,15 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The GenericTable class is composed of GenericTableRow classes.
  */
-public class Table {
 
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+@Slf4j
+public class Table {
 
     /** The table name. */
     private String tableName;
@@ -96,14 +95,14 @@ public class Table {
      */
     public Table addColumn(final String... colData) {
         for (String value : colData) {
-            this.log.info("{}", value);
+            log.info("{}", value);
         }
 
         int size = this.rows.size();
         for (int i = 0; i < size; i++) {
             TableRow row = this.rows.get(i);
             row.addCell(colData[i]);
-            this.log.info("{}", row);
+            log.info("{}", row);
         }
         return this;
     }

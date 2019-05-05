@@ -2,18 +2,21 @@
 package coaching.range;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
 public class IntegerRangeTest {
 
-    /** provides logging */
-    private static final Logger log = LoggerFactory.getLogger(IntegerRangeTest.class);
+    /**
+     *  provides logging.
+     */
 
     @Test
     public void testIntegerRange() {
@@ -23,6 +26,9 @@ public class IntegerRangeTest {
         log.info("{}", new IntegerRange(Integer.MIN_VALUE, Integer.MIN_VALUE));
     }
 
+    /**
+     * test IntegerRange object.
+     */
     @Test
     public void testRangeOf() {
         assertNotNull(IntegerRange.of(0, 0));
@@ -37,6 +43,9 @@ public class IntegerRangeTest {
         assertEquals(expected.toString(), actual.toString());
     }
 
+    /**
+     * test IntegerRange object.
+     */
     @Test
     public void testIntegerRangeIncludes() {
         IntegerRange range1to3 = new IntegerRange(1, 3);
@@ -47,6 +56,9 @@ public class IntegerRangeTest {
         assertFalse(range1to3.includes(4));
     }
 
+    /**
+     * test IntegerRange object.
+     */
     @Test
     public void testRangeIncludes() {
         assertTrue(IntegerRange.of(0, 0).includes(0));
@@ -57,6 +69,9 @@ public class IntegerRangeTest {
         assertFalse(Range.of(0, 0).includes(1));
     }
 
+    /**
+     * test IntegerRange object.
+     */
     @Test
     public void testIntegerRangeExcludes() {
         IntegerRange range1to3 = new IntegerRange(1, 3);
@@ -67,6 +82,9 @@ public class IntegerRangeTest {
         assertFalse(range1to3.excludes(3));
     }
 
+    /**
+     * test IntegerRange object.
+     */
     @Test
     public void testRangeExcludes() {
         assertTrue(Range.of(0, 0).excludes(1));

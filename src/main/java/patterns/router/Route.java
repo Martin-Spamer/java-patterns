@@ -1,16 +1,17 @@
 
 package patterns.router;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Route a Message, from the input channel to the output channel.
  */
-public final class Route implements InputChannelInterface, OutputChannelInterface {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(Route.class);
+
+
+
+@Slf4j
+public final class Route implements InputChannelInterface, OutputChannelInterface {
 
     /** The output channel. */
     private OutputChannelInterface outputChannel = null;
@@ -37,8 +38,8 @@ public final class Route implements InputChannelInterface, OutputChannelInterfac
      */
     @Override
     public void sendMessage(final Message message) {
-        LOG.info("sendMessage{}", message);
-        outputChannel.sendMessage(message);
+        log.info("sendMessage{}", message);
+        this.outputChannel.sendMessage(message);
     }
 
     /*
@@ -47,8 +48,8 @@ public final class Route implements InputChannelInterface, OutputChannelInterfac
      */
     @Override
     public Message receiveMessage() {
-        LOG.info("receiveMessage{}");
-        return inputChannel.receiveMessage();
+        log.info("receiveMessage{}");
+        return this.inputChannel.receiveMessage();
     }
 
 }

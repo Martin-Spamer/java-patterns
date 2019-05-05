@@ -2,19 +2,19 @@
 package coaching.pool;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for the BlockingPool class.
  */
-public final class BlockingPoolTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BlockingPoolTest.class);
+
+@Slf4j
+public final class BlockingPoolTest {
 
     /**
      * TestResourcePool Class.
@@ -29,7 +29,7 @@ public final class BlockingPoolTest {
     public void testBlockingPool() {
         final TestResourcePool resourcePool = new TestResourcePool();
         assertNotNull(resourcePool);
-        LOG.info(resourcePool.toString());
+        log.info(resourcePool.toString());
     }
 
     /**

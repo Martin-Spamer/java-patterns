@@ -6,16 +6,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * A GenericTableRow class composed of GenericTableCell classes.
  */
 public class TableColumn {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** the columns in the row. */
     private final List<TableCell> cols = new ArrayList<>();
@@ -55,7 +49,7 @@ public class TableColumn {
     public void addCells(final String values) {
         final String[] tuple = values.split(",");
         for (final String value : tuple) {
-            final TableCell cell = new TableCell(value);
+            final TableCell cell = new TableCell(value.trim());
             this.cols.add(cell);
         }
     }
@@ -67,7 +61,7 @@ public class TableColumn {
      */
     public void addCells(final String... values) {
         for (final String value : values) {
-            addCell(value);
+            addCell(value.trim());
         }
     }
 

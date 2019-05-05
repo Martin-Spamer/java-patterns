@@ -6,18 +6,12 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * A GenericTableRow class composed of GenericTableCell classes.
  *
  * @param <T> the generic type
  */
 public class GenericTableRow<T> {
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** the columns in the row. */
     private final List<GenericTableCell<T>> cols = new ArrayList<>();
@@ -36,7 +30,7 @@ public class GenericTableRow<T> {
      */
     public GenericTableRow(final String values) {
         super();
-        // addCells(values);
+        addCells(values.split(","));
     }
 
     /**
@@ -47,18 +41,27 @@ public class GenericTableRow<T> {
     @SafeVarargs
     public GenericTableRow(final T... values) {
         super();
-        // addCells(values);
+        addCells(values);
     }
 
     /**
      * Adds the cells.
      *
-     * @param values the string
-     * @return the table row
+     * @param values the values
+     * @return the generic table row
      */
     public GenericTableRow<T> addCells(final String values) {
-        final String[] tuple = values.split(",");
-        for (final String value : tuple) {
+        return addCells(values.split(","));
+    }
+
+    /**
+     * Adds the cells.
+     *
+     * @param values the values
+     * @return the generic table row
+     */
+    public GenericTableRow<T> addCells(final String[] values) {
+        for (final String value : values) {
             final GenericTableCell<T> cell = new GenericTableCell<T>().setValue((T) value);
             this.cols.add(cell);
         }
@@ -71,10 +74,22 @@ public class GenericTableRow<T> {
      * @param values the strings
      * @return the table row
      */
-    public GenericTableRow<?> addCells(final T... values) {
+    public GenericTableRow<T> addCells(final T... values) {
         for (final T value : values) {
-            addCells(value);
+            addCell(value);
         }
+        return this;
+    }
+
+    /**
+     * Adds the cell.
+     *
+     * @param value the value
+     * @return the generic table row
+     */
+    public GenericTableRow<T> addCell(final T value) {
+        final GenericTableCell<T> cell = new GenericTableCell<T>().setValue(value);
+        this.cols.add(cell);
         return this;
     }
 

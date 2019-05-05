@@ -2,21 +2,21 @@
 package coaching.pool;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for the AbstractResourcePoolTest class.
  */
-public final class AbstractResourcePoolTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractResourcePoolTest.class);
+
+@Slf4j
+public final class AbstractResourcePoolTest {
 
     /**
      * TestResourcePool Class.
@@ -29,7 +29,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testAbstractResourcePool() {
-        LOG.debug("testAbstractResourcePool");
+        log.debug("testAbstractResourcePool");
         assertNotNull(new MockResourcePool());
     }
 
@@ -38,7 +38,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testTypicalUsage() {
-        LOG.debug("testTypicalUsage");
+        log.debug("testTypicalUsage");
 
         // Given a resource pool
         final MockResourcePool testResourcePool = new MockResourcePool();
@@ -68,7 +68,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testAdd() {
-        LOG.debug("testAdd");
+        log.debug("testAdd");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
@@ -83,7 +83,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testRemove() {
-        LOG.debug("testRemove");
+        log.debug("testRemove");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertEquals(0, testResourcePool.countFree());
         assertEquals(0, testResourcePool.countUsed());
@@ -98,7 +98,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testOffer() {
-        LOG.debug("testOffer");
+        log.debug("testOffer");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
@@ -114,7 +114,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testRemoveWhenNull() {
-        LOG.debug("testRemoveWhenNull");
+        log.debug("testRemoveWhenNull");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
@@ -129,7 +129,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testGetWhenEmpty() {
-        LOG.debug("testGetWhenEmpty");
+        log.debug("testGetWhenEmpty");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
@@ -145,7 +145,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testGet() {
-        LOG.debug("testGet");
+        log.debug("testGet");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());
@@ -164,7 +164,7 @@ public final class AbstractResourcePoolTest {
      */
     @Test
     public void testRelease() {
-        LOG.debug("testRelease");
+        log.debug("testRelease");
         final MockResourcePool testResourcePool = new MockResourcePool();
         assertNotNull(testResourcePool);
         assertEquals(0, testResourcePool.countFree());

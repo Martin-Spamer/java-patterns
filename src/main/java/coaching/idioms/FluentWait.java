@@ -1,16 +1,15 @@
 
 package coaching.idioms;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A Fluent Wait Class, will test a condition for one second.
  */
-public class FluentWait {
 
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+@Slf4j
+public class FluentWait {
 
     /** The DEFAULT_INTERVAL is Constant 100 milliseconds. */
     private static final int DEFAULT_INTERVAL = 100;

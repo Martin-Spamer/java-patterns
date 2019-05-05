@@ -19,9 +19,14 @@ package coaching.jdbc;
 
 import java.sql.SQLException;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * A dynamic data access object.
  */
+
+
+@Slf4j
 public final class DynamicDao extends AbstractDao {
 
     /**
@@ -42,33 +47,37 @@ public final class DynamicDao extends AbstractDao {
         }
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.AbstractDao#createRow()
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.AbstractDao#createRow()
+     */
     @Override
     public CrudInterface createRow() {
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.AbstractDao#readRow()
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.AbstractDao#readRow()
+     */
     @Override
     public CrudInterface readRow() {
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.AbstractDao#updateRow()
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.AbstractDao#updateRow()
+     */
     @Override
     public CrudInterface updateRow() {
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.AbstractDao#deleteRow()
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.AbstractDao#deleteRow()
+     */
     @Override
     public CrudInterface deleteRow() {
         return this;

@@ -1,16 +1,11 @@
 
 package patterns.strategy;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Abstract Strategy Class.
  */
-public abstract class AbstractStrategy implements StrategyInterface {
 
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+public abstract class AbstractStrategy implements Strategy {
 
     /** The context. */
     private Context context = null;
@@ -31,7 +26,8 @@ public abstract class AbstractStrategy implements StrategyInterface {
      */
     @Override
     public void operation() {
-        log.info("{}.operation() should be overridden.", this.getClass().getSimpleName());
+        String message = String.format("%s.operation() should be overridden", this.getClass().getSimpleName());
+        throw new UnsupportedOperationException(message);
     }
 
     /*
@@ -40,7 +36,7 @@ public abstract class AbstractStrategy implements StrategyInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [context=%s]", this.getClass().getSimpleName(), context);
+        return String.format("%s [context=%s]", this.getClass().getSimpleName(), this.context);
     }
 
 }

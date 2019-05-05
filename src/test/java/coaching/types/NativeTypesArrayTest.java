@@ -2,27 +2,26 @@
 package coaching.types;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
 import coaching.arrays.NativeTypesArray;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit Tests for Primitives Arrays.
  */
-public final class NativeTypesArrayTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(NativeTypesArrayTest.class);
+
+@Slf4j
+public final class NativeTypesArrayTest {
 
     /**
      * Unit Test to display array.
      */
     @Test
     public void testDisplayMatrix() {
-        LOG.info("testDisplayMatrix");
+        log.info("testDisplayMatrix");
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
         primitivesArray.displayMatrix();
@@ -33,7 +32,7 @@ public final class NativeTypesArrayTest {
      */
     @Test
     public void testDisplayEmptyMatrix() {
-        LOG.info("testDisplayEmptyMatrix");
+        log.info("testDisplayEmptyMatrix");
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
         primitivesArray.displayEmptyMatrix();
@@ -44,7 +43,7 @@ public final class NativeTypesArrayTest {
      */
     @Test
     public void testIterateArray() {
-        LOG.info("testIterateArray");
+        log.info("testIterateArray");
         final NativeTypesArray primitivesArray = new NativeTypesArray();
         assertNotNull(primitivesArray);
         primitivesArray.iterateArray();

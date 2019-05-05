@@ -1,16 +1,17 @@
 
 package patterns.hopp;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Half-Object Part-Protocol class.
  */
-class LocalHopp implements HoppInterface {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(LocalHopp.class);
+
+
+
+@Slf4j
+public class LocalHopp implements HoppInterface {
 
     /** The remote object proxy. */
     public HoppInterface remoteObjectProxy = new RemoteObjectProxy();
@@ -21,8 +22,8 @@ class LocalHopp implements HoppInterface {
      */
     @Override
     public void localMethod() {
-        LOG.info("{}.localMethod()", this.getClass().getSimpleName());
-        remoteObjectProxy.localMethod();
+        log.info("{}.localMethod()", this.getClass().getSimpleName());
+        this.remoteObjectProxy.localMethod();
     }
 
     /*
@@ -31,7 +32,7 @@ class LocalHopp implements HoppInterface {
      */
     @Override
     public void remoteMethod() {
-        LOG.info("{}.remoteMethod()", this.getClass().getSimpleName());
-        remoteObjectProxy.remoteMethod();
+        log.info("{}.remoteMethod()", this.getClass().getSimpleName());
+        this.remoteObjectProxy.remoteMethod();
     }
 }

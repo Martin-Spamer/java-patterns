@@ -90,7 +90,6 @@ public class InterfaceSegregationPrinciple {
      * Example Teacher class.
      */
     public class Teacher extends Person {
-
         /*
          * (non-Javadoc)
          * @see coaching.solid.InterfaceSegregationPrinciple.Abstraction#work()

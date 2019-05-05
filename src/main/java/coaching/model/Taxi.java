@@ -40,14 +40,14 @@ public class Taxi extends Car {
      * @return the passenger
      */
     public Passenger getPassenger() {
-        return passenger;
+        return this.passenger;
     }
 
     /**
      * Clear passenger.
      */
     public void clearPassenger() {
-        passenger = null;
+        this.passenger = null;
     }
 
     /*
@@ -56,6 +56,6 @@ public class Taxi extends Car {
      */
     @Override
     public String toString() {
-        return String.format("%s [%s[passenger=%s]]", this.getClass().getSimpleName(), super.toString(), passenger);
+        return String.format("%s [%s[passenger=%s]]", this.getClass().getSimpleName(), super.toString(), this.passenger);
     }
 }

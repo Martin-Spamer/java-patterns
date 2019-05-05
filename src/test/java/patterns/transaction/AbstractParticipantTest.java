@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
 public final class AbstractParticipantTest {
 
     /**
-     * The Class TestMockParticipant.
+     * The TestMockParticipant.
      */
     public final class TestMockParticipant extends AbstractParticipant {
 

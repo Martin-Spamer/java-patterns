@@ -2,18 +2,18 @@
 package patterns.bridge;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * BridgeTest class.
  */
-public final class BridgeTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BridgeTest.class);
+
+@Slf4j
+public final class BridgeTest {
 
     /**
      * Unit Test to operation.
@@ -22,7 +22,7 @@ public final class BridgeTest {
     public void testOperation() {
         final RefinedAbstraction instance = new RefinedAbstraction(new Implementor());
         assertNotNull(instance);
-        LOG.info(instance.toString());
+        log.info(instance.toString());
     }
 
 }

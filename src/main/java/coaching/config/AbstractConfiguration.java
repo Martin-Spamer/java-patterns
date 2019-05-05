@@ -3,19 +3,17 @@ package coaching.config;
 
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import coaching.resources.PropertiesLoader;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An abstract Configuration class. Loads the Configuration from a Properties
  * file.
  */
-public abstract class AbstractConfiguration implements ConfigInterface {
 
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+@Slf4j
+public abstract class AbstractConfiguration implements ConfigInterface {
 
     /** The properties. */
     protected Properties properties;
@@ -105,7 +103,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
         if (value == null) {
             return this.properties.getProperty(key);
         } else {
-            this.log.warn("Using system property value {} for key {}", value, key);
+            log.warn("Using system property value {} for key {}", value, key);
         }
         return value;
     }
@@ -123,7 +121,7 @@ public abstract class AbstractConfiguration implements ConfigInterface {
         if (value == null) {
             return this.properties.getProperty(key, defaultValue);
         } else {
-            this.log.warn("Using system property value {} for key {}", value, key);
+            log.warn("Using system property value {} for key {}", value, key);
         }
         return value;
     }

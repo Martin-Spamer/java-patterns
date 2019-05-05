@@ -8,6 +8,7 @@ package coaching.application;
  * under specific circumstances, at certain times or in response to specific
  * events.
  */
+
 public final class ExampleScheduler extends AbstractScheduler {
 
     /**
@@ -21,7 +22,8 @@ public final class ExampleScheduler extends AbstractScheduler {
 
     /**
      * The main entry method for the application.
-     * Create a new instance of the ThreadedApplication with its default constructor,
+     * Create a new instance of the ThreadedApplication with its default
+     * constructor,
      * using any command line parameters from the args,
      * and calling the execute method.
      *

@@ -4,13 +4,13 @@ package coaching.range;
 import java.util.Date;
 
 /**
- * The Class DateRange.
+ * The DateRange.
  */
 public class DateRange {
 
     /** The start. */
     private final Date start;
-    
+
     /** The stop. */
     private final Date stop;
 

@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-import patterns.template.TemplateClass;
-
 /**
  * Unit tests for the ConcreteClass example.
  */

@@ -3,18 +3,18 @@ package coaching.jdbc;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test class for EntityMetaData.
  */
-public class EntityMetaDataTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(EntityMetaDataTest.class);
+
+@Slf4j
+public class EntityMetaDataTest {
 
     /**
      * Unit test to entity meta data.
@@ -25,7 +25,7 @@ public class EntityMetaDataTest {
         final EntityMetaData entityMetaData = new EntityMetaData();
         assertNotNull(entityMetaData);
         entityMetaData.process();
-        LOG.info("\tentityMetaData : {}", entityMetaData);
+        log.info("\tentityMetaData : {}", entityMetaData);
     }
 
 }

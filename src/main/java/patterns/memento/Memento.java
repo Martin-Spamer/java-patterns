@@ -29,23 +29,12 @@ public class Memento {
     /**
      * state.
      *
-     * new state
-     *
-     * @param state the new state
-     */
-    public void setState(final Object state) {
-        this.state = state;
-    }
-
-    /**
-     * state.
-     *
      * state
      *
      * @return the state
      */
     public Object getState() {
-        return state;
+        return this.state;
     }
 
     /*
@@ -54,7 +43,7 @@ public class Memento {
      */
     @Override
     public String toString() {
-        return String.format("%s [state=%s]", this.getClass().getSimpleName(), state);
+        return String.format("%s [state=%s]", this.getClass().getSimpleName(), this.state);
     }
 
 }

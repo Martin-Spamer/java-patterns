@@ -1,16 +1,15 @@
 
 package coaching.pool;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * WorkerThread Class.
  */
-public class WorkerThread implements Runnable {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(WorkerThread.class);
+
+@Slf4j
+public class WorkerThread implements Runnable {
 
     /** The Constant INTERVAL. */
     private static final int INTERVAL = 5000;
@@ -24,7 +23,7 @@ public class WorkerThread implements Runnable {
      * @param commandName the command name as String object.
      */
     public WorkerThread(final String commandName) {
-        command = commandName;
+        this.command = commandName;
     }
 
     /**
@@ -36,7 +35,7 @@ public class WorkerThread implements Runnable {
             Thread.sleep(WorkerThread.INTERVAL);
         } catch (final InterruptedException e) {
             Thread.currentThread().interrupt();
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -47,9 +46,9 @@ public class WorkerThread implements Runnable {
     @Override
     public void run() {
         final String name = Thread.currentThread().getName();
-        LOG.info("{}:{}", name, command);
+        log.info("{}:{}", name, this.command);
         processCommand();
-        LOG.info("{}:exit", name);
+        log.info("{}:exit", name);
     }
 
 }

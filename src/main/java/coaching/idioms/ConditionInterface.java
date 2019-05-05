@@ -14,7 +14,7 @@ public interface ConditionInterface<T> {
      * Checks if is false.
      *
      * @return true, if is
-     * 			false
+     *         false
      */
     boolean isFalse();
 
@@ -22,7 +22,7 @@ public interface ConditionInterface<T> {
      * Checks if is true.
      *
      * @return true, if is
-     * 			true
+     *         true
      */
     boolean isTrue();
 

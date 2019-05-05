@@ -1,16 +1,15 @@
 
 package coaching.thread;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * DaemonThread class.
  */
-public final class DaemonThread extends Thread {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(DaemonThread.class);
+
+@Slf4j
+public final class DaemonThread extends Thread {
 
     /** Instantiate the single instance of this class. */
     private static final DaemonThread INSTANCE = new DaemonThread();
@@ -30,7 +29,7 @@ public final class DaemonThread extends Thread {
     private DaemonThread() {
         super();
         setDaemon(true);
-        LOG.info("{} loaded...", this.getClass().getSimpleName());
+        log.info("{} loaded...", this.getClass().getSimpleName());
     }
 
     /*
@@ -39,16 +38,16 @@ public final class DaemonThread extends Thread {
      */
     @Override
     public void run() {
-        LOG.info("{} running... ", this.getClass().getSimpleName());
-        LOG.info("sleep 500 at {} ", System.currentTimeMillis());
+        log.info("{} running... ", this.getClass().getSimpleName());
+        log.info("sleep 500 at {} ", System.currentTimeMillis());
         try {
             yield();
             Thread.sleep(500);
         } catch (final InterruptedException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
             currentThread().interrupt();
         }
-        LOG.info("until {} ", System.currentTimeMillis());
+        log.info("until {} ", System.currentTimeMillis());
 
     }
 
@@ -58,6 +57,13 @@ public final class DaemonThread extends Thread {
      */
     @Override
     public String toString() {
-        return String.format("%s [id=%s, name=%s, state=%s, priority=%s, isAlive=%s, isDaemon=%s]", getClass(), getId(), getName(), getState(), getPriority(), isAlive(), isDaemon());
+        return String.format("%s [id=%s, name=%s, state=%s, priority=%s, isAlive=%s, isDaemon=%s]",
+            getClass(),
+            getId(),
+            getName(),
+            getState(),
+            getPriority(),
+            isAlive(),
+            isDaemon());
     }
 }

@@ -2,19 +2,19 @@
 package coaching.associations;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test for AggregateClassArray class.
  */
-public final class AggregateClassArrayTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AggregateClassArrayTest.class);
+
+@Slf4j
+public final class AggregateClassArrayTest {
 
     /**
      * Unit Test to execute.
@@ -23,7 +23,7 @@ public final class AggregateClassArrayTest {
     public void testExecute() {
         final AggregateClassArray aggregateClassArray = new AggregateClassArray();
         assertNotNull(aggregateClassArray);
-        LOG.info("Empty : {}", aggregateClassArray.toString());
+        log.info("Empty : {}", aggregateClassArray.toString());
 
         final Alice alice = new Alice();
         assertEquals(alice, aggregateClassArray.setAggregate(0, alice).getAggregate(0));
@@ -41,7 +41,7 @@ public final class AggregateClassArrayTest {
 
         aggregateClassArray.execute(3).execute(2).execute(1).execute(0);
 
-        LOG.info("Empty : {}", aggregateClassArray.toString());
+        log.info("Empty : {}", aggregateClassArray.toString());
     }
 
 }

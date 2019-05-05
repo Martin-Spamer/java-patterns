@@ -2,7 +2,7 @@
 package patterns.adapter;
 
 /**
- * The Class Adapter.
+ * The Adapter.
  */
 public class Adapter implements TargetInterface {
 

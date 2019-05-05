@@ -6,10 +6,14 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 import coaching.jdbc.XmlToJdbc;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test for the XmlToJdbc class.
  */
+
+
+@Slf4j
 public final class XmlToJdbcTest {
 
     /** The classname of the JDBC driver to use. */
@@ -33,7 +37,7 @@ public final class XmlToJdbcTest {
     /**
      * Unit Test for the XmlToJdbc class.
      *
-     * @throws ClassNotFoundException the class not found exception
+ * The not found exception
      */
     @Test
     public void testXmlToJdbc() throws ClassNotFoundException {

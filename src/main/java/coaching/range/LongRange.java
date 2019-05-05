@@ -2,14 +2,14 @@
 package coaching.range;
 
 /**
- * The Class LongRange.
+ * The LongRange.
  */
 public class LongRange {
 
     /** The start of the range. */
     private final long start;
 
-    /**  The end of the range. */
+    /** The end of the range. */
     private final long end;
 
     /** The steps in the range. */

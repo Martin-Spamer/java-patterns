@@ -4,18 +4,18 @@ package coaching.jdbc;
 import java.util.List;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test class for DynamicDao.
  */
-public class DynamicDaoTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(DynamicDaoTest.class);
+
+@Slf4j
+public class DynamicDaoTest {
 
     /**
      * Unit test to DynamicDAO, data access object.
@@ -26,12 +26,12 @@ public class DynamicDaoTest {
     public void testDynamicDao() throws Exception {
         final DynamicDao dao = new DynamicDao();
         assertNotNull(dao);
-        LOG.info("dao : {}", dao);
+        log.info("dao : {}", dao);
         dao.process();
         List<String> columnLabels = dao.columnLabels();
-        LOG.info("columnLabels : {}", columnLabels);
+        log.info("columnLabels : {}", columnLabels);
         final String bodyToString = dao.bodyToString();
-        LOG.info("bodyToString : {}", bodyToString);
+        log.info("bodyToString : {}", bodyToString);
     }
 
 }

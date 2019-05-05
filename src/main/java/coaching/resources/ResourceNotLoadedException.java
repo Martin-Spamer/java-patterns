@@ -2,7 +2,7 @@
 package coaching.resources;
 
 /**
- * The Class ResourceNotLoadedException.
+ * The ResourceNotLoadedException.
  */
 public class ResourceNotLoadedException extends AssertionError {
 

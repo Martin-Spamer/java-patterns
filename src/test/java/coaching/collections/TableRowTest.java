@@ -2,19 +2,19 @@
 package coaching.collections;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test class for GenericTableRow.
  */
-public class TableRowTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(TableRowTest.class);
+
+@Slf4j
+public class TableRowTest {
 
     /**
      * Unit test to table row.
@@ -23,7 +23,7 @@ public class TableRowTest {
     public void testTableRow() {
         final TableRow tableRow = new TableRow();
         assertNotNull(tableRow);
-        LOG.info("{}", tableRow);
+        log.info("{}", tableRow.toString());
     }
 
     /**
@@ -31,9 +31,10 @@ public class TableRowTest {
      */
     @Test
     public void testTableRowString() {
-        final TableRow tableRow = new TableRow("value");
+        final TableRow tableRow = new TableRow("one");
         assertNotNull(tableRow);
-        LOG.info("{}", tableRow);
+        tableRow.addCell("two");
+        log.info("{}", tableRow.toString());
     }
 
     /**
@@ -45,7 +46,21 @@ public class TableRowTest {
         assertNotNull(tableRow);
         tableRow.addCells("three,four");
         assertEquals(4, tableRow.length());
-        LOG.info("{}", tableRow);
+        log.info("{}", tableRow.toRowString());
+    }
+
+    /**
+     * test TableRow object.
+     */
+    @Test
+    public void testTableRowArray() {
+        String[] data = { "one", "two" };
+        final TableRow tableRow = new TableRow(data);
+        assertNotNull(tableRow);
+        String[] moreData = { "three", "four" };
+        tableRow.addCells(moreData);
+        assertEquals(4, tableRow.length());
+        log.info("{}", tableRow.toRowString());
     }
 
 }

@@ -1,16 +1,15 @@
 
 package coaching.factory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Factory Method Example.
  */
-public final class FactoryMethod {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(FactoryMethod.class);
+/** The Constant log. */
+@Slf4j
+public final class FactoryMethod {
 
     /**
      * private constructor prevent wild instantiation.
@@ -29,13 +28,15 @@ public final class FactoryMethod {
         try {
             return (String) Class.forName("java.lang.String").newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
 
     /**
      * Factory method to create a new instance of FactoryMethod.
+     *
+     * The name
      *
      * @param className the class name
      * @return new instance of FactoryMethod
@@ -44,7 +45,7 @@ public final class FactoryMethod {
         try {
             return (String) Class.forName(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }

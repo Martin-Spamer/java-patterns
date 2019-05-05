@@ -4,19 +4,19 @@ package patterns.memento;
 import java.util.UUID;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * The MementoTest class.
  */
-public final class MementoTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(MementoTest.class);
+
+@Slf4j
+public final class MementoTest {
 
     /**
      * Unit Test to memento typical usage.
@@ -27,7 +27,7 @@ public final class MementoTest {
         final Memento memento = new Memento(state);
         assertNotNull(memento);
         assertEquals(state, memento.getState());
-        LOG.info(memento.toString());
+        log.info(memento.toString());
     }
 
     /**
@@ -37,7 +37,7 @@ public final class MementoTest {
     public void testMemento() {
         final Memento memento = new Memento();
         assertNotNull(memento);
-        LOG.info(memento.toString());
+        log.info(memento.toString());
     }
 
     /**
@@ -47,7 +47,7 @@ public final class MementoTest {
     public void testMementoNull() {
         final Memento memento = new Memento(null);
         assertNotNull(memento);
-        LOG.info(memento.toString());
+        log.info(memento.toString());
     }
 
 }

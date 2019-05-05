@@ -6,24 +6,27 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 import coaching.thread.ThreadTemplate.ApplicationException;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test class for ThreadTemplate.
  */
+
+
+@Slf4j
 public class ThreadTemplateTest {
 
     /**
-     * The Class TestThread.
+ * The TestThread.
      */
     public class TestThread extends ThreadTemplate {
-
         /*
          * (non-Javadoc)
          * @see coaching.thread.ThreadTemplate#execute()
          */
         @Override
         protected void execute() throws ApplicationException {
-            this.log.info("execute");
+            log.info("execute");
         }
     }
 

@@ -1,30 +1,23 @@
 
 package coaching.csv;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * CsvRecord Class.
  */
 public class CsvRecord {
 
-    /** provides logging. */
-    protected static final Logger LOG = LoggerFactory.getLogger(CsvRecord.class);
-
     /** The fields. */
-    private List<String> fields;
+    private List<String> fields = new ArrayList<String>();
 
     /**
      * Instantiates a new CSV record.
      */
     public CsvRecord() {
         super();
-        LOG.info("CsvRecord()");
-        parse("");
     }
 
     /**
@@ -34,36 +27,7 @@ public class CsvRecord {
      */
     public CsvRecord(final String lineOfData) {
         super();
-        LOG.info("CsvRecord({})", lineOfData);
         parse(lineOfData);
-    }
-
-    /**
-     * Column count.
-     *
-     * @return the number of field columns as int.
-     */
-    public int columnCount() {
-        return fields.size();
-    }
-
-    /**
-     * column.
-     *
-     * @param index the index.
-     * @return the column.
-     */
-    public String getColumn(final int index) {
-        return fields.get(index);
-    }
-
-    /**
-     * Checks if is empty.
-     *
-     * @return true, if record is empty.
-     */
-    public boolean isEmpty() {
-        return fields.isEmpty();
     }
 
     /**
@@ -72,18 +36,29 @@ public class CsvRecord {
      * @param lineOfData the line of data
      */
     private void parse(final String lineOfData) {
-        fields = Arrays.asList(lineOfData.split(","));
+        this.fields = Arrays.asList(lineOfData.split(", "));
     }
 
     /**
-     * Removes the field value by index.
+     * Adds the.
+     *
+     * @param e the e
+     * @return true, if successful
+     * @see java.util.List#add(java.lang.Object)
+     */
+    public boolean add(final String e) {
+        return this.fields.add(e);
+    }
+
+    /**
+     * Adds the.
      *
      * @param index the index
-     * @return the CSV record
+     * @param element the element
+     * @see java.util.List#add(int, java.lang.Object)
      */
-    public CsvRecord remove(final int index) {
-        fields.remove(index);
-        return this;
+    public void add(final int index, final String element) {
+        this.fields.add(index, element);
     }
 
     /**
@@ -94,7 +69,46 @@ public class CsvRecord {
      * @return the CSV record
      */
     public CsvRecord set(final int index, final String field) {
-        fields.set(index, field);
+        this.fields.set(index, field);
+        return this;
+    }
+
+    /**
+     * Column count.
+     *
+     * @return the number of field columns as int.
+     */
+    public int columnCount() {
+        return this.fields.size();
+    }
+
+    /**
+     * column.
+     *
+     * @param index the index.
+     * @return the column.
+     */
+    public String getColumn(final int index) {
+        return this.fields.get(index);
+    }
+
+    /**
+     * Checks if is empty.
+     *
+     * @return true, if record is empty.
+     */
+    public boolean isEmpty() {
+        return this.fields.isEmpty();
+    }
+
+    /**
+     * Removes the field value by index.
+     *
+     * @param index the index
+     * @return the CSV record
+     */
+    public CsvRecord remove(final int index) {
+        this.fields.remove(index);
         return this;
     }
 
@@ -103,8 +117,18 @@ public class CsvRecord {
      *
      * @return the list
      */
-    public List<String> fields() {
-        return fields;
+    public List<String> getFields() {
+        return this.fields;
+    }
+
+    /**
+     * To array.
+     *
+     * @return the object[]
+     * @see java.util.List#toArray()
+     */
+    public Object[] toArray() {
+        return this.fields.toArray();
     }
 
     /*
@@ -113,8 +137,7 @@ public class CsvRecord {
      */
     @Override
     public String toString() {
-        LOG.info(fields.toString());
-        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), fields.toString());
+        return String.format("%s [fields=%s]", this.getClass().getSimpleName(), this.fields.toString());
     }
 
 }

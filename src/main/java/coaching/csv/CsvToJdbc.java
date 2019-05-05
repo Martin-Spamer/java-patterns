@@ -28,9 +28,9 @@ public final class CsvToJdbc {
      * @param tableName the table name
      */
     public void transfer(final String filename, final String tableName) {
-        csvFile.read(filename);
-        csvFile.rows();
-        dao.setTableName(tableName);
+        this.csvFile.read(filename);
+        this.csvFile.rows();
+        this.dao.setTableName(tableName);
     }
 
 }

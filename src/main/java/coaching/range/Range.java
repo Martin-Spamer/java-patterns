@@ -9,7 +9,7 @@ public class Range {
     /** The start of the range. */
     private final int start;
 
-    /**  The end of the range. */
+    /** The end of the range. */
     private final int end;
 
     /** The steps in the range. */

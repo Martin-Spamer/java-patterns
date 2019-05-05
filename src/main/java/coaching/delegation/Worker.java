@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Worker implements ProcessInterface {
 
-    /** provides logging. */
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*
@@ -18,7 +18,7 @@ public class Worker implements ProcessInterface {
      */
     @Override
     public Worker doProcess() {
-        log.info("do work");
+        this.log.info("do work");
         return this;
     }
 

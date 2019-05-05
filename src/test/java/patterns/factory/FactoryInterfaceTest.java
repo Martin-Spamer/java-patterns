@@ -2,25 +2,25 @@
 package patterns.factory;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * FactoryInterfaceTest class.
  */
-public final class FactoryInterfaceTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(FactoryInterfaceTest.class);
+
+@Slf4j
+public final class FactoryInterfaceTest {
 
     /**
      * Unit Test to factory one.
      */
     @Test
     public void testFactoryOne() {
-        LOG.info("testFactoryOne");
+        log.info("testFactoryOne");
         final ConcreteFactoryOne factory = new ConcreteFactoryOne();
         assertNotNull(factory);
         final AbstractProductAlpha productA = factory.createProductA();
@@ -34,7 +34,7 @@ public final class FactoryInterfaceTest {
      */
     @Test
     public void testFactoryTwo() {
-        LOG.info("testFactoryOne");
+        log.info("testFactoryOne");
         final ConcreteFactoryTwo factory = new ConcreteFactoryTwo();
         assertNotNull(factory);
         final AbstractProductAlpha productA = factory.createProductA();

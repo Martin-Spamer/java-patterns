@@ -5,18 +5,18 @@
 package coaching.model;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit tests for the Associations class.
  */
-public final class AssociationsTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(AssociationsTest.class);
+
+@Slf4j
+public final class AssociationsTest {
 
     /**
      * Unit Test for Car example.
@@ -25,10 +25,10 @@ public final class AssociationsTest {
      */
     @Test
     public void testExampleComposition() {
-        LOG.info("testExampleComposition");
+        log.info("testExampleComposition");
         final VehicleInterface car = new Car();
         assertNotNull(car);
-        LOG.info("car = {}", car);
+        log.info("car = {}", car);
     }
 
     /**
@@ -39,7 +39,7 @@ public final class AssociationsTest {
     @Test
     public void testExampleAggregation() {
         // Given
-        LOG.info("testExampleAggregation");
+        log.info("testExampleAggregation");
         final Car car = new Car();
         assertNotNull(car);
 
@@ -47,7 +47,7 @@ public final class AssociationsTest {
         final Driver driver = new Driver("Alice");
         assertNotNull(driver);
         car.setDriver(driver);
-        LOG.info("car = {}", car);
+        log.info("car = {}", car);
     }
 
     /**
@@ -56,7 +56,7 @@ public final class AssociationsTest {
     @Test
     public void testExampleTruck() {
         // Given
-        LOG.info("testExampleTruck");
+        log.info("testExampleTruck");
         final Truck truck = new Truck();
         assertNotNull(truck);
 
@@ -65,7 +65,7 @@ public final class AssociationsTest {
         assertNotNull(driver);
 
         truck.setDriver(driver);
-        LOG.info("truck = {}", truck);
+        log.info("truck = {}", truck);
     }
 
     /**
@@ -74,7 +74,7 @@ public final class AssociationsTest {
     @Test
     public void testExampleTaxi() {
         // Given
-        LOG.info("testExampleTaxi");
+        log.info("testExampleTaxi");
         final Taxi taxi = new Taxi();
         assertNotNull(taxi);
 
@@ -86,9 +86,9 @@ public final class AssociationsTest {
         final Passenger passenger = new Passenger("Bob");
         assertNotNull(passenger);
         taxi.setPassenger(passenger);
-        LOG.info("taxi = {}", taxi);
+        log.info("taxi = {}", taxi);
         taxi.clearPassenger();
-        LOG.info("taxi = {}", taxi);
+        log.info("taxi = {}", taxi);
     }
 
     /**
@@ -97,7 +97,7 @@ public final class AssociationsTest {
     @Test
     public void testExampleMotorCycleRider() {
         // Given
-        LOG.info("testExampleMotorCycleRider");
+        log.info("testExampleMotorCycleRider");
         final MotorCycle motorCycle = new MotorCycle();
         assertNotNull(motorCycle);
 
@@ -105,7 +105,7 @@ public final class AssociationsTest {
         final Rider rider = new Rider("Charlie");
         assertNotNull(rider);
         motorCycle.setRider(rider);
-        LOG.info("motorCycle = {}", motorCycle);
+        log.info("motorCycle = {}", motorCycle);
     }
 
 }

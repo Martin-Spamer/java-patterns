@@ -2,21 +2,20 @@
 package coaching.csv;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import coaching.csv.CsvFile.FileNotLoadedException;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit tests CSVFile.
  */
-public final class CsvFileTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CsvFileTest.class);
+
+@Slf4j
+public final class CsvFileTest {
 
     /**
      * Unit Test to csv file.
@@ -25,11 +24,11 @@ public final class CsvFileTest {
      */
     @Test
     public void testCsvFile() throws FileNotLoadedException {
-        LOG.info("testCsvFile()");
+        log.info("testCsvFile()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);
         assertEquals(4, csvFile.rowCount());
-        LOG.info(csvFile.toString());
+        log.info(csvFile.toString());
     }
 
     /**
@@ -39,11 +38,11 @@ public final class CsvFileTest {
      */
     @Test
     public void testCsvFileString() throws FileNotLoadedException {
-        LOG.info("testCsvFileString()");
+        log.info("testCsvFileString()");
         final CsvFile csvFile = new CsvFile("data.csv");
         assertNotNull(csvFile);
         assertEquals(4, csvFile.rowCount());
-        LOG.info(csvFile.toString());
+        log.info(csvFile.toString());
     }
 
     /**
@@ -53,12 +52,12 @@ public final class CsvFileTest {
      */
     @Test
     public void testCsvFileHeader() throws FileNotLoadedException {
-        LOG.info("testCsvFileHeader()");
+        log.info("testCsvFileHeader()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);
-        LOG.info(csvFile.toString());
+        log.info(csvFile.toString());
         assertNotNull(csvFile.getHeaderLine());
-        LOG.info(csvFile.toString());
+        log.info(csvFile.toString());
     }
 
     /**
@@ -68,13 +67,13 @@ public final class CsvFileTest {
      */
     @Test
     public void testCsvFileRecords() throws FileNotLoadedException {
-        LOG.info("testCsvFileRecords()");
+        log.info("testCsvFileRecords()");
         final CsvFile csvFile = new CsvFile();
         assertNotNull(csvFile);
         for (int index = 0; index < csvFile.rowCount(); index++) {
             final CsvRecord record = csvFile.getRecord(index);
             assertNotNull(record);
-            LOG.info(record.toString());
+            log.info(record.toString());
         }
     }
 }

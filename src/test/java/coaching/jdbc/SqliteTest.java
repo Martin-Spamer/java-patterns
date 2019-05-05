@@ -7,16 +7,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit tests for Sqlite.
  */
-public final class SqliteTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SqliteTest.class);
+
+@Slf4j
+public final class SqliteTest {
 
     /**
      * Unit test to Sqlite.
@@ -93,7 +93,7 @@ public final class SqliteTest {
     private void selectRecords(final Statement statement) throws SQLException {
         final ResultSet resultSet = statement.executeQuery("SELECT * from customer");
         while (resultSet.next()) {
-            LOG.info("{}) {} {}", resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("data"));
+            log.info("{}) {} {}", resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("data"));
         }
     }
 

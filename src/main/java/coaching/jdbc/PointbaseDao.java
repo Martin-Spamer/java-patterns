@@ -12,7 +12,7 @@ public class PointbaseDao extends AbstractDao {
     /** DEFAULT JDBC_URL. */
     private final static String JDBC_URL = "jdbc:pointbase://localhost:9092/sample";
 
-    /**  USERNAME. */
+    /** USERNAME. */
     private final static String USERNAME = "PBPUBLIC";
 
     /** PASSWORD. */

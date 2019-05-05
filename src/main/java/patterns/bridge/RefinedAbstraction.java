@@ -4,6 +4,7 @@ package patterns.bridge;
 /**
  * RefinedAbstraction Class.
  */
+
 public class RefinedAbstraction extends Abstraction {
 
     /**

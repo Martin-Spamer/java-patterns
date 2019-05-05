@@ -5,17 +5,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Simple Bag class.
  */
 @SuppressWarnings("serial")
-public class SimpleBag extends ArrayList<String> implements BagInterface {
 
-    /** Provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+@Slf4j
+public class SimpleBag extends ArrayList<String> implements BagInterface {
 
     /** The random. */
     private final Random random = new Random();
@@ -28,7 +27,7 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     public SimpleBag() {
         super();
-        this.log.info("SimpleBag()");
+        log.info("SimpleBag()");
         fill(this.initialState);
     }
 
@@ -41,7 +40,7 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     public SimpleBag(final String... values) {
         super();
-        this.log.info("SimpleBag({})", Arrays.toString(values));
+        log.info("SimpleBag({})", Arrays.toString(values));
         fill(values == null ? new String[0] : values);
     }
 
@@ -64,7 +63,7 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public String pick() {
-        this.log.debug("{}.choose()", this.getClass().getSimpleName());
+        log.debug("{}.choose()", this.getClass().getSimpleName());
         final int size = size();
         if (size > 0) {
             final int nextInt = this.random.nextInt(size);
@@ -80,7 +79,7 @@ public class SimpleBag extends ArrayList<String> implements BagInterface {
      */
     @Override
     public BagInterface reset() {
-        this.log.debug("{}.reset()", this.getClass().getSimpleName());
+        log.debug("{}.reset()", this.getClass().getSimpleName());
         return fill(this.initialState);
     }
 

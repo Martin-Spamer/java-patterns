@@ -7,7 +7,7 @@
  * <p>
  * Single Responsibility principle. A class should have the responsibility for a
  * single
- * requirement, it should be possible to describe the class with a single word
+ * The with a single word
  * or short phrase. It should have a single reason to change.
  *
  * <p>

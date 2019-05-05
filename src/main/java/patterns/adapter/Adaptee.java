@@ -2,8 +2,9 @@
 package patterns.adapter;
 
 /**
- * The Class Adaptee.
+ * The Adaptee.
  */
+
 public class Adaptee implements AdapteeInterface {
 
     /*

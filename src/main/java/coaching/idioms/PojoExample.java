@@ -59,7 +59,7 @@ public final class PojoExample implements Cloneable {
      * @return the string value
      */
     public String getStringValue() {
-        return stringValue;
+        return this.stringValue;
     }
 
     /**
@@ -68,7 +68,7 @@ public final class PojoExample implements Cloneable {
      * @return the long value
      */
     public long getLongValue() {
-        return longValue;
+        return this.longValue;
     }
 
     /*
@@ -77,7 +77,10 @@ public final class PojoExample implements Cloneable {
      */
     @Override
     public String toString() {
-        return String.format("%s [stringValue=%s, longValue=%s]", this.getClass().getSimpleName(), stringValue, longValue);
+        return String.format("%s [stringValue=%s, longValue=%s]",
+            this.getClass().getSimpleName(),
+            this.stringValue,
+            this.longValue);
     }
 
 }

@@ -2,16 +2,16 @@
 package coaching.range;
 
 /**
- * The Class IntegerRange.
+ * The IntegerRange.
  */
 public class IntegerRange {
 
     /** The start. */
     private final Integer start;
-    
+
     /** The end. */
     private final Integer end;
-    
+
     /** The step. */
     private final Integer step;
 

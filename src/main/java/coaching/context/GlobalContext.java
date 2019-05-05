@@ -1,7 +1,8 @@
+
 package coaching.context;
 
 /**
- * The Class GlobalContext.
+ * The GlobalContext.
  */
 public class GlobalContext extends AbstractContext {
 

@@ -1,36 +1,30 @@
 
 package patterns.memento;
 
-import java.util.UUID;
-
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
- * Unit test for Originator class.
+ * A UnitTest for Originator objects.
  */
 public final class OriginatorTest {
 
     /**
-     * Unit test to typical usage.
+     * test Originator object.
      */
     @Test
     public void testTypicalUsage() {
         // Given
-        final String stateOne = UUID.randomUUID().toString();
-        final String stateTwo = UUID.randomUUID().toString();
-        final Originator originator = new Originator(stateOne);
-        Memento actualOne = originator.getMemento();
-        assertEquals(stateOne, actualOne.getState());
+        final Originator originator = new Originator();
+        Memento state = originator.createMemento();
 
         // When
-        originator.createMemento(stateTwo);
-        Memento actualTwo = originator.getMemento();
+        originator.change();
+        originator.restore(state);
 
         // Then
-        assertEquals(stateTwo, actualTwo.getState());
-        assertEquals(stateOne, actualOne.getState());
+        assertTrue(originator.verify(state));
     }
 
 }

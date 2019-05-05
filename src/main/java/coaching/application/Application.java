@@ -4,10 +4,12 @@ package coaching.application;
 import java.util.Arrays;
 
 import coaching.solid.AbstractApplication;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Example ThreadedApplication class.
  */
+@Slf4j
 public final class Application extends AbstractApplication {
 
     /**
@@ -24,14 +26,14 @@ public final class Application extends AbstractApplication {
      */
     public Application(final String[] args) {
         super(args);
-        this.log.debug("args = {}", Arrays.toString(args));
+        log.debug("args = {}", Arrays.toString(args));
     }
 
     /**
      * Execute the ThreadedApplication.
      */
     public void execute() {
-        this.log.info("execute() : {}", this.toString());
+        log.info("execute() : {}", this.toString());
     }
 
     /**
@@ -48,7 +50,7 @@ public final class Application extends AbstractApplication {
     }
 
     /**
-     * The Class ApplicationException.
+     * The ApplicationException.
      */
     public class ApplicationException extends Exception {
 

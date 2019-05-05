@@ -2,18 +2,17 @@
 package coaching.associations;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * class CompositeTest.
  */
-public final class CompositeTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CompositeTest.class);
+@Slf4j
+public final class CompositeTest {
 
     /**
      * Unit Test to composite.
@@ -22,7 +21,7 @@ public final class CompositeTest {
     public void testComposite() {
         final Composite composite = new Composite();
         assertNotNull(composite);
-        LOG.info(composite.toString());
+        log.info(composite.toString());
     }
 
 }

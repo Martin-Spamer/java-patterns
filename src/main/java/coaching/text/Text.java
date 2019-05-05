@@ -28,16 +28,10 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Random;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Text utilities class.
  */
 public final class Text {
-
-    /** provides logging. */
-    private static final Logger log = LoggerFactory.getLogger(Text.class);
 
     /** RND constant. */
     private static final Random RND = new Random(System.currentTimeMillis());

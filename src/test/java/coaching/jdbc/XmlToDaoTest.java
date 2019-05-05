@@ -3,19 +3,19 @@ package coaching.jdbc;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test for XmlDAO class.
  */
 @Ignore("Requires PointBase DB availability work-in-progress low-priority")
-public final class XmlToDaoTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlToDaoTest.class);
+
+@Slf4j
+public final class XmlToDaoTest {
 
     /**
      * Unit Test to xml DAO.
@@ -24,7 +24,7 @@ public final class XmlToDaoTest {
     public void testXmlDao() {
         final XmlToDao dao = new XmlToDao();
         assertNotNull(dao);
-        LOG.info("dao : {}", dao.toString());
+        log.info("dao : {}", dao.toString());
     }
 
 }

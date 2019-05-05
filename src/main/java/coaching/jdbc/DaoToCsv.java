@@ -28,7 +28,7 @@ public final class DaoToCsv {
      */
     @Override
     public String toString() {
-        return String.format("%s [dao=%s, csvFile=%s]", this.getClass().getSimpleName(), dao, csv);
+        return String.format("%s [dao=%s, csvFile=%s]", this.getClass().getSimpleName(), this.dao, this.csv);
     }
 
 }

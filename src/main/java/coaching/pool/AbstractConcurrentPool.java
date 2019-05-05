@@ -3,9 +3,6 @@ package coaching.pool;
 
 import java.util.concurrent.ConcurrentLinkedDeque;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * ConcurrentPool Class.
  *
@@ -13,10 +10,8 @@ import org.slf4j.LoggerFactory;
  *
  * @param <E> the element type
  */
-public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
     /** The free pool. */
     protected ConcurrentLinkedDeque<E> freePool = new ConcurrentLinkedDeque<>();

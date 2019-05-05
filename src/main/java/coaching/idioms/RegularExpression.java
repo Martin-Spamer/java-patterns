@@ -4,16 +4,15 @@ package coaching.idioms;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * RegularExpression Class.
  */
-public class RegularExpression {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RegularExpression.class);
+
+@Slf4j
+public class RegularExpression {
 
     /** The Constant PATTERN_STRING. */
     private static final String PATTERN_STRING = "^ABC$";
@@ -40,7 +39,7 @@ public class RegularExpression {
      */
     public RegularExpression(final String patternString) {
         super();
-        pattern = Pattern.compile(patternString);
+        this.pattern = Pattern.compile(patternString);
     }
 
     /**
@@ -64,7 +63,7 @@ public class RegularExpression {
      * @return true, if successful, otherwise false.
      */
     public boolean verify(final String code) {
-        final Matcher matcher = pattern.matcher(code);
+        final Matcher matcher = this.pattern.matcher(code);
         return matcher.find();
     }
 
@@ -76,11 +75,11 @@ public class RegularExpression {
      * @param original the original
      */
     public void find(final String original) {
-        final Matcher matcher = pattern.matcher(original);
+        final Matcher matcher = this.pattern.matcher(original);
         while (matcher.find()) {
             final String message = "Test %s starting at index %s and ending at index %s";
             final String string = String.format(message, matcher.group(), matcher.start(), matcher.end());
-            LOG.info(string);
+            log.info(string);
         }
     }
 
@@ -108,7 +107,7 @@ public class RegularExpression {
      * @return the string
      */
     public String replace(final String original, final String newSubString) {
-        return pattern.matcher(original).replaceAll(newSubString);
+        return this.pattern.matcher(original).replaceAll(newSubString);
     }
 
 }

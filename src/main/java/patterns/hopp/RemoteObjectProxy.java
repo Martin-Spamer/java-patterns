@@ -1,16 +1,17 @@
 
 package patterns.hopp;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * RemoteObjectProxy Class.
  */
-class RemoteObjectProxy implements HoppInterface {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RemoteObjectProxy.class);
+
+
+
+@Slf4j
+public class RemoteObjectProxy implements HoppInterface {
 
     /** The remote object. */
     private final HoppInterface remoteObject = new RemoteObject();
@@ -19,8 +20,8 @@ class RemoteObjectProxy implements HoppInterface {
      * Remote method proxy.
      */
     public void remoteMethodProxy() {
-        LOG.info("{}.remoteMethodProxy()", this.getClass().getSimpleName());
-        remoteObject.remoteMethod();
+        log.info("{}.remoteMethodProxy()", this.getClass().getSimpleName());
+        this.remoteObject.remoteMethod();
     }
 
     /*
@@ -29,8 +30,8 @@ class RemoteObjectProxy implements HoppInterface {
      */
     @Override
     public void remoteMethod() {
-        LOG.info("{}.remoteMethod()", this.getClass().getSimpleName());
-        remoteObject.remoteMethod();
+        log.info("{}.remoteMethod()", this.getClass().getSimpleName());
+        this.remoteObject.remoteMethod();
     }
 
     /*
@@ -39,8 +40,8 @@ class RemoteObjectProxy implements HoppInterface {
      */
     @Override
     public void localMethod() {
-        LOG.info("{}.localMethod()", this.getClass().getSimpleName());
-        remoteObject.localMethod();
+        log.info("{}.localMethod()", this.getClass().getSimpleName());
+        this.remoteObject.localMethod();
     }
 
 }

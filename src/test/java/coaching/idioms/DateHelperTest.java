@@ -4,28 +4,28 @@ package coaching.idioms;
 import java.util.Calendar;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test for the DateHelper class.
  */
-public final class DateHelperTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(DateHelperTest.class);
+
+@Slf4j
+public final class DateHelperTest {
 
     /**
      * Unit Test to now.
      */
     @Test
     public void testNow() {
-        LOG.info("testNow");
+        log.info("testNow");
         final Calendar now = DateHelper.now();
         assertNotNull(now);
-        LOG.debug("testNow = {}", now.toString());
+        log.debug("testNow = {}", now.toString());
     }
 
     /**
@@ -33,10 +33,10 @@ public final class DateHelperTest {
      */
     @Test
     public void testYesterday() {
-        LOG.info("testYesterday");
+        log.info("testYesterday");
         final Calendar yesterday = DateHelper.yesterday();
         assertNotNull(yesterday);
-        LOG.debug("yesterday.toString() = {}", yesterday.toString());
+        log.debug("yesterday.toString() = {}", yesterday.toString());
         final Calendar now = Calendar.getInstance();
         now.add(Calendar.DAY_OF_YEAR, -1);
     }
@@ -46,10 +46,10 @@ public final class DateHelperTest {
      */
     @Test
     public void testTomorrow() {
-        LOG.info("testTomorrow");
+        log.info("testTomorrow");
         final Calendar tomorrow = DateHelper.tomorrow();
         assertNotNull(tomorrow);
-        LOG.debug("tomorrow.toString() = {}", tomorrow.toString());
+        log.debug("tomorrow.toString() = {}", tomorrow.toString());
         final Calendar now = Calendar.getInstance();
         now.add(Calendar.DAY_OF_YEAR, +1);
     }

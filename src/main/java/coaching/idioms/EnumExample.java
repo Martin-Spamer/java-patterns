@@ -10,10 +10,10 @@ public enum EnumExample {
 
     /** The Unknown. */
     Unknown("Unknown"),
-    
+
     /** The Heads. */
     Heads("Heads"),
-    
+
     /** The Tails. */
     Tails("Tails");
 

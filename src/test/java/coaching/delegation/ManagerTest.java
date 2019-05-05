@@ -2,25 +2,25 @@
 package coaching.delegation;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Manager Test.
  */
-public final class ManagerTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ManagerTest.class);
+
+@Slf4j
+public final class ManagerTest {
 
     /**
      * Test delegation.
      */
     @Test
     public void testDelegation() {
-        LOG.info("testDelegation");
+        log.info("testDelegation");
         final Manager manager = new Manager();
         assertNotNull(manager);
 

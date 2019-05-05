@@ -43,7 +43,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
     /** DELETE_SQL constant. */
     public static final String DELETE_SQL = "DELETE FROM {TableName} WHERE ID={Key}";
 
-    /** provides logging. */
+    /** The log. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
 
     /** The jdbc driver. */
@@ -94,7 +94,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         this.jdbcUrl = jdbcUrl;
         this.username = username;
         this.password = password;
-        connectionFactory = new ConnectionFactory(this.jdbcDriver, this.jdbcUrl, this.username, this.password);
+        this.connectionFactory = new ConnectionFactory(this.jdbcDriver, this.jdbcUrl, this.username, this.password);
     }
 
     /*
@@ -166,7 +166,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(prepare(CREATE_SQL));
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -180,14 +180,15 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(prepare(DROP_SQL));
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
 
-    /* (non-Javadoc)
-    * @see coaching.jdbc.DaoInterface#describeTable()
-    */
+    /*
+     * (non-Javadoc)
+     * @see coaching.jdbc.DaoInterface#describeTable()
+     */
     @Override
     public DaoInterface describeTable() {
         return null;
@@ -203,7 +204,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(prepareInsert());
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -228,7 +229,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(sql);
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -262,7 +263,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(prepare(SELECT_SQL));
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -277,7 +278,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(sql);
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -291,7 +292,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(prepare(COUNT_SQL));
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -316,7 +317,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(sql);
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -340,7 +341,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(prepareDeleteSql());
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -355,7 +356,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
         try {
             executePreparedStatement(sql);
         } catch (final SQLException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
         return this;
     }
@@ -376,7 +377,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
      * @return the prepare
      */
     private String prepare(final String sql) {
-        return sql.replace("{SchemaName}", schemaName).replace("{TableName}", tableName);
+        return sql.replace("{SchemaName}", this.schemaName).replace("{TableName}", this.tableName);
     }
 
 }

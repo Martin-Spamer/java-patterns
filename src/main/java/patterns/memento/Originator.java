@@ -1,67 +1,58 @@
 
 package patterns.memento;
 
+import java.util.UUID;
+
 /**
  * Originator Class.
  */
 public class Originator {
 
-    /** The memento. */
-    private Memento memento;
+    /** The state. */
+    private UUID state = UUID.randomUUID();
 
     /**
-     * Instantiates a new originator.
-     */
-    public Originator() {
-        memento = createMemento();
-    }
-
-    /**
-     * The Constructor.
-     *
-     * @param state the state
-     */
-    public Originator(final Object state) {
-        memento = createMemento(state);
-    }
-
-    /**
-     * memento.
+     * Creates the memento.
      *
      * @return the memento
      */
     public Memento createMemento() {
-        memento = new Memento();
-        return memento;
+        return new Memento(this.state);
     }
 
     /**
-     * memento factory method.
+     * Change.
+     */
+    public void change() {
+        this.state = UUID.randomUUID();
+    }
+
+    /**
+     * Restore.
+     *
+     * @param memento the memento
+     */
+    public void restore(final Memento memento) {
+        this.state = (UUID) memento.getState();
+    }
+
+    /**
+     * Verify.
      *
      * @param state the state
-     * @return the memento
+     * @return true, if successful
      */
-    public Memento createMemento(final Object state) {
-        memento = new Memento(state);
-        return memento;
+    public boolean verify(final Memento state) {
+        return state.getState() == this.state;
     }
 
-    /**
-     * memento.
-     *
-     * @param memento the new memento
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
      */
-    public void setMemento(final Memento memento) {
-        this.memento = memento;
-    }
-
-    /**
-     * memento.
-     *
-     * @return the memento
-     */
-    public Memento getMemento() {
-        return memento;
+    @Override
+    public String toString() {
+        return String.format("Originator [state=%s]", this.state);
     }
 
 }

@@ -3,18 +3,15 @@ package patterns.command;
 
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import coaching.resources.PropertiesLoader;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * An example class factory for creating Class objects.
  */
-public final class CommandFactory {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CommandFactory.class);
+@Slf4j
+public final class CommandFactory {
 
     /** DEFAULT constant. */
     private static final String DEFAULT = "patterns.command.ExampleCommand";
@@ -30,7 +27,7 @@ public final class CommandFactory {
      */
     private CommandFactory() {
         super();
-        properties = PropertiesLoader.getProperties("commands.properties");
+        this.properties = PropertiesLoader.getProperties("commands.properties");
     }
 
     /**
@@ -68,16 +65,25 @@ public final class CommandFactory {
     /**
      * Factory Class to create a new Command instance.
      *
-     * @param className the class name
+ * The name
      * @return the abstract command
      */
     private AbstractCommand createByClassName(final String className) {
         try {
             return (AbstractCommand) Class.forName(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("CommandFactory [properties=%s]", this.properties);
     }
 
 }

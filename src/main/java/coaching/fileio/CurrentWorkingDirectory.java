@@ -3,16 +3,15 @@ package coaching.fileio;
 
 import java.io.File;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * CurrentWorkingDirectory Class.
  */
-public final class CurrentWorkingDirectory {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CurrentWorkingDirectory.class);
+
+@Slf4j
+public final class CurrentWorkingDirectory {
 
     /**
      * Instantiates a new current working directory.
@@ -36,12 +35,12 @@ public final class CurrentWorkingDirectory {
             try {
                 file.createNewFile();
                 absolutePath = file.getAbsolutePath();
-                LOG.info(absolutePath);
+                log.info(absolutePath);
             } catch (final Exception e) {
-                LOG.error(e.getLocalizedMessage(), e);
+                log.error(e.getLocalizedMessage(), e);
             }
         } catch (final Exception e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return absolutePath;
     }

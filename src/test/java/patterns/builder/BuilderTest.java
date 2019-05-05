@@ -2,18 +2,18 @@
 package patterns.builder;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The BuilderTest class.
  */
-public final class BuilderTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(BuilderTest.class);
+
+@Slf4j
+public final class BuilderTest {
 
     /**
      * Unit Test to build one.
@@ -23,7 +23,7 @@ public final class BuilderTest {
         final BuilderOne builder = new BuilderOne();
         assertNotNull(builder);
         final AbstractPart product = builder.build();
-        LOG.info("product = {}", product);
+        log.info("product = {}", product);
     }
 
     /**
@@ -34,7 +34,7 @@ public final class BuilderTest {
         final BuilderTwo builder = new BuilderTwo();
         assertNotNull(builder);
         final AbstractPart product = builder.build();
-        LOG.info("product = {}", product);
+        log.info("product = {}", product);
     }
 
 }

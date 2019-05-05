@@ -1,8 +1,7 @@
 
 package coaching.types;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Examples of Java Object Types.
@@ -10,6 +9,9 @@ import org.slf4j.LoggerFactory;
  * @author martin.spamer.
  * @version 0.1 - first release. Created 07-Oct-2004 - 09:20:22
  */
+
+
+@Slf4j
 public class ObjectTypes {
 
     /** The largest byte. */
@@ -59,9 +61,6 @@ public class ObjectTypes {
 
     /** The false boolean. */
     private final Boolean falseBoolean = false;
-
-    /** provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /**
      * Display.

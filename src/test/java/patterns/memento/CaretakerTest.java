@@ -1,32 +1,21 @@
 
 package patterns.memento;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-
 import org.junit.Test;
 
-import static org.junit.Assert.assertThat;
-
 /**
- * The Class CaretakerTest.
+ * The CaretakerTest class.
  */
 public final class CaretakerTest {
-
-    /**
-     * Type.
-     */
-    @Test
-    public void type() {
-        assertThat(Caretaker.class, notNullValue());
-    }
-
+    
     /**
      * Instantiation.
      */
     @Test
     public void instantiation() {
-        final Caretaker target = new Caretaker();
-        assertThat(target, notNullValue());
+        Originator originator = new Originator();
+        Memento memento = originator.createMemento();
+        originator.restore(memento);
     }
 
 }

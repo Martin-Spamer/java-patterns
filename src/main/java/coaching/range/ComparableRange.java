@@ -1,7 +1,8 @@
+
 package coaching.range;
 
 /**
- * The Class ComparableRange.
+ * The ComparableRange.
  */
 public class ComparableRange {
 

@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Implements a Bag class with Generic Type.
@@ -14,10 +13,10 @@ import org.slf4j.LoggerFactory;
  * @param <T> the generic type
  */
 @SuppressWarnings("serial")
-public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 
-    /** Provides logging. */
-    protected final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+@Slf4j
+public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 
     /** random number generator. */
     private final Random random = new Random();
@@ -30,7 +29,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
      */
     public GenericBag() {
         super();
-        this.log.info("GenericBag({})");
+        log.info("GenericBag({})");
     }
 
     /**
@@ -41,7 +40,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
     @SafeVarargs
     public GenericBag(final T... values) {
         super();
-        this.log.info("GenericBag({})", values);
+        log.info("GenericBag({})", values);
         fill(values);
     }
 
@@ -52,7 +51,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
     @SuppressWarnings("unchecked")
     @Override
     public GenericBagInterface<T> fill(final T... values) {
-        this.log.debug("{}.fill({})", this.getClass().getSimpleName(), values);
+        log.debug("{}.fill({})", this.getClass().getSimpleName(), values);
         if (values != null) {
             this.initialState = values;
             this.addAll(Arrays.asList(values));
@@ -66,7 +65,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
      */
     @Override
     public T pick() {
-        this.log.debug("{}.pick()", this.getClass().getSimpleName());
+        log.debug("{}.pick()", this.getClass().getSimpleName());
         return choose();
     }
 
@@ -76,7 +75,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
      */
     @Override
     public T choose() {
-        this.log.debug("{}.choose()", this.getClass().getSimpleName());
+        log.debug("{}.choose()", this.getClass().getSimpleName());
         final int size = size();
         if (size > 0) {
             final int nextInt = this.random.nextInt(size);
@@ -92,7 +91,7 @@ public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T
      */
     @Override
     public GenericBagInterface<T> reset() {
-        this.log.debug("{}.reset()", this.getClass().getSimpleName());
+        log.debug("{}.reset()", this.getClass().getSimpleName());
         return fill(this.initialState);
     }
 

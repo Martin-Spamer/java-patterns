@@ -1,18 +1,17 @@
 
 package coaching.exceptions;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Example class of custom Exception handling.
  *
  * In general, exceptions should be handled as close to the cause as possible.
  */
-public final class CustomExceptionHandling {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(CustomExceptionHandling.class);
+
+@Slf4j
+public final class CustomExceptionHandling {
 
     /**
      * a Custom Exception. In most cases this all that is needed to implement a
@@ -83,7 +82,7 @@ public final class CustomExceptionHandling {
             updateProcess();
             deleteProcess();
         } catch (final CustomException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -97,7 +96,7 @@ public final class CustomExceptionHandling {
             updateProcess();
             deleteProcess();
         } catch (CustomCreationException | CustomReadException | CustomUpdateException | CustomDeleteException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -111,13 +110,13 @@ public final class CustomExceptionHandling {
             updateProcess();
             deleteProcess();
         } catch (final CustomCreationException e) {
-            LOG.error("Creation error", e);
+            log.error("Creation error", e);
         } catch (final CustomReadException e) {
-            LOG.error("Read error", e);
+            log.error("Read error", e);
         } catch (final CustomUpdateException e) {
-            LOG.error("Update error", e);
+            log.error("Update error", e);
         } catch (final CustomDeleteException e) {
-            LOG.error("Delete error", e);
+            log.error("Delete error", e);
         }
     }
 
@@ -134,16 +133,16 @@ public final class CustomExceptionHandling {
                     try {
                         deleteProcess();
                     } catch (final CustomException e) {
-                        LOG.error(e.getLocalizedMessage(), e);
+                        log.error(e.getLocalizedMessage(), e);
                     }
                 } catch (final CustomException e) {
-                    LOG.error(e.getLocalizedMessage(), e);
+                    log.error(e.getLocalizedMessage(), e);
                 }
             } catch (final CustomException e) {
-                LOG.error(e.getLocalizedMessage(), e);
+                log.error(e.getLocalizedMessage(), e);
             }
         } catch (final CustomException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -155,25 +154,25 @@ public final class CustomExceptionHandling {
         try {
             creationProcess();
         } catch (final CustomException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
 
         try {
             readProcess();
         } catch (final CustomException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
 
         try {
             updateProcess();
         } catch (final CustomException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
 
         try {
             deleteProcess();
         } catch (final CustomException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 

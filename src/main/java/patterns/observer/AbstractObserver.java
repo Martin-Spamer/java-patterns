@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractObserver implements ObserverInterface {
 
-    /** provides logging. */
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*
@@ -19,7 +19,7 @@ public abstract class AbstractObserver implements ObserverInterface {
      */
     @Override
     public void updateObservers() {
-        log.info("update notification received");
+        this.log.info("update notification received");
     }
 
 }

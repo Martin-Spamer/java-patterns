@@ -1,9 +1,16 @@
 
 package patterns.template;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Concrete Template class.
  */
+
+
+
+
+@Slf4j
 public final class TemplateClass extends AbstractTemplate {
 
     /*
@@ -13,7 +20,7 @@ public final class TemplateClass extends AbstractTemplate {
      */
     @Override
     public TemplateInterface primitiveOperationAlice() {
-        this.log.info("primitiveOperationAlice()");
+        log.info("primitiveOperationAlice()");
         return this;
     }
 
@@ -24,7 +31,7 @@ public final class TemplateClass extends AbstractTemplate {
      */
     @Override
     public TemplateInterface primitiveOperationBob() {
-        this.log.info("primitiveOperationBob()");
+        log.info("primitiveOperationBob()");
         return this;
     }
 

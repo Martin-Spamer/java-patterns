@@ -1,16 +1,17 @@
 
 package patterns.hopp;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * RemoteObject Class.
  */
-class RemoteObject implements HoppInterface {
 
-    /** Provide logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(RemoteObject.class);
+
+
+
+@Slf4j
+public class RemoteObject implements HoppInterface {
 
     /*
      * (non-Javadoc)
@@ -18,7 +19,7 @@ class RemoteObject implements HoppInterface {
      */
     @Override
     public void remoteMethod() {
-        LOG.info("{}.remoteMethod()", this.getClass().getSimpleName());
+        log.info("{}.remoteMethod()", this.getClass().getSimpleName());
     }
 
     /*
@@ -27,7 +28,7 @@ class RemoteObject implements HoppInterface {
      */
     @Override
     public void localMethod() {
-        LOG.info("{}.localMethod()", this.getClass().getSimpleName());
+        log.info("{}.localMethod()", this.getClass().getSimpleName());
     }
 
 }

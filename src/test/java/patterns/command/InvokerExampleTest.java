@@ -2,30 +2,30 @@
 package patterns.command;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit test example of an Invoker class.
  *
  * Each command is statically constructed and invoked.
  */
-public final class InvokerExampleTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(InvokerExampleTest.class);
+
+@Slf4j
+public final class InvokerExampleTest {
 
     /**
      * Unit Test for example command.
      */
     @Test
     public void testExampleCommand() {
-        LOG.info("testExampleCommand");
+        log.info("testExampleCommand");
         final ResultInterface result = new ExampleCommand().execute();
         assertNotNull(result);
-        LOG.debug(result.toString());
+        log.debug(result.toString());
     }
 
     /**
@@ -33,11 +33,11 @@ public final class InvokerExampleTest {
      */
     @Test
     public void testInvokerExampleCommand() {
-        LOG.info("testInvokerExampleCommand");
+        log.info("testInvokerExampleCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("ExampleCommand");
         assertNotNull(result);
-        LOG.debug(result.toString());
+        log.debug(result.toString());
     }
 
     /**
@@ -45,10 +45,10 @@ public final class InvokerExampleTest {
      */
     @Test
     public void testSequenceCommand() {
-        LOG.info("testSequenceCommand");
+        log.info("testSequenceCommand");
         final ResultInterface result = new CommandSequence().execute();
         assertNotNull(result);
-        LOG.debug(result.toString());
+        log.debug(result.toString());
     }
 
     /**
@@ -56,11 +56,11 @@ public final class InvokerExampleTest {
      */
     @Test
     public void testInvokerSequenceCommand() {
-        LOG.info("testInvokerSequenceCommand");
+        log.info("testInvokerSequenceCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("SequenceCommand");
         assertNotNull(result);
-        LOG.debug(result.toString());
+        log.debug(result.toString());
     }
 
     /**
@@ -68,10 +68,10 @@ public final class InvokerExampleTest {
      */
     @Test
     public void testCompoundCommand() {
-        LOG.info("testCompoundCommand");
+        log.info("testCompoundCommand");
         final ResultInterface result = new CompoundCommand().execute();
         assertNotNull(result);
-        LOG.debug(result.toString());
+        log.debug(result.toString());
     }
 
     /**
@@ -79,11 +79,11 @@ public final class InvokerExampleTest {
      */
     @Test
     public void testInvokerCompoundCommand() {
-        LOG.info("testInvokerCompoundCommand");
+        log.info("testInvokerCompoundCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("CompoundCommand");
         assertNotNull(result);
-        LOG.debug(result.toString());
+        log.debug(result.toString());
     }
 
     /**
@@ -91,10 +91,10 @@ public final class InvokerExampleTest {
      */
     @Test
     public void testConditionalCommand() {
-        LOG.info("testConditionalCommand");
+        log.info("testConditionalCommand");
         final ResultInterface result = new ConditionalCommand().execute();
         assertNotNull(result);
-        LOG.debug(result.toString());
+        log.debug(result.toString());
     }
 
     /**
@@ -102,11 +102,11 @@ public final class InvokerExampleTest {
      */
     @Test
     public void testInvokerConditionalCommand() {
-        LOG.info("testInvokerConditionalCommand");
+        log.info("testInvokerConditionalCommand");
         final InvokerExample invokerExample = new InvokerExample();
         final ResultInterface result = invokerExample.execute("ConditionalCommand");
         assertNotNull(result);
-        LOG.debug(result.toString());
+        log.debug(result.toString());
     }
 
 }

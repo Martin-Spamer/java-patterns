@@ -11,8 +11,9 @@ import static org.junit.Assert.assertNotNull;
 public class AbstractValueObjectTest {
 
     /**
-     * The Class ValueObject.
+     * The ValueObject.
      */
+
     public class ValueObject extends AbstractValueObject {
     }
 

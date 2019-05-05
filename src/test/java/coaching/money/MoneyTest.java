@@ -5,8 +5,6 @@ import java.util.Currency;
 import java.util.Locale;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -14,38 +12,40 @@ import static org.junit.Assert.assertTrue;
 
 import static org.junit.Assume.assumeTrue;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit test for the Money class.
  */
-public final class MoneyTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(MoneyTest.class);
+
+@Slf4j
+public final class MoneyTest {
 
     /**
      * Unit Test for typical usage of Money class.
      */
     @Test
     public void testMoneyUsage() {
-        LOG.info("testMoneyUsage");
+        log.info("testMoneyUsage");
 
         final Money money = new Money(10L);
         assertNotNull(money);
-        LOG.info("new Money(10L) = {}", money.toString());
+        log.info("new Money(10L) = {}", money.toString());
 
         money.add(1L);
-        LOG.info("\t.add(1L) = {}", money.toString());
+        log.info("\t.add(1L) = {}", money.toString());
 
         money.add(new Money(1L));
-        LOG.info("\t.add(1L) = {}", money.toString());
+        log.info("\t.add(1L) = {}", money.toString());
 
         money.subtract(2L);
-        LOG.info("\t.subtract(2L) = {}", money.toString());
+        log.info("\t.subtract(2L) = {}", money.toString());
 
         money.subtract(new Money(2L));
-        LOG.info("\t.subtract(2L) = {}", money.toString());
+        log.info("\t.subtract(2L) = {}", money.toString());
 
-        LOG.info("money = {}", money.toString());
+        log.info("money = {}", money.toString());
 
         assertTrue(money.isMoreThan(7L));
         assertTrue(money.isMoreThan(new Money(7L)));
@@ -62,7 +62,7 @@ public final class MoneyTest {
      */
     @Test
     public void testMoneyCurrency() {
-        LOG.info("testMoneyCurrency");
+        log.info("testMoneyCurrency");
         final Locale locale = Locale.getDefault();
         final Currency currency = Currency.getInstance(locale);
         final MoneyInterface money = new Money(currency);
@@ -77,7 +77,7 @@ public final class MoneyTest {
      */
     @Test
     public void testMoneyLong() {
-        LOG.info("testMoneyLong");
+        log.info("testMoneyLong");
         final MoneyInterface money = new Money();
         assertNotNull(money);
         assertTrue(money.isEqualTo(0));
@@ -88,7 +88,7 @@ public final class MoneyTest {
      */
     @Test
     public void testMoneyCurrencyLong() {
-        LOG.info("testMoneyCurrencyLong");
+        log.info("testMoneyCurrencyLong");
         final MoneyInterface money = new Money();
         assertNotNull(money);
         assertTrue(money.isEqualTo(0L));
@@ -99,10 +99,10 @@ public final class MoneyTest {
      */
     @Test
     public void testMoneyWithMinValueOfLong() {
-        LOG.info("testMoneyWithMinValueOfLong");
+        log.info("testMoneyWithMinValueOfLong");
         final MoneyInterface money = new Money(Long.MIN_VALUE);
         assertNotNull(money);
-        LOG.info(money.toString());
+        log.info(money.toString());
         assertTrue(money.isEqualTo(Long.MIN_VALUE));
     }
 
@@ -111,10 +111,10 @@ public final class MoneyTest {
      */
     @Test
     public void testMoneyWithMaxValueOfLong() {
-        LOG.info("testMoneyWithMaxValueOfLong");
+        log.info("testMoneyWithMaxValueOfLong");
         final MoneyInterface money = new Money(Long.MAX_VALUE);
         assertNotNull(money);
-        LOG.info(money.toString());
+        log.info(money.toString());
         assertTrue(money.isEqualTo(Long.MAX_VALUE));
     }
 
@@ -123,13 +123,13 @@ public final class MoneyTest {
      */
     @Test
     public void testMaxPounds() {
-        LOG.info("testMaxPounds");
+        log.info("testMaxPounds");
         final Currency gbp = Currency.getInstance("GBP");
-        LOG.info("Currency = {}", gbp.getDisplayName());
+        log.info("Currency = {}", gbp.getDisplayName());
         assumeTrue(gbp.getSymbol().equals("£"));
 
         final MoneyInterface money = new Money(gbp, Long.MAX_VALUE);
-        LOG.info(money.toString());
+        log.info(money.toString());
         assertNotNull(money);
         final String actual = money.toString();
         final String expected = "£ 9,223,372,036,854,775,807";
@@ -141,14 +141,14 @@ public final class MoneyTest {
      */
     @Test
     public void testMaxEuro() {
-        LOG.info("testMaxEuro");
+        log.info("testMaxEuro");
         final Currency eur = Currency.getInstance("EUR");
-        LOG.info("Currency = {}", eur.getDisplayName());
+        log.info("Currency = {}", eur.getDisplayName());
         assumeTrue(eur.getSymbol().equals("€"));
 
         final MoneyInterface money = new Money(eur, Long.MAX_VALUE);
         assertNotNull(money);
-        LOG.info(money.toString());
+        log.info(money.toString());
         final String actual = money.toString();
         final String expected = "€ 9,223,372,036,854,775,807";
         assertEquals(expected, actual);
@@ -159,16 +159,16 @@ public final class MoneyTest {
      */
     @Test
     public void testMaxDollar() {
-        LOG.info("testMaxDollar");
+        log.info("testMaxDollar");
         final Currency usd = Currency.getInstance(Locale.US);
-        LOG.info("\tusd.getSymbol = {}", usd.getSymbol());
-        LOG.info("\tusd.getDisplayName = {}", usd.getDisplayName());
-        LOG.info("\tusd.getCurrencyCode = {}", usd.getCurrencyCode());
+        log.info("\tusd.getSymbol = {}", usd.getSymbol());
+        log.info("\tusd.getDisplayName = {}", usd.getDisplayName());
+        log.info("\tusd.getCurrencyCode = {}", usd.getCurrencyCode());
         assumeTrue(usd.getSymbol().equals("$"));
 
         final MoneyInterface money = new Money(usd, Long.MAX_VALUE);
         assertNotNull(money);
-        LOG.info(money.toString());
+        log.info(money.toString());
         final String actual = money.toString();
         final String expected = "$ 9,223,372,036,854,775,807";
         assertEquals(expected, actual);

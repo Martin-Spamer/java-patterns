@@ -16,21 +16,21 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * ThreadedApplication, an example harness for Java Threads.
  *
  * Created on 30 June 2004 - 13:07
  **/
-public class ThreadedApplication {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ThreadedApplication.class);
+/** The Constant log. */
+@Slf4j
+public class ThreadedApplication {
 
     /** The document. */
     private Document document;
@@ -63,7 +63,7 @@ public class ThreadedApplication {
             this.document = builder.parse(inputStream(configFilename));
             return true;
         } catch (final Exception e) {
-            LOG.warn("Configuration file : {} not found.", configFilename);
+            log.warn("Configuration file : {} not found.", configFilename);
             return false;
         }
     }
@@ -117,10 +117,10 @@ public class ThreadedApplication {
         final Element element = (Element) threadListConfig.item(i);
 
         final String nameAttribute = element.getAttribute("name");
-        LOG.info("nameAttribute = {}", nameAttribute);
+        log.info("nameAttribute = {}", nameAttribute);
 
         final String className = element.getAttribute("class");
-        LOG.info("className = {}", className);
+        log.info("className = {}", className);
 
         final AbstractProcess abstractApplicationProcess = createProcess(className);
         if (abstractApplicationProcess != null) {
@@ -140,7 +140,7 @@ public class ThreadedApplication {
         try {
             return (AbstractProcess) Class.forName(className).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }
@@ -171,7 +171,7 @@ public class ThreadedApplication {
             transformer.transform(source, result);
             return result.getWriter().toString();
         } catch (IllegalArgumentException | TransformerFactoryConfigurationError | TransformerException e) {
-            LOG.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
         return null;
     }

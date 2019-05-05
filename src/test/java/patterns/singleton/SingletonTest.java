@@ -2,18 +2,18 @@
 package patterns.singleton;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Singleton Test class.
  */
-public final class SingletonTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(SingletonTest.class);
+
+@Slf4j
+public final class SingletonTest {
 
     /**
      * Unit Test to singleton.
@@ -24,7 +24,7 @@ public final class SingletonTest {
         assertNotNull(instance);
         final String string = instance.toString();
         assertNotNull(instance);
-        LOG.info(string);
+        log.info(string);
     }
 
 }

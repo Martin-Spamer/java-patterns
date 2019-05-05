@@ -2,19 +2,19 @@
 package coaching.collections;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Unit tests for the GenericTable class.
  */
-public final class TableTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(TableTest.class);
+
+@Slf4j
+public final class TableTest {
 
     /**
      * Unit Test to table.
@@ -25,7 +25,7 @@ public final class TableTest {
         final Table table = new Table();
         assertNotNull(table);
         assertEquals(tableName, table.setName(tableName).getName());
-        LOG.debug("{}", table);
+        log.debug("{}", table);
     }
 
     /**
@@ -37,7 +37,7 @@ public final class TableTest {
         final Table table = new Table(tableName);
         assertNotNull(table);
         assertEquals(tableName, table.getName());
-        LOG.debug("{}", table);
+        log.debug("{}", table);
     }
 
     /**
@@ -47,11 +47,39 @@ public final class TableTest {
     public void testAddTableRow() {
         final Table table = new Table();
         assertNotNull(table);
-        LOG.debug("{}", table);
+        log.debug("{}", table);
         final TableRow tableRow = new TableRow();
         assertNotNull(tableRow);
         table.addRow(tableRow);
-        LOG.debug("{}", table);
+        log.debug("{}", table);
+    }
+
+    /**
+     * test Table object.
+     */
+    @Test
+    public void testAddTableRowString() {
+        final Table table = new Table();
+        assertNotNull(table);
+        log.debug("{}", table);
+        final TableRow tableRow = new TableRow("one,two");
+        assertNotNull(tableRow);
+        table.addRow(tableRow);
+        log.debug("{}", table);
+    }
+
+    /**
+     * test Table object.
+     */
+    @Test
+    public void testAddTableRowArray() {
+        final Table table = new Table();
+        assertNotNull(table);
+        log.debug("{}", table);
+        final TableRow tableRow = new TableRow();
+        assertNotNull(tableRow);
+        table.addRow(new String[] { "one", "two" });
+        log.debug("{}", table);
     }
 
     /**
@@ -61,11 +89,11 @@ public final class TableTest {
     public void testAddTableRows() {
         final Table table = new Table();
         assertNotNull(table);
-        LOG.debug("{}", table);
+        log.debug("{}", table);
         final TableRow[] tableRows = { new TableRow(), new TableRow() };
         assertNotNull(tableRows);
         table.addRows(tableRows);
-        LOG.debug("{}", table);
+        log.debug("{}", table);
     }
 
     /**
@@ -75,7 +103,7 @@ public final class TableTest {
     public void testAddColumnName() {
         final Table table = new Table();
         assertNotNull(table);
-        LOG.debug("{}", table);
+        log.debug("{}", table);
 
         assertEquals(table, table.addColumnName("ColOne"));
         assertEquals(table, table.addColumnNames("ColTwo", "ColThree"));
@@ -89,7 +117,7 @@ public final class TableTest {
     public void testAddTableColumn() {
         final Table table = new Table();
         assertNotNull(table);
-        LOG.debug("{}", table);
+        log.debug("{}", table);
 
         assertEquals(table, table.addColumn("ColOne"));
         assertEquals(table, table.addColumn("ColTwo", "ColThree"));

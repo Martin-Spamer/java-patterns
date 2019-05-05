@@ -8,6 +8,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * class ContextTest.
  */
+
 public final class ContextTest {
 
     /**

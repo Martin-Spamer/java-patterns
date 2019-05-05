@@ -2,29 +2,29 @@
 package coaching.net;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit tests for the PortScan class.
  */
 // @Ignore("work-in-progress low-priority")
-public final class PortScanTest {
 
-    /** Provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(PortScanTest.class);
+
+@Slf4j
+public final class PortScanTest {
 
     /**
      * Unit test <code>PortScan</code> with defaults.
      */
     @Test
     public void testPortScan() {
-        LOG.info("testPortScan");
+        log.info("testPortScan");
         final PortScan portScan = new PortScan();
         assertNotNull(portScan);
-        LOG.info(portScan.toString());
+        log.info(portScan.toString());
     }
 
     /**
@@ -32,10 +32,10 @@ public final class PortScanTest {
      */
     @Test
     public void testPortScanIpPort() {
-        LOG.info("testPortScanIpPort");
+        log.info("testPortScanIpPort");
         final PortScan portScan = new PortScan("127.0.0.1", 8080);
         assertNotNull(portScan);
-        LOG.info(portScan.toString());
+        log.info(portScan.toString());
     }
 
     /**
@@ -43,7 +43,7 @@ public final class PortScanTest {
      */
     @Test(expected = AssertionError.class)
     public void testPortScanNull() {
-        LOG.info("testPortScanNull");
+        log.info("testPortScanNull");
         final PortScan portScan = new PortScan(null, 8080);
         assertNotNull(portScan);
     }
@@ -53,11 +53,11 @@ public final class PortScanTest {
      */
     @Test
     public void testPortScanArgs() {
-        LOG.info("testPortScanArgs");
+        log.info("testPortScanArgs");
         final String[] args = { "127.0.0.1", "8080" };
         final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);
-        LOG.info(portScan.toString());
+        log.info(portScan.toString());
     }
 
     /**
@@ -65,7 +65,7 @@ public final class PortScanTest {
      */
     @Test(expected = AssertionError.class)
     public void testPortScanNullArgs() {
-        LOG.info("testPortScanNullArgs");
+        log.info("testPortScanNullArgs");
         final String[] args = {};
         final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);
@@ -76,7 +76,7 @@ public final class PortScanTest {
      */
     @Test(expected = AssertionError.class)
     public void testPortScanEmptyArgs() {
-        LOG.info("testPortScanEmptyArgs");
+        log.info("testPortScanEmptyArgs");
         final String[] args = {};
         final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);
@@ -87,7 +87,7 @@ public final class PortScanTest {
      */
     @Test(expected = AssertionError.class)
     public void testPortScanZeroArgs() {
-        LOG.info("testPortScanZeroArgs");
+        log.info("testPortScanZeroArgs");
         final String[] args = new String[0];
         final PortScan portScan = new PortScan(args);
         assertNotNull(portScan);

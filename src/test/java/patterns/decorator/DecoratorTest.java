@@ -2,30 +2,29 @@
 package patterns.decorator;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit Test for an abstract Decorator class.
  */
+
+
+@Slf4j
 public final class DecoratorTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(DecoratorTest.class);
-
     /**
-     * The Class MissingOperation.
+ * The MissingOperation.
      */
     public final class MissingOperation extends AbstractComponent {
     }
 
     /**
-     * The Class ConcreteDecorator.
+ * The ConcreteDecorator.
      */
     public final class ConcreteDecorator extends AbstractComponent {
-
         /*
          * (non-Javadoc)
          * @see patterns.decorator.AbstractComponent#operation()
@@ -46,7 +45,7 @@ public final class DecoratorTest {
         final DecoratedComponent component = new DecoratedComponent();
         assertNotNull(component);
         assertNotNull(component.operation());
-        LOG.info(component.toString());
+        log.info(component.toString());
     }
 
     /**
@@ -75,7 +74,7 @@ public final class DecoratorTest {
         assertNotNull(component.detachBefore(behaviour));
         assertNotNull(component.operation());
 
-        LOG.info(component.toString());
+        log.info(component.toString());
     }
 
     /**
@@ -94,7 +93,7 @@ public final class DecoratorTest {
         component.detachAfter(behaviour);
         component.operation();
 
-        LOG.info(component.toString());
+        log.info(component.toString());
     }
 
 }

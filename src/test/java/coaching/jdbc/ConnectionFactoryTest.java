@@ -6,18 +6,18 @@ import java.sql.SQLException;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Unit tests for the ConnectionFactory class.
  */
-public final class ConnectionFactoryTest {
 
-    /** provides logging. */
-    private static final Logger LOG = LoggerFactory.getLogger(ConnectionFactoryTest.class);
+
+@Slf4j
+public final class ConnectionFactoryTest {
 
     /**
      * Unit test to connection factory.
@@ -42,8 +42,8 @@ public final class ConnectionFactoryTest {
     public void testSqLiteConnection() throws SQLException {
         final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
-        LOG.info("Schema {}", connection.getSchema());
-        LOG.info("Catalog {}", connection.getCatalog());
+        log.info("Schema {}", connection.getSchema());
+        log.info("Catalog {}", connection.getCatalog());
         connection.close();
     }
 
@@ -63,11 +63,11 @@ public final class ConnectionFactoryTest {
         // ConnectionFactory connectionFactory = new
         // ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
         // assertNotNull(connectionFactory);
-        // LOG.info("{}", connectionFactory.toString());
+        // log.info("{}", connectionFactory.toString());
 
         final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
-        LOG.info(connection.toString());
+        log.info(connection.toString());
         connection.close();
     }
 
@@ -87,11 +87,11 @@ public final class ConnectionFactoryTest {
         // ConnectionFactory connectionFactory = new
         // ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
         // assertNotNull(connectionFactory);
-        // LOG.info("{}", connectionFactory.toString());
+        // log.info("{}", connectionFactory.toString());
 
         final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
-        LOG.info(connection.toString());
+        log.info(connection.toString());
 
         connection.close();
     }
@@ -112,11 +112,11 @@ public final class ConnectionFactoryTest {
         // ConnectionFactory connectionFactory = new
         // ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
         // assertNotNull(connectionFactory);
-        // LOG.info("{}", connectionFactory.toString());
+        // log.info("{}", connectionFactory.toString());
 
         final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
-        LOG.info(connection.toString());
+        log.info(connection.toString());
 
         connection.close();
     }
@@ -137,11 +137,11 @@ public final class ConnectionFactoryTest {
         // ConnectionFactory connectionFactory = new
         // ConnectionFactory(JDBC_DRIVER, JDBC_URL,USERNAME, PASSWORD);
         // assertNotNull(connectionFactory);
-        // LOG.info("{}", connectionFactory.toString());
+        // log.info("{}", connectionFactory.toString());
 
         final Connection connection = ConnectionFactory.getConnection();
         assertNotNull(connection);
-        LOG.info("connection : {}", connection.toString());
+        log.info("connection : {}", connection.toString());
         connection.close();
     }
 

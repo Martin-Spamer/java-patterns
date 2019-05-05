@@ -4,7 +4,7 @@ package patterns.adapter;
 import org.junit.Test;
 
 /**
- * The Class AdapterTest.
+ * The AdapterTest.
  */
 public final class AdapterTest {
 

@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public final class ConnectionFactory implements ConnectionFactoryInterface {
 
-    /** provides logging. */
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The jdbc url. */
@@ -34,11 +34,11 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
         super();
         try {
             Class.forName(JdbcConfig.driver());
-            jdbcUrl = JdbcConfig.url();
-            username = JdbcConfig.username();
-            password = JdbcConfig.password();
+            this.jdbcUrl = JdbcConfig.url();
+            this.username = JdbcConfig.username();
+            this.password = JdbcConfig.password();
         } catch (final ClassNotFoundException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -58,7 +58,7 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
             this.username = username;
             this.password = password;
         } catch (final ClassNotFoundException e) {
-            log.error(e.getLocalizedMessage(), e);
+            this.log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -78,11 +78,11 @@ public final class ConnectionFactory implements ConnectionFactoryInterface {
      */
     @Override
     public Connection newConnection() throws SQLException {
-        assertNotNull(jdbcUrl);
-        assertNotNull(username);
-        assertNotNull(password);
+        assertNotNull(this.jdbcUrl);
+        assertNotNull(this.username);
+        assertNotNull(this.password);
 
-        return DriverManager.getConnection(jdbcUrl, username, password);
+        return DriverManager.getConnection(this.jdbcUrl, this.username, this.password);
     }
 
     /*
