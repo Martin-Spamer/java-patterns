@@ -5,14 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Unit test class for Box.
  */
-
-
-@Slf4j
 public class BoxTest {
 
     /**

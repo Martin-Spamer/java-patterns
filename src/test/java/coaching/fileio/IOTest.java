@@ -8,10 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 
 import coaching.resources.ResourceLoader;
-import lombok.extern.slf4j.Slf4j;
 
-
-@Slf4j
 public class IOTest {
 
     /** The test filename. */

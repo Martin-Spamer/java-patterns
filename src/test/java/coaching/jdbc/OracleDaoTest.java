@@ -6,15 +6,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Unit tests for OracleDao.
  */
 @Ignore("Requires Oracle DB availability work-in-progress low-priority")
-
-
-@Slf4j
 public final class OracleDaoTest {
 
     /**

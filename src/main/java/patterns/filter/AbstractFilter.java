@@ -1,16 +1,9 @@
 
 package patterns.filter;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * AbstractFilter Class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractFilter implements FilterInterface {
 
     /** The next filter. */
@@ -40,10 +33,10 @@ public abstract class AbstractFilter implements FilterInterface {
      */
     @Override
     public FilterInterface addNextFilter(final FilterInterface newFilter) {
-        if (nextFilter == null) {
-            nextFilter = newFilter;
+        if (this.nextFilter == null) {
+            this.nextFilter = newFilter;
         } else {
-            nextFilter.addNextFilter(newFilter);
+            this.nextFilter.addNextFilter(newFilter);
         }
         return this;
     }
@@ -55,8 +48,8 @@ public abstract class AbstractFilter implements FilterInterface {
      */
     @Override
     public void handleRequest(final PayloadInterface payload) {
-        if (nextFilter != null) {
-            nextFilter.handleRequest(payload);
+        if (this.nextFilter != null) {
+            this.nextFilter.handleRequest(payload);
         }
     }
 }

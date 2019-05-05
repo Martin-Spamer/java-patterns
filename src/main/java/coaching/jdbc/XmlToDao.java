@@ -5,7 +5,6 @@ import java.util.List;
 
 import coaching.csv.CsvFile;
 import coaching.csv.CsvRecord;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Provides a example of a crude XML DAO reader.
@@ -13,9 +12,6 @@ import lombok.extern.slf4j.Slf4j;
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
-
-
-@Slf4j
 public final class XmlToDao {
 
     /** The csv. */
@@ -38,8 +34,8 @@ public final class XmlToDao {
      * @param tableName the table name
      */
     public void process(final String resourceName, final String tableName) {
-        csv.read(resourceName);
-        final List<CsvRecord> rowList = csv.getRowList();
+        this.csv.read(resourceName);
+        final List<CsvRecord> rowList = this.csv.getRowList();
         // this.dao.insertRows(rowList);
     }
 
@@ -49,7 +45,7 @@ public final class XmlToDao {
      */
     @Override
     public String toString() {
-        return String.format("XmlToDao [csv=%s, dao=%s]", csv, dao);
+        return String.format("XmlToDao [csv=%s, dao=%s]", this.csv, this.dao);
     }
 
 }

@@ -1,8 +1,6 @@
 
 package coaching.application;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Example Scheduler class.
  *
@@ -11,8 +9,6 @@ import lombok.extern.slf4j.Slf4j;
  * events.
  */
 
-
-@Slf4j
 public final class ExampleScheduler extends AbstractScheduler {
 
     /**

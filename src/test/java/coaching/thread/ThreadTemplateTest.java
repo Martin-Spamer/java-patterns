@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ThreadTemplateTest {
 
     /**
-     * The Class TestThread.
+ * The TestThread.
      */
     public class TestThread extends ThreadTemplate {
         /*

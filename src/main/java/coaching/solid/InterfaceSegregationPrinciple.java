@@ -1,8 +1,6 @@
 
 package coaching.solid;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * A class to Demonstrate the Interface Segregation Principle (ISP).
  *
@@ -10,9 +8,6 @@ import lombok.extern.slf4j.Slf4j;
  * not use.
  *
  */
-
-
-@Slf4j
 public class InterfaceSegregationPrinciple {
 
     /**

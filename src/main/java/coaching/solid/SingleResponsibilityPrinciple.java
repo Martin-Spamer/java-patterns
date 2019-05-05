@@ -11,8 +11,6 @@ import lombok.extern.slf4j.Slf4j;
  * Intent: A class should have only on reason to change, one responsibility.
  *
  */
-
-
 @Slf4j
 public class SingleResponsibilityPrinciple {
 
@@ -20,10 +18,10 @@ public class SingleResponsibilityPrinciple {
      * An example of a class with Multiple Responsibilities.
      */
     public class MultipleResponsibility {
-        
+
         /** The foo. */
         private boolean foo = false;
-        
+
         /** The bar. */
         private boolean bar = false;
 

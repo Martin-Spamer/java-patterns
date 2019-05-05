@@ -1,14 +1,9 @@
 
 package coaching.jdbc;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * A Data Access object for Pointbase Database.
  */
-
-
-@Slf4j
 public class PointbaseDao extends AbstractDao {
 
     /** JDBC_DRIVER. */

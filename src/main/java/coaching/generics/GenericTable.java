@@ -6,16 +6,11 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * The GenericTable class is composed of GenericTableRow classes.
  *
  * @param <T> the generic type
  */
-
-
-@Slf4j
 public class GenericTable<T> {
 
     /** The table name. */
@@ -131,7 +126,7 @@ public class GenericTable<T> {
      * @return the boolean
      * @see java.util.List#add(java.lang.Object)
      */
-    public GenericTable<T> addRow(final GenericTableRow e) {
+    public GenericTable<T> addRow(final GenericTableRow<T> e) {
         this.rows.add(e);
         return this;
     }
@@ -143,7 +138,7 @@ public class GenericTable<T> {
      * @return the table row
      * @see java.util.List#get(int)
      */
-    public GenericTableRow getRow(final int index) {
+    public GenericTableRow<T> getRow(final int index) {
         return this.rows.get(index);
     }
 

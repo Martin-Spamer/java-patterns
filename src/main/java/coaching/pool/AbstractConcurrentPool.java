@@ -3,8 +3,6 @@ package coaching.pool;
 
 import java.util.concurrent.ConcurrentLinkedDeque;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * ConcurrentPool Class.
  *
@@ -13,8 +11,6 @@ import lombok.extern.slf4j.Slf4j;
  * @param <E> the element type
  */
 
-
-@Slf4j
 public abstract class AbstractConcurrentPool<E> implements PoolInterface<E> {
 
     /** The free pool. */

@@ -133,7 +133,7 @@ public class ThreadedApplication {
     /**
      * Creates the process.
      *
-     * @param className the class name
+ * The name
      * @return the abstract process
      */
     protected AbstractProcess createProcess(final String className) {

@@ -13,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
  * @param <E> the element type
  */
 
-
 @Slf4j
 public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
 
@@ -96,6 +95,15 @@ public abstract class AbstractBlockingPool<E> implements PoolInterface<E> {
     public PoolInterface<E> remove(final E resource) {
         this.usedPool.remove(resource);
         return this;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("AbstractBlockingPool [freePool=%s, usedPool=%s]", this.freePool, this.usedPool);
     }
 
 }

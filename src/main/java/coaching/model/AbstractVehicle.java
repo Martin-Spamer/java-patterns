@@ -4,14 +4,9 @@
 
 package coaching.model;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * An abstract Vehicle class.
  */
-
-
-@Slf4j
 public abstract class AbstractVehicle implements VehicleInterface, FuelInterface {
 
     /** The engine. */
@@ -35,7 +30,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
      */
     @Override
     public void addFuel(final int quantity) {
-        engine.addFuel(quantity);
+        this.engine.addFuel(quantity);
     }
 
     /*
@@ -44,7 +39,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
      */
     @Override
     public void useFuel(final int quantity) {
-        engine.useFuel(quantity);
+        this.engine.useFuel(quantity);
     }
 
     /*
@@ -63,7 +58,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
      */
     @Override
     public Driver getDriver() {
-        return driver;
+        return this.driver;
     }
 
     /*
@@ -72,8 +67,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
      */
     @Override
     public VehicleInterface travel(final String destination) {
-        log.info(destination);
-        engine.useFuel(1);
+        this.engine.useFuel(1);
         return this;
     }
 
@@ -83,7 +77,7 @@ public abstract class AbstractVehicle implements VehicleInterface, FuelInterface
      */
     @Override
     public String toString() {
-        return String.format("%s [engine=%s, driver=%s]", this.getClass().getSimpleName(), engine, driver);
+        return String.format("%s [engine=%s, driver=%s]", this.getClass().getSimpleName(), this.engine, this.driver);
     }
 
 }

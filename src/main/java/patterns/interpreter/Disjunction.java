@@ -1,16 +1,9 @@
 
 package patterns.interpreter;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Disjunction / OR Expression Class.
  */
-
-
-
-
-@Slf4j
 public class Disjunction extends NonTerminalExpression {
 
     /** The lhs. */
@@ -39,7 +32,7 @@ public class Disjunction extends NonTerminalExpression {
      */
     @Override
     public boolean interpret(final Context context) {
-        return lhs.interpret(context) || rhs.interpret(context);
+        return this.lhs.interpret(context) || this.rhs.interpret(context);
     }
 
 }

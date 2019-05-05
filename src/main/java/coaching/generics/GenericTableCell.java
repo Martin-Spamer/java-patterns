@@ -1,16 +1,11 @@
 
 package coaching.generics;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Generic GenericTable Cell class.
  *
  * @param <T> the generic type
  */
-
-
-@Slf4j
 public class GenericTableCell<T> {
 
     /** The value. */

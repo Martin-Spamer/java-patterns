@@ -1,16 +1,9 @@
 
 package patterns.interpreter;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Conjunction / And Expression Class.
  */
-
-
-
-
-@Slf4j
 public class Conjunction extends NonTerminalExpression {
 
     /** The lhs. */
@@ -39,7 +32,7 @@ public class Conjunction extends NonTerminalExpression {
      */
     @Override
     public boolean interpret(final Context context) {
-        return lhs.interpret(context) && rhs.interpret(context);
+        return this.lhs.interpret(context) && this.rhs.interpret(context);
     }
 
 }

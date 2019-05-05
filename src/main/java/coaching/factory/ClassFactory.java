@@ -6,14 +6,10 @@ import java.util.Properties;
 import coaching.money.BigDecimalMoney;
 import coaching.money.MoneyInterface;
 import coaching.resources.PropertiesLoader;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * A Factory class for creating Class objects.
  */
-
-
-@Slf4j
 public final class ClassFactory {
 
     /** Instantiate the single instance of this class. */
@@ -65,7 +61,7 @@ public final class ClassFactory {
      *
      * @param key the key
      * @return the object
-     * @throws ClassNotFoundException the class not found exception
+     *         The not found exception
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
@@ -80,7 +76,7 @@ public final class ClassFactory {
      * Factory method to create a new instance of ClassFactory.
      *
      * @return new instance of ClassFactory
-     * @throws ClassNotFoundException the class not found exception
+     *         The not found exception
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */
@@ -93,7 +89,7 @@ public final class ClassFactory {
      *
      * @param key the key
      * @return new instance of ClassFactory
-     * @throws ClassNotFoundException the class not found exception
+     *         The not found exception
      * @throws InstantiationException the instantiation exception
      * @throws IllegalAccessException the illegal access exception
      */

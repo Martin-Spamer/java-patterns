@@ -6,15 +6,10 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * An abstract data transfer object class.
  * Usage <code>Address extends AbstractDto</code>
  */
-
-
-@Slf4j
 public abstract class AbstractDto {
 
     /** The fields. */

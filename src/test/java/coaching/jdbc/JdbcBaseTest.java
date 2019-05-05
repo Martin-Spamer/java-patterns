@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class JdbcBaseTest {
 
     /**
-     * The Class MockJdbcBase.
+ * The MockJdbcBase.
      */
     public class MockJdbcBase extends JdbcBase {
     }

@@ -1,16 +1,9 @@
 
 package patterns.command;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Result of Command execution.
  */
-
-
-
-
-@Slf4j
 public final class Result implements ResultInterface {
 
     /** The Constant PASS. */
@@ -26,7 +19,7 @@ public final class Result implements ResultInterface {
      * Instantiates a new result.
      */
     public Result() {
-        value = PASS;
+        this.value = PASS;
     }
 
     /**
@@ -37,7 +30,7 @@ public final class Result implements ResultInterface {
      * @param result the result
      */
     public Result(final Boolean result) {
-        value = result;
+        this.value = result;
     }
 
     /*
@@ -47,7 +40,7 @@ public final class Result implements ResultInterface {
      */
     @Override
     public boolean isPass() {
-        return value;
+        return this.value;
     }
 
     /*
@@ -57,8 +50,8 @@ public final class Result implements ResultInterface {
      */
     @Override
     public boolean and(final ResultInterface newResult) {
-        value &= newResult.isPass();
-        return value;
+        this.value &= newResult.isPass();
+        return this.value;
     }
 
     /*
@@ -67,7 +60,7 @@ public final class Result implements ResultInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [result=%s]", this.getClass().getSimpleName(), value);
+        return String.format("%s [result=%s]", this.getClass().getSimpleName(), this.value);
     }
 
 }

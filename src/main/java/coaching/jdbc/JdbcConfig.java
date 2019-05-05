@@ -2,14 +2,10 @@
 package coaching.jdbc;
 
 import coaching.config.Configuration;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * JDBC Configuration class.
  */
-
-
-@Slf4j
 public final class JdbcConfig extends Configuration {
 
     /** Single instance. */

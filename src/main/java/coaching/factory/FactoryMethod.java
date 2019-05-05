@@ -36,7 +36,7 @@ public final class FactoryMethod {
     /**
      * Factory method to create a new instance of FactoryMethod.
      *
-     * @param className the class name
+ * The name
      * @return new instance of FactoryMethod
      */
     public static String create(final String className) {

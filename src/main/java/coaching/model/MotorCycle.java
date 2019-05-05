@@ -4,14 +4,9 @@
 
 package coaching.model;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * MotorCycle class.
  */
-
-
-@Slf4j
 public class MotorCycle extends AbstractVehicle {
 
     /** The rider. */
@@ -30,7 +25,7 @@ public class MotorCycle extends AbstractVehicle {
      * @return the rider
      */
     public Rider getRider() {
-        return rider;
+        return this.rider;
     }
 
     /**

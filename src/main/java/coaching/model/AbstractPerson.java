@@ -4,24 +4,17 @@
 
 package coaching.model;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * An abstract Person class.
  */
-
-
-@Slf4j
 public abstract class AbstractPerson implements PersonInterface {
-
-    /** person name. */
     private String name;
 
     /**
      * Instantiates a new person.
      */
     public AbstractPerson() {
-        name = "Name";
+        this.name = "Name";
     }
 
     /**
@@ -50,7 +43,7 @@ public abstract class AbstractPerson implements PersonInterface {
      */
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /*
@@ -59,7 +52,7 @@ public abstract class AbstractPerson implements PersonInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [name=%s]", this.getClass().getSimpleName(), name);
+        return String.format("%s [name=%s]", this.getClass().getSimpleName(), this.name);
     }
 
 }

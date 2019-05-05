@@ -6,14 +6,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * TimeStamp class.
  */
-
-
-@Slf4j
 public class TimeStamp {
 
     /**
@@ -43,6 +38,6 @@ public class TimeStamp {
      */
     @Override
     public String toString() {
-        return new SimpleDateFormat(TimeStamp.TIMESTAMP_FORMAT, Locale.getDefault()).format(time);
+        return new SimpleDateFormat(TimeStamp.TIMESTAMP_FORMAT, Locale.getDefault()).format(this.time);
     }
 }

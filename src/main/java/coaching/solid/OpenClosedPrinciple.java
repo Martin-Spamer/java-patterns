@@ -1,8 +1,6 @@
 
 package coaching.solid;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * A class to Demonstrate the Open Closed Principle (OCP).
  *
@@ -10,9 +8,6 @@ import lombok.extern.slf4j.Slf4j;
  * to extension but closed for modifications.
  *
  */
-
-
-@Slf4j
 public class OpenClosedPrinciple {
 
 }

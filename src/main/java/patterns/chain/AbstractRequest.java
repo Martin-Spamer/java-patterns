@@ -1,16 +1,9 @@
 
 package patterns.chain;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * AbstractRequest Class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractRequest implements RequestInterface {
 
     /** The payload. */
@@ -22,7 +15,7 @@ public abstract class AbstractRequest implements RequestInterface {
      * @return the payload
      */
     public String getPayload() {
-        return payload;
+        return this.payload;
     }
 
     /**
@@ -42,7 +35,7 @@ public abstract class AbstractRequest implements RequestInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [payload=%s]", this.getClass().getSimpleName(), payload);
+        return String.format("%s [payload=%s]", this.getClass().getSimpleName(), this.payload);
     }
 
 }

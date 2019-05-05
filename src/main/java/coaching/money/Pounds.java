@@ -4,14 +4,9 @@ package coaching.money;
 import java.util.Currency;
 import java.util.Locale;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * A class for Pounds as Money.
  */
-
-
-@Slf4j
 public final class Pounds extends Money {
 
     /**

@@ -2,14 +2,11 @@
 package coaching.bags;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import coaching.tuples.BoxTest;
 import lombok.extern.slf4j.Slf4j;
 
 /**

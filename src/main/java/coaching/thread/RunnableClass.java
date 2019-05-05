@@ -4,7 +4,7 @@ package coaching.thread;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * The Class RunnableClass.
+ * The RunnableClass.
  */
 
 

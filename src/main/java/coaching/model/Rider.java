@@ -1,14 +1,9 @@
 
 package coaching.model;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Rider class.
  */
-
-
-@Slf4j
 public class Rider extends AbstractPerson {
 
     /**

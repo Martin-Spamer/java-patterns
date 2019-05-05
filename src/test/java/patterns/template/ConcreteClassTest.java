@@ -5,14 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Unit tests for the ConcreteClass example.
  */
-
-
-@Slf4j
 public final class ConcreteClassTest {
 
     /**

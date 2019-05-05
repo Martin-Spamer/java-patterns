@@ -7,14 +7,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Helper Class.
  */
-
-
-@Slf4j
 public final class DateHelper {
 
     /** ISO FORMAT date time stamp. */

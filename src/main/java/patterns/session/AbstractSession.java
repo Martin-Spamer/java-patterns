@@ -3,16 +3,9 @@ package patterns.session;
 
 import java.util.UUID;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Abstract Session class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractSession {
 
     /** A Universally Unique ID. */
@@ -34,7 +27,7 @@ public abstract class AbstractSession {
      * @param currentUUID the current UUID
      */
     public AbstractSession(final UUID currentUUID) {
-        uuid = currentUUID;
+        this.uuid = currentUUID;
     }
 
     /**
@@ -52,7 +45,7 @@ public abstract class AbstractSession {
      * @return the uuid
      */
     public UUID getUuid() {
-        return uuid;
+        return this.uuid;
     }
 
     /**
@@ -61,7 +54,7 @@ public abstract class AbstractSession {
      * @return the token
      */
     public String token() {
-        return token;
+        return this.token;
     }
 
     /*
@@ -70,7 +63,7 @@ public abstract class AbstractSession {
      */
     @Override
     public String toString() {
-        return String.format("%s [uuid=%s, token=%s]", this.getClass().getSimpleName(), uuid, token);
+        return String.format("%s [uuid=%s, token=%s]", this.getClass().getSimpleName(), this.uuid, this.token);
     }
 
 }

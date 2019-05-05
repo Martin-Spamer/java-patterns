@@ -5,7 +5,7 @@ import coaching.factory.ClassFactory;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * The Class CommandInvoker.
+ * The CommandInvoker.
  */
 
 
@@ -63,7 +63,7 @@ public final class CommandInvoker {
     /**
      * Execute by class name.
      *
-     * @param className the class name
+ * The name
      * @return the result interface
      * @throws MissingCommandException the missing command exception
      */

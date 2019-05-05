@@ -1,15 +1,10 @@
 
 package coaching.pool;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * ResourceCreationException Class.
  */
 @SuppressWarnings("serial")
-
-
-@Slf4j
 public class ResourceCreationException extends ResourcePoolException {
 
     /**

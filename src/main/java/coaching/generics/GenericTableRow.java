@@ -6,16 +6,11 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * A GenericTableRow class composed of GenericTableCell classes.
  *
  * @param <T> the generic type
  */
-
-
-@Slf4j
 public class GenericTableRow<T> {
 
     /** the columns in the row. */

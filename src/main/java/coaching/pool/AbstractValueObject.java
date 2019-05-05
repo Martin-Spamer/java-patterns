@@ -1,14 +1,9 @@
 
 package coaching.pool;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Abstract Value Object.
  */
-
-
-@Slf4j
 public abstract class AbstractValueObject {
 
     /** Indicates if the value dirty, has it been changed. */
@@ -18,7 +13,7 @@ public abstract class AbstractValueObject {
      * Mark as dirty, changed.
      */
     protected void markDirty() {
-        dirty = true;
+        this.dirty = true;
     }
 
     /**
@@ -27,7 +22,7 @@ public abstract class AbstractValueObject {
      * @return true, if is dirty
      */
     protected boolean isDirty() {
-        return dirty;
+        return this.dirty;
     }
 
 }

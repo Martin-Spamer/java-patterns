@@ -1,16 +1,9 @@
 
 package patterns.builder;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Product Class.
  */
-
-
-
-
-@Slf4j
 public class Product {
 
     /** The part one. */
@@ -37,7 +30,7 @@ public class Product {
      */
     @Override
     public String toString() {
-        return String.format("%s [partOne=%s, partTwo=%s]", this.getClass().getSimpleName(), partOne, partTwo);
+        return String.format("%s [partOne=%s, partTwo=%s]", this.getClass().getSimpleName(), this.partOne, this.partTwo);
     }
 
 }

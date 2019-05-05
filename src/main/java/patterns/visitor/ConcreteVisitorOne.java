@@ -1,16 +1,9 @@
 
 package patterns.visitor;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Visitor Class.
  */
-
-
-
-
-@Slf4j
 public final class ConcreteVisitorOne extends AbstractVisitor {
 
     /*

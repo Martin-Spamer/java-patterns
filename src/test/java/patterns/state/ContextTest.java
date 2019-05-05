@@ -10,14 +10,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Context class tests.
  */
-
-
-@Slf4j
 public final class ContextTest {
 
     /**

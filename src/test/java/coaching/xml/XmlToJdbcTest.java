@@ -37,7 +37,7 @@ public final class XmlToJdbcTest {
     /**
      * Unit Test for the XmlToJdbc class.
      *
-     * @throws ClassNotFoundException the class not found exception
+ * The not found exception
      */
     @Test
     public void testXmlToJdbc() throws ClassNotFoundException {

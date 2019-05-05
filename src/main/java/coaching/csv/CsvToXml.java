@@ -5,14 +5,9 @@ import java.util.List;
 
 import org.w3c.dom.Document;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
- * The Class CsvToXml.
+ * The CsvToXml.
  */
-
-
-@Slf4j
 public final class CsvToXml {
 
     /** CSV file. */
@@ -35,8 +30,8 @@ public final class CsvToXml {
      * @param tableName the table name
      */
     public void process(final String resourceName, final String tableName) {
-        csv.read(resourceName);
-        final List<CsvRecord> rowList = csv.getRowList();
+        this.csv.read(resourceName);
+        final List<CsvRecord> rowList = this.csv.getRowList();
     }
 
 }

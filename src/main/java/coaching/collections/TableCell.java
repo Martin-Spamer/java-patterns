@@ -1,14 +1,9 @@
 
 package coaching.collections;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * GenericTable Cell class.
  */
-
-
-@Slf4j
 public class TableCell {
 
     /** The value. */

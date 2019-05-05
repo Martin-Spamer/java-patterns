@@ -4,14 +4,9 @@ package coaching.scripting;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
- * The Class Equation.
+ * The Equation.
  */
-
-
-@Slf4j
 public class Equation {
 
     /** The log. */
@@ -20,7 +15,7 @@ public class Equation {
     private final ScriptEngineManager manager = new ScriptEngineManager();
 
     /** The engine. */
-    private final ScriptEngine engine = manager.getEngineByName("js");
+    private final ScriptEngine engine = this.manager.getEngineByName("js");
 
     /**
      * Solve.
@@ -30,7 +25,7 @@ public class Equation {
      * @throws Exception the exception
      */
     public Integer solve(final String expression) throws Exception {
-        final Integer result = (Integer) engine.eval(expression);
+        final Integer result = (Integer) this.engine.eval(expression);
         return result;
     }
 

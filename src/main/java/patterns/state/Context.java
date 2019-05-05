@@ -1,16 +1,9 @@
 
 package patterns.state;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Context Class.
  */
-
-
-
-
-@Slf4j
 public class Context {
 
     /** state. */
@@ -32,7 +25,7 @@ public class Context {
      * @return the context
      */
     public Context toAlice() {
-        state = new StateAlice();
+        this.state = new StateAlice();
         return this;
     }
 
@@ -42,7 +35,7 @@ public class Context {
      * @return the context
      */
     public Context toBob() {
-        state = new StateBob();
+        this.state = new StateBob();
         return this;
     }
 
@@ -52,7 +45,7 @@ public class Context {
      */
     @Override
     public String toString() {
-        return String.format("%s [state=%s]", this.getClass().getSimpleName(), state);
+        return String.format("%s [state=%s]", this.getClass().getSimpleName(), this.state);
     }
 
 }

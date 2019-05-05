@@ -2,7 +2,6 @@
 package coaching.jdbc;
 
 import coaching.csv.CsvFile;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Provides a example of a crude XML DAO reader.
@@ -10,9 +9,6 @@ import lombok.extern.slf4j.Slf4j;
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
-
-
-@Slf4j
 public final class CsvToDao {
 
     /** The csv. */
@@ -34,7 +30,7 @@ public final class CsvToDao {
      * @param resourceName the resource name
      */
     public void process(final String resourceName) {
-        csv.read(resourceName);
+        this.csv.read(resourceName);
     }
 
     /*
@@ -43,7 +39,7 @@ public final class CsvToDao {
      */
     @Override
     public String toString() {
-        return String.format("%s [csv=%s, dao=%s]", this.getClass().getSimpleName(), csv, dao);
+        return String.format("%s [csv=%s, dao=%s]", this.getClass().getSimpleName(), this.csv, this.dao);
     }
 
 }

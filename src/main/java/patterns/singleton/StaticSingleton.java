@@ -1,16 +1,9 @@
 
 package patterns.singleton;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * StaticSingleton Class.
  */
-
-
-
-
-@Slf4j
 public final class StaticSingleton {
 
     /** The instance. */

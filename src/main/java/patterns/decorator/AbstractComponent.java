@@ -1,17 +1,11 @@
 
 package patterns.decorator;
 
-import lombok.extern.slf4j.Slf4j;
 import patterns.composite.ComponentInterface;
 
 /**
  * An abstract Component class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractComponent implements ComponentInterface {
 
     /*

@@ -23,7 +23,7 @@ public class AbstractAltResourcePoolTest {
     }
 
     /**
-     * The Class MockResourcePool.
+ * The MockResourcePool.
      */
     public class MockResourcePool extends AbstractAltResourcePool<ValueObject> {
         /*

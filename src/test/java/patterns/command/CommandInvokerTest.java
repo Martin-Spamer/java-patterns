@@ -5,14 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Unit test class for CommandInvoker.
  */
-
-
-@Slf4j
 public class CommandInvokerTest {
 
     /**

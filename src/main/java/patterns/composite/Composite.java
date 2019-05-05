@@ -4,16 +4,9 @@ package patterns.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Composite Class.
  */
-
-
-
-
-@Slf4j
 public final class Composite extends AbstractComponent {
 
     /** The leaves. */
@@ -25,7 +18,7 @@ public final class Composite extends AbstractComponent {
      */
     @Override
     public ComponentInterface add(final AbstractComponent component) {
-        leaves.add(component);
+        this.leaves.add(component);
         return this;
     }
 
@@ -35,7 +28,7 @@ public final class Composite extends AbstractComponent {
      */
     @Override
     public ComponentInterface remove(final AbstractComponent component) {
-        leaves.remove(component);
+        this.leaves.remove(component);
         return this;
     }
 
@@ -45,7 +38,7 @@ public final class Composite extends AbstractComponent {
      */
     @Override
     public ComponentInterface getChild(final int index) {
-        leaves.get(index);
+        this.leaves.get(index);
         return this;
     }
 
@@ -55,7 +48,7 @@ public final class Composite extends AbstractComponent {
      */
     @Override
     public ComponentInterface operation() {
-        for (final AbstractComponent component : leaves) {
+        for (final AbstractComponent component : this.leaves) {
             component.operation();
         }
         return this;

@@ -1,14 +1,9 @@
 
 package coaching.delegation;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Manager class with delegation.
  */
-
-
-@Slf4j
 public class Manager implements ProcessInterface {
 
     /** The worker. */
@@ -19,7 +14,7 @@ public class Manager implements ProcessInterface {
      */
     public Manager() {
         super();
-        worker = new Worker();
+        this.worker = new Worker();
     }
 
     /**
@@ -41,7 +36,7 @@ public class Manager implements ProcessInterface {
      */
     @Override
     public Manager doProcess() {
-        worker.doProcess();
+        this.worker.doProcess();
         return this;
     }
 

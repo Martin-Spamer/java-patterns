@@ -7,14 +7,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Unit test class for ClassFactory.
  */
-
-
-@Slf4j
 public class ClassFactoryTest {
 
     /**

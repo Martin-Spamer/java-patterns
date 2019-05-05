@@ -1,16 +1,9 @@
 
 package patterns.observer;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Subject Class.
  */
-
-
-
-
-@Slf4j
 public final class Subject extends AbstractSubject {
 
     /** The status. */
@@ -22,7 +15,7 @@ public final class Subject extends AbstractSubject {
      * @return the status
      */
     public Boolean getStatus() {
-        return status;
+        return this.status;
     }
 
     /**
@@ -41,7 +34,7 @@ public final class Subject extends AbstractSubject {
      */
     @Override
     public String toString() {
-        return String.format("%s [status=%s]", this.getClass().getSimpleName(), status);
+        return String.format("%s [status=%s]", this.getClass().getSimpleName(), this.status);
     }
 
 }

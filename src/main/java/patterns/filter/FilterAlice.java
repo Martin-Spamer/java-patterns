@@ -1,16 +1,9 @@
 
 package patterns.filter;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * First Filter.
  */
-
-
-
-
-@Slf4j
 public final class FilterAlice extends AbstractFilter {
 
     /**

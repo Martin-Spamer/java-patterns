@@ -4,16 +4,9 @@ package patterns.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * AbstractSubject Class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractSubject implements SubjectInterface {
 
     /** The observers. */
@@ -26,7 +19,7 @@ public abstract class AbstractSubject implements SubjectInterface {
      */
     @Override
     public void attachObserver(final AbstractObserver observer) {
-        observers.add(observer);
+        this.observers.add(observer);
     }
 
     /*
@@ -36,7 +29,7 @@ public abstract class AbstractSubject implements SubjectInterface {
      */
     @Override
     public void detachObserver(final ObserverInterface observer) {
-        observers.remove(observer);
+        this.observers.remove(observer);
     }
 
     /*
@@ -45,7 +38,7 @@ public abstract class AbstractSubject implements SubjectInterface {
      */
     @Override
     public void updateObservers() {
-        for (final ObserverInterface observer : observers) {
+        for (final ObserverInterface observer : this.observers) {
             observer.updateObservers();
         }
     }

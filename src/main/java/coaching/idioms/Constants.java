@@ -1,15 +1,10 @@
 
 package coaching.idioms;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Place an organisational Constants class in the organisations root namespace.
  * e.g The files might exist in uk.co.company
  */
-
-
-@Slf4j
 public final class Constants {
 
     /** COUNTRY_CODE Constant. */

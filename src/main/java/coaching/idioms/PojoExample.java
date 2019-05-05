@@ -1,14 +1,9 @@
 
 package coaching.idioms;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Example plain old java object class.
  */
-
-
-@Slf4j
 public final class PojoExample implements Cloneable {
 
     /** The string value. */
@@ -64,7 +59,7 @@ public final class PojoExample implements Cloneable {
      * @return the string value
      */
     public String getStringValue() {
-        return stringValue;
+        return this.stringValue;
     }
 
     /**
@@ -73,7 +68,7 @@ public final class PojoExample implements Cloneable {
      * @return the long value
      */
     public long getLongValue() {
-        return longValue;
+        return this.longValue;
     }
 
     /*
@@ -82,7 +77,10 @@ public final class PojoExample implements Cloneable {
      */
     @Override
     public String toString() {
-        return String.format("%s [stringValue=%s, longValue=%s]", this.getClass().getSimpleName(), stringValue, longValue);
+        return String.format("%s [stringValue=%s, longValue=%s]",
+            this.getClass().getSimpleName(),
+            this.stringValue,
+            this.longValue);
     }
 
 }

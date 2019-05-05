@@ -4,12 +4,9 @@ package coaching.delegation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Worker class.
  */
-@Slf4j
 public class Worker implements ProcessInterface {
 
     /** The log. */
@@ -21,7 +18,7 @@ public class Worker implements ProcessInterface {
      */
     @Override
     public Worker doProcess() {
-        log.info("do work");
+        this.log.info("do work");
         return this;
     }
 

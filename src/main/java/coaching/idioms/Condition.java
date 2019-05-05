@@ -1,14 +1,9 @@
 
 package coaching.idioms;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Condition Class.
  */
-
-
-@Slf4j
 public class Condition implements ConditionInterface<Boolean> {
 
     /** The result. */
@@ -30,7 +25,7 @@ public class Condition implements ConditionInterface<Boolean> {
      */
     @Override
     public boolean isTrue() {
-        return result;
+        return this.result;
     }
 
     /**
@@ -40,7 +35,7 @@ public class Condition implements ConditionInterface<Boolean> {
      */
     @Override
     public boolean isFalse() {
-        return result == false;
+        return this.result == false;
     }
 
     /*
@@ -49,7 +44,7 @@ public class Condition implements ConditionInterface<Boolean> {
      */
     @Override
     public String toString() {
-        return String.format("%s [result=%s]", this.getClass().getSimpleName(), result);
+        return String.format("%s [result=%s]", this.getClass().getSimpleName(), this.result);
     }
 
 }

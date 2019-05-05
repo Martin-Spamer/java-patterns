@@ -65,7 +65,7 @@ public final class CommandFactory {
     /**
      * Factory Class to create a new Command instance.
      *
-     * @param className the class name
+ * The name
      * @return the abstract command
      */
     private AbstractCommand createByClassName(final String className) {

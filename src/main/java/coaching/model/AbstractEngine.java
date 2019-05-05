@@ -1,14 +1,9 @@
 
 package coaching.model;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Abstract Engine class.
  */
-
-
-@Slf4j
 public abstract class AbstractEngine implements FuelInterface {
 
     /** fuel. */
@@ -39,7 +34,7 @@ public abstract class AbstractEngine implements FuelInterface {
      */
     @Override
     public void addFuel(final int quantity) {
-        fuel.addFuel(quantity);
+        this.fuel.addFuel(quantity);
     }
 
     /*
@@ -48,7 +43,7 @@ public abstract class AbstractEngine implements FuelInterface {
      */
     @Override
     public void useFuel(final int quantity) {
-        fuel.useFuel(quantity);
+        this.fuel.useFuel(quantity);
     }
 
     /*
@@ -57,7 +52,7 @@ public abstract class AbstractEngine implements FuelInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [fuel=%s]", this.getClass().getSimpleName(), fuel);
+        return String.format("%s [fuel=%s]", this.getClass().getSimpleName(), this.fuel);
     }
 
 }

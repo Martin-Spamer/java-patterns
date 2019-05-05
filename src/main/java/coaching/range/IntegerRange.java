@@ -1,14 +1,9 @@
 
 package coaching.range;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
- * The Class IntegerRange.
+ * The IntegerRange.
  */
-
-
-@Slf4j
 public class IntegerRange {
 
     /** The start. */

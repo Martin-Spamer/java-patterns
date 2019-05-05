@@ -1,8 +1,6 @@
 
 package coaching.exceptions;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * An example of a unchecked Exception class.
  *
@@ -14,9 +12,6 @@ import lombok.extern.slf4j.Slf4j;
  * programming error.
  */
 @SuppressWarnings("serial")
-
-
-@Slf4j
 public class UnCheckedException extends RuntimeException {
 
 }

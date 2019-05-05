@@ -28,14 +28,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Random;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Text utilities class.
  */
-
-
-@Slf4j
 public final class Text {
 
     /** RND constant. */

@@ -1,14 +1,9 @@
 
 package coaching.resources;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
- * The Class ResourceNotLoadedException.
+ * The ResourceNotLoadedException.
  */
-
-
-@Slf4j
 public class ResourceNotLoadedException extends AssertionError {
 
     /** serialVersionUID constant. */

@@ -1,14 +1,9 @@
 
 package coaching.model;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * The Fuel class.
  */
-
-
-@Slf4j
 public class Fuel implements FuelInterface {
 
     /** The quantity. */
@@ -45,7 +40,7 @@ public class Fuel implements FuelInterface {
      */
     @Override
     public String toString() {
-        return String.format("%s [quantity=%s]", this.getClass().getSimpleName(), quantity);
+        return String.format("%s [quantity=%s]", this.getClass().getSimpleName(), this.quantity);
     }
 
 }

@@ -1,16 +1,9 @@
 
 package patterns.state;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * AbstractState class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractState {
 
     /**

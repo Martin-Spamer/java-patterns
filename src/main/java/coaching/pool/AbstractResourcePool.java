@@ -3,16 +3,11 @@ package coaching.pool;
 
 import java.util.concurrent.LinkedBlockingDeque;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Abstract Resource Pool class.
  *
  * @param <E> the element type
  */
-
-
-@Slf4j
 public abstract class AbstractResourcePool<E> implements PoolInterface<E> {
 
     /** The free pool. */

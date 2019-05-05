@@ -6,8 +6,6 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -17,7 +15,6 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for ResourceLoader class.
  */
-
 
 @Slf4j
 public final class ResourceLoaderTest {

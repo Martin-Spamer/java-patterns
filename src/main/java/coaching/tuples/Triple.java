@@ -1,8 +1,6 @@
 
 package coaching.tuples;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Triple, 3 Tuple class.
  *
@@ -10,9 +8,6 @@ import lombok.extern.slf4j.Slf4j;
  * @param <Y> the y element type Y
  * @param <Z> the z element type Z
  */
-
-
-@Slf4j
 public class Triple<X, Y, Z> {
 
     /** The x. */

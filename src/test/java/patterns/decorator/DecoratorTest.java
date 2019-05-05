@@ -16,13 +16,13 @@ import lombok.extern.slf4j.Slf4j;
 public final class DecoratorTest {
 
     /**
-     * The Class MissingOperation.
+ * The MissingOperation.
      */
     public final class MissingOperation extends AbstractComponent {
     }
 
     /**
-     * The Class ConcreteDecorator.
+ * The ConcreteDecorator.
      */
     public final class ConcreteDecorator extends AbstractComponent {
         /*

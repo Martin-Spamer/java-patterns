@@ -1,16 +1,9 @@
 
 package patterns.builder;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * BuilderOne Class.
  */
-
-
-
-
-@Slf4j
 public class BuilderOne extends AbstractBuilder {
 
     /*

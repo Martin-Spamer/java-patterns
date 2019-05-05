@@ -1,16 +1,9 @@
 
 package patterns.visitor;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Abstract Element Class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractElement implements ElementInterface {
 
     /*

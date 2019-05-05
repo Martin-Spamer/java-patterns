@@ -4,16 +4,9 @@ package patterns.session;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * SessionTracker Class.
  */
-
-
-
-
-@Slf4j
 public class SessionTracker {
 
     /** The sessions. */
@@ -26,7 +19,7 @@ public class SessionTracker {
      */
     public AbstractSession createSession() {
         final Session session = new Session();
-        sessions.add(session);
+        this.sessions.add(session);
         return session;
     }
 
@@ -36,7 +29,7 @@ public class SessionTracker {
      * @param session the session
      */
     public void destroySession(final AbstractSession session) {
-        sessions.remove(session);
+        this.sessions.remove(session);
     }
 
     /*
@@ -45,7 +38,7 @@ public class SessionTracker {
      */
     @Override
     public String toString() {
-        return String.format("%s [sessions=%s]", this.getClass().getSimpleName(), sessions);
+        return String.format("%s [sessions=%s]", this.getClass().getSimpleName(), this.sessions);
     }
 
 }

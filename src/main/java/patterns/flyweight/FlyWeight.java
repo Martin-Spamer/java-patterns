@@ -1,16 +1,9 @@
 
 package patterns.flyweight;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * FlyWeight Class.
  */
-
-
-
-
-@Slf4j
 public final class FlyWeight {
 
     /** The common state. */
@@ -39,7 +32,7 @@ public final class FlyWeight {
      */
     @Override
     public String toString() {
-        return String.format("%s [commonState=%s]", this.getClass().getSimpleName(), commonState);
+        return String.format("%s [commonState=%s]", this.getClass().getSimpleName(), this.commonState);
     }
 
 }

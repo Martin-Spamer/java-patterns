@@ -7,16 +7,9 @@ import java.io.OutputStream;
 import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * AbstractPayload Class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractPayload implements PayloadInterface {
 
     /** The properties. */
@@ -30,7 +23,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @return the abstract payload
      */
     public AbstractPayload setProperty(final String key, final String value) {
-        properties.setProperty(key, value);
+        this.properties.setProperty(key, value);
         return this;
     }
 
@@ -41,7 +34,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @return the property
      */
     public String getProperty(final String key) {
-        return properties.getProperty(key);
+        return this.properties.getProperty(key);
     }
 
     /**
@@ -52,7 +45,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @return the property
      */
     public String getProperty(final String key, final String defaultValue) {
-        return properties.getProperty(key, defaultValue);
+        return this.properties.getProperty(key, defaultValue);
     }
 
     /**
@@ -63,7 +56,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @throws IOException Signals that an I/O exception has occurred.
      */
     public AbstractPayload load(final InputStream inputStream) throws IOException {
-        properties.load(inputStream);
+        this.properties.load(inputStream);
         return this;
     }
 
@@ -78,7 +71,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      *             exception
      */
     public AbstractPayload loadFromXML(final InputStream inputStream) throws IOException, InvalidPropertiesFormatException {
-        properties.loadFromXML(inputStream);
+        this.properties.loadFromXML(inputStream);
         return this;
 
     }
@@ -103,7 +96,7 @@ public abstract class AbstractPayload implements PayloadInterface {
      * @throws IOException Signals that an I/O exception has occurred.
      */
     public AbstractPayload store(final OutputStream outputStream, final String comments) throws IOException {
-        properties.store(outputStream, comments);
+        this.properties.store(outputStream, comments);
         return this;
     }
 

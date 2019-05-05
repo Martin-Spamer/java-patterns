@@ -2,14 +2,10 @@
 package coaching.csv;
 
 import coaching.jdbc.DynamicDao;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * A class to read a CSV file and write data to JDBC table.
  */
-
-
-@Slf4j
 public final class CsvToJdbc {
 
     /** CSV file. */
@@ -32,9 +28,9 @@ public final class CsvToJdbc {
      * @param tableName the table name
      */
     public void transfer(final String filename, final String tableName) {
-        csvFile.read(filename);
-        csvFile.rows();
-        dao.setTableName(tableName);
+        this.csvFile.read(filename);
+        this.csvFile.rows();
+        this.dao.setTableName(tableName);
     }
 
 }

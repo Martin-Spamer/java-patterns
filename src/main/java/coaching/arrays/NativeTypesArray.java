@@ -9,8 +9,6 @@ import lombok.extern.slf4j.Slf4j;
  * Example code of arrays of native/primitive types. One of the major downsides
  * of arrays is their fixed size, hence ARRAY_SIZE.
  **/
-
-
 @Slf4j
 public class NativeTypesArray {
 

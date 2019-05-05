@@ -3,17 +3,12 @@ package coaching.tuples;
 
 import java.util.Map;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * A KeyValue class.
  *
  * @param <K> the key type
  * @param <V> the value type
  */
-
-
-@Slf4j
 public class KeyValue<K, V> implements Map.Entry<K, V> {
 
     /** The key. */

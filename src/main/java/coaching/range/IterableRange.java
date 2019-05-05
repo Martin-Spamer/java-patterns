@@ -3,15 +3,10 @@ package coaching.range;
 
 import java.util.Iterator;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
- * The Class IterableRange.
+ * The IterableRange.
  */
-
-
-@Slf4j
-public class IterableRange implements Iterable<Object> {
+public class IterableRange implements Iterable<Range> {
 
     /** The start. */
     private final int start;
@@ -123,8 +118,8 @@ public class IterableRange implements Iterable<Object> {
      * @see java.lang.Iterable#iterator()
      */
     @Override
-    public Iterator iterator() {
-        return new Iterator() {
+    public Iterator<Range> iterator() {
+        return new Iterator<Range>() {
             private int current;
 
             @Override
@@ -133,7 +128,7 @@ public class IterableRange implements Iterable<Object> {
             }
 
             @Override
-            public Object next() {
+            public Range next() {
                 return null;
             }
 
@@ -152,15 +147,15 @@ public class IterableRange implements Iterable<Object> {
      * @param step the step
      * @return the iterable
      */
-    public static Iterable range(final int start, final int stop, final int step) {
+    public static Iterable<Range> range(final int start, final int stop, final int step) {
         if (step <= 0) {
             throw new IllegalArgumentException("step must be greate than zero!");
         }
 
-        return new Iterable() {
+        return new Iterable<Range>() {
             @Override
-            public Iterator iterator() {
-                return new Iterator() {
+            public Iterator<Range> iterator() {
+                return new Iterator<Range>() {
                     private int counter = start;
 
                     @Override
@@ -169,9 +164,9 @@ public class IterableRange implements Iterable<Object> {
                     }
 
                     @Override
-                    public Integer next() {
+                    public Range next() {
                         try {
-                            return this.counter;
+                            return null; // new Range(this.counter);
                         } finally {
                             this.counter += step;
                         }

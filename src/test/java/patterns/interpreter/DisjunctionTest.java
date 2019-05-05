@@ -7,14 +7,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * class DisjunctionTest.
  */
-
-
-@Slf4j
 public final class DisjunctionTest {
 
     /**

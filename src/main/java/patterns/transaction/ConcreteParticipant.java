@@ -1,16 +1,9 @@
 
 package patterns.transaction;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Concrete Participant Class.
  */
-
-
-
-
-@Slf4j
 public final class ConcreteParticipant extends AbstractParticipant {
 
     /*

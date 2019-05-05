@@ -9,8 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Example ThreadedApplication class.
  */
-
-
 @Slf4j
 public final class Application extends AbstractApplication {
 
@@ -52,7 +50,7 @@ public final class Application extends AbstractApplication {
     }
 
     /**
-     * The Class ApplicationException.
+     * The ApplicationException.
      */
     public class ApplicationException extends Exception {
 

@@ -1,16 +1,9 @@
 
 package patterns.interpreter;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * An abstract Expression Class.
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractExpression {
 
     /** The result. */
@@ -40,7 +33,7 @@ public abstract class AbstractExpression {
      * @return true, if successful, otherwise false., otherwise false.
      */
     public boolean interpret(final Context context) {
-        return result;
+        return this.result;
     }
 
 }

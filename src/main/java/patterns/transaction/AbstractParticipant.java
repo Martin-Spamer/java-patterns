@@ -1,16 +1,9 @@
 
 package patterns.transaction;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Abstract Participant class. https://en.wikipedia.org/wiki/ACID
  */
-
-
-
-
-@Slf4j
 public abstract class AbstractParticipant implements ParticipantInterface {
 
     /**

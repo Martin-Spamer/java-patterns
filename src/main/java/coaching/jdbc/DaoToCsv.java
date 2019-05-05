@@ -2,14 +2,10 @@
 package coaching.jdbc;
 
 import coaching.csv.CsvFile;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * JdbcToCsv class.
  */
-
-
-@Slf4j
 public final class DaoToCsv {
 
     /** Data access object. */
@@ -32,7 +28,7 @@ public final class DaoToCsv {
      */
     @Override
     public String toString() {
-        return String.format("%s [dao=%s, csvFile=%s]", this.getClass().getSimpleName(), dao, csv);
+        return String.format("%s [dao=%s, csvFile=%s]", this.getClass().getSimpleName(), this.dao, this.csv);
     }
 
 }
