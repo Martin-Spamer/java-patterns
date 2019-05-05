@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
  * @author martin.spamer.
  * @version 0.1 - first release. Created 07-Oct-2004 - 09:20:22
  */
+
+
 @Slf4j
 public class ObjectTypes {
 

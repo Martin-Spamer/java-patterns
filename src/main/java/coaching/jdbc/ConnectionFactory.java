@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public final class ConnectionFactory implements ConnectionFactoryInterface {
 
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** The jdbc url. */

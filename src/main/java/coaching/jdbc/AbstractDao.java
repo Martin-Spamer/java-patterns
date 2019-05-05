@@ -46,6 +46,7 @@ public abstract class AbstractDao extends JdbcBase implements CrudInterface, Dao
     /** DELETE_SQL constant. */
     public static final String DELETE_SQL = "DELETE FROM {TableName} WHERE ID={Key}";
 
+    /** The log. */
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
 
     /** The jdbc driver. */

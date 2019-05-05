@@ -8,6 +8,7 @@ import static org.junit.Assert.assertNotNull;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @Slf4j
 public class TableColumnTest {
 
@@ -44,6 +45,9 @@ public class TableColumnTest {
         log.info("{}", tableColumn.toRowString());
     }
 
+    /**
+     * test TableColumn object.
+     */
     @Test
     public void testTableColumnArray() {
         String[] data = { "one", "two" };

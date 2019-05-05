@@ -10,9 +10,13 @@ import static org.junit.Assert.assertNotNull;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @Slf4j
 public class GenericTableTest {
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testGenericTable() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>();
@@ -21,6 +25,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testGenericTableString() {
         String tableName = "tableName";
@@ -30,6 +37,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testGenericTableNull() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>(null);
@@ -38,6 +48,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testSetGetName() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>();
@@ -48,6 +61,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testAddColumnName() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>("tableName");
@@ -57,6 +73,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testAddColumnNameNull() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>("tableName");
@@ -66,6 +85,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testAddColumnNames() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>("tableName");
@@ -76,6 +98,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testAddColumnArray() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>("tableName");
@@ -90,6 +115,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testAddColumnNull() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>("tableName");
@@ -100,6 +128,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testAddRowGenericTableRow() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>("tableName");
@@ -110,6 +141,9 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testGetRow() {
         GenericTable<UUID> genericTable = new GenericTable<UUID>("tableName");
@@ -120,21 +154,33 @@ public class GenericTableTest {
         log.info("{}", genericTable);
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testTableHeader() {
         log.info("{}", new GenericTable<UUID>().tableHeader());
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testTableBody() {
         log.info("{}", new GenericTable<UUID>().tableBody());
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testToCsvString() {
         log.info("{}", new GenericTable<UUID>().toCsvString());
     }
 
+    /**
+     * test GenericTable object.
+     */
     @Test
     public void testToString() {
         log.info("{}", new GenericTable<UUID>().toString());

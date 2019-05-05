@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
  * a static logger is common to all instances.
  *
  */
+
+
 @Slf4j
 public final class StaticLogging {
 

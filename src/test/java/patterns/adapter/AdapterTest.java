@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The Class AdapterTest.
  */
+
+
 @Slf4j
 public final class AdapterTest {
 

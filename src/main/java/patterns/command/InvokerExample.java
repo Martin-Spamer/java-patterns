@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class InvokerExample implements InvokerInterface {
 
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /** static instance of the example command. */

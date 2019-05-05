@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @param <T> the generic type
  */
+
+
 @Slf4j
 public class GenericTableRow<T> {
 
@@ -47,10 +49,22 @@ public class GenericTableRow<T> {
         addCells(values);
     }
 
+    /**
+     * Adds the cells.
+     *
+     * @param values the values
+     * @return the generic table row
+     */
     public GenericTableRow<T> addCells(final String values) {
         return addCells(values.split(","));
     }
 
+    /**
+     * Adds the cells.
+     *
+     * @param values the values
+     * @return the generic table row
+     */
     public GenericTableRow<T> addCells(final String[] values) {
         for (final String value : values) {
             final GenericTableCell<T> cell = new GenericTableCell<T>().setValue((T) value);
@@ -72,6 +86,12 @@ public class GenericTableRow<T> {
         return this;
     }
 
+    /**
+     * Adds the cell.
+     *
+     * @param value the value
+     * @return the generic table row
+     */
     public GenericTableRow<T> addCell(final T value) {
         final GenericTableCell<T> cell = new GenericTableCell<T>().setValue(value);
         this.cols.add(cell);

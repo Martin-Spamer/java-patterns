@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  * Unit tests for the PortScan class.
  */
 // @Ignore("work-in-progress low-priority")
+
+
 @Slf4j
 public final class PortScanTest {
 

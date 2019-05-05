@@ -19,6 +19,8 @@ import lombok.extern.slf4j.Slf4j;
  * ResourceBundle.getBundle ("some.pkg.resource");
  * </code>
  */
+
+
 @Slf4j
 public final class ResourceLoader {
 

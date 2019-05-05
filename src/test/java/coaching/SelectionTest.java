@@ -2,8 +2,6 @@
 package coaching;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -14,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Examples of selection programming instructions.
  */
+
+
 @Slf4j
 public final class SelectionTest {
 

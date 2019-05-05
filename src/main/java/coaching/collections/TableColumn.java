@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A GenericTableRow class composed of GenericTableCell classes.
  */
+
+
 @Slf4j
 public class TableColumn {
 

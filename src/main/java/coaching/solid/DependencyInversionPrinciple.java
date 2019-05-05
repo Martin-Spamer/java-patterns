@@ -18,6 +18,8 @@ import lombok.extern.slf4j.Slf4j;
  * should not depend on details, details should depend on abstractions.
  *
  */
+
+
 @Slf4j
 public class DependencyInversionPrinciple {
 

@@ -12,10 +12,13 @@ import static org.junit.Assert.assertTrue;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @Slf4j
 public class RangeTest {
 
-    /** provides logging */
+    /**
+     *  provides logging.
+     */
 
     @Test
     public void testRange() {
@@ -23,6 +26,9 @@ public class RangeTest {
         assertNotNull(new Range(0, 0, 0));
     }
 
+    /**
+     * test Range object.
+     */
     @Test
     public void testRangeOf() {
         assertNotNull(Range.of(0, 0));
@@ -37,6 +43,9 @@ public class RangeTest {
         assertEquals(expected.toString(), actual.toString());
     }
 
+    /**
+     * test Range object.
+     */
     @Test
     public void testRangeIncludes() {
         assertTrue(Range.of(0, 0).includes(0));
@@ -47,6 +56,9 @@ public class RangeTest {
         assertFalse(Range.of(0, 0).includes(1));
     }
 
+    /**
+     * test Range object.
+     */
     @Test
     public void testRangeExcludes() {
         assertTrue(Range.of(0, 0).excludes(1));
@@ -56,6 +68,9 @@ public class RangeTest {
         assertFalse(Range.of(1, 1).excludes(1));
     }
 
+    /**
+     * test Range object.
+     */
     @Test
     public void testRangeAsArray() {
         int[] range = Range.asArray(0, 0);

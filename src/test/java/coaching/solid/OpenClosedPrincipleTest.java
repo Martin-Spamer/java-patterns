@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit Test for the Open Closed Principle (OCP) example class.
  */
+
+
 @Slf4j
 public final class OpenClosedPrincipleTest {
 

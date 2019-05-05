@@ -9,9 +9,13 @@ import static org.junit.Assert.assertEquals;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @Slf4j
 public class GenericTableRowTest {
 
+    /**
+     * test GenericTableRow object.
+     */
     @Test
     public void testGenericTableRow() {
         GenericTableRow<UUID> tableRow = new GenericTableRow<UUID>();
@@ -20,6 +24,9 @@ public class GenericTableRowTest {
         log.info(tableRow.toString());
     }
 
+    /**
+     * test GenericTableRow object.
+     */
     @Test
     public void testGenericTableRowString() {
         GenericTableRow<UUID> tableRow = new GenericTableRow<UUID>(UUID.randomUUID().toString());
@@ -28,6 +35,9 @@ public class GenericTableRowTest {
         log.info(tableRow.toString());
     }
 
+    /**
+     * test GenericTableRow object.
+     */
     @Test
     public void testGenericTableRowTArray() {
         GenericTableRow<UUID> tableRow = new GenericTableRow<UUID>(new UUID[] { UUID.randomUUID(), UUID.randomUUID() });
@@ -36,6 +46,9 @@ public class GenericTableRowTest {
         log.info(tableRow.toString());
     }
 
+    /**
+     * test GenericTableRow object.
+     */
     @Test
     public void testAddCellsString() {
         GenericTableRow<UUID> tableRow = new GenericTableRow<UUID>().addCells(UUID.randomUUID().toString());
@@ -44,6 +57,9 @@ public class GenericTableRowTest {
         log.info(tableRow.toString());
     }
 
+    /**
+     * test GenericTableRow object.
+     */
     @Test
     public void testAddCellsTArray() {
         GenericTableRow<UUID> tableRow = new GenericTableRow<UUID>().addCells(new UUID[] { UUID.randomUUID(), UUID.randomUUID() });

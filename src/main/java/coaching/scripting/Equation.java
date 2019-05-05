@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The Class Equation.
  */
+
+
 @Slf4j
 public class Equation {
 

@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for MainApp.
  */
+
+
 @Slf4j
 public final class MainAppTest {
 

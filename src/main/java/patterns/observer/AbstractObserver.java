@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public abstract class AbstractObserver implements ObserverInterface {
 
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*

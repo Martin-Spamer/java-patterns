@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Fluent Wait Test class.
  */
+
+
 @Slf4j
 public final class FluentWaitTest {
 

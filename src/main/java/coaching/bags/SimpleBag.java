@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
  * Simple Bag class.
  */
 @SuppressWarnings("serial")
+
+
 @Slf4j
 public class SimpleBag extends ArrayList<String> implements BagInterface {
 

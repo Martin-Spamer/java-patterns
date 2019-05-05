@@ -22,6 +22,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A template for a Thread class.
  */
+
+
 @Slf4j
 public class ThreadTemplate implements Runnable {
 

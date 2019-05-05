@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit Test for the Liskov Substitution Principle (LSP) example class.
  */
+
+
 @Slf4j
 public final class LiskovSubstitutionPrincipleTest {
 

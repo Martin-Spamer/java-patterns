@@ -14,10 +14,14 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A Unit test class for Text objects.
  */
+
+
 @Slf4j
 public final class TextTest {
 
-    /** provides logging */
+    /**
+     *  provides logging.
+     */
 
     /**
      * Unit tests for the textFill() method of Text object.
@@ -128,12 +132,18 @@ public final class TextTest {
         assertTrue(Text.randomDigits(10).length() == 10);
     }
 
+    /**
+     * test Text object.
+     */
     public void testJoin() {
         Text.join(new String[1], "");
         String[] fields = { "A", "B", "C" };
         assertEquals("A,B,C", Text.join(fields, ","));
     }
 
+    /**
+     * test Text object.
+     */
     public void testRepeat() {
         assertEquals("-----", Text.repeat('-', 5));
         assertEquals("=====", Text.repeat("=", 5));

@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Taxi class.
  */
+
+
 @Slf4j
 public class Taxi extends Car {
 

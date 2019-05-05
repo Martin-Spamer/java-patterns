@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * An example Car class.
  */
+
+
 @Slf4j
 public class Car extends AbstractVehicle implements CarInterface {
 

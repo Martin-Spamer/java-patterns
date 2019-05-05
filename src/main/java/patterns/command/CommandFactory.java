@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * An example class factory for creating Class objects.
  */
+
 @Slf4j
 public final class CommandFactory {
 
@@ -74,6 +75,15 @@ public final class CommandFactory {
             log.error(e.getLocalizedMessage(), e);
         }
         return null;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return String.format("CommandFactory [properties=%s]", this.properties);
     }
 
 }

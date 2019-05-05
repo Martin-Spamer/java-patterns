@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test the AbstractLogging class.
  */
+
+
 @Slf4j
 public final class AbstractLoggingTest {
 

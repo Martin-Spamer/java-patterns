@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The Class IterableRange.
  */
+
+
 @Slf4j
 public class IterableRange implements Iterable<Object> {
 

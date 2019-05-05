@@ -17,9 +17,12 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * PortScan class.
  */
+
+
 @Slf4j
 public class PortScan extends Thread {
 
+    /** The Constant 			LOCALHOST. */
     private static final String LOCALHOST = "127.0.0.1";
 
     /** The load factor. */

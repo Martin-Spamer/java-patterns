@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test for AggregateClassArray class.
  */
+
+
 @Slf4j
 public final class AggregateClassArrayTest {
 

@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * An abstract class to manage the current Context.
  */
+
+
 @Slf4j
 public abstract class AbstractContext implements ContextInterface {
 

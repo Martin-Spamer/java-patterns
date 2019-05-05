@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  * In general, exceptions should be handled as close to the cause as possible.
  */
+
+
 @Slf4j
 public final class CustomExceptionHandling {
 

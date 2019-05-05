@@ -2,8 +2,6 @@
 package coaching;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  * In a Sequence, one programming instruction follows another.
  */
+
+
 @Slf4j
 public final class SequenceTest {
 
@@ -67,6 +67,12 @@ public final class SequenceTest {
         return true;
     }
 
+    /**
+     * Bar.
+     *
+     * @param bar the bar
+     * @return true, if successful
+     */
     boolean bar(final boolean bar) {
         if (bar == true) {
             log.info("the bar function of run");
@@ -74,6 +80,13 @@ public final class SequenceTest {
         return bar;
     }
 
+    /**
+     * Adds the.
+     *
+     * @param x the x
+     * @param y the y
+     * @return the int
+     */
     int add(final int x, final int y) {
         return x + y;
     }

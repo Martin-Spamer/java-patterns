@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test example of an abstract parameters class for command classes.
  */
+
+
 @Slf4j
 public final class CommandParametersTest {
 

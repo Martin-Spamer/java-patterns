@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test class for Constants.
  */
+
+
 @Slf4j
 public class ConstantsTest {
 

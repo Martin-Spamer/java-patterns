@@ -19,10 +19,15 @@ import coaching.resources.ResourceLoader;
 import coaching.text.Template.TemplateException;
 import lombok.extern.slf4j.Slf4j;
 
+
 @Slf4j
 public class TemplateTest {
 
-    /** provides logging */
+    /**
+     *  provides logging.
+     *
+     * @throws TemplateException the template exception
+     */
 
     @Test
     public void testTemplateFromStream() throws TemplateException {
@@ -41,6 +46,11 @@ public class TemplateTest {
         template.toLog();
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testJsonTemplateFromStream() throws TemplateException {
         InputStream stream = ResourceLoader.getStream("Json.template");
@@ -58,6 +68,11 @@ public class TemplateTest {
         template.toLog();
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testTemplateJson() throws TemplateException {
         Template template = Template.from("src/test/resources/Json.template");
@@ -71,6 +86,11 @@ public class TemplateTest {
         template.toLog();
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testTemplateLoadJson() throws TemplateException {
         Template template = new Template();
@@ -85,6 +105,11 @@ public class TemplateTest {
         template.toLog();
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testTemplateFromFilename() throws TemplateException {
         Template template = new Template();
@@ -98,6 +123,11 @@ public class TemplateTest {
         template.toLog();
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testTemplateLoadCode() throws TemplateException {
         Template template = new Template();
@@ -111,22 +141,38 @@ public class TemplateTest {
         template.toLog();
     }
 
+    /**
+     * test Template object.
+     */
     @Test
     public void testTemplate() {
         assertNotNull(new Template());
     }
 
+    /**
+     * test Template object.
+     */
     @Test
     public void testTemplateString() {
         assertNotNull(new Template(""));
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test(expected = TemplateException.class)
     public void testTemplateLoadString() throws TemplateException {
         Template template = new Template();
         template.load("");
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testTemplateReplaceNullProperties() throws TemplateException {
         Template template = new Template();
@@ -134,12 +180,22 @@ public class TemplateTest {
         assertEquals(template, template.merge(nullProperties));
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testTemplateReplaceProperties() throws TemplateException {
         Template template = new Template();
         assertEquals(template, template.merge(new Properties()));
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testTemplateReplaceNullMap() throws TemplateException {
         Template template = new Template();
@@ -147,6 +203,11 @@ public class TemplateTest {
         assertEquals(template, template.merge(map));
     }
 
+    /**
+     * test Template object.
+     *
+     * @throws TemplateException the template exception
+     */
     @Test
     public void testTemplateReplaceEmptyMap() throws TemplateException {
         Template template = new Template();

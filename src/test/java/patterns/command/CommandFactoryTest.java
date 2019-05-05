@@ -2,8 +2,6 @@
 package patterns.command;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -12,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test the CommandFactory class.
  */
+
+
 @Slf4j
 public final class CommandFactoryTest {
 

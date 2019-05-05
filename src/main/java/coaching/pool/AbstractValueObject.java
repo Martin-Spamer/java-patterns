@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Abstract Value Object.
  */
+
+
 @Slf4j
 public abstract class AbstractValueObject {
 

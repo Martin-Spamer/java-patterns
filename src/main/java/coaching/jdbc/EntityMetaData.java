@@ -14,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The EntityMetaData class, query JDBC MetaData.
  */
+
+
 @Slf4j
 public class EntityMetaData extends JdbcBase {
 

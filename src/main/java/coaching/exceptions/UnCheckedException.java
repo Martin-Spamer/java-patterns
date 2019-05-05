@@ -14,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
  * programming error.
  */
 @SuppressWarnings("serial")
+
+
 @Slf4j
 public class UnCheckedException extends RuntimeException {
 

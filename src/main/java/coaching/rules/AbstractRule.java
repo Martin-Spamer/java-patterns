@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * An abstract Rule class.
  */
+
+
 @Slf4j
 public abstract class AbstractRule implements CommandInterface {
 

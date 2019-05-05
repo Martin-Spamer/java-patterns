@@ -27,6 +27,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  * Created on 30 June 2004 - 13:07
  **/
+
+
 @Slf4j
 public class ThreadedApplication {
 

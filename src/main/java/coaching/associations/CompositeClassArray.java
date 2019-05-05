@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  * The Lifetime of parts is constraint bound by lifetime of parent.
  **/
+
+
 @Slf4j
 public class CompositeClassArray {
 

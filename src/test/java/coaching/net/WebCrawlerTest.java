@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for the WebCrawler class.
  */
+
+
 @Slf4j
 public final class WebCrawlerTest {
 

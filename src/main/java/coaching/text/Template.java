@@ -19,6 +19,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The Template class.
  */
+
+
 @Slf4j
 public class Template {
 

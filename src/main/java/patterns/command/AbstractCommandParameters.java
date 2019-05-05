@@ -9,6 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Abstract class for Parameters to Commands.
  */
+
+
+
+
 @Slf4j
 public abstract class AbstractCommandParameters implements ParametersInterface {
 

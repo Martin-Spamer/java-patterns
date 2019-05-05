@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * An abstract Vehicle class.
  */
+
+
 @Slf4j
 public abstract class AbstractVehicle implements VehicleInterface, FuelInterface {
 

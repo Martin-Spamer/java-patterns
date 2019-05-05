@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Truck class.
  */
+
+
 @Slf4j
 public class Truck extends AbstractVehicle {
 

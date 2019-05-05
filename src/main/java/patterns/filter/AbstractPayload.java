@@ -12,6 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * AbstractPayload Class.
  */
+
+
+
+
 @Slf4j
 public abstract class AbstractPayload implements PayloadInterface {
 

@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  * of the parts is disconnected from the lifetime of the whole. We can describe
  * this as having no life-time constraint.
  */
+
+
 @Slf4j
 public final class AggregatePolymorphicList {
 

@@ -9,9 +9,13 @@ import static org.junit.Assert.assertNotNull;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @Slf4j
 public final class AbstractStrategyTest {
 
+    /**
+     * test AbstractStrategy object.
+     */
     @Test(expected = UnsupportedOperationException.class)
     public void testContext() {
         final Context context = new Context();
@@ -33,6 +37,9 @@ public final class AbstractStrategyTest {
         strategyCharlie.operation();
     }
 
+    /**
+     * test AbstractStrategy object.
+     */
     @Test(expected = UnsupportedOperationException.class)
     public void testContextProperties() {
         final Context context = new Context(new Properties());

@@ -4,8 +4,6 @@ package patterns.session;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -18,6 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * SessionTracker class tests.
  */
+
+
 @Slf4j
 public final class SessionTrackerTest {
 

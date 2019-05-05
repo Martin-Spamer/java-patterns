@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
  * An abstract Configuration class. Loads the Configuration from a Properties
  * file.
  */
+
+
 @Slf4j
 public abstract class AbstractConfiguration implements ConfigInterface {
 

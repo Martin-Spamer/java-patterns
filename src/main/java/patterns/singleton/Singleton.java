@@ -6,6 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Singleton Class.
  */
+
+
+
+
 @Slf4j
 public final class Singleton {
 

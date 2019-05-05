@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
  * @author martin.spamer.
  * @version 0.1 - first release. Created 17-Sep-2004 - 16:13:19
  */
+
+
 @Slf4j
 public abstract class AbstractProcess implements Runnable {
 

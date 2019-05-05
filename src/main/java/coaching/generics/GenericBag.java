@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  * @param <T> the generic type
  */
 @SuppressWarnings("serial")
+
+
 @Slf4j
 public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 

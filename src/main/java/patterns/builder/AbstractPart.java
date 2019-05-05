@@ -6,6 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Part class.
  */
+
+
+
+
 @Slf4j
 public abstract class AbstractPart {
 

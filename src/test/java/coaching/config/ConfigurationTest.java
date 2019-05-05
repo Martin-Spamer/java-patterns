@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for Configuration class.
  */
+
+
 @Slf4j
 public final class ConfigurationTest {
 

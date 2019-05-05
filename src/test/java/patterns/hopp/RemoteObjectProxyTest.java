@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * RemoteObjectProxy class tests.
  */
+
+
 @Slf4j
 public final class RemoteObjectProxyTest {
 

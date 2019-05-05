@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  * Represent an operation to be performed on elements of an object structure.
  */
+
+
 @Slf4j
 public final class VisitorTest {
 

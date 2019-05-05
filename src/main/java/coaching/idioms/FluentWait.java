@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A Fluent Wait Class, will test a condition for one second.
  */
+
+
 @Slf4j
 public class FluentWait {
 

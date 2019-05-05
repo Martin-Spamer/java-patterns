@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @param <T> the generic type
  */
+
+
 @Slf4j
 public class GenericTable<T> {
 

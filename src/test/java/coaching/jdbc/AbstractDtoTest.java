@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test the AbstractDto class.
  */
+
+
 @Slf4j
 public final class AbstractDtoTest {
 

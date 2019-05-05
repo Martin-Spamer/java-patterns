@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
  * to extension but closed for modifications.
  *
  */
+
+
 @Slf4j
 public class OpenClosedPrinciple {
 

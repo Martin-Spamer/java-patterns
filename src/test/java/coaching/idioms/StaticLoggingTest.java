@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests showing StaticLogging example.
  */
+
+
 @Slf4j
 public final class StaticLoggingTest {
 

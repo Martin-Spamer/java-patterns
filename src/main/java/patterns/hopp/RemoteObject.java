@@ -6,6 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * RemoteObject Class.
  */
+
+
+
+
 @Slf4j
 public class RemoteObject implements HoppInterface {
 

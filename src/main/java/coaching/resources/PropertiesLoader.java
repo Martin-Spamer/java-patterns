@@ -22,6 +22,8 @@ import lombok.extern.slf4j.Slf4j;
  * some.pkg.Resource.properties some/pkg/Resource some/pkg/Resource.properties
  * /some/pkg/Resource /some/pkg/Resource.properties
  */
+
+
 @Slf4j
 public final class PropertiesLoader {
 

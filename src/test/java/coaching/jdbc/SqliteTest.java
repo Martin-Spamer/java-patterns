@@ -15,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for Sqlite.
  */
+
+
 @Slf4j
 public final class SqliteTest {
 

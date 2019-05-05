@@ -6,6 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * DecoratedComponent Class.
  */
+
+
+
+
 @Slf4j
 public class DecoratedComponent extends AbstractDecorator implements DecoratorInterface {
 

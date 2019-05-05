@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The ObjectTypesTest class.
  */
+
+
 @Slf4j
 public final class ObjectTypesTest {
 

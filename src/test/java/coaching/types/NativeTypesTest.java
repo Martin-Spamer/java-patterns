@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Class showing usage of native types.
  */
+
+
 @Slf4j
 public final class NativeTypesTest {
 

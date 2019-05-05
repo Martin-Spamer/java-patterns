@@ -15,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
  * Unit tests for PointbaseDao class.
  */
 @Ignore("Requires PointBase DB availability work-in-progress low-priority")
+
+
 @Slf4j
 public final class SqLiteDaoTest {
 

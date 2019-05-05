@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test class for GenericTableRow.
  */
+
+
 @Slf4j
 public class TableRowTest {
 
@@ -47,6 +49,9 @@ public class TableRowTest {
         log.info("{}", tableRow.toRowString());
     }
 
+    /**
+     * test TableRow object.
+     */
     @Test
     public void testTableRowArray() {
         String[] data = { "one", "two" };

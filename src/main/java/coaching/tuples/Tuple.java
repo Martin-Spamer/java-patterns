@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
  * @param <L> the generic type
  * @param <R> the generic type
  */
+
+
 @Slf4j
 public class Tuple<L, R> implements TupleInterface<L, R> {
 

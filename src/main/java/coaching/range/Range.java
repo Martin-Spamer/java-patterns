@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A Range class.
  */
+
+
 @Slf4j
 public class Range {
 

@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * An abstract Class providing a polymorphic base.
  */
+
+
 @Slf4j
 public abstract class AbstractType implements TypeInterface {
 

@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test class for ThreadedApplication.
  */
+
+
 @Slf4j
 public class ApplicationTest {
 
@@ -27,6 +29,9 @@ public class ApplicationTest {
         new Application(new String[0]).execute();
     }
 
+    /**
+     * test Application object.
+     */
     @Test
     public void testApplicationNullArgs() {
         new Application(null).execute();
@@ -41,12 +46,18 @@ public class ApplicationTest {
         Application.main(args);
     }
 
+    /**
+     * test Application object.
+     */
     @Test
     public void testApplicationMain() {
         String[] args = new String[0];
         Application.main(args);
     }
 
+    /**
+     * test Application object.
+     */
     @Test
     public void testApplicationMainNull() {
         String[] args = null;

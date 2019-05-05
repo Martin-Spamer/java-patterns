@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A Data Access object for PostgreSql Database.
  */
+
+
 @Slf4j
 public class PostgresSqlDao extends AbstractDao {
 

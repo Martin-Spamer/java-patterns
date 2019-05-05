@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
  * In a Composite the Lifetime of parts is same as the lifetime of the parts. We
  * call this a life-time constraint.
  **/
+
+
 @Slf4j
 public final class Composite {
 

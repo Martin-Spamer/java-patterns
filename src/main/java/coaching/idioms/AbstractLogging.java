@@ -15,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  * logging layout formater (%F:%L) for click through in most IDEs.
  */
+
+
 @Slf4j
 public abstract class AbstractLogging {
 

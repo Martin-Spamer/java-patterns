@@ -6,6 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Concrete Template class.
  */
+
+
+
+
 @Slf4j
 public final class TemplateClass extends AbstractTemplate {
 

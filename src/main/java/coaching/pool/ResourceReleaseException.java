@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
  * ResourceReleaseException Class.
  */
 @SuppressWarnings("serial")
+
+
 @Slf4j
 public class ResourceReleaseException extends ResourcePoolException {
 

@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * DaemonThread class.
  */
+
+
 @Slf4j
 public final class DaemonThread extends Thread {
 

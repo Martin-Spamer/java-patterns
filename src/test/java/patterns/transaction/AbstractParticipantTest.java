@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * AbstractParticipant class tests.
  */
+
+
 @Slf4j
 public final class AbstractParticipantTest {
 

@@ -6,6 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Half-Object Part-Protocol class.
  */
+
+
+
+
 @Slf4j
 public class LocalHopp implements HoppInterface {
 

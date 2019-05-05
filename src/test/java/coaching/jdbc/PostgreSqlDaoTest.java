@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
  * Unit tests for PostgreSqlDao class.
  */
 @Ignore("Requires PostgreSqlDao DB availability work-in-progress low-priority")
+
+
 @Slf4j
 public final class PostgreSqlDaoTest {
 

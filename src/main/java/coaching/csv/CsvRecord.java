@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class CsvRecord {
 
+    /** The fields. */
     private List<String> fields = new ArrayList<String>();
 
     /**
@@ -39,8 +40,10 @@ public class CsvRecord {
     }
 
     /**
-     * @param e
-     * @return
+     * Adds the.
+     *
+     * @param e the e
+     * @return true, if successful
      * @see java.util.List#add(java.lang.Object)
      */
     public boolean add(final String e) {
@@ -48,8 +51,10 @@ public class CsvRecord {
     }
 
     /**
-     * @param index
-     * @param element
+     * Adds the.
+     *
+     * @param index the index
+     * @param element the element
      * @see java.util.List#add(int, java.lang.Object)
      */
     public void add(final int index, final String element) {
@@ -117,7 +122,9 @@ public class CsvRecord {
     }
 
     /**
-     * @return
+     * To array.
+     *
+     * @return the object[]
      * @see java.util.List#toArray()
      */
     public Object[] toArray() {

@@ -20,6 +20,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A class to crawl a web site.
  */
+
+
 @Slf4j
 public final class WebCrawler extends ThreadTemplate {
 

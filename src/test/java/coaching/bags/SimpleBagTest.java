@@ -15,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test examples for a Bag class.
  */
+
+
 @Slf4j
 public final class SimpleBagTest {
 

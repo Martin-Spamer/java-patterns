@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for the GenericTable class.
  */
+
+
 @Slf4j
 public final class TableTest {
 
@@ -52,6 +54,9 @@ public final class TableTest {
         log.debug("{}", table);
     }
 
+    /**
+     * test Table object.
+     */
     @Test
     public void testAddTableRowString() {
         final Table table = new Table();
@@ -63,6 +68,9 @@ public final class TableTest {
         log.debug("{}", table);
     }
 
+    /**
+     * test Table object.
+     */
     @Test
     public void testAddTableRowArray() {
         final Table table = new Table();

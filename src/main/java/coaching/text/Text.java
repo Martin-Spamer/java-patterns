@@ -33,6 +33,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Text utilities class.
  */
+
+
 @Slf4j
 public final class Text {
 

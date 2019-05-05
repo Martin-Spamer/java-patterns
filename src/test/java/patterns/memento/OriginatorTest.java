@@ -5,8 +5,14 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * A UnitTest for Originator objects.
+ */
 public final class OriginatorTest {
 
+    /**
+     * test Originator object.
+     */
     @Test
     public void testTypicalUsage() {
         // Given

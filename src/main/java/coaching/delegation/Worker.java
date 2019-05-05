@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Worker implements ProcessInterface {
 
+    /** The log. */
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
     /*

@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
  * not use.
  *
  */
+
+
 @Slf4j
 public class InterfaceSegregationPrinciple {
 
