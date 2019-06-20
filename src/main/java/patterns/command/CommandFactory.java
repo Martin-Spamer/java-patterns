@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
  * An example class factory for creating Class objects.
  */
 
+/** The Constant 			log. */
 @Slf4j
 public final class CommandFactory {
 
@@ -64,8 +65,10 @@ public final class CommandFactory {
 
     /**
      * Factory Class to create a new Command instance.
+     * 
+     * The name
      *
- * The name
+     * @param className the class name
      * @return the abstract command
      */
     private AbstractCommand createByClassName(final String className) {

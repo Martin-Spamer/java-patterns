@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @SuppressWarnings("serial")
 
 
+/** The Constant 			log. */
 @Slf4j
 public class GenericBag<T> extends ArrayList<T> implements GenericBagInterface<T> {
 

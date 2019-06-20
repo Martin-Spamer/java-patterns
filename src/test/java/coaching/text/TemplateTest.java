@@ -16,6 +16,9 @@ import static org.junit.Assume.assumeNotNull;
 import coaching.resources.ResourceLoader;
 import coaching.text.Template.TemplateException;
 
+/**
+ * A UnitTest for Template objects.
+ */
 public class TemplateTest {
 
     /**

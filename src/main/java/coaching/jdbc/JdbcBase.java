@@ -21,6 +21,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * An abstract JDBC base class to be extended to create a DAO.
  */
+
+/** The Constant 			log. */
 @Slf4j
 public abstract class JdbcBase {
 

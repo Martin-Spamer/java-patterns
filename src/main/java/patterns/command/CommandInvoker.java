@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 
+/** The Constant 			log. */
 @Slf4j
 public final class CommandInvoker {
 
@@ -62,8 +63,10 @@ public final class CommandInvoker {
 
     /**
      * Execute by class name.
+     * 
+     * The name
      *
- * The name
+     * @param className the class name
      * @return the result interface
      * @throws MissingCommandException the missing command exception
      */

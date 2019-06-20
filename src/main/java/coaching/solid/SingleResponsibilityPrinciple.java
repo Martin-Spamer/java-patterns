@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
  * Intent: A class should have only on reason to change, one responsibility.
  *
  */
+
+/** The Constant 			log. */
 @Slf4j
 public class SingleResponsibilityPrinciple {
 

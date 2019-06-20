@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Example ThreadedApplication class.
  */
+
+/** The Constant 			log. */
 @Slf4j
 public final class Application extends AbstractApplication {
 

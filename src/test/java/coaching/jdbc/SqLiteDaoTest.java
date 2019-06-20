@@ -15,13 +15,16 @@ import lombok.extern.slf4j.Slf4j;
 @Ignore("Requires PointBase DB availability work-in-progress low-priority")
 
 
+/** The Constant 			log. */
 @Slf4j
 public final class SqLiteDaoTest {
 
     /**
      * Unit test to sq lite dao.
+     * 
+     * The not found exception
      *
- * The not found exception
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testSqLiteDao() throws ClassNotFoundException {

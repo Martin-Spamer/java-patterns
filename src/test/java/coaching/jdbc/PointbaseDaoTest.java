@@ -14,8 +14,10 @@ public final class PointbaseDaoTest {
 
     /**
      * Unit Test to point base customer dao.
-     *
+     * 
      * The not found exception
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testPointBaseCustomerDao() throws ClassNotFoundException {
@@ -25,8 +27,10 @@ public final class PointbaseDaoTest {
 
     /**
      * Unit Test to point base customer dao url user password.
-     *
+     * 
      * The not found exception
+     *
+     * @throws ClassNotFoundException the class not found exception
      */
     @Test
     public void testPointBaseCustomerDaoTypical() throws ClassNotFoundException {

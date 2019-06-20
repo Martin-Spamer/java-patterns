@@ -9,6 +9,9 @@ import static org.junit.Assert.assertNotNull;
 
 import coaching.resources.ResourceLoader;
 
+/**
+ * A UnitTest for IO objects.
+ */
 public class IOTest {
 
     /** The test filename. */

@@ -19,6 +19,8 @@ import lombok.extern.slf4j.Slf4j;
  * under specific circumstances, at certain times or in response to specific
  * events.
  */
+
+/** The Constant 			log. */
 @Slf4j
 public abstract class AbstractScheduler {
 

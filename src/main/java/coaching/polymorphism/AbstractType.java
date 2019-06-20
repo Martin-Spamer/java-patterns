@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 
 
+/** The Constant 			log. */
 @Slf4j
 public abstract class AbstractType implements TypeInterface {
 

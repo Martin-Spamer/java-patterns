@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Ignore("Requires MySQL DB availability work-in-progress low-priority")
 
 
+/** The Constant 			log. */
 @Slf4j
 public final class MySqlDaoTest {
 
