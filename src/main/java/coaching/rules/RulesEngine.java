@@ -16,16 +16,10 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Rules Engine Class.
  */
-
-
-/** The Constant 			log. */
 @Slf4j
 public class RulesEngine {
 
-    /** The document. */
     private Document document = null;
-
-    /** The document element. */
     private Element documentElement = null;
 
     /**

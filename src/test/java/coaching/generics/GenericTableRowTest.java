@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import lombok.extern.slf4j.Slf4j;
 
 
-/** The Constant 			log. */
+
 @Slf4j
 public class GenericTableRowTest {
 

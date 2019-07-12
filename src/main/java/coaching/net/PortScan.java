@@ -8,34 +8,19 @@ package coaching.net;
 import java.io.IOException;
 import java.util.Properties;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import coaching.resources.PropertiesLoader;
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * PortScan class.
  */
-
-
-/** The Constant 			log. */
 @Slf4j
 public class PortScan extends Thread {
 
-    /** The Constant 			LOCALHOST. */
     private static final String LOCALHOST = "127.0.0.1";
-
-    /** The load factor. */
     private static int loadFactor = 100;
-
-    /** The properties. */
     private static Properties properties = null;
-
-    /** IP address, default to local host. */
     private String ip = LOCALHOST;
-
-    /** Port Number, default to 0. */
     private int portNo = 0;
 
     /**
@@ -54,7 +39,6 @@ public class PortScan extends Thread {
      */
     public PortScan(final String[] args) {
         super();
-        assertTrue(args.length == 2);
         this.ip = args[0];
         this.portNo = Integer.parseInt(args[1]);
         initialise();
@@ -69,8 +53,6 @@ public class PortScan extends Thread {
      */
     public PortScan(final String ip, final int port) {
         super();
-        assertNotNull(ip);
-        assertNotNull(port);
         this.ip = ip;
         this.portNo = port;
         initialise();

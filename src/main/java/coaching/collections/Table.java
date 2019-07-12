@@ -3,7 +3,6 @@ package coaching.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 import lombok.extern.slf4j.Slf4j;
@@ -11,22 +10,12 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The GenericTable class is composed of GenericTableRow classes.
  */
-
-
-/** The Constant 			log. */
 @Slf4j
 public class Table {
 
-    /** The table name. */
     private String tableName;
-
-    /** The column names. */
     private final List<String> colNames = new ArrayList<String>();
-
-    /** The rows of the table. */
     private final List<TableRow> rows = new ArrayList<TableRow>();
-
-    /** The rows of the table. */
     private final List<TableColumn> columns = new ArrayList<TableColumn>();
 
     /**
@@ -187,19 +176,7 @@ public class Table {
      * @return the string
      */
     protected String tableHeader() {
-        final StringBuilder stringBuffer = new StringBuilder();
-
-        final Iterator<String> itemIterator = this.colNames.iterator();
-        if (itemIterator.hasNext()) {
-            stringBuffer.append(itemIterator.next());
-            while (itemIterator.hasNext()) {
-                stringBuffer.append(',');
-                stringBuffer.append(itemIterator.next());
-            }
-        }
-
-        stringBuffer.append('\n');
-        return stringBuffer.toString();
+        return this.colNames.toString();
     }
 
     /**
@@ -209,17 +186,10 @@ public class Table {
      */
     protected String tableBody() {
         final StringBuilder stringBuffer = new StringBuilder();
-
-        final Iterator<TableRow> tableRow = this.rows.iterator();
-        if (tableRow.hasNext()) {
-            stringBuffer.append(tableRow.next());
-            while (tableRow.hasNext()) {
-                stringBuffer.append(',');
-                stringBuffer.append(tableRow.next().toRowString());
-            }
+        for (TableRow tableRow : this.rows) {
+            stringBuffer.append(tableRow.toString());
+            stringBuffer.append('\n');
         }
-
-        stringBuffer.append('\n');
         return stringBuffer.toString();
     }
 

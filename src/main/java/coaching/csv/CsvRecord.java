@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
- * CsvRecord Class.
+ * CsvRecord class, represents row of comma separated values.
  */
+@Slf4j
 public class CsvRecord {
 
-    /** The fields. */
     private List<String> fields = new ArrayList<String>();
 
     /**
@@ -129,6 +131,10 @@ public class CsvRecord {
      */
     public Object[] toArray() {
         return this.fields.toArray();
+    }
+
+    public void toLog() {
+        log.debug(toString());
     }
 
     /*

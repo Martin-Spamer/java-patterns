@@ -8,7 +8,6 @@ import coaching.context.ContextInterface;
  */
 public abstract class AbstractRule implements CommandInterface {
 
-    /** The context. */
     protected ContextInterface context = null;
 
     /**

@@ -11,19 +11,11 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test class for XmlResourceLoader.
  */
-
-
-/** The Constant 			log. */
 @Slf4j
 public class XmlResourceLoaderTest {
 
-    /** CONFIGURATION_XML constant. */
-    private static final String CONFIGURATION_XML = "Configuration.xml";
-
-    /** DATABASE_XML constant. */
+    private static final String RESOURCE_XML = "Configuration.xml";
     private static final String DATABASE_XML = "database.xml";
-
-    /** CONFIGURATION_MISSING constant. */
     private static final String CONFIGURATION_MISSING = "Missing.xml";
 
     /**
@@ -33,7 +25,7 @@ public class XmlResourceLoaderTest {
      */
     @Test
     public void testGetDatabaseXml() throws Exception {
-        final Document xmlResource = XmlResourceLoader.getXmlResource(DATABASE_XML);
+        final Document xmlResource = XmlResourceLoader.getXmlDocument(DATABASE_XML);
         assertNotNull(xmlResource);
         log.info("{}", xmlResource.getDoctype());
         log.info("{}", xmlResource.getXmlEncoding());
@@ -47,7 +39,7 @@ public class XmlResourceLoaderTest {
      */
     @Test
     public void testGetConfigurationXml() throws Exception {
-        final Document xmlResource = XmlResourceLoader.getXmlResource(CONFIGURATION_XML);
+        final Document xmlResource = XmlResourceLoader.getXmlDocument(RESOURCE_XML);
         assertNotNull(xmlResource);
         log.info("{}", xmlResource.getDoctype());
         log.info("{}", xmlResource.getXmlEncoding());
@@ -61,6 +53,6 @@ public class XmlResourceLoaderTest {
      */
     @Test(expected = ResourceNotLoadedException.class)
     public void testMissingConfiguration() throws Exception {
-        XmlResourceLoader.getXmlResource(CONFIGURATION_MISSING);
+        XmlResourceLoader.getXmlDocument(CONFIGURATION_MISSING);
     }
 }

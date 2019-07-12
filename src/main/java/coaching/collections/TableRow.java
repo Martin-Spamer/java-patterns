@@ -3,7 +3,6 @@ package coaching.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -47,11 +46,7 @@ public class TableRow {
      * @param values the string
      */
     public void addCells(final String values) {
-        final String[] tuple = values.split(",");
-        for (final String value : tuple) {
-            final TableCell cell = new TableCell(value);
-            this.cols.add(cell);
-        }
+        addCells(values.split(","));
     }
 
     /**
@@ -75,31 +70,21 @@ public class TableRow {
     }
 
     /**
+     * To row string.
+     *
+     * @return the string
+     */
+    public String toRowString() {
+        return this.cols.toString();
+    }
+
+    /**
      * Length, number of columns.
      *
      * @return the number of columns as int.
      */
     public int length() {
         return this.cols.size();
-    }
-
-    /**
-     * To row string.
-     *
-     * @return the string
-     */
-    public String toRowString() {
-        final StringBuilder stringBuffer = new StringBuilder();
-        final Iterator<TableCell> tableRow = this.cols.iterator();
-        if (tableRow.hasNext()) {
-            stringBuffer.append(tableRow.next());
-            while (tableRow.hasNext()) {
-                stringBuffer.append(',');
-                stringBuffer.append(tableRow.next());
-            }
-        }
-        stringBuffer.append('\n');
-        return stringBuffer.toString();
     }
 
     /*

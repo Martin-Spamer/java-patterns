@@ -1,11 +1,12 @@
 
-package coaching.jdbc;
+package coaching.xml;
 
 import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
+import coaching.xml.XmlToDao;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -14,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Ignore("Requires PointBase DB availability work-in-progress low-priority")
 
 
-/** The Constant 			log. */
+
 @Slf4j
 public final class XmlToDaoTest {
 

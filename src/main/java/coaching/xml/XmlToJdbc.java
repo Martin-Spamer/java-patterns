@@ -1,5 +1,5 @@
 
-package coaching.jdbc;
+package coaching.xml;
 
 import java.io.File;
 
@@ -18,9 +18,6 @@ import lombok.extern.slf4j.Slf4j;
  * Given an XML data file, use it to update a database via JDBC.
  */
 @WorkInProgress("")
-
-
-/** The Constant 			log. */
 @Slf4j
 public final class XmlToJdbc {
 

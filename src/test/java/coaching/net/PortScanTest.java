@@ -1,6 +1,7 @@
 
 package coaching.net;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -10,10 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for the PortScan class.
  */
-// @Ignore("work-in-progress low-priority")
-
-
-/** The Constant 			log. */
+@Ignore("work-in-progress low-priority")
 @Slf4j
 public final class PortScanTest {
 

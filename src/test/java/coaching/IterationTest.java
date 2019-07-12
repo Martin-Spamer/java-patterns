@@ -11,8 +11,6 @@ import lombok.extern.slf4j.Slf4j;
  * Examples of a iteration (looping) programming instructions.
  */
 
-
-/** The Constant 			log. */
 @Slf4j
 public final class IterationTest {
 

@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
  * An example class factory for creating Class objects.
  */
 
-/** The Constant 			log. */
+
 @Slf4j
 public final class CommandFactory {
 

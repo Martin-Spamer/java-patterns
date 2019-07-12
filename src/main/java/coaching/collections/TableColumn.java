@@ -3,7 +3,6 @@ package coaching.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -12,7 +11,7 @@ import java.util.List;
 public class TableColumn {
 
     /** the columns in the row. */
-    private final List<TableCell> cols = new ArrayList<>();
+    private final List<TableCell> row = new ArrayList<>();
 
     /**
      * Instantiates a new table row.
@@ -47,11 +46,7 @@ public class TableColumn {
      * @param values the string
      */
     public void addCells(final String values) {
-        final String[] tuple = values.split(",");
-        for (final String value : tuple) {
-            final TableCell cell = new TableCell(value.trim());
-            this.cols.add(cell);
-        }
+        addCells(values.split(","));
     }
 
     /**
@@ -71,16 +66,7 @@ public class TableColumn {
      * @param value the value
      */
     public void addCell(final String value) {
-        this.cols.add(new TableCell(value));
-    }
-
-    /**
-     * Length, number of columns.
-     *
-     * @return the number of columns as int.
-     */
-    public int length() {
-        return this.cols.size();
+        this.row.add(new TableCell(value));
     }
 
     /**
@@ -89,17 +75,16 @@ public class TableColumn {
      * @return the string
      */
     public String toRowString() {
-        final StringBuilder stringBuffer = new StringBuilder();
-        final Iterator<TableCell> tableRow = this.cols.iterator();
-        if (tableRow.hasNext()) {
-            stringBuffer.append(tableRow.next());
-            while (tableRow.hasNext()) {
-                stringBuffer.append(',');
-                stringBuffer.append(tableRow.next());
-            }
-        }
-        stringBuffer.append('\n');
-        return stringBuffer.toString();
+        return this.row.toString();
+    }
+
+    /**
+     * Length, number of columns.
+     *
+     * @return the number of columns as int.
+     */
+    public int length() {
+        return this.row.size();
     }
 
     /*
@@ -108,7 +93,7 @@ public class TableColumn {
      */
     @Override
     public String toString() {
-        return Collections.singletonList(this.cols).toString();
+        return Collections.singletonList(this.row).toString();
     }
 
 }

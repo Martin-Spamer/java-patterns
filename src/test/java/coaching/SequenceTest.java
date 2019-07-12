@@ -14,8 +14,6 @@ import lombok.extern.slf4j.Slf4j;
  * In a Sequence, one programming instruction follows another.
  */
 
-
-/** The Constant 			log. */
 @Slf4j
 public final class SequenceTest {
 

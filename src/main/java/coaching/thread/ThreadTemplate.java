@@ -22,37 +22,21 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A template for a Thread class.
  */
-
-
-/** The Constant 			log. */
 @Slf4j
 public class ThreadTemplate implements Runnable {
 
-    /** The Constant TIME_OUT. */
-    private static final long TIME_OUT = 1000;
+    /** The TIME_OUT default constant for a thread. */
+    protected static final long TIME_OUT = 1000;
 
-    /** The Constant MAX_TICKS. */
-    private static final long MAX_TICKS = 10;
+    /** The MAX_TICKS default constant */
+    protected static final long MAX_TICKS = 10;
 
-    /** The configuration. */
     protected ThreadConfig config;
-
-    /** thread. */
     protected final Thread thread;
-
-    /** exit. */
     protected boolean exit = false;
-
-    /** tick. */
     protected long tick;
-
-    /** start time. */
     protected long startTime;
-
-    /** time out. */
     protected long timeOut = TIME_OUT;
-
-    /** max ticks. */
     protected long maxTicks = MAX_TICKS;
 
     /**
@@ -140,6 +124,8 @@ public class ThreadTemplate implements Runnable {
      * The ApplicationException class.
      */
     public class ApplicationException extends Exception {
+        /** serialVersionUID */
+        private static final long serialVersionUID = 1L;
 
         /**
          * Instantiates a new application exception.

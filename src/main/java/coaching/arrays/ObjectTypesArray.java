@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  * hence the need for an ARRAY_SIZE constant.
  **/
 
-/** The Constant 			log. */
+
 @Slf4j
 public class ObjectTypesArray {
 
