@@ -10,8 +10,7 @@ package coaching.tuples;
  */
 public class Box<T> {
 
-    /** The boxed Object t of type T. */
-    protected T t;
+    protected T t; // The boxed Object t of type T.
 
     /**
      * Instantiates a new box.
