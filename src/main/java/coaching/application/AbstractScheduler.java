@@ -19,6 +19,8 @@ import lombok.extern.slf4j.Slf4j;
  * under specific circumstances, at certain times or in response to specific
  * events.
  */
+
+
 @Slf4j
 public abstract class AbstractScheduler {
 
@@ -39,7 +41,7 @@ public abstract class AbstractScheduler {
     public AbstractScheduler(final String[] args) {
         final String simpleName = this.getClass().getSimpleName();
         this.properties = PropertiesLoader.getProperties(simpleName);
-        this.xmlDoc = XmlResourceLoader.getXmlResource(simpleName);
+        this.xmlDoc = XmlResourceLoader.getXmlDocument(simpleName);
     }
 
     /**
@@ -58,7 +60,7 @@ public abstract class AbstractScheduler {
      * @return the abstract scheduler
      */
     public AbstractScheduler execute() {
-        this.xmlDoc = XmlResourceLoader.getXmlResource(resourceName());
+        this.xmlDoc = XmlResourceLoader.getXmlDocument(resourceName());
         return execute(this.xmlDoc);
     }
 

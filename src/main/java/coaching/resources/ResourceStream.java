@@ -20,15 +20,14 @@ import lombok.extern.slf4j.Slf4j;
  * </code>
  */
 
-
 @Slf4j
-public final class ResourceLoader {
+public final class ResourceStream {
 
     /**
      * Instantiates a new resource loader.
      */
-    private ResourceLoader() {
-        fail("Use static methods");
+    private ResourceStream() {
+        fail("Use the static factory methods.");
     }
 
     /**

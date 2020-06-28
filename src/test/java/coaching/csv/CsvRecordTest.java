@@ -9,7 +9,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * A UnitTest for CsvRecord objects.
+ * Unit tests for the CsvRecord class.
  */
 public final class CsvRecordTest {
 

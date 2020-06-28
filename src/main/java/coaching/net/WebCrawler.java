@@ -20,28 +20,25 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A class to crawl a web site.
  */
-
-
 @Slf4j
 public final class WebCrawler extends ThreadTemplate {
 
-    /** BUFFER_SIZE constant. */
     private static final int BUFFER_SIZE = 1024;
-
-    /** The Constant BASE_URL. */
     private static final String BASE_URL = "http://127.0.0.1:8080";
-
-    /** The Constant SEARCH_LIMIT. */
     public static final int SEARCH_LIMIT = 4;
-
-    /** The Constant SEARCH. */
     public static final String SEARCH = "Search";
-
-    /** The Constant STOP. */
     public static final String STOP = "Stop";
-
-    /** The Constant DISALLOW. */
     public static final String DISALLOW = "Disallow:";
+    protected String[] args;
+
+    public WebCrawler() {
+        super();
+    }
+
+    public WebCrawler(final String[] args) {
+        super();
+        this.args = args;
+    }
 
     /*
      * (non-Javadoc)
@@ -192,7 +189,7 @@ public final class WebCrawler extends ThreadTemplate {
      * @param args the args
      */
     public static void main(final String args[]) {
-        new WebCrawler().start();
+        new WebCrawler(args).start();
     }
 
 }

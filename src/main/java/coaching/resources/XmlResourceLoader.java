@@ -23,19 +23,16 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * XML resource loader class.
  */
-
-
 @Slf4j
 public final class XmlResourceLoader {
 
-    /** SUFFIX constant. */
     private static final String DEFAULT_SUFFIX = ".xml";
 
     /**
      * Instantiates a new xml resource loader.
      */
     private XmlResourceLoader() {
-        fail("Use static methods");
+        fail("Use the static factory methods.");
     }
 
     /**
@@ -45,8 +42,8 @@ public final class XmlResourceLoader {
      * @param resourceName the resource name
      * @return the xml resource
      */
-    public static Document getXmlResource(final String resourceLocation, final String resourceName) {
-        return getXmlResource(resourceLocation + resourceName);
+    public static Document getXmlDocument(final String resourceLocation, final String resourceName) {
+        return getXmlDocument(resourceLocation + resourceName);
     }
 
     /**
@@ -55,8 +52,8 @@ public final class XmlResourceLoader {
      * @param resourceName the resource name
      * @return the xml resource
      */
-    public static Document getXmlResource(final String resourceName) {
-        final InputStream stream = ResourceLoader.getStream(xmlFilename(resourceName));
+    public static Document getXmlDocument(final String resourceName) {
+        final InputStream stream = ResourceStream.getStream(xmlFilename(resourceName));
         try {
             final DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             return builder.parse(stream);
@@ -104,5 +101,4 @@ public final class XmlResourceLoader {
         }
         return null;
     }
-
 }

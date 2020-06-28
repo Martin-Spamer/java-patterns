@@ -10,10 +10,8 @@ import coaching.csv.CsvFile.FileNotLoadedException;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Unit tests CSVFile.
+ * Unit tests for the CSVFile class.
  */
-
-
 @Slf4j
 public final class CsvFileTest {
 

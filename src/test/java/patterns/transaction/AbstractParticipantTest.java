@@ -22,16 +22,7 @@ public final class AbstractParticipantTest {
          * @see patterns.transaction.AbstractParticipant#operation1()
          */
         @Override
-        public ParticipantInterface operation1() {
-            return this;
-        }
-
-        /*
-         * (non-Javadoc)
-         * @see patterns.transaction.AbstractParticipant#operation2()
-         */
-        @Override
-        public ParticipantInterface operation2() {
+        public ParticipantInterface operation() {
             return this;
         }
 
@@ -74,8 +65,7 @@ public final class AbstractParticipantTest {
         target.join();
 
         // When
-        target.operation1();
-        target.operation2();
+        target.operation();
 
         // Then
         target.commit();
@@ -91,8 +81,7 @@ public final class AbstractParticipantTest {
         target.join();
 
         // When
-        target.operation1();
-        target.operation2();
+        target.operation();
 
         // Then
         target.cancel();

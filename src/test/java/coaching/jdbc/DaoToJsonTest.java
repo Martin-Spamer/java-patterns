@@ -9,22 +9,25 @@ import static org.junit.Assert.assertNotNull;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Unit test class for CsvToDao.
+ * Unit tests the CsvToJdbc class.
  */
 
 
+
 @Slf4j
-public class CsvToDaoTest {
+public final class DaoToJsonTest {
 
     /**
-     * Unit test to csv to dao.
+     * Unit test to jdbc to csv.
+     *
+     * @throws Exception the exception
      */
     @Test
     @Ignore("Requires Database work-in-progress low-priority")
-    public void testCsvToDao() {
-        CsvToDao dao = new CsvToDao();
+    public void testDaoToXml() throws Exception {
+        final DaoToXml dao = new DaoToXml();
         assertNotNull(dao);
-        log.info("dao : {}", dao);
+        log.info("dao : {}", dao.toString());
     }
 
 }

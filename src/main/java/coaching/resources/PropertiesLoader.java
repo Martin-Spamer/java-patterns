@@ -22,8 +22,6 @@ import lombok.extern.slf4j.Slf4j;
  * some.pkg.Resource.properties some/pkg/Resource some/pkg/Resource.properties
  * /some/pkg/Resource /some/pkg/Resource.properties
  */
-
-
 @Slf4j
 public final class PropertiesLoader {
 
@@ -31,7 +29,7 @@ public final class PropertiesLoader {
      * Instantiates a new properties loader.
      */
     private PropertiesLoader() {
-        fail("Use static methods");
+        fail("Use the static factory methods.");
     }
 
     /**
@@ -43,7 +41,7 @@ public final class PropertiesLoader {
     public static Properties getProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader.getStream(propertiesFilename(resourceName));
+            final InputStream stream = ResourceStream.getStream(propertiesFilename(resourceName));
             properties.load(stream);
             properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {
@@ -75,7 +73,7 @@ public final class PropertiesLoader {
     public static Properties getXmlProperties(final String resourceName) {
         final Properties properties = new Properties();
         try {
-            final InputStream stream = ResourceLoader.getStream(xmlPropertiesFilename(xmlPropertiesFilename(resourceName)));
+            final InputStream stream = ResourceStream.getStream(xmlPropertiesFilename(xmlPropertiesFilename(resourceName)));
             properties.loadFromXML(stream);
             properties.setProperty("propertyFilename", resourceName);
         } catch (final IOException e) {

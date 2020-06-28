@@ -3,21 +3,11 @@ package coaching.types;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+public class NativeTypesTest {
 
-/**
- * Class showing usage of native types.
- */
-public final class NativeTypesTest {
-
-    /**
-     * Unit Test to display.
-     */
     @Test
     public void testDisplay() {
-        final NativeTypes nativeTypes = new NativeTypes();
-        assertNotNull(nativeTypes);
-        nativeTypes.display();
+        new ObjectTypes().display();
     }
 
 }

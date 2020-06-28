@@ -7,8 +7,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-import coaching.resources.ResourceLoader;
+import coaching.resources.ResourceStream;
 
+/**
+ * A UnitTest for IO objects.
+ */
 public class IOTest {
 
     /** The test filename. */
@@ -31,7 +34,7 @@ public class IOTest {
      */
     @Test
     public void testFromInputStream() throws Exception {
-        assertNotNull(IO.from(ResourceLoader.getStream("Configuration.properties")));
+        assertNotNull(IO.from(ResourceStream.getStream("Configuration.properties")));
     }
 
     /**

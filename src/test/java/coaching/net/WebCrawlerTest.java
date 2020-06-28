@@ -1,6 +1,7 @@
 
 package coaching.net;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -11,13 +12,10 @@ import lombok.extern.slf4j.Slf4j;
  * Unit tests for the WebCrawler class.
  */
 
-
 @Slf4j
 public final class WebCrawlerTest {
 
-    /**
-     * Unit test to web crawler.
-     */
+    @Ignore
     @Test
     public void testWebCrawler() {
         final WebCrawler webCrawler = new WebCrawler();
@@ -28,6 +26,7 @@ public final class WebCrawlerTest {
     /**
      * Unit test to execute.
      */
+    @Ignore
     @Test
     public void testExecute() {
         final WebCrawler webCrawler = new WebCrawler();

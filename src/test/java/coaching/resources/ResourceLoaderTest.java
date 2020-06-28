@@ -15,18 +15,12 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for ResourceLoader class.
  */
-
 @Slf4j
 public final class ResourceLoaderTest {
 
-    /** CONFIGURATION_PROPERTIES constant. */
     private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
-
-    /** CONFIGURATION_XML constant. */
     private static final String CONFIGURATION_XML = "Configuration.xml";
-
-    /** MISSING_RESOURCE constant. */
-    private static final String MISSING_RESOURCE = "Resource.missing";
+    private static final String MISSING_RESOURCE = "Missing";
 
     /**
      * Unit test to get stream.
@@ -36,7 +30,7 @@ public final class ResourceLoaderTest {
      */
     @Test
     public void testGetResource() throws IOException {
-        final InputStream inputStream = ResourceLoader.getStream(CONFIGURATION_PROPERTIES);
+        final InputStream inputStream = ResourceStream.getStream(CONFIGURATION_PROPERTIES);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
         log.debug("ResourceLoader.getStream = {}", inputStream.toString());
@@ -50,7 +44,7 @@ public final class ResourceLoaderTest {
      */
     @Test
     public void testGetXmlResource() throws IOException {
-        final InputStream inputStream = ResourceLoader.getStream(CONFIGURATION_XML);
+        final InputStream inputStream = ResourceStream.getStream(CONFIGURATION_XML);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
         log.debug("ResourceLoader.getStream = {}", streamToString(inputStream));
@@ -64,7 +58,7 @@ public final class ResourceLoaderTest {
      */
     @Test(expected = ResourceNotLoadedException.class)
     public void testMissingXmlResource() throws IOException {
-        final InputStream inputStream = ResourceLoader.getStream(MISSING_RESOURCE);
+        final InputStream inputStream = ResourceStream.getStream(MISSING_RESOURCE);
         assertNotNull(inputStream);
         assertTrue(inputStream.available() > 0);
         log.debug("ResourceLoader.getStream = {}", streamToString(inputStream));

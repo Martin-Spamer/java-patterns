@@ -3,7 +3,6 @@ package coaching.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -13,13 +12,8 @@ import java.util.List;
  */
 public class GenericTable<T> {
 
-    /** The table name. */
     private String tableName;
-
-    /** The column names. */
     private final List<String> colNames = new ArrayList<String>();
-
-    /** The rows of the table. */
     private final List<GenericTableRow<T>> rows = new ArrayList<GenericTableRow<T>>();
 
     /**
@@ -157,19 +151,7 @@ public class GenericTable<T> {
      * @return the string
      */
     protected String tableHeader() {
-        final StringBuilder stringBuffer = new StringBuilder();
-
-        final Iterator<String> itemIterator = this.colNames.iterator();
-        if (itemIterator.hasNext()) {
-            stringBuffer.append(itemIterator.next());
-            while (itemIterator.hasNext()) {
-                stringBuffer.append(',');
-                stringBuffer.append(itemIterator.next());
-            }
-        }
-
-        stringBuffer.append('\n');
-        return stringBuffer.toString();
+        return this.colNames.toString();
     }
 
     /**
@@ -180,15 +162,10 @@ public class GenericTable<T> {
     protected String tableBody() {
         final StringBuilder stringBuffer = new StringBuilder();
 
-        final Iterator<GenericTableRow<T>> tableRow = this.rows.iterator();
-        if (tableRow.hasNext()) {
-            stringBuffer.append(tableRow.next());
-            while (tableRow.hasNext()) {
-                stringBuffer.append(',');
-                stringBuffer.append(tableRow.next().toRowString());
-            }
+        for (GenericTableRow<T> tableRow : this.rows) {
+            stringBuffer.append(tableRow.toString());
         }
-        stringBuffer.append('\n');
+
         return stringBuffer.toString();
     }
 

@@ -1,10 +1,14 @@
 
-package coaching.jdbc;
+package coaching.xml;
 
 import java.util.List;
 
+import coaching.WorkInProgress;
 import coaching.csv.CsvFile;
 import coaching.csv.CsvRecord;
+import coaching.jdbc.DaoInterface;
+import coaching.jdbc.DynamicDao;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Provides a example of a crude XML DAO reader.
@@ -12,6 +16,8 @@ import coaching.csv.CsvRecord;
  * @author martin.spamer
  * @version 0.1 - 12:33:20
  */
+@WorkInProgress("")
+@Slf4j
 public final class XmlToDao {
 
     /** The csv. */

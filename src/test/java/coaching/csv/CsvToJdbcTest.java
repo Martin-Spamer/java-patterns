@@ -8,18 +8,17 @@ import org.junit.Test;
  */
 public final class CsvToJdbcTest {
 
-    /** Default data source filename. */
-    private final String filename = "./data/data.csv";
-
-    /** Default table name. */
+    private final String TEST_FILENAME = "./data/data.csv";
     private final String tableName = "tableName";
 
-    /**
-     * Fluent Interface.
-     */
     @Test
-    public void testFluentInterface() {
-        new CsvToJdbc().transfer(this.filename, this.tableName);
+    public void testCsvToDao() {
+        new CsvToDao();
+    }
+
+    @Test
+    public void testCsvToDaoFilename() {
+        new CsvToDao(this.TEST_FILENAME);
     }
 
 }

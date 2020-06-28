@@ -11,30 +11,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import coaching.resources.ResourceLoader;
+import coaching.resources.ResourceStream;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * The CsvFile class represents a data file containing comma separated values.
+ * CsvFile class, represents rows of comma separated values.
  */
-
-
 @Slf4j
 public class CsvFile {
 
-    /** The filename. */
     private String csvFilename;
-
-    /** The header line of the csv file. */
     private String headerLine;
-
-    /** The column names for the csv file. */
     private String[] columnNames;
-
-    /** The records, the rows of the csv file holding data. */
-    private final List<CsvRecord> records = new ArrayList<>();
-
-    /** The loaded successfully. */
+    // private final CsvRecord columnNames = new CsvRecord();
+    private final List<CsvRecord> records = new ArrayList<CsvRecord>();
     private boolean loaded;
 
     /**
@@ -42,8 +32,17 @@ public class CsvFile {
      */
     public CsvFile() {
         super();
-        log.debug("CsvFile()");
         initialise(defaultFilename());
+    }
+
+    /**
+     * Instantiates a new csv file from filename.
+     *
+     * @param csvFilename the csv filename
+     */
+    public CsvFile(final String csvFilename) {
+        super();
+        initialise(csvFilename);
     }
 
     /**
@@ -60,24 +59,16 @@ public class CsvFile {
     }
 
     /**
-     * Instantiates a new csv file from filename.
-     *
-     * @param csvFilename the csv filename
-     */
-    public CsvFile(final String csvFilename) {
-        super();
-        log.debug("CsvFile({})", csvFilename);
-        initialise(csvFilename);
-    }
-
-    /**
      * Initialise.
      *
      * @param csvFilename the csv filename
      */
     private void initialise(final String csvFilename) {
-        log.debug("initialise({})", csvFilename);
         this.csvFilename = csvFilename;
+        read();
+    }
+
+    private void read() {
         read(this.csvFilename);
     }
 
@@ -88,7 +79,7 @@ public class CsvFile {
      */
     public void read(final String resourceName) {
         log.debug("read({})", resourceName);
-        final InputStream stream = ResourceLoader.getStream(resourceName);
+        final InputStream stream = ResourceStream.getStream(resourceName);
         try {
             read(stream);
         } catch (final IOException e) {
@@ -273,6 +264,10 @@ public class CsvFile {
      */
     public int rowCount() {
         return this.records.size();
+    }
+
+    public void toLog() {
+        log.debug(toString());
     }
 
     /*

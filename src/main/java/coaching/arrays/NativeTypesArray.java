@@ -6,19 +6,24 @@ import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Example code of arrays of native/primitive types. One of the major downsides
- * of arrays is their fixed size, hence ARRAY_SIZE.
+ * Example code of arrays of native/primitive types.
+ * One of the major downsides of arrays is their fixed size,
+ * hence the need for an ARRAY_SIZE constant.
  **/
+
+
 @Slf4j
 public class NativeTypesArray {
 
-    /** ARRAY_SIZE constant. */
+    /** The Constant 			ARRAY_SIZE. */
     private static final int ARRAY_SIZE = 10;
 
     /**
      * iterate the elements of an array for display.
+     *
+     * @return the long[]
      */
-    public void iterateArray() {
+    public static long[] initialiseArray() {
         long[] values;
         values = new long[ARRAY_SIZE];
         values[0] = 0L;
@@ -28,32 +33,27 @@ public class NativeTypesArray {
             values[i] = i * i;
             log.info("values[{}] = {}", i, values[i]);
         }
+        return values;
     }
 
     /**
-     * Display matrix, two dimensional array by nested iteration.
+     * Array as string.
+     *
+     * @return the string
      */
-    public void displayEmptyMatrix() {
-        final long[][] matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
-
-        final String deepToString = Arrays.deepToString(matrix);
-        log.info("displayEmptyMatrix = {}", deepToString);
-
-        final String content = initialiseMatrix(matrix);
-        log.info("looping(matrix) = {}", content);
+    public static String arrayAsString() {
+        long[] initialiseArray = initialiseArray();
+        return arrayAsString(initialiseArray);
     }
 
     /**
-     * Display.
+     * Array as string.
+     *
+     * @param initialiseArray the initialise array
+     * @return the string
      */
-    public void displayMatrix() {
-        final long[][] matrix = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
-
-        final String deepToString = Arrays.deepToString(matrix);
-        log.info("displayMatrix  = {}", deepToString);
-
-        final String content = loopMatrix(matrix);
-        log.info("looping(vector) = {}", content);
+    private static String arrayAsString(final long[] initialiseArray) {
+        return null;
     }
 
     /**
@@ -62,7 +62,7 @@ public class NativeTypesArray {
      * @param matrix the vector
      * @return the string
      */
-    private String initialiseMatrix(final long[][] matrix) {
+    private static String matrixAsString(final long[][] matrix) {
         final StringBuilder stringBuffer = new StringBuilder();
         for (int firstIndex = 0; firstIndex < matrix.length; firstIndex++) {
             stringBuffer.append('\n');
@@ -76,12 +76,24 @@ public class NativeTypesArray {
     }
 
     /**
+     * Display matrix, two dimensional array by nested iteration.
+     */
+    public static void displayMatrix() {
+        long[][] matrix = new long[ARRAY_SIZE][ARRAY_SIZE];
+
+        final String deepToString = Arrays.deepToString(matrix);
+        log.info("displayEmptyMatrix = {}", deepToString);
+
+        log.info("looping(matrix) = {}", Arrays.toString(matrix));
+    }
+
+    /**
      * Looping.
      *
-     * @param matrix the vector
+     * @param matrix the matrix
      * @return the string
      */
-    private String loopMatrix(final long[][] matrix) {
+    private static String looping(final long[][] matrix) {
         final StringBuilder stringBuffer = new StringBuilder();
         for (final long[] element : matrix) {
             stringBuffer.append('\n');
@@ -91,6 +103,21 @@ public class NativeTypesArray {
             }
         }
         return stringBuffer.toString();
+    }
+
+    /**
+     * To hex.
+     *
+     * @param bytes the bytes
+     * @return the string
+     */
+    public static String toHex(final byte[] bytes) {
+        char[] hexChars = new char[bytes.length * 2];
+        for (int i = 0; i < bytes.length; i++) {
+            hexChars[2 * i] = "0123456789abcdef".charAt((bytes[i] & 0xf0) >> 4);
+            hexChars[2 * i + 1] = "0123456789abcdef".charAt(bytes[i] & 0x0f);
+        }
+        return new String(hexChars);
     }
 
 }

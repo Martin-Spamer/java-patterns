@@ -13,18 +13,12 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests for PropertyLoader class.
  */
-
 @Slf4j
 public final class PropertyLoaderTest {
 
-    /** CONFIGURATION_PROPERTIES constant. */
     private static final String CONFIGURATION_PROPERTIES = "Configuration.properties";
-
-    /** CONFIGURATION_XML constant. */
     private static final String CONFIGURATION_XML = "Configuration.xml";
-
-    /** MISSING_PROPERTIES constant. */
-    private static final String MISSING_PROPERTIES = "Properties.missing";
+    private static final String MISSING_PROPERTIES = "Missing";
 
     /**
      * Unit test to get properties.

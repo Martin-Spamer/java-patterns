@@ -18,14 +18,27 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit tests showing Json examples.
  */
-
-
 @Slf4j
 public final class JsonTest {
 
-    /**
-     * Unit test to new.
-     */
+    @Test
+    public void test() {
+        final JSONObject json = new JSONObject();
+        json.put("name", "Alice");
+        json.put("email", "alice@example.com");
+
+        final JSONArray list = new JSONArray();
+        list.add("value-1");
+        list.add("value-2");
+        list.add("value-3");
+
+        json.put("list", list);
+
+        write(json);
+
+        log.info(json.toString());
+    }
+
     @Test
     public void testNew() {
         final JSONObject json = new JSONObject();
@@ -43,7 +56,7 @@ public final class JsonTest {
      * Unit test to system.
      */
     @Test
-    public void testSystem() {
+    public void testPropertiesToJson() {
         final JSONObject json = new JSONObject();
         assumeNotNull(json);
         final Properties properties = System.getProperties();
@@ -59,40 +72,16 @@ public final class JsonTest {
     }
 
     /**
-     * Unit test to.
-     */
-    @Test
-    public void test() {
-        final JSONObject json = new JSONObject();
-        json.put("name", "Alice");
-        json.put("email", "alice@example.com");
-
-        final JSONArray list = new JSONArray();
-        list.add("value-1");
-        list.add("value-2");
-        list.add("value-3");
-
-        json.put("list", list);
-
-        write(json);
-
-        log.info(json.toString());
-
-    }
-
-    /**
      * Write.
      *
      * @param json the json
      */
     private void write(final JSONObject json) {
         try (FileWriter file = new FileWriter("./target/test.json")) {
-
             file.write(json.toJSONString());
             file.flush();
-
         } catch (final IOException e) {
-            e.printStackTrace();
+            log.error("writing %s", e);
         }
     }
 }

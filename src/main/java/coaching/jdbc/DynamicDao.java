@@ -24,8 +24,6 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * A dynamic data access object.
  */
-
-
 @Slf4j
 public final class DynamicDao extends AbstractDao {
 

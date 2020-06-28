@@ -13,9 +13,12 @@ import static org.junit.Assert.assertNotNull;
 
 import static org.junit.Assume.assumeNotNull;
 
-import coaching.resources.ResourceLoader;
+import coaching.resources.ResourceStream;
 import coaching.text.Template.TemplateException;
 
+/**
+ * A UnitTest for Template objects.
+ */
 public class TemplateTest {
 
     /**
@@ -26,7 +29,7 @@ public class TemplateTest {
 
     @Test
     public void testTemplateFromStream() throws TemplateException {
-        InputStream stream = ResourceLoader.getStream("Test.template");
+        InputStream stream = ResourceStream.getStream("Test.template");
         assumeNotNull(stream);
 
         Template template = Template.from(stream);
@@ -48,7 +51,7 @@ public class TemplateTest {
      */
     @Test
     public void testJsonTemplateFromStream() throws TemplateException {
-        InputStream stream = ResourceLoader.getStream("Json.template");
+        InputStream stream = ResourceStream.getStream("Json.template");
         assumeNotNull(stream);
 
         Template template = Template.from(stream);

@@ -8,6 +8,8 @@ package coaching.model;
  * An abstract Person class.
  */
 public abstract class AbstractPerson implements PersonInterface {
+    
+    /** The name. */
     private String name;
 
     /**

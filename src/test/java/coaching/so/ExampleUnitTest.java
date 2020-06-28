@@ -1,5 +1,5 @@
 
-package coaching.test;
+package coaching.so;
 
 import org.junit.AssumptionViolatedException;
 import org.junit.Test;
@@ -14,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Unit test for the ExampleUnitTest class.
  */
-
 
 @Slf4j
 public final class ExampleUnitTest {

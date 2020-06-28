@@ -1,37 +1,32 @@
 
 package coaching.csv;
 
-import java.util.List;
-
 import org.w3c.dom.Document;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
- * The CsvToXml.
+ * Class to convert a CSV file to XML.
  */
-public final class CsvToXml {
+@Slf4j
+public final class CsvToXml extends AbstractCsvSource {
 
-    /** CSV file. */
-    private final CsvFile csv = new CsvFile();
-
-    /** The doc. */
     private final Document doc = null;
 
-    /**
-     * Instantiates a new csv to xml.
-     */
+    public static CsvToXml open(final String sourceFilename) {
+        return new CsvToXml(sourceFilename);
+    }
+
     public CsvToXml() {
         super();
     }
 
-    /**
-     * Process.
-     *
-     * @param resourceName the resource name
-     * @param tableName the table name
-     */
-    public void process(final String resourceName, final String tableName) {
-        this.csv.read(resourceName);
-        final List<CsvRecord> rowList = this.csv.getRowList();
+    public CsvToXml(final String csvFilename) {
+        super(csvFilename);
+    }
+
+    public CsvToXml write(final String destinationFilename) {
+        return this;
     }
 
 }
